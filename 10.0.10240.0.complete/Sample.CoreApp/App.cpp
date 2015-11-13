@@ -12,7 +12,7 @@ struct View : IFrameworkViewT<View>
     {
         window.KeyUp([](CoreWindow const &, KeyEventArgs const & args)
         {
-            MODERN_TRACE(L"key: %c\n", args.VirtualKey());
+            MODERN_TRACE("key: %c\n", args.VirtualKey());
         });
 
         MessageDialog dialog(L"Modern C++ for the Windows Runtime", L"Hello World!");
