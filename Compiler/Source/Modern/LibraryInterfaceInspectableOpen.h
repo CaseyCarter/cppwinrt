@@ -1,0 +1,4 @@
+
+struct % :
+	IInspectable,
+	impl_%<%>

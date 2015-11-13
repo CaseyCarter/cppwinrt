@@ -1,0 +1,2 @@
+
+Project folder exists. Use -out and -name to form a new path. Use -update to update an existing project.

@@ -1,0 +1,5 @@
+%::%(%)
+{
+	IInspectable %, %;
+	InternalMove(GetActivationFactory<%, %>().%(%));
+}

@@ -1,0 +1,2 @@
+
+Unexpected token [%d] in %s(%d)

@@ -1,0 +1,2 @@
+
+Windows SDK not found. Use -sdk option to use specific folder.
