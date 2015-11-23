@@ -344,7 +344,7 @@ static void WriteParameter(Output & output, Parameter const & param, unsigned co
             }
             else
             {
-                Write(output, "String const & %", param.Name);
+                Write(output, "StringReference const & %", param.Name);
             }
         }
         else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)

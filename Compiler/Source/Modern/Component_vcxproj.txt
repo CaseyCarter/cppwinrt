@@ -237,6 +237,7 @@
 	<ItemGroup>
 		<ClInclude Include="Component.h" />
 		<ClInclude Include="pch.h" />
+		<ClInclude Include="@.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClCompile Include="Component.cpp" />

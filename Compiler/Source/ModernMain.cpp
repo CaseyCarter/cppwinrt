@@ -432,7 +432,7 @@ static void PrepareUsage()
 
     Database::Out(out);
 
-    if (!Path::CreateDirectory(out) && command != Command::Library && Options::Update != (Settings::Options & Options::Update))
+    if (!Path::CreateDirectory(out) && command != Command::Library && command != Command::Component)
     {
         throw ProjectFolderExistsException();
     }

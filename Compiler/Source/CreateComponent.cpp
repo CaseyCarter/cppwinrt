@@ -18,7 +18,7 @@ static void CreateProject(std::string const & name, std::string const & source)
     std::string const library = Database::Library();
 
     OutputFile project(name + ".vcxproj");
-    Write<'@'>(project, Strings::Component_vcxproj, guid, name, library, library, library, library, library, library, name);
+    Write<'@'>(project, Strings::Component_vcxproj, guid, name, library, library, library, library, library, library, name, name);
 
     OutputFile idl(source);
     Write(idl, Strings::Component_idl, name);
@@ -48,6 +48,16 @@ static void CreateComponentHeaderFile()
 
 
     out.WriteTo("Component.h");
+}
+
+static void CreateProjection(std::string const & name)
+{
+    std::string const filename = name + ".h";
+
+    Output out;
+
+
+    out.WriteTo(filename.c_str());
 }
 
 static void CreateClasses(std::string const & /*name*/)
@@ -88,18 +98,20 @@ void CreateComponent()
     if (!Path::Exists(source))
     {
         CreateProject(name, source);
-        
     }
+    else
+    {
+        int const sourceId = Database::AddSource(source.c_str(), true);
+        MODERN_ASSERT(sourceId != 0);
+        Idl::Parse(sourceId, source.c_str());
 
-    int const sourceId = Database::AddSource(source.c_str(), true);
-    MODERN_ASSERT(sourceId != 0);
-    Idl::Parse(sourceId, source.c_str());
-
-    Database::Project();
+        Database::Project();
+        CreateClasses(name);
+    }
 
     CreateComponentSourceFile();
     CreateComponentHeaderFile();
-    CreateClasses(name);
+    CreateProjection(name);
 }
 
 }

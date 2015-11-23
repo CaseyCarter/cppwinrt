@@ -861,7 +861,7 @@ inline void GetParameters()
         {
             if (back.Category == TypeCategory::String)
             {
-                ++info.StringCount;
+                //++info.StringCount;
             }
             else if (back.Category == TypeCategory::Delegate)
             {

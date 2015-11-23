@@ -147,33 +147,6 @@ struct StringBufferTraits : HandleTraits<HSTRING_BUFFER>
 	}
 };
 
-
-struct StringReference
-{
-	StringReference(StringReference const &) = delete;
-	StringReference & operator=(StringReference const &) = delete;
-
-	StringReference(wchar_t const * const value, unsigned length)
-	{
-		check(WindowsCreateStringReference(value, length, &m_header, &m_string));
-	}
-
-	template <unsigned Count>
-	StringReference(wchar_t const (&value)[Count]) :
-		StringReference(value, Count - 1)
-	{}
-
-	operator HSTRING() const noexcept
-	{
-		return m_string;
-	}
-
-private:
-
-	HSTRING_HEADER m_header;
-	HSTRING m_string;
-};
-
 struct String
 {
 	String() noexcept = default;
@@ -287,6 +260,11 @@ struct String
 		swap(left.m_handle, right.m_handle);
 	}
 
+	operator std::wstring() const
+	{
+		return std::wstring(Buffer(), Length());
+	}
+
 private:
 
 	static HSTRING DuplicateString(HSTRING other)
@@ -304,6 +282,39 @@ private:
 	}
 
 	Handle<StringTraits> m_handle;
+};
+
+struct StringReference
+{
+	StringReference(StringReference const &) = delete;
+	StringReference & operator=(StringReference const &) = delete;
+
+	StringReference(wchar_t const * const value, size_t const length)
+	{
+		check(WindowsCreateStringReference(value, static_cast<unsigned>(length), &m_header, &m_handle));
+	}
+
+	StringReference(wchar_t const * const value) :
+		StringReference(value, wcslen(value))
+	{}
+
+	StringReference(String const & value) noexcept :
+		m_handle(get(value))
+	{}
+
+	StringReference(std::wstring const & value) :
+		StringReference(value.c_str(), value.size())
+	{}
+
+	friend HSTRING get(StringReference const & string) noexcept
+	{
+		return string.m_handle;
+	}
+
+private:
+
+	HSTRING_HEADER m_header;
+	HSTRING m_handle;
 };
 
 inline bool operator==(String const & left, String const & right)
@@ -891,7 +902,7 @@ Instance ActivateInstance()
 							Traits<Class>::NameLength);
 
 	Instance instance = nullptr;
-	impl_ActivateInstance(classId, instance);
+	impl_ActivateInstance(get(classId), instance);
 	return instance;
 }
 
@@ -902,7 +913,7 @@ Interface GetActivationFactory()
 							Traits<Class>::NameLength);
 
 	Interface factory;
-	check(RoGetActivationFactory(classId, __uuidof(Abi<Interface>), reinterpret_cast<void **>(put(factory))));
+	check(RoGetActivationFactory(get(classId), __uuidof(Abi<Interface>), reinterpret_cast<void **>(put(factory))));
 	return factory;
 }
 
@@ -1421,8 +1432,8 @@ struct IPropertyValue;
 template <typename T>
 struct IReference :
 	IInspectable,
-	impl_IReference<IReference<T>, T> // ,
-	// Requires<IReference<T>, IPropertyValue>
+	impl_IReference<IReference<T>, T>,
+	Requires<IReference<T>, IPropertyValue>
 {
 	IReference(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return static_cast<AbiPtr<IReference>>(m_ptr); }

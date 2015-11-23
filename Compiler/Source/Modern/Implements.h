@@ -8,17 +8,11 @@
 
 namespace Modern {
 
-template <typename Interface>
-struct Cloaked : Interface {};
-
 template <typename ... Interfaces>
 class __declspec(novtable) Implements : public Interfaces ...
 {
-	template <typename Interface>
-	struct IsCloaked : std::false_type {};
-
-	template <typename Interface>
-	struct IsCloaked<Cloaked<Interface>> : std::true_type {};
+	template <typename T>
+	using IsCloaked = std::integral_constant<bool, !std::is_base_of<::IInspectable, typename T>::value>;
 
 	template <int = 0>
 	constexpr unsigned CountInterfaces() const noexcept
@@ -111,21 +105,21 @@ protected:
 	virtual ~Implements() noexcept
 	{}
 
-    template <typename First, typename ... Rest>
-    void * BaseQueryInterface(GUID const & id) noexcept
-    {
-        if (id == __uuidof(First) || id == __uuidof(::IUnknown))
-        {
-            return static_cast<First *>(this);
-        }
+	template <typename First, typename ... Rest>
+	void * BaseQueryInterface(GUID const & id) noexcept
+	{
+		if (id == __uuidof(First) || id == __uuidof(::IUnknown))
+		{
+			return static_cast<First *>(this);
+		}
 
-        if (IsInspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
-        {
-            return FindInspectable<Interfaces ...>();
-        }
+		if (IsInspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
+		{
+			return FindInspectable<Interfaces ...>();
+		}
 
-        return FindInterface<Rest ...>(id);
-    }
+		return FindInterface<Rest ...>(id);
+	}
 
 public:
 
