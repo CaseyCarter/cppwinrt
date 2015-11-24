@@ -2,11 +2,11 @@
 
 namespace Modern { namespace Strings {
 
+extern char const accessors[1961];
 extern char const ApplicationModel[1720];
-extern char const Async[4195];
 extern char const Await[2340];
-extern char const Base[66603];
-extern char const Collections[5481];
+extern char const Base[67233];
+extern char const Collections[3651];
 extern char const Component_def[75];
 extern char const Component_idl[69];
 extern char const Component_pch_cpp[18];
@@ -93,10 +93,6 @@ extern char const DatabaseSetClassDefaultConstructor[52];
 extern char const DatabaseSourceParsed[46];
 extern char const DatabaseStructureDepends[52];
 extern char const Debug[571];
-extern char const Generic_Abi[16047];
-extern char const Generic_Collections[1927];
-extern char const Generic_Delegates[9302];
-extern char const Generic_Interfaces[39495];
 extern char const Handle[2266];
 extern char const IdlError[31];
 extern char const Implements[3916];
@@ -165,7 +161,6 @@ extern char const RemoveAddRefRelease[264];
 extern char const Runtime[6294];
 extern char const SdkNotFound[65];
 extern char const SQLiteError[24];
-extern char const String[7002];
 extern char const TimeCompleted[26];
 extern char const Unknown[3733];
 extern char const Usage[813];
