@@ -240,7 +240,17 @@ struct String
 		return get(string.m_handle);
 	}
 
+	friend HSTRING impl_get(String const & string) noexcept
+	{
+		return get(string.m_handle);
+	}
+
 	friend HSTRING * put(String & string) noexcept
+	{
+		return put(string.m_handle);
+	}
+
+	friend HSTRING * impl_put(String & string) noexcept
 	{
 		return put(string.m_handle);
 	}
@@ -251,6 +261,11 @@ struct String
 	}
 
 	friend HSTRING detach(String & string) noexcept
+	{
+		return detach(string.m_handle);
+	}
+
+	friend HSTRING impl_detach(String & string) noexcept
 	{
 		return detach(string.m_handle);
 	}
@@ -499,9 +514,9 @@ Lease<To> forward(From value) noexcept
 
 template <typename First, typename ... Rest>
 struct ImplementsDefault : 
-    Implements<Abi<First>, Abi<Rest> ..., ::IAgileObject>
+	Implements<Abi<First>, Abi<Rest> ..., ::IAgileObject>
 {
-    using Default = First;
+	using Default = First;
 };
 
 template <> struct Traits<String>
@@ -592,6 +607,24 @@ struct IUnknown
 	{
 		T temp = nullptr;
 		check(m_ptr->QueryInterface(put(temp)));
+		return temp;
+	}
+
+	friend ::IUnknown * impl_get(IUnknown const & object) noexcept
+	{
+		return object.m_ptr;
+	}
+
+	friend ::IUnknown ** impl_put(IUnknown & object) noexcept
+	{
+		MODERN_ASSERT(!object);
+		return &object.m_ptr;
+	}
+
+	friend ::IUnknown * impl_detach(IUnknown & object) noexcept
+	{
+		::IUnknown * temp = object.m_ptr;
+		object.m_ptr = nullptr;
 		return temp;
 	}
 

@@ -1,158 +1,143 @@
 
-namespace Modern { namespace Interop {
+namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T>
-class Windows_Foundation_Collections_IIterator : public Implements<typename Abi<Windows::Foundation::Collections::IIterator<T>>::Type>
+struct impl_VectorIterator : ImplementsDefault<IIterator<T>>
 {
-    Windows::Foundation::Collections::IVectorView<T> v;
-    unsigned i = 0;
+	Windows::Foundation::Collections::IVectorView<T> v;
+	unsigned i = 0;
 
-public:
+	impl_VectorIterator(AbiArgIn<IVectorView<T>> other)
+	{
+		copy(v, other);
+	}
 
-    using DefaultInterface = Windows::Foundation::Collections::IIterator<T>;
+	virtual HRESULT __stdcall get_Current(AbiArgOut<T> current) noexcept override
+	{
+		return v->abi_GetAt(i, current);
+	}
 
-    Windows_Foundation_Collections_IIterator(typename Abi<Windows::Foundation::Collections::IVectorView<T>>::Type * other)
-    {
-        v.CopyAbi(other);
-    }
+	virtual HRESULT __stdcall get_HasCurrent(boolean * hasCurrent) noexcept override
+	{
+		return call([&]
+		{
+			*hasCurrent = i < v.Size();
+		});
+	}
 
-    virtual HRESULT __stdcall get_Current(typename AbiArgument<T>::Out current) noexcept override
-    {
-        return v->abi_GetAt(i, current);
-    }
+	virtual HRESULT __stdcall abi_MoveNext(boolean * hasCurrent) noexcept override
+	{
+		return call([&]
+		{
+			if (i + 1 < v.Size())
+			{
+				++i;
+				*hasCurrent = true;
+			}
+			else
+			{
+				*hasCurrent = false;
+			}
+		});
+	}
 
-    virtual HRESULT __stdcall get_HasCurrent(boolean * hasCurrent) noexcept override
-    {
-        return Call([&]
-        {
-            *hasCurrent = i < v.Size();
-        });
-    }
-
-    virtual HRESULT __stdcall abi_MoveNext(boolean * hasCurrent) noexcept override
-    {
-        return Call([&]
-        {
-            if (i + 1 < v.Size())
-            {
-                ++i;
-                *hasCurrent = true;
-            }
-            else
-            {
-                *hasCurrent = false;
-            }
-        });
-    }
-
-    virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, typename AbiArgument<T>::Out /*value*/, unsigned * /*actual*/) noexcept override
-    {
-        return E_NOTIMPL;
-    }
+	virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, AbiArgOut<T> /*value*/, unsigned * /*actual*/) noexcept override
+	{
+		return E_NOTIMPL;
+	}
 };
 
 template <typename T>
-class Windows_Foundation_Collections_IVector : public Implements<typename Abi<Windows::Foundation::Collections::IVector<T>>::Type, 
-                                                                 typename Abi<Windows::Foundation::Collections::IVectorView<T>>::Type,
-                                                                 typename Abi<Windows::Foundation::Collections::IIterable<T>>::Type>
+struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 {
 	std::vector<T> v;
 
-public:
-
-	using DefaultInterface = Windows::Foundation::Collections::IVector<T>;
-
-    Windows_Foundation_Collections_IVector() = default;
-
-    Windows_Foundation_Collections_IVector(std::vector<T> const & other) :
-		v(other)
+	template <typename ... Args>
+	impl_Vector(Args && ... args) :
+		v(std::forward(args) ...)
 	{}
 
-    Windows_Foundation_Collections_IVector(std::vector<T> && other) :
-		v(std::move(other))
-	{}
-
-	virtual HRESULT __stdcall abi_GetAt(unsigned index, typename AbiArgument<T>::Out item) noexcept override
+	virtual HRESULT __stdcall abi_GetAt(unsigned /*index*/, AbiArgOut<T> /*item*/) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
-			CopyToAbi(*item, v.at(index));
+			//CopyToAbi(*item, v.at(index));
 		});
 	}
 
 	virtual HRESULT __stdcall get_Size(unsigned * size) noexcept override
 	{
-        *size = v.size();
-        return S_OK;
+		*size = v.size();
+		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetView(typename Abi<Windows::Foundation::Collections::IVectorView<T>>::Type ** view) noexcept override
+	virtual HRESULT __stdcall abi_GetView(AbiArgOut<IVectorView<T>> view) noexcept override
 	{
-        *view = this;
-        static_cast<::IUnknown *>(*view)->AddRef();
-        return S_OK;
+		*view = this;
+		static_cast<::IUnknown *>(*view)->AddRef();
+		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_IndexOf(typename AbiArgument<T>::In value, unsigned * index, boolean * found) noexcept override
+	virtual HRESULT __stdcall abi_IndexOf(AbiArgIn<T> /*value*/, unsigned * index, boolean * found) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
-			*index = std::find(begin(v), end(v), Interop::Forward<T>(value)) - begin(v);
+			//*index = std::find(begin(v), end(v), Interop::Forward<T>(value)) - begin(v);
 			*found = *index < v.size();
 		});
 	}
 
-	virtual HRESULT __stdcall abi_SetAt(unsigned index, typename AbiArgument<T>::In item) noexcept override
+	virtual HRESULT __stdcall abi_SetAt(unsigned /*index*/, AbiArgIn<T> /*item*/) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
-			CopyFromAbi(v.at(index), item);
+			//CopyFromAbi(v.at(index), item);
 		});
 	}
 
-	virtual HRESULT __stdcall abi_InsertAt(unsigned index, typename AbiArgument<T>::In item) noexcept override
+	virtual HRESULT __stdcall abi_InsertAt(unsigned index, AbiArgIn<T> /*item*/) noexcept override
 	{
-        if (index > v.size())
-        {
-            return E_FAIL;
-        }
-
-		return Call([&]
+		if (index > v.size())
 		{
-			CopyFromAbi(*v.emplace(begin(v) + index), item);
+			return E_FAIL;
+		}
+
+		return call([&]
+		{
+			//CopyFromAbi(*v.emplace(begin(v) + index), item);
 		});
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAt(unsigned index) noexcept override
 	{
-        if (index >= v.size())
-        {
-            return E_FAIL;
-        }
+		if (index >= v.size())
+		{
+			return E_FAIL;
+		}
 
-		return Call([&]
+		return call([&]
 		{
 			v.erase(begin(v) + index);
 		});
 	}
 
-	virtual HRESULT __stdcall abi_Append(typename AbiArgument<T>::In item) noexcept override
+	virtual HRESULT __stdcall abi_Append(AbiArgIn<T> /*item*/) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
 			v.emplace_back();
-			CopyFromAbi(v.back(), item);
+			//CopyFromAbi(v.back(), item);
 		});
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAtEnd() noexcept override
 	{
-        if (v.empty())
-        {
-            return E_FAIL;
-        }
+		if (v.empty())
+		{
+			return E_FAIL;
+		}
 
-		return Call([&]
+		return call([&]
 		{
 			v.pop_back();
 		});
@@ -160,13 +145,13 @@ public:
 
 	virtual HRESULT __stdcall abi_Clear() noexcept override
 	{
-        v.clear();
-        return S_OK;
+		v.clear();
+		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, typename AbiArgument<T>::Out /*value*/, unsigned * actual) noexcept override
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, AbiArgOut<T> /*value*/, unsigned * actual) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
 			*actual = v.size() - startIndex;
 
@@ -182,43 +167,21 @@ public:
 		});
 	}
 
-	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, typename AbiArgument<T>::Out /*value*/) noexcept override
+	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, AbiArgOut<T> /*value*/) noexcept override
 	{
-		return Call([&]
+		return call([&]
 		{
 			// v.assign(value, value + count);
 		});
 	}
 
-    virtual HRESULT __stdcall abi_First(typename Abi<Windows::Foundation::Collections::IIterator<T>>::Type ** first) noexcept override
-    {
-        return Call([&]
-        {
-            *first = Make<Windows_Foundation_Collections_IIterator<T>>(this).DetachAbi();
-        });
-    }
+	virtual HRESULT __stdcall abi_First(Abi<IIterator<T>> ** first) noexcept override
+	{
+		return call([&]
+		{
+			*first = detach(make<impl_VectorIterator<T>>(this));
+		});
+	}
 };
-
-}}
-
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
-
-template <typename T>
-IVector<T> Vector()
-{
-	return Make<Interop::Windows_Foundation_Collections_IVector<T>>();
-}
-
-template <typename T>
-IVector<T> Vector(std::vector<T> && other)
-{
-	return Make<Interop::Windows_Foundation_Collections_IVector<T>>(std::move(other));
-}
-
-template <typename T>
-IVector<T> Vector(std::vector<T> const & other)
-{
-	return Make<Interop::Windows_Foundation_Collections_IVector<T>>(other);
-}
 
 }}}}
