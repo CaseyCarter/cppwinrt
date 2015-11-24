@@ -9,3 +9,4 @@
 #include <modern\sdk.extend.h>
 
 #include <modern\await.h>
+#include <modern\references.h>

@@ -1437,6 +1437,8 @@ struct IReference :
 {
 	IReference(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return static_cast<AbiPtr<IReference>>(m_ptr); }
+
+	IReference(T const & value);
 };
 
 }}}

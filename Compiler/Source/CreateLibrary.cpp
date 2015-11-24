@@ -129,7 +129,7 @@ static void WriteLibrary()
 	WriteSupportingHeader("comptr.h", Strings::ComPtr);
 	WriteSupportingHeader("handle.h", Strings::Handle);
 	WriteSupportingHeader("await.h", Strings::Await);
-    //WriteSupportingHeader("async.h", Strings::Async);
+    WriteSupportingHeader("references.h", Strings::References);
 
 	Output meta;
 	WriteLogo(meta);

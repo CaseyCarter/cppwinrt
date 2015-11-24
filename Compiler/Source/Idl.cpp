@@ -1594,6 +1594,26 @@ static void ParseLengthIsAttribute(Scanner & scanner)
     scanner.Next();
 }
 
+static void ParseContractAttribute(Scanner & scanner)
+{
+    scanner.Expect(Token::LeftParenthesis);
+    scanner.NextSimpleName();
+    scanner.Next();
+
+    if (scanner.Current() != Token::Comma)
+    {
+        AddAttribute(Attribute::Activatable);
+    }
+    else
+    {
+        scanner.NextSimpleName();
+        scanner.Next();
+    }
+
+    scanner.Expect(Token::RightParenthesis);
+    scanner.Next();
+}
+
 static void ParseActivatableAttribute(Scanner & scanner)
 {
     scanner.Expect(Token::LeftParenthesis);
@@ -1625,6 +1645,13 @@ static void ParseStaticAttribute(Scanner & scanner)
     scanner.Expect(Token::Comma);
     scanner.NextSimpleName();
     scanner.Next();
+
+    if (scanner.Current() == Token::Comma)
+    {
+        scanner.NextSimpleName();
+        scanner.Next();
+    }
+
     scanner.Expect(Token::RightParenthesis);
     scanner.Next();
 }
@@ -1752,6 +1779,10 @@ static void ParseAttribute(Scanner & scanner)
         else if (name == "marshaling_behavior")
         {
             ParseIgnoredNameValueAttribute(scanner);
+        }
+        else if (name == "contract")
+        {
+            ParseContractAttribute(scanner);
         }
         else if (name == "size_is")
         {
