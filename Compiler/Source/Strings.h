@@ -2,7 +2,7 @@
 
 namespace Modern { namespace Strings {
 
-extern char const accessors[1961];
+extern char const Accessors[1961];
 extern char const ApplicationModel[1720];
 extern char const Await[2340];
 extern char const Base[67233];
