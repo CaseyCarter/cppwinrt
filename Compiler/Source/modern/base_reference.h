@@ -1,7 +1,7 @@
 
 #pragma once
 
-namespace Modern { namespace Windows { namespace Foundation {
+namespace winrt { namespace Windows { namespace Foundation {
 
 inline IReference<byte> Reference(byte const value)
 {

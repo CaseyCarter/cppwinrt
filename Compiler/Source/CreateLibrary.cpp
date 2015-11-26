@@ -87,7 +87,7 @@ static void WriteModernHeader()
 {
     OutputFile target("..\\modern.h");
     WriteLogo(target);
-    Write(target, Strings::Modern);
+    Write(target, Strings::base_modern);
 }
 
 template <unsigned Count>
@@ -102,16 +102,7 @@ static void WriteBaseHeader()
 {
 	OutputFile out("base.h");
 	WriteLogo(out);
-	Write(out, Strings::Base);
-	//Write(out, Strings::Unknown);
-	//Write(out, Strings::String);
-	//Write(out, Strings::Lock);
-	//Write(out, Strings::Runtime);
-	//Write(out, Strings::Generic_Abi);
-	//Write(out, Strings::Generic_Interfaces);
-	//Write(out, Strings::Generic_Collections);
-	//Write(out, Strings::Generic_Delegates);
-	//Write(out, Strings::Collections);
+	//Write(out, Strings::Base);
 }
 
 static void WriteLibrary()
@@ -124,12 +115,12 @@ static void WriteLibrary()
     WriteModernHeader();
 	WriteBaseHeader();
 
-	WriteSupportingHeader("debug.h", Strings::Debug);
-	WriteSupportingHeader("implements.h", Strings::Implements);
-	WriteSupportingHeader("comptr.h", Strings::ComPtr);
-	WriteSupportingHeader("handle.h", Strings::Handle);
-	WriteSupportingHeader("await.h", Strings::Await);
-    WriteSupportingHeader("references.h", Strings::References);
+	//WriteSupportingHeader("debug.h", Strings::Debug);
+	//WriteSupportingHeader("implements.h", Strings::Implements);
+	//WriteSupportingHeader("comptr.h", Strings::ComPtr);
+	//WriteSupportingHeader("handle.h", Strings::Handle);
+	//WriteSupportingHeader("await.h", Strings::Await);
+ //   WriteSupportingHeader("references.h", Strings::References);
 
 	Output meta;
 	WriteLogo(meta);
