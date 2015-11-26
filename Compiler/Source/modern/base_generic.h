@@ -1,4 +1,26 @@
 
+namespace winrt { namespace impl {
+
+template <typename T, typename Enable = void>
+struct argument
+{
+	static constexpr T empty() noexcept
+	{
+		return{};
+	}
+};
+
+template <typename T>
+struct argument<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T>::value>::type>
+{
+	static constexpr T empty() noexcept
+	{
+		return nullptr;
+	}
+};
+
+}}
+
 namespace winrt { namespace ABI { namespace Windows { namespace Foundation {
 
 template <typename TProgress> struct IAsyncActionProgressHandler;
@@ -236,7 +258,7 @@ struct impl_IAsyncOperation
 
 	TResult GetResults() const
 	{
-		TResult result = Argument<TResult>::Empty();
+		TResult result = impl::argument<TResult>::empty();
 		check(impl::shim<D>(this)->abi_GetResults(abi(&result)));
 		return result;
 	}
@@ -283,7 +305,7 @@ struct impl_IAsyncOperationWithProgress
 
 	TResult GetResults() const
 	{
-		TResult result = Argument<TResult>::Empty();
+		TResult result = impl::argument<TResult>::empty();
 		check(impl::shim<D>(this)->abi_GetResults(abi(&result)));
 		return result;
 	}
@@ -294,8 +316,8 @@ struct impl_IReference
 {
 	T Value() const
 	{
-		T result = Argument<T>::Empty();
-		check(impl::shim<D>(this)->get_Value(abi(&result)));
+		T result = impl::argument<T>::empty();
+		check(impl::shim<D>(this)->get_Value(put(result)));
 		return result;
 	}
 };

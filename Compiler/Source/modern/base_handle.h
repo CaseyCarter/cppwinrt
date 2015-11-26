@@ -148,8 +148,6 @@ struct accessors<handle<T>>
 		*put(object) = value;
 	}
 
-	// The "copy" accessor is not provided for handles.
-
 	static type detach(handle<T> & object) noexcept
 	{
 		return impl_detach(object);

@@ -70,9 +70,6 @@ namespace winrt {
 template <typename T>
 using abi = typename impl::traits<T>::abi;
 
-//template <typename T>
-//using ptr = impl::no_ref<abi<T>> *;
-
 template <typename T>
 auto ptr(::IUnknown * object) noexcept
 {
@@ -94,7 +91,7 @@ template <typename First, typename ... Rest>
 struct implements :
 	winrt::implements<abi<First>, abi<Rest> ..., ::IAgileObject>
 {
-	using default = First;
+	using default_interface = First;
 };
 
 }}

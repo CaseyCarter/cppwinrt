@@ -30,7 +30,7 @@ struct String
 	String(std::nullptr_t) noexcept {}
 
 	String(wchar_t const * value, unsigned const length) :
-		m_handle(CreateString(value, length))
+		m_handle(create_string(value, length))
 	{}
 
 	template <unsigned Count>
@@ -43,12 +43,12 @@ struct String
 	{}
 
 	String(String const & other) :
-		m_handle(DuplicateString(get(other.m_handle)))
+		m_handle(duplicate_string(get(other.m_handle)))
 	{}
 
 	String & operator=(String const & other) noexcept
 	{
-		attach(m_handle, DuplicateString(get(other.m_handle)));
+		attach(m_handle, duplicate_string(get(other.m_handle)));
 		return *this;
 	}
 
@@ -136,14 +136,14 @@ struct String
 
 private:
 
-	static HSTRING DuplicateString(HSTRING other)
+	static HSTRING duplicate_string(HSTRING other)
 	{
 		HSTRING result = nullptr;
 		check(WindowsDuplicateString(other, &result));
 		return result;
 	}
 
-	static HSTRING CreateString(wchar_t const * value, unsigned const length)
+	static HSTRING create_string(wchar_t const * value, unsigned const length)
 	{
 		HSTRING result = nullptr;
 		check(WindowsCreateString(value, length, &result));
