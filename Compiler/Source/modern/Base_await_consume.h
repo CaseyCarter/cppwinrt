@@ -1,12 +1,10 @@
 
-#include <ctxtcall.h>
-
-namespace Modern { namespace Windows { namespace Foundation {
+namespace winrt { namespace Windows { namespace Foundation {
 
 template <typename T, typename F>
 void impl_suspend(T const & object, F resume)
 {
-	ComPtr<IContextCallback> context;
+	com_ptr<IContextCallback> context;
 	check(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
 
 	object.Completed([resume, context](auto const &, AsyncStatus)

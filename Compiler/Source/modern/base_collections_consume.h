@@ -1,20 +1,15 @@
 
-namespace Modern {
+namespace winrt { namespace impl {
 
 template <typename T>
-class FastIterator
+struct fast_iterator
 {
-	T const * m_collection = nullptr;
-	unsigned m_index = 0;
-
-public:
-
-	FastIterator(T const & collection, unsigned const index) noexcept :
+	fast_iterator(T const & collection, unsigned const index) noexcept :
 		m_collection(&collection),
 		m_index(index)
 	{}
 
-	FastIterator & operator++() noexcept
+	fast_iterator & operator++() noexcept
 	{
 		++m_index;
 		return *this;
@@ -25,21 +20,26 @@ public:
 		return m_collection->GetAt(m_index);
 	}
 
-	bool operator==(FastIterator const & other) const noexcept
+	bool operator==(fast_iterator const & other) const noexcept
 	{
 		MODERN_ASSERT(m_collection == other.m_collection);
 		return m_index == other.m_index;
 	}
 
-	bool operator!=(FastIterator const & other) const noexcept
+	bool operator!=(fast_iterator const & other) const noexcept
 	{
 		return !(*this == other);
 	}
+
+private:
+
+	T const * m_collection = nullptr;
+	unsigned m_index = 0;
 };
 
-}
+}}
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 enum class CollectionChange
 {
@@ -52,64 +52,72 @@ enum class CollectionChange
 }}}}
 
 
-namespace Modern { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
 
 struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
 {
-	virtual HRESULT __stdcall get_CollectionChange(Modern::Windows::Foundation::Collections::CollectionChange * value) = 0;
+	virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
 	virtual HRESULT __stdcall get_Index(unsigned * value) = 0;
 };
 
 }}}}}
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
-
-template <typename D>
-struct impl_IVectorChangedEventArgs
-{
-	CollectionChange CollectionChange() const
-	{
-		Collections::CollectionChange value = {};
-		check(static_cast<D const &>(*this)->get_CollectionChange(&value));
-		return value;
-	}
-
-	unsigned Index() const
-	{
-		unsigned index;
-		check(static_cast<D const &>(*this)->get_Index(&index));
-		return index;
-	}
-};
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 struct IVectorChangedEventArgs;
 
-}}}}
-
-namespace Modern {
-
-template <> struct Traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
+template <typename D>
+class impl_IVectorChangedEventArgs
 {
-	using Abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
-	template <typename T> using Methods = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<T>;
+	auto shim() const { return impl::shim<D, IVectorChangedEventArgs>(this); }
+
+public:
+
+	CollectionChange CollectionChange() const;
+	unsigned Index() const;
 };
 
-}
+}}}}
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace impl {
+
+template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
+{
+	using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
+	template <typename T> using methods = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<T>;
+};
+
+}}
+
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 struct IVectorChangedEventArgs :
 	IInspectable,
 	impl_IVectorChangedEventArgs<IVectorChangedEventArgs>
 {
 	IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IVectorChangedEventArgs>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
+
+
+template <typename T> CollectionChange impl_IVectorChangedEventArgs<T>::CollectionChange() const
+{
+	Collections::CollectionChange value = {};
+	check(shim()->get_CollectionChange(&value));
+	return value;
+}
+
+template <typename T> unsigned impl_IVectorChangedEventArgs<T>::Index() const
+{
+	unsigned index = 0;
+	check(shim()->get_Index(&index));
+	return index;
+}
 
 }}}}
 
-namespace Modern { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -127,10 +135,10 @@ template <typename T> struct IObservableVector;
 template <typename T>
 struct __declspec(novtable) impl_IIterator : IInspectable
 {
-	virtual HRESULT __stdcall get_Current(ArgOut<T> current) = 0;
-	virtual HRESULT __stdcall get_HasCurrent(boolean * hasCurrent) = 0;
-	virtual HRESULT __stdcall abi_MoveNext(boolean * hasCurrent) = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned capacity, ArgOut<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall get_Current(argument_out<T> current) = 0;
+	virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
+	virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
 
 };
 
@@ -143,63 +151,63 @@ struct __declspec(novtable) impl_IIterable : IInspectable
 template <typename K, typename V>
 struct __declspec(novtable) impl_IKeyValuePair : IInspectable
 {
-	virtual HRESULT __stdcall get_Key(ArgOut<K> key) = 0;
-	virtual HRESULT __stdcall get_Value(ArgOut<V> value) = 0;
+	virtual HRESULT __stdcall get_Key(argument_out<K> key) = 0;
+	virtual HRESULT __stdcall get_Value(argument_out<V> value) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IVectorView : IInspectable
 {
-	virtual HRESULT __stdcall abi_GetAt(unsigned index, ArgOut<T> item) = 0;
+	virtual HRESULT __stdcall abi_GetAt(unsigned index, argument_out<T> item) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
-	virtual HRESULT __stdcall abi_IndexOf(ArgIn<T> value, unsigned * index, boolean * found) = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, ArgOut<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall abi_IndexOf(argument_in<T> value, unsigned * index, bool * found) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IVector : IInspectable
 {
-	virtual HRESULT __stdcall abi_GetAt(unsigned index, ArgOut<T> item) = 0;
+	virtual HRESULT __stdcall abi_GetAt(unsigned index, argument_out<T> item) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
 	virtual HRESULT __stdcall abi_GetView(IVectorView<T> ** view) = 0;
-	virtual HRESULT __stdcall abi_IndexOf(ArgIn<T> value, unsigned * index, boolean * found) = 0;
-	virtual HRESULT __stdcall abi_SetAt(unsigned index, ArgIn<T> item) = 0;
-	virtual HRESULT __stdcall abi_InsertAt(unsigned index, ArgIn<T> item) = 0;
+	virtual HRESULT __stdcall abi_IndexOf(argument_in<T> value, unsigned * index, bool * found) = 0;
+	virtual HRESULT __stdcall abi_SetAt(unsigned index, argument_in<T> item) = 0;
+	virtual HRESULT __stdcall abi_InsertAt(unsigned index, argument_in<T> item) = 0;
 	virtual HRESULT __stdcall abi_RemoveAt(unsigned index) = 0;
-	virtual HRESULT __stdcall abi_Append(ArgIn<T> item) = 0;
+	virtual HRESULT __stdcall abi_Append(argument_in<T> item) = 0;
 	virtual HRESULT __stdcall abi_RemoveAtEnd() = 0;
 	virtual HRESULT __stdcall abi_Clear() = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, ArgOut<T> value, unsigned * actual) = 0;
-	virtual HRESULT __stdcall abi_ReplaceAll(unsigned count, ArgOut<T> value) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall abi_ReplaceAll(unsigned count, argument_out<T> value) = 0;
 
 };
 
 template <typename K, typename V>
 struct __declspec(novtable) impl_IMapView : IInspectable
 {
-	virtual HRESULT __stdcall abi_Lookup(K const & key, ArgOut<V> value) = 0;
-	virtual HRESULT __stdcall get_Size(unsigned int * size) = 0;
-	virtual HRESULT __stdcall abi_HasKey(K const & key, boolean * found) = 0;
+	virtual HRESULT __stdcall abi_Lookup(argument_in<K> key, argument_out<V> value) = 0;
+	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
+	virtual HRESULT __stdcall abi_HasKey(argument_in<K> key, bool * found) = 0;
 	virtual HRESULT __stdcall abi_Split(IMapView<K, V> ** firstPartition, IMapView<K, V> ** secondPartition) = 0;
 };
 
 template <typename K, typename V>
 struct __declspec(novtable) impl_IMap : IInspectable
 {
-	virtual HRESULT __stdcall abi_Lookup(K const & key, ArgOut<V> value) = 0;
-	virtual HRESULT __stdcall get_Size(unsigned int * size) = 0;
-	virtual HRESULT __stdcall abi_HasKey(K const & key, boolean * found) = 0;
+	virtual HRESULT __stdcall abi_Lookup(argument_in<K> key, argument_out<V> value) = 0;
+	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
+	virtual HRESULT __stdcall abi_HasKey(argument_in<K> key, bool * found) = 0;
 	virtual HRESULT __stdcall abi_GetView(IMapView<K, V> ** view) = 0;
-	virtual HRESULT __stdcall abi_Insert(K const & key, V const & value, boolean * replaced) = 0;
-	virtual HRESULT __stdcall abi_Remove(K const & key) = 0;
+	virtual HRESULT __stdcall abi_Insert(argument_in<K> key, V const & value, bool * replaced) = 0;
+	virtual HRESULT __stdcall abi_Remove(argument_in<K> key) = 0;
 	virtual HRESULT __stdcall abi_Clear() = 0;
 };
 
 template <typename K>
 struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
 {
-	virtual HRESULT __stdcall get_CollectionChange(Modern::Windows::Foundation::Collections::CollectionChange * value) = 0;
-	virtual HRESULT __stdcall get_Key(ArgOut<K> value) = 0;
+	virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
+	virtual HRESULT __stdcall get_Key(argument_out<K> value) = 0;
 };
 
 template <typename K, typename V>
@@ -230,7 +238,7 @@ struct __declspec(novtable) impl_IObservableVector : IInspectable
 
 }}}}}
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -246,27 +254,31 @@ template <typename T> struct IVectorChangedEventHandler;
 template <typename T> struct IObservableVector;
 
 template <typename D, typename T>
-struct impl_IIterator
+class impl_IIterator
 {
+	auto shim() const { return impl::shim<D, IIterator<T>>(this); }
+
+public:
+
 	T Current() const
 	{
-		T result = Argument<T>::Empty();
-		check(static_cast<D const &>(*this)->get_Current(abi(&result)));
+		T result = impl::argument<T>::empty();
+		check(shim()->get_Current(put(result)));
 		return result;
 	}
 
 	bool HasCurrent() const
 	{
-		boolean temp = 0;
-		check(static_cast<D const &>(*this)->get_HasCurrent(&temp));
-		return 0 != temp;
+		bool temp = false;
+		check(shim()->get_HasCurrent(&temp));
+		return temp;
 	}
 
 	bool MoveNext() const
 	{
-		boolean temp = 0;
-		check(static_cast<D const &>(*this)->abi_MoveNext(&temp));
-		return 0 != temp;
+		bool temp = false;
+		check(shim()->abi_MoveNext(&temp));
+		return temp;
 	}
 
 	impl_IIterator & operator++()
@@ -286,234 +298,270 @@ struct impl_IIterator
 };
 
 template <typename D, typename T>
-struct impl_IIterable
+class impl_IIterable
 {
+	auto shim() const { return impl::shim<D, IIterable<T>>(this); }
+
+public:
+
 	IIterator<T> First() const
 	{
 		IIterator<T> iterator;
-		check(static_cast<IIterable<T> const &>(static_cast<D const &>(*this))->abi_First(put(iterator)));
+		check(shim()->abi_First(put(iterator)));
 		return iterator;
 	}
 };
 
 template <typename D, typename K, typename V>
-struct impl_IKeyValuePair
+class impl_IKeyValuePair
 {
+	auto shim() const { return impl::shim<D, IKeyValuePair<K, V>>(this); }
+
+public:
+
 	K Key() const
 	{
-		K result = Argument<K>::Empty();
-		check(static_cast<D const &>(*this)->get_Key(abi(&result)));
+		K result = impl::argument<K>::empty();
+		check(shim()->get_Key(put(result)));
 		return result;
 	}
 
 	V Value() const
 	{
-		V result = Argument<V>::Empty();
-		check(static_cast<D const &>(*this)->get_Value(abi(&result)));
+		V result = impl::argument<V>::empty();
+		check(shim()->get_Value(put(result)));
 		return result;
 	}
 };
 
 template <typename D, typename T>
-struct impl_IVectorView
+class impl_IVectorView
 {
+	auto shim() const { return impl::shim<D, IVectorView<T>>(this); }
+
+public:
+
 	T GetAt(unsigned const index) const
 	{
-		T result = Argument<T>::Empty();
-		check(static_cast<IVectorView<T> const &>(static_cast<D const &>(*this))->abi_GetAt(index, abi(&result)));
+		T result = impl::argument<T>::empty();
+		check(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(static_cast<IVectorView<T> const &>(static_cast<D const &>(*this))->get_Size(&size));
+		check(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
-		boolean found = false;
-		check(static_cast<IVectorView<T> const &>(static_cast<D const &>(*this))->abi_IndexOf(get(value), &index, &found));
+		bool found = false;
+		check(shim()->abi_IndexOf(get(value), &index, &found));
 		return 0 != found;
 	}
 };
 
 template <typename D, typename T>
-struct impl_IVector
+class impl_IVector
 {
+	auto shim() const { return impl::shim<D, IVector<T>>(this); }
+
+public:
+
 	T GetAt(unsigned const index) const
 	{
-		T result = Argument<T>::Empty();
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_GetAt(index, abi(&result)));
+		T result = impl::argument<T>::empty();
+		check(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->get_Size(&size));
+		check(shim()->get_Size(&size));
 		return size;
 	}
 
 	IVectorView<T> GetView() const
 	{
 		IVectorView<T> view;
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_GetView(put(view)));
+		check(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
-		boolean found = false;
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_IndexOf(abi(value), &index, &found));
+		bool found = false;
+		check(shim()->abi_IndexOf(abi(value), &index, &found));
 		return 0 != found;
 	}
 
 	void SetAt(unsigned const index, T const & value) const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_SetAt(index, abi(value)));
+		check(shim()->abi_SetAt(index, abi(value)));
 	}
 
 	void InsertAt(unsigned const index, T const & value) const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_InsertAt(index, abi(value)));
+		check(shim()->abi_InsertAt(index, abi(value)));
 	}
 
 	void RemoveAt(unsigned const index) const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_RemoveAt(index));
+		check(shim()->abi_RemoveAt(index));
 	}
 
 	void Append(T const & value) const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_Append(abi(value)));
+		check(shim()->abi_Append(abi(value)));
 	}
 
 	void RemoveAtEnd() const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_RemoveAtEnd());
+		check(shim()->abi_RemoveAtEnd());
 	}
 
 	void Clear() const
 	{
-		check(static_cast<IVector<T> const &>(static_cast<D const &>(*this))->abi_Clear());
+		check(shim()->abi_Clear());
 	}
 };
 
 template <typename D, typename K, typename V>
-struct impl_IMapView
+class impl_IMapView
 {
+	auto shim() const { return impl::shim<D, IMapView<K, V>>(this); }
+
+public:
+
 	V Lookup(K const & key) const
 	{
-		V result = Argument<V>::Empty();
-		check(static_cast<IMapView<K, V> const &>(static_cast<D const &>(*this))->abi_Lookup(abi(key), abi(&result)));
+		V result = impl::argument<V>::empty();
+		check(shim()->abi_Lookup(abi(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(static_cast<IMapView<K, V> const &>(static_cast<D const &>(*this))->get_Size(&size));
+		check(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
-		boolean found = false;
-		check(static_cast<IMapView<K, V> const &>(static_cast<D const &>(*this))->abi_HasKey(abi(key), &found));
+		bool found = false;
+		check(shim()->abi_HasKey(abi(key), &found));
 		return 0 != found;
 	}
 
 	void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
 	{
-		check(static_cast<IMapView<K, V> const &>(static_cast<D const &>(*this))->abi_Split(put(firstPartition), put(secondPartition)));
+		check(shim()->abi_Split(put(firstPartition), put(secondPartition)));
 	}
 };
 
 template <typename D, typename K, typename V>
-struct impl_IMap
+class impl_IMap
 {
+	auto shim() const { return impl::shim<D, IMap<K, V>>(this); }
+
+public:
+
 	V Lookup(K const & key) const
 	{
-		V result = Argument<V>::Empty();
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_Lookup(abi(key), abi(&result)));
+		V result = impl::argument<V>::empty();
+		check(shim()->abi_Lookup(abi(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->get_Size(&size));
+		check(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
-		boolean found = false;
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_HasKey(abi(key), &found));
+		bool found = false;
+		check(shim()->abi_HasKey(abi(key), &found));
 		return 0 != found;
 	}
 
 	IMapView<K, V> GetView() const
 	{
 		IMapView<K, V> view;
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_GetView(put(view)));
+		check(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool Insert(K const & key, V const & value) const
 	{
-		boolean replaced = false;
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_Insert(abi(key), abi(value), &replaced));
+		bool replaced = false;
+		check(shim()->abi_Insert(abi(key), abi(value), &replaced));
 		return 0 != replaced;
 	}
 
 	void Remove(K const & key) const
 	{
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_Remove(abi(key)));
+		check(shim()->abi_Remove(abi(key)));
 	}
 
 	void Clear() const
 	{
-		check(static_cast<IMap<K, V> const &>(static_cast<D const &>(*this))->abi_Clear());
+		check(shim()->abi_Clear());
 	}
 };
 
 template <typename D, typename K>
-struct impl_IMapChangedEventArgs
+class impl_IMapChangedEventArgs
 {
+	auto shim() const { return impl::shim<D, IMapChangedEventArgs<K>>(this); }
+
+public:
+
 	CollectionChange CollectionChange() const
 	{
 		CollectionChange value = {};
-		check(static_cast<D const &>(*this)->get_CollectionChange(&value));
+		check(shim()->get_CollectionChange(&value));
 		return value;
 	}
 
 	K Key() const
 	{
-		K result = Argument<K>::Empty();
-		check(static_cast<D const &>(*this)->get_Key(abi(&result)));
+		K result = impl::argument<K>::empty();
+		check(shim()->get_Key(put(result)));
 		return result;
 	}
 };
 
 template <typename D, typename K, typename V>
-struct impl_IMapChangedEventHandler
+class impl_IMapChangedEventHandler
 {
+	auto shim() const { return impl::shim<D, IMapChangedEventHandler<K, V>>(this); }
+
+public:
+
 	void Invoke(IObservableMap<K, V> const & sender, IMapChangedEventArgs<K> const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), get(args)));
+		check(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
 template <typename D, typename K, typename V>
-struct impl_IObservableMap
+class impl_IObservableMap
 {
+	auto shim() const { return impl::shim<D, IObservableMap<K, V>>(this); }
+
+public:
+
 	EventRegistrationToken MapChanged(IMapChangedEventHandler<K, V> const & handler) const
 	{
 		EventRegistrationToken cookie = {};
-		check(static_cast<IObservableMap<K, V> const &>(static_cast<D const &>(*this))->add_MapChanged(get(handler), &cookie));
+		check(shim()->add_MapChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -524,26 +572,34 @@ struct impl_IObservableMap
 
 	void MapChanged(EventRegistrationToken const cookie) const
 	{
-		check(static_cast<IObservableMap<K, V> const &>(static_cast<D const &>(*this))->remove_MapChanged(cookie));
+		check(shim()->remove_MapChanged(cookie));
 	}
 };
 
 template <typename D, typename T>
-struct impl_IVectorChangedEventHandler
+class impl_IVectorChangedEventHandler
 {
+	auto shim() const { return impl::shim<D, IVectorChangedEventHandler<T>>(this); }
+
+public:
+
 	void Invoke(IObservableVector<T> const & sender, IVectorChangedEventArgs const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), get(args)));
+		check(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
 template <typename D, typename T>
-struct impl_IObservableVector
+class impl_IObservableVector
 {
+	auto shim() const { return impl::shim<D, IObservableVector<T>>(this); }
+
+public:
+
 	EventRegistrationToken VectorChanged(IVectorChangedEventHandler<T> const & handler) const
 	{
 		EventRegistrationToken cookie = {};
-		check(static_cast<IObservableVector<T> const &>(static_cast<D const &>(*this))->add_VectorChanged(get(handler), &cookie));
+		check(shim()->add_VectorChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -554,7 +610,7 @@ struct impl_IObservableVector
 
 	void VectorChanged(EventRegistrationToken const cookie) const
 	{
-		check(static_cast<IObservableVector<T> const &>(static_cast<D const &>(*this))->remove_VectorChanged(cookie));
+		check(shim()->remove_VectorChanged(cookie));
 	}
 };
 
@@ -564,7 +620,7 @@ struct IIterator :
 	impl_IIterator<IIterator<T>, T>
 {
 	IIterator(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IIterator>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IIterator>(m_ptr); }
 };
 
 template <typename T>
@@ -573,7 +629,7 @@ struct IIterable :
 	impl_IIterable<IIterable<T>, T>
 {
 	IIterable(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IIterable>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
 };
 
 template <typename K, typename V>
@@ -582,47 +638,47 @@ struct IKeyValuePair :
 	impl_IKeyValuePair<IKeyValuePair<K, V>, K, V>
 {
 	IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IKeyValuePair>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
 };
 
 template <typename T>
 struct IVectorView :
 	IInspectable,
 	impl_IVectorView<IVectorView<T>, T>,
-	Requires<IVectorView<T>, IIterable<T>>
+	requires<IVectorView<T>, IIterable<T>>
 {
 	IVectorView(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IVectorView>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IVectorView>(m_ptr); }
 };
 
 template <typename T>
 struct IVector :
 	IInspectable,
 	impl_IVector<IVector<T>, T>,
-	Requires<IVector<T>, IIterable<T>>
+	requires<IVector<T>, IIterable<T>>
 {
 	IVector(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IVector>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
 };
 
 template <typename K, typename V>
 struct IMapView :
 	IInspectable,
 	impl_IMapView<IMapView<K, V>, K, V>,
-	Requires<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
+	requires<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
 	IMapView(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IMapView>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IMapView>(m_ptr); }
 };
 
 template <typename K, typename V>
 struct IMap :
 	IInspectable,
 	impl_IMap<IMap<K, V>, K, V>,
-	Requires<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+	requires<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
 	IMap(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IMap>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IMap>(m_ptr); }
 };
 
 template <typename K>
@@ -631,7 +687,7 @@ struct IMapChangedEventArgs :
 	impl_IMapChangedEventArgs<IMapChangedEventArgs<K>, K>
 {
 	IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IMapChangedEventArgs>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IMapChangedEventArgs>(m_ptr); }
 };
 
 template <typename K, typename V>
@@ -640,17 +696,17 @@ struct IMapChangedEventHandler :
 	impl_IMapChangedEventHandler<IMapChangedEventHandler<K, V>, K, V>
 {
 	IMapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IMapChangedEventHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IMapChangedEventHandler>(m_ptr); }
 };
 
 template <typename K, typename V>
 struct IObservableMap :
 	IInspectable,
 	impl_IObservableMap<IObservableMap<K, V>, K, V>,
-	Requires<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+	requires<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
 	IObservableMap(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IObservableMap>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IObservableMap>(m_ptr); }
 };
 
 template <typename T>
@@ -659,129 +715,129 @@ struct IVectorChangedEventHandler :
 	impl_IVectorChangedEventHandler<IVectorChangedEventHandler<T>, T>
 {
 	IVectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IVectorChangedEventHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IVectorChangedEventHandler>(m_ptr); }
 };
 
 template <typename T>
 struct IObservableVector :
 	IInspectable,
 	impl_IObservableVector<IObservableVector<T>, T>,
-	Requires<IObservableVector<T>, IVector<T>, IIterable<T>>
+	requires<IObservableVector<T>, IVector<T>, IIterable<T>>
 {
 	IObservableVector(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IObservableVector>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
 
 }}}}
 
-namespace Modern {
+namespace winrt { namespace impl {
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IIterator<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IIterator<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IIterator<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IIterator<D, T>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IIterable<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IIterable<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IIterable<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IIterable<D, T>;
 };
 
-template <typename K, typename V> struct Traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IKeyValuePair<Abi<K>, Abi<V>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
+	using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IVectorView<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IVectorView<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IVectorView<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IVectorView<D, T>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IVector<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IVector<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IVector<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IVector<D, T>;
 };
 
-template <typename K, typename V> struct Traits<Windows::Foundation::Collections::IMapView<K, V>>
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IMapView<Abi<K>, Abi<V>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
+	using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
 };
 
-template <typename K, typename V> struct Traits<Windows::Foundation::Collections::IMap<K, V>>
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IMap<Abi<K>, Abi<V>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IMap<D, K, V>;
+	using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IMap<D, K, V>;
 };
 
-template <typename K> struct Traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<Abi<K>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
+	using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
 };
 
-template <typename K, typename V> struct Traits<Windows::Foundation::Collections::IMapChangedEventHandler<K, V>>
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapChangedEventHandler<K, V>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IMapChangedEventHandler<Abi<K>, Abi<V>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IMapChangedEventHandler<D, K, V>;
+	using abi = ABI::Windows::Foundation::Collections::IMapChangedEventHandler<abi<K>, abi<V>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IMapChangedEventHandler<D, K, V>;
 };
 
-template <typename K, typename V> struct Traits<Windows::Foundation::Collections::IObservableMap<K, V>>
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IObservableMap<Abi<K>, Abi<V>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
+	using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IVectorChangedEventHandler<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IVectorChangedEventHandler<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IVectorChangedEventHandler<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IVectorChangedEventHandler<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventHandler<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IVectorChangedEventHandler<D, T>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::Collections::IObservableVector<T>>
+template <typename T> struct traits<Windows::Foundation::Collections::IObservableVector<T>>
 {
-	using Abi = ABI::Windows::Foundation::Collections::IObservableVector<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
+	using abi = ABI::Windows::Foundation::Collections::IObservableVector<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
 };
 
-}
+}}
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
-
-template <typename T, IsNotRandomAccess<T> = nullptr>
-auto begin(T const & collection) -> decltype(collection.First())
-{
-	auto result = collection.First();
-
-	if (!result.HasCurrent())
-	{
-		return {};
-	}
-
-	return result;
-}
-
-template <typename T, IsNotRandomAccess<T> = nullptr>
-auto end(T const & collection) -> decltype(collection.First())
-{
-	collection;
-	return {};
-}
-
-template <typename T, IsRandomAccess<T> = nullptr>
-FastIterator<T> begin(T const & collection) noexcept
-{
-	return FastIterator<T>(collection, 0);
-}
-
-template <typename T, IsRandomAccess<T> = nullptr>
-FastIterator<T> end(T const & collection)
-{
-	return FastIterator<T>(collection, collection.Size());
-}
-
-}}}}
+//namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
+//
+//template <typename T, IsNotRandomAccess<T> = nullptr>
+//auto begin(T const & collection) -> decltype(collection.First())
+//{
+//	auto result = collection.First();
+//
+//	if (!result.HasCurrent())
+//	{
+//		return {};
+//	}
+//
+//	return result;
+//}
+//
+//template <typename T, IsNotRandomAccess<T> = nullptr>
+//auto end(T const & collection) -> decltype(collection.First())
+//{
+//	collection;
+//	return {};
+//}
+//
+//template <typename T, IsRandomAccess<T> = nullptr>
+//FastIterator<T> begin(T const & collection) noexcept
+//{
+//	return FastIterator<T>(collection, 0);
+//}
+//
+//template <typename T, IsRandomAccess<T> = nullptr>
+//FastIterator<T> end(T const & collection)
+//{
+//	return FastIterator<T>(collection, collection.Size());
+//}
+//
+//}}}}

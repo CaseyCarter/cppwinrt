@@ -4,6 +4,7 @@
 
 #include <inspectable.h>
 #include <winstring.h>
+#include <ctxtcall.h>
 #include <set>
 #include <memory>
 #include <vector>

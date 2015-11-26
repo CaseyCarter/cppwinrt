@@ -36,10 +36,10 @@ public:
 	static constexpr bool value = check<T>(0);
 };
 
-template <typename V, typename T>
-auto shim(T const * t)
+template <typename Crtp, typename Qi, typename Base>
+auto shim(Base const * base)
 {
-	return static_cast<V const &>(static_cast<T const &>(*t));
+	return static_cast<Qi const &>(static_cast<Crtp const &>(*base));
 }
 
 template <typename T, typename Enable = void>
