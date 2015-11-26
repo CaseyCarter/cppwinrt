@@ -1,51 +1,6 @@
 
 namespace winrt { namespace Windows {
 
-enum class AsyncStatus
-{
-	Started,
-	Completed,
-	Canceled,
-	Error,
-};
-
-enum class TrustLevel
-{
-	BaseTrust,
-	PartialTrust,
-	FullTrust
-};
-
-}}
-
-namespace winrt { namespace ABI { namespace Windows {
-
-struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : ::IUnknown
-{
-	virtual HRESULT __stdcall get_Iids(unsigned * count, GUID ** iids) = 0;
-	virtual HRESULT __stdcall get_RuntimeClassName(HSTRING * className) = 0;
-	virtual HRESULT __stdcall get_TrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
-
-	};
-
-struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
-{
-	virtual HRESULT __stdcall get_Id(unsigned * id) = 0;
-	virtual HRESULT __stdcall get_Status(winrt::Windows::AsyncStatus * status) = 0;
-	virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
-	virtual HRESULT __stdcall abi_Cancel() = 0;
-	virtual HRESULT __stdcall abi_Close() = 0;
-};
-
-struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
-{
-	virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
-};
-
-}}}
-
-namespace winrt { namespace Windows {
-
 struct IUnknown
 {
 	IUnknown() noexcept = default;
@@ -85,9 +40,9 @@ struct IUnknown
 		return nullptr != m_ptr;
 	}
 
-	impl::no_addref_release<::IUnknown> * operator->() const noexcept
+	impl::no_ref<::IUnknown> * operator->() const noexcept
 	{
-		return static_cast<impl::no_addref_release<::IUnknown> *>(m_ptr);
+		return static_cast<impl::no_ref<::IUnknown> *>(m_ptr);
 	}
 
 	IUnknown & operator=(std::nullptr_t) noexcept
@@ -264,28 +219,168 @@ inline bool operator>=(IUnknown const & left, IUnknown const & right) noexcept
 
 }}
 
-//
-//namespace Modern {
-//
-//template <> struct Traits<Windows::IUnknown>
-//{
-//	using Abi = ::IUnknown;
-//};
-//
-//}
-//
-//
-//
-//namespace Modern { namespace Windows {
-//
-//struct IInspectable;
-//struct IAsyncInfo;
-//struct IActivationFactory;
-//
-//template <typename T> struct impl_IAsyncInfo;
-//
-//}}
-//
+namespace winrt { namespace Windows {
+
+enum class AsyncStatus
+{
+	Started,
+	Completed,
+	Canceled,
+	Error,
+};
+
+enum class TrustLevel
+{
+	BaseTrust,
+	PartialTrust,
+	FullTrust
+};
+
+}}
+
+namespace winrt { namespace ABI { namespace Windows {
+
+struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : ::IInspectable
+{
+	virtual HRESULT __stdcall get_Id(unsigned * id) = 0;
+	virtual HRESULT __stdcall get_Status(winrt::Windows::AsyncStatus * status) = 0;
+	virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
+	virtual HRESULT __stdcall abi_Cancel() = 0;
+	virtual HRESULT __stdcall abi_Close() = 0;
+};
+
+struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : ::IInspectable
+{
+	virtual HRESULT __stdcall abi_ActivateInstance(::IInspectable ** instance) = 0;
+};
+
+}}}
+
+namespace winrt { namespace Windows {
+
+struct IInspectable;
+struct IAsyncInfo;
+struct IActivationFactory;
+
+template <typename T>
+struct impl_IInspectable
+{
+	String GetRuntimeClassName() const;
+};
+
+template <typename T>
+struct impl_IAsyncInfo
+{
+	unsigned Id() const;
+	AsyncStatus Status() const;
+	HRESULT ErrorCode() const;
+	void Cancel() const;
+	void Close() const;
+};
+
+template <typename T>
+struct impl_IActivationFactory
+{
+	IInspectable ActivateInstance() const;
+};
+
+}}
+
+namespace winrt { namespace impl {
+
+template <> struct traits<Windows::IInspectable>
+{
+	using abi = ::IInspectable;
+	template <typename T> using Methods = Windows::impl_IInspectable<T>;
+};
+
+template <> struct traits<Windows::IAsyncInfo>
+{
+	using abi = ABI::Windows::IAsyncInfo;
+	template <typename T> using Methods = Windows::impl_IAsyncInfo<T>;
+};
+
+template <> struct traits<Windows::IActivationFactory>
+{
+	using abi = ABI::Windows::IActivationFactory;
+	template <typename T> using Methods = Windows::impl_IActivationFactory<T>;
+};
+
+}}
+
+namespace winrt { namespace Windows {
+
+struct IInspectable :
+	IUnknown,
+	impl_IInspectable<IInspectable>
+{
+	IInspectable(std::nullptr_t = nullptr) noexcept {}
+	auto operator->() const noexcept { return ptr<IInspectable>(m_ptr); }
+};
+
+struct IAsyncInfo :
+	IUnknown,
+	impl_IAsyncInfo<IAsyncInfo>
+{
+	IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
+	auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
+};
+
+struct IActivationFactory :
+	IUnknown,
+	impl_IActivationFactory<IActivationFactory>
+{
+	IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+	auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
+};
+
+template <typename T> String impl_IInspectable<T>::GetRuntimeClassName() const
+{
+	String name;
+	check(impl::shim<IInspectable>(this)->get_RuntimeClassName(put(name)));
+	return name;
+}
+
+template <typename T> unsigned impl_IAsyncInfo<T>::Id() const
+{
+	unsigned id = 0;
+	check(impl::shim<IAsyncInfo>(this)->get_Id(&id));
+	return id;
+}
+
+template <typename T> AsyncStatus impl_IAsyncInfo<T>::Status() const
+{
+	AsyncStatus status = AsyncStatus::Started;
+	check(impl::shim<IAsyncInfo>(this)->get_Status(&status));
+	return status;
+}
+
+template <typename T> HRESULT impl_IAsyncInfo<T>::ErrorCode() const
+{
+	HRESULT code = S_OK;
+	check(impl::shim<IAsyncInfo>(this)->get_ErrorCode(&code));
+	return code;
+}
+
+template <typename T> void impl_IAsyncInfo<T>::Cancel() const
+{
+	check(impl::shim<IAsyncInfo>(this)->abi_Cancel());
+}
+
+template <typename T> void impl_IAsyncInfo<T>::Close() const
+{
+	check(impl::shim<IAsyncInfo>(this)->abi_Close());
+}
+
+template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance() const
+{
+	IInspectable instance;
+	check(impl::shim<IActivationFactory>(this)->abi_ActivateInstance(put(instance)));
+	return instance;
+}
+
+}}
+
 //namespace Modern {
 //
 //using IInspectable = Windows::IInspectable;
@@ -297,105 +392,3 @@ inline bool operator>=(IUnknown const & left, IUnknown const & right) noexcept
 //using IInspectable = ::IInspectable;
 //
 //}}
-//
-//namespace Modern {
-//
-//template <> struct Traits<Windows::IInspectable>
-//{
-//	using Abi = ::IInspectable;
-//};
-//
-//template <> struct Traits<Windows::IAsyncInfo>
-//{
-//	using Abi = ABI::Windows::IAsyncInfo;
-//	template <typename T> using Methods = Windows::impl_IAsyncInfo<T>;
-//};
-//
-//template <> struct Traits<Windows::IActivationFactory>
-//{
-//	using Abi = ABI::Windows::IActivationFactory;
-//};
-//
-//}
-//
-//
-//namespace Modern { namespace Windows {
-//
-//struct IInspectable : IUnknown
-//{
-//	IInspectable(std::nullptr_t = nullptr) noexcept {}
-//	auto operator->() const noexcept { return static_cast<AbiPtr<IInspectable>>(m_ptr); }
-//
-//	String GetRuntimeClassName() const
-//	{
-//		String name;
-//		check((*this)->GetRuntimeClassName(put(name)));
-//		return name;
-//	}
-//};
-//
-//template <typename T>
-//struct impl_IAsyncInfo
-//{
-//	unsigned Id() const
-//	{
-//		unsigned id;
-//		check(static_cast<IAsyncInfo const &>(static_cast<T const &>(*this))->get_Id(&id));
-//		return id;
-//	}
-//
-//	AsyncStatus Status() const
-//	{
-//		AsyncStatus status;
-//		check(static_cast<IAsyncInfo const &>(static_cast<T const &>(*this))->get_Status(&status));
-//		return status;
-//	}
-//
-//	HRESULT ErrorCode() const
-//	{
-//		HRESULT code;
-//		check(static_cast<IAsyncInfo const &>(static_cast<T const &>(*this))->get_ErrorCode(&code));
-//		return code;
-//	}
-//
-//	void Cancel() const
-//	{
-//		check(static_cast<IAsyncInfo const &>(static_cast<T const &>(*this))->abi_Cancel());
-//	}
-//
-//	void Close() const
-//	{
-//		check(static_cast<IAsyncInfo const &>(static_cast<T const &>(*this))->abi_Close());
-//	}
-//};
-//
-//struct IAsyncInfo :
-//	IInspectable,
-//	impl_IAsyncInfo<IAsyncInfo>
-//{
-//	IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-//	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncInfo>>(m_ptr); }
-//};
-//
-//template <typename T>
-//struct impl_IActivationFactory
-//{
-//	IInspectable ActivateInstance() const
-//	{
-//		IInspectable instance;
-//		check(static_cast<T const &>(*this)->abi_ActivateInstance(put(instance)));
-//		return instance;
-//	}
-//};
-//
-//struct IActivationFactory :
-//	IInspectable,
-//	impl_IActivationFactory<IActivationFactory>
-//{
-//	IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-//	auto operator->() const noexcept { return static_cast<AbiPtr<IActivationFactory>>(m_ptr); }
-//};
-//
-//}}
-//
-//

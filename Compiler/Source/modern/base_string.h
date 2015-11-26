@@ -263,6 +263,11 @@ private:
 
 namespace winrt { namespace impl {
 
+template <> struct traits<String>
+{
+	using abi = HSTRING;
+};
+
 template <>
 struct accessors<StringReference>
 {
@@ -270,11 +275,6 @@ struct accessors<StringReference>
 	{
 		return impl_get(object);
 	}
-};
-
-template <> struct traits<String>
-{
-	using abi = HSTRING;
 };
 
 }}

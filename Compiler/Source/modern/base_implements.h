@@ -1,51 +1,44 @@
 
-#pragma once
-
-#include <inspectable.h>
-#include <type_traits>
-
-#pragma comment(lib, "ole32")
-
-namespace Modern {
+namespace winrt {
 
 template <typename ... Interfaces>
-class __declspec(novtable) Implements : public Interfaces ...
+class __declspec(novtable) implements : public Interfaces ...
 {
 	template <typename T>
-	using IsCloaked = std::integral_constant<bool, !std::is_base_of<::IInspectable, typename T>::value>;
+	using is_cloaked = std::integral_constant<bool, !std::is_base_of<::IInspectable, typename T>::value>;
 
 	template <int = 0>
-	constexpr unsigned CountInterfaces() const noexcept
+	constexpr unsigned count_interfaces() const noexcept
 	{
 		return 0;
 	}
 
 	template <typename First, typename ... Rest>
-	constexpr unsigned CountInterfaces() const noexcept
+	constexpr unsigned count_interfaces() const noexcept
 	{
-		return !IsCloaked<First>::value + CountInterfaces<Rest ...>();
+		return !is_cloaked<First>::value + count_interfaces<Rest ...>();
 	}
 
 	template <int = 0>
-	constexpr bool IsInspectable() const noexcept
+	constexpr bool inspectable() const noexcept
 	{
 		return false;
 	}
 
 	template <typename First, typename ... Rest>
-	constexpr bool IsInspectable() const noexcept
+	constexpr bool inspectable() const noexcept
 	{
-		return std::is_base_of<::IInspectable, First>::value || IsInspectable<Rest ...>();
+		return std::is_base_of<::IInspectable, First>::value || inspectable<Rest ...>();
 	}
 
 	template <int = 0>
-	void * FindInspectable() noexcept
+	void * find_inspectable() noexcept
 	{
 		return nullptr;
 	}
 
 	template <typename First, typename ... Rest>
-	void * FindInspectable() noexcept
+	void * find_inspectable() noexcept
 	{
 		#pragma warning(push)
 		#pragma warning(disable:4127) // conditional expression is constant
@@ -57,78 +50,78 @@ class __declspec(novtable) Implements : public Interfaces ...
 
 		#pragma warning(pop)
 
-		return FindInspectable<Rest ...>();
+		return find_inspectable<Rest ...>();
 	}
 
 	template <int = 0>
-	void CopyInterfaces(GUID *) const noexcept {}
+	void copy_interfaces(GUID *) const noexcept {}
 
 	template <typename First, typename ... Rest>
-	void CopyInterfaces(GUID * ids) const noexcept
+	void copy_interfaces(GUID * ids) const noexcept
 	{
 		#pragma warning(push)
 		#pragma warning(disable:4127) // conditional expression is constant
 
-		if (!IsCloaked<First>::value)
+		if (!is_cloaked<First>::value)
 		{
 			*ids++ = __uuidof(First);
 		}
 
 		#pragma warning(pop)
 
-		CopyInterfaces<Rest ...>(ids);
+		copy_interfaces<Rest ...>(ids);
 	}
 
 	template <int = 0>
-	void * FindInterface(GUID const &) noexcept
+	void * find_interface(GUID const &) noexcept
 	{
 		return nullptr;
 	}
 
 	template <typename First, typename ... Rest>
-	void * FindInterface(GUID const & id) noexcept
+	void * find_interface(GUID const & id) noexcept
 	{
 		if (id == __uuidof(First))
 		{
 			return static_cast<First *>(this);
 		}
 
-		return FindInterface<Rest ...>(id);
+		return find_interface<Rest ...>(id);
 	}
 
 protected:
 
 	unsigned long m_references = 1;
 
-	Implements() noexcept = default;
+	implements() noexcept = default;
 
-	virtual ~Implements() noexcept
+	virtual ~implements() noexcept
 	{}
 
 	template <typename First, typename ... Rest>
-	void * BaseQueryInterface(GUID const & id) noexcept
+	void * query_interface(GUID const & id) noexcept
 	{
 		if (id == __uuidof(First) || id == __uuidof(::IUnknown))
 		{
 			return static_cast<First *>(this);
 		}
 
-		if (IsInspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
+		if (inspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
 		{
-			return FindInspectable<Interfaces ...>();
+			return find_inspectable<Interfaces ...>();
 		}
 
-		return FindInterface<Rest ...>(id);
+		return find_interface<Rest ...>(id);
 	}
 
 public:
 
-	Implements(Implements const &) = delete;
-	Implements & operator=(Implements const &) = delete;
+	implements(implements const &) = delete;
+	implements & operator=(implements const &) = delete;
 
 	virtual HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
 	{
-		*object = BaseQueryInterface<Interfaces ...>(id);
+		*object = query_interface<Interfaces ...>(id);
 
 		if (nullptr == *object)
 		{
@@ -161,7 +154,7 @@ public:
 		*count = 0;
 		*array = nullptr;
 
-		unsigned const localCount = CountInterfaces<Interfaces ...>();
+		unsigned const localCount = count_interfaces<Interfaces ...>();
 
 		if (0 == localCount)
 		{
@@ -175,7 +168,7 @@ public:
 			return E_OUTOFMEMORY;
 		}
 
-		CopyInterfaces<Interfaces ...>(localArray);
+		copy_interfaces<Interfaces ...>(localArray);
 
 		*count = localCount;
 		*array = localArray;

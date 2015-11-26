@@ -1,5 +1,5 @@
 
-namespace Modern { namespace ABI { namespace Windows { namespace Foundation {
+namespace winrt { namespace ABI { namespace Windows { namespace Foundation {
 
 template <typename TProgress> struct IAsyncActionProgressHandler;
 template <typename TProgress> struct IAsyncActionWithProgress;
@@ -16,7 +16,7 @@ template <typename T> struct IReference;
 template <typename TProgress>
 struct __declspec(novtable) impl_IAsyncActionProgressHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, ArgIn<TProgress> progressInfo) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, argument_in<TProgress> progressInfo) = 0;
 };
 
 template <typename TProgress>
@@ -32,37 +32,37 @@ struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
 template <typename TProgress>
 struct __declspec(novtable) impl_IAsyncActionWithProgressCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
 };
 
 template <typename TResult, typename TProgress>
 struct __declspec(novtable) impl_IAsyncOperationProgressHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, ArgIn<TProgress> progressInfo) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, argument_in<TProgress> progressInfo) = 0;
 };
 
 template <typename TResult, typename TProgress>
 struct __declspec(novtable) impl_IAsyncOperationWithProgressCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
 };
 
 template <typename TResult>
 struct __declspec(novtable) impl_IAsyncOperationCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IEventHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IInspectable * sender, ArgIn<T> args) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IInspectable * sender, argument_in<T> args) = 0;
 };
 
 template <typename TSender, typename TArgs>
 struct __declspec(novtable) impl_ITypedEventHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(ArgIn<TSender> sender, ArgIn<TArgs> args) = 0;
+	virtual HRESULT __stdcall abi_Invoke(argument_in<TSender> sender, argument_in<TArgs> args) = 0;
 };
 
 template <typename TResult>
@@ -70,7 +70,7 @@ struct __declspec(novtable) impl_IAsyncOperation : IInspectable
 {
 	virtual HRESULT __stdcall put_Completed(IAsyncOperationCompletedHandler<TResult> * handler) = 0;
 	virtual HRESULT __stdcall get_Completed(IAsyncOperationCompletedHandler<TResult> ** handler) = 0;
-	virtual HRESULT __stdcall abi_GetResults(ArgOut<TResult> results) = 0;
+	virtual HRESULT __stdcall abi_GetResults(argument_out<TResult> results) = 0;
 };
 
 template <typename TResult, typename TProgress>
@@ -80,18 +80,18 @@ struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
 	virtual HRESULT __stdcall get_Progress(IAsyncOperationProgressHandler<TResult, TProgress> ** handler) = 0;
 	virtual HRESULT __stdcall put_Completed(IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> * handler) = 0;
 	virtual HRESULT __stdcall get_Completed(IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
-	virtual HRESULT __stdcall abi_GetResults(ArgOut<TResult> results) = 0;
+	virtual HRESULT __stdcall abi_GetResults(argument_out<TResult> results) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IReference : IInspectable
 {
-	virtual HRESULT __stdcall get_Value(ArgOut<T> value) = 0;
+	virtual HRESULT __stdcall get_Value(argument_out<T> value) = 0;
 };
 
 }}}}
 
-namespace Modern { namespace Windows { namespace Foundation {
+namespace winrt { namespace Windows { namespace Foundation {
 
 template <typename TProgress> struct IAsyncActionProgressHandler;
 template <typename TProgress> struct IAsyncActionWithProgress;
@@ -110,7 +110,7 @@ struct impl_IAsyncActionProgressHandler
 {
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, TProgress const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), abi(args)));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), abi(args)));
 	}
 };
 
@@ -119,7 +119,7 @@ struct impl_IAsyncActionWithProgress
 {
 	void Progress(IAsyncActionProgressHandler<TProgress> const & handler) const
 	{
-		check(static_cast<D const &>(*this)->put_Progress(get(handler)));
+		check(impl::shim<D>(this)->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -131,13 +131,13 @@ struct impl_IAsyncActionWithProgress
 	IAsyncActionProgressHandler<TProgress> Progress() const
 	{
 		IAsyncActionProgressHandler<TProgress> handler;
-		check(static_cast<D const &>(*this)->get_Progress(put(handler)));
+		check(impl::shim<D>(this)->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncActionWithProgressCompletedHandler<TProgress> const & handler) const
 	{
-		check(static_cast<D const &>(*this)->put_Completed(get(handler)));
+		check(impl::shim<D>(this)->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -149,13 +149,13 @@ struct impl_IAsyncActionWithProgress
 	IAsyncActionWithProgressCompletedHandler<TProgress> Completed() const
 	{
 		IAsyncActionWithProgressCompletedHandler<TProgress> handler;
-		check(static_cast<D const &>(*this)->get_Completed(put(handler)));
+		check(impl::shim<D>(this)->get_Completed(put(handler)));
 		return handler;
 	}
 
 	void GetResults() const
 	{
-		check(static_cast<D const &>(*this)->abi_GetResults());
+		check(impl::shim<D>(this)->abi_GetResults());
 	}
 };
 
@@ -164,7 +164,7 @@ struct impl_IAsyncActionWithProgressCompletedHandler
 {
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), args));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -173,7 +173,7 @@ struct impl_IAsyncOperationProgressHandler
 {
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, TProgress const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), abi(args)));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), abi(args)));
 	}
 };
 
@@ -182,7 +182,7 @@ struct impl_IAsyncOperationWithProgressCompletedHandler
 {
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), args));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -191,7 +191,7 @@ struct impl_IAsyncOperationCompletedHandler
 {
 	void Invoke(IAsyncOperation<TResult> const & sender, AsyncStatus const args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), args));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -200,7 +200,7 @@ struct impl_IEventHandler
 {
 	void Invoke(IInspectable const & sender, T const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(get(sender), abi(args)));
+		check(impl::shim<D>(this)->abi_Invoke(get(sender), abi(args)));
 	}
 };
 
@@ -209,7 +209,7 @@ struct impl_ITypedEventHandler
 {
 	void Invoke(TSender const & sender, TArgs const & args) const
 	{
-		check(static_cast<D const &>(*this)->abi_Invoke(abi(sender), abi(args)));
+		check(impl::shim<D>(this)->abi_Invoke(abi(sender), abi(args)));
 	}
 };
 
@@ -218,7 +218,7 @@ struct impl_IAsyncOperation
 {
 	void Completed(IAsyncOperationCompletedHandler<TResult> const & handler) const
 	{
-		check(static_cast<D const &>(*this)->put_Completed(get(handler)));
+		check(impl::shim<D>(this)->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -230,14 +230,14 @@ struct impl_IAsyncOperation
 	IAsyncOperationCompletedHandler<TResult> Completed() const
 	{
 		IAsyncOperationCompletedHandler<TResult> temp;
-		check(static_cast<D const &>(*this)->get_Completed(put(temp)));
+		check(impl::shim<D>(this)->get_Completed(put(temp)));
 		return temp;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = Argument<TResult>::Empty();
-		check(static_cast<D const &>(*this)->abi_GetResults(abi(&result)));
+		check(impl::shim<D>(this)->abi_GetResults(abi(&result)));
 		return result;
 	}
 };
@@ -247,7 +247,7 @@ struct impl_IAsyncOperationWithProgress
 {
 	void Progress(IAsyncOperationProgressHandler<TResult, TProgress> const & handler) const
 	{
-		check(static_cast<D const &>(*this)->put_Progress(get(handler)));
+		check(impl::shim<D>(this)->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -259,13 +259,13 @@ struct impl_IAsyncOperationWithProgress
 	IAsyncOperationProgressHandler<TResult, TProgress> Progress() const
 	{
 		IAsyncOperationProgressHandler<TResult, TProgress> handler;
-		check(static_cast<D const &>(*this)->get_Progress(put(handler)));
+		check(impl::shim<D>(this)->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> const & handler) const
 	{
-		check(static_cast<D const &>(*this)->put_Completed(get(handler)));
+		check(impl::shim<D>(this)->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -277,14 +277,14 @@ struct impl_IAsyncOperationWithProgress
 	IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const
 	{
 		IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-		check(static_cast<D const &>(*this)->get_Completed(put(handler)));
+		check(impl::shim<D>(this)->get_Completed(put(handler)));
 		return handler;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = Argument<TResult>::Empty();
-		check(static_cast<D const &>(*this)->abi_GetResults(abi(&result)));
+		check(impl::shim<D>(this)->abi_GetResults(abi(&result)));
 		return result;
 	}
 };
@@ -295,7 +295,7 @@ struct impl_IReference
 	T Value() const
 	{
 		T result = Argument<T>::Empty();
-		check(static_cast<D const &>(*this)->get_Value(abi(&result)));
+		check(impl::shim<D>(this)->get_Value(abi(&result)));
 		return result;
 	}
 };
@@ -306,17 +306,17 @@ struct IAsyncActionProgressHandler :
 	impl_IAsyncActionProgressHandler<IAsyncActionProgressHandler<TProgress>, TProgress>
 {
 	IAsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncActionProgressHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncActionProgressHandler>(m_ptr); }
 };
 
 template <typename TProgress>
 struct IAsyncActionWithProgress :
 	IInspectable,
 	impl_IAsyncActionWithProgress<IAsyncActionWithProgress<TProgress>, TProgress>,
-	Requires<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
+	requires<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
 {
 	IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncActionWithProgress>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncActionWithProgress>(m_ptr); }
 };
 
 template <typename TProgress>
@@ -325,7 +325,7 @@ struct IAsyncActionWithProgressCompletedHandler :
 	impl_IAsyncActionWithProgressCompletedHandler<IAsyncActionWithProgressCompletedHandler<TProgress>, TProgress>
 {
 	IAsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncActionWithProgressCompletedHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncActionWithProgressCompletedHandler>(m_ptr); }
 };
 
 template <typename TResult, typename TProgress>
@@ -334,7 +334,7 @@ struct IAsyncOperationProgressHandler :
 	impl_IAsyncOperationProgressHandler<IAsyncOperationProgressHandler<TResult, TProgress>, TResult, TProgress>
 {
 	IAsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncOperationProgressHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncOperationProgressHandler>(m_ptr); }
 };
 
 template <typename TResult, typename TProgress>
@@ -343,7 +343,7 @@ struct IAsyncOperationWithProgressCompletedHandler :
 	impl_IAsyncOperationWithProgressCompletedHandler<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>, TResult, TProgress>
 {
 	IAsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncOperationWithProgressCompletedHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncOperationWithProgressCompletedHandler>(m_ptr); }
 };
 
 template <typename TResult>
@@ -352,7 +352,7 @@ struct IAsyncOperationCompletedHandler :
 	impl_IAsyncOperationCompletedHandler<IAsyncOperationCompletedHandler<TResult>, TResult>
 {
 	IAsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncOperationCompletedHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncOperationCompletedHandler>(m_ptr); }
 };
 
 template <typename T>
@@ -361,7 +361,7 @@ struct IEventHandler :
 	impl_IEventHandler<IEventHandler<T>, T>
 {
 	IEventHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IEventHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IEventHandler>(m_ptr); }
 };
 
 template <typename TSender, typename TArgs>
@@ -370,27 +370,27 @@ struct ITypedEventHandler :
 	impl_ITypedEventHandler<ITypedEventHandler<TSender, TArgs>, TSender, TArgs>
 {
 	ITypedEventHandler(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<ITypedEventHandler>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<ITypedEventHandler>(m_ptr); }
 };
 
 template <typename TResult>
 struct IAsyncOperation :
 	IInspectable,
 	impl_IAsyncOperation<IAsyncOperation<TResult>, TResult>,
-	Requires<IAsyncOperation<TResult>, IAsyncInfo>
+	requires<IAsyncOperation<TResult>, IAsyncInfo>
 {
 	IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncOperation>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncOperation>(m_ptr); }
 };
 
 template <typename TResult, typename TProgress>
 struct IAsyncOperationWithProgress :
 	IInspectable,
 	impl_IAsyncOperationWithProgress<IAsyncOperationWithProgress<TResult, TProgress>, TResult, TProgress>,
-	Requires<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
+	requires<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
 {
 	IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IAsyncOperationWithProgress>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
 };
 
 struct IPropertyValue;
@@ -398,99 +398,96 @@ struct IPropertyValue;
 template <typename T>
 struct IReference :
 	IInspectable,
-	impl_IReference<IReference<T>, T>,
-	Requires<IReference<T>, IPropertyValue>
+	impl_IReference<IReference<T>, T> //,
+	// requires<IReference<T>, IPropertyValue>
 {
 	IReference(std::nullptr_t = nullptr) noexcept {}
-	auto operator->() const noexcept { return static_cast<AbiPtr<IReference>>(m_ptr); }
+	auto operator->() const noexcept { return ptr<IReference>(m_ptr); }
 
 	IReference(T const & value);
 };
 
 }}}
 
-namespace Modern {
+namespace winrt { namespace impl {
 
-template <typename TProgress> struct Traits<Windows::Foundation::IAsyncActionProgressHandler<TProgress>>
+template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionProgressHandler<TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncActionProgressHandler<Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncActionProgressHandler<D, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncActionProgressHandler<abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncActionProgressHandler<D, TProgress>;
 };
 
-template <typename TProgress> struct Traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncActionWithProgress<Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncActionWithProgress<D, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncActionWithProgress<abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncActionWithProgress<D, TProgress>;
 };
 
-template <typename TProgress> struct Traits<Windows::Foundation::IAsyncActionWithProgressCompletedHandler<TProgress>>
+template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgressCompletedHandler<TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncActionWithProgressCompletedHandler<Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncActionWithProgressCompletedHandler<D, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncActionWithProgressCompletedHandler<abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncActionWithProgressCompletedHandler<D, TProgress>;
 };
 
-template <typename TResult, typename TProgress> struct Traits<Windows::Foundation::IAsyncOperationProgressHandler<TResult, TProgress>>
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationProgressHandler<TResult, TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncOperationProgressHandler<Abi<TResult>, Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncOperationProgressHandler<D, TResult, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncOperationProgressHandler<abi<TResult>, abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncOperationProgressHandler<D, TResult, TProgress>;
 };
 
-template <typename TResult, typename TProgress> struct Traits<Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<Abi<TResult>, Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncOperationWithProgressCompletedHandler<D, TResult, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<abi<TResult>, abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncOperationWithProgressCompletedHandler<D, TResult, TProgress>;
 };
 
-template <typename TResult> struct Traits<Windows::Foundation::IAsyncOperationCompletedHandler<TResult>>
+template <typename TResult> struct traits<Windows::Foundation::IAsyncOperationCompletedHandler<TResult>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncOperationCompletedHandler<Abi<TResult>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncOperationCompletedHandler<D, TResult>;
+	using abi = ABI::Windows::Foundation::IAsyncOperationCompletedHandler<abi<TResult>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncOperationCompletedHandler<D, TResult>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::IEventHandler<T>>
+template <typename T> struct traits<Windows::Foundation::IEventHandler<T>>
 {
-	using Abi = ABI::Windows::Foundation::IEventHandler<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IEventHandler<D, T>;
+	using abi = ABI::Windows::Foundation::IEventHandler<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::impl_IEventHandler<D, T>;
 };
 
-template <typename TSender, typename TArgs> struct Traits<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>
+template <typename TSender, typename TArgs> struct traits<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>
 {
-	using Abi = ABI::Windows::Foundation::ITypedEventHandler<Abi<TSender>, Abi<TArgs>>;
-	template <typename D> using Methods = Windows::Foundation::impl_ITypedEventHandler<D, TSender, TArgs>;
+	using abi = ABI::Windows::Foundation::ITypedEventHandler<abi<TSender>, abi<TArgs>>;
+	template <typename D> using methods = Windows::Foundation::impl_ITypedEventHandler<D, TSender, TArgs>;
 };
 
-template <typename TResult> struct Traits<Windows::Foundation::IAsyncOperation<TResult>>
+template <typename TResult> struct traits<Windows::Foundation::IAsyncOperation<TResult>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncOperation<Abi<TResult>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncOperation<D, TResult>;
+	using abi = ABI::Windows::Foundation::IAsyncOperation<abi<TResult>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncOperation<D, TResult>;
 };
 
-template <typename TResult, typename TProgress> struct Traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
 {
-	using Abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<Abi<TResult>, Abi<TProgress>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IAsyncOperationWithProgress<D, TResult, TProgress>;
+	using abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<abi<TResult>, abi<TProgress>>;
+	template <typename D> using methods = Windows::Foundation::impl_IAsyncOperationWithProgress<D, TResult, TProgress>;
 };
 
-template <typename T> struct Traits<Windows::Foundation::IReference<T>>
+template <typename T> struct traits<Windows::Foundation::IReference<T>>
 {
-	using Abi = ABI::Windows::Foundation::IReference<Abi<T>>;
-	template <typename D> using Methods = Windows::Foundation::impl_IReference<D, T>;
+	using abi = ABI::Windows::Foundation::IReference<abi<T>>;
+	template <typename D> using methods = Windows::Foundation::impl_IReference<D, T>;
 };
 
-}
+}}
 
-
-
-
-namespace Modern { namespace Windows { namespace Foundation {
+namespace winrt { namespace Windows { namespace Foundation {
 
 template <typename TProgress, typename THandler>
-struct impl_AsyncActionProgressHandler : ImplementsDefault<IAsyncActionProgressHandler<TProgress>>
+struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHandler<TProgress>>
 {
 	impl_AsyncActionProgressHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IAsyncActionWithProgress<TProgress>> sender, AbiArgIn<TProgress> args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IAsyncActionWithProgress<TProgress>> sender, ABI::argument_in<TProgress> args) noexcept override
 	{
 		return call([&]
 		{
@@ -506,12 +503,12 @@ IAsyncActionProgressHandler<TProgress> AsyncActionProgressHandler(THandler handl
 }
 
 template <typename TProgress, typename THandler>
-struct impl_AsyncActionWithProgressCompletedHandler : ImplementsDefault<IAsyncActionWithProgressCompletedHandler<TProgress>>
+struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncActionWithProgressCompletedHandler<TProgress>>
 {
 	impl_AsyncActionWithProgressCompletedHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
@@ -527,12 +524,12 @@ IAsyncActionWithProgressCompletedHandler<TProgress> AsyncActionWithProgressCompl
 }
 
 template <typename TResult, typename TProgress, typename THandler>
-struct impl_AsyncOperationProgressHandler : ImplementsDefault<IAsyncOperationProgressHandler<TResult, TProgress>>
+struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProgressHandler<TResult, TProgress>>
 {
 	impl_AsyncOperationProgressHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IAsyncOperationWithProgress<TResult, TProgress>> sender, AbiArgIn<TProgress> args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, ABI::argument_in<TProgress> args) noexcept override
 	{
 		return call([&]
 		{
@@ -548,12 +545,12 @@ IAsyncOperationProgressHandler<TResult, TProgress> AsyncOperationProgressHandler
 }
 
 template <typename TResult, typename TProgress, typename THandler>
-struct impl_AsyncOperationWithProgressCompletedHandler : ImplementsDefault<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
 {
 	impl_AsyncOperationWithProgressCompletedHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
@@ -569,12 +566,12 @@ IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> AsyncOperationWi
 }
 
 template <typename TResult, typename THandler>
-struct impl_AsyncOperationCompletedHandler : ImplementsDefault<IAsyncOperationCompletedHandler<TResult>>
+struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCompletedHandler<TResult>>
 {
 	impl_AsyncOperationCompletedHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
@@ -590,12 +587,12 @@ IAsyncOperationCompletedHandler<TResult> AsyncOperationCompletedHandler(THandler
 }
 
 template <typename TArgs, typename THandler>
-struct impl_EventHandler : ImplementsDefault<IEventHandler<TArgs>>
+struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>
 {
 	impl_EventHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<IInspectable> sender, AbiArgIn<TArgs> args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<IInspectable> sender, ABI::argument_in<TArgs> args) noexcept override
 	{
 		return call([&]
 		{
@@ -611,12 +608,12 @@ IEventHandler<TArgs> EventHandler(THandler handler)
 }
 
 template <typename TSender, typename TArgs, typename THandler>
-struct impl_TypedEventHandler : ImplementsDefault<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>
+struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>
 {
 	impl_TypedEventHandler(THandler handler) : m_handler(handler) {}
 	THandler m_handler;
 
-	virtual HRESULT __stdcall abi_Invoke(AbiArgIn<TSender> sender, AbiArgIn<TArgs> args) noexcept override
+	virtual HRESULT __stdcall abi_Invoke(ABI::argument_in<TSender> sender, ABI::argument_in<TArgs> args) noexcept override
 	{
 		return call([&]
 		{

@@ -1,16 +1,14 @@
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#undef GetCurrentTime
 #pragma comment(lib, "runtimeobject")
+#pragma comment(lib, "ole32")
 
 #include <inspectable.h>
-#include <eventtoken.h>
 #include <winstring.h>
 #include <set>
 #include <memory>
 #include <vector>
 #include <utility>
+#include <type_traits>
 
 extern "C"
 {

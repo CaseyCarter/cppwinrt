@@ -1,15 +1,4 @@
 
-namespace winrt { namespace impl {
-
-template <typename T>
-class no_addref_release : public T
-{
-	unsigned long __stdcall AddRef();
-	unsigned long __stdcall Release();
-};
-
-}}
-
 namespace winrt {
 
 template <typename T>
@@ -71,9 +60,9 @@ public:
 		return nullptr != m_ptr;
 	}
 
-	impl::no_addref_release<T> * operator->() const noexcept
+	impl::no_ref<T> * operator->() const noexcept
 	{
-		return static_cast<impl::no_addref_release<T> *>(m_ptr);
+		return static_cast<impl::no_ref<T> *>(m_ptr);
 	}
 
 	friend T * impl_get(com_ptr const & object) noexcept
