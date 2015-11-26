@@ -1,8 +1,8 @@
 
-template <> struct Traits<%::%>
+template <> struct traits<%::%>
 {
-	using Abi = ABI::%::%;
-	using Default = %;
-	static constexpr wchar_t const * Name() noexcept { return L"%"; }
-	static constexpr unsigned NameLength = %;
+	using abi = ABI::%::%;
+	using default_interface = %;
+	static constexpr wchar_t const * name() noexcept { return L"%"; }
+	static constexpr unsigned name_length = %;
 };

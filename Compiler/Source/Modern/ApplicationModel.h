@@ -1,10 +1,10 @@
 
-namespace Modern { namespace Windows { namespace ApplicationModel { namespace Core {
+namespace winrt { namespace Windows { namespace ApplicationModel { namespace Core {
 
 template <typename T>
-struct IFrameworkViewSourceT : ImplementsDefault<IFrameworkViewSource>
+struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
 {
-	virtual HRESULT __stdcall abi_CreateView(AbiArgOut<IFrameworkView> view) noexcept override
+	virtual HRESULT __stdcall abi_CreateView(ABI::argument_out<IFrameworkView> view) noexcept override
 	{
 		return call([&]
 		{
@@ -14,7 +14,7 @@ struct IFrameworkViewSourceT : ImplementsDefault<IFrameworkViewSource>
 };
 
 template <typename T>
-struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
+struct IFrameworkViewT : impl::implements<IFrameworkView>
 {
 	void Initialize(CoreApplicationView const &) const noexcept
 	{
@@ -41,7 +41,7 @@ struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
 	{
 	}
 
-	HRESULT __stdcall abi_Initialize(AbiArgIn<ICoreApplicationView> view) noexcept
+	HRESULT __stdcall abi_Initialize(ABI::argument_in<ICoreApplicationView> view) noexcept
 	{
 		return call([&]
 		{
@@ -49,7 +49,7 @@ struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
 		});
 	}
 
-	HRESULT __stdcall abi_SetWindow(AbiArgIn<UI::Core::ICoreWindow> window) noexcept
+	HRESULT __stdcall abi_SetWindow(ABI::argument_in<UI::Core::ICoreWindow> window) noexcept
 	{
 		return call([&]
 		{

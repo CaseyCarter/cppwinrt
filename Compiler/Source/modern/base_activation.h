@@ -18,6 +18,17 @@ void ActivateInstance(HSTRING classId, Interface & result)
 
 namespace winrt {
 
+enum class InitializeType
+{
+	SingleThreaded,
+	MultiThreaded
+};
+
+inline void Initialize(InitializeType const type = InitializeType::MultiThreaded)
+{
+	check(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
+}
+
 template <typename Class, typename Instance = Class>
 Instance ActivateInstance()
 {

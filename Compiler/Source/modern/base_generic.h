@@ -21,12 +21,6 @@ struct argument<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T>
 
 }}
 
-namespace winrt {
-
-using EventRegistrationToken = long long;
-
-}
-
 namespace winrt { namespace ABI { namespace Windows { namespace Foundation {
 
 template <typename TProgress> struct IAsyncActionProgressHandler;
@@ -60,7 +54,7 @@ struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
 template <typename TProgress>
 struct __declspec(novtable) impl_IAsyncActionWithProgressCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, AsyncStatus status) = 0;
 };
 
 template <typename TResult, typename TProgress>
@@ -72,13 +66,13 @@ struct __declspec(novtable) impl_IAsyncOperationProgressHandler : IUnknown
 template <typename TResult, typename TProgress>
 struct __declspec(novtable) impl_IAsyncOperationWithProgressCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, AsyncStatus status) = 0;
 };
 
 template <typename TResult>
 struct __declspec(novtable) impl_IAsyncOperationCompletedHandler : IUnknown
 {
-	virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
+	virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, AsyncStatus status) = 0;
 };
 
 template <typename T>

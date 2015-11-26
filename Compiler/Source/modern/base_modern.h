@@ -1,12 +1,11 @@
 
 #pragma once
 
-#include <modern\base.h>
+#include <winrt\pre.h>
 
-#include <Modern\sdk.abi.h>
-#include <modern\sdk.meta.h>
-#include <modern\sdk.shim.h>
-#include <modern\sdk.extend.h>
+#include <winrt\sdk.abi.h>
+#include <winrt\sdk.meta.h>
+#include <winrt\sdk.shim.h>
+#include <winrt\sdk.extend.h>
 
-#include <modern\await.h>
-#include <modern\references.h>
+#include <winrt\post.h>

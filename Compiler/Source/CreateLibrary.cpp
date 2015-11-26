@@ -85,7 +85,7 @@ static void WriteLogo(Target & target)
 
 static void WriteModernHeader()
 {
-    OutputFile target("..\\modern.h");
+    OutputFile target("..\\winrt.h");
     WriteLogo(target);
     Write(target, Strings::base_modern);
 }
@@ -100,20 +100,41 @@ static void WriteSupportingHeader(char const * filename, char const (&text)[Coun
 
 static void WriteBaseHeader()
 {
-	OutputFile out("base.h");
+	OutputFile out("pre.h");
 	WriteLogo(out);
-	//Write(out, Strings::Base);
+	Write(out, Strings::base_dependencies);
+	Write(out, Strings::base_error);
+	Write(out, Strings::base_accessors);
+	Write(out, Strings::base_handle);
+	Write(out, Strings::base_implements);
+	Write(out, Strings::base_meta);
+	Write(out, Strings::base_string);
+	Write(out, Strings::base_comptr);
+	Write(out, Strings::base_lock);
+	Write(out, Strings::base_windows);
+	Write(out, Strings::base_activation);
+	Write(out, Strings::base_generic);
+	Write(out, Strings::base_collections_consume);
+}
+
+static void WritePostHeader()
+{
+	OutputFile out("post.h");
+	WriteLogo(out);
+	Write(out, Strings::base_await_consume);
+	Write(out, Strings::base_reference);
 }
 
 static void WriteLibrary()
 {
     std::string path = Database::Out();
-    Path::Append(path, "modern");
+    Path::Append(path, "winrt");
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
     WriteModernHeader();
 	WriteBaseHeader();
+	WritePostHeader();
 
 	//WriteSupportingHeader("debug.h", Strings::Debug);
 	//WriteSupportingHeader("implements.h", Strings::Implements);

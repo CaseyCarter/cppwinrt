@@ -421,7 +421,7 @@ static void PrepareUsage()
             Path::CombineIntoSecond(Path::GetCurrentDirectory(), library);
         }
 
-        if (!Path::Exists(Path::Combine(library, "modern.h")))
+        if (!Path::Exists(Path::Combine(library, "winrt.h")))
         {
             throw LibraryNotFoundException();
         }

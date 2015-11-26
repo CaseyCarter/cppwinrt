@@ -359,6 +359,10 @@ class Scanner
         {
             type = "byte";
         }
+        else if (type == "EventRegistrationToken")
+        {
+            type = "long long";
+        }
     }
 
     void ReadRestOfString()
@@ -422,7 +426,7 @@ class Scanner
 
                         if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                         {
-                            m_string += "Modern::";
+                            m_string += "winrt::";
                         }
                     }
 
@@ -452,7 +456,7 @@ class Scanner
 
                         if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                         {
-                            m_string += "Modern::";
+                            m_string += "winrt::";
                         }
                     }
 
@@ -787,7 +791,7 @@ static bool ReadName(char const * & begin, char const * const end, std::string &
         {
             if (!part.empty())
             {
-                // TODO: check category and prepend "Modern::"
+                // TODO: check category and prepend "winrt::"
 
                 NormalizeMetadataType(part);
 
@@ -795,7 +799,7 @@ static bool ReadName(char const * & begin, char const * const end, std::string &
 
                 if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                 {
-                    name += "Modern::";
+                    name += "winrt::";
                 }
                 else if (category == TypeCategory::Deprecated)
                 {

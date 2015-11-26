@@ -179,8 +179,8 @@ struct __declspec(novtable) impl_IMapChangedEventHandler : IUnknown
 template <typename K, typename V>
 struct __declspec(novtable) impl_IObservableMap : IInspectable
 {
-	virtual HRESULT __stdcall add_MapChanged(IMapChangedEventHandler<K, V> * handler, EventRegistrationToken * token) = 0;
-	virtual HRESULT __stdcall remove_MapChanged(EventRegistrationToken token) = 0;
+	virtual HRESULT __stdcall add_MapChanged(IMapChangedEventHandler<K, V> * handler, long long * token) = 0;
+	virtual HRESULT __stdcall remove_MapChanged(long long token) = 0;
 };
 
 template <typename T>
@@ -192,8 +192,8 @@ struct __declspec(novtable) impl_IVectorChangedEventHandler : IUnknown
 template <typename T>
 struct __declspec(novtable) impl_IObservableVector : IInspectable
 {
-	virtual HRESULT __stdcall add_VectorChanged(IVectorChangedEventHandler<T> * handler, EventRegistrationToken *  token) = 0;
-	virtual HRESULT __stdcall remove_VectorChanged(EventRegistrationToken token) = 0;
+	virtual HRESULT __stdcall add_VectorChanged(IVectorChangedEventHandler<T> * handler, long long *  token) = 0;
+	virtual HRESULT __stdcall remove_VectorChanged(long long token) = 0;
 };
 
 }}}}}
@@ -518,19 +518,19 @@ class impl_IObservableMap
 
 public:
 
-	EventRegistrationToken MapChanged(IMapChangedEventHandler<K, V> const & handler) const
+	long long MapChanged(IMapChangedEventHandler<K, V> const & handler) const
 	{
-		EventRegistrationToken cookie = {};
+		long long cookie = {};
 		check(shim()->add_MapChanged(get(handler), &cookie));
 		return cookie;
 	}
 
-	template <typename T> EventRegistrationToken MapChanged(T handler) const
+	template <typename T> long long MapChanged(T handler) const
 	{
 		return MapChanged(MapChangedEventHandler<K, V>(handler));
 	}
 
-	void MapChanged(EventRegistrationToken const cookie) const
+	void MapChanged(long long const cookie) const
 	{
 		check(shim()->remove_MapChanged(cookie));
 	}
@@ -556,19 +556,19 @@ class impl_IObservableVector
 
 public:
 
-	EventRegistrationToken VectorChanged(IVectorChangedEventHandler<T> const & handler) const
+	long long VectorChanged(IVectorChangedEventHandler<T> const & handler) const
 	{
-		EventRegistrationToken cookie = {};
+		long long cookie = {};
 		check(shim()->add_VectorChanged(get(handler), &cookie));
 		return cookie;
 	}
 
-	template <typename Handler> EventRegistrationToken VectorChanged(Handler handler) const
+	template <typename Handler> long long VectorChanged(Handler handler) const
 	{
 		return VectorChanged(VectorChangedEventHandler<T>(handler));
 	}
 
-	void VectorChanged(EventRegistrationToken const cookie) const
+	void VectorChanged(long long const cookie) const
 	{
 		check(shim()->remove_VectorChanged(cookie));
 	}

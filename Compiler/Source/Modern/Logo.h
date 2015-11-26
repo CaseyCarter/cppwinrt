@@ -1,2 +1,2 @@
-// Modern v%.% - http://moderncpp.com
-// Copyright (c) % Kenny Kerr
+// C++ for the Windows Runtime v%.% - http://moderncpp.com
+// Copyright (c) % Microsoft Corporation

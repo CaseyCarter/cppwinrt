@@ -233,11 +233,7 @@ static void WriteDelegateAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "AbiArgIn<%> %", param.Type, param.Name);
-            }
-            else if (param.Category == TypeCategory::Boolean)
-            {
-                Write(output, "boolean %", param.Name);
+                Write(output, "ABI::argument_in<%> %", param.Type, param.Name);
             }
             else
             {
@@ -254,11 +250,7 @@ static void WriteDelegateAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "AbiArgOut<%> %", param.Type, param.Name);
-            }
-            else if (param.Category == TypeCategory::Boolean)
-            {
-                Write(output, "boolean * %", param.Name);
+                Write(output, "ABI::argument_out<%> %", param.Type, param.Name);
             }
             else
             {
@@ -295,7 +287,7 @@ static void WriteAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
             {
-                Write(output, "Modern::% %", param.Type, param.Name);
+                Write(output, "winrt::% %", param.Type, param.Name);
             }
             else if (param.Category == TypeCategory::Boolean)
             {
@@ -318,7 +310,7 @@ static void WriteAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
             {
-                Write(output, "Modern::% * %", param.Type, param.Name);
+                Write(output, "winrt::% * %", param.Type, param.Name);
             }
             else if (param.Category == TypeCategory::Boolean)
             {
@@ -822,7 +814,7 @@ static void WriteOverrideDefaults(Output & output, int const interfaceId, char c
     {
         if (0 == strcmp(Settings::ParameterInfo.ReturnType(), "IInspectable"))
         {
-            return "Modern::IInspectable";
+            return "winrt::IInspectable"; // TODO: shouldn't this be "Windows::IInspectable"?
         }
         else
         {
@@ -1124,7 +1116,7 @@ void WriteDeclarations(Output & out)
 
 void WriteImplementation(Output & out)
 {
-    out.OpenModernNamespace();
+	out.WriteNamespace("impl");
 
     GetInterfaceNames([&]
     {
@@ -1163,7 +1155,7 @@ void WriteImplementation(Output & out)
         }
     });
 
-    out.CloseModernNamespace();
+    out.WriteNamespace();
 }
 
 void WriteGenericInterfaces(Output & out)
@@ -1240,6 +1232,7 @@ void WriteInterfaces(Output & h, Output & methods, Output & abi)
 
         Write(h, 
               Strings::LibraryInterfaceImplOpen, 
+              Settings::InterfaceName,
               Settings::InterfaceName);
 
         if (Settings::InterfaceDelegate)

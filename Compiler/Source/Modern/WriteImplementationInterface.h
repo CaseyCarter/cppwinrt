@@ -1,6 +1,6 @@
 
-template <> struct Traits<%::%>
+template <> struct traits<%::%>
 {
-	using Abi = ABI::%::%;
-	template <typename T> using Methods = %::impl_%<T>;
+	using abi = ABI::%::%;
+	template <typename T> using methods = %::impl_%<T>;
 };

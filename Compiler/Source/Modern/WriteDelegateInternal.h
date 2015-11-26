@@ -1,5 +1,5 @@
 
-template <typename T> struct impl_% : ImplementsDefault<%>
+template <typename T> struct impl_% : impl::implements<%>
 {
 	impl_%(T handler) : m_handler(handler) {}
 	T m_handler;

@@ -219,7 +219,7 @@ inline bool operator>=(IUnknown const & left, IUnknown const & right) noexcept
 
 }}
 
-namespace winrt { namespace Windows {
+namespace winrt {
 
 enum class AsyncStatus
 {
@@ -236,14 +236,14 @@ enum class TrustLevel
 	FullTrust
 };
 
-}}
+}
 
 namespace winrt { namespace ABI { namespace Windows {
 
 struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : ::IInspectable
 {
 	virtual HRESULT __stdcall get_Id(unsigned * id) = 0;
-	virtual HRESULT __stdcall get_Status(winrt::Windows::AsyncStatus * status) = 0;
+	virtual HRESULT __stdcall get_Status(AsyncStatus * status) = 0;
 	virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
 	virtual HRESULT __stdcall abi_Cancel() = 0;
 	virtual HRESULT __stdcall abi_Close() = 0;
@@ -303,19 +303,19 @@ namespace winrt { namespace impl {
 template <> struct traits<Windows::IInspectable>
 {
 	using abi = ::IInspectable;
-	template <typename T> using Methods = Windows::impl_IInspectable<T>;
+	template <typename T> using methods = Windows::impl_IInspectable<T>;
 };
 
 template <> struct traits<Windows::IAsyncInfo>
 {
 	using abi = ABI::Windows::IAsyncInfo;
-	template <typename T> using Methods = Windows::impl_IAsyncInfo<T>;
+	template <typename T> using methods = Windows::impl_IAsyncInfo<T>;
 };
 
 template <> struct traits<Windows::IActivationFactory>
 {
 	using abi = ABI::Windows::IActivationFactory;
-	template <typename T> using Methods = Windows::impl_IActivationFactory<T>;
+	template <typename T> using methods = Windows::impl_IActivationFactory<T>;
 };
 
 }}
