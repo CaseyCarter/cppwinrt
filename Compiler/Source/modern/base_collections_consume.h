@@ -1,44 +1,4 @@
 
-namespace winrt { namespace impl {
-
-template <typename T>
-struct fast_iterator
-{
-	fast_iterator(T const & collection, unsigned const index) noexcept :
-		m_collection(&collection),
-		m_index(index)
-	{}
-
-	fast_iterator & operator++() noexcept
-	{
-		++m_index;
-		return *this;
-	}
-
-	auto operator *() const
-	{
-		return m_collection->GetAt(m_index);
-	}
-
-	bool operator==(fast_iterator const & other) const noexcept
-	{
-		MODERN_ASSERT(m_collection == other.m_collection);
-		return m_index == other.m_index;
-	}
-
-	bool operator!=(fast_iterator const & other) const noexcept
-	{
-		return !(*this == other);
-	}
-
-private:
-
-	T const * m_collection = nullptr;
-	unsigned m_index = 0;
-};
-
-}}
-
 namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 enum class CollectionChange
@@ -806,38 +766,79 @@ template <typename T> struct traits<Windows::Foundation::Collections::IObservabl
 
 }}
 
-//namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
-//
-//template <typename T, IsNotRandomAccess<T> = nullptr>
-//auto begin(T const & collection) -> decltype(collection.First())
-//{
-//	auto result = collection.First();
-//
-//	if (!result.HasCurrent())
-//	{
-//		return {};
-//	}
-//
-//	return result;
-//}
-//
-//template <typename T, IsNotRandomAccess<T> = nullptr>
-//auto end(T const & collection) -> decltype(collection.First())
-//{
-//	collection;
-//	return {};
-//}
-//
-//template <typename T, IsRandomAccess<T> = nullptr>
-//FastIterator<T> begin(T const & collection) noexcept
-//{
-//	return FastIterator<T>(collection, 0);
-//}
-//
-//template <typename T, IsRandomAccess<T> = nullptr>
-//FastIterator<T> end(T const & collection)
-//{
-//	return FastIterator<T>(collection, collection.Size());
-//}
-//
-//}}}}
+
+namespace winrt { namespace impl {
+
+template <typename T>
+struct fast_iterator
+{
+	fast_iterator(T const & collection, unsigned const index) noexcept :
+		m_collection(&collection),
+		m_index(index)
+	{}
+
+	fast_iterator & operator++() noexcept
+	{
+		++m_index;
+		return *this;
+	}
+
+	auto operator *() const
+	{
+		return m_collection->GetAt(m_index);
+	}
+
+	bool operator==(fast_iterator const & other) const noexcept
+	{
+		MODERN_ASSERT(m_collection == other.m_collection);
+		return m_index == other.m_index;
+	}
+
+	bool operator!=(fast_iterator const & other) const noexcept
+	{
+		return !(*this == other);
+	}
+
+private:
+
+	T const * m_collection = nullptr;
+	unsigned m_index = 0;
+};
+
+}}
+
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename T, typename std::enable_if<!impl::has_GetAt<T>::value>::type * = nullptr>
+auto begin(T const & collection) -> decltype(collection.First())
+{
+	auto result = collection.First();
+
+	if (!result.HasCurrent())
+	{
+		return {};
+	}
+
+	return result;
+}
+
+template <typename T, typename std::enable_if<!impl::has_GetAt<T>::value>::type * = nullptr>
+auto end(T const & collection) -> decltype(collection.First())
+{
+	collection;
+	return {};
+}
+
+template <typename T, typename std::enable_if<impl::has_GetAt<T>::value>::type * = nullptr>
+impl::fast_iterator<T> begin(T const & collection) noexcept
+{
+	return impl::fast_iterator<T>(collection, 0);
+}
+
+template <typename T, typename std::enable_if<impl::has_GetAt<T>::value>::type * = nullptr>
+impl::fast_iterator<T> end(T const & collection)
+{
+	return impl::fast_iterator<T>(collection, collection.Size());
+}
+
+}}}}
