@@ -279,7 +279,7 @@ struct accessors<StringReference>
 
 }}
 
-namespace Modern { namespace ABI {
+namespace winrt { namespace ABI {
 
 using String = HSTRING;
 

@@ -20,8 +20,6 @@ struct handle
 	using type = typename T::type;
 
 	handle() noexcept = default;
-	handle(handle const &) = delete;
-	handle & operator=(handle const &) = delete;
 
 	handle(type value) noexcept :
 		m_value(value)
