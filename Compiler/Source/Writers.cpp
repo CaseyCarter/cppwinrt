@@ -142,13 +142,9 @@ static void WriteAbiArguments(Output & output, unsigned const stringCount)
         }
         else
         {
-			if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value)
+			if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value || param.Category == TypeCategory::Boolean)
 			{
 				Write(output, "&%", param.Name);
-			}
-			else if (param.Category == TypeCategory::Boolean)
-			{
-				Write(output, "BoolProxy(%)", param.Name);
 			}
 			else
 			{
@@ -467,7 +463,6 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
                   Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass, 
                   Settings::ParameterInfo.ReturnType(),
                   Settings::ParameterInfo.ReturnTypeName(),
-                  Settings::InterfaceName,
                   Settings::MethodAbi);
         }
         else
@@ -476,7 +471,6 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
                   Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpen, 
                   Settings::ParameterInfo.ReturnType(),
                   Settings::ParameterInfo.ReturnTypeName(),
-                  Settings::InterfaceName,
                   Settings::MethodAbi);
         }
 
@@ -490,7 +484,6 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
     {
         Write(methods, 
               Strings::LibraryNonStaticMethodDefinitionBodyNoReturnTypeOpen, 
-              Settings::InterfaceName,
               Settings::MethodAbi);
 
         WriteAbiArguments(methods, stringCount);
