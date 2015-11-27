@@ -1,6 +1,6 @@
 #pragma once
 
-#include <modern.h>
+#include <winrt.h>
 #include <future>
 #include <pathcch.h>
 #pragma comment(lib, "pathcch")

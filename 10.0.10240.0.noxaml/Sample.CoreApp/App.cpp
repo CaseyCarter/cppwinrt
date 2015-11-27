@@ -1,6 +1,6 @@
 #include "pch.h"
 
-using namespace Modern;
+using namespace winrt;
 
 using namespace Windows::ApplicationModel::Core;
 using namespace Windows::UI::Core;
@@ -12,14 +12,14 @@ struct View : IFrameworkViewT<View>
     {
         window.KeyUp([](CoreWindow const &, KeyEventArgs const & args)
         {
-            MODERN_TRACE("key: %c\n", args.VirtualKey());
+            WINRT_TRACE("key: %c\n", args.VirtualKey());
         });
 
         MessageDialog dialog(L"Modern C++ for the Windows Runtime", L"Hello World!");
 
         dialog.ShowAsync().Completed([](auto const &, AsyncStatus)
         {
-            // CoreApplication::Exit();
+            CoreApplication::Exit();
         });
     }
 };

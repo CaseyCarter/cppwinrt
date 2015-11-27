@@ -1,7 +1,7 @@
 #include "pch.h"
 
 using namespace std;
-using namespace Modern;
+using namespace winrt;
 
 using namespace Windows::Storage;
 using namespace Windows::Storage::Streams;

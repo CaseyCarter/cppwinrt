@@ -45,7 +45,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->Initialize(Lease<CoreApplicationView>(view));
+			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
 		});
 	}
 
@@ -53,7 +53,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->SetWindow(Lease<UI::Core::CoreWindow>(window));
+			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
 		});
 	}
 
@@ -61,7 +61,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->Load(Lease<String>(entryPoint));
+			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
 		});
 	}
 

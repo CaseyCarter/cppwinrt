@@ -85,6 +85,17 @@ public:
 	static constexpr bool value = check<T>(0);
 };
 
+template <typename T>
+class has_composable
+{
+	template <typename U> static constexpr bool check(typename U::composable *) { return true; }
+	template <typename>   static constexpr bool check(...) { return false; }
+
+public:
+
+	static constexpr bool value = check<T>(nullptr);
+};
+
 template <typename Crtp, typename Qi, typename Base>
 auto shim(Base const * base)
 {
@@ -136,13 +147,22 @@ template <typename T, typename ... B>
 struct bases : impl::bases<T, B> ...
 {};
 
-template <typename T, typename ... Args>
+template <typename T, typename ... Args, typename std::enable_if<!impl::has_composable<T>::value>::type * = nullptr>
 auto make(Args && ... args)
 {
 	typename T::default_interface instance;
 	*put(instance) = new T(std::forward<Args>(args) ...);
 	return instance;
 }
+
+template <typename T, typename ... Args, typename std::enable_if<impl::has_composable<T>::value>::type * = nullptr>
+auto make(Args && ... args)
+{
+	Windows::IInspectable instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance.As<T::composable>();
+}
+
 
 }
 

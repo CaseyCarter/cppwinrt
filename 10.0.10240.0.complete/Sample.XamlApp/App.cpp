@@ -1,6 +1,6 @@
 #include "pch.h"
 
-using namespace Modern;
+using namespace winrt;
 
 using namespace Windows::ApplicationModel::Activation;
 using namespace Windows::Foundation;
@@ -21,7 +21,7 @@ public:
         {
             IPropertyValue value = object.GetValue(property).As<IPropertyValue>();
 
-            MODERN_TRACE(L"%ls\n", value.GetString().Buffer());
+            WINRT_TRACE("%ls\n", value.GetString().Buffer());
         });
 
         text.Text(L"Modern C++\nfor the\nWindows Runtime");

@@ -229,13 +229,6 @@ enum class AsyncStatus
 	Error,
 };
 
-enum class TrustLevel
-{
-	BaseTrust,
-	PartialTrust,
-	FullTrust
-};
-
 }
 
 namespace winrt { namespace ABI { namespace Windows {
@@ -393,14 +386,33 @@ template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance(
 
 }}
 
-//namespace Modern {
-//
-//using IInspectable = Windows::IInspectable;
-//
-//}
-//
-//namespace Modern { namespace ABI {
-//
-//using IInspectable = ::IInspectable;
-//
-//}}
+namespace winrt {
+
+template <typename ... R>
+struct overrides : implements<R ...>
+{
+	template <typename T>
+	T As() const
+	{
+		return m_inner.As<T>();
+	}
+
+	virtual HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
+	{
+		*object = query_interface<R ...>(id);
+
+		if (*object == nullptr)
+		{
+			return m_inner->QueryInterface(id, object);
+		}
+
+		static_cast<::IUnknown *>(*object)->AddRef();
+		return S_OK;
+	}
+
+protected:
+
+	Windows::IInspectable m_inner;
+};
+
+}

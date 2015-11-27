@@ -64,4 +64,10 @@ auto detach(T & object) noexcept
 	return impl::accessors<T>::detach(object);
 }
 
+template <typename T>
+auto detach(T && object) noexcept
+{
+	return impl::accessors<T>::detach(object);
+}
+
 }
