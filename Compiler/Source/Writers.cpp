@@ -229,7 +229,7 @@ static void WriteDelegateAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "ABI::argument_in<%> %", param.Type, param.Name);
+                Write(output, "abi_arg_in<%> %", param.Type, param.Name);
             }
             else
             {
@@ -246,7 +246,7 @@ static void WriteDelegateAbiParameters(Output & output)
             }
             else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "ABI::argument_out<%> %", param.Type, param.Name);
+                Write(output, "abi_arg_out<%> %", param.Type, param.Name);
             }
             else
             {
@@ -285,10 +285,6 @@ static void WriteAbiParameters(Output & output)
             {
                 Write(output, "winrt::% %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Boolean)
-            {
-                Write(output, "boolean %", param.Name);
-            }
             else
             {
                 Write(output, "% %", param.Type, param.Name);
@@ -307,10 +303,6 @@ static void WriteAbiParameters(Output & output)
             else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
             {
                 Write(output, "winrt::% * %", param.Type, param.Name);
-            }
-            else if (param.Category == TypeCategory::Boolean)
-            {
-                Write(output, "boolean * %", param.Name);
             }
             else
             {
@@ -880,7 +872,7 @@ static void WriteBases(Output & output)
     if (!bases.empty())
     {
         Write(output,
-              ",\n\tBases<%, %>",
+              ",\n\tbases<%, %>",
               Settings::ClassName,
               bases);
     }

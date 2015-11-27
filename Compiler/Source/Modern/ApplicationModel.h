@@ -4,7 +4,7 @@ namespace winrt { namespace Windows { namespace ApplicationModel { namespace Cor
 template <typename T>
 struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
 {
-	virtual HRESULT __stdcall abi_CreateView(ABI::argument_out<IFrameworkView> view) noexcept override
+	virtual HRESULT __stdcall abi_CreateView(abi_arg_out<IFrameworkView> view) noexcept override
 	{
 		return call([&]
 		{
@@ -41,7 +41,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 	}
 
-	HRESULT __stdcall abi_Initialize(ABI::argument_in<ICoreApplicationView> view) noexcept
+	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
 	{
 		return call([&]
 		{
@@ -49,7 +49,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 		});
 	}
 
-	HRESULT __stdcall abi_SetWindow(ABI::argument_in<UI::Core::ICoreWindow> window) noexcept
+	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
 	{
 		return call([&]
 		{

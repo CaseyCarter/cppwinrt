@@ -95,10 +95,10 @@ template <typename T> struct IObservableVector;
 template <typename T>
 struct __declspec(novtable) impl_IIterator : IInspectable
 {
-	virtual HRESULT __stdcall get_Current(argument_out<T> current) = 0;
+	virtual HRESULT __stdcall get_Current(arg_out<T> current) = 0;
 	virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
 	virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned capacity, arg_out<T> value, unsigned * actual) = 0;
 
 };
 
@@ -111,55 +111,55 @@ struct __declspec(novtable) impl_IIterable : IInspectable
 template <typename K, typename V>
 struct __declspec(novtable) impl_IKeyValuePair : IInspectable
 {
-	virtual HRESULT __stdcall get_Key(argument_out<K> key) = 0;
-	virtual HRESULT __stdcall get_Value(argument_out<V> value) = 0;
+	virtual HRESULT __stdcall get_Key(arg_out<K> key) = 0;
+	virtual HRESULT __stdcall get_Value(arg_out<V> value) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IVectorView : IInspectable
 {
-	virtual HRESULT __stdcall abi_GetAt(unsigned index, argument_out<T> item) = 0;
+	virtual HRESULT __stdcall abi_GetAt(unsigned index, arg_out<T> item) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
-	virtual HRESULT __stdcall abi_IndexOf(argument_in<T> value, unsigned * index, bool * found) = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, unsigned * index, bool * found) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, arg_out<T> value, unsigned * actual) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IVector : IInspectable
 {
-	virtual HRESULT __stdcall abi_GetAt(unsigned index, argument_out<T> item) = 0;
+	virtual HRESULT __stdcall abi_GetAt(unsigned index, arg_out<T> item) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
 	virtual HRESULT __stdcall abi_GetView(IVectorView<T> ** view) = 0;
-	virtual HRESULT __stdcall abi_IndexOf(argument_in<T> value, unsigned * index, bool * found) = 0;
-	virtual HRESULT __stdcall abi_SetAt(unsigned index, argument_in<T> item) = 0;
-	virtual HRESULT __stdcall abi_InsertAt(unsigned index, argument_in<T> item) = 0;
+	virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, unsigned * index, bool * found) = 0;
+	virtual HRESULT __stdcall abi_SetAt(unsigned index, arg_in<T> item) = 0;
+	virtual HRESULT __stdcall abi_InsertAt(unsigned index, arg_in<T> item) = 0;
 	virtual HRESULT __stdcall abi_RemoveAt(unsigned index) = 0;
-	virtual HRESULT __stdcall abi_Append(argument_in<T> item) = 0;
+	virtual HRESULT __stdcall abi_Append(arg_in<T> item) = 0;
 	virtual HRESULT __stdcall abi_RemoveAtEnd() = 0;
 	virtual HRESULT __stdcall abi_Clear() = 0;
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, argument_out<T> value, unsigned * actual) = 0;
-	virtual HRESULT __stdcall abi_ReplaceAll(unsigned count, argument_out<T> value) = 0;
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, arg_out<T> value, unsigned * actual) = 0;
+	virtual HRESULT __stdcall abi_ReplaceAll(unsigned count, arg_out<T> value) = 0;
 
 };
 
 template <typename K, typename V>
 struct __declspec(novtable) impl_IMapView : IInspectable
 {
-	virtual HRESULT __stdcall abi_Lookup(argument_in<K> key, argument_out<V> value) = 0;
+	virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
-	virtual HRESULT __stdcall abi_HasKey(argument_in<K> key, bool * found) = 0;
+	virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
 	virtual HRESULT __stdcall abi_Split(IMapView<K, V> ** firstPartition, IMapView<K, V> ** secondPartition) = 0;
 };
 
 template <typename K, typename V>
 struct __declspec(novtable) impl_IMap : IInspectable
 {
-	virtual HRESULT __stdcall abi_Lookup(argument_in<K> key, argument_out<V> value) = 0;
+	virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
 	virtual HRESULT __stdcall get_Size(unsigned * size) = 0;
-	virtual HRESULT __stdcall abi_HasKey(argument_in<K> key, bool * found) = 0;
+	virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
 	virtual HRESULT __stdcall abi_GetView(IMapView<K, V> ** view) = 0;
-	virtual HRESULT __stdcall abi_Insert(argument_in<K> key, V const & value, bool * replaced) = 0;
-	virtual HRESULT __stdcall abi_Remove(argument_in<K> key) = 0;
+	virtual HRESULT __stdcall abi_Insert(arg_in<K> key, V const & value, bool * replaced) = 0;
+	virtual HRESULT __stdcall abi_Remove(arg_in<K> key) = 0;
 	virtual HRESULT __stdcall abi_Clear() = 0;
 };
 
@@ -167,7 +167,7 @@ template <typename K>
 struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
 {
 	virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
-	virtual HRESULT __stdcall get_Key(argument_out<K> value) = 0;
+	virtual HRESULT __stdcall get_Key(arg_out<K> value) = 0;
 };
 
 template <typename K, typename V>
@@ -354,18 +354,18 @@ public:
 	bool IndexOf(T const & value, unsigned & index) const
 	{
 		bool found = false;
-		check(shim()->abi_IndexOf(abi(value), &index, &found));
+		check(shim()->abi_IndexOf(get(value), &index, &found));
 		return 0 != found;
 	}
 
 	void SetAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_SetAt(index, abi(value)));
+		check(shim()->abi_SetAt(index, get(value)));
 	}
 
 	void InsertAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_InsertAt(index, abi(value)));
+		check(shim()->abi_InsertAt(index, get(value)));
 	}
 
 	void RemoveAt(unsigned const index) const
@@ -375,7 +375,7 @@ public:
 
 	void Append(T const & value) const
 	{
-		check(shim()->abi_Append(abi(value)));
+		check(shim()->abi_Append(get(value)));
 	}
 
 	void RemoveAtEnd() const
@@ -399,7 +399,7 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(abi(key), put(result)));
+		check(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
@@ -413,7 +413,7 @@ public:
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(abi(key), &found));
+		check(shim()->abi_HasKey(get(key), &found));
 		return 0 != found;
 	}
 
@@ -433,7 +433,7 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(abi(key), put(result)));
+		check(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
@@ -447,7 +447,7 @@ public:
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(abi(key), &found));
+		check(shim()->abi_HasKey(get(key), &found));
 		return 0 != found;
 	}
 
@@ -461,13 +461,13 @@ public:
 	bool Insert(K const & key, V const & value) const
 	{
 		bool replaced = false;
-		check(shim()->abi_Insert(abi(key), abi(value), &replaced));
+		check(shim()->abi_Insert(get(key), get(value), &replaced));
 		return 0 != replaced;
 	}
 
 	void Remove(K const & key) const
 	{
-		check(shim()->abi_Remove(abi(key)));
+		check(shim()->abi_Remove(get(key)));
 	}
 
 	void Clear() const
@@ -790,7 +790,7 @@ struct fast_iterator
 
 	bool operator==(fast_iterator const & other) const noexcept
 	{
-		MODERN_ASSERT(m_collection == other.m_collection);
+		WINRT_ASSERT(m_collection == other.m_collection);
 		return m_index == other.m_index;
 	}
 

@@ -36,7 +36,7 @@ Instance ActivateInstance()
 							impl::traits<Class>::name_length);
 
 	Instance instance = nullptr;
-	impl_ActivateInstance(get(classId), instance);
+	impl::ActivateInstance(get(classId), instance);
 	return instance;
 }
 

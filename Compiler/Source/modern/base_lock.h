@@ -31,7 +31,7 @@ private:
 	SRWLOCK m_lock;
 };
 
-class lock_guard
+struct lock_guard
 {
 	lock_guard(lock_guard const &) = delete;
 	lock_guard & operator=(lock_guard const &) = delete;

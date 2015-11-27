@@ -2,10 +2,8 @@
 namespace winrt {
 
 template <typename T>
-class com_ptr
+struct com_ptr
 {
-public:
-
 	using type = T;
 
 	com_ptr() noexcept = default;
@@ -156,7 +154,7 @@ private:
 	}
 
 	template <typename T>
-	friend class com_ptr;
+	friend struct com_ptr;
 
 	T * m_ptr = nullptr;
 };

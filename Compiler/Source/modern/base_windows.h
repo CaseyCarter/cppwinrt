@@ -150,23 +150,23 @@ template <> struct traits<Windows::IUnknown>
 template <typename T>
 struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T>::value>::type>
 {
-	static abi<default_interface<T>> * get(T const & object) noexcept
+	static auto get(T const & object) noexcept
 	{
-		return static_cast<abi<default_interface<T>> *>(impl_get(object));
+		return static_cast<abi_arg_in<T>>(impl_get(object));
 	}
 
-	static abi<default_interface<T>> ** put(T & object) noexcept
+	static auto put(T & object) noexcept
 	{
-		return reinterpret_cast<abi<default_interface<T>> **>(impl_put(object));
+		return reinterpret_cast<abi_arg_out<T>>(impl_put(object));
 	}
 
-	static void attach(T & object, abi<default_interface<T>> * value) noexcept
+	static void attach(T & object, abi_arg_in<T> value) noexcept
 	{
 		object = nullptr;
 		*put(object) = value;
 	}
 
-	static void copy(T & object, abi<default_interface<T>> * value) noexcept
+	static void copy(T & object, abi_arg_in<T> value) noexcept
 	{
 		object = nullptr;
 
@@ -177,9 +177,9 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		}
 	}
 
-	static abi<default_interface<T>> * detach(T & object) noexcept
+	static auto detach(T & object) noexcept
 	{
-		return static_cast<abi<default_interface<T>> *>(impl_detach(object));
+		return static_cast<abi_arg_in<T>>(impl_detach(object));
 	}
 };
 
