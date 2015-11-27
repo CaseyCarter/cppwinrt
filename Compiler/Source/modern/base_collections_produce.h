@@ -1,23 +1,23 @@
 
-namespace Modern { namespace Windows { namespace Foundation { namespace Collections {
+namespace winrt { namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T>
-struct impl_VectorIterator : ImplementsDefault<IIterator<T>>
+struct impl_VectorIterator : impl::implements<IIterator<T>>
 {
-	Windows::Foundation::Collections::IVectorView<T> v;
+	IVectorView<T> v;
 	unsigned i = 0;
 
-	impl_VectorIterator(AbiArgIn<IVectorView<T>> other)
+	impl_VectorIterator(abi_arg_in<IVectorView<T>> other)
 	{
 		copy(v, other);
 	}
 
-	virtual HRESULT __stdcall get_Current(AbiArgOut<T> current) noexcept override
+	virtual HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept override
 	{
 		return v->abi_GetAt(i, current);
 	}
 
-	virtual HRESULT __stdcall get_HasCurrent(boolean * hasCurrent) noexcept override
+	virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept override
 	{
 		return call([&]
 		{
@@ -25,7 +25,7 @@ struct impl_VectorIterator : ImplementsDefault<IIterator<T>>
 		});
 	}
 
-	virtual HRESULT __stdcall abi_MoveNext(boolean * hasCurrent) noexcept override
+	virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept override
 	{
 		return call([&]
 		{
@@ -41,27 +41,30 @@ struct impl_VectorIterator : ImplementsDefault<IIterator<T>>
 		});
 	}
 
-	virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, AbiArgOut<T> /*value*/, unsigned * /*actual*/) noexcept override
+	virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, abi_arg_out<T> /*value*/, unsigned * /*actual*/) noexcept override
 	{
 		return E_NOTIMPL;
 	}
 };
 
 template <typename T>
-struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
+struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 {
 	std::vector<T> v;
 
-	template <typename ... Args>
-	impl_Vector(Args && ... args) :
-		v(std::forward(args) ...)
+	impl_Vector(std::vector<T> const & other) :
+		v(other)
 	{}
 
-	virtual HRESULT __stdcall abi_GetAt(unsigned /*index*/, AbiArgOut<T> /*item*/) noexcept override
+	impl_Vector(std::vector<T> && other) :
+		v(std::move(other))
+	{}
+
+	virtual HRESULT __stdcall abi_GetAt(unsigned index, abi_arg_out<T> item) noexcept override
 	{
 		return call([&]
 		{
-			//CopyToAbi(*item, v.at(index));
+			copy(*item, v.at(index));
 		});
 	}
 
@@ -71,40 +74,40 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetView(AbiArgOut<IVectorView<T>> view) noexcept override
+	virtual HRESULT __stdcall abi_GetView(abi_arg_out<IVectorView<T>> view) noexcept override
 	{
 		*view = this;
 		static_cast<::IUnknown *>(*view)->AddRef();
 		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_IndexOf(AbiArgIn<T> /*value*/, unsigned * index, boolean * found) noexcept override
+	virtual HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, unsigned * index, bool * found) noexcept override
 	{
 		return call([&]
 		{
-			//*index = std::find(begin(v), end(v), Interop::Forward<T>(value)) - begin(v);
+			*index = std::find(begin(v), end(v), impl::forward<T>(value)) - begin(v);
 			*found = *index < v.size();
 		});
 	}
 
-	virtual HRESULT __stdcall abi_SetAt(unsigned /*index*/, AbiArgIn<T> /*item*/) noexcept override
+	virtual HRESULT __stdcall abi_SetAt(unsigned index, abi_arg_in<T> item) noexcept override
 	{
 		return call([&]
 		{
-			//CopyFromAbi(v.at(index), item);
+			copy(v.at(index), item);
 		});
 	}
 
-	virtual HRESULT __stdcall abi_InsertAt(unsigned index, AbiArgIn<T> /*item*/) noexcept override
+	virtual HRESULT __stdcall abi_InsertAt(unsigned index, abi_arg_in<T> item) noexcept override
 	{
 		if (index > v.size())
 		{
-			return E_FAIL;
+			return E_BOUNDS;
 		}
 
 		return call([&]
 		{
-			//CopyFromAbi(*v.emplace(begin(v) + index), item);
+			copy(*v.emplace(begin(v) + index), item);
 		});
 	}
 
@@ -112,7 +115,7 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		if (index >= v.size())
 		{
-			return E_FAIL;
+			return E_BOUNDS;
 		}
 
 		return call([&]
@@ -121,12 +124,12 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 		});
 	}
 
-	virtual HRESULT __stdcall abi_Append(AbiArgIn<T> /*item*/) noexcept override
+	virtual HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept override
 	{
 		return call([&]
 		{
 			v.emplace_back();
-			//CopyFromAbi(v.back(), item);
+			copy(v.back(), item);
 		});
 	}
 
@@ -134,7 +137,7 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		if (v.empty())
 		{
-			return E_FAIL;
+			return E_BOUNDS;
 		}
 
 		return call([&]
@@ -149,7 +152,7 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, AbiArgOut<T> /*value*/, unsigned * actual) noexcept override
+	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, abi_arg_out<T> /*value*/, unsigned * actual) noexcept override
 	{
 		return call([&]
 		{
@@ -167,7 +170,7 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 		});
 	}
 
-	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, AbiArgOut<T> /*value*/) noexcept override
+	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, abi_arg_out<T> /*value*/) noexcept override
 	{
 		return call([&]
 		{
@@ -175,7 +178,7 @@ struct impl_Vector : ImplementsDefault<IVector<T>, IVectorView<T>, IIterable<T>>
 		});
 	}
 
-	virtual HRESULT __stdcall abi_First(Abi<IIterator<T>> ** first) noexcept override
+	virtual HRESULT __stdcall abi_First(abi_arg_out<IIterator<T>> first) noexcept override
 	{
 		return call([&]
 		{

@@ -319,7 +319,7 @@ public:
 	{
 		bool found = false;
 		check(shim()->abi_IndexOf(get(value), &index, &found));
-		return 0 != found;
+		return found;
 	}
 };
 
@@ -355,7 +355,7 @@ public:
 	{
 		bool found = false;
 		check(shim()->abi_IndexOf(get(value), &index, &found));
-		return 0 != found;
+		return found;
 	}
 
 	void SetAt(unsigned const index, T const & value) const
@@ -414,7 +414,7 @@ public:
 	{
 		bool found = false;
 		check(shim()->abi_HasKey(get(key), &found));
-		return 0 != found;
+		return found;
 	}
 
 	void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
@@ -448,7 +448,7 @@ public:
 	{
 		bool found = false;
 		check(shim()->abi_HasKey(get(key), &found));
-		return 0 != found;
+		return found;
 	}
 
 	IMapView<K, V> GetView() const
@@ -462,7 +462,7 @@ public:
 	{
 		bool replaced = false;
 		check(shim()->abi_Insert(get(key), get(value), &replaced));
-		return 0 != replaced;
+		return replaced;
 	}
 
 	void Remove(K const & key) const

@@ -52,6 +52,11 @@ inline void check(HRESULT const result)
 		throw std::bad_alloc();
 	}
 
+	if (E_BOUNDS == result)
+	{
+		throw std::out_of_range("");
+	}
+
 	throw Exception(result);
 }
 
@@ -69,6 +74,10 @@ HRESULT call(T inner) noexcept
 	catch (std::bad_alloc const &)
 	{
 		return E_OUTOFMEMORY;
+	}
+	catch (std::out_of_range const &)
+	{
+		return E_BOUNDS;
 	}
 	catch (std::exception const &)
 	{
