@@ -1,11 +1,10 @@
 
-template <typename T> struct impl_% : impl::implements<%>
+template <typename T> struct impl_% : impl::implements<%>, T
 {
-	impl_%(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_%(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(%) noexcept override
 	{
-		return call([&]{ m_handler(%); });
+		return call([&]{ (*this)(%); });
 	}
 };

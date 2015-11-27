@@ -5,14 +5,13 @@
 
 namespace winrt { namespace Windows { namespace ApplicationModel { namespace Background {
 
-template <typename T> struct impl_BackgroundTaskCanceledEventHandler : impl::implements<IBackgroundTaskCanceledEventHandler>
+template <typename T> struct impl_BackgroundTaskCanceledEventHandler : impl::implements<IBackgroundTaskCanceledEventHandler>, T
 {
-	impl_BackgroundTaskCanceledEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_BackgroundTaskCanceledEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(sender), reason); });
+		return call([&]{ (*this)(impl::forward<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(sender), reason); });
 	}
 };
 
@@ -21,14 +20,13 @@ template <typename T> IBackgroundTaskCanceledEventHandler BackgroundTaskCanceled
 	return make<impl_BackgroundTaskCanceledEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_BackgroundTaskProgressEventHandler : impl::implements<IBackgroundTaskProgressEventHandler>
+template <typename T> struct impl_BackgroundTaskProgressEventHandler : impl::implements<IBackgroundTaskProgressEventHandler>, T
 {
-	impl_BackgroundTaskProgressEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_BackgroundTaskProgressEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs> args) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(sender), impl::forward<Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs>(args)); });
+		return call([&]{ (*this)(impl::forward<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(sender), impl::forward<Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs>(args)); });
 	}
 };
 
@@ -37,14 +35,13 @@ template <typename T> IBackgroundTaskProgressEventHandler BackgroundTaskProgress
 	return make<impl_BackgroundTaskProgressEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_BackgroundTaskCompletedEventHandler : impl::implements<IBackgroundTaskCompletedEventHandler>
+template <typename T> struct impl_BackgroundTaskCompletedEventHandler : impl::implements<IBackgroundTaskCompletedEventHandler>, T
 {
-	impl_BackgroundTaskCompletedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_BackgroundTaskCompletedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> args) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(sender), impl::forward<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs>(args)); });
+		return call([&]{ (*this)(impl::forward<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(sender), impl::forward<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs>(args)); });
 	}
 };
 
@@ -57,14 +54,13 @@ template <typename T> IBackgroundTaskCompletedEventHandler BackgroundTaskComplet
 
 namespace winrt { namespace Windows { namespace ApplicationModel { namespace DataTransfer {
 
-template <typename T> struct impl_DataProviderHandler : impl::implements<IDataProviderHandler>
+template <typename T> struct impl_DataProviderHandler : impl::implements<IDataProviderHandler>, T
 {
-	impl_DataProviderHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DataProviderHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::DataTransfer::IDataProviderRequest> request) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::ApplicationModel::DataTransfer::DataProviderRequest>(request)); });
+		return call([&]{ (*this)(impl::forward<Windows::ApplicationModel::DataTransfer::DataProviderRequest>(request)); });
 	}
 };
 
@@ -77,14 +73,13 @@ template <typename T> IDataProviderHandler DataProviderHandler(T handler)
 
 namespace winrt { namespace Windows { namespace ApplicationModel { namespace Store {
 
-template <typename T> struct impl_LicenseChangedEventHandler : impl::implements<ILicenseChangedEventHandler>
+template <typename T> struct impl_LicenseChangedEventHandler : impl::implements<ILicenseChangedEventHandler>, T
 {
-	impl_LicenseChangedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_LicenseChangedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke() noexcept override
 	{
-		return call([&]{ m_handler(); });
+		return call([&]{ (*this)(); });
 	}
 };
 
@@ -97,14 +92,13 @@ template <typename T> ILicenseChangedEventHandler LicenseChangedEventHandler(T h
 
 namespace winrt { namespace Windows { namespace Data { namespace Text {
 
-template <typename T> struct impl_WordSegmentsTokenizingHandler : impl::implements<IWordSegmentsTokenizingHandler>
+template <typename T> struct impl_WordSegmentsTokenizingHandler : impl::implements<IWordSegmentsTokenizingHandler>, T
 {
-	impl_WordSegmentsTokenizingHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_WordSegmentsTokenizingHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> precedingWords, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> words) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>>(precedingWords), impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>>(words)); });
+		return call([&]{ (*this)(impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>>(precedingWords), impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>>(words)); });
 	}
 };
 
@@ -113,14 +107,13 @@ template <typename T> IWordSegmentsTokenizingHandler WordSegmentsTokenizingHandl
 	return make<impl_WordSegmentsTokenizingHandler<T>>(handler);
 }
 
-template <typename T> struct impl_SelectableWordSegmentsTokenizingHandler : impl::implements<ISelectableWordSegmentsTokenizingHandler>
+template <typename T> struct impl_SelectableWordSegmentsTokenizingHandler : impl::implements<ISelectableWordSegmentsTokenizingHandler>, T
 {
-	impl_SelectableWordSegmentsTokenizingHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_SelectableWordSegmentsTokenizingHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> precedingWords, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> words) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>>(precedingWords), impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>>(words)); });
+		return call([&]{ (*this)(impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>>(precedingWords), impl::forward<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>>(words)); });
 	}
 };
 
@@ -133,14 +126,13 @@ template <typename T> ISelectableWordSegmentsTokenizingHandler SelectableWordSeg
 
 namespace winrt { namespace Windows { namespace Devices { namespace Perception { namespace Provider {
 
-template <typename T> struct impl_PerceptionStartFaceAuthenticationHandler : impl::implements<IPerceptionStartFaceAuthenticationHandler>
+template <typename T> struct impl_PerceptionStartFaceAuthenticationHandler : impl::implements<IPerceptionStartFaceAuthenticationHandler>, T
 {
-	impl_PerceptionStartFaceAuthenticationHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_PerceptionStartFaceAuthenticationHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender, bool * result) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>(sender)); });
 	}
 };
 
@@ -149,14 +141,13 @@ template <typename T> IPerceptionStartFaceAuthenticationHandler PerceptionStartF
 	return make<impl_PerceptionStartFaceAuthenticationHandler<T>>(handler);
 }
 
-template <typename T> struct impl_PerceptionStopFaceAuthenticationHandler : impl::implements<IPerceptionStopFaceAuthenticationHandler>
+template <typename T> struct impl_PerceptionStopFaceAuthenticationHandler : impl::implements<IPerceptionStopFaceAuthenticationHandler>, T
 {
-	impl_PerceptionStopFaceAuthenticationHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_PerceptionStopFaceAuthenticationHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>(sender)); });
 	}
 };
 
@@ -169,14 +160,13 @@ template <typename T> IPerceptionStopFaceAuthenticationHandler PerceptionStopFac
 
 namespace winrt { namespace Windows { namespace Devices { namespace SmartCards {
 
-template <typename T> struct impl_SmartCardPinResetHandler : impl::implements<ISmartCardPinResetHandler>
+template <typename T> struct impl_SmartCardPinResetHandler : impl::implements<ISmartCardPinResetHandler>, T
 {
-	impl_SmartCardPinResetHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_SmartCardPinResetHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::SmartCards::ISmartCardProvisioning> sender, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinResetRequest> request) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Devices::SmartCards::SmartCardProvisioning>(sender), impl::forward<Windows::Devices::SmartCards::SmartCardPinResetRequest>(request)); });
+		return call([&]{ (*this)(impl::forward<Windows::Devices::SmartCards::SmartCardProvisioning>(sender), impl::forward<Windows::Devices::SmartCards::SmartCardPinResetRequest>(request)); });
 	}
 };
 
@@ -189,14 +179,13 @@ template <typename T> ISmartCardPinResetHandler SmartCardPinResetHandler(T handl
 
 namespace winrt { namespace Windows { namespace Foundation {
 
-template <typename T> struct impl_AsyncActionCompletedHandler : impl::implements<IAsyncActionCompletedHandler>
+template <typename T> struct impl_AsyncActionCompletedHandler : impl::implements<IAsyncActionCompletedHandler>, T
 {
-	impl_AsyncActionCompletedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_AsyncActionCompletedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncAction> asyncInfo, AsyncStatus asyncStatus) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Foundation::IAsyncAction>(asyncInfo), asyncStatus); });
+		return call([&]{ (*this)(impl::forward<Windows::Foundation::IAsyncAction>(asyncInfo), asyncStatus); });
 	}
 };
 
@@ -205,14 +194,13 @@ template <typename T> IAsyncActionCompletedHandler AsyncActionCompletedHandler(T
 	return make<impl_AsyncActionCompletedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_DeferralCompletedHandler : impl::implements<IDeferralCompletedHandler>
+template <typename T> struct impl_DeferralCompletedHandler : impl::implements<IDeferralCompletedHandler>, T
 {
-	impl_DeferralCompletedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DeferralCompletedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke() noexcept override
 	{
-		return call([&]{ m_handler(); });
+		return call([&]{ (*this)(); });
 	}
 };
 
@@ -225,14 +213,13 @@ template <typename T> IDeferralCompletedHandler DeferralCompletedHandler(T handl
 
 namespace winrt { namespace Windows { namespace Gaming { namespace Preview { namespace GamesEnumeration {
 
-template <typename T> struct impl_GameListChangedEventHandler : impl::implements<IGameListChangedEventHandler>
+template <typename T> struct impl_GameListChangedEventHandler : impl::implements<IGameListChangedEventHandler>, T
 {
-	impl_GameListChangedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_GameListChangedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Gaming::Preview::GamesEnumeration::IGameListEntry> game) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>(game)); });
+		return call([&]{ (*this)(impl::forward<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>(game)); });
 	}
 };
 
@@ -241,14 +228,13 @@ template <typename T> IGameListChangedEventHandler GameListChangedEventHandler(T
 	return make<impl_GameListChangedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_GameListRemovedEventHandler : impl::implements<IGameListRemovedEventHandler>
+template <typename T> struct impl_GameListRemovedEventHandler : impl::implements<IGameListRemovedEventHandler>, T
 {
-	impl_GameListRemovedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_GameListRemovedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(HSTRING identifier) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<String>(identifier)); });
+		return call([&]{ (*this)(impl::forward<String>(identifier)); });
 	}
 };
 
@@ -261,14 +247,13 @@ template <typename T> IGameListRemovedEventHandler GameListRemovedEventHandler(T
 
 namespace winrt { namespace Windows { namespace Graphics { namespace Printing {
 
-template <typename T> struct impl_PrintTaskSourceRequestedHandler : impl::implements<IPrintTaskSourceRequestedHandler>
+template <typename T> struct impl_PrintTaskSourceRequestedHandler : impl::implements<IPrintTaskSourceRequestedHandler>, T
 {
-	impl_PrintTaskSourceRequestedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_PrintTaskSourceRequestedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs> args) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>(args)); });
+		return call([&]{ (*this)(impl::forward<Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>(args)); });
 	}
 };
 
@@ -281,14 +266,13 @@ template <typename T> IPrintTaskSourceRequestedHandler PrintTaskSourceRequestedH
 
 namespace winrt { namespace Windows { namespace Graphics { namespace Printing3D {
 
-template <typename T> struct impl_Print3DTaskSourceRequestedHandler : impl::implements<IPrint3DTaskSourceRequestedHandler>
+template <typename T> struct impl_Print3DTaskSourceRequestedHandler : impl::implements<IPrint3DTaskSourceRequestedHandler>, T
 {
-	impl_Print3DTaskSourceRequestedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_Print3DTaskSourceRequestedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs> args) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs>(args)); });
+		return call([&]{ (*this)(impl::forward<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs>(args)); });
 	}
 };
 
@@ -301,14 +285,13 @@ template <typename T> IPrint3DTaskSourceRequestedHandler Print3DTaskSourceReques
 
 namespace winrt { namespace Windows { namespace Media { namespace Capture {
 
-template <typename T> struct impl_MediaCaptureFailedEventHandler : impl::implements<IMediaCaptureFailedEventHandler>
+template <typename T> struct impl_MediaCaptureFailedEventHandler : impl::implements<IMediaCaptureFailedEventHandler>, T
 {
-	impl_MediaCaptureFailedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_MediaCaptureFailedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Capture::IMediaCapture> sender, abi_arg_in<Windows::Media::Capture::IMediaCaptureFailedEventArgs> errorEventArgs) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Capture::MediaCapture>(sender), impl::forward<Windows::Media::Capture::MediaCaptureFailedEventArgs>(errorEventArgs)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Capture::MediaCapture>(sender), impl::forward<Windows::Media::Capture::MediaCaptureFailedEventArgs>(errorEventArgs)); });
 	}
 };
 
@@ -317,14 +300,13 @@ template <typename T> IMediaCaptureFailedEventHandler MediaCaptureFailedEventHan
 	return make<impl_MediaCaptureFailedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_RecordLimitationExceededEventHandler : impl::implements<IRecordLimitationExceededEventHandler>
+template <typename T> struct impl_RecordLimitationExceededEventHandler : impl::implements<IRecordLimitationExceededEventHandler>, T
 {
-	impl_RecordLimitationExceededEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_RecordLimitationExceededEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Capture::IMediaCapture> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Capture::MediaCapture>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Capture::MediaCapture>(sender)); });
 	}
 };
 
@@ -337,14 +319,13 @@ template <typename T> IRecordLimitationExceededEventHandler RecordLimitationExce
 
 namespace winrt { namespace Windows { namespace Media { namespace Devices {
 
-template <typename T> struct impl_CallControlEventHandler : impl::implements<ICallControlEventHandler>
+template <typename T> struct impl_CallControlEventHandler : impl::implements<ICallControlEventHandler>, T
 {
-	impl_CallControlEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_CallControlEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Devices::ICallControl> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Devices::CallControl>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Devices::CallControl>(sender)); });
 	}
 };
 
@@ -353,14 +334,13 @@ template <typename T> ICallControlEventHandler CallControlEventHandler(T handler
 	return make<impl_CallControlEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_DialRequestedEventHandler : impl::implements<IDialRequestedEventHandler>
+template <typename T> struct impl_DialRequestedEventHandler : impl::implements<IDialRequestedEventHandler>, T
 {
-	impl_DialRequestedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DialRequestedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Devices::ICallControl> sender, abi_arg_in<Windows::Media::Devices::IDialRequestedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::DialRequestedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::DialRequestedEventArgs>(e)); });
 	}
 };
 
@@ -369,14 +349,13 @@ template <typename T> IDialRequestedEventHandler DialRequestedEventHandler(T han
 	return make<impl_DialRequestedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_RedialRequestedEventHandler : impl::implements<IRedialRequestedEventHandler>
+template <typename T> struct impl_RedialRequestedEventHandler : impl::implements<IRedialRequestedEventHandler>, T
 {
-	impl_RedialRequestedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_RedialRequestedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Devices::ICallControl> sender, abi_arg_in<Windows::Media::Devices::IRedialRequestedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::RedialRequestedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::RedialRequestedEventArgs>(e)); });
 	}
 };
 
@@ -385,14 +364,13 @@ template <typename T> IRedialRequestedEventHandler RedialRequestedEventHandler(T
 	return make<impl_RedialRequestedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_KeypadPressedEventHandler : impl::implements<IKeypadPressedEventHandler>
+template <typename T> struct impl_KeypadPressedEventHandler : impl::implements<IKeypadPressedEventHandler>, T
 {
-	impl_KeypadPressedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_KeypadPressedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Devices::ICallControl> sender, abi_arg_in<Windows::Media::Devices::IKeypadPressedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::KeypadPressedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Devices::CallControl>(sender), impl::forward<Windows::Media::Devices::KeypadPressedEventArgs>(e)); });
 	}
 };
 
@@ -405,14 +383,13 @@ template <typename T> IKeypadPressedEventHandler KeypadPressedEventHandler(T han
 
 namespace winrt { namespace Windows { namespace Media { namespace Protection {
 
-template <typename T> struct impl_ServiceRequestedEventHandler : impl::implements<IServiceRequestedEventHandler>
+template <typename T> struct impl_ServiceRequestedEventHandler : impl::implements<IServiceRequestedEventHandler>, T
 {
-	impl_ServiceRequestedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ServiceRequestedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Protection::IMediaProtectionManager> sender, abi_arg_in<Windows::Media::Protection::IServiceRequestedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender), impl::forward<Windows::Media::Protection::ServiceRequestedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender), impl::forward<Windows::Media::Protection::ServiceRequestedEventArgs>(e)); });
 	}
 };
 
@@ -421,14 +398,13 @@ template <typename T> IServiceRequestedEventHandler ServiceRequestedEventHandler
 	return make<impl_ServiceRequestedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_RebootNeededEventHandler : impl::implements<IRebootNeededEventHandler>
+template <typename T> struct impl_RebootNeededEventHandler : impl::implements<IRebootNeededEventHandler>, T
 {
-	impl_RebootNeededEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_RebootNeededEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Protection::IMediaProtectionManager> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender)); });
 	}
 };
 
@@ -437,14 +413,13 @@ template <typename T> IRebootNeededEventHandler RebootNeededEventHandler(T handl
 	return make<impl_RebootNeededEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_ComponentLoadFailedEventHandler : impl::implements<IComponentLoadFailedEventHandler>
+template <typename T> struct impl_ComponentLoadFailedEventHandler : impl::implements<IComponentLoadFailedEventHandler>, T
 {
-	impl_ComponentLoadFailedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ComponentLoadFailedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Protection::IMediaProtectionManager> sender, abi_arg_in<Windows::Media::Protection::IComponentLoadFailedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender), impl::forward<Windows::Media::Protection::ComponentLoadFailedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Protection::MediaProtectionManager>(sender), impl::forward<Windows::Media::Protection::ComponentLoadFailedEventArgs>(e)); });
 	}
 };
 
@@ -457,14 +432,13 @@ template <typename T> IComponentLoadFailedEventHandler ComponentLoadFailedEventH
 
 namespace winrt { namespace Windows { namespace Media { namespace Streaming {
 
-template <typename T> struct impl_DeviceControllerFinderHandler : impl::implements<IDeviceControllerFinderHandler>
+template <typename T> struct impl_DeviceControllerFinderHandler : impl::implements<IDeviceControllerFinderHandler>, T
 {
-	impl_DeviceControllerFinderHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DeviceControllerFinderHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Streaming::IDeviceController> sender, HSTRING uniqueDeviceName, abi_arg_in<Windows::Media::Streaming::IBasicDevice> device) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Streaming::IDeviceController>(sender), impl::forward<String>(uniqueDeviceName), impl::forward<Windows::Media::Streaming::IBasicDevice>(device)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Streaming::IDeviceController>(sender), impl::forward<String>(uniqueDeviceName), impl::forward<Windows::Media::Streaming::IBasicDevice>(device)); });
 	}
 };
 
@@ -473,14 +447,13 @@ template <typename T> IDeviceControllerFinderHandler DeviceControllerFinderHandl
 	return make<impl_DeviceControllerFinderHandler<T>>(handler);
 }
 
-template <typename T> struct impl_ConnectionStatusHandler : impl::implements<IConnectionStatusHandler>
+template <typename T> struct impl_ConnectionStatusHandler : impl::implements<IConnectionStatusHandler>, T
 {
-	impl_ConnectionStatusHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ConnectionStatusHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Streaming::IBasicDevice> sender, Windows::Media::Streaming::ConnectionStatus arg) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Streaming::IBasicDevice>(sender), arg); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Streaming::IBasicDevice>(sender), arg); });
 	}
 };
 
@@ -489,14 +462,13 @@ template <typename T> IConnectionStatusHandler ConnectionStatusHandler(T handler
 	return make<impl_ConnectionStatusHandler<T>>(handler);
 }
 
-template <typename T> struct impl_TransportParametersUpdateHandler : impl::implements<ITransportParametersUpdateHandler>
+template <typename T> struct impl_TransportParametersUpdateHandler : impl::implements<ITransportParametersUpdateHandler>, T
 {
-	impl_TransportParametersUpdateHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_TransportParametersUpdateHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Streaming::IMediaRenderer> sender, abi_arg_in<Windows::Media::Streaming::ITransportParameters> arg) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Streaming::IMediaRenderer>(sender), impl::forward<Windows::Media::Streaming::ITransportParameters>(arg)); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Streaming::IMediaRenderer>(sender), impl::forward<Windows::Media::Streaming::ITransportParameters>(arg)); });
 	}
 };
 
@@ -505,14 +477,13 @@ template <typename T> ITransportParametersUpdateHandler TransportParametersUpdat
 	return make<impl_TransportParametersUpdateHandler<T>>(handler);
 }
 
-template <typename T> struct impl_RenderingParametersUpdateHandler : impl::implements<IRenderingParametersUpdateHandler>
+template <typename T> struct impl_RenderingParametersUpdateHandler : impl::implements<IRenderingParametersUpdateHandler>, T
 {
-	impl_RenderingParametersUpdateHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_RenderingParametersUpdateHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Streaming::IMediaRenderer> sender, Windows::Media::Streaming::RenderingParameters arg) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Media::Streaming::IMediaRenderer>(sender), arg); });
+		return call([&]{ (*this)(impl::forward<Windows::Media::Streaming::IMediaRenderer>(sender), arg); });
 	}
 };
 
@@ -525,14 +496,13 @@ template <typename T> IRenderingParametersUpdateHandler RenderingParametersUpdat
 
 namespace winrt { namespace Windows { namespace Networking { namespace Connectivity {
 
-template <typename T> struct impl_NetworkStatusChangedEventHandler : impl::implements<INetworkStatusChangedEventHandler>
+template <typename T> struct impl_NetworkStatusChangedEventHandler : impl::implements<INetworkStatusChangedEventHandler>, T
 {
-	impl_NetworkStatusChangedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_NetworkStatusChangedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<IInspectable>(sender)); });
+		return call([&]{ (*this)(impl::forward<IInspectable>(sender)); });
 	}
 };
 
@@ -545,14 +515,13 @@ template <typename T> INetworkStatusChangedEventHandler NetworkStatusChangedEven
 
 namespace winrt { namespace Windows { namespace Networking { namespace Proximity {
 
-template <typename T> struct impl_MessageReceivedHandler : impl::implements<IMessageReceivedHandler>
+template <typename T> struct impl_MessageReceivedHandler : impl::implements<IMessageReceivedHandler>, T
 {
-	impl_MessageReceivedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_MessageReceivedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, abi_arg_in<Windows::Networking::Proximity::IProximityMessage> message) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender), impl::forward<Windows::Networking::Proximity::ProximityMessage>(message)); });
+		return call([&]{ (*this)(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender), impl::forward<Windows::Networking::Proximity::ProximityMessage>(message)); });
 	}
 };
 
@@ -561,14 +530,13 @@ template <typename T> IMessageReceivedHandler MessageReceivedHandler(T handler)
 	return make<impl_MessageReceivedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_MessageTransmittedHandler : impl::implements<IMessageTransmittedHandler>
+template <typename T> struct impl_MessageTransmittedHandler : impl::implements<IMessageTransmittedHandler>, T
 {
-	impl_MessageTransmittedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_MessageTransmittedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, long long messageId) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender), messageId); });
+		return call([&]{ (*this)(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender), messageId); });
 	}
 };
 
@@ -577,14 +545,13 @@ template <typename T> IMessageTransmittedHandler MessageTransmittedHandler(T han
 	return make<impl_MessageTransmittedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_DeviceArrivedEventHandler : impl::implements<IDeviceArrivedEventHandler>
+template <typename T> struct impl_DeviceArrivedEventHandler : impl::implements<IDeviceArrivedEventHandler>, T
 {
-	impl_DeviceArrivedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DeviceArrivedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender)); });
 	}
 };
 
@@ -593,14 +560,13 @@ template <typename T> IDeviceArrivedEventHandler DeviceArrivedEventHandler(T han
 	return make<impl_DeviceArrivedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_DeviceDepartedEventHandler : impl::implements<IDeviceDepartedEventHandler>
+template <typename T> struct impl_DeviceDepartedEventHandler : impl::implements<IDeviceDepartedEventHandler>, T
 {
-	impl_DeviceDepartedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DeviceDepartedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender)); });
+		return call([&]{ (*this)(impl::forward<Windows::Networking::Proximity::ProximityDevice>(sender)); });
 	}
 };
 
@@ -613,14 +579,13 @@ template <typename T> IDeviceDepartedEventHandler DeviceDepartedEventHandler(T h
 
 namespace winrt { namespace Windows { namespace Storage {
 
-template <typename T> struct impl_StreamedFileDataRequestedHandler : impl::implements<IStreamedFileDataRequestedHandler>
+template <typename T> struct impl_StreamedFileDataRequestedHandler : impl::implements<IStreamedFileDataRequestedHandler>, T
 {
-	impl_StreamedFileDataRequestedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_StreamedFileDataRequestedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Storage::Streams::IOutputStream> stream) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Storage::StreamedFileDataRequest>(stream)); });
+		return call([&]{ (*this)(impl::forward<Windows::Storage::StreamedFileDataRequest>(stream)); });
 	}
 };
 
@@ -629,14 +594,13 @@ template <typename T> IStreamedFileDataRequestedHandler StreamedFileDataRequeste
 	return make<impl_StreamedFileDataRequestedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_ApplicationDataSetVersionHandler : impl::implements<IApplicationDataSetVersionHandler>
+template <typename T> struct impl_ApplicationDataSetVersionHandler : impl::implements<IApplicationDataSetVersionHandler>, T
 {
-	impl_ApplicationDataSetVersionHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ApplicationDataSetVersionHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Storage::ISetVersionRequest> setVersionRequest) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Storage::SetVersionRequest>(setVersionRequest)); });
+		return call([&]{ (*this)(impl::forward<Windows::Storage::SetVersionRequest>(setVersionRequest)); });
 	}
 };
 
@@ -649,14 +613,13 @@ template <typename T> IApplicationDataSetVersionHandler ApplicationDataSetVersio
 
 namespace winrt { namespace Windows { namespace System { namespace Threading {
 
-template <typename T> struct impl_TimerElapsedHandler : impl::implements<ITimerElapsedHandler>
+template <typename T> struct impl_TimerElapsedHandler : impl::implements<ITimerElapsedHandler>, T
 {
-	impl_TimerElapsedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_TimerElapsedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::System::Threading::IThreadPoolTimer> timer) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::System::Threading::ThreadPoolTimer>(timer)); });
+		return call([&]{ (*this)(impl::forward<Windows::System::Threading::ThreadPoolTimer>(timer)); });
 	}
 };
 
@@ -665,14 +628,13 @@ template <typename T> ITimerElapsedHandler TimerElapsedHandler(T handler)
 	return make<impl_TimerElapsedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_TimerDestroyedHandler : impl::implements<ITimerDestroyedHandler>
+template <typename T> struct impl_TimerDestroyedHandler : impl::implements<ITimerDestroyedHandler>, T
 {
-	impl_TimerDestroyedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_TimerDestroyedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::System::Threading::IThreadPoolTimer> timer) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::System::Threading::ThreadPoolTimer>(timer)); });
+		return call([&]{ (*this)(impl::forward<Windows::System::Threading::ThreadPoolTimer>(timer)); });
 	}
 };
 
@@ -681,14 +643,13 @@ template <typename T> ITimerDestroyedHandler TimerDestroyedHandler(T handler)
 	return make<impl_TimerDestroyedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_WorkItemHandler : impl::implements<IWorkItemHandler>
+template <typename T> struct impl_WorkItemHandler : impl::implements<IWorkItemHandler>, T
 {
-	impl_WorkItemHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_WorkItemHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncAction> operation) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::Foundation::IAsyncAction>(operation)); });
+		return call([&]{ (*this)(impl::forward<Windows::Foundation::IAsyncAction>(operation)); });
 	}
 };
 
@@ -701,14 +662,13 @@ template <typename T> IWorkItemHandler WorkItemHandler(T handler)
 
 namespace winrt { namespace Windows { namespace System { namespace Threading { namespace Core {
 
-template <typename T> struct impl_SignalHandler : impl::implements<ISignalHandler>
+template <typename T> struct impl_SignalHandler : impl::implements<ISignalHandler>, T
 {
-	impl_SignalHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_SignalHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::System::Threading::Core::ISignalNotifier> signalNotifier, bool timedOut) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::System::Threading::Core::SignalNotifier>(signalNotifier), timedOut); });
+		return call([&]{ (*this)(impl::forward<Windows::System::Threading::Core::SignalNotifier>(signalNotifier), timedOut); });
 	}
 };
 
@@ -721,14 +681,13 @@ template <typename T> ISignalHandler SignalHandler(T handler)
 
 namespace winrt { namespace Windows { namespace UI { namespace ApplicationSettings {
 
-template <typename T> struct impl_WebAccountProviderCommandInvokedHandler : impl::implements<IWebAccountProviderCommandInvokedHandler>
+template <typename T> struct impl_WebAccountProviderCommandInvokedHandler : impl::implements<IWebAccountProviderCommandInvokedHandler>, T
 {
-	impl_WebAccountProviderCommandInvokedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_WebAccountProviderCommandInvokedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountProviderCommand> command) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::UI::ApplicationSettings::WebAccountProviderCommand>(command)); });
+		return call([&]{ (*this)(impl::forward<Windows::UI::ApplicationSettings::WebAccountProviderCommand>(command)); });
 	}
 };
 
@@ -737,14 +696,13 @@ template <typename T> IWebAccountProviderCommandInvokedHandler WebAccountProvide
 	return make<impl_WebAccountProviderCommandInvokedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_WebAccountCommandInvokedHandler : impl::implements<IWebAccountCommandInvokedHandler>
+template <typename T> struct impl_WebAccountCommandInvokedHandler : impl::implements<IWebAccountCommandInvokedHandler>, T
 {
-	impl_WebAccountCommandInvokedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_WebAccountCommandInvokedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountCommand> command, abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs> args) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::UI::ApplicationSettings::WebAccountCommand>(command), impl::forward<Windows::UI::ApplicationSettings::WebAccountInvokedArgs>(args)); });
+		return call([&]{ (*this)(impl::forward<Windows::UI::ApplicationSettings::WebAccountCommand>(command), impl::forward<Windows::UI::ApplicationSettings::WebAccountInvokedArgs>(args)); });
 	}
 };
 
@@ -757,14 +715,13 @@ template <typename T> IWebAccountCommandInvokedHandler WebAccountCommandInvokedH
 
 namespace winrt { namespace Windows { namespace UI { namespace Core {
 
-template <typename T> struct impl_DispatchedHandler : impl::implements<IDispatchedHandler>
+template <typename T> struct impl_DispatchedHandler : impl::implements<IDispatchedHandler>, T
 {
-	impl_DispatchedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_DispatchedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke() noexcept override
 	{
-		return call([&]{ m_handler(); });
+		return call([&]{ (*this)(); });
 	}
 };
 
@@ -773,14 +730,13 @@ template <typename T> IDispatchedHandler DispatchedHandler(T handler)
 	return make<impl_DispatchedHandler<T>>(handler);
 }
 
-template <typename T> struct impl_IdleDispatchedHandler : impl::implements<IIdleDispatchedHandler>
+template <typename T> struct impl_IdleDispatchedHandler : impl::implements<IIdleDispatchedHandler>, T
 {
-	impl_IdleDispatchedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_IdleDispatchedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Core::IIdleDispatchedHandlerArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::UI::Core::IdleDispatchedHandlerArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<Windows::UI::Core::IdleDispatchedHandlerArgs>(e)); });
 	}
 };
 
@@ -793,14 +749,13 @@ template <typename T> IIdleDispatchedHandler IdleDispatchedHandler(T handler)
 
 namespace winrt { namespace Windows { namespace UI { namespace Popups {
 
-template <typename T> struct impl_UICommandInvokedHandler : impl::implements<IUICommandInvokedHandler>
+template <typename T> struct impl_UICommandInvokedHandler : impl::implements<IUICommandInvokedHandler>, T
 {
-	impl_UICommandInvokedHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_UICommandInvokedHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Popups::IUICommand> command) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<Windows::UI::Popups::IUICommand>(command)); });
+		return call([&]{ (*this)(impl::forward<Windows::UI::Popups::IUICommand>(command)); });
 	}
 };
 
@@ -813,14 +768,13 @@ template <typename T> IUICommandInvokedHandler UICommandInvokedHandler(T handler
 
 namespace winrt { namespace Windows { namespace UI { namespace WebUI {
 
-template <typename T> struct impl_ActivatedEventHandler : impl::implements<IActivatedEventHandler>
+template <typename T> struct impl_ActivatedEventHandler : impl::implements<IActivatedEventHandler>, T
 {
-	impl_ActivatedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ActivatedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> eventArgs) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<IInspectable>(sender), impl::forward<Windows::ApplicationModel::Activation::IActivatedEventArgs>(eventArgs)); });
+		return call([&]{ (*this)(impl::forward<IInspectable>(sender), impl::forward<Windows::ApplicationModel::Activation::IActivatedEventArgs>(eventArgs)); });
 	}
 };
 
@@ -829,14 +783,13 @@ template <typename T> IActivatedEventHandler ActivatedEventHandler(T handler)
 	return make<impl_ActivatedEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_ResumingEventHandler : impl::implements<IResumingEventHandler>
+template <typename T> struct impl_ResumingEventHandler : impl::implements<IResumingEventHandler>, T
 {
-	impl_ResumingEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_ResumingEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<IInspectable>(sender)); });
+		return call([&]{ (*this)(impl::forward<IInspectable>(sender)); });
 	}
 };
 
@@ -845,14 +798,13 @@ template <typename T> IResumingEventHandler ResumingEventHandler(T handler)
 	return make<impl_ResumingEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_SuspendingEventHandler : impl::implements<ISuspendingEventHandler>
+template <typename T> struct impl_SuspendingEventHandler : impl::implements<ISuspendingEventHandler>, T
 {
-	impl_SuspendingEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_SuspendingEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::ApplicationModel::ISuspendingEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<IInspectable>(sender), impl::forward<Windows::ApplicationModel::ISuspendingEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<IInspectable>(sender), impl::forward<Windows::ApplicationModel::ISuspendingEventArgs>(e)); });
 	}
 };
 
@@ -861,14 +813,13 @@ template <typename T> ISuspendingEventHandler SuspendingEventHandler(T handler)
 	return make<impl_SuspendingEventHandler<T>>(handler);
 }
 
-template <typename T> struct impl_NavigatedEventHandler : impl::implements<INavigatedEventHandler>
+template <typename T> struct impl_NavigatedEventHandler : impl::implements<INavigatedEventHandler>, T
 {
-	impl_NavigatedEventHandler(T handler) : m_handler(handler) {}
-	T m_handler;
+	impl_NavigatedEventHandler(T handler) : T(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::UI::WebUI::IWebUINavigatedEventArgs> e) noexcept override
 	{
-		return call([&]{ m_handler(impl::forward<IInspectable>(sender), impl::forward<Windows::UI::WebUI::IWebUINavigatedEventArgs>(e)); });
+		return call([&]{ (*this)(impl::forward<IInspectable>(sender), impl::forward<Windows::UI::WebUI::IWebUINavigatedEventArgs>(e)); });
 	}
 };
 

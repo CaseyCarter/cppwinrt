@@ -2303,16 +2303,15 @@ template <typename T> struct traits<Windows::Foundation::IReference<T>>
 namespace winrt { namespace Windows { namespace Foundation {
 
 template <typename TProgress, typename THandler>
-struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHandler<TProgress>>
+struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHandler<TProgress>>, THandler
 {
-	impl_AsyncActionProgressHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_AsyncActionProgressHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
+			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
 		});
 	}
 };
@@ -2324,16 +2323,15 @@ IAsyncActionProgressHandler<TProgress> AsyncActionProgressHandler(THandler handl
 }
 
 template <typename TProgress, typename THandler>
-struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncActionWithProgressCompletedHandler<TProgress>>
+struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncActionWithProgressCompletedHandler<TProgress>>, THandler
 {
-	impl_AsyncActionWithProgressCompletedHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_AsyncActionWithProgressCompletedHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
+			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
 		});
 	}
 };
@@ -2345,16 +2343,15 @@ IAsyncActionWithProgressCompletedHandler<TProgress> AsyncActionWithProgressCompl
 }
 
 template <typename TResult, typename TProgress, typename THandler>
-struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProgressHandler<TResult, TProgress>>
+struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProgressHandler<TResult, TProgress>>, THandler
 {
-	impl_AsyncOperationProgressHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_AsyncOperationProgressHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
+			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
 		});
 	}
 };
@@ -2366,16 +2363,15 @@ IAsyncOperationProgressHandler<TResult, TProgress> AsyncOperationProgressHandler
 }
 
 template <typename TResult, typename TProgress, typename THandler>
-struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>>, THandler
 {
-	impl_AsyncOperationWithProgressCompletedHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_AsyncOperationWithProgressCompletedHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
+			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
 		});
 	}
 };
@@ -2387,16 +2383,15 @@ IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> AsyncOperationWi
 }
 
 template <typename TResult, typename THandler>
-struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCompletedHandler<TResult>>
+struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCompletedHandler<TResult>>, THandler
 {
-	impl_AsyncOperationCompletedHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_AsyncOperationCompletedHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IAsyncOperation<TResult>>(sender), args);
+			(*this)(impl::forward<IAsyncOperation<TResult>>(sender), args);
 		});
 	}
 };
@@ -2408,16 +2403,15 @@ IAsyncOperationCompletedHandler<TResult> AsyncOperationCompletedHandler(THandler
 }
 
 template <typename TArgs, typename THandler>
-struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>
+struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>, THandler
 {
-	impl_EventHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_EventHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<TArgs> args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
+			(*this)(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
 		});
 	}
 };
@@ -2429,16 +2423,15 @@ IEventHandler<TArgs> EventHandler(THandler handler)
 }
 
 template <typename TSender, typename TArgs, typename THandler>
-struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>
+struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEventHandler<TSender, TArgs>>, THandler
 {
-	impl_TypedEventHandler(THandler handler) : m_handler(handler) {}
-	THandler m_handler;
+	impl_TypedEventHandler(THandler handler) : THandler(handler) {}
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
 	{
 		return call([&]
 		{
-			m_handler(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
+			(*this)(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
 		});
 	}
 };
