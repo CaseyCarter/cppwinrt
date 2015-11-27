@@ -557,7 +557,7 @@ struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHa
 	{
 		return call([&]
 		{
-			m_handler(forward<IAsyncActionWithProgress<TProgress>>(sender), forward<TProgress>(args));
+			m_handler(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
 		});
 	}
 };
@@ -578,7 +578,7 @@ struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncAct
 	{
 		return call([&]
 		{
-			m_handler(forward<IAsyncActionWithProgress<TProgress>>(sender), args);
+			m_handler(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
 		});
 	}
 };
@@ -599,7 +599,7 @@ struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProg
 	{
 		return call([&]
 		{
-			m_handler(forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), forward<TProgress>(args));
+			m_handler(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
 		});
 	}
 };
@@ -620,7 +620,7 @@ struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsync
 	{
 		return call([&]
 		{
-			m_handler(forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
+			m_handler(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
 		});
 	}
 };
@@ -641,7 +641,7 @@ struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCom
 	{
 		return call([&]
 		{
-			m_handler(forward<IAsyncOperation<TResult>>(sender), args);
+			m_handler(impl::forward<IAsyncOperation<TResult>>(sender), args);
 		});
 	}
 };
@@ -662,7 +662,7 @@ struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>
 	{
 		return call([&]
 		{
-			m_handler(forward<IInspectable>(sender), forward<TArgs>(args));
+			m_handler(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
 		});
 	}
 };
@@ -683,7 +683,7 @@ struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEven
 	{
 		return call([&]
 		{
-			m_handler(forward<TSender>(sender), forward<TArgs>(args));
+			m_handler(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
 		});
 	}
 };

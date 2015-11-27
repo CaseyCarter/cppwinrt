@@ -47,6 +47,33 @@ class no_ref : public T
 	unsigned long __stdcall Release();
 };
 
+template <typename To>
+struct lease : To
+{
+	template <typename From>
+	lease(From value) noexcept : To(nullptr)
+	{
+		*put(*static_cast<To *>(this)) = value;
+	}
+
+	~lease() noexcept
+	{
+		detach(*static_cast<To *>(this));
+	}
+};
+
+template <typename To, typename From, typename std::enable_if<std::is_pod<To>::value>::type * = nullptr>
+To forward(From value) noexcept
+{
+	return value;
+}
+
+template <typename To, typename From, typename std::enable_if<!std::is_pod<To>::value>::type * = nullptr>
+lease<To> forward(From value) noexcept
+{
+	return lease<To>(value);
+}
+
 template <typename T>
 class has_GetAt
 {
