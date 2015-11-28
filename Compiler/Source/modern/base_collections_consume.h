@@ -619,6 +619,10 @@ struct IVector :
 {
 	IVector(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
+
+	IVector(std::vector<T> const & other);
+	IVector(std::vector<T> && other);
+	IVector(std::initializer_list<T> other);
 };
 
 template <typename K, typename V>

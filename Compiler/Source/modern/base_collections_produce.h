@@ -70,7 +70,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall get_Size(unsigned * size) noexcept override
 	{
-		*size = v.size();
+		*size = static_cast<unsigned>(v.size());
 		return S_OK;
 	}
 
@@ -85,7 +85,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			*index = std::find(begin(v), end(v), impl::forward<T>(value)) - begin(v);
+			*index = static_cast<unsigned>(std::find(begin(v), end(v), impl::forward<T>(value)) - begin(v));
 			*found = *index < v.size();
 		});
 	}
@@ -156,7 +156,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			*actual = v.size() - startIndex;
+			*actual = static_cast<unsigned>(v.size() - startIndex);
 
 			if (*actual > capacity)
 			{
@@ -186,5 +186,11 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 		});
 	}
 };
+
+template <typename T> IVector<T>::IVector(std::vector<T> const & other) : IVector<T>(make<impl_Vector<int>>(other)) {}
+
+template <typename T> IVector<T>::IVector(std::vector<T> && other) : IVector<T>(make<impl_Vector<int>>(std::move(other))) {}
+
+template <typename T> IVector<T>::IVector(std::initializer_list<T> other) : IVector<T>(make<impl_Vector<int>>(other)) {}
 
 }}}}

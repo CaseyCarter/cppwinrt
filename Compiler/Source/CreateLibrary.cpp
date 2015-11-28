@@ -115,6 +115,7 @@ static void WriteBaseHeader()
 	Write(out, Strings::base_activation);
 	Write(out, Strings::base_generic);
 	Write(out, Strings::base_collections_consume);
+	Write(out, Strings::base_collections_produce);
 }
 
 static void WritePostHeader()
