@@ -36,6 +36,8 @@ enum class Token
     Enumeration      = 20,
     RuntimeClass     = 21,
     Structure        = 22,
+
+    ApiContract		 = 23
 };
 
 enum class Attribute
@@ -127,6 +129,7 @@ static Keyword const Keywords [] =
     { Token::Delegate,      "delegate"     },
     { Token::Requires,      "requires"     },
     { Token::Import,        "import"       },
+    { Token::ApiContract,   "apicontract"  },
 };
 
 static Fundamental const Fundamentals [] =
@@ -656,6 +659,7 @@ static void ParseAttribute(Scanner & scanner);
 static void ParseEnumeration(Scanner & scanner);
 static void ParseDelegate(Scanner & scanner);
 static void ParseStructure(Scanner & scanner);
+static void ParseApiContract(Scanner & scanner);
 
 static int s_indent;
 
@@ -983,16 +987,17 @@ static void Scan(Scanner & scanner)
         switch (token)
         {
             case Token::Import:         ParseImport(scanner);         break;
-            case Token::Namespace:      ParseOpenNamespace(scanner);            break;
+            case Token::Namespace:      ParseOpenNamespace(scanner);  break;
             case Token::RuntimeClass:   ParseRuntimeClass(scanner);   break;
-            case Token::RightBrace:     ParseCloseNamespace(scanner);           break;
+            case Token::RightBrace:     ParseCloseNamespace(scanner); break;
             case Token::Typedef:        ParseTypedef(scanner);        break;
             case Token::Interface:      ParseInterface(scanner);      break;
-            case Token::Declare:        ParseDeclare(scanner);                  break;
-            case Token::LeftBracket:    ParseAttribute(scanner);                break;
+            case Token::Declare:        ParseDeclare(scanner);        break;
+            case Token::LeftBracket:    ParseAttribute(scanner);      break;
             case Token::Enumeration:    ParseEnumeration(scanner);    break;
             case Token::Delegate:       ParseDelegate(scanner);       break;
             case Token::Structure:      ParseStructure(scanner);      break;
+            case Token::ApiContract:    ParseApiContract(scanner);    break;
 
             case Token::EndOfFile:      return;
 
@@ -1784,6 +1789,10 @@ static void ParseAttribute(Scanner & scanner)
         {
             ParseIgnoredNameValueAttribute(scanner);
         }
+        else if (name == "contractversion")
+        {
+            ParseIgnoredNameValueAttribute(scanner);
+        }
         else if (name == "contract")
         {
             ParseContractAttribute(scanner);
@@ -1806,7 +1815,7 @@ static void ParseAttribute(Scanner & scanner)
         }
         else if (name == "deprecated")
         {
-            AddAttribute(Attribute::Deprecated);
+            //AddAttribute(Attribute::Deprecated);
             ParseDeprecatedAttribute(scanner);
         }
         else if (name == "default_overload")
@@ -1912,6 +1921,23 @@ static void ParseStructure(Scanner & scanner)
     scanner.Next();
     ParseInnerStructure(scanner, name);
     scanner.Expect(Token::Semicolon);
+    scanner.Next();
+}
+
+static void ParseApiContract(Scanner & scanner)
+{
+    scanner.NextSimpleName();
+    scanner.Next();
+
+    if (scanner.Current() == Token::Semicolon)
+    {
+        scanner.Next();
+        return;
+    }
+
+    scanner.Expect(Token::LeftBrace);
+    scanner.Next();
+    scanner.Expect(Token::RightBrace);
     scanner.Next();
 }
 

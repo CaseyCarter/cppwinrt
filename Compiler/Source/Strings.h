@@ -7,7 +7,7 @@ extern char const base_accessors[1147];
 extern char const base_activation[1248];
 extern char const base_await_consume[2317];
 extern char const base_collections_consume[22941];
-extern char const base_collections_produce[3971];
+extern char const base_collections_produce[4040];
 extern char const base_comptr[3801];
 extern char const base_dependencies[594];
 extern char const base_error[1394];
