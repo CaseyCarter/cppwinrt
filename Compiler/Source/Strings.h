@@ -141,6 +141,7 @@ extern char const LibraryNonStaticMethodDeclarationOpen[5];
 extern char const LibraryNonStaticMethodDefinitionBodyNoReturnTypeOpen[28];
 extern char const LibraryNonStaticMethodDefinitionBodyReturnTypeOpen[39];
 extern char const LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass[44];
+extern char const LibraryNonStaticMethodDefinitionBodyReturnTypeOpenDefault[34];
 extern char const LibraryNonStaticMethodDefinitionNoReturnTypeClose[7];
 extern char const LibraryNonStaticMethodDefinitionReturnTypeClose[18];
 extern char const LibraryNotFound[77];

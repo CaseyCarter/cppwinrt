@@ -449,10 +449,20 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
     }
     else if (Settings::ParameterInfo.HasReturnType)
     {
-        if (Settings::ParameterInfo.HasReturnType && !Settings::ParameterInfo.Parameters.back().ClassType.empty())
+        Parameter const & back = Settings::ParameterInfo.Parameters.back();
+
+        if (back.Category == TypeCategory::String || (back.Category == TypeCategory::Interface && Settings::ParameterInfo.Parameters.back().ClassType.empty()))
+        {
+            Write(methods,
+                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenDefault,
+                  Settings::ParameterInfo.ReturnType(),
+                  Settings::ParameterInfo.ReturnTypeName(),
+                  Settings::MethodAbi);
+        }
+        else if (!Settings::ParameterInfo.Parameters.back().ClassType.empty())
         {
             Write(methods, 
-                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass, 
+                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass,
                   Settings::ParameterInfo.ReturnType(),
                   Settings::ParameterInfo.ReturnTypeName(),
                   Settings::MethodAbi);
@@ -1187,10 +1197,10 @@ void WriteInterfaceDefinitions(Output & out)
 
         WriteRequiredInterfaces(out);
 
-		Write(out,
-			  Strings::LibraryInterfaceDefinitionMacro,
-			  Settings::InterfaceName,
-			  Settings::InterfaceName);
+        Write(out,
+              Strings::LibraryInterfaceDefinitionMacro,
+              Settings::InterfaceName,
+              Settings::InterfaceName);
 
         GetUsingMethodsForInterface([&]
         {
