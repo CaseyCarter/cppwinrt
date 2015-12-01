@@ -196,21 +196,11 @@ static void ParseUsage(int argc, char ** argv)
                 last = Options::Debug;
                 Settings::Options |= last;
             }
-            else if (0 == strcmp(arg, "noexcept"))
-            {
-                last = Options::Noexcept;
-                Settings::Options |= last;
-            }
 			else if (0 == strcmp(arg, "depends"))
 			{
 				last = Options::Depends;
                 Settings::Options |= last;
 			}
-            else if (0 == strcmp(arg, "update"))
-            {
-                last = Options::Update;
-                Settings::Options |= last;
-            }
 			else
             {
                 throw UsageException();

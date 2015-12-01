@@ -723,7 +723,8 @@ template <typename T> void GetComponentClasses(T callback)
         Settings::ClassName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
         Settings::ClassDotName = s.GetString(3);
-		Settings::ClassDefaultInterface = s.GetString(4);
+        Settings::ClassDefaultInterface = s.GetString(4);
+        Settings::ClassActivatable = s.GetBool(5);
 
         callback();
     }

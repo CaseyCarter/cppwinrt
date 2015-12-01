@@ -1,4 +1,4 @@
 
 struct % :
-	IUnknown,
+	Windows::IUnknown,
 	impl_%<%>

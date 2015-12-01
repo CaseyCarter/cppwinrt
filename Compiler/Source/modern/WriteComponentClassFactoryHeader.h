@@ -1,0 +1,3 @@
+
+struct %Factory : %FactoryT<%Factory>
+{

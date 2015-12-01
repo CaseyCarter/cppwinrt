@@ -166,7 +166,6 @@ static void WriteLibrary()
 	WriteImplementation(meta);
 	WriteInterfaceDefinitions(meta);
 	WriteClasses(meta, shim);
-	//WriteAbiClassDeclarations(abi);
 	WriteGenericInterfaces(abi);
 
 	meta.WriteTo("sdk.meta.h");
