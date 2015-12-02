@@ -89,6 +89,7 @@ extern char const DatabaseGetOverridables[177];
 extern char const DatabaseGetOverrides[195];
 extern char const DatabaseGetParameters[100];
 extern char const DatabaseGetRequiredClassInterfaces[974];
+extern char const DatabaseGetRequiredComponentClassInterfaces[529];
 extern char const DatabaseGetRequiredComposableInterfaces[510];
 extern char const DatabaseGetRequiredInterfaces[355];
 extern char const DatabaseGetStaticInterfaces[126];

@@ -1333,6 +1333,25 @@ void WriteDelegates(Output & out)
 
 static void WriteComponentClassInterfaces(Output & out)
 {
+    bool first = true;
+
+    GetRequiredComponentClassInterfaces([&]
+    {
+        if (first)
+        {
+            first = false;
+        }
+        else
+        {
+            Write(out, ", ");
+        }
+
+        Write(out, Settings::InterfaceName);
+    });
+}
+
+static void WriteComponentClassFactoryInterfaces(Output & out)
+{
 
 }
 
@@ -1352,7 +1371,7 @@ void WriteComponentHeader(Output & out)
         Write(out,
               Strings::WriteComponentClassFactoryBehind,
               Settings::ClassName,
-              Bind(WriteComponentClassInterfaces));
+              Bind(WriteComponentClassFactoryInterfaces));
     });
 
     out.WriteNamespace();

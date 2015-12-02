@@ -899,6 +899,20 @@ template <typename T> void GetRequiredClassInterfaces(T callback)
 	}
 }
 
+template <typename T> void GetRequiredComponentClassInterfaces(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetRequiredComponentClassInterfaces);
+    s.Reset(Settings::ClassId);
+
+    while (s.Step())
+    {
+        Settings::InterfaceId = s.GetInt(0);
+        Settings::InterfaceName = s.GetString(1);
+
+        callback();
+    }
+}
+
 template <typename T> void GetClassConstructorsPublic(T callback)
 {
     static Statement s = Prepare(Strings::DatabaseGetClassConstructorsPublic);
