@@ -1331,12 +1331,29 @@ void WriteDelegates(Output & out)
     out.WriteNamespace();
 }
 
+static void WriteComponentClassInterfaces(Output & out)
+{
+
+}
+
 void WriteComponentHeader(Output & out)
 {
     Write(out, "#pragma once\n\n#include \"%.h\"\n", Database::Name());
     out.WriteImplementationNamespace(Settings::Namespace);
     Write(out, Strings::WriteComponentLockHeader);
 
+    GetComponentClasses([&]
+    {
+        Write(out,
+              Strings::WriteComponentClassBehind,
+              Settings::ClassName,
+              Bind(WriteComponentClassInterfaces));
+
+        Write(out,
+              Strings::WriteComponentClassFactoryBehind,
+              Settings::ClassName,
+              Bind(WriteComponentClassInterfaces));
+    });
 
     out.WriteNamespace();
 }
@@ -1347,6 +1364,7 @@ static void WriteComponentMakeFactories(Output & out)
     {
         Write(out,
               Strings::WriteComponentMakeFactory,
+              Settings::Namespace,
               Settings::ClassName,
               Settings::ClassName);
     });
