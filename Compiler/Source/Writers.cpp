@@ -1352,7 +1352,15 @@ static void WriteComponentClassInterfaces(Output & out)
 
 static void WriteComponentClassFactoryInterfaces(Output & out)
 {
+    GetClassConstructorsPublic([&]
+    {
+        Write(out, ", %", Settings::InterfaceName);
+    });
 
+    GetStaticInterfaces([&]
+    {
+        Write(out, ", %", Settings::InterfaceName);
+    });
 }
 
 static void WriteComponentClassFactoryInterfaceMethods(Output & out)
