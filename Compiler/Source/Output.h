@@ -363,7 +363,7 @@ public:
                 begin = end + 2;
             }
 
-            Write(*this, "namespace implementation {\n");
+            Write(*this, "namespace component {\n");
         }
 
         return true;

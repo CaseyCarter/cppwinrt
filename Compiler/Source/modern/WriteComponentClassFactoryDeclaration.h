@@ -1,0 +1,4 @@
+
+struct %Factory : %FactoryT<%Factory>
+{
+};

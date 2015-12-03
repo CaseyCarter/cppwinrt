@@ -187,10 +187,10 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	}
 };
 
-template <typename T> IVector<T>::IVector(std::vector<T> const & other) : IVector<T>(make<impl_Vector<int>>(other)) {}
+template <typename T> IVector<T>::IVector(std::vector<T> const & other) : IVector<T>(make<impl_Vector<T>>(other)) {}
 
-template <typename T> IVector<T>::IVector(std::vector<T> && other) : IVector<T>(make<impl_Vector<int>>(std::move(other))) {}
+template <typename T> IVector<T>::IVector(std::vector<T> && other) : IVector<T>(make<impl_Vector<T>>(std::move(other))) {}
 
-template <typename T> IVector<T>::IVector(std::initializer_list<T> other) : IVector<T>(make<impl_Vector<int>>(other)) {}
+template <typename T> IVector<T>::IVector(std::initializer_list<T> other) : IVector<T>(make<impl_Vector<T>>(other)) {}
 
 }}}}

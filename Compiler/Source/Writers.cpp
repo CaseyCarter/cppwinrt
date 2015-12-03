@@ -809,7 +809,7 @@ static void WriteOverrideDefaults(Output & output, int const interfaceId, char c
     {
         if (0 == strcmp(Settings::ParameterInfo.ReturnType(), "IInspectable"))
         {
-            return "winrt::IInspectable"; // TODO: shouldn't this be "Windows::IInspectable"?
+            return "Windows::IInspectable";
         }
         else
         {
@@ -1355,6 +1355,37 @@ static void WriteComponentClassFactoryInterfaces(Output & out)
 
 }
 
+static void WriteComponentClassFactoryInterfaceMethods(Output & out)
+{
+    if (!Settings::ClassDefaultInterface.empty())
+    {
+        Write(out,
+              Strings::WriteComponentClassFactoryActivateInstance_Yes,
+              Settings::ClassName);
+    }
+    else
+    {
+        Write(out, Strings::WriteComponentClassFactoryActivateInstance_No);
+    }
+}
+
+static void WriteComponentClassInterfaceMethods(Output & out)
+{
+    GetRequiredComponentClassInterfaces([&]
+    {
+        GetInterfaceMethods([&]
+        {
+            Write(out,
+                  Strings::WriteComponentClassBehindOverrideVirtual,
+                  Settings::MethodAbi,
+                  Bind(WriteDelegateAbiParameters),
+                  "",
+                  Settings::MethodName,
+                  Bind(WriteDelegateForwardArgunents));
+        });
+    });
+}
+
 void WriteComponentHeader(Output & out)
 {
     Write(out, "#pragma once\n\n#include \"%.h\"\n", Database::Name());
@@ -1363,15 +1394,24 @@ void WriteComponentHeader(Output & out)
 
     GetComponentClasses([&]
     {
-        Write(out,
-              Strings::WriteComponentClassBehind,
-              Settings::ClassName,
-              Bind(WriteComponentClassInterfaces));
+        if (!Settings::ClassDefaultInterface.empty())
+        {
+            Write(out,
+                  Strings::WriteComponentClassBehind,
+                  Settings::ClassName,
+                  Bind(WriteComponentClassInterfaces),
+                  Settings::ClassName,
+                  Settings::ClassName,
+                  Bind(WriteComponentClassInterfaceMethods));
+        }
 
         Write(out,
               Strings::WriteComponentClassFactoryBehind,
               Settings::ClassName,
-              Bind(WriteComponentClassFactoryInterfaces));
+              Bind(WriteComponentClassFactoryInterfaces),
+              Settings::ClassName,
+              Settings::ClassName,
+              Bind(WriteComponentClassFactoryInterfaceMethods));
     });
 
     out.WriteNamespace();
@@ -1410,6 +1450,31 @@ void WriteComponentSource(Output & out)
     out.WriteNamespace();
 }
 
+static void WriteComponentClassDefaultConstructorDeclaration(Output & out)
+{
+    if (Settings::ClassActivatable)
+    {
+        Write(out,
+              "    %();",
+              Settings::ClassName);
+    }
+}
+
+static void WriteComponentClassMethodDeclarations(Output & out)
+{
+    GetRequiredComponentClassInterfaces([&]
+    {
+        GetInterfaceMethods([&]
+        {
+            Write(out,
+                  Strings::WriteComponentClassMethodDeclaration,
+                  Settings::ParameterInfo.ReturnType(),
+                  Settings::MethodName,
+                  Bind(WriteParameters, 0, false, false));
+        });
+    });
+}
+
 void WriteComponentClassHeader(Output & out)
 {
     Write(out, "#pragma once\n\n#include \"component.h\"\n");
@@ -1418,30 +1483,45 @@ void WriteComponentClassHeader(Output & out)
     if (!Settings::ClassDefaultInterface.empty())
     {
         Write(out,
-              Strings::WriteComponentClassHeader,
+              Strings::WriteComponentClassDeclaration,
               Settings::ClassName,
               Settings::ClassName,
-              Settings::ClassName);
-
-        if (Settings::ClassActivatable)
-        {
-            Write(out,
-                  Strings::LibraryClassDefaultConstructorDeclaration,
-                  Settings::ClassName);
-        }
-
-        Write(out, Strings::LibraryClassClose);
+              Settings::ClassName,
+              Bind(WriteComponentClassDefaultConstructorDeclaration),
+              Bind(WriteComponentClassMethodDeclarations));
     }
 
     Write(out,
-          Strings::WriteComponentClassFactoryHeader,
+          Strings::WriteComponentClassFactoryDeclaration,
           Settings::ClassName,
           Settings::ClassName,
           Settings::ClassName);
 
-    Write(out, Strings::LibraryClassClose);
-
     out.WriteNamespace();
+}
+
+static void WriteComponentClassDefinitions(Output & out)
+{
+    if (Settings::ClassActivatable)
+    {
+        Write(out,
+              Strings::WriteComponentClassDefaultConstructorDefinition,
+              Settings::ClassName,
+              Settings::ClassName);
+    }
+
+    GetRequiredComponentClassInterfaces([&]
+    {
+        GetInterfaceMethods([&]
+        {
+            Write(out,
+                  Strings::WriteComponentClassMethodDefinition,
+                  Settings::ParameterInfo.ReturnType(),
+                  Settings::ClassName,
+                  Settings::MethodName,
+                  Bind(WriteParameters, 0, false, true));
+        });
+    });
 }
 
 void WriteComponentClassSource(Output & out)
@@ -1452,10 +1532,8 @@ void WriteComponentClassSource(Output & out)
 
     if (!Settings::ClassDefaultInterface.empty())
     {
-        // write class methods
+        WriteComponentClassDefinitions(out);
     }
-
-    // write class factory methods
 
     out.WriteNamespace();
 }
