@@ -6,7 +6,7 @@ extern char const ApplicationModel[1747];
 extern char const base_accessors[1381];
 extern char const base_activation[1248];
 extern char const base_await_consume[2317];
-extern char const base_collections_consume[22986];
+extern char const base_collections_consume[22985];
 extern char const base_collections_produce[4052];
 extern char const base_comptr[4047];
 extern char const base_dependencies[594];

@@ -132,10 +132,15 @@ struct accessors
 		object = value;
 	}
 
-	static void copy(T & object, T const & value) noexcept
+	static void copy_from(T & object, T const & value) noexcept
 	{
 		object = value;
 	}
+
+    static void copy_to(T const & object, T & value) noexcept
+    {
+        value = object;
+    }
 
 	static T detach(T & object) noexcept
 	{
@@ -166,9 +171,15 @@ void attach(T & object, V && value) noexcept
 }
 
 template <typename T, typename V>
-void copy(T & object, V && value) noexcept
+void copy_from(T & object, V && value)
 {
-	impl::accessors<T>::copy(object, value);
+	impl::accessors<T>::copy_from(object, value);
+}
+
+template <typename T, typename V>
+void copy_to(T const & object, V & value)
+{
+    impl::accessors<T>::copy_to(object, value);
 }
 
 template <typename T>
@@ -885,11 +896,16 @@ struct accessors<String>
 		*put(object) = value;
 	}
 
-	static void copy(String & object, HSTRING value)
+	static void copy_from(String & object, HSTRING value)
 	{
 		object = nullptr;
 		check(WindowsDuplicateString(value, put(object)));
 	}
+
+    static void copy_to(String const & object, HSTRING & value)
+    {
+        check(WindowsDuplicateString(get(object), &value));
+    }
 
 	static HSTRING detach(String & object) noexcept
 	{
@@ -1177,7 +1193,7 @@ struct accessors<com_ptr<T>>
 		*put(object) = value;
 	}
 
-	static void copy(com_ptr<T> & object, T * value)
+	static void copy_from(com_ptr<T> & object, T * value)
 	{
 		object = nullptr;
 
@@ -1187,6 +1203,19 @@ struct accessors<com_ptr<T>>
 			*put(object) = value;
 		}
 	}
+
+    static void copy_to(com_ptr<T> const & object, T * & value)
+    {
+        if (object)
+        {
+            value = get(object);
+            value->AddRef();
+        }
+        else
+        {
+            value = nullptr;
+        }
+    }
 
 	static T * detach(com_ptr<T> & object) noexcept
 	{
@@ -1297,6 +1326,7 @@ struct IUnknown
 {
 	IUnknown() noexcept = default;
 	IUnknown(std::nullptr_t) noexcept {}
+	void * operator new(size_t) = delete;
 
 	IUnknown(IUnknown const & other) noexcept :
 		m_ptr(other.m_ptr)
@@ -1458,7 +1488,7 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		*put(object) = value;
 	}
 
-	static void copy(T & object, abi_arg_in<T> value) noexcept
+	static void copy_from(T & object, abi_arg_in<T> value) noexcept
 	{
 		object = nullptr;
 
@@ -1468,6 +1498,19 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 			*put(object) = value;
 		}
 	}
+
+    static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
+    {
+        if (object)
+        {
+            value = get(object);
+            value->AddRef();
+        }
+        else
+        {
+            value = nullptr;
+        }
+    }
 
 	static auto detach(T & object) noexcept
 	{
@@ -3228,7 +3271,7 @@ template <typename T> struct traits<Windows::Foundation::Collections::IObservabl
 namespace winrt { namespace impl {
 
 template <typename T>
-struct fast_iterator
+struct fast_iterator : std::iterator<std::input_iterator_tag, T>
 {
 	fast_iterator(T const & collection, unsigned const index) noexcept :
 		m_collection(&collection),
@@ -3311,7 +3354,7 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 
 	impl_VectorIterator(abi_arg_in<IVectorView<T>> other)
 	{
-		copy(v, other);
+		copy_from(v, other);
 	}
 
 	virtual HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept override
@@ -3366,7 +3409,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			copy(*item, v.at(index));
+			copy_to(v.at(index), *item);
 		});
 	}
 
@@ -3376,7 +3419,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetView(abi_arg_out<IVectorView<T>> view) noexcept override
+	virtual HRESULT __stdcall abi_GetView(IVectorView<abi<T>> ** view) noexcept override
 	{
 		*view = this;
 		static_cast<::IUnknown *>(*view)->AddRef();
@@ -3396,7 +3439,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			copy(v.at(index), item);
+			copy_from(v.at(index), item);
 		});
 	}
 
@@ -3409,7 +3452,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 		return call([&]
 		{
-			copy(*v.emplace(begin(v) + index), item);
+			copy_from(*v.emplace(begin(v) + index), item);
 		});
 	}
 
@@ -3431,7 +3474,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 		return call([&]
 		{
 			v.emplace_back();
-			copy(v.back(), item);
+			copy_from(v.back(), item);
 		});
 	}
 
@@ -3489,10 +3532,10 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	}
 };
 
-template <typename T> IVector<T>::IVector(std::vector<T> const & other) : IVector<T>(make<impl_Vector<int>>(other)) {}
+template <typename T> IVector<T>::IVector(std::vector<T> const & other) : IVector<T>(make<impl_Vector<T>>(other)) {}
 
-template <typename T> IVector<T>::IVector(std::vector<T> && other) : IVector<T>(make<impl_Vector<int>>(std::move(other))) {}
+template <typename T> IVector<T>::IVector(std::vector<T> && other) : IVector<T>(make<impl_Vector<T>>(std::move(other))) {}
 
-template <typename T> IVector<T>::IVector(std::initializer_list<T> other) : IVector<T>(make<impl_Vector<int>>(other)) {}
+template <typename T> IVector<T>::IVector(std::initializer_list<T> other) : IVector<T>(make<impl_Vector<T>>(other)) {}
 
 }}}}

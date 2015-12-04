@@ -776,7 +776,6 @@ namespace winrt { namespace impl {
 template <typename T>
 struct fast_iterator : std::iterator<std::input_iterator_tag, T>
 {
-
 	fast_iterator(T const & collection, unsigned const index) noexcept :
 		m_collection(&collection),
 		m_index(index)

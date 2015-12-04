@@ -253,7 +253,7 @@ namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>
 struct IAutomationPeerOverridesT : A
 {
-	winrt::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface const patternInterface)
+	Windows::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface const patternInterface)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPatternCore(patternInterface);
 	}
@@ -638,17 +638,17 @@ struct IAutomationPeerOverrides2T : A
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>
 struct IAutomationPeerOverrides3T : A
 {
-	winrt::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection const direction)
+	Windows::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection const direction)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().NavigateCore(direction);
 	}
 
-	winrt::IInspectable GetElementFromPointCore(Windows::Foundation::Point const & pointInWindowCoordinates)
+	Windows::IInspectable GetElementFromPointCore(Windows::Foundation::Point const & pointInWindowCoordinates)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetElementFromPointCore(pointInWindowCoordinates);
 	}
 
-	winrt::IInspectable GetFocusedElementCore()
+	Windows::IInspectable GetFocusedElementCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetFocusedElementCore();
 	}
@@ -1875,7 +1875,7 @@ namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
 struct ICustomXamlResourceLoaderOverridesT : A
 {
-	winrt::IInspectable GetResource(StringReference const & resourceId, StringReference const & objectType, StringReference const & propertyName, StringReference const & propertyType)
+	Windows::IInspectable GetResource(StringReference const & resourceId, StringReference const & objectType, StringReference const & propertyName, StringReference const & propertyType)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
 	}
