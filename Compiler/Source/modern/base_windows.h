@@ -6,9 +6,6 @@ struct IUnknown
 	IUnknown() noexcept = default;
 	IUnknown(std::nullptr_t) noexcept {}
 	void * operator new(size_t) = delete;
-	void * operator new[](size_t) = delete;
-	void operator delete(void *) = delete;
-	void operator delete[](void *) = delete;
 
 	IUnknown(IUnknown const & other) noexcept :
 		m_ptr(other.m_ptr)
