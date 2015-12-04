@@ -3,12 +3,12 @@
 namespace Modern { namespace Strings {
 
 extern char const ApplicationModel[1747];
-extern char const base_accessors[1147];
+extern char const base_accessors[1381];
 extern char const base_activation[1248];
 extern char const base_await_consume[2317];
-extern char const base_collections_consume[22941];
-extern char const base_collections_produce[4034];
-extern char const base_comptr[3801];
+extern char const base_collections_consume[22986];
+extern char const base_collections_produce[4052];
+extern char const base_comptr[4047];
 extern char const base_dependencies[594];
 extern char const base_error[1394];
 extern char const base_generic[23835];
@@ -18,8 +18,8 @@ extern char const base_lock[691];
 extern char const base_meta[3672];
 extern char const base_modern[178];
 extern char const base_reference[730];
-extern char const base_string[5523];
-extern char const base_windows[7776];
+extern char const base_string[5665];
+extern char const base_windows[8071];
 extern char const Component_def[73];
 extern char const Component_idl[69];
 extern char const Component_pch_cpp[18];

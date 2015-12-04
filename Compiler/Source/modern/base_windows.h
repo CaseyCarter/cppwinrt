@@ -167,7 +167,7 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		*put(object) = value;
 	}
 
-	static void copy(T & object, abi_arg_in<T> value) noexcept
+	static void copy_from(T & object, abi_arg_in<T> value) noexcept
 	{
 		object = nullptr;
 
@@ -177,6 +177,19 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 			*put(object) = value;
 		}
 	}
+
+    static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
+    {
+        if (object)
+        {
+            value = get(object);
+            value->AddRef();
+        }
+        else
+        {
+            value = nullptr;
+        }
+    }
 
 	static auto detach(T & object) noexcept
 	{

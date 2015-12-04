@@ -9,7 +9,7 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 
 	impl_VectorIterator(abi_arg_in<IVectorView<T>> other)
 	{
-		copy(v, other);
+		copy_from(v, other);
 	}
 
 	virtual HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept override
@@ -64,7 +64,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			copy(*item, v.at(index));
+			copy_to(v.at(index), *item);
 		});
 	}
 
@@ -94,7 +94,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 	{
 		return call([&]
 		{
-			copy(v.at(index), item);
+			copy_from(v.at(index), item);
 		});
 	}
 
@@ -107,7 +107,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 		return call([&]
 		{
-			copy(*v.emplace(begin(v) + index), item);
+			copy_from(*v.emplace(begin(v) + index), item);
 		});
 	}
 
@@ -129,7 +129,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 		return call([&]
 		{
 			v.emplace_back();
-			copy(v.back(), item);
+			copy_from(v.back(), item);
 		});
 	}
 

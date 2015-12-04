@@ -176,11 +176,16 @@ struct accessors<String>
 		*put(object) = value;
 	}
 
-	static void copy(String & object, HSTRING value)
+	static void copy_from(String & object, HSTRING value)
 	{
 		object = nullptr;
 		check(WindowsDuplicateString(value, put(object)));
 	}
+
+    static void copy_to(String const & object, HSTRING & value)
+    {
+        check(WindowsDuplicateString(get(object), &value));
+    }
 
 	static HSTRING detach(String & object) noexcept
 	{

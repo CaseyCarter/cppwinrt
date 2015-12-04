@@ -182,7 +182,7 @@ struct accessors<com_ptr<T>>
 		*put(object) = value;
 	}
 
-	static void copy(com_ptr<T> & object, T * value)
+	static void copy_from(com_ptr<T> & object, T * value)
 	{
 		object = nullptr;
 
@@ -192,6 +192,19 @@ struct accessors<com_ptr<T>>
 			*put(object) = value;
 		}
 	}
+
+    static void copy_to(com_ptr<T> const & object, T * & value)
+    {
+        if (object)
+        {
+            value = get(object);
+            value->AddRef();
+        }
+        else
+        {
+            value = nullptr;
+        }
+    }
 
 	static T * detach(com_ptr<T> & object) noexcept
 	{
