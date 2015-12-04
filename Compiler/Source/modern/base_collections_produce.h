@@ -74,7 +74,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 		return S_OK;
 	}
 
-	virtual HRESULT __stdcall abi_GetView(abi_arg_out<IVectorView<T>> view) noexcept override
+	virtual HRESULT __stdcall abi_GetView(IVectorView<abi<T>> ** view) noexcept override
 	{
 		*view = this;
 		static_cast<::IUnknown *>(*view)->AddRef();
