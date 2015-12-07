@@ -433,24 +433,12 @@ template <typename T> void GetHeaders(T callback)
     }
 }
 
-//inline bool HasEnumerations()
-//{
-//    static Statement s = Prepare(Strings::DatabaseHasEnumerations);
-//    s.Reset();
-//    s.Step();
-//    return s.GetBool();
-//}
-
 inline TypeCategory GetCategory(std::string const & fullname)
 {
     static Statement s = Prepare(Strings::DatabaseGetCategory);
     s.Reset(fullname);
     MODERN_VERIFY(s.Step());
     return static_cast<TypeCategory>(s.GetInt());
-
-    //TypeCategory const category = static_cast<TypeCategory>(s.GetInt());
-    //MODERN_ASSERT(category != TypeCategory::Unknown);
-    //return category;
 }
 
 template <typename T> void GetEnumerations(T callback)

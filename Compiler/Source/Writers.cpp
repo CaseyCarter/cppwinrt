@@ -996,33 +996,6 @@ void WriteStructures(Output & out)
     out.WriteNamespace();
 }
 
-//void WriteAbiClassDeclarations(Output & out)
-//{
-//    out.OpenModernNamespace();
-//
-//    GetClassDeclarations([&]
-//    {
-//        if (!Settings::ClassDefaultInterface.empty())
-//        {
-//            Write(out, 
-//                  Strings::WriteAbiClassDeclaration, 
-//                  Settings::Namespace,
-//                  Settings::ClassName, 
-//                  Settings::ClassDefaultInterface);
-//        }
-//        //else
-//        //{
-//        //    Write(out, 
-//        //          Strings::WriteAbiClassDeclarationStatic, 
-//        //          Settings::ClassName,
-//        //          Settings::ClassDotName,
-//        //          Settings::ClassDotNameLength);
-//        //}
-//    });
-//
-//    out.CloseModernNamespace();
-//}
-
 void WriteAbiInterfaceDeclarations(Output & out)
 {
     GetInterfaceDeclarations([&]
