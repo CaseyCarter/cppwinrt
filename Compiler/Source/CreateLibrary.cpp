@@ -116,6 +116,7 @@ static void WritePreHeader()
     Write(out, Strings::base_generic);
     Write(out, Strings::base_collections_consume);
     Write(out, Strings::base_collections_produce);
+    Write(out, Strings::base_weak);
 }
 
 static void WritePostHeader()

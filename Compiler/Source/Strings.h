@@ -19,6 +19,7 @@ extern char const base_meta[3672];
 extern char const base_modern[178];
 extern char const base_reference[730];
 extern char const base_string[5665];
+extern char const base_weak[2841];
 extern char const base_windows[8071];
 extern char const Component_def[73];
 extern char const Component_idl[69];
