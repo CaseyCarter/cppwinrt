@@ -98,9 +98,9 @@ static void WriteSupportingHeader(char const * filename, char const (&text)[Coun
     Write(target, text);
 }
 
-static void WritePreHeader()
+static void WriteBaseHeader()
 {
-    OutputFile out("pre.h");
+    OutputFile out("base.h");
     WriteLogo(out);
     Write(out, Strings::base_dependencies);
     Write(out, Strings::base_error);
@@ -135,7 +135,7 @@ static void WriteLibrary()
     Path::SetCurrentDirectory(path);
 
     WriteModernHeader();
-    WritePreHeader();
+    WriteBaseHeader();
     WritePostHeader();
 
     Output meta;

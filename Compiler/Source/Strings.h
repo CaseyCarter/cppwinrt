@@ -16,7 +16,7 @@ extern char const base_handle[2483];
 extern char const base_implements[3826];
 extern char const base_lock[691];
 extern char const base_meta[3672];
-extern char const base_modern[178];
+extern char const base_modern[179];
 extern char const base_reference[730];
 extern char const base_string[5665];
 extern char const base_weak[2841];
