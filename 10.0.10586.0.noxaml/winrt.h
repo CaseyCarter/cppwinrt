@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <winrt\pre.h>
+#include <winrt\base.h>
 
 #include <winrt\sdk.abi.h>
 #include <winrt\sdk.meta.h>
