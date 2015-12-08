@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Modern\Handle.h>
+#include "handle.h"
 #include <stdio.h>
 #include <functional>
 #include "FileView.h"
@@ -194,7 +194,7 @@ public:
     {
         MODERN_ASSERT(m_namespace.empty());
 
-        Write(*this, "\nnamespace Modern {\n");
+        Write(*this, "\nnamespace winrt {\n");
     }
 
     void CloseModernNamespace()
@@ -228,7 +228,7 @@ public:
 
 		if (!m_namespace.empty())
 		{
-            Write(*this, "\nnamespace Modern { ");
+            Write(*this, "\nnamespace winrt { ");
 			++m_namespaceLevels;
 
 			size_t begin = 0;
@@ -284,7 +284,7 @@ public:
 
 		if (!m_namespace.empty())
 		{
-            Write(*this, "\nnamespace Modern { namespace ABI { ");
+            Write(*this, "\nnamespace winrt { namespace ABI { ");
 			m_namespaceLevels += 2;
 
 			size_t begin = 0;
@@ -340,7 +340,7 @@ public:
 
         if (!m_namespace.empty())
         {
-            Write(*this, "\nnamespace Modern { ");
+            Write(*this, "\nnamespace winrt { ");
             m_namespaceLevels += 2;
 
             size_t begin = 0;
@@ -363,7 +363,7 @@ public:
                 begin = end + 2;
             }
 
-            Write(*this, "namespace Implementation {\n");
+            Write(*this, "namespace component {\n");
         }
 
         return true;

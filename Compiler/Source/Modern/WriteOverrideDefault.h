@@ -1,5 +1,5 @@
 
 	% %(%)
 	{
-		%static_cast<T *>(this)->As<Modern::%::%>().%(%);
+		%static_cast<T *>(this)->As<%::%>().%(%);
 	}

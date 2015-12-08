@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Modern\Base.h"
+#include "debug.h"
 
 namespace Modern { namespace Timer {
 

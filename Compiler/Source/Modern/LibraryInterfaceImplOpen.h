@@ -1,4 +1,8 @@
 
 template <typename T>
-struct impl_%
+class impl_%
 {
+	auto shim() const { return impl::shim<T, %>(this); }
+
+public:
+

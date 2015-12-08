@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "Modern\Base.h"
+#include "debug.h"
 
 namespace Modern {
 
@@ -30,9 +30,7 @@ enum class Options
     Time     = 0x0080,
 
     Debug    = 0x0100,
-    Noexcept = 0x0200,
     Depends  = 0x0400,
-    Update   = 0x0800,
 
 	NoXaml	 = 0x1000,
 };

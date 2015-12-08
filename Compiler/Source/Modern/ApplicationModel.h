@@ -1,10 +1,10 @@
 
-namespace Modern { namespace Windows { namespace ApplicationModel { namespace Core {
+namespace winrt { namespace Windows { namespace ApplicationModel { namespace Core {
 
 template <typename T>
-struct IFrameworkViewSourceT : ImplementsDefault<IFrameworkViewSource>
+struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
 {
-	virtual HRESULT __stdcall abi_CreateView(AbiArgOut<IFrameworkView> view) noexcept override
+	virtual HRESULT __stdcall abi_CreateView(abi_arg_out<IFrameworkView> view) noexcept override
 	{
 		return call([&]
 		{
@@ -14,7 +14,7 @@ struct IFrameworkViewSourceT : ImplementsDefault<IFrameworkViewSource>
 };
 
 template <typename T>
-struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
+struct IFrameworkViewT : impl::implements<IFrameworkView>
 {
 	void Initialize(CoreApplicationView const &) const noexcept
 	{
@@ -41,19 +41,19 @@ struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
 	{
 	}
 
-	HRESULT __stdcall abi_Initialize(AbiArgIn<ICoreApplicationView> view) noexcept
+	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->Initialize(Lease<CoreApplicationView>(view));
+			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
 		});
 	}
 
-	HRESULT __stdcall abi_SetWindow(AbiArgIn<UI::Core::ICoreWindow> window) noexcept
+	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->SetWindow(Lease<UI::Core::CoreWindow>(window));
+			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
 		});
 	}
 
@@ -61,7 +61,7 @@ struct IFrameworkViewT : ImplementsDefault<IFrameworkView>
 	{
 		return call([&]
 		{
-			static_cast<T *>(this)->Load(Lease<String>(entryPoint));
+			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
 		});
 	}
 

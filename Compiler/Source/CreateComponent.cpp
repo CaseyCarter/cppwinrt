@@ -18,12 +18,12 @@ static void CreateProject(std::string const & name, std::string const & source)
     std::string const library = Database::Library();
 
     OutputFile project(name + ".vcxproj");
-    Write<'@'>(project, Strings::Component_vcxproj, guid, name, library, library, library, library, library, library, name);
+    Write<'@'>(project, Strings::Component_vcxproj, guid, name, library, library, library, library, library, library, name, name);
 
     OutputFile idl(source);
     Write(idl, Strings::Component_idl, name);
 
-    OutputFile component_def("Component.def");
+    OutputFile component_def("component.def");
     Write(component_def, Strings::Component_def);
 
     OutputFile precompiled_h("pch.h");
@@ -36,18 +36,53 @@ static void CreateProject(std::string const & name, std::string const & source)
 static void CreateComponentSourceFile()
 {
     Output out;
+    WriteComponentSource(out);
 
-
-    out.WriteTo("Component.cpp");
+    out.WriteTo("component.cpp");
 }
 
 static void CreateComponentHeaderFile()
 {
     Output out;
+    WriteComponentHeader(out);
 
+    out.WriteTo("component.h");
+}
 
+static void CreateProjection(std::string const & name)
+{
+    std::string const filename = name + ".h";
 
-    out.WriteTo("Component.h");
+    Output meta;
+    WriteDeclarations(meta);
+
+    Output shim;
+    WriteDelegates(shim);
+
+    Output abi;
+    WriteEnumerations(abi);
+    WriteStructures(abi);
+    WriteAbiInterfaceDeclarations(abi);
+
+    WriteInterfaces(meta, shim, abi);
+    WriteAbiClassDeclarations(abi);
+    WriteImplementation(meta);
+    WriteInterfaceDefinitions(meta);
+    WriteClasses(meta, shim);
+    WriteGenericInterfaces(abi);
+
+    Output extend;
+    WriteOverrides(extend);
+    WriteComposable(extend);
+
+    Output out;
+    Write(out, "#pragma once\n");
+    out.Append(abi.Begin(), abi.Size());
+    out.Append(meta.Begin(), meta.Size());
+    out.Append(shim.Begin(), shim.Size());
+    out.Append(extend.Begin(), extend.Size());
+
+    out.WriteTo(filename.c_str());
 }
 
 static void CreateClasses(std::string const & /*name*/)
@@ -88,18 +123,20 @@ void CreateComponent()
     if (!Path::Exists(source))
     {
         CreateProject(name, source);
-        
     }
+    else
+    {
+        int const sourceId = Database::AddSource(source.c_str(), true);
+        MODERN_ASSERT(sourceId != 0);
+        Idl::Parse(sourceId, source.c_str());
 
-    int const sourceId = Database::AddSource(source.c_str(), true);
-    MODERN_ASSERT(sourceId != 0);
-    Idl::Parse(sourceId, source.c_str());
-
-    Database::Project();
+        Database::Project();
+        CreateClasses(name);
+    }
 
     CreateComponentSourceFile();
     CreateComponentHeaderFile();
-    CreateClasses(name);
+    CreateProjection(name);
 }
 
 }

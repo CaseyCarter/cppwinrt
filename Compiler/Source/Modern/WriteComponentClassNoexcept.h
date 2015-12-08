@@ -1,6 +1,0 @@
-
-class % : public Implements<%>
-{
-public:
-%
-};

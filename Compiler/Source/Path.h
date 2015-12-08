@@ -3,7 +3,7 @@
 #include <shlwapi.h>
 #include <shlobj.h>
 #include <string>
-#include <Modern\Handle.h>
+#include "Handle.h"
 #include "ThrowWindowsError.h"
 
 #pragma comment(lib, "shlwapi")

@@ -1,1 +1,1 @@
-template <> struct Traits<%::%> { using Default = %; };
+template <> struct traits<%::%> { using default_interface = %; };

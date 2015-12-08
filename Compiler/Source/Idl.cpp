@@ -36,6 +36,8 @@ enum class Token
     Enumeration      = 20,
     RuntimeClass     = 21,
     Structure        = 22,
+
+    ApiContract		 = 23
 };
 
 enum class Attribute
@@ -127,6 +129,7 @@ static Keyword const Keywords [] =
     { Token::Delegate,      "delegate"     },
     { Token::Requires,      "requires"     },
     { Token::Import,        "import"       },
+    { Token::ApiContract,   "apicontract"  },
 };
 
 static Fundamental const Fundamentals [] =
@@ -359,6 +362,10 @@ class Scanner
         {
             type = "byte";
         }
+        else if (type == "EventRegistrationToken")
+        {
+            type = "long long";
+        }
     }
 
     void ReadRestOfString()
@@ -422,7 +429,7 @@ class Scanner
 
                         if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                         {
-                            m_string += "Modern::";
+                            m_string += "winrt::";
                         }
                     }
 
@@ -452,7 +459,7 @@ class Scanner
 
                         if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                         {
-                            m_string += "Modern::";
+                            m_string += "winrt::";
                         }
                     }
 
@@ -652,6 +659,7 @@ static void ParseAttribute(Scanner & scanner);
 static void ParseEnumeration(Scanner & scanner);
 static void ParseDelegate(Scanner & scanner);
 static void ParseStructure(Scanner & scanner);
+static void ParseApiContract(Scanner & scanner);
 
 static int s_indent;
 
@@ -787,7 +795,7 @@ static bool ReadName(char const * & begin, char const * const end, std::string &
         {
             if (!part.empty())
             {
-                // TODO: check category and prepend "Modern::"
+                // TODO: check category and prepend "winrt::"
 
                 NormalizeMetadataType(part);
 
@@ -795,7 +803,7 @@ static bool ReadName(char const * & begin, char const * const end, std::string &
 
                 if (category == TypeCategory::Structure || category == TypeCategory::Enumeration)
                 {
-                    name += "Modern::";
+                    name += "winrt::";
                 }
                 else if (category == TypeCategory::Deprecated)
                 {
@@ -979,16 +987,17 @@ static void Scan(Scanner & scanner)
         switch (token)
         {
             case Token::Import:         ParseImport(scanner);         break;
-            case Token::Namespace:      ParseOpenNamespace(scanner);            break;
+            case Token::Namespace:      ParseOpenNamespace(scanner);  break;
             case Token::RuntimeClass:   ParseRuntimeClass(scanner);   break;
-            case Token::RightBrace:     ParseCloseNamespace(scanner);           break;
+            case Token::RightBrace:     ParseCloseNamespace(scanner); break;
             case Token::Typedef:        ParseTypedef(scanner);        break;
             case Token::Interface:      ParseInterface(scanner);      break;
-            case Token::Declare:        ParseDeclare(scanner);                  break;
-            case Token::LeftBracket:    ParseAttribute(scanner);                break;
+            case Token::Declare:        ParseDeclare(scanner);        break;
+            case Token::LeftBracket:    ParseAttribute(scanner);      break;
             case Token::Enumeration:    ParseEnumeration(scanner);    break;
             case Token::Delegate:       ParseDelegate(scanner);       break;
             case Token::Structure:      ParseStructure(scanner);      break;
+            case Token::ApiContract:    ParseApiContract(scanner);    break;
 
             case Token::EndOfFile:      return;
 
@@ -1594,6 +1603,26 @@ static void ParseLengthIsAttribute(Scanner & scanner)
     scanner.Next();
 }
 
+static void ParseContractAttribute(Scanner & scanner)
+{
+    scanner.Expect(Token::LeftParenthesis);
+    scanner.NextSimpleName();
+    scanner.Next();
+
+    if (scanner.Current() != Token::Comma)
+    {
+        AddAttribute(Attribute::Activatable);
+    }
+    else
+    {
+        scanner.NextSimpleName();
+        scanner.Next();
+    }
+
+    scanner.Expect(Token::RightParenthesis);
+    scanner.Next();
+}
+
 static void ParseActivatableAttribute(Scanner & scanner)
 {
     scanner.Expect(Token::LeftParenthesis);
@@ -1625,6 +1654,13 @@ static void ParseStaticAttribute(Scanner & scanner)
     scanner.Expect(Token::Comma);
     scanner.NextSimpleName();
     scanner.Next();
+
+    if (scanner.Current() == Token::Comma)
+    {
+        scanner.NextSimpleName();
+        scanner.Next();
+    }
+
     scanner.Expect(Token::RightParenthesis);
     scanner.Next();
 }
@@ -1753,6 +1789,14 @@ static void ParseAttribute(Scanner & scanner)
         {
             ParseIgnoredNameValueAttribute(scanner);
         }
+        else if (name == "contractversion")
+        {
+            ParseIgnoredNameValueAttribute(scanner);
+        }
+        else if (name == "contract")
+        {
+            ParseContractAttribute(scanner);
+        }
         else if (name == "size_is")
         {
             ParseSizeIsAttribute(scanner);
@@ -1771,7 +1815,7 @@ static void ParseAttribute(Scanner & scanner)
         }
         else if (name == "deprecated")
         {
-            AddAttribute(Attribute::Deprecated);
+            //AddAttribute(Attribute::Deprecated);
             ParseDeprecatedAttribute(scanner);
         }
         else if (name == "default_overload")
@@ -1877,6 +1921,23 @@ static void ParseStructure(Scanner & scanner)
     scanner.Next();
     ParseInnerStructure(scanner, name);
     scanner.Expect(Token::Semicolon);
+    scanner.Next();
+}
+
+static void ParseApiContract(Scanner & scanner)
+{
+    scanner.NextSimpleName();
+    scanner.Next();
+
+    if (scanner.Current() == Token::Semicolon)
+    {
+        scanner.Next();
+        return;
+    }
+
+    scanner.Expect(Token::LeftBrace);
+    scanner.Next();
+    scanner.Expect(Token::RightBrace);
     scanner.Next();
 }
 

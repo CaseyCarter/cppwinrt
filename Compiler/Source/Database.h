@@ -433,24 +433,12 @@ template <typename T> void GetHeaders(T callback)
     }
 }
 
-//inline bool HasEnumerations()
-//{
-//    static Statement s = Prepare(Strings::DatabaseHasEnumerations);
-//    s.Reset();
-//    s.Step();
-//    return s.GetBool();
-//}
-
 inline TypeCategory GetCategory(std::string const & fullname)
 {
     static Statement s = Prepare(Strings::DatabaseGetCategory);
     s.Reset(fullname);
     MODERN_VERIFY(s.Step());
     return static_cast<TypeCategory>(s.GetInt());
-
-    //TypeCategory const category = static_cast<TypeCategory>(s.GetInt());
-    //MODERN_ASSERT(category != TypeCategory::Unknown);
-    //return category;
 }
 
 template <typename T> void GetEnumerations(T callback)
@@ -723,7 +711,8 @@ template <typename T> void GetComponentClasses(T callback)
         Settings::ClassName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
         Settings::ClassDotName = s.GetString(3);
-		Settings::ClassDefaultInterface = s.GetString(4);
+        Settings::ClassDefaultInterface = s.GetString(4);
+        Settings::ClassActivatable = s.GetBool(5);
 
         callback();
     }
@@ -861,7 +850,7 @@ inline void GetParameters()
         {
             if (back.Category == TypeCategory::String)
             {
-                ++info.StringCount;
+                //++info.StringCount;
             }
             else if (back.Category == TypeCategory::Delegate)
             {
@@ -896,6 +885,20 @@ template <typename T> void GetRequiredClassInterfaces(T callback)
 	{
 		callback(s.GetString());
 	}
+}
+
+template <typename T> void GetRequiredComponentClassInterfaces(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetRequiredComponentClassInterfaces);
+    s.Reset(Settings::ClassId);
+
+    while (s.Step())
+    {
+        Settings::InterfaceId = s.GetInt(0);
+        Settings::InterfaceName = s.GetString(1);
+
+        callback();
+    }
 }
 
 template <typename T> void GetClassConstructorsPublic(T callback)

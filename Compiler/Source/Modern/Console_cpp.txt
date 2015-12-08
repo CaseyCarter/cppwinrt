@@ -1,6 +1,6 @@
 #include "pch.h"
 
-using namespace Modern;
+using namespace winrt;
 
 int main()
 {

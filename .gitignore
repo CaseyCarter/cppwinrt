@@ -3,3 +3,8 @@
 debug
 release
 ipch
+*.opensdf
+*.user
+*.filters
+*.opendb
+~$*

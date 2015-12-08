@@ -1,5 +1,5 @@
 %::%(%)
 {
 	IInspectable %, %;
-	InternalMove(GetActivationFactory<%, %>().%(%));
+	impl_move(GetActivationFactory<%, %>().%(%));
 }

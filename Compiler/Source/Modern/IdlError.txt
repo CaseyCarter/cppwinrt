@@ -1,2 +1,2 @@
 
-Unexpected token [%d] in %s(%d)
+Unexpected token [%] in %(%)

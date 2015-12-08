@@ -1,4 +1,4 @@
 
 struct % :
-	IInspectable,
+	Windows::IInspectable,
 	impl_%<%>

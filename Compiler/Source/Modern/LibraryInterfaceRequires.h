@@ -1,2 +1,2 @@
 ,
-	Requires<%, %>
+	requires<%, %>

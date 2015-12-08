@@ -196,21 +196,11 @@ static void ParseUsage(int argc, char ** argv)
                 last = Options::Debug;
                 Settings::Options |= last;
             }
-            else if (0 == strcmp(arg, "noexcept"))
-            {
-                last = Options::Noexcept;
-                Settings::Options |= last;
-            }
 			else if (0 == strcmp(arg, "depends"))
 			{
 				last = Options::Depends;
                 Settings::Options |= last;
 			}
-            else if (0 == strcmp(arg, "update"))
-            {
-                last = Options::Update;
-                Settings::Options |= last;
-            }
 			else
             {
                 throw UsageException();
@@ -421,7 +411,7 @@ static void PrepareUsage()
             Path::CombineIntoSecond(Path::GetCurrentDirectory(), library);
         }
 
-        if (!Path::Exists(Path::Combine(library, "modern.h")))
+        if (!Path::Exists(Path::Combine(library, "winrt.h")))
         {
             throw LibraryNotFoundException();
         }
@@ -432,7 +422,7 @@ static void PrepareUsage()
 
     Database::Out(out);
 
-    if (!Path::CreateDirectory(out) && command != Command::Library && Options::Update != (Settings::Options & Options::Update))
+    if (!Path::CreateDirectory(out) && command != Command::Library && command != Command::Component)
     {
         throw ProjectFolderExistsException();
     }

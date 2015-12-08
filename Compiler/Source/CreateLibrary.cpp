@@ -16,8 +16,8 @@ static char const * ExcludedFiles [] =
     "Windows.Graphics.Display.Interop.idl",
     "Windows.Foundation.CustomAttributes.idl",
     "Windows.UI.Xaml.CustomAttributes.idl",
-	"Windows.ApplicationModel.contactstemp.idl",
-	"windows.web.http.diagnostics.idl",
+    "Windows.ApplicationModel.contactstemp.idl",
+    "windows.web.http.diagnostics.idl",
 };
 
 static void WriteLibrary();
@@ -25,7 +25,7 @@ static void WriteLibrary();
 template <unsigned Count>
 bool StartsWithNoCase(char const * target, char const (&match)[Count]) noexcept
 {
-	return 0 == _strnicmp(target, match, Count - 1);
+    return 0 == _strnicmp(target, match, Count - 1);
 }
 
 void CreateLibrary()
@@ -34,7 +34,7 @@ void CreateLibrary()
 
     Path::SetCurrentDirectory(Database::Sdk());
 
-	bool const noxaml = Options::NoXaml == (Settings::Options & Options::NoXaml);
+    bool const noxaml = Options::NoXaml == (Settings::Options & Options::NoXaml);
 
     Database::Includes([&]
     {
@@ -48,13 +48,13 @@ void CreateLibrary()
                 }
             }
 
-			if (noxaml)
-			{
-				if (StartsWithNoCase(filename, "Windows.UI.Xaml"))
-				{
-					return;
-				}
-			}
+            if (noxaml)
+            {
+                if (StartsWithNoCase(filename, "Windows.UI.Xaml"))
+                {
+                    return;
+                }
+            }
 
             if (int const sourceId = Database::AddSource(filename, true))
             {
@@ -85,9 +85,9 @@ static void WriteLogo(Target & target)
 
 static void WriteModernHeader()
 {
-    OutputFile target("..\\modern.h");
+    OutputFile target("..\\winrt.h");
     WriteLogo(target);
-    Write(target, Strings::Modern);
+    Write(target, Strings::base_modern);
 }
 
 template <unsigned Count>
@@ -100,78 +100,84 @@ static void WriteSupportingHeader(char const * filename, char const (&text)[Coun
 
 static void WriteBaseHeader()
 {
-	OutputFile out("base.h");
-	WriteLogo(out);
-	Write(out, Strings::Base);
-	//Write(out, Strings::Unknown);
-	//Write(out, Strings::String);
-	//Write(out, Strings::Lock);
-	//Write(out, Strings::Runtime);
-	//Write(out, Strings::Generic_Abi);
-	//Write(out, Strings::Generic_Interfaces);
-	//Write(out, Strings::Generic_Collections);
-	//Write(out, Strings::Generic_Delegates);
-	//Write(out, Strings::Collections);
+    OutputFile out("base.h");
+    WriteLogo(out);
+    Write(out, Strings::base_dependencies);
+    Write(out, Strings::base_error);
+    Write(out, Strings::base_accessors);
+    Write(out, Strings::base_handle);
+    Write(out, Strings::base_implements);
+    Write(out, Strings::base_meta);
+    Write(out, Strings::base_string);
+    Write(out, Strings::base_comptr);
+    Write(out, Strings::base_lock);
+    Write(out, Strings::base_windows);
+    Write(out, Strings::base_activation);
+    Write(out, Strings::base_generic);
+    Write(out, Strings::base_collections_consume);
+    Write(out, Strings::base_collections_produce);
+    Write(out, Strings::base_weak);
+}
+
+static void WritePostHeader()
+{
+    OutputFile out("post.h");
+    WriteLogo(out);
+    Write(out, Strings::base_await_consume);
+    Write(out, Strings::base_reference);
 }
 
 static void WriteLibrary()
 {
     std::string path = Database::Out();
-    Path::Append(path, "modern");
+    Path::Append(path, "winrt");
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
     WriteModernHeader();
-	WriteBaseHeader();
+    WriteBaseHeader();
+    WritePostHeader();
 
-	WriteSupportingHeader("debug.h", Strings::Debug);
-	WriteSupportingHeader("implements.h", Strings::Implements);
-	WriteSupportingHeader("comptr.h", Strings::ComPtr);
-	WriteSupportingHeader("handle.h", Strings::Handle);
-	WriteSupportingHeader("await.h", Strings::Await);
-    //WriteSupportingHeader("async.h", Strings::Async);
+    Output meta;
+    WriteLogo(meta);
+    Write(meta, Strings::PragmaOnce);
+    WriteDeclarations(meta);
 
-	Output meta;
-	WriteLogo(meta);
-	Write(meta, Strings::PragmaOnce);
-	WriteDeclarations(meta);
+    Output shim;
+    WriteLogo(shim);
+    Write(shim, Strings::PragmaOnce);
+    WriteDelegates(shim);
 
-	Output shim;
-	WriteLogo(shim);
-	Write(shim, Strings::PragmaOnce);
-	WriteDelegates(shim);
-
-	Output abi;
-	WriteLogo(abi);
-	Write(abi, Strings::PragmaOnce);
-	WriteEnumerations(abi);
-	WriteStructures(abi);
+    Output abi;
+    WriteLogo(abi);
+    Write(abi, Strings::PragmaOnce);
+    WriteEnumerations(abi);
+    WriteStructures(abi);
     WriteAbiInterfaceDeclarations(abi);
 
-	WriteInterfaces(meta, shim, abi);
+    WriteInterfaces(meta, shim, abi);
     WriteAbiClassDeclarations(abi);
-	WriteImplementation(meta);
-	WriteInterfaceDefinitions(meta);
-	WriteClasses(meta, shim);
-	//WriteAbiClassDeclarations(abi);
-	WriteGenericInterfaces(abi);
+    WriteImplementation(meta);
+    WriteInterfaceDefinitions(meta);
+    WriteClasses(meta, shim);
+    WriteGenericInterfaces(abi);
 
-	meta.WriteTo("sdk.meta.h");
-	shim.WriteTo("sdk.shim.h");
-	abi.WriteTo("sdk.abi.h");
+    meta.WriteTo("sdk.meta.h");
+    shim.WriteTo("sdk.shim.h");
+    abi.WriteTo("sdk.abi.h");
 
-	Output extend;
-	WriteLogo(extend);
-	Write(extend, Strings::PragmaOnce);
-	WriteOverrides(extend);
-	WriteComposable(extend);
+    Output extend;
+    WriteLogo(extend);
+    Write(extend, Strings::PragmaOnce);
+    WriteOverrides(extend);
+    WriteComposable(extend);
 
-	if (Database::IncludesCoreWindow())
-	{
-		Write(extend, Strings::ApplicationModel);
-	}
+    if (Database::IncludesCoreWindow())
+    {
+        Write(extend, Strings::ApplicationModel);
+    }
 
-	extend.WriteTo("sdk.extend.h");
+    extend.WriteTo("sdk.extend.h");
 }
 
 }
