@@ -148,6 +148,38 @@ struct accessors
 	}
 };
 
+struct bool_proxy
+{
+	bool_proxy & operator=(bool_proxy const &) = delete;
+
+	bool_proxy(bool & value) noexcept :
+		m_value(value)
+	{}
+
+	~bool_proxy() noexcept
+	{
+		m_value = false != m_value;
+	}
+
+	operator bool * () noexcept
+	{
+		return &m_value;
+	}
+
+private:
+
+	bool & m_value;
+};
+
+template <>
+struct accessors<bool>
+{
+	static bool_proxy put(bool & object) noexcept
+	{
+		return bool_proxy(object);
+	}
+};
+
 }}
 
 namespace winrt {

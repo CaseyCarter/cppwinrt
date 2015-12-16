@@ -142,7 +142,7 @@ static void WriteAbiArguments(Output & output, unsigned const stringCount)
         }
         else
         {
-            if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value || param.Category == TypeCategory::Boolean)
+            if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value)
             {
                 Write(output, "&%", param.Name);
             }

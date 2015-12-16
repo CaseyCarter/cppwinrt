@@ -1011,84 +1011,84 @@ template <typename T> void impl_IPackageWithMetadata<T>::Launch(StringReference 
 template <typename T> bool impl_IPackageStatus<T>::VerifyIsOK() const
 {
 	bool value = {};
-	check(shim()->abi_VerifyIsOK(&value));
+	check(shim()->abi_VerifyIsOK(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::NotAvailable() const
 {
 	bool value = {};
-	check(shim()->get_NotAvailable(&value));
+	check(shim()->get_NotAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::PackageOffline() const
 {
 	bool value = {};
-	check(shim()->get_PackageOffline(&value));
+	check(shim()->get_PackageOffline(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::DataOffline() const
 {
 	bool value = {};
-	check(shim()->get_DataOffline(&value));
+	check(shim()->get_DataOffline(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::Disabled() const
 {
 	bool value = {};
-	check(shim()->get_Disabled(&value));
+	check(shim()->get_Disabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::NeedsRemediation() const
 {
 	bool value = {};
-	check(shim()->get_NeedsRemediation(&value));
+	check(shim()->get_NeedsRemediation(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::LicenseIssue() const
 {
 	bool value = {};
-	check(shim()->get_LicenseIssue(&value));
+	check(shim()->get_LicenseIssue(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::Modified() const
 {
 	bool value = {};
-	check(shim()->get_Modified(&value));
+	check(shim()->get_Modified(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::Tampered() const
 {
 	bool value = {};
-	check(shim()->get_Tampered(&value));
+	check(shim()->get_Tampered(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::DependencyIssue() const
 {
 	bool value = {};
-	check(shim()->get_DependencyIssue(&value));
+	check(shim()->get_DependencyIssue(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::Servicing() const
 {
 	bool value = {};
-	check(shim()->get_Servicing(&value));
+	check(shim()->get_Servicing(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageStatus<T>::DeploymentInProgress() const
 {
 	bool value = {};
-	check(shim()->get_DeploymentInProgress(&value));
+	check(shim()->get_DeploymentInProgress(put(value)));
 	return value;
 }
 
@@ -1165,7 +1165,7 @@ template <typename T> Windows::Storage::StorageFolder impl_IPackage<T>::Installe
 template <typename T> bool impl_IPackage<T>::IsFramework() const
 {
 	bool value = {};
-	check(shim()->get_IsFramework(&value));
+	check(shim()->get_IsFramework(put(value)));
 	return value;
 }
 
@@ -1207,21 +1207,21 @@ template <typename T> Windows::Foundation::Uri impl_IPackage2<T>::Logo() const
 template <typename T> bool impl_IPackage2<T>::IsResourcePackage() const
 {
 	bool value = {};
-	check(shim()->get_IsResourcePackage(&value));
+	check(shim()->get_IsResourcePackage(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackage2<T>::IsBundle() const
 {
 	bool value = {};
-	check(shim()->get_IsBundle(&value));
+	check(shim()->get_IsBundle(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackage2<T>::IsDevelopmentMode() const
 {
 	bool value = {};
-	check(shim()->get_IsDevelopmentMode(&value));
+	check(shim()->get_IsDevelopmentMode(put(value)));
 	return value;
 }
 
@@ -1256,7 +1256,7 @@ template <typename T> Windows::ApplicationModel::Package impl_IPackageStatics<T>
 template <typename T> bool impl_IDesignModeStatics<T>::DesignModeEnabled() const
 {
 	bool value = {};
-	check(shim()->get_DesignModeEnabled(&value));
+	check(shim()->get_DesignModeEnabled(put(value)));
 	return value;
 }
 
@@ -1326,7 +1326,7 @@ template <typename T> Windows::UI::ViewManagement::ActivationViewSwitcher impl_I
 template <typename T> bool impl_IPrelaunchActivatedEventArgs<T>::PrelaunchActivated() const
 {
 	bool value = {};
-	check(shim()->get_PrelaunchActivated(&value));
+	check(shim()->get_PrelaunchActivated(put(value)));
 	return value;
 }
 
@@ -2326,7 +2326,7 @@ template <typename T> void impl_IAppointment<T>::BusyStatus(Windows::Application
 template <typename T> bool impl_IAppointment<T>::AllDay() const
 {
 	bool value = {};
-	check(shim()->get_AllDay(&value));
+	check(shim()->get_AllDay(put(value)));
 	return value;
 }
 
@@ -2395,7 +2395,7 @@ template <typename T> Windows::Foundation::IReference<winrt::Windows::Foundation
 template <typename T> bool impl_IAppointment2<T>::IsResponseRequested() const
 {
 	bool value = {};
-	check(shim()->get_IsResponseRequested(&value));
+	check(shim()->get_IsResponseRequested(put(value)));
 	return value;
 }
 
@@ -2407,7 +2407,7 @@ template <typename T> void impl_IAppointment2<T>::IsResponseRequested(bool const
 template <typename T> bool impl_IAppointment2<T>::AllowNewTimeProposal() const
 {
 	bool value = {};
-	check(shim()->get_AllowNewTimeProposal(&value));
+	check(shim()->get_AllowNewTimeProposal(put(value)));
 	return value;
 }
 
@@ -2455,14 +2455,14 @@ template <typename T> void impl_IAppointment2<T>::UserResponse(Windows::Applicat
 template <typename T> bool impl_IAppointment2<T>::HasInvitees() const
 {
 	bool value = {};
-	check(shim()->get_HasInvitees(&value));
+	check(shim()->get_HasInvitees(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppointment2<T>::IsCanceledMeeting() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceledMeeting(&value));
+	check(shim()->get_IsCanceledMeeting(put(value)));
 	return value;
 }
 
@@ -2474,7 +2474,7 @@ template <typename T> void impl_IAppointment2<T>::IsCanceledMeeting(bool const v
 template <typename T> bool impl_IAppointment2<T>::IsOrganizedByUser() const
 {
 	bool value = {};
-	check(shim()->get_IsOrganizedByUser(&value));
+	check(shim()->get_IsOrganizedByUser(put(value)));
 	return value;
 }
 
@@ -2531,7 +2531,7 @@ template <typename T> Windows::Foundation::Collections::IVector<String> impl_IFi
 template <typename T> bool impl_IFindAppointmentsOptions<T>::IncludeHidden() const
 {
 	bool value = {};
-	check(shim()->get_IncludeHidden(&value));
+	check(shim()->get_IncludeHidden(put(value)));
 	return value;
 }
 
@@ -2581,7 +2581,7 @@ template <typename T> String impl_IAppointmentCalendar<T>::LocalId() const
 template <typename T> bool impl_IAppointmentCalendar<T>::IsHidden() const
 {
 	bool value = {};
-	check(shim()->get_IsHidden(&value));
+	check(shim()->get_IsHidden(put(value)));
 	return value;
 }
 
@@ -2765,7 +2765,7 @@ template <typename T> String impl_IAppointmentCalendar2<T>::UserDataAccountId() 
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanCreateOrUpdateAppointments() const
 {
 	bool value = {};
-	check(shim()->get_CanCreateOrUpdateAppointments(&value));
+	check(shim()->get_CanCreateOrUpdateAppointments(put(value)));
 	return value;
 }
 
@@ -2777,7 +2777,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanCreateOrUpdateAppoi
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanCancelMeetings() const
 {
 	bool value = {};
-	check(shim()->get_CanCancelMeetings(&value));
+	check(shim()->get_CanCancelMeetings(put(value)));
 	return value;
 }
 
@@ -2789,7 +2789,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanCancelMeetings(bool
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanForwardMeetings() const
 {
 	bool value = {};
-	check(shim()->get_CanForwardMeetings(&value));
+	check(shim()->get_CanForwardMeetings(put(value)));
 	return value;
 }
 
@@ -2801,7 +2801,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanForwardMeetings(boo
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanProposeNewTimeForMeetings() const
 {
 	bool value = {};
-	check(shim()->get_CanProposeNewTimeForMeetings(&value));
+	check(shim()->get_CanProposeNewTimeForMeetings(put(value)));
 	return value;
 }
 
@@ -2813,7 +2813,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanProposeNewTimeForMe
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanUpdateMeetingResponses() const
 {
 	bool value = {};
-	check(shim()->get_CanUpdateMeetingResponses(&value));
+	check(shim()->get_CanUpdateMeetingResponses(put(value)));
 	return value;
 }
 
@@ -2825,7 +2825,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanUpdateMeetingRespon
 template <typename T> bool impl_IAppointmentCalendar2<T>::CanNotifyInvitees() const
 {
 	bool value = {};
-	check(shim()->get_CanNotifyInvitees(&value));
+	check(shim()->get_CanNotifyInvitees(put(value)));
 	return value;
 }
 
@@ -2837,7 +2837,7 @@ template <typename T> void impl_IAppointmentCalendar2<T>::CanNotifyInvitees(bool
 template <typename T> bool impl_IAppointmentCalendar2<T>::MustNofityInvitees() const
 {
 	bool value = {};
-	check(shim()->get_MustNofityInvitees(&value));
+	check(shim()->get_MustNofityInvitees(put(value)));
 	return value;
 }
 
@@ -3377,7 +3377,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<String> impl
 template <typename T> bool impl_IAppointmentException<T>::IsDeleted() const
 {
 	bool value = {};
-	check(shim()->get_IsDeleted(&value));
+	check(shim()->get_IsDeleted(put(value)));
 	return value;
 }
 
@@ -3853,7 +3853,7 @@ template <typename T> void impl_IBackgroundTaskBuilder2<T>::CancelOnConditionLos
 template <typename T> bool impl_IBackgroundTaskBuilder2<T>::CancelOnConditionLoss() const
 {
 	bool value = {};
-	check(shim()->get_CancelOnConditionLoss(&value));
+	check(shim()->get_CancelOnConditionLoss(put(value)));
 	return value;
 }
 
@@ -3865,7 +3865,7 @@ template <typename T> void impl_IBackgroundTaskBuilder3<T>::IsNetworkRequested(b
 template <typename T> bool impl_IBackgroundTaskBuilder3<T>::IsNetworkRequested() const
 {
 	bool value = {};
-	check(shim()->get_IsNetworkRequested(&value));
+	check(shim()->get_IsNetworkRequested(put(value)));
 	return value;
 }
 
@@ -3933,7 +3933,7 @@ template <typename T> Windows::ApplicationModel::Background::StorageLibraryConte
 template <typename T> bool impl_ISystemTrigger<T>::OneShot() const
 {
 	bool oneShot = {};
-	check(shim()->get_OneShot(&oneShot));
+	check(shim()->get_OneShot(put(oneShot)));
 	return oneShot;
 }
 
@@ -3996,7 +3996,7 @@ template <typename T> Windows::Storage::Provider::FileUpdateRequest impl_ICached
 template <typename T> bool impl_ICachedFileUpdaterTriggerDetails<T>::CanRequestUserInput() const
 {
 	bool value = {};
-	check(shim()->get_CanRequestUserInput(&value));
+	check(shim()->get_CanRequestUserInput(put(value)));
 	return value;
 }
 
@@ -4010,7 +4010,7 @@ template <typename T> unsigned impl_ITimeTrigger<T>::FreshnessTime() const
 template <typename T> bool impl_ITimeTrigger<T>::OneShot() const
 {
 	bool oneShot = {};
-	check(shim()->get_OneShot(&oneShot));
+	check(shim()->get_OneShot(put(oneShot)));
 	return oneShot;
 }
 
@@ -4031,7 +4031,7 @@ template <typename T> unsigned impl_IMaintenanceTrigger<T>::FreshnessTime() cons
 template <typename T> bool impl_IMaintenanceTrigger<T>::OneShot() const
 {
 	bool oneShot = {};
-	check(shim()->get_OneShot(&oneShot));
+	check(shim()->get_OneShot(put(oneShot)));
 	return oneShot;
 }
 
@@ -4045,7 +4045,7 @@ template <typename T> Windows::ApplicationModel::Background::MaintenanceTrigger 
 template <typename T> bool impl_IPhoneTrigger<T>::OneShot() const
 {
 	bool value = {};
-	check(shim()->get_OneShot(&value));
+	check(shim()->get_OneShot(put(value)));
 	return value;
 }
 
@@ -4108,7 +4108,7 @@ template <typename T> Windows::Devices::Bluetooth::Background::RfcommOutboundCon
 template <typename T> bool impl_IRfcommConnectionTrigger<T>::AllowMultipleConnections() const
 {
 	bool value = {};
-	check(shim()->get_AllowMultipleConnections(&value));
+	check(shim()->get_AllowMultipleConnections(put(value)));
 	return value;
 }
 
@@ -4151,14 +4151,14 @@ template <typename T> String impl_IDeviceConnectionChangeTrigger<T>::DeviceId() 
 template <typename T> bool impl_IDeviceConnectionChangeTrigger<T>::CanMaintainConnection() const
 {
 	bool value = {};
-	check(shim()->get_CanMaintainConnection(&value));
+	check(shim()->get_CanMaintainConnection(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IDeviceConnectionChangeTrigger<T>::MaintainConnection() const
 {
 	bool value = {};
-	check(shim()->get_MaintainConnection(&value));
+	check(shim()->get_MaintainConnection(put(value)));
 	return value;
 }
 
@@ -4362,7 +4362,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::Duration(Windows::Fou
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsCallerIdBlocked() const
 {
 	bool value = {};
-	check(shim()->get_IsCallerIdBlocked(&value));
+	check(shim()->get_IsCallerIdBlocked(put(value)));
 	return value;
 }
 
@@ -4374,7 +4374,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsCallerIdBlocked(boo
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsEmergency() const
 {
 	bool value = {};
-	check(shim()->get_IsEmergency(&value));
+	check(shim()->get_IsEmergency(put(value)));
 	return value;
 }
 
@@ -4386,7 +4386,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsEmergency(bool cons
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsIncoming() const
 {
 	bool value = {};
-	check(shim()->get_IsIncoming(&value));
+	check(shim()->get_IsIncoming(put(value)));
 	return value;
 }
 
@@ -4398,7 +4398,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsIncoming(bool const
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsMissed() const
 {
 	bool value = {};
-	check(shim()->get_IsMissed(&value));
+	check(shim()->get_IsMissed(put(value)));
 	return value;
 }
 
@@ -4410,7 +4410,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsMissed(bool const v
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsRinging() const
 {
 	bool value = {};
-	check(shim()->get_IsRinging(&value));
+	check(shim()->get_IsRinging(put(value)));
 	return value;
 }
 
@@ -4422,7 +4422,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsRinging(bool const 
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsSeen() const
 {
 	bool value = {};
-	check(shim()->get_IsSeen(&value));
+	check(shim()->get_IsSeen(put(value)));
 	return value;
 }
 
@@ -4434,7 +4434,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsSeen(bool const val
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsSuppressed() const
 {
 	bool value = {};
-	check(shim()->get_IsSuppressed(&value));
+	check(shim()->get_IsSuppressed(put(value)));
 	return value;
 }
 
@@ -4446,7 +4446,7 @@ template <typename T> void impl_IPhoneCallHistoryEntry<T>::IsSuppressed(bool con
 template <typename T> bool impl_IPhoneCallHistoryEntry<T>::IsVoicemail() const
 {
 	bool value = {};
-	check(shim()->get_IsVoicemail(&value));
+	check(shim()->get_IsVoicemail(put(value)));
 	return value;
 }
 
@@ -4823,7 +4823,7 @@ template <typename T> int impl_IPhoneLineCellularDetails<T>::SimSlotIndex() cons
 template <typename T> bool impl_IPhoneLineCellularDetails<T>::IsModemOn() const
 {
 	bool value = {};
-	check(shim()->get_IsModemOn(&value));
+	check(shim()->get_IsModemOn(put(value)));
 	return value;
 }
 
@@ -4917,14 +4917,14 @@ template <typename T> Windows::ApplicationModel::Calls::PhoneLineTransport impl_
 template <typename T> bool impl_IPhoneLine<T>::CanDial() const
 {
 	bool value = {};
-	check(shim()->get_CanDial(&value));
+	check(shim()->get_CanDial(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPhoneLine<T>::SupportsTile() const
 {
 	bool value = {};
-	check(shim()->get_SupportsTile(&value));
+	check(shim()->get_SupportsTile(put(value)));
 	return value;
 }
 
@@ -4983,7 +4983,7 @@ template <typename T> Windows::ApplicationModel::Calls::PhoneLineWatcher impl_IP
 template <typename T> bool impl_IPhoneLineConfiguration<T>::IsVideoCallingEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsVideoCallingEnabled(&value));
+	check(shim()->get_IsVideoCallingEnabled(put(value)));
 	return value;
 }
 
@@ -5135,14 +5135,14 @@ template <typename T> void impl_IPhoneCallManagerStatics2<T>::CallStateChanged(l
 template <typename T> bool impl_IPhoneCallManagerStatics2<T>::IsCallActive() const
 {
 	bool value = {};
-	check(shim()->get_IsCallActive(&value));
+	check(shim()->get_IsCallActive(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPhoneCallManagerStatics2<T>::IsCallIncoming() const
 {
 	bool value = {};
-	check(shim()->get_IsCallIncoming(&value));
+	check(shim()->get_IsCallIncoming(put(value)));
 	return value;
 }
 
@@ -5161,7 +5161,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename T> bool impl_IPhoneCallVideoCapabilities<T>::IsVideoCallingCapable() const
 {
 	bool pValue = {};
-	check(shim()->get_IsVideoCallingCapable(&pValue));
+	check(shim()->get_IsVideoCallingCapable(put(pValue)));
 	return pValue;
 }
 
@@ -5175,7 +5175,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename T> bool impl_IPhoneCallBlockingStatics<T>::BlockUnknownNumbers() const
 {
 	bool value = {};
-	check(shim()->get_BlockUnknownNumbers(&value));
+	check(shim()->get_BlockUnknownNumbers(put(value)));
 	return value;
 }
 
@@ -5187,7 +5187,7 @@ template <typename T> void impl_IPhoneCallBlockingStatics<T>::BlockUnknownNumber
 template <typename T> bool impl_IPhoneCallBlockingStatics<T>::BlockPrivateNumbers() const
 {
 	bool value = {};
-	check(shim()->get_BlockPrivateNumbers(&value));
+	check(shim()->get_BlockPrivateNumbers(put(value)));
 	return value;
 }
 
@@ -5368,7 +5368,7 @@ template <typename T> void impl_IVoipPhoneCall<T>::NotifyCallReady() const
 template <typename T> bool impl_IMuteChangeEventArgs<T>::Muted() const
 {
 	bool value = {};
-	check(shim()->get_Muted(&value));
+	check(shim()->get_Muted(put(value)));
 	return value;
 }
 
@@ -5598,7 +5598,7 @@ template <typename T> Windows::ApplicationModel::Calls::Background::PhoneLineCha
 template <typename T> bool impl_IPhoneLineChangedTriggerDetails<T>::HasLinePropertyChanged(Windows::ApplicationModel::Calls::Background::PhoneLineProperties const lineProperty) const
 {
 	bool result = {};
-	check(shim()->abi_HasLinePropertyChanged(lineProperty, &result));
+	check(shim()->abi_HasLinePropertyChanged(lineProperty, put(result)));
 	return result;
 }
 
@@ -5657,7 +5657,7 @@ template <typename T> void impl_IPhoneCallOrigin2<T>::DisplayName(StringReferenc
 template <typename T> bool impl_IPhoneCallOriginManagerStatics<T>::IsCurrentAppActiveCallOriginApp() const
 {
 	bool value = {};
-	check(shim()->get_IsCurrentAppActiveCallOriginApp(&value));
+	check(shim()->get_IsCurrentAppActiveCallOriginApp(put(value)));
 	return value;
 }
 
@@ -5678,14 +5678,14 @@ namespace winrt { namespace Windows { namespace ApplicationModel { namespace Cha
 template <typename T> bool impl_IChatMessageTransport<T>::IsAppSetAsNotificationProvider() const
 {
 	bool value = {};
-	check(shim()->get_IsAppSetAsNotificationProvider(&value));
+	check(shim()->get_IsAppSetAsNotificationProvider(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IChatMessageTransport<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
@@ -5871,21 +5871,21 @@ template <typename T> String impl_IChatMessage<T>::Id() const
 template <typename T> bool impl_IChatMessage<T>::IsForwardingDisabled() const
 {
 	bool value = {};
-	check(shim()->get_IsForwardingDisabled(&value));
+	check(shim()->get_IsForwardingDisabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IChatMessage<T>::IsIncoming() const
 {
 	bool value = {};
-	check(shim()->get_IsIncoming(&value));
+	check(shim()->get_IsIncoming(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IChatMessage<T>::IsRead() const
 {
 	bool value = {};
-	check(shim()->get_IsRead(&value));
+	check(shim()->get_IsRead(put(value)));
 	return value;
 }
 
@@ -5977,7 +5977,7 @@ template <typename T> void impl_IChatMessage2<T>::From(StringReference const & v
 template <typename T> bool impl_IChatMessage2<T>::IsAutoReply() const
 {
 	bool result = {};
-	check(shim()->get_IsAutoReply(&result));
+	check(shim()->get_IsAutoReply(put(result)));
 	return result;
 }
 
@@ -5994,7 +5994,7 @@ template <typename T> void impl_IChatMessage2<T>::IsForwardingDisabled(bool cons
 template <typename T> bool impl_IChatMessage2<T>::IsReplyDisabled() const
 {
 	bool result = {};
-	check(shim()->get_IsReplyDisabled(&result));
+	check(shim()->get_IsReplyDisabled(put(result)));
 	return result;
 }
 
@@ -6011,7 +6011,7 @@ template <typename T> void impl_IChatMessage2<T>::IsRead(bool const value) const
 template <typename T> bool impl_IChatMessage2<T>::IsSeen() const
 {
 	bool result = {};
-	check(shim()->get_IsSeen(&result));
+	check(shim()->get_IsSeen(put(result)));
 	return result;
 }
 
@@ -6023,7 +6023,7 @@ template <typename T> void impl_IChatMessage2<T>::IsSeen(bool const value) const
 template <typename T> bool impl_IChatMessage2<T>::IsSimMessage() const
 {
 	bool result = {};
-	check(shim()->get_IsSimMessage(&result));
+	check(shim()->get_IsSimMessage(put(result)));
 	return result;
 }
 
@@ -6064,7 +6064,7 @@ template <typename T> void impl_IChatMessage2<T>::NetworkTimestamp(Windows::Foun
 template <typename T> bool impl_IChatMessage2<T>::IsReceivedDuringQuietHours() const
 {
 	bool result = {};
-	check(shim()->get_IsReceivedDuringQuietHours(&result));
+	check(shim()->get_IsReceivedDuringQuietHours(put(result)));
 	return result;
 }
 
@@ -6091,7 +6091,7 @@ template <typename T> void impl_IChatMessage2<T>::Subject(StringReference const 
 template <typename T> bool impl_IChatMessage2<T>::ShouldSuppressNotification() const
 {
 	bool result = {};
-	check(shim()->get_ShouldSuppressNotification(&result));
+	check(shim()->get_ShouldSuppressNotification(put(result)));
 	return result;
 }
 
@@ -6549,63 +6549,63 @@ template <typename T> Windows::ApplicationModel::Chat::ChatMessage impl_IChatMes
 template <typename T> bool impl_IChatMessageNotificationTriggerDetails2<T>::ShouldDisplayToast() const
 {
 	bool result = {};
-	check(shim()->get_ShouldDisplayToast(&result));
+	check(shim()->get_ShouldDisplayToast(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatMessageNotificationTriggerDetails2<T>::ShouldUpdateDetailText() const
 {
 	bool result = {};
-	check(shim()->get_ShouldUpdateDetailText(&result));
+	check(shim()->get_ShouldUpdateDetailText(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatMessageNotificationTriggerDetails2<T>::ShouldUpdateBadge() const
 {
 	bool result = {};
-	check(shim()->get_ShouldUpdateBadge(&result));
+	check(shim()->get_ShouldUpdateBadge(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatMessageNotificationTriggerDetails2<T>::ShouldUpdateActionCenter() const
 {
 	bool result = {};
-	check(shim()->get_ShouldUpdateActionCenter(&result));
+	check(shim()->get_ShouldUpdateActionCenter(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatCapabilities<T>::IsOnline() const
 {
 	bool result = {};
-	check(shim()->get_IsOnline(&result));
+	check(shim()->get_IsOnline(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatCapabilities<T>::IsChatCapable() const
 {
 	bool result = {};
-	check(shim()->get_IsChatCapable(&result));
+	check(shim()->get_IsChatCapable(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatCapabilities<T>::IsFileTransferCapable() const
 {
 	bool result = {};
-	check(shim()->get_IsFileTransferCapable(&result));
+	check(shim()->get_IsFileTransferCapable(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatCapabilities<T>::IsGeoLocationPushCapable() const
 {
 	bool result = {};
-	check(shim()->get_IsGeoLocationPushCapable(&result));
+	check(shim()->get_IsGeoLocationPushCapable(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IChatCapabilities<T>::IsIntegratedMessagingCapable() const
 {
 	bool result = {};
-	check(shim()->get_IsIntegratedMessagingCapable(&result));
+	check(shim()->get_IsIntegratedMessagingCapable(put(result)));
 	return result;
 }
 
@@ -6683,7 +6683,7 @@ template <typename T> int impl_IChatRecipientDeliveryInfo<T>::TransportErrorCode
 template <typename T> bool impl_IChatRecipientDeliveryInfo<T>::IsErrorPermanent() const
 {
 	bool result = {};
-	check(shim()->get_IsErrorPermanent(&result));
+	check(shim()->get_IsErrorPermanent(put(result)));
 	return result;
 }
 
@@ -6766,7 +6766,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 template <typename T> bool impl_IChatConversation<T>::HasUnreadMessages() const
 {
 	bool result = {};
-	check(shim()->get_HasUnreadMessages(&result));
+	check(shim()->get_HasUnreadMessages(put(result)));
 	return result;
 }
 
@@ -6792,7 +6792,7 @@ template <typename T> void impl_IChatConversation<T>::Subject(StringReference co
 template <typename T> bool impl_IChatConversation<T>::IsConversationMuted() const
 {
 	bool result = {};
-	check(shim()->get_IsConversationMuted(&result));
+	check(shim()->get_IsConversationMuted(put(result)));
 	return result;
 }
 
@@ -6887,7 +6887,7 @@ template <typename T> void impl_IChatConversation<T>::RemoteParticipantComposing
 template <typename T> bool impl_IChatConversation2<T>::CanModifyParticipants() const
 {
 	bool result = {};
-	check(shim()->get_CanModifyParticipants(&result));
+	check(shim()->get_CanModifyParticipants(put(result)));
 	return result;
 }
 
@@ -6913,7 +6913,7 @@ template <typename T> String impl_IRemoteParticipantComposingChangedEventArgs<T>
 template <typename T> bool impl_IRemoteParticipantComposingChangedEventArgs<T>::IsComposing() const
 {
 	bool result = {};
-	check(shim()->get_IsComposing(&result));
+	check(shim()->get_IsComposing(put(result)));
 	return result;
 }
 
@@ -6962,7 +6962,7 @@ template <typename T> Windows::Foundation::Collections::IMapView<String, IInspec
 template <typename T> bool impl_IRcsTransport<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
@@ -6990,14 +6990,14 @@ template <typename T> Windows::ApplicationModel::Chat::RcsTransportConfiguration
 template <typename T> bool impl_IRcsTransport<T>::IsStoreAndForwardEnabled(Windows::ApplicationModel::Chat::RcsServiceKind const serviceKind) const
 {
 	bool result = {};
-	check(shim()->abi_IsStoreAndForwardEnabled(serviceKind, &result));
+	check(shim()->abi_IsStoreAndForwardEnabled(serviceKind, put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IRcsTransport<T>::IsServiceKindSupported(Windows::ApplicationModel::Chat::RcsServiceKind const serviceKind) const
 {
 	bool result = {};
-	check(shim()->abi_IsServiceKindSupported(serviceKind, &result));
+	check(shim()->abi_IsServiceKindSupported(serviceKind, put(result)));
 	return result;
 }
 
@@ -7108,7 +7108,7 @@ template <typename T> String impl_IRcsEndUserMessage<T>::Text() const
 template <typename T> bool impl_IRcsEndUserMessage<T>::IsPinRequired() const
 {
 	bool result = {};
-	check(shim()->get_IsPinRequired(&result));
+	check(shim()->get_IsPinRequired(put(result)));
 	return result;
 }
 
@@ -7136,7 +7136,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IRcsEndUserMessage<
 template <typename T> bool impl_IRcsEndUserMessageAvailableEventArgs<T>::IsMessageAvailable() const
 {
 	bool result = {};
-	check(shim()->get_IsMessageAvailable(&result));
+	check(shim()->get_IsMessageAvailable(put(result)));
 	return result;
 }
 
@@ -7270,7 +7270,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename T> bool impl_IContactManagerStatics3<T>::IsShowContactCardSupported() const
 {
 	bool result = {};
-	check(shim()->abi_IsShowContactCardSupported(&result));
+	check(shim()->abi_IsShowContactCardSupported(put(result)));
 	return result;
 }
 
@@ -7282,7 +7282,7 @@ template <typename T> void impl_IContactManagerStatics3<T>::ShowContactCard(Wind
 template <typename T> bool impl_IContactManagerStatics3<T>::IsShowDelayLoadedContactCardSupported() const
 {
 	bool result = {};
-	check(shim()->abi_IsShowDelayLoadedContactCardSupported(&result));
+	check(shim()->abi_IsShowDelayLoadedContactCardSupported(put(result)));
 	return result;
 }
 
@@ -7522,7 +7522,7 @@ template <typename T> void impl_IContactAnnotation<T>::SupportedOperations(Windo
 template <typename T> bool impl_IContactAnnotation<T>::IsDisabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDisabled(&value));
+	check(shim()->get_IsDisabled(put(value)));
 	return value;
 }
 
@@ -7663,7 +7663,7 @@ template <typename T> String impl_IContactList<T>::SourceDisplayName() const
 template <typename T> bool impl_IContactList<T>::IsHidden() const
 {
 	bool value = {};
-	check(shim()->get_IsHidden(&value));
+	check(shim()->get_IsHidden(put(value)));
 	return value;
 }
 
@@ -7713,7 +7713,7 @@ template <typename T> Windows::ApplicationModel::Contacts::ContactListSyncManage
 template <typename T> bool impl_IContactList<T>::SupportsServerSearch() const
 {
 	bool value = {};
-	check(shim()->get_SupportsServerSearch(&value));
+	check(shim()->get_SupportsServerSearch(put(value)));
 	return value;
 }
 
@@ -8530,7 +8530,7 @@ template <typename T> void impl_IContact3<T>::DisplayPictureUserUpdateTime(Windo
 template <typename T> bool impl_IContact3<T>::IsMe() const
 {
 	bool value = {};
-	check(shim()->get_IsMe(&value));
+	check(shim()->get_IsMe(put(value)));
 	return value;
 }
 
@@ -8568,7 +8568,7 @@ template <typename T> void impl_IContact3<T>::RingToneToken(StringReference cons
 template <typename T> bool impl_IContact3<T>::IsDisplayPictureManuallySet() const
 {
 	bool value = {};
-	check(shim()->get_IsDisplayPictureManuallySet(&value));
+	check(shim()->get_IsDisplayPictureManuallySet(put(value)));
 	return value;
 }
 
@@ -8613,7 +8613,7 @@ template <typename T> void impl_IContact3<T>::TextToneToken(StringReference cons
 template <typename T> bool impl_IContact3<T>::IsAggregate() const
 {
 	bool value = {};
-	check(shim()->get_IsAggregate(&value));
+	check(shim()->get_IsAggregate(put(value)));
 	return value;
 }
 
@@ -8796,7 +8796,7 @@ template <typename T> Windows::Foundation::Collections::IVector<String> impl_ICo
 template <typename T> bool impl_IContactQueryOptions<T>::IncludeContactsFromHiddenLists() const
 {
 	bool value = {};
-	check(shim()->get_IncludeContactsFromHiddenLists(&value));
+	check(shim()->get_IncludeContactsFromHiddenLists(put(value)));
 	return value;
 }
 
@@ -9234,7 +9234,7 @@ template <typename T> void impl_IContactPickerUI<T>::RemoveContact(StringReferen
 template <typename T> bool impl_IContactPickerUI<T>::ContainsContact(StringReference const & id) const
 {
 	bool isContained = {};
-	check(shim()->abi_ContainsContact(get(id), &isContained));
+	check(shim()->abi_ContainsContact(get(id), put(isContained)));
 	return isContained;
 }
 
@@ -9509,14 +9509,14 @@ template <typename T> void impl_ICoreApplicationView<T>::Activated(long long con
 template <typename T> bool impl_ICoreApplicationView<T>::IsMain() const
 {
 	bool value = {};
-	check(shim()->get_IsMain(&value));
+	check(shim()->get_IsMain(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICoreApplicationView<T>::IsHosted() const
 {
 	bool value = {};
-	check(shim()->get_IsHosted(&value));
+	check(shim()->get_IsHosted(put(value)));
 	return value;
 }
 
@@ -9530,7 +9530,7 @@ template <typename T> Windows::UI::Core::CoreDispatcher impl_ICoreApplicationVie
 template <typename T> bool impl_ICoreApplicationView3<T>::IsComponent() const
 {
 	bool value = {};
-	check(shim()->get_IsComponent(&value));
+	check(shim()->get_IsComponent(put(value)));
 	return value;
 }
 
@@ -9573,7 +9573,7 @@ template <typename T> void impl_ICoreApplicationViewTitleBar<T>::ExtendViewIntoT
 template <typename T> bool impl_ICoreApplicationViewTitleBar<T>::ExtendViewIntoTitleBar() const
 {
 	bool value = {};
-	check(shim()->get_ExtendViewIntoTitleBar(&value));
+	check(shim()->get_ExtendViewIntoTitleBar(put(value)));
 	return value;
 }
 
@@ -9618,7 +9618,7 @@ template <typename T> void impl_ICoreApplicationViewTitleBar<T>::LayoutMetricsCh
 template <typename T> bool impl_ICoreApplicationViewTitleBar<T>::IsVisible() const
 {
 	bool value = {};
-	check(shim()->get_IsVisible(&value));
+	check(shim()->get_IsVisible(put(value)));
 	return value;
 }
 
@@ -9649,7 +9649,7 @@ template <typename T> Windows::ApplicationModel::Core::UnhandledError impl_IUnha
 template <typename T> bool impl_IUnhandledError<T>::Handled() const
 {
 	bool value = {};
-	check(shim()->get_Handled(&value));
+	check(shim()->get_Handled(put(value)));
 	return value;
 }
 
@@ -10020,7 +10020,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<String> impl
 template <typename T> bool impl_IDataPackageView<T>::Contains(StringReference const & formatId) const
 {
 	bool value = {};
-	check(shim()->abi_Contains(get(formatId), &value));
+	check(shim()->abi_Contains(get(formatId), put(value)));
 	return value;
 }
 
@@ -10467,7 +10467,7 @@ template <typename T> void impl_ICoreDragUIOverride<T>::SetContentFromSoftwareBi
 template <typename T> bool impl_ICoreDragUIOverride<T>::IsContentVisible() const
 {
 	bool value = {};
-	check(shim()->get_IsContentVisible(&value));
+	check(shim()->get_IsContentVisible(put(value)));
 	return value;
 }
 
@@ -10491,7 +10491,7 @@ template <typename T> void impl_ICoreDragUIOverride<T>::Caption(StringReference 
 template <typename T> bool impl_ICoreDragUIOverride<T>::IsCaptionVisible() const
 {
 	bool value = {};
-	check(shim()->get_IsCaptionVisible(&value));
+	check(shim()->get_IsCaptionVisible(put(value)));
 	return value;
 }
 
@@ -10503,7 +10503,7 @@ template <typename T> void impl_ICoreDragUIOverride<T>::IsCaptionVisible(bool co
 template <typename T> bool impl_ICoreDragUIOverride<T>::IsGlyphVisible() const
 {
 	bool value = {};
-	check(shim()->get_IsGlyphVisible(&value));
+	check(shim()->get_IsGlyphVisible(put(value)));
 	return value;
 }
 
@@ -10625,7 +10625,7 @@ template <typename T> void impl_ICoreDragDropManager<T>::TargetRequested(long lo
 template <typename T> bool impl_ICoreDragDropManager<T>::AreConcurrentOperationsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AreConcurrentOperationsEnabled(&value));
+	check(shim()->get_AreConcurrentOperationsEnabled(put(value)));
 	return value;
 }
 
@@ -10926,7 +10926,7 @@ template <typename T> Windows::ApplicationModel::Email::EmailIrmTemplate impl_IE
 template <typename T> bool impl_IEmailIrmInfo<T>::CanEdit() const
 {
 	bool value = {};
-	check(shim()->get_CanEdit(&value));
+	check(shim()->get_CanEdit(put(value)));
 	return value;
 }
 
@@ -10938,7 +10938,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanEdit(bool const value) cons
 template <typename T> bool impl_IEmailIrmInfo<T>::CanExtractData() const
 {
 	bool value = {};
-	check(shim()->get_CanExtractData(&value));
+	check(shim()->get_CanExtractData(put(value)));
 	return value;
 }
 
@@ -10950,7 +10950,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanExtractData(bool const valu
 template <typename T> bool impl_IEmailIrmInfo<T>::CanForward() const
 {
 	bool value = {};
-	check(shim()->get_CanForward(&value));
+	check(shim()->get_CanForward(put(value)));
 	return value;
 }
 
@@ -10962,7 +10962,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanForward(bool const value) c
 template <typename T> bool impl_IEmailIrmInfo<T>::CanModifyRecipientsOnResponse() const
 {
 	bool value = {};
-	check(shim()->get_CanModifyRecipientsOnResponse(&value));
+	check(shim()->get_CanModifyRecipientsOnResponse(put(value)));
 	return value;
 }
 
@@ -10974,7 +10974,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanModifyRecipientsOnResponse(
 template <typename T> bool impl_IEmailIrmInfo<T>::CanPrintData() const
 {
 	bool value = {};
-	check(shim()->get_CanPrintData(&value));
+	check(shim()->get_CanPrintData(put(value)));
 	return value;
 }
 
@@ -10986,7 +10986,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanPrintData(bool const value)
 template <typename T> bool impl_IEmailIrmInfo<T>::CanRemoveIrmOnResponse() const
 {
 	bool value = {};
-	check(shim()->get_CanRemoveIrmOnResponse(&value));
+	check(shim()->get_CanRemoveIrmOnResponse(put(value)));
 	return value;
 }
 
@@ -10998,7 +10998,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanRemoveIrmOnResponse(bool co
 template <typename T> bool impl_IEmailIrmInfo<T>::CanReply() const
 {
 	bool value = {};
-	check(shim()->get_CanReply(&value));
+	check(shim()->get_CanReply(put(value)));
 	return value;
 }
 
@@ -11010,7 +11010,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::CanReply(bool const value) con
 template <typename T> bool impl_IEmailIrmInfo<T>::CanReplyAll() const
 {
 	bool value = {};
-	check(shim()->get_CanReplyAll(&value));
+	check(shim()->get_CanReplyAll(put(value)));
 	return value;
 }
 
@@ -11034,7 +11034,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::ExpirationDate(Windows::Founda
 template <typename T> bool impl_IEmailIrmInfo<T>::IsIrmOriginator() const
 {
 	bool value = {};
-	check(shim()->get_IsIrmOriginator(&value));
+	check(shim()->get_IsIrmOriginator(put(value)));
 	return value;
 }
 
@@ -11046,7 +11046,7 @@ template <typename T> void impl_IEmailIrmInfo<T>::IsIrmOriginator(bool const val
 template <typename T> bool impl_IEmailIrmInfo<T>::IsProgramaticAccessAllowed() const
 {
 	bool value = {};
-	check(shim()->get_IsProgramaticAccessAllowed(&value));
+	check(shim()->get_IsProgramaticAccessAllowed(put(value)));
 	return value;
 }
 
@@ -11169,7 +11169,7 @@ template <typename T> String impl_IEmailMessage2<T>::FolderId() const
 template <typename T> bool impl_IEmailMessage2<T>::AllowInternetImages() const
 {
 	bool value = {};
-	check(shim()->get_AllowInternetImages(&value));
+	check(shim()->get_AllowInternetImages(put(value)));
 	return value;
 }
 
@@ -11224,7 +11224,7 @@ template <typename T> void impl_IEmailMessage2<T>::FlagState(Windows::Applicatio
 template <typename T> bool impl_IEmailMessage2<T>::HasPartialBodies() const
 {
 	bool value = {};
-	check(shim()->get_HasPartialBodies(&value));
+	check(shim()->get_HasPartialBodies(put(value)));
 	return value;
 }
 
@@ -11262,14 +11262,14 @@ template <typename T> void impl_IEmailMessage2<T>::IrmInfo(Windows::ApplicationM
 template <typename T> bool impl_IEmailMessage2<T>::IsDraftMessage() const
 {
 	bool value = {};
-	check(shim()->get_IsDraftMessage(&value));
+	check(shim()->get_IsDraftMessage(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMessage2<T>::IsRead() const
 {
 	bool value = {};
-	check(shim()->get_IsRead(&value));
+	check(shim()->get_IsRead(put(value)));
 	return value;
 }
 
@@ -11281,7 +11281,7 @@ template <typename T> void impl_IEmailMessage2<T>::IsRead(bool const value) cons
 template <typename T> bool impl_IEmailMessage2<T>::IsSeen() const
 {
 	bool value = {};
-	check(shim()->get_IsSeen(&value));
+	check(shim()->get_IsSeen(put(value)));
 	return value;
 }
 
@@ -11293,14 +11293,14 @@ template <typename T> void impl_IEmailMessage2<T>::IsSeen(bool const value) cons
 template <typename T> bool impl_IEmailMessage2<T>::IsServerSearchMessage() const
 {
 	bool value = {};
-	check(shim()->get_IsServerSearchMessage(&value));
+	check(shim()->get_IsServerSearchMessage(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMessage2<T>::IsSmartSendable() const
 {
 	bool value = {};
-	check(shim()->get_IsSmartSendable(&value));
+	check(shim()->get_IsSmartSendable(put(value)));
 	return value;
 }
 
@@ -11513,14 +11513,14 @@ template <typename T> void impl_IEmailAttachment2<T>::EstimatedDownloadSizeInByt
 template <typename T> bool impl_IEmailAttachment2<T>::IsFromBaseMessage() const
 {
 	bool value = {};
-	check(shim()->get_IsFromBaseMessage(&value));
+	check(shim()->get_IsFromBaseMessage(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailAttachment2<T>::IsInline() const
 {
 	bool value = {};
-	check(shim()->get_IsInline(&value));
+	check(shim()->get_IsInline(put(value)));
 	return value;
 }
 
@@ -11577,7 +11577,7 @@ template <typename T> Windows::ApplicationModel::Email::EmailMailboxAllowedSmime
 template <typename T> bool impl_IEmailMailboxPolicies<T>::AllowSmimeSoftCertificates() const
 {
 	bool value = {};
-	check(shim()->get_AllowSmimeSoftCertificates(&value));
+	check(shim()->get_AllowSmimeSoftCertificates(put(value)));
 	return value;
 }
 
@@ -11598,112 +11598,112 @@ template <typename T> Windows::Foundation::IReference<winrt::Windows::Applicatio
 template <typename T> bool impl_IEmailMailboxPolicies2<T>::MustEncryptSmimeMessages() const
 {
 	bool value = {};
-	check(shim()->get_MustEncryptSmimeMessages(&value));
+	check(shim()->get_MustEncryptSmimeMessages(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxPolicies2<T>::MustSignSmimeMessages() const
 {
 	bool value = {};
-	check(shim()->get_MustSignSmimeMessages(&value));
+	check(shim()->get_MustSignSmimeMessages(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanForwardMeetings() const
 {
 	bool value = {};
-	check(shim()->get_CanForwardMeetings(&value));
+	check(shim()->get_CanForwardMeetings(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanGetAndSetExternalAutoReplies() const
 {
 	bool value = {};
-	check(shim()->get_CanGetAndSetExternalAutoReplies(&value));
+	check(shim()->get_CanGetAndSetExternalAutoReplies(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanGetAndSetInternalAutoReplies() const
 {
 	bool value = {};
-	check(shim()->get_CanGetAndSetInternalAutoReplies(&value));
+	check(shim()->get_CanGetAndSetInternalAutoReplies(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanUpdateMeetingResponses() const
 {
 	bool value = {};
-	check(shim()->get_CanUpdateMeetingResponses(&value));
+	check(shim()->get_CanUpdateMeetingResponses(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanServerSearchFolders() const
 {
 	bool value = {};
-	check(shim()->get_CanServerSearchFolders(&value));
+	check(shim()->get_CanServerSearchFolders(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanServerSearchMailbox() const
 {
 	bool value = {};
-	check(shim()->get_CanServerSearchMailbox(&value));
+	check(shim()->get_CanServerSearchMailbox(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanProposeNewTimeForMeetings() const
 {
 	bool value = {};
-	check(shim()->get_CanProposeNewTimeForMeetings(&value));
+	check(shim()->get_CanProposeNewTimeForMeetings(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities<T>::CanSmartSend() const
 {
 	bool value = {};
-	check(shim()->get_CanSmartSend(&value));
+	check(shim()->get_CanSmartSend(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanResolveRecipients() const
 {
 	bool value = {};
-	check(shim()->get_CanResolveRecipients(&value));
+	check(shim()->get_CanResolveRecipients(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanValidateCertificates() const
 {
 	bool value = {};
-	check(shim()->get_CanValidateCertificates(&value));
+	check(shim()->get_CanValidateCertificates(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanEmptyFolder() const
 {
 	bool value = {};
-	check(shim()->get_CanEmptyFolder(&value));
+	check(shim()->get_CanEmptyFolder(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanCreateFolder() const
 {
 	bool value = {};
-	check(shim()->get_CanCreateFolder(&value));
+	check(shim()->get_CanCreateFolder(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanDeleteFolder() const
 {
 	bool value = {};
-	check(shim()->get_CanDeleteFolder(&value));
+	check(shim()->get_CanDeleteFolder(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailboxCapabilities2<T>::CanMoveFolder() const
 {
 	bool value = {};
-	check(shim()->get_CanMoveFolder(&value));
+	check(shim()->get_CanMoveFolder(put(value)));
 	return value;
 }
 
@@ -11743,14 +11743,14 @@ template <typename T> String impl_IEmailMailbox<T>::Id() const
 template <typename T> bool impl_IEmailMailbox<T>::IsOwnedByCurrentApp() const
 {
 	bool value = {};
-	check(shim()->get_IsOwnedByCurrentApp(&value));
+	check(shim()->get_IsOwnedByCurrentApp(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEmailMailbox<T>::IsDataEncryptedUnderLock() const
 {
 	bool value = {};
-	check(shim()->get_IsDataEncryptedUnderLock(&value));
+	check(shim()->get_IsDataEncryptedUnderLock(put(value)));
 	return value;
 }
 
@@ -12139,7 +12139,7 @@ template <typename T> Windows::ApplicationModel::Email::EmailFolder impl_IEmailM
 template <typename T> bool impl_IEmailMailboxAutoReplySettings<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -12208,7 +12208,7 @@ template <typename T> Windows::ApplicationModel::Email::EmailMailboxAutoReply im
 template <typename T> bool impl_IEmailMailboxAutoReply<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -12322,7 +12322,7 @@ template <typename T> void impl_IEmailFolder<T>::DisplayName(StringReference con
 template <typename T> bool impl_IEmailFolder<T>::IsSyncEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsSyncEnabled(&value));
+	check(shim()->get_IsSyncEnabled(put(value)));
 	return value;
 }
 
@@ -12465,7 +12465,7 @@ template <typename T> Windows::ApplicationModel::Email::EmailFlagState impl_IEma
 template <typename T> bool impl_IEmailConversation<T>::HasAttachment() const
 {
 	bool value = {};
-	check(shim()->get_HasAttachment(&value));
+	check(shim()->get_HasAttachment(put(value)));
 	return value;
 }
 
@@ -12750,7 +12750,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 template <typename T> bool impl_IEmailMailboxChangeTracker<T>::IsTracking() const
 {
 	bool value = {};
-	check(shim()->get_IsTracking(&value));
+	check(shim()->get_IsTracking(put(value)));
 	return value;
 }
 
@@ -12774,7 +12774,7 @@ template <typename T> void impl_IEmailMailboxChangeTracker<T>::Reset() const
 template <typename T> bool impl_IEmailMeetingInfo<T>::AllowNewTimeProposal() const
 {
 	bool value = {};
-	check(shim()->get_AllowNewTimeProposal(&value));
+	check(shim()->get_AllowNewTimeProposal(put(value)));
 	return value;
 }
 
@@ -12822,7 +12822,7 @@ template <typename T> void impl_IEmailMeetingInfo<T>::Duration(Windows::Foundati
 template <typename T> bool impl_IEmailMeetingInfo<T>::IsAllDay() const
 {
 	bool value = {};
-	check(shim()->get_IsAllDay(&value));
+	check(shim()->get_IsAllDay(put(value)));
 	return value;
 }
 
@@ -12834,7 +12834,7 @@ template <typename T> void impl_IEmailMeetingInfo<T>::IsAllDay(bool const value)
 template <typename T> bool impl_IEmailMeetingInfo<T>::IsResponseRequested() const
 {
 	bool value = {};
-	check(shim()->get_IsResponseRequested(&value));
+	check(shim()->get_IsResponseRequested(put(value)));
 	return value;
 }
 
@@ -12930,7 +12930,7 @@ template <typename T> void impl_IEmailMeetingInfo<T>::StartTime(Windows::Foundat
 template <typename T> bool impl_IEmailMeetingInfo2<T>::IsReportedOutOfDateByServer() const
 {
 	bool value = {};
-	check(shim()->get_IsReportedOutOfDateByServer(&value));
+	check(shim()->get_IsReportedOutOfDateByServer(put(value)));
 	return value;
 }
 
@@ -13403,7 +13403,7 @@ template <typename T> Windows::ApplicationModel::Resources::Core::ResourceManage
 template <typename T> bool impl_IResourceManagerStatics<T>::IsResourceReference(StringReference const & resourceReference) const
 {
 	bool isReference = {};
-	check(shim()->abi_IsResourceReference(get(resourceReference), &isReference));
+	check(shim()->abi_IsResourceReference(get(resourceReference), put(isReference)));
 	return isReference;
 }
 
@@ -13424,14 +13424,14 @@ template <typename T> String impl_IResourceQualifier<T>::QualifierValue() const
 template <typename T> bool impl_IResourceQualifier<T>::IsDefault() const
 {
 	bool value = {};
-	check(shim()->get_IsDefault(&value));
+	check(shim()->get_IsDefault(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IResourceQualifier<T>::IsMatch() const
 {
 	bool value = {};
-	check(shim()->get_IsMatch(&value));
+	check(shim()->get_IsMatch(put(value)));
 	return value;
 }
 
@@ -13534,21 +13534,21 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::App
 template <typename T> bool impl_IResourceCandidate<T>::IsMatch() const
 {
 	bool value = {};
-	check(shim()->get_IsMatch(&value));
+	check(shim()->get_IsMatch(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IResourceCandidate<T>::IsMatchAsDefault() const
 {
 	bool value = {};
-	check(shim()->get_IsMatchAsDefault(&value));
+	check(shim()->get_IsMatchAsDefault(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IResourceCandidate<T>::IsDefault() const
 {
 	bool value = {};
-	check(shim()->get_IsDefault(&value));
+	check(shim()->get_IsDefault(put(value)));
 	return value;
 }
 
@@ -13766,7 +13766,7 @@ template <typename T> unsigned impl_ISearchPaneQueryLinguisticDetails<T>::QueryT
 template <typename T> bool impl_ISearchPaneVisibilityChangedEventArgs<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
@@ -13854,7 +13854,7 @@ template <typename T> void impl_ISearchPaneSuggestionsRequestDeferral<T>::Comple
 template <typename T> bool impl_ISearchPaneSuggestionsRequest<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -13887,7 +13887,7 @@ template <typename T> void impl_ILocalContentSuggestionSettings<T>::Enabled(bool
 template <typename T> bool impl_ILocalContentSuggestionSettings<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -13937,7 +13937,7 @@ template <typename T> void impl_ISearchPane<T>::SearchHistoryEnabled(bool const 
 template <typename T> bool impl_ISearchPane<T>::SearchHistoryEnabled() const
 {
 	bool value = {};
-	check(shim()->get_SearchHistoryEnabled(&value));
+	check(shim()->get_SearchHistoryEnabled(put(value)));
 	return value;
 }
 
@@ -13982,7 +13982,7 @@ template <typename T> String impl_ISearchPane<T>::Language() const
 template <typename T> bool impl_ISearchPane<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
@@ -14094,14 +14094,14 @@ template <typename T> void impl_ISearchPane<T>::ShowOnKeyboardInput(bool const v
 template <typename T> bool impl_ISearchPane<T>::ShowOnKeyboardInput() const
 {
 	bool value = {};
-	check(shim()->get_ShowOnKeyboardInput(&value));
+	check(shim()->get_ShowOnKeyboardInput(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISearchPane<T>::TrySetQueryText(StringReference const & query) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetQueryText(get(query), &succeeded));
+	check(shim()->abi_TrySetQueryText(get(query), put(succeeded)));
 	return succeeded;
 }
 
@@ -14141,7 +14141,7 @@ template <typename T> void impl_ISearchSuggestionsRequestDeferral<T>::Complete()
 template <typename T> bool impl_ISearchSuggestionsRequest<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -14409,14 +14409,14 @@ template <typename T> Windows::Foundation::Collections::IMapView<String, Windows
 template <typename T> bool impl_ILicenseInformation<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ILicenseInformation<T>::IsTrial() const
 {
 	bool value = {};
-	check(shim()->get_IsTrial(&value));
+	check(shim()->get_IsTrial(put(value)));
 	return value;
 }
 
@@ -14454,7 +14454,7 @@ template <typename T> String impl_IProductLicense<T>::ProductId() const
 template <typename T> bool impl_IProductLicense<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
@@ -14524,7 +14524,7 @@ template <typename T> Windows::Foundation::DateTime impl_IListingInformation2<T>
 template <typename T> bool impl_IListingInformation2<T>::IsOnSale() const
 {
 	bool value = {};
-	check(shim()->get_IsOnSale(&value));
+	check(shim()->get_IsOnSale(put(value)));
 	return value;
 }
 
@@ -14580,7 +14580,7 @@ template <typename T> Windows::Foundation::DateTime impl_IProductListing2<T>::Sa
 template <typename T> bool impl_IProductListing2<T>::IsOnSale() const
 {
 	bool value = {};
-	check(shim()->get_IsOnSale(&value));
+	check(shim()->get_IsOnSale(put(value)));
 	return value;
 }
 
@@ -14627,7 +14627,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename T> bool impl_IProductLicenseWithFulfillment<T>::IsConsumable() const
 {
 	bool value = {};
-	check(shim()->get_IsConsumable(&value));
+	check(shim()->get_IsConsumable(put(value)));
 	return value;
 }
 
@@ -14899,7 +14899,7 @@ template <typename T> void impl_IStoreConfigurationStatics<T>::SetStoreWebAccoun
 template <typename T> bool impl_IStoreConfigurationStatics<T>::IsStoreWebAccountId(StringReference const & webAccountId) const
 {
 	bool value = {};
-	check(shim()->abi_IsStoreWebAccountId(get(webAccountId), &value));
+	check(shim()->abi_IsStoreWebAccountId(get(webAccountId), put(value)));
 	return value;
 }
 
@@ -15037,7 +15037,7 @@ template <typename T> String impl_IUserDataAccount2<T>::EnterpriseId() const
 template <typename T> bool impl_IUserDataAccount2<T>::IsProtectedUnderLock() const
 {
 	bool value = {};
-	check(shim()->get_IsProtectedUnderLock(&value));
+	check(shim()->get_IsProtectedUnderLock(put(value)));
 	return value;
 }
 
@@ -15287,7 +15287,7 @@ template <typename T> Windows::ApplicationModel::VoiceCommands::VoiceCommandCont
 template <typename T> bool impl_IVoiceCommandConfirmationResult<T>::Confirmed() const
 {
 	bool value = {};
-	check(shim()->get_Confirmed(&value));
+	check(shim()->get_Confirmed(put(value)));
 	return value;
 }
 
@@ -15501,7 +15501,7 @@ template <typename T> void impl_IWalletItemCustomProperty<T>::Value(StringRefere
 template <typename T> bool impl_IWalletItemCustomProperty<T>::AutoDetectLinks() const
 {
 	bool value = {};
-	check(shim()->get_AutoDetectLinks(&value));
+	check(shim()->get_AutoDetectLinks(put(value)));
 	return value;
 }
 
@@ -15568,7 +15568,7 @@ template <typename T> String impl_IWalletItem<T>::Id() const
 template <typename T> bool impl_IWalletItem<T>::IsAcknowledged() const
 {
 	bool value = {};
-	check(shim()->get_IsAcknowledged(&value));
+	check(shim()->get_IsAcknowledged(put(value)));
 	return value;
 }
 
@@ -15683,7 +15683,7 @@ template <typename T> void impl_IWalletItem<T>::DisplayMessage(StringReference c
 template <typename T> bool impl_IWalletItem<T>::IsDisplayMessageLaunchable() const
 {
 	bool value = {};
-	check(shim()->get_IsDisplayMessageLaunchable(&value));
+	check(shim()->get_IsDisplayMessageLaunchable(put(value)));
 	return value;
 }
 
@@ -15841,7 +15841,7 @@ template <typename T> Windows::Foundation::Collections::IMap<String, Windows::Ap
 template <typename T> bool impl_IWalletItem<T>::IsMoreTransactionHistoryLaunchable() const
 {
 	bool value = {};
-	check(shim()->get_IsMoreTransactionHistoryLaunchable(&value));
+	check(shim()->get_IsMoreTransactionHistoryLaunchable(put(value)));
 	return value;
 }
 
@@ -15891,7 +15891,7 @@ template <typename T> void impl_IWalletTransaction<T>::DisplayAmount(StringRefer
 template <typename T> bool impl_IWalletTransaction<T>::IgnoreTimeOfDay() const
 {
 	bool value = {};
-	check(shim()->get_IgnoreTimeOfDay(&value));
+	check(shim()->get_IgnoreTimeOfDay(put(value)));
 	return value;
 }
 
@@ -15927,7 +15927,7 @@ template <typename T> void impl_IWalletTransaction<T>::TransactionDate(Windows::
 template <typename T> bool impl_IWalletTransaction<T>::IsLaunchable() const
 {
 	bool value = {};
-	check(shim()->get_IsLaunchable(&value));
+	check(shim()->get_IsLaunchable(put(value)));
 	return value;
 }
 
@@ -16198,7 +16198,7 @@ template <typename T> double impl_IJsonValue<T>::GetNumber() const
 template <typename T> bool impl_IJsonValue<T>::GetBoolean() const
 {
 	bool returnValue = {};
-	check(shim()->abi_GetBoolean(&returnValue));
+	check(shim()->abi_GetBoolean(put(returnValue)));
 	return returnValue;
 }
 
@@ -16226,7 +16226,7 @@ template <typename T> Windows::Data::Json::JsonValue impl_IJsonValueStatics<T>::
 template <typename T> bool impl_IJsonValueStatics<T>::TryParse(StringReference const & input, Windows::Data::Json::JsonValue & result) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(result), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(result), put(succeeded)));
 	return succeeded;
 }
 
@@ -16301,7 +16301,7 @@ template <typename T> double impl_IJsonObject<T>::GetNamedNumber(StringReference
 template <typename T> bool impl_IJsonObject<T>::GetNamedBoolean(StringReference const & name) const
 {
 	bool returnValue = {};
-	check(shim()->abi_GetNamedBoolean(get(name), &returnValue));
+	check(shim()->abi_GetNamedBoolean(get(name), put(returnValue)));
 	return returnValue;
 }
 
@@ -16343,7 +16343,7 @@ template <typename T> double impl_IJsonObjectWithDefaultValues<T>::GetNamedNumbe
 template <typename T> bool impl_IJsonObjectWithDefaultValues<T>::GetNamedBoolean(StringReference const & name, bool const defaultValue) const
 {
 	bool returnValue = {};
-	check(shim()->abi_GetNamedBooleanOrDefault(get(name), defaultValue, &returnValue));
+	check(shim()->abi_GetNamedBooleanOrDefault(get(name), defaultValue, put(returnValue)));
 	return returnValue;
 }
 
@@ -16357,7 +16357,7 @@ template <typename T> Windows::Data::Json::JsonObject impl_IJsonObjectStatics<T>
 template <typename T> bool impl_IJsonObjectStatics<T>::TryParse(StringReference const & input, Windows::Data::Json::JsonObject & result) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(result), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(result), put(succeeded)));
 	return succeeded;
 }
 
@@ -16392,7 +16392,7 @@ template <typename T> double impl_IJsonArray<T>::GetNumberAt(unsigned const inde
 template <typename T> bool impl_IJsonArray<T>::GetBooleanAt(unsigned const index) const
 {
 	bool returnValue = {};
-	check(shim()->abi_GetBooleanAt(index, &returnValue));
+	check(shim()->abi_GetBooleanAt(index, put(returnValue)));
 	return returnValue;
 }
 
@@ -16406,7 +16406,7 @@ template <typename T> Windows::Data::Json::JsonArray impl_IJsonArrayStatics<T>::
 template <typename T> bool impl_IJsonArrayStatics<T>::TryParse(StringReference const & input, Windows::Data::Json::JsonArray & result) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(result), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(result), put(succeeded)));
 	return succeeded;
 }
 
@@ -16507,7 +16507,7 @@ template <typename T> void impl_IPdfPageRenderOptions<T>::BackgroundColor(Window
 template <typename T> bool impl_IPdfPageRenderOptions<T>::IsIgnoringHighContrast() const
 {
 	bool value = {};
-	check(shim()->get_IsIgnoringHighContrast(&value));
+	check(shim()->get_IsIgnoringHighContrast(put(value)));
 	return value;
 }
 
@@ -16601,7 +16601,7 @@ template <typename T> unsigned impl_IPdfDocument<T>::PageCount() const
 template <typename T> bool impl_IPdfDocument<T>::IsPasswordProtected() const
 {
 	bool value = {};
-	check(shim()->get_IsPasswordProtected(&value));
+	check(shim()->get_IsPasswordProtected(put(value)));
 	return value;
 }
 
@@ -16690,91 +16690,91 @@ template <typename T> void impl_IUnicodeCharactersStatics<T>::GetSurrogatePairFr
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsHighSurrogate(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsHighSurrogate(codepoint, &value));
+	check(shim()->abi_IsHighSurrogate(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsLowSurrogate(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsLowSurrogate(codepoint, &value));
+	check(shim()->abi_IsLowSurrogate(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsSupplementary(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsSupplementary(codepoint, &value));
+	check(shim()->abi_IsSupplementary(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsNoncharacter(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsNoncharacter(codepoint, &value));
+	check(shim()->abi_IsNoncharacter(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsWhitespace(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsWhitespace(codepoint, &value));
+	check(shim()->abi_IsWhitespace(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsAlphabetic(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsAlphabetic(codepoint, &value));
+	check(shim()->abi_IsAlphabetic(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsCased(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsCased(codepoint, &value));
+	check(shim()->abi_IsCased(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsUppercase(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsUppercase(codepoint, &value));
+	check(shim()->abi_IsUppercase(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsLowercase(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsLowercase(codepoint, &value));
+	check(shim()->abi_IsLowercase(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsIdStart(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsIdStart(codepoint, &value));
+	check(shim()->abi_IsIdStart(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsIdContinue(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsIdContinue(codepoint, &value));
+	check(shim()->abi_IsIdContinue(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsGraphemeBase(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsGraphemeBase(codepoint, &value));
+	check(shim()->abi_IsGraphemeBase(codepoint, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUnicodeCharactersStatics<T>::IsGraphemeExtend(unsigned const codepoint) const
 {
 	bool value = {};
-	check(shim()->abi_IsGraphemeExtend(codepoint, &value));
+	check(shim()->abi_IsGraphemeExtend(codepoint, put(value)));
 	return value;
 }
 
@@ -16934,7 +16934,7 @@ template <typename T> String impl_ITextPredictionGenerator<T>::ResolvedLanguage(
 template <typename T> bool impl_ITextPredictionGenerator<T>::LanguageAvailableButNotInstalled() const
 {
 	bool value = {};
-	check(shim()->get_LanguageAvailableButNotInstalled(&value));
+	check(shim()->get_LanguageAvailableButNotInstalled(put(value)));
 	return value;
 }
 
@@ -16969,7 +16969,7 @@ template <typename T> String impl_ITextConversionGenerator<T>::ResolvedLanguage(
 template <typename T> bool impl_ITextConversionGenerator<T>::LanguageAvailableButNotInstalled() const
 {
 	bool value = {};
-	check(shim()->get_LanguageAvailableButNotInstalled(&value));
+	check(shim()->get_LanguageAvailableButNotInstalled(put(value)));
 	return value;
 }
 
@@ -17004,7 +17004,7 @@ template <typename T> String impl_ITextReverseConversionGenerator<T>::ResolvedLa
 template <typename T> bool impl_ITextReverseConversionGenerator<T>::LanguageAvailableButNotInstalled() const
 {
 	bool value = {};
-	check(shim()->get_LanguageAvailableButNotInstalled(&value));
+	check(shim()->get_LanguageAvailableButNotInstalled(put(value)));
 	return value;
 }
 
@@ -17151,7 +17151,7 @@ template <typename T> Windows::Data::Xml::Dom::XmlNamedNodeMap impl_IXmlNode<T>:
 template <typename T> bool impl_IXmlNode<T>::HasChildNodes() const
 {
 	bool value = {};
-	check(shim()->abi_HasChildNodes(&value));
+	check(shim()->abi_HasChildNodes(put(value)));
 	return value;
 }
 
@@ -17231,7 +17231,7 @@ template <typename T> void impl_IXmlNode<T>::Prefix(IInspectable const & value) 
 template <typename T> bool impl_IXmlDomImplementation<T>::HasFeature(StringReference const & feature, IInspectable const & version) const
 {
 	bool featureSupported = {};
-	check(shim()->abi_HasFeature(get(feature), get(version), &featureSupported));
+	check(shim()->abi_HasFeature(get(feature), get(version), put(featureSupported)));
 	return featureSupported;
 }
 
@@ -17266,7 +17266,7 @@ template <typename T> String impl_IXmlAttribute<T>::Name() const
 template <typename T> bool impl_IXmlAttribute<T>::Specified() const
 {
 	bool value = {};
-	check(shim()->get_Specified(&value));
+	check(shim()->get_Specified(put(value)));
 	return value;
 }
 
@@ -17676,7 +17676,7 @@ template <typename T> void impl_IXmlLoadSettings<T>::MaxElementDepth(unsigned co
 template <typename T> bool impl_IXmlLoadSettings<T>::ProhibitDtd() const
 {
 	bool value = {};
-	check(shim()->get_ProhibitDtd(&value));
+	check(shim()->get_ProhibitDtd(put(value)));
 	return value;
 }
 
@@ -17688,7 +17688,7 @@ template <typename T> void impl_IXmlLoadSettings<T>::ProhibitDtd(bool const valu
 template <typename T> bool impl_IXmlLoadSettings<T>::ResolveExternals() const
 {
 	bool value = {};
-	check(shim()->get_ResolveExternals(&value));
+	check(shim()->get_ResolveExternals(put(value)));
 	return value;
 }
 
@@ -17700,7 +17700,7 @@ template <typename T> void impl_IXmlLoadSettings<T>::ResolveExternals(bool const
 template <typename T> bool impl_IXmlLoadSettings<T>::ValidateOnParse() const
 {
 	bool value = {};
-	check(shim()->get_ValidateOnParse(&value));
+	check(shim()->get_ValidateOnParse(put(value)));
 	return value;
 }
 
@@ -17712,7 +17712,7 @@ template <typename T> void impl_IXmlLoadSettings<T>::ValidateOnParse(bool const 
 template <typename T> bool impl_IXmlLoadSettings<T>::ElementContentWhiteSpace() const
 {
 	bool value = {};
-	check(shim()->get_ElementContentWhiteSpace(&value));
+	check(shim()->get_ElementContentWhiteSpace(put(value)));
 	return value;
 }
 
@@ -18214,7 +18214,7 @@ template <typename T> String impl_IAllJoynAuthenticationCompleteEventArgs<T>::Pe
 template <typename T> bool impl_IAllJoynAuthenticationCompleteEventArgs<T>::Succeeded() const
 {
 	bool value = {};
-	check(shim()->get_Succeeded(&value));
+	check(shim()->get_Succeeded(put(value)));
 	return value;
 }
 
@@ -18382,7 +18382,7 @@ template <typename T> String impl_IAllJoynAboutDataView<T>::Manufacturer() const
 template <typename T> bool impl_IAllJoynAboutData<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -18532,14 +18532,14 @@ template <typename T> Windows::Devices::AllJoyn::AllJoynTrafficType impl_IAllJoy
 template <typename T> bool impl_IAllJoynAcceptSessionJoinerEventArgs<T>::SamePhysicalNode() const
 {
 	bool value = {};
-	check(shim()->get_SamePhysicalNode(&value));
+	check(shim()->get_SamePhysicalNode(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAllJoynAcceptSessionJoinerEventArgs<T>::SameNetwork() const
 {
 	bool value = {};
-	check(shim()->get_SameNetwork(&value));
+	check(shim()->get_SameNetwork(put(value)));
 	return value;
 }
 
@@ -20166,7 +20166,7 @@ template <typename T> Windows::Networking::Sockets::StreamSocket impl_IRfcommCon
 template <typename T> bool impl_IRfcommConnectionTriggerDetails<T>::Incoming() const
 {
 	bool value = {};
-	check(shim()->get_Incoming(&value));
+	check(shim()->get_Incoming(put(value)));
 	return value;
 }
 
@@ -22071,14 +22071,14 @@ template <typename T> void impl_IDevicePicker<T>::SetDisplayStatus(Windows::Devi
 template <typename T> bool impl_IEnclosureLocation<T>::InDock() const
 {
 	bool value = {};
-	check(shim()->get_InDock(&value));
+	check(shim()->get_InDock(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IEnclosureLocation<T>::InLid() const
 {
 	bool value = {};
-	check(shim()->get_InLid(&value));
+	check(shim()->get_InLid(put(value)));
 	return value;
 }
 
@@ -22334,14 +22334,14 @@ template <typename T> String impl_IDeviceInformation<T>::Name() const
 template <typename T> bool impl_IDeviceInformation<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IDeviceInformation<T>::IsDefault() const
 {
 	bool value = {};
-	check(shim()->get_IsDefault(&value));
+	check(shim()->get_IsDefault(put(value)));
 	return value;
 }
 
@@ -22478,14 +22478,14 @@ template <typename T> void impl_IDeviceInformationCustomPairing<T>::PairingReque
 template <typename T> bool impl_IDeviceInformationPairing<T>::IsPaired() const
 {
 	bool value = {};
-	check(shim()->get_IsPaired(&value));
+	check(shim()->get_IsPaired(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IDeviceInformationPairing<T>::CanPair() const
 {
 	bool value = {};
-	check(shim()->get_CanPair(&value));
+	check(shim()->get_CanPair(put(value)));
 	return value;
 }
 
@@ -22534,7 +22534,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Devices::Enu
 template <typename T> bool impl_IDeviceInformationPairingStatics<T>::TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds const pairingKindsSupported) const
 {
 	bool result = {};
-	check(shim()->abi_TryRegisterForAllInboundPairingRequests(pairingKindsSupported, &result));
+	check(shim()->abi_TryRegisterForAllInboundPairingRequests(pairingKindsSupported, put(result)));
 	return result;
 }
 
@@ -23396,7 +23396,7 @@ template <typename T> Windows::Devices::Geolocation::IGeoshape impl_IGeofence<T>
 template <typename T> bool impl_IGeofence<T>::SingleUse() const
 {
 	bool value = {};
-	check(shim()->get_SingleUse(&value));
+	check(shim()->get_SingleUse(put(value)));
 	return value;
 }
 
@@ -23658,14 +23658,14 @@ template <typename T> unsigned impl_IHidNumericControlDescription<T>::Unit() con
 template <typename T> bool impl_IHidNumericControlDescription<T>::IsAbsolute() const
 {
 	bool value = {};
-	check(shim()->get_IsAbsolute(&value));
+	check(shim()->get_IsAbsolute(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IHidNumericControlDescription<T>::HasNull() const
 {
 	bool value = {};
-	check(shim()->get_HasNull(&value));
+	check(shim()->get_HasNull(put(value)));
 	return value;
 }
 
@@ -23885,7 +23885,7 @@ template <typename T> unsigned short impl_IHidBooleanControl<T>::UsageId() const
 template <typename T> bool impl_IHidBooleanControl<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
@@ -23911,7 +23911,7 @@ template <typename T> unsigned impl_IHidNumericControl<T>::Id() const
 template <typename T> bool impl_IHidNumericControl<T>::IsGrouped() const
 {
 	bool value = {};
-	check(shim()->get_IsGrouped(&value));
+	check(shim()->get_IsGrouped(put(value)));
 	return value;
 }
 
@@ -24180,7 +24180,7 @@ template <typename T> Windows::Devices::Input::PointerDeviceType impl_IPointerDe
 template <typename T> bool impl_IPointerDevice<T>::IsIntegrated() const
 {
 	bool value = {};
-	check(shim()->get_IsIntegrated(&value));
+	check(shim()->get_IsIntegrated(put(value)));
 	return value;
 }
 
@@ -24271,7 +24271,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Devices::Lig
 template <typename T> bool impl_ILampAvailabilityChangedEventArgs<T>::IsAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsAvailable(&value));
+	check(shim()->get_IsAvailable(put(value)));
 	return value;
 }
 
@@ -24285,7 +24285,7 @@ template <typename T> String impl_ILamp<T>::DeviceId() const
 template <typename T> bool impl_ILamp<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -24309,7 +24309,7 @@ template <typename T> void impl_ILamp<T>::BrightnessLevel(float const value) con
 template <typename T> bool impl_ILamp<T>::IsColorSettable() const
 {
 	bool value = {};
-	check(shim()->get_IsColorSettable(&value));
+	check(shim()->get_IsColorSettable(put(value)));
 	return value;
 }
 
@@ -24650,7 +24650,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Devices::Mid
 template <typename T> bool impl_IMidiSynthesizerStatics<T>::IsSynthesizer(Windows::Devices::Enumeration::DeviceInformation const & midiDevice) const
 {
 	bool value = {};
-	check(shim()->abi_IsSynthesizer(get(midiDevice), &value));
+	check(shim()->abi_IsSynthesizer(get(midiDevice), put(value)));
 	return value;
 }
 
@@ -25460,21 +25460,21 @@ template <typename T> String impl_IPerceptionColorFrameSource<T>::DeviceKind() c
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::Available() const
 {
 	bool value = {};
-	check(shim()->get_Available(&value));
+	check(shim()->get_Available(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::Active() const
 {
 	bool value = {};
-	check(shim()->get_Active(&value));
+	check(shim()->get_Active(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::IsControlled() const
 {
 	bool value = {};
-	check(shim()->get_IsControlled(&value));
+	check(shim()->get_IsControlled(put(value)));
 	return value;
 }
 
@@ -25523,21 +25523,21 @@ template <typename T> Windows::Devices::Perception::PerceptionControlSession imp
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::CanControlIndependentlyFrom(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), &result));
+	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::IsCorrelatedWith(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_IsCorrelatedWith(get(targetId), &result));
+	check(shim()->abi_IsCorrelatedWith(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionColorFrameSource<T>::TryGetTransformTo(StringReference const & targetId, Windows::Foundation::Numerics::Matrix4x4 & result) const
 {
 	bool hasResult = {};
-	check(shim()->abi_TryGetTransformTo(get(targetId), &result, &hasResult));
+	check(shim()->abi_TryGetTransformTo(get(targetId), &result, put(hasResult)));
 	return hasResult;
 }
 
@@ -25685,21 +25685,21 @@ template <typename T> String impl_IPerceptionDepthFrameSource<T>::DeviceKind() c
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::Available() const
 {
 	bool value = {};
-	check(shim()->get_Available(&value));
+	check(shim()->get_Available(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::Active() const
 {
 	bool value = {};
-	check(shim()->get_Active(&value));
+	check(shim()->get_Active(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::IsControlled() const
 {
 	bool value = {};
-	check(shim()->get_IsControlled(&value));
+	check(shim()->get_IsControlled(put(value)));
 	return value;
 }
 
@@ -25748,21 +25748,21 @@ template <typename T> Windows::Devices::Perception::PerceptionControlSession imp
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::CanControlIndependentlyFrom(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), &result));
+	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::IsCorrelatedWith(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_IsCorrelatedWith(get(targetId), &result));
+	check(shim()->abi_IsCorrelatedWith(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionDepthFrameSource<T>::TryGetTransformTo(StringReference const & targetId, Windows::Foundation::Numerics::Matrix4x4 & result) const
 {
 	bool hasResult = {};
-	check(shim()->abi_TryGetTransformTo(get(targetId), &result, &hasResult));
+	check(shim()->abi_TryGetTransformTo(get(targetId), &result, put(hasResult)));
 	return hasResult;
 }
 
@@ -25910,21 +25910,21 @@ template <typename T> String impl_IPerceptionInfraredFrameSource<T>::DeviceKind(
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::Available() const
 {
 	bool value = {};
-	check(shim()->get_Available(&value));
+	check(shim()->get_Available(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::Active() const
 {
 	bool value = {};
-	check(shim()->get_Active(&value));
+	check(shim()->get_Active(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::IsControlled() const
 {
 	bool value = {};
-	check(shim()->get_IsControlled(&value));
+	check(shim()->get_IsControlled(put(value)));
 	return value;
 }
 
@@ -25973,21 +25973,21 @@ template <typename T> Windows::Devices::Perception::PerceptionControlSession imp
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::CanControlIndependentlyFrom(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), &result));
+	check(shim()->abi_CanControlIndependentlyFrom(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::IsCorrelatedWith(StringReference const & targetId) const
 {
 	bool result = {};
-	check(shim()->abi_IsCorrelatedWith(get(targetId), &result));
+	check(shim()->abi_IsCorrelatedWith(get(targetId), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IPerceptionInfraredFrameSource<T>::TryGetTransformTo(StringReference const & targetId, Windows::Foundation::Numerics::Matrix4x4 & result) const
 {
 	bool hasResult = {};
-	check(shim()->abi_TryGetTransformTo(get(targetId), &result, &hasResult));
+	check(shim()->abi_TryGetTransformTo(get(targetId), &result, put(hasResult)));
 	return hasResult;
 }
 
@@ -26064,7 +26064,7 @@ template <typename T> Windows::Foundation::TimeSpan impl_IPerceptionVideoProfile
 template <typename T> bool impl_IPerceptionVideoProfile<T>::IsEqual(Windows::Devices::Perception::PerceptionVideoProfile const & other) const
 {
 	bool result = {};
-	check(shim()->abi_IsEqual(get(other), &result));
+	check(shim()->abi_IsEqual(get(other), put(result)));
 	return result;
 }
 
@@ -26175,7 +26175,7 @@ template <typename T> Windows::Devices::Perception::PerceptionColorFrameSource i
 template <typename T> bool impl_IPerceptionColorFrameReader<T>::IsPaused() const
 {
 	bool value = {};
-	check(shim()->get_IsPaused(&value));
+	check(shim()->get_IsPaused(put(value)));
 	return value;
 }
 
@@ -26218,7 +26218,7 @@ template <typename T> Windows::Devices::Perception::PerceptionDepthFrameSource i
 template <typename T> bool impl_IPerceptionDepthFrameReader<T>::IsPaused() const
 {
 	bool value = {};
-	check(shim()->get_IsPaused(&value));
+	check(shim()->get_IsPaused(put(value)));
 	return value;
 }
 
@@ -26261,7 +26261,7 @@ template <typename T> Windows::Devices::Perception::PerceptionInfraredFrameSourc
 template <typename T> bool impl_IPerceptionInfraredFrameReader<T>::IsPaused() const
 {
 	bool value = {};
-	check(shim()->get_IsPaused(&value));
+	check(shim()->get_IsPaused(put(value)));
 	return value;
 }
 
@@ -26305,7 +26305,7 @@ namespace winrt { namespace Windows { namespace Devices { namespace Perception {
 template <typename T> bool impl_IPerceptionStartFaceAuthenticationHandler<T>::Invoke(Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup const & sender) const
 {
 	bool result = {};
-	check(shim()->abi_Invoke(get(sender), &result));
+	check(shim()->abi_Invoke(get(sender), put(result)));
 	return result;
 }
 
@@ -26436,7 +26436,7 @@ template <typename T> void impl_IPerceptionFrameProviderInfo<T>::FrameKind(Strin
 template <typename T> bool impl_IPerceptionFrameProviderInfo<T>::Hidden() const
 {
 	bool value = {};
-	check(shim()->get_Hidden(&value));
+	check(shim()->get_Hidden(put(value)));
 	return value;
 }
 
@@ -26603,7 +26603,7 @@ template <typename T> Windows::Devices::Perception::Provider::PerceptionFramePro
 template <typename T> bool impl_IPerceptionFrameProvider<T>::Available() const
 {
 	bool value = {};
-	check(shim()->get_Available(&value));
+	check(shim()->get_Available(put(value)));
 	return value;
 }
 
@@ -27385,7 +27385,7 @@ template <typename T> Windows::Devices::PointOfService::BarcodeScannerReport imp
 template <typename T> bool impl_IBarcodeScannerErrorOccurredEventArgs<T>::IsRetriable() const
 {
 	bool value = {};
-	check(shim()->get_IsRetriable(&value));
+	check(shim()->get_IsRetriable(put(value)));
 	return value;
 }
 
@@ -27413,28 +27413,28 @@ template <typename T> Windows::Devices::PointOfService::UnifiedPosPowerReporting
 template <typename T> bool impl_IBarcodeScannerCapabilities<T>::IsStatisticsReportingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsReportingSupported(&value));
+	check(shim()->get_IsStatisticsReportingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IBarcodeScannerCapabilities<T>::IsStatisticsUpdatingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsUpdatingSupported(&value));
+	check(shim()->get_IsStatisticsUpdatingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IBarcodeScannerCapabilities<T>::IsImagePreviewSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsImagePreviewSupported(&value));
+	check(shim()->get_IsImagePreviewSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IBarcodeScannerCapabilities1<T>::IsSoftwareTriggerSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsSoftwareTriggerSupported(&value));
+	check(shim()->get_IsSoftwareTriggerSupported(put(value)));
 	return value;
 }
 
@@ -27518,7 +27518,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<String> impl
 template <typename T> bool impl_IBarcodeScanner<T>::IsProfileSupported(StringReference const & profile) const
 {
 	bool isSupported = {};
-	check(shim()->abi_IsProfileSupported(get(profile), &isSupported));
+	check(shim()->abi_IsProfileSupported(get(profile), put(isSupported)));
 	return isSupported;
 }
 
@@ -27955,21 +27955,21 @@ template <typename T> Windows::Devices::PointOfService::MagneticStripeReaderAuth
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsIsoSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsIsoSupported(&value));
+	check(shim()->get_IsIsoSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsJisOneSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsJisOneSupported(&value));
+	check(shim()->get_IsJisOneSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsJisTwoSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsJisTwoSupported(&value));
+	check(shim()->get_IsJisTwoSupported(put(value)));
 	return value;
 }
 
@@ -27983,28 +27983,28 @@ template <typename T> Windows::Devices::PointOfService::UnifiedPosPowerReporting
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsStatisticsReportingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsReportingSupported(&value));
+	check(shim()->get_IsStatisticsReportingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsStatisticsUpdatingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsUpdatingSupported(&value));
+	check(shim()->get_IsStatisticsUpdatingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsTrackDataMaskingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsTrackDataMaskingSupported(&value));
+	check(shim()->get_IsTrackDataMaskingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMagneticStripeReaderCapabilities<T>::IsTransmitSentinelsSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsTransmitSentinelsSupported(&value));
+	check(shim()->get_IsTransmitSentinelsSupported(put(value)));
 	return value;
 }
 
@@ -28119,14 +28119,14 @@ template <typename T> unsigned impl_IPosPrinterCharacterSetIdsStatics<T>::Ansi()
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsPrinterPresent() const
 {
 	bool value = {};
-	check(shim()->get_IsPrinterPresent(&value));
+	check(shim()->get_IsPrinterPresent(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsDualColorSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDualColorSupported(&value));
+	check(shim()->get_IsDualColorSupported(put(value)));
 	return value;
 }
 
@@ -28147,56 +28147,56 @@ template <typename T> Windows::Devices::PointOfService::PosPrinterCartridgeSenso
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsBoldSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsBoldSupported(&value));
+	check(shim()->get_IsBoldSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsItalicSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsItalicSupported(&value));
+	check(shim()->get_IsItalicSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsUnderlineSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsUnderlineSupported(&value));
+	check(shim()->get_IsUnderlineSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsDoubleHighPrintSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDoubleHighPrintSupported(&value));
+	check(shim()->get_IsDoubleHighPrintSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsDoubleWidePrintSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDoubleWidePrintSupported(&value));
+	check(shim()->get_IsDoubleWidePrintSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsDoubleHighDoubleWidePrintSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDoubleHighDoubleWidePrintSupported(&value));
+	check(shim()->get_IsDoubleHighDoubleWidePrintSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsPaperEmptySensorSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsPaperEmptySensorSupported(&value));
+	check(shim()->get_IsPaperEmptySensorSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonPosPrintStationCapabilities<T>::IsPaperNearEndSensorSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsPaperNearEndSensorSupported(&value));
+	check(shim()->get_IsPaperNearEndSensorSupported(put(value)));
 	return value;
 }
 
@@ -28210,42 +28210,42 @@ template <typename T> Windows::Foundation::Collections::IVectorView<unsigned> im
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::IsBarcodeSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsBarcodeSupported(&value));
+	check(shim()->get_IsBarcodeSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::IsBitmapSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsBitmapSupported(&value));
+	check(shim()->get_IsBitmapSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::IsLeft90RotationSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsLeft90RotationSupported(&value));
+	check(shim()->get_IsLeft90RotationSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::IsRight90RotationSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsRight90RotationSupported(&value));
+	check(shim()->get_IsRight90RotationSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::Is180RotationSupported() const
 {
 	bool value = {};
-	check(shim()->get_Is180RotationSupported(&value));
+	check(shim()->get_Is180RotationSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonReceiptSlipCapabilities<T>::IsPrintAreaSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsPrintAreaSupported(&value));
+	check(shim()->get_IsPrintAreaSupported(put(value)));
 	return value;
 }
 
@@ -28273,14 +28273,14 @@ template <typename T> Windows::Foundation::Collections::IVectorView<winrt::Windo
 template <typename T> bool impl_IReceiptPrinterCapabilities<T>::CanCutPaper() const
 {
 	bool value = {};
-	check(shim()->get_CanCutPaper(&value));
+	check(shim()->get_CanCutPaper(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IReceiptPrinterCapabilities<T>::IsStampSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStampSupported(&value));
+	check(shim()->get_IsStampSupported(put(value)));
 	return value;
 }
 
@@ -28294,14 +28294,14 @@ template <typename T> Windows::Devices::PointOfService::PosPrinterMarkFeedCapabi
 template <typename T> bool impl_ISlipPrinterCapabilities<T>::IsFullLengthSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsFullLengthSupported(&value));
+	check(shim()->get_IsFullLengthSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISlipPrinterCapabilities<T>::IsBothSidesPrintingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsBothSidesPrintingSupported(&value));
+	check(shim()->get_IsBothSidesPrintingSupported(put(value)));
 	return value;
 }
 
@@ -28315,14 +28315,14 @@ template <typename T> Windows::Devices::PointOfService::UnifiedPosPowerReporting
 template <typename T> bool impl_IPosPrinterCapabilities<T>::IsStatisticsReportingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsReportingSupported(&value));
+	check(shim()->get_IsStatisticsReportingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPosPrinterCapabilities<T>::IsStatisticsUpdatingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsUpdatingSupported(&value));
+	check(shim()->get_IsStatisticsUpdatingSupported(put(value)));
 	return value;
 }
 
@@ -28336,21 +28336,21 @@ template <typename T> unsigned impl_IPosPrinterCapabilities<T>::DefaultCharacter
 template <typename T> bool impl_IPosPrinterCapabilities<T>::HasCoverSensor() const
 {
 	bool value = {};
-	check(shim()->get_HasCoverSensor(&value));
+	check(shim()->get_HasCoverSensor(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPosPrinterCapabilities<T>::CanMapCharacterSet() const
 {
 	bool value = {};
-	check(shim()->get_CanMapCharacterSet(&value));
+	check(shim()->get_CanMapCharacterSet(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPosPrinterCapabilities<T>::IsTransactionSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsTransactionSupported(&value));
+	check(shim()->get_IsTransactionSupported(put(value)));
 	return value;
 }
 
@@ -28653,14 +28653,14 @@ template <typename T> void impl_ICommonClaimedPosPrinterStation<T>::IsLetterQual
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsLetterQuality() const
 {
 	bool value = {};
-	check(shim()->get_IsLetterQuality(&value));
+	check(shim()->get_IsLetterQuality(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsPaperNearEnd() const
 {
 	bool value = {};
-	check(shim()->get_IsPaperNearEnd(&value));
+	check(shim()->get_IsPaperNearEnd(put(value)));
 	return value;
 }
 
@@ -28679,49 +28679,49 @@ template <typename T> Windows::Devices::PointOfService::PosPrinterColorCartridge
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsCoverOpen() const
 {
 	bool value = {};
-	check(shim()->get_IsCoverOpen(&value));
+	check(shim()->get_IsCoverOpen(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsCartridgeRemoved() const
 {
 	bool value = {};
-	check(shim()->get_IsCartridgeRemoved(&value));
+	check(shim()->get_IsCartridgeRemoved(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsCartridgeEmpty() const
 {
 	bool value = {};
-	check(shim()->get_IsCartridgeEmpty(&value));
+	check(shim()->get_IsCartridgeEmpty(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsHeadCleaning() const
 {
 	bool value = {};
-	check(shim()->get_IsHeadCleaning(&value));
+	check(shim()->get_IsHeadCleaning(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsPaperEmpty() const
 {
 	bool value = {};
-	check(shim()->get_IsPaperEmpty(&value));
+	check(shim()->get_IsPaperEmpty(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::IsReadyToPrint() const
 {
 	bool value = {};
-	check(shim()->get_IsReadyToPrint(&value));
+	check(shim()->get_IsReadyToPrint(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICommonClaimedPosPrinterStation<T>::ValidateData(StringReference const & data) const
 {
 	bool result = {};
-	check(shim()->abi_ValidateData(get(data), &result));
+	check(shim()->abi_ValidateData(get(data), put(result)));
 	return result;
 }
 
@@ -28890,35 +28890,35 @@ template <typename T> Windows::Devices::PointOfService::UnifiedPosPowerReporting
 template <typename T> bool impl_ICashDrawerCapabilities<T>::IsStatisticsReportingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsReportingSupported(&value));
+	check(shim()->get_IsStatisticsReportingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICashDrawerCapabilities<T>::IsStatisticsUpdatingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatisticsUpdatingSupported(&value));
+	check(shim()->get_IsStatisticsUpdatingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICashDrawerCapabilities<T>::IsStatusReportingSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatusReportingSupported(&value));
+	check(shim()->get_IsStatusReportingSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICashDrawerCapabilities<T>::IsStatusMultiDrawerDetectSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsStatusMultiDrawerDetectSupported(&value));
+	check(shim()->get_IsStatusMultiDrawerDetectSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICashDrawerCapabilities<T>::IsDrawerOpenSensorAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsDrawerOpenSensorAvailable(&value));
+	check(shim()->get_IsDrawerOpenSensorAvailable(put(value)));
 	return value;
 }
 
@@ -29008,7 +29008,7 @@ template <typename T> Windows::Devices::PointOfService::CashDrawerStatus impl_IC
 template <typename T> bool impl_ICashDrawer<T>::IsDrawerOpen() const
 {
 	bool value = {};
-	check(shim()->get_IsDrawerOpen(&value));
+	check(shim()->get_IsDrawerOpen(put(value)));
 	return value;
 }
 
@@ -29139,7 +29139,7 @@ template <typename T> String impl_IClaimedBarcodeScanner<T>::DeviceId() const
 template <typename T> bool impl_IClaimedBarcodeScanner<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -29151,7 +29151,7 @@ template <typename T> void impl_IClaimedBarcodeScanner<T>::IsDisabledOnDataRecei
 template <typename T> bool impl_IClaimedBarcodeScanner<T>::IsDisabledOnDataReceived() const
 {
 	bool value = {};
-	check(shim()->get_IsDisabledOnDataReceived(&value));
+	check(shim()->get_IsDisabledOnDataReceived(put(value)));
 	return value;
 }
 
@@ -29163,7 +29163,7 @@ template <typename T> void impl_IClaimedBarcodeScanner<T>::IsDecodeDataEnabled(b
 template <typename T> bool impl_IClaimedBarcodeScanner<T>::IsDecodeDataEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDecodeDataEnabled(&value));
+	check(shim()->get_IsDecodeDataEnabled(put(value)));
 	return value;
 }
 
@@ -29340,7 +29340,7 @@ template <typename T> String impl_IClaimedMagneticStripeReader<T>::DeviceId() co
 template <typename T> bool impl_IClaimedMagneticStripeReader<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -29352,7 +29352,7 @@ template <typename T> void impl_IClaimedMagneticStripeReader<T>::IsDisabledOnDat
 template <typename T> bool impl_IClaimedMagneticStripeReader<T>::IsDisabledOnDataReceived() const
 {
 	bool value = {};
-	check(shim()->get_IsDisabledOnDataReceived(&value));
+	check(shim()->get_IsDisabledOnDataReceived(put(value)));
 	return value;
 }
 
@@ -29364,14 +29364,14 @@ template <typename T> void impl_IClaimedMagneticStripeReader<T>::IsDecodeDataEna
 template <typename T> bool impl_IClaimedMagneticStripeReader<T>::IsDecodeDataEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDecodeDataEnabled(&value));
+	check(shim()->get_IsDecodeDataEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IClaimedMagneticStripeReader<T>::IsDeviceAuthenticated() const
 {
 	bool value = {};
-	check(shim()->get_IsDeviceAuthenticated(&value));
+	check(shim()->get_IsDeviceAuthenticated(put(value)));
 	return value;
 }
 
@@ -29407,7 +29407,7 @@ template <typename T> void impl_IClaimedMagneticStripeReader<T>::IsTransmitSenti
 template <typename T> bool impl_IClaimedMagneticStripeReader<T>::IsTransmitSentinelsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsTransmitSentinelsEnabled(&value));
+	check(shim()->get_IsTransmitSentinelsEnabled(put(value)));
 	return value;
 }
 
@@ -29558,7 +29558,7 @@ template <typename T> String impl_IClaimedPosPrinter<T>::DeviceId() const
 template <typename T> bool impl_IClaimedPosPrinter<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -29577,7 +29577,7 @@ template <typename T> unsigned impl_IClaimedPosPrinter<T>::CharacterSet() const
 template <typename T> bool impl_IClaimedPosPrinter<T>::IsCoverOpen() const
 {
 	bool value = {};
-	check(shim()->get_IsCoverOpen(&value));
+	check(shim()->get_IsCoverOpen(put(value)));
 	return value;
 }
 
@@ -29589,7 +29589,7 @@ template <typename T> void impl_IClaimedPosPrinter<T>::IsCharacterSetMappingEnab
 template <typename T> bool impl_IClaimedPosPrinter<T>::IsCharacterSetMappingEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsCharacterSetMappingEnabled(&value));
+	check(shim()->get_IsCharacterSetMappingEnabled(put(value)));
 	return value;
 }
 
@@ -29688,14 +29688,14 @@ template <typename T> String impl_IClaimedCashDrawer<T>::DeviceId() const
 template <typename T> bool impl_IClaimedCashDrawer<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IClaimedCashDrawer<T>::IsDrawerOpen() const
 {
 	bool value = {};
-	check(shim()->get_IsDrawerOpen(&value));
+	check(shim()->get_IsDrawerOpen(put(value)));
 	return value;
 }
 
@@ -30063,7 +30063,7 @@ template <typename T> IInspectable impl_IPrint3DWorkflow<T>::GetPrintModelPackag
 template <typename T> bool impl_IPrint3DWorkflow<T>::IsPrintReady() const
 {
 	bool value = {};
-	check(shim()->get_IsPrintReady(&value));
+	check(shim()->get_IsPrintReady(put(value)));
 	return value;
 }
 
@@ -30192,7 +30192,7 @@ template <typename T> void impl_IImageScannerFormatConfiguration<T>::Format(Wind
 template <typename T> bool impl_IImageScannerFormatConfiguration<T>::IsFormatSupported(Windows::Devices::Scanners::ImageScannerFormat const value) const
 {
 	bool result = {};
-	check(shim()->abi_IsFormatSupported(value, &result));
+	check(shim()->abi_IsFormatSupported(value, put(result)));
 	return result;
 }
 
@@ -30237,7 +30237,7 @@ template <typename T> void impl_IImageScannerSourceConfiguration<T>::AutoCroppin
 template <typename T> bool impl_IImageScannerSourceConfiguration<T>::IsAutoCroppingModeSupported(Windows::Devices::Scanners::ImageScannerAutoCroppingMode const value) const
 {
 	bool result = {};
-	check(shim()->abi_IsAutoCroppingModeSupported(value, &result));
+	check(shim()->abi_IsAutoCroppingModeSupported(value, put(result)));
 	return result;
 }
 
@@ -30303,7 +30303,7 @@ template <typename T> void impl_IImageScannerSourceConfiguration<T>::ColorMode(W
 template <typename T> bool impl_IImageScannerSourceConfiguration<T>::IsColorModeSupported(Windows::Devices::Scanners::ImageScannerColorMode const value) const
 {
 	bool result = {};
-	check(shim()->abi_IsColorModeSupported(value, &result));
+	check(shim()->abi_IsColorModeSupported(value, put(result)));
 	return result;
 }
 
@@ -30390,14 +30390,14 @@ template <typename T> void impl_IImageScannerSourceConfiguration<T>::Contrast(in
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::CanAutoDetectPageSize() const
 {
 	bool value = {};
-	check(shim()->get_CanAutoDetectPageSize(&value));
+	check(shim()->get_CanAutoDetectPageSize(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::AutoDetectPageSize() const
 {
 	bool value = {};
-	check(shim()->get_AutoDetectPageSize(&value));
+	check(shim()->get_AutoDetectPageSize(put(value)));
 	return value;
 }
 
@@ -30440,7 +30440,7 @@ template <typename T> Windows::Foundation::Size impl_IImageScannerFeederConfigur
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::IsPageSizeSupported(Windows::Graphics::Printing::PrintMediaSize const pageSize, Windows::Graphics::Printing::PrintOrientation const pageOrientation) const
 {
 	bool result = {};
-	check(shim()->abi_IsPageSizeSupported(pageSize, pageOrientation, &result));
+	check(shim()->abi_IsPageSizeSupported(pageSize, pageOrientation, put(result)));
 	return result;
 }
 
@@ -30459,14 +30459,14 @@ template <typename T> void impl_IImageScannerFeederConfiguration<T>::MaxNumberOf
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::CanScanDuplex() const
 {
 	bool value = {};
-	check(shim()->get_CanScanDuplex(&value));
+	check(shim()->get_CanScanDuplex(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::Duplex() const
 {
 	bool value = {};
-	check(shim()->get_Duplex(&value));
+	check(shim()->get_Duplex(put(value)));
 	return value;
 }
 
@@ -30478,14 +30478,14 @@ template <typename T> void impl_IImageScannerFeederConfiguration<T>::Duplex(bool
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::CanScanAhead() const
 {
 	bool value = {};
-	check(shim()->get_CanScanAhead(&value));
+	check(shim()->get_CanScanAhead(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IImageScannerFeederConfiguration<T>::ScanAhead() const
 {
 	bool value = {};
-	check(shim()->get_ScanAhead(&value));
+	check(shim()->get_ScanAhead(put(value)));
 	return value;
 }
 
@@ -30504,7 +30504,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Sto
 template <typename T> bool impl_IImageScannerPreviewResult<T>::Succeeded() const
 {
 	bool value = {};
-	check(shim()->get_Succeeded(&value));
+	check(shim()->get_Succeeded(put(value)));
 	return value;
 }
 
@@ -30532,7 +30532,7 @@ template <typename T> Windows::Devices::Scanners::ImageScannerScanSource impl_II
 template <typename T> bool impl_IImageScanner<T>::IsScanSourceSupported(Windows::Devices::Scanners::ImageScannerScanSource const value) const
 {
 	bool result = {};
-	check(shim()->abi_IsScanSourceSupported(value, &result));
+	check(shim()->abi_IsScanSourceSupported(value, put(result)));
 	return result;
 }
 
@@ -30560,7 +30560,7 @@ template <typename T> Windows::Devices::Scanners::ImageScannerAutoConfiguration 
 template <typename T> bool impl_IImageScanner<T>::IsPreviewSupported(Windows::Devices::Scanners::ImageScannerScanSource const scanSource) const
 {
 	bool result = {};
-	check(shim()->abi_IsPreviewSupported(scanSource, &result));
+	check(shim()->abi_IsPreviewSupported(scanSource, put(result)));
 	return result;
 }
 
@@ -31990,7 +31990,7 @@ template <typename T> Windows::Foundation::DateTime impl_IProximitySensorReading
 template <typename T> bool impl_IProximitySensorReading<T>::IsDetected() const
 {
 	bool value = {};
-	check(shim()->get_IsDetected(&value));
+	check(shim()->get_IsDetected(put(value)));
 	return value;
 }
 
@@ -32154,7 +32154,7 @@ template <typename T> void impl_ISerialDevice<T>::BaudRate(unsigned const value)
 template <typename T> bool impl_ISerialDevice<T>::BreakSignalState() const
 {
 	bool value = {};
-	check(shim()->get_BreakSignalState(&value));
+	check(shim()->get_BreakSignalState(put(value)));
 	return value;
 }
 
@@ -32173,14 +32173,14 @@ template <typename T> unsigned impl_ISerialDevice<T>::BytesReceived() const
 template <typename T> bool impl_ISerialDevice<T>::CarrierDetectState() const
 {
 	bool value = {};
-	check(shim()->get_CarrierDetectState(&value));
+	check(shim()->get_CarrierDetectState(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISerialDevice<T>::ClearToSendState() const
 {
 	bool value = {};
-	check(shim()->get_ClearToSendState(&value));
+	check(shim()->get_ClearToSendState(put(value)));
 	return value;
 }
 
@@ -32199,7 +32199,7 @@ template <typename T> void impl_ISerialDevice<T>::DataBits(unsigned short const 
 template <typename T> bool impl_ISerialDevice<T>::DataSetReadyState() const
 {
 	bool value = {};
-	check(shim()->get_DataSetReadyState(&value));
+	check(shim()->get_DataSetReadyState(put(value)));
 	return value;
 }
 
@@ -32218,7 +32218,7 @@ template <typename T> void impl_ISerialDevice<T>::Handshake(Windows::Devices::Se
 template <typename T> bool impl_ISerialDevice<T>::IsDataTerminalReadyEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDataTerminalReadyEnabled(&value));
+	check(shim()->get_IsDataTerminalReadyEnabled(put(value)));
 	return value;
 }
 
@@ -32230,7 +32230,7 @@ template <typename T> void impl_ISerialDevice<T>::IsDataTerminalReadyEnabled(boo
 template <typename T> bool impl_ISerialDevice<T>::IsRequestToSendEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsRequestToSendEnabled(&value));
+	check(shim()->get_IsRequestToSendEnabled(put(value)));
 	return value;
 }
 
@@ -32968,7 +32968,7 @@ template <typename T> void impl_ISmsTextMessage2<T>::CallbackNumber(StringRefere
 template <typename T> bool impl_ISmsTextMessage2<T>::IsDeliveryNotificationEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDeliveryNotificationEnabled(&value));
+	check(shim()->get_IsDeliveryNotificationEnabled(put(value)));
 	return value;
 }
 
@@ -33105,7 +33105,7 @@ template <typename T> void impl_ISmsAppMessage<T>::CallbackNumber(StringReferenc
 template <typename T> bool impl_ISmsAppMessage<T>::IsDeliveryNotificationEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDeliveryNotificationEnabled(&value));
+	check(shim()->get_IsDeliveryNotificationEnabled(put(value)));
 	return value;
 }
 
@@ -33245,14 +33245,14 @@ template <typename T> Windows::Devices::Sms::SmsBroadcastType impl_ISmsBroadcast
 template <typename T> bool impl_ISmsBroadcastMessage<T>::IsEmergencyAlert() const
 {
 	bool value = {};
-	check(shim()->get_IsEmergencyAlert(&value));
+	check(shim()->get_IsEmergencyAlert(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISmsBroadcastMessage<T>::IsUserPopupRequested() const
 {
 	bool value = {};
-	check(shim()->get_IsUserPopupRequested(&value));
+	check(shim()->get_IsUserPopupRequested(put(value)));
 	return value;
 }
 
@@ -33371,7 +33371,7 @@ template <typename T> unsigned impl_ISmsDeviceMessageStore<T>::MaxMessages() con
 template <typename T> bool impl_ISmsSendMessageResult<T>::IsSuccessful() const
 {
 	bool value = {};
-	check(shim()->get_IsSuccessful(&value));
+	check(shim()->get_IsSuccessful(put(value)));
 	return value;
 }
 
@@ -33399,7 +33399,7 @@ template <typename T> Windows::Devices::Sms::SmsModemErrorCode impl_ISmsSendMess
 template <typename T> bool impl_ISmsSendMessageResult<T>::IsErrorTransient() const
 {
 	bool value = {};
-	check(shim()->get_IsErrorTransient(&value));
+	check(shim()->get_IsErrorTransient(put(value)));
 	return value;
 }
 
@@ -34207,21 +34207,21 @@ template <typename T> unsigned impl_IUsbConfigurationDescriptor<T>::MaxPowerMill
 template <typename T> bool impl_IUsbConfigurationDescriptor<T>::SelfPowered() const
 {
 	bool value = {};
-	check(shim()->get_SelfPowered(&value));
+	check(shim()->get_SelfPowered(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUsbConfigurationDescriptor<T>::RemoteWakeup() const
 {
 	bool value = {};
-	check(shim()->get_RemoteWakeup(&value));
+	check(shim()->get_RemoteWakeup(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUsbConfigurationDescriptorStatics<T>::TryParse(Windows::Devices::Usb::UsbDescriptor const & descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor & parsed) const
 {
 	bool success = {};
-	check(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+	check(shim()->abi_TryParse(get(descriptor), put(parsed), put(success)));
 	return success;
 }
 
@@ -34270,7 +34270,7 @@ template <typename T> byte impl_IUsbInterfaceDescriptor<T>::InterfaceNumber() co
 template <typename T> bool impl_IUsbInterfaceDescriptorStatics<T>::TryParse(Windows::Devices::Usb::UsbDescriptor const & descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor & parsed) const
 {
 	bool success = {};
-	check(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+	check(shim()->abi_TryParse(get(descriptor), put(parsed), put(success)));
 	return success;
 }
 
@@ -34333,7 +34333,7 @@ template <typename T> Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor i
 template <typename T> bool impl_IUsbEndpointDescriptorStatics<T>::TryParse(Windows::Devices::Usb::UsbDescriptor const & descriptor, Windows::Devices::Usb::UsbEndpointDescriptor & parsed) const
 {
 	bool success = {};
-	check(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+	check(shim()->abi_TryParse(get(descriptor), put(parsed), put(success)));
 	return success;
 }
 
@@ -34613,7 +34613,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Dev
 template <typename T> bool impl_IUsbInterfaceSetting<T>::Selected() const
 {
 	bool value = {};
-	check(shim()->get_Selected(&value));
+	check(shim()->get_Selected(put(value)));
 	return value;
 }
 
@@ -34968,7 +34968,7 @@ template <typename T> Windows::Foundation::TimeSpan impl_IWiFiAvailableNetwork<T
 template <typename T> bool impl_IWiFiAvailableNetwork<T>::IsWiFiDirect() const
 {
 	bool value = {};
-	check(shim()->get_IsWiFiDirect(&value));
+	check(shim()->get_IsWiFiDirect(put(value)));
 	return value;
 }
 
@@ -35064,7 +35064,7 @@ template <typename T> void impl_IWiFiDirectInformationElement<T>::Value(Windows:
 template <typename T> bool impl_IWiFiDirectLegacySettings<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -35124,7 +35124,7 @@ template <typename T> void impl_IWiFiDirectAdvertisement<T>::ListenStateDiscover
 template <typename T> bool impl_IWiFiDirectAdvertisement<T>::IsAutonomousGroupOwnerEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsAutonomousGroupOwnerEnabled(&value));
+	check(shim()->get_IsAutonomousGroupOwnerEnabled(put(value)));
 	return value;
 }
 
@@ -35323,7 +35323,7 @@ template <typename T> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceC
 template <typename T> bool impl_IWiFiDirectServiceProvisioningInfo<T>::IsGroupFormationNeeded() const
 {
 	bool value = {};
-	check(shim()->get_IsGroupFormationNeeded(&value));
+	check(shim()->get_IsGroupFormationNeeded(put(value)));
 	return value;
 }
 
@@ -35405,7 +35405,7 @@ template <typename T> void impl_IWiFiDirectServiceAdvertiser<T>::ServiceInfo(Win
 template <typename T> bool impl_IWiFiDirectServiceAdvertiser<T>::AutoAcceptSession() const
 {
 	bool value = {};
-	check(shim()->get_AutoAcceptSession(&value));
+	check(shim()->get_AutoAcceptSession(put(value)));
 	return value;
 }
 
@@ -35417,7 +35417,7 @@ template <typename T> void impl_IWiFiDirectServiceAdvertiser<T>::AutoAcceptSessi
 template <typename T> bool impl_IWiFiDirectServiceAdvertiser<T>::PreferGroupOwnerMode() const
 {
 	bool value = {};
-	check(shim()->get_PreferGroupOwnerMode(&value));
+	check(shim()->get_PreferGroupOwnerMode(put(value)));
 	return value;
 }
 
@@ -35596,7 +35596,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<winrt::Windo
 template <typename T> bool impl_IWiFiDirectService<T>::PreferGroupOwnerMode() const
 {
 	bool value = {};
-	check(shim()->get_PreferGroupOwnerMode(&value));
+	check(shim()->get_PreferGroupOwnerMode(put(value)));
 	return value;
 }
 
@@ -35902,14 +35902,14 @@ template <typename T> int impl_IUriRuntimeClass<T>::Port() const
 template <typename T> bool impl_IUriRuntimeClass<T>::Suspicious() const
 {
 	bool value = {};
-	check(shim()->get_Suspicious(&value));
+	check(shim()->get_Suspicious(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUriRuntimeClass<T>::Equals(Windows::Foundation::Uri const & pUri) const
 {
 	bool value = {};
-	check(shim()->abi_Equals(get(pUri), &value));
+	check(shim()->abi_Equals(get(pUri), put(value)));
 	return value;
 }
 
@@ -36012,7 +36012,7 @@ template <typename T> Windows::Foundation::PropertyType impl_IPropertyValue<T>::
 template <typename T> bool impl_IPropertyValue<T>::IsNumericScalar() const
 {
 	bool value = {};
-	check(shim()->get_IsNumericScalar(&value));
+	check(shim()->get_IsNumericScalar(put(value)));
 	return value;
 }
 
@@ -36089,7 +36089,7 @@ template <typename T> wchar_t impl_IPropertyValue<T>::GetChar16() const
 template <typename T> bool impl_IPropertyValue<T>::GetBoolean() const
 {
 	bool value = {};
-	check(shim()->abi_GetBoolean(&value));
+	check(shim()->abi_GetBoolean(put(value)));
 	return value;
 }
 
@@ -36377,7 +36377,7 @@ namespace winrt { namespace Windows { namespace Foundation { namespace Diagnosti
 template <typename T> bool impl_ITracingStatusChangedEventArgs<T>::Enabled() const
 {
 	bool enabled = {};
-	check(shim()->get_Enabled(&enabled));
+	check(shim()->get_Enabled(put(enabled)));
 	return enabled;
 }
 
@@ -36876,21 +36876,21 @@ template <typename T> void impl_ILoggingFields<T>::AddRect(StringReference const
 template <typename T> bool impl_ILoggingTarget<T>::IsEnabled() const
 {
 	bool result = {};
-	check(shim()->abi_IsEnabled(&result));
+	check(shim()->abi_IsEnabled(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_ILoggingTarget<T>::IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel const level) const
 {
 	bool result = {};
-	check(shim()->abi_IsEnabledWithLevel(level, &result));
+	check(shim()->abi_IsEnabledWithLevel(level, put(result)));
 	return result;
 }
 
 template <typename T> bool impl_ILoggingTarget<T>::IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel const level, long long const keywords) const
 {
 	bool result = {};
-	check(shim()->abi_IsEnabledWithLevelAndKeywords(level, keywords, &result));
+	check(shim()->abi_IsEnabledWithLevelAndKeywords(level, keywords, put(result)));
 	return result;
 }
 
@@ -36952,7 +36952,7 @@ template <typename T> String impl_ILoggingChannel<T>::Name() const
 template <typename T> bool impl_ILoggingChannel<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -37181,70 +37181,70 @@ namespace winrt { namespace Windows { namespace Foundation { namespace Metadata 
 template <typename T> bool impl_IApiInformationStatics<T>::IsTypePresent(StringReference const & typeName) const
 {
 	bool value = {};
-	check(shim()->abi_IsTypePresent(get(typeName), &value));
+	check(shim()->abi_IsTypePresent(get(typeName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsMethodPresent(StringReference const & typeName, StringReference const & methodName) const
 {
 	bool value = {};
-	check(shim()->abi_IsMethodPresent(get(typeName), get(methodName), &value));
+	check(shim()->abi_IsMethodPresent(get(typeName), get(methodName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsMethodPresent(StringReference const & typeName, StringReference const & methodName, unsigned const inputParameterCount) const
 {
 	bool value = {};
-	check(shim()->abi_IsMethodPresentWithArity(get(typeName), get(methodName), inputParameterCount, &value));
+	check(shim()->abi_IsMethodPresentWithArity(get(typeName), get(methodName), inputParameterCount, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsEventPresent(StringReference const & typeName, StringReference const & eventName) const
 {
 	bool value = {};
-	check(shim()->abi_IsEventPresent(get(typeName), get(eventName), &value));
+	check(shim()->abi_IsEventPresent(get(typeName), get(eventName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsPropertyPresent(StringReference const & typeName, StringReference const & propertyName) const
 {
 	bool value = {};
-	check(shim()->abi_IsPropertyPresent(get(typeName), get(propertyName), &value));
+	check(shim()->abi_IsPropertyPresent(get(typeName), get(propertyName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsReadOnlyPropertyPresent(StringReference const & typeName, StringReference const & propertyName) const
 {
 	bool value = {};
-	check(shim()->abi_IsReadOnlyPropertyPresent(get(typeName), get(propertyName), &value));
+	check(shim()->abi_IsReadOnlyPropertyPresent(get(typeName), get(propertyName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsWriteablePropertyPresent(StringReference const & typeName, StringReference const & propertyName) const
 {
 	bool value = {};
-	check(shim()->abi_IsWriteablePropertyPresent(get(typeName), get(propertyName), &value));
+	check(shim()->abi_IsWriteablePropertyPresent(get(typeName), get(propertyName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsEnumNamedValuePresent(StringReference const & enumTypeName, StringReference const & valueName) const
 {
 	bool value = {};
-	check(shim()->abi_IsEnumNamedValuePresent(get(enumTypeName), get(valueName), &value));
+	check(shim()->abi_IsEnumNamedValuePresent(get(enumTypeName), get(valueName), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsApiContractPresent(StringReference const & contractName, unsigned short const majorVersion) const
 {
 	bool value = {};
-	check(shim()->abi_IsApiContractPresentByMajor(get(contractName), majorVersion, &value));
+	check(shim()->abi_IsApiContractPresentByMajor(get(contractName), majorVersion, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApiInformationStatics<T>::IsApiContractPresent(StringReference const & contractName, unsigned short const majorVersion, unsigned short const minorVersion) const
 {
 	bool value = {};
-	check(shim()->abi_IsApiContractPresentByMajorAndMinor(get(contractName), majorVersion, minorVersion, &value));
+	check(shim()->abi_IsApiContractPresentByMajorAndMinor(get(contractName), majorVersion, minorVersion, put(value)));
 	return value;
 }
 
@@ -37313,7 +37313,7 @@ template <typename T> Windows::Gaming::Input::Headset impl_IGameController<T>::H
 template <typename T> bool impl_IGameController<T>::IsWireless() const
 {
 	bool value = {};
-	check(shim()->get_IsWireless(&value));
+	check(shim()->get_IsWireless(put(value)));
 	return value;
 }
 
@@ -37553,14 +37553,14 @@ template <typename T> void impl_IGameBarStatics<T>::IsInputRedirectedChanged(lon
 template <typename T> bool impl_IGameBarStatics<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IGameBarStatics<T>::IsInputRedirected() const
 {
 	bool value = {};
-	check(shim()->get_IsInputRedirected(&value));
+	check(shim()->get_IsInputRedirected(put(value)));
 	return value;
 }
 
@@ -37599,7 +37599,7 @@ template <typename T> String impl_IJapanesePhoneme<T>::YomiText() const
 template <typename T> bool impl_IJapanesePhoneme<T>::IsPhraseStart() const
 {
 	bool value = {};
-	check(shim()->get_IsPhraseStart(&value));
+	check(shim()->get_IsPhraseStart(put(value)));
 	return value;
 }
 
@@ -39181,7 +39181,7 @@ template <typename T> Windows::Globalization::GeographicRegion impl_IGeographicR
 template <typename T> bool impl_IGeographicRegionStatics<T>::IsSupported(StringReference const & geographicRegionCode) const
 {
 	bool result = {};
-	check(shim()->abi_IsSupported(get(geographicRegionCode), &result));
+	check(shim()->abi_IsSupported(get(geographicRegionCode), put(result)));
 	return result;
 }
 
@@ -39230,7 +39230,7 @@ template <typename T> Windows::Globalization::Language impl_ILanguageFactory<T>:
 template <typename T> bool impl_ILanguageStatics<T>::IsWellFormed(StringReference const & languageTag) const
 {
 	bool result = {};
-	check(shim()->abi_IsWellFormed(get(languageTag), &result));
+	check(shim()->abi_IsWellFormed(get(languageTag), put(result)));
 	return result;
 }
 
@@ -39244,7 +39244,7 @@ template <typename T> String impl_ILanguageStatics<T>::CurrentInputMethodLanguag
 template <typename T> bool impl_ILanguageStatics2<T>::TrySetInputMethodLanguageTag(StringReference const & languageTag) const
 {
 	bool result = {};
-	check(shim()->abi_TrySetInputMethodLanguageTag(get(languageTag), &result));
+	check(shim()->abi_TrySetInputMethodLanguageTag(get(languageTag), put(result)));
 	return result;
 }
 
@@ -39876,7 +39876,7 @@ template <typename T> String impl_ICalendar<T>::ResolvedLanguage() const
 template <typename T> bool impl_ICalendar<T>::IsDaylightSavingTime() const
 {
 	bool value = {};
-	check(shim()->get_IsDaylightSavingTime(&value));
+	check(shim()->get_IsDaylightSavingTime(put(value)));
 	return value;
 }
 
@@ -40511,7 +40511,7 @@ template <typename T> void impl_INumberFormatterOptions<T>::FractionDigits(int c
 template <typename T> bool impl_INumberFormatterOptions<T>::IsGrouped() const
 {
 	bool value = {};
-	check(shim()->get_IsGrouped(&value));
+	check(shim()->get_IsGrouped(put(value)));
 	return value;
 }
 
@@ -40523,7 +40523,7 @@ template <typename T> void impl_INumberFormatterOptions<T>::IsGrouped(bool const
 template <typename T> bool impl_INumberFormatterOptions<T>::IsDecimalPointAlwaysDisplayed() const
 {
 	bool value = {};
-	check(shim()->get_IsDecimalPointAlwaysDisplayed(&value));
+	check(shim()->get_IsDecimalPointAlwaysDisplayed(put(value)));
 	return value;
 }
 
@@ -40585,7 +40585,7 @@ template <typename T> void impl_INumberRounderOption<T>::NumberRounder(Windows::
 template <typename T> bool impl_ISignedZeroOption<T>::IsZeroSigned() const
 {
 	bool value = {};
-	check(shim()->get_IsZeroSigned(&value));
+	check(shim()->get_IsZeroSigned(put(value)));
 	return value;
 }
 
@@ -40838,7 +40838,7 @@ template <typename T> void impl_IDisplayInformation<T>::DpiChanged(long long con
 template <typename T> bool impl_IDisplayInformation<T>::StereoEnabled() const
 {
 	bool value = {};
-	check(shim()->get_StereoEnabled(&value));
+	check(shim()->get_StereoEnabled(put(value)));
 	return value;
 }
 
@@ -40974,7 +40974,7 @@ template <typename T> void impl_IDisplayPropertiesStatics<T>::LogicalDpiChanged(
 template <typename T> bool impl_IDisplayPropertiesStatics<T>::StereoEnabled() const
 {
 	bool value = {};
-	check(shim()->get_StereoEnabled(&value));
+	check(shim()->get_StereoEnabled(put(value)));
 	return value;
 }
 
@@ -41078,7 +41078,7 @@ template <typename T> void impl_IHolographicCamera<T>::ViewportScaleFactor(doubl
 template <typename T> bool impl_IHolographicCamera<T>::IsStereo() const
 {
 	bool value = {};
-	check(shim()->get_IsStereo(&value));
+	check(shim()->get_IsStereo(put(value)));
 	return value;
 }
 
@@ -41788,7 +41788,7 @@ template <typename T> Windows::Graphics::Imaging::BitmapProperties impl_IBitmapE
 template <typename T> bool impl_IBitmapEncoder<T>::IsThumbnailGenerated() const
 {
 	bool value = {};
-	check(shim()->get_IsThumbnailGenerated(&value));
+	check(shim()->get_IsThumbnailGenerated(put(value)));
 	return value;
 }
 
@@ -41948,7 +41948,7 @@ template <typename T> int impl_ISoftwareBitmap<T>::PixelHeight() const
 template <typename T> bool impl_ISoftwareBitmap<T>::IsReadOnly() const
 {
 	bool value = {};
-	check(shim()->get_IsReadOnly(&value));
+	check(shim()->get_IsReadOnly(put(value)));
 	return value;
 }
 
@@ -42390,7 +42390,7 @@ template <typename T> void impl_IPrintTaskTargetDeviceSupport<T>::IsPrinterTarge
 template <typename T> bool impl_IPrintTaskTargetDeviceSupport<T>::IsPrinterTargetEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsPrinterTargetEnabled(&value));
+	check(shim()->get_IsPrinterTargetEnabled(put(value)));
 	return value;
 }
 
@@ -42402,7 +42402,7 @@ template <typename T> void impl_IPrintTaskTargetDeviceSupport<T>::Is3DManufactur
 template <typename T> bool impl_IPrintTaskTargetDeviceSupport<T>::Is3DManufacturingTargetEnabled() const
 {
 	bool value = {};
-	check(shim()->get_Is3DManufacturingTargetEnabled(&value));
+	check(shim()->get_Is3DManufacturingTargetEnabled(put(value)));
 	return value;
 }
 
@@ -43215,7 +43215,7 @@ template <typename T> Windows::Foundation::Collections::IVector<Windows::Graphic
 template <typename T> bool impl_IPrinting3DMeshVerificationResult<T>::IsValid() const
 {
 	bool value = {};
-	check(shim()->get_IsValid(&value));
+	check(shim()->get_IsValid(put(value)));
 	return value;
 }
 
@@ -43453,7 +43453,7 @@ template <typename T> IInspectable impl_IPrintOptionDetails<T>::Value() const
 template <typename T> bool impl_IPrintOptionDetails<T>::TrySetValue(IInspectable const & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetValue(get(value), &succeeded));
+	check(shim()->abi_TrySetValue(get(value), put(succeeded)));
 	return succeeded;
 }
 
@@ -43934,14 +43934,14 @@ template <typename T> Windows::Foundation::IAsyncOperationWithProgress<Windows::
 template <typename T> bool impl_IPackageVolume<T>::IsOffline() const
 {
 	bool value = {};
-	check(shim()->get_IsOffline(&value));
+	check(shim()->get_IsOffline(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPackageVolume<T>::IsSystemVolume() const
 {
 	bool value = {};
-	check(shim()->get_IsSystemVolume(&value));
+	check(shim()->get_IsSystemVolume(put(value)));
 	return value;
 }
 
@@ -43969,7 +43969,7 @@ template <typename T> String impl_IPackageVolume<T>::PackageStorePath() const
 template <typename T> bool impl_IPackageVolume<T>::SupportsHardLinks() const
 {
 	bool value = {};
-	check(shim()->get_SupportsHardLinks(&value));
+	check(shim()->get_SupportsHardLinks(put(value)));
 	return value;
 }
 
@@ -44121,35 +44121,35 @@ namespace winrt { namespace Windows { namespace Management { namespace Workplace
 template <typename T> bool impl_IMdmAllowPolicyStatics<T>::IsBrowserAllowed() const
 {
 	bool value = {};
-	check(shim()->abi_IsBrowserAllowed(&value));
+	check(shim()->abi_IsBrowserAllowed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMdmAllowPolicyStatics<T>::IsCameraAllowed() const
 {
 	bool value = {};
-	check(shim()->abi_IsCameraAllowed(&value));
+	check(shim()->abi_IsCameraAllowed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMdmAllowPolicyStatics<T>::IsMicrosoftAccountAllowed() const
 {
 	bool value = {};
-	check(shim()->abi_IsMicrosoftAccountAllowed(&value));
+	check(shim()->abi_IsMicrosoftAccountAllowed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMdmAllowPolicyStatics<T>::IsStoreAllowed() const
 {
 	bool value = {};
-	check(shim()->abi_IsStoreAllowed(&value));
+	check(shim()->abi_IsStoreAllowed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IWorkplaceSettingsStatics<T>::IsMicrosoftAccountOptional() const
 {
 	bool value = {};
-	check(shim()->get_IsMicrosoftAccountOptional(&value));
+	check(shim()->get_IsMicrosoftAccountOptional(put(value)));
 	return value;
 }
 
@@ -44195,7 +44195,7 @@ template <typename T> String impl_IMediaFrame<T>::Type() const
 template <typename T> bool impl_IMediaFrame<T>::IsReadOnly() const
 {
 	bool value = {};
-	check(shim()->get_IsReadOnly(&value));
+	check(shim()->get_IsReadOnly(put(value)));
 	return value;
 }
 
@@ -44243,7 +44243,7 @@ template <typename T> void impl_IMediaFrame<T>::IsDiscontinuous(bool const value
 template <typename T> bool impl_IMediaFrame<T>::IsDiscontinuous() const
 {
 	bool value = {};
-	check(shim()->get_IsDiscontinuous(&value));
+	check(shim()->get_IsDiscontinuous(put(value)));
 	return value;
 }
 
@@ -44544,7 +44544,7 @@ template <typename T> void impl_IMediaControl<T>::IsPlaying(bool const value) co
 template <typename T> bool impl_IMediaControl<T>::IsPlaying() const
 {
 	bool value = {};
-	check(shim()->get_IsPlaying(&value));
+	check(shim()->get_IsPlaying(put(value)));
 	return value;
 }
 
@@ -44882,7 +44882,7 @@ template <typename T> double impl_IPlaybackRateChangeRequestedEventArgs<T>::Requ
 template <typename T> bool impl_IShuffleEnabledChangeRequestedEventArgs<T>::RequestedShuffleEnabled() const
 {
 	bool value = {};
-	check(shim()->get_RequestedShuffleEnabled(&value));
+	check(shim()->get_RequestedShuffleEnabled(put(value)));
 	return value;
 }
 
@@ -44922,7 +44922,7 @@ template <typename T> Windows::Media::SoundLevel impl_ISystemMediaTransportContr
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -44934,7 +44934,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsEnabled(bool
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsPlayEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsPlayEnabled(&value));
+	check(shim()->get_IsPlayEnabled(put(value)));
 	return value;
 }
 
@@ -44946,7 +44946,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsPlayEnabled(
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsStopEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsStopEnabled(&value));
+	check(shim()->get_IsStopEnabled(put(value)));
 	return value;
 }
 
@@ -44958,7 +44958,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsStopEnabled(
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsPauseEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsPauseEnabled(&value));
+	check(shim()->get_IsPauseEnabled(put(value)));
 	return value;
 }
 
@@ -44970,7 +44970,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsPauseEnabled
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsRecordEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsRecordEnabled(&value));
+	check(shim()->get_IsRecordEnabled(put(value)));
 	return value;
 }
 
@@ -44982,7 +44982,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsRecordEnable
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsFastForwardEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsFastForwardEnabled(&value));
+	check(shim()->get_IsFastForwardEnabled(put(value)));
 	return value;
 }
 
@@ -44994,7 +44994,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsFastForwardE
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsRewindEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsRewindEnabled(&value));
+	check(shim()->get_IsRewindEnabled(put(value)));
 	return value;
 }
 
@@ -45006,7 +45006,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsRewindEnable
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsPreviousEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsPreviousEnabled(&value));
+	check(shim()->get_IsPreviousEnabled(put(value)));
 	return value;
 }
 
@@ -45018,7 +45018,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsPreviousEnab
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsNextEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsNextEnabled(&value));
+	check(shim()->get_IsNextEnabled(put(value)));
 	return value;
 }
 
@@ -45030,7 +45030,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsNextEnabled(
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsChannelUpEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsChannelUpEnabled(&value));
+	check(shim()->get_IsChannelUpEnabled(put(value)));
 	return value;
 }
 
@@ -45042,7 +45042,7 @@ template <typename T> void impl_ISystemMediaTransportControls<T>::IsChannelUpEna
 template <typename T> bool impl_ISystemMediaTransportControls<T>::IsChannelDownEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsChannelDownEnabled(&value));
+	check(shim()->get_IsChannelDownEnabled(put(value)));
 	return value;
 }
 
@@ -45100,7 +45100,7 @@ template <typename T> void impl_ISystemMediaTransportControls2<T>::AutoRepeatMod
 template <typename T> bool impl_ISystemMediaTransportControls2<T>::ShuffleEnabled() const
 {
 	bool value = {};
-	check(shim()->get_ShuffleEnabled(&value));
+	check(shim()->get_ShuffleEnabled(put(value)));
 	return value;
 }
 
@@ -45668,7 +45668,7 @@ template <typename T> Windows::Media::MediaProperties::AudioEncodingProperties i
 template <typename T> bool impl_IAudioNode<T>::ConsumeInput() const
 {
 	bool value = {};
-	check(shim()->get_ConsumeInput(&value));
+	check(shim()->get_ConsumeInput(put(value)));
 	return value;
 }
 
@@ -46296,7 +46296,7 @@ template <typename T> void impl_IReverbEffectDefinition<T>::DisableLateField(boo
 template <typename T> bool impl_IReverbEffectDefinition<T>::DisableLateField() const
 {
 	bool value = {};
-	check(shim()->get_DisableLateField(&value));
+	check(shim()->get_DisableLateField(put(value)));
 	return value;
 }
 
@@ -46562,7 +46562,7 @@ template <typename T> void impl_IAppCaptureSettings<T>::IsAudioCaptureEnabled(bo
 template <typename T> bool impl_IAppCaptureSettings<T>::IsAudioCaptureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsAudioCaptureEnabled(&value));
+	check(shim()->get_IsAudioCaptureEnabled(put(value)));
 	return value;
 }
 
@@ -46634,7 +46634,7 @@ template <typename T> void impl_IAppCaptureSettings<T>::IsHistoricalCaptureEnabl
 template <typename T> bool impl_IAppCaptureSettings<T>::IsHistoricalCaptureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsHistoricalCaptureEnabled(&value));
+	check(shim()->get_IsHistoricalCaptureEnabled(put(value)));
 	return value;
 }
 
@@ -46646,7 +46646,7 @@ template <typename T> void impl_IAppCaptureSettings<T>::IsHistoricalCaptureOnBat
 template <typename T> bool impl_IAppCaptureSettings<T>::IsHistoricalCaptureOnBatteryAllowed() const
 {
 	bool value = {};
-	check(shim()->get_IsHistoricalCaptureOnBatteryAllowed(&value));
+	check(shim()->get_IsHistoricalCaptureOnBatteryAllowed(put(value)));
 	return value;
 }
 
@@ -46658,7 +46658,7 @@ template <typename T> void impl_IAppCaptureSettings<T>::IsHistoricalCaptureOnWir
 template <typename T> bool impl_IAppCaptureSettings<T>::IsHistoricalCaptureOnWirelessDisplayAllowed() const
 {
 	bool value = {};
-	check(shim()->get_IsHistoricalCaptureOnWirelessDisplayAllowed(&value));
+	check(shim()->get_IsHistoricalCaptureOnWirelessDisplayAllowed(put(value)));
 	return value;
 }
 
@@ -46718,42 +46718,42 @@ template <typename T> void impl_IAppCaptureSettings<T>::IsAppCaptureEnabled(bool
 template <typename T> bool impl_IAppCaptureSettings<T>::IsAppCaptureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsAppCaptureEnabled(&value));
+	check(shim()->get_IsAppCaptureEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCaptureSettings<T>::IsCpuConstrained() const
 {
 	bool value = {};
-	check(shim()->get_IsCpuConstrained(&value));
+	check(shim()->get_IsCpuConstrained(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCaptureSettings<T>::IsDisabledByPolicy() const
 {
 	bool value = {};
-	check(shim()->get_IsDisabledByPolicy(&value));
+	check(shim()->get_IsDisabledByPolicy(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCaptureSettings<T>::IsMemoryConstrained() const
 {
 	bool value = {};
-	check(shim()->get_IsMemoryConstrained(&value));
+	check(shim()->get_IsMemoryConstrained(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCaptureSettings<T>::HasHardwareEncoder() const
 {
 	bool value = {};
-	check(shim()->get_HasHardwareEncoder(&value));
+	check(shim()->get_HasHardwareEncoder(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCaptureSettings2<T>::IsGpuConstrained() const
 {
 	bool value = {};
-	check(shim()->get_IsGpuConstrained(&value));
+	check(shim()->get_IsGpuConstrained(put(value)));
 	return value;
 }
 
@@ -46772,7 +46772,7 @@ template <typename T> void impl_IAppCaptureSettings3<T>::IsMicrophoneCaptureEnab
 template <typename T> bool impl_IAppCaptureSettings3<T>::IsMicrophoneCaptureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsMicrophoneCaptureEnabled(&value));
+	check(shim()->get_IsMicrophoneCaptureEnabled(put(value)));
 	return value;
 }
 
@@ -46827,7 +46827,7 @@ template <typename T> void impl_ICameraCaptureUIPhotoCaptureSettings<T>::Cropped
 template <typename T> bool impl_ICameraCaptureUIPhotoCaptureSettings<T>::AllowCropping() const
 {
 	bool value = {};
-	check(shim()->get_AllowCropping(&value));
+	check(shim()->get_AllowCropping(put(value)));
 	return value;
 }
 
@@ -46875,7 +46875,7 @@ template <typename T> void impl_ICameraCaptureUIVideoCaptureSettings<T>::MaxDura
 template <typename T> bool impl_ICameraCaptureUIVideoCaptureSettings<T>::AllowTrimming() const
 {
 	bool value = {};
-	check(shim()->get_AllowTrimming(&value));
+	check(shim()->get_AllowTrimming(put(value)));
 	return value;
 }
 
@@ -46913,14 +46913,14 @@ template <typename T> void impl_ICameraOptionsUIStatics<T>::Show(Windows::Media:
 template <typename T> bool impl_IAppCapture<T>::IsCapturingAudio() const
 {
 	bool value = {};
-	check(shim()->get_IsCapturingAudio(&value));
+	check(shim()->get_IsCapturingAudio(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IAppCapture<T>::IsCapturingVideo() const
 {
 	bool value = {};
-	check(shim()->get_IsCapturingVideo(&value));
+	check(shim()->get_IsCapturingVideo(put(value)));
 	return value;
 }
 
@@ -46986,14 +46986,14 @@ template <typename T> double impl_IMediaCaptureVideoProfileMediaDescription<T>::
 template <typename T> bool impl_IMediaCaptureVideoProfileMediaDescription<T>::IsVariablePhotoSequenceSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsVariablePhotoSequenceSupported(&value));
+	check(shim()->get_IsVariablePhotoSequenceSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaCaptureVideoProfileMediaDescription<T>::IsHdrVideoSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsHdrVideoSupported(&value));
+	check(shim()->get_IsHdrVideoSupported(put(value)));
 	return value;
 }
 
@@ -47186,7 +47186,7 @@ template <typename T> void impl_IMediaCaptureInitializationSettings4<T>::PhotoMe
 template <typename T> bool impl_IMediaCaptureStatics<T>::IsVideoProfileSupported(StringReference const & videoDeviceId) const
 {
 	bool value = {};
-	check(shim()->abi_IsVideoProfileSupported(get(videoDeviceId), &value));
+	check(shim()->abi_IsVideoProfileSupported(get(videoDeviceId), put(value)));
 	return value;
 }
 
@@ -47363,7 +47363,7 @@ template <typename T> void impl_IMediaCapture<T>::SetPreviewMirroring(bool const
 template <typename T> bool impl_IMediaCapture<T>::GetPreviewMirroring() const
 {
 	bool value = {};
-	check(shim()->abi_GetPreviewMirroring(&value));
+	check(shim()->abi_GetPreviewMirroring(put(value)));
 	return value;
 }
 
@@ -47975,21 +47975,21 @@ template <typename T> Windows::Media::Capture::VideoDeviceCharacteristic impl_IM
 template <typename T> bool impl_IMediaCaptureSettings2<T>::ConcurrentRecordAndPhotoSupported() const
 {
 	bool value = {};
-	check(shim()->get_ConcurrentRecordAndPhotoSupported(&value));
+	check(shim()->get_ConcurrentRecordAndPhotoSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaCaptureSettings2<T>::ConcurrentRecordAndPhotoSequenceSupported() const
 {
 	bool value = {};
-	check(shim()->get_ConcurrentRecordAndPhotoSequenceSupported(&value));
+	check(shim()->get_ConcurrentRecordAndPhotoSequenceSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaCaptureSettings2<T>::CameraSoundRequiredForRegion() const
 {
 	bool value = {};
-	check(shim()->get_CameraSoundRequiredForRegion(&value));
+	check(shim()->get_CameraSoundRequiredForRegion(put(value)));
 	return value;
 }
 
@@ -48334,7 +48334,7 @@ template <typename T> Windows::Media::Casting::CastingDevice impl_ICastingDevice
 template <typename T> bool impl_ICastingDevicePickerFilter<T>::SupportsAudio() const
 {
 	bool value = {};
-	check(shim()->get_SupportsAudio(&value));
+	check(shim()->get_SupportsAudio(put(value)));
 	return value;
 }
 
@@ -48346,7 +48346,7 @@ template <typename T> void impl_ICastingDevicePickerFilter<T>::SupportsAudio(boo
 template <typename T> bool impl_ICastingDevicePickerFilter<T>::SupportsVideo() const
 {
 	bool value = {};
-	check(shim()->get_SupportsVideo(&value));
+	check(shim()->get_SupportsVideo(put(value)));
 	return value;
 }
 
@@ -48358,7 +48358,7 @@ template <typename T> void impl_ICastingDevicePickerFilter<T>::SupportsVideo(boo
 template <typename T> bool impl_ICastingDevicePickerFilter<T>::SupportsPictures() const
 {
 	bool value = {};
-	check(shim()->get_SupportsPictures(&value));
+	check(shim()->get_SupportsPictures(put(value)));
 	return value;
 }
 
@@ -48669,7 +48669,7 @@ namespace winrt { namespace Windows { namespace Media { namespace Core {
 template <typename T> bool impl_IMediaStreamDescriptor<T>::IsSelected() const
 {
 	bool selected = {};
-	check(shim()->get_IsSelected(&selected));
+	check(shim()->get_IsSelected(put(selected)));
 	return selected;
 }
 
@@ -48852,7 +48852,7 @@ template <typename T> void impl_IMediaStreamSource<T>::CanSeek(bool const value)
 template <typename T> bool impl_IMediaStreamSource<T>::CanSeek() const
 {
 	bool value = {};
-	check(shim()->get_CanSeek(&value));
+	check(shim()->get_CanSeek(put(value)));
 	return value;
 }
 
@@ -48990,7 +48990,7 @@ template <typename T> void impl_IMediaStreamSample<T>::KeyFrame(bool const value
 template <typename T> bool impl_IMediaStreamSample<T>::KeyFrame() const
 {
 	bool value = {};
-	check(shim()->get_KeyFrame(&value));
+	check(shim()->get_KeyFrame(put(value)));
 	return value;
 }
 
@@ -49002,7 +49002,7 @@ template <typename T> void impl_IMediaStreamSample<T>::Discontinuous(bool const 
 template <typename T> bool impl_IMediaStreamSample<T>::Discontinuous() const
 {
 	bool value = {};
-	check(shim()->get_Discontinuous(&value));
+	check(shim()->get_Discontinuous(put(value)));
 	return value;
 }
 
@@ -49144,7 +49144,7 @@ template <typename T> Windows::Media::Core::MediaStreamSourceSwitchStreamsReques
 template <typename T> bool impl_IMseStreamSourceStatics<T>::IsContentTypeSupported(StringReference const & contentType) const
 {
 	bool value = {};
-	check(shim()->abi_IsContentTypeSupported(get(contentType), &value));
+	check(shim()->abi_IsContentTypeSupported(get(contentType), put(value)));
 	return value;
 }
 
@@ -49349,7 +49349,7 @@ template <typename T> void impl_IMseSourceBuffer<T>::Mode(Windows::Media::Core::
 template <typename T> bool impl_IMseSourceBuffer<T>::IsUpdating() const
 {
 	bool value = {};
-	check(shim()->get_IsUpdating(&value));
+	check(shim()->get_IsUpdating(put(value)));
 	return value;
 }
 
@@ -49470,7 +49470,7 @@ template <typename T> void impl_IHighDynamicRangeControl<T>::Enabled(bool const 
 template <typename T> bool impl_IHighDynamicRangeControl<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -49567,7 +49567,7 @@ template <typename T> void impl_IFaceDetectionEffect<T>::Enabled(bool const valu
 template <typename T> bool impl_IFaceDetectionEffect<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -49620,7 +49620,7 @@ template <typename T> void impl_IFaceDetectionEffectDefinition<T>::SynchronousDe
 template <typename T> bool impl_IFaceDetectionEffectDefinition<T>::SynchronousDetectionEnabled() const
 {
 	bool value = {};
-	check(shim()->get_SynchronousDetectionEnabled(&value));
+	check(shim()->get_SynchronousDetectionEnabled(put(value)));
 	return value;
 }
 
@@ -49639,7 +49639,7 @@ template <typename T> void impl_IVideoStabilizationEffect<T>::Enabled(bool const
 template <typename T> bool impl_IVideoStabilizationEffect<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -49874,7 +49874,7 @@ template <typename T> Windows::Foundation::IReference<winrt::Windows::Foundation
 template <typename T> bool impl_IMediaSource2<T>::IsOpen() const
 {
 	bool value = {};
-	check(shim()->get_IsOpen(&value));
+	check(shim()->get_IsOpen(put(value)));
 	return value;
 }
 
@@ -50075,7 +50075,7 @@ template <typename T> void impl_ITimedTextRegion<T>::LineHeight(Windows::Media::
 template <typename T> bool impl_ITimedTextRegion<T>::IsOverflowClipped() const
 {
 	bool value = {};
-	check(shim()->get_IsOverflowClipped(&value));
+	check(shim()->get_IsOverflowClipped(put(value)));
 	return value;
 }
 
@@ -50207,7 +50207,7 @@ template <typename T> void impl_ITimedTextStyle<T>::Background(Windows::UI::Colo
 template <typename T> bool impl_ITimedTextStyle<T>::IsBackgroundAlwaysShown() const
 {
 	bool value = {};
-	check(shim()->get_IsBackgroundAlwaysShown(&value));
+	check(shim()->get_IsBackgroundAlwaysShown(put(value)));
 	return value;
 }
 
@@ -50663,7 +50663,7 @@ template <typename T> void impl_ICallControl<T>::EndCall(unsigned long long cons
 template <typename T> bool impl_ICallControl<T>::HasRinger() const
 {
 	bool value = {};
-	check(shim()->get_HasRinger(&value));
+	check(shim()->get_HasRinger(put(value)));
 	return value;
 }
 
@@ -50890,21 +50890,21 @@ template <typename T> Windows::Foundation::IAsyncAction impl_ISceneModeControl<T
 template <typename T> bool impl_ITorchControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITorchControl<T>::PowerSupported() const
 {
 	bool value = {};
-	check(shim()->get_PowerSupported(&value));
+	check(shim()->get_PowerSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITorchControl<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -50928,28 +50928,28 @@ template <typename T> void impl_ITorchControl<T>::PowerPercent(float const value
 template <typename T> bool impl_IFlashControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFlashControl<T>::PowerSupported() const
 {
 	bool value = {};
-	check(shim()->get_PowerSupported(&value));
+	check(shim()->get_PowerSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFlashControl<T>::RedEyeReductionSupported() const
 {
 	bool value = {};
-	check(shim()->get_RedEyeReductionSupported(&value));
+	check(shim()->get_RedEyeReductionSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFlashControl<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -50961,7 +50961,7 @@ template <typename T> void impl_IFlashControl<T>::Enabled(bool const value) cons
 template <typename T> bool impl_IFlashControl<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -50973,7 +50973,7 @@ template <typename T> void impl_IFlashControl<T>::Auto(bool const value) const
 template <typename T> bool impl_IFlashControl<T>::RedEyeReduction() const
 {
 	bool value = {};
-	check(shim()->get_RedEyeReduction(&value));
+	check(shim()->get_RedEyeReduction(put(value)));
 	return value;
 }
 
@@ -50997,14 +50997,14 @@ template <typename T> void impl_IFlashControl<T>::PowerPercent(float const value
 template <typename T> bool impl_IFlashControl2<T>::AssistantLightSupported() const
 {
 	bool value = {};
-	check(shim()->get_AssistantLightSupported(&value));
+	check(shim()->get_AssistantLightSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFlashControl2<T>::AssistantLightEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AssistantLightEnabled(&value));
+	check(shim()->get_AssistantLightEnabled(put(value)));
 	return value;
 }
 
@@ -51016,7 +51016,7 @@ template <typename T> void impl_IFlashControl2<T>::AssistantLightEnabled(bool co
 template <typename T> bool impl_IExposureCompensationControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51058,7 +51058,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IExposureCompensati
 template <typename T> bool impl_IIsoSpeedControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51121,7 +51121,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IIsoSpeedControl2<T
 template <typename T> bool impl_IIsoSpeedControl2<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -51135,7 +51135,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IIsoSpeedControl2<T
 template <typename T> bool impl_IWhiteBalanceControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51191,14 +51191,14 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IWhiteBalanceContro
 template <typename T> bool impl_IExposureControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IExposureControl<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -51271,7 +51271,7 @@ template <typename T> void impl_IZoomSettings<T>::Value(float const value) const
 template <typename T> bool impl_IZoomControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51378,7 +51378,7 @@ template <typename T> void impl_IFocusSettings<T>::Distance(Windows::Foundation:
 template <typename T> bool impl_IFocusSettings<T>::WaitForFocus() const
 {
 	bool value = {};
-	check(shim()->get_WaitForFocus(&value));
+	check(shim()->get_WaitForFocus(put(value)));
 	return value;
 }
 
@@ -51390,7 +51390,7 @@ template <typename T> void impl_IFocusSettings<T>::WaitForFocus(bool const value
 template <typename T> bool impl_IFocusSettings<T>::DisableDriverFallback() const
 {
 	bool value = {};
-	check(shim()->get_DisableDriverFallback(&value));
+	check(shim()->get_DisableDriverFallback(put(value)));
 	return value;
 }
 
@@ -51402,7 +51402,7 @@ template <typename T> void impl_IFocusSettings<T>::DisableDriverFallback(bool co
 template <typename T> bool impl_IFocusControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51479,14 +51479,14 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IFocusControl<T>::F
 template <typename T> bool impl_IFocusControl2<T>::FocusChangedSupported() const
 {
 	bool value = {};
-	check(shim()->get_FocusChangedSupported(&value));
+	check(shim()->get_FocusChangedSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFocusControl2<T>::WaitForFocusSupported() const
 {
 	bool value = {};
-	check(shim()->get_WaitForFocusSupported(&value));
+	check(shim()->get_WaitForFocusSupported(put(value)));
 	return value;
 }
 
@@ -51547,7 +51547,7 @@ template <typename T> void impl_IFocusControl2<T>::Configure(Windows::Media::Dev
 template <typename T> bool impl_IRegionOfInterest<T>::AutoFocusEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AutoFocusEnabled(&value));
+	check(shim()->get_AutoFocusEnabled(put(value)));
 	return value;
 }
 
@@ -51559,7 +51559,7 @@ template <typename T> void impl_IRegionOfInterest<T>::AutoFocusEnabled(bool cons
 template <typename T> bool impl_IRegionOfInterest<T>::AutoWhiteBalanceEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AutoWhiteBalanceEnabled(&value));
+	check(shim()->get_AutoWhiteBalanceEnabled(put(value)));
 	return value;
 }
 
@@ -51571,7 +51571,7 @@ template <typename T> void impl_IRegionOfInterest<T>::AutoWhiteBalanceEnabled(bo
 template <typename T> bool impl_IRegionOfInterest<T>::AutoExposureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AutoExposureEnabled(&value));
+	check(shim()->get_AutoExposureEnabled(put(value)));
 	return value;
 }
 
@@ -51607,7 +51607,7 @@ template <typename T> void impl_IRegionOfInterest2<T>::Type(Windows::Media::Devi
 template <typename T> bool impl_IRegionOfInterest2<T>::BoundsNormalized() const
 {
 	bool value = {};
-	check(shim()->get_BoundsNormalized(&value));
+	check(shim()->get_BoundsNormalized(put(value)));
 	return value;
 }
 
@@ -51659,35 +51659,35 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestC
 template <typename T> bool impl_IRegionsOfInterestControl<T>::AutoFocusSupported() const
 {
 	bool value = {};
-	check(shim()->get_AutoFocusSupported(&value));
+	check(shim()->get_AutoFocusSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IRegionsOfInterestControl<T>::AutoWhiteBalanceSupported() const
 {
 	bool value = {};
-	check(shim()->get_AutoWhiteBalanceSupported(&value));
+	check(shim()->get_AutoWhiteBalanceSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IRegionsOfInterestControl<T>::AutoExposureSupported() const
 {
 	bool value = {};
-	check(shim()->get_AutoExposureSupported(&value));
+	check(shim()->get_AutoExposureSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IExposurePriorityVideoControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IExposurePriorityVideoControl<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -51699,7 +51699,7 @@ template <typename T> void impl_IExposurePriorityVideoControl<T>::Enabled(bool c
 template <typename T> bool impl_IHdrVideoControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51737,7 +51737,7 @@ template <typename T> void impl_IAdvancedPhotoCaptureSettings<T>::Mode(Windows::
 template <typename T> bool impl_IAdvancedPhotoControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51763,7 +51763,7 @@ template <typename T> void impl_IAdvancedPhotoControl<T>::Configure(Windows::Med
 template <typename T> bool impl_IOpticalImageStabilizationControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -51815,7 +51815,7 @@ template <typename T> void impl_IAudioDeviceController<T>::Muted(bool const valu
 template <typename T> bool impl_IAudioDeviceController<T>::Muted() const
 {
 	bool value = {};
-	check(shim()->get_Muted(&value));
+	check(shim()->get_Muted(put(value)));
 	return value;
 }
 
@@ -51911,14 +51911,14 @@ template <typename T> Windows::Media::Devices::MediaDeviceControl impl_IVideoDev
 template <typename T> bool impl_IVideoDeviceController<T>::TrySetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency const value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetPowerlineFrequency(value, &succeeded));
+	check(shim()->abi_TrySetPowerlineFrequency(value, put(succeeded)));
 	return succeeded;
 }
 
 template <typename T> bool impl_IVideoDeviceController<T>::TryGetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryGetPowerlineFrequency(&value, &succeeded));
+	check(shim()->abi_TryGetPowerlineFrequency(&value, put(succeeded)));
 	return succeeded;
 }
 
@@ -52082,35 +52082,35 @@ template <typename T> Windows::Media::Devices::MediaDeviceControlCapabilities im
 template <typename T> bool impl_IMediaDeviceControl<T>::TryGetValue(double & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryGetValue(&value, &succeeded));
+	check(shim()->abi_TryGetValue(&value, put(succeeded)));
 	return succeeded;
 }
 
 template <typename T> bool impl_IMediaDeviceControl<T>::TrySetValue(double const value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetValue(value, &succeeded));
+	check(shim()->abi_TrySetValue(value, put(succeeded)));
 	return succeeded;
 }
 
 template <typename T> bool impl_IMediaDeviceControl<T>::TryGetAuto(bool & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryGetAuto(&value, &succeeded));
+	check(shim()->abi_TryGetAuto(put(value), put(succeeded)));
 	return succeeded;
 }
 
 template <typename T> bool impl_IMediaDeviceControl<T>::TrySetAuto(bool const value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetAuto(value, &succeeded));
+	check(shim()->abi_TrySetAuto(value, put(succeeded)));
 	return succeeded;
 }
 
 template <typename T> bool impl_IMediaDeviceControlCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52145,7 +52145,7 @@ template <typename T> double impl_IMediaDeviceControlCapabilities<T>::Default() 
 template <typename T> bool impl_IMediaDeviceControlCapabilities<T>::AutoModeSupported() const
 {
 	bool value = {};
-	check(shim()->get_AutoModeSupported(&value));
+	check(shim()->get_AutoModeSupported(put(value)));
 	return value;
 }
 
@@ -52164,7 +52164,7 @@ template <typename T> IInspectable impl_IAdvancedVideoCaptureDeviceController<T>
 template <typename T> bool impl_ILowLagPhotoSequenceControl<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52223,7 +52223,7 @@ template <typename T> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPh
 template <typename T> bool impl_ILowLagPhotoSequenceControl<T>::ThumbnailEnabled() const
 {
 	bool value = {};
-	check(shim()->get_ThumbnailEnabled(&value));
+	check(shim()->get_ThumbnailEnabled(put(value)));
 	return value;
 }
 
@@ -52280,7 +52280,7 @@ template <typename T> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPh
 template <typename T> bool impl_ILowLagPhotoControl<T>::ThumbnailEnabled() const
 {
 	bool value = {};
-	check(shim()->get_ThumbnailEnabled(&value));
+	check(shim()->get_ThumbnailEnabled(put(value)));
 	return value;
 }
 
@@ -52323,14 +52323,14 @@ template <typename T> unsigned impl_ILowLagPhotoControl<T>::HardwareAcceleratedT
 template <typename T> bool impl_IPhotoConfirmationControl<T>::Supported() const
 {
 	bool pbSupported = {};
-	check(shim()->get_Supported(&pbSupported));
+	check(shim()->get_Supported(put(pbSupported)));
 	return pbSupported;
 }
 
 template <typename T> bool impl_IPhotoConfirmationControl<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -52421,7 +52421,7 @@ template <typename T> Windows::Foundation::Numerics::Vector2 impl_ICameraIntrins
 template <typename T> bool impl_IFrameExposureCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52449,7 +52449,7 @@ template <typename T> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilit
 template <typename T> bool impl_IFrameExposureCompensationCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52477,7 +52477,7 @@ template <typename T> float impl_IFrameExposureCompensationCapabilities<T>::Step
 template <typename T> bool impl_IFrameIsoSpeedCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52505,7 +52505,7 @@ template <typename T> unsigned impl_IFrameIsoSpeedCapabilities<T>::Step() const
 template <typename T> bool impl_IFrameFocusCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -52533,21 +52533,21 @@ template <typename T> unsigned impl_IFrameFocusCapabilities<T>::Step() const
 template <typename T> bool impl_IFrameFlashCapabilities<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFrameFlashCapabilities<T>::RedEyeReductionSupported() const
 {
 	bool value = {};
-	check(shim()->get_RedEyeReductionSupported(&value));
+	check(shim()->get_RedEyeReductionSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IFrameFlashCapabilities<T>::PowerSupported() const
 {
 	bool value = {};
-	check(shim()->get_PowerSupported(&value));
+	check(shim()->get_PowerSupported(put(value)));
 	return value;
 }
 
@@ -52582,7 +52582,7 @@ template <typename T> Windows::Media::Devices::Core::FrameFocusCapabilities impl
 template <typename T> bool impl_IFrameControlCapabilities<T>::PhotoConfirmationSupported() const
 {
 	bool value = {};
-	check(shim()->get_PhotoConfirmationSupported(&value));
+	check(shim()->get_PhotoConfirmationSupported(put(value)));
 	return value;
 }
 
@@ -52596,7 +52596,7 @@ template <typename T> Windows::Media::Devices::Core::FrameFlashCapabilities impl
 template <typename T> bool impl_IFrameExposureControl<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -52632,7 +52632,7 @@ template <typename T> void impl_IFrameExposureCompensationControl<T>::Value(Wind
 template <typename T> bool impl_IFrameIsoSpeedControl<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -52680,7 +52680,7 @@ template <typename T> void impl_IFrameFlashControl<T>::Mode(Windows::Media::Devi
 template <typename T> bool impl_IFrameFlashControl<T>::Auto() const
 {
 	bool value = {};
-	check(shim()->get_Auto(&value));
+	check(shim()->get_Auto(put(value)));
 	return value;
 }
 
@@ -52692,7 +52692,7 @@ template <typename T> void impl_IFrameFlashControl<T>::Auto(bool const value) co
 template <typename T> bool impl_IFrameFlashControl<T>::RedEyeReduction() const
 {
 	bool value = {};
-	check(shim()->get_RedEyeReduction(&value));
+	check(shim()->get_RedEyeReduction(put(value)));
 	return value;
 }
 
@@ -52763,7 +52763,7 @@ template <typename T> Windows::Media::Devices::Core::FrameFlashControl impl_IFra
 template <typename T> bool impl_IVariablePhotoSequenceController<T>::Supported() const
 {
 	bool value = {};
-	check(shim()->get_Supported(&value));
+	check(shim()->get_Supported(put(value)));
 	return value;
 }
 
@@ -53462,7 +53462,7 @@ template <typename T> Windows::Media::Editing::MediaClip impl_IMediaOverlay<T>::
 template <typename T> bool impl_IMediaOverlay<T>::AudioEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AudioEnabled(&value));
+	check(shim()->get_AudioEnabled(put(value)));
 	return value;
 }
 
@@ -53678,7 +53678,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Med
 template <typename T> bool impl_IVideoCompositor<T>::TimeIndependent() const
 {
 	bool value = {};
-	check(shim()->get_TimeIndependent(&value));
+	check(shim()->get_TimeIndependent(put(value)));
 	return value;
 }
 
@@ -53775,7 +53775,7 @@ template <typename T> Windows::Media::VideoFrame impl_IProcessVideoFrameContext<
 template <typename T> bool impl_IBasicVideoEffect<T>::IsReadOnly() const
 {
 	bool value = {};
-	check(shim()->get_IsReadOnly(&value));
+	check(shim()->get_IsReadOnly(put(value)));
 	return value;
 }
 
@@ -53789,7 +53789,7 @@ template <typename T> Windows::Media::Effects::MediaMemoryTypes impl_IBasicVideo
 template <typename T> bool impl_IBasicVideoEffect<T>::TimeIndependent() const
 {
 	bool value = {};
-	check(shim()->get_TimeIndependent(&value));
+	check(shim()->get_TimeIndependent(put(value)));
 	return value;
 }
 
@@ -53837,7 +53837,7 @@ template <typename T> Windows::Media::AudioFrame impl_IProcessAudioFrameContext<
 template <typename T> bool impl_IBasicAudioEffect<T>::UseInputFrameForOutput() const
 {
 	bool value = {};
-	check(shim()->get_UseInputFrameForOutput(&value));
+	check(shim()->get_UseInputFrameForOutput(put(value)));
 	return value;
 }
 
@@ -54006,14 +54006,14 @@ template <typename T> Windows::Foundation::Collections::IVectorView<winrt::Windo
 template <typename T> bool impl_IFaceDetectorStatics<T>::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat const bitmapPixelFormat) const
 {
 	bool result = {};
-	check(shim()->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
+	check(shim()->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IFaceDetectorStatics<T>::IsSupported() const
 {
 	bool returnValue = {};
-	check(shim()->get_IsSupported(&returnValue));
+	check(shim()->get_IsSupported(put(returnValue)));
 	return returnValue;
 }
 
@@ -54065,14 +54065,14 @@ template <typename T> Windows::Foundation::Collections::IVectorView<winrt::Windo
 template <typename T> bool impl_IFaceTrackerStatics<T>::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat const bitmapPixelFormat) const
 {
 	bool result = {};
-	check(shim()->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
+	check(shim()->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IFaceTrackerStatics<T>::IsSupported() const
 {
 	bool returnValue = {};
-	check(shim()->get_IsSupported(&returnValue));
+	check(shim()->get_IsSupported(put(returnValue)));
 	return returnValue;
 }
 
@@ -54305,7 +54305,7 @@ template <typename T> Windows::Foundation::IReference<bool> impl_IPhotoImportSou
 template <typename T> bool impl_IPhotoImportSource<T>::IsMassStorage() const
 {
 	bool value = {};
-	check(shim()->get_IsMassStorage(&value));
+	check(shim()->get_IsMassStorage(put(value)));
 	return value;
 }
 
@@ -54357,7 +54357,7 @@ template <typename T> void impl_IPhotoImportSession<T>::AppendSessionDateToDesti
 template <typename T> bool impl_IPhotoImportSession<T>::AppendSessionDateToDestinationFolder() const
 {
 	bool value = {};
-	check(shim()->get_AppendSessionDateToDestinationFolder(&value));
+	check(shim()->get_AppendSessionDateToDestinationFolder(put(value)));
 	return value;
 }
 
@@ -54451,7 +54451,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Med
 template <typename T> bool impl_IPhotoImportItem<T>::IsSelected() const
 {
 	bool value = {};
-	check(shim()->get_IsSelected(&value));
+	check(shim()->get_IsSelected(put(value)));
 	return value;
 }
 
@@ -54491,7 +54491,7 @@ template <typename T> Windows::Media::Import::PhotoImportSession impl_IPhotoImpo
 template <typename T> bool impl_IPhotoImportFindItemsResult<T>::HasSucceeded() const
 {
 	bool value = {};
-	check(shim()->get_HasSucceeded(&value));
+	check(shim()->get_HasSucceeded(put(value)));
 	return value;
 }
 
@@ -54722,7 +54722,7 @@ template <typename T> Windows::Media::Import::PhotoImportSession impl_IPhotoImpo
 template <typename T> bool impl_IPhotoImportImportItemsResult<T>::HasSucceeded() const
 {
 	bool value = {};
-	check(shim()->get_HasSucceeded(&value));
+	check(shim()->get_HasSucceeded(put(value)));
 	return value;
 }
 
@@ -54820,7 +54820,7 @@ template <typename T> Windows::Media::Import::PhotoImportSession impl_IPhotoImpo
 template <typename T> bool impl_IPhotoImportDeleteImportedItemsFromSourceResult<T>::HasSucceeded() const
 {
 	bool value = {};
-	check(shim()->get_HasSucceeded(&value));
+	check(shim()->get_HasSucceeded(put(value)));
 	return value;
 }
 
@@ -54967,7 +54967,7 @@ template <typename T> Windows::Media::Import::PhotoImportItem impl_IPhotoImportI
 template <typename T> bool impl_IPhotoImportSelectionChangedEventArgs<T>::IsSelectionEmpty() const
 {
 	bool value = {};
-	check(shim()->get_IsSelectionEmpty(&value));
+	check(shim()->get_IsSelectionEmpty(put(value)));
 	return value;
 }
 
@@ -55818,7 +55818,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Glo
 template <typename T> bool impl_IOcrEngineStatics<T>::IsLanguageSupported(Windows::Globalization::Language const & language) const
 {
 	bool result = {};
-	check(shim()->abi_IsLanguageSupported(get(language), &result));
+	check(shim()->abi_IsLanguageSupported(get(language), put(result)));
 	return result;
 }
 
@@ -55927,7 +55927,7 @@ template <typename T> Windows::Foundation::TimeSpan impl_ICurrentTimeChangeReque
 template <typename T> bool impl_IMuteChangeRequestedEventArgs<T>::Mute() const
 {
 	bool value = {};
-	check(shim()->get_Mute(&value));
+	check(shim()->get_Mute(put(value)));
 	return value;
 }
 
@@ -56171,7 +56171,7 @@ template <typename T> void impl_IPlayToReceiver<T>::SupportsImage(bool const val
 template <typename T> bool impl_IPlayToReceiver<T>::SupportsImage() const
 {
 	bool value = {};
-	check(shim()->get_SupportsImage(&value));
+	check(shim()->get_SupportsImage(put(value)));
 	return value;
 }
 
@@ -56183,7 +56183,7 @@ template <typename T> void impl_IPlayToReceiver<T>::SupportsAudio(bool const val
 template <typename T> bool impl_IPlayToReceiver<T>::SupportsAudio() const
 {
 	bool value = {};
-	check(shim()->get_SupportsAudio(&value));
+	check(shim()->get_SupportsAudio(put(value)));
 	return value;
 }
 
@@ -56195,7 +56195,7 @@ template <typename T> void impl_IPlayToReceiver<T>::SupportsVideo(bool const val
 template <typename T> bool impl_IPlayToReceiver<T>::SupportsVideo() const
 {
 	bool value = {};
-	check(shim()->get_SupportsVideo(&value));
+	check(shim()->get_SupportsVideo(put(value)));
 	return value;
 }
 
@@ -56373,21 +56373,21 @@ template <typename T> Windows::Storage::Streams::IRandomAccessStreamWithContentT
 template <typename T> bool impl_IPlayToSourceSelectedEventArgs<T>::SupportsImage() const
 {
 	bool value = {};
-	check(shim()->get_SupportsImage(&value));
+	check(shim()->get_SupportsImage(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPlayToSourceSelectedEventArgs<T>::SupportsAudio() const
 {
 	bool value = {};
-	check(shim()->get_SupportsAudio(&value));
+	check(shim()->get_SupportsAudio(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPlayToSourceSelectedEventArgs<T>::SupportsVideo() const
 {
 	bool value = {};
-	check(shim()->get_SupportsVideo(&value));
+	check(shim()->get_SupportsVideo(put(value)));
 	return value;
 }
 
@@ -56469,7 +56469,7 @@ template <typename T> void impl_IPlayToManager<T>::DefaultSourceSelection(bool c
 template <typename T> bool impl_IPlayToManager<T>::DefaultSourceSelection() const
 {
 	bool value = {};
-	check(shim()->get_DefaultSourceSelection(&value));
+	check(shim()->get_DefaultSourceSelection(put(value)));
 	return value;
 }
 
@@ -56586,7 +56586,7 @@ template <typename T> Windows::Foundation::Collections::ValueSet impl_IMediaPlay
 template <typename T> bool impl_IMediaPlayer<T>::AutoPlay() const
 {
 	bool value = {};
-	check(shim()->get_AutoPlay(&value));
+	check(shim()->get_AutoPlay(put(value)));
 	return value;
 }
 
@@ -56631,21 +56631,21 @@ template <typename T> Windows::Media::Playback::MediaPlayerState impl_IMediaPlay
 template <typename T> bool impl_IMediaPlayer<T>::CanSeek() const
 {
 	bool value = {};
-	check(shim()->get_CanSeek(&value));
+	check(shim()->get_CanSeek(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaPlayer<T>::CanPause() const
 {
 	bool value = {};
-	check(shim()->get_CanPause(&value));
+	check(shim()->get_CanPause(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaPlayer<T>::IsLoopingEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsLoopingEnabled(&value));
+	check(shim()->get_IsLoopingEnabled(put(value)));
 	return value;
 }
 
@@ -56657,14 +56657,14 @@ template <typename T> void impl_IMediaPlayer<T>::IsLoopingEnabled(bool const val
 template <typename T> bool impl_IMediaPlayer<T>::IsProtected() const
 {
 	bool value = {};
-	check(shim()->get_IsProtected(&value));
+	check(shim()->get_IsProtected(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaPlayer<T>::IsMuted() const
 {
 	bool value = {};
-	check(shim()->get_IsMuted(&value));
+	check(shim()->get_IsMuted(put(value)));
 	return value;
 }
 
@@ -57023,7 +57023,7 @@ template <typename T> void impl_IBackgroundMediaPlayerStatics<T>::SendMessageToF
 template <typename T> bool impl_IBackgroundMediaPlayerStatics<T>::IsMediaPlaying() const
 {
 	bool isMediaPlaying = {};
-	check(shim()->abi_IsMediaPlaying(&isMediaPlaying));
+	check(shim()->abi_IsMediaPlaying(put(isMediaPlaying)));
 	return isMediaPlaying;
 }
 
@@ -57247,7 +57247,7 @@ template <typename T> Windows::Foundation::Collections::IObservableVector<Window
 template <typename T> bool impl_IMediaPlaybackList<T>::AutoRepeatEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AutoRepeatEnabled(&value));
+	check(shim()->get_AutoRepeatEnabled(put(value)));
 	return value;
 }
 
@@ -57259,7 +57259,7 @@ template <typename T> void impl_IMediaPlaybackList<T>::AutoRepeatEnabled(bool co
 template <typename T> bool impl_IMediaPlaybackList<T>::ShuffleEnabled() const
 {
 	bool value = {};
-	check(shim()->get_ShuffleEnabled(&value));
+	check(shim()->get_ShuffleEnabled(put(value)));
 	return value;
 }
 
@@ -57720,14 +57720,14 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IPlayReadyLicenseMa
 template <typename T> bool impl_IPlayReadyLicense<T>::FullyEvaluated() const
 {
 	bool value = {};
-	check(shim()->get_FullyEvaluated(&value));
+	check(shim()->get_FullyEvaluated(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPlayReadyLicense<T>::UsableForPlay() const
 {
 	bool value = {};
-	check(shim()->get_UsableForPlay(&value));
+	check(shim()->get_UsableForPlay(put(value)));
 	return value;
 }
 
@@ -57888,7 +57888,7 @@ template <typename T> GUID impl_IPlayReadyStatics3<T>::SecureStopServiceRequestT
 template <typename T> bool impl_IPlayReadyStatics3<T>::CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures const hwdrmFeature) const
 {
 	bool value = {};
-	check(shim()->abi_CheckSupportedHardware(hwdrmFeature, &value));
+	check(shim()->abi_CheckSupportedHardware(hwdrmFeature, put(value)));
 	return value;
 }
 
@@ -57948,7 +57948,7 @@ template <typename T> void impl_INDDownloadEngine<T>::Seek(Windows::Foundation::
 template <typename T> bool impl_INDDownloadEngine<T>::CanSeek() const
 {
 	bool canSeek = {};
-	check(shim()->get_CanSeek(&canSeek));
+	check(shim()->get_CanSeek(put(canSeek)));
 	return canSeek;
 }
 
@@ -58140,7 +58140,7 @@ template <typename T> Windows::Media::Protection::PlayReady::INDTransmitterPrope
 template <typename T> bool impl_INDRegistrationCompletedEventArgs<T>::TransmitterCertificateAccepted() const
 {
 	bool acceptpt = {};
-	check(shim()->get_TransmitterCertificateAccepted(&acceptpt));
+	check(shim()->get_TransmitterCertificateAccepted(put(acceptpt)));
 	return acceptpt;
 }
 
@@ -58462,7 +58462,7 @@ template <typename T> Windows::Foundation::DateTime impl_IPlayReadySecureStopSer
 template <typename T> bool impl_IPlayReadySecureStopServiceRequest<T>::Stopped() const
 {
 	bool value = {};
-	check(shim()->get_Stopped(&value));
+	check(shim()->get_Stopped(put(value)));
 	return value;
 }
 
@@ -58540,7 +58540,7 @@ template <typename T> void impl_ISpeechRecognizerUIOptions<T>::AudiblePrompt(Str
 template <typename T> bool impl_ISpeechRecognizerUIOptions<T>::IsReadBackEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsReadBackEnabled(&value));
+	check(shim()->get_IsReadBackEnabled(put(value)));
 	return value;
 }
 
@@ -58552,7 +58552,7 @@ template <typename T> void impl_ISpeechRecognizerUIOptions<T>::IsReadBackEnabled
 template <typename T> bool impl_ISpeechRecognizerUIOptions<T>::ShowConfirmation() const
 {
 	bool value = {};
-	check(shim()->get_ShowConfirmation(&value));
+	check(shim()->get_ShowConfirmation(put(value)));
 	return value;
 }
 
@@ -58620,7 +58620,7 @@ template <typename T> double impl_ISpeechRecognitionResult<T>::RawConfidence() c
 template <typename T> bool impl_ISpeechRecognitionConstraint<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -59288,14 +59288,14 @@ template <typename T> Windows::Foundation::Collections::IVector<String> impl_IBa
 template <typename T> bool impl_IBasicDevice<T>::CanWakeDevices() const
 {
 	bool value = {};
-	check(shim()->get_CanWakeDevices(&value));
+	check(shim()->get_CanWakeDevices(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IBasicDevice<T>::DiscoveredOnCurrentNetwork() const
 {
 	bool value = {};
-	check(shim()->get_DiscoveredOnCurrentNetwork(&value));
+	check(shim()->get_DiscoveredOnCurrentNetwork(put(value)));
 	return value;
 }
 
@@ -59347,42 +59347,42 @@ template <typename T> unsigned impl_IActiveBasicDevice<T>::MaxVolume() const
 template <typename T> bool impl_IActiveBasicDevice<T>::IsMuteSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsMuteSupported(&value));
+	check(shim()->get_IsMuteSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IActiveBasicDevice<T>::IsSetNextSourceSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsSetNextSourceSupported(&value));
+	check(shim()->get_IsSetNextSourceSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IActiveBasicDevice<T>::IsAudioSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsAudioSupported(&value));
+	check(shim()->get_IsAudioSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IActiveBasicDevice<T>::IsVideoSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsVideoSupported(&value));
+	check(shim()->get_IsVideoSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IActiveBasicDevice<T>::IsImageSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsImageSupported(&value));
+	check(shim()->get_IsImageSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IActiveBasicDevice<T>::IsSearchSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsSearchSupported(&value));
+	check(shim()->get_IsSearchSupported(put(value)));
 	return value;
 }
 
@@ -59516,21 +59516,21 @@ template <typename T> Windows::Media::Streaming::ActiveBasicDevice impl_IDeviceP
 template <typename T> bool impl_IMediaRenderer<T>::IsAudioSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsAudioSupported(&value));
+	check(shim()->get_IsAudioSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRenderer<T>::IsVideoSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsVideoSupported(&value));
+	check(shim()->get_IsVideoSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRenderer<T>::IsImageSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsImageSupported(&value));
+	check(shim()->get_IsImageSupported(put(value)));
 	return value;
 }
 
@@ -59704,49 +59704,49 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IMediaRenderer<T>::
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsMuteAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsMuteAvailable(&value));
+	check(shim()->get_IsMuteAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsPauseAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsPauseAvailable(&value));
+	check(shim()->get_IsPauseAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsPlayAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsPlayAvailable(&value));
+	check(shim()->get_IsPlayAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsSeekAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsSeekAvailable(&value));
+	check(shim()->get_IsSeekAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsSetNextSourceAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsSetNextSourceAvailable(&value));
+	check(shim()->get_IsSetNextSourceAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsStopAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsStopAvailable(&value));
+	check(shim()->get_IsStopAvailable(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMediaRendererActionInformation<T>::IsVolumeAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsVolumeAvailable(&value));
+	check(shim()->get_IsVolumeAvailable(put(value)));
 	return value;
 }
 
@@ -59848,7 +59848,7 @@ template <typename T> Windows::Web::Http::HttpResponseMessage impl_IAdaptiveMedi
 template <typename T> bool impl_IAdaptiveMediaSourceStatics<T>::IsContentTypeSupported(StringReference const & contentType) const
 {
 	bool result = {};
-	check(shim()->abi_IsContentTypeSupported(get(contentType), &result));
+	check(shim()->abi_IsContentTypeSupported(get(contentType), put(result)));
 	return result;
 }
 
@@ -59883,7 +59883,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Media::Strea
 template <typename T> bool impl_IAdaptiveMediaSource<T>::IsLive() const
 {
 	bool value = {};
-	check(shim()->get_IsLive(&value));
+	check(shim()->get_IsLive(put(value)));
 	return value;
 }
 
@@ -59959,7 +59959,7 @@ template <typename T> void impl_IAdaptiveMediaSource<T>::DesiredMaxBitrate(Windo
 template <typename T> bool impl_IAdaptiveMediaSource<T>::AudioOnlyPlayback() const
 {
 	bool value = {};
-	check(shim()->get_AudioOnlyPlayback(&value));
+	check(shim()->get_AudioOnlyPlayback(put(value)));
 	return value;
 }
 
@@ -60077,7 +60077,7 @@ template <typename T> Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceAd
 template <typename T> bool impl_IAdaptiveMediaSourceAdvancedSettings<T>::AllSegmentsIndependent() const
 {
 	bool value = {};
-	check(shim()->get_AllSegmentsIndependent(&value));
+	check(shim()->get_AllSegmentsIndependent(put(value)));
 	return value;
 }
 
@@ -60141,7 +60141,7 @@ template <typename T> unsigned impl_IAdaptiveMediaSourcePlaybackBitrateChangedEv
 template <typename T> bool impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs<T>::AudioOnly() const
 {
 	bool value = {};
-	check(shim()->get_AudioOnly(&value));
+	check(shim()->get_AudioOnly(put(value)));
 	return value;
 }
 
@@ -60395,7 +60395,7 @@ template <typename T> void impl_IMediaTranscoder<T>::AlwaysReencode(bool const v
 template <typename T> bool impl_IMediaTranscoder<T>::AlwaysReencode() const
 {
 	bool value = {};
-	check(shim()->get_AlwaysReencode(&value));
+	check(shim()->get_AlwaysReencode(put(value)));
 	return value;
 }
 
@@ -60407,7 +60407,7 @@ template <typename T> void impl_IMediaTranscoder<T>::HardwareAccelerationEnabled
 template <typename T> bool impl_IMediaTranscoder<T>::HardwareAccelerationEnabled() const
 {
 	bool value = {};
-	check(shim()->get_HardwareAccelerationEnabled(&value));
+	check(shim()->get_HardwareAccelerationEnabled(put(value)));
 	return value;
 }
 
@@ -60453,7 +60453,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Media::Trans
 template <typename T> bool impl_IPrepareTranscodeResult<T>::CanTranscode() const
 {
 	bool value = {};
-	check(shim()->get_CanTranscode(&value));
+	check(shim()->get_CanTranscode(put(value)));
 	return value;
 }
 
@@ -60520,7 +60520,7 @@ template <typename T> Windows::Networking::HostNameType impl_IHostName<T>::Type(
 template <typename T> bool impl_IHostName<T>::IsEqual(Windows::Networking::HostName const & hostName) const
 {
 	bool isEqual = {};
-	check(shim()->abi_IsEqual(get(hostName), &isEqual));
+	check(shim()->abi_IsEqual(get(hostName), put(isEqual)));
 	return isEqual;
 }
 
@@ -60658,7 +60658,7 @@ template <typename T> void impl_IBackgroundTransferBase<T>::CostPolicy(Windows::
 template <typename T> bool impl_IUnconstrainedTransferRequestResult<T>::IsUnconstrained() const
 {
 	bool value = {};
-	check(shim()->get_IsUnconstrained(&value));
+	check(shim()->get_IsUnconstrained(put(value)));
 	return value;
 }
 
@@ -61071,7 +61071,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 template <typename T> bool impl_IResponseInformation<T>::IsResumable() const
 {
 	bool value = {};
-	check(shim()->get_IsResumable(&value));
+	check(shim()->get_IsResumable(put(value)));
 	return value;
 }
 
@@ -61194,7 +61194,7 @@ template <typename T> Windows::ApplicationModel::Background::IBackgroundTrigger 
 template <typename T> bool impl_IBackgroundTransferCompletionGroup<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -61306,28 +61306,28 @@ template <typename T> Windows::Networking::Connectivity::NetworkCostType impl_IC
 template <typename T> bool impl_IConnectionCost<T>::Roaming() const
 {
 	bool value = {};
-	check(shim()->get_Roaming(&value));
+	check(shim()->get_Roaming(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IConnectionCost<T>::OverDataLimit() const
 {
 	bool value = {};
-	check(shim()->get_OverDataLimit(&value));
+	check(shim()->get_OverDataLimit(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IConnectionCost<T>::ApproachingDataLimit() const
 {
 	bool value = {};
-	check(shim()->get_ApproachingDataLimit(&value));
+	check(shim()->get_ApproachingDataLimit(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IConnectionCost2<T>::BackgroundDataUsageRestricted() const
 {
 	bool value = {};
-	check(shim()->get_BackgroundDataUsageRestricted(&value));
+	check(shim()->get_BackgroundDataUsageRestricted(put(value)));
 	return value;
 }
 
@@ -61481,14 +61481,14 @@ template <typename T> Windows::Foundation::TimeSpan impl_INetworkUsage<T>::Conne
 template <typename T> bool impl_IConnectionProfile2<T>::IsWwanConnectionProfile() const
 {
 	bool value = {};
-	check(shim()->get_IsWwanConnectionProfile(&value));
+	check(shim()->get_IsWwanConnectionProfile(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IConnectionProfile2<T>::IsWlanConnectionProfile() const
 {
 	bool value = {};
-	check(shim()->get_IsWlanConnectionProfile(&value));
+	check(shim()->get_IsWlanConnectionProfile(put(value)));
 	return value;
 }
 
@@ -61643,7 +61643,7 @@ template <typename T> void impl_IConnectionProfileFilter<T>::IsConnected(bool co
 template <typename T> bool impl_IConnectionProfileFilter<T>::IsConnected() const
 {
 	bool value = {};
-	check(shim()->get_IsConnected(&value));
+	check(shim()->get_IsConnected(put(value)));
 	return value;
 }
 
@@ -61655,7 +61655,7 @@ template <typename T> void impl_IConnectionProfileFilter<T>::IsWwanConnectionPro
 template <typename T> bool impl_IConnectionProfileFilter<T>::IsWwanConnectionProfile() const
 {
 	bool value = {};
-	check(shim()->get_IsWwanConnectionProfile(&value));
+	check(shim()->get_IsWwanConnectionProfile(put(value)));
 	return value;
 }
 
@@ -61667,7 +61667,7 @@ template <typename T> void impl_IConnectionProfileFilter<T>::IsWlanConnectionPro
 template <typename T> bool impl_IConnectionProfileFilter<T>::IsWlanConnectionProfile() const
 {
 	bool value = {};
-	check(shim()->get_IsWlanConnectionProfile(&value));
+	check(shim()->get_IsWlanConnectionProfile(put(value)));
 	return value;
 }
 
@@ -61825,7 +61825,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Fou
 template <typename T> bool impl_IProxyConfiguration<T>::CanConnectDirectly() const
 {
 	bool value = {};
-	check(shim()->get_CanConnectDirectly(&value));
+	check(shim()->get_CanConnectDirectly(put(value)));
 	return value;
 }
 
@@ -61915,7 +61915,7 @@ template <typename T> void impl_ICellularApnContext<T>::Password(StringReference
 template <typename T> bool impl_ICellularApnContext<T>::IsCompressionEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsCompressionEnabled(&value));
+	check(shim()->get_IsCompressionEnabled(put(value)));
 	return value;
 }
 
@@ -61956,56 +61956,56 @@ template <typename T> void impl_IConnectivityManagerStatics<T>::RemoveHttpRouteP
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewInternetConnectionProfile() const
 {
 	bool value = {};
-	check(shim()->get_HasNewInternetConnectionProfile(&value));
+	check(shim()->get_HasNewInternetConnectionProfile(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewConnectionCost() const
 {
 	bool value = {};
-	check(shim()->get_HasNewConnectionCost(&value));
+	check(shim()->get_HasNewConnectionCost(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewNetworkConnectivityLevel() const
 {
 	bool value = {};
-	check(shim()->get_HasNewNetworkConnectivityLevel(&value));
+	check(shim()->get_HasNewNetworkConnectivityLevel(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewDomainConnectivityLevel() const
 {
 	bool value = {};
-	check(shim()->get_HasNewDomainConnectivityLevel(&value));
+	check(shim()->get_HasNewDomainConnectivityLevel(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewHostNameList() const
 {
 	bool value = {};
-	check(shim()->get_HasNewHostNameList(&value));
+	check(shim()->get_HasNewHostNameList(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails<T>::HasNewWwanRegistrationState() const
 {
 	bool value = {};
-	check(shim()->get_HasNewWwanRegistrationState(&value));
+	check(shim()->get_HasNewWwanRegistrationState(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails2<T>::HasNewTetheringOperationalState() const
 {
 	bool value = {};
-	check(shim()->get_HasNewTetheringOperationalState(&value));
+	check(shim()->get_HasNewTetheringOperationalState(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_INetworkStateChangeEventDetails2<T>::HasNewTetheringClientCount() const
 {
 	bool value = {};
-	check(shim()->get_HasNewTetheringClientCount(&value));
+	check(shim()->get_HasNewTetheringClientCount(put(value)));
 	return value;
 }
 
@@ -62470,14 +62470,14 @@ template <typename T> String impl_IMobileBroadbandAccountUpdatedEventArgs<T>::Ne
 template <typename T> bool impl_IMobileBroadbandAccountUpdatedEventArgs<T>::HasDeviceInformationChanged() const
 {
 	bool value = {};
-	check(shim()->get_HasDeviceInformationChanged(&value));
+	check(shim()->get_HasDeviceInformationChanged(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMobileBroadbandAccountUpdatedEventArgs<T>::HasNetworkChanged() const
 {
 	bool value = {};
-	check(shim()->get_HasNetworkChanged(&value));
+	check(shim()->get_HasNetworkChanged(put(value)));
 	return value;
 }
 
@@ -62670,7 +62670,7 @@ template <typename T> Windows::Networking::NetworkOperators::MobileBroadbandDevi
 template <typename T> bool impl_IMobileBroadbandModem<T>::IsResetSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsResetSupported(&value));
+	check(shim()->get_IsResetSupported(put(value)));
 	return value;
 }
 
@@ -62712,7 +62712,7 @@ template <typename T> Windows::Networking::NetworkOperators::MobileBroadbandPin 
 template <typename T> bool impl_IMobileBroadbandPinOperationResult<T>::IsSuccessful() const
 {
 	bool value = {};
-	check(shim()->get_IsSuccessful(&value));
+	check(shim()->get_IsSuccessful(put(value)));
 	return value;
 }
 
@@ -62747,7 +62747,7 @@ template <typename T> Windows::Networking::NetworkOperators::MobileBroadbandPinF
 template <typename T> bool impl_IMobileBroadbandPin<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -62817,14 +62817,14 @@ template <typename T> GUID impl_IMobileBroadbandDeviceServiceInformation<T>::Dev
 template <typename T> bool impl_IMobileBroadbandDeviceServiceInformation<T>::IsDataReadSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDataReadSupported(&value));
+	check(shim()->get_IsDataReadSupported(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IMobileBroadbandDeviceServiceInformation<T>::IsDataWriteSupported() const
 {
 	bool value = {};
-	check(shim()->get_IsDataWriteSupported(&value));
+	check(shim()->get_IsDataWriteSupported(put(value)));
 	return value;
 }
 
@@ -63243,7 +63243,7 @@ template <typename T> String impl_IHotspotAuthenticationEventDetails<T>::EventTo
 template <typename T> bool impl_IHotspotAuthenticationContextStatics<T>::TryGetAuthenticationContext(StringReference const & evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const
 {
 	bool isValid = {};
-	check(shim()->abi_TryGetAuthenticationContext(get(evenToken), put(context), &isValid));
+	check(shim()->abi_TryGetAuthenticationContext(get(evenToken), put(context), put(isValid)));
 	return isValid;
 }
 
@@ -63298,7 +63298,7 @@ template <typename T> void impl_IHotspotAuthenticationContext<T>::TriggerAttenti
 template <typename T> bool impl_IHotspotCredentialsAuthenticationResult<T>::HasNetworkErrorOccurred() const
 {
 	bool value = {};
-	check(shim()->get_HasNetworkErrorOccurred(&value));
+	check(shim()->get_HasNetworkErrorOccurred(put(value)));
 	return value;
 }
 
@@ -63333,7 +63333,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Networking::
 template <typename T> bool impl_IProvisionFromXmlDocumentResults<T>::AllElementsProvisioned() const
 {
 	bool value = {};
-	check(shim()->get_AllElementsProvisioned(&value));
+	check(shim()->get_AllElementsProvisioned(put(value)));
 	return value;
 }
 
@@ -63807,7 +63807,7 @@ template <typename T> void impl_IPeerWatcher<T>::Stop() const
 template <typename T> bool impl_IPeerFinderStatics<T>::AllowBluetooth() const
 {
 	bool value = {};
-	check(shim()->get_AllowBluetooth(&value));
+	check(shim()->get_AllowBluetooth(put(value)));
 	return value;
 }
 
@@ -63819,7 +63819,7 @@ template <typename T> void impl_IPeerFinderStatics<T>::AllowBluetooth(bool const
 template <typename T> bool impl_IPeerFinderStatics<T>::AllowInfrastructure() const
 {
 	bool value = {};
-	check(shim()->get_AllowInfrastructure(&value));
+	check(shim()->get_AllowInfrastructure(put(value)));
 	return value;
 }
 
@@ -63831,7 +63831,7 @@ template <typename T> void impl_IPeerFinderStatics<T>::AllowInfrastructure(bool 
 template <typename T> bool impl_IPeerFinderStatics<T>::AllowWiFiDirect() const
 {
 	bool value = {};
-	check(shim()->get_AllowWiFiDirect(&value));
+	check(shim()->get_AllowWiFiDirect(put(value)));
 	return value;
 }
 
@@ -64029,7 +64029,7 @@ template <typename T> void impl_IPushNotificationReceivedEventArgs<T>::Cancel(bo
 template <typename T> bool impl_IPushNotificationReceivedEventArgs<T>::Cancel() const
 {
 	bool value = {};
-	check(shim()->get_Cancel(&value));
+	check(shim()->get_Cancel(put(value)));
 	return value;
 }
 
@@ -64164,7 +64164,7 @@ template <typename T> Windows::Networking::HostName impl_IDnssdRegistrationResul
 template <typename T> bool impl_IDnssdRegistrationResult<T>::HasInstanceNameChanged() const
 {
 	bool value = {};
-	check(shim()->get_HasInstanceNameChanged(&value));
+	check(shim()->get_HasInstanceNameChanged(put(value)));
 	return value;
 }
 
@@ -64374,14 +64374,14 @@ template <typename T> Windows::Networking::Sockets::ControlChannelTriggerResetRe
 template <typename T> bool impl_IControlChannelTriggerResetEventDetails<T>::HardwareSlotReset() const
 {
 	bool value = {};
-	check(shim()->get_HardwareSlotReset(&value));
+	check(shim()->get_HardwareSlotReset(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IControlChannelTriggerResetEventDetails<T>::SoftwareSlotReset() const
 {
 	bool value = {};
-	check(shim()->get_SoftwareSlotReset(&value));
+	check(shim()->get_SoftwareSlotReset(put(value)));
 	return value;
 }
 
@@ -64606,7 +64606,7 @@ template <typename T> void impl_IDatagramSocketControl2<T>::InboundBufferSizeInB
 template <typename T> bool impl_IDatagramSocketControl2<T>::DontFragment() const
 {
 	bool value = {};
-	check(shim()->get_DontFragment(&value));
+	check(shim()->get_DontFragment(put(value)));
 	return value;
 }
 
@@ -64618,7 +64618,7 @@ template <typename T> void impl_IDatagramSocketControl2<T>::DontFragment(bool co
 template <typename T> bool impl_IDatagramSocketControl3<T>::MulticastOnly() const
 {
 	bool value = {};
-	check(shim()->get_MulticastOnly(&value));
+	check(shim()->get_MulticastOnly(put(value)));
 	return value;
 }
 
@@ -64866,7 +64866,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Sec
 template <typename T> bool impl_IStreamSocketControl<T>::NoDelay() const
 {
 	bool value = {};
-	check(shim()->get_NoDelay(&value));
+	check(shim()->get_NoDelay(put(value)));
 	return value;
 }
 
@@ -64878,7 +64878,7 @@ template <typename T> void impl_IStreamSocketControl<T>::NoDelay(bool const valu
 template <typename T> bool impl_IStreamSocketControl<T>::KeepAlive() const
 {
 	bool value = {};
-	check(shim()->get_KeepAlive(&value));
+	check(shim()->get_KeepAlive(put(value)));
 	return value;
 }
 
@@ -64933,7 +64933,7 @@ template <typename T> Windows::Foundation::Collections::IVector<winrt::Windows::
 template <typename T> bool impl_IStreamSocketControl3<T>::SerializeConnectionAttempts() const
 {
 	bool value = {};
-	check(shim()->get_SerializeConnectionAttempts(&value));
+	check(shim()->get_SerializeConnectionAttempts(put(value)));
 	return value;
 }
 
@@ -65071,7 +65071,7 @@ template <typename T> void impl_IStreamSocketListenerControl<T>::QualityOfServic
 template <typename T> bool impl_IStreamSocketListenerControl2<T>::NoDelay() const
 {
 	bool value = {};
-	check(shim()->get_NoDelay(&value));
+	check(shim()->get_NoDelay(put(value)));
 	return value;
 }
 
@@ -65083,7 +65083,7 @@ template <typename T> void impl_IStreamSocketListenerControl2<T>::NoDelay(bool c
 template <typename T> bool impl_IStreamSocketListenerControl2<T>::KeepAlive() const
 {
 	bool value = {};
-	check(shim()->get_KeepAlive(&value));
+	check(shim()->get_KeepAlive(put(value)));
 	return value;
 }
 
@@ -65379,7 +65379,7 @@ template <typename T> void impl_IMessageWebSocket<T>::MessageReceived(long long 
 template <typename T> bool impl_IStreamWebSocketControl<T>::NoDelay() const
 {
 	bool value = {};
-	check(shim()->get_NoDelay(&value));
+	check(shim()->get_NoDelay(put(value)));
 	return value;
 }
 
@@ -65472,7 +65472,7 @@ template <typename T> void impl_IVpnCustomPrompt<T>::Compulsory(bool const value
 template <typename T> bool impl_IVpnCustomPrompt<T>::Compulsory() const
 {
 	bool value = {};
-	check(shim()->get_Compulsory(&value));
+	check(shim()->get_Compulsory(put(value)));
 	return value;
 }
 
@@ -65484,7 +65484,7 @@ template <typename T> void impl_IVpnCustomPrompt<T>::Bordered(bool const value) 
 template <typename T> bool impl_IVpnCustomPrompt<T>::Bordered() const
 {
 	bool value = {};
-	check(shim()->get_Bordered(&value));
+	check(shim()->get_Bordered(put(value)));
 	return value;
 }
 
@@ -65508,7 +65508,7 @@ template <typename T> void impl_IVpnCustomEditBox<T>::NoEcho(bool const value) c
 template <typename T> bool impl_IVpnCustomEditBox<T>::NoEcho() const
 {
 	bool value = {};
-	check(shim()->get_NoEcho(&value));
+	check(shim()->get_NoEcho(put(value)));
 	return value;
 }
 
@@ -65558,14 +65558,14 @@ template <typename T> void impl_IVpnCustomCheckBox<T>::InitialCheckState(bool co
 template <typename T> bool impl_IVpnCustomCheckBox<T>::InitialCheckState() const
 {
 	bool value = {};
-	check(shim()->get_InitialCheckState(&value));
+	check(shim()->get_InitialCheckState(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IVpnCustomCheckBox<T>::Checked() const
 {
 	bool value = {};
-	check(shim()->get_Checked(&value));
+	check(shim()->get_Checked(put(value)));
 	return value;
 }
 
@@ -65656,7 +65656,7 @@ template <typename T> void impl_IVpnRouteAssignment<T>::ExcludeLocalSubnets(bool
 template <typename T> bool impl_IVpnRouteAssignment<T>::ExcludeLocalSubnets() const
 {
 	bool value = {};
-	check(shim()->get_ExcludeLocalSubnets(&value));
+	check(shim()->get_ExcludeLocalSubnets(put(value)));
 	return value;
 }
 
@@ -66014,7 +66014,7 @@ template <typename T> void impl_IVpnCustomPromptElement<T>::Compulsory(bool cons
 template <typename T> bool impl_IVpnCustomPromptElement<T>::Compulsory() const
 {
 	bool value = {};
-	check(shim()->get_Compulsory(&value));
+	check(shim()->get_Compulsory(put(value)));
 	return value;
 }
 
@@ -66026,7 +66026,7 @@ template <typename T> void impl_IVpnCustomPromptElement<T>::Emphasized(bool cons
 template <typename T> bool impl_IVpnCustomPromptElement<T>::Emphasized() const
 {
 	bool value = {};
-	check(shim()->get_Emphasized(&value));
+	check(shim()->get_Emphasized(put(value)));
 	return value;
 }
 
@@ -66172,7 +66172,7 @@ template <typename T> void impl_IVpnCustomPromptTextInput<T>::IsTextHidden(bool 
 template <typename T> bool impl_IVpnCustomPromptTextInput<T>::IsTextHidden() const
 {
 	bool value = {};
-	check(shim()->get_IsTextHidden(&value));
+	check(shim()->get_IsTextHidden(put(value)));
 	return value;
 }
 
@@ -66205,14 +66205,14 @@ template <typename T> void impl_IVpnCustomPromptBooleanInput<T>::InitialValue(bo
 template <typename T> bool impl_IVpnCustomPromptBooleanInput<T>::InitialValue() const
 {
 	bool value = {};
-	check(shim()->get_InitialValue(&value));
+	check(shim()->get_InitialValue(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IVpnCustomPromptBooleanInput<T>::Value() const
 {
 	bool value = {};
-	check(shim()->get_Value(&value));
+	check(shim()->get_Value(put(value)));
 	return value;
 }
 
@@ -66418,7 +66418,7 @@ template <typename T> Windows::Foundation::Collections::IVector<Windows::Network
 template <typename T> bool impl_IVpnTrafficFilterAssignment<T>::AllowOutbound() const
 {
 	bool value = {};
-	check(shim()->get_AllowOutbound(&value));
+	check(shim()->get_AllowOutbound(put(value)));
 	return value;
 }
 
@@ -66430,7 +66430,7 @@ template <typename T> void impl_IVpnTrafficFilterAssignment<T>::AllowOutbound(bo
 template <typename T> bool impl_IVpnTrafficFilterAssignment<T>::AllowInbound() const
 {
 	bool value = {};
-	check(shim()->get_AllowInbound(&value));
+	check(shim()->get_AllowInbound(put(value)));
 	return value;
 }
 
@@ -66482,7 +66482,7 @@ template <typename T> Windows::Foundation::Collections::IVector<Windows::Network
 template <typename T> bool impl_IVpnProfile<T>::RememberCredentials() const
 {
 	bool value = {};
-	check(shim()->get_RememberCredentials(&value));
+	check(shim()->get_RememberCredentials(put(value)));
 	return value;
 }
 
@@ -66494,7 +66494,7 @@ template <typename T> void impl_IVpnProfile<T>::RememberCredentials(bool const v
 template <typename T> bool impl_IVpnProfile<T>::AlwaysOn() const
 {
 	bool value = {};
-	check(shim()->get_AlwaysOn(&value));
+	check(shim()->get_AlwaysOn(put(value)));
 	return value;
 }
 
@@ -66794,7 +66794,7 @@ template <typename T> Windows::Foundation::Collections::IMapView<String, Windows
 template <typename T> bool impl_ISpatialAnchorStore<T>::TrySave(StringReference const & id, Windows::Perception::Spatial::SpatialAnchor const & anchor) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySave(get(id), get(anchor), &succeeded));
+	check(shim()->abi_TrySave(get(id), get(anchor), put(succeeded)));
 	return succeeded;
 }
 
@@ -66839,7 +66839,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<winrt::Windows::Perce
 template <typename T> bool impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs<T>::Canceled() const
 {
 	bool value = {};
-	check(shim()->get_Canceled(&value));
+	check(shim()->get_Canceled(put(value)));
 	return value;
 }
 
@@ -67213,7 +67213,7 @@ template <typename T> void impl_ISpatialSurfaceMeshOptions<T>::VertexNormalForma
 template <typename T> bool impl_ISpatialSurfaceMeshOptions<T>::IncludeVertexNormals() const
 {
 	bool value = {};
-	check(shim()->get_IncludeVertexNormals(&value));
+	check(shim()->get_IncludeVertexNormals(put(value)));
 	return value;
 }
 
@@ -67396,14 +67396,14 @@ template <typename T> String impl_IUserIdentity<T>::LastName() const
 template <typename T> bool impl_IUserIdentity<T>::IsBetaAccount() const
 {
 	bool value = {};
-	check(shim()->get_IsBetaAccount(&value));
+	check(shim()->get_IsBetaAccount(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUserIdentity<T>::IsConfirmedPC() const
 {
 	bool value = {};
-	check(shim()->get_IsConfirmedPC(&value));
+	check(shim()->get_IsConfirmedPC(put(value)));
 	return value;
 }
 
@@ -67443,7 +67443,7 @@ template <typename T> GUID impl_IOnlineIdAuthenticator<T>::ApplicationId() const
 template <typename T> bool impl_IOnlineIdAuthenticator<T>::CanSignOut() const
 {
 	bool value = {};
-	check(shim()->get_CanSignOut(&value));
+	check(shim()->get_CanSignOut(put(value)));
 	return value;
 }
 
@@ -68517,7 +68517,7 @@ template <typename T> void impl_ICredentialPickerOptions<T>::AlwaysDisplayDialog
 template <typename T> bool impl_ICredentialPickerOptions<T>::AlwaysDisplayDialog() const
 {
 	bool value = {};
-	check(shim()->get_AlwaysDisplayDialog(&value));
+	check(shim()->get_AlwaysDisplayDialog(put(value)));
 	return value;
 }
 
@@ -68529,7 +68529,7 @@ template <typename T> void impl_ICredentialPickerOptions<T>::CallerSavesCredenti
 template <typename T> bool impl_ICredentialPickerOptions<T>::CallerSavesCredential() const
 {
 	bool value = {};
-	check(shim()->get_CallerSavesCredential(&value));
+	check(shim()->get_CallerSavesCredential(put(value)));
 	return value;
 }
 
@@ -68583,7 +68583,7 @@ template <typename T> Windows::Security::Credentials::UI::CredentialSaveOption i
 template <typename T> bool impl_ICredentialPickerResults<T>::CredentialSaved() const
 {
 	bool value = {};
-	check(shim()->get_CredentialSaved(&value));
+	check(shim()->get_CredentialSaved(put(value)));
 	return value;
 }
 
@@ -68636,7 +68636,7 @@ namespace winrt { namespace Windows { namespace Security { namespace Cryptograph
 template <typename T> bool impl_ICryptographicBufferStatics<T>::Compare(Windows::Storage::Streams::IBuffer const & object1, Windows::Storage::Streams::IBuffer const & object2) const
 {
 	bool isEqual = {};
-	check(shim()->abi_Compare(get(object1), get(object2), &isEqual));
+	check(shim()->abi_Compare(get(object1), get(object2), put(isEqual)));
 	return isEqual;
 }
 
@@ -68883,7 +68883,7 @@ template <typename T> void impl_ICertificateRequestProperties3<T>::ContainerName
 template <typename T> bool impl_ICertificateRequestProperties3<T>::UseExistingKey() const
 {
 	bool value = {};
-	check(shim()->get_UseExistingKey(&value));
+	check(shim()->get_UseExistingKey(put(value)));
 	return value;
 }
 
@@ -69162,7 +69162,7 @@ template <typename T> void impl_IChainBuildingParameters<T>::ValidationTimestamp
 template <typename T> bool impl_IChainBuildingParameters<T>::RevocationCheckEnabled() const
 {
 	bool value = {};
-	check(shim()->get_RevocationCheckEnabled(&value));
+	check(shim()->get_RevocationCheckEnabled(put(value)));
 	return value;
 }
 
@@ -69174,7 +69174,7 @@ template <typename T> void impl_IChainBuildingParameters<T>::RevocationCheckEnab
 template <typename T> bool impl_IChainBuildingParameters<T>::NetworkRetrievalEnabled() const
 {
 	bool value = {};
-	check(shim()->get_NetworkRetrievalEnabled(&value));
+	check(shim()->get_NetworkRetrievalEnabled(put(value)));
 	return value;
 }
 
@@ -69186,7 +69186,7 @@ template <typename T> void impl_IChainBuildingParameters<T>::NetworkRetrievalEna
 template <typename T> bool impl_IChainBuildingParameters<T>::AuthorityInformationAccessEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AuthorityInformationAccessEnabled(&value));
+	check(shim()->get_AuthorityInformationAccessEnabled(put(value)));
 	return value;
 }
 
@@ -69198,7 +69198,7 @@ template <typename T> void impl_IChainBuildingParameters<T>::AuthorityInformatio
 template <typename T> bool impl_IChainBuildingParameters<T>::CurrentTimeValidationEnabled() const
 {
 	bool value = {};
-	check(shim()->get_CurrentTimeValidationEnabled(&value));
+	check(shim()->get_CurrentTimeValidationEnabled(put(value)));
 	return value;
 }
 
@@ -69272,7 +69272,7 @@ template <typename T> void impl_ICertificateQuery<T>::FriendlyName(StringReferen
 template <typename T> bool impl_ICertificateQuery<T>::HardwareOnly() const
 {
 	bool value = {};
-	check(shim()->get_HardwareOnly(&value));
+	check(shim()->get_HardwareOnly(put(value)));
 	return value;
 }
 
@@ -69284,7 +69284,7 @@ template <typename T> void impl_ICertificateQuery<T>::HardwareOnly(bool const va
 template <typename T> bool impl_ICertificateQuery2<T>::IncludeDuplicates() const
 {
 	bool value = {};
-	check(shim()->get_IncludeDuplicates(&value));
+	check(shim()->get_IncludeDuplicates(put(value)));
 	return value;
 }
 
@@ -69296,7 +69296,7 @@ template <typename T> void impl_ICertificateQuery2<T>::IncludeDuplicates(bool co
 template <typename T> bool impl_ICertificateQuery2<T>::IncludeExpiredCertificates() const
 {
 	bool value = {};
-	check(shim()->get_IncludeExpiredCertificates(&value));
+	check(shim()->get_IncludeExpiredCertificates(put(value)));
 	return value;
 }
 
@@ -69376,14 +69376,14 @@ template <typename T> String impl_ICertificate<T>::Issuer() const
 template <typename T> bool impl_ICertificate<T>::HasPrivateKey() const
 {
 	bool value = {};
-	check(shim()->get_HasPrivateKey(&value));
+	check(shim()->get_HasPrivateKey(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICertificate<T>::IsStronglyProtected() const
 {
 	bool value = {};
-	check(shim()->get_IsStronglyProtected(&value));
+	check(shim()->get_IsStronglyProtected(put(value)));
 	return value;
 }
 
@@ -69423,7 +69423,7 @@ template <typename T> String impl_ICertificate<T>::FriendlyName() const
 template <typename T> bool impl_ICertificate2<T>::IsSecurityDeviceBound() const
 {
 	bool value = {};
-	check(shim()->get_IsSecurityDeviceBound(&value));
+	check(shim()->get_IsSecurityDeviceBound(put(value)));
 	return value;
 }
 
@@ -69650,7 +69650,7 @@ template <typename T> void impl_IPfxImportParameters<T>::ReaderName(StringRefere
 template <typename T> bool impl_ICertificateKeyUsages<T>::EncipherOnly() const
 {
 	bool value = {};
-	check(shim()->get_EncipherOnly(&value));
+	check(shim()->get_EncipherOnly(put(value)));
 	return value;
 }
 
@@ -69662,7 +69662,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::EncipherOnly(bool cons
 template <typename T> bool impl_ICertificateKeyUsages<T>::CrlSign() const
 {
 	bool value = {};
-	check(shim()->get_CrlSign(&value));
+	check(shim()->get_CrlSign(put(value)));
 	return value;
 }
 
@@ -69674,7 +69674,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::CrlSign(bool const val
 template <typename T> bool impl_ICertificateKeyUsages<T>::KeyCertificateSign() const
 {
 	bool value = {};
-	check(shim()->get_KeyCertificateSign(&value));
+	check(shim()->get_KeyCertificateSign(put(value)));
 	return value;
 }
 
@@ -69686,7 +69686,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::KeyCertificateSign(boo
 template <typename T> bool impl_ICertificateKeyUsages<T>::KeyAgreement() const
 {
 	bool value = {};
-	check(shim()->get_KeyAgreement(&value));
+	check(shim()->get_KeyAgreement(put(value)));
 	return value;
 }
 
@@ -69698,7 +69698,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::KeyAgreement(bool cons
 template <typename T> bool impl_ICertificateKeyUsages<T>::DataEncipherment() const
 {
 	bool value = {};
-	check(shim()->get_DataEncipherment(&value));
+	check(shim()->get_DataEncipherment(put(value)));
 	return value;
 }
 
@@ -69710,7 +69710,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::DataEncipherment(bool 
 template <typename T> bool impl_ICertificateKeyUsages<T>::KeyEncipherment() const
 {
 	bool value = {};
-	check(shim()->get_KeyEncipherment(&value));
+	check(shim()->get_KeyEncipherment(put(value)));
 	return value;
 }
 
@@ -69722,7 +69722,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::KeyEncipherment(bool c
 template <typename T> bool impl_ICertificateKeyUsages<T>::NonRepudiation() const
 {
 	bool value = {};
-	check(shim()->get_NonRepudiation(&value));
+	check(shim()->get_NonRepudiation(put(value)));
 	return value;
 }
 
@@ -69734,7 +69734,7 @@ template <typename T> void impl_ICertificateKeyUsages<T>::NonRepudiation(bool co
 template <typename T> bool impl_ICertificateKeyUsages<T>::DigitalSignature() const
 {
 	bool value = {};
-	check(shim()->get_DigitalSignature(&value));
+	check(shim()->get_DigitalSignature(put(value)));
 	return value;
 }
 
@@ -70129,7 +70129,7 @@ template <typename T> Windows::Storage::Streams::IBuffer impl_ICryptographicEngi
 template <typename T> bool impl_ICryptographicEngineStatics<T>::VerifySignature(Windows::Security::Cryptography::Core::CryptographicKey const & key, Windows::Storage::Streams::IBuffer const & data, Windows::Storage::Streams::IBuffer const & signature) const
 {
 	bool isAuthenticated = {};
-	check(shim()->abi_VerifySignature(get(key), get(data), get(signature), &isAuthenticated));
+	check(shim()->abi_VerifySignature(get(key), get(data), get(signature), put(isAuthenticated)));
 	return isAuthenticated;
 }
 
@@ -70150,7 +70150,7 @@ template <typename T> Windows::Storage::Streams::IBuffer impl_ICryptographicEngi
 template <typename T> bool impl_ICryptographicEngineStatics2<T>::VerifySignatureWithHashInput(Windows::Security::Cryptography::Core::CryptographicKey const & key, Windows::Storage::Streams::IBuffer const & data, Windows::Storage::Streams::IBuffer const & signature) const
 {
 	bool isAuthenticated = {};
-	check(shim()->abi_VerifySignatureWithHashInput(get(key), get(data), get(signature), &isAuthenticated));
+	check(shim()->abi_VerifySignatureWithHashInput(get(key), get(data), get(signature), put(isAuthenticated)));
 	return isAuthenticated;
 }
 
@@ -71199,7 +71199,7 @@ template <typename T> Windows::Security::EnterpriseData::FileProtectionStatus im
 template <typename T> bool impl_IFileProtectionInfo<T>::IsRoamable() const
 {
 	bool value = {};
-	check(shim()->get_IsRoamable(&value));
+	check(shim()->get_IsRoamable(put(value)));
 	return value;
 }
 
@@ -71323,14 +71323,14 @@ template <typename T> String impl_IProtectionPolicyManager<T>::Identity() const
 template <typename T> bool impl_IProtectionPolicyManagerStatics<T>::IsIdentityManaged(StringReference const & identity) const
 {
 	bool result = {};
-	check(shim()->abi_IsIdentityManaged(get(identity), &result));
+	check(shim()->abi_IsIdentityManaged(get(identity), put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IProtectionPolicyManagerStatics<T>::TryApplyProcessUIPolicy(StringReference const & identity) const
 {
 	bool result = {};
-	check(shim()->abi_TryApplyProcessUIPolicy(get(identity), &result));
+	check(shim()->abi_TryApplyProcessUIPolicy(get(identity), put(result)));
 	return result;
 }
 
@@ -71433,7 +71433,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
 template <typename T> bool impl_IProtectionPolicyManagerStatics2<T>::HasContentBeenRevokedSince(StringReference const & identity, Windows::Foundation::DateTime const & since) const
 {
 	bool result = {};
-	check(shim()->abi_HasContentBeenRevokedSince(get(identity), since, &result));
+	check(shim()->abi_HasContentBeenRevokedSince(get(identity), since, put(result)));
 	return result;
 }
 
@@ -71461,14 +71461,14 @@ template <typename T> Windows::Security::EnterpriseData::EnforcementLevel impl_I
 template <typename T> bool impl_IProtectionPolicyManagerStatics2<T>::IsUserDecryptionAllowed(StringReference const & identity) const
 {
 	bool value = {};
-	check(shim()->abi_IsUserDecryptionAllowed(get(identity), &value));
+	check(shim()->abi_IsUserDecryptionAllowed(get(identity), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IProtectionPolicyManagerStatics2<T>::IsProtectionUnderLockRequired(StringReference const & identity) const
 {
 	bool value = {};
-	check(shim()->abi_IsProtectionUnderLockRequired(get(identity), &value));
+	check(shim()->abi_IsProtectionUnderLockRequired(get(identity), put(value)));
 	return value;
 }
 
@@ -71492,7 +71492,7 @@ template <typename T> void impl_IProtectionPolicyManagerStatics2<T>::PolicyChang
 template <typename T> bool impl_IProtectionPolicyManagerStatics2<T>::IsProtectionEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsProtectionEnabled(&value));
+	check(shim()->get_IsProtectionEnabled(put(value)));
 	return value;
 }
 
@@ -71538,7 +71538,7 @@ namespace winrt { namespace Windows { namespace Security { namespace ExchangeAct
 template <typename T> bool impl_IEasClientSecurityPolicy<T>::RequireEncryption() const
 {
 	bool value = {};
-	check(shim()->get_RequireEncryption(&value));
+	check(shim()->get_RequireEncryption(put(value)));
 	return value;
 }
 
@@ -71562,7 +71562,7 @@ template <typename T> void impl_IEasClientSecurityPolicy<T>::MinPasswordLength(b
 template <typename T> bool impl_IEasClientSecurityPolicy<T>::DisallowConvenienceLogon() const
 {
 	bool value = {};
-	check(shim()->get_DisallowConvenienceLogon(&value));
+	check(shim()->get_DisallowConvenienceLogon(put(value)));
 	return value;
 }
 
@@ -71648,7 +71648,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Security::Ex
 template <typename T> bool impl_IEasComplianceResults<T>::Compliant() const
 {
 	bool value = {};
-	check(shim()->get_Compliant(&value));
+	check(shim()->get_Compliant(put(value)));
 	return value;
 }
 
@@ -72113,7 +72113,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::Ser
 template <typename T> bool impl_IMapRoute<T>::IsTrafficBased() const
 {
 	bool value = {};
-	check(shim()->get_IsTrafficBased(&value));
+	check(shim()->get_IsTrafficBased(put(value)));
 	return value;
 }
 
@@ -72127,7 +72127,7 @@ template <typename T> Windows::Services::Maps::MapRouteRestrictions impl_IMapRou
 template <typename T> bool impl_IMapRoute2<T>::HasBlockedRoads() const
 {
 	bool value = {};
-	check(shim()->get_HasBlockedRoads(&value));
+	check(shim()->get_HasBlockedRoads(put(value)));
 	return value;
 }
 
@@ -72496,7 +72496,7 @@ template <typename T> Windows::Services::Maps::Guidance::GuidanceMapMatchedCoord
 template <typename T> bool impl_IGuidanceUpdatedEventArgs<T>::IsNewManeuver() const
 {
 	bool value = {};
-	check(shim()->get_IsNewManeuver(&value));
+	check(shim()->get_IsNewManeuver(put(value)));
 	return value;
 }
 
@@ -72748,7 +72748,7 @@ template <typename T> void impl_IGuidanceNavigator2<T>::AudioNotificationRequest
 template <typename T> bool impl_IGuidanceNavigator2<T>::IsGuidanceAudioMuted() const
 {
 	bool value = {};
-	check(shim()->get_IsGuidanceAudioMuted(&value));
+	check(shim()->get_IsGuidanceAudioMuted(put(value)));
 	return value;
 }
 
@@ -72767,7 +72767,7 @@ template <typename T> Windows::Services::Maps::Guidance::GuidanceNavigator impl_
 template <typename T> bool impl_IGuidanceNavigatorStatics2<T>::UseAppProvidedVoice() const
 {
 	bool value = {};
-	check(shim()->get_UseAppProvidedVoice(&value));
+	check(shim()->get_UseAppProvidedVoice(put(value)));
 	return value;
 }
 
@@ -72816,21 +72816,21 @@ template <typename T> String impl_IGuidanceRoadSegment<T>::Id() const
 template <typename T> bool impl_IGuidanceRoadSegment<T>::IsHighway() const
 {
 	bool value = {};
-	check(shim()->get_IsHighway(&value));
+	check(shim()->get_IsHighway(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IGuidanceRoadSegment<T>::IsTunnel() const
 {
 	bool value = {};
-	check(shim()->get_IsTunnel(&value));
+	check(shim()->get_IsTunnel(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IGuidanceRoadSegment<T>::IsTollRoad() const
 {
 	bool value = {};
-	check(shim()->get_IsTollRoad(&value));
+	check(shim()->get_IsTollRoad(put(value)));
 	return value;
 }
 
@@ -72858,7 +72858,7 @@ template <typename T> double impl_IGuidanceMapMatchedCoordinate<T>::CurrentSpeed
 template <typename T> bool impl_IGuidanceMapMatchedCoordinate<T>::IsOnStreet() const
 {
 	bool value = {};
-	check(shim()->get_IsOnStreet(&value));
+	check(shim()->get_IsOnStreet(put(value)));
 	return value;
 }
 
@@ -72879,7 +72879,7 @@ template <typename T> Windows::Services::Maps::Guidance::GuidanceTelemetryCollec
 template <typename T> bool impl_IGuidanceTelemetryCollector<T>::Enabled() const
 {
 	bool value = {};
-	check(shim()->get_Enabled(&value));
+	check(shim()->get_Enabled(put(value)));
 	return value;
 }
 
@@ -72920,7 +72920,7 @@ template <typename T> void impl_IGuidanceTelemetryCollector<T>::UploadFrequency(
 template <typename T> bool impl_IGuidanceRouteStatics<T>::CanCreateFromMapRoute(Windows::Services::Maps::MapRoute const & mapRoute) const
 {
 	bool result = {};
-	check(shim()->abi_CanCreateFromMapRoute(get(mapRoute), &result));
+	check(shim()->abi_CanCreateFromMapRoute(get(mapRoute), put(result)));
 	return result;
 }
 
@@ -72990,7 +72990,7 @@ template <typename T> Windows::Services::Maps::Guidance::GuidanceLaneMarkers imp
 template <typename T> bool impl_IGuidanceLaneInfo<T>::IsOnRoute() const
 {
 	bool value = {};
-	check(shim()->get_IsOnRoute(&value));
+	check(shim()->get_IsOnRoute(put(value)));
 	return value;
 }
 
@@ -73474,7 +73474,7 @@ template <typename T> Windows::Foundation::DateTime impl_IStorageItem<T>::DateCr
 template <typename T> bool impl_IStorageItem<T>::IsOfType(Windows::Storage::StorageItemTypes const type) const
 {
 	bool value = {};
-	check(shim()->abi_IsOfType(type, &value));
+	check(shim()->abi_IsOfType(type, put(value)));
 	return value;
 }
 
@@ -73649,7 +73649,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
 template <typename T> bool impl_IStorageItem2<T>::IsEqual(Windows::Storage::IStorageItem const & item) const
 {
 	bool value = {};
-	check(shim()->abi_IsEqual(get(item), &value));
+	check(shim()->abi_IsEqual(get(item), put(value)));
 	return value;
 }
 
@@ -73733,7 +73733,7 @@ template <typename T> Windows::Storage::StorageProvider impl_IStorageItemPropert
 template <typename T> bool impl_IStorageFilePropertiesWithAvailability<T>::IsAvailable() const
 {
 	bool value = {};
-	check(shim()->get_IsAvailable(&value));
+	check(shim()->get_IsAvailable(put(value)));
 	return value;
 }
 
@@ -74578,7 +74578,7 @@ template <typename T> void impl_IStorageItemAccessList<T>::Remove(StringReferenc
 template <typename T> bool impl_IStorageItemAccessList<T>::ContainsItem(StringReference const & token) const
 {
 	bool value = {};
-	check(shim()->abi_ContainsItem(get(token), &value));
+	check(shim()->abi_ContainsItem(get(token), put(value)));
 	return value;
 }
 
@@ -74590,7 +74590,7 @@ template <typename T> void impl_IStorageItemAccessList<T>::Clear() const
 template <typename T> bool impl_IStorageItemAccessList<T>::CheckAccess(Windows::Storage::IStorageItem const & file) const
 {
 	bool value = {};
-	check(shim()->abi_CheckAccess(get(file), &value));
+	check(shim()->abi_CheckAccess(get(file), put(value)));
 	return value;
 }
 
@@ -74910,7 +74910,7 @@ template <typename T> unsigned impl_IThumbnailProperties<T>::OriginalHeight() co
 template <typename T> bool impl_IThumbnailProperties<T>::ReturnedSmallerCachedSize() const
 {
 	bool value = {};
-	check(shim()->get_ReturnedSmallerCachedSize(&value));
+	check(shim()->get_ReturnedSmallerCachedSize(put(value)));
 	return value;
 }
 
@@ -75691,14 +75691,14 @@ template <typename T> void impl_IFileOpenPickerUI<T>::RemoveFile(StringReference
 template <typename T> bool impl_IFileOpenPickerUI<T>::ContainsFile(StringReference const & id) const
 {
 	bool isContained = {};
-	check(shim()->abi_ContainsFile(get(id), &isContained));
+	check(shim()->abi_ContainsFile(get(id), put(isContained)));
 	return isContained;
 }
 
 template <typename T> bool impl_IFileOpenPickerUI<T>::CanAddFile(Windows::Storage::IStorageFile const & file) const
 {
 	bool canAdd = {};
-	check(shim()->abi_CanAddFile(get(file), &canAdd));
+	check(shim()->abi_CanAddFile(get(file), put(canAdd)));
 	return canAdd;
 }
 
@@ -75779,7 +75779,7 @@ template <typename T> Windows::Storage::Pickers::Provider::PickerClosingOperatio
 template <typename T> bool impl_IPickerClosingEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -76597,21 +76597,21 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 template <typename T> bool impl_IStorageFolderQueryOperations<T>::AreQueryOptionsSupported(Windows::Storage::Search::QueryOptions const & queryOptions) const
 {
 	bool value = {};
-	check(shim()->abi_AreQueryOptionsSupported(get(queryOptions), &value));
+	check(shim()->abi_AreQueryOptionsSupported(get(queryOptions), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IStorageFolderQueryOperations<T>::IsCommonFolderQuerySupported(Windows::Storage::Search::CommonFolderQuery const query) const
 {
 	bool value = {};
-	check(shim()->abi_IsCommonFolderQuerySupported(query, &value));
+	check(shim()->abi_IsCommonFolderQuerySupported(query, put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IStorageFolderQueryOperations<T>::IsCommonFileQuerySupported(Windows::Storage::Search::CommonFileQuery const query) const
 {
 	bool value = {};
-	check(shim()->abi_IsCommonFileQuerySupported(query, &value));
+	check(shim()->abi_IsCommonFileQuerySupported(query, put(value)));
 	return value;
 }
 
@@ -76693,7 +76693,7 @@ template <typename T> Windows::Storage::Streams::IBuffer impl_IDataReader<T>::Re
 template <typename T> bool impl_IDataReader<T>::ReadBoolean() const
 {
 	bool value = {};
-	check(shim()->abi_ReadBoolean(&value));
+	check(shim()->abi_ReadBoolean(put(value)));
 	return value;
 }
 
@@ -77143,14 +77143,14 @@ template <typename T> Windows::Storage::Streams::IRandomAccessStream impl_IRando
 template <typename T> bool impl_IRandomAccessStream<T>::CanRead() const
 {
 	bool value = {};
-	check(shim()->get_CanRead(&value));
+	check(shim()->get_CanRead(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IRandomAccessStream<T>::CanWrite() const
 {
 	bool value = {};
-	check(shim()->get_CanWrite(&value));
+	check(shim()->get_CanWrite(put(value)));
 	return value;
 }
 
@@ -77303,7 +77303,7 @@ template <typename T> Windows::System::ProcessMemoryReport impl_IMemoryManagerSt
 template <typename T> bool impl_IMemoryManagerStatics3<T>::TrySetAppMemoryUsageLimit(unsigned long long const value) const
 {
 	bool result = {};
-	check(shim()->abi_TrySetAppMemoryUsageLimit(value, &result));
+	check(shim()->abi_TrySetAppMemoryUsageLimit(value, put(result)));
 	return result;
 }
 
@@ -77681,7 +77681,7 @@ template <typename T> void impl_ILauncherUIOptions<T>::PreferredPlacement(Window
 template <typename T> bool impl_ILauncherOptions<T>::TreatAsUntrusted() const
 {
 	bool value = {};
-	check(shim()->get_TreatAsUntrusted(&value));
+	check(shim()->get_TreatAsUntrusted(put(value)));
 	return value;
 }
 
@@ -77693,7 +77693,7 @@ template <typename T> void impl_ILauncherOptions<T>::TreatAsUntrusted(bool const
 template <typename T> bool impl_ILauncherOptions<T>::DisplayApplicationPicker() const
 {
 	bool value = {};
-	check(shim()->get_DisplayApplicationPicker(&value));
+	check(shim()->get_DisplayApplicationPicker(put(value)));
 	return value;
 }
 
@@ -78549,7 +78549,7 @@ template <typename T> Windows::System::Profile::HardwareToken impl_IHardwareIden
 template <typename T> bool impl_ISharedModeSettingsStatics<T>::IsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsEnabled(&value));
+	check(shim()->get_IsEnabled(put(value)));
 	return value;
 }
 
@@ -78580,14 +78580,14 @@ template <typename T> void impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<
 template <typename T> bool impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<T>::CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel const level) const
 {
 	bool result = {};
-	check(shim()->abi_CanCollectDiagnostics(level, &result));
+	check(shim()->abi_CanCollectDiagnostics(level, put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IRetailInfoStatics<T>::IsDemoModeEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsDemoModeEnabled(&value));
+	check(shim()->get_IsDemoModeEnabled(put(value)));
 	return value;
 }
 
@@ -78770,7 +78770,7 @@ namespace winrt { namespace Windows { namespace System { namespace RemoteDesktop
 template <typename T> bool impl_IInteractiveSessionStatics<T>::IsRemote() const
 {
 	bool value = {};
-	check(shim()->get_IsRemote(&value));
+	check(shim()->get_IsRemote(put(value)));
 	return value;
 }
 
@@ -79020,14 +79020,14 @@ template <typename T> String impl_IAdvertisingManagerStatics<T>::AdvertisingId()
 template <typename T> bool impl_IUserInformationStatics<T>::AccountPictureChangeEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AccountPictureChangeEnabled(&value));
+	check(shim()->get_AccountPictureChangeEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUserInformationStatics<T>::NameAccessAllowed() const
 {
 	bool value = {};
-	check(shim()->get_NameAccessAllowed(&value));
+	check(shim()->get_NameAccessAllowed(put(value)));
 	return value;
 }
 
@@ -79163,7 +79163,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
 template <typename T> bool impl_ILockScreenImageFeedStatics<T>::TryRemoveImageFeed() const
 {
 	bool result = {};
-	check(shim()->abi_TryRemoveImageFeed(&result));
+	check(shim()->abi_TryRemoveImageFeed(put(result)));
 	return result;
 }
 
@@ -79191,7 +79191,7 @@ template <typename T> Windows::System::UserProfile::UserProfilePersonalizationSe
 template <typename T> bool impl_IUserProfilePersonalizationSettingsStatics<T>::IsSupported() const
 {
 	bool result = {};
-	check(shim()->abi_IsSupported(&result));
+	check(shim()->abi_IsSupported(put(result)));
 	return result;
 }
 
@@ -80606,14 +80606,14 @@ template <typename T> void impl_ICompositionColorBrush<T>::Color(Windows::UI::Co
 template <typename T> bool impl_ICompositionCommitBatch<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICompositionCommitBatch<T>::IsEnded() const
 {
 	bool value = {};
-	check(shim()->get_IsEnded(&value));
+	check(shim()->get_IsEnded(put(value)));
 	return value;
 }
 
@@ -80856,14 +80856,14 @@ template <typename T> Windows::UI::Composition::CompositionGetValueStatus impl_I
 template <typename T> bool impl_ICompositionScopedBatch<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICompositionScopedBatch<T>::IsEnded() const
 {
 	bool value = {};
-	check(shim()->get_IsEnded(&value));
+	check(shim()->get_IsEnded(put(value)));
 	return value;
 }
 
@@ -81441,7 +81441,7 @@ template <typename T> void impl_IVisual<T>::CompositeMode(Windows::UI::Compositi
 template <typename T> bool impl_IVisual<T>::IsVisible() const
 {
 	bool value = {};
-	check(shim()->get_IsVisible(&value));
+	check(shim()->get_IsVisible(put(value)));
 	return value;
 }
 
@@ -81619,7 +81619,7 @@ template <typename T> void impl_IIdleDispatchedHandler<T>::Invoke(Windows::UI::C
 template <typename T> bool impl_ICoreWindowEventArgs<T>::Handled() const
 {
 	bool value = {};
-	check(shim()->get_Handled(&value));
+	check(shim()->get_Handled(put(value)));
 	return value;
 }
 
@@ -81657,7 +81657,7 @@ template <typename T> Windows::UI::Core::CorePhysicalKeyStatus impl_ICharacterRe
 template <typename T> bool impl_IInputEnabledEventArgs<T>::InputEnabled() const
 {
 	bool value = {};
-	check(shim()->get_InputEnabled(&value));
+	check(shim()->get_InputEnabled(put(value)));
 	return value;
 }
 
@@ -81746,7 +81746,7 @@ template <typename T> Windows::Foundation::Size impl_IWindowSizeChangedEventArgs
 template <typename T> bool impl_IVisibilityChangedEventArgs<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
@@ -81793,7 +81793,7 @@ template <typename T> void impl_ICoreWindow<T>::FlowDirection(Windows::UI::Core:
 template <typename T> bool impl_ICoreWindow<T>::IsInputEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsInputEnabled(&value));
+	check(shim()->get_IsInputEnabled(put(value)));
 	return value;
 }
 
@@ -81824,7 +81824,7 @@ template <typename T> Windows::Foundation::Point impl_ICoreWindow<T>::PointerPos
 template <typename T> bool impl_ICoreWindow<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
@@ -82204,7 +82204,7 @@ template <typename T> void impl_ICoreAcceleratorKeys<T>::AcceleratorKeyActivated
 template <typename T> bool impl_ICoreDispatcher<T>::HasThreadAccess() const
 {
 	bool value = {};
-	check(shim()->get_HasThreadAccess(&value));
+	check(shim()->get_HasThreadAccess(put(value)));
 	return value;
 }
 
@@ -82276,14 +82276,14 @@ template <typename T> void impl_ICoreDispatcherWithTaskPriority<T>::CurrentPrior
 template <typename T> bool impl_ICoreDispatcherWithTaskPriority<T>::ShouldYield() const
 {
 	bool value = {};
-	check(shim()->abi_ShouldYield(&value));
+	check(shim()->abi_ShouldYield(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ICoreDispatcherWithTaskPriority<T>::ShouldYield(Windows::UI::Core::CoreDispatcherPriority const priority) const
 {
 	bool value = {};
-	check(shim()->abi_ShouldYieldToPriority(priority, &value));
+	check(shim()->abi_ShouldYieldToPriority(priority, put(value)));
 	return value;
 }
 
@@ -82295,7 +82295,7 @@ template <typename T> void impl_ICoreDispatcherWithTaskPriority<T>::StopProcessE
 template <typename T> bool impl_IIdleDispatchedHandlerArgs<T>::IsDispatcherIdle() const
 {
 	bool value = {};
-	check(shim()->get_IsDispatcherIdle(&value));
+	check(shim()->get_IsDispatcherIdle(put(value)));
 	return value;
 }
 
@@ -82338,7 +82338,7 @@ template <typename T> void impl_ICoreWindowResizeManagerLayoutCapability<T>::Sho
 template <typename T> bool impl_ICoreWindowResizeManagerLayoutCapability<T>::ShouldWaitForLayoutCompletion() const
 {
 	bool value = {};
-	check(shim()->get_ShouldWaitForLayoutCompletion(&value));
+	check(shim()->get_ShouldWaitForLayoutCompletion(put(value)));
 	return value;
 }
 
@@ -82359,7 +82359,7 @@ template <typename T> Windows::UI::Core::CoreDispatcher impl_ICoreInputSourceBas
 template <typename T> bool impl_ICoreInputSourceBase<T>::IsInputEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsInputEnabled(&value));
+	check(shim()->get_IsInputEnabled(put(value)));
 	return value;
 }
 
@@ -82398,7 +82398,7 @@ template <typename T> void impl_ICorePointerInputSource<T>::SetPointerCapture() 
 template <typename T> bool impl_ICorePointerInputSource<T>::HasCapture() const
 {
 	bool value = {};
-	check(shim()->get_HasCapture(&value));
+	check(shim()->get_HasCapture(put(value)));
 	return value;
 }
 
@@ -82601,7 +82601,7 @@ template <typename T> void impl_ICoreKeyboardInputSource<T>::KeyUp(long long con
 template <typename T> bool impl_ICoreComponentFocusable<T>::HasFocus() const
 {
 	bool value = {};
-	check(shim()->get_HasFocus(&value));
+	check(shim()->get_HasFocus(put(value)));
 	return value;
 }
 
@@ -82980,7 +82980,7 @@ template <typename T> Windows::UI::Core::SystemNavigationManager impl_ISystemNav
 template <typename T> bool impl_IBackRequestedEventArgs<T>::Handled() const
 {
 	bool value = {};
-	check(shim()->get_Handled(&value));
+	check(shim()->get_Handled(put(value)));
 	return value;
 }
 
@@ -82999,7 +82999,7 @@ template <typename T> Windows::UI::Core::CoreWindow impl_ICoreWindowFactory<T>::
 template <typename T> bool impl_ICoreWindowFactory<T>::WindowReuseAllowed() const
 {
 	bool value = {};
-	check(shim()->get_WindowReuseAllowed(&value));
+	check(shim()->get_WindowReuseAllowed(put(value)));
 	return value;
 }
 
@@ -83205,7 +83205,7 @@ template <typename T> void impl_IEdgeGesture<T>::Canceled(long long const token)
 template <typename T> bool impl_IKeyboardDeliveryInterceptor<T>::IsInterceptionEnabledWhenInForeground() const
 {
 	bool value = {};
-	check(shim()->get_IsInterceptionEnabledWhenInForeground(&value));
+	check(shim()->get_IsInterceptionEnabledWhenInForeground(put(value)));
 	return value;
 }
 
@@ -83535,21 +83535,21 @@ template <typename T> void impl_IGestureRecognizer<T>::GestureSettings(Windows::
 template <typename T> bool impl_IGestureRecognizer<T>::IsInertial() const
 {
 	bool value = {};
-	check(shim()->get_IsInertial(&value));
+	check(shim()->get_IsInertial(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IGestureRecognizer<T>::IsActive() const
 {
 	bool value = {};
-	check(shim()->get_IsActive(&value));
+	check(shim()->get_IsActive(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IGestureRecognizer<T>::ShowGestureFeedback() const
 {
 	bool value = {};
-	check(shim()->get_ShowGestureFeedback(&value));
+	check(shim()->get_ShowGestureFeedback(put(value)));
 	return value;
 }
 
@@ -83657,7 +83657,7 @@ template <typename T> void impl_IGestureRecognizer<T>::InertiaExpansion(float co
 template <typename T> bool impl_IGestureRecognizer<T>::ManipulationExact() const
 {
 	bool value = {};
-	check(shim()->get_ManipulationExact(&value));
+	check(shim()->get_ManipulationExact(put(value)));
 	return value;
 }
 
@@ -83681,7 +83681,7 @@ template <typename T> void impl_IGestureRecognizer<T>::CrossSlideThresholds(Wind
 template <typename T> bool impl_IGestureRecognizer<T>::CrossSlideHorizontally() const
 {
 	bool value = {};
-	check(shim()->get_CrossSlideHorizontally(&value));
+	check(shim()->get_CrossSlideHorizontally(put(value)));
 	return value;
 }
 
@@ -83693,7 +83693,7 @@ template <typename T> void impl_IGestureRecognizer<T>::CrossSlideHorizontally(bo
 template <typename T> bool impl_IGestureRecognizer<T>::CrossSlideExact() const
 {
 	bool value = {};
-	check(shim()->get_CrossSlideExact(&value));
+	check(shim()->get_CrossSlideExact(put(value)));
 	return value;
 }
 
@@ -83705,7 +83705,7 @@ template <typename T> void impl_IGestureRecognizer<T>::CrossSlideExact(bool cons
 template <typename T> bool impl_IGestureRecognizer<T>::AutoProcessInertia() const
 {
 	bool value = {};
-	check(shim()->get_AutoProcessInertia(&value));
+	check(shim()->get_AutoProcessInertia(put(value)));
 	return value;
 }
 
@@ -83724,7 +83724,7 @@ template <typename T> Windows::UI::Input::MouseWheelParameters impl_IGestureReco
 template <typename T> bool impl_IGestureRecognizer<T>::CanBeDoubleTap(Windows::UI::Input::PointerPoint const & value) const
 {
 	bool canBeDoubleTap = {};
-	check(shim()->abi_CanBeDoubleTap(get(value), &canBeDoubleTap));
+	check(shim()->abi_CanBeDoubleTap(get(value), put(canBeDoubleTap)));
 	return canBeDoubleTap;
 }
 
@@ -83949,7 +83949,7 @@ template <typename T> Windows::UI::Input::IPointerPointTransform impl_IPointerPo
 template <typename T> bool impl_IPointerPointTransform<T>::TryTransform(Windows::Foundation::Point const & inPoint, Windows::Foundation::Point & outPoint) const
 {
 	bool returnValue = {};
-	check(shim()->abi_TryTransform(inPoint, &outPoint, &returnValue));
+	check(shim()->abi_TryTransform(inPoint, &outPoint, put(returnValue)));
 	return returnValue;
 }
 
@@ -84005,7 +84005,7 @@ template <typename T> unsigned long long impl_IPointerPoint<T>::Timestamp() cons
 template <typename T> bool impl_IPointerPoint<T>::IsInContact() const
 {
 	bool value = {};
-	check(shim()->get_IsInContact(&value));
+	check(shim()->get_IsInContact(put(value)));
 	return value;
 }
 
@@ -84026,14 +84026,14 @@ template <typename T> float impl_IPointerPointProperties<T>::Pressure() const
 template <typename T> bool impl_IPointerPointProperties<T>::IsInverted() const
 {
 	bool value = {};
-	check(shim()->get_IsInverted(&value));
+	check(shim()->get_IsInverted(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsEraser() const
 {
 	bool value = {};
-	check(shim()->get_IsEraser(&value));
+	check(shim()->get_IsEraser(put(value)));
 	return value;
 }
 
@@ -84082,28 +84082,28 @@ template <typename T> Windows::Foundation::Rect impl_IPointerPointProperties<T>:
 template <typename T> bool impl_IPointerPointProperties<T>::TouchConfidence() const
 {
 	bool value = {};
-	check(shim()->get_TouchConfidence(&value));
+	check(shim()->get_TouchConfidence(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsLeftButtonPressed() const
 {
 	bool value = {};
-	check(shim()->get_IsLeftButtonPressed(&value));
+	check(shim()->get_IsLeftButtonPressed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsRightButtonPressed() const
 {
 	bool value = {};
-	check(shim()->get_IsRightButtonPressed(&value));
+	check(shim()->get_IsRightButtonPressed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsMiddleButtonPressed() const
 {
 	bool value = {};
-	check(shim()->get_IsMiddleButtonPressed(&value));
+	check(shim()->get_IsMiddleButtonPressed(put(value)));
 	return value;
 }
 
@@ -84117,49 +84117,49 @@ template <typename T> int impl_IPointerPointProperties<T>::MouseWheelDelta() con
 template <typename T> bool impl_IPointerPointProperties<T>::IsHorizontalMouseWheel() const
 {
 	bool value = {};
-	check(shim()->get_IsHorizontalMouseWheel(&value));
+	check(shim()->get_IsHorizontalMouseWheel(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsPrimary() const
 {
 	bool value = {};
-	check(shim()->get_IsPrimary(&value));
+	check(shim()->get_IsPrimary(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsInRange() const
 {
 	bool value = {};
-	check(shim()->get_IsInRange(&value));
+	check(shim()->get_IsInRange(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsBarrelButtonPressed() const
 {
 	bool value = {};
-	check(shim()->get_IsBarrelButtonPressed(&value));
+	check(shim()->get_IsBarrelButtonPressed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsXButton1Pressed() const
 {
 	bool value = {};
-	check(shim()->get_IsXButton1Pressed(&value));
+	check(shim()->get_IsXButton1Pressed(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IPointerPointProperties<T>::IsXButton2Pressed() const
 {
 	bool value = {};
-	check(shim()->get_IsXButton2Pressed(&value));
+	check(shim()->get_IsXButton2Pressed(put(value)));
 	return value;
 }
 
@@ -84173,7 +84173,7 @@ template <typename T> Windows::UI::Input::PointerUpdateKind impl_IPointerPointPr
 template <typename T> bool impl_IPointerPointProperties<T>::HasUsage(unsigned const usagePage, unsigned const usageId) const
 {
 	bool value = {};
-	check(shim()->abi_HasUsage(usagePage, usageId, &value));
+	check(shim()->abi_HasUsage(usagePage, usageId, put(value)));
 	return value;
 }
 
@@ -84192,7 +84192,7 @@ template <typename T> void impl_IPointerVisualizationSettings<T>::IsContactFeedb
 template <typename T> bool impl_IPointerVisualizationSettings<T>::IsContactFeedbackEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsContactFeedbackEnabled(&value));
+	check(shim()->get_IsContactFeedbackEnabled(put(value)));
 	return value;
 }
 
@@ -84204,7 +84204,7 @@ template <typename T> void impl_IPointerVisualizationSettings<T>::IsBarrelButton
 template <typename T> bool impl_IPointerVisualizationSettings<T>::IsBarrelButtonFeedbackEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsBarrelButtonFeedbackEnabled(&value));
+	check(shim()->get_IsBarrelButtonFeedbackEnabled(put(value)));
 	return value;
 }
 
@@ -84236,7 +84236,7 @@ template <typename T> Windows::Foundation::Collections::IVectorView<Windows::UI:
 template <typename T> bool impl_IInkPresenter<T>::IsInputEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsInputEnabled(&value));
+	check(shim()->get_IsInputEnabled(put(value)));
 	return value;
 }
 
@@ -84645,7 +84645,7 @@ template <typename T> void impl_IInkDrawingAttributes<T>::Size(Windows::Foundati
 template <typename T> bool impl_IInkDrawingAttributes<T>::IgnorePressure() const
 {
 	bool value = {};
-	check(shim()->get_IgnorePressure(&value));
+	check(shim()->get_IgnorePressure(put(value)));
 	return value;
 }
 
@@ -84657,7 +84657,7 @@ template <typename T> void impl_IInkDrawingAttributes<T>::IgnorePressure(bool co
 template <typename T> bool impl_IInkDrawingAttributes<T>::FitToCurve() const
 {
 	bool value = {};
-	check(shim()->get_FitToCurve(&value));
+	check(shim()->get_FitToCurve(put(value)));
 	return value;
 }
 
@@ -84681,7 +84681,7 @@ template <typename T> void impl_IInkDrawingAttributes2<T>::PenTipTransform(Windo
 template <typename T> bool impl_IInkDrawingAttributes2<T>::DrawAsHighlighter() const
 {
 	bool value = {};
-	check(shim()->get_DrawAsHighlighter(&value));
+	check(shim()->get_DrawAsHighlighter(put(value)));
 	return value;
 }
 
@@ -84761,7 +84761,7 @@ template <typename T> Windows::Foundation::Rect impl_IInkStroke<T>::BoundingRect
 template <typename T> bool impl_IInkStroke<T>::Selected() const
 {
 	bool value = {};
-	check(shim()->get_Selected(&value));
+	check(shim()->get_Selected(put(value)));
 	return value;
 }
 
@@ -84773,7 +84773,7 @@ template <typename T> void impl_IInkStroke<T>::Selected(bool const value) const
 template <typename T> bool impl_IInkStroke<T>::Recognized() const
 {
 	bool value = {};
-	check(shim()->get_Recognized(&value));
+	check(shim()->get_Recognized(put(value)));
 	return value;
 }
 
@@ -84924,7 +84924,7 @@ template <typename T> Windows::Foundation::Rect impl_IInkStrokeContainer<T>::Pas
 template <typename T> bool impl_IInkStrokeContainer<T>::CanPasteFromClipboard() const
 {
 	bool canPaste = {};
-	check(shim()->abi_CanPasteFromClipboard(&canPaste));
+	check(shim()->abi_CanPasteFromClipboard(put(canPaste)));
 	return canPaste;
 }
 
@@ -85268,7 +85268,7 @@ template <typename T> Windows::UI::Input::Spatial::SpatialInteractionSourcePrope
 template <typename T> bool impl_ISpatialInteractionSourceState<T>::IsPressed() const
 {
 	bool value = {};
-	check(shim()->get_IsPressed(&value));
+	check(shim()->get_IsPressed(put(value)));
 	return value;
 }
 
@@ -85303,7 +85303,7 @@ template <typename T> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpat
 template <typename T> bool impl_ISpatialRecognitionStartedEventArgs<T>::IsGesturePossible(Windows::UI::Input::Spatial::SpatialGestureSettings const gesture) const
 {
 	bool value = {};
-	check(shim()->abi_IsGesturePossible(gesture, &value));
+	check(shim()->abi_IsGesturePossible(gesture, put(value)));
 	return value;
 }
 
@@ -85436,21 +85436,21 @@ template <typename T> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpat
 template <typename T> bool impl_ISpatialNavigationStartedEventArgs<T>::IsNavigatingX() const
 {
 	bool value = {};
-	check(shim()->get_IsNavigatingX(&value));
+	check(shim()->get_IsNavigatingX(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISpatialNavigationStartedEventArgs<T>::IsNavigatingY() const
 {
 	bool value = {};
-	check(shim()->get_IsNavigatingY(&value));
+	check(shim()->get_IsNavigatingY(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ISpatialNavigationStartedEventArgs<T>::IsNavigatingZ() const
 {
 	bool value = {};
-	check(shim()->get_IsNavigatingZ(&value));
+	check(shim()->get_IsNavigatingZ(put(value)));
 	return value;
 }
 
@@ -85747,7 +85747,7 @@ template <typename T> void impl_ISpatialGestureRecognizer<T>::CancelPendingGestu
 template <typename T> bool impl_ISpatialGestureRecognizer<T>::TrySetGestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings const settings) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TrySetGestureSettings(settings, &succeeded));
+	check(shim()->abi_TrySetGestureSettings(settings, put(succeeded)));
 	return succeeded;
 }
 
@@ -86322,7 +86322,7 @@ template <typename T> void impl_IToastNotification2<T>::SuppressPopup(bool const
 template <typename T> bool impl_IToastNotification2<T>::SuppressPopup() const
 {
 	bool value = {};
-	check(shim()->get_SuppressPopup(&value));
+	check(shim()->get_SuppressPopup(put(value)));
 	return value;
 }
 
@@ -86412,7 +86412,7 @@ template <typename T> void impl_IScheduledToastNotification2<T>::SuppressPopup(b
 template <typename T> bool impl_IScheduledToastNotification2<T>::SuppressPopup() const
 {
 	bool value = {};
-	check(shim()->get_SuppressPopup(&value));
+	check(shim()->get_SuppressPopup(put(value)));
 	return value;
 }
 
@@ -86768,7 +86768,7 @@ template <typename T> String impl_IJumpListItem<T>::Arguments() const
 template <typename T> bool impl_IJumpListItem<T>::RemovedByUser() const
 {
 	bool value = {};
-	check(shim()->get_RemovedByUser(&value));
+	check(shim()->get_RemovedByUser(put(value)));
 	return value;
 }
 
@@ -86870,7 +86870,7 @@ template <typename T> Windows::Foundation::IAsyncOperation<Windows::UI::StartScr
 template <typename T> bool impl_IJumpListStatics<T>::IsSupported() const
 {
 	bool result = {};
-	check(shim()->abi_IsSupported(&result));
+	check(shim()->abi_IsSupported(put(result)));
 	return result;
 }
 
@@ -86978,7 +86978,7 @@ template <typename T> void impl_ISecondaryTile<T>::LockScreenDisplayBadgeAndTile
 template <typename T> bool impl_ISecondaryTile<T>::LockScreenDisplayBadgeAndTileText() const
 {
 	bool value = {};
-	check(shim()->get_LockScreenDisplayBadgeAndTileText(&value));
+	check(shim()->get_LockScreenDisplayBadgeAndTileText(put(value)));
 	return value;
 }
 
@@ -87108,7 +87108,7 @@ template <typename T> void impl_ISecondaryTile2<T>::RoamingEnabled(bool const va
 template <typename T> bool impl_ISecondaryTile2<T>::RoamingEnabled() const
 {
 	bool value = {};
-	check(shim()->get_RoamingEnabled(&value));
+	check(shim()->get_RoamingEnabled(put(value)));
 	return value;
 }
 
@@ -87221,7 +87221,7 @@ template <typename T> void impl_ISecondaryTileVisualElements<T>::ShowNameOnSquar
 template <typename T> bool impl_ISecondaryTileVisualElements<T>::ShowNameOnSquare150x150Logo() const
 {
 	bool value = {};
-	check(shim()->get_ShowNameOnSquare150x150Logo(&value));
+	check(shim()->get_ShowNameOnSquare150x150Logo(put(value)));
 	return value;
 }
 
@@ -87233,7 +87233,7 @@ template <typename T> void impl_ISecondaryTileVisualElements<T>::ShowNameOnWide3
 template <typename T> bool impl_ISecondaryTileVisualElements<T>::ShowNameOnWide310x150Logo() const
 {
 	bool value = {};
-	check(shim()->get_ShowNameOnWide310x150Logo(&value));
+	check(shim()->get_ShowNameOnWide310x150Logo(put(value)));
 	return value;
 }
 
@@ -87245,7 +87245,7 @@ template <typename T> void impl_ISecondaryTileVisualElements<T>::ShowNameOnSquar
 template <typename T> bool impl_ISecondaryTileVisualElements<T>::ShowNameOnSquare310x310Logo() const
 {
 	bool value = {};
-	check(shim()->get_ShowNameOnSquare310x310Logo(&value));
+	check(shim()->get_ShowNameOnSquare310x310Logo(put(value)));
 	return value;
 }
 
@@ -87292,7 +87292,7 @@ template <typename T> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTil
 template <typename T> bool impl_ISecondaryTileStatics<T>::Exists(StringReference const & tileId) const
 {
 	bool exists = {};
-	check(shim()->abi_Exists(get(tileId), &exists));
+	check(shim()->abi_Exists(get(tileId), put(exists)));
 	return exists;
 }
 
@@ -87463,28 +87463,28 @@ template <typename T> void impl_ITextDocument<T>::UndoLimit(unsigned const value
 template <typename T> bool impl_ITextDocument<T>::CanCopy() const
 {
 	bool value = {};
-	check(shim()->abi_CanCopy(&value));
+	check(shim()->abi_CanCopy(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITextDocument<T>::CanPaste() const
 {
 	bool value = {};
-	check(shim()->abi_CanPaste(&value));
+	check(shim()->abi_CanPaste(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITextDocument<T>::CanRedo() const
 {
 	bool value = {};
-	check(shim()->abi_CanRedo(&value));
+	check(shim()->abi_CanRedo(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITextDocument<T>::CanUndo() const
 {
 	bool value = {};
-	check(shim()->abi_CanUndo(&value));
+	check(shim()->abi_CanUndo(put(value)));
 	return value;
 }
 
@@ -87705,7 +87705,7 @@ template <typename T> void impl_ITextRange<T>::Text(StringReference const & valu
 template <typename T> bool impl_ITextRange<T>::CanPaste(int const format) const
 {
 	bool value = {};
-	check(shim()->abi_CanPaste(format, &value));
+	check(shim()->abi_CanPaste(format, put(value)));
 	return value;
 }
 
@@ -87799,7 +87799,7 @@ template <typename T> void impl_ITextRange<T>::GetTextViaStream(Windows::UI::Tex
 template <typename T> bool impl_ITextRange<T>::InRange(Windows::UI::Text::ITextRange const & range) const
 {
 	bool value = {};
-	check(shim()->abi_InRange(get(range), &value));
+	check(shim()->abi_InRange(get(range), put(value)));
 	return value;
 }
 
@@ -87811,14 +87811,14 @@ template <typename T> void impl_ITextRange<T>::InsertImage(int const width, int 
 template <typename T> bool impl_ITextRange<T>::InStory(Windows::UI::Text::ITextRange const & range) const
 {
 	bool value = {};
-	check(shim()->abi_InStory(get(range), &value));
+	check(shim()->abi_InStory(get(range), put(value)));
 	return value;
 }
 
 template <typename T> bool impl_ITextRange<T>::IsEqual(Windows::UI::Text::ITextRange const & range) const
 {
 	bool value = {};
-	check(shim()->abi_IsEqual(get(range), &value));
+	check(shim()->abi_IsEqual(get(range), put(value)));
 	return value;
 }
 
@@ -88254,7 +88254,7 @@ template <typename T> Windows::UI::Text::ITextCharacterFormat impl_ITextCharacte
 template <typename T> bool impl_ITextCharacterFormat<T>::IsEqual(Windows::UI::Text::ITextCharacterFormat const & format) const
 {
 	bool value = {};
-	check(shim()->abi_IsEqual(get(format), &value));
+	check(shim()->abi_IsEqual(get(format), put(value)));
 	return value;
 }
 
@@ -88527,7 +88527,7 @@ template <typename T> void impl_ITextParagraphFormat<T>::GetTab(int const index,
 template <typename T> bool impl_ITextParagraphFormat<T>::IsEqual(Windows::UI::Text::ITextParagraphFormat const & format) const
 {
 	bool value = {};
-	check(shim()->abi_IsEqual(get(format), &value));
+	check(shim()->abi_IsEqual(get(format), put(value)));
 	return value;
 }
 
@@ -88649,7 +88649,7 @@ template <typename T> void impl_ICoreTextTextRequest<T>::Text(StringReference co
 template <typename T> bool impl_ICoreTextTextRequest<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88682,7 +88682,7 @@ template <typename T> void impl_ICoreTextSelectionRequest<T>::Selection(Windows:
 template <typename T> bool impl_ICoreTextSelectionRequest<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88741,7 +88741,7 @@ template <typename T> Windows::UI::Text::Core::CoreTextLayoutBounds impl_ICoreTe
 template <typename T> bool impl_ICoreTextLayoutRequest<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88802,7 +88802,7 @@ template <typename T> void impl_ICoreTextTextUpdatingEventArgs<T>::Result(Window
 template <typename T> bool impl_ICoreTextTextUpdatingEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88835,7 +88835,7 @@ template <typename T> void impl_ICoreTextSelectionUpdatingEventArgs<T>::Result(W
 template <typename T> bool impl_ICoreTextSelectionUpdatingEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88903,7 +88903,7 @@ template <typename T> void impl_ICoreTextFormatUpdatingEventArgs<T>::Result(Wind
 template <typename T> bool impl_ICoreTextFormatUpdatingEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88917,7 +88917,7 @@ template <typename T> Windows::Foundation::Deferral impl_ICoreTextFormatUpdating
 template <typename T> bool impl_ICoreTextCompositionStartedEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88931,7 +88931,7 @@ template <typename T> Windows::Foundation::Deferral impl_ICoreTextCompositionSta
 template <typename T> bool impl_ICoreTextCompositionCompletedEventArgs<T>::IsCanceled() const
 {
 	bool value = {};
-	check(shim()->get_IsCanceled(&value));
+	check(shim()->get_IsCanceled(put(value)));
 	return value;
 }
 
@@ -88993,7 +88993,7 @@ template <typename T> void impl_ICoreTextEditContext<T>::InputScope(Windows::UI:
 template <typename T> bool impl_ICoreTextEditContext<T>::IsReadOnly() const
 {
 	bool value = {};
-	check(shim()->get_IsReadOnly(&value));
+	check(shim()->get_IsReadOnly(put(value)));
 	return value;
 }
 
@@ -89331,7 +89331,7 @@ template <typename T> Windows::UI::ViewManagement::ApplicationViewState impl_IAp
 template <typename T> bool impl_IApplicationViewStatics<T>::TryUnsnap() const
 {
 	bool success = {};
-	check(shim()->abi_TryUnsnap(&success));
+	check(shim()->abi_TryUnsnap(put(success)));
 	return success;
 }
 
@@ -89345,7 +89345,7 @@ template <typename T> Windows::UI::ViewManagement::ApplicationView impl_IApplica
 template <typename T> bool impl_IApplicationViewStatics2<T>::TerminateAppOnFinalViewClose() const
 {
 	bool value = {};
-	check(shim()->get_TerminateAppOnFinalViewClose(&value));
+	check(shim()->get_TerminateAppOnFinalViewClose(put(value)));
 	return value;
 }
 
@@ -89388,35 +89388,35 @@ template <typename T> Windows::UI::ViewManagement::ApplicationViewOrientation im
 template <typename T> bool impl_IApplicationView<T>::AdjacentToLeftDisplayEdge() const
 {
 	bool value = {};
-	check(shim()->get_AdjacentToLeftDisplayEdge(&value));
+	check(shim()->get_AdjacentToLeftDisplayEdge(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationView<T>::AdjacentToRightDisplayEdge() const
 {
 	bool value = {};
-	check(shim()->get_AdjacentToRightDisplayEdge(&value));
+	check(shim()->get_AdjacentToRightDisplayEdge(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationView<T>::IsFullScreen() const
 {
 	bool value = {};
-	check(shim()->get_IsFullScreen(&value));
+	check(shim()->get_IsFullScreen(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationView<T>::IsOnLockScreen() const
 {
 	bool value = {};
-	check(shim()->get_IsOnLockScreen(&value));
+	check(shim()->get_IsOnLockScreen(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationView<T>::IsScreenCaptureEnabled() const
 {
 	bool value = {};
-	check(shim()->get_IsScreenCaptureEnabled(&value));
+	check(shim()->get_IsScreenCaptureEnabled(put(value)));
 	return value;
 }
 
@@ -89464,7 +89464,7 @@ template <typename T> void impl_IApplicationView<T>::Consolidated(long long cons
 template <typename T> bool impl_IApplicationView2<T>::SuppressSystemOverlays() const
 {
 	bool value = {};
-	check(shim()->get_SuppressSystemOverlays(&value));
+	check(shim()->get_SuppressSystemOverlays(put(value)));
 	return value;
 }
 
@@ -89500,7 +89500,7 @@ template <typename T> void impl_IApplicationView2<T>::VisibleBoundsChanged(long 
 template <typename T> bool impl_IApplicationView2<T>::SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode const boundsMode) const
 {
 	bool success = {};
-	check(shim()->abi_SetDesiredBoundsMode(boundsMode, &success));
+	check(shim()->abi_SetDesiredBoundsMode(boundsMode, put(success)));
 	return success;
 }
 
@@ -89677,14 +89677,14 @@ template <typename T> void impl_IApplicationView3<T>::FullScreenSystemOverlayMod
 template <typename T> bool impl_IApplicationView3<T>::IsFullScreenMode() const
 {
 	bool value = {};
-	check(shim()->get_IsFullScreenMode(&value));
+	check(shim()->get_IsFullScreenMode(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationView3<T>::TryEnterFullScreenMode() const
 {
 	bool success = {};
-	check(shim()->abi_TryEnterFullScreenMode(&success));
+	check(shim()->abi_TryEnterFullScreenMode(put(success)));
 	return success;
 }
 
@@ -89701,7 +89701,7 @@ template <typename T> void impl_IApplicationView3<T>::ShowStandardSystemOverlays
 template <typename T> bool impl_IApplicationView3<T>::TryResizeView(Windows::Foundation::Size const & value) const
 {
 	bool success = {};
-	check(shim()->abi_TryResizeView(value, &success));
+	check(shim()->abi_TryResizeView(value, put(success)));
 	return success;
 }
 
@@ -89713,14 +89713,14 @@ template <typename T> void impl_IApplicationView3<T>::SetPreferredMinSize(Window
 template <typename T> bool impl_IApplicationViewFullscreenStatics<T>::TryUnsnapToFullscreen() const
 {
 	bool success = {};
-	check(shim()->abi_TryUnsnapToFullscreen(&success));
+	check(shim()->abi_TryUnsnapToFullscreen(put(success)));
 	return success;
 }
 
 template <typename T> bool impl_IApplicationViewConsolidatedEventArgs<T>::IsUserInitiated() const
 {
 	bool value = {};
-	check(shim()->get_IsUserInitiated(&value));
+	check(shim()->get_IsUserInitiated(put(value)));
 	return value;
 }
 
@@ -89741,7 +89741,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IActivationViewSwit
 template <typename T> bool impl_IActivationViewSwitcher<T>::IsViewPresentedOnActivationVirtualDesktop(int const viewId) const
 {
 	bool value = {};
-	check(shim()->abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &value));
+	check(shim()->abi_IsViewPresentedOnActivationVirtualDesktop(viewId, put(value)));
 	return value;
 }
 
@@ -89779,7 +89779,7 @@ template <typename T> void impl_IInputPaneVisibilityEventArgs<T>::EnsuredFocused
 template <typename T> bool impl_IInputPaneVisibilityEventArgs<T>::EnsuredFocusedElementInView() const
 {
 	bool value = {};
-	check(shim()->get_EnsuredFocusedElementInView(&value));
+	check(shim()->get_EnsuredFocusedElementInView(put(value)));
 	return value;
 }
 
@@ -89827,21 +89827,21 @@ template <typename T> Windows::Foundation::Rect impl_IInputPane<T>::OccludedRect
 template <typename T> bool impl_IInputPane2<T>::TryShow() const
 {
 	bool result = {};
-	check(shim()->abi_TryShow(&result));
+	check(shim()->abi_TryShow(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IInputPane2<T>::TryHide() const
 {
 	bool result = {};
-	check(shim()->abi_TryHide(&result));
+	check(shim()->abi_TryHide(put(result)));
 	return result;
 }
 
 template <typename T> bool impl_IInputPaneControl<T>::Visible() const
 {
 	bool value = {};
-	check(shim()->get_Visible(&value));
+	check(shim()->get_Visible(put(value)));
 	return value;
 }
 
@@ -89881,7 +89881,7 @@ template <typename T> Windows::Foundation::IAsyncAction impl_IProjectionManagerS
 template <typename T> bool impl_IProjectionManagerStatics<T>::ProjectionDisplayAvailable() const
 {
 	bool value = {};
-	check(shim()->get_ProjectionDisplayAvailable(&value));
+	check(shim()->get_ProjectionDisplayAvailable(put(value)));
 	return value;
 }
 
@@ -89947,7 +89947,7 @@ template <typename T> Windows::UI::ViewManagement::UIViewSettings impl_IUIViewSe
 template <typename T> bool impl_IAccessibilitySettings<T>::HighContrast() const
 {
 	bool value = {};
-	check(shim()->get_HighContrast(&value));
+	check(shim()->get_HighContrast(put(value)));
 	return value;
 }
 
@@ -90020,14 +90020,14 @@ template <typename T> unsigned impl_IUISettings<T>::MessageDuration() const
 template <typename T> bool impl_IUISettings<T>::AnimationsEnabled() const
 {
 	bool value = {};
-	check(shim()->get_AnimationsEnabled(&value));
+	check(shim()->get_AnimationsEnabled(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IUISettings<T>::CaretBrowsingEnabled() const
 {
 	bool value = {};
-	check(shim()->get_CaretBrowsingEnabled(&value));
+	check(shim()->get_CaretBrowsingEnabled(put(value)));
 	return value;
 }
 
@@ -90117,14 +90117,14 @@ template <typename T> void impl_IUISettings3<T>::ColorValuesChanged(long long co
 template <typename T> bool impl_IApplicationViewScalingStatics<T>::DisableLayoutScaling() const
 {
 	bool value = {};
-	check(shim()->get_DisableLayoutScaling(&value));
+	check(shim()->get_DisableLayoutScaling(put(value)));
 	return value;
 }
 
 template <typename T> bool impl_IApplicationViewScalingStatics<T>::TrySetDisableLayoutScaling(bool const disableLayoutScaling) const
 {
 	bool success = {};
-	check(shim()->abi_TrySetDisableLayoutScaling(disableLayoutScaling, &success));
+	check(shim()->abi_TrySetDisableLayoutScaling(disableLayoutScaling, put(success)));
 	return success;
 }
 
@@ -90181,7 +90181,7 @@ template <typename T> Windows::UI::WebUI::WebUINavigatedOperation impl_IWebUINav
 template <typename T> bool impl_IWebUIBackgroundTaskInstance<T>::Succeeded() const
 {
 	bool succeeded = {};
-	check(shim()->get_Succeeded(&succeeded));
+	check(shim()->get_Succeeded(put(succeeded)));
 	return succeeded;
 }
 
@@ -90340,7 +90340,7 @@ template <typename T> void impl_IHtmlPrintDocumentSource<T>::BottomMargin(float 
 template <typename T> bool impl_IHtmlPrintDocumentSource<T>::EnableHeaderFooter() const
 {
 	bool value = {};
-	check(shim()->get_EnableHeaderFooter(&value));
+	check(shim()->get_EnableHeaderFooter(put(value)));
 	return value;
 }
 
@@ -90352,7 +90352,7 @@ template <typename T> void impl_IHtmlPrintDocumentSource<T>::EnableHeaderFooter(
 template <typename T> bool impl_IHtmlPrintDocumentSource<T>::ShrinkToFit() const
 {
 	bool value = {};
-	check(shim()->get_ShrinkToFit(&value));
+	check(shim()->get_ShrinkToFit(put(value)));
 	return value;
 }
 
@@ -90383,7 +90383,7 @@ template <typename T> String impl_IHtmlPrintDocumentSource<T>::PageRange() const
 template <typename T> bool impl_IHtmlPrintDocumentSource<T>::TrySetPageRange(StringReference const & strPageRange) const
 {
 	bool pfSuccess = {};
-	check(shim()->abi_TrySetPageRange(get(strPageRange), &pfSuccess));
+	check(shim()->abi_TrySetPageRange(get(strPageRange), put(pfSuccess)));
 	return pfSuccess;
 }
 
@@ -90666,7 +90666,7 @@ template <typename T> Windows::Foundation::IAsyncOperationWithProgress<String, u
 template <typename T> bool impl_IHttpContent<T>::TryComputeLength(unsigned long long & length) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryComputeLength(&length, &succeeded));
+	check(shim()->abi_TryComputeLength(&length, put(succeeded)));
 	return succeeded;
 }
 
@@ -90680,14 +90680,14 @@ template <typename T> Windows::Foundation::IAsyncOperationWithProgress<unsigned 
 template <typename T> bool impl_IHttpCookieManager<T>::SetCookie(Windows::Web::Http::HttpCookie const & cookie) const
 {
 	bool replaced = {};
-	check(shim()->abi_SetCookie(get(cookie), &replaced));
+	check(shim()->abi_SetCookie(get(cookie), put(replaced)));
 	return replaced;
 }
 
 template <typename T> bool impl_IHttpCookieManager<T>::SetCookie(Windows::Web::Http::HttpCookie const & cookie, bool const thirdParty) const
 {
 	bool replaced = {};
-	check(shim()->abi_SetCookieWithThirdParty(get(cookie), thirdParty, &replaced));
+	check(shim()->abi_SetCookieWithThirdParty(get(cookie), thirdParty, put(replaced)));
 	return replaced;
 }
 
@@ -90746,7 +90746,7 @@ template <typename T> void impl_IHttpCookie<T>::Expires(Windows::Foundation::IRe
 template <typename T> bool impl_IHttpCookie<T>::HttpOnly() const
 {
 	bool value = {};
-	check(shim()->get_HttpOnly(&value));
+	check(shim()->get_HttpOnly(put(value)));
 	return value;
 }
 
@@ -90758,7 +90758,7 @@ template <typename T> void impl_IHttpCookie<T>::HttpOnly(bool const value) const
 template <typename T> bool impl_IHttpCookie<T>::Secure() const
 {
 	bool value = {};
-	check(shim()->get_Secure(&value));
+	check(shim()->get_Secure(put(value)));
 	return value;
 }
 
@@ -90963,7 +90963,7 @@ template <typename T> Windows::Web::Http::Headers::HttpResponseHeaderCollection 
 template <typename T> bool impl_IHttpResponseMessage<T>::IsSuccessStatusCode() const
 {
 	bool value = {};
-	check(shim()->get_IsSuccessStatusCode(&value));
+	check(shim()->get_IsSuccessStatusCode(put(value)));
 	return value;
 }
 
@@ -91162,7 +91162,7 @@ template <typename T> void impl_IHttpCacheControl<T>::WriteBehavior(Windows::Web
 template <typename T> bool impl_IHttpBaseProtocolFilter<T>::AllowAutoRedirect() const
 {
 	bool value = {};
-	check(shim()->get_AllowAutoRedirect(&value));
+	check(shim()->get_AllowAutoRedirect(put(value)));
 	return value;
 }
 
@@ -91174,7 +91174,7 @@ template <typename T> void impl_IHttpBaseProtocolFilter<T>::AllowAutoRedirect(bo
 template <typename T> bool impl_IHttpBaseProtocolFilter<T>::AllowUI() const
 {
 	bool value = {};
-	check(shim()->get_AllowUI(&value));
+	check(shim()->get_AllowUI(put(value)));
 	return value;
 }
 
@@ -91186,7 +91186,7 @@ template <typename T> void impl_IHttpBaseProtocolFilter<T>::AllowUI(bool const v
 template <typename T> bool impl_IHttpBaseProtocolFilter<T>::AutomaticDecompression() const
 {
 	bool value = {};
-	check(shim()->get_AutomaticDecompression(&value));
+	check(shim()->get_AutomaticDecompression(put(value)));
 	return value;
 }
 
@@ -91267,7 +91267,7 @@ template <typename T> void impl_IHttpBaseProtocolFilter<T>::ServerCredential(Win
 template <typename T> bool impl_IHttpBaseProtocolFilter<T>::UseProxy() const
 {
 	bool value = {};
-	check(shim()->get_UseProxy(&value));
+	check(shim()->get_UseProxy(put(value)));
 	return value;
 }
 
@@ -91422,7 +91422,7 @@ template <typename T> void impl_IHttpContentHeaderCollection<T>::Append(StringRe
 template <typename T> bool impl_IHttpContentHeaderCollection<T>::TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), put(succeeded)));
 	return succeeded;
 }
 
@@ -91605,7 +91605,7 @@ template <typename T> void impl_IHttpRequestHeaderCollection<T>::Append(StringRe
 template <typename T> bool impl_IHttpRequestHeaderCollection<T>::TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), put(succeeded)));
 	return succeeded;
 }
 
@@ -91707,7 +91707,7 @@ template <typename T> void impl_IHttpResponseHeaderCollection<T>::Append(StringR
 template <typename T> bool impl_IHttpResponseHeaderCollection<T>::TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+	check(shim()->abi_TryAppendWithoutValidation(get(name), get(value), put(succeeded)));
 	return succeeded;
 }
 
@@ -91767,7 +91767,7 @@ template <typename T> void impl_IHttpCacheDirectiveHeaderValueCollection<T>::Par
 template <typename T> bool impl_IHttpCacheDirectiveHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -91781,7 +91781,7 @@ template <typename T> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl
 template <typename T> bool impl_IHttpChallengeHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(challengeHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(challengeHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -91828,7 +91828,7 @@ template <typename T> void impl_IHttpChallengeHeaderValueCollection<T>::ParseAdd
 template <typename T> bool impl_IHttpChallengeHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -91842,7 +91842,7 @@ template <typename T> Windows::Web::Http::Headers::HttpCredentialsHeaderValue im
 template <typename T> bool impl_IHttpCredentialsHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(credentialsHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(credentialsHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -91891,7 +91891,7 @@ template <typename T> Windows::Web::Http::Headers::HttpConnectionOptionHeaderVal
 template <typename T> bool impl_IHttpConnectionOptionHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(connectionOptionHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(connectionOptionHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -91917,7 +91917,7 @@ template <typename T> void impl_IHttpConnectionOptionHeaderValueCollection<T>::P
 template <typename T> bool impl_IHttpConnectionOptionHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -91931,7 +91931,7 @@ template <typename T> Windows::Web::Http::Headers::HttpContentCodingHeaderValue 
 template <typename T> bool impl_IHttpContentCodingHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(contentCodingHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(contentCodingHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -91957,7 +91957,7 @@ template <typename T> void impl_IHttpContentCodingHeaderValueCollection<T>::Pars
 template <typename T> bool impl_IHttpContentCodingHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -91971,7 +91971,7 @@ template <typename T> Windows::Web::Http::Headers::HttpContentDispositionHeaderV
 template <typename T> bool impl_IHttpContentDispositionHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(contentDispositionHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(contentDispositionHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92059,7 +92059,7 @@ template <typename T> Windows::Web::Http::Headers::HttpContentRangeHeaderValue i
 template <typename T> bool impl_IHttpContentRangeHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(contentRangeHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(contentRangeHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92127,7 +92127,7 @@ template <typename T> Windows::Web::Http::Headers::HttpCookiePairHeaderValue imp
 template <typename T> bool impl_IHttpCookiePairHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(cookiePairHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(cookiePairHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92172,7 +92172,7 @@ template <typename T> void impl_IHttpCookiePairHeaderValueCollection<T>::ParseAd
 template <typename T> bool impl_IHttpCookiePairHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92186,7 +92186,7 @@ template <typename T> Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue im
 template <typename T> bool impl_IHttpDateOrDeltaHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(dateOrDeltaHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(dateOrDeltaHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92214,7 +92214,7 @@ template <typename T> Windows::Web::Http::Headers::HttpExpectationHeaderValue im
 template <typename T> bool impl_IHttpExpectationHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(expectationHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(expectationHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92266,7 +92266,7 @@ template <typename T> void impl_IHttpExpectationHeaderValueCollection<T>::ParseA
 template <typename T> bool impl_IHttpExpectationHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92278,7 +92278,7 @@ template <typename T> void impl_IHttpLanguageHeaderValueCollection<T>::ParseAdd(
 template <typename T> bool impl_IHttpLanguageHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92292,7 +92292,7 @@ template <typename T> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityH
 template <typename T> bool impl_IHttpLanguageRangeWithQualityHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(languageRangeWithQualityHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(languageRangeWithQualityHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92332,7 +92332,7 @@ template <typename T> void impl_IHttpLanguageRangeWithQualityHeaderValueCollecti
 template <typename T> bool impl_IHttpLanguageRangeWithQualityHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92346,7 +92346,7 @@ template <typename T> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl
 template <typename T> bool impl_IHttpMediaTypeHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(mediaTypeHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(mediaTypeHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92398,7 +92398,7 @@ template <typename T> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeade
 template <typename T> bool impl_IHttpMediaTypeWithQualityHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(mediaTypeWithQualityHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(mediaTypeWithQualityHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92467,7 +92467,7 @@ template <typename T> void impl_IHttpMediaTypeWithQualityHeaderValueCollection<T
 template <typename T> bool impl_IHttpMediaTypeWithQualityHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92479,7 +92479,7 @@ template <typename T> void impl_IHttpMethodHeaderValueCollection<T>::ParseAdd(St
 template <typename T> bool impl_IHttpMethodHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92493,7 +92493,7 @@ template <typename T> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl
 template <typename T> bool impl_IHttpNameValueHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(nameValueHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(nameValueHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92540,7 +92540,7 @@ template <typename T> Windows::Web::Http::Headers::HttpProductHeaderValue impl_I
 template <typename T> bool impl_IHttpProductHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(productHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(productHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92582,7 +92582,7 @@ template <typename T> Windows::Web::Http::Headers::HttpProductInfoHeaderValue im
 template <typename T> bool impl_IHttpProductInfoHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(productInfoHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(productInfoHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92622,7 +92622,7 @@ template <typename T> void impl_IHttpProductInfoHeaderValueCollection<T>::ParseA
 template <typename T> bool impl_IHttpProductInfoHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92636,7 +92636,7 @@ template <typename T> Windows::Web::Http::Headers::HttpContentCodingWithQualityH
 template <typename T> bool impl_IHttpContentCodingWithQualityHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(contentCodingWithQualityHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(contentCodingWithQualityHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92676,7 +92676,7 @@ template <typename T> void impl_IHttpContentCodingWithQualityHeaderValueCollecti
 template <typename T> bool impl_IHttpContentCodingWithQualityHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -92690,7 +92690,7 @@ template <typename T> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue
 template <typename T> bool impl_IHttpTransferCodingHeaderValueStatics<T>::TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParse(get(input), put(transferCodingHeaderValue), &succeeded));
+	check(shim()->abi_TryParse(get(input), put(transferCodingHeaderValue), put(succeeded)));
 	return succeeded;
 }
 
@@ -92723,7 +92723,7 @@ template <typename T> void impl_IHttpTransferCodingHeaderValueCollection<T>::Par
 template <typename T> bool impl_IHttpTransferCodingHeaderValueCollection<T>::TryParseAdd(StringReference const & input) const
 {
 	bool succeeded = {};
-	check(shim()->abi_TryParseAdd(get(input), &succeeded));
+	check(shim()->abi_TryParseAdd(get(input), put(succeeded)));
 	return succeeded;
 }
 
@@ -93582,7 +93582,7 @@ template <typename T> void impl_ISyndicationClient<T>::Timeout(unsigned const va
 template <typename T> bool impl_ISyndicationClient<T>::BypassCacheOnRetrieve() const
 {
 	bool value = {};
-	check(shim()->get_BypassCacheOnRetrieve(&value));
+	check(shim()->get_BypassCacheOnRetrieve(put(value)));
 	return value;
 }
 
