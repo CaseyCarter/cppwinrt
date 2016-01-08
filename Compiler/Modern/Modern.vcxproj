@@ -101,10 +101,8 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
+ 
+ </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -120,10 +118,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
+    </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -143,10 +138,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
+    </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -166,10 +158,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
+    </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\CreateComponent.cpp" />
     <ClCompile Include="..\Source\CreateConsole.cpp" />
