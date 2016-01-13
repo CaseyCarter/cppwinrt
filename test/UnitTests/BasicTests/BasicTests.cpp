@@ -8,17 +8,16 @@ using namespace winrt;
 
 namespace UnitTests
 {		
-    TEST_CLASS(UnitTest1)
+    TEST_CLASS(BasicTests)
     {
     public:
 
-        TEST_METHOD(TestMethod1)
+        TEST_METHOD(InstantiateUriType)
         {
             try
             {
                 using namespace Windows::Foundation;
                 Uri uri(L"http://kennykerr.ca/articles");
-                assert(5 == 6);
             }
             catch (Exception /*ex*/)
             {
