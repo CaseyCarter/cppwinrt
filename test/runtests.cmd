@@ -12,6 +12,7 @@ FOR /r %%f IN ("*.exe") DO (
   )
 )
 
+echo.
 echo ==============================================
 echo DETECTED ^>^> !FINALERRORLEVEL! ^<^< TEST FAILURES
 echo ==============================================
