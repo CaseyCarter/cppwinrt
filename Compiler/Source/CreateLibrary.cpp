@@ -1,7 +1,6 @@
 #include "Precompiled.h"
 #include "Path.h"
 #include "Database.h"
-#include "Idl.h"
 #include "Strings.h"
 #include "Output.h"
 #include "Writers.h"
@@ -9,16 +8,6 @@
 #include "Year.h"
 
 namespace Modern {
-
-static char const * ExcludedFiles [] =
-{
-    // TODO: find way to automatically skip these for future-proofing
-    "Windows.Graphics.Display.Interop.idl",
-    "Windows.Foundation.CustomAttributes.idl",
-    "Windows.UI.Xaml.CustomAttributes.idl",
-    "Windows.ApplicationModel.contactstemp.idl",
-    "windows.web.http.diagnostics.idl",
-};
 
 static void WriteLibrary();
 
@@ -30,47 +19,6 @@ bool StartsWithNoCase(char const * target, char const (&match)[Count]) noexcept
 
 void CreateLibrary()
 {
-    Write(printf, Strings::LibraryReading);
-
-    Path::SetCurrentDirectory(Database::Sdk());
-
-    bool const noxaml = Options::NoXaml == (Settings::Options & Options::NoXaml);
-
-    Database::Includes([&]
-    {
-        Path::FindFiles(Settings::Include + "*.idl", [&](char const * filename)
-        {
-            for (char const * exclude : ExcludedFiles)
-            {
-                if (0 == _stricmp(exclude, filename))
-                {
-                    return;
-                }
-            }
-
-            if (noxaml)
-            {
-                if (StartsWithNoCase(filename, "Windows.UI.Xaml"))
-                {
-                    return;
-                }
-            }
-
-            if (int const sourceId = Database::AddSource(filename, true))
-            {
-                Idl::Parse(sourceId, filename);
-            }
-        });
-    });
-
-    Database::GetHeaders([&](char const * filename)
-    {
-        Idl::ParseHeader(filename);
-    });
-
-    Write(printf, Strings::LibraryProjecting);
-    Database::Project();
-
     Write(printf, Strings::LibraryWriting);
     WriteLibrary();
 }
@@ -129,7 +77,7 @@ static void WritePostHeader()
 
 static void WriteLibrary()
 {
-    std::string path = Database::Out();
+    std::string path = Settings::OutPath;
     Path::Append(path, "winrt");
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
@@ -172,6 +120,9 @@ static void WriteLibrary()
     WriteOverrides(extend);
     WriteComposable(extend);
 
+    //// Once xbox version ships, use a more flexible solution
+    // If CoreWindow classes are present in the DB, include overridable classes
+    // like IFrameworkViewT and IFrameworkViewSourceT
     if (Database::IncludesCoreWindow())
     {
         Write(extend, Strings::ApplicationModel);

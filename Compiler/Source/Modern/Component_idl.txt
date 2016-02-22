@@ -1,6 +1,0 @@
-import "inspectable.idl";
-import "eventtoken.idl";
-
-namespace %
-{
-}

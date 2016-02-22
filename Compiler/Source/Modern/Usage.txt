@@ -1,21 +1,10 @@
 
-Commands:
+Usage:
 
- library     Create or update language projection
- component   Create or update component
- console     Create console app
- desktop     Create desktop app
- universal   Create universal app
+ <sqllite database file> <Options>
 
 Options:
 
- -include <namespaces>   Include specific namespaces in library
- -library <folder>       Location of language projection
- -name    <project>      App or component name
  -out     <folder>       Write output in specific folder
- -sdk     <folder>       Use specific Windows SDK
- -noexcept               Produce library or project without exceptions
- -db                     Save projection database
  -nologo                 Suppress the display of the copyright banner
- -debug                  Include additional compile-time consistency checks
- -depends                Show sources as they are compiled
+ -time                   Show elapsed time

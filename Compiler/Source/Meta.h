@@ -5,51 +5,41 @@
 
 namespace Modern {
 
-enum class Command
-{
-    None,
-    Library,
-    Component,
-    Console,
-    Desktop,
-    Store
-};
-
 enum class Options
 {
     None,
 
-    Include  = 0x0001,
-    Library  = 0x0002,
-    Name     = 0x0004,
-    Out      = 0x0008,
-
-    Sdk      = 0x0010,
-    Database = 0x0020,
-    NoLogo   = 0x0040,
-    Time     = 0x0080,
-
-    Debug    = 0x0100,
-    Depends  = 0x0400,
-
-	NoXaml	 = 0x1000,
+    Out = 0x0001,
+    NoLogo = 0x0002,
+    Time = 0x0004,
+    Debug = 0x0008,
+    Module = 0x0010
 };
 
 DEFINE_ENUM_FLAG_OPERATORS(Options)
 
-enum class ParameterDirection
+enum ParameterAttribute
 {
-    In     = 0,
-    Out    = 1,
-    Return = 2,
+    // None, In and Out should match the corresponding values:
+    // None = System.Reflection.ParameterAttributes.None
+    // In = System.Reflection.ParameterAttributes.In
+    // Out = System.Reflection.ParameterAttributes.Out
+
+    None = 0,
+    In = 1,
+    Out = 2,
+    Return = 65536,
+    ByRef = 131072,
+    Array = 262144,
+    Const = 524288
 };
 
 enum class TypeCategory
 {
     Unknown = 0,
 
-    // TODO: why are these bit flags? I don't think they need to be.
-
+	// TODO: why are these bit flags? I don't think they need to be.
+	
     Value       = 0x0001, // 1
     String      = 0x0002, // 2
     Enumeration = 0x0004, // 4
@@ -72,18 +62,18 @@ struct Parameter
     std::string Name;
     std::string Type;
     std::string ClassType;
-    ParameterDirection Direction;
+    ParameterAttribute Attribute;
     TypeCategory Category;
 
     Parameter(char const * name,
               char const * type,
               char const * classType,
-              ParameterDirection direction,
+              ParameterAttribute attribute,
               TypeCategory category) :
         Name(name),
         Type(type),
         ClassType(classType ? classType : ""),
-        Direction(direction),
+        Attribute(attribute),
         Category(category)
     {}
 
@@ -104,7 +94,7 @@ inline void swap(Parameter & left, Parameter & right)
 {
     swap(left.Name, right.Name);
     swap(left.Type, right.Type);
-    std::swap(left.Direction, right.Direction);
+    std::swap(left.Attribute, right.Attribute);
     std::swap(left.Category, right.Category);
 }
 
@@ -112,8 +102,10 @@ struct ParameterInfo
 {
     std::vector<Parameter> Parameters;
     unsigned StringCount = 0;
-    bool HasReturnType = false;
+    int HasReturnType = false;
     bool HasDelegate = false;
+    // TODO: Remove once support for arrays is added
+    bool HasArrayParam = false;
 
     ParameterInfo() = default;
     ParameterInfo(ParameterInfo const &) = delete;
@@ -127,6 +119,8 @@ struct ParameterInfo
         StringCount = 0;
         HasReturnType = false;
         HasDelegate = false;
+        // TODO: Remove once support for arrays is added
+        HasArrayParam = false;
     }
 
     char const * ReturnType() const noexcept

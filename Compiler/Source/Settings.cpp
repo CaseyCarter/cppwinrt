@@ -1,10 +1,15 @@
 #include "Precompiled.h"
+#include "SQLite.h"
 #include "Settings.h"
 
 namespace Modern { namespace Settings {
 
-std::string Include;
+std::string OutPath;
+std::string DatabasePath;
+std::string LibraryName;
+std::string ComponentName;
 Modern::Options Options;
+SQLite::Connection Connection;
 
 std::string Namespace;
 

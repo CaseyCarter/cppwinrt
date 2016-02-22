@@ -18,9 +18,4 @@ void WriteInterfaceDefinitions(Output & out);
 void WriteOverrides(Output & output);
 void WriteComposable(Output & output);
 
-void WriteComponentHeader(Output & out);
-void WriteComponentSource(Output & out);
-void WriteComponentClassHeader(Output & output);
-void WriteComponentClassSource(Output & output);
-
 }

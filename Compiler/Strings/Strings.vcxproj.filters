@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{757b169c-b02f-4fa3-be50-7d04c831e52b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{d10b5e6a-20d7-4982-a6e4-8dc3ff27db9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\StringsMain.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Modern\ApplicationModel.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_accessors.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_activation.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_await_consume.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_collections_consume.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_collections_produce.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_comptr.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_dependencies.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_error.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_generic.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_handle.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_implements.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_lock.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_meta.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_modern.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_reference.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_string.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_weak.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\base_windows.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryAbiInterfaceInspectableOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryAbiInterfaceUnknownOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassDefaultConstructorDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassDefaultConstructorDefinition.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassOpenType.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassStaticOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryClassUsingMethod.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryDelegateMethodDefinitionBodyNoReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryDelegateMethodDefinitionBodyReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryDelegateMethodDefinitionClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryForwardArgument.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryGenericInterface.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceDefinitionClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceDefinitionMacro.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceImplOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceInspectableOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceRequires.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryInterfaceUnknownOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryMethodDefinitionOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDeclarationClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDeclarationOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionBodyNoReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionBodyReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionBodyReturnTypeOpenDefault.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionNoReturnTypeClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryNonStaticMethodDefinitionReturnTypeClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryRequiredMethodDefinitionClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryStaticMethodDeclarationClose.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryStaticMethodDeclarationOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryStaticMethodDefinitionBodyNoReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryStaticMethodDefinitionBodyReturnTypeOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\LibraryStaticMethodDefinitionOpen.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\Logo.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\PragmaOnce.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteAbiClassDefault.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteAbiInterfaceMethod.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteAbiInterfaceMethodDeprecated.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassComposable.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassConstructorDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassConstructorDefinition.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassConstructorDefinitionComposable.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassImplementation.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteClassImplementationStatic.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteComposableConstructor.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteDelegateFunction.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteDelegateInternal.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteEnumeration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteEnumerationFlag.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteEnumerator.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteEnumeratorFlag.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteImplementationInterface.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteOverrideDefault.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteOverrideTemplate.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteOverrideVirtual.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteStructure.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteStructureDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Modern\WriteStructureField.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Source\Modern\ConsoleHeader.txt">
+      <Filter>Assets</Filter>
+    </Text>
+    <Text Include="..\Source\Modern\LibraryWriting.txt">
+      <Filter>Assets</Filter>
+    </Text>
+    <Text Include="..\Source\Modern\OutputError.txt">
+      <Filter>Assets</Filter>
+    </Text>
+    <Text Include="..\Source\Modern\SQLiteError.txt">
+      <Filter>Assets</Filter>
+    </Text>
+    <Text Include="..\Source\Modern\TimeCompleted.txt">
+      <Filter>Assets</Filter>
+    </Text>
+    <Text Include="..\Source\Modern\Usage.txt">
+      <Filter>Assets</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Source\Modern\DatabaseGetAbiClassDeclarations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetBases.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetCategory.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetClassConstructorsPublic.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetClasses.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetClassesComposable.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetClassImplementations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetClassOverrides.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetComposableConstructors.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetConstructorMethods.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetDeclarations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetDelegates.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetEnumerations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetEnumerators.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetEnumeratorsFlag.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetFields.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetGenericInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetInterfaceDeclarations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetInterfaceDefinitions.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetInterfaceMethods.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetInterfaceNames.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetOverrides.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetParameters.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetRequiredClassInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetRequiredComposableInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetRequiredInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetStaticInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetStructures.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetUsingMethodsForClass.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseGetUsingMethodsForInterface.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseIncludesCoreWindow.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\Source\Modern\DatabaseStructureDepends.sql">
+      <Filter>Assets</Filter>
+    </None>
+  </ItemGroup>
+</Project>

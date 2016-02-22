@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\CreateLibrary.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Database.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ModernMain.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Precompiled.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Settings.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\sqlite3.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Strings.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Writers.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{ab3c5ed4-5d63-4aba-b7cd-5cc38793f2e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4aa6dfd7-a10f-4c1f-950d-25a5b538d32b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Arguments.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Database.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Debug.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\FileView.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\FormatMessage.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\handle.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Meta.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Output.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Path.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Precompiled.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Settings.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SQLite.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\sqlite3.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Strings.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ThrowWindowsError.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Timer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Version.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\write.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Writers.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Year.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

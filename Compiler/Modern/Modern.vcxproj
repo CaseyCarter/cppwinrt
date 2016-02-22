@@ -101,9 +101,6 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -120,9 +117,6 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -143,9 +137,6 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -166,18 +157,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TargetDir)Modern.exe C:\temp\Modern4.exe</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\CreateComponent.cpp" />
-    <ClCompile Include="..\Source\CreateConsole.cpp" />
-    <ClCompile Include="..\Source\CreateDesktop.cpp" />
     <ClCompile Include="..\Source\CreateLibrary.cpp" />
-    <ClCompile Include="..\Source\CreateStore.cpp" />
     <ClCompile Include="..\Source\Database.cpp" />
-    <ClCompile Include="..\Source\Idl.cpp" />
     <ClCompile Include="..\Source\ModernMain.cpp" />
     <ClCompile Include="..\Source\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -198,6 +181,28 @@
     </ClCompile>
     <ClCompile Include="..\Source\Strings.cpp" />
     <ClCompile Include="..\Source\Writers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Arguments.h" />
+    <ClInclude Include="..\Source\Database.h" />
+    <ClInclude Include="..\Source\Debug.h" />
+    <ClInclude Include="..\Source\FileView.h" />
+    <ClInclude Include="..\Source\FormatMessage.h" />
+    <ClInclude Include="..\Source\handle.h" />
+    <ClInclude Include="..\Source\Meta.h" />
+    <ClInclude Include="..\Source\Output.h" />
+    <ClInclude Include="..\Source\Path.h" />
+    <ClInclude Include="..\Source\Precompiled.h" />
+    <ClInclude Include="..\Source\Settings.h" />
+    <ClInclude Include="..\Source\SQLite.h" />
+    <ClInclude Include="..\Source\sqlite3.h" />
+    <ClInclude Include="..\Source\Strings.h" />
+    <ClInclude Include="..\Source\ThrowWindowsError.h" />
+    <ClInclude Include="..\Source\Timer.h" />
+    <ClInclude Include="..\Source\Version.h" />
+    <ClInclude Include="..\Source\write.h" />
+    <ClInclude Include="..\Source\Writers.h" />
+    <ClInclude Include="..\Source\Year.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

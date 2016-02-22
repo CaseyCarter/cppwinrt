@@ -4,8 +4,12 @@
 
 namespace Modern { namespace Settings {
 
-extern std::string Include;
+extern std::string OutPath;
+extern std::string DatabasePath;
+extern std::string LibraryName;
+extern std::string ComponentName;
 extern Modern::Options Options;
+extern SQLite::Connection Connection;
 
 extern std::string Namespace;
 

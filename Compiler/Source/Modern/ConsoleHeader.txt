@@ -1,4 +1,3 @@
 
-Modern v%.% - http://moderncpp.com
-Modern C++ for the Windows Runtime
-Copyright (c) % Kenny Kerr
+C++ for the Windows Runtime v%.%
+Copyright (c) % Microsoft
