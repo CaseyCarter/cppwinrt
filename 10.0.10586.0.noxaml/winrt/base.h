@@ -39,9 +39,9 @@ extern "C"
 template <typename ... Args>
 void WINRT_TRACE(char const * const message, Args ... args) noexcept
 {
-    char buffer[1024] = {};
-    sprintf_s(buffer, message, args ...);
-    OutputDebugStringA(buffer);
+	char buffer[1024] = {};
+	sprintf_s(buffer, message, args ...);
+	OutputDebugStringA(buffer);
 }
 
 #else
@@ -78,10 +78,10 @@ struct accessors
 		object = value;
 	}
 
-    static void copy_to(T const & object, T & value) noexcept
-    {
-        value = object;
-    }
+	static void copy_to(T const & object, T & value) noexcept
+	{
+		value = object;
+	}
 
 	static T detach(T & object) noexcept
 	{
@@ -152,7 +152,7 @@ void copy_from(T & object, V && value)
 template <typename T, typename V>
 void copy_to(T const & object, V & value)
 {
-    impl::accessors<T>::copy_to(object, value);
+	impl::accessors<T>::copy_to(object, value);
 }
 
 template <typename T>
@@ -374,18 +374,18 @@ struct accessors<com_ptr<T>>
 		}
 	}
 
-    static void copy_to(com_ptr<T> const & object, T * & value)
-    {
-        if (object)
-        {
-            value = get(object);
-            value->AddRef();
-        }
-        else
-        {
-            value = nullptr;
-        }
-    }
+	static void copy_to(com_ptr<T> const & object, T * & value)
+	{
+		if (object)
+		{
+			value = get(object);
+			value->AddRef();
+		}
+		else
+		{
+			value = nullptr;
+		}
+	}
 
 	static T * detach(com_ptr<T> & object) noexcept
 	{
@@ -613,22 +613,22 @@ struct bstr_traits : handle_traits<BSTR>
 template <>
 struct accessors<handle<bstr_traits>>
 {
-    static wchar_t const * get(handle<bstr_traits> const & object) noexcept
-    {
-        if (object)
-        {
-            return impl_get(object);
-        }
-        else
-        {
-            return L"";
-        }
-    }
+	static wchar_t const * get(handle<bstr_traits> const & object) noexcept
+	{
+		if (object)
+		{
+			return impl_get(object);
+		}
+		else
+		{
+			return L"";
+		}
+	}
 
-    static BSTR * put(handle<bstr_traits> & object) noexcept
-    {
-        return impl_put(object);
-    }
+	static BSTR * put(handle<bstr_traits> & object) noexcept
+	{
+		return impl_put(object);
+	}
 };
 
 inline void trim_error(std::string & message) noexcept
@@ -661,25 +661,25 @@ inline std::string format_message(HRESULT const result)
 
 inline std::string restricted_message(HRESULT const result)
 {
-    com_ptr<IRestrictedErrorInfo> info;
+	com_ptr<IRestrictedErrorInfo> info;
 
-    if (S_OK == GetRestrictedErrorInfo(put(info)))
-    {
-        handle<bstr_traits> description;
-        handle<bstr_traits> unused1;
-        handle<bstr_traits> unused2;
-        HRESULT unused3 = S_OK;
+	if (S_OK == GetRestrictedErrorInfo(put(info)))
+	{
+		handle<bstr_traits> description;
+		handle<bstr_traits> unused1;
+		handle<bstr_traits> unused2;
+		HRESULT unused3 = S_OK;
 
-        if (S_OK == info->GetErrorDetails(put(unused1), &unused3, put(description), put(unused2)))
-        {
-            std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
-            std::string message = convert.to_bytes(get(description));
-            trim_error(message);
-            return message;
-        }
-    }
+		if (S_OK == info->GetErrorDetails(put(unused1), &unused3, put(description), put(unused2)))
+		{
+			std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
+			std::string message = convert.to_bytes(get(description));
+			trim_error(message);
+			return message;
+		}
+	}
 
-    return format_message(result);
+	return format_message(result);
 }
 
 struct hresult_category : std::error_category
@@ -715,7 +715,7 @@ inline impl::hresult_category const & hresult_category() noexcept
 
 struct hresult_error :
 	impl::error_info,
-    std::system_error
+	std::system_error
 {
 	explicit hresult_error(HRESULT const value) : 
 		std::system_error(value, hresult_category())
@@ -1671,18 +1671,18 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		}
 	}
 
-    static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
-    {
-        if (object)
-        {
-            value = get(object);
-            value->AddRef();
-        }
-        else
-        {
-            value = nullptr;
-        }
-    }
+	static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
+	{
+		if (object)
+		{
+			value = get(object);
+			value->AddRef();
+		}
+		else
+		{
+			value = nullptr;
+		}
+	}
 
 	static auto detach(T & object) noexcept
 	{
