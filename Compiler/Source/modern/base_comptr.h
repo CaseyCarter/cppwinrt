@@ -1,6 +1,17 @@
 
 namespace winrt {
 
+namespace impl {
+
+template <typename T>
+class no_ref : public T
+{
+	unsigned long __stdcall AddRef();
+	unsigned long __stdcall Release();
+};
+
+}
+
 template <typename T>
 struct com_ptr
 {
@@ -193,18 +204,18 @@ struct accessors<com_ptr<T>>
 		}
 	}
 
-    static void copy_to(com_ptr<T> const & object, T * & value)
-    {
-        if (object)
-        {
-            value = get(object);
-            value->AddRef();
-        }
-        else
-        {
-            value = nullptr;
-        }
-    }
+	static void copy_to(com_ptr<T> const & object, T * & value)
+	{
+		if (object)
+		{
+			value = get(object);
+			value->AddRef();
+		}
+		else
+		{
+			value = nullptr;
+		}
+	}
 
 	static T * detach(com_ptr<T> & object) noexcept
 	{

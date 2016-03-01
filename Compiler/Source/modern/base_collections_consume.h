@@ -64,14 +64,14 @@ struct IVectorChangedEventArgs :
 template <typename T> CollectionChange impl_IVectorChangedEventArgs<T>::CollectionChange() const
 {
 	Collections::CollectionChange value = {};
-	check(shim()->get_CollectionChange(&value));
+	check_hresult(shim()->get_CollectionChange(&value));
 	return value;
 }
 
 template <typename T> unsigned impl_IVectorChangedEventArgs<T>::Index() const
 {
 	unsigned index = 0;
-	check(shim()->get_Index(&index));
+	check_hresult(shim()->get_Index(&index));
 	return index;
 }
 
@@ -223,21 +223,21 @@ public:
 	T Current() const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->get_Current(put(result)));
+		check_hresult(shim()->get_Current(put(result)));
 		return result;
 	}
 
 	bool HasCurrent() const
 	{
 		bool temp = false;
-		check(shim()->get_HasCurrent(&temp));
+		check_hresult(shim()->get_HasCurrent(&temp));
 		return temp;
 	}
 
 	bool MoveNext() const
 	{
 		bool temp = false;
-		check(shim()->abi_MoveNext(&temp));
+		check_hresult(shim()->abi_MoveNext(&temp));
 		return temp;
 	}
 
@@ -267,7 +267,7 @@ public:
 	IIterator<T> First() const
 	{
 		IIterator<T> iterator;
-		check(shim()->abi_First(put(iterator)));
+		check_hresult(shim()->abi_First(put(iterator)));
 		return iterator;
 	}
 };
@@ -282,14 +282,14 @@ public:
 	K Key() const
 	{
 		K result = impl::argument<K>::empty();
-		check(shim()->get_Key(put(result)));
+		check_hresult(shim()->get_Key(put(result)));
 		return result;
 	}
 
 	V Value() const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->get_Value(put(result)));
+		check_hresult(shim()->get_Value(put(result)));
 		return result;
 	}
 };
@@ -304,21 +304,21 @@ public:
 	T GetAt(unsigned const index) const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->abi_GetAt(index, put(result)));
+		check_hresult(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
 		bool found = false;
-		check(shim()->abi_IndexOf(get(value), &index, &found));
+		check_hresult(shim()->abi_IndexOf(get(value), &index, &found));
 		return found;
 	}
 };
@@ -333,59 +333,59 @@ public:
 	T GetAt(unsigned const index) const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->abi_GetAt(index, put(result)));
+		check_hresult(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	IVectorView<T> GetView() const
 	{
 		IVectorView<T> view;
-		check(shim()->abi_GetView(put(view)));
+		check_hresult(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
 		bool found = false;
-		check(shim()->abi_IndexOf(get(value), &index, &found));
+		check_hresult(shim()->abi_IndexOf(get(value), &index, &found));
 		return found;
 	}
 
 	void SetAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_SetAt(index, get(value)));
+		check_hresult(shim()->abi_SetAt(index, get(value)));
 	}
 
 	void InsertAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_InsertAt(index, get(value)));
+		check_hresult(shim()->abi_InsertAt(index, get(value)));
 	}
 
 	void RemoveAt(unsigned const index) const
 	{
-		check(shim()->abi_RemoveAt(index));
+		check_hresult(shim()->abi_RemoveAt(index));
 	}
 
 	void Append(T const & value) const
 	{
-		check(shim()->abi_Append(get(value)));
+		check_hresult(shim()->abi_Append(get(value)));
 	}
 
 	void RemoveAtEnd() const
 	{
-		check(shim()->abi_RemoveAtEnd());
+		check_hresult(shim()->abi_RemoveAtEnd());
 	}
 
 	void Clear() const
 	{
-		check(shim()->abi_Clear());
+		check_hresult(shim()->abi_Clear());
 	}
 };
 
@@ -399,27 +399,27 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(get(key), put(result)));
+		check_hresult(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(get(key), &found));
+		check_hresult(shim()->abi_HasKey(get(key), &found));
 		return found;
 	}
 
 	void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
 	{
-		check(shim()->abi_Split(put(firstPartition), put(secondPartition)));
+		check_hresult(shim()->abi_Split(put(firstPartition), put(secondPartition)));
 	}
 };
 
@@ -433,46 +433,46 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(get(key), put(result)));
+		check_hresult(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(get(key), &found));
+		check_hresult(shim()->abi_HasKey(get(key), &found));
 		return found;
 	}
 
 	IMapView<K, V> GetView() const
 	{
 		IMapView<K, V> view;
-		check(shim()->abi_GetView(put(view)));
+		check_hresult(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool Insert(K const & key, V const & value) const
 	{
 		bool replaced = false;
-		check(shim()->abi_Insert(get(key), get(value), &replaced));
+		check_hresult(shim()->abi_Insert(get(key), get(value), &replaced));
 		return replaced;
 	}
 
 	void Remove(K const & key) const
 	{
-		check(shim()->abi_Remove(get(key)));
+		check_hresult(shim()->abi_Remove(get(key)));
 	}
 
 	void Clear() const
 	{
-		check(shim()->abi_Clear());
+		check_hresult(shim()->abi_Clear());
 	}
 };
 
@@ -486,14 +486,14 @@ public:
 	CollectionChange CollectionChange() const
 	{
 		CollectionChange value = {};
-		check(shim()->get_CollectionChange(&value));
+		check_hresult(shim()->get_CollectionChange(&value));
 		return value;
 	}
 
 	K Key() const
 	{
 		K result = impl::argument<K>::empty();
-		check(shim()->get_Key(put(result)));
+		check_hresult(shim()->get_Key(put(result)));
 		return result;
 	}
 };
@@ -507,7 +507,7 @@ public:
 
 	void Invoke(IObservableMap<K, V> const & sender, IMapChangedEventArgs<K> const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -521,7 +521,7 @@ public:
 	long long MapChanged(IMapChangedEventHandler<K, V> const & handler) const
 	{
 		long long cookie = {};
-		check(shim()->add_MapChanged(get(handler), &cookie));
+		check_hresult(shim()->add_MapChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -532,7 +532,7 @@ public:
 
 	void MapChanged(long long const cookie) const
 	{
-		check(shim()->remove_MapChanged(cookie));
+		check_hresult(shim()->remove_MapChanged(cookie));
 	}
 };
 
@@ -545,7 +545,7 @@ public:
 
 	void Invoke(IObservableVector<T> const & sender, IVectorChangedEventArgs const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -559,7 +559,7 @@ public:
 	long long VectorChanged(IVectorChangedEventHandler<T> const & handler) const
 	{
 		long long cookie = {};
-		check(shim()->add_VectorChanged(get(handler), &cookie));
+		check_hresult(shim()->add_VectorChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -570,7 +570,7 @@ public:
 
 	void VectorChanged(long long const cookie) const
 	{
-		check(shim()->remove_VectorChanged(cookie));
+		check_hresult(shim()->remove_VectorChanged(cookie));
 	}
 };
 

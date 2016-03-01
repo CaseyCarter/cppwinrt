@@ -40,13 +40,6 @@ struct traits
 	using abi = T;
 };
 
-template <typename T>
-class no_ref : public T
-{
-	unsigned long __stdcall AddRef();
-	unsigned long __stdcall Release();
-};
-
 template <typename To>
 struct lease : To
 {

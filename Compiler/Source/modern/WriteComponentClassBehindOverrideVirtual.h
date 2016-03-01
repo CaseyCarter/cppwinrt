@@ -1,8 +1,9 @@
 
-    virtual HRESULT __stdcall %(%) noexcept override
-    {
-        return call([&]
-        {
-            %static_cast<T *>(this)->%(%);
-        });
-    }
+	virtual HRESULT __stdcall %(%) noexcept override
+	{
+		try
+		{
+			%static_cast<T *>(this)->%(%);
+		}
+		catch (...) { return impl::to_hresult(); }
+	}

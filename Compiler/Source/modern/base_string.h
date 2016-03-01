@@ -81,21 +81,21 @@ struct String
 	bool EmbeddedNull() const
 	{
 		BOOL result = 0;
-		check(WindowsStringHasEmbeddedNull(get(m_handle), &result));
+		check_hresult(WindowsStringHasEmbeddedNull(get(m_handle), &result));
 		return 0 != result;
 	}
 
 	String Substring(unsigned const startIndex)
 	{
 		String result;
-		check(WindowsSubstring(get(m_handle), startIndex, put(result.m_handle)));
+		check_hresult(WindowsSubstring(get(m_handle), startIndex, put(result.m_handle)));
 		return result;
 	}
 
 	String Substring(unsigned const startIndex, unsigned const length)
 	{
 		String result;
-		check(WindowsSubstringWithSpecifiedLength(get(m_handle), startIndex, length, put(result.m_handle)));
+		check_hresult(WindowsSubstringWithSpecifiedLength(get(m_handle), startIndex, length, put(result.m_handle)));
 		return result;
 	}
 
@@ -139,14 +139,14 @@ private:
 	static HSTRING duplicate_string(HSTRING other)
 	{
 		HSTRING result = nullptr;
-		check(WindowsDuplicateString(other, &result));
+		check_hresult(WindowsDuplicateString(other, &result));
 		return result;
 	}
 
 	static HSTRING create_string(wchar_t const * value, unsigned const length)
 	{
 		HSTRING result = nullptr;
-		check(WindowsCreateString(value, length, &result));
+		check_hresult(WindowsCreateString(value, length, &result));
 		return result;
 	}
 
@@ -179,13 +179,13 @@ struct accessors<String>
 	static void copy_from(String & object, HSTRING value)
 	{
 		object = nullptr;
-		check(WindowsDuplicateString(value, put(object)));
+		check_hresult(WindowsDuplicateString(value, put(object)));
 	}
 
-    static void copy_to(String const & object, HSTRING & value)
-    {
-        check(WindowsDuplicateString(get(object), &value));
-    }
+	static void copy_to(String const & object, HSTRING & value)
+	{
+		check_hresult(WindowsDuplicateString(get(object), &value));
+	}
 
 	static HSTRING detach(String & object) noexcept
 	{
@@ -200,7 +200,7 @@ namespace winrt {
 inline bool operator==(String const & left, String const & right)
 {
 	int result = 0;
-	check(WindowsCompareStringOrdinal(get(left), get(right), &result));
+	check_hresult(WindowsCompareStringOrdinal(get(left), get(right), &result));
 	return result == 0;
 }
 
@@ -212,7 +212,7 @@ inline bool operator!=(String const & left, String const & right)
 inline bool operator<(String const & left, String const & right)
 {
 	int result = 0;
-	check(WindowsCompareStringOrdinal(get(left), get(right), &result));
+	check_hresult(WindowsCompareStringOrdinal(get(left), get(right), &result));
 	return result == -1;
 }
 
@@ -238,7 +238,7 @@ struct StringReference
 
 	StringReference(wchar_t const * const value, size_t const length)
 	{
-		check(WindowsCreateStringReference(value, static_cast<unsigned>(length), &m_header, &m_handle));
+		check_hresult(WindowsCreateStringReference(value, static_cast<unsigned>(length), &m_header, &m_handle));
 	}
 
 	StringReference(wchar_t const * const value) :

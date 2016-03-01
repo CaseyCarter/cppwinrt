@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.29 - http://moderncpp.com
-// Copyright (c) 2015 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation
 
 #pragma once
 
@@ -10,10 +10,12 @@ struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
 {
 	virtual HRESULT __stdcall abi_CreateView(abi_arg_out<IFrameworkView> view) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*view = detach(static_cast<T *>(this)->CreateView());
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -47,42 +49,52 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 
 	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Run() noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Run();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Uninitialize() noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Uninitialize();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 

@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.29 - http://moderncpp.com
-// Copyright (c) 2015 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation
 
 #pragma once
 

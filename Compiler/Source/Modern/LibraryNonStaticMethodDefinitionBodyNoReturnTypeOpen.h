@@ -1,3 +1,3 @@
 ) const
 {
-	check(shim()->%(
+	check_hresult(shim()->%(

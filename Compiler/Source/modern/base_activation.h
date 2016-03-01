@@ -3,7 +3,7 @@ namespace winrt { namespace impl {
 
 inline void ActivateInstance(HSTRING classId, Windows::IInspectable & instance)
 {
-	check(RoActivateInstance(classId, put(instance)));
+	check_hresult(RoActivateInstance(classId, put(instance)));
 }
 
 template <typename Interface>
@@ -26,7 +26,7 @@ enum class InitializeType
 
 inline void Initialize(InitializeType const type = InitializeType::MultiThreaded)
 {
-	check(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
+	check_hresult(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
 }
 
 template <typename Class, typename Instance = Class>
@@ -47,7 +47,7 @@ Interface GetActivationFactory()
 							impl::traits<Class>::name_length);
 
 	Interface factory;
-	check(RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+	check_hresult(RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
 	return factory;
 }
 

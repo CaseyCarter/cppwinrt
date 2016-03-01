@@ -103,13 +103,14 @@ static void WriteBaseHeader()
     OutputFile out("base.h");
     WriteLogo(out);
     Write(out, Strings::base_dependencies);
-    Write(out, Strings::base_error);
+    Write(out, Strings::base_debug);
     Write(out, Strings::base_accessors);
+    Write(out, Strings::base_comptr);
     Write(out, Strings::base_handle);
+    Write(out, Strings::base_error);
     Write(out, Strings::base_implements);
     Write(out, Strings::base_meta);
     Write(out, Strings::base_string);
-    Write(out, Strings::base_comptr);
     Write(out, Strings::base_lock);
     Write(out, Strings::base_windows);
     Write(out, Strings::base_activation);
@@ -123,7 +124,7 @@ static void WritePostHeader()
 {
     OutputFile out("post.h");
     WriteLogo(out);
-    Write(out, Strings::base_await_consume);
+    Write(out, Strings::Base_await_consume);
     Write(out, Strings::base_reference);
 }
 

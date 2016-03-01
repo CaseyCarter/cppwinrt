@@ -5,6 +5,7 @@ template <typename T> struct impl_% : impl::implements<%>, T
 
 	virtual HRESULT __stdcall abi_Invoke(%) noexcept override
 	{
-		return call([&]{ (*this)(%); });
+		try { %; return S_OK; }
+		catch (...) { return impl::to_hresult(); }
 	}
 };

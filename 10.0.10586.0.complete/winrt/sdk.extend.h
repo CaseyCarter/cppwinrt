@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.29 - http://moderncpp.com
-// Copyright (c) 2015 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation
 
 #pragma once
 
@@ -25,26 +25,29 @@ struct IUIElementOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnCreateAutomationPeer(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnCreateAutomationPeer();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDisconnectVisualChildren();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>>> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->FindSubElementsForTouchTargeting(point, boundingRect);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -58,10 +61,11 @@ struct IVisualStateManagerOverridesT : A
 
 	virtual HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, HSTRING stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GoToStateCore(impl::forward<Windows::UI::Xaml::Controls::Control>(control), impl::forward<Windows::UI::Xaml::FrameworkElement>(templateRoot), impl::forward<String>(stateName), impl::forward<Windows::UI::Xaml::VisualStateGroup>(group), impl::forward<Windows::UI::Xaml::VisualState>(state), useTransitions);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -85,26 +89,29 @@ struct IFrameworkElementOverridesT : A
 
 	virtual HRESULT __stdcall abi_MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->MeasureOverride(availableSize);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->ArrangeOverride(finalSize);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnApplyTemplate() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnApplyTemplate();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -118,10 +125,11 @@ struct IFrameworkElementOverrides2T : A
 
 	virtual HRESULT __stdcall abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GoToElementStateCore(impl::forward<String>(stateName), useTransitions);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -175,74 +183,83 @@ struct IApplicationOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnActivated(abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnActivated(impl::forward<Windows::ApplicationModel::Activation::IActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnLaunched(abi_arg_in<Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnLaunched(impl::forward<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnFileActivated(impl::forward<Windows::ApplicationModel::Activation::FileActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnSearchActivated(abi_arg_in<Windows::ApplicationModel::Activation::ISearchActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnSearchActivated(impl::forward<Windows::ApplicationModel::Activation::SearchActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnShareTargetActivated(abi_arg_in<Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnShareTargetActivated(impl::forward<Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileOpenPickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnFileOpenPickerActivated(impl::forward<Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileSavePickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnFileSavePickerActivated(impl::forward<Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnCachedFileUpdaterActivated(abi_arg_in<Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnCachedFileUpdaterActivated(impl::forward<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnWindowCreated(abi_arg_in<Windows::UI::Xaml::IWindowCreatedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnWindowCreated(impl::forward<Windows::UI::Xaml::WindowCreatedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -390,218 +407,245 @@ struct IAutomationPeerOverridesT : A
 
 	virtual HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetPatternCore(patternInterface);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetAcceleratorKeyCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetAcceleratorKeyCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetAccessKeyCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetAccessKeyCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetAutomationControlTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationControlType * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetAutomationControlTypeCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetAutomationIdCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetAutomationIdCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetBoundingRectangleCore(Windows::Foundation::Rect * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetBoundingRectangleCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetChildrenCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetChildrenCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetClassNameCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetClassNameCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetClickablePointCore(Windows::Foundation::Point * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetClickablePointCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetHelpTextCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetHelpTextCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetItemStatusCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetItemStatusCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetItemTypeCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetItemTypeCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetLabeledByCore(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLabeledByCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetLocalizedControlTypeCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLocalizedControlTypeCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetNameCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetNameCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetOrientationCore(Windows::UI::Xaml::Automation::Peers::AutomationOrientation * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetOrientationCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_HasKeyboardFocusCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->HasKeyboardFocusCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsContentElementCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsContentElementCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsControlElementCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsControlElementCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsEnabledCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsEnabledCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsKeyboardFocusableCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsKeyboardFocusableCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsOffscreenCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsOffscreenCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsPasswordCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsPasswordCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_IsRequiredForFormCore(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsRequiredForFormCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_SetFocusCore() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SetFocusCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetPeerFromPointCore(Windows::Foundation::Point point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetPeerFromPointCore(point);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetLiveSettingCore(Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLiveSettingCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -620,18 +664,20 @@ struct IAutomationPeerOverrides2T : A
 
 	virtual HRESULT __stdcall abi_ShowContextMenuCore() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->ShowContextMenuCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetControlledPeersCore(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetControlledPeersCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -675,58 +721,65 @@ struct IAutomationPeerOverrides3T : A
 
 	virtual HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->NavigateCore(direction);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetElementFromPointCore(Windows::Foundation::Point pointInWindowCoordinates, abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetElementFromPointCore(pointInWindowCoordinates);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetFocusedElementCore(abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetFocusedElementCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetAnnotationsCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetAnnotationsCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetPositionInSetCore(int * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetPositionInSetCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetSizeOfSetCore(int * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetSizeOfSetCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetLevelCore(int * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLevelCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -745,18 +798,20 @@ struct IAutomationPeerOverrides4T : A
 
 	virtual HRESULT __stdcall abi_GetLandmarkTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLandmarkTypeCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetLocalizedLandmarkTypeCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -770,10 +825,11 @@ struct IItemsControlAutomationPeerOverrides2T : A
 
 	virtual HRESULT __stdcall abi_OnCreateItemAutomationPeer(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnCreateItemAutomationPeer(impl::forward<IInspectable>(item));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -791,10 +847,11 @@ struct IDataTemplateSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectTemplateCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SelectTemplateCore(impl::forward<IInspectable>(item), impl::forward<Windows::UI::Xaml::DependencyObject>(container));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -808,10 +865,11 @@ struct IDataTemplateSelectorOverrides2T : A
 
 	virtual HRESULT __stdcall abi_SelectTemplateForItemCore(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SelectTemplateCore(impl::forward<IInspectable>(item));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -825,10 +883,11 @@ struct IStyleSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectStyleCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SelectStyleCore(impl::forward<IInspectable>(item), impl::forward<Windows::UI::Xaml::DependencyObject>(container));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -842,10 +901,11 @@ struct IGroupStyleSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectGroupStyleCore(abi_arg_in<IInspectable> group, unsigned level, abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SelectGroupStyleCore(impl::forward<IInspectable>(group), level);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -864,18 +924,20 @@ struct IContentPresenterOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnContentTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newContentTemplate));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnContentTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -899,26 +961,29 @@ struct IVirtualizingPanelOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemsChanged(impl::forward<IInspectable>(sender), impl::forward<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>(args));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnClearChildren() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnClearChildren();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_BringIndexIntoView(int index) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->BringIndexIntoView(index);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -932,10 +997,11 @@ struct IVirtualizingStackPanelOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnCleanUpVirtualizedItem(abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnCleanUpVirtualizedItem(impl::forward<Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1069,202 +1135,227 @@ struct IControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnPointerEntered(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerEntered(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerPressed(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerPressed(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerMoved(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerMoved(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerReleased(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerReleased(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerExited(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerExited(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerCaptureLost(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerCaptureLost(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerCanceled(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerCanceled(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerWheelChanged(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnPointerWheelChanged(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnTapped(abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnTapped(impl::forward<Windows::UI::Xaml::Input::TappedRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDoubleTapped(abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDoubleTapped(impl::forward<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnHolding(abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnHolding(impl::forward<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnRightTapped(abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnRightTapped(impl::forward<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnManipulationStarting(impl::forward<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationInertiaStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnManipulationInertiaStarting(impl::forward<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationStarted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnManipulationStarted(impl::forward<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationDelta(abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnManipulationDelta(impl::forward<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationCompleted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnManipulationCompleted(impl::forward<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnKeyUp(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnKeyUp(impl::forward<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnKeyDown(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnKeyDown(impl::forward<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnGotFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnGotFocus(impl::forward<Windows::UI::Xaml::RoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnLostFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnLostFocus(impl::forward<Windows::UI::Xaml::RoutedEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragEnter(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDragEnter(impl::forward<Windows::UI::Xaml::DragEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragLeave(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDragLeave(impl::forward<Windows::UI::Xaml::DragEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragOver(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDragOver(impl::forward<Windows::UI::Xaml::DragEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDrop(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDrop(impl::forward<Windows::UI::Xaml::DragEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1288,26 +1379,29 @@ struct IContentControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnContentTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newContentTemplate));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnContentTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1366,82 +1460,92 @@ struct IItemsControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_IsItemItsOwnContainerOverride(abi_arg_in<IInspectable> item, bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->IsItemItsOwnContainerOverride(impl::forward<IInspectable>(item));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetContainerForItemOverride(abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetContainerForItemOverride();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_ClearContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->ClearContainerForItemOverride(impl::forward<Windows::UI::Xaml::DependencyObject>(element), impl::forward<IInspectable>(item));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_PrepareContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->PrepareContainerForItemOverride(impl::forward<Windows::UI::Xaml::DependencyObject>(element), impl::forward<IInspectable>(item));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemsChanged(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemContainerStyleChanged(abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemContainerStyleChanged(impl::forward<Windows::UI::Xaml::Style>(oldItemContainerStyle), impl::forward<Windows::UI::Xaml::Style>(newItemContainerStyle));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemContainerStyleSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::StyleSelector>(oldItemContainerStyleSelector), impl::forward<Windows::UI::Xaml::Controls::StyleSelector>(newItemContainerStyleSelector));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldItemTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newItemTemplate));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnItemTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldItemTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newItemTemplateSelector));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnGroupStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnGroupStyleSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::GroupStyleSelector>(oldGroupStyleSelector), impl::forward<Windows::UI::Xaml::Controls::GroupStyleSelector>(newGroupStyleSelector));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1470,34 +1574,38 @@ struct IToggleSwitchOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnToggled() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnToggled();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnOnContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOffContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnOffContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnHeaderChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnHeaderChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1516,18 +1624,20 @@ struct IComboBoxOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnDropDownClosed(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDropDownClosed(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDropDownOpened(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDropDownOpened(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1546,18 +1656,20 @@ struct IAppBarOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnClosed(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnClosed(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOpened(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnOpened(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1576,18 +1688,20 @@ struct IAppBarOverrides3T : A
 
 	virtual HRESULT __stdcall abi_OnClosing(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnClosing(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOpening(abi_arg_in<IInspectable> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnOpening(impl::forward<IInspectable>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1611,26 +1725,29 @@ struct IPageOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnNavigatedFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnNavigatedFrom(impl::forward<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnNavigatedTo(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnNavigatedTo(impl::forward<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnNavigatingFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnNavigatingFrom(impl::forward<Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>(e));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1648,10 +1765,11 @@ struct IFlyoutBaseOverridesT : A
 
 	virtual HRESULT __stdcall abi_CreatePresenter(abi_arg_out<Windows::UI::Xaml::Controls::IControl> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->CreatePresenter();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1675,26 +1793,29 @@ struct IRangeBaseOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnMinimumChanged(double oldMinimum, double newMinimum) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnMinimumChanged(oldMinimum, newMinimum);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnMaximumChanged(double oldMaximum, double newMaximum) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnMaximumChanged(oldMaximum, newMaximum);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnValueChanged(double oldValue, double newValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnValueChanged(oldValue, newValue);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1708,10 +1829,11 @@ struct IToggleButtonOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnToggle() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnToggle();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1730,18 +1852,20 @@ struct IPickerFlyoutBaseOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnConfirmed() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnConfirmed();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_ShouldShowConfirmationButtons(bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->ShouldShowConfirmationButtons();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1759,10 +1883,11 @@ struct ITextElementOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnDisconnectVisualChildren();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1790,26 +1915,29 @@ struct IGeneralTransformOverridesT : A
 
 	virtual HRESULT __stdcall get_InverseCore(abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> value) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->InverseCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point * outPoint, bool * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->TryTransformCore(inPoint, );
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->TransformBoundsCore(rect);
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1832,18 +1960,20 @@ struct INavigationTransitionInfoOverridesT : A
 
 	virtual HRESULT __stdcall abi_GetNavigationStateCore(HSTRING * returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetNavigationStateCore();
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_SetNavigationStateCore(HSTRING navigationState) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SetNavigationStateCore(impl::forward<String>(navigationState));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1861,10 +1991,11 @@ struct IXamlRenderingBackgroundTaskOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnRun(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->OnRun(impl::forward<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(taskInstance));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -1882,10 +2013,11 @@ struct ICustomXamlResourceLoaderOverridesT : A
 
 	virtual HRESULT __stdcall abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->GetResource(impl::forward<String>(resourceId), impl::forward<String>(objectType), impl::forward<String>(propertyName), impl::forward<String>(propertyType));
-		});
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -4896,10 +5028,12 @@ struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
 {
 	virtual HRESULT __stdcall abi_CreateView(abi_arg_out<IFrameworkView> view) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*view = detach(static_cast<T *>(this)->CreateView());
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -4933,42 +5067,52 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 
 	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Run() noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Run();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	HRESULT __stdcall abi_Uninitialize() noexcept
 	{
-		return call([&]
+		try
 		{
 			static_cast<T *>(this)->Uninitialize();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 

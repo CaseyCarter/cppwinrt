@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.29 - http://moderncpp.com
-// Copyright (c) 2015 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation
 
 #pragma comment(lib, "runtimeobject")
 #pragma comment(lib, "ole32")
@@ -7,17 +7,22 @@
 #include <inspectable.h>
 #include <winstring.h>
 #include <ctxtcall.h>
+#include <restrictederrorinfo.h>
+
 #include <set>
 #include <memory>
 #include <vector>
 #include <utility>
 #include <type_traits>
+#include <locale>
+#include <codecvt>
 
 extern "C"
 {
 	enum RO_INIT_TYPE;
 
 	BOOL __stdcall RoOriginateErrorW(HRESULT error, unsigned length, wchar_t const * message);
+	HRESULT __stdcall GetRestrictedErrorInfo(IRestrictedErrorInfo ** info);
 	HRESULT __stdcall RoInitialize(RO_INIT_TYPE type);
 	HRESULT __stdcall RoGetActivationFactory(HSTRING classId, GUID const & iid, void ** factory);
 	HRESULT __stdcall RoActivateInstance(HSTRING classId, ::IInspectable ** instance);
@@ -34,9 +39,9 @@ extern "C"
 template <typename ... Args>
 void WINRT_TRACE(char const * const message, Args ... args) noexcept
 {
-	char buffer[1024] = {};
-	sprintf_s(buffer, message, args ...);
-	OutputDebugStringA(buffer);
+    char buffer[1024] = {};
+    sprintf_s(buffer, message, args ...);
+    OutputDebugStringA(buffer);
 }
 
 #else
@@ -48,70 +53,6 @@ void WINRT_TRACE(char const * const message, Args ... args) noexcept
 
 #endif
 
-namespace winrt {
-
-struct Exception
-{
-	HRESULT Result;
-
-	explicit Exception(HRESULT const value) : Result(value)
-	{}
-
-	template <unsigned Count>
-	Exception(HRESULT const value, wchar_t const (&message)[Count]) : Result(value)
-	{
-		RoOriginateErrorW(value, Count - 1, message);
-	}
-};
-
-inline void check(HRESULT const result)
-{
-	if (S_OK == result)
-	{
-		return;
-	}
-
-	if (E_OUTOFMEMORY == result)
-	{
-		throw std::bad_alloc();
-	}
-
-	if (E_BOUNDS == result)
-	{
-		throw std::out_of_range("");
-	}
-
-	throw Exception(result);
-}
-
-template <typename T>
-HRESULT call(T inner) noexcept
-{
-	try
-	{
-		inner();
-	}
-	catch (Exception const & e)
-	{
-		return e.Result;
-	}
-	catch (std::bad_alloc const &)
-	{
-		return E_OUTOFMEMORY;
-	}
-	catch (std::out_of_range const &)
-	{
-		return E_BOUNDS;
-	}
-	catch (std::exception const &)
-	{
-		return E_FAIL;
-	}
-
-	return S_OK;
-}
-
-}
 namespace winrt { namespace impl {
 
 template <typename T, typename Enable = void>
@@ -230,390 +171,7 @@ auto detach(T && object) noexcept
 
 namespace winrt {
 
-template <typename T>
-struct handle_traits
-{
-	using type = T;
-
-	constexpr static type invalid() noexcept
-	{
-		return nullptr;
-	}
-
-	// static void close(type value) noexcept;
-};
-
-template <typename T>
-struct handle
-{
-	using type = typename T::type;
-
-	handle() noexcept = default;
-
-	handle(type value) noexcept :
-		m_value(value)
-	{}
-
-	handle(handle && other) noexcept :
-		m_value(detach(other))
-	{}
-
-	handle & operator=(handle && other) noexcept
-	{
-		if (this != &other)
-		{
-			attach(*this, detach(other));
-		}
-
-		return *this;
-	}
-
-	~handle() noexcept
-	{
-		close();
-	}
-
-	void close() noexcept
-	{
-		if (*this)
-		{	
-			T::close(m_value);
-		}
-	}
-
-	explicit operator bool() const noexcept
-	{
-		return m_value != T::invalid();
-	}
-
-	friend type impl_get(handle const & handle) noexcept
-	{
-		return handle.m_value;
-	}
-
-	friend type * impl_put(handle & handle) noexcept
-	{
-		WINRT_ASSERT(!handle);
-		return &handle.m_value;
-	}
-
-	friend type impl_detach(handle & handle) noexcept
-	{
-		type value = handle.m_value;
-		handle.m_value = T::invalid();
-		return value;
-	}
-
-	friend void swap(handle & left, handle & right) noexcept
-	{
-		std::swap(left, right);
-	}
-
-private:
-
-	type m_value = T::invalid();
-};
-
-template <typename T>
-bool operator==(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return get(left) == get(right);
-}
-
-template <typename T>
-bool operator!=(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return !(left == right);
-}
-
-template <typename T>
-bool operator<(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return get(left) < get(right);
-}
-
-template <typename T>
-bool operator>(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return right < left;
-}
-
-template <typename T>
-bool operator<=(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return !(right < left);
-}
-
-template <typename T>
-bool operator>=(handle<T> const & left, handle<T> const & right) noexcept
-{
-	return !(left < right);
-}
-
-}
-
-namespace winrt { namespace impl {
-
-template <typename T>
-struct accessors<handle<T>>
-{
-	using type = typename handle<T>::type;
-
-	static type get(handle<T> const & object) noexcept
-	{
-		return impl_get(object);
-	}
-
-	static type * put(handle<T> & object) noexcept
-	{
-		return impl_put(object);
-	}
-
-	static void attach(handle<T> & object, type value) noexcept
-	{
-		object.close();
-		*put(object) = value;
-	}
-
-	static type detach(handle<T> & object) noexcept
-	{
-		return impl_detach(object);
-	}
-};
-
-}}
-
-namespace winrt {
-
-template <typename ... Interfaces>
-class __declspec(novtable) implements : public Interfaces ...
-{
-	template <typename T>
-	using is_cloaked = std::integral_constant<bool, !std::is_base_of<::IInspectable, typename T>::value>;
-
-	template <int = 0>
-	constexpr unsigned count_interfaces() const noexcept
-	{
-		return 0;
-	}
-
-	template <typename First, typename ... Rest>
-	constexpr unsigned count_interfaces() const noexcept
-	{
-		return !is_cloaked<First>::value + count_interfaces<Rest ...>();
-	}
-
-	template <int = 0>
-	constexpr bool inspectable() const noexcept
-	{
-		return false;
-	}
-
-	template <typename First, typename ... Rest>
-	constexpr bool inspectable() const noexcept
-	{
-		return std::is_base_of<::IInspectable, First>::value || inspectable<Rest ...>();
-	}
-
-	template <int = 0>
-	void * find_inspectable() noexcept
-	{
-		return nullptr;
-	}
-
-	template <typename First, typename ... Rest>
-	void * find_inspectable() noexcept
-	{
-		#pragma warning(push)
-		#pragma warning(disable:4127) // conditional expression is constant
-
-		if (std::is_base_of<::IInspectable, First>::value)
-		{
-			return static_cast<First *>(this);
-		}
-
-		#pragma warning(pop)
-
-		return find_inspectable<Rest ...>();
-	}
-
-	template <int = 0>
-	void copy_interfaces(GUID *) const noexcept {}
-
-	template <typename First, typename ... Rest>
-	void copy_interfaces(GUID * ids) const noexcept
-	{
-		#pragma warning(push)
-		#pragma warning(disable:4127) // conditional expression is constant
-
-		if (!is_cloaked<First>::value)
-		{
-			*ids++ = __uuidof(First);
-		}
-
-		#pragma warning(pop)
-
-		copy_interfaces<Rest ...>(ids);
-	}
-
-	template <int = 0>
-	void * find_interface(GUID const &) noexcept
-	{
-		return nullptr;
-	}
-
-	template <typename First, typename ... Rest>
-	void * find_interface(GUID const & id) noexcept
-	{
-		if (id == __uuidof(First))
-		{
-			return static_cast<First *>(this);
-		}
-
-		return find_interface<Rest ...>(id);
-	}
-
-protected:
-
-	unsigned long m_references = 1;
-
-	implements() noexcept = default;
-
-	virtual ~implements() noexcept
-	{}
-
-	template <typename First, typename ... Rest>
-	void * query_interface(GUID const & id) noexcept
-	{
-		if (id == __uuidof(First) || id == __uuidof(::IUnknown))
-		{
-			return static_cast<First *>(this);
-		}
-
-		if (inspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
-		{
-			return find_inspectable<Interfaces ...>();
-		}
-
-		return find_interface<Rest ...>(id);
-	}
-
-public:
-
-	implements(implements const &) = delete;
-	implements & operator=(implements const &) = delete;
-
-	virtual HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
-	{
-		*object = query_interface<Interfaces ...>(id);
-
-		if (nullptr == *object)
-		{
-			return E_NOINTERFACE;
-		}
-
-		static_cast<::IUnknown *>(*object)->AddRef();
-		return S_OK;
-	}
-
-	virtual unsigned long __stdcall AddRef() noexcept override
-	{
-		return InterlockedIncrement(&m_references);
-	}
-
-	virtual unsigned long __stdcall Release() noexcept override
-	{
-		unsigned long const remaining = InterlockedDecrement(&m_references);
-
-		if (0 == remaining)
-		{
-			delete this;
-		}
-
-		return remaining;
-	}
-
-	HRESULT __stdcall GetIids(unsigned long * count, GUID ** array) noexcept
-	{
-		*count = 0;
-		*array = nullptr;
-
-		unsigned const localCount = count_interfaces<Interfaces ...>();
-
-		if (0 == localCount)
-		{
-			return S_OK;
-		}
-
-		GUID * localArray = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * localCount));
-
-		if (nullptr == localArray)
-		{
-			return E_OUTOFMEMORY;
-		}
-
-		copy_interfaces<Interfaces ...>(localArray);
-
-		*count = localCount;
-		*array = localArray;
-		return S_OK;
-	}
-
-	HRESULT __stdcall GetRuntimeClassName(HSTRING * name) noexcept
-	{
-		*name = nullptr;
-		return E_NOTIMPL;
-	}
-
-	HRESULT __stdcall GetTrustLevel(TrustLevel * trustLevel) noexcept
-	{
-		*trustLevel = BaseTrust;
-		return S_OK;
-	}
-};
-
-}
-
-namespace winrt { namespace ABI {
-
-template <typename T>
-struct traits
-{
-	using default_interface = T;
-};
-
-template <typename T>
-using default_interface = typename traits<T>::default_interface;
-
-template <typename T, typename Enable = void>
-struct arg
-{
-	using in = T;
-	using out = T *;
-};
-
-template <typename T>
-struct arg<T, typename std::enable_if<std::is_base_of<::IUnknown, T>::value>::type>
-{
-	using in = T *;
-	using out = T **;
-};
-
-template <typename T>
-using arg_in = typename arg<default_interface<T>>::in;
-
-template <typename T>
-using arg_out = typename arg<default_interface<T>>::out;
-
-}}
-
-namespace winrt { namespace impl {
-
-template <typename T>
-struct traits
-{
-	using abi = T;
-};
+namespace impl {
 
 template <typename T>
 class no_ref : public T
@@ -622,427 +180,7 @@ class no_ref : public T
 	unsigned long __stdcall Release();
 };
 
-template <typename To>
-struct lease : To
-{
-	template <typename From>
-	lease(From value) noexcept : To(nullptr)
-	{
-		*put(*static_cast<To *>(this)) = value;
-	}
-
-	~lease() noexcept
-	{
-		detach(*static_cast<To *>(this));
-	}
-};
-
-template <typename To, typename From, typename std::enable_if<std::is_pod<To>::value>::type * = nullptr>
-To forward(From value) noexcept
-{
-	return value;
 }
-
-template <typename To, typename From, typename std::enable_if<!std::is_pod<To>::value>::type * = nullptr>
-lease<To> forward(From value) noexcept
-{
-	return lease<To>(value);
-}
-
-template <typename T>
-class has_GetAt
-{
-	template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool check(int) { return true; }
-	template <typename> static constexpr bool check(...) { return false; }
-
-public:
-
-	static constexpr bool value = check<T>(0);
-};
-
-template <typename T>
-class has_composable
-{
-	template <typename U> static constexpr bool check(typename U::composable *) { return true; }
-	template <typename>   static constexpr bool check(...) { return false; }
-
-public:
-
-	static constexpr bool value = check<T>(nullptr);
-};
-
-template <typename Crtp, typename Qi, typename Base>
-auto shim(Base const * base)
-{
-	return static_cast<Qi const &>(static_cast<Crtp const &>(*base));
-}
-
-template <typename T, typename R>
-struct requires : traits<R>::template methods<requires<T, R>>
-{
-	operator R() const noexcept
-	{
-		return static_cast<T const *>(this)->As<R>();
-	}
-};
-
-template <typename T, typename B>
-struct bases
-{
-	operator B() const noexcept
-	{
-		return static_cast<T const *>(this)->As<B>();
-	}
-};
-
-}}
-
-namespace winrt {
-
-template <typename T>
-using abi = typename impl::traits<T>::abi;
-
-template <typename T>
-using abi_arg_in = ABI::arg_in<abi<T>>;
-
-template <typename T>
-using abi_arg_out = ABI::arg_out<abi<T>>;
-
-template <typename T>
-auto ptr(::IUnknown * object) noexcept
-{
-	return static_cast<impl::no_ref<abi<T>> *>(object);
-}
-
-template <typename T, typename ... R>
-struct requires : impl::requires<T, R> ...
-{};
-
-template <typename T, typename ... B>
-struct bases : impl::bases<T, B> ...
-{};
-
-template <typename T, typename ... Args, typename std::enable_if<!impl::has_composable<T>::value>::type * = nullptr>
-auto make(Args && ... args)
-{
-	typename T::default_interface instance;
-	*put(instance) = new T(std::forward<Args>(args) ...);
-	return instance;
-}
-
-template <typename T, typename ... Args, typename std::enable_if<impl::has_composable<T>::value>::type * = nullptr>
-auto make(Args && ... args)
-{
-	Windows::IInspectable instance;
-	*put(instance) = new T(std::forward<Args>(args) ...);
-	return instance.As<T::composable>();
-}
-
-
-}
-
-namespace winrt { namespace impl {
-
-template <typename First, typename ... Rest>
-struct implements : winrt::implements<abi<First>, abi<Rest> ..., ::IAgileObject>
-{
-	using default_interface = First;
-};
-
-}}
-
-namespace winrt { namespace impl {
-
-struct string_traits : handle_traits<HSTRING>
-{
-	static void close(type value) noexcept
-	{
-		WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
-	}
-};
-
-struct string_buffer_traits : handle_traits<HSTRING_BUFFER>
-{
-	static void close(type value) noexcept
-	{
-		WINRT_VERIFY_(S_OK, WindowsDeleteStringBuffer(value));
-	}
-};
-
-}}
-
-namespace winrt {
-
-struct String
-{
-	String() noexcept = default;
-	String(String && other) noexcept = default;
-	String & operator=(String && other) noexcept = default;
-
-	String(std::nullptr_t) noexcept {}
-
-	String(wchar_t const * value, unsigned const length) :
-		m_handle(create_string(value, length))
-	{}
-
-	template <unsigned Count>
-	String(wchar_t const (&value)[Count]) :
-		String(value, Count - 1)
-	{}
-
-	String(wchar_t const * const value) :
-		String(value, static_cast<unsigned>(wcslen(value)))
-	{}
-
-	String(String const & other) :
-		m_handle(duplicate_string(get(other.m_handle)))
-	{}
-
-	String & operator=(String const & other) noexcept
-	{
-		attach(m_handle, duplicate_string(get(other.m_handle)));
-		return *this;
-	}
-
-	String & operator=(std::nullptr_t) noexcept
-	{
-		m_handle.close();
-		return *this;
-	}
-
-	wchar_t const * Buffer() const noexcept
-	{
-		return WindowsGetStringRawBuffer(get(m_handle), nullptr);
-	}
-
-	wchar_t const * Buffer(unsigned & length) const noexcept
-	{
-		return WindowsGetStringRawBuffer(get(m_handle), &length);
-	}
-
-	unsigned Length() const noexcept
-	{
-		return WindowsGetStringLen(get(m_handle));
-	}
-
-	bool Empty() const noexcept
-	{
-		return 0 != WindowsIsStringEmpty(get(m_handle));
-	}
-
-	bool EmbeddedNull() const
-	{
-		BOOL result = 0;
-		check(WindowsStringHasEmbeddedNull(get(m_handle), &result));
-		return 0 != result;
-	}
-
-	String Substring(unsigned const startIndex)
-	{
-		String result;
-		check(WindowsSubstring(get(m_handle), startIndex, put(result.m_handle)));
-		return result;
-	}
-
-	String Substring(unsigned const startIndex, unsigned const length)
-	{
-		String result;
-		check(WindowsSubstringWithSpecifiedLength(get(m_handle), startIndex, length, put(result.m_handle)));
-		return result;
-	}
-
-	int Compare(wchar_t const * other) const noexcept
-	{
-		return wcscmp(Buffer(), other);
-	}
-
-	int Compare(String const & other) const noexcept
-	{
-		return Compare(other.Buffer());
-	}
-
-	friend HSTRING impl_get(String const & string) noexcept
-	{
-		return get(string.m_handle);
-	}
-
-	friend HSTRING * impl_put(String & string) noexcept
-	{
-		return put(string.m_handle);
-	}
-
-	friend HSTRING impl_detach(String & string) noexcept
-	{
-		return detach(string.m_handle);
-	}
-
-	friend void swap(String & left, String & right) noexcept
-	{
-		std::swap(left.m_handle, right.m_handle);
-	}
-
-	operator std::wstring() const
-	{
-		return std::wstring(Buffer(), Length());
-	}
-
-private:
-
-	static HSTRING duplicate_string(HSTRING other)
-	{
-		HSTRING result = nullptr;
-		check(WindowsDuplicateString(other, &result));
-		return result;
-	}
-
-	static HSTRING create_string(wchar_t const * value, unsigned const length)
-	{
-		HSTRING result = nullptr;
-		check(WindowsCreateString(value, length, &result));
-		return result;
-	}
-
-	handle<impl::string_traits> m_handle;
-};
-
-}
-
-namespace winrt { namespace impl {
-
-template <>
-struct accessors<String>
-{
-	static HSTRING get(String const & object) noexcept
-	{
-		return impl_get(object);
-	}
-
-	static HSTRING * put(String & object) noexcept
-	{
-		return impl_put(object);
-	}
-
-	static void attach(String & object, HSTRING value) noexcept
-	{
-		object = nullptr;
-		*put(object) = value;
-	}
-
-	static void copy_from(String & object, HSTRING value)
-	{
-		object = nullptr;
-		check(WindowsDuplicateString(value, put(object)));
-	}
-
-    static void copy_to(String const & object, HSTRING & value)
-    {
-        check(WindowsDuplicateString(get(object), &value));
-    }
-
-	static HSTRING detach(String & object) noexcept
-	{
-		return impl_detach(object);
-	}
-};
-
-}}
-
-namespace winrt {
-
-inline bool operator==(String const & left, String const & right)
-{
-	int result = 0;
-	check(WindowsCompareStringOrdinal(get(left), get(right), &result));
-	return result == 0;
-}
-
-inline bool operator!=(String const & left, String const & right)
-{
-	return !(left == right);
-}
-
-inline bool operator<(String const & left, String const & right)
-{
-	int result = 0;
-	check(WindowsCompareStringOrdinal(get(left), get(right), &result));
-	return result == -1;
-}
-
-inline bool operator>(String const & left, String const & right)
-{
-	return right < left;
-}
-
-inline bool operator<=(String const & left, String const & right)
-{
-	return !(right < left);
-}
-
-inline bool operator>=(String const & left, String const & right)
-{
-	return !(left < right);
-}
-
-struct StringReference
-{
-	StringReference(StringReference const &) = delete;
-	StringReference & operator=(StringReference const &) = delete;
-
-	StringReference(wchar_t const * const value, size_t const length)
-	{
-		check(WindowsCreateStringReference(value, static_cast<unsigned>(length), &m_header, &m_handle));
-	}
-
-	StringReference(wchar_t const * const value) :
-		StringReference(value, wcslen(value))
-	{}
-
-	StringReference(String const & value) noexcept :
-		m_handle(get(value))
-	{}
-
-	StringReference(std::wstring const & value) :
-		StringReference(value.c_str(), value.size())
-	{}
-
-	friend HSTRING impl_get(StringReference const & string) noexcept
-	{
-		return string.m_handle;
-	}
-
-private:
-
-	HSTRING_HEADER m_header;
-	HSTRING m_handle;
-};
-
-}
-
-namespace winrt { namespace impl {
-
-template <> struct traits<String>
-{
-	using abi = HSTRING;
-};
-
-template <>
-struct accessors<StringReference>
-{
-	static HSTRING get(StringReference const & object) noexcept
-	{
-		return impl_get(object);
-	}
-};
-
-}}
-
-namespace winrt { namespace ABI {
-
-using String = HSTRING;
-
-}}
-
-namespace winrt {
 
 template <typename T>
 struct com_ptr
@@ -1299,6 +437,1008 @@ bool operator>=(com_ptr<T> const & left, com_ptr<T> const & right) noexcept
 
 namespace winrt {
 
+template <typename T>
+struct handle_traits
+{
+	using type = T;
+
+	constexpr static type invalid() noexcept
+	{
+		return nullptr;
+	}
+
+	// static void close(type value) noexcept;
+};
+
+template <typename T>
+struct handle
+{
+	using type = typename T::type;
+
+	handle() noexcept = default;
+
+	handle(type value) noexcept :
+		m_value(value)
+	{}
+
+	handle(handle && other) noexcept :
+		m_value(detach(other))
+	{}
+
+	handle & operator=(handle && other) noexcept
+	{
+		if (this != &other)
+		{
+			attach(*this, detach(other));
+		}
+
+		return *this;
+	}
+
+	~handle() noexcept
+	{
+		close();
+	}
+
+	void close() noexcept
+	{
+		if (*this)
+		{	
+			T::close(m_value);
+		}
+	}
+
+	explicit operator bool() const noexcept
+	{
+		return m_value != T::invalid();
+	}
+
+	friend type impl_get(handle const & handle) noexcept
+	{
+		return handle.m_value;
+	}
+
+	friend type * impl_put(handle & handle) noexcept
+	{
+		WINRT_ASSERT(!handle);
+		return &handle.m_value;
+	}
+
+	friend type impl_detach(handle & handle) noexcept
+	{
+		type value = handle.m_value;
+		handle.m_value = T::invalid();
+		return value;
+	}
+
+	friend void swap(handle & left, handle & right) noexcept
+	{
+		std::swap(left, right);
+	}
+
+private:
+
+	type m_value = T::invalid();
+};
+
+template <typename T>
+bool operator==(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return get(left) == get(right);
+}
+
+template <typename T>
+bool operator!=(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return !(left == right);
+}
+
+template <typename T>
+bool operator<(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return get(left) < get(right);
+}
+
+template <typename T>
+bool operator>(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return right < left;
+}
+
+template <typename T>
+bool operator<=(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return !(right < left);
+}
+
+template <typename T>
+bool operator>=(handle<T> const & left, handle<T> const & right) noexcept
+{
+	return !(left < right);
+}
+
+}
+
+namespace winrt { namespace impl {
+
+template <typename T>
+struct accessors<handle<T>>
+{
+	using type = typename handle<T>::type;
+
+	static type get(handle<T> const & object) noexcept
+	{
+		return impl_get(object);
+	}
+
+	static type * put(handle<T> & object) noexcept
+	{
+		return impl_put(object);
+	}
+
+	static void attach(handle<T> & object, type value) noexcept
+	{
+		object.close();
+		*put(object) = value;
+	}
+
+	static type detach(handle<T> & object) noexcept
+	{
+		return impl_detach(object);
+	}
+};
+
+}}
+
+namespace winrt {
+
+namespace impl {
+
+struct format_traits : handle_traits<char *>
+{
+	static void close(type value) noexcept
+	{
+		WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
+	}
+};
+
+struct bstr_traits : handle_traits<BSTR>
+{
+	static void close(type value) noexcept
+	{
+		SysFreeString(value);
+	}
+};
+
+template <>
+struct accessors<handle<bstr_traits>>
+{
+    static wchar_t const * get(handle<bstr_traits> const & object) noexcept
+    {
+        if (object)
+        {
+            return impl_get(object);
+        }
+        else
+        {
+            return L"";
+        }
+    }
+
+    static BSTR * put(handle<bstr_traits> & object) noexcept
+    {
+        return impl_put(object);
+    }
+};
+
+inline void trim_error(std::string & message) noexcept
+{
+	while (!message.empty() && (isspace(message.back()) || '.' == message.back()))
+	{
+		message.resize(message.size() - 1);
+	}
+}
+
+inline std::string format_message(HRESULT const result)
+{
+	handle<format_traits> buffer;
+	std::string message;
+
+	if (FormatMessageA(0x00000100 | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+					   nullptr,
+					   result,
+					   MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+					   reinterpret_cast<char *>(put(buffer)),
+					   0,
+					   nullptr))
+	{
+		message = get(buffer);
+		trim_error(message);
+	}
+
+	return message;
+}
+
+inline std::string restricted_message(HRESULT const result)
+{
+    com_ptr<IRestrictedErrorInfo> info;
+
+    if (S_OK == GetRestrictedErrorInfo(put(info)))
+    {
+        handle<bstr_traits> description;
+        handle<bstr_traits> unused1;
+        handle<bstr_traits> unused2;
+        HRESULT unused3 = S_OK;
+
+        if (S_OK == info->GetErrorDetails(put(unused1), &unused3, put(description), put(unused2)))
+        {
+            std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
+            std::string message = convert.to_bytes(get(description));
+            trim_error(message);
+            return message;
+        }
+    }
+
+    return format_message(result);
+}
+
+struct hresult_category : std::error_category
+{
+	char const * name() const noexcept override
+	{
+		return "HRESULT";
+	}
+
+	std::string message(int code) const override
+	{
+		return restricted_message(code);
+	}
+};
+
+struct error_info
+{
+	error_info() = default;
+
+	error_info(HRESULT const value, wchar_t const * const message, size_t const size) noexcept
+	{
+		RoOriginateErrorW(value, static_cast<unsigned>(size), message);
+	}
+};
+
+}
+
+inline impl::hresult_category const & hresult_category() noexcept
+{
+	static impl::hresult_category category;
+	return category;
+}
+
+struct hresult_error :
+	impl::error_info,
+    std::system_error
+{
+	explicit hresult_error(HRESULT const value) : 
+		std::system_error(value, hresult_category())
+	{}
+
+	hresult_error(HRESULT const value, wchar_t const * const message) : 
+		impl::error_info(value, message, wcslen(message)), 
+		std::system_error(value, hresult_category())
+	{}
+
+	hresult_error(HRESULT const value, std::wstring const & message) : 
+		impl::error_info(value, message.c_str(), message.size()), 
+		std::system_error(value, hresult_category())
+	{}
+};
+
+namespace impl {
+
+inline __declspec(noinline) void throw_hresult(HRESULT const result)
+{
+	if (result == E_OUTOFMEMORY)
+	{
+		throw std::bad_alloc();
+	}
+
+	if (result == E_BOUNDS)
+	{
+		throw std::out_of_range("");
+	}
+
+	throw hresult_error(result);
+}
+
+inline __declspec(noinline) HRESULT to_hresult() noexcept
+{
+	try
+	{
+		throw;
+	}
+	catch (hresult_error const & e)
+	{
+		return e.code().value();
+	}
+	catch (std::bad_alloc const &)
+	{
+		return E_OUTOFMEMORY;
+	}
+	catch (std::out_of_range const &)
+	{
+		return E_BOUNDS;
+	}
+	catch (std::exception const &)
+	{
+		return E_FAIL;
+	}
+}
+
+}
+
+__forceinline void check_hresult(HRESULT const result)
+{
+	if (result != S_OK)
+	{
+		impl::throw_hresult(result);
+	}
+}
+
+}
+
+namespace winrt {
+
+template <typename ... Interfaces>
+class __declspec(novtable) implements : public Interfaces ...
+{
+	template <typename T>
+	using is_cloaked = std::integral_constant<bool, !std::is_base_of<::IInspectable, typename T>::value>;
+
+	template <int = 0>
+	constexpr unsigned count_interfaces() const noexcept
+	{
+		return 0;
+	}
+
+	template <typename First, typename ... Rest>
+	constexpr unsigned count_interfaces() const noexcept
+	{
+		return !is_cloaked<First>::value + count_interfaces<Rest ...>();
+	}
+
+	template <int = 0>
+	constexpr bool inspectable() const noexcept
+	{
+		return false;
+	}
+
+	template <typename First, typename ... Rest>
+	constexpr bool inspectable() const noexcept
+	{
+		return std::is_base_of<::IInspectable, First>::value || inspectable<Rest ...>();
+	}
+
+	template <int = 0>
+	void * find_inspectable() noexcept
+	{
+		return nullptr;
+	}
+
+	template <typename First, typename ... Rest>
+	void * find_inspectable() noexcept
+	{
+		#pragma warning(push)
+		#pragma warning(disable:4127) // conditional expression is constant
+
+		if (std::is_base_of<::IInspectable, First>::value)
+		{
+			return static_cast<First *>(this);
+		}
+
+		#pragma warning(pop)
+
+		return find_inspectable<Rest ...>();
+	}
+
+	template <int = 0>
+	void copy_interfaces(GUID *) const noexcept {}
+
+	template <typename First, typename ... Rest>
+	void copy_interfaces(GUID * ids) const noexcept
+	{
+		#pragma warning(push)
+		#pragma warning(disable:4127) // conditional expression is constant
+
+		if (!is_cloaked<First>::value)
+		{
+			*ids++ = __uuidof(First);
+		}
+
+		#pragma warning(pop)
+
+		copy_interfaces<Rest ...>(ids);
+	}
+
+	template <int = 0>
+	void * find_interface(GUID const &) noexcept
+	{
+		return nullptr;
+	}
+
+	template <typename First, typename ... Rest>
+	void * find_interface(GUID const & id) noexcept
+	{
+		if (id == __uuidof(First))
+		{
+			return static_cast<First *>(this);
+		}
+
+		return find_interface<Rest ...>(id);
+	}
+
+protected:
+
+	unsigned long m_references = 1;
+
+	implements() noexcept = default;
+
+	virtual ~implements() noexcept
+	{}
+
+	template <typename First, typename ... Rest>
+	void * query_interface(GUID const & id) noexcept
+	{
+		if (id == __uuidof(First) || id == __uuidof(::IUnknown))
+		{
+			return static_cast<First *>(this);
+		}
+
+		if (inspectable<Interfaces ...>() && id == __uuidof(::IInspectable))
+		{
+			return find_inspectable<Interfaces ...>();
+		}
+
+		return find_interface<Rest ...>(id);
+	}
+
+public:
+
+	implements(implements const &) = delete;
+	implements & operator=(implements const &) = delete;
+
+	virtual HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
+	{
+		*object = query_interface<Interfaces ...>(id);
+
+		if (nullptr == *object)
+		{
+			return E_NOINTERFACE;
+		}
+
+		static_cast<::IUnknown *>(*object)->AddRef();
+		return S_OK;
+	}
+
+	virtual unsigned long __stdcall AddRef() noexcept override
+	{
+		return InterlockedIncrement(&m_references);
+	}
+
+	virtual unsigned long __stdcall Release() noexcept override
+	{
+		unsigned long const remaining = InterlockedDecrement(&m_references);
+
+		if (0 == remaining)
+		{
+			delete this;
+		}
+
+		return remaining;
+	}
+
+	HRESULT __stdcall GetIids(unsigned long * count, GUID ** array) noexcept
+	{
+		*count = 0;
+		*array = nullptr;
+
+		unsigned const localCount = count_interfaces<Interfaces ...>();
+
+		if (0 == localCount)
+		{
+			return S_OK;
+		}
+
+		GUID * localArray = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * localCount));
+
+		if (nullptr == localArray)
+		{
+			return E_OUTOFMEMORY;
+		}
+
+		copy_interfaces<Interfaces ...>(localArray);
+
+		*count = localCount;
+		*array = localArray;
+		return S_OK;
+	}
+
+	HRESULT __stdcall GetRuntimeClassName(HSTRING * name) noexcept
+	{
+		*name = nullptr;
+		return E_NOTIMPL;
+	}
+
+	HRESULT __stdcall GetTrustLevel(TrustLevel * trustLevel) noexcept
+	{
+		*trustLevel = BaseTrust;
+		return S_OK;
+	}
+};
+
+}
+
+namespace winrt { namespace ABI {
+
+template <typename T>
+struct traits
+{
+	using default_interface = T;
+};
+
+template <typename T>
+using default_interface = typename traits<T>::default_interface;
+
+template <typename T, typename Enable = void>
+struct arg
+{
+	using in = T;
+	using out = T *;
+};
+
+template <typename T>
+struct arg<T, typename std::enable_if<std::is_base_of<::IUnknown, T>::value>::type>
+{
+	using in = T *;
+	using out = T **;
+};
+
+template <typename T>
+using arg_in = typename arg<default_interface<T>>::in;
+
+template <typename T>
+using arg_out = typename arg<default_interface<T>>::out;
+
+}}
+
+namespace winrt { namespace impl {
+
+template <typename T>
+struct traits
+{
+	using abi = T;
+};
+
+template <typename To>
+struct lease : To
+{
+	template <typename From>
+	lease(From value) noexcept : To(nullptr)
+	{
+		*put(*static_cast<To *>(this)) = value;
+	}
+
+	~lease() noexcept
+	{
+		detach(*static_cast<To *>(this));
+	}
+};
+
+template <typename To, typename From, typename std::enable_if<std::is_pod<To>::value>::type * = nullptr>
+To forward(From value) noexcept
+{
+	return value;
+}
+
+template <typename To, typename From, typename std::enable_if<!std::is_pod<To>::value>::type * = nullptr>
+lease<To> forward(From value) noexcept
+{
+	return lease<To>(value);
+}
+
+template <typename T>
+class has_GetAt
+{
+	template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool check(int) { return true; }
+	template <typename> static constexpr bool check(...) { return false; }
+
+public:
+
+	static constexpr bool value = check<T>(0);
+};
+
+template <typename T>
+class has_composable
+{
+	template <typename U> static constexpr bool check(typename U::composable *) { return true; }
+	template <typename>   static constexpr bool check(...) { return false; }
+
+public:
+
+	static constexpr bool value = check<T>(nullptr);
+};
+
+template <typename Crtp, typename Qi, typename Base>
+auto shim(Base const * base)
+{
+	return static_cast<Qi const &>(static_cast<Crtp const &>(*base));
+}
+
+template <typename T, typename R>
+struct requires : traits<R>::template methods<requires<T, R>>
+{
+	operator R() const noexcept
+	{
+		return static_cast<T const *>(this)->As<R>();
+	}
+};
+
+template <typename T, typename B>
+struct bases
+{
+	operator B() const noexcept
+	{
+		return static_cast<T const *>(this)->As<B>();
+	}
+};
+
+}}
+
+namespace winrt {
+
+template <typename T>
+using abi = typename impl::traits<T>::abi;
+
+template <typename T>
+using abi_arg_in = ABI::arg_in<abi<T>>;
+
+template <typename T>
+using abi_arg_out = ABI::arg_out<abi<T>>;
+
+template <typename T>
+auto ptr(::IUnknown * object) noexcept
+{
+	return static_cast<impl::no_ref<abi<T>> *>(object);
+}
+
+template <typename T, typename ... R>
+struct requires : impl::requires<T, R> ...
+{};
+
+template <typename T, typename ... B>
+struct bases : impl::bases<T, B> ...
+{};
+
+template <typename T, typename ... Args, typename std::enable_if<!impl::has_composable<T>::value>::type * = nullptr>
+auto make(Args && ... args)
+{
+	typename T::default_interface instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance;
+}
+
+template <typename T, typename ... Args, typename std::enable_if<impl::has_composable<T>::value>::type * = nullptr>
+auto make(Args && ... args)
+{
+	Windows::IInspectable instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance.As<T::composable>();
+}
+
+
+}
+
+namespace winrt { namespace impl {
+
+template <typename First, typename ... Rest>
+struct implements : winrt::implements<abi<First>, abi<Rest> ..., ::IAgileObject>
+{
+	using default_interface = First;
+};
+
+}}
+
+namespace winrt { namespace impl {
+
+struct string_traits : handle_traits<HSTRING>
+{
+	static void close(type value) noexcept
+	{
+		WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+	}
+};
+
+struct string_buffer_traits : handle_traits<HSTRING_BUFFER>
+{
+	static void close(type value) noexcept
+	{
+		WINRT_VERIFY_(S_OK, WindowsDeleteStringBuffer(value));
+	}
+};
+
+}}
+
+namespace winrt {
+
+struct String
+{
+	String() noexcept = default;
+	String(String && other) noexcept = default;
+	String & operator=(String && other) noexcept = default;
+
+	String(std::nullptr_t) noexcept {}
+
+	String(wchar_t const * value, unsigned const length) :
+		m_handle(create_string(value, length))
+	{}
+
+	template <unsigned Count>
+	String(wchar_t const (&value)[Count]) :
+		String(value, Count - 1)
+	{}
+
+	String(wchar_t const * const value) :
+		String(value, static_cast<unsigned>(wcslen(value)))
+	{}
+
+	String(String const & other) :
+		m_handle(duplicate_string(get(other.m_handle)))
+	{}
+
+	String & operator=(String const & other) noexcept
+	{
+		attach(m_handle, duplicate_string(get(other.m_handle)));
+		return *this;
+	}
+
+	String & operator=(std::nullptr_t) noexcept
+	{
+		m_handle.close();
+		return *this;
+	}
+
+	wchar_t const * Buffer() const noexcept
+	{
+		return WindowsGetStringRawBuffer(get(m_handle), nullptr);
+	}
+
+	wchar_t const * Buffer(unsigned & length) const noexcept
+	{
+		return WindowsGetStringRawBuffer(get(m_handle), &length);
+	}
+
+	unsigned Length() const noexcept
+	{
+		return WindowsGetStringLen(get(m_handle));
+	}
+
+	bool Empty() const noexcept
+	{
+		return 0 != WindowsIsStringEmpty(get(m_handle));
+	}
+
+	bool EmbeddedNull() const
+	{
+		BOOL result = 0;
+		check_hresult(WindowsStringHasEmbeddedNull(get(m_handle), &result));
+		return 0 != result;
+	}
+
+	String Substring(unsigned const startIndex)
+	{
+		String result;
+		check_hresult(WindowsSubstring(get(m_handle), startIndex, put(result.m_handle)));
+		return result;
+	}
+
+	String Substring(unsigned const startIndex, unsigned const length)
+	{
+		String result;
+		check_hresult(WindowsSubstringWithSpecifiedLength(get(m_handle), startIndex, length, put(result.m_handle)));
+		return result;
+	}
+
+	int Compare(wchar_t const * other) const noexcept
+	{
+		return wcscmp(Buffer(), other);
+	}
+
+	int Compare(String const & other) const noexcept
+	{
+		return Compare(other.Buffer());
+	}
+
+	friend HSTRING impl_get(String const & string) noexcept
+	{
+		return get(string.m_handle);
+	}
+
+	friend HSTRING * impl_put(String & string) noexcept
+	{
+		return put(string.m_handle);
+	}
+
+	friend HSTRING impl_detach(String & string) noexcept
+	{
+		return detach(string.m_handle);
+	}
+
+	friend void swap(String & left, String & right) noexcept
+	{
+		std::swap(left.m_handle, right.m_handle);
+	}
+
+	operator std::wstring() const
+	{
+		return std::wstring(Buffer(), Length());
+	}
+
+private:
+
+	static HSTRING duplicate_string(HSTRING other)
+	{
+		HSTRING result = nullptr;
+		check_hresult(WindowsDuplicateString(other, &result));
+		return result;
+	}
+
+	static HSTRING create_string(wchar_t const * value, unsigned const length)
+	{
+		HSTRING result = nullptr;
+		check_hresult(WindowsCreateString(value, length, &result));
+		return result;
+	}
+
+	handle<impl::string_traits> m_handle;
+};
+
+}
+
+namespace winrt { namespace impl {
+
+template <>
+struct accessors<String>
+{
+	static HSTRING get(String const & object) noexcept
+	{
+		return impl_get(object);
+	}
+
+	static HSTRING * put(String & object) noexcept
+	{
+		return impl_put(object);
+	}
+
+	static void attach(String & object, HSTRING value) noexcept
+	{
+		object = nullptr;
+		*put(object) = value;
+	}
+
+	static void copy_from(String & object, HSTRING value)
+	{
+		object = nullptr;
+		check_hresult(WindowsDuplicateString(value, put(object)));
+	}
+
+	static void copy_to(String const & object, HSTRING & value)
+	{
+		check_hresult(WindowsDuplicateString(get(object), &value));
+	}
+
+	static HSTRING detach(String & object) noexcept
+	{
+		return impl_detach(object);
+	}
+};
+
+}}
+
+namespace winrt {
+
+inline bool operator==(String const & left, String const & right)
+{
+	int result = 0;
+	check_hresult(WindowsCompareStringOrdinal(get(left), get(right), &result));
+	return result == 0;
+}
+
+inline bool operator!=(String const & left, String const & right)
+{
+	return !(left == right);
+}
+
+inline bool operator<(String const & left, String const & right)
+{
+	int result = 0;
+	check_hresult(WindowsCompareStringOrdinal(get(left), get(right), &result));
+	return result == -1;
+}
+
+inline bool operator>(String const & left, String const & right)
+{
+	return right < left;
+}
+
+inline bool operator<=(String const & left, String const & right)
+{
+	return !(right < left);
+}
+
+inline bool operator>=(String const & left, String const & right)
+{
+	return !(left < right);
+}
+
+struct StringReference
+{
+	StringReference(StringReference const &) = delete;
+	StringReference & operator=(StringReference const &) = delete;
+
+	StringReference(wchar_t const * const value, size_t const length)
+	{
+		check_hresult(WindowsCreateStringReference(value, static_cast<unsigned>(length), &m_header, &m_handle));
+	}
+
+	StringReference(wchar_t const * const value) :
+		StringReference(value, wcslen(value))
+	{}
+
+	StringReference(String const & value) noexcept :
+		m_handle(get(value))
+	{}
+
+	StringReference(std::wstring const & value) :
+		StringReference(value.c_str(), value.size())
+	{}
+
+	friend HSTRING impl_get(StringReference const & string) noexcept
+	{
+		return string.m_handle;
+	}
+
+private:
+
+	HSTRING_HEADER m_header;
+	HSTRING m_handle;
+};
+
+}
+
+namespace winrt { namespace impl {
+
+template <> struct traits<String>
+{
+	using abi = HSTRING;
+};
+
+template <>
+struct accessors<StringReference>
+{
+	static HSTRING get(StringReference const & object) noexcept
+	{
+		return impl_get(object);
+	}
+};
+
+}}
+
+namespace winrt { namespace ABI {
+
+using String = HSTRING;
+
+}}
+
+namespace winrt {
+
 struct lock
 {
 	lock(lock const &) = delete;
@@ -1409,7 +1549,7 @@ struct IUnknown
 	T As() const
 	{
 		T temp = nullptr;
-		check(m_ptr->QueryInterface(put(temp)));
+		check_hresult(m_ptr->QueryInterface(put(temp)));
 		return temp;
 	}
 
@@ -1709,45 +1849,45 @@ struct IActivationFactory :
 template <typename T> String impl_IInspectable<T>::GetRuntimeClassName() const
 {
 	String name;
-	check(shim()->get_RuntimeClassName(put(name)));
+	check_hresult(shim()->get_RuntimeClassName(put(name)));
 	return name;
 }
 
 template <typename T> unsigned impl_IAsyncInfo<T>::Id() const
 {
 	unsigned id = 0;
-	check(shim()->get_Id(&id));
+	check_hresult(shim()->get_Id(&id));
 	return id;
 }
 
 template <typename T> AsyncStatus impl_IAsyncInfo<T>::Status() const
 {
 	AsyncStatus status = {};
-	check(shim()->get_Status(&status));
+	check_hresult(shim()->get_Status(&status));
 	return status;
 }
 
 template <typename T> HRESULT impl_IAsyncInfo<T>::ErrorCode() const
 {
 	HRESULT code = S_OK;
-	check(shim()->get_ErrorCode(&code));
+	check_hresult(shim()->get_ErrorCode(&code));
 	return code;
 }
 
 template <typename T> void impl_IAsyncInfo<T>::Cancel() const
 {
-	check(shim()->abi_Cancel());
+	check_hresult(shim()->abi_Cancel());
 }
 
 template <typename T> void impl_IAsyncInfo<T>::Close() const
 {
-	check(shim()->abi_Close());
+	check_hresult(shim()->abi_Close());
 }
 
 template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance() const
 {
 	IInspectable instance;
-	check(shim()->abi_ActivateInstance(put(instance)));
+	check_hresult(shim()->abi_ActivateInstance(put(instance)));
 	return instance;
 }
 
@@ -1788,7 +1928,7 @@ namespace winrt { namespace impl {
 
 inline void ActivateInstance(HSTRING classId, Windows::IInspectable & instance)
 {
-	check(RoActivateInstance(classId, put(instance)));
+	check_hresult(RoActivateInstance(classId, put(instance)));
 }
 
 template <typename Interface>
@@ -1811,7 +1951,7 @@ enum class InitializeType
 
 inline void Initialize(InitializeType const type = InitializeType::MultiThreaded)
 {
-	check(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
+	check_hresult(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
 }
 
 template <typename Class, typename Instance = Class>
@@ -1832,7 +1972,7 @@ Interface GetActivationFactory()
 							impl::traits<Class>::name_length);
 
 	Interface factory;
-	check(RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+	check_hresult(RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
 	return factory;
 }
 
@@ -1975,7 +2115,7 @@ public:
 
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, TProgress const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -1988,7 +2128,7 @@ public:
 
 	void Progress(IAsyncActionProgressHandler<TProgress> const & handler) const
 	{
-		check(shim()->put_Progress(get(handler)));
+		check_hresult(shim()->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -2000,13 +2140,13 @@ public:
 	IAsyncActionProgressHandler<TProgress> Progress() const
 	{
 		IAsyncActionProgressHandler<TProgress> handler;
-		check(shim()->get_Progress(put(handler)));
+		check_hresult(shim()->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncActionWithProgressCompletedHandler<TProgress> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -2018,13 +2158,13 @@ public:
 	IAsyncActionWithProgressCompletedHandler<TProgress> Completed() const
 	{
 		IAsyncActionWithProgressCompletedHandler<TProgress> handler;
-		check(shim()->get_Completed(put(handler)));
+		check_hresult(shim()->get_Completed(put(handler)));
 		return handler;
 	}
 
 	void GetResults() const
 	{
-		check(shim()->abi_GetResults());
+		check_hresult(shim()->abi_GetResults());
 	}
 };
 
@@ -2037,7 +2177,7 @@ public:
 
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -2050,7 +2190,7 @@ public:
 
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, TProgress const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -2063,7 +2203,7 @@ public:
 
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -2076,7 +2216,7 @@ public:
 
 	void Invoke(IAsyncOperation<TResult> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -2089,7 +2229,7 @@ public:
 
 	void Invoke(IInspectable const & sender, T const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -2102,7 +2242,7 @@ public:
 
 	void Invoke(TSender const & sender, TArgs const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -2115,7 +2255,7 @@ public:
 
 	void Completed(IAsyncOperationCompletedHandler<TResult> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -2127,14 +2267,14 @@ public:
 	IAsyncOperationCompletedHandler<TResult> Completed() const
 	{
 		IAsyncOperationCompletedHandler<TResult> temp;
-		check(shim()->get_Completed(put(temp)));
+		check_hresult(shim()->get_Completed(put(temp)));
 		return temp;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = impl::argument<TResult>::empty();
-		check(shim()->abi_GetResults(put(result)));
+		check_hresult(shim()->abi_GetResults(put(result)));
 		return result;
 	}
 };
@@ -2148,7 +2288,7 @@ public:
 
 	void Progress(IAsyncOperationProgressHandler<TResult, TProgress> const & handler) const
 	{
-		check(shim()->put_Progress(get(handler)));
+		check_hresult(shim()->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -2160,13 +2300,13 @@ public:
 	IAsyncOperationProgressHandler<TResult, TProgress> Progress() const
 	{
 		IAsyncOperationProgressHandler<TResult, TProgress> handler;
-		check(shim()->get_Progress(put(handler)));
+		check_hresult(shim()->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -2178,14 +2318,14 @@ public:
 	IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const
 	{
 		IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-		check(shim()->get_Completed(put(handler)));
+		check_hresult(shim()->get_Completed(put(handler)));
 		return handler;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = impl::argument<TResult>::empty();
-		check(shim()->abi_GetResults(put(result)));
+		check_hresult(shim()->abi_GetResults(put(result)));
 		return result;
 	}
 };
@@ -2200,7 +2340,7 @@ public:
 	T Value() const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->get_Value(put(result)));
+		check_hresult(shim()->get_Value(put(result)));
 		return result;
 	}
 };
@@ -2393,10 +2533,12 @@ struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHa
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2413,10 +2555,12 @@ struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncAct
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2433,10 +2577,12 @@ struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProg
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2453,10 +2599,12 @@ struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsync
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2473,10 +2621,12 @@ struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCom
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperation<TResult>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2493,10 +2643,12 @@ struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>, THandler
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<TArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2513,10 +2665,12 @@ struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEven
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -2593,14 +2747,14 @@ struct IVectorChangedEventArgs :
 template <typename T> CollectionChange impl_IVectorChangedEventArgs<T>::CollectionChange() const
 {
 	Collections::CollectionChange value = {};
-	check(shim()->get_CollectionChange(&value));
+	check_hresult(shim()->get_CollectionChange(&value));
 	return value;
 }
 
 template <typename T> unsigned impl_IVectorChangedEventArgs<T>::Index() const
 {
 	unsigned index = 0;
-	check(shim()->get_Index(&index));
+	check_hresult(shim()->get_Index(&index));
 	return index;
 }
 
@@ -2752,21 +2906,21 @@ public:
 	T Current() const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->get_Current(put(result)));
+		check_hresult(shim()->get_Current(put(result)));
 		return result;
 	}
 
 	bool HasCurrent() const
 	{
 		bool temp = false;
-		check(shim()->get_HasCurrent(&temp));
+		check_hresult(shim()->get_HasCurrent(&temp));
 		return temp;
 	}
 
 	bool MoveNext() const
 	{
 		bool temp = false;
-		check(shim()->abi_MoveNext(&temp));
+		check_hresult(shim()->abi_MoveNext(&temp));
 		return temp;
 	}
 
@@ -2796,7 +2950,7 @@ public:
 	IIterator<T> First() const
 	{
 		IIterator<T> iterator;
-		check(shim()->abi_First(put(iterator)));
+		check_hresult(shim()->abi_First(put(iterator)));
 		return iterator;
 	}
 };
@@ -2811,14 +2965,14 @@ public:
 	K Key() const
 	{
 		K result = impl::argument<K>::empty();
-		check(shim()->get_Key(put(result)));
+		check_hresult(shim()->get_Key(put(result)));
 		return result;
 	}
 
 	V Value() const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->get_Value(put(result)));
+		check_hresult(shim()->get_Value(put(result)));
 		return result;
 	}
 };
@@ -2833,21 +2987,21 @@ public:
 	T GetAt(unsigned const index) const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->abi_GetAt(index, put(result)));
+		check_hresult(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
 		bool found = false;
-		check(shim()->abi_IndexOf(get(value), &index, &found));
+		check_hresult(shim()->abi_IndexOf(get(value), &index, &found));
 		return found;
 	}
 };
@@ -2862,59 +3016,59 @@ public:
 	T GetAt(unsigned const index) const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->abi_GetAt(index, put(result)));
+		check_hresult(shim()->abi_GetAt(index, put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	IVectorView<T> GetView() const
 	{
 		IVectorView<T> view;
-		check(shim()->abi_GetView(put(view)));
+		check_hresult(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool IndexOf(T const & value, unsigned & index) const
 	{
 		bool found = false;
-		check(shim()->abi_IndexOf(get(value), &index, &found));
+		check_hresult(shim()->abi_IndexOf(get(value), &index, &found));
 		return found;
 	}
 
 	void SetAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_SetAt(index, get(value)));
+		check_hresult(shim()->abi_SetAt(index, get(value)));
 	}
 
 	void InsertAt(unsigned const index, T const & value) const
 	{
-		check(shim()->abi_InsertAt(index, get(value)));
+		check_hresult(shim()->abi_InsertAt(index, get(value)));
 	}
 
 	void RemoveAt(unsigned const index) const
 	{
-		check(shim()->abi_RemoveAt(index));
+		check_hresult(shim()->abi_RemoveAt(index));
 	}
 
 	void Append(T const & value) const
 	{
-		check(shim()->abi_Append(get(value)));
+		check_hresult(shim()->abi_Append(get(value)));
 	}
 
 	void RemoveAtEnd() const
 	{
-		check(shim()->abi_RemoveAtEnd());
+		check_hresult(shim()->abi_RemoveAtEnd());
 	}
 
 	void Clear() const
 	{
-		check(shim()->abi_Clear());
+		check_hresult(shim()->abi_Clear());
 	}
 };
 
@@ -2928,27 +3082,27 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(get(key), put(result)));
+		check_hresult(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(get(key), &found));
+		check_hresult(shim()->abi_HasKey(get(key), &found));
 		return found;
 	}
 
 	void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
 	{
-		check(shim()->abi_Split(put(firstPartition), put(secondPartition)));
+		check_hresult(shim()->abi_Split(put(firstPartition), put(secondPartition)));
 	}
 };
 
@@ -2962,46 +3116,46 @@ public:
 	V Lookup(K const & key) const
 	{
 		V result = impl::argument<V>::empty();
-		check(shim()->abi_Lookup(get(key), put(result)));
+		check_hresult(shim()->abi_Lookup(get(key), put(result)));
 		return result;
 	}
 
 	unsigned Size() const
 	{
 		unsigned size = 0;
-		check(shim()->get_Size(&size));
+		check_hresult(shim()->get_Size(&size));
 		return size;
 	}
 
 	bool HasKey(K const & key) const
 	{
 		bool found = false;
-		check(shim()->abi_HasKey(get(key), &found));
+		check_hresult(shim()->abi_HasKey(get(key), &found));
 		return found;
 	}
 
 	IMapView<K, V> GetView() const
 	{
 		IMapView<K, V> view;
-		check(shim()->abi_GetView(put(view)));
+		check_hresult(shim()->abi_GetView(put(view)));
 		return view;
 	}
 
 	bool Insert(K const & key, V const & value) const
 	{
 		bool replaced = false;
-		check(shim()->abi_Insert(get(key), get(value), &replaced));
+		check_hresult(shim()->abi_Insert(get(key), get(value), &replaced));
 		return replaced;
 	}
 
 	void Remove(K const & key) const
 	{
-		check(shim()->abi_Remove(get(key)));
+		check_hresult(shim()->abi_Remove(get(key)));
 	}
 
 	void Clear() const
 	{
-		check(shim()->abi_Clear());
+		check_hresult(shim()->abi_Clear());
 	}
 };
 
@@ -3015,14 +3169,14 @@ public:
 	CollectionChange CollectionChange() const
 	{
 		CollectionChange value = {};
-		check(shim()->get_CollectionChange(&value));
+		check_hresult(shim()->get_CollectionChange(&value));
 		return value;
 	}
 
 	K Key() const
 	{
 		K result = impl::argument<K>::empty();
-		check(shim()->get_Key(put(result)));
+		check_hresult(shim()->get_Key(put(result)));
 		return result;
 	}
 };
@@ -3036,7 +3190,7 @@ public:
 
 	void Invoke(IObservableMap<K, V> const & sender, IMapChangedEventArgs<K> const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -3050,7 +3204,7 @@ public:
 	long long MapChanged(IMapChangedEventHandler<K, V> const & handler) const
 	{
 		long long cookie = {};
-		check(shim()->add_MapChanged(get(handler), &cookie));
+		check_hresult(shim()->add_MapChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -3061,7 +3215,7 @@ public:
 
 	void MapChanged(long long const cookie) const
 	{
-		check(shim()->remove_MapChanged(cookie));
+		check_hresult(shim()->remove_MapChanged(cookie));
 	}
 };
 
@@ -3074,7 +3228,7 @@ public:
 
 	void Invoke(IObservableVector<T> const & sender, IVectorChangedEventArgs const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -3088,7 +3242,7 @@ public:
 	long long VectorChanged(IVectorChangedEventHandler<T> const & handler) const
 	{
 		long long cookie = {};
-		check(shim()->add_VectorChanged(get(handler), &cookie));
+		check_hresult(shim()->add_VectorChanged(get(handler), &cookie));
 		return cookie;
 	}
 
@@ -3099,7 +3253,7 @@ public:
 
 	void VectorChanged(long long const cookie) const
 	{
-		check(shim()->remove_VectorChanged(cookie));
+		check_hresult(shim()->remove_VectorChanged(cookie));
 	}
 };
 
@@ -3396,15 +3550,17 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 
 	virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*hasCurrent = i < v.Size();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			if (i + 1 < v.Size())
 			{
@@ -3415,7 +3571,10 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 			{
 				*hasCurrent = false;
 			}
-		});
+
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, abi_arg_out<T> /*value*/, unsigned * /*actual*/) noexcept override
@@ -3439,10 +3598,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_GetAt(unsigned index, abi_arg_out<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			copy_to(v.at(index), *item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall get_Size(unsigned * size) noexcept override
@@ -3460,19 +3621,23 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, unsigned * index, bool * found) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*index = static_cast<unsigned>(std::find(begin(v), end(v), impl::forward<T>(value)) - begin(v));
 			*found = *index < v.size();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_SetAt(unsigned index, abi_arg_in<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			copy_from(v.at(index), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_InsertAt(unsigned index, abi_arg_in<T> item) noexcept override
@@ -3482,10 +3647,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			copy_from(*v.emplace(begin(v) + index), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAt(unsigned index) noexcept override
@@ -3495,19 +3662,23 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			v.erase(begin(v) + index);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			v.emplace_back();
 			copy_from(v.back(), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAtEnd() noexcept override
@@ -3517,10 +3688,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			v.pop_back();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_Clear() noexcept override
@@ -3531,7 +3704,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, abi_arg_out<T> /*value*/, unsigned * actual) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*actual = static_cast<unsigned>(v.size() - startIndex);
 
@@ -3544,23 +3717,30 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			{
 				//value[i] = v[startIndex + i];
 			}
-		});
+
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, abi_arg_out<T> /*value*/) noexcept override
 	{
-		return call([&]
+		try
 		{
 			// v.assign(value, value + count);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_First(abi_arg_out<IIterator<T>> first) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*first = detach(make<impl_VectorIterator<T>>(this));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -3667,7 +3847,7 @@ template <typename T> template <typename Qi> Qi impl_IWeakReference<T>::Resolve(
 template <typename T> IWeakReference impl_IWeakReferenceSource<T>::GetWeakReference() const
 {
 	IWeakReference weakReference;
-	check(shim()->abi_GetWeakReference(put(weakReference)));
+	check_hresult(shim()->abi_GetWeakReference(put(weakReference)));
 	return weakReference;
 }
 

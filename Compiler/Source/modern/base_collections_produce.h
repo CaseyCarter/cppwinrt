@@ -19,15 +19,17 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 
 	virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*hasCurrent = i < v.Size();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept override
 	{
-		return call([&]
+		try
 		{
 			if (i + 1 < v.Size())
 			{
@@ -38,7 +40,10 @@ struct impl_VectorIterator : impl::implements<IIterator<T>>
 			{
 				*hasCurrent = false;
 			}
-		});
+
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_GetMany(unsigned /*capacity*/, abi_arg_out<T> /*value*/, unsigned * /*actual*/) noexcept override
@@ -62,10 +67,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_GetAt(unsigned index, abi_arg_out<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			copy_to(v.at(index), *item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall get_Size(unsigned * size) noexcept override
@@ -83,19 +90,23 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, unsigned * index, bool * found) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*index = static_cast<unsigned>(std::find(begin(v), end(v), impl::forward<T>(value)) - begin(v));
 			*found = *index < v.size();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_SetAt(unsigned index, abi_arg_in<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			copy_from(v.at(index), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_InsertAt(unsigned index, abi_arg_in<T> item) noexcept override
@@ -105,10 +116,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			copy_from(*v.emplace(begin(v) + index), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAt(unsigned index) noexcept override
@@ -118,19 +131,23 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			v.erase(begin(v) + index);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept override
 	{
-		return call([&]
+		try
 		{
 			v.emplace_back();
 			copy_from(v.back(), item);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_RemoveAtEnd() noexcept override
@@ -140,10 +157,12 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			return E_BOUNDS;
 		}
 
-		return call([&]
+		try
 		{
 			v.pop_back();
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_Clear() noexcept override
@@ -154,7 +173,7 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 
 	virtual HRESULT __stdcall abi_GetMany(unsigned startIndex, unsigned capacity, abi_arg_out<T> /*value*/, unsigned * actual) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*actual = static_cast<unsigned>(v.size() - startIndex);
 
@@ -167,23 +186,30 @@ struct impl_Vector : impl::implements<IVector<T>, IVectorView<T>, IIterable<T>>
 			{
 				//value[i] = v[startIndex + i];
 			}
-		});
+
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_ReplaceAll(unsigned /*count*/, abi_arg_out<T> /*value*/) noexcept override
 	{
-		return call([&]
+		try
 		{
 			// v.assign(value, value + count);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_First(abi_arg_out<IIterator<T>> first) noexcept override
 	{
-		return call([&]
+		try
 		{
 			*first = detach(make<impl_VectorIterator<T>>(this));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 

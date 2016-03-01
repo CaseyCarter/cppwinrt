@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.29 - http://moderncpp.com
-// Copyright (c) 2015 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation
 
 namespace winrt { namespace Windows { namespace Foundation {
 
@@ -7,14 +7,14 @@ template <typename T, typename F>
 void impl_suspend(T const & object, F resume)
 {
 	com_ptr<IContextCallback> context;
-	check(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
+	check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
 
 	object.Completed([resume, context](auto const &, AsyncStatus)
 	{
 		ComCallData data = {};
 		data.pUserDefined = resume.to_address();
 
-		check(context->ContextCallback([](ComCallData * data)
+		check_hresult(context->ContextCallback([](ComCallData * data)
 		{
 			F::from_address(data->pUserDefined)();
 			return S_OK;

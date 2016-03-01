@@ -24,10 +24,10 @@ struct accessors
 		object = value;
 	}
 
-    static void copy_to(T const & object, T & value) noexcept
-    {
-        value = object;
-    }
+	static void copy_to(T const & object, T & value) noexcept
+	{
+		value = object;
+	}
 
 	static T detach(T & object) noexcept
 	{
@@ -98,7 +98,7 @@ void copy_from(T & object, V && value)
 template <typename T, typename V>
 void copy_to(T const & object, V & value)
 {
-    impl::accessors<T>::copy_to(object, value);
+	impl::accessors<T>::copy_to(object, value);
 }
 
 template <typename T>

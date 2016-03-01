@@ -136,7 +136,7 @@ public:
 
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, TProgress const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -149,7 +149,7 @@ public:
 
 	void Progress(IAsyncActionProgressHandler<TProgress> const & handler) const
 	{
-		check(shim()->put_Progress(get(handler)));
+		check_hresult(shim()->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -161,13 +161,13 @@ public:
 	IAsyncActionProgressHandler<TProgress> Progress() const
 	{
 		IAsyncActionProgressHandler<TProgress> handler;
-		check(shim()->get_Progress(put(handler)));
+		check_hresult(shim()->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncActionWithProgressCompletedHandler<TProgress> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -179,13 +179,13 @@ public:
 	IAsyncActionWithProgressCompletedHandler<TProgress> Completed() const
 	{
 		IAsyncActionWithProgressCompletedHandler<TProgress> handler;
-		check(shim()->get_Completed(put(handler)));
+		check_hresult(shim()->get_Completed(put(handler)));
 		return handler;
 	}
 
 	void GetResults() const
 	{
-		check(shim()->abi_GetResults());
+		check_hresult(shim()->abi_GetResults());
 	}
 };
 
@@ -198,7 +198,7 @@ public:
 
 	void Invoke(IAsyncActionWithProgress<TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -211,7 +211,7 @@ public:
 
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, TProgress const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -224,7 +224,7 @@ public:
 
 	void Invoke(IAsyncOperationWithProgress<TResult, TProgress> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -237,7 +237,7 @@ public:
 
 	void Invoke(IAsyncOperation<TResult> const & sender, AsyncStatus const args) const
 	{
-		check(shim()->abi_Invoke(get(sender), args));
+		check_hresult(shim()->abi_Invoke(get(sender), args));
 	}
 };
 
@@ -250,7 +250,7 @@ public:
 
 	void Invoke(IInspectable const & sender, T const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -263,7 +263,7 @@ public:
 
 	void Invoke(TSender const & sender, TArgs const & args) const
 	{
-		check(shim()->abi_Invoke(get(sender), get(args)));
+		check_hresult(shim()->abi_Invoke(get(sender), get(args)));
 	}
 };
 
@@ -276,7 +276,7 @@ public:
 
 	void Completed(IAsyncOperationCompletedHandler<TResult> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -288,14 +288,14 @@ public:
 	IAsyncOperationCompletedHandler<TResult> Completed() const
 	{
 		IAsyncOperationCompletedHandler<TResult> temp;
-		check(shim()->get_Completed(put(temp)));
+		check_hresult(shim()->get_Completed(put(temp)));
 		return temp;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = impl::argument<TResult>::empty();
-		check(shim()->abi_GetResults(put(result)));
+		check_hresult(shim()->abi_GetResults(put(result)));
 		return result;
 	}
 };
@@ -309,7 +309,7 @@ public:
 
 	void Progress(IAsyncOperationProgressHandler<TResult, TProgress> const & handler) const
 	{
-		check(shim()->put_Progress(get(handler)));
+		check_hresult(shim()->put_Progress(get(handler)));
 	}
 
 	template <typename Handler>
@@ -321,13 +321,13 @@ public:
 	IAsyncOperationProgressHandler<TResult, TProgress> Progress() const
 	{
 		IAsyncOperationProgressHandler<TResult, TProgress> handler;
-		check(shim()->get_Progress(put(handler)));
+		check_hresult(shim()->get_Progress(put(handler)));
 		return handler;
 	}
 
 	void Completed(IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> const & handler) const
 	{
-		check(shim()->put_Completed(get(handler)));
+		check_hresult(shim()->put_Completed(get(handler)));
 	}
 
 	template <typename Handler>
@@ -339,14 +339,14 @@ public:
 	IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const
 	{
 		IAsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-		check(shim()->get_Completed(put(handler)));
+		check_hresult(shim()->get_Completed(put(handler)));
 		return handler;
 	}
 
 	TResult GetResults() const
 	{
 		TResult result = impl::argument<TResult>::empty();
-		check(shim()->abi_GetResults(put(result)));
+		check_hresult(shim()->abi_GetResults(put(result)));
 		return result;
 	}
 };
@@ -361,7 +361,7 @@ public:
 	T Value() const
 	{
 		T result = impl::argument<T>::empty();
-		check(shim()->get_Value(put(result)));
+		check_hresult(shim()->get_Value(put(result)));
 		return result;
 	}
 };
@@ -554,10 +554,12 @@ struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHa
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -574,10 +576,12 @@ struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncAct
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -594,10 +598,12 @@ struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProg
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -614,10 +620,12 @@ struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsync
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -634,10 +642,12 @@ struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCom
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IAsyncOperation<TResult>>(sender), args);
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -654,10 +664,12 @@ struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>, THandler
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<TArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 
@@ -674,10 +686,12 @@ struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEven
 
 	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
 	{
-		return call([&]
+		try
 		{
 			(*this)(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
-		});
+			return S_OK;
+		}
+		catch (...) { return impl::to_hresult(); }
 	}
 };
 

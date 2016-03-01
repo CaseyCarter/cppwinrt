@@ -56,7 +56,7 @@ struct IUnknown
 	T As() const
 	{
 		T temp = nullptr;
-		check(m_ptr->QueryInterface(put(temp)));
+		check_hresult(m_ptr->QueryInterface(put(temp)));
 		return temp;
 	}
 
@@ -178,18 +178,18 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		}
 	}
 
-    static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
-    {
-        if (object)
-        {
-            value = get(object);
-            value->AddRef();
-        }
-        else
-        {
-            value = nullptr;
-        }
-    }
+	static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
+	{
+		if (object)
+		{
+			value = get(object);
+			value->AddRef();
+		}
+		else
+		{
+			value = nullptr;
+		}
+	}
 
 	static auto detach(T & object) noexcept
 	{
@@ -356,45 +356,45 @@ struct IActivationFactory :
 template <typename T> String impl_IInspectable<T>::GetRuntimeClassName() const
 {
 	String name;
-	check(shim()->get_RuntimeClassName(put(name)));
+	check_hresult(shim()->get_RuntimeClassName(put(name)));
 	return name;
 }
 
 template <typename T> unsigned impl_IAsyncInfo<T>::Id() const
 {
 	unsigned id = 0;
-	check(shim()->get_Id(&id));
+	check_hresult(shim()->get_Id(&id));
 	return id;
 }
 
 template <typename T> AsyncStatus impl_IAsyncInfo<T>::Status() const
 {
 	AsyncStatus status = {};
-	check(shim()->get_Status(&status));
+	check_hresult(shim()->get_Status(&status));
 	return status;
 }
 
 template <typename T> HRESULT impl_IAsyncInfo<T>::ErrorCode() const
 {
 	HRESULT code = S_OK;
-	check(shim()->get_ErrorCode(&code));
+	check_hresult(shim()->get_ErrorCode(&code));
 	return code;
 }
 
 template <typename T> void impl_IAsyncInfo<T>::Cancel() const
 {
-	check(shim()->abi_Cancel());
+	check_hresult(shim()->abi_Cancel());
 }
 
 template <typename T> void impl_IAsyncInfo<T>::Close() const
 {
-	check(shim()->abi_Close());
+	check_hresult(shim()->abi_Close());
 }
 
 template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance() const
 {
 	IInspectable instance;
-	check(shim()->abi_ActivateInstance(put(instance)));
+	check_hresult(shim()->abi_ActivateInstance(put(instance)));
 	return instance;
 }
 

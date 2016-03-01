@@ -94,7 +94,7 @@ template <typename T> template <typename Qi> Qi impl_IWeakReference<T>::Resolve(
 template <typename T> IWeakReference impl_IWeakReferenceSource<T>::GetWeakReference() const
 {
 	IWeakReference weakReference;
-	check(shim()->abi_GetWeakReference(put(weakReference)));
+	check_hresult(shim()->abi_GetWeakReference(put(weakReference)));
 	return weakReference;
 }
 
