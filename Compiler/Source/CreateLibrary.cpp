@@ -124,7 +124,7 @@ static void WritePostHeader()
 {
     OutputFile out("post.h");
     WriteLogo(out);
-    Write(out, Strings::Base_await_consume);
+    Write(out, Strings::base_await_consume);
     Write(out, Strings::base_reference);
 }
 

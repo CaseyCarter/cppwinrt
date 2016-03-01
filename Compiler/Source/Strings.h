@@ -5,7 +5,7 @@ namespace Modern { namespace Strings {
 extern char const ApplicationModel[2029];
 extern char const base_accessors[1767];
 extern char const base_activation[1272];
-extern char const Base_await_consume[2333];
+extern char const base_await_consume[2333];
 extern char const base_collections_consume[23305];
 extern char const base_collections_produce[4618];
 extern char const base_comptr[4119];
