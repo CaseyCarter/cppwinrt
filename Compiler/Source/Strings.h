@@ -11,7 +11,7 @@ extern char const base_collections_produce[4618];
 extern char const base_comptr[4119];
 extern char const base_debug[547];
 extern char const base_dependencies[738];
-extern char const base_error[3597];
+extern char const base_error[3736];
 extern char const base_generic[24332];
 extern char const base_handle[2483];
 extern char const base_implements[3826];

@@ -746,6 +746,11 @@ inline __declspec(noinline) void throw_hresult(HRESULT const result)
 		throw std::out_of_range("");
 	}
 
+	if (result == E_INVALIDARG)
+	{
+		throw std::invalid_argument("");
+	}
+
 	throw hresult_error(result);
 }
 
@@ -766,6 +771,10 @@ inline __declspec(noinline) HRESULT to_hresult() noexcept
 	catch (std::out_of_range const &)
 	{
 		return E_BOUNDS;
+	}
+	catch (std::invalid_argument const &)
+	{
+		return E_INVALIDARG;
 	}
 	catch (std::exception const &)
 	{
