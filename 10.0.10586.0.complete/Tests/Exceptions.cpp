@@ -8,6 +8,34 @@ TEST_CASE("Exceptions,S_OK")
     winrt::check_hresult(S_OK);
 }
 
+TEST_CASE("Exceptions,E_FAIL")
+{
+    // This represents the general case for HRESULTs with no specific mapping.
+
+    // Incoming error...
+
+    try
+    {
+        winrt::check_hresult(E_FAIL);
+        FAIL(L"Previous line should throw");
+    }
+    catch (winrt::hresult_error const & e)
+    {
+        REQUIRE(E_FAIL == e.code().value());
+    }
+
+    // Outgoing error...
+
+    try
+    {
+        throw winrt::hresult_error(E_FAIL);
+    }
+    catch (...)
+    {
+        REQUIRE(E_FAIL == winrt::impl::to_hresult());
+    }
+}
+
 TEST_CASE("Exceptions,S_FALSE")
 {
     // We consider S_FALSE a false positive - the caller can handle it explicitly if so desired.

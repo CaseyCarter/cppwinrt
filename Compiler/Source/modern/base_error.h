@@ -1,4 +1,8 @@
 
+#ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
+#define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
+#endif
+
 namespace winrt {
 
 namespace impl {
@@ -40,9 +44,9 @@ struct accessors<handle<bstr_traits>>
 	}
 };
 
-inline void trim_error(std::string & message) noexcept
+inline void trim_trailing_whitespace(std::string & message) noexcept
 {
-	while (!message.empty() && (isspace(message.back()) || '.' == message.back()))
+	while (!message.empty() && (isspace(message.back())))
 	{
 		message.resize(message.size() - 1);
 	}
@@ -53,7 +57,7 @@ inline std::string format_message(HRESULT const result)
 	handle<format_traits> buffer;
 	std::string message;
 
-	if (FormatMessageA(0x00000100 | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+	if (FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
 					   nullptr,
 					   result,
 					   MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
@@ -62,7 +66,7 @@ inline std::string format_message(HRESULT const result)
 					   nullptr))
 	{
 		message = get(buffer);
-		trim_error(message);
+		trim_trailing_whitespace(message);
 	}
 
 	return message;
@@ -83,7 +87,7 @@ inline std::string restricted_message(HRESULT const result)
 		{
 			std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
 			std::string message = convert.to_bytes(get(description));
-			trim_error(message);
+			trim_trailing_whitespace(message);
 			return message;
 		}
 	}
@@ -145,17 +149,17 @@ namespace impl {
 
 inline __declspec(noinline) void throw_hresult(HRESULT const result)
 {
-	if (result == E_OUTOFMEMORY)
+	if (E_OUTOFMEMORY == result)
 	{
 		throw std::bad_alloc();
 	}
 
-	if (result == E_BOUNDS)
+	if (E_BOUNDS == result)
 	{
 		throw std::out_of_range("");
 	}
 
-	if (result == E_INVALIDARG)
+	if (E_INVALIDARG == result)
 	{
 		throw std::invalid_argument("");
 	}
