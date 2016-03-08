@@ -7,4 +7,5 @@ ipch
 *.user
 *.filters
 *.opendb
-~$*
+Modern.db
+*.vc.db
