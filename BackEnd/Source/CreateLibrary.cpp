@@ -102,22 +102,22 @@ static void WriteBaseHeader()
 {
     OutputFile out("base.h");
     WriteLogo(out);
-    Write(out, Strings::base_dependencies);
-    Write(out, Strings::base_debug);
-    Write(out, Strings::base_accessors);
-    Write(out, Strings::base_comptr);
-    Write(out, Strings::base_handle);
-    Write(out, Strings::base_error);
-    Write(out, Strings::base_implements);
-    Write(out, Strings::base_meta);
-    Write(out, Strings::base_string);
-    Write(out, Strings::base_lock);
-    Write(out, Strings::base_windows);
-    Write(out, Strings::base_activation);
-    Write(out, Strings::base_generic);
-    Write(out, Strings::base_collections_consume);
-    Write(out, Strings::base_collections_produce);
-    Write(out, Strings::base_weak);
+    Write(out, Strings::base_dependencies);        // #include "base_dependencies.h"
+    Write(out, Strings::base_debug);               // #include "base_debug.h"
+    Write(out, Strings::base_accessors);           // #include "base_accessors.h"
+    Write(out, Strings::base_comptr);              // #include "base_comptr.h"
+    Write(out, Strings::base_handle);              // #include "base_handle.h"
+    Write(out, Strings::base_error);               // #include "base_error.h"
+    Write(out, Strings::base_implements);          // #include "base_implements.h"
+    Write(out, Strings::base_meta);                // #include "base_meta.h"
+    Write(out, Strings::base_string);              // #include "base_string.h"
+    Write(out, Strings::base_lock);                // #include "base_lock.h"
+    Write(out, Strings::base_windows);             // #include "base_windows.h"
+    Write(out, Strings::base_activation);          // #include "base_activation.h"
+    Write(out, Strings::base_generic);             // #include "base_generic.h"
+    Write(out, Strings::base_collections_consume); // #include "base_collections_consume.h"
+    Write(out, Strings::base_collections_produce); // #include "base_collections_produce.h"
+    Write(out, Strings::base_weak);                // #include "base_weak.h"
 }
 
 static void WritePostHeader()
