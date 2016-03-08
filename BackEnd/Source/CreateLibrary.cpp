@@ -118,6 +118,8 @@ static void WriteBaseHeader()
     Write(out, Strings::base_collections_consume); // #include "base_collections_consume.h"
     Write(out, Strings::base_collections_produce); // #include "base_collections_produce.h"
     Write(out, Strings::base_weak);                // #include "base_weak.h"
+
+    Write(out, Strings::base_std);
 }
 
 static void WritePostHeader()

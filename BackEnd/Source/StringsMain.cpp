@@ -18,7 +18,7 @@ int main()
 	
 	OptimizeDebugOutput();
 
-    Path::SetCurrentDirectory("..\\Source\\Modern");
+    Path::SetCurrentDirectory("Source\\Modern");
 
     Output h;
     Output cpp;

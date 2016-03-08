@@ -148,6 +148,21 @@ template <> struct traits<Windows::IUnknown>
 	using abi = ::IUnknown;
 };
 
+template <typename To>
+struct lease_t : To
+{
+	template <typename From>
+	lease_t(From value) noexcept : To(nullptr)
+	{
+		*put(*static_cast<To *>(this)) = value;
+	}
+
+	~lease_t() noexcept
+	{
+		detach(*static_cast<To *>(this));
+	}
+};
+
 template <typename T>
 struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T>::value>::type>
 {
@@ -178,7 +193,8 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 		}
 	}
 
-	static void copy_to(T const & object, abi_arg_in<T> & value) noexcept
+	template <typename V>
+	static void copy_to(T const & object, V & value) noexcept
 	{
 		if (object)
 		{
@@ -194,6 +210,12 @@ struct accessors<T, typename std::enable_if<std::is_base_of<Windows::IUnknown, T
 	static auto detach(T & object) noexcept
 	{
 		return static_cast<abi_arg_in<T>>(impl_detach(object));
+	}
+
+	template <typename V>
+	static lease_t<T> lease(V value) noexcept
+	{
+		return lease_t<T>(value);
 	}
 };
 
@@ -276,7 +298,7 @@ class impl_IInspectable
 
 public:
 
-	String GetRuntimeClassName() const;
+	hstring GetRuntimeClassName() const;
 };
 
 template <typename T>
@@ -353,9 +375,9 @@ struct IActivationFactory :
 	auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
 };
 
-template <typename T> String impl_IInspectable<T>::GetRuntimeClassName() const
+template <typename T> hstring impl_IInspectable<T>::GetRuntimeClassName() const
 {
-	String name;
+	hstring name;
 	check_hresult(shim()->get_RuntimeClassName(put(name)));
 	return name;
 }
@@ -398,9 +420,31 @@ template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance(
 	return instance;
 }
 
-}}
+}
 
-namespace winrt {
+template <typename T, typename As, typename ... Args>
+auto make_as(Args && ... args)
+{
+	As instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance;
+}
+
+template <typename T, typename ... Args, typename std::enable_if<!impl::has_composable<T>::value>::type * = nullptr>
+auto make(Args && ... args)
+{
+	typename T::default_interface instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance;
+}
+
+template <typename T, typename ... Args, typename std::enable_if<impl::has_composable<T>::value>::type * = nullptr>
+auto make(Args && ... args)
+{
+	Windows::IInspectable instance;
+	*put(instance) = new T(std::forward<Args>(args) ...);
+	return instance.As<T::composable>();
+}
 
 template <typename ... R>
 struct overrides : implements<R ...>
@@ -411,9 +455,9 @@ struct overrides : implements<R ...>
 		return m_inner.As<T>();
 	}
 
-	virtual HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
+	HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
 	{
-		*object = query_interface<R ...>(id);
+			*object = query_interface<R ...>(id);
 
 		if (*object == nullptr)
 		{

@@ -134,7 +134,7 @@ static Keyword const Keywords [] =
 
 static Fundamental const Fundamentals [] =
 {
-    { "String",                 TypeCategory::String    },
+    { "hstring",                TypeCategory::String    },
     { "bool",                   TypeCategory::Boolean   },
     { "EventRegistrationToken", TypeCategory::Value     },
     { "IInspectable",           TypeCategory::Interface },
@@ -316,7 +316,7 @@ class Scanner
 
         if (type == "HSTRING")
         {
-            type = "String";
+            type = "hstring";
         }
         else if (type == "boolean")
         {
@@ -736,12 +736,13 @@ static void NormalizeMetadataType(std::string & type)
     {
         type = "short";
     }
+    else if (type == "String")
+    {
+        type = "hstring";
+    }
     else
     {
-        if (type != "String")
-        {
-            MODERN_ASSERT(std::string::npos != type.find(':'));
-        }
+        MODERN_ASSERT(std::string::npos != type.find(':'));
     }
 }
 
@@ -869,7 +870,7 @@ void ParseHeader(char const * filename)
             if (!ReadName(next, end, name, ns))
             {
                 continue;
-            }           
+            }
 
             Database::AddGenericInterface(name, ns, guidBegin, guidEnd);
         }

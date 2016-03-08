@@ -111,7 +111,6 @@ inline void swap(Parameter & left, Parameter & right)
 struct ParameterInfo
 {
     std::vector<Parameter> Parameters;
-    unsigned StringCount = 0;
     bool HasReturnType = false;
     bool HasDelegate = false;
 
@@ -124,7 +123,6 @@ struct ParameterInfo
     void Clear() noexcept
     {
         Parameters.clear();
-        StringCount = 0;
         HasReturnType = false;
         HasDelegate = false;
     }

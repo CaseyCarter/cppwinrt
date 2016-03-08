@@ -552,11 +552,11 @@ struct impl_AsyncActionProgressHandler : impl::implements<IAsyncActionProgressHa
 {
 	impl_AsyncActionProgressHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), impl::forward<TProgress>(args));
+			(*this)(lease<IAsyncActionWithProgress<TProgress>>(sender), lease<TProgress>(args));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -574,11 +574,11 @@ struct impl_AsyncActionWithProgressCompletedHandler : impl::implements<IAsyncAct
 {
 	impl_AsyncActionWithProgressCompletedHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IAsyncActionWithProgress<TProgress>>(sender), args);
+			(*this)(lease<IAsyncActionWithProgress<TProgress>>(sender), args);
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -596,11 +596,11 @@ struct impl_AsyncOperationProgressHandler : impl::implements<IAsyncOperationProg
 {
 	impl_AsyncOperationProgressHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), impl::forward<TProgress>(args));
+			(*this)(lease<IAsyncOperationWithProgress<TResult, TProgress>>(sender), lease<TProgress>(args));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -618,11 +618,11 @@ struct impl_AsyncOperationWithProgressCompletedHandler : impl::implements<IAsync
 {
 	impl_AsyncOperationWithProgressCompletedHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
+			(*this)(lease<IAsyncOperationWithProgress<TResult, TProgress>>(sender), args);
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -640,11 +640,11 @@ struct impl_AsyncOperationCompletedHandler : impl::implements<IAsyncOperationCom
 {
 	impl_AsyncOperationCompletedHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IAsyncOperation<TResult>>(sender), args);
+			(*this)(lease<IAsyncOperation<TResult>>(sender), args);
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -662,11 +662,11 @@ struct impl_EventHandler : impl::implements<IEventHandler<TArgs>>, THandler
 {
 	impl_EventHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<TArgs> args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<TArgs> args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<IInspectable>(sender), impl::forward<TArgs>(args));
+			(*this)(lease<IInspectable>(sender), lease<TArgs>(args));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
@@ -684,11 +684,11 @@ struct impl_TypedEventHandler : impl::implements<Windows::Foundation::ITypedEven
 {
 	impl_TypedEventHandler(THandler handler) : THandler(handler) {}
 
-	virtual HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
+	HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
 	{
 		try
 		{
-			(*this)(impl::forward<TSender>(sender), impl::forward<TArgs>(args));
+			(*this)(lease<TSender>(sender), lease<TArgs>(args));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }

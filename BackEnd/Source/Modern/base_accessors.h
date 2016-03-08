@@ -1,5 +1,7 @@
 
-namespace winrt { namespace impl {
+namespace winrt {
+
+namespace impl {
 
 template <typename T, typename Enable = void>
 struct accessors
@@ -30,6 +32,11 @@ struct accessors
 	}
 
 	static T detach(T & object) noexcept
+	{
+		return object;
+	}
+
+	static T const & lease(T const & object) noexcept
 	{
 		return object;
 	}
@@ -65,11 +72,14 @@ struct accessors<bool>
 	{
 		return bool_proxy(object);
 	}
+
+	static bool detach(bool object) noexcept
+	{
+		return object;
+	}
 };
 
-}}
-
-namespace winrt {
+}
 
 template <typename T>
 auto get(T const & object) noexcept
@@ -81,6 +91,12 @@ template <typename T>
 auto put(T & object) noexcept
 {
 	return impl::accessors<T>::put(object);
+}
+
+template <typename T>
+auto put_size(T & object) noexcept
+{
+	return impl::accessors<T>::put_size(object);
 }
 
 template <typename T, typename V>
@@ -102,15 +118,21 @@ void copy_to(T const & object, V & value)
 }
 
 template <typename T>
-auto detach(T & object) noexcept
+auto detach(T & object)
+{
+	return impl::accessors<std::decay_t<T>>::detach(object);
+}
+
+template <typename T>
+auto detach(T && object)
 {
 	return impl::accessors<T>::detach(object);
 }
 
-template <typename T>
-auto detach(T && object) noexcept
+template <typename T, typename V>
+auto lease(V && object) noexcept
 {
-	return impl::accessors<T>::detach(object);
+	return impl::accessors<T>::lease(object);
 }
 
 }

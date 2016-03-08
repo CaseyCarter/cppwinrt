@@ -2354,8 +2354,8 @@ class impl_IAppDisplayInfo
 
 public:
 
-	String DisplayName() const;
-	String Description() const;
+	hstring DisplayName() const;
+	hstring Description() const;
 	Windows::Storage::Streams::RandomAccessStreamReference GetLogo(Windows::Foundation::Size const & size) const;
 };
 
@@ -2366,10 +2366,10 @@ class impl_IAppInfo
 
 public:
 
-	String Id() const;
-	String AppUserModelId() const;
+	hstring Id() const;
+	hstring AppUserModelId() const;
 	Windows::ApplicationModel::AppDisplayInfo DisplayInfo() const;
-	String PackageFamilyName() const;
+	hstring PackageFamilyName() const;
 };
 
 template <typename T>
@@ -2410,8 +2410,8 @@ class impl_IPackageIdWithMetadata
 
 public:
 
-	String ProductId() const;
-	String Author() const;
+	hstring ProductId() const;
+	hstring Author() const;
 };
 
 template <typename T>
@@ -2422,8 +2422,8 @@ class impl_IPackageWithMetadata
 public:
 
 	Windows::Foundation::DateTime InstallDate() const;
-	String GetThumbnailToken() const;
-	void Launch(StringReference const & parameters) const;
+	hstring GetThumbnailToken() const;
+	void Launch(hstring_ref parameters) const;
 };
 
 template <typename T>
@@ -2454,14 +2454,14 @@ class impl_IPackageId
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	Windows::ApplicationModel::PackageVersion Version() const;
 	Windows::System::ProcessorArchitecture Architecture() const;
-	String ResourceId() const;
-	String Publisher() const;
-	String PublisherId() const;
-	String FullName() const;
-	String FamilyName() const;
+	hstring ResourceId() const;
+	hstring Publisher() const;
+	hstring PublisherId() const;
+	hstring FullName() const;
+	hstring FamilyName() const;
 };
 
 template <typename T>
@@ -2484,9 +2484,9 @@ class impl_IPackage2
 
 public:
 
-	String DisplayName() const;
-	String PublisherDisplayName() const;
-	String Description() const;
+	hstring DisplayName() const;
+	hstring PublisherDisplayName() const;
+	hstring Description() const;
 	Windows::Foundation::Uri Logo() const;
 	bool IsResourcePackage() const;
 	bool IsBundle() const;
@@ -2591,8 +2591,8 @@ class impl_ILaunchActivatedEventArgs
 
 public:
 
-	String Arguments() const;
-	String TileId() const;
+	hstring Arguments() const;
+	hstring TileId() const;
 };
 
 template <typename T>
@@ -2602,8 +2602,8 @@ class impl_ISearchActivatedEventArgs
 
 public:
 
-	String QueryText() const;
-	String Language() const;
+	hstring QueryText() const;
+	hstring Language() const;
 };
 
 template <typename T>
@@ -2634,7 +2634,7 @@ class impl_IFileActivatedEventArgs
 public:
 
 	Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem> Files() const;
-	String Verb() const;
+	hstring Verb() const;
 };
 
 template <typename T>
@@ -2654,7 +2654,7 @@ class impl_IFileActivatedEventArgsWithCallerPackageFamilyName
 
 public:
 
-	String CallerPackageFamilyName() const;
+	hstring CallerPackageFamilyName() const;
 };
 
 template <typename T>
@@ -2674,7 +2674,7 @@ class impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData
 
 public:
 
-	String CallerPackageFamilyName() const;
+	hstring CallerPackageFamilyName() const;
 	Windows::Foundation::Collections::ValueSet Data() const;
 };
 
@@ -2705,7 +2705,7 @@ class impl_IFileOpenPickerActivatedEventArgs2
 
 public:
 
-	String CallerPackageFamilyName() const;
+	hstring CallerPackageFamilyName() const;
 };
 
 template <typename T>
@@ -2725,8 +2725,8 @@ class impl_IFileSavePickerActivatedEventArgs2
 
 public:
 
-	String CallerPackageFamilyName() const;
-	String EnterpriseId() const;
+	hstring CallerPackageFamilyName() const;
+	hstring EnterpriseId() const;
 };
 
 template <typename T>
@@ -2756,8 +2756,8 @@ class impl_IDeviceActivatedEventArgs
 
 public:
 
-	String DeviceInformationId() const;
-	String Verb() const;
+	hstring DeviceInformationId() const;
+	hstring Verb() const;
 };
 
 template <typename T>
@@ -2798,7 +2798,7 @@ class impl_IAppointmentsProviderActivatedEventArgs
 
 public:
 
-	String Verb() const;
+	hstring Verb() const;
 };
 
 template <typename T>
@@ -2839,8 +2839,8 @@ class impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs
 public:
 
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> InstanceStartDate() const;
-	String LocalId() const;
-	String RoamingId() const;
+	hstring LocalId() const;
+	hstring RoamingId() const;
 };
 
 template <typename T>
@@ -2861,7 +2861,7 @@ class impl_IContactActivatedEventArgs
 
 public:
 
-	String Verb() const;
+	hstring Verb() const;
 };
 
 template <typename T>
@@ -2871,8 +2871,8 @@ class impl_IContactCallActivatedEventArgs
 
 public:
 
-	String ServiceId() const;
-	String ServiceUserId() const;
+	hstring ServiceId() const;
+	hstring ServiceUserId() const;
 	Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
@@ -2883,8 +2883,8 @@ class impl_IContactMessageActivatedEventArgs
 
 public:
 
-	String ServiceId() const;
-	String ServiceUserId() const;
+	hstring ServiceId() const;
+	hstring ServiceUserId() const;
 	Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
@@ -2906,8 +2906,8 @@ class impl_IContactPostActivatedEventArgs
 
 public:
 
-	String ServiceId() const;
-	String ServiceUserId() const;
+	hstring ServiceId() const;
+	hstring ServiceUserId() const;
 	Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
@@ -2918,8 +2918,8 @@ class impl_IContactVideoCallActivatedEventArgs
 
 public:
 
-	String ServiceId() const;
-	String ServiceUserId() const;
+	hstring ServiceId() const;
+	hstring ServiceUserId() const;
 	Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
@@ -2930,7 +2930,7 @@ class impl_IContactsProviderActivatedEventArgs
 
 public:
 
-	String Verb() const;
+	hstring Verb() const;
 };
 
 template <typename T>
@@ -3020,7 +3020,7 @@ class impl_IToastNotificationActivatedEventArgs
 
 public:
 
-	String Argument() const;
+	hstring Argument() const;
 	Windows::Foundation::Collections::ValueSet UserInput() const;
 };
 
@@ -3031,7 +3031,7 @@ class impl_IDialReceiverActivatedEventArgs
 
 public:
 
-	String AppName() const;
+	hstring AppName() const;
 };
 
 template <typename T>
@@ -3065,14 +3065,14 @@ class impl_IAppointmentManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<String> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
-	Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
-	Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
-	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
-	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
 	Windows::Foundation::IAsyncAction ShowTimeFrameAsync(Windows::Foundation::DateTime const & timeToShow, Windows::Foundation::TimeSpan const & duration) const;
 };
 
@@ -3083,9 +3083,9 @@ class impl_IAppointmentManagerStatics2
 
 public:
 
-	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & appointmentId) const;
-	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & appointmentId, Windows::Foundation::DateTime const & instanceStartDate) const;
-	Windows::Foundation::IAsyncOperation<String> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment) const;
+	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId) const;
+	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment) const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentStore> RequestStoreAsync(Windows::ApplicationModel::Appointments::AppointmentStoreAccessType options) const;
 };
 
@@ -3096,10 +3096,10 @@ class impl_IAppointmentParticipant
 
 public:
 
-	String DisplayName() const;
-	void DisplayName(StringReference const & value) const;
-	String Address() const;
-	void Address(StringReference const & value) const;
+	hstring DisplayName() const;
+	void DisplayName(hstring_ref value) const;
+	hstring Address() const;
+	void Address(hstring_ref value) const;
 };
 
 template <typename T>
@@ -3148,8 +3148,8 @@ class impl_IAppointmentRecurrence2
 public:
 
 	Windows::ApplicationModel::Appointments::RecurrenceType RecurrenceType() const;
-	String TimeZone() const;
-	void TimeZone(StringReference const & value) const;
+	hstring TimeZone() const;
+	void TimeZone(hstring_ref value) const;
 };
 
 template <typename T>
@@ -3159,7 +3159,7 @@ class impl_IAppointmentRecurrence3
 
 public:
 
-	String CalendarIdentifier() const;
+	hstring CalendarIdentifier() const;
 };
 
 template <typename T>
@@ -3173,12 +3173,12 @@ public:
 	void StartTime(Windows::Foundation::DateTime const & value) const;
 	Windows::Foundation::TimeSpan Duration() const;
 	void Duration(Windows::Foundation::TimeSpan const & value) const;
-	String Location() const;
-	void Location(StringReference const & value) const;
-	String Subject() const;
-	void Subject(StringReference const & value) const;
-	String Details() const;
-	void Details(StringReference const & value) const;
+	hstring Location() const;
+	void Location(hstring_ref value) const;
+	hstring Subject() const;
+	void Subject(hstring_ref value) const;
+	hstring Details() const;
+	void Details(hstring_ref value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> Reminder() const;
 	void Reminder(Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> const & value) const;
 	Windows::ApplicationModel::Appointments::AppointmentOrganizer Organizer() const;
@@ -3203,17 +3203,17 @@ class impl_IAppointment2
 
 public:
 
-	String LocalId() const;
-	String CalendarId() const;
-	String RoamingId() const;
-	void RoamingId(StringReference const & value) const;
+	hstring LocalId() const;
+	hstring CalendarId() const;
+	hstring RoamingId() const;
+	void RoamingId(hstring_ref value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> OriginalStartTime() const;
 	bool IsResponseRequested() const;
 	void IsResponseRequested(bool value) const;
 	bool AllowNewTimeProposal() const;
 	void AllowNewTimeProposal(bool value) const;
-	String OnlineMeetingLink() const;
-	void OnlineMeetingLink(StringReference const & value) const;
+	hstring OnlineMeetingLink() const;
+	void OnlineMeetingLink(hstring_ref value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> ReplyTime() const;
 	void ReplyTime(Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> const & value) const;
 	Windows::ApplicationModel::Appointments::AppointmentParticipantResponse UserResponse() const;
@@ -3246,8 +3246,8 @@ class impl_IFindAppointmentsOptions
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> CalendarIds() const;
-	Windows::Foundation::Collections::IVector<String> FetchProperties() const;
+	Windows::Foundation::Collections::IVector<hstring> CalendarIds() const;
+	Windows::Foundation::Collections::IVector<hstring> FetchProperties() const;
 	bool IncludeHidden() const;
 	void IncludeHidden(bool value) const;
 	unsigned MaxCount() const;
@@ -3262,30 +3262,30 @@ class impl_IAppointmentCalendar
 public:
 
 	Windows::UI::Color DisplayColor() const;
-	String DisplayName() const;
-	void DisplayName(StringReference const & value) const;
-	String LocalId() const;
+	hstring DisplayName() const;
+	void DisplayName(hstring_ref value) const;
+	hstring LocalId() const;
 	bool IsHidden() const;
 	Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppReadAccess OtherAppReadAccess() const;
 	void OtherAppReadAccess(Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppReadAccess value) const;
 	Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppWriteAccess OtherAppWriteAccess() const;
 	void OtherAppWriteAccess(Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppWriteAccess value) const;
-	String SourceDisplayName() const;
+	hstring SourceDisplayName() const;
 	Windows::ApplicationModel::Appointments::AppointmentSummaryCardView SummaryCardView() const;
 	void SummaryCardView(Windows::ApplicationModel::Appointments::AppointmentSummaryCardView value) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength, Windows::ApplicationModel::Appointments::FindAppointmentsOptions const & options) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> FindExceptionsFromMasterAsync(StringReference const & masterLocalId) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(StringReference const & masterLocalId, Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(StringReference const & masterLocalId, Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength, Windows::ApplicationModel::Appointments::FindAppointmentsOptions const & pOptions) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(StringReference const & localId) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(StringReference const & localId, Windows::Foundation::DateTime const & instanceStartTime) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> FindExceptionsFromMasterAsync(hstring_ref masterLocalId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(hstring_ref masterLocalId, Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(hstring_ref masterLocalId, Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength, Windows::ApplicationModel::Appointments::FindAppointmentsOptions const & pOptions) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(hstring_ref localId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(hstring_ref localId, Windows::Foundation::DateTime const & instanceStartTime) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindUnexpandedAppointmentsAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindUnexpandedAppointmentsAsync(Windows::ApplicationModel::Appointments::FindAppointmentsOptions const & options) const;
 	Windows::Foundation::IAsyncAction DeleteAsync() const;
 	Windows::Foundation::IAsyncAction SaveAsync() const;
-	Windows::Foundation::IAsyncAction DeleteAppointmentAsync(StringReference const & localId) const;
-	Windows::Foundation::IAsyncAction DeleteAppointmentInstanceAsync(StringReference const & localId, Windows::Foundation::DateTime const & instanceStartTime) const;
+	Windows::Foundation::IAsyncAction DeleteAppointmentAsync(hstring_ref localId) const;
+	Windows::Foundation::IAsyncAction DeleteAppointmentInstanceAsync(hstring_ref localId, Windows::Foundation::DateTime const & instanceStartTime) const;
 	Windows::Foundation::IAsyncAction SaveAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & pAppointment) const;
 };
 
@@ -3297,11 +3297,11 @@ class impl_IAppointmentCalendar2
 public:
 
 	Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager SyncManager() const;
-	String RemoteId() const;
-	void RemoteId(StringReference const & value) const;
+	hstring RemoteId() const;
+	void RemoteId(hstring_ref value) const;
 	void DisplayColor(Windows::UI::Color const & value) const;
 	void IsHidden(bool value) const;
-	String UserDataAccountId() const;
+	hstring UserDataAccountId() const;
 	bool CanCreateOrUpdateAppointments() const;
 	void CanCreateOrUpdateAppointments(bool value) const;
 	bool CanCancelMeetings() const;
@@ -3317,10 +3317,10 @@ public:
 	bool MustNofityInvitees() const;
 	void MustNofityInvitees(bool value) const;
 	Windows::Foundation::IAsyncOperation<bool> TryCreateOrUpdateAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, bool notifyInvitees) const;
-	Windows::Foundation::IAsyncOperation<bool> TryCancelMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, StringReference const & subject, StringReference const & comment, bool notifyInvitees) const;
-	Windows::Foundation::IAsyncOperation<bool> TryForwardMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> const & invitees, StringReference const & subject, StringReference const & forwardHeader, StringReference const & comment) const;
-	Windows::Foundation::IAsyncOperation<bool> TryProposeNewTimeForMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::Foundation::DateTime const & newStartTime, Windows::Foundation::TimeSpan const & newDuration, StringReference const & subject, StringReference const & comment) const;
-	Windows::Foundation::IAsyncOperation<bool> TryUpdateMeetingResponseAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response, StringReference const & subject, StringReference const & comment, bool sendUpdate) const;
+	Windows::Foundation::IAsyncOperation<bool> TryCancelMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, hstring_ref subject, hstring_ref comment, bool notifyInvitees) const;
+	Windows::Foundation::IAsyncOperation<bool> TryForwardMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> const & invitees, hstring_ref subject, hstring_ref forwardHeader, hstring_ref comment) const;
+	Windows::Foundation::IAsyncOperation<bool> TryProposeNewTimeForMeetingAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::Foundation::DateTime const & newStartTime, Windows::Foundation::TimeSpan const & newDuration, hstring_ref subject, hstring_ref comment) const;
+	Windows::Foundation::IAsyncOperation<bool> TryUpdateMeetingResponseAsync(Windows::ApplicationModel::Appointments::Appointment const & meeting, Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response, hstring_ref subject, hstring_ref comment, bool sendUpdate) const;
 };
 
 template <typename T>
@@ -3346,29 +3346,29 @@ class impl_IAppointmentPropertiesStatics
 
 public:
 
-	String Subject() const;
-	String Location() const;
-	String StartTime() const;
-	String Duration() const;
-	String Reminder() const;
-	String BusyStatus() const;
-	String Sensitivity() const;
-	String OriginalStartTime() const;
-	String IsResponseRequested() const;
-	String AllowNewTimeProposal() const;
-	String AllDay() const;
-	String Details() const;
-	String OnlineMeetingLink() const;
-	String ReplyTime() const;
-	String Organizer() const;
-	String UserResponse() const;
-	String HasInvitees() const;
-	String IsCanceledMeeting() const;
-	String IsOrganizedByUser() const;
-	String Recurrence() const;
-	String Uri() const;
-	String Invitees() const;
-	Windows::Foundation::Collections::IVector<String> DefaultProperties() const;
+	hstring Subject() const;
+	hstring Location() const;
+	hstring StartTime() const;
+	hstring Duration() const;
+	hstring Reminder() const;
+	hstring BusyStatus() const;
+	hstring Sensitivity() const;
+	hstring OriginalStartTime() const;
+	hstring IsResponseRequested() const;
+	hstring AllowNewTimeProposal() const;
+	hstring AllDay() const;
+	hstring Details() const;
+	hstring OnlineMeetingLink() const;
+	hstring ReplyTime() const;
+	hstring Organizer() const;
+	hstring UserResponse() const;
+	hstring HasInvitees() const;
+	hstring IsCanceledMeeting() const;
+	hstring IsOrganizedByUser() const;
+	hstring Recurrence() const;
+	hstring Uri() const;
+	hstring Invitees() const;
+	Windows::Foundation::Collections::IVector<hstring> DefaultProperties() const;
 };
 
 template <typename T>
@@ -3378,9 +3378,9 @@ class impl_IAppointmentPropertiesStatics2
 
 public:
 
-	String ChangeNumber() const;
-	String RemoteChangeNumber() const;
-	String DetailsKind() const;
+	hstring ChangeNumber() const;
+	hstring RemoteChangeNumber() const;
+	hstring DetailsKind() const;
 };
 
 template <typename T>
@@ -3476,10 +3476,10 @@ class impl_IAppointmentStore
 public:
 
 	Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker ChangeTracker() const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(StringReference const & name) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> GetAppointmentCalendarAsync(StringReference const & calendarId) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(StringReference const & localId) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(StringReference const & localId, Windows::Foundation::DateTime const & instanceStartTime) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(hstring_ref name) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> GetAppointmentCalendarAsync(hstring_ref calendarId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(hstring_ref localId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(hstring_ref localId, Windows::Foundation::DateTime const & instanceStartTime) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> FindAppointmentCalendarsAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> FindAppointmentCalendarsAsync(Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions options) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(Windows::Foundation::DateTime const & rangeStart, Windows::Foundation::TimeSpan const & rangeLength) const;
@@ -3487,15 +3487,15 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentConflictResult> FindConflictAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment) const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentConflictResult> FindConflictAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::DateTime const & instanceStartTime) const;
 	Windows::Foundation::IAsyncAction MoveAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::ApplicationModel::Appointments::AppointmentCalendar const & destinationCalendar) const;
-	Windows::Foundation::IAsyncOperation<String> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & localId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & localId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
-	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & localId, Windows::Foundation::Rect const & selection) const;
-	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & localId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
-	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & localId) const;
-	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & localId, Windows::Foundation::DateTime const & instanceStartDate) const;
-	Windows::Foundation::IAsyncOperation<String> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> FindLocalIdsFromRoamingIdAsync(StringReference const & roamingId) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref localId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref localId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref localId, Windows::Foundation::Rect const & selection) const;
+	Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref localId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref localId) const;
+	Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref localId, Windows::Foundation::DateTime const & instanceStartDate) const;
+	Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindLocalIdsFromRoamingIdAsync(hstring_ref roamingId) const;
 };
 
 template <typename T>
@@ -3508,7 +3508,7 @@ public:
 	long long StoreChanged(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentStore, Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs> const & pHandler) const;
 	template <typename F> long long StoreChanged(F pHandler) const;
 	void StoreChanged(long long token) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(StringReference const & name, StringReference const & userDataAccountId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(hstring_ref name, hstring_ref userDataAccountId) const;
 };
 
 template <typename T>
@@ -3519,7 +3519,7 @@ class impl_IAppointmentException
 public:
 
 	Windows::ApplicationModel::Appointments::Appointment Appointment() const;
-	Windows::Foundation::Collections::IVectorView<String> ExceptionProperties() const;
+	Windows::Foundation::Collections::IVectorView<hstring> ExceptionProperties() const;
 	bool IsDeleted() const;
 };
 
@@ -3534,10 +3534,10 @@ class impl_IAppointmentsProviderLaunchActionVerbsStatics
 
 public:
 
-	String AddAppointment() const;
-	String ReplaceAppointment() const;
-	String RemoveAppointment() const;
-	String ShowTimeFrame() const;
+	hstring AddAppointment() const;
+	hstring ReplaceAppointment() const;
+	hstring RemoveAppointment() const;
+	hstring ShowTimeFrame() const;
 };
 
 template <typename T>
@@ -3547,7 +3547,7 @@ class impl_IAppointmentsProviderLaunchActionVerbsStatics2
 
 public:
 
-	String ShowAppointmentDetails() const;
+	hstring ShowAppointmentDetails() const;
 };
 
 template <typename T>
@@ -3558,10 +3558,10 @@ class impl_IAddAppointmentOperation
 public:
 
 	Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
-	String SourcePackageFamilyName() const;
-	void ReportCompleted(StringReference const & itemId) const;
+	hstring SourcePackageFamilyName() const;
+	void ReportCompleted(hstring_ref itemId) const;
 	void ReportCanceled() const;
-	void ReportError(StringReference const & value) const;
+	void ReportError(hstring_ref value) const;
 	void DismissUI() const;
 };
 
@@ -3572,13 +3572,13 @@ class impl_IReplaceAppointmentOperation
 
 public:
 
-	String AppointmentId() const;
+	hstring AppointmentId() const;
 	Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> InstanceStartDate() const;
-	String SourcePackageFamilyName() const;
-	void ReportCompleted(StringReference const & itemId) const;
+	hstring SourcePackageFamilyName() const;
+	void ReportCompleted(hstring_ref itemId) const;
 	void ReportCanceled() const;
-	void ReportError(StringReference const & value) const;
+	void ReportError(hstring_ref value) const;
 	void DismissUI() const;
 };
 
@@ -3589,12 +3589,12 @@ class impl_IRemoveAppointmentOperation
 
 public:
 
-	String AppointmentId() const;
+	hstring AppointmentId() const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> InstanceStartDate() const;
-	String SourcePackageFamilyName() const;
+	hstring SourcePackageFamilyName() const;
 	void ReportCompleted() const;
 	void ReportCanceled() const;
-	void ReportError(StringReference const & value) const;
+	void ReportError(hstring_ref value) const;
 	void DismissUI() const;
 };
 
@@ -3661,11 +3661,11 @@ class impl_IBackgroundExecutionManagerStatics
 public:
 
 	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync() const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(StringReference const & applicationId) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId) const;
 	void RemoveAccess() const;
-	void RemoveAccess(StringReference const & applicationId) const;
+	void RemoveAccess(hstring_ref applicationId) const;
 	Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus() const;
-	Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(StringReference const & applicationId) const;
+	Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_ref applicationId) const;
 };
 
 template <typename T>
@@ -3735,7 +3735,7 @@ class impl_IBackgroundTaskRegistration
 public:
 
 	GUID TaskId() const;
-	String Name() const;
+	hstring Name() const;
 	long long Progress(Windows::ApplicationModel::Background::IBackgroundTaskProgressEventHandler const & handler) const;
 	template <typename F> long long Progress(F handler) const;
 	void Progress(long long cookie) const;
@@ -3812,12 +3812,12 @@ class impl_IBackgroundTaskBuilder
 
 public:
 
-	void TaskEntryPoint(StringReference const & value) const;
-	String TaskEntryPoint() const;
+	void TaskEntryPoint(hstring_ref value) const;
+	hstring TaskEntryPoint() const;
 	void SetTrigger(Windows::ApplicationModel::Background::IBackgroundTrigger const & trigger) const;
 	void AddCondition(Windows::ApplicationModel::Background::IBackgroundCondition const & condition) const;
-	void Name(StringReference const & value) const;
-	String Name() const;
+	void Name(hstring_ref value) const;
+	hstring Name() const;
 	Windows::ApplicationModel::Background::BackgroundTaskRegistration Register() const;
 };
 
@@ -4017,7 +4017,7 @@ class impl_INetworkOperatorNotificationTrigger
 
 public:
 
-	String NetworkAccountId() const;
+	hstring NetworkAccountId() const;
 };
 
 template <typename T>
@@ -4027,7 +4027,7 @@ class impl_INetworkOperatorNotificationTriggerFactory
 
 public:
 
-	Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(StringReference const & networkAccountId) const;
+	Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(hstring_ref networkAccountId) const;
 };
 
 template <typename T>
@@ -4121,8 +4121,8 @@ class impl_IDeviceUseTrigger
 
 public:
 
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(StringReference const & deviceId) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(StringReference const & deviceId, StringReference const & arguments) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, hstring_ref arguments) const;
 };
 
 template <typename T>
@@ -4132,8 +4132,8 @@ class impl_IDeviceServicingTrigger
 
 public:
 
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(StringReference const & deviceId, Windows::Foundation::TimeSpan const & expectedDuration) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(StringReference const & deviceId, Windows::Foundation::TimeSpan const & expectedDuration, StringReference const & arguments) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, Windows::Foundation::TimeSpan const & expectedDuration) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, Windows::Foundation::TimeSpan const & expectedDuration, hstring_ref arguments) const;
 };
 
 template <typename T>
@@ -4160,7 +4160,7 @@ class impl_IDeviceConnectionChangeTrigger
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	bool CanMaintainConnection() const;
 	bool MaintainConnection() const;
 	void MaintainConnection(bool value) const;
@@ -4173,7 +4173,7 @@ class impl_IDeviceConnectionChangeTriggerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(StringReference const & deviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId) const;
 };
 
 template <typename T>
@@ -4310,7 +4310,7 @@ class impl_IPushNotificationTriggerFactory
 
 public:
 
-	Windows::ApplicationModel::Background::PushNotificationTrigger Create(StringReference const & applicationId) const;
+	Windows::ApplicationModel::Background::PushNotificationTrigger Create(hstring_ref applicationId) const;
 };
 
 template <typename T>
@@ -4320,7 +4320,7 @@ class impl_IToastNotificationHistoryChangedTriggerFactory
 
 public:
 
-	Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(StringReference const & applicationId) const;
+	Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(hstring_ref applicationId) const;
 };
 
 template <typename T>
@@ -4330,7 +4330,7 @@ class impl_IToastNotificationActionTriggerFactory
 
 public:
 
-	Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(StringReference const & applicationId) const;
+	Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(hstring_ref applicationId) const;
 };
 
 }}}}
@@ -4344,7 +4344,7 @@ class impl_IPhoneCallHistoryEntry
 
 public:
 
-	String Id() const;
+	hstring Id() const;
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Address() const;
 	void Address(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress const & value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> Duration() const;
@@ -4369,11 +4369,11 @@ public:
 	void Media(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia value) const;
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess OtherAppReadAccess() const;
 	void OtherAppReadAccess(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess value) const;
-	String RemoteId() const;
-	void RemoteId(StringReference const & value) const;
-	String SourceDisplayName() const;
-	String SourceId() const;
-	void SourceId(StringReference const & value) const;
+	hstring RemoteId() const;
+	void RemoteId(hstring_ref value) const;
+	hstring SourceDisplayName() const;
+	hstring SourceId() const;
+	void SourceId(hstring_ref value) const;
 	Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind SourceIdKind() const;
 	void SourceIdKind(Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind value) const;
 	Windows::Foundation::DateTime StartTime() const;
@@ -4387,12 +4387,12 @@ class impl_IPhoneCallHistoryEntryAddress
 
 public:
 
-	String ContactId() const;
-	void ContactId(StringReference const & value) const;
-	String DisplayName() const;
-	void DisplayName(StringReference const & value) const;
-	String RawAddress() const;
-	void RawAddress(StringReference const & value) const;
+	hstring ContactId() const;
+	void ContactId(hstring_ref value) const;
+	hstring DisplayName() const;
+	void DisplayName(hstring_ref value) const;
+	hstring RawAddress() const;
+	void RawAddress(hstring_ref value) const;
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind RawAddressKind() const;
 	void RawAddressKind(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value) const;
 };
@@ -4404,7 +4404,7 @@ class impl_IPhoneCallHistoryEntryAddressFactory
 
 public:
 
-	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(StringReference const & rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
+	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
 };
 
 template <typename T>
@@ -4416,7 +4416,7 @@ public:
 
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia DesiredMedia() const;
 	void DesiredMedia(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value) const;
-	Windows::Foundation::Collections::IVector<String> SourceIds() const;
+	Windows::Foundation::Collections::IVector<hstring> SourceIds() const;
 };
 
 template <typename T>
@@ -4436,7 +4436,7 @@ class impl_IPhoneCallHistoryStore
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(StringReference const & callHistoryEntryId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(hstring_ref callHistoryEntryId) const;
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader() const;
 	Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions const & queryOptions) const;
 	Windows::Foundation::IAsyncAction SaveEntryAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryEntry const & callHistoryEntry) const;
@@ -4446,8 +4446,8 @@ public:
 	Windows::Foundation::IAsyncAction MarkEntriesAsSeenAsync(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> const & callHistoryEntries) const;
 	Windows::Foundation::IAsyncOperation<unsigned> GetUnseenCountAsync() const;
 	Windows::Foundation::IAsyncAction MarkAllAsSeenAsync() const;
-	Windows::Foundation::IAsyncOperation<unsigned> GetSourcesUnseenCountAsync(Windows::Foundation::Collections::IIterable<String> const & sourceIds) const;
-	Windows::Foundation::IAsyncAction MarkSourcesAsSeenAsync(Windows::Foundation::Collections::IIterable<String> const & sourceIds) const;
+	Windows::Foundation::IAsyncOperation<unsigned> GetSourcesUnseenCountAsync(Windows::Foundation::Collections::IIterable<hstring> const & sourceIds) const;
+	Windows::Foundation::IAsyncAction MarkSourcesAsSeenAsync(Windows::Foundation::Collections::IIterable<hstring> const & sourceIds) const;
 };
 
 template <typename T>
@@ -4467,7 +4467,7 @@ class impl_IPhoneVoicemail
 
 public:
 
-	String Number() const;
+	hstring Number() const;
 	int MessageCount() const;
 	Windows::ApplicationModel::Calls::PhoneVoicemailType Type() const;
 	Windows::Foundation::IAsyncAction DialVoicemailAsync() const;
@@ -4480,10 +4480,10 @@ class impl_IPhoneDialOptions
 
 public:
 
-	String Number() const;
-	void Number(StringReference const & value) const;
-	String DisplayName() const;
-	void DisplayName(StringReference const & value) const;
+	hstring Number() const;
+	void Number(hstring_ref value) const;
+	hstring DisplayName() const;
+	void DisplayName(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::Contact Contact() const;
 	void Contact(Windows::ApplicationModel::Contacts::Contact const & value) const;
 	Windows::ApplicationModel::Contacts::ContactPhone ContactPhone() const;
@@ -4505,7 +4505,7 @@ public:
 	int SimSlotIndex() const;
 	bool IsModemOn() const;
 	int RegistrationRejectCode() const;
-	String GetNetworkOperatorDisplayText(Windows::ApplicationModel::Calls::PhoneLineNetworkOperatorDisplayTextLocation location) const;
+	hstring GetNetworkOperatorDisplayText(Windows::ApplicationModel::Calls::PhoneLineNetworkOperatorDisplayTextLocation location) const;
 };
 
 template <typename T>
@@ -4521,17 +4521,17 @@ public:
 	GUID Id() const;
 	Windows::UI::Color DisplayColor() const;
 	Windows::ApplicationModel::Calls::PhoneNetworkState NetworkState() const;
-	String DisplayName() const;
+	hstring DisplayName() const;
 	Windows::ApplicationModel::Calls::PhoneVoicemail Voicemail() const;
-	String NetworkName() const;
+	hstring NetworkName() const;
 	Windows::ApplicationModel::Calls::PhoneLineCellularDetails CellularDetails() const;
 	Windows::ApplicationModel::Calls::PhoneLineTransport Transport() const;
 	bool CanDial() const;
 	bool SupportsTile() const;
 	Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities VideoCallingCapabilities() const;
 	Windows::ApplicationModel::Calls::PhoneLineConfiguration LineConfiguration() const;
-	Windows::Foundation::IAsyncOperation<bool> IsImmediateDialNumberAsync(StringReference const & number) const;
-	void Dial(StringReference const & number, StringReference const & displayName) const;
+	Windows::Foundation::IAsyncOperation<bool> IsImmediateDialNumberAsync(hstring_ref number) const;
+	void Dial(hstring_ref number, hstring_ref displayName) const;
 	void DialWithOptions(Windows::ApplicationModel::Calls::PhoneDialOptions const & options) const;
 };
 
@@ -4542,7 +4542,7 @@ class impl_IPhoneCallStore
 
 public:
 
-	Windows::Foundation::IAsyncOperation<bool> IsEmergencyPhoneNumberAsync(StringReference const & number) const;
+	Windows::Foundation::IAsyncOperation<bool> IsEmergencyPhoneNumberAsync(hstring_ref number) const;
 	Windows::Foundation::IAsyncOperation<GUID> GetDefaultLineAsync() const;
 	Windows::ApplicationModel::Calls::PhoneLineWatcher RequestLineWatcher() const;
 };
@@ -4555,7 +4555,7 @@ class impl_IPhoneLineConfiguration
 public:
 
 	bool IsVideoCallingEnabled() const;
-	Windows::Foundation::Collections::IMapView<String, IInspectable> ExtendedProperties() const;
+	Windows::Foundation::Collections::IMapView<hstring, IInspectable> ExtendedProperties() const;
 };
 
 template <typename T>
@@ -4612,7 +4612,7 @@ class impl_IPhoneCallManagerStatics
 
 public:
 
-	void ShowPhoneCallUI(StringReference const & phoneNumber, StringReference const & displayName) const;
+	void ShowPhoneCallUI(hstring_ref phoneNumber, hstring_ref displayName) const;
 };
 
 template <typename T>
@@ -4648,7 +4648,7 @@ class impl_IPhoneCallVideoCapabilitiesManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities> GetCapabilitiesAsync(StringReference const & phoneNumber) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities> GetCapabilitiesAsync(hstring_ref phoneNumber) const;
 };
 
 template <typename T>
@@ -4662,7 +4662,7 @@ public:
 	void BlockUnknownNumbers(bool value) const;
 	bool BlockPrivateNumbers() const;
 	void BlockPrivateNumbers(bool value) const;
-	Windows::Foundation::IAsyncOperation<bool> SetCallBlockingListAsync(Windows::Foundation::Collections::IIterable<String> const & phoneNumberList) const;
+	Windows::Foundation::IAsyncOperation<bool> SetCallBlockingListAsync(Windows::Foundation::Collections::IIterable<hstring> const & phoneNumberList) const;
 };
 
 template <typename T>
@@ -4720,8 +4720,8 @@ public:
 	void NotifyCallHeld() const;
 	void NotifyCallActive() const;
 	void NotifyCallEnded() const;
-	String ContactName() const;
-	void ContactName(StringReference const & value) const;
+	hstring ContactName() const;
+	void ContactName(hstring_ref value) const;
 	Windows::Foundation::DateTime StartTime() const;
 	void StartTime(Windows::Foundation::DateTime const & value) const;
 	Windows::ApplicationModel::Calls::VoipPhoneCallMedia CallMedia() const;
@@ -4746,16 +4746,16 @@ class impl_IVoipCallCoordinator
 
 public:
 
-	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(StringReference const & taskEntryPoint) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const;
 	long long MuteStateChanged(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> const & muteChangeHandler) const;
 	template <typename F> long long MuteStateChanged(F muteChangeHandler) const;
 	void MuteStateChanged(long long token) const;
-	Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewIncomingCall(StringReference const & context, StringReference const & contactName, StringReference const & contactNumber, Windows::Foundation::Uri const & contactImage, StringReference const & serviceName, Windows::Foundation::Uri const & brandingImage, StringReference const & callDetails, Windows::Foundation::Uri const & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, Windows::Foundation::TimeSpan const & ringTimeout) const;
-	Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewOutgoingCall(StringReference const & context, StringReference const & contactName, StringReference const & serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const;
+	Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewIncomingCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, Windows::Foundation::Uri const & contactImage, hstring_ref serviceName, Windows::Foundation::Uri const & brandingImage, hstring_ref callDetails, Windows::Foundation::Uri const & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, Windows::Foundation::TimeSpan const & ringTimeout) const;
+	Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewOutgoingCall(hstring_ref context, hstring_ref contactName, hstring_ref serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const;
 	void NotifyMuted() const;
 	void NotifyUnmuted() const;
-	Windows::ApplicationModel::Calls::VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, StringReference const & context, StringReference const & contactName, StringReference const & serviceName) const;
-	Windows::ApplicationModel::Calls::VoipPhoneCall RequestIncomingUpgradeToVideoCall(StringReference const & context, StringReference const & contactName, StringReference const & contactNumber, Windows::Foundation::Uri const & contactImage, StringReference const & serviceName, Windows::Foundation::Uri const & brandingImage, StringReference const & callDetails, Windows::Foundation::Uri const & ringtone, Windows::Foundation::TimeSpan const & ringTimeout) const;
+	Windows::ApplicationModel::Calls::VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_ref context, hstring_ref contactName, hstring_ref serviceName) const;
+	Windows::ApplicationModel::Calls::VoipPhoneCall RequestIncomingUpgradeToVideoCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, Windows::Foundation::Uri const & contactImage, hstring_ref serviceName, Windows::Foundation::Uri const & brandingImage, hstring_ref callDetails, Windows::Foundation::Uri const & ringtone, Windows::Foundation::TimeSpan const & ringTimeout) const;
 	void TerminateCellularCall(GUID callUpgradeGuid) const;
 	void CancelUpgrade(GUID callUpgradeGuid) const;
 };
@@ -4805,8 +4805,8 @@ public:
 	long long Closed(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Calls::LockScreenCallUI, IInspectable> const & handler) const;
 	template <typename F> long long Closed(F handler) const;
 	void Closed(long long token) const;
-	String CallTitle() const;
-	void CallTitle(StringReference const & value) const;
+	hstring CallTitle() const;
+	void CallTitle(hstring_ref value) const;
 };
 
 }}}}
@@ -4820,7 +4820,7 @@ class impl_IPhoneCallBlockedTriggerDetails
 
 public:
 
-	String PhoneNumber() const;
+	hstring PhoneNumber() const;
 	GUID LineId() const;
 	Windows::ApplicationModel::Calls::Background::PhoneCallBlockedReason CallBlockedReason() const;
 };
@@ -4833,7 +4833,7 @@ class impl_IPhoneCallOriginDataRequestTriggerDetails
 public:
 
 	GUID RequestId() const;
-	String PhoneNumber() const;
+	hstring PhoneNumber() const;
 };
 
 template <typename T>
@@ -4845,7 +4845,7 @@ public:
 
 	GUID LineId() const;
 	int VoicemailCount() const;
-	String OperatorMessage() const;
+	hstring OperatorMessage() const;
 };
 
 template <typename T>
@@ -4884,7 +4884,7 @@ class impl_IContactCardOptions2
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> ServerSearchContactListIds() const;
+	Windows::Foundation::Collections::IVector<hstring> ServerSearchContactListIds() const;
 };
 
 template <typename T>
@@ -4963,13 +4963,13 @@ class impl_IContactAnnotationStore
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> FindContactIdsByEmailAsync(StringReference const & emailAddress) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> FindContactIdsByPhoneNumberAsync(StringReference const & phoneNumber) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByEmailAsync(hstring_ref emailAddress) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByPhoneNumberAsync(hstring_ref phoneNumber) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsForContactAsync(Windows::ApplicationModel::Contacts::Contact const & contact) const;
 	Windows::Foundation::IAsyncAction DisableAnnotationAsync(Windows::ApplicationModel::Contacts::ContactAnnotation const & annotation) const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync(StringReference const & userDataAccountId) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> GetAnnotationListAsync(StringReference const & annotationListId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync(hstring_ref userDataAccountId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> GetAnnotationListAsync(hstring_ref annotationListId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> FindAnnotationListsAsync() const;
 };
 
@@ -4980,13 +4980,13 @@ class impl_IContactAnnotationList
 
 public:
 
-	String Id() const;
-	String ProviderPackageFamilyName() const;
-	String UserDataAccountId() const;
+	hstring Id() const;
+	hstring ProviderPackageFamilyName() const;
+	hstring UserDataAccountId() const;
 	Windows::Foundation::IAsyncAction DeleteAsync() const;
 	Windows::Foundation::IAsyncOperation<bool> TrySaveAnnotationAsync(Windows::ApplicationModel::Contacts::ContactAnnotation const & annotation) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> GetAnnotationAsync(StringReference const & annotationId) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsByRemoteIdAsync(StringReference const & remoteId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> GetAnnotationAsync(hstring_ref annotationId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsByRemoteIdAsync(hstring_ref remoteId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsAsync() const;
 	Windows::Foundation::IAsyncAction DeleteAnnotationAsync(Windows::ApplicationModel::Contacts::ContactAnnotation const & annotation) const;
 };
@@ -4998,12 +4998,12 @@ class impl_IContactAnnotation
 
 public:
 
-	String Id() const;
-	String AnnotationListId() const;
-	String ContactId() const;
-	void ContactId(StringReference const & value) const;
-	String RemoteId() const;
-	void RemoteId(StringReference const & value) const;
+	hstring Id() const;
+	hstring AnnotationListId() const;
+	hstring ContactId() const;
+	void ContactId(hstring_ref value) const;
+	hstring RemoteId() const;
+	void RemoteId(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactAnnotationOperations SupportedOperations() const;
 	void SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) const;
 	bool IsDisabled() const;
@@ -5027,8 +5027,8 @@ class impl_IContactStore
 public:
 
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync(StringReference const & searchText) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(StringReference const & contactId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync(hstring_ref searchText) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_ref contactId) const;
 };
 
 template <typename T>
@@ -5044,12 +5044,12 @@ public:
 	void ContactChanged(long long value) const;
 	Windows::ApplicationModel::Contacts::AggregateContactManager AggregateContactManager() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> FindContactListsAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> GetContactListAsync(StringReference const & contactListId) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(StringReference const & displayName) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> GetContactListAsync(hstring_ref contactListId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_ref displayName) const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetMeContactAsync() const;
 	Windows::ApplicationModel::Contacts::ContactReader GetContactReader() const;
 	Windows::ApplicationModel::Contacts::ContactReader GetContactReader(Windows::ApplicationModel::Contacts::ContactQueryOptions const & options) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(StringReference const & displayName, StringReference const & userDataAccountId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_ref displayName, hstring_ref userDataAccountId) const;
 };
 
 template <typename T>
@@ -5059,10 +5059,10 @@ class impl_IContactList
 
 public:
 
-	String Id() const;
-	String DisplayName() const;
-	void DisplayName(StringReference const & value) const;
-	String SourceDisplayName() const;
+	hstring Id() const;
+	hstring DisplayName() const;
+	void DisplayName(hstring_ref value) const;
+	hstring SourceDisplayName() const;
 	bool IsHidden() const;
 	void IsHidden(bool value) const;
 	Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess OtherAppReadAccess() const;
@@ -5072,19 +5072,19 @@ public:
 	Windows::ApplicationModel::Contacts::ContactChangeTracker ChangeTracker() const;
 	Windows::ApplicationModel::Contacts::ContactListSyncManager SyncManager() const;
 	bool SupportsServerSearch() const;
-	String UserDataAccountId() const;
+	hstring UserDataAccountId() const;
 	long long ContactChanged(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const & value) const;
 	template <typename F> long long ContactChanged(F value) const;
 	void ContactChanged(long long value) const;
 	Windows::Foundation::IAsyncAction SaveAsync() const;
 	Windows::Foundation::IAsyncAction DeleteAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactFromRemoteIdAsync(StringReference const & remoteId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactFromRemoteIdAsync(hstring_ref remoteId) const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetMeContactAsync() const;
 	Windows::ApplicationModel::Contacts::ContactReader GetContactReader() const;
 	Windows::ApplicationModel::Contacts::ContactReader GetContactReader(Windows::ApplicationModel::Contacts::ContactQueryOptions const & options) const;
 	Windows::Foundation::IAsyncAction SaveContactAsync(Windows::ApplicationModel::Contacts::Contact const & contact) const;
 	Windows::Foundation::IAsyncAction DeleteContactAsync(Windows::ApplicationModel::Contacts::Contact const & contact) const;
-	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(StringReference const & contactId) const;
+	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_ref contactId) const;
 };
 
 template <typename T>
@@ -5110,10 +5110,10 @@ class impl_IContactConnectedServiceAccount
 
 public:
 
-	String Id() const;
-	void Id(StringReference const & value) const;
-	String ServiceName() const;
-	void ServiceName(StringReference const & value) const;
+	hstring Id() const;
+	void Id(hstring_ref value) const;
+	hstring ServiceName() const;
+	void ServiceName(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5123,10 +5123,10 @@ class impl_IContactSignificantOther
 
 public:
 
-	String Name() const;
-	void Name(StringReference const & value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Name() const;
+	void Name(hstring_ref value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5149,8 +5149,8 @@ public:
 
 	Windows::Foundation::Uri Uri() const;
 	void Uri(Windows::Foundation::Uri const & value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5160,8 +5160,8 @@ class impl_IContactWebsite2
 
 public:
 
-	String RawValue() const;
-	void RawValue(StringReference const & value) const;
+	hstring RawValue() const;
+	void RawValue(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5171,12 +5171,12 @@ class impl_IContactEmail
 
 public:
 
-	String Address() const;
-	void Address(StringReference const & value) const;
+	hstring Address() const;
+	void Address(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactEmailKind Kind() const;
 	void Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5186,12 +5186,12 @@ class impl_IContactPhone
 
 public:
 
-	String Number() const;
-	void Number(StringReference const & value) const;
+	hstring Number() const;
+	void Number(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactPhoneKind Kind() const;
 	void Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5201,20 +5201,20 @@ class impl_IContactAddress
 
 public:
 
-	String StreetAddress() const;
-	void StreetAddress(StringReference const & value) const;
-	String Locality() const;
-	void Locality(StringReference const & value) const;
-	String Region() const;
-	void Region(StringReference const & value) const;
-	String Country() const;
-	void Country(StringReference const & value) const;
-	String PostalCode() const;
-	void PostalCode(StringReference const & value) const;
+	hstring StreetAddress() const;
+	void StreetAddress(hstring_ref value) const;
+	hstring Locality() const;
+	void Locality(hstring_ref value) const;
+	hstring Region() const;
+	void Region(hstring_ref value) const;
+	hstring Country() const;
+	void Country(hstring_ref value) const;
+	hstring PostalCode() const;
+	void PostalCode(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactAddressKind Kind() const;
 	void Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5232,8 +5232,8 @@ public:
 	void Year(Windows::Foundation::IReference<int> const & value) const;
 	Windows::ApplicationModel::Contacts::ContactDateKind Kind() const;
 	void Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5243,22 +5243,22 @@ class impl_IContactJobInfo
 
 public:
 
-	String CompanyName() const;
-	void CompanyName(StringReference const & value) const;
-	String CompanyYomiName() const;
-	void CompanyYomiName(StringReference const & value) const;
-	String Department() const;
-	void Department(StringReference const & value) const;
-	String Title() const;
-	void Title(StringReference const & value) const;
-	String Manager() const;
-	void Manager(StringReference const & value) const;
-	String Office() const;
-	void Office(StringReference const & value) const;
-	String CompanyAddress() const;
-	void CompanyAddress(StringReference const & value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring CompanyName() const;
+	void CompanyName(hstring_ref value) const;
+	hstring CompanyYomiName() const;
+	void CompanyYomiName(hstring_ref value) const;
+	hstring Department() const;
+	void Department(hstring_ref value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
+	hstring Manager() const;
+	void Manager(hstring_ref value) const;
+	hstring Office() const;
+	void Office(hstring_ref value) const;
+	hstring CompanyAddress() const;
+	void CompanyAddress(hstring_ref value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 };
 
 template <typename T>
@@ -5268,8 +5268,8 @@ class impl_IContact
 
 public:
 
-	String Name() const;
-	void Name(StringReference const & value) const;
+	hstring Name() const;
+	void Name(hstring_ref value) const;
 	Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
 	void Thumbnail(Windows::Storage::Streams::IRandomAccessStreamReference const & value) const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField> Fields() const;
@@ -5284,8 +5284,8 @@ public:
 
 	Windows::ApplicationModel::Contacts::ContactFieldType Type() const;
 	Windows::ApplicationModel::Contacts::ContactFieldCategory Category() const;
-	String Name() const;
-	String Value() const;
+	hstring Name() const;
+	hstring Value() const;
 };
 
 template <typename T>
@@ -5295,22 +5295,22 @@ class impl_IContactName
 
 public:
 
-	String FirstName() const;
-	void FirstName(StringReference const & value) const;
-	String LastName() const;
-	void LastName(StringReference const & value) const;
-	String MiddleName() const;
-	void MiddleName(StringReference const & value) const;
-	String YomiGivenName() const;
-	void YomiGivenName(StringReference const & value) const;
-	String YomiFamilyName() const;
-	void YomiFamilyName(StringReference const & value) const;
-	String HonorificNameSuffix() const;
-	void HonorificNameSuffix(StringReference const & value) const;
-	String HonorificNamePrefix() const;
-	void HonorificNamePrefix(StringReference const & value) const;
-	String DisplayName() const;
-	String YomiDisplayName() const;
+	hstring FirstName() const;
+	void FirstName(hstring_ref value) const;
+	hstring LastName() const;
+	void LastName(hstring_ref value) const;
+	hstring MiddleName() const;
+	void MiddleName(hstring_ref value) const;
+	hstring YomiGivenName() const;
+	void YomiGivenName(hstring_ref value) const;
+	hstring YomiFamilyName() const;
+	void YomiFamilyName(hstring_ref value) const;
+	hstring HonorificNameSuffix() const;
+	void HonorificNameSuffix(hstring_ref value) const;
+	hstring HonorificNamePrefix() const;
+	void HonorificNamePrefix(hstring_ref value) const;
+	hstring DisplayName() const;
+	hstring YomiDisplayName() const;
 };
 
 template <typename T>
@@ -5320,16 +5320,16 @@ class impl_IContact2
 
 public:
 
-	String Id() const;
-	void Id(StringReference const & value) const;
-	String Notes() const;
-	void Notes(StringReference const & value) const;
+	hstring Id() const;
+	void Id(hstring_ref value) const;
+	hstring Notes() const;
+	void Notes(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone> Phones() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail> Emails() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress> Addresses() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount> ConnectedServiceAccounts() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactDate> ImportantDates() const;
-	Windows::Foundation::Collections::IVector<String> DataSuppliers() const;
+	Windows::Foundation::Collections::IVector<hstring> DataSuppliers() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactJobInfo> JobInfo() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactSignificantOther> SignificantOthers() const;
 	Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactWebsite> Websites() const;
@@ -5343,29 +5343,29 @@ class impl_IContact3
 
 public:
 
-	String ContactListId() const;
+	hstring ContactListId() const;
 	Windows::Foundation::DateTime DisplayPictureUserUpdateTime() const;
 	void DisplayPictureUserUpdateTime(Windows::Foundation::DateTime const & value) const;
 	bool IsMe() const;
-	String AggregateId() const;
-	String RemoteId() const;
-	void RemoteId(StringReference const & value) const;
-	String RingToneToken() const;
-	void RingToneToken(StringReference const & value) const;
+	hstring AggregateId() const;
+	hstring RemoteId() const;
+	void RemoteId(hstring_ref value) const;
+	hstring RingToneToken() const;
+	void RingToneToken(hstring_ref value) const;
 	bool IsDisplayPictureManuallySet() const;
 	Windows::Storage::Streams::IRandomAccessStreamReference LargeDisplayPicture() const;
 	Windows::Storage::Streams::IRandomAccessStreamReference SmallDisplayPicture() const;
 	Windows::Storage::Streams::IRandomAccessStreamReference SourceDisplayPicture() const;
 	void SourceDisplayPicture(Windows::Storage::Streams::IRandomAccessStreamReference const & value) const;
-	String TextToneToken() const;
-	void TextToneToken(StringReference const & value) const;
+	hstring TextToneToken() const;
+	void TextToneToken(hstring_ref value) const;
 	bool IsAggregate() const;
-	String FullName() const;
-	String DisplayNameOverride() const;
-	void DisplayNameOverride(StringReference const & value) const;
-	String Nickname() const;
-	void Nickname(StringReference const & value) const;
-	String SortName() const;
+	hstring FullName() const;
+	hstring DisplayNameOverride() const;
+	void DisplayNameOverride(hstring_ref value) const;
+	hstring Nickname() const;
+	void Nickname(hstring_ref value) const;
+	hstring SortName() const;
 };
 
 template <typename T>
@@ -5443,8 +5443,8 @@ public:
 
 	Windows::ApplicationModel::Contacts::ContactQuerySearchFields Fields() const;
 	void Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) const;
-	String Text() const;
-	void Text(StringReference const & value) const;
+	hstring Text() const;
+	void Text(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactQuerySearchScope SearchScope() const;
 	void SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) const;
 };
@@ -5456,8 +5456,8 @@ class impl_IContactQueryOptionsFactory
 
 public:
 
-	Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithText(StringReference const & text) const;
-	Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithTextAndFields(StringReference const & text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const;
+	Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithText(hstring_ref text) const;
+	Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const;
 };
 
 template <typename T>
@@ -5468,14 +5468,14 @@ class impl_IContactQueryOptions
 public:
 
 	Windows::ApplicationModel::Contacts::ContactQueryTextSearch TextSearch() const;
-	Windows::Foundation::Collections::IVector<String> ContactListIds() const;
+	Windows::Foundation::Collections::IVector<hstring> ContactListIds() const;
 	bool IncludeContactsFromHiddenLists() const;
 	void IncludeContactsFromHiddenLists(bool value) const;
 	Windows::ApplicationModel::Contacts::ContactQueryDesiredFields DesiredFields() const;
 	void DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) const;
 	Windows::ApplicationModel::Contacts::ContactAnnotationOperations DesiredOperations() const;
 	void DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) const;
-	Windows::Foundation::Collections::IVector<String> AnnotationListIds() const;
+	Windows::Foundation::Collections::IVector<hstring> AnnotationListIds() const;
 };
 
 template <typename T>
@@ -5498,7 +5498,7 @@ public:
 
 	Windows::ApplicationModel::Contacts::ContactMatchReasonKind Field() const;
 	Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment> Segments() const;
-	String Text() const;
+	hstring Text() const;
 };
 
 template <typename T>
@@ -5508,11 +5508,11 @@ class impl_IContactLaunchActionVerbsStatics
 
 public:
 
-	String Call() const;
-	String Message() const;
-	String Map() const;
-	String Post() const;
-	String VideoCall() const;
+	hstring Call() const;
+	hstring Message() const;
+	hstring Map() const;
+	hstring Post() const;
+	hstring VideoCall() const;
 };
 
 template <typename T>
@@ -5522,12 +5522,12 @@ class impl_IContactLocationField
 
 public:
 
-	String UnstructuredAddress() const;
-	String Street() const;
-	String City() const;
-	String Region() const;
-	String Country() const;
-	String PostalCode() const;
+	hstring UnstructuredAddress() const;
+	hstring Street() const;
+	hstring City() const;
+	hstring Region() const;
+	hstring Country() const;
+	hstring PostalCode() const;
 };
 
 template <typename T>
@@ -5537,9 +5537,9 @@ class impl_IContactInstantMessageField
 
 public:
 
-	String UserName() const;
-	String Service() const;
-	String DisplayText() const;
+	hstring UserName() const;
+	hstring Service() const;
+	hstring DisplayText() const;
 	Windows::Foundation::Uri LaunchUri() const;
 };
 
@@ -5550,12 +5550,12 @@ class impl_IKnownContactFieldStatics
 
 public:
 
-	String Email() const;
-	String PhoneNumber() const;
-	String Location() const;
-	String InstantMessage() const;
-	Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(StringReference const & name) const;
-	String ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
+	hstring Email() const;
+	hstring PhoneNumber() const;
+	hstring Location() const;
+	hstring InstantMessage() const;
+	Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_ref name) const;
+	hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
 };
 
 template <typename T>
@@ -5565,14 +5565,14 @@ class impl_IContactInformation
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetThumbnailAsync() const;
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> Emails() const;
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> PhoneNumbers() const;
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField> Locations() const;
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField> InstantMessages() const;
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> CustomFields() const;
-	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> QueryCustomFields(StringReference const & customName) const;
+	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> QueryCustomFields(hstring_ref customName) const;
 };
 
 template <typename T>
@@ -5582,9 +5582,9 @@ class impl_IContactFieldFactory
 
 public:
 
-	Windows::ApplicationModel::Contacts::ContactField CreateField(StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
-	Windows::ApplicationModel::Contacts::ContactField CreateField(StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-	Windows::ApplicationModel::Contacts::ContactField CreateField(StringReference const & name, StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+	Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
+	Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+	Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
 };
 
 template <typename T>
@@ -5594,9 +5594,9 @@ class impl_IContactLocationFieldFactory
 
 public:
 
-	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(StringReference const & unstructuredAddress) const;
-	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(StringReference const & unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(StringReference const & unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, StringReference const & street, StringReference const & city, StringReference const & region, StringReference const & country, StringReference const & postalCode) const;
+	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress) const;
+	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+	Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) const;
 };
 
 template <typename T>
@@ -5606,9 +5606,9 @@ class impl_IContactInstantMessageFieldFactory
 
 public:
 
-	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(StringReference const & userName) const;
-	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(StringReference const & userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(StringReference const & userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, StringReference const & service, StringReference const & displayText, Windows::Foundation::Uri const & verb) const;
+	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName) const;
+	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+	Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, Windows::Foundation::Uri const & verb) const;
 };
 
 template <typename T>
@@ -5618,11 +5618,11 @@ class impl_IContactPicker
 
 public:
 
-	String CommitButtonText() const;
-	void CommitButtonText(StringReference const & value) const;
+	hstring CommitButtonText() const;
+	void CommitButtonText(hstring_ref value) const;
 	Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
 	void SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) const;
-	Windows::Foundation::Collections::IVector<String> DesiredFields() const;
+	Windows::Foundation::Collections::IVector<hstring> DesiredFields() const;
 	Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactInformation> PickSingleContactAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>> PickMultipleContactsAsync() const;
 };
@@ -5660,7 +5660,7 @@ class impl_IContactRemovedEventArgs
 
 public:
 
-	String Id() const;
+	hstring Id() const;
 };
 
 template <typename T>
@@ -5670,10 +5670,10 @@ class impl_IContactPickerUI
 
 public:
 
-	Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(StringReference const & id, Windows::ApplicationModel::Contacts::Contact const & contact) const;
-	void RemoveContact(StringReference const & id) const;
-	bool ContainsContact(StringReference const & id) const;
-	Windows::Foundation::Collections::IVectorView<String> DesiredFields() const;
+	Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(hstring_ref id, Windows::ApplicationModel::Contacts::Contact const & contact) const;
+	void RemoveContact(hstring_ref id) const;
+	bool ContainsContact(hstring_ref id) const;
+	Windows::Foundation::Collections::IVectorView<hstring> DesiredFields() const;
 	Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
 	long long ContactRemoved(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> const & handler) const;
 	template <typename F> long long ContactRemoved(F handler) const;
@@ -5715,7 +5715,7 @@ public:
 
 	void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const & applicationView) const;
 	void SetWindow(Windows::UI::Core::CoreWindow const & window) const;
-	void Load(StringReference const & entryPoint) const;
+	void Load(hstring_ref entryPoint) const;
 	void Run() const;
 	void Uninitialize() const;
 };
@@ -5737,7 +5737,7 @@ class impl_ICoreApplication
 
 public:
 
-	String Id() const;
+	hstring Id() const;
 	long long Suspending(Windows::Foundation::IEventHandler<Windows::ApplicationModel::SuspendingEventArgs> const & handler) const;
 	template <typename F> long long Suspending(F handler) const;
 	void Suspending(long long token) const;
@@ -5782,7 +5782,7 @@ class impl_ICoreImmersiveApplication
 public:
 
 	Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> Views() const;
-	Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(StringReference const & runtimeType, StringReference const & entryPoint) const;
+	Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint) const;
 	Windows::ApplicationModel::Core::CoreApplicationView MainView() const;
 };
 
@@ -5930,12 +5930,12 @@ class impl_IStandardDataFormatsStatics
 
 public:
 
-	String Text() const;
-	String Uri() const;
-	String Html() const;
-	String Rtf() const;
-	String Bitmap() const;
-	String StorageItems() const;
+	hstring Text() const;
+	hstring Uri() const;
+	hstring Html() const;
+	hstring Rtf() const;
+	hstring Bitmap() const;
+	hstring StorageItems() const;
 };
 
 template <typename T>
@@ -5945,8 +5945,8 @@ class impl_IStandardDataFormatsStatics2
 
 public:
 
-	String WebLink() const;
-	String ApplicationLink() const;
+	hstring WebLink() const;
+	hstring ApplicationLink() const;
 };
 
 template <typename T>
@@ -5956,11 +5956,11 @@ class impl_IDataPackagePropertySetView
 
 public:
 
-	String Title() const;
-	String Description() const;
+	hstring Title() const;
+	hstring Description() const;
 	Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
-	Windows::Foundation::Collections::IVectorView<String> FileTypes() const;
-	String ApplicationName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> FileTypes() const;
+	hstring ApplicationName() const;
 	Windows::Foundation::Uri ApplicationListingUri() const;
 };
 
@@ -5971,7 +5971,7 @@ class impl_IDataPackagePropertySetView2
 
 public:
 
-	String PackageFamilyName() const;
+	hstring PackageFamilyName() const;
 	Windows::Foundation::Uri ContentSourceWebLink() const;
 	Windows::Foundation::Uri ContentSourceApplicationLink() const;
 	Windows::Storage::Streams::IRandomAccessStreamReference Square30x30Logo() const;
@@ -5985,7 +5985,7 @@ class impl_IDataPackagePropertySetView3
 
 public:
 
-	String EnterpriseId() const;
+	hstring EnterpriseId() const;
 };
 
 template <typename T>
@@ -5995,15 +5995,15 @@ class impl_IDataPackagePropertySet
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
-	String Description() const;
-	void Description(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
+	hstring Description() const;
+	void Description(hstring_ref value) const;
 	Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
 	void Thumbnail(Windows::Storage::Streams::IRandomAccessStreamReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> FileTypes() const;
-	String ApplicationName() const;
-	void ApplicationName(StringReference const & value) const;
+	Windows::Foundation::Collections::IVector<hstring> FileTypes() const;
+	hstring ApplicationName() const;
+	void ApplicationName(hstring_ref value) const;
 	Windows::Foundation::Uri ApplicationListingUri() const;
 	void ApplicationListingUri(Windows::Foundation::Uri const & value) const;
 };
@@ -6019,8 +6019,8 @@ public:
 	void ContentSourceWebLink(Windows::Foundation::Uri const & value) const;
 	Windows::Foundation::Uri ContentSourceApplicationLink() const;
 	void ContentSourceApplicationLink(Windows::Foundation::Uri const & value) const;
-	String PackageFamilyName() const;
-	void PackageFamilyName(StringReference const & value) const;
+	hstring PackageFamilyName() const;
+	void PackageFamilyName(hstring_ref value) const;
 	Windows::Storage::Streams::IRandomAccessStreamReference Square30x30Logo() const;
 	void Square30x30Logo(Windows::Storage::Streams::IRandomAccessStreamReference const & value) const;
 	Windows::UI::Color LogoBackgroundColor() const;
@@ -6034,8 +6034,8 @@ class impl_IDataPackagePropertySet3
 
 public:
 
-	String EnterpriseId() const;
-	void EnterpriseId(StringReference const & value) const;
+	hstring EnterpriseId() const;
+	void EnterpriseId(hstring_ref value) const;
 };
 
 template <typename T>
@@ -6055,7 +6055,7 @@ class impl_IDataProviderRequest
 
 public:
 
-	String FormatId() const;
+	hstring FormatId() const;
 	Windows::Foundation::DateTime Deadline() const;
 	Windows::ApplicationModel::DataTransfer::DataProviderDeferral GetDeferral() const;
 	void SetData(IInspectable const & value) const;
@@ -6078,7 +6078,7 @@ class impl_IOperationCompletedEventArgs2
 
 public:
 
-	String AcceptedFormatId() const;
+	hstring AcceptedFormatId() const;
 };
 
 template <typename T>
@@ -6091,15 +6091,15 @@ public:
 	Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView Properties() const;
 	Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
 	void ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
-	Windows::Foundation::Collections::IVectorView<String> AvailableFormats() const;
-	bool Contains(StringReference const & formatId) const;
-	Windows::Foundation::IAsyncOperation<IInspectable> GetDataAsync(StringReference const & formatId) const;
-	Windows::Foundation::IAsyncOperation<String> GetTextAsync() const;
-	Windows::Foundation::IAsyncOperation<String> GetTextAsync(StringReference const & formatId) const;
+	Windows::Foundation::Collections::IVectorView<hstring> AvailableFormats() const;
+	bool Contains(hstring_ref formatId) const;
+	Windows::Foundation::IAsyncOperation<IInspectable> GetDataAsync(hstring_ref formatId) const;
+	Windows::Foundation::IAsyncOperation<hstring> GetTextAsync() const;
+	Windows::Foundation::IAsyncOperation<hstring> GetTextAsync(hstring_ref formatId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetUriAsync() const;
-	Windows::Foundation::IAsyncOperation<String> GetHtmlFormatAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<String, Windows::Storage::Streams::RandomAccessStreamReference>> GetResourceMapAsync() const;
-	Windows::Foundation::IAsyncOperation<String> GetRtfAsync() const;
+	Windows::Foundation::IAsyncOperation<hstring> GetHtmlFormatAsync() const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> GetResourceMapAsync() const;
+	Windows::Foundation::IAsyncOperation<hstring> GetRtfAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> GetBitmapAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetStorageItemsAsync() const;
 };
@@ -6123,7 +6123,7 @@ class impl_IDataPackageView3
 public:
 
 	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync() const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(StringReference const & enterpriseId) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref enterpriseId) const;
 	Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity() const;
 };
 
@@ -6134,7 +6134,7 @@ class impl_IDataPackageView4
 
 public:
 
-	void SetAcceptedFormatId(StringReference const & formatId) const;
+	void SetAcceptedFormatId(hstring_ref formatId) const;
 };
 
 template <typename T>
@@ -6154,14 +6154,14 @@ public:
 	long long Destroyed(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, IInspectable> const & handler) const;
 	template <typename F> long long Destroyed(F handler) const;
 	void Destroyed(long long eventCookie) const;
-	void SetData(StringReference const & formatId, IInspectable const & value) const;
-	void SetDataProvider(StringReference const & formatId, Windows::ApplicationModel::DataTransfer::IDataProviderHandler const & delayRenderer) const;
-	template <typename F> void SetDataProvider(StringReference const & formatId, F delayRenderer) const;
-	void SetText(StringReference const & value) const;
+	void SetData(hstring_ref formatId, IInspectable const & value) const;
+	void SetDataProvider(hstring_ref formatId, Windows::ApplicationModel::DataTransfer::IDataProviderHandler const & delayRenderer) const;
+	template <typename F> void SetDataProvider(hstring_ref formatId, F delayRenderer) const;
+	void SetText(hstring_ref value) const;
 	void SetUri(Windows::Foundation::Uri const & value) const;
-	void SetHtmlFormat(StringReference const & value) const;
-	Windows::Foundation::Collections::IMap<String, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
-	void SetRtf(StringReference const & value) const;
+	void SetHtmlFormat(hstring_ref value) const;
+	Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
+	void SetRtf(hstring_ref value) const;
 	void SetBitmap(Windows::Storage::Streams::RandomAccessStreamReference const & value) const;
 	void SetStorageItems(Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const & value) const;
 	void SetStorageItems(Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const & value, bool readOnly) const;
@@ -6185,8 +6185,8 @@ class impl_IHtmlFormatHelperStatics
 
 public:
 
-	String GetStaticFragment(StringReference const & htmlFormat) const;
-	String CreateHtmlFormat(StringReference const & htmlFragment) const;
+	hstring GetStaticFragment(hstring_ref htmlFormat) const;
+	hstring CreateHtmlFormat(hstring_ref htmlFragment) const;
 };
 
 template <typename T>
@@ -6225,7 +6225,7 @@ public:
 	Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
 	void Data(Windows::ApplicationModel::DataTransfer::DataPackage const & value) const;
 	Windows::Foundation::DateTime Deadline() const;
-	void FailWithDisplayText(StringReference const & value) const;
+	void FailWithDisplayText(hstring_ref value) const;
 	Windows::ApplicationModel::DataTransfer::DataRequestDeferral GetDeferral() const;
 };
 
@@ -6246,7 +6246,7 @@ class impl_ITargetApplicationChosenEventArgs
 
 public:
 
-	String ApplicationName() const;
+	hstring ApplicationName() const;
 };
 
 template <typename T>
@@ -6282,9 +6282,9 @@ class impl_ISharedStorageAccessManagerStatics
 
 public:
 
-	String AddFile(Windows::Storage::IStorageFile const & file) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(StringReference const & token) const;
-	void RemoveFile(StringReference const & token) const;
+	hstring AddFile(Windows::Storage::IStorageFile const & file) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token) const;
+	void RemoveFile(hstring_ref token) const;
 };
 
 }}}}
@@ -6298,14 +6298,14 @@ class impl_IQuickLink
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
 	void Thumbnail(Windows::Storage::Streams::RandomAccessStreamReference const & value) const;
-	String Id() const;
-	void Id(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> SupportedDataFormats() const;
-	Windows::Foundation::Collections::IVector<String> SupportedFileTypes() const;
+	hstring Id() const;
+	void Id(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> SupportedDataFormats() const;
+	Windows::Foundation::Collections::IVector<hstring> SupportedFileTypes() const;
 };
 
 template <typename T>
@@ -6316,14 +6316,14 @@ class impl_IShareOperation
 public:
 
 	Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
-	String QuickLinkId() const;
+	hstring QuickLinkId() const;
 	void RemoveThisQuickLink() const;
 	void ReportStarted() const;
 	void ReportDataRetrieved() const;
 	void ReportSubmittedBackgroundTask() const;
 	void ReportCompleted(Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink const & quicklink) const;
 	void ReportCompleted() const;
-	void ReportError(StringReference const & value) const;
+	void ReportError(hstring_ref value) const;
 };
 
 template <typename T>
@@ -6347,7 +6347,7 @@ class impl_ISearchPaneQueryLinguisticDetails
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> QueryTextAlternatives() const;
+	Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
 	unsigned QueryTextCompositionStart() const;
 	unsigned QueryTextCompositionLength() const;
 };
@@ -6369,8 +6369,8 @@ class impl_ISearchPaneQueryChangedEventArgs
 
 public:
 
-	String QueryText() const;
-	String Language() const;
+	hstring QueryText() const;
+	hstring Language() const;
 	Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails LinguisticDetails() const;
 };
 
@@ -6381,8 +6381,8 @@ class impl_ISearchPaneQuerySubmittedEventArgs
 
 public:
 
-	String QueryText() const;
-	String Language() const;
+	hstring QueryText() const;
+	hstring Language() const;
 };
 
 template <typename T>
@@ -6402,7 +6402,7 @@ class impl_ISearchPaneResultSuggestionChosenEventArgs
 
 public:
 
-	String Tag() const;
+	hstring Tag() const;
 };
 
 template <typename T>
@@ -6413,10 +6413,10 @@ class impl_ISearchSuggestionCollection
 public:
 
 	unsigned Size() const;
-	void AppendQuerySuggestion(StringReference const & text) const;
-	void AppendQuerySuggestions(Windows::Foundation::Collections::IIterable<String> const & suggestions) const;
-	void AppendResultSuggestion(StringReference const & text, StringReference const & detailText, StringReference const & tag, Windows::Storage::Streams::IRandomAccessStreamReference const & image, StringReference const & imageAlternateText) const;
-	void AppendSearchSeparator(StringReference const & label) const;
+	void AppendQuerySuggestion(hstring_ref text) const;
+	void AppendQuerySuggestions(Windows::Foundation::Collections::IIterable<hstring> const & suggestions) const;
+	void AppendResultSuggestion(hstring_ref text, hstring_ref detailText, hstring_ref tag, Windows::Storage::Streams::IRandomAccessStreamReference const & image, hstring_ref imageAlternateText) const;
+	void AppendSearchSeparator(hstring_ref label) const;
 };
 
 template <typename T>
@@ -6461,9 +6461,9 @@ public:
 	void Enabled(bool value) const;
 	bool Enabled() const;
 	Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> Locations() const;
-	void AqsFilter(StringReference const & value) const;
-	String AqsFilter() const;
-	Windows::Foundation::Collections::IVector<String> PropertiesToMatch() const;
+	void AqsFilter(hstring_ref value) const;
+	hstring AqsFilter() const;
+	Windows::Foundation::Collections::IVector<hstring> PropertiesToMatch() const;
 };
 
 template <typename T>
@@ -6495,12 +6495,12 @@ public:
 
 	void SearchHistoryEnabled(bool value) const;
 	bool SearchHistoryEnabled() const;
-	void SearchHistoryContext(StringReference const & value) const;
-	String SearchHistoryContext() const;
-	void PlaceholderText(StringReference const & value) const;
-	String PlaceholderText() const;
-	String QueryText() const;
-	String Language() const;
+	void SearchHistoryContext(hstring_ref value) const;
+	hstring SearchHistoryContext() const;
+	void PlaceholderText(hstring_ref value) const;
+	hstring PlaceholderText() const;
+	hstring QueryText() const;
+	hstring Language() const;
 	bool Visible() const;
 	long long VisibilityChanged(Windows::Foundation::ITypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const & handler) const;
 	template <typename F> long long VisibilityChanged(F handler) const;
@@ -6519,10 +6519,10 @@ public:
 	void ResultSuggestionChosen(long long token) const;
 	void SetLocalContentSuggestionSettings(Windows::ApplicationModel::Search::LocalContentSuggestionSettings const & settings) const;
 	void Show() const;
-	void Show(StringReference const & query) const;
+	void Show(hstring_ref query) const;
 	void ShowOnKeyboardInput(bool value) const;
 	bool ShowOnKeyboardInput() const;
-	bool TrySetQueryText(StringReference const & query) const;
+	bool TrySetQueryText(hstring_ref query) const;
 };
 
 template <typename T>
@@ -6532,7 +6532,7 @@ class impl_ISearchQueryLinguisticDetailsFactory
 
 public:
 
-	Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(Windows::Foundation::Collections::IIterable<String> const & queryTextAlternatives, unsigned queryTextCompositionStart, unsigned queryTextCompositionLength) const;
+	Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(Windows::Foundation::Collections::IIterable<hstring> const & queryTextAlternatives, unsigned queryTextCompositionStart, unsigned queryTextCompositionLength) const;
 };
 
 template <typename T>
@@ -6542,7 +6542,7 @@ class impl_ISearchQueryLinguisticDetails
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> QueryTextAlternatives() const;
+	Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
 	unsigned QueryTextCompositionStart() const;
 	unsigned QueryTextCompositionLength() const;
 };
@@ -6600,8 +6600,8 @@ class impl_ISemanticTextQueryFactory
 
 public:
 
-	Windows::Data::Text::SemanticTextQuery Create(StringReference const & aqsFilter) const;
-	Windows::Data::Text::SemanticTextQuery CreateWithLanguage(StringReference const & aqsFilter, StringReference const & filterLanguage) const;
+	Windows::Data::Text::SemanticTextQuery Create(hstring_ref aqsFilter) const;
+	Windows::Data::Text::SemanticTextQuery CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const;
 };
 
 template <typename T>
@@ -6611,8 +6611,8 @@ class impl_ISemanticTextQuery
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment> Find(StringReference const & content) const;
-	Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment> FindInProperty(StringReference const & propertyContent, StringReference const & propertyName) const;
+	Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment> Find(hstring_ref content) const;
+	Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment> FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const;
 };
 
 template <typename T>
@@ -6649,7 +6649,7 @@ class impl_IAlternateWordForm
 public:
 
 	Windows::Data::Text::TextSegment SourceTextSegment() const;
-	String AlternateText() const;
+	hstring AlternateText() const;
 	Windows::Data::Text::AlternateNormalizationFormat NormalizationFormat() const;
 };
 
@@ -6660,7 +6660,7 @@ class impl_ISelectableWordSegment
 
 public:
 
-	String Text() const;
+	hstring Text() const;
 	Windows::Data::Text::TextSegment SourceTextSegment() const;
 };
 
@@ -6671,7 +6671,7 @@ class impl_IWordSegment
 
 public:
 
-	String Text() const;
+	hstring Text() const;
 	Windows::Data::Text::TextSegment SourceTextSegment() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> AlternateForms() const;
 };
@@ -6683,11 +6683,11 @@ class impl_IWordsSegmenter
 
 public:
 
-	String ResolvedLanguage() const;
-	Windows::Data::Text::WordSegment GetTokenAt(StringReference const & text, unsigned startIndex) const;
-	Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(StringReference const & text) const;
-	void Tokenize(StringReference const & text, unsigned startIndex, Windows::Data::Text::IWordSegmentsTokenizingHandler const & handler) const;
-	template <typename F> void Tokenize(StringReference const & text, unsigned startIndex, F handler) const;
+	hstring ResolvedLanguage() const;
+	Windows::Data::Text::WordSegment GetTokenAt(hstring_ref text, unsigned startIndex) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(hstring_ref text) const;
+	void Tokenize(hstring_ref text, unsigned startIndex, Windows::Data::Text::IWordSegmentsTokenizingHandler const & handler) const;
+	template <typename F> void Tokenize(hstring_ref text, unsigned startIndex, F handler) const;
 };
 
 template <typename T>
@@ -6697,7 +6697,7 @@ class impl_IWordsSegmenterFactory
 
 public:
 
-	Windows::Data::Text::WordsSegmenter CreateWithLanguage(StringReference const & language) const;
+	Windows::Data::Text::WordsSegmenter CreateWithLanguage(hstring_ref language) const;
 };
 
 template <typename T>
@@ -6707,11 +6707,11 @@ class impl_ISelectableWordsSegmenter
 
 public:
 
-	String ResolvedLanguage() const;
-	Windows::Data::Text::SelectableWordSegment GetTokenAt(StringReference const & text, unsigned startIndex) const;
-	Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(StringReference const & text) const;
-	void Tokenize(StringReference const & text, unsigned startIndex, Windows::Data::Text::ISelectableWordSegmentsTokenizingHandler const & handler) const;
-	template <typename F> void Tokenize(StringReference const & text, unsigned startIndex, F handler) const;
+	hstring ResolvedLanguage() const;
+	Windows::Data::Text::SelectableWordSegment GetTokenAt(hstring_ref text, unsigned startIndex) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(hstring_ref text) const;
+	void Tokenize(hstring_ref text, unsigned startIndex, Windows::Data::Text::ISelectableWordSegmentsTokenizingHandler const & handler) const;
+	template <typename F> void Tokenize(hstring_ref text, unsigned startIndex, F handler) const;
 };
 
 template <typename T>
@@ -6721,7 +6721,7 @@ class impl_ISelectableWordsSegmenterFactory
 
 public:
 
-	Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(StringReference const & language) const;
+	Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(hstring_ref language) const;
 };
 
 template <typename T>
@@ -6731,10 +6731,10 @@ class impl_ITextPredictionGenerator
 
 public:
 
-	String ResolvedLanguage() const;
+	hstring ResolvedLanguage() const;
 	bool LanguageAvailableButNotInstalled() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> GetCandidatesAsync(StringReference const & input) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> GetCandidatesAsync(StringReference const & input, unsigned maxCandidates) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, unsigned maxCandidates) const;
 };
 
 template <typename T>
@@ -6744,7 +6744,7 @@ class impl_ITextPredictionGeneratorFactory
 
 public:
 
-	Windows::Data::Text::TextPredictionGenerator Create(StringReference const & languageTag) const;
+	Windows::Data::Text::TextPredictionGenerator Create(hstring_ref languageTag) const;
 };
 
 template <typename T>
@@ -6754,10 +6754,10 @@ class impl_ITextConversionGenerator
 
 public:
 
-	String ResolvedLanguage() const;
+	hstring ResolvedLanguage() const;
 	bool LanguageAvailableButNotInstalled() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> GetCandidatesAsync(StringReference const & input) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<String>> GetCandidatesAsync(StringReference const & input, unsigned maxCandidates) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, unsigned maxCandidates) const;
 };
 
 template <typename T>
@@ -6767,7 +6767,7 @@ class impl_ITextConversionGeneratorFactory
 
 public:
 
-	Windows::Data::Text::TextConversionGenerator Create(StringReference const & languageTag) const;
+	Windows::Data::Text::TextConversionGenerator Create(hstring_ref languageTag) const;
 };
 
 template <typename T>
@@ -6777,9 +6777,9 @@ class impl_ITextReverseConversionGenerator
 
 public:
 
-	String ResolvedLanguage() const;
+	hstring ResolvedLanguage() const;
 	bool LanguageAvailableButNotInstalled() const;
-	Windows::Foundation::IAsyncOperation<String> ConvertBackAsync(StringReference const & input) const;
+	Windows::Foundation::IAsyncOperation<hstring> ConvertBackAsync(hstring_ref input) const;
 };
 
 template <typename T>
@@ -6789,7 +6789,7 @@ class impl_ITextReverseConversionGeneratorFactory
 
 public:
 
-	Windows::Data::Text::TextReverseConversionGenerator Create(StringReference const & languageTag) const;
+	Windows::Data::Text::TextReverseConversionGenerator Create(hstring_ref languageTag) const;
 };
 
 }}}}
@@ -6803,9 +6803,9 @@ class impl_IBluetoothDevice
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	Windows::Networking::HostName HostName() const;
-	String Name() const;
+	hstring Name() const;
 	Windows::Devices::Bluetooth::BluetoothClassOfDevice ClassOfDevice() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Storage::Streams::IBuffer> SdpRecords() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommServices() const;
@@ -6839,10 +6839,10 @@ class impl_IBluetoothDeviceStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(StringReference const & deviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(hstring_ref deviceId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromHostNameAsync(Windows::Networking::HostName const & hostName) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromBluetoothAddressAsync(unsigned long long address) const;
-	String GetDeviceSelector() const;
+	hstring GetDeviceSelector() const;
 };
 
 template <typename T>
@@ -6852,11 +6852,11 @@ class impl_IBluetoothDeviceStatics2
 
 public:
 
-	String GetDeviceSelectorFromPairingState(bool pairingState) const;
-	String GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
-	String GetDeviceSelectorFromDeviceName(StringReference const & deviceName) const;
-	String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress) const;
-	String GetDeviceSelectorFromClassOfDevice(Windows::Devices::Bluetooth::BluetoothClassOfDevice const & classOfDevice) const;
+	hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
+	hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
+	hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
+	hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress) const;
+	hstring GetDeviceSelectorFromClassOfDevice(Windows::Devices::Bluetooth::BluetoothClassOfDevice const & classOfDevice) const;
 };
 
 template <typename T>
@@ -6957,8 +6957,8 @@ class impl_IBluetoothLEDevice
 
 public:
 
-	String DeviceId() const;
-	String Name() const;
+	hstring DeviceId() const;
+	hstring Name() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
 	Windows::Devices::Bluetooth::BluetoothConnectionStatus ConnectionStatus() const;
 	unsigned long long BluetoothAddress() const;
@@ -6993,9 +6993,9 @@ class impl_IBluetoothLEDeviceStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(StringReference const & deviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_ref deviceId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(unsigned long long bluetoothAddress) const;
-	String GetDeviceSelector() const;
+	hstring GetDeviceSelector() const;
 };
 
 template <typename T>
@@ -7005,12 +7005,12 @@ class impl_IBluetoothLEDeviceStatics2
 
 public:
 
-	String GetDeviceSelectorFromPairingState(bool pairingState) const;
-	String GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
-	String GetDeviceSelectorFromDeviceName(StringReference const & deviceName) const;
-	String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress) const;
-	String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const;
-	String GetDeviceSelectorFromAppearance(Windows::Devices::Bluetooth::BluetoothLEAppearance const & appearance) const;
+	hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
+	hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
+	hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
+	hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress) const;
+	hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const;
+	hstring GetDeviceSelectorFromAppearance(Windows::Devices::Bluetooth::BluetoothLEAppearance const & appearance) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const;
 };
 
@@ -7068,8 +7068,8 @@ public:
 
 	Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> Flags() const;
 	void Flags(Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> const & value) const;
-	String LocalName() const;
-	void LocalName(StringReference const & value) const;
+	hstring LocalName() const;
+	void LocalName(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<GUID> ServiceUuids() const;
 	Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> ManufacturerData() const;
 	Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> DataSections() const;
@@ -7377,9 +7377,9 @@ class impl_IGattDeviceServiceStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(StringReference const & deviceId) const;
-	String GetDeviceSelectorFromUuid(GUID serviceUuid) const;
-	String GetDeviceSelectorFromShortId(unsigned short serviceShortId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_ref deviceId) const;
+	hstring GetDeviceSelectorFromUuid(GUID serviceUuid) const;
+	hstring GetDeviceSelectorFromShortId(unsigned short serviceShortId) const;
 	GUID ConvertShortIdToUuid(unsigned short shortId) const;
 };
 
@@ -7404,7 +7404,7 @@ public:
 	Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties CharacteristicProperties() const;
 	Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel ProtectionLevel() const;
 	void ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const;
-	String UserDescription() const;
+	hstring UserDescription() const;
 	GUID Uuid() const;
 	unsigned short AttributeHandle() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> PresentationFormats() const;
@@ -7723,7 +7723,7 @@ public:
 
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> GetCharacteristics(GUID characteristicUuid) const;
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GetIncludedServices(GUID serviceUuid) const;
-	String DeviceId() const;
+	hstring DeviceId() const;
 	GUID Uuid() const;
 	unsigned short AttributeHandle() const;
 };
@@ -7771,7 +7771,7 @@ public:
 
 	GUID Uuid() const;
 	unsigned AsShortId() const;
-	String AsString() const;
+	hstring AsString() const;
 };
 
 template <typename T>
@@ -7781,8 +7781,8 @@ class impl_IRfcommDeviceServiceStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(StringReference const & deviceId) const;
-	String GetDeviceSelector(Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId const & serviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(hstring_ref deviceId) const;
+	hstring GetDeviceSelector(Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId const & serviceId) const;
 };
 
 template <typename T>
@@ -7793,7 +7793,7 @@ class impl_IRfcommDeviceService
 public:
 
 	Windows::Networking::HostName ConnectionHostName() const;
-	String ConnectionServiceName() const;
+	hstring ConnectionServiceName() const;
 	Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ServiceId() const;
 	Windows::Networking::Sockets::SocketProtectionLevel ProtectionLevel() const;
 	Windows::Networking::Sockets::SocketProtectionLevel MaxProtectionLevel() const;
@@ -7855,7 +7855,7 @@ class impl_IDeviceConnectionChangeTriggerDetails
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -7865,8 +7865,8 @@ class impl_IDevicePickerAppearance
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	Windows::UI::Color ForegroundColor() const;
 	void ForegroundColor(Windows::UI::Color const & value) const;
 	Windows::UI::Color BackgroundColor() const;
@@ -7909,7 +7909,7 @@ class impl_IDevicePickerFilter
 public:
 
 	Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Enumeration::DeviceClass> SupportedDeviceClasses() const;
-	Windows::Foundation::Collections::IVector<String> SupportedDeviceSelectors() const;
+	Windows::Foundation::Collections::IVector<hstring> SupportedDeviceSelectors() const;
 };
 
 template <typename T>
@@ -7921,7 +7921,7 @@ public:
 
 	Windows::Devices::Enumeration::DevicePickerFilter Filter() const;
 	Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
-	Windows::Foundation::Collections::IVector<String> RequestedProperties() const;
+	Windows::Foundation::Collections::IVector<hstring> RequestedProperties() const;
 	long long DeviceSelected(Windows::Foundation::ITypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const & handler) const;
 	template <typename F> long long DeviceSelected(F handler) const;
 	void DeviceSelected(long long token) const;
@@ -7936,7 +7936,7 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(Windows::Foundation::Rect const & selection) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement placement) const;
 	void Hide() const;
-	void SetDisplayStatus(Windows::Devices::Enumeration::DeviceInformation const & device, StringReference const & status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const;
+	void SetDisplayStatus(Windows::Devices::Enumeration::DeviceInformation const & device, hstring_ref status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const;
 };
 
 template <typename T>
@@ -7958,8 +7958,8 @@ class impl_IDeviceInformationUpdate
 
 public:
 
-	String Id() const;
-	Windows::Foundation::Collections::IMapView<String, IInspectable> Properties() const;
+	hstring Id() const;
+	Windows::Foundation::Collections::IMapView<hstring, IInspectable> Properties() const;
 };
 
 template <typename T>
@@ -8016,16 +8016,16 @@ class impl_IDeviceInformationStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId) const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId, Windows::Foundation::Collections::IIterable<String> const & additionalProperties) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter) const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties) const;
 	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher() const;
 	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter) const;
-	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties) const;
+	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter) const;
+	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties) const;
 };
 
 template <typename T>
@@ -8035,10 +8035,10 @@ class impl_IDeviceInformationStatics2
 
 public:
 
-	String GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+	hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+	Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
 };
 
 template <typename T>
@@ -8048,12 +8048,12 @@ class impl_IDeviceInformation
 
 public:
 
-	String Id() const;
-	String Name() const;
+	hstring Id() const;
+	hstring Name() const;
 	bool IsEnabled() const;
 	bool IsDefault() const;
 	Windows::Devices::Enumeration::EnclosureLocation EnclosureLocation() const;
-	Windows::Foundation::Collections::IMapView<String, IInspectable> Properties() const;
+	Windows::Foundation::Collections::IMapView<hstring, IInspectable> Properties() const;
 	void Update(Windows::Devices::Enumeration::DeviceInformationUpdate const & updateInfo) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> GetThumbnailAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> GetGlyphThumbnailAsync() const;
@@ -8098,9 +8098,9 @@ public:
 
 	Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
 	Windows::Devices::Enumeration::DevicePairingKinds PairingKind() const;
-	String Pin() const;
+	hstring Pin() const;
 	void Accept() const;
-	void Accept(StringReference const & pin) const;
+	void Accept(hstring_ref pin) const;
 	Windows::Foundation::Deferral GetDeferral() const;
 };
 
@@ -8196,7 +8196,7 @@ class impl_IDeviceAccessInformationStatics
 
 public:
 
-	Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(StringReference const & deviceId) const;
+	Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_ref deviceId) const;
 	Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId) const;
 	Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
 };
@@ -8340,8 +8340,8 @@ class impl_IVenueData
 
 public:
 
-	String Id() const;
-	String Level() const;
+	hstring Id() const;
+	hstring Level() const;
 };
 
 template <typename T>
@@ -8410,10 +8410,10 @@ class impl_ICivicAddress
 
 public:
 
-	String Country() const;
-	String State() const;
-	String City() const;
-	String PostalCode() const;
+	hstring Country() const;
+	hstring State() const;
+	hstring City() const;
+	hstring PostalCode() const;
 	Windows::Foundation::DateTime Timestamp() const;
 };
 
@@ -8661,9 +8661,9 @@ class impl_IPrintNotificationEventDetails
 
 public:
 
-	String PrinterName() const;
-	String EventData() const;
-	void EventData(StringReference const & value) const;
+	hstring PrinterName() const;
+	hstring EventData() const;
+	void EventData(hstring_ref value) const;
 };
 
 template <typename T>
@@ -8673,7 +8673,7 @@ class impl_IPrintExtensionContextStatic
 
 public:
 
-	IInspectable FromDeviceId(StringReference const & deviceId) const;
+	IInspectable FromDeviceId(hstring_ref deviceId) const;
 };
 
 template <typename T>
@@ -8696,7 +8696,7 @@ class impl_IPrint3DWorkflow
 
 public:
 
-	String DeviceID() const;
+	hstring DeviceID() const;
 	IInspectable GetPrintModelPackage() const;
 	bool IsPrintReady() const;
 	void IsPrintReady(bool value) const;
@@ -8725,7 +8725,7 @@ class impl_ISensorDataThresholdTriggerDetails
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	Windows::Devices::Sensors::SensorType SensorType() const;
 };
 
@@ -8736,7 +8736,7 @@ class impl_IAccelerometerDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -8831,7 +8831,7 @@ class impl_IInclinometerDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -8922,7 +8922,7 @@ class impl_IGyrometerDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -8992,7 +8992,7 @@ class impl_ICompassDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -9071,7 +9071,7 @@ class impl_ILightSensorDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -9159,7 +9159,7 @@ class impl_IOrientationSensorDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -9249,7 +9249,7 @@ class impl_ISimpleOrientationSensorDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -9304,7 +9304,7 @@ class impl_IMagnetometerDeviceId
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 };
 
 template <typename T>
@@ -9376,8 +9376,8 @@ class impl_IActivitySensorStatics
 public:
 
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> GetDefaultAsync() const;
-	String GetDeviceSelector() const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(StringReference const & deviceId) const;
+	hstring GetDeviceSelector() const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(hstring_ref deviceId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime, Windows::Foundation::TimeSpan const & duration) const;
 };
@@ -9392,7 +9392,7 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensorReading> GetCurrentReadingAsync() const;
 	Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> SubscribedActivities() const;
 	double PowerInMilliwatts() const;
-	String DeviceId() const;
+	hstring DeviceId() const;
 	Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> SupportedActivities() const;
 	unsigned MinimumReportInterval() const;
 	long long ReadingChanged(Windows::Foundation::ITypedEventHandler<Windows::Devices::Sensors::ActivitySensor, Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs> const & handler) const;
@@ -9460,7 +9460,7 @@ class impl_IBarometer
 public:
 
 	Windows::Devices::Sensors::BarometerReading GetCurrentReading() const;
-	String DeviceId() const;
+	hstring DeviceId() const;
 	unsigned MinimumReportInterval() const;
 	void ReportInterval(unsigned value) const;
 	unsigned ReportInterval() const;
@@ -9520,9 +9520,9 @@ class impl_IPedometerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(StringReference const & deviceId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(hstring_ref deviceId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> GetDefaultAsync() const;
-	String GetDeviceSelector() const;
+	hstring GetDeviceSelector() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime, Windows::Foundation::TimeSpan const & duration) const;
 };
@@ -9554,7 +9554,7 @@ class impl_IPedometer
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	double PowerInMilliwatts() const;
 	unsigned MinimumReportInterval() const;
 	void ReportInterval(unsigned value) const;
@@ -9581,8 +9581,8 @@ class impl_IProximitySensorStatics
 
 public:
 
-	String GetDeviceSelector() const;
-	Windows::Devices::Sensors::ProximitySensor FromId(StringReference const & sensorId) const;
+	hstring GetDeviceSelector() const;
+	Windows::Devices::Sensors::ProximitySensor FromId(hstring_ref sensorId) const;
 };
 
 template <typename T>
@@ -9592,7 +9592,7 @@ class impl_IProximitySensor
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	Windows::Foundation::IReference<unsigned> MaxDistanceInMillimeters() const;
 	Windows::Foundation::IReference<unsigned> MinDistanceInMillimeters() const;
 	Windows::Devices::Sensors::ProximitySensorReading GetCurrentReading() const;
@@ -9662,7 +9662,7 @@ class impl_IAltimeter
 public:
 
 	Windows::Devices::Sensors::AltimeterReading GetCurrentReading() const;
-	String DeviceId() const;
+	hstring DeviceId() const;
 	unsigned MinimumReportInterval() const;
 	void ReportInterval(unsigned value) const;
 	unsigned ReportInterval() const;
@@ -9735,10 +9735,10 @@ class impl_ISmsMessageBase
 public:
 
 	Windows::Devices::Sms::SmsMessageType MessageType() const;
-	String DeviceId() const;
+	hstring DeviceId() const;
 	Windows::Devices::Sms::CellularClass CellularClass() const;
 	Windows::Devices::Sms::SmsMessageClass MessageClass() const;
-	String SimIccId() const;
+	hstring SimIccId() const;
 };
 
 template <typename T>
@@ -9763,12 +9763,12 @@ public:
 	unsigned PartReferenceId() const;
 	unsigned PartNumber() const;
 	unsigned PartCount() const;
-	String To() const;
-	void To(StringReference const & value) const;
-	String From() const;
-	void From(StringReference const & value) const;
-	String Body() const;
-	void Body(StringReference const & value) const;
+	hstring To() const;
+	void To(hstring_ref value) const;
+	hstring From() const;
+	void From(hstring_ref value) const;
+	hstring Body() const;
+	void Body(hstring_ref value) const;
 	Windows::Devices::Sms::SmsEncoding Encoding() const;
 	void Encoding(Windows::Devices::Sms::SmsEncoding value) const;
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::ISmsBinaryMessage> ToBinaryMessages(Windows::Devices::Sms::SmsDataFormat format) const;
@@ -9792,15 +9792,15 @@ class impl_ISmsTextMessage2
 public:
 
 	Windows::Foundation::DateTime Timestamp() const;
-	String To() const;
-	void To(StringReference const & value) const;
-	String From() const;
-	String Body() const;
-	void Body(StringReference const & value) const;
+	hstring To() const;
+	void To(hstring_ref value) const;
+	hstring From() const;
+	hstring Body() const;
+	void Body(hstring_ref value) const;
 	Windows::Devices::Sms::SmsEncoding Encoding() const;
 	void Encoding(Windows::Devices::Sms::SmsEncoding value) const;
-	String CallbackNumber() const;
-	void CallbackNumber(StringReference const & value) const;
+	hstring CallbackNumber() const;
+	void CallbackNumber(hstring_ref value) const;
 	bool IsDeliveryNotificationEnabled() const;
 	void IsDeliveryNotificationEnabled(bool value) const;
 	int RetryAttemptCount() const;
@@ -9817,12 +9817,12 @@ class impl_ISmsWapMessage
 public:
 
 	Windows::Foundation::DateTime Timestamp() const;
-	String To() const;
-	String From() const;
-	String ApplicationId() const;
-	String ContentType() const;
+	hstring To() const;
+	hstring From() const;
+	hstring ApplicationId() const;
+	hstring ContentType() const;
 	Windows::Storage::Streams::IBuffer BinaryBody() const;
-	Windows::Foundation::Collections::IMap<String, String> Headers() const;
+	Windows::Foundation::Collections::IMap<hstring, hstring> Headers() const;
 };
 
 template <typename T>
@@ -9833,13 +9833,13 @@ class impl_ISmsAppMessage
 public:
 
 	Windows::Foundation::DateTime Timestamp() const;
-	String To() const;
-	void To(StringReference const & value) const;
-	String From() const;
-	String Body() const;
-	void Body(StringReference const & value) const;
-	String CallbackNumber() const;
-	void CallbackNumber(StringReference const & value) const;
+	hstring To() const;
+	void To(hstring_ref value) const;
+	hstring From() const;
+	hstring Body() const;
+	void Body(hstring_ref value) const;
+	hstring CallbackNumber() const;
+	void CallbackNumber(hstring_ref value) const;
 	bool IsDeliveryNotificationEnabled() const;
 	void IsDeliveryNotificationEnabled(bool value) const;
 	int RetryAttemptCount() const;
@@ -9864,8 +9864,8 @@ class impl_ISmsBroadcastMessage
 public:
 
 	Windows::Foundation::DateTime Timestamp() const;
-	String To() const;
-	String Body() const;
+	hstring To() const;
+	hstring Body() const;
 	int Channel() const;
 	Windows::Devices::Sms::SmsGeographicalScope GeographicalScope() const;
 	int MessageCode() const;
@@ -9883,8 +9883,8 @@ class impl_ISmsVoicemailMessage
 public:
 
 	Windows::Foundation::DateTime Timestamp() const;
-	String To() const;
-	String Body() const;
+	hstring To() const;
+	hstring Body() const;
 	Windows::Foundation::IReference<int> MessageCount() const;
 };
 
@@ -9895,9 +9895,9 @@ class impl_ISmsStatusMessage
 
 public:
 
-	String To() const;
-	String From() const;
-	String Body() const;
+	hstring To() const;
+	hstring From() const;
+	hstring Body() const;
 	int Status() const;
 	int MessageReferenceNumber() const;
 	Windows::Foundation::DateTime ServiceCenterTimestamp() const;
@@ -9952,8 +9952,8 @@ class impl_ISmsDeviceStatics
 
 public:
 
-	String GetDeviceSelector() const;
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromIdAsync(StringReference const & deviceId) const;
+	hstring GetDeviceSelector() const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromIdAsync(hstring_ref deviceId) const;
 	Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> GetDefaultAsync() const;
 };
 
@@ -9964,7 +9964,7 @@ class impl_ISmsDeviceStatics2
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromNetworkAccountIdAsync(StringReference const & networkAccountId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromNetworkAccountIdAsync(hstring_ref networkAccountId) const;
 };
 
 template <typename T>
@@ -9976,7 +9976,7 @@ public:
 
 	Windows::Devices::Sms::SendSmsMessageOperation SendMessageAsync(Windows::Devices::Sms::ISmsMessage const & message) const;
 	Windows::Devices::Sms::SmsEncodedLength CalculateLength(Windows::Devices::Sms::SmsTextMessage const & message) const;
-	String AccountPhoneNumber() const;
+	hstring AccountPhoneNumber() const;
 	Windows::Devices::Sms::CellularClass CellularClass() const;
 	Windows::Devices::Sms::SmsDeviceMessageStore MessageStore() const;
 	Windows::Devices::Sms::SmsDeviceStatus DeviceStatus() const;
@@ -9995,10 +9995,10 @@ class impl_ISmsDevice2Statics
 
 public:
 
-	String GetDeviceSelector() const;
-	Windows::Devices::Sms::SmsDevice2 FromId(StringReference const & deviceId) const;
+	hstring GetDeviceSelector() const;
+	Windows::Devices::Sms::SmsDevice2 FromId(hstring_ref deviceId) const;
 	Windows::Devices::Sms::SmsDevice2 GetDefault() const;
-	Windows::Devices::Sms::SmsDevice2 FromParentId(StringReference const & parentDeviceId) const;
+	Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_ref parentDeviceId) const;
 };
 
 template <typename T>
@@ -10008,11 +10008,11 @@ class impl_ISmsDevice2
 
 public:
 
-	String SmscAddress() const;
-	void SmscAddress(StringReference const & value) const;
-	String DeviceId() const;
-	String ParentDeviceId() const;
-	String AccountPhoneNumber() const;
+	hstring SmscAddress() const;
+	void SmscAddress(hstring_ref value) const;
+	hstring DeviceId() const;
+	hstring ParentDeviceId() const;
+	hstring AccountPhoneNumber() const;
 	Windows::Devices::Sms::CellularClass CellularClass() const;
 	Windows::Devices::Sms::SmsDeviceStatus DeviceStatus() const;
 	Windows::Devices::Sms::SmsEncodedLength CalculateLength(Windows::Devices::Sms::ISmsMessageBase const & message) const;
@@ -10029,7 +10029,7 @@ class impl_ISmsReceivedEventDetails
 
 public:
 
-	String DeviceId() const;
+	hstring DeviceId() const;
 	unsigned MessageIndex() const;
 };
 
@@ -10070,17 +10070,17 @@ class impl_ISmsFilterRule
 public:
 
 	Windows::Devices::Sms::SmsMessageType MessageType() const;
-	Windows::Foundation::Collections::IVector<String> ImsiPrefixes() const;
-	Windows::Foundation::Collections::IVector<String> DeviceIds() const;
-	Windows::Foundation::Collections::IVector<String> SenderNumbers() const;
-	Windows::Foundation::Collections::IVector<String> TextMessagePrefixes() const;
+	Windows::Foundation::Collections::IVector<hstring> ImsiPrefixes() const;
+	Windows::Foundation::Collections::IVector<hstring> DeviceIds() const;
+	Windows::Foundation::Collections::IVector<hstring> SenderNumbers() const;
+	Windows::Foundation::Collections::IVector<hstring> TextMessagePrefixes() const;
 	Windows::Foundation::Collections::IVector<int> PortNumbers() const;
 	Windows::Devices::Sms::CellularClass CellularClass() const;
 	void CellularClass(Windows::Devices::Sms::CellularClass value) const;
 	Windows::Foundation::Collections::IVector<int> ProtocolIds() const;
 	Windows::Foundation::Collections::IVector<int> TeleserviceIds() const;
-	Windows::Foundation::Collections::IVector<String> WapApplicationIds() const;
-	Windows::Foundation::Collections::IVector<String> WapContentTypes() const;
+	Windows::Foundation::Collections::IVector<hstring> WapApplicationIds() const;
+	Windows::Foundation::Collections::IVector<hstring> WapContentTypes() const;
 	Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sms::SmsBroadcastType> BroadcastTypes() const;
 	Windows::Foundation::Collections::IVector<int> BroadcastChannels() const;
 };
@@ -10124,7 +10124,7 @@ class impl_ISmsMessageRegistrationStatics
 public:
 
 	Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> AllRegistrations() const;
-	Windows::Devices::Sms::SmsMessageRegistration Register(StringReference const & id, Windows::Devices::Sms::SmsFilterRules const & filterRules) const;
+	Windows::Devices::Sms::SmsMessageRegistration Register(hstring_ref id, Windows::Devices::Sms::SmsFilterRules const & filterRules) const;
 };
 
 template <typename T>
@@ -10134,7 +10134,7 @@ class impl_ISmsMessageRegistration
 
 public:
 
-	String Id() const;
+	hstring Id() const;
 	void Unregister() const;
 	long long MessageReceived(Windows::Foundation::ITypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const & eventHandler) const;
 	template <typename F> long long MessageReceived(F eventHandler) const;
@@ -10172,23 +10172,23 @@ class impl_IUriRuntimeClass
 
 public:
 
-	String AbsoluteUri() const;
-	String DisplayUri() const;
-	String Domain() const;
-	String Extension() const;
-	String Fragment() const;
-	String Host() const;
-	String Password() const;
-	String Path() const;
-	String Query() const;
+	hstring AbsoluteUri() const;
+	hstring DisplayUri() const;
+	hstring Domain() const;
+	hstring Extension() const;
+	hstring Fragment() const;
+	hstring Host() const;
+	hstring Password() const;
+	hstring Path() const;
+	hstring Query() const;
 	Windows::Foundation::WwwFormUrlDecoder QueryParsed() const;
-	String RawUri() const;
-	String SchemeName() const;
-	String UserName() const;
+	hstring RawUri() const;
+	hstring SchemeName() const;
+	hstring UserName() const;
 	int Port() const;
 	bool Suspicious() const;
 	bool Equals(Windows::Foundation::Uri const & pUri) const;
-	Windows::Foundation::Uri CombineUri(StringReference const & relativeUri) const;
+	Windows::Foundation::Uri CombineUri(hstring_ref relativeUri) const;
 };
 
 template <typename T>
@@ -10198,8 +10198,8 @@ class impl_IUriRuntimeClassWithAbsoluteCanonicalUri
 
 public:
 
-	String AbsoluteCanonicalUri() const;
-	String DisplayIri() const;
+	hstring AbsoluteCanonicalUri() const;
+	hstring DisplayIri() const;
 };
 
 template <typename T>
@@ -10209,8 +10209,8 @@ class impl_IUriEscapeStatics
 
 public:
 
-	String UnescapeComponent(StringReference const & toUnescape) const;
-	String EscapeComponent(StringReference const & toEscape) const;
+	hstring UnescapeComponent(hstring_ref toUnescape) const;
+	hstring EscapeComponent(hstring_ref toEscape) const;
 };
 
 template <typename T>
@@ -10220,8 +10220,8 @@ class impl_IUriRuntimeClassFactory
 
 public:
 
-	Windows::Foundation::Uri CreateUri(StringReference const & uri) const;
-	Windows::Foundation::Uri CreateWithRelativeUri(StringReference const & baseUri, StringReference const & relativeUri) const;
+	Windows::Foundation::Uri CreateUri(hstring_ref uri) const;
+	Windows::Foundation::Uri CreateWithRelativeUri(hstring_ref baseUri, hstring_ref relativeUri) const;
 };
 
 template <typename T>
@@ -10231,8 +10231,8 @@ class impl_IWwwFormUrlDecoderEntry
 
 public:
 
-	String Name() const;
-	String Value() const;
+	hstring Name() const;
+	hstring Value() const;
 };
 
 template <typename T>
@@ -10242,7 +10242,7 @@ class impl_IWwwFormUrlDecoderRuntimeClass
 
 public:
 
-	String GetFirstValueByName(StringReference const & name) const;
+	hstring GetFirstValueByName(hstring_ref name) const;
 };
 
 template <typename T>
@@ -10252,7 +10252,7 @@ class impl_IWwwFormUrlDecoderRuntimeClassFactory
 
 public:
 
-	Windows::Foundation::WwwFormUrlDecoder CreateWwwFormUrlDecoder(StringReference const & query) const;
+	Windows::Foundation::WwwFormUrlDecoder CreateWwwFormUrlDecoder(hstring_ref query) const;
 };
 
 template <typename T>
@@ -10262,7 +10262,7 @@ class impl_IGetActivationFactory
 
 public:
 
-	IInspectable GetActivationFactory(StringReference const & activatableClassId) const;
+	IInspectable GetActivationFactory(hstring_ref activatableClassId) const;
 };
 
 template <typename T>
@@ -10295,7 +10295,7 @@ public:
 	double GetDouble() const;
 	wchar_t GetChar16() const;
 	bool GetBoolean() const;
-	String GetString() const;
+	hstring GetString() const;
 	GUID GetGuid() const;
 	Windows::Foundation::DateTime GetDateTime() const;
 	Windows::Foundation::TimeSpan GetTimeSpan() const;
@@ -10323,7 +10323,7 @@ public:
 	IInspectable CreateDouble(double value) const;
 	IInspectable CreateChar16(wchar_t value) const;
 	IInspectable CreateBoolean(bool value) const;
-	IInspectable CreateString(StringReference const & value) const;
+	IInspectable CreateString(hstring_ref value) const;
 	IInspectable CreateInspectable(IInspectable const & value) const;
 	IInspectable CreateGuid(GUID value) const;
 	IInspectable CreateDateTime(Windows::Foundation::DateTime const & value) const;
@@ -10340,7 +10340,7 @@ class impl_IStringable
 
 public:
 
-	String ToString() const;
+	hstring ToString() const;
 };
 
 template <typename T>
@@ -10445,7 +10445,7 @@ class impl_IAsyncCausalityTracerStatics
 
 public:
 
-	void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, StringReference const & operationName, unsigned long long relatedContext) const;
+	void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, hstring_ref operationName, unsigned long long relatedContext) const;
 	void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, AsyncStatus status) const;
 	void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, Windows::Foundation::Diagnostics::CausalityRelation relation) const;
 	void TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) const;
@@ -10483,8 +10483,8 @@ class impl_IErrorDetails
 
 public:
 
-	String Description() const;
-	String LongDescription() const;
+	hstring Description() const;
+	hstring LongDescription() const;
 	Windows::Foundation::Uri HelpUri() const;
 };
 
@@ -10548,66 +10548,66 @@ class impl_ILoggingFields
 public:
 
 	void Clear() const;
-	void BeginStruct(StringReference const & name) const;
-	void BeginStruct(StringReference const & name, int tags) const;
+	void BeginStruct(hstring_ref name) const;
+	void BeginStruct(hstring_ref name, int tags) const;
 	void EndStruct() const;
-	void AddEmpty(StringReference const & name) const;
-	void AddEmpty(StringReference const & name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddEmpty(StringReference const & name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddUInt8(StringReference const & name, byte value) const;
-	void AddUInt8(StringReference const & name, byte value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddUInt8(StringReference const & name, byte value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddInt16(StringReference const & name, short value) const;
-	void AddInt16(StringReference const & name, short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddInt16(StringReference const & name, short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddUInt16(StringReference const & name, unsigned short value) const;
-	void AddUInt16(StringReference const & name, unsigned short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddUInt16(StringReference const & name, unsigned short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddInt32(StringReference const & name, int value) const;
-	void AddInt32(StringReference const & name, int value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddInt32(StringReference const & name, int value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddUInt32(StringReference const & name, unsigned value) const;
-	void AddUInt32(StringReference const & name, unsigned value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddUInt32(StringReference const & name, unsigned value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddInt64(StringReference const & name, long long value) const;
-	void AddInt64(StringReference const & name, long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddInt64(StringReference const & name, long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddUInt64(StringReference const & name, unsigned long long value) const;
-	void AddUInt64(StringReference const & name, unsigned long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddUInt64(StringReference const & name, unsigned long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddSingle(StringReference const & name, float value) const;
-	void AddSingle(StringReference const & name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddSingle(StringReference const & name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddDouble(StringReference const & name, double value) const;
-	void AddDouble(StringReference const & name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddDouble(StringReference const & name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddChar16(StringReference const & name, wchar_t value) const;
-	void AddChar16(StringReference const & name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddChar16(StringReference const & name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddBoolean(StringReference const & name, bool value) const;
-	void AddBoolean(StringReference const & name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddBoolean(StringReference const & name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddString(StringReference const & name, StringReference const & value) const;
-	void AddString(StringReference const & name, StringReference const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddString(StringReference const & name, StringReference const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddGuid(StringReference const & name, GUID value) const;
-	void AddGuid(StringReference const & name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddGuid(StringReference const & name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddDateTime(StringReference const & name, Windows::Foundation::DateTime const & value) const;
-	void AddDateTime(StringReference const & name, Windows::Foundation::DateTime const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddDateTime(StringReference const & name, Windows::Foundation::DateTime const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddTimeSpan(StringReference const & name, Windows::Foundation::TimeSpan const & value) const;
-	void AddTimeSpan(StringReference const & name, Windows::Foundation::TimeSpan const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddTimeSpan(StringReference const & name, Windows::Foundation::TimeSpan const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddPoint(StringReference const & name, Windows::Foundation::Point const & value) const;
-	void AddPoint(StringReference const & name, Windows::Foundation::Point const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddPoint(StringReference const & name, Windows::Foundation::Point const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddSize(StringReference const & name, Windows::Foundation::Size const & value) const;
-	void AddSize(StringReference const & name, Windows::Foundation::Size const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddSize(StringReference const & name, Windows::Foundation::Size const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
-	void AddRect(StringReference const & name, Windows::Foundation::Rect const & value) const;
-	void AddRect(StringReference const & name, Windows::Foundation::Rect const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-	void AddRect(StringReference const & name, Windows::Foundation::Rect const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddEmpty(hstring_ref name) const;
+	void AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddUInt8(hstring_ref name, byte value) const;
+	void AddUInt8(hstring_ref name, byte value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddUInt8(hstring_ref name, byte value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddInt16(hstring_ref name, short value) const;
+	void AddInt16(hstring_ref name, short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddInt16(hstring_ref name, short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddUInt16(hstring_ref name, unsigned short value) const;
+	void AddUInt16(hstring_ref name, unsigned short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddUInt16(hstring_ref name, unsigned short value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddInt32(hstring_ref name, int value) const;
+	void AddInt32(hstring_ref name, int value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddInt32(hstring_ref name, int value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddUInt32(hstring_ref name, unsigned value) const;
+	void AddUInt32(hstring_ref name, unsigned value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddUInt32(hstring_ref name, unsigned value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddInt64(hstring_ref name, long long value) const;
+	void AddInt64(hstring_ref name, long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddInt64(hstring_ref name, long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddUInt64(hstring_ref name, unsigned long long value) const;
+	void AddUInt64(hstring_ref name, unsigned long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddUInt64(hstring_ref name, unsigned long long value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddSingle(hstring_ref name, float value) const;
+	void AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddDouble(hstring_ref name, double value) const;
+	void AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddChar16(hstring_ref name, wchar_t value) const;
+	void AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddBoolean(hstring_ref name, bool value) const;
+	void AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddString(hstring_ref name, hstring_ref value) const;
+	void AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddGuid(hstring_ref name, GUID value) const;
+	void AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddDateTime(hstring_ref name, Windows::Foundation::DateTime const & value) const;
+	void AddDateTime(hstring_ref name, Windows::Foundation::DateTime const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddDateTime(hstring_ref name, Windows::Foundation::DateTime const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddTimeSpan(hstring_ref name, Windows::Foundation::TimeSpan const & value) const;
+	void AddTimeSpan(hstring_ref name, Windows::Foundation::TimeSpan const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddTimeSpan(hstring_ref name, Windows::Foundation::TimeSpan const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddPoint(hstring_ref name, Windows::Foundation::Point const & value) const;
+	void AddPoint(hstring_ref name, Windows::Foundation::Point const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddPoint(hstring_ref name, Windows::Foundation::Point const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddSize(hstring_ref name, Windows::Foundation::Size const & value) const;
+	void AddSize(hstring_ref name, Windows::Foundation::Size const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddSize(hstring_ref name, Windows::Foundation::Size const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
+	void AddRect(hstring_ref name, Windows::Foundation::Rect const & value) const;
+	void AddRect(hstring_ref name, Windows::Foundation::Rect const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+	void AddRect(hstring_ref name, Windows::Foundation::Rect const & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int tags) const;
 };
 
 template <typename T>
@@ -10620,14 +10620,14 @@ public:
 	bool IsEnabled() const;
 	bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level) const;
 	bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level, long long keywords) const;
-	void LogEvent(StringReference const & eventName) const;
-	void LogEvent(StringReference const & eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
-	void LogEvent(StringReference const & eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-	void LogEvent(StringReference const & eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
-	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(StringReference const & startEventName) const;
-	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(StringReference const & startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
-	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(StringReference const & startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(StringReference const & startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
+	void LogEvent(hstring_ref eventName) const;
+	void LogEvent(hstring_ref eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
+	void LogEvent(hstring_ref eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+	void LogEvent(hstring_ref eventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
+	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName) const;
+	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
+	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+	Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
 };
 
 template <typename T>
@@ -10637,13 +10637,13 @@ class impl_ILoggingChannel
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	bool Enabled() const;
 	Windows::Foundation::Diagnostics::LoggingLevel Level() const;
-	void LogMessage(StringReference const & eventString) const;
-	void LogMessage(StringReference const & eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-	void LogValuePair(StringReference const & value1, int value2) const;
-	void LogValuePair(StringReference const & value1, int value2, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+	void LogMessage(hstring_ref eventString) const;
+	void LogMessage(hstring_ref eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+	void LogValuePair(hstring_ref value1, int value2) const;
+	void LogValuePair(hstring_ref value1, int value2, Windows::Foundation::Diagnostics::LoggingLevel level) const;
 	long long LoggingEnabled(Windows::Foundation::ITypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, IInspectable> const & handler) const;
 	template <typename F> long long LoggingEnabled(F handler) const;
 	void LoggingEnabled(long long token) const;
@@ -10666,7 +10666,7 @@ class impl_ILoggingChannelFactory
 
 public:
 
-	Windows::Foundation::Diagnostics::LoggingChannel Create(StringReference const & name) const;
+	Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_ref name) const;
 };
 
 template <typename T>
@@ -10676,8 +10676,8 @@ class impl_ILoggingChannelFactory2
 
 public:
 
-	Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(StringReference const & name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options) const;
-	Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(StringReference const & name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options, GUID id) const;
+	Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(hstring_ref name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options) const;
+	Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(hstring_ref name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options, GUID id) const;
 };
 
 template <typename T>
@@ -10687,7 +10687,7 @@ class impl_ILoggingActivity
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	GUID Id() const;
 };
 
@@ -10699,9 +10699,9 @@ class impl_ILoggingActivity2
 public:
 
 	Windows::Foundation::Diagnostics::LoggingChannel Channel() const;
-	void StopActivity(StringReference const & stopEventName) const;
-	void StopActivity(StringReference const & stopEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
-	void StopActivity(StringReference const & stopEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
+	void StopActivity(hstring_ref stopEventName) const;
+	void StopActivity(hstring_ref stopEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields) const;
+	void StopActivity(hstring_ref stopEventName, Windows::Foundation::Diagnostics::LoggingFields const & fields, Windows::Foundation::Diagnostics::LoggingOptions const & options) const;
 };
 
 template <typename T>
@@ -10711,8 +10711,8 @@ class impl_ILoggingActivityFactory
 
 public:
 
-	Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivity(StringReference const & activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
-	Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivityWithLevel(StringReference const & activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+	Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivity(hstring_ref activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
+	Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivityWithLevel(hstring_ref activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const;
 };
 
 template <typename T>
@@ -10722,8 +10722,8 @@ class impl_ILoggingSession
 
 public:
 
-	String Name() const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SaveToFileAsync(Windows::Storage::IStorageFolder const & folder, StringReference const & fileName) const;
+	hstring Name() const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SaveToFileAsync(Windows::Storage::IStorageFolder const & folder, hstring_ref fileName) const;
 	void AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
 	void AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const;
 	void RemoveLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
@@ -10736,7 +10736,7 @@ class impl_ILoggingSessionFactory
 
 public:
 
-	Windows::Foundation::Diagnostics::LoggingSession Create(StringReference const & name) const;
+	Windows::Foundation::Diagnostics::LoggingSession Create(hstring_ref name) const;
 };
 
 template <typename T>
@@ -10756,7 +10756,7 @@ class impl_IFileLoggingSession
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	void AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
 	void AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const;
 	void RemoveLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel) const;
@@ -10773,7 +10773,7 @@ class impl_IFileLoggingSessionFactory
 
 public:
 
-	Windows::Foundation::Diagnostics::FileLoggingSession Create(StringReference const & name) const;
+	Windows::Foundation::Diagnostics::FileLoggingSession Create(hstring_ref name) const;
 };
 
 }}}}
@@ -10787,16 +10787,16 @@ class impl_IApiInformationStatics
 
 public:
 
-	bool IsTypePresent(StringReference const & typeName) const;
-	bool IsMethodPresent(StringReference const & typeName, StringReference const & methodName) const;
-	bool IsMethodPresent(StringReference const & typeName, StringReference const & methodName, unsigned inputParameterCount) const;
-	bool IsEventPresent(StringReference const & typeName, StringReference const & eventName) const;
-	bool IsPropertyPresent(StringReference const & typeName, StringReference const & propertyName) const;
-	bool IsReadOnlyPropertyPresent(StringReference const & typeName, StringReference const & propertyName) const;
-	bool IsWriteablePropertyPresent(StringReference const & typeName, StringReference const & propertyName) const;
-	bool IsEnumNamedValuePresent(StringReference const & enumTypeName, StringReference const & valueName) const;
-	bool IsApiContractPresent(StringReference const & contractName, unsigned short majorVersion) const;
-	bool IsApiContractPresent(StringReference const & contractName, unsigned short majorVersion, unsigned short minorVersion) const;
+	bool IsTypePresent(hstring_ref typeName) const;
+	bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName) const;
+	bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName, unsigned inputParameterCount) const;
+	bool IsEventPresent(hstring_ref typeName, hstring_ref eventName) const;
+	bool IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const;
+	bool IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const;
+	bool IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName) const;
+	bool IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName) const;
+	bool IsApiContractPresent(hstring_ref contractName, unsigned short majorVersion) const;
+	bool IsApiContractPresent(hstring_ref contractName, unsigned short majorVersion, unsigned short minorVersion) const;
 };
 
 }}}}
@@ -10859,8 +10859,8 @@ class impl_IHeadset
 
 public:
 
-	String CaptureDeviceId() const;
-	String RenderDeviceId() const;
+	hstring CaptureDeviceId() const;
+	hstring RenderDeviceId() const;
 };
 
 }}}}
@@ -10874,8 +10874,8 @@ class impl_IJapanesePhoneticAnalyzerStatics
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(StringReference const & input) const;
-	Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(StringReference const & input, bool monoRuby) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(hstring_ref input) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(hstring_ref input, bool monoRuby) const;
 };
 
 template <typename T>
@@ -10885,8 +10885,8 @@ class impl_IJapanesePhoneme
 
 public:
 
-	String DisplayText() const;
-	String YomiText() const;
+	hstring DisplayText() const;
+	hstring YomiText() const;
 	bool IsPhraseStart() const;
 };
 
@@ -10897,15 +10897,15 @@ class impl_ICalendarIdentifiersStatics
 
 public:
 
-	String Gregorian() const;
-	String Hebrew() const;
-	String Hijri() const;
-	String Japanese() const;
-	String Julian() const;
-	String Korean() const;
-	String Taiwan() const;
-	String Thai() const;
-	String UmAlQura() const;
+	hstring Gregorian() const;
+	hstring Hebrew() const;
+	hstring Hijri() const;
+	hstring Japanese() const;
+	hstring Julian() const;
+	hstring Korean() const;
+	hstring Taiwan() const;
+	hstring Thai() const;
+	hstring UmAlQura() const;
 };
 
 template <typename T>
@@ -10915,7 +10915,7 @@ class impl_ICalendarIdentifiersStatics2
 
 public:
 
-	String Persian() const;
+	hstring Persian() const;
 };
 
 template <typename T>
@@ -10925,8 +10925,8 @@ class impl_IClockIdentifiersStatics
 
 public:
 
-	String TwelveHour() const;
-	String TwentyFourHour() const;
+	hstring TwelveHour() const;
+	hstring TwentyFourHour() const;
 };
 
 template <typename T>
@@ -10936,42 +10936,42 @@ class impl_INumeralSystemIdentifiersStatics
 
 public:
 
-	String Arab() const;
-	String ArabExt() const;
-	String Bali() const;
-	String Beng() const;
-	String Cham() const;
-	String Deva() const;
-	String FullWide() const;
-	String Gujr() const;
-	String Guru() const;
-	String HaniDec() const;
-	String Java() const;
-	String Kali() const;
-	String Khmr() const;
-	String Knda() const;
-	String Lana() const;
-	String LanaTham() const;
-	String Laoo() const;
-	String Latn() const;
-	String Lepc() const;
-	String Limb() const;
-	String Mlym() const;
-	String Mong() const;
-	String Mtei() const;
-	String Mymr() const;
-	String MymrShan() const;
-	String Nkoo() const;
-	String Olck() const;
-	String Orya() const;
-	String Saur() const;
-	String Sund() const;
-	String Talu() const;
-	String TamlDec() const;
-	String Telu() const;
-	String Thai() const;
-	String Tibt() const;
-	String Vaii() const;
+	hstring Arab() const;
+	hstring ArabExt() const;
+	hstring Bali() const;
+	hstring Beng() const;
+	hstring Cham() const;
+	hstring Deva() const;
+	hstring FullWide() const;
+	hstring Gujr() const;
+	hstring Guru() const;
+	hstring HaniDec() const;
+	hstring Java() const;
+	hstring Kali() const;
+	hstring Khmr() const;
+	hstring Knda() const;
+	hstring Lana() const;
+	hstring LanaTham() const;
+	hstring Laoo() const;
+	hstring Latn() const;
+	hstring Lepc() const;
+	hstring Limb() const;
+	hstring Mlym() const;
+	hstring Mong() const;
+	hstring Mtei() const;
+	hstring Mymr() const;
+	hstring MymrShan() const;
+	hstring Nkoo() const;
+	hstring Olck() const;
+	hstring Orya() const;
+	hstring Saur() const;
+	hstring Sund() const;
+	hstring Talu() const;
+	hstring TamlDec() const;
+	hstring Telu() const;
+	hstring Thai() const;
+	hstring Tibt() const;
+	hstring Vaii() const;
 };
 
 template <typename T>
@@ -10981,18 +10981,18 @@ class impl_INumeralSystemIdentifiersStatics2
 
 public:
 
-	String Brah() const;
-	String Osma() const;
-	String MathBold() const;
-	String MathDbl() const;
-	String MathSans() const;
-	String MathSanb() const;
-	String MathMono() const;
-	String ZmthBold() const;
-	String ZmthDbl() const;
-	String ZmthSans() const;
-	String ZmthSanb() const;
-	String ZmthMono() const;
+	hstring Brah() const;
+	hstring Osma() const;
+	hstring MathBold() const;
+	hstring MathDbl() const;
+	hstring MathSans() const;
+	hstring MathSanb() const;
+	hstring MathMono() const;
+	hstring ZmthBold() const;
+	hstring ZmthDbl() const;
+	hstring ZmthSans() const;
+	hstring ZmthSanb() const;
+	hstring ZmthMono() const;
 };
 
 template <typename T>
@@ -11002,163 +11002,163 @@ class impl_ICurrencyIdentifiersStatics
 
 public:
 
-	String AED() const;
-	String AFN() const;
-	String ALL() const;
-	String AMD() const;
-	String ANG() const;
-	String AOA() const;
-	String ARS() const;
-	String AUD() const;
-	String AWG() const;
-	String AZN() const;
-	String BAM() const;
-	String BBD() const;
-	String BDT() const;
-	String BGN() const;
-	String BHD() const;
-	String BIF() const;
-	String BMD() const;
-	String BND() const;
-	String BOB() const;
-	String BRL() const;
-	String BSD() const;
-	String BTN() const;
-	String BWP() const;
-	String BYR() const;
-	String BZD() const;
-	String CAD() const;
-	String CDF() const;
-	String CHF() const;
-	String CLP() const;
-	String CNY() const;
-	String COP() const;
-	String CRC() const;
-	String CUP() const;
-	String CVE() const;
-	String CZK() const;
-	String DJF() const;
-	String DKK() const;
-	String DOP() const;
-	String DZD() const;
-	String EGP() const;
-	String ERN() const;
-	String ETB() const;
-	String EUR() const;
-	String FJD() const;
-	String FKP() const;
-	String GBP() const;
-	String GEL() const;
-	String GHS() const;
-	String GIP() const;
-	String GMD() const;
-	String GNF() const;
-	String GTQ() const;
-	String GYD() const;
-	String HKD() const;
-	String HNL() const;
-	String HRK() const;
-	String HTG() const;
-	String HUF() const;
-	String IDR() const;
-	String ILS() const;
-	String INR() const;
-	String IQD() const;
-	String IRR() const;
-	String ISK() const;
-	String JMD() const;
-	String JOD() const;
-	String JPY() const;
-	String KES() const;
-	String KGS() const;
-	String KHR() const;
-	String KMF() const;
-	String KPW() const;
-	String KRW() const;
-	String KWD() const;
-	String KYD() const;
-	String KZT() const;
-	String LAK() const;
-	String LBP() const;
-	String LKR() const;
-	String LRD() const;
-	String LSL() const;
-	String LTL() const;
-	String LVL() const;
-	String LYD() const;
-	String MAD() const;
-	String MDL() const;
-	String MGA() const;
-	String MKD() const;
-	String MMK() const;
-	String MNT() const;
-	String MOP() const;
-	String MRO() const;
-	String MUR() const;
-	String MVR() const;
-	String MWK() const;
-	String MXN() const;
-	String MYR() const;
-	String MZN() const;
-	String NAD() const;
-	String NGN() const;
-	String NIO() const;
-	String NOK() const;
-	String NPR() const;
-	String NZD() const;
-	String OMR() const;
-	String PAB() const;
-	String PEN() const;
-	String PGK() const;
-	String PHP() const;
-	String PKR() const;
-	String PLN() const;
-	String PYG() const;
-	String QAR() const;
-	String RON() const;
-	String RSD() const;
-	String RUB() const;
-	String RWF() const;
-	String SAR() const;
-	String SBD() const;
-	String SCR() const;
-	String SDG() const;
-	String SEK() const;
-	String SGD() const;
-	String SHP() const;
-	String SLL() const;
-	String SOS() const;
-	String SRD() const;
-	String STD() const;
-	String SYP() const;
-	String SZL() const;
-	String THB() const;
-	String TJS() const;
-	String TMT() const;
-	String TND() const;
-	String TOP() const;
-	String TRY() const;
-	String TTD() const;
-	String TWD() const;
-	String TZS() const;
-	String UAH() const;
-	String UGX() const;
-	String USD() const;
-	String UYU() const;
-	String UZS() const;
-	String VEF() const;
-	String VND() const;
-	String VUV() const;
-	String WST() const;
-	String XAF() const;
-	String XCD() const;
-	String XOF() const;
-	String XPF() const;
-	String XXX() const;
-	String YER() const;
-	String ZAR() const;
-	String ZMW() const;
-	String ZWL() const;
+	hstring AED() const;
+	hstring AFN() const;
+	hstring ALL() const;
+	hstring AMD() const;
+	hstring ANG() const;
+	hstring AOA() const;
+	hstring ARS() const;
+	hstring AUD() const;
+	hstring AWG() const;
+	hstring AZN() const;
+	hstring BAM() const;
+	hstring BBD() const;
+	hstring BDT() const;
+	hstring BGN() const;
+	hstring BHD() const;
+	hstring BIF() const;
+	hstring BMD() const;
+	hstring BND() const;
+	hstring BOB() const;
+	hstring BRL() const;
+	hstring BSD() const;
+	hstring BTN() const;
+	hstring BWP() const;
+	hstring BYR() const;
+	hstring BZD() const;
+	hstring CAD() const;
+	hstring CDF() const;
+	hstring CHF() const;
+	hstring CLP() const;
+	hstring CNY() const;
+	hstring COP() const;
+	hstring CRC() const;
+	hstring CUP() const;
+	hstring CVE() const;
+	hstring CZK() const;
+	hstring DJF() const;
+	hstring DKK() const;
+	hstring DOP() const;
+	hstring DZD() const;
+	hstring EGP() const;
+	hstring ERN() const;
+	hstring ETB() const;
+	hstring EUR() const;
+	hstring FJD() const;
+	hstring FKP() const;
+	hstring GBP() const;
+	hstring GEL() const;
+	hstring GHS() const;
+	hstring GIP() const;
+	hstring GMD() const;
+	hstring GNF() const;
+	hstring GTQ() const;
+	hstring GYD() const;
+	hstring HKD() const;
+	hstring HNL() const;
+	hstring HRK() const;
+	hstring HTG() const;
+	hstring HUF() const;
+	hstring IDR() const;
+	hstring ILS() const;
+	hstring INR() const;
+	hstring IQD() const;
+	hstring IRR() const;
+	hstring ISK() const;
+	hstring JMD() const;
+	hstring JOD() const;
+	hstring JPY() const;
+	hstring KES() const;
+	hstring KGS() const;
+	hstring KHR() const;
+	hstring KMF() const;
+	hstring KPW() const;
+	hstring KRW() const;
+	hstring KWD() const;
+	hstring KYD() const;
+	hstring KZT() const;
+	hstring LAK() const;
+	hstring LBP() const;
+	hstring LKR() const;
+	hstring LRD() const;
+	hstring LSL() const;
+	hstring LTL() const;
+	hstring LVL() const;
+	hstring LYD() const;
+	hstring MAD() const;
+	hstring MDL() const;
+	hstring MGA() const;
+	hstring MKD() const;
+	hstring MMK() const;
+	hstring MNT() const;
+	hstring MOP() const;
+	hstring MRO() const;
+	hstring MUR() const;
+	hstring MVR() const;
+	hstring MWK() const;
+	hstring MXN() const;
+	hstring MYR() const;
+	hstring MZN() const;
+	hstring NAD() const;
+	hstring NGN() const;
+	hstring NIO() const;
+	hstring NOK() const;
+	hstring NPR() const;
+	hstring NZD() const;
+	hstring OMR() const;
+	hstring PAB() const;
+	hstring PEN() const;
+	hstring PGK() const;
+	hstring PHP() const;
+	hstring PKR() const;
+	hstring PLN() const;
+	hstring PYG() const;
+	hstring QAR() const;
+	hstring RON() const;
+	hstring RSD() const;
+	hstring RUB() const;
+	hstring RWF() const;
+	hstring SAR() const;
+	hstring SBD() const;
+	hstring SCR() const;
+	hstring SDG() const;
+	hstring SEK() const;
+	hstring SGD() const;
+	hstring SHP() const;
+	hstring SLL() const;
+	hstring SOS() const;
+	hstring SRD() const;
+	hstring STD() const;
+	hstring SYP() const;
+	hstring SZL() const;
+	hstring THB() const;
+	hstring TJS() const;
+	hstring TMT() const;
+	hstring TND() const;
+	hstring TOP() const;
+	hstring TRY() const;
+	hstring TTD() const;
+	hstring TWD() const;
+	hstring TZS() const;
+	hstring UAH() const;
+	hstring UGX() const;
+	hstring USD() const;
+	hstring UYU() const;
+	hstring UZS() const;
+	hstring VEF() const;
+	hstring VND() const;
+	hstring VUV() const;
+	hstring WST() const;
+	hstring XAF() const;
+	hstring XCD() const;
+	hstring XOF() const;
+	hstring XPF() const;
+	hstring XXX() const;
+	hstring YER() const;
+	hstring ZAR() const;
+	hstring ZMW() const;
+	hstring ZWL() const;
 };
 
 template <typename T>
@@ -11168,13 +11168,13 @@ class impl_IGeographicRegion
 
 public:
 
-	String Code() const;
-	String CodeTwoLetter() const;
-	String CodeThreeLetter() const;
-	String CodeThreeDigit() const;
-	String DisplayName() const;
-	String NativeName() const;
-	Windows::Foundation::Collections::IVectorView<String> CurrenciesInUse() const;
+	hstring Code() const;
+	hstring CodeTwoLetter() const;
+	hstring CodeThreeLetter() const;
+	hstring CodeThreeDigit() const;
+	hstring DisplayName() const;
+	hstring NativeName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> CurrenciesInUse() const;
 };
 
 template <typename T>
@@ -11184,7 +11184,7 @@ class impl_IGeographicRegionFactory
 
 public:
 
-	Windows::Globalization::GeographicRegion CreateGeographicRegion(StringReference const & geographicRegionCode) const;
+	Windows::Globalization::GeographicRegion CreateGeographicRegion(hstring_ref geographicRegionCode) const;
 };
 
 template <typename T>
@@ -11194,7 +11194,7 @@ class impl_IGeographicRegionStatics
 
 public:
 
-	bool IsSupported(StringReference const & geographicRegionCode) const;
+	bool IsSupported(hstring_ref geographicRegionCode) const;
 };
 
 template <typename T>
@@ -11204,10 +11204,10 @@ class impl_ILanguage
 
 public:
 
-	String LanguageTag() const;
-	String DisplayName() const;
-	String NativeName() const;
-	String Script() const;
+	hstring LanguageTag() const;
+	hstring DisplayName() const;
+	hstring NativeName() const;
+	hstring Script() const;
 };
 
 template <typename T>
@@ -11217,7 +11217,7 @@ class impl_ILanguageExtensionSubtags
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> GetExtensionSubtags(StringReference const & singleton) const;
+	Windows::Foundation::Collections::IVectorView<hstring> GetExtensionSubtags(hstring_ref singleton) const;
 };
 
 template <typename T>
@@ -11227,7 +11227,7 @@ class impl_ILanguageFactory
 
 public:
 
-	Windows::Globalization::Language CreateLanguage(StringReference const & languageTag) const;
+	Windows::Globalization::Language CreateLanguage(hstring_ref languageTag) const;
 };
 
 template <typename T>
@@ -11237,8 +11237,8 @@ class impl_ILanguageStatics
 
 public:
 
-	bool IsWellFormed(StringReference const & languageTag) const;
-	String CurrentInputMethodLanguageTag() const;
+	bool IsWellFormed(hstring_ref languageTag) const;
+	hstring CurrentInputMethodLanguageTag() const;
 };
 
 template <typename T>
@@ -11248,7 +11248,7 @@ class impl_ILanguageStatics2
 
 public:
 
-	bool TrySetInputMethodLanguageTag(StringReference const & languageTag) const;
+	bool TrySetInputMethodLanguageTag(hstring_ref languageTag) const;
 };
 
 template <typename T>
@@ -11261,13 +11261,13 @@ public:
 	Windows::Globalization::Calendar Clone() const;
 	void SetToMin() const;
 	void SetToMax() const;
-	Windows::Foundation::Collections::IVectorView<String> Languages() const;
-	String NumeralSystem() const;
-	void NumeralSystem(StringReference const & value) const;
-	String GetCalendarSystem() const;
-	void ChangeCalendarSystem(StringReference const & value) const;
-	String GetClock() const;
-	void ChangeClock(StringReference const & value) const;
+	Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+	hstring NumeralSystem() const;
+	void NumeralSystem(hstring_ref value) const;
+	hstring GetCalendarSystem() const;
+	void ChangeCalendarSystem(hstring_ref value) const;
+	hstring GetClock() const;
+	void ChangeClock(hstring_ref value) const;
 	Windows::Foundation::DateTime GetDateTime() const;
 	void SetDateTime(Windows::Foundation::DateTime const & value) const;
 	void SetToNow() const;
@@ -11277,29 +11277,29 @@ public:
 	int Era() const;
 	void Era(int value) const;
 	void AddEras(int eras) const;
-	String EraAsString() const;
-	String EraAsString(int idealLength) const;
+	hstring EraAsString() const;
+	hstring EraAsString(int idealLength) const;
 	int FirstYearInThisEra() const;
 	int LastYearInThisEra() const;
 	int NumberOfYearsInThisEra() const;
 	int Year() const;
 	void Year(int value) const;
 	void AddYears(int years) const;
-	String YearAsString() const;
-	String YearAsTruncatedString(int remainingDigits) const;
-	String YearAsPaddedString(int minDigits) const;
+	hstring YearAsString() const;
+	hstring YearAsTruncatedString(int remainingDigits) const;
+	hstring YearAsPaddedString(int minDigits) const;
 	int FirstMonthInThisYear() const;
 	int LastMonthInThisYear() const;
 	int NumberOfMonthsInThisYear() const;
 	int Month() const;
 	void Month(int value) const;
 	void AddMonths(int months) const;
-	String MonthAsString() const;
-	String MonthAsString(int idealLength) const;
-	String MonthAsSoloString() const;
-	String MonthAsSoloString(int idealLength) const;
-	String MonthAsNumericString() const;
-	String MonthAsPaddedNumericString(int minDigits) const;
+	hstring MonthAsString() const;
+	hstring MonthAsString(int idealLength) const;
+	hstring MonthAsSoloString() const;
+	hstring MonthAsSoloString(int idealLength) const;
+	hstring MonthAsNumericString() const;
+	hstring MonthAsPaddedNumericString(int minDigits) const;
 	void AddWeeks(int weeks) const;
 	int FirstDayInThisMonth() const;
 	int LastDayInThisMonth() const;
@@ -11307,44 +11307,44 @@ public:
 	int Day() const;
 	void Day(int value) const;
 	void AddDays(int days) const;
-	String DayAsString() const;
-	String DayAsPaddedString(int minDigits) const;
+	hstring DayAsString() const;
+	hstring DayAsPaddedString(int minDigits) const;
 	Windows::Globalization::DayOfWeek DayOfWeek() const;
-	String DayOfWeekAsString() const;
-	String DayOfWeekAsString(int idealLength) const;
-	String DayOfWeekAsSoloString() const;
-	String DayOfWeekAsSoloString(int idealLength) const;
+	hstring DayOfWeekAsString() const;
+	hstring DayOfWeekAsString(int idealLength) const;
+	hstring DayOfWeekAsSoloString() const;
+	hstring DayOfWeekAsSoloString(int idealLength) const;
 	int FirstPeriodInThisDay() const;
 	int LastPeriodInThisDay() const;
 	int NumberOfPeriodsInThisDay() const;
 	int Period() const;
 	void Period(int value) const;
 	void AddPeriods(int periods) const;
-	String PeriodAsString() const;
-	String PeriodAsString(int idealLength) const;
+	hstring PeriodAsString() const;
+	hstring PeriodAsString(int idealLength) const;
 	int FirstHourInThisPeriod() const;
 	int LastHourInThisPeriod() const;
 	int NumberOfHoursInThisPeriod() const;
 	int Hour() const;
 	void Hour(int value) const;
 	void AddHours(int hours) const;
-	String HourAsString() const;
-	String HourAsPaddedString(int minDigits) const;
+	hstring HourAsString() const;
+	hstring HourAsPaddedString(int minDigits) const;
 	int Minute() const;
 	void Minute(int value) const;
 	void AddMinutes(int minutes) const;
-	String MinuteAsString() const;
-	String MinuteAsPaddedString(int minDigits) const;
+	hstring MinuteAsString() const;
+	hstring MinuteAsPaddedString(int minDigits) const;
 	int Second() const;
 	void Second(int value) const;
 	void AddSeconds(int seconds) const;
-	String SecondAsString() const;
-	String SecondAsPaddedString(int minDigits) const;
+	hstring SecondAsString() const;
+	hstring SecondAsPaddedString(int minDigits) const;
 	int Nanosecond() const;
 	void Nanosecond(int value) const;
 	void AddNanoseconds(int nanoseconds) const;
-	String NanosecondAsString() const;
-	String NanosecondAsPaddedString(int minDigits) const;
+	hstring NanosecondAsString() const;
+	hstring NanosecondAsPaddedString(int minDigits) const;
 	int Compare(Windows::Globalization::Calendar const & other) const;
 	int CompareDateTime(Windows::Foundation::DateTime const & other) const;
 	void CopyTo(Windows::Globalization::Calendar const & other) const;
@@ -11354,7 +11354,7 @@ public:
 	int FirstSecondInThisMinute() const;
 	int LastSecondInThisMinute() const;
 	int NumberOfSecondsInThisMinute() const;
-	String ResolvedLanguage() const;
+	hstring ResolvedLanguage() const;
 	bool IsDaylightSavingTime() const;
 };
 
@@ -11365,7 +11365,7 @@ class impl_ICalendarFactory2
 
 public:
 
-	Windows::Globalization::Calendar CreateCalendarWithTimeZone(Windows::Foundation::Collections::IIterable<String> const & languages, StringReference const & calendar, StringReference const & clock, StringReference const & timeZoneId) const;
+	Windows::Globalization::Calendar CreateCalendarWithTimeZone(Windows::Foundation::Collections::IIterable<hstring> const & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) const;
 };
 
 template <typename T>
@@ -11375,10 +11375,10 @@ class impl_ITimeZoneOnCalendar
 
 public:
 
-	String GetTimeZone() const;
-	void ChangeTimeZone(StringReference const & timeZoneId) const;
-	String TimeZoneAsString() const;
-	String TimeZoneAsString(int idealLength) const;
+	hstring GetTimeZone() const;
+	void ChangeTimeZone(hstring_ref timeZoneId) const;
+	hstring TimeZoneAsString() const;
+	hstring TimeZoneAsString(int idealLength) const;
 };
 
 template <typename T>
@@ -11388,8 +11388,8 @@ class impl_ICalendarFactory
 
 public:
 
-	Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(Windows::Foundation::Collections::IIterable<String> const & languages) const;
-	Windows::Globalization::Calendar CreateCalendar(Windows::Foundation::Collections::IIterable<String> const & languages, StringReference const & calendar, StringReference const & clock) const;
+	Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(Windows::Foundation::Collections::IIterable<hstring> const & languages) const;
+	Windows::Globalization::Calendar CreateCalendar(Windows::Foundation::Collections::IIterable<hstring> const & languages, hstring_ref calendar, hstring_ref clock) const;
 };
 
 template <typename T>
@@ -11399,10 +11399,10 @@ class impl_IApplicationLanguagesStatics
 
 public:
 
-	String PrimaryLanguageOverride() const;
-	void PrimaryLanguageOverride(StringReference const & value) const;
-	Windows::Foundation::Collections::IVectorView<String> Languages() const;
-	Windows::Foundation::Collections::IVectorView<String> ManifestLanguages() const;
+	hstring PrimaryLanguageOverride() const;
+	void PrimaryLanguageOverride(hstring_ref value) const;
+	Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+	Windows::Foundation::Collections::IVectorView<hstring> ManifestLanguages() const;
 };
 
 }}}
@@ -11551,10 +11551,10 @@ class impl_ISpeechRecognizerUIOptions
 
 public:
 
-	String ExampleText() const;
-	void ExampleText(StringReference const & value) const;
-	String AudiblePrompt() const;
-	void AudiblePrompt(StringReference const & value) const;
+	hstring ExampleText() const;
+	void ExampleText(hstring_ref value) const;
+	hstring AudiblePrompt() const;
+	void AudiblePrompt(hstring_ref value) const;
 	bool IsReadBackEnabled() const;
 	void IsReadBackEnabled(bool value) const;
 	bool ShowConfirmation() const;
@@ -11569,12 +11569,12 @@ class impl_ISpeechRecognitionResult
 public:
 
 	Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
-	String Text() const;
+	hstring Text() const;
 	Windows::Media::SpeechRecognition::SpeechRecognitionConfidence Confidence() const;
 	Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation SemanticInterpretation() const;
 	Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechRecognition::SpeechRecognitionResult> GetAlternates(unsigned maxAlternates) const;
 	Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint Constraint() const;
-	Windows::Foundation::Collections::IVectorView<String> RulePath() const;
+	Windows::Foundation::Collections::IVectorView<hstring> RulePath() const;
 	double RawConfidence() const;
 };
 
@@ -11587,8 +11587,8 @@ public:
 
 	bool IsEnabled() const;
 	void IsEnabled(bool value) const;
-	String Tag() const;
-	void Tag(StringReference const & value) const;
+	hstring Tag() const;
+	void Tag(hstring_ref value) const;
 	Windows::Media::SpeechRecognition::SpeechRecognitionConstraintType Type() const;
 	Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability Probability() const;
 	void Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) const;
@@ -11612,7 +11612,7 @@ class impl_ISpeechRecognitionSemanticInterpretation
 
 public:
 
-	Windows::Foundation::Collections::IMapView<String, Windows::Foundation::Collections::IVectorView<String>> Properties() const;
+	Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> Properties() const;
 };
 
 template <typename T>
@@ -11623,7 +11623,7 @@ class impl_ISpeechRecognitionTopicConstraint
 public:
 
 	Windows::Media::SpeechRecognition::SpeechRecognitionScenario Scenario() const;
-	String TopicHint() const;
+	hstring TopicHint() const;
 };
 
 template <typename T>
@@ -11633,8 +11633,8 @@ class impl_ISpeechRecognitionTopicConstraintFactory
 
 public:
 
-	Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, StringReference const & topicHint) const;
-	Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, StringReference const & topicHint, StringReference const & tag) const;
+	Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) const;
+	Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) const;
 };
 
 template <typename T>
@@ -11644,7 +11644,7 @@ class impl_ISpeechRecognitionListConstraint
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> Commands() const;
+	Windows::Foundation::Collections::IVector<hstring> Commands() const;
 };
 
 template <typename T>
@@ -11654,8 +11654,8 @@ class impl_ISpeechRecognitionListConstraintFactory
 
 public:
 
-	Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(Windows::Foundation::Collections::IIterable<String> const & commands) const;
-	Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(Windows::Foundation::Collections::IIterable<String> const & commands, StringReference const & tag) const;
+	Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(Windows::Foundation::Collections::IIterable<hstring> const & commands) const;
+	Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(Windows::Foundation::Collections::IIterable<hstring> const & commands, hstring_ref tag) const;
 };
 
 template <typename T>
@@ -11676,7 +11676,7 @@ class impl_ISpeechRecognitionGrammarFileConstraintFactory
 public:
 
 	Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint Create(Windows::Storage::StorageFile const & file) const;
-	Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(Windows::Storage::StorageFile const & file, StringReference const & tag) const;
+	Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(Windows::Storage::StorageFile const & file, hstring_ref tag) const;
 };
 
 template <typename T>
@@ -11774,7 +11774,7 @@ class impl_ISpeechRecognitionHypothesis
 
 public:
 
-	String Text() const;
+	hstring Text() const;
 };
 
 template <typename T>
@@ -11841,7 +11841,7 @@ class impl_IHostNameStatics
 
 public:
 
-	int Compare(StringReference const & value1, StringReference const & value2) const;
+	int Compare(hstring_ref value1, hstring_ref value2) const;
 };
 
 template <typename T>
@@ -11852,9 +11852,9 @@ class impl_IHostName
 public:
 
 	Windows::Networking::Connectivity::IPInformation IPInformation() const;
-	String RawName() const;
-	String DisplayName() const;
-	String CanonicalName() const;
+	hstring RawName() const;
+	hstring DisplayName() const;
+	hstring CanonicalName() const;
 	Windows::Networking::HostNameType Type() const;
 	bool IsEqual(Windows::Networking::HostName const & hostName) const;
 };
@@ -11866,7 +11866,7 @@ class impl_IHostNameFactory
 
 public:
 
-	Windows::Networking::HostName CreateHostName(StringReference const & hostName) const;
+	Windows::Networking::HostName CreateHostName(hstring_ref hostName) const;
 };
 
 template <typename T>
@@ -11878,12 +11878,12 @@ public:
 
 	Windows::Networking::HostName LocalHostName() const;
 	void LocalHostName(Windows::Networking::HostName const & value) const;
-	String LocalServiceName() const;
-	void LocalServiceName(StringReference const & value) const;
+	hstring LocalServiceName() const;
+	void LocalServiceName(hstring_ref value) const;
 	Windows::Networking::HostName RemoteHostName() const;
 	void RemoteHostName(Windows::Networking::HostName const & value) const;
-	String RemoteServiceName() const;
-	void RemoteServiceName(StringReference const & value) const;
+	hstring RemoteServiceName() const;
+	void RemoteServiceName(hstring_ref value) const;
 };
 
 template <typename T>
@@ -11893,7 +11893,7 @@ class impl_IEndpointPairFactory
 
 public:
 
-	Windows::Networking::EndpointPair CreateEndpointPair(Windows::Networking::HostName const & localHostName, StringReference const & localServiceName, Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName) const;
+	Windows::Networking::EndpointPair CreateEndpointPair(Windows::Networking::HostName const & localHostName, hstring_ref localServiceName, Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName) const;
 };
 
 }}}
@@ -11988,9 +11988,9 @@ class impl_IConnectionProfile
 
 public:
 
-	String ProfileName() const;
+	hstring ProfileName() const;
 	Windows::Networking::Connectivity::NetworkConnectivityLevel GetNetworkConnectivityLevel() const;
-	Windows::Foundation::Collections::IVectorView<String> GetNetworkNames() const;
+	Windows::Foundation::Collections::IVectorView<hstring> GetNetworkNames() const;
 	Windows::Networking::Connectivity::ConnectionCost GetConnectionCost() const;
 	Windows::Networking::Connectivity::DataPlanStatus GetDataPlanStatus() const;
 	Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
@@ -12006,8 +12006,8 @@ class impl_IWwanConnectionProfileDetails
 
 public:
 
-	String HomeProviderId() const;
-	String AccessPointName() const;
+	hstring HomeProviderId() const;
+	hstring AccessPointName() const;
 	Windows::Networking::Connectivity::WwanNetworkRegistrationState GetNetworkRegistrationState() const;
 	Windows::Networking::Connectivity::WwanDataClass GetCurrentDataClass() const;
 };
@@ -12019,7 +12019,7 @@ class impl_IWlanConnectionProfileDetails
 
 public:
 
-	String GetConnectedSsid() const;
+	hstring GetConnectedSsid() const;
 };
 
 template <typename T>
@@ -12236,14 +12236,14 @@ class impl_ICellularApnContext
 
 public:
 
-	String ProviderId() const;
-	void ProviderId(StringReference const & value) const;
-	String AccessPointName() const;
-	void AccessPointName(StringReference const & value) const;
-	String UserName() const;
-	void UserName(StringReference const & value) const;
-	String Password() const;
-	void Password(StringReference const & value) const;
+	hstring ProviderId() const;
+	void ProviderId(hstring_ref value) const;
+	hstring AccessPointName() const;
+	void AccessPointName(hstring_ref value) const;
+	hstring UserName() const;
+	void UserName(hstring_ref value) const;
+	hstring Password() const;
+	void Password(hstring_ref value) const;
 	bool IsCompressionEnabled() const;
 	void IsCompressionEnabled(bool value) const;
 	Windows::Networking::Connectivity::CellularApnAuthenticationType AuthenticationType() const;
@@ -12299,7 +12299,7 @@ class impl_IControlChannelTrigger
 
 public:
 
-	String ControlChannelTriggerId() const;
+	hstring ControlChannelTriggerId() const;
 	unsigned ServerKeepAliveIntervalInMinutes() const;
 	void ServerKeepAliveIntervalInMinutes(unsigned value) const;
 	unsigned CurrentKeepAliveIntervalInMinutes() const;
@@ -12319,8 +12319,8 @@ class impl_IControlChannelTriggerFactory
 
 public:
 
-	Windows::Networking::Sockets::ControlChannelTrigger CreateControlChannelTrigger(StringReference const & channelId, unsigned serverKeepAliveIntervalInMinutes) const;
-	Windows::Networking::Sockets::ControlChannelTrigger CreateControlChannelTriggerEx(StringReference const & channelId, unsigned serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType) const;
+	Windows::Networking::Sockets::ControlChannelTrigger CreateControlChannelTrigger(hstring_ref channelId, unsigned serverKeepAliveIntervalInMinutes) const;
+	Windows::Networking::Sockets::ControlChannelTrigger CreateControlChannelTriggerEx(hstring_ref channelId, unsigned serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType) const;
 };
 
 template <typename T>
@@ -12353,7 +12353,7 @@ class impl_ISocketActivityInformation
 public:
 
 	GUID TaskId() const;
-	String Id() const;
+	hstring Id() const;
 	Windows::Networking::Sockets::SocketActivityKind SocketKind() const;
 	Windows::Networking::Sockets::SocketActivityContext Context() const;
 	Windows::Networking::Sockets::DatagramSocket DatagramSocket() const;
@@ -12379,7 +12379,7 @@ class impl_ISocketActivityInformationStatics
 
 public:
 
-	Windows::Foundation::Collections::IMapView<String, Windows::Networking::Sockets::SocketActivityInformation> AllSockets() const;
+	Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> AllSockets() const;
 };
 
 template <typename T>
@@ -12410,7 +12410,7 @@ class impl_IDatagramSocketMessageReceivedEventArgs
 public:
 
 	Windows::Networking::HostName RemoteAddress() const;
-	String RemotePort() const;
+	hstring RemotePort() const;
 	Windows::Networking::HostName LocalAddress() const;
 	Windows::Storage::Streams::DataReader GetDataReader() const;
 	Windows::Storage::Streams::IInputStream GetDataStream() const;
@@ -12436,7 +12436,7 @@ class impl_IWebSocketClosedEventArgs
 public:
 
 	unsigned short Code() const;
-	String Reason() const;
+	hstring Reason() const;
 };
 
 template <typename T>
@@ -12447,9 +12447,9 @@ class impl_IDatagramSocketInformation
 public:
 
 	Windows::Networking::HostName LocalAddress() const;
-	String LocalPort() const;
+	hstring LocalPort() const;
 	Windows::Networking::HostName RemoteAddress() const;
-	String RemotePort() const;
+	hstring RemotePort() const;
 };
 
 template <typename T>
@@ -12496,8 +12496,8 @@ class impl_IDatagramSocketStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
 };
 
 template <typename T>
@@ -12510,12 +12510,12 @@ public:
 	Windows::Networking::Sockets::DatagramSocketControl Control() const;
 	Windows::Networking::Sockets::DatagramSocketInformation Information() const;
 	Windows::Storage::Streams::IOutputStream OutputStream() const;
-	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName) const;
+	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName) const;
 	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::EndpointPair const & endpointPair) const;
-	Windows::Foundation::IAsyncAction BindServiceNameAsync(StringReference const & localServiceName) const;
-	Windows::Foundation::IAsyncAction BindEndpointAsync(Windows::Networking::HostName const & localHostName, StringReference const & localServiceName) const;
+	Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName) const;
+	Windows::Foundation::IAsyncAction BindEndpointAsync(Windows::Networking::HostName const & localHostName, hstring_ref localServiceName) const;
 	void JoinMulticastGroup(Windows::Networking::HostName const & host) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(Windows::Networking::EndpointPair const & endpointPair) const;
 	long long MessageReceived(Windows::Foundation::ITypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const & eventHandler) const;
 	template <typename F> long long MessageReceived(F eventHandler) const;
@@ -12529,7 +12529,7 @@ class impl_IDatagramSocket2
 
 public:
 
-	Windows::Foundation::IAsyncAction BindServiceNameAsync(StringReference const & localServiceName, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
+	Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
 };
 
 template <typename T>
@@ -12542,9 +12542,9 @@ public:
 	Windows::Foundation::IAsyncAction CancelIOAsync() const;
 	void EnableTransferOwnership(GUID taskId) const;
 	void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-	void TransferOwnership(StringReference const & socketId) const;
-	void TransferOwnership(StringReference const & socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
-	void TransferOwnership(StringReference const & socketId, Windows::Networking::Sockets::SocketActivityContext const & data, Windows::Foundation::TimeSpan const & keepAliveTime) const;
+	void TransferOwnership(hstring_ref socketId) const;
+	void TransferOwnership(hstring_ref socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
+	void TransferOwnership(hstring_ref socketId, Windows::Networking::Sockets::SocketActivityContext const & data, Windows::Foundation::TimeSpan const & keepAliveTime) const;
 };
 
 template <typename T>
@@ -12555,11 +12555,11 @@ class impl_IStreamSocketInformation
 public:
 
 	Windows::Networking::HostName LocalAddress() const;
-	String LocalPort() const;
+	hstring LocalPort() const;
 	Windows::Networking::HostName RemoteHostName() const;
 	Windows::Networking::HostName RemoteAddress() const;
-	String RemoteServiceName() const;
-	String RemotePort() const;
+	hstring RemoteServiceName() const;
+	hstring RemotePort() const;
 	Windows::Networking::Sockets::RoundTripTimeStatistics RoundTripTimeStatistics() const;
 	Windows::Networking::Sockets::BandwidthStatistics BandwidthStatistics() const;
 	Windows::Networking::Sockets::SocketProtectionLevel ProtectionLevel() const;
@@ -12633,9 +12633,9 @@ public:
 	Windows::Storage::Streams::IInputStream InputStream() const;
 	Windows::Storage::Streams::IOutputStream OutputStream() const;
 	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::EndpointPair const & endpointPair) const;
-	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName) const;
+	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName) const;
 	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::EndpointPair const & endpointPair, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
-	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
+	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
 	Windows::Foundation::IAsyncAction UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::HostName const & validationHostName) const;
 };
 
@@ -12646,7 +12646,7 @@ class impl_IStreamSocket2
 
 public:
 
-	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
+	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
 };
 
 template <typename T>
@@ -12659,9 +12659,9 @@ public:
 	Windows::Foundation::IAsyncAction CancelIOAsync() const;
 	void EnableTransferOwnership(GUID taskId) const;
 	void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-	void TransferOwnership(StringReference const & socketId) const;
-	void TransferOwnership(StringReference const & socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
-	void TransferOwnership(StringReference const & socketId, Windows::Networking::Sockets::SocketActivityContext const & data, Windows::Foundation::TimeSpan const & keepAliveTime) const;
+	void TransferOwnership(hstring_ref socketId) const;
+	void TransferOwnership(hstring_ref socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
+	void TransferOwnership(hstring_ref socketId, Windows::Networking::Sockets::SocketActivityContext const & data, Windows::Foundation::TimeSpan const & keepAliveTime) const;
 };
 
 template <typename T>
@@ -12699,7 +12699,7 @@ class impl_IStreamSocketListenerInformation
 
 public:
 
-	String LocalPort() const;
+	hstring LocalPort() const;
 };
 
 template <typename T>
@@ -12721,8 +12721,8 @@ public:
 
 	Windows::Networking::Sockets::StreamSocketListenerControl Control() const;
 	Windows::Networking::Sockets::StreamSocketListenerInformation Information() const;
-	Windows::Foundation::IAsyncAction BindServiceNameAsync(StringReference const & localServiceName) const;
-	Windows::Foundation::IAsyncAction BindEndpointAsync(Windows::Networking::HostName const & localHostName, StringReference const & localServiceName) const;
+	Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName) const;
+	Windows::Foundation::IAsyncAction BindEndpointAsync(Windows::Networking::HostName const & localHostName, hstring_ref localServiceName) const;
 	long long ConnectionReceived(Windows::Foundation::ITypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const & eventHandler) const;
 	template <typename F> long long ConnectionReceived(F eventHandler) const;
 	void ConnectionReceived(long long eventCookie) const;
@@ -12735,8 +12735,8 @@ class impl_IStreamSocketListener2
 
 public:
 
-	Windows::Foundation::IAsyncAction BindServiceNameAsync(StringReference const & localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
-	Windows::Foundation::IAsyncAction BindServiceNameAsync(StringReference const & localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
+	Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
+	Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::NetworkAdapter const & adapter) const;
 };
 
 template <typename T>
@@ -12749,8 +12749,8 @@ public:
 	Windows::Foundation::IAsyncAction CancelIOAsync() const;
 	void EnableTransferOwnership(GUID taskId) const;
 	void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-	void TransferOwnership(StringReference const & socketId) const;
-	void TransferOwnership(StringReference const & socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
+	void TransferOwnership(hstring_ref socketId) const;
+	void TransferOwnership(hstring_ref socketId, Windows::Networking::Sockets::SocketActivityContext const & data) const;
 };
 
 template <typename T>
@@ -12766,7 +12766,7 @@ public:
 	void ServerCredential(Windows::Security::Credentials::PasswordCredential const & value) const;
 	Windows::Security::Credentials::PasswordCredential ProxyCredential() const;
 	void ProxyCredential(Windows::Security::Credentials::PasswordCredential const & value) const;
-	Windows::Foundation::Collections::IVector<String> SupportedProtocols() const;
+	Windows::Foundation::Collections::IVector<hstring> SupportedProtocols() const;
 };
 
 template <typename T>
@@ -12778,7 +12778,7 @@ public:
 
 	Windows::Networking::HostName LocalAddress() const;
 	Windows::Networking::Sockets::BandwidthStatistics BandwidthStatistics() const;
-	String Protocol() const;
+	hstring Protocol() const;
 };
 
 template <typename T>
@@ -12790,11 +12790,11 @@ public:
 
 	Windows::Storage::Streams::IOutputStream OutputStream() const;
 	Windows::Foundation::IAsyncAction ConnectAsync(Windows::Foundation::Uri const & uri) const;
-	void SetRequestHeader(StringReference const & headerName, StringReference const & headerValue) const;
+	void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
 	long long Closed(Windows::Foundation::ITypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const & eventHandler) const;
 	template <typename F> long long Closed(F eventHandler) const;
 	void Closed(long long eventCookie) const;
-	void Close(unsigned short code, StringReference const & reason) const;
+	void Close(unsigned short code, hstring_ref reason) const;
 };
 
 template <typename T>
@@ -12878,7 +12878,7 @@ class impl_IWebAuthenticationResult
 
 public:
 
-	String ResponseData() const;
+	hstring ResponseData() const;
 	Windows::Security::Authentication::Web::WebAuthenticationStatus ResponseStatus() const;
 	unsigned ResponseErrorDetail() const;
 };
@@ -12921,10 +12921,10 @@ class impl_IWebTokenRequest
 public:
 
 	Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
-	String Scope() const;
-	String ClientId() const;
+	hstring Scope() const;
+	hstring ClientId() const;
 	Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType PromptType() const;
-	Windows::Foundation::Collections::IMap<String, String> Properties() const;
+	Windows::Foundation::Collections::IMap<hstring, hstring> Properties() const;
 };
 
 template <typename T>
@@ -12934,7 +12934,7 @@ class impl_IWebTokenRequest2
 
 public:
 
-	Windows::Foundation::Collections::IMap<String, String> AppProperties() const;
+	Windows::Foundation::Collections::IMap<hstring, hstring> AppProperties() const;
 };
 
 template <typename T>
@@ -12944,10 +12944,10 @@ class impl_IWebTokenRequestFactory
 
 public:
 
-	Windows::Security::Authentication::Web::Core::WebTokenRequest Create(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope, StringReference const & clientId) const;
-	Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithPromptType(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope, StringReference const & clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const;
+	Windows::Security::Authentication::Web::Core::WebTokenRequest Create(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope, hstring_ref clientId) const;
+	Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithPromptType(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const;
 	Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithProvider(Windows::Security::Credentials::WebAccountProvider const & provider) const;
-	Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithScope(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope) const;
+	Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithScope(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope) const;
 };
 
 template <typename T>
@@ -12961,9 +12961,9 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> GetTokenSilentlyAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request, Windows::Security::Credentials::WebAccount const & webAccount) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request, Windows::Security::Credentials::WebAccount const & webAccount) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & webAccountId) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId, StringReference const & authority) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref webAccountId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority) const;
 };
 
 template <typename T>
@@ -12973,7 +12973,7 @@ class impl_IWebAuthenticationCoreManagerStatics2
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId, StringReference const & authority, Windows::System::User const & user) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, Windows::System::User const & user) const;
 };
 
 template <typename T>
@@ -12984,8 +12984,8 @@ class impl_IWebProviderError
 public:
 
 	unsigned ErrorCode() const;
-	String ErrorMessage() const;
-	Windows::Foundation::Collections::IMap<String, String> Properties() const;
+	hstring ErrorMessage() const;
+	Windows::Foundation::Collections::IMap<hstring, hstring> Properties() const;
 };
 
 template <typename T>
@@ -12995,7 +12995,7 @@ class impl_IWebProviderErrorFactory
 
 public:
 
-	Windows::Security::Authentication::Web::Core::WebProviderError Create(unsigned errorCode, StringReference const & errorMessage) const;
+	Windows::Security::Authentication::Web::Core::WebProviderError Create(unsigned errorCode, hstring_ref errorMessage) const;
 };
 
 template <typename T>
@@ -13018,10 +13018,10 @@ class impl_IWebTokenResponse
 
 public:
 
-	String Token() const;
+	hstring Token() const;
 	Windows::Security::Authentication::Web::Core::WebProviderError ProviderError() const;
 	Windows::Security::Credentials::WebAccount WebAccount() const;
-	Windows::Foundation::Collections::IMap<String, String> Properties() const;
+	Windows::Foundation::Collections::IMap<hstring, hstring> Properties() const;
 };
 
 template <typename T>
@@ -13031,9 +13031,9 @@ class impl_IWebTokenResponseFactory
 
 public:
 
-	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithToken(StringReference const & token) const;
-	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAndAccount(StringReference const & token, Windows::Security::Credentials::WebAccount const & webAccount) const;
-	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAccountAndError(StringReference const & token, Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Core::WebProviderError const & error) const;
+	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithToken(hstring_ref token) const;
+	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAndAccount(hstring_ref token, Windows::Security::Credentials::WebAccount const & webAccount) const;
+	Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAccountAndError(hstring_ref token, Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Core::WebProviderError const & error) const;
 };
 
 }}}}}}
@@ -13093,7 +13093,7 @@ public:
 
 	Windows::Foundation::Uri ApplicationCallbackUri() const;
 	Windows::Security::Authentication::Web::Provider::WebAccountClientViewType Type() const;
-	String AccountPairwiseId() const;
+	hstring AccountPairwiseId() const;
 };
 
 template <typename T>
@@ -13104,7 +13104,7 @@ class impl_IWebAccountClientViewFactory
 public:
 
 	Windows::Security::Authentication::Web::Provider::WebAccountClientView Create(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri) const;
-	Windows::Security::Authentication::Web::Provider::WebAccountClientView CreateWithPairwiseId(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri, StringReference const & accountPairwiseId) const;
+	Windows::Security::Authentication::Web::Provider::WebAccountClientView CreateWithPairwiseId(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri, hstring_ref accountPairwiseId) const;
 };
 
 template <typename T>
@@ -13114,8 +13114,8 @@ class impl_IWebAccountManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(Windows::Security::Credentials::WebAccount const & webAccount, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & additionalProperties) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(StringReference const & webAccountId, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & props) const;
+	Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(Windows::Security::Credentials::WebAccount const & webAccount, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & additionalProperties) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & props) const;
 	Windows::Foundation::IAsyncAction DeleteWebAccountAsync(Windows::Security::Credentials::WebAccount const & webAccount) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> FindAllProviderWebAccountsAsync() const;
 	Windows::Foundation::IAsyncAction PushCookiesAsync(Windows::Foundation::Uri const & uri, Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> const & cookies) const;
@@ -13133,7 +13133,7 @@ class impl_IWebAccountManagerStatics2
 
 public:
 
-	Windows::Foundation::IAsyncAction PullCookiesAsync(StringReference const & uriString, StringReference const & callerPFN) const;
+	Windows::Foundation::IAsyncAction PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN) const;
 };
 
 template <typename T>
@@ -13143,7 +13143,7 @@ class impl_IWebAccountScopeManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(StringReference const & webAccountId, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
 	Windows::Foundation::IAsyncAction SetScopeAsync(Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
 	Windows::Security::Authentication::Web::Provider::WebAccountScope GetScope(Windows::Security::Credentials::WebAccount const & webAccount) const;
 };
@@ -13233,7 +13233,7 @@ public:
 
 	Windows::Security::Credentials::WebAccount WebAccount() const;
 	Windows::Foundation::Uri ApplicationCallbackUri() const;
-	String ClientId() const;
+	hstring ClientId() const;
 };
 
 template <typename T>
@@ -13271,7 +13271,7 @@ class impl_IWebAccountFactory
 
 public:
 
-	Windows::Security::Credentials::WebAccount CreateWebAccount(Windows::Security::Credentials::WebAccountProvider const & webAccountProvider, StringReference const & userName, Windows::Security::Credentials::WebAccountState state) const;
+	Windows::Security::Credentials::WebAccount CreateWebAccount(Windows::Security::Credentials::WebAccountProvider const & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const;
 };
 
 template <typename T>
@@ -13282,7 +13282,7 @@ class impl_IWebAccount
 public:
 
 	Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
-	String UserName() const;
+	hstring UserName() const;
 	Windows::Security::Credentials::WebAccountState State() const;
 };
 
@@ -13293,11 +13293,11 @@ class impl_IWebAccount2
 
 public:
 
-	String Id() const;
-	Windows::Foundation::Collections::IMapView<String, String> Properties() const;
+	hstring Id() const;
+	Windows::Foundation::Collections::IMapView<hstring, hstring> Properties() const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const;
 	Windows::Foundation::IAsyncAction SignOutAsync() const;
-	Windows::Foundation::IAsyncAction SignOutAsync(StringReference const & clientId) const;
+	Windows::Foundation::IAsyncAction SignOutAsync(hstring_ref clientId) const;
 };
 
 template <typename T>
@@ -13307,7 +13307,7 @@ class impl_IWebAccountProviderFactory
 
 public:
 
-	Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(StringReference const & id, StringReference const & displayName, Windows::Foundation::Uri const & iconUri) const;
+	Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, Windows::Foundation::Uri const & iconUri) const;
 };
 
 template <typename T>
@@ -13317,8 +13317,8 @@ class impl_IWebAccountProvider
 
 public:
 
-	String Id() const;
-	String DisplayName() const;
+	hstring Id() const;
+	hstring DisplayName() const;
 	Windows::Foundation::Uri IconUri() const;
 };
 
@@ -13329,8 +13329,8 @@ class impl_IWebAccountProvider2
 
 public:
 
-	String DisplayPurpose() const;
-	String Authority() const;
+	hstring DisplayPurpose() const;
+	hstring Authority() const;
 };
 
 template <typename T>
@@ -13352,9 +13352,9 @@ public:
 
 	Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
 	Windows::Foundation::IAsyncAction RenewAttestationAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(StringReference const & name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(StringReference const & name) const;
-	Windows::Foundation::IAsyncAction DeleteAsync(StringReference const & name) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(hstring_ref name) const;
+	Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref name) const;
 };
 
 template <typename T>
@@ -13364,7 +13364,7 @@ class impl_IKeyCredential
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	Windows::Storage::Streams::IBuffer RetrievePublicKey() const;
 	Windows::Storage::Streams::IBuffer RetrievePublicKey(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult> RequestSignAsync(Windows::Storage::Streams::IBuffer const & data) const;
@@ -13412,12 +13412,12 @@ class impl_IPasswordCredential
 
 public:
 
-	String Resource() const;
-	void Resource(StringReference const & resource) const;
-	String UserName() const;
-	void UserName(StringReference const & userName) const;
-	String Password() const;
-	void Password(StringReference const & password) const;
+	hstring Resource() const;
+	void Resource(hstring_ref resource) const;
+	hstring UserName() const;
+	void UserName(hstring_ref userName) const;
+	hstring Password() const;
+	void Password(hstring_ref password) const;
 	void RetrievePassword() const;
 	Windows::Foundation::Collections::IPropertySet Properties() const;
 };
@@ -13429,7 +13429,7 @@ class impl_ICredentialFactory
 
 public:
 
-	Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(StringReference const & resource, StringReference const & userName, StringReference const & password) const;
+	Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const;
 };
 
 template <typename T>
@@ -13441,9 +13441,9 @@ public:
 
 	void Add(Windows::Security::Credentials::PasswordCredential const & credential) const;
 	void Remove(Windows::Security::Credentials::PasswordCredential const & credential) const;
-	Windows::Security::Credentials::PasswordCredential Retrieve(StringReference const & resource, StringReference const & userName) const;
-	Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByResource(StringReference const & resource) const;
-	Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByUserName(StringReference const & userName) const;
+	Windows::Security::Credentials::PasswordCredential Retrieve(hstring_ref resource, hstring_ref userName) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByResource(hstring_ref resource) const;
+	Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByUserName(hstring_ref userName) const;
 	Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> RetrieveAll() const;
 };
 
@@ -13458,24 +13458,24 @@ class impl_ICertificateRequestProperties
 
 public:
 
-	String Subject() const;
-	void Subject(StringReference const & value) const;
-	String KeyAlgorithmName() const;
-	void KeyAlgorithmName(StringReference const & value) const;
+	hstring Subject() const;
+	void Subject(hstring_ref value) const;
+	hstring KeyAlgorithmName() const;
+	void KeyAlgorithmName(hstring_ref value) const;
 	unsigned KeySize() const;
 	void KeySize(unsigned value) const;
-	String FriendlyName() const;
-	void FriendlyName(StringReference const & value) const;
-	String HashAlgorithmName() const;
-	void HashAlgorithmName(StringReference const & value) const;
+	hstring FriendlyName() const;
+	void FriendlyName(hstring_ref value) const;
+	hstring HashAlgorithmName() const;
+	void HashAlgorithmName(hstring_ref value) const;
 	Windows::Security::Cryptography::Certificates::ExportOption Exportable() const;
 	void Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const;
 	Windows::Security::Cryptography::Certificates::EnrollKeyUsages KeyUsages() const;
 	void KeyUsages(Windows::Security::Cryptography::Certificates::EnrollKeyUsages value) const;
 	Windows::Security::Cryptography::Certificates::KeyProtectionLevel KeyProtectionLevel() const;
 	void KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const;
-	String KeyStorageProviderName() const;
-	void KeyStorageProviderName(StringReference const & value) const;
+	hstring KeyStorageProviderName() const;
+	void KeyStorageProviderName(hstring_ref value) const;
 };
 
 template <typename T>
@@ -13485,8 +13485,8 @@ class impl_ICertificateRequestProperties2
 
 public:
 
-	String SmartcardReaderName() const;
-	void SmartcardReaderName(StringReference const & value) const;
+	hstring SmartcardReaderName() const;
+	void SmartcardReaderName(hstring_ref value) const;
 	Windows::Security::Cryptography::Certificates::Certificate SigningCertificate() const;
 	void SigningCertificate(Windows::Security::Cryptography::Certificates::Certificate const & value) const;
 	Windows::Security::Cryptography::Certificates::Certificate AttestationCredentialCertificate() const;
@@ -13500,12 +13500,12 @@ class impl_ICertificateRequestProperties3
 
 public:
 
-	String CurveName() const;
-	void CurveName(StringReference const & value) const;
-	String ContainerNamePrefix() const;
-	void ContainerNamePrefix(StringReference const & value) const;
-	String ContainerName() const;
-	void ContainerName(StringReference const & value) const;
+	hstring CurveName() const;
+	void CurveName(hstring_ref value) const;
+	hstring ContainerNamePrefix() const;
+	void ContainerNamePrefix(hstring_ref value) const;
+	hstring ContainerName() const;
+	void ContainerName(hstring_ref value) const;
 	bool UseExistingKey() const;
 	void UseExistingKey(bool value) const;
 };
@@ -13517,9 +13517,9 @@ class impl_ICertificateEnrollmentManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request) const;
-	Windows::Foundation::IAsyncAction InstallCertificateAsync(StringReference const & certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName) const;
+	Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request) const;
+	Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
 };
 
 template <typename T>
@@ -13530,7 +13530,7 @@ class impl_ICertificateEnrollmentManagerStatics2
 public:
 
 	Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager UserCertificateEnrollmentManager() const;
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName, StringReference const & keyStorageProvider) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const;
 };
 
 template <typename T>
@@ -13540,7 +13540,7 @@ class impl_ICertificateEnrollmentManagerStatics3
 
 public:
 
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters) const;
 };
 
 template <typename T>
@@ -13550,8 +13550,8 @@ class impl_IKeyAttestationHelperStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> DecryptTpmAttestationCredentialAsync(StringReference const & credential) const;
-	String GetTpmAttestationCredentialId(StringReference const & credential) const;
+	Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential) const;
+	hstring GetTpmAttestationCredentialId(hstring_ref credential) const;
 };
 
 template <typename T>
@@ -13561,7 +13561,7 @@ class impl_IKeyAttestationHelperStatics2
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> DecryptTpmAttestationCredentialAsync(StringReference const & credential, StringReference const & containerName) const;
+	Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName) const;
 };
 
 template <typename T>
@@ -13575,7 +13575,7 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync(Windows::Security::Cryptography::Certificates::CertificateQuery const & query) const;
 	Windows::Security::Cryptography::Certificates::CertificateStore TrustedRootCertificationAuthorities() const;
 	Windows::Security::Cryptography::Certificates::CertificateStore IntermediateCertificationAuthorities() const;
-	Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(StringReference const & storeName) const;
+	Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(hstring_ref storeName) const;
 };
 
 template <typename T>
@@ -13585,10 +13585,10 @@ class impl_IUserCertificateEnrollmentManager
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request) const;
-	Windows::Foundation::IAsyncAction InstallCertificateAsync(StringReference const & certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName) const;
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName, StringReference const & keyStorageProvider) const;
+	Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request) const;
+	Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const;
 };
 
 template <typename T>
@@ -13598,7 +13598,7 @@ class impl_IUserCertificateEnrollmentManager2
 
 public:
 
-	Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters) const;
+	Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters) const;
 };
 
 template <typename T>
@@ -13619,7 +13619,7 @@ class impl_ICertificateStore2
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 };
 
 template <typename T>
@@ -13629,14 +13629,14 @@ class impl_IKeyAlgorithmNamesStatics
 
 public:
 
-	String Rsa() const;
-	String Dsa() const;
-	String Ecdh256() const;
-	String Ecdh384() const;
-	String Ecdh521() const;
-	String Ecdsa256() const;
-	String Ecdsa384() const;
-	String Ecdsa521() const;
+	hstring Rsa() const;
+	hstring Dsa() const;
+	hstring Ecdh256() const;
+	hstring Ecdh384() const;
+	hstring Ecdh521() const;
+	hstring Ecdsa256() const;
+	hstring Ecdsa384() const;
+	hstring Ecdsa521() const;
 };
 
 template <typename T>
@@ -13646,8 +13646,8 @@ class impl_IKeyAlgorithmNamesStatics2
 
 public:
 
-	String Ecdsa() const;
-	String Ecdh() const;
+	hstring Ecdsa() const;
+	hstring Ecdh() const;
 };
 
 template <typename T>
@@ -13657,9 +13657,9 @@ class impl_IKeyStorageProviderNamesStatics
 
 public:
 
-	String SoftwareKeyStorageProvider() const;
-	String SmartcardKeyStorageProvider() const;
-	String PlatformKeyStorageProvider() const;
+	hstring SoftwareKeyStorageProvider() const;
+	hstring SmartcardKeyStorageProvider() const;
+	hstring PlatformKeyStorageProvider() const;
 };
 
 template <typename T>
@@ -13669,7 +13669,7 @@ class impl_IKeyStorageProviderNamesStatics2
 
 public:
 
-	String PassportKeyStorageProvider() const;
+	hstring PassportKeyStorageProvider() const;
 };
 
 template <typename T>
@@ -13679,7 +13679,7 @@ class impl_IChainBuildingParameters
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> EnhancedKeyUsages() const;
+	Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
 	Windows::Foundation::DateTime ValidationTimestamp() const;
 	void ValidationTimestamp(Windows::Foundation::DateTime const & value) const;
 	bool RevocationCheckEnabled() const;
@@ -13713,11 +13713,11 @@ class impl_ICertificateQuery
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> EnhancedKeyUsages() const;
-	String IssuerName() const;
-	void IssuerName(StringReference const & value) const;
-	String FriendlyName() const;
-	void FriendlyName(StringReference const & value) const;
+	Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
+	hstring IssuerName() const;
+	void IssuerName(hstring_ref value) const;
+	hstring FriendlyName() const;
+	void FriendlyName(hstring_ref value) const;
 	bool HardwareOnly() const;
 	void HardwareOnly(bool value) const;
 };
@@ -13733,8 +13733,8 @@ public:
 	void IncludeDuplicates(bool value) const;
 	bool IncludeExpiredCertificates() const;
 	void IncludeExpiredCertificates(bool value) const;
-	String StoreName() const;
-	void StoreName(StringReference const & value) const;
+	hstring StoreName() const;
+	void StoreName(hstring_ref value) const;
 };
 
 template <typename T>
@@ -13759,15 +13759,15 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const & certificates) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const & certificates, Windows::Security::Cryptography::Certificates::ChainBuildingParameters const & parameters) const;
 	Windows::Storage::Streams::IBuffer GetCertificateBlob() const;
-	String Subject() const;
-	String Issuer() const;
+	hstring Subject() const;
+	hstring Issuer() const;
 	bool HasPrivateKey() const;
 	bool IsStronglyProtected() const;
 	Windows::Foundation::DateTime ValidFrom() const;
 	Windows::Foundation::DateTime ValidTo() const;
-	Windows::Foundation::Collections::IVectorView<String> EnhancedKeyUsages() const;
-	void FriendlyName(StringReference const & value) const;
-	String FriendlyName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> EnhancedKeyUsages() const;
+	void FriendlyName(hstring_ref value) const;
+	hstring FriendlyName() const;
 };
 
 template <typename T>
@@ -13779,9 +13779,9 @@ public:
 
 	bool IsSecurityDeviceBound() const;
 	Windows::Security::Cryptography::Certificates::CertificateKeyUsages KeyUsages() const;
-	String KeyAlgorithmName() const;
-	String SignatureAlgorithmName() const;
-	String SignatureHashAlgorithmName() const;
+	hstring KeyAlgorithmName() const;
+	hstring SignatureAlgorithmName() const;
+	hstring SignatureHashAlgorithmName() const;
 	Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo SubjectAlternativeName() const;
 };
 
@@ -13816,8 +13816,8 @@ public:
 
 	Windows::Security::Cryptography::Certificates::Certificate Certificate() const;
 	void Certificate(Windows::Security::Cryptography::Certificates::Certificate const & value) const;
-	String HashAlgorithmName() const;
-	void HashAlgorithmName(StringReference const & value) const;
+	hstring HashAlgorithmName() const;
+	void HashAlgorithmName(hstring_ref value) const;
 	Windows::Security::Cryptography::Certificates::CmsTimestampInfo TimestampInfo() const;
 };
 
@@ -13828,12 +13828,12 @@ class impl_ISubjectAlternativeNameInfo
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> EmailName() const;
-	Windows::Foundation::Collections::IVectorView<String> IPAddress() const;
-	Windows::Foundation::Collections::IVectorView<String> Url() const;
-	Windows::Foundation::Collections::IVectorView<String> DnsName() const;
-	Windows::Foundation::Collections::IVectorView<String> DistinguishedName() const;
-	Windows::Foundation::Collections::IVectorView<String> PrincipalName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> EmailName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> IPAddress() const;
+	Windows::Foundation::Collections::IVectorView<hstring> Url() const;
+	Windows::Foundation::Collections::IVectorView<hstring> DnsName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> DistinguishedName() const;
+	Windows::Foundation::Collections::IVectorView<hstring> PrincipalName() const;
 };
 
 template <typename T>
@@ -13849,14 +13849,14 @@ public:
 	void KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const;
 	Windows::Security::Cryptography::Certificates::InstallOptions InstallOptions() const;
 	void InstallOptions(Windows::Security::Cryptography::Certificates::InstallOptions value) const;
-	String FriendlyName() const;
-	void FriendlyName(StringReference const & value) const;
-	String KeyStorageProviderName() const;
-	void KeyStorageProviderName(StringReference const & value) const;
-	String ContainerNamePrefix() const;
-	void ContainerNamePrefix(StringReference const & value) const;
-	String ReaderName() const;
-	void ReaderName(StringReference const & value) const;
+	hstring FriendlyName() const;
+	void FriendlyName(hstring_ref value) const;
+	hstring KeyStorageProviderName() const;
+	void KeyStorageProviderName(hstring_ref value) const;
+	hstring ContainerNamePrefix() const;
+	void ContainerNamePrefix(hstring_ref value) const;
+	hstring ReaderName() const;
+	void ReaderName(hstring_ref value) const;
 };
 
 template <typename T>
@@ -14029,7 +14029,7 @@ class impl_IHashAlgorithmProvider
 
 public:
 
-	String AlgorithmName() const;
+	hstring AlgorithmName() const;
 	unsigned HashLength() const;
 	Windows::Storage::Streams::IBuffer HashData(Windows::Storage::Streams::IBuffer const & data) const;
 	Windows::Security::Cryptography::Core::CryptographicHash CreateHash() const;
@@ -14042,7 +14042,7 @@ class impl_IMacAlgorithmProvider
 
 public:
 
-	String AlgorithmName() const;
+	hstring AlgorithmName() const;
 	unsigned MacLength() const;
 	Windows::Security::Cryptography::Core::CryptographicKey CreateKey(Windows::Storage::Streams::IBuffer const & keyMaterial) const;
 };
@@ -14064,7 +14064,7 @@ class impl_IKeyDerivationAlgorithmProvider
 
 public:
 
-	String AlgorithmName() const;
+	hstring AlgorithmName() const;
 	Windows::Security::Cryptography::Core::CryptographicKey CreateKey(Windows::Storage::Streams::IBuffer const & keyMaterial) const;
 };
 
@@ -14075,7 +14075,7 @@ class impl_ISymmetricKeyAlgorithmProvider
 
 public:
 
-	String AlgorithmName() const;
+	hstring AlgorithmName() const;
 	unsigned BlockLength() const;
 	Windows::Security::Cryptography::Core::CryptographicKey CreateSymmetricKey(Windows::Storage::Streams::IBuffer const & keyMaterial) const;
 };
@@ -14087,7 +14087,7 @@ class impl_IAsymmetricKeyAlgorithmProvider
 
 public:
 
-	String AlgorithmName() const;
+	hstring AlgorithmName() const;
 	Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPair(unsigned keySize) const;
 	Windows::Security::Cryptography::Core::CryptographicKey ImportKeyPair(Windows::Storage::Streams::IBuffer const & keyBlob) const;
 	Windows::Security::Cryptography::Core::CryptographicKey ImportKeyPair(Windows::Storage::Streams::IBuffer const & keyBlob, Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType) const;
@@ -14102,7 +14102,7 @@ class impl_IAsymmetricKeyAlgorithmProvider2
 
 public:
 
-	Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(StringReference const & curveName) const;
+	Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(hstring_ref curveName) const;
 };
 
 template <typename T>
@@ -14112,8 +14112,8 @@ class impl_IPersistedKeyProviderStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(Windows::Security::Cryptography::Certificates::Certificate const & certificate, StringReference const & hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
-	Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(Windows::Security::Cryptography::Certificates::Certificate const & certificate, StringReference const & hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(Windows::Security::Cryptography::Certificates::Certificate const & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
+	Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(Windows::Security::Cryptography::Certificates::Certificate const & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
 };
 
 template <typename T>
@@ -14164,7 +14164,7 @@ class impl_IHashAlgorithmProviderStatics
 
 public:
 
-	Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(StringReference const & algorithm) const;
+	Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename T>
@@ -14174,7 +14174,7 @@ class impl_IMacAlgorithmProviderStatics
 
 public:
 
-	Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(StringReference const & algorithm) const;
+	Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename T>
@@ -14184,7 +14184,7 @@ class impl_IKeyDerivationAlgorithmProviderStatics
 
 public:
 
-	Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(StringReference const & algorithm) const;
+	Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename T>
@@ -14194,7 +14194,7 @@ class impl_ISymmetricKeyAlgorithmProviderStatics
 
 public:
 
-	Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(StringReference const & algorithm) const;
+	Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename T>
@@ -14204,7 +14204,7 @@ class impl_IAsymmetricKeyAlgorithmProviderStatics
 
 public:
 
-	Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(StringReference const & algorithm) const;
+	Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename T>
@@ -14214,11 +14214,11 @@ class impl_IHashAlgorithmNamesStatics
 
 public:
 
-	String Md5() const;
-	String Sha1() const;
-	String Sha256() const;
-	String Sha384() const;
-	String Sha512() const;
+	hstring Md5() const;
+	hstring Sha1() const;
+	hstring Sha256() const;
+	hstring Sha384() const;
+	hstring Sha512() const;
 };
 
 template <typename T>
@@ -14228,12 +14228,12 @@ class impl_IMacAlgorithmNamesStatics
 
 public:
 
-	String HmacMd5() const;
-	String HmacSha1() const;
-	String HmacSha256() const;
-	String HmacSha384() const;
-	String HmacSha512() const;
-	String AesCmac() const;
+	hstring HmacMd5() const;
+	hstring HmacSha1() const;
+	hstring HmacSha256() const;
+	hstring HmacSha384() const;
+	hstring HmacSha512() const;
+	hstring AesCmac() const;
 };
 
 template <typename T>
@@ -14243,25 +14243,25 @@ class impl_ISymmetricAlgorithmNamesStatics
 
 public:
 
-	String DesCbc() const;
-	String DesEcb() const;
-	String TripleDesCbc() const;
-	String TripleDesEcb() const;
-	String Rc2Cbc() const;
-	String Rc2Ecb() const;
-	String AesCbc() const;
-	String AesEcb() const;
-	String AesGcm() const;
-	String AesCcm() const;
-	String AesCbcPkcs7() const;
-	String AesEcbPkcs7() const;
-	String DesCbcPkcs7() const;
-	String DesEcbPkcs7() const;
-	String TripleDesCbcPkcs7() const;
-	String TripleDesEcbPkcs7() const;
-	String Rc2CbcPkcs7() const;
-	String Rc2EcbPkcs7() const;
-	String Rc4() const;
+	hstring DesCbc() const;
+	hstring DesEcb() const;
+	hstring TripleDesCbc() const;
+	hstring TripleDesEcb() const;
+	hstring Rc2Cbc() const;
+	hstring Rc2Ecb() const;
+	hstring AesCbc() const;
+	hstring AesEcb() const;
+	hstring AesGcm() const;
+	hstring AesCcm() const;
+	hstring AesCbcPkcs7() const;
+	hstring AesEcbPkcs7() const;
+	hstring DesCbcPkcs7() const;
+	hstring DesEcbPkcs7() const;
+	hstring TripleDesCbcPkcs7() const;
+	hstring TripleDesEcbPkcs7() const;
+	hstring Rc2CbcPkcs7() const;
+	hstring Rc2EcbPkcs7() const;
+	hstring Rc4() const;
 };
 
 template <typename T>
@@ -14271,24 +14271,24 @@ class impl_IAsymmetricAlgorithmNamesStatics
 
 public:
 
-	String RsaPkcs1() const;
-	String RsaOaepSha1() const;
-	String RsaOaepSha256() const;
-	String RsaOaepSha384() const;
-	String RsaOaepSha512() const;
-	String EcdsaP256Sha256() const;
-	String EcdsaP384Sha384() const;
-	String EcdsaP521Sha512() const;
-	String DsaSha1() const;
-	String DsaSha256() const;
-	String RsaSignPkcs1Sha1() const;
-	String RsaSignPkcs1Sha256() const;
-	String RsaSignPkcs1Sha384() const;
-	String RsaSignPkcs1Sha512() const;
-	String RsaSignPssSha1() const;
-	String RsaSignPssSha256() const;
-	String RsaSignPssSha384() const;
-	String RsaSignPssSha512() const;
+	hstring RsaPkcs1() const;
+	hstring RsaOaepSha1() const;
+	hstring RsaOaepSha256() const;
+	hstring RsaOaepSha384() const;
+	hstring RsaOaepSha512() const;
+	hstring EcdsaP256Sha256() const;
+	hstring EcdsaP384Sha384() const;
+	hstring EcdsaP521Sha512() const;
+	hstring DsaSha1() const;
+	hstring DsaSha256() const;
+	hstring RsaSignPkcs1Sha1() const;
+	hstring RsaSignPkcs1Sha256() const;
+	hstring RsaSignPkcs1Sha384() const;
+	hstring RsaSignPkcs1Sha512() const;
+	hstring RsaSignPssSha1() const;
+	hstring RsaSignPssSha256() const;
+	hstring RsaSignPssSha384() const;
+	hstring RsaSignPssSha512() const;
 };
 
 template <typename T>
@@ -14298,9 +14298,9 @@ class impl_IAsymmetricAlgorithmNamesStatics2
 
 public:
 
-	String EcdsaSha256() const;
-	String EcdsaSha384() const;
-	String EcdsaSha512() const;
+	hstring EcdsaSha256() const;
+	hstring EcdsaSha384() const;
+	hstring EcdsaSha512() const;
 };
 
 template <typename T>
@@ -14310,52 +14310,52 @@ class impl_IEccCurveNamesStatics
 
 public:
 
-	String BrainpoolP160r1() const;
-	String BrainpoolP160t1() const;
-	String BrainpoolP192r1() const;
-	String BrainpoolP192t1() const;
-	String BrainpoolP224r1() const;
-	String BrainpoolP224t1() const;
-	String BrainpoolP256r1() const;
-	String BrainpoolP256t1() const;
-	String BrainpoolP320r1() const;
-	String BrainpoolP320t1() const;
-	String BrainpoolP384r1() const;
-	String BrainpoolP384t1() const;
-	String BrainpoolP512r1() const;
-	String BrainpoolP512t1() const;
-	String Curve25519() const;
-	String Ec192wapi() const;
-	String NistP192() const;
-	String NistP224() const;
-	String NistP256() const;
-	String NistP384() const;
-	String NistP521() const;
-	String NumsP256t1() const;
-	String NumsP384t1() const;
-	String NumsP512t1() const;
-	String SecP160k1() const;
-	String SecP160r1() const;
-	String SecP160r2() const;
-	String SecP192k1() const;
-	String SecP192r1() const;
-	String SecP224k1() const;
-	String SecP224r1() const;
-	String SecP256k1() const;
-	String SecP256r1() const;
-	String SecP384r1() const;
-	String SecP521r1() const;
-	String Wtls7() const;
-	String Wtls9() const;
-	String Wtls12() const;
-	String X962P192v1() const;
-	String X962P192v2() const;
-	String X962P192v3() const;
-	String X962P239v1() const;
-	String X962P239v2() const;
-	String X962P239v3() const;
-	String X962P256v1() const;
-	Windows::Foundation::Collections::IVectorView<String> AllEccCurveNames() const;
+	hstring BrainpoolP160r1() const;
+	hstring BrainpoolP160t1() const;
+	hstring BrainpoolP192r1() const;
+	hstring BrainpoolP192t1() const;
+	hstring BrainpoolP224r1() const;
+	hstring BrainpoolP224t1() const;
+	hstring BrainpoolP256r1() const;
+	hstring BrainpoolP256t1() const;
+	hstring BrainpoolP320r1() const;
+	hstring BrainpoolP320t1() const;
+	hstring BrainpoolP384r1() const;
+	hstring BrainpoolP384t1() const;
+	hstring BrainpoolP512r1() const;
+	hstring BrainpoolP512t1() const;
+	hstring Curve25519() const;
+	hstring Ec192wapi() const;
+	hstring NistP192() const;
+	hstring NistP224() const;
+	hstring NistP256() const;
+	hstring NistP384() const;
+	hstring NistP521() const;
+	hstring NumsP256t1() const;
+	hstring NumsP384t1() const;
+	hstring NumsP512t1() const;
+	hstring SecP160k1() const;
+	hstring SecP160r1() const;
+	hstring SecP160r2() const;
+	hstring SecP192k1() const;
+	hstring SecP192r1() const;
+	hstring SecP224k1() const;
+	hstring SecP224r1() const;
+	hstring SecP256k1() const;
+	hstring SecP256r1() const;
+	hstring SecP384r1() const;
+	hstring SecP521r1() const;
+	hstring Wtls7() const;
+	hstring Wtls9() const;
+	hstring Wtls12() const;
+	hstring X962P192v1() const;
+	hstring X962P192v2() const;
+	hstring X962P192v3() const;
+	hstring X962P239v1() const;
+	hstring X962P239v2() const;
+	hstring X962P239v3() const;
+	hstring X962P256v1() const;
+	Windows::Foundation::Collections::IVectorView<hstring> AllEccCurveNames() const;
 };
 
 template <typename T>
@@ -14365,21 +14365,21 @@ class impl_IKeyDerivationAlgorithmNamesStatics
 
 public:
 
-	String Pbkdf2Md5() const;
-	String Pbkdf2Sha1() const;
-	String Pbkdf2Sha256() const;
-	String Pbkdf2Sha384() const;
-	String Pbkdf2Sha512() const;
-	String Sp800108CtrHmacMd5() const;
-	String Sp800108CtrHmacSha1() const;
-	String Sp800108CtrHmacSha256() const;
-	String Sp800108CtrHmacSha384() const;
-	String Sp800108CtrHmacSha512() const;
-	String Sp80056aConcatMd5() const;
-	String Sp80056aConcatSha1() const;
-	String Sp80056aConcatSha256() const;
-	String Sp80056aConcatSha384() const;
-	String Sp80056aConcatSha512() const;
+	hstring Pbkdf2Md5() const;
+	hstring Pbkdf2Sha1() const;
+	hstring Pbkdf2Sha256() const;
+	hstring Pbkdf2Sha384() const;
+	hstring Pbkdf2Sha512() const;
+	hstring Sp800108CtrHmacMd5() const;
+	hstring Sp800108CtrHmacSha1() const;
+	hstring Sp800108CtrHmacSha256() const;
+	hstring Sp800108CtrHmacSha384() const;
+	hstring Sp800108CtrHmacSha512() const;
+	hstring Sp80056aConcatMd5() const;
+	hstring Sp80056aConcatSha1() const;
+	hstring Sp80056aConcatSha256() const;
+	hstring Sp80056aConcatSha384() const;
+	hstring Sp80056aConcatSha512() const;
 };
 
 template <typename T>
@@ -14389,11 +14389,11 @@ class impl_IKeyDerivationAlgorithmNamesStatics2
 
 public:
 
-	String CapiKdfMd5() const;
-	String CapiKdfSha1() const;
-	String CapiKdfSha256() const;
-	String CapiKdfSha384() const;
-	String CapiKdfSha512() const;
+	hstring CapiKdfMd5() const;
+	hstring CapiKdfSha1() const;
+	hstring CapiKdfSha256() const;
+	hstring CapiKdfSha384() const;
+	hstring CapiKdfSha512() const;
 };
 
 }}}}}
@@ -14407,9 +14407,9 @@ class impl_IFileRevocationManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const & storageItem, StringReference const & enterpriseIdentity) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const & storageItem, hstring_ref enterpriseIdentity) const;
 	Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const & sourceStorageItem, Windows::Storage::IStorageItem const & targetStorageItem) const;
-	void Revoke(StringReference const & enterpriseIdentity) const;
+	void Revoke(hstring_ref enterpriseIdentity) const;
 	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> GetStatusAsync(Windows::Storage::IStorageItem const & storageItem) const;
 };
 
@@ -14420,13 +14420,13 @@ class impl_IFileProtectionManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> ProtectAsync(Windows::Storage::IStorageItem const & target, StringReference const & identity) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> ProtectAsync(Windows::Storage::IStorageItem const & target, hstring_ref identity) const;
 	Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const & source, Windows::Storage::IStorageItem const & target) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> GetProtectionInfoAsync(Windows::Storage::IStorageItem const & source) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile, Windows::Storage::IStorageItem const & target) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedFileCreateResult> CreateProtectedAndOpenAsync(Windows::Storage::IStorageFolder const & parentFolder, StringReference const & desiredName, StringReference const & identity, Windows::Storage::CreationCollisionOption collisionOption) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedFileCreateResult> CreateProtectedAndOpenAsync(Windows::Storage::IStorageFolder const & parentFolder, hstring_ref desiredName, hstring_ref identity, Windows::Storage::CreationCollisionOption collisionOption) const;
 };
 
 template <typename T>
@@ -14438,7 +14438,7 @@ public:
 
 	Windows::Foundation::IAsyncOperation<bool> IsContainerAsync(Windows::Storage::IStorageFile const & file) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile, Windows::Storage::IStorageItem const & target, Windows::Storage::NameCollisionOption collisionOption) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile, Windows::Foundation::Collections::IIterable<String> const & sharedWithIdentities) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile, Windows::Foundation::Collections::IIterable<hstring> const & sharedWithIdentities) const;
 };
 
 template <typename T>
@@ -14462,7 +14462,7 @@ public:
 
 	Windows::Security::EnterpriseData::FileProtectionStatus Status() const;
 	bool IsRoamable() const;
-	String Identity() const;
+	hstring Identity() const;
 };
 
 template <typename T>
@@ -14494,9 +14494,9 @@ class impl_IDataProtectionManagerStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> ProtectAsync(Windows::Storage::Streams::IBuffer const & data, StringReference const & identity) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> ProtectAsync(Windows::Storage::Streams::IBuffer const & data, hstring_ref identity) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> UnprotectAsync(Windows::Storage::Streams::IBuffer const & data) const;
-	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> ProtectStreamAsync(Windows::Storage::Streams::IInputStream const & unprotectedStream, StringReference const & identity, Windows::Storage::Streams::IOutputStream const & protectedStream) const;
+	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> ProtectStreamAsync(Windows::Storage::Streams::IInputStream const & unprotectedStream, hstring_ref identity, Windows::Storage::Streams::IOutputStream const & protectedStream) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> UnprotectStreamAsync(Windows::Storage::Streams::IInputStream const & protectedStream, Windows::Storage::Streams::IOutputStream const & unprotectedStream) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> GetProtectionInfoAsync(Windows::Storage::Streams::IBuffer const & protectedData) const;
 	Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> GetStreamProtectionInfoAsync(Windows::Storage::Streams::IInputStream const & protectedStream) const;
@@ -14510,7 +14510,7 @@ class impl_IDataProtectionInfo
 public:
 
 	Windows::Security::EnterpriseData::DataProtectionStatus Status() const;
-	String Identity() const;
+	hstring Identity() const;
 };
 
 template <typename T>
@@ -14531,8 +14531,8 @@ class impl_IProtectionPolicyManager
 
 public:
 
-	void Identity(StringReference const & value) const;
-	String Identity() const;
+	void Identity(hstring_ref value) const;
+	hstring Identity() const;
 };
 
 template <typename T>
@@ -14542,12 +14542,12 @@ class impl_IProtectionPolicyManagerStatics
 
 public:
 
-	bool IsIdentityManaged(StringReference const & identity) const;
-	bool TryApplyProcessUIPolicy(StringReference const & identity) const;
+	bool IsIdentityManaged(hstring_ref identity) const;
+	bool TryApplyProcessUIPolicy(hstring_ref identity) const;
 	void ClearProcessUIPolicy() const;
-	Windows::Security::EnterpriseData::ThreadNetworkContext CreateCurrentThreadNetworkContext(StringReference const & identity) const;
-	Windows::Foundation::IAsyncOperation<String> GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows::Networking::HostName const & endpointHost) const;
-	void RevokeContent(StringReference const & identity) const;
+	Windows::Security::EnterpriseData::ThreadNetworkContext CreateCurrentThreadNetworkContext(hstring_ref identity) const;
+	Windows::Foundation::IAsyncOperation<hstring> GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows::Networking::HostName const & endpointHost) const;
+	void RevokeContent(hstring_ref identity) const;
 	Windows::Security::EnterpriseData::ProtectionPolicyManager GetForCurrentView() const;
 	long long ProtectedAccessSuspending(Windows::Foundation::IEventHandler<Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs> const & handler) const;
 	template <typename F> long long ProtectedAccessSuspending(F handler) const;
@@ -14558,8 +14558,8 @@ public:
 	long long ProtectedContentRevoked(Windows::Foundation::IEventHandler<Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs> const & handler) const;
 	template <typename F> long long ProtectedContentRevoked(F handler) const;
 	void ProtectedContentRevoked(long long token) const;
-	Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccess(StringReference const & sourceIdentity, StringReference const & targetIdentity) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(StringReference const & sourceIdentity, StringReference const & targetIdentity) const;
+	Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccess(hstring_ref sourceIdentity, hstring_ref targetIdentity) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref sourceIdentity, hstring_ref targetIdentity) const;
 };
 
 template <typename T>
@@ -14569,12 +14569,12 @@ class impl_IProtectionPolicyManagerStatics2
 
 public:
 
-	bool HasContentBeenRevokedSince(StringReference const & identity, Windows::Foundation::DateTime const & since) const;
-	Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccessForApp(StringReference const & sourceIdentity, StringReference const & appPackageFamilyName) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessForAppAsync(StringReference const & sourceIdentity, StringReference const & appPackageFamilyName) const;
-	Windows::Security::EnterpriseData::EnforcementLevel GetEnforcementLevel(StringReference const & identity) const;
-	bool IsUserDecryptionAllowed(StringReference const & identity) const;
-	bool IsProtectionUnderLockRequired(StringReference const & identity) const;
+	bool HasContentBeenRevokedSince(hstring_ref identity, Windows::Foundation::DateTime const & since) const;
+	Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccessForApp(hstring_ref sourceIdentity, hstring_ref appPackageFamilyName) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessForAppAsync(hstring_ref sourceIdentity, hstring_ref appPackageFamilyName) const;
+	Windows::Security::EnterpriseData::EnforcementLevel GetEnforcementLevel(hstring_ref identity) const;
+	bool IsUserDecryptionAllowed(hstring_ref identity) const;
+	bool IsProtectionUnderLockRequired(hstring_ref identity) const;
 	long long PolicyChanged(Windows::Foundation::IEventHandler<IInspectable> const & handler) const;
 	template <typename F> long long PolicyChanged(F handler) const;
 	void PolicyChanged(long long token) const;
@@ -14597,7 +14597,7 @@ class impl_IProtectedAccessSuspendingEventArgs
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> Identities() const;
+	Windows::Foundation::Collections::IVectorView<hstring> Identities() const;
 	Windows::Foundation::DateTime Deadline() const;
 	Windows::Foundation::Deferral GetDeferral() const;
 };
@@ -14609,7 +14609,7 @@ class impl_IProtectedAccessResumedEventArgs
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> Identities() const;
+	Windows::Foundation::Collections::IVectorView<hstring> Identities() const;
 };
 
 template <typename T>
@@ -14619,7 +14619,7 @@ class impl_IProtectedContentRevokedEventArgs
 
 public:
 
-	Windows::Foundation::Collections::IVectorView<String> Identities() const;
+	Windows::Foundation::Collections::IVectorView<hstring> Identities() const;
 };
 
 }}}}
@@ -14757,10 +14757,10 @@ class impl_IDownloadsFolderStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption option) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
 };
 
 template <typename T>
@@ -14770,10 +14770,10 @@ class impl_IDownloadsFolderStatics2
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, StringReference const & desiredName, Windows::Storage::CreationCollisionOption option) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, StringReference const & desiredName, Windows::Storage::CreationCollisionOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
 };
 
 template <typename T>
@@ -14793,13 +14793,13 @@ class impl_IStorageFileStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(StringReference const & path) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(hstring_ref path) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromApplicationUriAsync(Windows::Foundation::Uri const & uri) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(StringReference const & displayNameWithExtension, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
-	template <typename F> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(StringReference const & displayNameWithExtension, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
+	template <typename F> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileAsync(Windows::Storage::IStorageFile const & fileToReplace, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
 	template <typename F> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileAsync(Windows::Storage::IStorageFile const & fileToReplace, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(StringReference const & displayNameWithExtension, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileFromUriAsync(Windows::Storage::IStorageFile const & fileToReplace, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail) const;
 };
 
@@ -14810,13 +14810,13 @@ class impl_IStorageItem
 
 public:
 
-	Windows::Foundation::IAsyncAction RenameAsync(StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncAction RenameAsync(StringReference const & desiredName, Windows::Storage::NameCollisionOption option) const;
+	Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName, Windows::Storage::NameCollisionOption option) const;
 	Windows::Foundation::IAsyncAction DeleteAsync() const;
 	Windows::Foundation::IAsyncAction DeleteAsync(Windows::Storage::StorageDeleteOption option) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::BasicProperties> GetBasicPropertiesAsync() const;
-	String Name() const;
-	String Path() const;
+	hstring Name() const;
+	hstring Path() const;
 	Windows::Storage::FileAttributes Attributes() const;
 	Windows::Foundation::DateTime DateCreated() const;
 	bool IsOfType(Windows::Storage::StorageItemTypes type) const;
@@ -14829,13 +14829,13 @@ class impl_IStorageFolder
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption options) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption options) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(StringReference const & name) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(StringReference const & name) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(StringReference const & name) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref name) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref name) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref name) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> GetFilesAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> GetFoldersAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetItemsAsync() const;
@@ -14848,17 +14848,17 @@ class impl_IStorageFile
 
 public:
 
-	String FileType() const;
-	String ContentType() const;
+	hstring FileType() const;
+	hstring ContentType() const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> OpenAsync(Windows::Storage::FileAccessMode accessMode) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> OpenTransactedWriteAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(Windows::Storage::IStorageFolder const & destinationFolder) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(Windows::Storage::IStorageFolder const & destinationFolder, StringReference const & desiredNewName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(Windows::Storage::IStorageFolder const & destinationFolder, StringReference const & desiredNewName, Windows::Storage::NameCollisionOption option) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(Windows::Storage::IStorageFolder const & destinationFolder, hstring_ref desiredNewName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(Windows::Storage::IStorageFolder const & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const;
 	Windows::Foundation::IAsyncAction CopyAndReplaceAsync(Windows::Storage::IStorageFile const & fileToReplace) const;
 	Windows::Foundation::IAsyncAction MoveAsync(Windows::Storage::IStorageFolder const & destinationFolder) const;
-	Windows::Foundation::IAsyncAction MoveAsync(Windows::Storage::IStorageFolder const & destinationFolder, StringReference const & desiredNewName) const;
-	Windows::Foundation::IAsyncAction MoveAsync(Windows::Storage::IStorageFolder const & destinationFolder, StringReference const & desiredNewName, Windows::Storage::NameCollisionOption option) const;
+	Windows::Foundation::IAsyncAction MoveAsync(Windows::Storage::IStorageFolder const & destinationFolder, hstring_ref desiredNewName) const;
+	Windows::Foundation::IAsyncAction MoveAsync(Windows::Storage::IStorageFolder const & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const;
 	Windows::Foundation::IAsyncAction MoveAndReplaceAsync(Windows::Storage::IStorageFile const & fileToReplace) const;
 };
 
@@ -14869,7 +14869,7 @@ class impl_IStorageFolderStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(StringReference const & path) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(hstring_ref path) const;
 };
 
 template <typename T>
@@ -14893,9 +14893,9 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, unsigned requestedSize) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, unsigned requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const;
-	String DisplayName() const;
-	String DisplayType() const;
-	String FolderRelativeId() const;
+	hstring DisplayName() const;
+	hstring DisplayType() const;
+	hstring FolderRelativeId() const;
 	Windows::Storage::FileProperties::StorageItemContentProperties Properties() const;
 };
 
@@ -14938,8 +14938,8 @@ class impl_IStorageProvider
 
 public:
 
-	String Id() const;
-	String DisplayName() const;
+	hstring Id() const;
+	hstring DisplayName() const;
 };
 
 template <typename T>
@@ -14949,7 +14949,7 @@ class impl_IStorageFolder2
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> TryGetItemAsync(StringReference const & name) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> TryGetItemAsync(hstring_ref name) const;
 };
 
 template <typename T>
@@ -14970,18 +14970,18 @@ class impl_IFileIOStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> ReadTextAsync(Windows::Storage::IStorageFile const & file) const;
-	Windows::Foundation::IAsyncOperation<String> ReadTextAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents) const;
-	Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents) const;
-	Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(Windows::Storage::IStorageFile const & file) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines) const;
-	Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines) const;
-	Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(Windows::Storage::IStorageFile const & file) const;
+	Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents) const;
+	Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents) const;
+	Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(Windows::Storage::IStorageFile const & file) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines) const;
+	Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines) const;
+	Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(Windows::Storage::IStorageFile const & file) const;
 	Windows::Foundation::IAsyncAction WriteBufferAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::IBuffer const & buffer) const;
 };
@@ -14993,20 +14993,20 @@ class impl_IPathIOStatics
 
 public:
 
-	Windows::Foundation::IAsyncOperation<String> ReadTextAsync(StringReference const & absolutePath) const;
-	Windows::Foundation::IAsyncOperation<String> ReadTextAsync(StringReference const & absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction WriteTextAsync(StringReference const & absolutePath, StringReference const & contents) const;
-	Windows::Foundation::IAsyncAction WriteTextAsync(StringReference const & absolutePath, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction AppendTextAsync(StringReference const & absolutePath, StringReference const & contents) const;
-	Windows::Foundation::IAsyncAction AppendTextAsync(StringReference const & absolutePath, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(StringReference const & absolutePath) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(StringReference const & absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction WriteLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines) const;
-	Windows::Foundation::IAsyncAction WriteLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncAction AppendLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines) const;
-	Windows::Foundation::IAsyncAction AppendLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(StringReference const & absolutePath) const;
-	Windows::Foundation::IAsyncAction WriteBufferAsync(StringReference const & absolutePath, Windows::Storage::Streams::IBuffer const & buffer) const;
+	Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath) const;
+	Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents) const;
+	Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents) const;
+	Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines) const;
+	Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines) const;
+	Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_ref absolutePath) const;
+	Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_ref absolutePath, Windows::Storage::Streams::IBuffer const & buffer) const;
 };
 
 template <typename T>
@@ -15027,7 +15027,7 @@ class impl_ISystemAudioProperties
 
 public:
 
-	String EncodingBitrate() const;
+	hstring EncodingBitrate() const;
 };
 
 template <typename T>
@@ -15037,8 +15037,8 @@ class impl_ISystemGPSProperties
 
 public:
 
-	String LatitudeDecimal() const;
-	String LongitudeDecimal() const;
+	hstring LatitudeDecimal() const;
+	hstring LongitudeDecimal() const;
 };
 
 template <typename T>
@@ -15048,8 +15048,8 @@ class impl_ISystemImageProperties
 
 public:
 
-	String HorizontalSize() const;
-	String VerticalSize() const;
+	hstring HorizontalSize() const;
+	hstring VerticalSize() const;
 };
 
 template <typename T>
@@ -15059,12 +15059,12 @@ class impl_ISystemMediaProperties
 
 public:
 
-	String Duration() const;
-	String Producer() const;
-	String Publisher() const;
-	String SubTitle() const;
-	String Writer() const;
-	String Year() const;
+	hstring Duration() const;
+	hstring Producer() const;
+	hstring Publisher() const;
+	hstring SubTitle() const;
+	hstring Writer() const;
+	hstring Year() const;
 };
 
 template <typename T>
@@ -15074,14 +15074,14 @@ class impl_ISystemMusicProperties
 
 public:
 
-	String AlbumArtist() const;
-	String AlbumTitle() const;
-	String Artist() const;
-	String Composer() const;
-	String Conductor() const;
-	String DisplayArtist() const;
-	String Genre() const;
-	String TrackNumber() const;
+	hstring AlbumArtist() const;
+	hstring AlbumTitle() const;
+	hstring Artist() const;
+	hstring Composer() const;
+	hstring Conductor() const;
+	hstring DisplayArtist() const;
+	hstring Genre() const;
+	hstring TrackNumber() const;
 };
 
 template <typename T>
@@ -15091,11 +15091,11 @@ class impl_ISystemPhotoProperties
 
 public:
 
-	String CameraManufacturer() const;
-	String CameraModel() const;
-	String DateTaken() const;
-	String Orientation() const;
-	String PeopleNames() const;
+	hstring CameraManufacturer() const;
+	hstring CameraModel() const;
+	hstring DateTaken() const;
+	hstring Orientation() const;
+	hstring PeopleNames() const;
 };
 
 template <typename T>
@@ -15105,11 +15105,11 @@ class impl_ISystemVideoProperties
 
 public:
 
-	String Director() const;
-	String FrameHeight() const;
-	String FrameWidth() const;
-	String Orientation() const;
-	String TotalBitrate() const;
+	hstring Director() const;
+	hstring FrameHeight() const;
+	hstring FrameWidth() const;
+	hstring Orientation() const;
+	hstring TotalBitrate() const;
 };
 
 template <typename T>
@@ -15119,12 +15119,12 @@ class impl_ISystemProperties
 
 public:
 
-	String Author() const;
-	String Comment() const;
-	String ItemNameDisplay() const;
-	String Keywords() const;
-	String Rating() const;
-	String Title() const;
+	hstring Author() const;
+	hstring Comment() const;
+	hstring ItemNameDisplay() const;
+	hstring Keywords() const;
+	hstring Rating() const;
+	hstring Title() const;
 	Windows::Storage::SystemAudioProperties Audio() const;
 	Windows::Storage::SystemGPSProperties GPS() const;
 	Windows::Storage::SystemMediaProperties Media() const;
@@ -15206,8 +15206,8 @@ class impl_IApplicationData3
 
 public:
 
-	Windows::Storage::StorageFolder GetPublisherCacheFolder(StringReference const & folderName) const;
-	Windows::Foundation::IAsyncAction ClearPublisherCacheFolderAsync(StringReference const & folderName) const;
+	Windows::Storage::StorageFolder GetPublisherCacheFolder(hstring_ref folderName) const;
+	Windows::Foundation::IAsyncAction ClearPublisherCacheFolderAsync(hstring_ref folderName) const;
 	Windows::Storage::StorageFolder SharedLocalFolder() const;
 };
 
@@ -15240,12 +15240,12 @@ class impl_IApplicationDataContainer
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 	Windows::Storage::ApplicationDataLocality Locality() const;
 	Windows::Foundation::Collections::IPropertySet Values() const;
-	Windows::Foundation::Collections::IMapView<String, Windows::Storage::ApplicationDataContainer> Containers() const;
-	Windows::Storage::ApplicationDataContainer CreateContainer(StringReference const & name, Windows::Storage::ApplicationDataCreateDisposition disposition) const;
-	void DeleteContainer(StringReference const & name) const;
+	Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::ApplicationDataContainer> Containers() const;
+	Windows::Storage::ApplicationDataContainer CreateContainer(hstring_ref name, Windows::Storage::ApplicationDataCreateDisposition disposition) const;
+	void DeleteContainer(hstring_ref name) const;
 };
 
 }}}
@@ -15284,8 +15284,8 @@ class impl_IStorageItemExtraProperties
 
 public:
 
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<String, IInspectable>> RetrievePropertiesAsync(Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve) const;
-	Windows::Foundation::IAsyncAction SavePropertiesAsync(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, IInspectable>> const & propertiesToSave) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, IInspectable>> RetrievePropertiesAsync(Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve) const;
+	Windows::Foundation::IAsyncAction SavePropertiesAsync(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>> const & propertiesToSave) const;
 	Windows::Foundation::IAsyncAction SavePropertiesAsync() const;
 };
 
@@ -15309,29 +15309,29 @@ class impl_IMusicProperties
 
 public:
 
-	String Album() const;
-	void Album(StringReference const & value) const;
-	String Artist() const;
-	void Artist(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Genre() const;
+	hstring Album() const;
+	void Album(hstring_ref value) const;
+	hstring Artist() const;
+	void Artist(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Genre() const;
 	unsigned TrackNumber() const;
 	void TrackNumber(unsigned value) const;
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	unsigned Rating() const;
 	void Rating(unsigned value) const;
 	Windows::Foundation::TimeSpan Duration() const;
 	unsigned Bitrate() const;
-	String AlbumArtist() const;
-	void AlbumArtist(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Composers() const;
-	Windows::Foundation::Collections::IVector<String> Conductors() const;
-	String Subtitle() const;
-	void Subtitle(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Producers() const;
-	String Publisher() const;
-	void Publisher(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Writers() const;
+	hstring AlbumArtist() const;
+	void AlbumArtist(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Composers() const;
+	Windows::Foundation::Collections::IVector<hstring> Conductors() const;
+	hstring Subtitle() const;
+	void Subtitle(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Producers() const;
+	hstring Publisher() const;
+	void Publisher(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Writers() const;
 	unsigned Year() const;
 	void Year(unsigned value) const;
 };
@@ -15345,21 +15345,21 @@ public:
 
 	unsigned Rating() const;
 	void Rating(unsigned value) const;
-	Windows::Foundation::Collections::IVector<String> Keywords() const;
+	Windows::Foundation::Collections::IVector<hstring> Keywords() const;
 	Windows::Foundation::DateTime DateTaken() const;
 	void DateTaken(Windows::Foundation::DateTime const & value) const;
 	unsigned Width() const;
 	unsigned Height() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	Windows::Foundation::IReference<double> Latitude() const;
 	Windows::Foundation::IReference<double> Longitude() const;
-	String CameraManufacturer() const;
-	void CameraManufacturer(StringReference const & value) const;
-	String CameraModel() const;
-	void CameraModel(StringReference const & value) const;
+	hstring CameraManufacturer() const;
+	void CameraManufacturer(hstring_ref value) const;
+	hstring CameraModel() const;
+	void CameraModel(hstring_ref value) const;
 	Windows::Storage::FileProperties::PhotoOrientation Orientation() const;
-	Windows::Foundation::Collections::IVectorView<String> PeopleNames() const;
+	Windows::Foundation::Collections::IVectorView<hstring> PeopleNames() const;
 };
 
 template <typename T>
@@ -15371,24 +15371,24 @@ public:
 
 	unsigned Rating() const;
 	void Rating(unsigned value) const;
-	Windows::Foundation::Collections::IVector<String> Keywords() const;
+	Windows::Foundation::Collections::IVector<hstring> Keywords() const;
 	unsigned Width() const;
 	unsigned Height() const;
 	Windows::Foundation::TimeSpan Duration() const;
 	Windows::Foundation::IReference<double> Latitude() const;
 	Windows::Foundation::IReference<double> Longitude() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
-	String Subtitle() const;
-	void Subtitle(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Producers() const;
-	String Publisher() const;
-	void Publisher(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Writers() const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
+	hstring Subtitle() const;
+	void Subtitle(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Producers() const;
+	hstring Publisher() const;
+	void Publisher(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Writers() const;
 	unsigned Year() const;
 	void Year(unsigned value) const;
 	unsigned Bitrate() const;
-	Windows::Foundation::Collections::IVector<String> Directors() const;
+	Windows::Foundation::Collections::IVector<hstring> Directors() const;
 	Windows::Storage::FileProperties::VideoOrientation Orientation() const;
 };
 
@@ -15399,12 +15399,12 @@ class impl_IDocumentProperties
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> Author() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
-	Windows::Foundation::Collections::IVector<String> Keywords() const;
-	String Comment() const;
-	void Comment(StringReference const & value) const;
+	Windows::Foundation::Collections::IVector<hstring> Author() const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
+	Windows::Foundation::Collections::IVector<hstring> Keywords() const;
+	hstring Comment() const;
+	void Comment(hstring_ref value) const;
 };
 
 template <typename T>
@@ -15430,7 +15430,7 @@ class impl_IFileRemovedEventArgs
 
 public:
 
-	String Id() const;
+	hstring Id() const;
 };
 
 template <typename T>
@@ -15440,15 +15440,15 @@ class impl_IFileOpenPickerUI
 
 public:
 
-	Windows::Storage::Pickers::Provider::AddFileResult AddFile(StringReference const & id, Windows::Storage::IStorageFile const & file) const;
-	void RemoveFile(StringReference const & id) const;
-	bool ContainsFile(StringReference const & id) const;
+	Windows::Storage::Pickers::Provider::AddFileResult AddFile(hstring_ref id, Windows::Storage::IStorageFile const & file) const;
+	void RemoveFile(hstring_ref id) const;
+	bool ContainsFile(hstring_ref id) const;
 	bool CanAddFile(Windows::Storage::IStorageFile const & file) const;
-	Windows::Foundation::Collections::IVectorView<String> AllowedFileTypes() const;
+	Windows::Foundation::Collections::IVectorView<hstring> AllowedFileTypes() const;
 	Windows::Storage::Pickers::Provider::FileSelectionMode SelectionMode() const;
-	String SettingsIdentifier() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring SettingsIdentifier() const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	long long FileRemoved(Windows::Foundation::ITypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> const & handler) const;
 	template <typename F> long long FileRemoved(F handler) const;
 	void FileRemoved(long long token) const;
@@ -15496,12 +15496,12 @@ class impl_IFileSavePickerUI
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
-	Windows::Foundation::Collections::IVectorView<String> AllowedFileTypes() const;
-	String SettingsIdentifier() const;
-	String FileName() const;
-	Windows::Storage::Pickers::Provider::SetFileNameResult TrySetFileName(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
+	Windows::Foundation::Collections::IVectorView<hstring> AllowedFileTypes() const;
+	hstring SettingsIdentifier() const;
+	hstring FileName() const;
+	Windows::Storage::Pickers::Provider::SetFileNameResult TrySetFileName(hstring_ref value) const;
 	long long FileNameChanged(Windows::Foundation::ITypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, IInspectable> const & handler) const;
 	template <typename F> long long FileNameChanged(F handler) const;
 	void FileNameChanged(long long token) const;
@@ -15553,8 +15553,8 @@ class impl_ICachedFileUpdaterUI
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
 	long long FileUpdateRequested(Windows::Foundation::ITypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> const & handler) const;
 	template <typename F> long long FileUpdateRequested(F handler) const;
@@ -15582,7 +15582,7 @@ class impl_IFileUpdateRequest
 
 public:
 
-	String ContentId() const;
+	hstring ContentId() const;
 	Windows::Storage::StorageFile File() const;
 	Windows::Storage::Provider::FileUpdateStatus Status() const;
 	void Status(Windows::Storage::Provider::FileUpdateStatus value) const;
@@ -15618,8 +15618,8 @@ class impl_IFileUpdateRequest2
 
 public:
 
-	String UserInputNeededMessage() const;
-	void UserInputNeededMessage(StringReference const & value) const;
+	hstring UserInputNeededMessage() const;
+	void UserInputNeededMessage(hstring_ref value) const;
 };
 
 template <typename T>
@@ -15629,7 +15629,7 @@ class impl_ICachedFileUpdaterStatics
 
 public:
 
-	void SetUpdateInformation(Windows::Storage::IStorageFile const & file, StringReference const & contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
+	void SetUpdateInformation(Windows::Storage::IStorageFile const & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
 };
 
 }}}}
@@ -15643,7 +15643,7 @@ class impl_IContentIndexerStatics
 
 public:
 
-	Windows::Storage::Search::ContentIndexer GetIndexer(StringReference const & indexName) const;
+	Windows::Storage::Search::ContentIndexer GetIndexer(hstring_ref indexName) const;
 	Windows::Storage::Search::ContentIndexer GetIndexer() const;
 };
 
@@ -15654,13 +15654,13 @@ class impl_IIndexableContent
 
 public:
 
-	String Id() const;
-	void Id(StringReference const & value) const;
-	Windows::Foundation::Collections::IMap<String, IInspectable> Properties() const;
+	hstring Id() const;
+	void Id(hstring_ref value) const;
+	Windows::Foundation::Collections::IMap<hstring, IInspectable> Properties() const;
 	Windows::Storage::Streams::IRandomAccessStream Stream() const;
 	void Stream(Windows::Storage::Streams::IRandomAccessStream const & value) const;
-	String StreamContentType() const;
-	void StreamContentType(StringReference const & value) const;
+	hstring StreamContentType() const;
+	void StreamContentType(hstring_ref value) const;
 };
 
 template <typename T>
@@ -15672,10 +15672,10 @@ public:
 
 	Windows::Foundation::IAsyncAction AddAsync(Windows::Storage::Search::IIndexableContent const & indexableContent) const;
 	Windows::Foundation::IAsyncAction UpdateAsync(Windows::Storage::Search::IIndexableContent const & indexableContent) const;
-	Windows::Foundation::IAsyncAction DeleteAsync(StringReference const & contentId) const;
-	Windows::Foundation::IAsyncAction DeleteMultipleAsync(Windows::Foundation::Collections::IIterable<String> const & contentIds) const;
+	Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref contentId) const;
+	Windows::Foundation::IAsyncAction DeleteMultipleAsync(Windows::Foundation::Collections::IIterable<hstring> const & contentIds) const;
 	Windows::Foundation::IAsyncAction DeleteAllAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<String, IInspectable>> RetrievePropertiesAsync(StringReference const & contentId, Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, IInspectable>> RetrievePropertiesAsync(hstring_ref contentId, Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve) const;
 	unsigned long long Revision() const;
 };
 
@@ -15686,8 +15686,8 @@ class impl_IValueAndLanguage
 
 public:
 
-	String Language() const;
-	void Language(StringReference const & value) const;
+	hstring Language() const;
+	void Language(hstring_ref value) const;
 	IInspectable Value() const;
 	void Value(IInspectable const & value) const;
 };
@@ -15699,9 +15699,9 @@ class impl_IContentIndexerQueryOperations
 
 public:
 
-	Windows::Storage::Search::ContentIndexerQuery CreateQuery(StringReference const & searchFilter, Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve, Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry> const & sortOrder, StringReference const & searchFilterLanguage) const;
-	Windows::Storage::Search::ContentIndexerQuery CreateQuery(StringReference const & searchFilter, Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve, Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry> const & sortOrder) const;
-	Windows::Storage::Search::ContentIndexerQuery CreateQuery(StringReference const & searchFilter, Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve) const;
+	Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve, Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry> const & sortOrder, hstring_ref searchFilterLanguage) const;
+	Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve, Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry> const & sortOrder) const;
+	Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve) const;
 };
 
 template <typename T>
@@ -15712,8 +15712,8 @@ class impl_IContentIndexerQuery
 public:
 
 	Windows::Foundation::IAsyncOperation<unsigned> GetCountAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<String, IInspectable>>> GetPropertiesAsync() const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<String, IInspectable>>> GetPropertiesAsync(unsigned startIndex, unsigned maxItems) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, IInspectable>>> GetPropertiesAsync() const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, IInspectable>>> GetPropertiesAsync(unsigned startIndex, unsigned maxItems) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> GetAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> GetAsync(unsigned startIndex, unsigned maxItems) const;
 	Windows::Storage::StorageFolder QueryFolder() const;
@@ -15726,24 +15726,24 @@ class impl_IQueryOptions
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> FileTypeFilter() const;
+	Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
 	Windows::Storage::Search::FolderDepth FolderDepth() const;
 	void FolderDepth(Windows::Storage::Search::FolderDepth value) const;
-	String ApplicationSearchFilter() const;
-	void ApplicationSearchFilter(StringReference const & value) const;
-	String UserSearchFilter() const;
-	void UserSearchFilter(StringReference const & value) const;
-	String Language() const;
-	void Language(StringReference const & value) const;
+	hstring ApplicationSearchFilter() const;
+	void ApplicationSearchFilter(hstring_ref value) const;
+	hstring UserSearchFilter() const;
+	void UserSearchFilter(hstring_ref value) const;
+	hstring Language() const;
+	void Language(hstring_ref value) const;
 	Windows::Storage::Search::IndexerOption IndexerOption() const;
 	void IndexerOption(Windows::Storage::Search::IndexerOption value) const;
 	Windows::Foundation::Collections::IVector<winrt::Windows::Storage::Search::SortEntry> SortOrder() const;
-	String GroupPropertyName() const;
+	hstring GroupPropertyName() const;
 	Windows::Storage::Search::DateStackOption DateStackOption() const;
-	String SaveToString() const;
-	void LoadFromString(StringReference const & value) const;
+	hstring SaveToString() const;
+	void LoadFromString(hstring_ref value) const;
 	void SetThumbnailPrefetch(Windows::Storage::FileProperties::ThumbnailMode mode, unsigned requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const;
-	void SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, Windows::Foundation::Collections::IIterable<String> const & propertiesToRetrieve) const;
+	void SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, Windows::Foundation::Collections::IIterable<hstring> const & propertiesToRetrieve) const;
 };
 
 template <typename T>
@@ -15753,7 +15753,7 @@ class impl_IQueryOptionsWithProviderFilter
 
 public:
 
-	Windows::Foundation::Collections::IVector<String> StorageProviderIdFilter() const;
+	Windows::Foundation::Collections::IVector<hstring> StorageProviderIdFilter() const;
 };
 
 template <typename T>
@@ -15763,7 +15763,7 @@ class impl_IQueryOptionsFactory
 
 public:
 
-	Windows::Storage::Search::QueryOptions CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, Windows::Foundation::Collections::IIterable<String> const & fileTypeFilter) const;
+	Windows::Storage::Search::QueryOptions CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, Windows::Foundation::Collections::IIterable<hstring> const & fileTypeFilter) const;
 	Windows::Storage::Search::QueryOptions CreateCommonFolderQuery(Windows::Storage::Search::CommonFolderQuery query) const;
 };
 
@@ -15805,7 +15805,7 @@ class impl_IStorageFileQueryResult2
 
 public:
 
-	Windows::Foundation::Collections::IMap<String, Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>> GetMatchingPropertiesWithRanges(Windows::Storage::StorageFile const & file) const;
+	Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>> GetMatchingPropertiesWithRanges(Windows::Storage::StorageFile const & file) const;
 };
 
 template <typename T>
@@ -15897,7 +15897,7 @@ public:
 	unsigned long long ReadUInt64() const;
 	float ReadSingle() const;
 	double ReadDouble() const;
-	String ReadString(unsigned codeUnitCount) const;
+	hstring ReadString(unsigned codeUnitCount) const;
 	Windows::Foundation::DateTime ReadDateTime() const;
 	Windows::Foundation::TimeSpan ReadTimeSpan() const;
 	Windows::Storage::Streams::DataReaderLoadOperation LoadAsync(unsigned count) const;
@@ -15952,8 +15952,8 @@ public:
 	void WriteDouble(double value) const;
 	void WriteDateTime(Windows::Foundation::DateTime const & value) const;
 	void WriteTimeSpan(Windows::Foundation::TimeSpan const & value) const;
-	unsigned WriteString(StringReference const & value) const;
-	unsigned MeasureString(StringReference const & value) const;
+	unsigned WriteString(hstring_ref value) const;
+	unsigned MeasureString(hstring_ref value) const;
 	Windows::Storage::Streams::DataWriterStoreOperation StoreAsync() const;
 	Windows::Foundation::IAsyncOperation<bool> FlushAsync() const;
 	Windows::Storage::Streams::IBuffer DetachBuffer() const;
@@ -16032,7 +16032,7 @@ class impl_IContentTypeProvider
 
 public:
 
-	String ContentType() const;
+	hstring ContentType() const;
 };
 
 template <typename T>
@@ -16203,11 +16203,11 @@ class impl_IUser
 
 public:
 
-	String NonRoamableId() const;
+	hstring NonRoamableId() const;
 	Windows::System::UserAuthenticationStatus AuthenticationStatus() const;
 	Windows::System::UserType Type() const;
-	Windows::Foundation::IAsyncOperation<IInspectable> GetPropertyAsync(StringReference const & value) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(Windows::Foundation::Collections::IVectorView<String> const & values) const;
+	Windows::Foundation::IAsyncOperation<IInspectable> GetPropertyAsync(hstring_ref value) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(Windows::Foundation::Collections::IVectorView<hstring> const & values) const;
 	Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetPictureAsync(Windows::System::UserPictureSize desiredSize) const;
 };
 
@@ -16222,7 +16222,7 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync() const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type) const;
 	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status) const;
-	Windows::System::User GetFromId(StringReference const & nonRoamableId) const;
+	Windows::System::User GetFromId(hstring_ref nonRoamableId) const;
 };
 
 template <typename T>
@@ -16298,15 +16298,15 @@ class impl_IKnownUserPropertiesStatics
 
 public:
 
-	String DisplayName() const;
-	String FirstName() const;
-	String LastName() const;
-	String ProviderName() const;
-	String AccountName() const;
-	String GuestHost() const;
-	String PrincipalName() const;
-	String DomainName() const;
-	String SessionInitiationProtocolUri() const;
+	hstring DisplayName() const;
+	hstring FirstName() const;
+	hstring LastName() const;
+	hstring ProviderName() const;
+	hstring AccountName() const;
+	hstring GuestHost() const;
+	hstring PrincipalName() const;
+	hstring DomainName() const;
+	hstring SessionInitiationProtocolUri() const;
 };
 
 template <typename T>
@@ -16347,14 +16347,14 @@ public:
 	bool DisplayApplicationPicker() const;
 	void DisplayApplicationPicker(bool value) const;
 	Windows::System::LauncherUIOptions UI() const;
-	String PreferredApplicationPackageFamilyName() const;
-	void PreferredApplicationPackageFamilyName(StringReference const & value) const;
-	String PreferredApplicationDisplayName() const;
-	void PreferredApplicationDisplayName(StringReference const & value) const;
+	hstring PreferredApplicationPackageFamilyName() const;
+	void PreferredApplicationPackageFamilyName(hstring_ref value) const;
+	hstring PreferredApplicationDisplayName() const;
+	void PreferredApplicationDisplayName(hstring_ref value) const;
 	Windows::Foundation::Uri FallbackUri() const;
 	void FallbackUri(Windows::Foundation::Uri const & value) const;
-	String ContentType() const;
-	void ContentType(StringReference const & value) const;
+	hstring ContentType() const;
+	void ContentType(hstring_ref value) const;
 };
 
 template <typename T>
@@ -16364,8 +16364,8 @@ class impl_ILauncherOptions2
 
 public:
 
-	String TargetApplicationPackageFamilyName() const;
-	void TargetApplicationPackageFamilyName(StringReference const & value) const;
+	hstring TargetApplicationPackageFamilyName() const;
+	void TargetApplicationPackageFamilyName(hstring_ref value) const;
 	Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
 	void NeighboringFilesQuery(Windows::Storage::Search::StorageFileQueryResult const & value) const;
 };
@@ -16415,12 +16415,12 @@ public:
 	Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(Windows::Foundation::Uri const & uri, Windows::System::LauncherOptions const & options, Windows::Foundation::Collections::ValueSet const & inputData) const;
 	Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(Windows::Foundation::Uri const & uri, Windows::System::LauncherOptions const & options, Windows::Foundation::Collections::ValueSet const & inputData) const;
 	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, StringReference const & packageFamilyName) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName) const;
 	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file) const;
-	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file, StringReference const & packageFamilyName) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(StringReference const & scheme) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(StringReference const & scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
-	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(StringReference const & extension) const;
+	Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file, hstring_ref packageFamilyName) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
+	Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(hstring_ref extension) const;
 };
 
 template <typename T>
@@ -17124,8 +17124,8 @@ public:
 	void Showing(long long cookie) const;
 	Windows::Foundation::Size MaxSize() const;
 	Windows::Foundation::Size MinSize() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	int IsInteractionDelayed() const;
 	void IsInteractionDelayed(int value) const;
 	Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
@@ -17146,7 +17146,7 @@ class impl_ICoreWindowDialogFactory
 
 public:
 
-	Windows::UI::Core::CoreWindowDialog CreateWithTitle(StringReference const & title) const;
+	Windows::UI::Core::CoreWindowDialog CreateWithTitle(hstring_ref title) const;
 };
 
 template <typename T>
@@ -17161,8 +17161,8 @@ public:
 	void Showing(long long cookie) const;
 	Windows::Foundation::Size MaxSize() const;
 	Windows::Foundation::Size MinSize() const;
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	int IsInteractionDelayed() const;
 	void IsInteractionDelayed(int value) const;
 	Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
@@ -17182,7 +17182,7 @@ class impl_ICoreWindowFlyoutFactory
 public:
 
 	Windows::UI::Core::CoreWindowFlyout Create(Windows::Foundation::Point const & position) const;
-	Windows::UI::Core::CoreWindowFlyout CreateWithTitle(Windows::Foundation::Point const & position, StringReference const & title) const;
+	Windows::UI::Core::CoreWindowFlyout CreateWithTitle(Windows::Foundation::Point const & position, hstring_ref title) const;
 };
 
 template <typename T>
@@ -17860,7 +17860,7 @@ class impl_IInkRecognitionResult
 public:
 
 	Windows::Foundation::Rect BoundingRect() const;
-	Windows::Foundation::Collections::IVectorView<String> GetTextCandidates() const;
+	Windows::Foundation::Collections::IVectorView<hstring> GetTextCandidates() const;
 	Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> GetStrokes() const;
 };
 
@@ -17905,7 +17905,7 @@ class impl_IInkRecognizer
 
 public:
 
-	String Name() const;
+	hstring Name() const;
 };
 
 template <typename T>
@@ -18002,15 +18002,15 @@ class impl_IMessageDialog
 
 public:
 
-	String Title() const;
-	void Title(StringReference const & value) const;
+	hstring Title() const;
+	void Title(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
 	unsigned DefaultCommandIndex() const;
 	void DefaultCommandIndex(unsigned value) const;
 	unsigned CancelCommandIndex() const;
 	void CancelCommandIndex(unsigned value) const;
-	String Content() const;
-	void Content(StringReference const & value) const;
+	hstring Content() const;
+	void Content(hstring_ref value) const;
 	Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowAsync() const;
 	Windows::UI::Popups::MessageDialogOptions Options() const;
 	void Options(Windows::UI::Popups::MessageDialogOptions value) const;
@@ -18023,8 +18023,8 @@ class impl_IMessageDialogFactory
 
 public:
 
-	Windows::UI::Popups::MessageDialog Create(StringReference const & content) const;
-	Windows::UI::Popups::MessageDialog CreateWithTitle(StringReference const & content, StringReference const & title) const;
+	Windows::UI::Popups::MessageDialog Create(hstring_ref content) const;
+	Windows::UI::Popups::MessageDialog CreateWithTitle(hstring_ref content, hstring_ref title) const;
 };
 
 template <typename T>
@@ -18034,8 +18034,8 @@ class impl_IUICommand
 
 public:
 
-	String Label() const;
-	void Label(StringReference const & value) const;
+	hstring Label() const;
+	void Label(hstring_ref value) const;
 	Windows::UI::Popups::IUICommandInvokedHandler Invoked() const;
 	void Invoked(Windows::UI::Popups::IUICommandInvokedHandler const & value) const;
 	template <typename F> void Invoked(F value) const;
@@ -18050,11 +18050,11 @@ class impl_IUICommandFactory
 
 public:
 
-	Windows::UI::Popups::UICommand Create(StringReference const & label) const;
-	Windows::UI::Popups::UICommand CreateWithHandler(StringReference const & label, Windows::UI::Popups::IUICommandInvokedHandler const & action) const;
-	template <typename F> Windows::UI::Popups::UICommand CreateWithHandler(StringReference const & label, F action) const;
-	Windows::UI::Popups::UICommand CreateWithHandlerAndId(StringReference const & label, Windows::UI::Popups::IUICommandInvokedHandler const & action, IInspectable const & commandId) const;
-	template <typename F> Windows::UI::Popups::UICommand CreateWithHandlerAndId(StringReference const & label, F action, IInspectable const & commandId) const;
+	Windows::UI::Popups::UICommand Create(hstring_ref label) const;
+	Windows::UI::Popups::UICommand CreateWithHandler(hstring_ref label, Windows::UI::Popups::IUICommandInvokedHandler const & action) const;
+	template <typename F> Windows::UI::Popups::UICommand CreateWithHandler(hstring_ref label, F action) const;
+	Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_ref label, Windows::UI::Popups::IUICommandInvokedHandler const & action, IInspectable const & commandId) const;
+	template <typename F> Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_ref label, F action, IInspectable const & commandId) const;
 };
 
 template <typename T>
@@ -18161,8 +18161,8 @@ public:
 	bool IsOnLockScreen() const;
 	bool IsScreenCaptureEnabled() const;
 	void IsScreenCaptureEnabled(bool value) const;
-	void Title(StringReference const & value) const;
-	String Title() const;
+	void Title(hstring_ref value) const;
+	hstring Title() const;
 	int Id() const;
 	long long Consolidated(Windows::Foundation::ITypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const & handler) const;
 	template <typename F> long long Consolidated(F handler) const;
@@ -18287,7 +18287,7 @@ class impl_IApplicationViewTransferContextStatics
 
 public:
 
-	String DataPackageFormatId() const;
+	hstring DataPackageFormatId() const;
 };
 
 template <typename T>
@@ -18376,7 +18376,7 @@ public:
 	Windows::Foundation::IAsyncAction StartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Devices::Enumeration::DeviceInformation const & displayDeviceInfo) const;
 	Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Foundation::Rect const & selection) const;
 	Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement prefferedPlacement) const;
-	String GetDeviceSelector() const;
+	hstring GetDeviceSelector() const;
 };
 
 template <typename T>
@@ -18407,7 +18407,7 @@ class impl_IAccessibilitySettings
 public:
 
 	bool HighContrast() const;
-	String HighContrastScheme() const;
+	hstring HighContrastScheme() const;
 	long long HighContrastChanged(Windows::Foundation::ITypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, IInspectable> const & handler) const;
 	template <typename F> long long HighContrastChanged(F handler) const;
 	void HighContrastChanged(long long cookie) const;
@@ -18531,7 +18531,7 @@ public:
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress> GetAsync(Windows::Foundation::Uri const & uri, Windows::Web::Http::HttpCompletionOption completionOption) const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, winrt::Windows::Web::Http::HttpProgress> GetBufferAsync(Windows::Foundation::Uri const & uri) const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, winrt::Windows::Web::Http::HttpProgress> GetInputStreamAsync(Windows::Foundation::Uri const & uri) const;
-	Windows::Foundation::IAsyncOperationWithProgress<String, winrt::Windows::Web::Http::HttpProgress> GetStringAsync(Windows::Foundation::Uri const & uri) const;
+	Windows::Foundation::IAsyncOperationWithProgress<hstring, winrt::Windows::Web::Http::HttpProgress> GetStringAsync(Windows::Foundation::Uri const & uri) const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress> PostAsync(Windows::Foundation::Uri const & uri, Windows::Web::Http::IHttpContent const & content) const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress> PutAsync(Windows::Foundation::Uri const & uri, Windows::Web::Http::IHttpContent const & content) const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress> SendRequestAsync(Windows::Web::Http::HttpRequestMessage const & request) const;
@@ -18550,7 +18550,7 @@ public:
 	Windows::Foundation::IAsyncOperationWithProgress<unsigned long long, unsigned long long> BufferAllAsync() const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, unsigned long long> ReadAsBufferAsync() const;
 	Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, unsigned long long> ReadAsInputStreamAsync() const;
-	Windows::Foundation::IAsyncOperationWithProgress<String, unsigned long long> ReadAsStringAsync() const;
+	Windows::Foundation::IAsyncOperationWithProgress<hstring, unsigned long long> ReadAsStringAsync() const;
 	bool TryComputeLength(unsigned long long & length) const;
 	Windows::Foundation::IAsyncOperationWithProgress<unsigned long long, unsigned long long> WriteToStreamAsync(Windows::Storage::Streams::IOutputStream const & outputStream) const;
 };
@@ -18575,7 +18575,7 @@ class impl_IHttpCookieFactory
 
 public:
 
-	Windows::Web::Http::HttpCookie Create(StringReference const & name, StringReference const & domain, StringReference const & path) const;
+	Windows::Web::Http::HttpCookie Create(hstring_ref name, hstring_ref domain, hstring_ref path) const;
 };
 
 template <typename T>
@@ -18585,17 +18585,17 @@ class impl_IHttpCookie
 
 public:
 
-	String Name() const;
-	String Domain() const;
-	String Path() const;
+	hstring Name() const;
+	hstring Domain() const;
+	hstring Path() const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> Expires() const;
 	void Expires(Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> const & value) const;
 	bool HttpOnly() const;
 	void HttpOnly(bool value) const;
 	bool Secure() const;
 	void Secure(bool value) const;
-	String Value() const;
-	void Value(StringReference const & value) const;
+	hstring Value() const;
+	void Value(hstring_ref value) const;
 };
 
 template <typename T>
@@ -18621,7 +18621,7 @@ class impl_IHttpMethodFactory
 
 public:
 
-	Windows::Web::Http::HttpMethod Create(StringReference const & method) const;
+	Windows::Web::Http::HttpMethod Create(hstring_ref method) const;
 };
 
 template <typename T>
@@ -18631,7 +18631,7 @@ class impl_IHttpMethod
 
 public:
 
-	String Method() const;
+	hstring Method() const;
 };
 
 template <typename T>
@@ -18669,7 +18669,7 @@ public:
 	Windows::Web::Http::Headers::HttpRequestHeaderCollection Headers() const;
 	Windows::Web::Http::HttpMethod Method() const;
 	void Method(Windows::Web::Http::HttpMethod const & value) const;
-	Windows::Foundation::Collections::IMap<String, IInspectable> Properties() const;
+	Windows::Foundation::Collections::IMap<hstring, IInspectable> Properties() const;
 	Windows::Foundation::Uri RequestUri() const;
 	void RequestUri(Windows::Foundation::Uri const & value) const;
 	Windows::Web::Http::HttpTransportInformation TransportInformation() const;
@@ -18696,8 +18696,8 @@ public:
 	void Content(Windows::Web::Http::IHttpContent const & value) const;
 	Windows::Web::Http::Headers::HttpResponseHeaderCollection Headers() const;
 	bool IsSuccessStatusCode() const;
-	String ReasonPhrase() const;
-	void ReasonPhrase(StringReference const & value) const;
+	hstring ReasonPhrase() const;
+	void ReasonPhrase(hstring_ref value) const;
 	Windows::Web::Http::HttpRequestMessage RequestMessage() const;
 	void RequestMessage(Windows::Web::Http::HttpRequestMessage const & value) const;
 	Windows::Web::Http::HttpResponseMessageSource Source() const;
@@ -18716,9 +18716,9 @@ class impl_IHttpStringContentFactory
 
 public:
 
-	Windows::Web::Http::HttpStringContent CreateFromString(StringReference const & content) const;
-	Windows::Web::Http::HttpStringContent CreateFromStringWithEncoding(StringReference const & content, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-	Windows::Web::Http::HttpStringContent CreateFromStringWithEncodingAndMediaType(StringReference const & content, Windows::Storage::Streams::UnicodeEncoding encoding, StringReference const & mediaType) const;
+	Windows::Web::Http::HttpStringContent CreateFromString(hstring_ref content) const;
+	Windows::Web::Http::HttpStringContent CreateFromStringWithEncoding(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+	Windows::Web::Http::HttpStringContent CreateFromStringWithEncodingAndMediaType(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) const;
 };
 
 template <typename T>
@@ -18749,7 +18749,7 @@ class impl_IHttpFormUrlEncodedContentFactory
 
 public:
 
-	Windows::Web::Http::HttpFormUrlEncodedContent Create(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, String>> const & content) const;
+	Windows::Web::Http::HttpFormUrlEncodedContent Create(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> const & content) const;
 };
 
 template <typename T>
@@ -18759,8 +18759,8 @@ class impl_IHttpMultipartContentFactory
 
 public:
 
-	Windows::Web::Http::HttpMultipartContent CreateWithSubtype(StringReference const & subtype) const;
-	Windows::Web::Http::HttpMultipartContent CreateWithSubtypeAndBoundary(StringReference const & subtype, StringReference const & boundary) const;
+	Windows::Web::Http::HttpMultipartContent CreateWithSubtype(hstring_ref subtype) const;
+	Windows::Web::Http::HttpMultipartContent CreateWithSubtypeAndBoundary(hstring_ref subtype, hstring_ref boundary) const;
 };
 
 template <typename T>
@@ -18780,7 +18780,7 @@ class impl_IHttpMultipartFormDataContentFactory
 
 public:
 
-	Windows::Web::Http::HttpMultipartFormDataContent CreateWithBoundary(StringReference const & boundary) const;
+	Windows::Web::Http::HttpMultipartFormDataContent CreateWithBoundary(hstring_ref boundary) const;
 };
 
 template <typename T>
@@ -18791,8 +18791,8 @@ class impl_IHttpMultipartFormDataContent
 public:
 
 	void Add(Windows::Web::Http::IHttpContent const & content) const;
-	void Add(Windows::Web::Http::IHttpContent const & content, StringReference const & name) const;
-	void Add(Windows::Web::Http::IHttpContent const & content, StringReference const & name, StringReference const & fileName) const;
+	void Add(Windows::Web::Http::IHttpContent const & content, hstring_ref name) const;
+	void Add(Windows::Web::Http::IHttpContent const & content, hstring_ref name, hstring_ref fileName) const;
 };
 
 }}}}
@@ -18901,8 +18901,8 @@ public:
 	void Expires(Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> const & value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> LastModified() const;
 	void LastModified(Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> const & value) const;
-	void Append(StringReference const & name, StringReference const & value) const;
-	bool TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const;
+	void Append(hstring_ref name, hstring_ref value) const;
+	bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -18923,8 +18923,8 @@ public:
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> Date() const;
 	void Date(Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> const & value) const;
 	Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection Expect() const;
-	String From() const;
-	void From(StringReference const & value) const;
+	hstring From() const;
+	void From(hstring_ref value) const;
 	Windows::Networking::HostName Host() const;
 	void Host(Windows::Networking::HostName const & value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime> IfModifiedSince() const;
@@ -18939,8 +18939,8 @@ public:
 	void Referer(Windows::Foundation::Uri const & value) const;
 	Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection TransferEncoding() const;
 	Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection UserAgent() const;
-	void Append(StringReference const & name, StringReference const & value) const;
-	bool TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const;
+	void Append(hstring_ref name, hstring_ref value) const;
+	bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -18964,8 +18964,8 @@ public:
 	void RetryAfter(Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue const & value) const;
 	Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection TransferEncoding() const;
 	Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection WwwAuthenticate() const;
-	void Append(StringReference const & name, StringReference const & value) const;
-	bool TryAppendWithoutValidation(StringReference const & name, StringReference const & value) const;
+	void Append(hstring_ref name, hstring_ref value) const;
+	bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -18983,8 +18983,8 @@ public:
 	void MinFresh(Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> const & value) const;
 	Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> SharedMaxAge() const;
 	void SharedMaxAge(Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan> const & value) const;
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -18994,8 +18994,8 @@ class impl_IHttpChallengeHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const;
+	Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const;
 };
 
 template <typename T>
@@ -19005,8 +19005,8 @@ class impl_IHttpChallengeHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromScheme(StringReference const & scheme) const;
-	Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromSchemeWithToken(StringReference const & scheme, StringReference const & token) const;
+	Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromScheme(hstring_ref scheme) const;
+	Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
 };
 
 template <typename T>
@@ -19017,8 +19017,8 @@ class impl_IHttpChallengeHeaderValue
 public:
 
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
-	String Scheme() const;
-	String Token() const;
+	hstring Scheme() const;
+	hstring Token() const;
 };
 
 template <typename T>
@@ -19028,8 +19028,8 @@ class impl_IHttpChallengeHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19039,8 +19039,8 @@ class impl_IHttpCredentialsHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const;
+	Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const;
 };
 
 template <typename T>
@@ -19050,8 +19050,8 @@ class impl_IHttpCredentialsHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromScheme(StringReference const & scheme) const;
-	Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromSchemeWithToken(StringReference const & scheme, StringReference const & token) const;
+	Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromScheme(hstring_ref scheme) const;
+	Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
 };
 
 template <typename T>
@@ -19062,8 +19062,8 @@ class impl_IHttpCredentialsHeaderValue
 public:
 
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
-	String Scheme() const;
-	String Token() const;
+	hstring Scheme() const;
+	hstring Token() const;
 };
 
 template <typename T>
@@ -19073,8 +19073,8 @@ class impl_IHttpConnectionOptionHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const;
+	Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const;
 };
 
 template <typename T>
@@ -19084,7 +19084,7 @@ class impl_IHttpConnectionOptionHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Create(StringReference const & token) const;
+	Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Create(hstring_ref token) const;
 };
 
 template <typename T>
@@ -19094,7 +19094,7 @@ class impl_IHttpConnectionOptionHeaderValue
 
 public:
 
-	String Token() const;
+	hstring Token() const;
 };
 
 template <typename T>
@@ -19104,8 +19104,8 @@ class impl_IHttpConnectionOptionHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19115,8 +19115,8 @@ class impl_IHttpContentCodingHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const;
+	Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const;
 };
 
 template <typename T>
@@ -19126,7 +19126,7 @@ class impl_IHttpContentCodingHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentCodingHeaderValue Create(StringReference const & contentCoding) const;
+	Windows::Web::Http::Headers::HttpContentCodingHeaderValue Create(hstring_ref contentCoding) const;
 };
 
 template <typename T>
@@ -19136,7 +19136,7 @@ class impl_IHttpContentCodingHeaderValue
 
 public:
 
-	String ContentCoding() const;
+	hstring ContentCoding() const;
 };
 
 template <typename T>
@@ -19146,8 +19146,8 @@ class impl_IHttpContentCodingHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19157,8 +19157,8 @@ class impl_IHttpContentDispositionHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const;
+	Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const;
 };
 
 template <typename T>
@@ -19168,7 +19168,7 @@ class impl_IHttpContentDispositionHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Create(StringReference const & dispositionType) const;
+	Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Create(hstring_ref dispositionType) const;
 };
 
 template <typename T>
@@ -19178,14 +19178,14 @@ class impl_IHttpContentDispositionHeaderValue
 
 public:
 
-	String DispositionType() const;
-	void DispositionType(StringReference const & value) const;
-	String FileName() const;
-	void FileName(StringReference const & value) const;
-	String FileNameStar() const;
-	void FileNameStar(StringReference const & value) const;
-	String Name() const;
-	void Name(StringReference const & value) const;
+	hstring DispositionType() const;
+	void DispositionType(hstring_ref value) const;
+	hstring FileName() const;
+	void FileName(hstring_ref value) const;
+	hstring FileNameStar() const;
+	void FileNameStar(hstring_ref value) const;
+	hstring Name() const;
+	void Name(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 	Windows::Foundation::IReference<unsigned long long> Size() const;
 	void Size(Windows::Foundation::IReference<unsigned long long> const & value) const;
@@ -19198,8 +19198,8 @@ class impl_IHttpContentRangeHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const;
+	Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const;
 };
 
 template <typename T>
@@ -19224,8 +19224,8 @@ public:
 	Windows::Foundation::IReference<unsigned long long> FirstBytePosition() const;
 	Windows::Foundation::IReference<unsigned long long> LastBytePosition() const;
 	Windows::Foundation::IReference<unsigned long long> Length() const;
-	String Unit() const;
-	void Unit(StringReference const & value) const;
+	hstring Unit() const;
+	void Unit(hstring_ref value) const;
 };
 
 template <typename T>
@@ -19235,8 +19235,8 @@ class impl_IHttpCookiePairHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const;
+	Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const;
 };
 
 template <typename T>
@@ -19246,8 +19246,8 @@ class impl_IHttpCookiePairHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromName(StringReference const & name) const;
-	Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromNameWithValue(StringReference const & name, StringReference const & value) const;
+	Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromName(hstring_ref name) const;
+	Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -19257,9 +19257,9 @@ class impl_IHttpCookiePairHeaderValue
 
 public:
 
-	String Name() const;
-	String Value() const;
-	void Value(StringReference const & value) const;
+	hstring Name() const;
+	hstring Value() const;
+	void Value(hstring_ref value) const;
 };
 
 template <typename T>
@@ -19269,8 +19269,8 @@ class impl_IHttpCookiePairHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19280,8 +19280,8 @@ class impl_IHttpDateOrDeltaHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const;
+	Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const;
 };
 
 template <typename T>
@@ -19302,8 +19302,8 @@ class impl_IHttpExpectationHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const;
+	Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const;
 };
 
 template <typename T>
@@ -19313,8 +19313,8 @@ class impl_IHttpExpectationHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromName(StringReference const & name) const;
-	Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromNameWithValue(StringReference const & name, StringReference const & value) const;
+	Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromName(hstring_ref name) const;
+	Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -19324,9 +19324,9 @@ class impl_IHttpExpectationHeaderValue
 
 public:
 
-	String Name() const;
-	String Value() const;
-	void Value(StringReference const & value) const;
+	hstring Name() const;
+	hstring Value() const;
+	void Value(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 };
 
@@ -19337,8 +19337,8 @@ class impl_IHttpExpectationHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19348,8 +19348,8 @@ class impl_IHttpLanguageHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19359,8 +19359,8 @@ class impl_IHttpLanguageRangeWithQualityHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const;
+	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const;
 };
 
 template <typename T>
@@ -19370,8 +19370,8 @@ class impl_IHttpLanguageRangeWithQualityHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRange(StringReference const & languageRange) const;
-	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRangeWithQuality(StringReference const & languageRange, double quality) const;
+	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRange(hstring_ref languageRange) const;
+	Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRangeWithQuality(hstring_ref languageRange, double quality) const;
 };
 
 template <typename T>
@@ -19381,7 +19381,7 @@ class impl_IHttpLanguageRangeWithQualityHeaderValue
 
 public:
 
-	String LanguageRange() const;
+	hstring LanguageRange() const;
 	Windows::Foundation::IReference<double> Quality() const;
 };
 
@@ -19392,8 +19392,8 @@ class impl_IHttpLanguageRangeWithQualityHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19403,8 +19403,8 @@ class impl_IHttpMediaTypeHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const;
+	Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const;
 };
 
 template <typename T>
@@ -19414,7 +19414,7 @@ class impl_IHttpMediaTypeHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Create(StringReference const & mediaType) const;
+	Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Create(hstring_ref mediaType) const;
 };
 
 template <typename T>
@@ -19424,10 +19424,10 @@ class impl_IHttpMediaTypeHeaderValue
 
 public:
 
-	String CharSet() const;
-	void CharSet(StringReference const & value) const;
-	String MediaType() const;
-	void MediaType(StringReference const & value) const;
+	hstring CharSet() const;
+	void CharSet(hstring_ref value) const;
+	hstring MediaType() const;
+	void MediaType(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 };
 
@@ -19438,8 +19438,8 @@ class impl_IHttpMediaTypeWithQualityHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const;
+	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const;
 };
 
 template <typename T>
@@ -19449,8 +19449,8 @@ class impl_IHttpMediaTypeWithQualityHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaType(StringReference const & mediaType) const;
-	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaTypeWithQuality(StringReference const & mediaType, double quality) const;
+	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaType(hstring_ref mediaType) const;
+	Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaTypeWithQuality(hstring_ref mediaType, double quality) const;
 };
 
 template <typename T>
@@ -19460,10 +19460,10 @@ class impl_IHttpMediaTypeWithQualityHeaderValue
 
 public:
 
-	String CharSet() const;
-	void CharSet(StringReference const & value) const;
-	String MediaType() const;
-	void MediaType(StringReference const & value) const;
+	hstring CharSet() const;
+	void CharSet(hstring_ref value) const;
+	hstring MediaType() const;
+	void MediaType(hstring_ref value) const;
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 	Windows::Foundation::IReference<double> Quality() const;
 	void Quality(Windows::Foundation::IReference<double> const & value) const;
@@ -19476,8 +19476,8 @@ class impl_IHttpMediaTypeWithQualityHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19487,8 +19487,8 @@ class impl_IHttpMethodHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19498,8 +19498,8 @@ class impl_IHttpNameValueHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const;
+	Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const;
 };
 
 template <typename T>
@@ -19509,8 +19509,8 @@ class impl_IHttpNameValueHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromName(StringReference const & name) const;
-	Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromNameWithValue(StringReference const & name, StringReference const & value) const;
+	Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromName(hstring_ref name) const;
+	Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename T>
@@ -19520,9 +19520,9 @@ class impl_IHttpNameValueHeaderValue
 
 public:
 
-	String Name() const;
-	String Value() const;
-	void Value(StringReference const & value) const;
+	hstring Name() const;
+	hstring Value() const;
+	void Value(hstring_ref value) const;
 };
 
 template <typename T>
@@ -19532,8 +19532,8 @@ class impl_IHttpProductHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpProductHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const;
+	Windows::Web::Http::Headers::HttpProductHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const;
 };
 
 template <typename T>
@@ -19543,8 +19543,8 @@ class impl_IHttpProductHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromName(StringReference const & productName) const;
-	Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromNameWithVersion(StringReference const & productName, StringReference const & productVersion) const;
+	Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromName(hstring_ref productName) const;
+	Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
 };
 
 template <typename T>
@@ -19554,8 +19554,8 @@ class impl_IHttpProductHeaderValue
 
 public:
 
-	String Name() const;
-	String Version() const;
+	hstring Name() const;
+	hstring Version() const;
 };
 
 template <typename T>
@@ -19565,8 +19565,8 @@ class impl_IHttpProductInfoHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const;
+	Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const;
 };
 
 template <typename T>
@@ -19576,8 +19576,8 @@ class impl_IHttpProductInfoHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromComment(StringReference const & productComment) const;
-	Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromNameWithVersion(StringReference const & productName, StringReference const & productVersion) const;
+	Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromComment(hstring_ref productComment) const;
+	Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
 };
 
 template <typename T>
@@ -19588,7 +19588,7 @@ class impl_IHttpProductInfoHeaderValue
 public:
 
 	Windows::Web::Http::Headers::HttpProductHeaderValue Product() const;
-	String Comment() const;
+	hstring Comment() const;
 };
 
 template <typename T>
@@ -19598,8 +19598,8 @@ class impl_IHttpProductInfoHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19609,8 +19609,8 @@ class impl_IHttpContentCodingWithQualityHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const;
+	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const;
 };
 
 template <typename T>
@@ -19620,8 +19620,8 @@ class impl_IHttpContentCodingWithQualityHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValue(StringReference const & contentCoding) const;
-	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValueWithQuality(StringReference const & contentCoding, double quality) const;
+	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValue(hstring_ref contentCoding) const;
+	Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValueWithQuality(hstring_ref contentCoding, double quality) const;
 };
 
 template <typename T>
@@ -19631,7 +19631,7 @@ class impl_IHttpContentCodingWithQualityHeaderValue
 
 public:
 
-	String ContentCoding() const;
+	hstring ContentCoding() const;
 	Windows::Foundation::IReference<double> Quality() const;
 };
 
@@ -19642,8 +19642,8 @@ class impl_IHttpContentCodingWithQualityHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19653,8 +19653,8 @@ class impl_IHttpTransferCodingHeaderValueStatics
 
 public:
 
-	Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(StringReference const & input) const;
-	bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const;
+	Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(hstring_ref input) const;
+	bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const;
 };
 
 template <typename T>
@@ -19664,7 +19664,7 @@ class impl_IHttpTransferCodingHeaderValueFactory
 
 public:
 
-	Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Create(StringReference const & input) const;
+	Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Create(hstring_ref input) const;
 };
 
 template <typename T>
@@ -19675,7 +19675,7 @@ class impl_IHttpTransferCodingHeaderValue
 public:
 
 	Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
-	String Value() const;
+	hstring Value() const;
 };
 
 template <typename T>
@@ -19685,8 +19685,8 @@ class impl_IHttpTransferCodingHeaderValueCollection
 
 public:
 
-	void ParseAdd(StringReference const & input) const;
-	bool TryParseAdd(StringReference const & input) const;
+	void ParseAdd(hstring_ref input) const;
+	bool TryParseAdd(hstring_ref input) const;
 };
 
 }}}}}
@@ -27212,7 +27212,7 @@ template <> struct traits<Windows::Foundation::Collections::ValueSet>
 template <> struct traits<Windows::Foundation::Collections::StringMap>
 {
 	using abi = ABI::Windows::Foundation::Collections::StringMap;
-	using default_interface = Windows::Foundation::Collections::IMap<String, String>;
+	using default_interface = Windows::Foundation::Collections::IMap<hstring, hstring>;
 	static constexpr wchar_t const * name() noexcept { return L"Windows.Foundation.Collections.StringMap"; }
 	static constexpr unsigned name_length = 40;
 };
@@ -35693,7 +35693,7 @@ struct IStandardDataFormatsStatics2 :
 struct IDataPackagePropertySetView :
 	Windows::IInspectable,
 	impl_IDataPackagePropertySetView<IDataPackagePropertySetView>,
-	requires<IDataPackagePropertySetView, Windows::Foundation::Collections::IMapView<String, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, IInspectable>>>
+	requires<IDataPackagePropertySetView, Windows::Foundation::Collections::IMapView<hstring, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>>
 {
 	IDataPackagePropertySetView(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IDataPackagePropertySetView>(m_ptr); }
@@ -35718,7 +35718,7 @@ struct IDataPackagePropertySetView3 :
 struct IDataPackagePropertySet :
 	Windows::IInspectable,
 	impl_IDataPackagePropertySet<IDataPackagePropertySet>,
-	requires<IDataPackagePropertySet, Windows::Foundation::Collections::IMap<String, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, IInspectable>>>
+	requires<IDataPackagePropertySet, Windows::Foundation::Collections::IMap<hstring, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>>
 {
 	IDataPackagePropertySet(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IDataPackagePropertySet>(m_ptr); }
@@ -38425,7 +38425,7 @@ namespace winrt { namespace Windows { namespace Foundation { namespace Collectio
 struct IPropertySet :
 	Windows::IInspectable,
 	impl_IPropertySet<IPropertySet>,
-	requires<IPropertySet, Windows::Foundation::Collections::IObservableMap<String, IInspectable>, Windows::Foundation::Collections::IMap<String, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, IInspectable>>>
+	requires<IPropertySet, Windows::Foundation::Collections::IObservableMap<hstring, IInspectable>, Windows::Foundation::Collections::IMap<hstring, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>>
 {
 	IPropertySet(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IPropertySet>(m_ptr); }
@@ -43225,7 +43225,7 @@ namespace winrt { namespace Windows { namespace Web { namespace Http { namespace
 struct IHttpContentHeaderCollection :
 	Windows::IInspectable,
 	impl_IHttpContentHeaderCollection<IHttpContentHeaderCollection>,
-	requires<IHttpContentHeaderCollection, Windows::Foundation::Collections::IMap<String, String>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, String>>>
+	requires<IHttpContentHeaderCollection, Windows::Foundation::Collections::IMap<hstring, hstring>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>>
 {
 	IHttpContentHeaderCollection(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IHttpContentHeaderCollection>(m_ptr); }
@@ -43234,7 +43234,7 @@ struct IHttpContentHeaderCollection :
 struct IHttpRequestHeaderCollection :
 	Windows::IInspectable,
 	impl_IHttpRequestHeaderCollection<IHttpRequestHeaderCollection>,
-	requires<IHttpRequestHeaderCollection, Windows::Foundation::Collections::IMap<String, String>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, String>>>
+	requires<IHttpRequestHeaderCollection, Windows::Foundation::Collections::IMap<hstring, hstring>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>>
 {
 	IHttpRequestHeaderCollection(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IHttpRequestHeaderCollection>(m_ptr); }
@@ -43243,7 +43243,7 @@ struct IHttpRequestHeaderCollection :
 struct IHttpResponseHeaderCollection :
 	Windows::IInspectable,
 	impl_IHttpResponseHeaderCollection<IHttpResponseHeaderCollection>,
-	requires<IHttpResponseHeaderCollection, Windows::Foundation::Collections::IMap<String, String>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, String>>>
+	requires<IHttpResponseHeaderCollection, Windows::Foundation::Collections::IMap<hstring, hstring>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>>
 {
 	IHttpResponseHeaderCollection(std::nullptr_t = nullptr) noexcept {}
 	auto operator->() const noexcept { return ptr<IHttpResponseHeaderCollection>(m_ptr); }
@@ -44103,18 +44103,18 @@ struct AppointmentRecurrence :
 struct AppointmentManager
 {
 	AppointmentManager() = delete;
-	static Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & appointmentId);
-	static Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(StringReference const & appointmentId, Windows::Foundation::DateTime const & instanceStartDate);
-	static Windows::Foundation::IAsyncOperation<String> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment);
+	static Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId);
+	static Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId, Windows::Foundation::DateTime const & instanceStartDate);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment);
 	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentStore> RequestStoreAsync(Windows::ApplicationModel::Appointments::AppointmentStoreAccessType options);
-	static Windows::Foundation::IAsyncOperation<String> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection);
-	static Windows::Foundation::IAsyncOperation<String> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
-	static Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection);
-	static Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
-	static Windows::Foundation::IAsyncOperation<String> ShowReplaceAppointmentAsync(StringReference const & appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate);
-	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection);
-	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
-	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(StringReference const & appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
+	static Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, Windows::ApplicationModel::Appointments::Appointment const & appointment, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate);
+	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection);
+	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement);
+	static Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::DateTime const & instanceStartDate);
 	static Windows::Foundation::IAsyncAction ShowTimeFrameAsync(Windows::Foundation::DateTime const & timeToShow, Windows::Foundation::TimeSpan const & duration);
 };
 
@@ -44188,32 +44188,32 @@ struct AppointmentStoreChangedEventArgs :
 struct AppointmentProperties
 {
 	AppointmentProperties() = delete;
-	static String ChangeNumber();
-	static String RemoteChangeNumber();
-	static String DetailsKind();
-	static String Subject();
-	static String Location();
-	static String StartTime();
-	static String Duration();
-	static String Reminder();
-	static String BusyStatus();
-	static String Sensitivity();
-	static String OriginalStartTime();
-	static String IsResponseRequested();
-	static String AllowNewTimeProposal();
-	static String AllDay();
-	static String Details();
-	static String OnlineMeetingLink();
-	static String ReplyTime();
-	static String Organizer();
-	static String UserResponse();
-	static String HasInvitees();
-	static String IsCanceledMeeting();
-	static String IsOrganizedByUser();
-	static String Recurrence();
-	static String Uri();
-	static String Invitees();
-	static Windows::Foundation::Collections::IVector<String> DefaultProperties();
+	static hstring ChangeNumber();
+	static hstring RemoteChangeNumber();
+	static hstring DetailsKind();
+	static hstring Subject();
+	static hstring Location();
+	static hstring StartTime();
+	static hstring Duration();
+	static hstring Reminder();
+	static hstring BusyStatus();
+	static hstring Sensitivity();
+	static hstring OriginalStartTime();
+	static hstring IsResponseRequested();
+	static hstring AllowNewTimeProposal();
+	static hstring AllDay();
+	static hstring Details();
+	static hstring OnlineMeetingLink();
+	static hstring ReplyTime();
+	static hstring Organizer();
+	static hstring UserResponse();
+	static hstring HasInvitees();
+	static hstring IsCanceledMeeting();
+	static hstring IsOrganizedByUser();
+	static hstring Recurrence();
+	static hstring Uri();
+	static hstring Invitees();
+	static Windows::Foundation::Collections::IVector<hstring> DefaultProperties();
 };
 
 struct AppointmentStoreNotificationTriggerDetails :
@@ -44229,11 +44229,11 @@ namespace winrt { namespace Windows { namespace ApplicationModel { namespace App
 struct AppointmentsProviderLaunchActionVerbs
 {
 	AppointmentsProviderLaunchActionVerbs() = delete;
-	static String AddAppointment();
-	static String ReplaceAppointment();
-	static String RemoveAppointment();
-	static String ShowTimeFrame();
-	static String ShowAppointmentDetails();
+	static hstring AddAppointment();
+	static hstring ReplaceAppointment();
+	static hstring RemoveAppointment();
+	static hstring ShowTimeFrame();
+	static hstring ShowAppointmentDetails();
 };
 
 struct AddAppointmentOperation :
@@ -44289,11 +44289,11 @@ struct BackgroundExecutionManager
 {
 	BackgroundExecutionManager() = delete;
 	static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync();
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(StringReference const & applicationId);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId);
 	static void RemoveAccess();
-	static void RemoveAccess(StringReference const & applicationId);
+	static void RemoveAccess(hstring_ref applicationId);
 	static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus();
-	static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(StringReference const & applicationId);
+	static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_ref applicationId);
 };
 
 struct MediaProcessingTrigger :
@@ -44447,7 +44447,7 @@ struct NetworkOperatorNotificationTrigger :
 	Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger
 {
 	NetworkOperatorNotificationTrigger(std::nullptr_t) noexcept {}
-	NetworkOperatorNotificationTrigger(StringReference const & networkAccountId);
+	NetworkOperatorNotificationTrigger(hstring_ref networkAccountId);
 };
 
 struct CachedFileUpdaterTriggerDetails :
@@ -44509,7 +44509,7 @@ struct DeviceConnectionChangeTrigger :
 	Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger
 {
 	DeviceConnectionChangeTrigger(std::nullptr_t) noexcept {}
-	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(StringReference const & deviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId);
 };
 
 struct GattCharacteristicNotificationTrigger :
@@ -44579,7 +44579,7 @@ struct PushNotificationTrigger :
 {
 	PushNotificationTrigger(std::nullptr_t) noexcept {}
 	PushNotificationTrigger();
-	PushNotificationTrigger(StringReference const & applicationId);
+	PushNotificationTrigger(hstring_ref applicationId);
 };
 
 struct ToastNotificationHistoryChangedTrigger :
@@ -44587,7 +44587,7 @@ struct ToastNotificationHistoryChangedTrigger :
 {
 	ToastNotificationHistoryChangedTrigger(std::nullptr_t) noexcept {}
 	ToastNotificationHistoryChangedTrigger();
-	ToastNotificationHistoryChangedTrigger(StringReference const & applicationId);
+	ToastNotificationHistoryChangedTrigger(hstring_ref applicationId);
 };
 
 struct ToastNotificationActionTrigger :
@@ -44595,7 +44595,7 @@ struct ToastNotificationActionTrigger :
 {
 	ToastNotificationActionTrigger(std::nullptr_t) noexcept {}
 	ToastNotificationActionTrigger();
-	ToastNotificationActionTrigger(StringReference const & applicationId);
+	ToastNotificationActionTrigger(hstring_ref applicationId);
 };
 
 }}}}
@@ -44607,7 +44607,7 @@ struct PhoneCallHistoryEntryAddress :
 {
 	PhoneCallHistoryEntryAddress(std::nullptr_t) noexcept {}
 	PhoneCallHistoryEntryAddress();
-	PhoneCallHistoryEntryAddress(StringReference const & rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
+	PhoneCallHistoryEntryAddress(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
 };
 
 struct PhoneCallHistoryEntry :
@@ -44708,13 +44708,13 @@ struct PhoneCallManager
 	static bool IsCallIncoming();
 	static void ShowPhoneCallSettingsUI();
 	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallStore> RequestStoreAsync();
-	static void ShowPhoneCallUI(StringReference const & phoneNumber, StringReference const & displayName);
+	static void ShowPhoneCallUI(hstring_ref phoneNumber, hstring_ref displayName);
 };
 
 struct PhoneCallVideoCapabilitiesManager
 {
 	PhoneCallVideoCapabilitiesManager() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities> GetCapabilitiesAsync(StringReference const & phoneNumber);
+	static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallVideoCapabilities> GetCapabilitiesAsync(hstring_ref phoneNumber);
 };
 
 struct PhoneCallBlocking
@@ -44724,7 +44724,7 @@ struct PhoneCallBlocking
 	static void BlockUnknownNumbers(bool value);
 	static bool BlockPrivateNumbers();
 	static void BlockPrivateNumbers(bool value);
-	static Windows::Foundation::IAsyncOperation<bool> SetCallBlockingListAsync(Windows::Foundation::Collections::IIterable<String> const & phoneNumberList);
+	static Windows::Foundation::IAsyncOperation<bool> SetCallBlockingListAsync(Windows::Foundation::Collections::IIterable<hstring> const & phoneNumberList);
 };
 
 struct CallStateChangeEventArgs :
@@ -44904,8 +44904,8 @@ struct ContactQueryOptions :
 {
 	ContactQueryOptions(std::nullptr_t) noexcept {}
 	ContactQueryOptions();
-	ContactQueryOptions(StringReference const & text);
-	ContactQueryOptions(StringReference const & text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields);
+	ContactQueryOptions(hstring_ref text);
+	ContactQueryOptions(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields);
 };
 
 struct ContactListSyncManager :
@@ -45040,49 +45040,49 @@ struct ContactManager
 struct ContactLaunchActionVerbs
 {
 	ContactLaunchActionVerbs() = delete;
-	static String Call();
-	static String Message();
-	static String Map();
-	static String Post();
-	static String VideoCall();
+	static hstring Call();
+	static hstring Message();
+	static hstring Map();
+	static hstring Post();
+	static hstring VideoCall();
 };
 
 struct ContactField :
 	Windows::ApplicationModel::Contacts::IContactField
 {
 	ContactField(std::nullptr_t) noexcept {}
-	ContactField(StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type);
-	ContactField(StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
-	ContactField(StringReference const & name, StringReference const & value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
+	ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type);
+	ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
+	ContactField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
 };
 
 struct ContactLocationField :
 	Windows::ApplicationModel::Contacts::IContactLocationField
 {
 	ContactLocationField(std::nullptr_t) noexcept {}
-	ContactLocationField(StringReference const & unstructuredAddress);
-	ContactLocationField(StringReference const & unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
-	ContactLocationField(StringReference const & unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, StringReference const & street, StringReference const & city, StringReference const & region, StringReference const & country, StringReference const & postalCode);
+	ContactLocationField(hstring_ref unstructuredAddress);
+	ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
+	ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode);
 };
 
 struct ContactInstantMessageField :
 	Windows::ApplicationModel::Contacts::IContactInstantMessageField
 {
 	ContactInstantMessageField(std::nullptr_t) noexcept {}
-	ContactInstantMessageField(StringReference const & userName);
-	ContactInstantMessageField(StringReference const & userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
-	ContactInstantMessageField(StringReference const & userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, StringReference const & service, StringReference const & displayText, Windows::Foundation::Uri const & verb);
+	ContactInstantMessageField(hstring_ref userName);
+	ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category);
+	ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, Windows::Foundation::Uri const & verb);
 };
 
 struct KnownContactField
 {
 	KnownContactField() = delete;
-	static String Email();
-	static String PhoneNumber();
-	static String Location();
-	static String InstantMessage();
-	static Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(StringReference const & name);
-	static String ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type);
+	static hstring Email();
+	static hstring PhoneNumber();
+	static hstring Location();
+	static hstring InstantMessage();
+	static Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_ref name);
+	static hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type);
 };
 
 struct ContactInformation :
@@ -45149,7 +45149,7 @@ struct CoreApplication
 	static void IncrementApplicationUseCount();
 	static void DecrementApplicationUseCount();
 	static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(Windows::ApplicationModel::Core::IFrameworkViewSource const & viewSource);
-	static String Id();
+	static hstring Id();
 	static long long Suspending(Windows::Foundation::IEventHandler<Windows::ApplicationModel::SuspendingEventArgs> const & handler);
 	template <typename F> static long long Suspending(F handler);
 	static void Suspending(long long token);
@@ -45165,7 +45165,7 @@ struct CoreApplication
 	template <typename F> static long long Exiting(F handler);
 	static void Exiting(long long token);
 	static Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> Views();
-	static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(StringReference const & runtimeType, StringReference const & entryPoint);
+	static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint);
 	static Windows::ApplicationModel::Core::CoreApplicationView MainView();
 	static long long UnhandledErrorDetected(Windows::Foundation::IEventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> const & handler);
 	template <typename F> static long long UnhandledErrorDetected(F handler);
@@ -45204,14 +45204,14 @@ namespace winrt { namespace Windows { namespace ApplicationModel { namespace Dat
 struct StandardDataFormats
 {
 	StandardDataFormats() = delete;
-	static String WebLink();
-	static String ApplicationLink();
-	static String Text();
-	static String Uri();
-	static String Html();
-	static String Rtf();
-	static String Bitmap();
-	static String StorageItems();
+	static hstring WebLink();
+	static hstring ApplicationLink();
+	static hstring Text();
+	static hstring Uri();
+	static hstring Html();
+	static hstring Rtf();
+	static hstring Bitmap();
+	static hstring StorageItems();
 };
 
 struct DataPackagePropertySetView :
@@ -45265,8 +45265,8 @@ struct DataPackage :
 struct HtmlFormatHelper
 {
 	HtmlFormatHelper() = delete;
-	static String GetStaticFragment(StringReference const & htmlFormat);
-	static String CreateHtmlFormat(StringReference const & htmlFragment);
+	static hstring GetStaticFragment(hstring_ref htmlFormat);
+	static hstring CreateHtmlFormat(hstring_ref htmlFragment);
 };
 
 struct Clipboard
@@ -45316,9 +45316,9 @@ struct DataTransferManager :
 struct SharedStorageAccessManager
 {
 	SharedStorageAccessManager() = delete;
-	static String AddFile(Windows::Storage::IStorageFile const & file);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(StringReference const & token);
-	static void RemoveFile(StringReference const & token);
+	static hstring AddFile(Windows::Storage::IStorageFile const & file);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token);
+	static void RemoveFile(hstring_ref token);
 };
 
 }}}}
@@ -45417,7 +45417,7 @@ struct SearchQueryLinguisticDetails :
 	Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails
 {
 	SearchQueryLinguisticDetails(std::nullptr_t) noexcept {}
-	SearchQueryLinguisticDetails(Windows::Foundation::Collections::IIterable<String> const & queryTextAlternatives, unsigned queryTextCompositionStart, unsigned queryTextCompositionLength);
+	SearchQueryLinguisticDetails(Windows::Foundation::Collections::IIterable<hstring> const & queryTextAlternatives, unsigned queryTextCompositionStart, unsigned queryTextCompositionLength);
 };
 
 struct SearchSuggestionsRequestDeferral :
@@ -45440,8 +45440,8 @@ struct SemanticTextQuery :
 	Windows::Data::Text::ISemanticTextQuery
 {
 	SemanticTextQuery(std::nullptr_t) noexcept {}
-	SemanticTextQuery(StringReference const & aqsFilter);
-	SemanticTextQuery(StringReference const & aqsFilter, StringReference const & filterLanguage);
+	SemanticTextQuery(hstring_ref aqsFilter);
+	SemanticTextQuery(hstring_ref aqsFilter, hstring_ref filterLanguage);
 };
 
 struct UnicodeCharacters
@@ -45482,7 +45482,7 @@ struct WordsSegmenter :
 	Windows::Data::Text::IWordsSegmenter
 {
 	WordsSegmenter(std::nullptr_t) noexcept {}
-	WordsSegmenter(StringReference const & language);
+	WordsSegmenter(hstring_ref language);
 };
 
 struct SelectableWordSegment :
@@ -45495,28 +45495,28 @@ struct SelectableWordsSegmenter :
 	Windows::Data::Text::ISelectableWordsSegmenter
 {
 	SelectableWordsSegmenter(std::nullptr_t) noexcept {}
-	SelectableWordsSegmenter(StringReference const & language);
+	SelectableWordsSegmenter(hstring_ref language);
 };
 
 struct TextPredictionGenerator :
 	Windows::Data::Text::ITextPredictionGenerator
 {
 	TextPredictionGenerator(std::nullptr_t) noexcept {}
-	TextPredictionGenerator(StringReference const & languageTag);
+	TextPredictionGenerator(hstring_ref languageTag);
 };
 
 struct TextConversionGenerator :
 	Windows::Data::Text::ITextConversionGenerator
 {
 	TextConversionGenerator(std::nullptr_t) noexcept {}
-	TextConversionGenerator(StringReference const & languageTag);
+	TextConversionGenerator(hstring_ref languageTag);
 };
 
 struct TextReverseConversionGenerator :
 	Windows::Data::Text::ITextReverseConversionGenerator
 {
 	TextReverseConversionGenerator(std::nullptr_t) noexcept {}
-	TextReverseConversionGenerator(StringReference const & languageTag);
+	TextReverseConversionGenerator(hstring_ref languageTag);
 };
 
 }}}}
@@ -45528,16 +45528,16 @@ struct BluetoothLEDevice :
 	requires<BluetoothLEDevice, Windows::Devices::Bluetooth::IBluetoothLEDevice2>
 {
 	BluetoothLEDevice(std::nullptr_t) noexcept {}
-	static String GetDeviceSelectorFromPairingState(bool pairingState);
-	static String GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus);
-	static String GetDeviceSelectorFromDeviceName(StringReference const & deviceName);
-	static String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress);
-	static String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType);
-	static String GetDeviceSelectorFromAppearance(Windows::Devices::Bluetooth::BluetoothLEAppearance const & appearance);
+	static hstring GetDeviceSelectorFromPairingState(bool pairingState);
+	static hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus);
+	static hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName);
+	static hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress);
+	static hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType);
+	static hstring GetDeviceSelectorFromAppearance(Windows::Devices::Bluetooth::BluetoothLEAppearance const & appearance);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(unsigned long long bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(StringReference const & deviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_ref deviceId);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(unsigned long long bluetoothAddress);
-	static String GetDeviceSelector();
+	static hstring GetDeviceSelector();
 };
 
 struct BluetoothDevice :
@@ -45545,15 +45545,15 @@ struct BluetoothDevice :
 	requires<BluetoothDevice, Windows::Devices::Bluetooth::IBluetoothDevice2>
 {
 	BluetoothDevice(std::nullptr_t) noexcept {}
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(StringReference const & deviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(hstring_ref deviceId);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromHostNameAsync(Windows::Networking::HostName const & hostName);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromBluetoothAddressAsync(unsigned long long address);
-	static String GetDeviceSelector();
-	static String GetDeviceSelectorFromPairingState(bool pairingState);
-	static String GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus);
-	static String GetDeviceSelectorFromDeviceName(StringReference const & deviceName);
-	static String GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress);
-	static String GetDeviceSelectorFromClassOfDevice(Windows::Devices::Bluetooth::BluetoothClassOfDevice const & classOfDevice);
+	static hstring GetDeviceSelector();
+	static hstring GetDeviceSelectorFromPairingState(bool pairingState);
+	static hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus);
+	static hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName);
+	static hstring GetDeviceSelectorFromBluetoothAddress(unsigned long long bluetoothAddress);
+	static hstring GetDeviceSelectorFromClassOfDevice(Windows::Devices::Bluetooth::BluetoothClassOfDevice const & classOfDevice);
 };
 
 struct BluetoothClassOfDevice :
@@ -45791,9 +45791,9 @@ struct GattDeviceService :
 	requires<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService2>
 {
 	GattDeviceService(std::nullptr_t) noexcept {}
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(StringReference const & deviceId);
-	static String GetDeviceSelectorFromUuid(GUID serviceUuid);
-	static String GetDeviceSelectorFromShortId(unsigned short serviceShortId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_ref deviceId);
+	static hstring GetDeviceSelectorFromUuid(GUID serviceUuid);
+	static hstring GetDeviceSelectorFromShortId(unsigned short serviceShortId);
 	static GUID ConvertShortIdToUuid(unsigned short shortId);
 };
 
@@ -46009,8 +46009,8 @@ struct RfcommDeviceService :
 	requires<RfcommDeviceService, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2>
 {
 	RfcommDeviceService(std::nullptr_t) noexcept {}
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(StringReference const & deviceId);
-	static String GetDeviceSelector(Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId const & serviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(hstring_ref deviceId);
+	static hstring GetDeviceSelector(Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId const & serviceId);
 };
 
 struct RfcommServiceId :
@@ -46046,20 +46046,20 @@ struct DeviceInformation :
 	requires<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformation2>
 {
 	DeviceInformation(std::nullptr_t) noexcept {}
-	static String GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
-	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(StringReference const & deviceId, Windows::Foundation::Collections::IIterable<String> const & additionalProperties);
+	static hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync();
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter);
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties);
 	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher();
 	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass);
-	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter);
-	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(StringReference const & aqsFilter, Windows::Foundation::Collections::IIterable<String> const & additionalProperties);
+	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter);
+	static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, Windows::Foundation::Collections::IIterable<hstring> const & additionalProperties);
 };
 
 struct DeviceConnectionChangeTriggerDetails :
@@ -46175,7 +46175,7 @@ struct DeviceAccessInformation :
 	Windows::Devices::Enumeration::IDeviceAccessInformation
 {
 	DeviceAccessInformation(std::nullptr_t) noexcept {}
-	static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(StringReference const & deviceId);
+	static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_ref deviceId);
 	static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId);
 	static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass);
 };
@@ -46373,7 +46373,7 @@ struct PrintNotificationEventDetails :
 struct PrintExtensionContext
 {
 	PrintExtensionContext() = delete;
-	static IInspectable FromDeviceId(StringReference const & deviceId);
+	static IInspectable FromDeviceId(hstring_ref deviceId);
 };
 
 struct Print3DWorkflowPrintRequestedEventArgs :
@@ -46580,8 +46580,8 @@ struct ActivitySensor :
 {
 	ActivitySensor(std::nullptr_t) noexcept {}
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> GetDefaultAsync();
-	static String GetDeviceSelector();
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(StringReference const & deviceId);
+	static hstring GetDeviceSelector();
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(hstring_ref deviceId);
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime);
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime, Windows::Foundation::TimeSpan const & duration);
 };
@@ -46640,9 +46640,9 @@ struct Pedometer :
 	requires<Pedometer, Windows::Devices::Sensors::IPedometer2>
 {
 	Pedometer(std::nullptr_t) noexcept {}
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(StringReference const & deviceId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(hstring_ref deviceId);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> GetDefaultAsync();
-	static String GetDeviceSelector();
+	static hstring GetDeviceSelector();
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime);
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> GetSystemHistoryAsync(Windows::Foundation::DateTime const & fromTime, Windows::Foundation::TimeSpan const & duration);
 	static Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading> GetReadingsFromTriggerDetails(Windows::Devices::Sensors::SensorDataThresholdTriggerDetails const & triggerDetails);
@@ -46666,8 +46666,8 @@ struct ProximitySensor :
 {
 	ProximitySensor(std::nullptr_t) noexcept {}
 	static Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ProximitySensorReading> GetReadingsFromTriggerDetails(Windows::Devices::Sensors::SensorDataThresholdTriggerDetails const & triggerDetails);
-	static String GetDeviceSelector();
-	static Windows::Devices::Sensors::ProximitySensor FromId(StringReference const & sensorId);
+	static hstring GetDeviceSelector();
+	static Windows::Devices::Sensors::ProximitySensor FromId(hstring_ref sensorId);
 };
 
 struct ProximitySensorReading :
@@ -46823,10 +46823,10 @@ struct SmsDevice :
 	Windows::Devices::Sms::ISmsDevice
 {
 	SmsDevice(std::nullptr_t) noexcept {}
-	static String GetDeviceSelector();
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromIdAsync(StringReference const & deviceId);
+	static hstring GetDeviceSelector();
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromIdAsync(hstring_ref deviceId);
 	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> GetDefaultAsync();
-	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromNetworkAccountIdAsync(StringReference const & networkAccountId);
+	static Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> FromNetworkAccountIdAsync(hstring_ref networkAccountId);
 };
 
 struct GetSmsDeviceOperation :
@@ -46839,10 +46839,10 @@ struct SmsDevice2 :
 	Windows::Devices::Sms::ISmsDevice2
 {
 	SmsDevice2(std::nullptr_t) noexcept {}
-	static String GetDeviceSelector();
-	static Windows::Devices::Sms::SmsDevice2 FromId(StringReference const & deviceId);
+	static hstring GetDeviceSelector();
+	static Windows::Devices::Sms::SmsDevice2 FromId(hstring_ref deviceId);
 	static Windows::Devices::Sms::SmsDevice2 GetDefault();
-	static Windows::Devices::Sms::SmsDevice2 FromParentId(StringReference const & parentDeviceId);
+	static Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_ref parentDeviceId);
 };
 
 struct SmsReceivedEventDetails :
@@ -46877,7 +46877,7 @@ struct SmsMessageRegistration :
 {
 	SmsMessageRegistration(std::nullptr_t) noexcept {}
 	static Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> AllRegistrations();
-	static Windows::Devices::Sms::SmsMessageRegistration Register(StringReference const & id, Windows::Devices::Sms::SmsFilterRules const & filterRules);
+	static Windows::Devices::Sms::SmsMessageRegistration Register(hstring_ref id, Windows::Devices::Sms::SmsFilterRules const & filterRules);
 };
 
 }}}}
@@ -46888,7 +46888,7 @@ struct WwwFormUrlDecoder :
 	Windows::Foundation::IWwwFormUrlDecoderRuntimeClass
 {
 	WwwFormUrlDecoder(std::nullptr_t) noexcept {}
-	WwwFormUrlDecoder(StringReference const & query);
+	WwwFormUrlDecoder(hstring_ref query);
 };
 
 struct Uri :
@@ -46896,10 +46896,10 @@ struct Uri :
 	requires<Uri, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, Windows::Foundation::IStringable>
 {
 	Uri(std::nullptr_t) noexcept {}
-	Uri(StringReference const & uri);
-	Uri(StringReference const & baseUri, StringReference const & relativeUri);
-	static String UnescapeComponent(StringReference const & toUnescape);
-	static String EscapeComponent(StringReference const & toEscape);
+	Uri(hstring_ref uri);
+	Uri(hstring_ref baseUri, hstring_ref relativeUri);
+	static hstring UnescapeComponent(hstring_ref toUnescape);
+	static hstring EscapeComponent(hstring_ref toEscape);
 };
 
 struct WwwFormUrlDecoderEntry :
@@ -46923,7 +46923,7 @@ struct PropertyValue
 	static IInspectable CreateDouble(double value);
 	static IInspectable CreateChar16(wchar_t value);
 	static IInspectable CreateBoolean(bool value);
-	static IInspectable CreateString(StringReference const & value);
+	static IInspectable CreateString(hstring_ref value);
 	static IInspectable CreateInspectable(IInspectable const & value);
 	static IInspectable CreateGuid(GUID value);
 	static IInspectable CreateDateTime(Windows::Foundation::DateTime const & value);
@@ -46967,7 +46967,7 @@ struct ValueSet :
 };
 
 struct StringMap :
-	Windows::Foundation::Collections::IMap<String, String>
+	Windows::Foundation::Collections::IMap<hstring, hstring>
 {
 	StringMap(std::nullptr_t) noexcept {}
 	StringMap();
@@ -46986,7 +46986,7 @@ struct TracingStatusChangedEventArgs :
 struct AsyncCausalityTracer
 {
 	AsyncCausalityTracer() = delete;
-	static void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, StringReference const & operationName, unsigned long long relatedContext);
+	static void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, hstring_ref operationName, unsigned long long relatedContext);
 	static void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, AsyncStatus status);
 	static void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, Windows::Foundation::Diagnostics::CausalityRelation relation);
 	static void TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, unsigned long long operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work);
@@ -47038,8 +47038,8 @@ struct LoggingActivity :
 	requires<LoggingActivity, Windows::Foundation::Diagnostics::ILoggingActivity2, Windows::Foundation::Diagnostics::ILoggingTarget>
 {
 	LoggingActivity(std::nullptr_t) noexcept {}
-	LoggingActivity(StringReference const & activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel);
-	LoggingActivity(StringReference const & activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level);
+	LoggingActivity(hstring_ref activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel);
+	LoggingActivity(hstring_ref activityName, Windows::Foundation::Diagnostics::ILoggingChannel const & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level);
 };
 
 struct LoggingChannel :
@@ -47047,16 +47047,16 @@ struct LoggingChannel :
 	requires<LoggingChannel, Windows::Foundation::Diagnostics::ILoggingChannel2, Windows::Foundation::Diagnostics::ILoggingTarget>
 {
 	LoggingChannel(std::nullptr_t) noexcept {}
-	LoggingChannel(StringReference const & name);
-	LoggingChannel(StringReference const & name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options);
-	LoggingChannel(StringReference const & name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options, GUID id);
+	LoggingChannel(hstring_ref name);
+	LoggingChannel(hstring_ref name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options);
+	LoggingChannel(hstring_ref name, Windows::Foundation::Diagnostics::LoggingChannelOptions const & options, GUID id);
 };
 
 struct LoggingSession :
 	Windows::Foundation::Diagnostics::ILoggingSession
 {
 	LoggingSession(std::nullptr_t) noexcept {}
-	LoggingSession(StringReference const & name);
+	LoggingSession(hstring_ref name);
 };
 
 struct LogFileGeneratedEventArgs :
@@ -47069,7 +47069,7 @@ struct FileLoggingSession :
 	Windows::Foundation::Diagnostics::IFileLoggingSession
 {
 	FileLoggingSession(std::nullptr_t) noexcept {}
-	FileLoggingSession(StringReference const & name);
+	FileLoggingSession(hstring_ref name);
 };
 
 }}}}
@@ -47079,16 +47079,16 @@ namespace winrt { namespace Windows { namespace Foundation { namespace Metadata 
 struct ApiInformation
 {
 	ApiInformation() = delete;
-	static bool IsTypePresent(StringReference const & typeName);
-	static bool IsMethodPresent(StringReference const & typeName, StringReference const & methodName);
-	static bool IsMethodPresent(StringReference const & typeName, StringReference const & methodName, unsigned inputParameterCount);
-	static bool IsEventPresent(StringReference const & typeName, StringReference const & eventName);
-	static bool IsPropertyPresent(StringReference const & typeName, StringReference const & propertyName);
-	static bool IsReadOnlyPropertyPresent(StringReference const & typeName, StringReference const & propertyName);
-	static bool IsWriteablePropertyPresent(StringReference const & typeName, StringReference const & propertyName);
-	static bool IsEnumNamedValuePresent(StringReference const & enumTypeName, StringReference const & valueName);
-	static bool IsApiContractPresent(StringReference const & contractName, unsigned short majorVersion);
-	static bool IsApiContractPresent(StringReference const & contractName, unsigned short majorVersion, unsigned short minorVersion);
+	static bool IsTypePresent(hstring_ref typeName);
+	static bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName);
+	static bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName, unsigned inputParameterCount);
+	static bool IsEventPresent(hstring_ref typeName, hstring_ref eventName);
+	static bool IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName);
+	static bool IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName);
+	static bool IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName);
+	static bool IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName);
+	static bool IsApiContractPresent(hstring_ref contractName, unsigned short majorVersion);
+	static bool IsApiContractPresent(hstring_ref contractName, unsigned short majorVersion, unsigned short minorVersion);
 };
 
 }}}}
@@ -47127,245 +47127,245 @@ struct JapanesePhoneme :
 struct JapanesePhoneticAnalyzer
 {
 	JapanesePhoneticAnalyzer() = delete;
-	static Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(StringReference const & input);
-	static Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(StringReference const & input, bool monoRuby);
+	static Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(hstring_ref input);
+	static Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> GetWords(hstring_ref input, bool monoRuby);
 };
 
 struct CalendarIdentifiers
 {
 	CalendarIdentifiers() = delete;
-	static String Gregorian();
-	static String Hebrew();
-	static String Hijri();
-	static String Japanese();
-	static String Julian();
-	static String Korean();
-	static String Taiwan();
-	static String Thai();
-	static String UmAlQura();
-	static String Persian();
+	static hstring Gregorian();
+	static hstring Hebrew();
+	static hstring Hijri();
+	static hstring Japanese();
+	static hstring Julian();
+	static hstring Korean();
+	static hstring Taiwan();
+	static hstring Thai();
+	static hstring UmAlQura();
+	static hstring Persian();
 };
 
 struct ClockIdentifiers
 {
 	ClockIdentifiers() = delete;
-	static String TwelveHour();
-	static String TwentyFourHour();
+	static hstring TwelveHour();
+	static hstring TwentyFourHour();
 };
 
 struct NumeralSystemIdentifiers
 {
 	NumeralSystemIdentifiers() = delete;
-	static String Arab();
-	static String ArabExt();
-	static String Bali();
-	static String Beng();
-	static String Cham();
-	static String Deva();
-	static String FullWide();
-	static String Gujr();
-	static String Guru();
-	static String HaniDec();
-	static String Java();
-	static String Kali();
-	static String Khmr();
-	static String Knda();
-	static String Lana();
-	static String LanaTham();
-	static String Laoo();
-	static String Latn();
-	static String Lepc();
-	static String Limb();
-	static String Mlym();
-	static String Mong();
-	static String Mtei();
-	static String Mymr();
-	static String MymrShan();
-	static String Nkoo();
-	static String Olck();
-	static String Orya();
-	static String Saur();
-	static String Sund();
-	static String Talu();
-	static String TamlDec();
-	static String Telu();
-	static String Thai();
-	static String Tibt();
-	static String Vaii();
-	static String Brah();
-	static String Osma();
-	static String MathBold();
-	static String MathDbl();
-	static String MathSans();
-	static String MathSanb();
-	static String MathMono();
-	static String ZmthBold();
-	static String ZmthDbl();
-	static String ZmthSans();
-	static String ZmthSanb();
-	static String ZmthMono();
+	static hstring Arab();
+	static hstring ArabExt();
+	static hstring Bali();
+	static hstring Beng();
+	static hstring Cham();
+	static hstring Deva();
+	static hstring FullWide();
+	static hstring Gujr();
+	static hstring Guru();
+	static hstring HaniDec();
+	static hstring Java();
+	static hstring Kali();
+	static hstring Khmr();
+	static hstring Knda();
+	static hstring Lana();
+	static hstring LanaTham();
+	static hstring Laoo();
+	static hstring Latn();
+	static hstring Lepc();
+	static hstring Limb();
+	static hstring Mlym();
+	static hstring Mong();
+	static hstring Mtei();
+	static hstring Mymr();
+	static hstring MymrShan();
+	static hstring Nkoo();
+	static hstring Olck();
+	static hstring Orya();
+	static hstring Saur();
+	static hstring Sund();
+	static hstring Talu();
+	static hstring TamlDec();
+	static hstring Telu();
+	static hstring Thai();
+	static hstring Tibt();
+	static hstring Vaii();
+	static hstring Brah();
+	static hstring Osma();
+	static hstring MathBold();
+	static hstring MathDbl();
+	static hstring MathSans();
+	static hstring MathSanb();
+	static hstring MathMono();
+	static hstring ZmthBold();
+	static hstring ZmthDbl();
+	static hstring ZmthSans();
+	static hstring ZmthSanb();
+	static hstring ZmthMono();
 };
 
 struct CurrencyIdentifiers
 {
 	CurrencyIdentifiers() = delete;
-	static String AED();
-	static String AFN();
-	static String ALL();
-	static String AMD();
-	static String ANG();
-	static String AOA();
-	static String ARS();
-	static String AUD();
-	static String AWG();
-	static String AZN();
-	static String BAM();
-	static String BBD();
-	static String BDT();
-	static String BGN();
-	static String BHD();
-	static String BIF();
-	static String BMD();
-	static String BND();
-	static String BOB();
-	static String BRL();
-	static String BSD();
-	static String BTN();
-	static String BWP();
-	static String BYR();
-	static String BZD();
-	static String CAD();
-	static String CDF();
-	static String CHF();
-	static String CLP();
-	static String CNY();
-	static String COP();
-	static String CRC();
-	static String CUP();
-	static String CVE();
-	static String CZK();
-	static String DJF();
-	static String DKK();
-	static String DOP();
-	static String DZD();
-	static String EGP();
-	static String ERN();
-	static String ETB();
-	static String EUR();
-	static String FJD();
-	static String FKP();
-	static String GBP();
-	static String GEL();
-	static String GHS();
-	static String GIP();
-	static String GMD();
-	static String GNF();
-	static String GTQ();
-	static String GYD();
-	static String HKD();
-	static String HNL();
-	static String HRK();
-	static String HTG();
-	static String HUF();
-	static String IDR();
-	static String ILS();
-	static String INR();
-	static String IQD();
-	static String IRR();
-	static String ISK();
-	static String JMD();
-	static String JOD();
-	static String JPY();
-	static String KES();
-	static String KGS();
-	static String KHR();
-	static String KMF();
-	static String KPW();
-	static String KRW();
-	static String KWD();
-	static String KYD();
-	static String KZT();
-	static String LAK();
-	static String LBP();
-	static String LKR();
-	static String LRD();
-	static String LSL();
-	static String LTL();
-	static String LVL();
-	static String LYD();
-	static String MAD();
-	static String MDL();
-	static String MGA();
-	static String MKD();
-	static String MMK();
-	static String MNT();
-	static String MOP();
-	static String MRO();
-	static String MUR();
-	static String MVR();
-	static String MWK();
-	static String MXN();
-	static String MYR();
-	static String MZN();
-	static String NAD();
-	static String NGN();
-	static String NIO();
-	static String NOK();
-	static String NPR();
-	static String NZD();
-	static String OMR();
-	static String PAB();
-	static String PEN();
-	static String PGK();
-	static String PHP();
-	static String PKR();
-	static String PLN();
-	static String PYG();
-	static String QAR();
-	static String RON();
-	static String RSD();
-	static String RUB();
-	static String RWF();
-	static String SAR();
-	static String SBD();
-	static String SCR();
-	static String SDG();
-	static String SEK();
-	static String SGD();
-	static String SHP();
-	static String SLL();
-	static String SOS();
-	static String SRD();
-	static String STD();
-	static String SYP();
-	static String SZL();
-	static String THB();
-	static String TJS();
-	static String TMT();
-	static String TND();
-	static String TOP();
-	static String TRY();
-	static String TTD();
-	static String TWD();
-	static String TZS();
-	static String UAH();
-	static String UGX();
-	static String USD();
-	static String UYU();
-	static String UZS();
-	static String VEF();
-	static String VND();
-	static String VUV();
-	static String WST();
-	static String XAF();
-	static String XCD();
-	static String XOF();
-	static String XPF();
-	static String XXX();
-	static String YER();
-	static String ZAR();
-	static String ZMW();
-	static String ZWL();
+	static hstring AED();
+	static hstring AFN();
+	static hstring ALL();
+	static hstring AMD();
+	static hstring ANG();
+	static hstring AOA();
+	static hstring ARS();
+	static hstring AUD();
+	static hstring AWG();
+	static hstring AZN();
+	static hstring BAM();
+	static hstring BBD();
+	static hstring BDT();
+	static hstring BGN();
+	static hstring BHD();
+	static hstring BIF();
+	static hstring BMD();
+	static hstring BND();
+	static hstring BOB();
+	static hstring BRL();
+	static hstring BSD();
+	static hstring BTN();
+	static hstring BWP();
+	static hstring BYR();
+	static hstring BZD();
+	static hstring CAD();
+	static hstring CDF();
+	static hstring CHF();
+	static hstring CLP();
+	static hstring CNY();
+	static hstring COP();
+	static hstring CRC();
+	static hstring CUP();
+	static hstring CVE();
+	static hstring CZK();
+	static hstring DJF();
+	static hstring DKK();
+	static hstring DOP();
+	static hstring DZD();
+	static hstring EGP();
+	static hstring ERN();
+	static hstring ETB();
+	static hstring EUR();
+	static hstring FJD();
+	static hstring FKP();
+	static hstring GBP();
+	static hstring GEL();
+	static hstring GHS();
+	static hstring GIP();
+	static hstring GMD();
+	static hstring GNF();
+	static hstring GTQ();
+	static hstring GYD();
+	static hstring HKD();
+	static hstring HNL();
+	static hstring HRK();
+	static hstring HTG();
+	static hstring HUF();
+	static hstring IDR();
+	static hstring ILS();
+	static hstring INR();
+	static hstring IQD();
+	static hstring IRR();
+	static hstring ISK();
+	static hstring JMD();
+	static hstring JOD();
+	static hstring JPY();
+	static hstring KES();
+	static hstring KGS();
+	static hstring KHR();
+	static hstring KMF();
+	static hstring KPW();
+	static hstring KRW();
+	static hstring KWD();
+	static hstring KYD();
+	static hstring KZT();
+	static hstring LAK();
+	static hstring LBP();
+	static hstring LKR();
+	static hstring LRD();
+	static hstring LSL();
+	static hstring LTL();
+	static hstring LVL();
+	static hstring LYD();
+	static hstring MAD();
+	static hstring MDL();
+	static hstring MGA();
+	static hstring MKD();
+	static hstring MMK();
+	static hstring MNT();
+	static hstring MOP();
+	static hstring MRO();
+	static hstring MUR();
+	static hstring MVR();
+	static hstring MWK();
+	static hstring MXN();
+	static hstring MYR();
+	static hstring MZN();
+	static hstring NAD();
+	static hstring NGN();
+	static hstring NIO();
+	static hstring NOK();
+	static hstring NPR();
+	static hstring NZD();
+	static hstring OMR();
+	static hstring PAB();
+	static hstring PEN();
+	static hstring PGK();
+	static hstring PHP();
+	static hstring PKR();
+	static hstring PLN();
+	static hstring PYG();
+	static hstring QAR();
+	static hstring RON();
+	static hstring RSD();
+	static hstring RUB();
+	static hstring RWF();
+	static hstring SAR();
+	static hstring SBD();
+	static hstring SCR();
+	static hstring SDG();
+	static hstring SEK();
+	static hstring SGD();
+	static hstring SHP();
+	static hstring SLL();
+	static hstring SOS();
+	static hstring SRD();
+	static hstring STD();
+	static hstring SYP();
+	static hstring SZL();
+	static hstring THB();
+	static hstring TJS();
+	static hstring TMT();
+	static hstring TND();
+	static hstring TOP();
+	static hstring TRY();
+	static hstring TTD();
+	static hstring TWD();
+	static hstring TZS();
+	static hstring UAH();
+	static hstring UGX();
+	static hstring USD();
+	static hstring UYU();
+	static hstring UZS();
+	static hstring VEF();
+	static hstring VND();
+	static hstring VUV();
+	static hstring WST();
+	static hstring XAF();
+	static hstring XCD();
+	static hstring XOF();
+	static hstring XPF();
+	static hstring XXX();
+	static hstring YER();
+	static hstring ZAR();
+	static hstring ZMW();
+	static hstring ZWL();
 };
 
 struct GeographicRegion :
@@ -47373,8 +47373,8 @@ struct GeographicRegion :
 {
 	GeographicRegion(std::nullptr_t) noexcept {}
 	GeographicRegion();
-	GeographicRegion(StringReference const & geographicRegionCode);
-	static bool IsSupported(StringReference const & geographicRegionCode);
+	GeographicRegion(hstring_ref geographicRegionCode);
+	static bool IsSupported(hstring_ref geographicRegionCode);
 };
 
 struct Language :
@@ -47382,10 +47382,10 @@ struct Language :
 	requires<Language, Windows::Globalization::ILanguageExtensionSubtags>
 {
 	Language(std::nullptr_t) noexcept {}
-	Language(StringReference const & languageTag);
-	static bool TrySetInputMethodLanguageTag(StringReference const & languageTag);
-	static bool IsWellFormed(StringReference const & languageTag);
-	static String CurrentInputMethodLanguageTag();
+	Language(hstring_ref languageTag);
+	static bool TrySetInputMethodLanguageTag(hstring_ref languageTag);
+	static bool IsWellFormed(hstring_ref languageTag);
+	static hstring CurrentInputMethodLanguageTag();
 };
 
 struct Calendar :
@@ -47394,18 +47394,18 @@ struct Calendar :
 {
 	Calendar(std::nullptr_t) noexcept {}
 	Calendar();
-	Calendar(Windows::Foundation::Collections::IIterable<String> const & languages);
-	Calendar(Windows::Foundation::Collections::IIterable<String> const & languages, StringReference const & calendar, StringReference const & clock);
-	Calendar(Windows::Foundation::Collections::IIterable<String> const & languages, StringReference const & calendar, StringReference const & clock, StringReference const & timeZoneId);
+	Calendar(Windows::Foundation::Collections::IIterable<hstring> const & languages);
+	Calendar(Windows::Foundation::Collections::IIterable<hstring> const & languages, hstring_ref calendar, hstring_ref clock);
+	Calendar(Windows::Foundation::Collections::IIterable<hstring> const & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId);
 };
 
 struct ApplicationLanguages
 {
 	ApplicationLanguages() = delete;
-	static String PrimaryLanguageOverride();
-	static void PrimaryLanguageOverride(StringReference const & value);
-	static Windows::Foundation::Collections::IVectorView<String> Languages();
-	static Windows::Foundation::Collections::IVectorView<String> ManifestLanguages();
+	static hstring PrimaryLanguageOverride();
+	static void PrimaryLanguageOverride(hstring_ref value);
+	static Windows::Foundation::Collections::IVectorView<hstring> Languages();
+	static Windows::Foundation::Collections::IVectorView<hstring> ManifestLanguages();
 };
 
 }}}
@@ -47474,16 +47474,16 @@ struct SpeechRecognitionTopicConstraint :
 	Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint
 {
 	SpeechRecognitionTopicConstraint(std::nullptr_t) noexcept {}
-	SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, StringReference const & topicHint);
-	SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, StringReference const & topicHint, StringReference const & tag);
+	SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint);
+	SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag);
 };
 
 struct SpeechRecognitionListConstraint :
 	Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint
 {
 	SpeechRecognitionListConstraint(std::nullptr_t) noexcept {}
-	SpeechRecognitionListConstraint(Windows::Foundation::Collections::IIterable<String> const & commands);
-	SpeechRecognitionListConstraint(Windows::Foundation::Collections::IIterable<String> const & commands, StringReference const & tag);
+	SpeechRecognitionListConstraint(Windows::Foundation::Collections::IIterable<hstring> const & commands);
+	SpeechRecognitionListConstraint(Windows::Foundation::Collections::IIterable<hstring> const & commands, hstring_ref tag);
 };
 
 struct SpeechRecognitionGrammarFileConstraint :
@@ -47491,7 +47491,7 @@ struct SpeechRecognitionGrammarFileConstraint :
 {
 	SpeechRecognitionGrammarFileConstraint(std::nullptr_t) noexcept {}
 	SpeechRecognitionGrammarFileConstraint(Windows::Storage::StorageFile const & file);
-	SpeechRecognitionGrammarFileConstraint(Windows::Storage::StorageFile const & file, StringReference const & tag);
+	SpeechRecognitionGrammarFileConstraint(Windows::Storage::StorageFile const & file, hstring_ref tag);
 };
 
 struct SpeechRecognizerTimeouts :
@@ -47580,7 +47580,7 @@ struct EndpointPair :
 	Windows::Networking::IEndpointPair
 {
 	EndpointPair(std::nullptr_t) noexcept {}
-	EndpointPair(Windows::Networking::HostName const & localHostName, StringReference const & localServiceName, Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName);
+	EndpointPair(Windows::Networking::HostName const & localHostName, hstring_ref localServiceName, Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName);
 };
 
 struct HostName :
@@ -47588,8 +47588,8 @@ struct HostName :
 	requires<HostName, Windows::Foundation::IStringable>
 {
 	HostName(std::nullptr_t) noexcept {}
-	HostName(StringReference const & hostName);
-	static int Compare(StringReference const & value1, StringReference const & value2);
+	HostName(hstring_ref hostName);
+	static int Compare(hstring_ref value1, hstring_ref value2);
 };
 
 }}}
@@ -47760,8 +47760,8 @@ struct ControlChannelTrigger :
 	Windows::Networking::Sockets::IControlChannelTrigger
 {
 	ControlChannelTrigger(std::nullptr_t) noexcept {}
-	ControlChannelTrigger(StringReference const & channelId, unsigned serverKeepAliveIntervalInMinutes);
-	ControlChannelTrigger(StringReference const & channelId, unsigned serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType);
+	ControlChannelTrigger(hstring_ref channelId, unsigned serverKeepAliveIntervalInMinutes);
+	ControlChannelTrigger(hstring_ref channelId, unsigned serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType);
 };
 
 struct SocketActivityContext :
@@ -47779,8 +47779,8 @@ struct DatagramSocket :
 	DatagramSocket();
 	using impl_IDatagramSocket::BindServiceNameAsync;
 	using impl_IDatagramSocket2::BindServiceNameAsync;
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, StringReference const & remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(Windows::Networking::HostName const & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions);
 };
 
 struct StreamSocket :
@@ -47807,7 +47807,7 @@ struct SocketActivityInformation :
 	Windows::Networking::Sockets::ISocketActivityInformation
 {
 	SocketActivityInformation(std::nullptr_t) noexcept {}
-	static Windows::Foundation::Collections::IMapView<String, Windows::Networking::Sockets::SocketActivityInformation> AllSockets();
+	static Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> AllSockets();
 };
 
 struct DatagramSocketControl :
@@ -47968,10 +47968,10 @@ struct WebTokenRequest :
 	Windows::Security::Authentication::Web::Core::IWebTokenRequest
 {
 	WebTokenRequest(std::nullptr_t) noexcept {}
-	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope, StringReference const & clientId);
-	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope, StringReference const & clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType);
+	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope, hstring_ref clientId);
+	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType);
 	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider);
-	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & scope);
+	WebTokenRequest(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref scope);
 };
 
 struct WebAuthenticationCoreManager
@@ -47981,17 +47981,17 @@ struct WebAuthenticationCoreManager
 	static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> GetTokenSilentlyAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request, Windows::Security::Credentials::WebAccount const & webAccount);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const & request, Windows::Security::Credentials::WebAccount const & webAccount);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(Windows::Security::Credentials::WebAccountProvider const & provider, StringReference const & webAccountId);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId, StringReference const & authority);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(StringReference const & webAccountProviderId, StringReference const & authority, Windows::System::User const & user);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(Windows::Security::Credentials::WebAccountProvider const & provider, hstring_ref webAccountId);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, Windows::System::User const & user);
 };
 
 struct WebProviderError :
 	Windows::Security::Authentication::Web::Core::IWebProviderError
 {
 	WebProviderError(std::nullptr_t) noexcept {}
-	WebProviderError(unsigned errorCode, StringReference const & errorMessage);
+	WebProviderError(unsigned errorCode, hstring_ref errorMessage);
 };
 
 struct WebTokenResponse :
@@ -47999,9 +47999,9 @@ struct WebTokenResponse :
 {
 	WebTokenResponse(std::nullptr_t) noexcept {}
 	WebTokenResponse();
-	WebTokenResponse(StringReference const & token);
-	WebTokenResponse(StringReference const & token, Windows::Security::Credentials::WebAccount const & webAccount);
-	WebTokenResponse(StringReference const & token, Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Core::WebProviderError const & error);
+	WebTokenResponse(hstring_ref token);
+	WebTokenResponse(hstring_ref token, Windows::Security::Credentials::WebAccount const & webAccount);
+	WebTokenResponse(hstring_ref token, Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Core::WebProviderError const & error);
 };
 
 struct WebTokenRequestResult :
@@ -48032,18 +48032,18 @@ struct WebAccountClientView :
 {
 	WebAccountClientView(std::nullptr_t) noexcept {}
 	WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri);
-	WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri, StringReference const & accountPairwiseId);
+	WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, Windows::Foundation::Uri const & applicationCallbackUri, hstring_ref accountPairwiseId);
 };
 
 struct WebAccountManager
 {
 	WebAccountManager() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(StringReference const & webAccountId, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope);
 	static Windows::Foundation::IAsyncAction SetScopeAsync(Windows::Security::Credentials::WebAccount const & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope);
 	static Windows::Security::Authentication::Web::Provider::WebAccountScope GetScope(Windows::Security::Credentials::WebAccount const & webAccount);
-	static Windows::Foundation::IAsyncAction PullCookiesAsync(StringReference const & uriString, StringReference const & callerPFN);
-	static Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(Windows::Security::Credentials::WebAccount const & webAccount, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & additionalProperties);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(StringReference const & webAccountId, StringReference const & webAccountUserName, Windows::Foundation::Collections::IMapView<String, String> const & props);
+	static Windows::Foundation::IAsyncAction PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN);
+	static Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(Windows::Security::Credentials::WebAccount const & webAccount, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & additionalProperties);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> const & props);
 	static Windows::Foundation::IAsyncAction DeleteWebAccountAsync(Windows::Security::Credentials::WebAccount const & webAccount);
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> FindAllProviderWebAccountsAsync();
 	static Windows::Foundation::IAsyncAction PushCookiesAsync(Windows::Foundation::Uri const & uri, Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> const & cookies);
@@ -48116,7 +48116,7 @@ struct WebAccountProvider :
 	requires<WebAccountProvider, Windows::Security::Credentials::IWebAccountProvider2, Windows::Security::Credentials::IWebAccountProvider3>
 {
 	WebAccountProvider(std::nullptr_t) noexcept {}
-	WebAccountProvider(StringReference const & id, StringReference const & displayName, Windows::Foundation::Uri const & iconUri);
+	WebAccountProvider(hstring_ref id, hstring_ref displayName, Windows::Foundation::Uri const & iconUri);
 };
 
 struct WebAccount :
@@ -48124,7 +48124,7 @@ struct WebAccount :
 	requires<WebAccount, Windows::Security::Credentials::IWebAccount2>
 {
 	WebAccount(std::nullptr_t) noexcept {}
-	WebAccount(Windows::Security::Credentials::WebAccountProvider const & webAccountProvider, StringReference const & userName, Windows::Security::Credentials::WebAccountState state);
+	WebAccount(Windows::Security::Credentials::WebAccountProvider const & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state);
 };
 
 struct KeyCredentialRetrievalResult :
@@ -48156,9 +48156,9 @@ struct KeyCredentialManager
 	KeyCredentialManager() = delete;
 	static Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync();
 	static Windows::Foundation::IAsyncAction RenewAttestationAsync();
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(StringReference const & name, Windows::Security::Credentials::KeyCredentialCreationOption option);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(StringReference const & name);
-	static Windows::Foundation::IAsyncAction DeleteAsync(StringReference const & name);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(hstring_ref name);
+	static Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref name);
 };
 
 struct PasswordCredential :
@@ -48166,7 +48166,7 @@ struct PasswordCredential :
 {
 	PasswordCredential(std::nullptr_t) noexcept {}
 	PasswordCredential();
-	PasswordCredential(StringReference const & resource, StringReference const & userName, StringReference const & password);
+	PasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password);
 };
 
 struct PasswordVault :
@@ -48223,19 +48223,19 @@ struct CertificateEnrollmentManager
 {
 	CertificateEnrollmentManager() = delete;
 	static Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager UserCertificateEnrollmentManager();
-	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName, StringReference const & keyStorageProvider);
-	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters);
-	static Windows::Foundation::IAsyncOperation<String> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request);
-	static Windows::Foundation::IAsyncAction InstallCertificateAsync(StringReference const & certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption);
-	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(StringReference const & pfxData, StringReference const & password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, StringReference const & friendlyName);
+	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider);
+	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::PfxImportParameters const & pfxImportParameters);
+	static Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(Windows::Security::Cryptography::Certificates::CertificateRequestProperties const & request);
+	static Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption);
+	static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName);
 };
 
 struct KeyAttestationHelper
 {
 	KeyAttestationHelper() = delete;
-	static Windows::Foundation::IAsyncOperation<String> DecryptTpmAttestationCredentialAsync(StringReference const & credential, StringReference const & containerName);
-	static Windows::Foundation::IAsyncOperation<String> DecryptTpmAttestationCredentialAsync(StringReference const & credential);
-	static String GetTpmAttestationCredentialId(StringReference const & credential);
+	static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName);
+	static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential);
+	static hstring GetTpmAttestationCredentialId(hstring_ref credential);
 };
 
 struct CertificateQuery :
@@ -48260,31 +48260,31 @@ struct CertificateStores
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync(Windows::Security::Cryptography::Certificates::CertificateQuery const & query);
 	static Windows::Security::Cryptography::Certificates::CertificateStore TrustedRootCertificationAuthorities();
 	static Windows::Security::Cryptography::Certificates::CertificateStore IntermediateCertificationAuthorities();
-	static Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(StringReference const & storeName);
+	static Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(hstring_ref storeName);
 };
 
 struct KeyAlgorithmNames
 {
 	KeyAlgorithmNames() = delete;
-	static String Ecdsa();
-	static String Ecdh();
-	static String Rsa();
-	static String Dsa();
-	static String Ecdh256();
-	static String Ecdh384();
-	static String Ecdh521();
-	static String Ecdsa256();
-	static String Ecdsa384();
-	static String Ecdsa521();
+	static hstring Ecdsa();
+	static hstring Ecdh();
+	static hstring Rsa();
+	static hstring Dsa();
+	static hstring Ecdh256();
+	static hstring Ecdh384();
+	static hstring Ecdh521();
+	static hstring Ecdsa256();
+	static hstring Ecdsa384();
+	static hstring Ecdsa521();
 };
 
 struct KeyStorageProviderNames
 {
 	KeyStorageProviderNames() = delete;
-	static String PassportKeyStorageProvider();
-	static String SoftwareKeyStorageProvider();
-	static String SmartcardKeyStorageProvider();
-	static String PlatformKeyStorageProvider();
+	static hstring PassportKeyStorageProvider();
+	static hstring SoftwareKeyStorageProvider();
+	static hstring SmartcardKeyStorageProvider();
+	static hstring PlatformKeyStorageProvider();
 };
 
 struct ChainBuildingParameters :
@@ -48380,8 +48380,8 @@ struct CryptographicHash :
 struct PersistedKeyProvider
 {
 	PersistedKeyProvider() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(Windows::Security::Cryptography::Certificates::Certificate const & certificate, StringReference const & hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding);
-	static Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(Windows::Security::Cryptography::Certificates::Certificate const & certificate, StringReference const & hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(Windows::Security::Cryptography::Certificates::Certificate const & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding);
+	static Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(Windows::Security::Cryptography::Certificates::Certificate const & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding);
 };
 
 struct EncryptedAndAuthenticatedData :
@@ -48411,7 +48411,7 @@ struct HashAlgorithmProvider :
 	Windows::Security::Cryptography::Core::IHashAlgorithmProvider
 {
 	HashAlgorithmProvider(std::nullptr_t) noexcept {}
-	static Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(StringReference const & algorithm);
+	static Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(hstring_ref algorithm);
 };
 
 struct MacAlgorithmProvider :
@@ -48419,21 +48419,21 @@ struct MacAlgorithmProvider :
 	requires<MacAlgorithmProvider, Windows::Security::Cryptography::Core::IMacAlgorithmProvider2>
 {
 	MacAlgorithmProvider(std::nullptr_t) noexcept {}
-	static Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(StringReference const & algorithm);
+	static Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(hstring_ref algorithm);
 };
 
 struct KeyDerivationAlgorithmProvider :
 	Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider
 {
 	KeyDerivationAlgorithmProvider(std::nullptr_t) noexcept {}
-	static Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(StringReference const & algorithm);
+	static Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(hstring_ref algorithm);
 };
 
 struct SymmetricKeyAlgorithmProvider :
 	Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider
 {
 	SymmetricKeyAlgorithmProvider(std::nullptr_t) noexcept {}
-	static Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(StringReference const & algorithm);
+	static Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm);
 };
 
 struct AsymmetricKeyAlgorithmProvider :
@@ -48441,154 +48441,154 @@ struct AsymmetricKeyAlgorithmProvider :
 	requires<AsymmetricKeyAlgorithmProvider, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider2>
 {
 	AsymmetricKeyAlgorithmProvider(std::nullptr_t) noexcept {}
-	static Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(StringReference const & algorithm);
+	static Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm);
 };
 
 struct HashAlgorithmNames
 {
 	HashAlgorithmNames() = delete;
-	static String Md5();
-	static String Sha1();
-	static String Sha256();
-	static String Sha384();
-	static String Sha512();
+	static hstring Md5();
+	static hstring Sha1();
+	static hstring Sha256();
+	static hstring Sha384();
+	static hstring Sha512();
 };
 
 struct MacAlgorithmNames
 {
 	MacAlgorithmNames() = delete;
-	static String HmacMd5();
-	static String HmacSha1();
-	static String HmacSha256();
-	static String HmacSha384();
-	static String HmacSha512();
-	static String AesCmac();
+	static hstring HmacMd5();
+	static hstring HmacSha1();
+	static hstring HmacSha256();
+	static hstring HmacSha384();
+	static hstring HmacSha512();
+	static hstring AesCmac();
 };
 
 struct SymmetricAlgorithmNames
 {
 	SymmetricAlgorithmNames() = delete;
-	static String DesCbc();
-	static String DesEcb();
-	static String TripleDesCbc();
-	static String TripleDesEcb();
-	static String Rc2Cbc();
-	static String Rc2Ecb();
-	static String AesCbc();
-	static String AesEcb();
-	static String AesGcm();
-	static String AesCcm();
-	static String AesCbcPkcs7();
-	static String AesEcbPkcs7();
-	static String DesCbcPkcs7();
-	static String DesEcbPkcs7();
-	static String TripleDesCbcPkcs7();
-	static String TripleDesEcbPkcs7();
-	static String Rc2CbcPkcs7();
-	static String Rc2EcbPkcs7();
-	static String Rc4();
+	static hstring DesCbc();
+	static hstring DesEcb();
+	static hstring TripleDesCbc();
+	static hstring TripleDesEcb();
+	static hstring Rc2Cbc();
+	static hstring Rc2Ecb();
+	static hstring AesCbc();
+	static hstring AesEcb();
+	static hstring AesGcm();
+	static hstring AesCcm();
+	static hstring AesCbcPkcs7();
+	static hstring AesEcbPkcs7();
+	static hstring DesCbcPkcs7();
+	static hstring DesEcbPkcs7();
+	static hstring TripleDesCbcPkcs7();
+	static hstring TripleDesEcbPkcs7();
+	static hstring Rc2CbcPkcs7();
+	static hstring Rc2EcbPkcs7();
+	static hstring Rc4();
 };
 
 struct AsymmetricAlgorithmNames
 {
 	AsymmetricAlgorithmNames() = delete;
-	static String EcdsaSha256();
-	static String EcdsaSha384();
-	static String EcdsaSha512();
-	static String RsaPkcs1();
-	static String RsaOaepSha1();
-	static String RsaOaepSha256();
-	static String RsaOaepSha384();
-	static String RsaOaepSha512();
-	static String EcdsaP256Sha256();
-	static String EcdsaP384Sha384();
-	static String EcdsaP521Sha512();
-	static String DsaSha1();
-	static String DsaSha256();
-	static String RsaSignPkcs1Sha1();
-	static String RsaSignPkcs1Sha256();
-	static String RsaSignPkcs1Sha384();
-	static String RsaSignPkcs1Sha512();
-	static String RsaSignPssSha1();
-	static String RsaSignPssSha256();
-	static String RsaSignPssSha384();
-	static String RsaSignPssSha512();
+	static hstring EcdsaSha256();
+	static hstring EcdsaSha384();
+	static hstring EcdsaSha512();
+	static hstring RsaPkcs1();
+	static hstring RsaOaepSha1();
+	static hstring RsaOaepSha256();
+	static hstring RsaOaepSha384();
+	static hstring RsaOaepSha512();
+	static hstring EcdsaP256Sha256();
+	static hstring EcdsaP384Sha384();
+	static hstring EcdsaP521Sha512();
+	static hstring DsaSha1();
+	static hstring DsaSha256();
+	static hstring RsaSignPkcs1Sha1();
+	static hstring RsaSignPkcs1Sha256();
+	static hstring RsaSignPkcs1Sha384();
+	static hstring RsaSignPkcs1Sha512();
+	static hstring RsaSignPssSha1();
+	static hstring RsaSignPssSha256();
+	static hstring RsaSignPssSha384();
+	static hstring RsaSignPssSha512();
 };
 
 struct EccCurveNames
 {
 	EccCurveNames() = delete;
-	static String BrainpoolP160r1();
-	static String BrainpoolP160t1();
-	static String BrainpoolP192r1();
-	static String BrainpoolP192t1();
-	static String BrainpoolP224r1();
-	static String BrainpoolP224t1();
-	static String BrainpoolP256r1();
-	static String BrainpoolP256t1();
-	static String BrainpoolP320r1();
-	static String BrainpoolP320t1();
-	static String BrainpoolP384r1();
-	static String BrainpoolP384t1();
-	static String BrainpoolP512r1();
-	static String BrainpoolP512t1();
-	static String Curve25519();
-	static String Ec192wapi();
-	static String NistP192();
-	static String NistP224();
-	static String NistP256();
-	static String NistP384();
-	static String NistP521();
-	static String NumsP256t1();
-	static String NumsP384t1();
-	static String NumsP512t1();
-	static String SecP160k1();
-	static String SecP160r1();
-	static String SecP160r2();
-	static String SecP192k1();
-	static String SecP192r1();
-	static String SecP224k1();
-	static String SecP224r1();
-	static String SecP256k1();
-	static String SecP256r1();
-	static String SecP384r1();
-	static String SecP521r1();
-	static String Wtls7();
-	static String Wtls9();
-	static String Wtls12();
-	static String X962P192v1();
-	static String X962P192v2();
-	static String X962P192v3();
-	static String X962P239v1();
-	static String X962P239v2();
-	static String X962P239v3();
-	static String X962P256v1();
-	static Windows::Foundation::Collections::IVectorView<String> AllEccCurveNames();
+	static hstring BrainpoolP160r1();
+	static hstring BrainpoolP160t1();
+	static hstring BrainpoolP192r1();
+	static hstring BrainpoolP192t1();
+	static hstring BrainpoolP224r1();
+	static hstring BrainpoolP224t1();
+	static hstring BrainpoolP256r1();
+	static hstring BrainpoolP256t1();
+	static hstring BrainpoolP320r1();
+	static hstring BrainpoolP320t1();
+	static hstring BrainpoolP384r1();
+	static hstring BrainpoolP384t1();
+	static hstring BrainpoolP512r1();
+	static hstring BrainpoolP512t1();
+	static hstring Curve25519();
+	static hstring Ec192wapi();
+	static hstring NistP192();
+	static hstring NistP224();
+	static hstring NistP256();
+	static hstring NistP384();
+	static hstring NistP521();
+	static hstring NumsP256t1();
+	static hstring NumsP384t1();
+	static hstring NumsP512t1();
+	static hstring SecP160k1();
+	static hstring SecP160r1();
+	static hstring SecP160r2();
+	static hstring SecP192k1();
+	static hstring SecP192r1();
+	static hstring SecP224k1();
+	static hstring SecP224r1();
+	static hstring SecP256k1();
+	static hstring SecP256r1();
+	static hstring SecP384r1();
+	static hstring SecP521r1();
+	static hstring Wtls7();
+	static hstring Wtls9();
+	static hstring Wtls12();
+	static hstring X962P192v1();
+	static hstring X962P192v2();
+	static hstring X962P192v3();
+	static hstring X962P239v1();
+	static hstring X962P239v2();
+	static hstring X962P239v3();
+	static hstring X962P256v1();
+	static Windows::Foundation::Collections::IVectorView<hstring> AllEccCurveNames();
 };
 
 struct KeyDerivationAlgorithmNames
 {
 	KeyDerivationAlgorithmNames() = delete;
-	static String CapiKdfMd5();
-	static String CapiKdfSha1();
-	static String CapiKdfSha256();
-	static String CapiKdfSha384();
-	static String CapiKdfSha512();
-	static String Pbkdf2Md5();
-	static String Pbkdf2Sha1();
-	static String Pbkdf2Sha256();
-	static String Pbkdf2Sha384();
-	static String Pbkdf2Sha512();
-	static String Sp800108CtrHmacMd5();
-	static String Sp800108CtrHmacSha1();
-	static String Sp800108CtrHmacSha256();
-	static String Sp800108CtrHmacSha384();
-	static String Sp800108CtrHmacSha512();
-	static String Sp80056aConcatMd5();
-	static String Sp80056aConcatSha1();
-	static String Sp80056aConcatSha256();
-	static String Sp80056aConcatSha384();
-	static String Sp80056aConcatSha512();
+	static hstring CapiKdfMd5();
+	static hstring CapiKdfSha1();
+	static hstring CapiKdfSha256();
+	static hstring CapiKdfSha384();
+	static hstring CapiKdfSha512();
+	static hstring Pbkdf2Md5();
+	static hstring Pbkdf2Sha1();
+	static hstring Pbkdf2Sha256();
+	static hstring Pbkdf2Sha384();
+	static hstring Pbkdf2Sha512();
+	static hstring Sp800108CtrHmacMd5();
+	static hstring Sp800108CtrHmacSha1();
+	static hstring Sp800108CtrHmacSha256();
+	static hstring Sp800108CtrHmacSha384();
+	static hstring Sp800108CtrHmacSha512();
+	static hstring Sp80056aConcatMd5();
+	static hstring Sp80056aConcatSha1();
+	static hstring Sp80056aConcatSha256();
+	static hstring Sp80056aConcatSha384();
+	static hstring Sp80056aConcatSha512();
 };
 
 }}}}}
@@ -48641,22 +48641,22 @@ struct ProtectionPolicyManager :
 	Windows::Security::EnterpriseData::IProtectionPolicyManager
 {
 	ProtectionPolicyManager(std::nullptr_t) noexcept {}
-	static bool HasContentBeenRevokedSince(StringReference const & identity, Windows::Foundation::DateTime const & since);
-	static Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccessForApp(StringReference const & sourceIdentity, StringReference const & appPackageFamilyName);
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessForAppAsync(StringReference const & sourceIdentity, StringReference const & appPackageFamilyName);
-	static Windows::Security::EnterpriseData::EnforcementLevel GetEnforcementLevel(StringReference const & identity);
-	static bool IsUserDecryptionAllowed(StringReference const & identity);
-	static bool IsProtectionUnderLockRequired(StringReference const & identity);
+	static bool HasContentBeenRevokedSince(hstring_ref identity, Windows::Foundation::DateTime const & since);
+	static Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccessForApp(hstring_ref sourceIdentity, hstring_ref appPackageFamilyName);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessForAppAsync(hstring_ref sourceIdentity, hstring_ref appPackageFamilyName);
+	static Windows::Security::EnterpriseData::EnforcementLevel GetEnforcementLevel(hstring_ref identity);
+	static bool IsUserDecryptionAllowed(hstring_ref identity);
+	static bool IsProtectionUnderLockRequired(hstring_ref identity);
 	static long long PolicyChanged(Windows::Foundation::IEventHandler<IInspectable> const & handler);
 	template <typename F> static long long PolicyChanged(F handler);
 	static void PolicyChanged(long long token);
 	static bool IsProtectionEnabled();
-	static bool IsIdentityManaged(StringReference const & identity);
-	static bool TryApplyProcessUIPolicy(StringReference const & identity);
+	static bool IsIdentityManaged(hstring_ref identity);
+	static bool TryApplyProcessUIPolicy(hstring_ref identity);
 	static void ClearProcessUIPolicy();
-	static Windows::Security::EnterpriseData::ThreadNetworkContext CreateCurrentThreadNetworkContext(StringReference const & identity);
-	static Windows::Foundation::IAsyncOperation<String> GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows::Networking::HostName const & endpointHost);
-	static void RevokeContent(StringReference const & identity);
+	static Windows::Security::EnterpriseData::ThreadNetworkContext CreateCurrentThreadNetworkContext(hstring_ref identity);
+	static Windows::Foundation::IAsyncOperation<hstring> GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows::Networking::HostName const & endpointHost);
+	static void RevokeContent(hstring_ref identity);
 	static Windows::Security::EnterpriseData::ProtectionPolicyManager GetForCurrentView();
 	static long long ProtectedAccessSuspending(Windows::Foundation::IEventHandler<Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs> const & handler);
 	template <typename F> static long long ProtectedAccessSuspending(F handler);
@@ -48667,8 +48667,8 @@ struct ProtectionPolicyManager :
 	static long long ProtectedContentRevoked(Windows::Foundation::IEventHandler<Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs> const & handler);
 	template <typename F> static long long ProtectedContentRevoked(F handler);
 	static void ProtectedContentRevoked(long long token);
-	static Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccess(StringReference const & sourceIdentity, StringReference const & targetIdentity);
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(StringReference const & sourceIdentity, StringReference const & targetIdentity);
+	static Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccess(hstring_ref sourceIdentity, hstring_ref targetIdentity);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref sourceIdentity, hstring_ref targetIdentity);
 };
 
 struct ProtectedAccessSuspendingEventArgs :
@@ -48692,33 +48692,33 @@ struct ProtectedContentRevokedEventArgs :
 struct FileRevocationManager
 {
 	FileRevocationManager() = delete;
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const & storageItem, StringReference const & enterpriseIdentity);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const & storageItem, hstring_ref enterpriseIdentity);
 	static Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const & sourceStorageItem, Windows::Storage::IStorageItem const & targetStorageItem);
-	static void Revoke(StringReference const & enterpriseIdentity);
+	static void Revoke(hstring_ref enterpriseIdentity);
 	static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::FileProtectionStatus> GetStatusAsync(Windows::Storage::IStorageItem const & storageItem);
 };
 
 struct FileProtectionManager
 {
 	FileProtectionManager() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> ProtectAsync(Windows::Storage::IStorageItem const & target, StringReference const & identity);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> ProtectAsync(Windows::Storage::IStorageItem const & target, hstring_ref identity);
 	static Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const & source, Windows::Storage::IStorageItem const & target);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> GetProtectionInfoAsync(Windows::Storage::IStorageItem const & source);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile, Windows::Storage::IStorageItem const & target);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedFileCreateResult> CreateProtectedAndOpenAsync(Windows::Storage::IStorageFolder const & parentFolder, StringReference const & desiredName, StringReference const & identity, Windows::Storage::CreationCollisionOption collisionOption);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedFileCreateResult> CreateProtectedAndOpenAsync(Windows::Storage::IStorageFolder const & parentFolder, hstring_ref desiredName, hstring_ref identity, Windows::Storage::CreationCollisionOption collisionOption);
 	static Windows::Foundation::IAsyncOperation<bool> IsContainerAsync(Windows::Storage::IStorageFile const & file);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerImportResult> LoadFileFromContainerAsync(Windows::Storage::IStorageFile const & containerFile, Windows::Storage::IStorageItem const & target, Windows::Storage::NameCollisionOption collisionOption);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile, Windows::Foundation::Collections::IIterable<String> const & sharedWithIdentities);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectedContainerExportResult> SaveFileAsContainerAsync(Windows::Storage::IStorageFile const & protectedFile, Windows::Foundation::Collections::IIterable<hstring> const & sharedWithIdentities);
 };
 
 struct DataProtectionManager
 {
 	DataProtectionManager() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> ProtectAsync(Windows::Storage::Streams::IBuffer const & data, StringReference const & identity);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> ProtectAsync(Windows::Storage::Streams::IBuffer const & data, hstring_ref identity);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::BufferProtectUnprotectResult> UnprotectAsync(Windows::Storage::Streams::IBuffer const & data);
-	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> ProtectStreamAsync(Windows::Storage::Streams::IInputStream const & unprotectedStream, StringReference const & identity, Windows::Storage::Streams::IOutputStream const & protectedStream);
+	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> ProtectStreamAsync(Windows::Storage::Streams::IInputStream const & unprotectedStream, hstring_ref identity, Windows::Storage::Streams::IOutputStream const & protectedStream);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> UnprotectStreamAsync(Windows::Storage::Streams::IInputStream const & protectedStream, Windows::Storage::Streams::IOutputStream const & unprotectedStream);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> GetProtectionInfoAsync(Windows::Storage::Streams::IBuffer const & protectedData);
 	static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::DataProtectionInfo> GetStreamProtectionInfoAsync(Windows::Storage::Streams::IInputStream const & protectedStream);
@@ -48737,13 +48737,13 @@ struct StorageFile :
 	using impl_IStorageFile::OpenTransactedWriteAsync;
 	using impl_IStorageFile2::OpenAsync;
 	using impl_IStorageFile2::OpenTransactedWriteAsync;
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(StringReference const & path);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(hstring_ref path);
 	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromApplicationUriAsync(Windows::Foundation::Uri const & uri);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(StringReference const & displayNameWithExtension, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
-	template <typename F> static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(StringReference const & displayNameWithExtension, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
+	template <typename F> static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
 	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileAsync(Windows::Storage::IStorageFile const & fileToReplace, Windows::Storage::IStreamedFileDataRequestedHandler const & dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
 	template <typename F> static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileAsync(Windows::Storage::IStorageFile const & fileToReplace, F dataRequested, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(StringReference const & displayNameWithExtension, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
 	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileFromUriAsync(Windows::Storage::IStorageFile const & fileToReplace, Windows::Foundation::Uri const & uri, Windows::Storage::Streams::IRandomAccessStreamReference const & thumbnail);
 };
 
@@ -48758,7 +48758,7 @@ struct StorageFolder :
 	using impl_IStorageFolder::GetFilesAsync;
 	using impl_IStorageFolder::GetFoldersAsync;
 	using impl_IStorageFolder::GetItemsAsync;
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(StringReference const & path);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(hstring_ref path);
 };
 
 struct StorageLibrary :
@@ -48791,14 +48791,14 @@ struct KnownFolders
 struct DownloadsFolder
 {
 	DownloadsFolder() = delete;
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption option);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(StringReference const & desiredName, Windows::Storage::CreationCollisionOption option);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, StringReference const & desiredName);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, StringReference const & desiredName);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, StringReference const & desiredName, Windows::Storage::CreationCollisionOption option);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, StringReference const & desiredName, Windows::Storage::CreationCollisionOption option);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, hstring_ref desiredName);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, hstring_ref desiredName);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(Windows::System::User const & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(Windows::System::User const & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option);
 };
 
 struct StreamedFileDataRequest :
@@ -48823,18 +48823,18 @@ struct StorageProvider :
 struct FileIO
 {
 	FileIO() = delete;
-	static Windows::Foundation::IAsyncOperation<String> ReadTextAsync(Windows::Storage::IStorageFile const & file);
-	static Windows::Foundation::IAsyncOperation<String> ReadTextAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents);
-	static Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents);
-	static Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(Windows::Storage::IStorageFile const & file);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines);
-	static Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines);
-	static Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(Windows::Storage::IStorageFile const & file);
+	static Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents);
+	static Windows::Foundation::IAsyncAction WriteTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents);
+	static Windows::Foundation::IAsyncAction AppendTextAsync(Windows::Storage::IStorageFile const & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(Windows::Storage::IStorageFile const & file);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines);
+	static Windows::Foundation::IAsyncAction WriteLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines);
+	static Windows::Foundation::IAsyncAction AppendLinesAsync(Windows::Storage::IStorageFile const & file, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
 	static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(Windows::Storage::IStorageFile const & file);
 	static Windows::Foundation::IAsyncAction WriteBufferAsync(Windows::Storage::IStorageFile const & file, Windows::Storage::Streams::IBuffer const & buffer);
 };
@@ -48842,20 +48842,20 @@ struct FileIO
 struct PathIO
 {
 	PathIO() = delete;
-	static Windows::Foundation::IAsyncOperation<String> ReadTextAsync(StringReference const & absolutePath);
-	static Windows::Foundation::IAsyncOperation<String> ReadTextAsync(StringReference const & absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction WriteTextAsync(StringReference const & absolutePath, StringReference const & contents);
-	static Windows::Foundation::IAsyncAction WriteTextAsync(StringReference const & absolutePath, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction AppendTextAsync(StringReference const & absolutePath, StringReference const & contents);
-	static Windows::Foundation::IAsyncAction AppendTextAsync(StringReference const & absolutePath, StringReference const & contents, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(StringReference const & absolutePath);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<String>> ReadLinesAsync(StringReference const & absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction WriteLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines);
-	static Windows::Foundation::IAsyncAction WriteLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncAction AppendLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines);
-	static Windows::Foundation::IAsyncAction AppendLinesAsync(StringReference const & absolutePath, Windows::Foundation::Collections::IIterable<String> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
-	static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(StringReference const & absolutePath);
-	static Windows::Foundation::IAsyncAction WriteBufferAsync(StringReference const & absolutePath, Windows::Storage::Streams::IBuffer const & buffer);
+	static Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath);
+	static Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents);
+	static Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents);
+	static Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines);
+	static Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines);
+	static Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, Windows::Foundation::Collections::IIterable<hstring> const & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
+	static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_ref absolutePath);
+	static Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_ref absolutePath, Windows::Storage::Streams::IBuffer const & buffer);
 };
 
 struct CachedFileManager
@@ -48910,12 +48910,12 @@ struct SystemVideoProperties :
 struct SystemProperties
 {
 	SystemProperties() = delete;
-	static String Author();
-	static String Comment();
-	static String ItemNameDisplay();
-	static String Keywords();
-	static String Rating();
-	static String Title();
+	static hstring Author();
+	static hstring Comment();
+	static hstring ItemNameDisplay();
+	static hstring Keywords();
+	static hstring Rating();
+	static hstring Title();
 	static Windows::Storage::SystemAudioProperties Audio();
 	static Windows::Storage::SystemGPSProperties GPS();
 	static Windows::Storage::SystemMediaProperties Media();
@@ -49112,7 +49112,7 @@ struct FileUpdateRequestDeferral :
 struct CachedFileUpdater
 {
 	CachedFileUpdater() = delete;
-	static void SetUpdateInformation(Windows::Storage::IStorageFile const & file, StringReference const & contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options);
+	static void SetUpdateInformation(Windows::Storage::IStorageFile const & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options);
 };
 
 }}}}
@@ -49124,7 +49124,7 @@ struct ContentIndexer :
 	requires<ContentIndexer, Windows::Storage::Search::IContentIndexerQueryOperations>
 {
 	ContentIndexer(std::nullptr_t) noexcept {}
-	static Windows::Storage::Search::ContentIndexer GetIndexer(StringReference const & indexName);
+	static Windows::Storage::Search::ContentIndexer GetIndexer(hstring_ref indexName);
 	static Windows::Storage::Search::ContentIndexer GetIndexer();
 };
 
@@ -49154,7 +49154,7 @@ struct QueryOptions :
 {
 	QueryOptions(std::nullptr_t) noexcept {}
 	QueryOptions();
-	QueryOptions(Windows::Storage::Search::CommonFileQuery query, Windows::Foundation::Collections::IIterable<String> const & fileTypeFilter);
+	QueryOptions(Windows::Storage::Search::CommonFileQuery query, Windows::Foundation::Collections::IIterable<hstring> const & fileTypeFilter);
 	QueryOptions(Windows::Storage::Search::CommonFolderQuery query);
 };
 
@@ -49302,7 +49302,7 @@ struct User :
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync();
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type);
 	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status);
-	static Windows::System::User GetFromId(StringReference const & nonRoamableId);
+	static Windows::System::User GetFromId(hstring_ref nonRoamableId);
 };
 
 struct ProtocolForResultsOperation :
@@ -49376,15 +49376,15 @@ struct UserAuthenticationStatusChangeDeferral :
 struct KnownUserProperties
 {
 	KnownUserProperties() = delete;
-	static String DisplayName();
-	static String FirstName();
-	static String LastName();
-	static String ProviderName();
-	static String AccountName();
-	static String GuestHost();
-	static String PrincipalName();
-	static String DomainName();
-	static String SessionInitiationProtocolUri();
+	static hstring DisplayName();
+	static hstring FirstName();
+	static hstring LastName();
+	static hstring ProviderName();
+	static hstring AccountName();
+	static hstring GuestHost();
+	static hstring PrincipalName();
+	static hstring DomainName();
+	static hstring SessionInitiationProtocolUri();
 };
 
 struct LaunchUriResult :
@@ -49428,12 +49428,12 @@ struct Launcher
 	static Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(Windows::Foundation::Uri const & uri, Windows::System::LauncherOptions const & options, Windows::Foundation::Collections::ValueSet const & inputData);
 	static Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(Windows::Foundation::Uri const & uri, Windows::System::LauncherOptions const & options, Windows::Foundation::Collections::ValueSet const & inputData);
 	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType);
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, StringReference const & packageFamilyName);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(Windows::Foundation::Uri const & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName);
 	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file);
-	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file, StringReference const & packageFamilyName);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(StringReference const & scheme);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(StringReference const & scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType);
-	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(StringReference const & extension);
+	static Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(Windows::Storage::StorageFile const & file, hstring_ref packageFamilyName);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType);
+	static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(hstring_ref extension);
 };
 
 }}}
@@ -49733,7 +49733,7 @@ struct CoreWindowDialog :
 {
 	CoreWindowDialog(std::nullptr_t) noexcept {}
 	CoreWindowDialog();
-	CoreWindowDialog(StringReference const & title);
+	CoreWindowDialog(hstring_ref title);
 };
 
 struct CoreWindowFlyout :
@@ -49741,7 +49741,7 @@ struct CoreWindowFlyout :
 {
 	CoreWindowFlyout(std::nullptr_t) noexcept {}
 	CoreWindowFlyout(Windows::Foundation::Point const & position);
-	CoreWindowFlyout(Windows::Foundation::Point const & position, StringReference const & title);
+	CoreWindowFlyout(Windows::Foundation::Point const & position, hstring_ref title);
 };
 
 struct BackRequestedEventArgs :
@@ -50009,8 +50009,8 @@ struct MessageDialog :
 	Windows::UI::Popups::IMessageDialog
 {
 	MessageDialog(std::nullptr_t) noexcept {}
-	MessageDialog(StringReference const & content);
-	MessageDialog(StringReference const & content, StringReference const & title);
+	MessageDialog(hstring_ref content);
+	MessageDialog(hstring_ref content, hstring_ref title);
 };
 
 struct UICommand :
@@ -50018,11 +50018,11 @@ struct UICommand :
 {
 	UICommand(std::nullptr_t) noexcept {}
 	UICommand();
-	UICommand(StringReference const & label);
-	UICommand(StringReference const & label, Windows::UI::Popups::IUICommandInvokedHandler const & action);
-	template <typename F> UICommand(StringReference const & label, F action);
-	UICommand(StringReference const & label, Windows::UI::Popups::IUICommandInvokedHandler const & action, IInspectable const & commandId);
-	template <typename F> UICommand(StringReference const & label, F action, IInspectable const & commandId);
+	UICommand(hstring_ref label);
+	UICommand(hstring_ref label, Windows::UI::Popups::IUICommandInvokedHandler const & action);
+	template <typename F> UICommand(hstring_ref label, F action);
+	UICommand(hstring_ref label, Windows::UI::Popups::IUICommandInvokedHandler const & action, IInspectable const & commandId);
+	template <typename F> UICommand(hstring_ref label, F action, IInspectable const & commandId);
 };
 
 struct UICommandSeparator :
@@ -50098,7 +50098,7 @@ struct ApplicationViewTransferContext :
 {
 	ApplicationViewTransferContext(std::nullptr_t) noexcept {}
 	ApplicationViewTransferContext();
-	static String DataPackageFormatId();
+	static hstring DataPackageFormatId();
 };
 
 struct InputPaneVisibilityEventArgs :
@@ -50121,7 +50121,7 @@ struct ProjectionManager
 	static Windows::Foundation::IAsyncAction StartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Devices::Enumeration::DeviceInformation const & displayDeviceInfo);
 	static Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Foundation::Rect const & selection);
 	static Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int projectionViewId, int anchorViewId, Windows::Foundation::Rect const & selection, Windows::UI::Popups::Placement prefferedPlacement);
-	static String GetDeviceSelector();
+	static hstring GetDeviceSelector();
 	static Windows::Foundation::IAsyncAction StartProjectingAsync(int projectionViewId, int anchorViewId);
 	static Windows::Foundation::IAsyncAction SwapDisplaysForViewsAsync(int projectionViewId, int anchorViewId);
 	static Windows::Foundation::IAsyncAction StopProjectingAsync(int projectionViewId, int anchorViewId);
@@ -50204,7 +50204,7 @@ struct HttpMethod :
 	requires<HttpMethod, Windows::Foundation::IStringable>
 {
 	HttpMethod(std::nullptr_t) noexcept {}
-	HttpMethod(StringReference const & method);
+	HttpMethod(hstring_ref method);
 	static Windows::Web::Http::HttpMethod Delete();
 	static Windows::Web::Http::HttpMethod Get();
 	static Windows::Web::Http::HttpMethod Head();
@@ -50228,7 +50228,7 @@ struct HttpCookie :
 	requires<HttpCookie, Windows::Foundation::IStringable>
 {
 	HttpCookie(std::nullptr_t) noexcept {}
-	HttpCookie(StringReference const & name, StringReference const & domain, StringReference const & path);
+	HttpCookie(hstring_ref name, hstring_ref domain, hstring_ref path);
 };
 
 struct HttpCookieCollection :
@@ -50249,9 +50249,9 @@ struct HttpStringContent :
 	requires<HttpStringContent, Windows::Foundation::IStringable>
 {
 	HttpStringContent(std::nullptr_t) noexcept {}
-	HttpStringContent(StringReference const & content);
-	HttpStringContent(StringReference const & content, Windows::Storage::Streams::UnicodeEncoding encoding);
-	HttpStringContent(StringReference const & content, Windows::Storage::Streams::UnicodeEncoding encoding, StringReference const & mediaType);
+	HttpStringContent(hstring_ref content);
+	HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding);
+	HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType);
 };
 
 struct HttpBufferContent :
@@ -50276,7 +50276,7 @@ struct HttpFormUrlEncodedContent :
 	requires<HttpFormUrlEncodedContent, Windows::Foundation::IStringable>
 {
 	HttpFormUrlEncodedContent(std::nullptr_t) noexcept {}
-	HttpFormUrlEncodedContent(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<String, String>> const & content);
+	HttpFormUrlEncodedContent(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> const & content);
 };
 
 struct HttpMultipartContent :
@@ -50285,8 +50285,8 @@ struct HttpMultipartContent :
 {
 	HttpMultipartContent(std::nullptr_t) noexcept {}
 	HttpMultipartContent();
-	HttpMultipartContent(StringReference const & subtype);
-	HttpMultipartContent(StringReference const & subtype, StringReference const & boundary);
+	HttpMultipartContent(hstring_ref subtype);
+	HttpMultipartContent(hstring_ref subtype, hstring_ref boundary);
 };
 
 struct HttpMultipartFormDataContent :
@@ -50295,7 +50295,7 @@ struct HttpMultipartFormDataContent :
 {
 	HttpMultipartFormDataContent(std::nullptr_t) noexcept {}
 	HttpMultipartFormDataContent();
-	HttpMultipartFormDataContent(StringReference const & boundary);
+	HttpMultipartFormDataContent(hstring_ref boundary);
 };
 
 }}}}
@@ -50347,9 +50347,9 @@ struct HttpContentDispositionHeaderValue :
 	requires<HttpContentDispositionHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpContentDispositionHeaderValue(std::nullptr_t) noexcept {}
-	HttpContentDispositionHeaderValue(StringReference const & dispositionType);
-	static Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue);
+	HttpContentDispositionHeaderValue(hstring_ref dispositionType);
+	static Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue);
 };
 
 struct HttpContentCodingHeaderValueCollection :
@@ -50374,8 +50374,8 @@ struct HttpContentRangeHeaderValue :
 	HttpContentRangeHeaderValue(unsigned long long length);
 	HttpContentRangeHeaderValue(unsigned long long from, unsigned long long to);
 	HttpContentRangeHeaderValue(unsigned long long from, unsigned long long to, unsigned long long length);
-	static Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue);
+	static Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue);
 };
 
 struct HttpMediaTypeHeaderValue :
@@ -50383,9 +50383,9 @@ struct HttpMediaTypeHeaderValue :
 	requires<HttpMediaTypeHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpMediaTypeHeaderValue(std::nullptr_t) noexcept {}
-	HttpMediaTypeHeaderValue(StringReference const & mediaType);
-	static Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue);
+	HttpMediaTypeHeaderValue(hstring_ref mediaType);
+	static Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue);
 };
 
 struct HttpMediaTypeWithQualityHeaderValueCollection :
@@ -50414,10 +50414,10 @@ struct HttpCredentialsHeaderValue :
 	requires<HttpCredentialsHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpCredentialsHeaderValue(std::nullptr_t) noexcept {}
-	HttpCredentialsHeaderValue(StringReference const & scheme);
-	HttpCredentialsHeaderValue(StringReference const & scheme, StringReference const & token);
-	static Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue);
+	HttpCredentialsHeaderValue(hstring_ref scheme);
+	HttpCredentialsHeaderValue(hstring_ref scheme, hstring_ref token);
+	static Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue);
 };
 
 struct HttpCacheDirectiveHeaderValueCollection :
@@ -50481,8 +50481,8 @@ struct HttpDateOrDeltaHeaderValue :
 	requires<HttpDateOrDeltaHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpDateOrDeltaHeaderValue(std::nullptr_t) noexcept {}
-	static Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue);
+	static Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue);
 };
 
 struct HttpNameValueHeaderValue :
@@ -50490,10 +50490,10 @@ struct HttpNameValueHeaderValue :
 	requires<HttpNameValueHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpNameValueHeaderValue(std::nullptr_t) noexcept {}
-	HttpNameValueHeaderValue(StringReference const & name);
-	HttpNameValueHeaderValue(StringReference const & name, StringReference const & value);
-	static Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue);
+	HttpNameValueHeaderValue(hstring_ref name);
+	HttpNameValueHeaderValue(hstring_ref name, hstring_ref value);
+	static Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue);
 };
 
 struct HttpChallengeHeaderValue :
@@ -50501,10 +50501,10 @@ struct HttpChallengeHeaderValue :
 	requires<HttpChallengeHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpChallengeHeaderValue(std::nullptr_t) noexcept {}
-	HttpChallengeHeaderValue(StringReference const & scheme);
-	HttpChallengeHeaderValue(StringReference const & scheme, StringReference const & token);
-	static Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue);
+	HttpChallengeHeaderValue(hstring_ref scheme);
+	HttpChallengeHeaderValue(hstring_ref scheme, hstring_ref token);
+	static Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue);
 };
 
 struct HttpConnectionOptionHeaderValue :
@@ -50512,9 +50512,9 @@ struct HttpConnectionOptionHeaderValue :
 	requires<HttpConnectionOptionHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpConnectionOptionHeaderValue(std::nullptr_t) noexcept {}
-	HttpConnectionOptionHeaderValue(StringReference const & token);
-	static Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue);
+	HttpConnectionOptionHeaderValue(hstring_ref token);
+	static Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue);
 };
 
 struct HttpContentCodingHeaderValue :
@@ -50522,9 +50522,9 @@ struct HttpContentCodingHeaderValue :
 	requires<HttpContentCodingHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpContentCodingHeaderValue(std::nullptr_t) noexcept {}
-	HttpContentCodingHeaderValue(StringReference const & contentCoding);
-	static Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue);
+	HttpContentCodingHeaderValue(hstring_ref contentCoding);
+	static Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue);
 };
 
 struct HttpCookiePairHeaderValue :
@@ -50532,10 +50532,10 @@ struct HttpCookiePairHeaderValue :
 	requires<HttpCookiePairHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpCookiePairHeaderValue(std::nullptr_t) noexcept {}
-	HttpCookiePairHeaderValue(StringReference const & name);
-	HttpCookiePairHeaderValue(StringReference const & name, StringReference const & value);
-	static Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue);
+	HttpCookiePairHeaderValue(hstring_ref name);
+	HttpCookiePairHeaderValue(hstring_ref name, hstring_ref value);
+	static Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue);
 };
 
 struct HttpExpectationHeaderValue :
@@ -50543,10 +50543,10 @@ struct HttpExpectationHeaderValue :
 	requires<HttpExpectationHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpExpectationHeaderValue(std::nullptr_t) noexcept {}
-	HttpExpectationHeaderValue(StringReference const & name);
-	HttpExpectationHeaderValue(StringReference const & name, StringReference const & value);
-	static Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue);
+	HttpExpectationHeaderValue(hstring_ref name);
+	HttpExpectationHeaderValue(hstring_ref name, hstring_ref value);
+	static Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue);
 };
 
 struct HttpLanguageRangeWithQualityHeaderValue :
@@ -50554,10 +50554,10 @@ struct HttpLanguageRangeWithQualityHeaderValue :
 	requires<HttpLanguageRangeWithQualityHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpLanguageRangeWithQualityHeaderValue(std::nullptr_t) noexcept {}
-	HttpLanguageRangeWithQualityHeaderValue(StringReference const & languageRange);
-	HttpLanguageRangeWithQualityHeaderValue(StringReference const & languageRange, double quality);
-	static Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue);
+	HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange);
+	HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange, double quality);
+	static Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue);
 };
 
 struct HttpMediaTypeWithQualityHeaderValue :
@@ -50565,10 +50565,10 @@ struct HttpMediaTypeWithQualityHeaderValue :
 	requires<HttpMediaTypeWithQualityHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpMediaTypeWithQualityHeaderValue(std::nullptr_t) noexcept {}
-	HttpMediaTypeWithQualityHeaderValue(StringReference const & mediaType);
-	HttpMediaTypeWithQualityHeaderValue(StringReference const & mediaType, double quality);
-	static Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue);
+	HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType);
+	HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType, double quality);
+	static Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue);
 };
 
 struct HttpProductHeaderValue :
@@ -50576,10 +50576,10 @@ struct HttpProductHeaderValue :
 	requires<HttpProductHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpProductHeaderValue(std::nullptr_t) noexcept {}
-	HttpProductHeaderValue(StringReference const & productName);
-	HttpProductHeaderValue(StringReference const & productName, StringReference const & productVersion);
-	static Windows::Web::Http::Headers::HttpProductHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue);
+	HttpProductHeaderValue(hstring_ref productName);
+	HttpProductHeaderValue(hstring_ref productName, hstring_ref productVersion);
+	static Windows::Web::Http::Headers::HttpProductHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue);
 };
 
 struct HttpProductInfoHeaderValue :
@@ -50587,10 +50587,10 @@ struct HttpProductInfoHeaderValue :
 	requires<HttpProductInfoHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpProductInfoHeaderValue(std::nullptr_t) noexcept {}
-	HttpProductInfoHeaderValue(StringReference const & productComment);
-	HttpProductInfoHeaderValue(StringReference const & productName, StringReference const & productVersion);
-	static Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue);
+	HttpProductInfoHeaderValue(hstring_ref productComment);
+	HttpProductInfoHeaderValue(hstring_ref productName, hstring_ref productVersion);
+	static Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue);
 };
 
 struct HttpContentCodingWithQualityHeaderValue :
@@ -50598,10 +50598,10 @@ struct HttpContentCodingWithQualityHeaderValue :
 	requires<HttpContentCodingWithQualityHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpContentCodingWithQualityHeaderValue(std::nullptr_t) noexcept {}
-	HttpContentCodingWithQualityHeaderValue(StringReference const & contentCoding);
-	HttpContentCodingWithQualityHeaderValue(StringReference const & contentCoding, double quality);
-	static Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue);
+	HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding);
+	HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding, double quality);
+	static Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue);
 };
 
 struct HttpTransferCodingHeaderValue :
@@ -50609,9 +50609,9 @@ struct HttpTransferCodingHeaderValue :
 	requires<HttpTransferCodingHeaderValue, Windows::Foundation::IStringable>
 {
 	HttpTransferCodingHeaderValue(std::nullptr_t) noexcept {}
-	HttpTransferCodingHeaderValue(StringReference const & input);
-	static Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(StringReference const & input);
-	static bool TryParse(StringReference const & input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue);
+	HttpTransferCodingHeaderValue(hstring_ref input);
+	static Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(hstring_ref input);
+	static bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue);
 };
 
 }}}}}

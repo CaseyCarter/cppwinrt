@@ -1,5 +1,7 @@
 
-namespace winrt { namespace impl {
+namespace winrt {
+
+namespace impl {
 
 inline void ActivateInstance(HSTRING classId, Windows::IInspectable & instance)
 {
@@ -14,9 +16,7 @@ void ActivateInstance(HSTRING classId, Interface & result)
 	result = instance.As<Interface>();
 }
 
-}}
-
-namespace winrt {
+}
 
 enum class InitializeType
 {
@@ -29,11 +29,15 @@ inline void Initialize(InitializeType const type = InitializeType::MultiThreaded
 	check_hresult(RoInitialize(static_cast<RO_INIT_TYPE>(type)));
 }
 
+inline void Uninitialize() noexcept
+{
+	RoUninitialize();
+}
+
 template <typename Class, typename Instance = Class>
 Instance ActivateInstance()
 {
-	StringReference classId(impl::traits<Class>::name(),
-							impl::traits<Class>::name_length);
+	hstring_ref classId(impl::traits<Class>::name());
 
 	Instance instance = nullptr;
 	impl::ActivateInstance(get(classId), instance);
@@ -43,8 +47,7 @@ Instance ActivateInstance()
 template <typename Class, typename Interface = Windows::IActivationFactory>
 Interface GetActivationFactory()
 {
-	StringReference classId(impl::traits<Class>::name(),
-							impl::traits<Class>::name_length);
+	hstring_ref classId(impl::traits<Class>::name());
 
 	Interface factory;
 	check_hresult(RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));

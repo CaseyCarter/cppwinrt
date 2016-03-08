@@ -22,6 +22,7 @@ extern "C"
 	BOOL __stdcall RoOriginateErrorW(HRESULT error, unsigned length, wchar_t const * message);
 	HRESULT __stdcall GetRestrictedErrorInfo(IRestrictedErrorInfo ** info);
 	HRESULT __stdcall RoInitialize(RO_INIT_TYPE type);
+	void __stdcall RoUninitialize();
 	HRESULT __stdcall RoGetActivationFactory(HSTRING classId, GUID const & iid, void ** factory);
 	HRESULT __stdcall RoActivateInstance(HSTRING classId, ::IInspectable ** instance);
 }
