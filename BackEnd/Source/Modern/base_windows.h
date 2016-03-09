@@ -457,7 +457,7 @@ struct overrides : implements<R ...>
 
 	HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
 	{
-			*object = query_interface<R ...>(id);
+		*object = query_interface<R ...>(id);
 
 		if (*object == nullptr)
 		{

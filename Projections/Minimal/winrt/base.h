@@ -1606,7 +1606,7 @@ inline bool embedded_null(hstring const & value) noexcept
 	return impl::embedded_null(get(value));
 }
 
-inline bool operator==(hstring_ref left, hstring_ref right)
+inline bool operator==(hstring_ref left, hstring_ref right) noexcept
 {
 	return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1621,7 +1621,7 @@ inline bool operator==(hstring const & left, hstring_ref right) noexcept
 	return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring const & left, hstring const & right)
+inline bool operator==(hstring const & left, hstring const & right) noexcept
 {
 	return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1666,7 +1666,7 @@ inline bool operator==(std::wstring const & left, hstring const & right) noexcep
 	return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, hstring_ref right)
+inline bool operator<(hstring_ref left, hstring_ref right) noexcept
 {
 	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1681,7 +1681,7 @@ inline bool operator<(hstring const & left, hstring_ref right) noexcept
 	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring const & left, hstring const & right)
+inline bool operator<(hstring const & left, hstring const & right) noexcept
 {
 	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1726,10 +1726,10 @@ inline bool operator<(std::wstring const & left, hstring const & right) noexcept
 	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator!=(hstring_ref left, hstring_ref right) { return !(left == right); }
-inline bool operator >(hstring_ref left, hstring_ref right) { return right < left; }
-inline bool operator<=(hstring_ref left, hstring_ref right) { return !(right < left); }
-inline bool operator>=(hstring_ref left, hstring_ref right) { return !(left < right); }
+inline bool operator!=(hstring_ref left, hstring_ref right) noexcept { return !(left == right); }
+inline bool operator >(hstring_ref left, hstring_ref right) noexcept { return right < left; }
+inline bool operator<=(hstring_ref left, hstring_ref right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_ref left, hstring_ref right) noexcept { return !(left < right); }
 
 inline bool operator!=(hstring_ref left, wchar_t const * const right) noexcept { return !(left == right); }
 inline bool operator >(hstring_ref left, wchar_t const * const right) noexcept { return right < left; }
@@ -2304,7 +2304,7 @@ struct overrides : implements<R ...>
 
 	HRESULT __stdcall QueryInterface(GUID const & id, void ** object) noexcept override
 	{
-			*object = query_interface<R ...>(id);
+		*object = query_interface<R ...>(id);
 
 		if (*object == nullptr)
 		{
