@@ -1363,6 +1363,19 @@ template <> struct accessors<std::wstring>
 
 }
 
+inline bool embedded_null(hstring_ref value) noexcept
+{
+	return impl::embedded_null(get(value));
+}
+
+inline bool embedded_null(hstring const & value) noexcept
+{
+	return impl::embedded_null(get(value));
+}
+
+// TODO: this must be removed. The ABI projection should just use HSTRING directly.
+namespace ABI { using hstring = HSTRING; }
+
 inline hstring::hstring(hstring const & value) :
 	m_handle(impl::duplicate_string(get(value.m_handle)))
 {}
@@ -1596,16 +1609,6 @@ inline hstring_ref::size_type hstring_ref::size() const noexcept
 	return WindowsGetStringLen(m_handle);
 }
 
-inline bool embedded_null(hstring_ref value) noexcept
-{
-	return impl::embedded_null(get(value));
-}
-
-inline bool embedded_null(hstring const & value) noexcept
-{
-	return impl::embedded_null(get(value));
-}
-
 inline bool operator==(hstring_ref left, hstring_ref right) noexcept
 {
 	return std::equal(left.begin(), left.end(), right.begin(), right.end());
@@ -1761,10 +1764,10 @@ inline bool operator >(hstring const & left, hstring_ref right) noexcept { retur
 inline bool operator<=(hstring const & left, hstring_ref right) noexcept { return !(right < left); }
 inline bool operator>=(hstring const & left, hstring_ref right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring const & left, hstring const & right) { return !(left == right); }
-inline bool operator >(hstring const & left, hstring const & right) { return right < left; }
-inline bool operator<=(hstring const & left, hstring const & right) { return !(right < left); }
-inline bool operator>=(hstring const & left, hstring const & right) { return !(left < right); }
+inline bool operator!=(hstring const & left, hstring const & right) noexcept { return !(left == right); }
+inline bool operator >(hstring const & left, hstring const & right) noexcept { return right < left; }
+inline bool operator<=(hstring const & left, hstring const & right) noexcept { return !(right < left); }
+inline bool operator>=(hstring const & left, hstring const & right) noexcept { return !(left < right); }
 
 inline bool operator!=(hstring const & left, wchar_t const * const right) noexcept { return !(left == right); }
 inline bool operator >(hstring const & left, wchar_t const * const right) noexcept { return right < left; }
@@ -1785,9 +1788,6 @@ inline bool operator!=(std::wstring const & left, hstring const & right) noexcep
 inline bool operator >(std::wstring const & left, hstring const & right) noexcept { return right < left; }
 inline bool operator<=(std::wstring const & left, hstring const & right) noexcept { return !(right < left); }
 inline bool operator>=(std::wstring const & left, hstring const & right) noexcept { return !(left < right); }
-
-// TODO: this must be removed. The ABI projection should just use HSTRING directly.
-namespace ABI { using hstring = HSTRING; }
 
 }
 
