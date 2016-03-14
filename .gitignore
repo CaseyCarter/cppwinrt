@@ -6,4 +6,5 @@ ipch
 *.opensdf
 *.user
 *.opendb
-~$*
+Modern.db
+*.vc.db

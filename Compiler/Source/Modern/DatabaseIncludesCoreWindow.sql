@@ -1,1 +1,0 @@
-select exists (select * from Classes where FullName like 'Windows::ApplicationModel::Core%')
