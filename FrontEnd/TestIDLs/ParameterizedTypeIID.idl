@@ -1,0 +1,55 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "windows.foundation.idl";
+import "windows.web.http.idl";
+
+
+
+namespace Modern.Test
+{
+[contract(Windows.Foundation.UniversalApiContract, 2)]
+[v1_enum]
+typedef enum EnumTestNoFlags
+{
+    Count = 0,
+    Forever = 100,
+} EnumTestNoFlags;
+
+[contract(Windows.Foundation.UniversalApiContract, 2)]
+[flags] 
+[v1_enum]
+typedef enum EnumTestsWithFlags
+{
+    None      = 0,
+    Animation = 0x10,
+    Effect    = 0x20,
+} EnumTestsWithFlags;
+
+
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+typedef struct Struct1
+{
+    EnumTestNoFlags Field1;
+    EnumTestsWithFlags Field2;
+    Windows.Foundation.IReference<UINT>* Field3;
+} Struct1;
+
+[uuid(14CB6DD5-0902-439E-BFD7-E12552B165CE)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFoo : IInspectable
+{
+    HRESULT Bar(Windows.Foundation.Collections.IVectorView<Struct1>* p);
+};
+
+[uuid(5CBEB4C8-2D9E-45EC-91F7-0B45F4D75EC5)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooWithEventHandler : IInspectable
+{
+    [eventadd] HRESULT Failed( [in] Windows.Foundation.TypedEventHandler<IInspectable*, IInspectable*>* handler, [out, retval] EventRegistrationToken *eventCookie );
+    [eventremove] HRESULT Failed( [in] EventRegistrationToken eventCookie );
+
+    [eventadd] HRESULT Passed( [in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out, retval] EventRegistrationToken *eventCookie );
+    [eventremove] HRESULT Passed( [in] EventRegistrationToken eventCookie );
+};
+}

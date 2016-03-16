@@ -1,0 +1,16 @@
+BytesRetrieved|unsigned|1|Modern::Test::Struct1
+byteField|byte|1|Modern::Test::Struct2
+int16Field|short|1|Modern::Test::Struct2
+uint16Field|unsigned short|1|Modern::Test::Struct2
+int32Field|int|1|Modern::Test::Struct2
+uint32Field|unsigned|1|Modern::Test::Struct2
+int64Field|long long|1|Modern::Test::Struct2
+uint64Field|unsigned long long|1|Modern::Test::Struct2
+floatField|float|1|Modern::Test::Struct2
+doubleField|double|1|Modern::Test::Struct2
+booleanField|boolean|128|Modern::Test::Struct2
+wcharField|wchar_t|1|Modern::Test::Struct2
+hstringField|HSTRING|2|Modern::Test::Struct2
+structField|Windows::Foundation::TimeSpan|8|Modern::Test::Struct2
+enumField|Windows::Foundation::PropertyType|4|Modern::Test::Struct2
+Value|unsigned|1|Modern::Test::DeprecatedStruct
