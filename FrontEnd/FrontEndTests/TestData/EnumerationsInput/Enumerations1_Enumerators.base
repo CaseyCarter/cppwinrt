@@ -1,0 +1,9 @@
+Count|0|Modern::Test::EnumTestNoFlags|0
+Forever|100|Modern::Test::EnumTestNoFlags|0
+None|0|Modern::Test::EnumTestsWithFlags|0
+Animation|16|Modern::Test::EnumTestsWithFlags|0
+Effect|32|Modern::Test::EnumTestsWithFlags|0
+None|0|Modern::Test::DeprecatedEnum|0
+None|0|Modern::Test::EnumWithDeprecatedValue|0
+DeprecatedValue|1|Modern::Test::EnumWithDeprecatedValue|1
+Two|2|Modern::Test::EnumWithDeprecatedValue|0

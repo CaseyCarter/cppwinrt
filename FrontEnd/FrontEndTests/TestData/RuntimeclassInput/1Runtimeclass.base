@@ -1,0 +1,5 @@
+Modern::Test::Bar3|12||Modern::Test::IFoo2|0|0
+Modern::Test::Bar4|12|1|Modern::Test::IFoo2|0|0
+Modern::Test::Bar1|12||Modern::Test::IFoo2|1|0
+Modern::Test::Bar2|12||Modern::Test::IFoo1|0|0
+Modern::Test::BarDeprecated|12||Modern::Test::IFoo2|0|1

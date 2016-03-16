@@ -1,0 +1,371 @@
+
+#include <sdkddkver.h>
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "windows.foundation.idl";
+
+namespace Modern.Test
+{
+
+// Basic delegate used in interface methods
+[uuid(B7DE5527-4C8F-42DD-84DA-5EC493ABDB9A)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+delegate HRESULT DelegateTest([in] boolean value);
+
+[uuid(3E19A640-425A-4179-9AEF-7DA700052E72)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooTest : IInspectable
+{
+    HRESULT DoTest();
+}
+
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+runtimeclass BarTest
+{
+    [default] interface IFooTest;
+}
+
+[uuid(35392C38-CDED-4D4C-9637-05F15C1C9406)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IOneMethodPerParameterType: IInspectable
+{
+    HRESULT DoEmpty();
+    HRESULT DoBYTE(BYTE byteParam);
+    HRESULT DoINT16(INT16 int16Param);
+    HRESULT DoUINT16(UINT16 uint16Param);
+    HRESULT DoINT32(INT32 int32Param);
+    HRESULT DoUINT32(UINT32 uint32Param);
+    HRESULT DoINT64(INT64 int64Param);
+    HRESULT DoUINT64(UINT64 uint64Param);
+    HRESULT DoFLOAT(FLOAT floatParam);
+    HRESULT DoDOUBLE(DOUBLE doubleParam);
+    HRESULT Doboolean(boolean booleanParam);
+    HRESULT DoWCHAR(WCHAR wcharParam);
+    HRESULT DoHSTRING(HSTRING hstringParam);
+    HRESULT DoStruct(Windows.Foundation.TimeSpan structParam);
+    HRESULT DoEnum(Windows.Foundation.PropertyType enumParam);
+    HRESULT DoInterface(Windows.Foundation.IPropertyValue* interfaceParam);
+    HRESULT DoRuntimeclass(BarTest* runtimeclassParam);
+    HRESULT DoDelegate(DelegateTest* delegateParam);
+}
+
+[uuid(6D890267-5676-472D-853C-0D11651B1DA5)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IOneMethodPerPassArrayParameterType: IInspectable
+{
+    HRESULT DoBYTEArray([in]unsigned int size, [in, size_is(size)] BYTE* byteParam);
+    HRESULT DoINT16Array([in]unsigned int size, [in, size_is(size)] INT16* int16Param);
+    HRESULT DoUINT16Array([in]unsigned int size, [in, size_is(size)] UINT16* uint16Param);
+    HRESULT DoINT32Array([in]unsigned int size, [in, size_is(size)] INT32* int32Param);
+    HRESULT DoUINT32Array([in]unsigned int size, [in, size_is(size)] UINT32* uint32Param);
+    HRESULT DoINT64Array([in]unsigned int size, [in, size_is(size)] INT64* int64Param);
+    HRESULT DoUINT64Array([in]unsigned int size, [in, size_is(size)] UINT64* uint64Param);
+    HRESULT DoFLOATArray([in]unsigned int size, [in, size_is(size)] FLOAT* floatParam);
+    HRESULT DoDOUBLEArray([in]unsigned int size, [in, size_is(size)] DOUBLE* doubleParam);
+    HRESULT DobooleanArray([in]unsigned int size, [in, size_is(size)] boolean* booleanParam);
+    HRESULT DoWCHARArray([in]unsigned int size, [in, size_is(size)] WCHAR* wcharParam);
+    HRESULT DoHSTRINGArray([in]unsigned int size, [in, size_is(size)] HSTRING* hstringParam);
+    HRESULT DoStructArray([in]unsigned int size, [in, size_is(size)] Windows.Foundation.TimeSpan* structParam);
+    HRESULT DoEnumArray([in]unsigned int size, [in, size_is(size)] Windows.Foundation.PropertyType* enumParam);
+    HRESULT DoInterfaceArray([in]unsigned int size, [in, size_is(size)] Windows.Foundation.IPropertyValue** interfaceParam);
+    HRESULT DoRuntimeclassArray([in]unsigned int size, [in, size_is(size)] BarTest** runtimeclassParam);
+    HRESULT DoDelegateArray([in]unsigned int size, [in, size_is(size)] DelegateTest** delegateParam);
+}
+
+[uuid(76F4E569-9814-4CB7-8C68-C2F15D64BC75)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooOneMethodWithAllTypesAsInput : IInspectable
+{
+    HRESULT Do(
+        BYTE byteParam,
+        INT16 int16Param,
+        UINT16 uint16Param,
+        INT32 int32Param,
+        UINT32 uint32Param,
+        INT64 int64Param,
+        UINT64 uint64Param,
+        FLOAT floatParam,
+        DOUBLE doubleParam,
+        boolean booleanParam,
+        WCHAR wcharParam,
+        HSTRING hstringParam,
+        Windows.Foundation.TimeSpan structParam,
+        Windows.Foundation.PropertyType enumParam,
+        Windows.Foundation.IPropertyValue* interfaceParam,
+        BarTest* runtimeclassParam,
+        DelegateTest* delegateParam,
+        [in]unsigned int sizeByte, [in, size_is(sizeByte)] BYTE* byteParamArray,
+	    [in]unsigned int sizeInt16, [in, size_is(sizeInt16)] INT16* int16ParamArray,
+	    [in]unsigned int sizeUint16, [in, size_is(sizeUint16)] UINT16* uint16ParamArray,
+	    [in]unsigned int sizeInt32, [in, size_is(sizeInt32)] INT32* int32ParamArray,
+	    [in]unsigned int sizeUInt32, [in, size_is(sizeUInt32)] UINT32* uint32ParamArray,
+	    [in]unsigned int sizeInt64, [in, size_is(sizeInt64)] INT64* int64ParamArray,
+	    [in]unsigned int sizeUint64, [in, size_is(sizeUint64)] UINT64* uint64ParamArray,
+	    [in]unsigned int sizeFloat, [in, size_is(sizeFloat)] FLOAT* floatParamArray,
+	    [in]unsigned int sizeDouble, [in, size_is(sizeDouble)] DOUBLE* doubleParamArray,
+	    [in]unsigned int sizeBoolean, [in, size_is(sizeBoolean)] boolean* booleanParamArray,
+	    [in]unsigned int sizeWchar, [in, size_is(sizeWchar)] WCHAR* wcharParamArray,
+	    [in]unsigned int sizeHstring, [in, size_is(sizeHstring)] HSTRING* hstringParamArray,
+	    [in]unsigned int sizeStruct, [in, size_is(sizeStruct)] Windows.Foundation.TimeSpan* structParamArray,
+	    [in]unsigned int sizeEnum, [in, size_is(sizeEnum)] Windows.Foundation.PropertyType* enumParamArray,
+	    [in]unsigned int sizeInterface, [in, size_is(sizeInterface)] Windows.Foundation.IPropertyValue** interfaceParamArray,
+	    [in]unsigned int sizeRuntimeclass, [in, size_is(sizeRuntimeclass)] BarTest** runtimeclassParamArray,
+	    [in]unsigned int sizeDelegate, [in, size_is(sizeDelegate)] DelegateTest** delegateParamArray);
+}
+
+[uuid(0BC19AED-3878-4443-897C-601CE66B74A5)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IOneMethodPerParameterTypeAsReturn : IInspectable
+{
+    HRESULT DoBYTE([out] [retval] BYTE* byteParameter);
+    HRESULT DoINT16([out] [retval] INT16* int16Parameter);
+    HRESULT DoUINT16([out] [retval] UINT16* uint16Parameter);
+    HRESULT DoINT32([out] [retval] INT32* int32Parameter);
+    HRESULT DoUINT32([out] [retval] UINT32* uint32Parameter);
+    HRESULT DoINT64([out] [retval] INT64* int64Parameter);
+    HRESULT DoUINT64([out] [retval] UINT64* uint64Parameter);
+    HRESULT DoFLOAT([out] [retval] FLOAT* floatParameter);
+    HRESULT DoDOUBLE([out] [retval] DOUBLE* doubleParameter);
+    HRESULT Doboolean([out] [retval] boolean* booleanParameter);
+    HRESULT DoWCHAR([out] [retval] WCHAR* wcharParameter);
+    HRESULT DoHSTRING([out] [retval] HSTRING* hstringParameter);
+    HRESULT DoEnum([out] [retval] Windows.Foundation.PropertyType* enumParameter);
+    HRESULT DoStruct([out] [retval] Windows.Foundation.TimeSpan* structParameter);
+    HRESULT DoInterface([out] [retval] Windows.Foundation.IPropertyValue** interfaceParameter);
+    HRESULT DoRuntimeclass([out] [retval] BarTest** runtimeclassParameter);
+    HRESULT DoDelegate([out] [retval] DelegateTest** delegateParameter);
+}
+
+[uuid(2E295EA0-1A94-438D-A280-A92A7F2DC8A2)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooOneMethodWithOneOutputValuePerType : IInspectable
+{
+    HRESULT DoBYTE([out] BYTE* byteParameter);
+    HRESULT DoINT16([out] INT16* int16Parameter);
+    HRESULT DoUINT16([out] UINT16* uint16Parameter);
+    HRESULT DoINT32([out] INT32* int32Parameter);
+    HRESULT DoUINT32([out] UINT32* uint32Parameter);
+    HRESULT DoINT64([out] INT64* int64Parameter);
+    HRESULT DoUINT64([out] UINT64* uint64Parameter);
+    HRESULT DoFLOAT([out] FLOAT* floatParameter);
+    HRESULT DoDOUBLE([out] DOUBLE* doubleParameter);
+    HRESULT Doboolean([out] boolean* booleanParameter);
+    HRESULT DoWCHAR([out] WCHAR* wcharParameter);
+    HRESULT DoHSTRING([out] HSTRING* hstringParameter);
+    HRESULT DoEnum([out] Windows.Foundation.PropertyType* enumParameter);
+    HRESULT DoStruct([out] Windows.Foundation.TimeSpan* structParameter);
+    HRESULT DoInterface([out] Windows.Foundation.IPropertyValue** interfaceParameter);
+    HRESULT DoRuntimeclass([out] BarTest** runtimeclassParameter);
+    HRESULT DoDelegate([out] DelegateTest** delegateParameter);
+}
+
+[uuid(4F970CD4-373B-49CC-BA6A-B12035D9DE5E)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooOneMethodWithOneOutputFillArrayPerType : IInspectable
+{
+    HRESULT DoBYTEArray([in]unsigned int size, [out, size_is(size)] BYTE* byteParam);
+    HRESULT DoINT16Array([in]unsigned int size, [out, size_is(size)] INT16* int16Param);
+    HRESULT DoUINT16Array([in]unsigned int size, [out, size_is(size)] UINT16* uint16Param);
+    HRESULT DoINT32Array([in]unsigned int size, [out, size_is(size)] INT32* int32Param);
+    HRESULT DoUINT32Array([in]unsigned int size, [out, size_is(size)] UINT32* uint32Param);
+    HRESULT DoINT64Array([in]unsigned int size, [out, size_is(size)] INT64* int64Param);
+    HRESULT DoUINT64Array([in]unsigned int size, [out, size_is(size)] UINT64* uint64Param);
+    HRESULT DoFLOATArray([in]unsigned int size, [out, size_is(size)] FLOAT* floatParam);
+    HRESULT DoDOUBLEArray([in]unsigned int size, [out, size_is(size)] DOUBLE* doubleParam);
+    HRESULT DobooleanArray([in]unsigned int size, [out, size_is(size)] boolean* booleanParam);
+    HRESULT DoWCHARArray([in]unsigned int size, [out, size_is(size)] WCHAR* wcharParam);
+    HRESULT DoHSTRINGArray([in]unsigned int size, [out, size_is(size)] HSTRING* hstringParam);
+    HRESULT DoStructArray([in]unsigned int size, [out, size_is(size)] Windows.Foundation.TimeSpan* structParam);
+    HRESULT DoEnumArray([in]unsigned int size, [out, size_is(size)] Windows.Foundation.PropertyType* enumParam);
+    HRESULT DoInterfaceArray([in]unsigned int size, [out, size_is(size)] Windows.Foundation.IPropertyValue** interfaceParam);
+    HRESULT DoRuntimeclassArray([in]unsigned int size, [out, size_is(size)] BarTest** runtimeclassParam);
+    HRESULT DoDelegateArray([in]unsigned int size, [out, size_is(size)] DelegateTest** delegateParam);	
+}
+
+[uuid(4ADF4E9C-8FC3-49A5-AA6A-29AB5BA42E09)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooOneMethodWithOneOutputReceiveArrayPerType : IInspectable
+{
+    HRESULT DoBYTEArray([out]unsigned int* size, [out, size_is(,*size)] BYTE** byteParam);
+    HRESULT DoINT16Array([out]unsigned int* size, [out, size_is(,*size)] INT16** int16Param);
+    HRESULT DoUINT16Array([out]unsigned int* size, [out, size_is(,*size)] UINT16** uint16Param);
+    HRESULT DoINT32Array([out]unsigned int* size, [out, size_is(,*size)] INT32** int32Param);
+    HRESULT DoUINT32Array([out]unsigned int* size, [out, size_is(,*size)] UINT32** uint32Param);
+    HRESULT DoINT64Array([out]unsigned int* size, [out, size_is(,*size)] INT64** int64Param);
+    HRESULT DoUINT64Array([out]unsigned int* size, [out, size_is(,*size)] UINT64** uint64Param);
+    HRESULT DoFLOATArray([out]unsigned int* size, [out, size_is(,*size)] FLOAT** floatParam);
+    HRESULT DoDOUBLEArray([out]unsigned int* size, [out, size_is(,*size)] DOUBLE** doubleParam);
+    HRESULT DobooleanArray([out]unsigned int* size, [out, size_is(,*size)] boolean** booleanParam);
+    HRESULT DoWCHARArray([out]unsigned int* size, [out, size_is(,*size)] WCHAR** wcharParam);
+    HRESULT DoHSTRINGArray([out]unsigned int* size, [out, size_is(,*size)] HSTRING** hstringParam);
+    HRESULT DoStructArray([out]unsigned int* size, [out, size_is(,*size)] Windows.Foundation.TimeSpan** structParam);
+    HRESULT DoEnumArray([out]unsigned int* size, [out, size_is(,*size)] Windows.Foundation.PropertyType** enumParam);
+    //HRESULT DoInterfaceArray([out]unsigned int* size, [out, size_is(,*size)] Windows.Foundation.IPropertyValue** interfaceParam);
+    //HRESULT DoRuntimeclassArray([out]unsigned int* size, [out, size_is(,*size)] BarTest** runtimeclassParam);
+    //HRESULT DoDelegateArray([out]unsigned int* size, [out, size_is(,*size)] DelegateTest** delegateParam);		
+}
+
+[uuid(894DDF1E-EF60-4B22-834E-34C2C01B6693)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooOneMethodWithAllTypesAsOutput : IInspectable
+{
+    HRESULT Do(BarTest* runtimeclassParam, 
+	    BYTE byteParam,
+	    INT16 int16Param,
+	    UINT16 uint16Param,
+	    INT32 int32Param,
+	    UINT32 uint32Param,
+	    INT64 int64Param,
+	    UINT64 uint64Param,
+	    FLOAT floatParam,
+	    DOUBLE doubleParam,
+	    boolean booleanParam,
+	    WCHAR wcharParam,
+	    HSTRING hstringParam,
+	    Windows.Foundation.TimeSpan structParam,
+	    Windows.Foundation.PropertyType enumParam,
+	    Windows.Foundation.IPropertyValue* interfaceParam,
+	    DelegateTest* delegateParam,
+        [in]unsigned int sizeByte, [out, size_is(sizeByte)] BYTE* byteParamArray,
+	    [in]unsigned int sizeInt16, [out, size_is(sizeInt16)] INT16* int16ParamArray,
+	    [in]unsigned int sizeUint16, [out, size_is(sizeUint16)] UINT16* uint16ParamArray,
+	    [in]unsigned int sizeInt32, [out, size_is(sizeInt32)] INT32* int32ParamArray,
+	    [in]unsigned int sizeUInt32, [out, size_is(sizeUInt32)] UINT32* uint32ParamArray,
+	    [in]unsigned int sizeInt64, [out, size_is(sizeInt64)] INT64* int64ParamArray,
+	    [in]unsigned int sizeUint64, [out, size_is(sizeUint64)] UINT64* uint64ParamArray,
+	    [in]unsigned int sizeFloat, [out, size_is(sizeFloat)] FLOAT* floatParamArray,
+	    [in]unsigned int sizeDouble, [out, size_is(sizeDouble)] DOUBLE* doubleParamArray,
+	    [in]unsigned int sizeBoolean, [out, size_is(sizeBoolean)] boolean* booleanParamArray,
+	    [in]unsigned int sizeWchar, [out, size_is(sizeWchar)] WCHAR* wcharParamArray,
+	    [in]unsigned int sizeHstring, [out, size_is(sizeHstring)] HSTRING* hstringParamArray,
+	    [in]unsigned int sizeStruct, [out, size_is(sizeStruct)] Windows.Foundation.TimeSpan* structParamArray,
+	    [in]unsigned int sizeEnum, [out, size_is(sizeEnum)] Windows.Foundation.PropertyType* enumParamArray,
+	    [in]unsigned int sizeInterface, [out, size_is(sizeInterface)] Windows.Foundation.IPropertyValue** interfaceParamArray,
+	    [in]unsigned int sizeRuntimeclass, [out, size_is(sizeRuntimeclass)] BarTest** runtimeclassParamArray,
+	    [in]unsigned int sizeDelegate, [out, size_is(sizeDelegate)] DelegateTest** delegateParamArray);
+}
+
+[uuid(11493F74-F454-4696-83C6-1227A482F7AA)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IOneMethodPerParameterTypeUsingAnIVector: IInspectable
+{
+    HRESULT DoBYTE(IVector<BYTE>* byteParam);
+    HRESULT DoINT16(IVector<INT16>* int16Param);
+    HRESULT DoUINT16(IVector<UINT16>* uint16Param);
+    HRESULT DoINT32(IVector<INT32>* int32Param);
+    HRESULT DoUINT32(IVector<UINT32>* uint32Param);
+    HRESULT DoINT64(IVector<INT64>* int64Param);
+    HRESULT DoUINT64(IVector<UINT64>* uint64Param);
+    HRESULT DoFLOAT(IVector<FLOAT>* floatParam);
+    HRESULT DoDOUBLE(IVector<DOUBLE>* doubleParam);
+    HRESULT Doboolean(IVector<boolean>* booleanParam);
+    HRESULT DoWCHAR(IVector<WCHAR>* wcharParam);
+    HRESULT DoHSTRING(IVector<HSTRING>* hstringParam);
+    HRESULT DoStruct(IVector<Windows.Foundation.TimeSpan>* structParam);
+    HRESULT DoEnum(IVector<Windows.Foundation.PropertyType>* enumParam);
+    HRESULT DoInterface(IVector<Windows.Foundation.IPropertyValue*>* interfaceParam);
+    HRESULT DoRuntimeclass(IVector<BarTest*>* runtimeclassParam);
+    HRESULT DoDelegate(IVector<DelegateTest*>* delegateParam);
+}
+
+[uuid(CB12ECB7-6751-403B-BA5C-979569D4EEF0)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IOneMethodPerParameterTypeUsingAnIMap: IInspectable
+{
+    HRESULT DoBYTE(IMap<HSTRING, BYTE>* byteParam);
+    HRESULT DoINT16(IMap<HSTRING, INT16>* int16Param);
+    HRESULT DoUINT16(IMap<HSTRING, UINT16>* uint16Param);
+    HRESULT DoINT32(IMap<HSTRING, INT32>* int32Param);
+    HRESULT DoUINT32(IMap<HSTRING, UINT32>* uint32Param);
+    HRESULT DoINT64(IMap<HSTRING, INT64>* int64Param);
+    HRESULT DoUINT64(IMap<HSTRING, UINT64>* uint64Param);
+    HRESULT DoFLOAT(IMap<HSTRING, FLOAT>* floatParam);
+    HRESULT DoDOUBLE(IMap<HSTRING, DOUBLE>* doubleParam);
+    HRESULT Doboolean(IMap<HSTRING, boolean>* booleanParam);
+    HRESULT DoWCHAR(IMap<HSTRING, WCHAR>* wcharParam);
+    HRESULT DoHSTRING(IMap<HSTRING, HSTRING>* hstringParam);
+    HRESULT DoStruct(IMap<HSTRING, Windows.Foundation.TimeSpan>* structParam);
+    HRESULT DoEnum(IMap<HSTRING, Windows.Foundation.PropertyType>* enumParam);
+    HRESULT DoInterface(IMap<HSTRING, Windows.Foundation.IPropertyValue*>* interfaceParam);
+    HRESULT DoRuntimeclass(IMap<HSTRING, BarTest*>* runtimeclassParam);
+    HRESULT DoDelegate(IMap<HSTRING, DelegateTest*>* delegateParam);
+}
+
+// Return parameters mixed with input and output
+
+[uuid(A292D766-FFEB-43BA-BA52-BA06794EB10B)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IMixInputOutputParameters : IInspectable
+{
+    HRESULT Do1(HSTRING value1, [out] [retval] int* retValue);
+    HRESULT Do2(HSTRING value1, [out] HSTRING* value2, [out] [retval] int* retValue);
+}
+
+// Interface that requires another interface
+[uuid(B08746AB-3945-448E-B635-A8B9B4A15916)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooThatRequires : IInspectable requires IFooTest
+{
+    HRESULT Do();
+}
+
+// Deprecated interface at the interface level
+[uuid(E93754DF-06C2-4E5D-9F4F-D2C541E683C3)]
+[deprecated("Awesome deprecated text", deprecate, Windows.Foundation.UniversalApiContract, 1)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IDeprecatedInterface : IInspectable
+{
+    HRESULT Do();
+}
+
+// Deprecated methods in the interface
+[uuid(FE5D2591-53AF-49BD-A6D6-0CF7DECC9E14)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IInterfaceWithDeprecatedMethods1 : IInspectable
+{
+    HRESULT Do();
+    [deprecated("Awesome deprecated text", deprecate, Windows.Foundation.UniversalApiContract, 1)]
+    HRESULT DeprecatedMethod();
+}
+
+[uuid(87E626A2-F9E1-4491-9046-436C9B46532A)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IInterfaceWithDeprecatedMethods2 : IInspectable
+{
+    HRESULT Do1();
+    [deprecated("Awesome deprecated text", deprecate, Windows.Foundation.UniversalApiContract, 1)]
+    HRESULT DeprecatedMethod1();
+    HRESULT Do2();
+    [deprecated("Awesome deprecated text 2", deprecate, Windows.Foundation.UniversalApiContract, 1)]
+    HRESULT DeprecatedMethod2();
+}
+
+[uuid(75E86DE3-AF4C-4548-8C8D-C537D236587E)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IInterfaceWithMethodsThatUseArray : IInspectable
+{
+    HRESULT PassArray([in]unsigned int i, [in, size_is(i)] int* array);
+    HRESULT FillArray([in]unsigned int i, [out, size_is(i)] int* array);
+    HRESULT ReceiveArray([out]unsigned int* i, [out, size_is(,*i)] int** array);
+}
+
+[uuid(FDB9016A-F058-40E9-9ABA-3B28BD07E161)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IInterfaceWithMethodsWithSpecialNames : IInspectable
+{
+    [eventadd]    HRESULT AccountCommandsRequested([in] Windows.Foundation.TypedEventHandler<IFooTest*, boolean> *handler, [out, retval] EventRegistrationToken *cookie);
+    [eventremove] HRESULT AccountCommandsRequested([in] EventRegistrationToken cookie);
+    [propget] HRESULT ConsumeInput([out, retval] IFooTest** value);
+    [propput] HRESULT ConsumeInput([in] IFooTest* value);
+}
+
+[uuid(545F17FF-FC99-46C6-AA24-62D477D97248)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IInterfaceWithAMethodWithStructByRef : IInspectable
+{
+    HRESULT Method([in] struct Windows.Foundation.TimeSpan const * pInput);
+}
+
+}

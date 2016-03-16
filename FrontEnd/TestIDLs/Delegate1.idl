@@ -1,0 +1,13 @@
+#include <sdkddkver.h>
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "windows.foundation.idl";
+
+namespace Modern.Test
+{
+[uuid(77A83338-3515-4573-AAD6-BA699DFAC16D)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+delegate HRESULT ActivateApplicationHandler([in] HSTRING value1, [in] UINT value2, [in] IInspectable* value3);
+}

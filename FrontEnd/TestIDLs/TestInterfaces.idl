@@ -1,0 +1,91 @@
+// Copyright (c) Microsoft Corporation.
+// All rights reserved.
+
+import "unknwn.idl";
+import "Windows.Foundation.idl";
+
+namespace TestMarshaling
+{
+    [version(1)]
+    typedef enum TestEnum
+    {
+        MyEnumValue = 1,
+        YourEnumValue = 2
+    } TestEnum;
+
+    [version(1)]
+    typedef struct TestStruct
+    {
+        INT16 simpleValue;
+        Windows.Foundation.IReference<INT16> *genericValue;
+        DOUBLE numericValue;
+    } TestStruct;
+
+    [version(1)]
+    [uuid(1e6085f9-c0e1-42ca-a58b-cc54e476381d)]
+    interface IMagicNumberGenerator : IInspectable
+    {
+        HRESULT GetMagicNumber([out] UINT32 *pMagicNumber);
+    }
+
+    [version(1)]
+    runtimeclass RMagicNumberGenerator
+    {
+        [default] interface IMagicNumberGenerator;
+    }
+
+    [version(1)]
+    [uuid(da0a7bcf-f06b-4f02-aebe-880b6b437853)]
+    interface IThoroughInterface : IInspectable
+    {
+        // Sanity checking the most basic of function calls
+        HRESULT MethodSanity();
+
+        //  Fundamental types as [in] parameters
+        HRESULT MethodSignedInts([in] INT16 param1, [in] INT32 param2, [in] INT64 param3);
+        HRESULT MethodUnsignedInts([in] UINT16 param1, [in] UINT32 param2, [in] UINT64 param3);
+        HRESULT MethodFloatsAndDoubles([in] FLOAT param1, [in] DOUBLE param2);
+        HRESULT MethodCharactersAndStrings([in] WCHAR param1, [in] HSTRING param2);
+        HRESULT MethodBoolean([in] boolean param1);
+        HRESULT MethodGuid([in] GUID param1);
+        HRESULT MethodArray([in] UINT32 cItems, [in, size_is(cItems)] DOUBLE *items);
+        HRESULT MethodRC([in] RMagicNumberGenerator *pClass, [out] UINT32 *pNumber);
+
+        // User-defined types as [in] parameters
+        HRESULT MethodEnum([in] TestEnum param1);
+        HRESULT MethodStruct([in] TestStruct param1);
+        HRESULT MethodIInspectable([in] IInspectable *pParam1);
+
+        // Out parameters
+        HRESULT MethodOutSignedInts([out] INT16 *param1, [out] INT32 *param2, [out] INT64 *param3);
+        HRESULT MethodOutUnsignedInts([out] UINT16 *param1, [out] UINT32 *param2, [out] UINT64 *param3);
+        HRESULT MethodOutFloatsAndDoubles([out] FLOAT *param1, [out] DOUBLE *param2);
+        HRESULT MethodOutCharactersAndStrings([out] WCHAR *param1, [out, retval] HSTRING *param2);
+        HRESULT MethodOutBoolean([out] boolean *param1);
+        HRESULT MethodOutGuid([out] GUID *param1);
+        HRESULT MethodOutParamsIInspectable([out, retval] IInspectable **ppParam1);
+
+        // Array patterns
+        HRESULT MethodFillArray([in, range(0, 10)] UINT32 cItems,
+                                [out, size_is(cItems), length_is(*pcLength)] boolean *items,
+                                [out] UINT32 *pcLength);
+
+        HRESULT MethodPassArray([in, range(0, 10)] UINT32 cItems,
+                                [in, size_is(cItems)] UINT32 *items,
+                                [in] UINT32 cElements);
+
+        HRESULT MethodReceiveArray([out] UINT32 *pcSize,
+                                   [out, size_is(,*pcSize)] UINT32 **items);
+
+        // Pinterfaces
+        HRESULT MethodPinterfaceIn([in] IVector<UINT32> *pVector);
+        HRESULT MethodPinterfaceOut([out] IMap<UINT32, IInspectable*> **ppParam1, [out,retval] IVector<BYTE> **pParam2);
+    }
+
+    [version(1)]
+    runtimeclass RCThoroughInterface
+    {
+        [default] interface IThoroughInterface;
+    }
+
+}
