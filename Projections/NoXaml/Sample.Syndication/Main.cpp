@@ -16,9 +16,9 @@ std::future<void> Sample()
 
     for (SyndicationItem item : feed.Items())
     {
-        String title = item.Title().Text();
+        hstring title = item.Title().Text();
 
-        printf("%ls\n", title.Buffer());
+        printf("%ls\n", title.c_str());
     }
 }
 

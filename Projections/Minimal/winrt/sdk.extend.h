@@ -3,7 +3,9 @@
 
 #pragma once
 
-namespace winrt { namespace Windows { namespace ApplicationModel { namespace Core {
+namespace winrt {
+
+namespace Windows { namespace ApplicationModel { namespace Core {
 
 template <typename T>
 struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
@@ -30,7 +32,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 	}
 
-	void Load(String const &) const noexcept
+	void Load(hstring_ref) const noexcept
 	{
 	}
 
@@ -47,37 +49,37 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 	}
 
-	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
+	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
+			static_cast<T *>(this)->Initialize(lease<CoreApplicationView>(view));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
+	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
+			static_cast<T *>(this)->SetWindow(lease<UI::Core::CoreWindow>(window));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept
+	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
+			static_cast<T *>(this)->Load(lease<hstring>(entryPoint));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Run() noexcept
+	HRESULT __stdcall abi_Run() noexcept override
 	{
 		try
 		{
@@ -87,7 +89,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Uninitialize() noexcept
+	HRESULT __stdcall abi_Uninitialize() noexcept override
 	{
 		try
 		{
@@ -98,4 +100,6 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	}
 };
 
-}}}}
+}}}
+
+}

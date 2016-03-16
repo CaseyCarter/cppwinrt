@@ -47,8 +47,9 @@ struct handle
 	void close() noexcept
 	{
 		if (*this)
-		{	
+		{
 			T::close(m_value);
+			m_value = T::invalid();
 		}
 	}
 

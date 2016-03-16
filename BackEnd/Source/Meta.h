@@ -101,7 +101,6 @@ inline void swap(Parameter & left, Parameter & right)
 struct ParameterInfo
 {
     std::vector<Parameter> Parameters;
-    unsigned StringCount = 0;
     int HasReturnType = false;
     bool HasDelegate = false;
     // TODO: Remove once support for arrays is added
@@ -116,7 +115,6 @@ struct ParameterInfo
     void Clear() noexcept
     {
         Parameters.clear();
-        StringCount = 0;
         HasReturnType = false;
         HasDelegate = false;
         // TODO: Remove once support for arrays is added

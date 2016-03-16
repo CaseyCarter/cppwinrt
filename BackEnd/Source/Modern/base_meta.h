@@ -40,33 +40,6 @@ struct traits
 	using abi = T;
 };
 
-template <typename To>
-struct lease : To
-{
-	template <typename From>
-	lease(From value) noexcept : To(nullptr)
-	{
-		*put(*static_cast<To *>(this)) = value;
-	}
-
-	~lease() noexcept
-	{
-		detach(*static_cast<To *>(this));
-	}
-};
-
-template <typename To, typename From, typename std::enable_if<std::is_pod<To>::value>::type * = nullptr>
-To forward(From value) noexcept
-{
-	return value;
-}
-
-template <typename To, typename From, typename std::enable_if<!std::is_pod<To>::value>::type * = nullptr>
-lease<To> forward(From value) noexcept
-{
-	return lease<To>(value);
-}
-
 template <typename T>
 class has_GetAt
 {
@@ -92,7 +65,7 @@ public:
 template <typename Crtp, typename Qi, typename Base>
 auto shim(Base const * base)
 {
-	return static_cast<Qi const &>(static_cast<Crtp const &>(*base));
+	return get(static_cast<Qi const &>(static_cast<Crtp const &>(*base)));
 }
 
 template <typename T, typename R>
@@ -100,7 +73,7 @@ struct requires : traits<R>::template methods<requires<T, R>>
 {
 	operator R() const noexcept
 	{
-		return static_cast<T const *>(this)->As<R>();
+		return static_cast<T const *>(this)->template As<R>();
 	}
 };
 
@@ -140,26 +113,7 @@ template <typename T, typename ... B>
 struct bases : impl::bases<T, B> ...
 {};
 
-template <typename T, typename ... Args, typename std::enable_if<!impl::has_composable<T>::value>::type * = nullptr>
-auto make(Args && ... args)
-{
-	typename T::default_interface instance;
-	*put(instance) = new T(std::forward<Args>(args) ...);
-	return instance;
-}
-
-template <typename T, typename ... Args, typename std::enable_if<impl::has_composable<T>::value>::type * = nullptr>
-auto make(Args && ... args)
-{
-	Windows::IInspectable instance;
-	*put(instance) = new T(std::forward<Args>(args) ...);
-	return instance.As<T::composable>();
-}
-
-
-}
-
-namespace winrt { namespace impl {
+namespace impl {
 
 template <typename First, typename ... Rest>
 struct implements : winrt::implements<abi<First>, abi<Rest> ..., ::IAgileObject>

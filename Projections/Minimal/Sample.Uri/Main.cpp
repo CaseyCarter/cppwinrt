@@ -9,5 +9,5 @@ int main()
 
     Uri uri(L"http://host/path");
 
-    printf("%ls\n", uri.Path().Buffer());
+    printf("%ls\n", uri.Path().c_str());
 }

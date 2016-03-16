@@ -8,7 +8,7 @@ using namespace Windows::Storage::Streams;
 using namespace Windows::Graphics::Imaging;
 using namespace Windows::Media::Ocr;
 
-String MessagePath()
+hstring MessagePath()
 {
     // StorageFile.GetFileFromPathAsync doesn't appear to honor the "current directory"
     // so we have to get that ourselves...
@@ -21,7 +21,7 @@ String MessagePath()
     return buffer;
 }
 
-future<String> Sample()
+future<hstring> Sample()
 {
     StorageFile file = await StorageFile::GetFileFromPathAsync(MessagePath());
 
@@ -42,7 +42,7 @@ int main()
 {
     Initialize();
 
-    String text = Sample().get();
+    hstring text = Sample().get();
 
-    printf("%ls\n", text.Buffer());
+    printf("%ls\n", text.c_str());
 }

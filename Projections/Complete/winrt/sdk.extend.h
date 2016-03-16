@@ -45,14 +45,14 @@ struct IUIElementOverridesT : A
 template <typename T, typename A = ABI::Windows::UI::Xaml::IVisualStateManagerOverrides>
 struct IVisualStateManagerOverridesT : A
 {
-	bool GoToStateCore(Windows::UI::Xaml::Controls::Control const & control, Windows::UI::Xaml::FrameworkElement const & templateRoot, StringReference const & stateName, Windows::UI::Xaml::VisualStateGroup const & group, Windows::UI::Xaml::VisualState const & state, bool const useTransitions)
+	bool GoToStateCore(Windows::UI::Xaml::Controls::Control const & control, Windows::UI::Xaml::FrameworkElement const & templateRoot, hstring_ref stateName, Windows::UI::Xaml::VisualStateGroup const & group, Windows::UI::Xaml::VisualState const & state, bool const useTransitions)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::IVisualStateManagerOverrides>().GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
 	}
 
 	virtual HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, HSTRING stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->GoToStateCore(impl::forward<Windows::UI::Xaml::Controls::Control>(control), impl::forward<Windows::UI::Xaml::FrameworkElement>(templateRoot), impl::forward<String>(stateName), impl::forward<Windows::UI::Xaml::VisualStateGroup>(group), impl::forward<Windows::UI::Xaml::VisualState>(state), useTransitions); return S_OK; }
+		try { static_cast<T *>(this)->GoToStateCore(lease<Windows::UI::Xaml::Controls::Control>(control), lease<Windows::UI::Xaml::FrameworkElement>(templateRoot), lease<hstring>(stateName), lease<Windows::UI::Xaml::VisualStateGroup>(group), lease<Windows::UI::Xaml::VisualState>(state), useTransitions); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -97,14 +97,14 @@ struct IFrameworkElementOverridesT : A
 template <typename T, typename A = ABI::Windows::UI::Xaml::IFrameworkElementOverrides2>
 struct IFrameworkElementOverrides2T : A
 {
-	bool GoToElementStateCore(StringReference const & stateName, bool const useTransitions)
+	bool GoToElementStateCore(hstring_ref stateName, bool const useTransitions)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::IFrameworkElementOverrides2>().GoToElementStateCore(stateName, useTransitions);
 	}
 
 	virtual HRESULT __stdcall abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool * returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->GoToElementStateCore(impl::forward<String>(stateName), useTransitions); return S_OK; }
+		try { static_cast<T *>(this)->GoToElementStateCore(lease<hstring>(stateName), useTransitions); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -159,55 +159,55 @@ struct IApplicationOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnActivated(abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnActivated(impl::forward<Windows::ApplicationModel::Activation::IActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnActivated(lease<Windows::ApplicationModel::Activation::IActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnLaunched(abi_arg_in<Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnLaunched(impl::forward<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnLaunched(lease<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnFileActivated(impl::forward<Windows::ApplicationModel::Activation::FileActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnFileActivated(lease<Windows::ApplicationModel::Activation::FileActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnSearchActivated(abi_arg_in<Windows::ApplicationModel::Activation::ISearchActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnSearchActivated(impl::forward<Windows::ApplicationModel::Activation::SearchActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnSearchActivated(lease<Windows::ApplicationModel::Activation::SearchActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnShareTargetActivated(abi_arg_in<Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnShareTargetActivated(impl::forward<Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnShareTargetActivated(lease<Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileOpenPickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnFileOpenPickerActivated(impl::forward<Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnFileOpenPickerActivated(lease<Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnFileSavePickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnFileSavePickerActivated(impl::forward<Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnFileSavePickerActivated(lease<Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnCachedFileUpdaterActivated(abi_arg_in<Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnCachedFileUpdaterActivated(impl::forward<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnCachedFileUpdaterActivated(lease<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnWindowCreated(abi_arg_in<Windows::UI::Xaml::IWindowCreatedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnWindowCreated(impl::forward<Windows::UI::Xaml::WindowCreatedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnWindowCreated(lease<Windows::UI::Xaml::WindowCreatedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -224,12 +224,12 @@ struct IAutomationPeerOverridesT : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPatternCore(patternInterface);
 	}
 
-	String GetAcceleratorKeyCore()
+	hstring GetAcceleratorKeyCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAcceleratorKeyCore();
 	}
 
-	String GetAccessKeyCore()
+	hstring GetAccessKeyCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAccessKeyCore();
 	}
@@ -239,7 +239,7 @@ struct IAutomationPeerOverridesT : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationControlTypeCore();
 	}
 
-	String GetAutomationIdCore()
+	hstring GetAutomationIdCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationIdCore();
 	}
@@ -254,7 +254,7 @@ struct IAutomationPeerOverridesT : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetChildrenCore();
 	}
 
-	String GetClassNameCore()
+	hstring GetClassNameCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClassNameCore();
 	}
@@ -264,17 +264,17 @@ struct IAutomationPeerOverridesT : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClickablePointCore();
 	}
 
-	String GetHelpTextCore()
+	hstring GetHelpTextCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetHelpTextCore();
 	}
 
-	String GetItemStatusCore()
+	hstring GetItemStatusCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemStatusCore();
 	}
 
-	String GetItemTypeCore()
+	hstring GetItemTypeCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemTypeCore();
 	}
@@ -284,12 +284,12 @@ struct IAutomationPeerOverridesT : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLabeledByCore();
 	}
 
-	String GetLocalizedControlTypeCore()
+	hstring GetLocalizedControlTypeCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLocalizedControlTypeCore();
 	}
 
-	String GetNameCore()
+	hstring GetNameCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetNameCore();
 	}
@@ -632,7 +632,7 @@ struct IAutomationPeerOverrides4T : A
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLandmarkTypeCore();
 	}
 
-	String GetLocalizedLandmarkTypeCore()
+	hstring GetLocalizedLandmarkTypeCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLocalizedLandmarkTypeCore();
 	}
@@ -660,7 +660,7 @@ struct IItemsControlAutomationPeerOverrides2T : A
 
 	virtual HRESULT __stdcall abi_OnCreateItemAutomationPeer(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->OnCreateItemAutomationPeer(impl::forward<IInspectable>(item)); return S_OK; }
+		try { static_cast<T *>(this)->OnCreateItemAutomationPeer(lease<IInspectable>(item)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -679,7 +679,7 @@ struct IDataTemplateSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectTemplateCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->SelectTemplateCore(impl::forward<IInspectable>(item), impl::forward<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
+		try { static_cast<T *>(this)->SelectTemplateCore(lease<IInspectable>(item), lease<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -694,7 +694,7 @@ struct IDataTemplateSelectorOverrides2T : A
 
 	virtual HRESULT __stdcall abi_SelectTemplateForItemCore(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->SelectTemplateCore(impl::forward<IInspectable>(item)); return S_OK; }
+		try { static_cast<T *>(this)->SelectTemplateCore(lease<IInspectable>(item)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -709,7 +709,7 @@ struct IStyleSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectStyleCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->SelectStyleCore(impl::forward<IInspectable>(item), impl::forward<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
+		try { static_cast<T *>(this)->SelectStyleCore(lease<IInspectable>(item), lease<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -724,7 +724,7 @@ struct IGroupStyleSelectorOverridesT : A
 
 	virtual HRESULT __stdcall abi_SelectGroupStyleCore(abi_arg_in<IInspectable> group, unsigned level, abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->SelectGroupStyleCore(impl::forward<IInspectable>(group), level); return S_OK; }
+		try { static_cast<T *>(this)->SelectGroupStyleCore(lease<IInspectable>(group), level); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -744,13 +744,13 @@ struct IContentPresenterOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
 	{
-		try { static_cast<T *>(this)->OnContentTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
+		try { static_cast<T *>(this)->OnContentTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), lease<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
 	{
-		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
+		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -775,7 +775,7 @@ struct IVirtualizingPanelOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemsChanged(impl::forward<IInspectable>(sender), impl::forward<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>(args)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemsChanged(lease<IInspectable>(sender), lease<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>(args)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
@@ -802,7 +802,7 @@ struct IVirtualizingStackPanelOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnCleanUpVirtualizedItem(abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnCleanUpVirtualizedItem(impl::forward<Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnCleanUpVirtualizedItem(lease<Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -937,151 +937,151 @@ struct IControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnPointerEntered(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerEntered(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerEntered(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerPressed(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerPressed(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerPressed(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerMoved(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerMoved(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerMoved(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerReleased(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerReleased(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerReleased(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerExited(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerExited(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerExited(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerCaptureLost(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerCaptureLost(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerCaptureLost(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerCanceled(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerCanceled(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerCanceled(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnPointerWheelChanged(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnPointerWheelChanged(impl::forward<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnPointerWheelChanged(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnTapped(abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnTapped(impl::forward<Windows::UI::Xaml::Input::TappedRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnTapped(lease<Windows::UI::Xaml::Input::TappedRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDoubleTapped(abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDoubleTapped(impl::forward<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDoubleTapped(lease<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnHolding(abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnHolding(impl::forward<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnHolding(lease<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnRightTapped(abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnRightTapped(impl::forward<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnRightTapped(lease<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnManipulationStarting(impl::forward<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnManipulationStarting(lease<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationInertiaStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnManipulationInertiaStarting(impl::forward<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnManipulationInertiaStarting(lease<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationStarted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnManipulationStarted(impl::forward<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnManipulationStarted(lease<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationDelta(abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnManipulationDelta(impl::forward<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnManipulationDelta(lease<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnManipulationCompleted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnManipulationCompleted(impl::forward<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnManipulationCompleted(lease<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnKeyUp(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnKeyUp(impl::forward<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnKeyUp(lease<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnKeyDown(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnKeyDown(impl::forward<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnKeyDown(lease<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnGotFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnGotFocus(impl::forward<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnGotFocus(lease<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnLostFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnLostFocus(impl::forward<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnLostFocus(lease<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragEnter(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDragEnter(impl::forward<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDragEnter(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragLeave(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDragLeave(impl::forward<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDragLeave(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDragOver(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDragOver(impl::forward<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDragOver(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDrop(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDrop(impl::forward<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDrop(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1106,19 +1106,19 @@ struct IContentControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		try { static_cast<T *>(this)->OnContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent)); return S_OK; }
+		try { static_cast<T *>(this)->OnContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
 	{
-		try { static_cast<T *>(this)->OnContentTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
+		try { static_cast<T *>(this)->OnContentTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), lease<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
 	{
-		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
+		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1178,7 +1178,7 @@ struct IItemsControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_IsItemItsOwnContainerOverride(abi_arg_in<IInspectable> item, bool * returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->IsItemItsOwnContainerOverride(impl::forward<IInspectable>(item)); return S_OK; }
+		try { static_cast<T *>(this)->IsItemItsOwnContainerOverride(lease<IInspectable>(item)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
@@ -1190,49 +1190,49 @@ struct IItemsControlOverridesT : A
 
 	virtual HRESULT __stdcall abi_ClearContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
 	{
-		try { static_cast<T *>(this)->ClearContainerForItemOverride(impl::forward<Windows::UI::Xaml::DependencyObject>(element), impl::forward<IInspectable>(item)); return S_OK; }
+		try { static_cast<T *>(this)->ClearContainerForItemOverride(lease<Windows::UI::Xaml::DependencyObject>(element), lease<IInspectable>(item)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_PrepareContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
 	{
-		try { static_cast<T *>(this)->PrepareContainerForItemOverride(impl::forward<Windows::UI::Xaml::DependencyObject>(element), impl::forward<IInspectable>(item)); return S_OK; }
+		try { static_cast<T *>(this)->PrepareContainerForItemOverride(lease<Windows::UI::Xaml::DependencyObject>(element), lease<IInspectable>(item)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemsChanged(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemsChanged(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemContainerStyleChanged(abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemContainerStyleChanged(impl::forward<Windows::UI::Xaml::Style>(oldItemContainerStyle), impl::forward<Windows::UI::Xaml::Style>(newItemContainerStyle)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemContainerStyleChanged(lease<Windows::UI::Xaml::Style>(oldItemContainerStyle), lease<Windows::UI::Xaml::Style>(newItemContainerStyle)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemContainerStyleSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::StyleSelector>(oldItemContainerStyleSelector), impl::forward<Windows::UI::Xaml::Controls::StyleSelector>(newItemContainerStyleSelector)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemContainerStyleSelectorChanged(lease<Windows::UI::Xaml::Controls::StyleSelector>(oldItemContainerStyleSelector), lease<Windows::UI::Xaml::Controls::StyleSelector>(newItemContainerStyleSelector)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemTemplateChanged(impl::forward<Windows::UI::Xaml::DataTemplate>(oldItemTemplate), impl::forward<Windows::UI::Xaml::DataTemplate>(newItemTemplate)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldItemTemplate), lease<Windows::UI::Xaml::DataTemplate>(newItemTemplate)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnItemTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
 	{
-		try { static_cast<T *>(this)->OnItemTemplateSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldItemTemplateSelector), impl::forward<Windows::UI::Xaml::Controls::DataTemplateSelector>(newItemTemplateSelector)); return S_OK; }
+		try { static_cast<T *>(this)->OnItemTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldItemTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newItemTemplateSelector)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnGroupStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
 	{
-		try { static_cast<T *>(this)->OnGroupStyleSelectorChanged(impl::forward<Windows::UI::Xaml::Controls::GroupStyleSelector>(oldGroupStyleSelector), impl::forward<Windows::UI::Xaml::Controls::GroupStyleSelector>(newGroupStyleSelector)); return S_OK; }
+		try { static_cast<T *>(this)->OnGroupStyleSelectorChanged(lease<Windows::UI::Xaml::Controls::GroupStyleSelector>(oldGroupStyleSelector), lease<Windows::UI::Xaml::Controls::GroupStyleSelector>(newGroupStyleSelector)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1268,19 +1268,19 @@ struct IToggleSwitchOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnOnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		try { static_cast<T *>(this)->OnOnContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent)); return S_OK; }
+		try { static_cast<T *>(this)->OnOnContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOffContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		try { static_cast<T *>(this)->OnOffContentChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent)); return S_OK; }
+		try { static_cast<T *>(this)->OnOffContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnHeaderChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
 	{
-		try { static_cast<T *>(this)->OnHeaderChanged(impl::forward<IInspectable>(oldContent), impl::forward<IInspectable>(newContent)); return S_OK; }
+		try { static_cast<T *>(this)->OnHeaderChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1300,13 +1300,13 @@ struct IComboBoxOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnDropDownClosed(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDropDownClosed(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDropDownClosed(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnDropDownOpened(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnDropDownOpened(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnDropDownOpened(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1326,13 +1326,13 @@ struct IAppBarOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnClosed(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnClosed(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnClosed(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOpened(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnOpened(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnOpened(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1352,13 +1352,13 @@ struct IAppBarOverrides3T : A
 
 	virtual HRESULT __stdcall abi_OnClosing(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnClosing(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnClosing(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnOpening(abi_arg_in<IInspectable> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnOpening(impl::forward<IInspectable>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnOpening(lease<IInspectable>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1383,19 +1383,19 @@ struct IPageOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnNavigatedFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnNavigatedFrom(impl::forward<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnNavigatedFrom(lease<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnNavigatedTo(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnNavigatedTo(impl::forward<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnNavigatedTo(lease<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 
 	virtual HRESULT __stdcall abi_OnNavigatingFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
 	{
-		try { static_cast<T *>(this)->OnNavigatingFrom(impl::forward<Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>(e)); return S_OK; }
+		try { static_cast<T *>(this)->OnNavigatingFrom(lease<Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>(e)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1564,12 +1564,12 @@ namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
 struct INavigationTransitionInfoOverridesT : A
 {
-	String GetNavigationStateCore()
+	hstring GetNavigationStateCore()
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().GetNavigationStateCore();
 	}
 
-	void SetNavigationStateCore(StringReference const & navigationState)
+	void SetNavigationStateCore(hstring_ref navigationState)
 	{
 		static_cast<T *>(this)->As<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
 	}
@@ -1582,7 +1582,7 @@ struct INavigationTransitionInfoOverridesT : A
 
 	virtual HRESULT __stdcall abi_SetNavigationStateCore(HSTRING navigationState) noexcept override
 	{
-		try { static_cast<T *>(this)->SetNavigationStateCore(impl::forward<String>(navigationState)); return S_OK; }
+		try { static_cast<T *>(this)->SetNavigationStateCore(lease<hstring>(navigationState)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1601,7 +1601,7 @@ struct IXamlRenderingBackgroundTaskOverridesT : A
 
 	virtual HRESULT __stdcall abi_OnRun(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
 	{
-		try { static_cast<T *>(this)->OnRun(impl::forward<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(taskInstance)); return S_OK; }
+		try { static_cast<T *>(this)->OnRun(lease<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(taskInstance)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1613,14 +1613,14 @@ namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
 struct ICustomXamlResourceLoaderOverridesT : A
 {
-	Windows::IInspectable GetResource(StringReference const & resourceId, StringReference const & objectType, StringReference const & propertyName, StringReference const & propertyType)
+	Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType)
 	{
 		return static_cast<T *>(this)->As<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
 	}
 
 	virtual HRESULT __stdcall abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, abi_arg_out<IInspectable> returnValue) noexcept override
 	{
-		try { static_cast<T *>(this)->GetResource(impl::forward<String>(resourceId), impl::forward<String>(objectType), impl::forward<String>(propertyName), impl::forward<String>(propertyType)); return S_OK; }
+		try { static_cast<T *>(this)->GetResource(lease<hstring>(resourceId), lease<hstring>(objectType), lease<hstring>(propertyName), lease<hstring>(propertyType)); return S_OK; }
 		catch (...) { return impl::to_hresult(); }
 	}
 };
@@ -1639,7 +1639,7 @@ protected:
 
 	DependencyObjectT()
 	{
-		GetActivationFactory<DependencyObject, IDependencyObjectFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DependencyObject, IDependencyObjectFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1653,7 +1653,7 @@ protected:
 
 	RoutedEventArgsT()
 	{
-		GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1667,7 +1667,7 @@ protected:
 
 	DataTemplateT()
 	{
-		GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1681,7 +1681,7 @@ protected:
 
 	FrameworkElementT()
 	{
-		GetActivationFactory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1695,7 +1695,7 @@ protected:
 
 	FrameworkTemplateT()
 	{
-		GetActivationFactory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1709,7 +1709,7 @@ protected:
 
 	DispatcherTimerT()
 	{
-		GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1723,12 +1723,12 @@ protected:
 
 	DataTemplateKeyT()
 	{
-		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	DataTemplateKeyT(IInspectable const & dataType)
 	{
-		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1742,12 +1742,12 @@ protected:
 
 	PropertyMetadataT(IInspectable const & defaultValue)
 	{
-		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	PropertyMetadataT(IInspectable const & defaultValue, Windows::UI::Xaml::IPropertyChangedCallback const & propertyChangedCallback)
 	{
-		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1761,7 +1761,7 @@ protected:
 
 	DependencyObjectCollectionT()
 	{
-		GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1775,7 +1775,7 @@ protected:
 
 	ResourceDictionaryT()
 	{
-		GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1789,7 +1789,7 @@ protected:
 
 	StateTriggerBaseT()
 	{
-		GetActivationFactory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1803,7 +1803,7 @@ protected:
 
 	VisualStateManagerT()
 	{
-		GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1817,7 +1817,7 @@ protected:
 
 	VisualTransitionT()
 	{
-		GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1831,7 +1831,7 @@ protected:
 
 	AdaptiveTriggerT()
 	{
-		GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1845,7 +1845,7 @@ protected:
 
 	ApplicationT()
 	{
-		GetActivationFactory<Application, IApplicationFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Application, IApplicationFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1863,7 +1863,7 @@ protected:
 
 	AutomationPeerT()
 	{
-		GetActivationFactory<AutomationPeer, IAutomationPeerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AutomationPeer, IAutomationPeerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1877,7 +1877,7 @@ protected:
 
 	FrameworkElementAutomationPeerT(Windows::UI::Xaml::FrameworkElement const & owner)
 	{
-		GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1891,7 +1891,7 @@ protected:
 
 	ButtonBaseAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ButtonBase const & owner)
 	{
-		GetActivationFactory<ButtonBaseAutomationPeer, IButtonBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ButtonBaseAutomationPeer, IButtonBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1905,7 +1905,7 @@ protected:
 
 	CaptureElementAutomationPeerT(Windows::UI::Xaml::Controls::CaptureElement const & owner)
 	{
-		GetActivationFactory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1919,7 +1919,7 @@ protected:
 
 	ComboBoxItemAutomationPeerT(Windows::UI::Xaml::Controls::ComboBoxItem const & owner)
 	{
-		GetActivationFactory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1933,7 +1933,7 @@ protected:
 
 	FlipViewItemAutomationPeerT(Windows::UI::Xaml::Controls::FlipViewItem const & owner)
 	{
-		GetActivationFactory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1947,7 +1947,7 @@ protected:
 
 	GroupItemAutomationPeerT(Windows::UI::Xaml::Controls::GroupItem const & owner)
 	{
-		GetActivationFactory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1961,7 +1961,7 @@ protected:
 
 	ImageAutomationPeerT(Windows::UI::Xaml::Controls::Image const & owner)
 	{
-		GetActivationFactory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1975,7 +1975,7 @@ protected:
 
 	ListBoxItemAutomationPeerT(Windows::UI::Xaml::Controls::ListBoxItem const & owner)
 	{
-		GetActivationFactory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -1989,7 +1989,7 @@ protected:
 
 	MediaTransportControlsAutomationPeerT(Windows::UI::Xaml::Controls::MediaTransportControls const & owner)
 	{
-		GetActivationFactory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2003,7 +2003,7 @@ protected:
 
 	PasswordBoxAutomationPeerT(Windows::UI::Xaml::Controls::PasswordBox const & owner)
 	{
-		GetActivationFactory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2017,7 +2017,7 @@ protected:
 
 	ProgressRingAutomationPeerT(Windows::UI::Xaml::Controls::ProgressRing const & owner)
 	{
-		GetActivationFactory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2031,7 +2031,7 @@ protected:
 
 	RichEditBoxAutomationPeerT(Windows::UI::Xaml::Controls::RichEditBox const & owner)
 	{
-		GetActivationFactory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2045,7 +2045,7 @@ protected:
 
 	RichTextBlockAutomationPeerT(Windows::UI::Xaml::Controls::RichTextBlock const & owner)
 	{
-		GetActivationFactory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2059,7 +2059,7 @@ protected:
 
 	RichTextBlockOverflowAutomationPeerT(Windows::UI::Xaml::Controls::RichTextBlockOverflow const & owner)
 	{
-		GetActivationFactory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2073,7 +2073,7 @@ protected:
 
 	SettingsFlyoutAutomationPeerT(Windows::UI::Xaml::Controls::SettingsFlyout const & owner)
 	{
-		GetActivationFactory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2087,7 +2087,7 @@ protected:
 
 	TextBlockAutomationPeerT(Windows::UI::Xaml::Controls::TextBlock const & owner)
 	{
-		GetActivationFactory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2101,7 +2101,7 @@ protected:
 
 	TextBoxAutomationPeerT(Windows::UI::Xaml::Controls::TextBox const & owner)
 	{
-		GetActivationFactory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2115,7 +2115,7 @@ protected:
 
 	ThumbAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::Thumb const & owner)
 	{
-		GetActivationFactory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2129,7 +2129,7 @@ protected:
 
 	DatePickerAutomationPeerT(Windows::UI::Xaml::Controls::DatePicker const & owner)
 	{
-		GetActivationFactory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2143,7 +2143,7 @@ protected:
 
 	FlyoutPresenterAutomationPeerT(Windows::UI::Xaml::Controls::FlyoutPresenter const & owner)
 	{
-		GetActivationFactory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2157,7 +2157,7 @@ protected:
 
 	GridViewItemAutomationPeerT(Windows::UI::Xaml::Controls::GridViewItem const & owner)
 	{
-		GetActivationFactory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2171,7 +2171,7 @@ protected:
 
 	HubAutomationPeerT(Windows::UI::Xaml::Controls::Hub const & owner)
 	{
-		GetActivationFactory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2185,7 +2185,7 @@ protected:
 
 	ListViewBaseHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewBaseHeaderItem const & owner)
 	{
-		GetActivationFactory<ListViewBaseHeaderItemAutomationPeer, IListViewBaseHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewBaseHeaderItemAutomationPeer, IListViewBaseHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2199,7 +2199,7 @@ protected:
 
 	ListViewItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewItem const & owner)
 	{
-		GetActivationFactory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2213,7 +2213,7 @@ protected:
 
 	MediaElementAutomationPeerT(Windows::UI::Xaml::Controls::MediaElement const & owner)
 	{
-		GetActivationFactory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2227,7 +2227,7 @@ protected:
 
 	SearchBoxAutomationPeerT(Windows::UI::Xaml::Controls::SearchBox const & owner)
 	{
-		GetActivationFactory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2241,7 +2241,7 @@ protected:
 
 	TimePickerAutomationPeerT(Windows::UI::Xaml::Controls::TimePicker const & owner)
 	{
-		GetActivationFactory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2255,7 +2255,7 @@ protected:
 
 	GridViewHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::GridViewHeaderItem const & owner)
 	{
-		GetActivationFactory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2269,7 +2269,7 @@ protected:
 
 	ListViewHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewHeaderItem const & owner)
 	{
-		GetActivationFactory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2283,7 +2283,7 @@ protected:
 
 	ButtonAutomationPeerT(Windows::UI::Xaml::Controls::Button const & owner)
 	{
-		GetActivationFactory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2297,7 +2297,7 @@ protected:
 
 	HyperlinkButtonAutomationPeerT(Windows::UI::Xaml::Controls::HyperlinkButton const & owner)
 	{
-		GetActivationFactory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2311,7 +2311,7 @@ protected:
 
 	RepeatButtonAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::RepeatButton const & owner)
 	{
-		GetActivationFactory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2325,7 +2325,7 @@ protected:
 
 	MenuFlyoutItemAutomationPeerT(Windows::UI::Xaml::Controls::MenuFlyoutItem const & owner)
 	{
-		GetActivationFactory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2339,7 +2339,7 @@ protected:
 
 	AppBarButtonAutomationPeerT(Windows::UI::Xaml::Controls::AppBarButton const & owner)
 	{
-		GetActivationFactory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2353,7 +2353,7 @@ protected:
 
 	ItemsControlAutomationPeerT(Windows::UI::Xaml::Controls::ItemsControl const & owner)
 	{
-		GetActivationFactory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2367,7 +2367,7 @@ protected:
 
 	MenuFlyoutPresenterAutomationPeerT(Windows::UI::Xaml::Controls::MenuFlyoutPresenter const & owner)
 	{
-		GetActivationFactory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2381,7 +2381,7 @@ protected:
 
 	RangeBaseAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::RangeBase const & owner)
 	{
-		GetActivationFactory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2395,7 +2395,7 @@ protected:
 
 	ProgressBarAutomationPeerT(Windows::UI::Xaml::Controls::ProgressBar const & owner)
 	{
-		GetActivationFactory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2409,7 +2409,7 @@ protected:
 
 	ScrollBarAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ScrollBar const & owner)
 	{
-		GetActivationFactory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2423,7 +2423,7 @@ protected:
 
 	SliderAutomationPeerT(Windows::UI::Xaml::Controls::Slider const & owner)
 	{
-		GetActivationFactory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2437,7 +2437,7 @@ protected:
 
 	HubSectionAutomationPeerT(Windows::UI::Xaml::Controls::HubSection const & owner)
 	{
-		GetActivationFactory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2451,7 +2451,7 @@ protected:
 
 	ScrollViewerAutomationPeerT(Windows::UI::Xaml::Controls::ScrollViewer const & owner)
 	{
-		GetActivationFactory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2465,7 +2465,7 @@ protected:
 
 	SelectorAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::Selector const & owner)
 	{
-		GetActivationFactory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2479,7 +2479,7 @@ protected:
 
 	FlipViewAutomationPeerT(Windows::UI::Xaml::Controls::FlipView const & owner)
 	{
-		GetActivationFactory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2493,7 +2493,7 @@ protected:
 
 	ListBoxAutomationPeerT(Windows::UI::Xaml::Controls::ListBox const & owner)
 	{
-		GetActivationFactory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2507,7 +2507,7 @@ protected:
 
 	ListViewBaseAutomationPeerT(Windows::UI::Xaml::Controls::ListViewBase const & owner)
 	{
-		GetActivationFactory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2521,7 +2521,7 @@ protected:
 
 	GridViewAutomationPeerT(Windows::UI::Xaml::Controls::GridView const & owner)
 	{
-		GetActivationFactory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2535,7 +2535,7 @@ protected:
 
 	ListViewAutomationPeerT(Windows::UI::Xaml::Controls::ListView const & owner)
 	{
-		GetActivationFactory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2549,7 +2549,7 @@ protected:
 
 	SemanticZoomAutomationPeerT(Windows::UI::Xaml::Controls::SemanticZoom const & owner)
 	{
-		GetActivationFactory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2563,7 +2563,7 @@ protected:
 
 	ToggleSwitchAutomationPeerT(Windows::UI::Xaml::Controls::ToggleSwitch const & owner)
 	{
-		GetActivationFactory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2577,7 +2577,7 @@ protected:
 
 	ToggleButtonAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ToggleButton const & owner)
 	{
-		GetActivationFactory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2591,7 +2591,7 @@ protected:
 
 	CheckBoxAutomationPeerT(Windows::UI::Xaml::Controls::CheckBox const & owner)
 	{
-		GetActivationFactory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2605,7 +2605,7 @@ protected:
 
 	RadioButtonAutomationPeerT(Windows::UI::Xaml::Controls::RadioButton const & owner)
 	{
-		GetActivationFactory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2619,7 +2619,7 @@ protected:
 
 	AppBarAutomationPeerT(Windows::UI::Xaml::Controls::AppBar const & owner)
 	{
-		GetActivationFactory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2633,7 +2633,7 @@ protected:
 
 	ToggleMenuFlyoutItemAutomationPeerT(Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem const & owner)
 	{
-		GetActivationFactory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2647,7 +2647,7 @@ protected:
 
 	AppBarToggleButtonAutomationPeerT(Windows::UI::Xaml::Controls::AppBarToggleButton const & owner)
 	{
-		GetActivationFactory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2661,7 +2661,7 @@ protected:
 
 	ComboBoxAutomationPeerT(Windows::UI::Xaml::Controls::ComboBox const & owner)
 	{
-		GetActivationFactory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2675,7 +2675,7 @@ protected:
 
 	ItemAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer const & parent)
 	{
-		GetActivationFactory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2689,7 +2689,7 @@ protected:
 
 	SelectorItemAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer const & parent)
 	{
-		GetActivationFactory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2703,7 +2703,7 @@ protected:
 
 	ComboBoxItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer const & parent)
 	{
-		GetActivationFactory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2717,7 +2717,7 @@ protected:
 
 	FlipViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer const & parent)
 	{
-		GetActivationFactory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2731,7 +2731,7 @@ protected:
 
 	ListBoxItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer const & parent)
 	{
-		GetActivationFactory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2745,7 +2745,7 @@ protected:
 
 	GridViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer const & parent)
 	{
-		GetActivationFactory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2759,7 +2759,7 @@ protected:
 
 	ListViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer const & parent)
 	{
-		GetActivationFactory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2777,7 +2777,7 @@ protected:
 
 	ListViewBaseT()
 	{
-		GetActivationFactory<ListViewBase, IListViewBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewBase, IListViewBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2791,7 +2791,7 @@ protected:
 
 	ControlT()
 	{
-		GetActivationFactory<Control, IControlFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Control, IControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2805,7 +2805,7 @@ protected:
 
 	PanelT()
 	{
-		GetActivationFactory<Panel, IPanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Panel, IPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2819,7 +2819,7 @@ protected:
 
 	ContentPresenterT()
 	{
-		GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2833,7 +2833,7 @@ protected:
 
 	ContentControlT()
 	{
-		GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2847,7 +2847,7 @@ protected:
 
 	ItemsControlT()
 	{
-		GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2861,7 +2861,7 @@ protected:
 
 	CanvasT()
 	{
-		GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2875,7 +2875,7 @@ protected:
 
 	DataTemplateSelectorT()
 	{
-		GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2889,7 +2889,7 @@ protected:
 
 	StyleSelectorT()
 	{
-		GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2903,7 +2903,7 @@ protected:
 
 	GroupStyleT()
 	{
-		GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2917,7 +2917,7 @@ protected:
 
 	GroupStyleSelectorT()
 	{
-		GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2931,7 +2931,7 @@ protected:
 
 	FlyoutT()
 	{
-		GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2945,7 +2945,7 @@ protected:
 
 	MenuFlyoutT()
 	{
-		GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2959,7 +2959,7 @@ protected:
 
 	SelectionChangedEventArgsT(Windows::Foundation::Collections::IVector<IInspectable> const & removedItems, Windows::Foundation::Collections::IVector<IInspectable> const & addedItems)
 	{
-		GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2973,7 +2973,7 @@ protected:
 
 	GridT()
 	{
-		GetActivationFactory<Grid, IGridFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Grid, IGridFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -2987,7 +2987,7 @@ protected:
 
 	RelativePanelT()
 	{
-		GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3001,7 +3001,7 @@ protected:
 
 	StackPanelT()
 	{
-		GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3015,7 +3015,7 @@ protected:
 
 	InkCanvasT()
 	{
-		GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3029,7 +3029,7 @@ protected:
 
 	BitmapIconT()
 	{
-		GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3043,7 +3043,7 @@ protected:
 
 	FontIconT()
 	{
-		GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3057,7 +3057,7 @@ protected:
 
 	PathIconT()
 	{
-		GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3071,7 +3071,7 @@ protected:
 
 	SwapChainBackgroundPanelT()
 	{
-		GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3085,7 +3085,7 @@ protected:
 
 	SwapChainPanelT()
 	{
-		GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3099,7 +3099,7 @@ protected:
 
 	MediaTransportControlsT()
 	{
-		GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3113,7 +3113,7 @@ protected:
 
 	RichEditBoxT()
 	{
-		GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3127,7 +3127,7 @@ protected:
 
 	TextBoxT()
 	{
-		GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3141,7 +3141,7 @@ protected:
 
 	UserControlT()
 	{
-		GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3155,7 +3155,7 @@ protected:
 
 	GroupItemT()
 	{
-		GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3169,7 +3169,7 @@ protected:
 
 	SettingsFlyoutT()
 	{
-		GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3183,7 +3183,7 @@ protected:
 
 	ToolTipT()
 	{
-		GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3197,7 +3197,7 @@ protected:
 
 	ComboBoxItemT()
 	{
-		GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3211,7 +3211,7 @@ protected:
 
 	FlipViewItemT()
 	{
-		GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3225,7 +3225,7 @@ protected:
 
 	ListBoxItemT()
 	{
-		GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3239,7 +3239,7 @@ protected:
 
 	ProgressBarT()
 	{
-		GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3253,7 +3253,7 @@ protected:
 
 	SliderT()
 	{
-		GetActivationFactory<Slider, ISliderFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Slider, ISliderFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3267,7 +3267,7 @@ protected:
 
 	ButtonT()
 	{
-		GetActivationFactory<Button, IButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Button, IButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3281,7 +3281,7 @@ protected:
 
 	HyperlinkButtonT()
 	{
-		GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3295,7 +3295,7 @@ protected:
 
 	ComboBoxT()
 	{
-		GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3309,7 +3309,7 @@ protected:
 
 	FlipViewT()
 	{
-		GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3323,7 +3323,7 @@ protected:
 
 	ListBoxT()
 	{
-		GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3337,7 +3337,7 @@ protected:
 
 	CheckBoxT()
 	{
-		GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3351,7 +3351,7 @@ protected:
 
 	RadioButtonT()
 	{
-		GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3365,7 +3365,7 @@ protected:
 
 	CalendarViewT()
 	{
-		GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3379,7 +3379,7 @@ protected:
 
 	CalendarViewDayItemT()
 	{
-		GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3393,7 +3393,7 @@ protected:
 
 	HubSectionT()
 	{
-		GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3407,7 +3407,7 @@ protected:
 
 	AppBarSeparatorT()
 	{
-		GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3421,7 +3421,7 @@ protected:
 
 	CalendarDatePickerT()
 	{
-		GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3435,7 +3435,7 @@ protected:
 
 	DatePickerT()
 	{
-		GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3449,7 +3449,7 @@ protected:
 
 	HubT()
 	{
-		GetActivationFactory<Hub, IHubFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Hub, IHubFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3463,7 +3463,7 @@ protected:
 
 	SearchBoxT()
 	{
-		GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3477,7 +3477,7 @@ protected:
 
 	SplitViewT()
 	{
-		GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3491,7 +3491,7 @@ protected:
 
 	TimePickerT()
 	{
-		GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3505,7 +3505,7 @@ protected:
 
 	AppBarT()
 	{
-		GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3519,7 +3519,7 @@ protected:
 
 	CommandBarOverflowPresenterT()
 	{
-		GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3533,7 +3533,7 @@ protected:
 
 	ContentDialogT()
 	{
-		GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3547,7 +3547,7 @@ protected:
 
 	FlyoutPresenterT()
 	{
-		GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3561,7 +3561,7 @@ protected:
 
 	FrameT()
 	{
-		GetActivationFactory<Frame, IFrameFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Frame, IFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3575,7 +3575,7 @@ protected:
 
 	MenuFlyoutItemT()
 	{
-		GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3589,7 +3589,7 @@ protected:
 
 	MenuFlyoutPresenterT()
 	{
-		GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3603,7 +3603,7 @@ protected:
 
 	MenuFlyoutSeparatorT()
 	{
-		GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3617,7 +3617,7 @@ protected:
 
 	PageT()
 	{
-		GetActivationFactory<Page, IPageFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Page, IPageFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3631,7 +3631,7 @@ protected:
 
 	CommandBarT()
 	{
-		GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3645,7 +3645,7 @@ protected:
 
 	GridViewHeaderItemT()
 	{
-		GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3659,7 +3659,7 @@ protected:
 
 	GridViewItemT()
 	{
-		GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3673,7 +3673,7 @@ protected:
 
 	ListViewHeaderItemT()
 	{
-		GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3687,7 +3687,7 @@ protected:
 
 	ListViewItemT()
 	{
-		GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3701,7 +3701,7 @@ protected:
 
 	ToggleMenuFlyoutItemT()
 	{
-		GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3715,7 +3715,7 @@ protected:
 
 	AppBarButtonT()
 	{
-		GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3729,7 +3729,7 @@ protected:
 
 	AppBarToggleButtonT()
 	{
-		GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3743,7 +3743,7 @@ protected:
 
 	GridViewT()
 	{
-		GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3757,7 +3757,7 @@ protected:
 
 	ListViewT()
 	{
-		GetActivationFactory<ListView, IListViewFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListView, IListViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3771,7 +3771,7 @@ protected:
 
 	PivotT()
 	{
-		GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3785,7 +3785,7 @@ protected:
 
 	PivotItemT()
 	{
-		GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3803,7 +3803,7 @@ protected:
 
 	MapCustomExperienceT()
 	{
-		GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3817,7 +3817,7 @@ protected:
 
 	MapElementT()
 	{
-		GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3831,7 +3831,7 @@ protected:
 
 	MapRouteViewT(Windows::Services::Maps::MapRoute const & route)
 	{
-		GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3845,7 +3845,7 @@ protected:
 
 	MapTileDataSourceT()
 	{
-		GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3859,27 +3859,27 @@ protected:
 
 	MapTileSourceT()
 	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource)
 	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange)
 	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange, Windows::Devices::Geolocation::GeoboundingBox const & bounds)
 	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange, Windows::Devices::Geolocation::GeoboundingBox const & bounds, int const tileSizeInPixels)
 	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3893,7 +3893,7 @@ protected:
 
 	CustomMapTileDataSourceT()
 	{
-		GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3907,12 +3907,12 @@ protected:
 
 	HttpMapTileDataSourceT()
 	{
-		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 
-	HttpMapTileDataSourceT(StringReference const & uriFormatString)
+	HttpMapTileDataSourceT(hstring_ref uriFormatString)
 	{
-		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3926,12 +3926,12 @@ protected:
 
 	LocalMapTileDataSourceT()
 	{
-		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 
-	LocalMapTileDataSourceT(StringReference const & uriFormatString)
+	LocalMapTileDataSourceT(hstring_ref uriFormatString)
 	{
-		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3949,7 +3949,7 @@ protected:
 
 	FlyoutBaseT()
 	{
-		GetActivationFactory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3963,7 +3963,7 @@ protected:
 
 	DragCompletedEventArgsT(double const horizontalChange, double const verticalChange, bool const canceled)
 	{
-		GetActivationFactory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3977,7 +3977,7 @@ protected:
 
 	DragDeltaEventArgsT(double const horizontalChange, double const verticalChange)
 	{
-		GetActivationFactory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -3991,7 +3991,7 @@ protected:
 
 	DragStartedEventArgsT(double const horizontalOffset, double const verticalOffset)
 	{
-		GetActivationFactory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4005,7 +4005,7 @@ protected:
 
 	CarouselPanelT()
 	{
-		GetActivationFactory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4019,7 +4019,7 @@ protected:
 
 	GridViewItemPresenterT()
 	{
-		GetActivationFactory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4033,7 +4033,7 @@ protected:
 
 	ListViewItemPresenterT()
 	{
-		GetActivationFactory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4047,7 +4047,7 @@ protected:
 
 	SelectorItemT()
 	{
-		GetActivationFactory<SelectorItem, ISelectorItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SelectorItem, ISelectorItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4061,7 +4061,7 @@ protected:
 
 	RangeBaseT()
 	{
-		GetActivationFactory<RangeBase, IRangeBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RangeBase, IRangeBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4075,7 +4075,7 @@ protected:
 
 	ButtonBaseT()
 	{
-		GetActivationFactory<ButtonBase, IButtonBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ButtonBase, IButtonBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4089,7 +4089,7 @@ protected:
 
 	ToggleButtonT()
 	{
-		GetActivationFactory<ToggleButton, IToggleButtonFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ToggleButton, IToggleButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4103,7 +4103,7 @@ protected:
 
 	PickerFlyoutBaseT()
 	{
-		GetActivationFactory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4117,7 +4117,7 @@ protected:
 
 	PivotHeaderItemT()
 	{
-		GetActivationFactory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4135,12 +4135,12 @@ protected:
 
 	CurrentChangingEventArgsT()
 	{
-		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	CurrentChangingEventArgsT(bool const isCancelable)
 	{
-		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4152,9 +4152,9 @@ template <typename T> struct PropertyChangedEventArgsT :
 
 protected:
 
-	PropertyChangedEventArgsT(StringReference const & name)
+	PropertyChangedEventArgsT(hstring_ref name)
 	{
-		GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4168,7 +4168,7 @@ protected:
 
 	BindingBaseT()
 	{
-		GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4182,7 +4182,7 @@ protected:
 
 	RelativeSourceT()
 	{
-		GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4196,7 +4196,7 @@ protected:
 
 	BindingT()
 	{
-		GetActivationFactory<Binding, IBindingFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Binding, IBindingFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4210,7 +4210,7 @@ protected:
 
 	ItemIndexRangeT(int const firstIndex, unsigned const length)
 	{
-		GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4228,7 +4228,7 @@ protected:
 
 	BlockT()
 	{
-		GetActivationFactory<Block, IBlockFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Block, IBlockFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4242,7 +4242,7 @@ protected:
 
 	InlineT()
 	{
-		GetActivationFactory<Inline, IInlineFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Inline, IInlineFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4256,7 +4256,7 @@ protected:
 
 	SpanT()
 	{
-		GetActivationFactory<Span, ISpanFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Span, ISpanFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4274,7 +4274,7 @@ protected:
 
 	ManipulationStartedRoutedEventArgsT()
 	{
-		GetActivationFactory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4292,7 +4292,7 @@ protected:
 
 	NotifyCollectionChangedEventArgsT(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction const action, Windows::UI::Xaml::Interop::IBindableVector const & newItems, Windows::UI::Xaml::Interop::IBindableVector const & oldItems, int const newIndex, int const oldIndex)
 	{
-		GetActivationFactory<NotifyCollectionChangedEventArgs, INotifyCollectionChangedEventArgsFactory>().CreateInstanceWithAllParameters(action, newItems, oldItems, newIndex, oldIndex, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<NotifyCollectionChangedEventArgs, INotifyCollectionChangedEventArgsFactory>().CreateInstanceWithAllParameters(action, newItems, oldItems, newIndex, oldIndex, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4308,9 +4308,9 @@ template <typename T> struct FontFamilyT :
 
 protected:
 
-	FontFamilyT(StringReference const & familyName)
+	FontFamilyT(hstring_ref familyName)
 	{
-		GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4324,7 +4324,7 @@ protected:
 
 	BrushT()
 	{
-		GetActivationFactory<Brush, IBrushFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Brush, IBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4338,7 +4338,7 @@ protected:
 
 	CacheModeT()
 	{
-		GetActivationFactory<CacheMode, ICacheModeFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CacheMode, ICacheModeFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4352,7 +4352,7 @@ protected:
 
 	GeneralTransformT()
 	{
-		GetActivationFactory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4366,7 +4366,7 @@ protected:
 
 	ProjectionT()
 	{
-		GetActivationFactory<Projection, IProjectionFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Projection, IProjectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4380,7 +4380,7 @@ protected:
 
 	GradientBrushT()
 	{
-		GetActivationFactory<GradientBrush, IGradientBrushFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<GradientBrush, IGradientBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4394,7 +4394,7 @@ protected:
 
 	TileBrushT()
 	{
-		GetActivationFactory<TileBrush, ITileBrushFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<TileBrush, ITileBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4412,7 +4412,7 @@ protected:
 
 	ColorKeyFrameT()
 	{
-		GetActivationFactory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4426,7 +4426,7 @@ protected:
 
 	DoubleKeyFrameT()
 	{
-		GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4440,7 +4440,7 @@ protected:
 
 	NavigationTransitionInfoT()
 	{
-		GetActivationFactory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4454,7 +4454,7 @@ protected:
 
 	ObjectKeyFrameT()
 	{
-		GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4468,7 +4468,7 @@ protected:
 
 	PointKeyFrameT()
 	{
-		GetActivationFactory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4482,7 +4482,7 @@ protected:
 
 	TimelineT()
 	{
-		GetActivationFactory<Timeline, ITimelineFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Timeline, ITimelineFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4500,7 +4500,7 @@ protected:
 
 	XamlRenderingBackgroundTaskT()
 	{
-		GetActivationFactory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4514,7 +4514,7 @@ protected:
 
 	BitmapSourceT()
 	{
-		GetActivationFactory<BitmapSource, IBitmapSourceFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<BitmapSource, IBitmapSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4528,12 +4528,12 @@ protected:
 
 	SurfaceImageSourceT(int const pixelWidth, int const pixelHeight)
 	{
-		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, lease<Windows::IInspectable>(this), m_inner);
 	}
 
 	SurfaceImageSourceT(int const pixelWidth, int const pixelHeight, bool const isOpaque)
 	{
-		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4551,7 +4551,7 @@ protected:
 
 	Transform3DT()
 	{
-		GetActivationFactory<Transform3D, ITransform3DFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Transform3D, ITransform3DFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4569,7 +4569,7 @@ protected:
 
 	PrintDocumentT()
 	{
-		GetActivationFactory<PrintDocument, IPrintDocumentFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<PrintDocument, IPrintDocumentFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4587,7 +4587,7 @@ protected:
 
 	CustomXamlResourceLoaderT()
 	{
-		GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4605,7 +4605,7 @@ protected:
 
 	ShapeT()
 	{
-		GetActivationFactory<Shape, IShapeFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Shape, IShapeFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
@@ -4619,13 +4619,15 @@ protected:
 
 	PathT()
 	{
-		GetActivationFactory<Path, IPathFactory>().CreateInstance(impl::lease<Windows::IInspectable>(this), m_inner);
+		GetActivationFactory<Path, IPathFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
 	}
 };
 
 }}}}}
 
-namespace winrt { namespace Windows { namespace ApplicationModel { namespace Core {
+namespace winrt {
+
+namespace Windows { namespace ApplicationModel { namespace Core {
 
 template <typename T>
 struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
@@ -4652,7 +4654,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 	}
 
-	void Load(String const &) const noexcept
+	void Load(hstring_ref) const noexcept
 	{
 	}
 
@@ -4669,37 +4671,37 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	{
 	}
 
-	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept
+	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->Initialize(impl::forward<CoreApplicationView>(view));
+			static_cast<T *>(this)->Initialize(lease<CoreApplicationView>(view));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept
+	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->SetWindow(impl::forward<UI::Core::CoreWindow>(window));
+			static_cast<T *>(this)->SetWindow(lease<UI::Core::CoreWindow>(window));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept
+	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept override
 	{
 		try
 		{
-			static_cast<T *>(this)->Load(impl::forward<String>(entryPoint));
+			static_cast<T *>(this)->Load(lease<hstring>(entryPoint));
 			return S_OK;
 		}
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Run() noexcept
+	HRESULT __stdcall abi_Run() noexcept override
 	{
 		try
 		{
@@ -4709,7 +4711,7 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 		catch (...) { return impl::to_hresult(); }
 	}
 
-	HRESULT __stdcall abi_Uninitialize() noexcept
+	HRESULT __stdcall abi_Uninitialize() noexcept override
 	{
 		try
 		{
@@ -4720,4 +4722,6 @@ struct IFrameworkViewT : impl::implements<IFrameworkView>
 	}
 };
 
-}}}}
+}}}
+
+}

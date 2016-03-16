@@ -44,39 +44,10 @@ static void WriteStructureFields(Output & out)
     });
 }
 
-static void WriteTemplatePreamble(Output & output, unsigned const stringCount, bool const hasDelegate)
+// TODO: once the delegate work is merged this function will go away.
+static void WriteTemplatePreamble(Output & output)
 {
-    MODERN_ASSERT(hasDelegate || 0 != stringCount);
-
-    Write(output, "template <");
-
-    bool first = true;
-
-    for (unsigned s = 0; s != stringCount; ++s)
-    {
-        if (first)
-        {
-            first = false;
-        }
-        else
-        {
-            Write(output, ", ");
-        }
-
-        Write(output, "unsigned S%", s);
-    }
-
-    if (hasDelegate)
-    {
-        if (!first)
-        {
-            Write(output, ", ");
-        }
-
-        Write(output, "typename F");
-    }
-
-    Write(output, "> ");
+    Write(output, "template <typename F> ");
 }
 
 static void WriteDelegateForwardArguments(Output & output)
@@ -98,7 +69,7 @@ static void WriteDelegateForwardArguments(Output & output)
         {
             if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate || param.Category == TypeCategory::String)
             {
-                Write(output, Strings::LibraryForwardArgument, param.ModernType(), param.Name);
+                Write(output, "lease<%>(%)", param.ModernType(), param.Name);
             }
             else
             {
@@ -110,7 +81,7 @@ static void WriteDelegateForwardArguments(Output & output)
     }
 }
 
-static void WriteAbiArguments(Output & output, unsigned const stringCount)
+static void WriteAbiArguments(Output & output)
 {
     bool first = true;
 
@@ -127,11 +98,7 @@ static void WriteAbiArguments(Output & output, unsigned const stringCount)
 
         if (param.Attribute & ParameterAttribute::In)
         {
-            if (param.Category == TypeCategory::String && 0 != stringCount)
-            {
-                Write(output, "StringReference(%)", param.Name);
-            }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value || param.Category == TypeCategory::Boolean)
+            if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value || param.Category == TypeCategory::Boolean)
             {
                 Write(output, "%", param.Name);
             }
@@ -312,20 +279,13 @@ static void WriteAbiParameters(Output & output)
     }
 }
 
-static void WriteParameter(Output & output, Parameter const & param, unsigned const stringCount, bool const hasDelegate, bool const definition, unsigned & s)
+static void WriteParameter(Output & output, Parameter const & param, bool const hasDelegate, bool const definition)
 {
     if (param.Attribute & ParameterAttribute::In)
     {
         if (param.Category == TypeCategory::String)
         {
-            if (0 != stringCount)
-            {
-                Write(output, "wchar_t const (&%)[S%]", param.Name, s++);
-            }
-            else
-            {
-                Write(output, "StringReference const & %", param.Name);
-            }
+            Write(output, "hstring_ref %", param.Name);
         }
         else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
         {
@@ -357,10 +317,9 @@ static void WriteParameter(Output & output, Parameter const & param, unsigned co
     }
 }
 
-static void WriteComposableConstructorParameters(Output & output, unsigned const stringCount, bool const hasDelegate, bool const definition)
+static void WriteComposableConstructorParameters(Output & output, bool const hasDelegate, bool const definition)
 {
     MODERN_ASSERT(Settings::ParameterInfo.Parameters.size() >= 3);
-    unsigned s = 0;
 
     for (size_t i = 0; i != Settings::ParameterInfo.Parameters.size() - 3; ++i)
     {
@@ -371,14 +330,13 @@ static void WriteComposableConstructorParameters(Output & output, unsigned const
             Write(output, ", ");
         }
 
-        WriteParameter(output, param, stringCount, hasDelegate, definition, s);
+        WriteParameter(output, param, hasDelegate, definition);
     }
 }
 
-static void WriteParameters(Output & output, unsigned const stringCount, bool const hasDelegate, bool const definition)
+static void WriteParameters(Output & output, bool const hasDelegate, bool const definition)
 {
     bool first = true;
-    unsigned s = 0;
 
     for (Parameter const & param : Settings::ParameterInfo.Parameters)
     {
@@ -391,19 +349,19 @@ static void WriteParameters(Output & output, unsigned const stringCount, bool co
             Write(output, ", ");
         }
 
-        WriteParameter(output, param, stringCount, hasDelegate, definition, s);
+        WriteParameter(output, param, hasDelegate, definition);
     }
 }
 
-static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const stringCount, bool const hasDelegate)
+static void WriteInterfaceMethod(Output & h, Output & methods, bool const hasDelegate)
 {
     Write(h, "\t");
     Write(methods, "\ntemplate <typename T> ");
 
-    if (hasDelegate || 0 != stringCount)
+    if (hasDelegate)
     {
-        WriteTemplatePreamble(h, stringCount, hasDelegate);
-        WriteTemplatePreamble(methods, stringCount, hasDelegate);
+        WriteTemplatePreamble(h);
+        WriteTemplatePreamble(methods);
     }
 
     Write(h, 
@@ -411,7 +369,7 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
           Settings::ParameterInfo.ReturnType(),
           Settings::MethodName);
 
-    WriteParameters(h, stringCount, hasDelegate, false);
+    WriteParameters(h, hasDelegate, false);
 
     Write(h, 
           Strings::LibraryNonStaticMethodDeclarationClose);
@@ -422,9 +380,8 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
           Settings::InterfaceName, 
           Settings::MethodName);
 
-    WriteParameters(methods, 
-                    stringCount, 
-                    hasDelegate, 
+    WriteParameters(methods,
+                    hasDelegate,
                     true);
 
     if (hasDelegate)
@@ -476,7 +433,7 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
                   Settings::MethodAbi);
         }
 
-        WriteAbiArguments(methods, stringCount);
+        WriteAbiArguments(methods);
 
         Write(methods, 
               Strings::LibraryNonStaticMethodDefinitionReturnTypeClose, 
@@ -488,7 +445,7 @@ static void WriteInterfaceMethod(Output & h, Output & methods, unsigned const st
               Strings::LibraryNonStaticMethodDefinitionBodyNoReturnTypeOpen, 
               Settings::MethodAbi);
 
-        WriteAbiArguments(methods, stringCount);
+        WriteAbiArguments(methods);
 
         Write(methods, 
               Strings::LibraryNonStaticMethodDefinitionNoReturnTypeClose);
@@ -511,21 +468,11 @@ static void WriteInterfaceMethods(Output & h, Output & methods, Output & abi)
 
             ParameterInfo & params = Settings::ParameterInfo;
 
-            WriteInterfaceMethod(h, methods, 0, false);
-
-            if (0 != params.StringCount)
-            {
-                WriteInterfaceMethod(h, methods, params.StringCount, false);
-            }
+            WriteInterfaceMethod(h, methods, false);
 
             if (params.HasDelegate)
             {
-                WriteInterfaceMethod(h, methods, 0, true);
-            }
-
-            if (params.HasDelegate && 0 != params.StringCount)
-            {
-                WriteInterfaceMethod(h, methods, params.StringCount, true);
+                WriteInterfaceMethod(h, methods, true);
             }
         }
         else
@@ -577,15 +524,15 @@ static void WriteClassDefaultConstructor(Output & h, Output & methods)
           Settings::ClassName);
 }
 
-static void WriteStaticMethod(Output & h, Output & methods, unsigned const stringCount, bool const hasDelegate)
+static void WriteStaticMethod(Output & h, Output & methods, bool const hasDelegate)
 {
     Write(h, "\t");
     Write(methods, "\n");
 
-    if (hasDelegate || 0 != stringCount)
+    if (hasDelegate)
     {
-        WriteTemplatePreamble(h, stringCount, hasDelegate);
-        WriteTemplatePreamble(methods, stringCount, hasDelegate);
+        WriteTemplatePreamble(h);
+        WriteTemplatePreamble(methods);
     }
     else
     {
@@ -597,13 +544,13 @@ static void WriteStaticMethod(Output & h, Output & methods, unsigned const strin
           Settings::ParameterInfo.ReturnType(),
           Settings::MethodName);
 
-    WriteParameters(h, stringCount, hasDelegate, false);
+    WriteParameters(h, hasDelegate, false);
 
     Write(h, Strings::LibraryStaticMethodDeclarationClose);
 
     Write(methods, Strings::LibraryStaticMethodDefinitionOpen, Settings::ParameterInfo.ReturnType(), Settings::ClassName, Settings::MethodName);
 
-    WriteParameters(methods, stringCount, hasDelegate, true);
+    WriteParameters(methods, hasDelegate, true);
 
     if (Settings::ParameterInfo.HasReturnType)
     {
@@ -618,15 +565,15 @@ static void WriteStaticMethod(Output & h, Output & methods, unsigned const strin
     Write(methods, Strings::LibraryRequiredMethodDefinitionClose);
 }
 
-static void WriteClassConstructor(Output & h, Output & methods, unsigned const stringCount, bool const hasDelegate)
+static void WriteClassConstructor(Output & h, Output & methods, bool const hasDelegate)
 {
     Write(h, "\t");
     Write(methods, "\n");
 
-    if (hasDelegate || 0 != stringCount)
+    if (hasDelegate)
     {
-        WriteTemplatePreamble(h, stringCount, hasDelegate);
-        WriteTemplatePreamble(methods, stringCount, hasDelegate);
+        WriteTemplatePreamble(h);
+        WriteTemplatePreamble(methods);
     }
     else
     {
@@ -640,13 +587,13 @@ static void WriteClassConstructor(Output & h, Output & methods, unsigned const s
         Write(h,
               Strings::WriteClassConstructorDeclaration,
               Settings::ClassName,
-              Bind(WriteComposableConstructorParameters, stringCount, hasDelegate, false));
+              Bind(WriteComposableConstructorParameters, hasDelegate, false));
 
         Write(methods,
               Strings::WriteClassConstructorDefinitionComposable,
               Settings::ClassName,
               Settings::ClassName,
-              Bind(WriteComposableConstructorParameters, stringCount, hasDelegate, true),
+              Bind(WriteComposableConstructorParameters, hasDelegate, true),
               params.Parameters[params.Parameters.size() - 3].Name,
               params.Parameters[params.Parameters.size() - 2].Name,
               Settings::ClassName,
@@ -659,13 +606,13 @@ static void WriteClassConstructor(Output & h, Output & methods, unsigned const s
         Write(h,
               Strings::WriteClassConstructorDeclaration,
               Settings::ClassName,
-              Bind(WriteParameters, stringCount, hasDelegate, false));
+              Bind(WriteParameters, hasDelegate, false));
 
         Write(methods,
               Strings::WriteClassConstructorDefinition,
               Settings::ClassName,
               Settings::ClassName,
-              Bind(WriteParameters, stringCount, hasDelegate, true),
+              Bind(WriteParameters, hasDelegate, true),
               Settings::ClassName,
               Settings::ClassName,
               Settings::InterfaceName,
@@ -688,21 +635,11 @@ static void WriteStaticMethods(Output & h, Output & methods)
 
             ParameterInfo & params = Settings::ParameterInfo;
 
-            WriteStaticMethod(h, methods, 0, false);
-
-            if (0 != params.StringCount)
-            {
-                WriteStaticMethod(h, methods, params.StringCount, false);
-            }
+            WriteStaticMethod(h, methods, false);
 
             if (params.HasDelegate)
             {
-                WriteStaticMethod(h, methods, 0, true);
-            }
-
-            if (params.HasDelegate && 0 != params.StringCount)
-            {
-                WriteStaticMethod(h, methods, params.StringCount, true);
+                WriteStaticMethod(h, methods, true);
             }
         });
     });
@@ -723,21 +660,11 @@ static void WriteClassConstructors(Output & h, Output & methods)
         {
             ParameterInfo & params = Settings::ParameterInfo;
 
-            WriteClassConstructor(h, methods, 0, false);
-
-            if (0 != params.StringCount)
-            {
-                WriteClassConstructor(h, methods, params.StringCount, false);
-            }
+            WriteClassConstructor(h, methods, false);
 
             if (params.HasDelegate)
             {
-                WriteClassConstructor(h, methods, 0, true);
-            }
-
-            if (params.HasDelegate && 0 != params.StringCount)
-            {
-                WriteClassConstructor(h, methods, params.StringCount, true);
+                WriteClassConstructor(h, methods, true);
             }
         });
     });
@@ -794,7 +721,7 @@ static void WriteComposableConstructors(Output & output)
             Write(output,
                   Strings::WriteComposableConstructor,
                   Settings::ClassName,
-                  Bind(WriteComposableConstructorParameters, 0, false, true),
+                  Bind(WriteComposableConstructorParameters, false, true),
                   Settings::ClassName,
                   Settings::InterfaceName,
                   Settings::MethodName,
@@ -831,7 +758,7 @@ static void WriteOverrideDefaults(Output & output, int const interfaceId, char c
               Strings::WriteOverrideDefault,
               returnType(),
               Settings::MethodName,
-              Bind(WriteParameters, 0, false, true),
+              Bind(WriteParameters, false, true),
               Settings::ParameterInfo.HasReturnType ? "return " : "",
               interfaceNamespace,
               interfaceName,
