@@ -55,70 +55,115 @@ namespace Microsoft.Wcl.Parsers
 
         private void ProcessWinmd(string winmd)
         {
-            string namespaceName = null;
-            string typeName = null;
-
-            try
+            using (var stream = File.OpenRead(winmd))
+            using (var pereader = new PEReader(stream))
             {
-                using (var stream = File.OpenRead(winmd))
-                using (var pereader = new PEReader(stream))
-                {
-                    // MetadataReaderOptions.None: Give me the raw info. Do not apply C# semantics (eg, give me IVector instead of IList)
-                    var assembly = pereader.GetMetadataReader(MetadataReaderOptions.None);
+                // MetadataReaderOptions.None: Give me the raw info. Do not apply C# semantics (eg, give me IVector instead of IList)
+                var assembly = pereader.GetMetadataReader(MetadataReaderOptions.None);
+                // When resolving interface methods, which includes properties and events, the map below will help to 
+                // resolve the method names against pretty names.
+                // For example, put_MyPropertyValue or set_MyPropertyValue versus MyPropertyValue setter
+                var specialMethodNamesRepository = GetSpecialMethodNamesRepository(assembly);
+                TypeDefinition? typeDef = null;
 
+                try
+                {
                     foreach (var typeDefHandle in assembly.TypeDefinitions)
                     {
-                        var typeDef = assembly.GetTypeDefinition(typeDefHandle);
-                        // In the case of an error while parsing, save the namespace and typename for future logging
-                        namespaceName = assembly.GetString(typeDef.Namespace);
-                        typeName = assembly.GetString(typeDef.Name);
+                        typeDef = assembly.GetTypeDefinition(typeDefHandle);
 
-                        if (FrontEndMetadataParser.ShouldIgnoreType(typeDef))
+                        if (FrontEndMetadataParser.ShouldIgnoreType(typeDef.Value))
                         {
                             continue;
                         }
 
-                        var typeDefinitionKind = MetadataParserHelpers.GetTypeDefinitionKind(assembly, typeDef);
+                        var typeDefinitionKind = MetadataParserHelpers.GetTypeDefinitionKind(assembly, typeDef.Value);
 
                         switch (typeDefinitionKind)
                         {
                             case TypeDefinitionKind.RuntimeClass:
-                                ProcessRuntimeClass(assembly, typeDef);
+                                ProcessRuntimeClass(assembly, typeDef.Value);
                                 break;
                             case TypeDefinitionKind.Interface:
-                                ProcessInterface(assembly, typeDef);
+                                ProcessInterface(assembly, typeDef.Value, specialMethodNamesRepository);
                                 break;
                             case TypeDefinitionKind.Struct:
-                                ProcessStruct(assembly, typeDef);
+                                ProcessStruct(assembly, typeDef.Value);
                                 break;
                             case TypeDefinitionKind.Enum:
-                                ProcessEnum(assembly, typeDef);
+                                ProcessEnum(assembly, typeDef.Value);
                                 break;
                             case TypeDefinitionKind.Attribute:
                                 // DO NOTHING AT THIS LEVEL. Attributes are only used later on when they are applied to types.
                                 break;
                             case TypeDefinitionKind.Delegate:
-                                ProcessDelegate(assembly, typeDef);
+                                ProcessDelegate(assembly, typeDef.Value, specialMethodNamesRepository);
                                 break;
                             default:
                                 throw new NotImplementedException();
                         }
                     }
                 }
+                catch (Exception exp)
+                {
+                    if (typeDef.HasValue && assembly != null)
+                    {
+                        // In the case of an error while parsing, provide the full type name and winmd
+                        var namespaceName = assembly.GetString(typeDef.Value.Namespace);
+                        var typeName = assembly.GetString(typeDef.Value.Name);
+                        var fullTypeName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
+
+                        throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotParseTypeInMetadataWinmd, fullTypeName, winmd), exp);
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
             }
-            catch (Exception exp)
+        }
+
+        /// <summary>
+        /// For method name resolution, specifically with properties and events, build a map with the info needed to resolve them
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <returns></returns>
+        private IDictionary<MethodDefinitionHandle, string> GetSpecialMethodNamesRepository(MetadataReader assembly)
+        {
+            var specialMethodNamesRepository = new Dictionary<MethodDefinitionHandle, string>();
+
+            specialMethodNamesRepository.Clear();
+            foreach (var propertyHandle in assembly.PropertyDefinitions)
             {
-                // Where possible, provide more details about what was been processed when the error took place
-                if (namespaceName != null && typeName != null)
+                var propertyDef = assembly.GetPropertyDefinition(propertyHandle);
+                var propertyAccessors = propertyDef.GetAccessors();
+                var name = assembly.GetString(propertyDef.Name);
+                if (!propertyAccessors.Getter.IsNil)
                 {
-                    var fullTypeName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
-                    throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotParseTypeInMetadataWinmd, fullTypeName, winmd), exp);
+                    specialMethodNamesRepository.Add(propertyAccessors.Getter, name);
                 }
-                else
+                if (!propertyAccessors.Setter.IsNil)
                 {
-                    throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotParseWinmd, winmd), exp);
+                    specialMethodNamesRepository.Add(propertyAccessors.Setter, name);
                 }
             }
+
+            foreach (var eventHandle in assembly.EventDefinitions)
+            {
+                var eventDef = assembly.GetEventDefinition(eventHandle);
+                var eventAccessors = eventDef.GetAccessors();
+                var name = assembly.GetString(eventDef.Name);
+                if (!eventAccessors.Adder.IsNil)
+                {
+                    specialMethodNamesRepository.Add(eventAccessors.Adder, name);
+                }
+                if (!eventAccessors.Remover.IsNil)
+                {
+                    specialMethodNamesRepository.Add(eventAccessors.Remover, name);
+                }
+            }
+
+            return specialMethodNamesRepository;
         }
 
         private void ProcessRuntimeClass(MetadataReader assembly, TypeDefinition typeDef)
@@ -127,9 +172,9 @@ namespace Microsoft.Wcl.Parsers
             this.Configuration.DataStore.InsertRuntimeClassInfo(info);
         }
 
-        private void ProcessInterface(MetadataReader assembly, TypeDefinition typeDef)
+        private void ProcessInterface(MetadataReader assembly, TypeDefinition typeDef, IDictionary<MethodDefinitionHandle, string> propertiesRepository)
         {
-            var info = this.InterfaceMetadataParser.Parse(assembly, typeDef, null, false);
+            var info = this.InterfaceMetadataParser.Parse(assembly, typeDef, null, false, propertiesRepository);
             this.Configuration.DataStore.InsertInterfaceInfo(info);
         }
 
@@ -145,10 +190,10 @@ namespace Microsoft.Wcl.Parsers
             this.Configuration.DataStore.InsertEnumInfo(info);
         }
 
-        private void ProcessDelegate(MetadataReader assembly, TypeDefinition typeDef)
+        private void ProcessDelegate(MetadataReader assembly, TypeDefinition typeDef, IDictionary<MethodDefinitionHandle, string> fieldsRepository)
         {
             // Delegates are treated just like interfaces.
-            var info = this.InterfaceMetadataParser.Parse(assembly, typeDef, null, true);
+            var info = this.InterfaceMetadataParser.Parse(assembly, typeDef, null, true, fieldsRepository);
             this.Configuration.DataStore.InsertInterfaceInfo(info);
         }
 

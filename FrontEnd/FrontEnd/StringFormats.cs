@@ -29,6 +29,7 @@ namespace Microsoft.Wcl
         public const string CantBuildTypeInfoFromCustomAttribute = "Can't build {0}. The information from the metadata seems to be incorrect.";
         public const string QueryDidNotYieldExpectedResult = "Query was executed, but did not yield expected result: {0}";
         public const string CouldNotParseWinmd = "Could not parse winmd {0}";
+        public const string CouldNotFindFriendlyMethodNameInRepository = "Could not find friendly method name information in the repository for method {0}";
     }
 
     internal static class StringFormats
