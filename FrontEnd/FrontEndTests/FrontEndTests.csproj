@@ -101,6 +101,7 @@
     <Compile Include="ArgumentValidatorTest.cs" />
     <Compile Include="ParameterizedTypeIIDTests.cs" />
     <Compile Include="E2E.cs" />
+    <Compile Include="PlatformVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FrontEnd\FrontEnd.csproj">
@@ -136,6 +137,9 @@
     <None Include="TestData\InterfacesInput\Interface1_Parameters.base" />
     <None Include="TestData\InterfacesInput\Interface1_RequiredInterfaces.base" />
     <None Include="TestData\ParameterizedTypeIIDInput\ParameterizedTypeIID_Basic.base" />
+    <None Include="TestData\PlatformVersion\ClassConstructors.base" />
+    <None Include="TestData\PlatformVersion\Classes.base" />
+    <None Include="TestData\PlatformVersion\ClassStatics.base" />
     <None Include="TestData\RuntimeclassInput\1Runtimeclass.base" />
     <None Include="TestData\RuntimeclassInput\1Runtimeclass_ClassInterfaces.base" />
     <None Include="TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd" />

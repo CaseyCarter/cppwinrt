@@ -28,6 +28,7 @@ namespace Microsoft.Wcl
         public const string RuntimeclassNonGenericDefaultInterfaceExists = "Default interface (non Generic) for Runtimeclass not found";
         public const string CantBuildTypeInfoFromCustomAttribute = "Can't build {0}. The information from the metadata seems to be incorrect.";
         public const string QueryDidNotYieldExpectedResult = "Query was executed, but did not yield expected result: {0}";
+        public const string CouldNotParseWinmd = "Could not parse winmd {0}";
     }
 
     internal static class StringFormats

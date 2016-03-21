@@ -55,8 +55,8 @@ namespace Microsoft.Wcl.Parsers
 
         private void ProcessWinmd(string winmd)
         {
-            TypeDefinition? typeDef = null;
-            MetadataReader assembly = null;
+            string namespaceName = null;
+            string typeName = null;
 
             try
             {
@@ -64,38 +64,41 @@ namespace Microsoft.Wcl.Parsers
                 using (var pereader = new PEReader(stream))
                 {
                     // MetadataReaderOptions.None: Give me the raw info. Do not apply C# semantics (eg, give me IVector instead of IList)
-                    assembly = pereader.GetMetadataReader(MetadataReaderOptions.None);
+                    var assembly = pereader.GetMetadataReader(MetadataReaderOptions.None);
 
                     foreach (var typeDefHandle in assembly.TypeDefinitions)
                     {
-                        typeDef = assembly.GetTypeDefinition(typeDefHandle);
+                        var typeDef = assembly.GetTypeDefinition(typeDefHandle);
+                        // In the case of an error while parsing, save the namespace and typename for future logging
+                        namespaceName = assembly.GetString(typeDef.Namespace);
+                        typeName = assembly.GetString(typeDef.Name);
 
-                        if (FrontEndMetadataParser.ShouldIgnoreType(typeDef.Value))
+                        if (FrontEndMetadataParser.ShouldIgnoreType(typeDef))
                         {
                             continue;
                         }
 
-                        var typeDefinitionKind = MetadataParserHelpers.GetTypeDefinitionKind(assembly, typeDef.Value);
+                        var typeDefinitionKind = MetadataParserHelpers.GetTypeDefinitionKind(assembly, typeDef);
 
                         switch (typeDefinitionKind)
                         {
                             case TypeDefinitionKind.RuntimeClass:
-                                ProcessRuntimeClass(assembly, typeDef.Value);
+                                ProcessRuntimeClass(assembly, typeDef);
                                 break;
                             case TypeDefinitionKind.Interface:
-                                ProcessInterface(assembly, typeDef.Value);
+                                ProcessInterface(assembly, typeDef);
                                 break;
                             case TypeDefinitionKind.Struct:
-                                ProcessStruct(assembly, typeDef.Value);
+                                ProcessStruct(assembly, typeDef);
                                 break;
                             case TypeDefinitionKind.Enum:
-                                ProcessEnum(assembly, typeDef.Value);
+                                ProcessEnum(assembly, typeDef);
                                 break;
                             case TypeDefinitionKind.Attribute:
                                 // DO NOTHING AT THIS LEVEL. Attributes are only used later on when they are applied to types.
                                 break;
                             case TypeDefinitionKind.Delegate:
-                                ProcessDelegate(assembly, typeDef.Value);
+                                ProcessDelegate(assembly, typeDef);
                                 break;
                             default:
                                 throw new NotImplementedException();
@@ -106,17 +109,14 @@ namespace Microsoft.Wcl.Parsers
             catch (Exception exp)
             {
                 // Where possible, provide more details about what was been processed when the error took place
-                if (typeDef.HasValue && assembly != null)
+                if (namespaceName != null && typeName != null)
                 {
-                    var namespaceName = assembly.GetString(typeDef.Value.Namespace);
-                    var typeName = assembly.GetString(typeDef.Value.Name);
                     var fullTypeName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
-
                     throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotParseTypeInMetadataWinmd, fullTypeName, winmd), exp);
                 }
                 else
                 {
-                    throw;
+                    throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotParseWinmd, winmd), exp);
                 }
             }
         }
