@@ -7,7 +7,7 @@
     <ClCompile Include="Source\Database.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModernMain.cpp">
+    <ClCompile Include="Source\Main.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Source\Precompiled.cpp">
