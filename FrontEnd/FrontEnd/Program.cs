@@ -33,7 +33,7 @@ namespace Microsoft.Wcl
                 {
                     return ProcessMain(args);
                 }
-                catch (MissingWimdException e)
+                catch (WinmdFileNotFoundException e)
                 {
                     // No catastrophic. No need to generate WER report and such
                     Console.WriteLine(e.Message);
@@ -44,8 +44,15 @@ namespace Microsoft.Wcl
                 {
                     // No catastrophic. No need to generate WER report and such
                     Console.WriteLine(e.Message);
+                    Console.WriteLine();
                     ShowHelp();
                     Console.WriteLine();
+                    return -1;
+                }
+                catch (ResponseFileNotFoundException e)
+                {
+                    // No catastrophic. No need to generate WER report and such
+                    Console.WriteLine(e.Message);
                     return -1;
                 }
                 catch (Exception e)
@@ -58,7 +65,7 @@ namespace Microsoft.Wcl
                         e = e.InnerException;
                     }
 
-                    // This will generate
+                    // This will generate a WER report
                     throw;
                 }
             }
