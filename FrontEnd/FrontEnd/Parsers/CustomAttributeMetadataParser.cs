@@ -224,7 +224,12 @@ namespace Microsoft.Wcl.Parsers
             var memberReference = assembly.GetMemberReference((MemberReferenceHandle)customAttributeInfo.Constructor);
             CustomAttributeMetadataParser.GetDeferedCustomAttributes(assembly, memberReference.Signature, customAttributeInfo.BlobHandle, out typeHolderInfo);
 
-            if (typeHolderInfo.Items.Count != 4)
+            // Deal with contract based versus platform based metadata
+            // Composable attribute can come like
+            // [composable(IFooComposableInterface, protected, NTDDI_WINBLUE)] -- By default Platform.Windows
+            // [composable(IFooComposableInterface, protected, Windows.Foundation.UniversalApiContract, 2)]
+            if (!(typeHolderInfo.Items.Count == 4 || typeHolderInfo.Items.Count == 3) ||
+                !(typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.TypeHandle && typeHolderInfo.Items[1].SignatureTypeCode == SignatureTypeCode.TypeHandle))
             {
                 throw new InvalidOperationException(String.Format(StringExceptionFormats.CantBuildTypeInfoFromCustomAttribute, "composable interface type name"));
             }
@@ -232,6 +237,7 @@ namespace Microsoft.Wcl.Parsers
             var blobReader = assembly.GetBlobReader(customAttributeInfo.BlobHandle);
             var value1 = (string)MetadataParserHelpers.GetValueForSignatureTypeCode<string>(assembly, ref typeHolderInfo.BlobReader, typeHolderInfo.Items[0].SignatureTypeCode, typeHolderInfo.Items[0].Handle);
             var value2 = MetadataParserHelpers.GetValueForSignatureTypeCode<int>(assembly, ref typeHolderInfo.BlobReader, SignatureTypeCode.Int32, typeHolderInfo.Items[1].Handle);
+
 
             if (Enum.IsDefined(typeof(CompositionTypeInfo), value2))
             {
@@ -250,7 +256,15 @@ namespace Microsoft.Wcl.Parsers
             var memberReference = assembly.GetMemberReference((MemberReferenceHandle)customAttributeInfo.Constructor);
             CustomAttributeMetadataParser.GetDeferedCustomAttributes(assembly, memberReference.Signature, customAttributeInfo.BlobHandle, out typeHolderInfo);
 
-            if (typeHolderInfo.Items.Count != 3)
+            // Deal with contract based versus platform based metadata
+            // Static attribute can come like
+            // [static(IMyClassStatics, NTDDI_WIN10_TH2)] -- By default, Platform.Windows
+            // [static(IMyClassStatics, NTDDI_WIN10_TH2, Platform.WindowsPhone)]
+            // [static(IMyClassStatics, Windows.Foundation.UniversalApiContract, 2)]
+            // Contract base static attribute has 3 parameters, whereas platform based static attribute has 2 or 3
+            // In both cases, the first parameter has to be a TypeHandle from which we will read the name of the static interface
+            if (!(typeHolderInfo.Items.Count == 3 || typeHolderInfo.Items.Count == 2) ||
+                !(typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.TypeHandle))
             {
                 throw new InvalidOperationException(String.Format(StringExceptionFormats.CantBuildTypeInfoFromCustomAttribute, "static interface type name"));
             }
@@ -287,16 +301,26 @@ namespace Microsoft.Wcl.Parsers
             var memberReference = assembly.GetMemberReference((MemberReferenceHandle)customAttributeInfo.Constructor);
             CustomAttributeMetadataParser.GetDeferedCustomAttributes(assembly, memberReference.Signature, customAttributeInfo.BlobHandle, out typeHolderInfo);
 
-            if (typeHolderInfo.Items.Count < 2 && typeHolderInfo.Items.Count > 3)
+            // Deal with contract based versus platform based metadata
+            // Activatable attribute can come like
+            // [activatable(NTDDI_WIN10_TH2)] -- By default Platform.Windows
+            // [activatable(Windows.Foundation.UniversalApiContract, 2)]
+            // [activatable(IVisualInteractionSourceFactory, NTDDI_WIN10_RS1)] -- By default Platform.Windows
+            // [activatable(IVisualInteractionSourceFactory, NTDDI_WIN10_RS1, Platform.WindowsPhone)]
+            // [activatable(IVisualInteractionSourceFactory, Windows.Foundation.UniversalApiContract, 3)]
+            // Contract based activatable attribute 2 (no factory) or 3 (with factory), whereas platform version has 1 (no factory) or 2 (with factory)
+            // In both cases, if the first parameter SignatureTypeCode is TypeHandle, then that should be the factory, otherwise there is not
+            if (!(typeHolderInfo.Items.Count >= 1 && typeHolderInfo.Items.Count <= 3) ||
+                !(typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.TypeHandle || typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.UInt32))
             {
-                throw new InvalidOperationException(String.Format(StringExceptionFormats.CantBuildTypeInfoFromCustomAttribute, "activatable interface type name"));
+                throw new InvalidOperationException(String.Format(StringExceptionFormats.CantBuildTypeInfoFromCustomAttribute, "activatable interface format"));
             }
-            
-            if (typeHolderInfo.Items.Count == 3)
+
+            if (typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.TypeHandle)
             {
                 value = Convert.ToString(MetadataParserHelpers.GetValueForSignatureTypeCode<string>(assembly, ref typeHolderInfo.BlobReader, typeHolderInfo.Items[0].SignatureTypeCode, typeHolderInfo.Items[0].Handle));
             }
-            
+
             activatableInterfaceFullTypeName = value;
         }
 

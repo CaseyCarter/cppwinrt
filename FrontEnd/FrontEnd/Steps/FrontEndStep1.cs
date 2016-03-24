@@ -7,9 +7,9 @@ using Microsoft.Wcl.DataStore;
 
 namespace Microsoft.Wcl.Steps
 {
-    internal class MissingWimdException : Exception
+    internal class WinmdFileNotFoundException : FileNotFoundException
     {
-        public MissingWimdException(string winmd) : base(String.Format(StringExceptionFormats.MissingWinmd, winmd))
+        public WinmdFileNotFoundException(string winmd) : base(String.Format(StringExceptionFormats.WinmdFileNotFound, winmd))
         {            
         }
     }
@@ -56,7 +56,7 @@ namespace Microsoft.Wcl.Steps
             {
                 if (!File.Exists(winmd))
                 {
-                    throw new MissingWimdException(winmd);
+                    throw new WinmdFileNotFoundException(winmd);
                 }
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Wcl;
 using System.Collections.Generic;
 using System.IO;
 
@@ -78,7 +79,7 @@ namespace Microsoft.Wtl.Tests
             var file1 = Path.Combine(Directory.GetCurrentDirectory(), "foo1.winmd");
             configuration.Arguments.Add("winmd", new Wcl.Argument("winmd", new string[] { file1 }));
 
-            AssertHelper.VerifiyThrows<Wcl.Steps.MissingWimdException>(() => phase1.Run(configuration));
+            AssertHelper.VerifiyThrows<Wcl.Steps.WinmdFileNotFoundException>(() => phase1.Run(configuration), string.Format(StringExceptionFormats.WinmdFileNotFound, file1));
         }
     }
 }

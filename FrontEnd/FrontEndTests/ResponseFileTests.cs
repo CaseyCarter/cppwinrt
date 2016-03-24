@@ -2,6 +2,7 @@
 
 using Microsoft.Wcl;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Microsoft.Wtl.Tests
 {
@@ -205,7 +206,6 @@ namespace Microsoft.Wtl.Tests
         public void OneParameter_OneValidValueWithSpacesAndNoQuotes()
         {
             var name = "-winmd";
-            //var value = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
             var chunk1 = "C:\\Program";
             var chunk2 = "Files";
             var chunk3 = "(x86)\\Windows";
@@ -221,6 +221,15 @@ namespace Microsoft.Wtl.Tests
             Assert.AreEqual(chunk2, list[2]);
             Assert.AreEqual(chunk3, list[3]);
             Assert.AreEqual(chunk4, list[4]);
+        }
+
+        [TestMethod]
+        public void ResponseFileNotFound()
+        {
+            var responseFileParser = new ResponseFileParser();
+            var file = @"c:\filethatdoesnotexists.txt";
+
+            AssertHelper.VerifiyThrows<ResponseFileNotFoundException>(() => { responseFileParser.Parse(file); }, string.Format(StringExceptionFormats.ResponseFileNotFound, file));
         }
     }
 }

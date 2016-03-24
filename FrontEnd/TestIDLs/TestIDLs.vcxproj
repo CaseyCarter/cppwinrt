@@ -158,7 +158,8 @@ copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDIn
 copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-</Command>
+md "$(TargetDir)TEstData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*" </Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -201,7 +202,8 @@ copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDIn
 copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-</Command>
+md "$(TargetDir)TEstData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*" </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
@@ -266,6 +268,7 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TEstData\Parame
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Midl Include="PlatformVersion.idl" />
     <Midl Include="Runtimeclass1.idl" />
     <Midl Include="BasicTests.Idl" />
     <Midl Include="ClassConstructors1.idl" />
