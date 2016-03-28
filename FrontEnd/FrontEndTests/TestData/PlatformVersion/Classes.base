@@ -1,0 +1,4 @@
+Modern::Test::FooComposableWithPlatformVersion|12||Modern::Test::IFooWithPlatformVersion|0|0
+Modern::Test::FooDefaultActivatableWithPlatformVersion|12||Modern::Test::IFooWithPlatformVersion|1|0
+Modern::Test::FooFactoryActivatableWithPlatformVersion|12||Modern::Test::IFooWithPlatformVersion|0|0
+Modern::Test::FooStaticWithPlatformVersion|12||Modern::Test::IFooWithPlatformVersion|0|0

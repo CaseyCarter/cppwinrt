@@ -15,7 +15,7 @@ namespace Microsoft.Wcl.Parsers
             this.Configuration = configuration;
         }
 
-        public InterfaceInfo Parse(MetadataReader assembly, TypeDefinition typeDef, string parentFullTypeName, bool isDelegate)
+        public InterfaceInfo Parse(MetadataReader assembly, TypeDefinition typeDef, string parentFullTypeName, bool isDelegate, IDictionary<MethodDefinitionHandle, string> specialMethodNamesRepository)
         {
             var interfaceInfo = new InterfaceInfo();
             CustomAttributeInfo customAttributeInfo = null;
@@ -43,13 +43,13 @@ namespace Microsoft.Wcl.Parsers
             interfaceInfo.Uuid = guid.ToString();
             interfaceInfo.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated); ;
             interfaceInfo.Delegate = (isDelegate ? TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName) : null);
-            interfaceInfo.MethodsInfo = GetMethodsInfo(assembly, typeDef, interfaceInfo.FullName, isDelegate);
+            interfaceInfo.MethodsInfo = GetMethodsInfo(assembly, typeDef, interfaceInfo.FullName, isDelegate, specialMethodNamesRepository);
             interfaceInfo.RequiredInterfacesInfo = GetRequiredInterfacesInfo(assembly, typeDef, interfaceInfo.FullName);
 
             return interfaceInfo;
         }
 
-        private IList<InterfaceMethodInfo> GetMethodsInfo(MetadataReader assembly, TypeDefinition typeDef, string interfaceFullTypeName, bool isDelegate)
+        private IList<InterfaceMethodInfo> GetMethodsInfo(MetadataReader assembly, TypeDefinition typeDef, string interfaceFullTypeName, bool isDelegate, IDictionary<MethodDefinitionHandle, string> specialMethodNamesRepository)
         {
             var methodInfoList = new List<InterfaceMethodInfo>();
 
@@ -77,7 +77,7 @@ namespace Microsoft.Wcl.Parsers
                     CustomAttributeMetadataParser.GetOverloadName(assembly, customAttributeInfo, out overloadMethodName);
                 }
 
-                UpdateMethodNameAndAbiMethodName(methodDef.Attributes, methodName, overloadMethodName, out prettyMethodName, out abiMethodName);
+                UpdateMethodNameAndAbiMethodName(methodHandle, methodDef, methodName, overloadMethodName, specialMethodNamesRepository, out prettyMethodName, out abiMethodName);
                 var fullAbiMethodName = TypeNameUtilities.GetFormattedFullTypeName(interfaceFullTypeName, abiMethodName);
 
                 var info = new InterfaceMethodInfo();
@@ -93,7 +93,7 @@ namespace Microsoft.Wcl.Parsers
             return methodInfoList;
         }
 
-        private void UpdateMethodNameAndAbiMethodName(MethodAttributes methodAttributes, string methodName, string overloadMethodName, out string prettyMethodName, out string abiMethodName)
+        private void UpdateMethodNameAndAbiMethodName(MethodDefinitionHandle methodHandle, MethodDefinition methodDef, string methodName, string overloadMethodName, IDictionary<MethodDefinitionHandle, string> specialMethodNamesRepository, out string prettyMethodName, out string abiMethodName)
         {
             string prettyMethodNameLocal = null;
             string abiMethodNameLocal = null;
@@ -102,22 +102,18 @@ namespace Microsoft.Wcl.Parsers
             // For example, a property getter may look as object.PropertyName, but in the metadata it is really object.get_PropertyName.
             // Same thing with property setter (put_),  event add (add_) and event remove (remove_).
             // In this cases, the methodName becomes the abiMethodName and the methodName is fixed to not have the prefix.
-            if (((methodAttributes & MethodAttributes.SpecialName) == MethodAttributes.SpecialName))
+            if (((methodDef.Attributes & MethodAttributes.SpecialName) == MethodAttributes.SpecialName))
             {
-                var prefixes = new string[] { "get_", "put_", "add_", "remove_" };
-                foreach (var prefix in prefixes)
+                string friendlyName;
+                if (specialMethodNamesRepository.TryGetValue(methodHandle, out friendlyName))
                 {
-                    if (methodName.StartsWith(prefix))
-                    {
-                        abiMethodNameLocal = methodName;
-                        prettyMethodNameLocal = methodName.Replace(prefix, String.Empty);
-                        break;
-                    }
+                    abiMethodNameLocal = methodName;
+                    prettyMethodNameLocal = friendlyName;
                 }
-
-                if (abiMethodNameLocal == null && methodName != "Invoke")
+                // "Invoke" is a special name, but there won't be any data about it (compared to Fields and Events).
+                else if (methodName != "Invoke")
                 {
-                    throw new InvalidOperationException(String.Format(StringExceptionFormats.InvalidSpecialNameOnMethod, methodName));
+                    throw new InvalidOperationException(String.Format(StringExceptionFormats.CouldNotFindFriendlyMethodNameInRepository, methodName));
                 }
             }
 

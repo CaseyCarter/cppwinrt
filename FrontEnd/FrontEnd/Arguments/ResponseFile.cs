@@ -4,13 +4,26 @@ using System.IO;
 
 namespace Microsoft.Wcl
 {
+    internal class ResponseFileNotFoundException : FileNotFoundException
+    {
+        public ResponseFileNotFoundException(string responseFile) : base(String.Format(StringExceptionFormats.ResponseFileNotFound, responseFile))
+        { }
+    }
+
     internal class ResponseFileParser
     {
         public IList<string> Parse(string file)
         {
-            var responseFileContent = GetResponseFileContent(file);
-            var expandedArgs = ParseResponseFileContent(responseFileContent);
-            return expandedArgs;
+            if (File.Exists(file))
+            {
+                var responseFileContent = GetResponseFileContent(file);
+                var expandedArgs = ParseResponseFileContent(responseFileContent);
+                return expandedArgs;
+            }
+            else
+            {
+                throw new ResponseFileNotFoundException(file);
+            }
         }
 
         /// <summary>

@@ -22,12 +22,15 @@ namespace Microsoft.Wcl
         public const string CouldNotDeriveProjectedType = "Could not derive projected type for type {0}. Reason {1}";
         public const string CouldNotDeriveClassType = "Could not derive class type from type {0}";
         public const string CouldNotDeriveTypeCategory = "Could not derive type category from type {0}";
-        public const string MissingWinmd = "Could not find Winmd {0}";
+        public const string WinmdFileNotFound = "Could not find Winmd {0}";
         public const string CouldNotParseTypeInMetadataWinmd = "Could not parse type {0} from winmd {1}";
         public const string RuntimeclassWithoutStaticOrDefaultInterface = "Runtimeclass found without default interface or static interface";
         public const string RuntimeclassNonGenericDefaultInterfaceExists = "Default interface (non Generic) for Runtimeclass not found";
         public const string CantBuildTypeInfoFromCustomAttribute = "Can't build {0}. The information from the metadata seems to be incorrect.";
         public const string QueryDidNotYieldExpectedResult = "Query was executed, but did not yield expected result: {0}";
+        public const string CouldNotParseWinmd = "Could not parse winmd {0}";
+        public const string CouldNotFindFriendlyMethodNameInRepository = "Could not find friendly method name information in the repository for method {0}";
+        public const string ResponseFileNotFound = "Could not find response file {0}";
     }
 
     internal static class StringFormats
