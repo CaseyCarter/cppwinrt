@@ -39,19 +39,6 @@ class Connection
     using ConnectionHandle = Handle<ConnectionHandleTraits>;
     ConnectionHandle m_handle;
 
-    template <typename F, typename C>
-    void InternalOpen(F open, C const * const filename)
-    {
-        Connection temp;
-
-        if (SQLITE_OK != open(filename, put(temp.m_handle)))
-        {
-            temp.ThrowLastError();
-        }
-
-        swap(m_handle, temp.m_handle);
-    }
-
 public:
 
     Connection() noexcept = default;
@@ -66,16 +53,6 @@ public:
     explicit Connection(std::basic_string<C> const & filename) :
         Connection(filename.c_str())
     {}
-
-    static Connection Memory()
-    {
-        return Connection(":memory:");
-    }
-
-    static Connection WideMemory()
-    {
-        return Connection(L":memory:");
-    }
 
     __declspec(noreturn) void ThrowLastError() const
     {
@@ -94,12 +71,14 @@ public:
 
     void Open(char const * const filename)
     {
-        InternalOpen(sqlite3_open, filename);
-    }
+        Connection temp;
 
-    void Open(wchar_t const * const filename)
-    {
-        InternalOpen(sqlite3_open16, filename);
+        if (SQLITE_OK != sqlite3_open_v2(filename, put(temp.m_handle), SQLITE_OPEN_READONLY, nullptr))
+        {
+            temp.ThrowLastError();
+        }
+
+        swap(m_handle, temp.m_handle);
     }
 
     long long RowId() const noexcept
