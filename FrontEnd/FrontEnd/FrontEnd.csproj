@@ -111,6 +111,8 @@
     <Compile Include="Parsers\CustomAttributeMetadataParser.cs" />
     <Compile Include="Parsers\EnumMetadataParser.cs" />
     <Compile Include="FullTypeNameConstants.cs" />
+    <Compile Include="Parsers\GenericInterfacesIIDsGenerator.cs" />
+    <Compile Include="Parsers\ImplicitGenericInterfacesGenerator.cs" />
     <Compile Include="Parsers\InfoObjectTypeDefinition.cs" />
     <Compile Include="Parsers\MetadataParserHelpers.cs" />
     <Compile Include="Parsers\TypeModifier.cs" />

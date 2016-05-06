@@ -52,4 +52,11 @@ interface IFooWithEventHandler : IInspectable
     [eventadd] HRESULT Passed( [in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out, retval] EventRegistrationToken *eventCookie );
     [eventremove] HRESULT Passed( [in] EventRegistrationToken eventCookie );
 };
+
+[uuid(F0D94CA2-8050-4BBA-A4DF-8C42EBFE6714)]
+[contract(Windows.Foundation.UniversalApiContract, 1)]
+interface IFooNestedGenericInterface : IInspectable
+{
+    HRESULT Bar(Windows.Foundation.Collections.IVectorView<Windows.Foundation.Collections.IVector<EnumTestsWithFlags>*>* p);
+};
 }
