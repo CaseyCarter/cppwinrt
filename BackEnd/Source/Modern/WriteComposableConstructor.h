@@ -1,5 +1,5 @@
 
-	%T(%)
-	{
-		GetActivationFactory<%, %>().%(%lease<Windows::IInspectable>(this), m_inner);
-	}
+    %T(%)
+    {
+        GetActivationFactory<%, %>().%(%*this, m_inner);
+    }

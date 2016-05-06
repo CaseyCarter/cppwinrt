@@ -1,6 +1,5 @@
 
 template <> struct traits<%::%>
 {
-	static constexpr wchar_t const * name() noexcept { return L"%"; }
-	static constexpr unsigned name_length = %;
+    static constexpr const wchar_t * name() noexcept { return L"%"; }
 };

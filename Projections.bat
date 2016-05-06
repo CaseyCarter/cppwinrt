@@ -1,8 +1,7 @@
 @echo off
 
-FrontEnd\FrontEnd\bin\Release\WinMDc1.exe @Projections.answers
-BackEnd\x86\Release\WinMDc2.exe Complete.db -out Projections\Complete
-FrontEnd\FrontEnd\bin\Release\WinMDc1.exe @Projections.answers
-BackEnd\x86\Release\WinMDc2.exe Complete.db -out Projections\Minimal
-FrontEnd\FrontEnd\bin\Release\WinMDc1.exe @Projections.answers
-BackEnd\x86\Release\WinMDc2.exe Complete.db -out Projections\NoXaml
+FrontEnd\FrontEnd\bin\Release\winmdc1.exe @Projections.NoXaml.txt
+BackEnd\x86\Release\winmdc2.exe Projections\NoXaml\Metadata.db -out Projections\NoXaml -time
+
+FrontEnd\FrontEnd\bin\Release\winmdc1.exe @Projections.Complete.txt
+BackEnd\x86\Release\winmdc2.exe Projections\Complete\Metadata.db -out Projections\Complete -time

@@ -1,0 +1,5 @@
+
+inline % %::%(%)
+{
+    %GetActivationFactory<%, %>().%(%);
+}

@@ -1,1 +1,1 @@
-	virtual HRESULT __stdcall %(%) = 0;
+    virtual HRESULT __stdcall %(%) = 0;

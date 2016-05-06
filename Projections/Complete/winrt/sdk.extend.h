@@ -1,4727 +1,5942 @@
-// C++ for the Windows Runtime v1.29 - http://moderncpp.com
+// C++ for the Windows Runtime v1.29
 // Copyright (c) 2016 Microsoft Corporation
 
 #pragma once
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml {
+WINRT_EXPORT namespace winrt {
 
-template <typename T, typename A = ABI::Windows::UI::Xaml::IUIElementOverrides>
-struct IUIElementOverridesT : A
+namespace Windows { namespace UI { namespace Xaml {
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::IApplicationOverrides>
+struct IApplicationOverridesT : A
 {
-	Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IUIElementOverrides>().OnCreateAutomationPeer();
-	}
+    void OnActivated(const Windows::ApplicationModel::Activation::IActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnActivated(args);
+    }
 
-	void OnDisconnectVisualChildren()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IUIElementOverrides>().OnDisconnectVisualChildren();
-	}
+    void OnLaunched(const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnLaunched(args);
+    }
 
-	Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>> FindSubElementsForTouchTargeting(Windows::Foundation::Point const & point, Windows::Foundation::Rect const & boundingRect)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IUIElementOverrides>().FindSubElementsForTouchTargeting(point, boundingRect);
-	}
+    void OnFileActivated(const Windows::ApplicationModel::Activation::FileActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnFileActivated(args);
+    }
 
-	virtual HRESULT __stdcall abi_OnCreateAutomationPeer(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->OnCreateAutomationPeer(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    void OnSearchActivated(const Windows::ApplicationModel::Activation::SearchActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnSearchActivated(args);
+    }
 
-	virtual HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
-	{
-		try { static_cast<T *>(this)->OnDisconnectVisualChildren(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    void OnShareTargetActivated(const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnShareTargetActivated(args);
+    }
 
-	virtual HRESULT __stdcall abi_FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>>> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->FindSubElementsForTouchTargeting(point, boundingRect); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    void OnFileOpenPickerActivated(const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnFileOpenPickerActivated(args);
+    }
+
+    void OnFileSavePickerActivated(const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnFileSavePickerActivated(args);
+    }
+
+    void OnCachedFileUpdaterActivated(const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnCachedFileUpdaterActivated(args);
+    }
+
+    void OnWindowCreated(const Windows::UI::Xaml::WindowCreatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides>().OnWindowCreated(args);
+    }
+
+    HRESULT __stdcall abi_OnActivated(abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::IActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnLaunched(abi_arg_in<Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnLaunched(*reinterpret_cast<const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnFileActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnFileActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnSearchActivated(abi_arg_in<Windows::ApplicationModel::Activation::ISearchActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnSearchActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::SearchActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnShareTargetActivated(abi_arg_in<Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnShareTargetActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnFileOpenPickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnFileOpenPickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnFileSavePickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnFileSavePickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnCachedFileUpdaterActivated(abi_arg_in<Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnCachedFileUpdaterActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnWindowCreated(abi_arg_in<Windows::UI::Xaml::IWindowCreatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnWindowCreated(*reinterpret_cast<const Windows::UI::Xaml::WindowCreatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
-template <typename T, typename A = ABI::Windows::UI::Xaml::IVisualStateManagerOverrides>
-struct IVisualStateManagerOverridesT : A
+template <typename T, typename A = ABI::Windows::UI::Xaml::IApplicationOverrides2>
+struct IApplicationOverrides2T : A
 {
-	bool GoToStateCore(Windows::UI::Xaml::Controls::Control const & control, Windows::UI::Xaml::FrameworkElement const & templateRoot, hstring_ref stateName, Windows::UI::Xaml::VisualStateGroup const & group, Windows::UI::Xaml::VisualState const & state, bool const useTransitions)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IVisualStateManagerOverrides>().GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
-	}
+    void OnBackgroundActivated(const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IApplicationOverrides2>().OnBackgroundActivated(args);
+    }
 
-	virtual HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, HSTRING stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GoToStateCore(lease<Windows::UI::Xaml::Controls::Control>(control), lease<Windows::UI::Xaml::FrameworkElement>(templateRoot), lease<hstring>(stateName), lease<Windows::UI::Xaml::VisualStateGroup>(group), lease<Windows::UI::Xaml::VisualState>(state), useTransitions); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnBackgroundActivated(abi_arg_in<Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnBackgroundActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::IFrameworkElementOverrides>
 struct IFrameworkElementOverridesT : A
 {
-	Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size const & availableSize)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IFrameworkElementOverrides>().MeasureOverride(availableSize);
-	}
+    Windows::Foundation::Size MeasureOverride(const Windows::Foundation::Size & availableSize)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides>().MeasureOverride(availableSize);
+    }
 
-	Windows::Foundation::Size ArrangeOverride(Windows::Foundation::Size const & finalSize)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IFrameworkElementOverrides>().ArrangeOverride(finalSize);
-	}
+    Windows::Foundation::Size ArrangeOverride(const Windows::Foundation::Size & finalSize)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides>().ArrangeOverride(finalSize);
+    }
 
-	void OnApplyTemplate()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IFrameworkElementOverrides>().OnApplyTemplate();
-	}
+    void OnApplyTemplate()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides>().OnApplyTemplate();
+    }
 
-	virtual HRESULT __stdcall abi_MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->MeasureOverride(availableSize); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->MeasureOverride(availableSize));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->ArrangeOverride(finalSize); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->ArrangeOverride(finalSize));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_OnApplyTemplate() noexcept override
-	{
-		try { static_cast<T *>(this)->OnApplyTemplate(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnApplyTemplate() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnApplyTemplate();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::IFrameworkElementOverrides2>
 struct IFrameworkElementOverrides2T : A
 {
-	bool GoToElementStateCore(hstring_ref stateName, bool const useTransitions)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::IFrameworkElementOverrides2>().GoToElementStateCore(stateName, useTransitions);
-	}
+    bool GoToElementStateCore(hstring_ref stateName, bool useTransitions)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides2>().GoToElementStateCore(stateName, useTransitions);
+    }
 
-	virtual HRESULT __stdcall abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GoToElementStateCore(lease<hstring>(stateName), useTransitions); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GoToElementStateCore(*reinterpret_cast<const hstring *>(&stateName), useTransitions));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
-template <typename T, typename A = ABI::Windows::UI::Xaml::IApplicationOverrides>
-struct IApplicationOverridesT : A
+template <typename T, typename A = ABI::Windows::UI::Xaml::IUIElementOverrides>
+struct IUIElementOverridesT : A
 {
-	void OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnActivated(args);
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IUIElementOverrides>().OnCreateAutomationPeer();
+    }
 
-	void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnLaunched(args);
-	}
+    void OnDisconnectVisualChildren()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::IUIElementOverrides>().OnDisconnectVisualChildren();
+    }
 
-	void OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnFileActivated(args);
-	}
+    Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>> FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IUIElementOverrides>().FindSubElementsForTouchTargeting(point, boundingRect);
+    }
 
-	void OnSearchActivated(Windows::ApplicationModel::Activation::SearchActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnSearchActivated(args);
-	}
+    HRESULT __stdcall abi_OnCreateAutomationPeer(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->OnCreateAutomationPeer());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	void OnShareTargetActivated(Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnShareTargetActivated(args);
-	}
+    HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDisconnectVisualChildren();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	void OnFileOpenPickerActivated(Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnFileOpenPickerActivated(args);
-	}
-
-	void OnFileSavePickerActivated(Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnFileSavePickerActivated(args);
-	}
-
-	void OnCachedFileUpdaterActivated(Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnCachedFileUpdaterActivated(args);
-	}
-
-	void OnWindowCreated(Windows::UI::Xaml::WindowCreatedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::IApplicationOverrides>().OnWindowCreated(args);
-	}
-
-	virtual HRESULT __stdcall abi_OnActivated(abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnActivated(lease<Windows::ApplicationModel::Activation::IActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnLaunched(abi_arg_in<Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnLaunched(lease<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnFileActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnFileActivated(lease<Windows::ApplicationModel::Activation::FileActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnSearchActivated(abi_arg_in<Windows::ApplicationModel::Activation::ISearchActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnSearchActivated(lease<Windows::ApplicationModel::Activation::SearchActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnShareTargetActivated(abi_arg_in<Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnShareTargetActivated(lease<Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnFileOpenPickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnFileOpenPickerActivated(lease<Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnFileSavePickerActivated(abi_arg_in<Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnFileSavePickerActivated(lease<Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnCachedFileUpdaterActivated(abi_arg_in<Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnCachedFileUpdaterActivated(lease<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnWindowCreated(abi_arg_in<Windows::UI::Xaml::IWindowCreatedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnWindowCreated(lease<Windows::UI::Xaml::WindowCreatedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->FindSubElementsForTouchTargeting(point, boundingRect));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 };
 
-}}}}
+template <typename T, typename A = ABI::Windows::UI::Xaml::IVisualStateManagerOverrides>
+struct IVisualStateManagerOverridesT : A
+{
+    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::IVisualStateManagerOverrides>().GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
+    }
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
+    HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, HSTRING stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GoToStateCore(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control), *reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&templateRoot), *reinterpret_cast<const hstring *>(&stateName), *reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&group), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&state), useTransitions));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>
 struct IAutomationPeerOverridesT : A
 {
-	Windows::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface const patternInterface)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPatternCore(patternInterface);
-	}
+    Windows::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPatternCore(patternInterface);
+    }
 
-	hstring GetAcceleratorKeyCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAcceleratorKeyCore();
-	}
+    hstring GetAcceleratorKeyCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAcceleratorKeyCore();
+    }
 
-	hstring GetAccessKeyCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAccessKeyCore();
-	}
+    hstring GetAccessKeyCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAccessKeyCore();
+    }
 
-	Windows::UI::Xaml::Automation::Peers::AutomationControlType GetAutomationControlTypeCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationControlTypeCore();
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationControlType GetAutomationControlTypeCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationControlTypeCore();
+    }
 
-	hstring GetAutomationIdCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationIdCore();
-	}
+    hstring GetAutomationIdCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetAutomationIdCore();
+    }
 
-	Windows::Foundation::Rect GetBoundingRectangleCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetBoundingRectangleCore();
-	}
+    Windows::Foundation::Rect GetBoundingRectangleCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetBoundingRectangleCore();
+    }
 
-	Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetChildrenCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetChildrenCore();
-	}
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetChildrenCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetChildrenCore();
+    }
 
-	hstring GetClassNameCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClassNameCore();
-	}
+    hstring GetClassNameCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClassNameCore();
+    }
 
-	Windows::Foundation::Point GetClickablePointCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClickablePointCore();
-	}
+    Windows::Foundation::Point GetClickablePointCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetClickablePointCore();
+    }
 
-	hstring GetHelpTextCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetHelpTextCore();
-	}
+    hstring GetHelpTextCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetHelpTextCore();
+    }
 
-	hstring GetItemStatusCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemStatusCore();
-	}
+    hstring GetItemStatusCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemStatusCore();
+    }
 
-	hstring GetItemTypeCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemTypeCore();
-	}
+    hstring GetItemTypeCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetItemTypeCore();
+    }
 
-	Windows::UI::Xaml::Automation::Peers::AutomationPeer GetLabeledByCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLabeledByCore();
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer GetLabeledByCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLabeledByCore();
+    }
 
-	hstring GetLocalizedControlTypeCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLocalizedControlTypeCore();
-	}
+    hstring GetLocalizedControlTypeCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLocalizedControlTypeCore();
+    }
 
-	hstring GetNameCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetNameCore();
-	}
+    hstring GetNameCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetNameCore();
+    }
 
-	Windows::UI::Xaml::Automation::Peers::AutomationOrientation GetOrientationCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetOrientationCore();
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationOrientation GetOrientationCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetOrientationCore();
+    }
 
-	bool HasKeyboardFocusCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().HasKeyboardFocusCore();
-	}
+    bool HasKeyboardFocusCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().HasKeyboardFocusCore();
+    }
 
-	bool IsContentElementCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsContentElementCore();
-	}
+    bool IsContentElementCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsContentElementCore();
+    }
 
-	bool IsControlElementCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsControlElementCore();
-	}
+    bool IsControlElementCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsControlElementCore();
+    }
 
-	bool IsEnabledCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsEnabledCore();
-	}
+    bool IsEnabledCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsEnabledCore();
+    }
 
-	bool IsKeyboardFocusableCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsKeyboardFocusableCore();
-	}
+    bool IsKeyboardFocusableCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsKeyboardFocusableCore();
+    }
 
-	bool IsOffscreenCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsOffscreenCore();
-	}
+    bool IsOffscreenCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsOffscreenCore();
+    }
 
-	bool IsPasswordCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsPasswordCore();
-	}
+    bool IsPasswordCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsPasswordCore();
+    }
 
-	bool IsRequiredForFormCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsRequiredForFormCore();
-	}
+    bool IsRequiredForFormCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().IsRequiredForFormCore();
+    }
 
-	void SetFocusCore()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().SetFocusCore();
-	}
+    void SetFocusCore()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().SetFocusCore();
+    }
 
-	Windows::UI::Xaml::Automation::Peers::AutomationPeer GetPeerFromPointCore(Windows::Foundation::Point const & point)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPeerFromPointCore(point);
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer GetPeerFromPointCore(const Windows::Foundation::Point & point)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetPeerFromPointCore(point);
+    }
 
-	Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting GetLiveSettingCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLiveSettingCore();
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting GetLiveSettingCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>().GetLiveSettingCore();
+    }
 
-	virtual HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, abi_arg_out<IInspectable> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetPatternCore(patternInterface); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetPatternCore(patternInterface));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetAcceleratorKeyCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetAcceleratorKeyCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetAcceleratorKeyCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetAcceleratorKeyCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetAccessKeyCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetAccessKeyCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetAccessKeyCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetAccessKeyCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetAutomationControlTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationControlType * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetAutomationControlTypeCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetAutomationControlTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationControlType * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetAutomationControlTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetAutomationIdCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetAutomationIdCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetAutomationIdCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetAutomationIdCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetBoundingRectangleCore(Windows::Foundation::Rect * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetBoundingRectangleCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetBoundingRectangleCore(Windows::Foundation::Rect * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetBoundingRectangleCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetChildrenCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetChildrenCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetChildrenCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetChildrenCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetClassNameCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetClassNameCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetClassNameCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetClassNameCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetClickablePointCore(Windows::Foundation::Point * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetClickablePointCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetClickablePointCore(Windows::Foundation::Point * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetClickablePointCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetHelpTextCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetHelpTextCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetHelpTextCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetHelpTextCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetItemStatusCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetItemStatusCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetItemStatusCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetItemStatusCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetItemTypeCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetItemTypeCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetItemTypeCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetItemTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetLabeledByCore(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLabeledByCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLabeledByCore(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLabeledByCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetLocalizedControlTypeCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLocalizedControlTypeCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLocalizedControlTypeCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLocalizedControlTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetNameCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetNameCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetNameCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetNameCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetOrientationCore(Windows::UI::Xaml::Automation::Peers::AutomationOrientation * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetOrientationCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetOrientationCore(Windows::UI::Xaml::Automation::Peers::AutomationOrientation * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetOrientationCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_HasKeyboardFocusCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->HasKeyboardFocusCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_HasKeyboardFocusCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->HasKeyboardFocusCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsContentElementCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsContentElementCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsContentElementCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsContentElementCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsControlElementCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsControlElementCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsControlElementCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsControlElementCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsEnabledCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsEnabledCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsEnabledCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsEnabledCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsKeyboardFocusableCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsKeyboardFocusableCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsKeyboardFocusableCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsKeyboardFocusableCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsOffscreenCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsOffscreenCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsOffscreenCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsOffscreenCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsPasswordCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsPasswordCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsPasswordCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsPasswordCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_IsRequiredForFormCore(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsRequiredForFormCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_IsRequiredForFormCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsRequiredForFormCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_SetFocusCore() noexcept override
-	{
-		try { static_cast<T *>(this)->SetFocusCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_SetFocusCore() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->SetFocusCore();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetPeerFromPointCore(Windows::Foundation::Point point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetPeerFromPointCore(point); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetPeerFromPointCore(Windows::Foundation::Point point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetPeerFromPointCore(point));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetLiveSettingCore(Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLiveSettingCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLiveSettingCore(Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLiveSettingCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>
 struct IAutomationPeerOverrides2T : A
 {
-	void ShowContextMenuCore()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>().ShowContextMenuCore();
-	}
+    void ShowContextMenuCore()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>().ShowContextMenuCore();
+    }
 
-	Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetControlledPeersCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>().GetControlledPeersCore();
-	}
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetControlledPeersCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>().GetControlledPeersCore();
+    }
 
-	virtual HRESULT __stdcall abi_ShowContextMenuCore() noexcept override
-	{
-		try { static_cast<T *>(this)->ShowContextMenuCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_ShowContextMenuCore() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->ShowContextMenuCore();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetControlledPeersCore(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetControlledPeersCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetControlledPeersCore(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetControlledPeersCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>
 struct IAutomationPeerOverrides3T : A
 {
-	Windows::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection const direction)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().NavigateCore(direction);
-	}
+    Windows::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().NavigateCore(direction);
+    }
 
-	Windows::IInspectable GetElementFromPointCore(Windows::Foundation::Point const & pointInWindowCoordinates)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetElementFromPointCore(pointInWindowCoordinates);
-	}
+    Windows::IInspectable GetElementFromPointCore(const Windows::Foundation::Point & pointInWindowCoordinates)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetElementFromPointCore(pointInWindowCoordinates);
+    }
 
-	Windows::IInspectable GetFocusedElementCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetFocusedElementCore();
-	}
+    Windows::IInspectable GetFocusedElementCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetFocusedElementCore();
+    }
 
-	Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation> GetAnnotationsCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetAnnotationsCore();
-	}
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation> GetAnnotationsCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetAnnotationsCore();
+    }
 
-	int GetPositionInSetCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetPositionInSetCore();
-	}
+    int32_t GetPositionInSetCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetPositionInSetCore();
+    }
 
-	int GetSizeOfSetCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetSizeOfSetCore();
-	}
+    int32_t GetSizeOfSetCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetSizeOfSetCore();
+    }
 
-	int GetLevelCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetLevelCore();
-	}
+    int32_t GetLevelCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>().GetLevelCore();
+    }
 
-	virtual HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, abi_arg_out<IInspectable> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->NavigateCore(direction); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->NavigateCore(direction));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetElementFromPointCore(Windows::Foundation::Point pointInWindowCoordinates, abi_arg_out<IInspectable> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetElementFromPointCore(pointInWindowCoordinates); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetElementFromPointCore(Windows::Foundation::Point pointInWindowCoordinates, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetElementFromPointCore(pointInWindowCoordinates));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetFocusedElementCore(abi_arg_out<IInspectable> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetFocusedElementCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetFocusedElementCore(abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetFocusedElementCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetAnnotationsCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetAnnotationsCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetAnnotationsCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetAnnotationsCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetPositionInSetCore(int * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetPositionInSetCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetPositionInSetCore(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetPositionInSetCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetSizeOfSetCore(int * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetSizeOfSetCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetSizeOfSetCore(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetSizeOfSetCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetLevelCore(int * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLevelCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLevelCore(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLevelCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>
 struct IAutomationPeerOverrides4T : A
 {
-	Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkTypeCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLandmarkTypeCore();
-	}
+    Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkTypeCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLandmarkTypeCore();
+    }
 
-	hstring GetLocalizedLandmarkTypeCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLocalizedLandmarkTypeCore();
-	}
+    hstring GetLocalizedLandmarkTypeCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>().GetLocalizedLandmarkTypeCore();
+    }
 
-	virtual HRESULT __stdcall abi_GetLandmarkTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLandmarkTypeCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLandmarkTypeCore(Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLandmarkTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetLocalizedLandmarkTypeCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetLocalizedLandmarkTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>
+struct IAutomationPeerOverrides5T : A
+{
+    bool IsPeripheralCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().IsPeripheralCore();
+    }
+
+    bool IsDataValidForFormCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().IsDataValidForFormCore();
+    }
+
+    hstring GetFullDescriptionCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().GetFullDescriptionCore();
+    }
+
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetDescribedByCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().GetDescribedByCore();
+    }
+
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetFlowsToCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().GetFlowsToCore();
+    }
+
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetFlowsFromCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>().GetFlowsFromCore();
+    }
+
+    HRESULT __stdcall abi_IsPeripheralCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsPeripheralCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_IsDataValidForFormCore(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsDataValidForFormCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFullDescriptionCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetFullDescriptionCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDescribedByCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetDescribedByCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFlowsToCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetFlowsToCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFlowsFromCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetFlowsFromCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2>
 struct IItemsControlAutomationPeerOverrides2T : A
 {
-	Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer OnCreateItemAutomationPeer(IInspectable const & item)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2>().OnCreateItemAutomationPeer(item);
-	}
+    Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer OnCreateItemAutomationPeer(const Windows::IInspectable & item)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2>().OnCreateItemAutomationPeer(item);
+    }
 
-	virtual HRESULT __stdcall abi_OnCreateItemAutomationPeer(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->OnCreateItemAutomationPeer(lease<IInspectable>(item)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnCreateItemAutomationPeer(abi_arg_in<Windows::IInspectable> item, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 };
 
-}}}}}}
+}}}}}
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Controls {
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides>
-struct IDataTemplateSelectorOverridesT : A
-{
-	Windows::UI::Xaml::DataTemplate SelectTemplateCore(IInspectable const & item, Windows::UI::Xaml::DependencyObject const & container)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides>().SelectTemplateCore(item, container);
-	}
-
-	virtual HRESULT __stdcall abi_SelectTemplateCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->SelectTemplateCore(lease<IInspectable>(item), lease<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2>
-struct IDataTemplateSelectorOverrides2T : A
-{
-	Windows::UI::Xaml::DataTemplate SelectTemplateCore(IInspectable const & item)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2>().SelectTemplateCore(item);
-	}
-
-	virtual HRESULT __stdcall abi_SelectTemplateForItemCore(abi_arg_in<IInspectable> item, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->SelectTemplateCore(lease<IInspectable>(item)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IStyleSelectorOverrides>
-struct IStyleSelectorOverridesT : A
-{
-	Windows::UI::Xaml::Style SelectStyleCore(IInspectable const & item, Windows::UI::Xaml::DependencyObject const & container)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IStyleSelectorOverrides>().SelectStyleCore(item, container);
-	}
-
-	virtual HRESULT __stdcall abi_SelectStyleCore(abi_arg_in<IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->SelectStyleCore(lease<IInspectable>(item), lease<Windows::UI::Xaml::DependencyObject>(container)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides>
-struct IGroupStyleSelectorOverridesT : A
-{
-	Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyleCore(IInspectable const & group, unsigned const level)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides>().SelectGroupStyleCore(group, level);
-	}
-
-	virtual HRESULT __stdcall abi_SelectGroupStyleCore(abi_arg_in<IInspectable> group, unsigned level, abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->SelectGroupStyleCore(lease<IInspectable>(group), level); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IContentPresenterOverrides>
-struct IContentPresenterOverridesT : A
-{
-	void OnContentTemplateChanged(Windows::UI::Xaml::DataTemplate const & oldContentTemplate, Windows::UI::Xaml::DataTemplate const & newContentTemplate)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IContentPresenterOverrides>().OnContentTemplateChanged(oldContentTemplate, newContentTemplate);
-	}
-
-	void OnContentTemplateSelectorChanged(Windows::UI::Xaml::Controls::DataTemplateSelector const & oldContentTemplateSelector, Windows::UI::Xaml::Controls::DataTemplateSelector const & newContentTemplateSelector)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IContentPresenterOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
-	}
-
-	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
-	{
-		try { static_cast<T *>(this)->OnContentTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), lease<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
-	{
-		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>
-struct IVirtualizingPanelOverridesT : A
-{
-	void OnItemsChanged(IInspectable const & sender, Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs const & args)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().OnItemsChanged(sender, args);
-	}
-
-	void OnClearChildren()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().OnClearChildren();
-	}
-
-	void BringIndexIntoView(int const index)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().BringIndexIntoView(index);
-	}
-
-	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemsChanged(lease<IInspectable>(sender), lease<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>(args)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnClearChildren() noexcept override
-	{
-		try { static_cast<T *>(this)->OnClearChildren(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_BringIndexIntoView(int index) noexcept override
-	{
-		try { static_cast<T *>(this)->BringIndexIntoView(index); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides>
-struct IVirtualizingStackPanelOverridesT : A
-{
-	void OnCleanUpVirtualizedItem(Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides>().OnCleanUpVirtualizedItem(e);
-	}
-
-	virtual HRESULT __stdcall abi_OnCleanUpVirtualizedItem(abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnCleanUpVirtualizedItem(lease<Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IControlOverrides>
-struct IControlOverridesT : A
-{
-	void OnPointerEntered(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerEntered(e);
-	}
-
-	void OnPointerPressed(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerPressed(e);
-	}
-
-	void OnPointerMoved(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerMoved(e);
-	}
-
-	void OnPointerReleased(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerReleased(e);
-	}
-
-	void OnPointerExited(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerExited(e);
-	}
-
-	void OnPointerCaptureLost(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerCaptureLost(e);
-	}
-
-	void OnPointerCanceled(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerCanceled(e);
-	}
-
-	void OnPointerWheelChanged(Windows::UI::Xaml::Input::PointerRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerWheelChanged(e);
-	}
-
-	void OnTapped(Windows::UI::Xaml::Input::TappedRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnTapped(e);
-	}
-
-	void OnDoubleTapped(Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnDoubleTapped(e);
-	}
-
-	void OnHolding(Windows::UI::Xaml::Input::HoldingRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnHolding(e);
-	}
-
-	void OnRightTapped(Windows::UI::Xaml::Input::RightTappedRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnRightTapped(e);
-	}
-
-	void OnManipulationStarting(Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationStarting(e);
-	}
-
-	void OnManipulationInertiaStarting(Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationInertiaStarting(e);
-	}
-
-	void OnManipulationStarted(Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationStarted(e);
-	}
-
-	void OnManipulationDelta(Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationDelta(e);
-	}
-
-	void OnManipulationCompleted(Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationCompleted(e);
-	}
-
-	void OnKeyUp(Windows::UI::Xaml::Input::KeyRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnKeyUp(e);
-	}
-
-	void OnKeyDown(Windows::UI::Xaml::Input::KeyRoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnKeyDown(e);
-	}
-
-	void OnGotFocus(Windows::UI::Xaml::RoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnGotFocus(e);
-	}
-
-	void OnLostFocus(Windows::UI::Xaml::RoutedEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnLostFocus(e);
-	}
-
-	void OnDragEnter(Windows::UI::Xaml::DragEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragEnter(e);
-	}
-
-	void OnDragLeave(Windows::UI::Xaml::DragEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragLeave(e);
-	}
-
-	void OnDragOver(Windows::UI::Xaml::DragEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragOver(e);
-	}
-
-	void OnDrop(Windows::UI::Xaml::DragEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IControlOverrides>().OnDrop(e);
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerEntered(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerEntered(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerPressed(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerPressed(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerMoved(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerMoved(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerReleased(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerReleased(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerExited(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerExited(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerCaptureLost(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerCaptureLost(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerCanceled(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerCanceled(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnPointerWheelChanged(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnPointerWheelChanged(lease<Windows::UI::Xaml::Input::PointerRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnTapped(abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnTapped(lease<Windows::UI::Xaml::Input::TappedRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDoubleTapped(abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDoubleTapped(lease<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnHolding(abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnHolding(lease<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnRightTapped(abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnRightTapped(lease<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnManipulationStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnManipulationStarting(lease<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnManipulationInertiaStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnManipulationInertiaStarting(lease<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnManipulationStarted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnManipulationStarted(lease<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnManipulationDelta(abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnManipulationDelta(lease<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnManipulationCompleted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnManipulationCompleted(lease<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnKeyUp(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnKeyUp(lease<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnKeyDown(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnKeyDown(lease<Windows::UI::Xaml::Input::KeyRoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnGotFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnGotFocus(lease<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnLostFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnLostFocus(lease<Windows::UI::Xaml::RoutedEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDragEnter(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDragEnter(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDragLeave(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDragLeave(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDragOver(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDragOver(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDrop(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDrop(lease<Windows::UI::Xaml::DragEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IContentControlOverrides>
-struct IContentControlOverridesT : A
-{
-	void OnContentChanged(IInspectable const & oldContent, IInspectable const & newContent)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentChanged(oldContent, newContent);
-	}
-
-	void OnContentTemplateChanged(Windows::UI::Xaml::DataTemplate const & oldContentTemplate, Windows::UI::Xaml::DataTemplate const & newContentTemplate)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentTemplateChanged(oldContentTemplate, newContentTemplate);
-	}
-
-	void OnContentTemplateSelectorChanged(Windows::UI::Xaml::Controls::DataTemplateSelector const & oldContentTemplateSelector, Windows::UI::Xaml::Controls::DataTemplateSelector const & newContentTemplateSelector)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
-	}
-
-	virtual HRESULT __stdcall abi_OnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
-	{
-		try { static_cast<T *>(this)->OnContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
-	{
-		try { static_cast<T *>(this)->OnContentTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldContentTemplate), lease<Windows::UI::Xaml::DataTemplate>(newContentTemplate)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
-	{
-		try { static_cast<T *>(this)->OnContentTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldContentTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newContentTemplateSelector)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IItemsControlOverrides>
-struct IItemsControlOverridesT : A
-{
-	bool IsItemItsOwnContainerOverride(IInspectable const & item)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().IsItemItsOwnContainerOverride(item);
-	}
-
-	Windows::UI::Xaml::DependencyObject GetContainerForItemOverride()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().GetContainerForItemOverride();
-	}
-
-	void ClearContainerForItemOverride(Windows::UI::Xaml::DependencyObject const & element, IInspectable const & item)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().ClearContainerForItemOverride(element, item);
-	}
-
-	void PrepareContainerForItemOverride(Windows::UI::Xaml::DependencyObject const & element, IInspectable const & item)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().PrepareContainerForItemOverride(element, item);
-	}
-
-	void OnItemsChanged(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemsChanged(e);
-	}
-
-	void OnItemContainerStyleChanged(Windows::UI::Xaml::Style const & oldItemContainerStyle, Windows::UI::Xaml::Style const & newItemContainerStyle)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle);
-	}
-
-	void OnItemContainerStyleSelectorChanged(Windows::UI::Xaml::Controls::StyleSelector const & oldItemContainerStyleSelector, Windows::UI::Xaml::Controls::StyleSelector const & newItemContainerStyleSelector)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector);
-	}
-
-	void OnItemTemplateChanged(Windows::UI::Xaml::DataTemplate const & oldItemTemplate, Windows::UI::Xaml::DataTemplate const & newItemTemplate)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemTemplateChanged(oldItemTemplate, newItemTemplate);
-	}
-
-	void OnItemTemplateSelectorChanged(Windows::UI::Xaml::Controls::DataTemplateSelector const & oldItemTemplateSelector, Windows::UI::Xaml::Controls::DataTemplateSelector const & newItemTemplateSelector)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector);
-	}
-
-	void OnGroupStyleSelectorChanged(Windows::UI::Xaml::Controls::GroupStyleSelector const & oldGroupStyleSelector, Windows::UI::Xaml::Controls::GroupStyleSelector const & newGroupStyleSelector)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector);
-	}
-
-	virtual HRESULT __stdcall abi_IsItemItsOwnContainerOverride(abi_arg_in<IInspectable> item, bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->IsItemItsOwnContainerOverride(lease<IInspectable>(item)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_GetContainerForItemOverride(abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetContainerForItemOverride(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_ClearContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
-	{
-		try { static_cast<T *>(this)->ClearContainerForItemOverride(lease<Windows::UI::Xaml::DependencyObject>(element), lease<IInspectable>(item)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_PrepareContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<IInspectable> item) noexcept override
-	{
-		try { static_cast<T *>(this)->PrepareContainerForItemOverride(lease<Windows::UI::Xaml::DependencyObject>(element), lease<IInspectable>(item)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemsChanged(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnItemContainerStyleChanged(abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemContainerStyleChanged(lease<Windows::UI::Xaml::Style>(oldItemContainerStyle), lease<Windows::UI::Xaml::Style>(newItemContainerStyle)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemContainerStyleSelectorChanged(lease<Windows::UI::Xaml::Controls::StyleSelector>(oldItemContainerStyleSelector), lease<Windows::UI::Xaml::Controls::StyleSelector>(newItemContainerStyleSelector)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnItemTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemTemplateChanged(lease<Windows::UI::Xaml::DataTemplate>(oldItemTemplate), lease<Windows::UI::Xaml::DataTemplate>(newItemTemplate)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnItemTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
-	{
-		try { static_cast<T *>(this)->OnItemTemplateSelectorChanged(lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(oldItemTemplateSelector), lease<Windows::UI::Xaml::Controls::DataTemplateSelector>(newItemTemplateSelector)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnGroupStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
-	{
-		try { static_cast<T *>(this)->OnGroupStyleSelectorChanged(lease<Windows::UI::Xaml::Controls::GroupStyleSelector>(oldGroupStyleSelector), lease<Windows::UI::Xaml::Controls::GroupStyleSelector>(newGroupStyleSelector)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IToggleSwitchOverrides>
-struct IToggleSwitchOverridesT : A
-{
-	void OnToggled()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnToggled();
-	}
-
-	void OnOnContentChanged(IInspectable const & oldContent, IInspectable const & newContent)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnOnContentChanged(oldContent, newContent);
-	}
-
-	void OnOffContentChanged(IInspectable const & oldContent, IInspectable const & newContent)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnOffContentChanged(oldContent, newContent);
-	}
-
-	void OnHeaderChanged(IInspectable const & oldContent, IInspectable const & newContent)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnHeaderChanged(oldContent, newContent);
-	}
-
-	virtual HRESULT __stdcall abi_OnToggled() noexcept override
-	{
-		try { static_cast<T *>(this)->OnToggled(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnOnContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
-	{
-		try { static_cast<T *>(this)->OnOnContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnOffContentChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
-	{
-		try { static_cast<T *>(this)->OnOffContentChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnHeaderChanged(abi_arg_in<IInspectable> oldContent, abi_arg_in<IInspectable> newContent) noexcept override
-	{
-		try { static_cast<T *>(this)->OnHeaderChanged(lease<IInspectable>(oldContent), lease<IInspectable>(newContent)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IComboBoxOverrides>
-struct IComboBoxOverridesT : A
-{
-	void OnDropDownClosed(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IComboBoxOverrides>().OnDropDownClosed(e);
-	}
-
-	void OnDropDownOpened(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IComboBoxOverrides>().OnDropDownOpened(e);
-	}
-
-	virtual HRESULT __stdcall abi_OnDropDownClosed(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDropDownClosed(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnDropDownOpened(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnDropDownOpened(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
+namespace Windows { namespace UI { namespace Xaml { namespace Controls {
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IAppBarOverrides>
 struct IAppBarOverridesT : A
 {
-	void OnClosed(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IAppBarOverrides>().OnClosed(e);
-	}
+    void OnClosed(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IAppBarOverrides>().OnClosed(e);
+    }
 
-	void OnOpened(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IAppBarOverrides>().OnOpened(e);
-	}
+    void OnOpened(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IAppBarOverrides>().OnOpened(e);
+    }
 
-	virtual HRESULT __stdcall abi_OnClosed(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnClosed(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnClosed(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_OnOpened(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnOpened(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnOpened(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IAppBarOverrides3>
 struct IAppBarOverrides3T : A
 {
-	void OnClosing(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IAppBarOverrides3>().OnClosing(e);
-	}
+    void OnClosing(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IAppBarOverrides3>().OnClosing(e);
+    }
 
-	void OnOpening(IInspectable const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IAppBarOverrides3>().OnOpening(e);
-	}
+    void OnOpening(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IAppBarOverrides3>().OnOpening(e);
+    }
 
-	virtual HRESULT __stdcall abi_OnClosing(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnClosing(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnClosing(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnClosing(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_OnOpening(abi_arg_in<IInspectable> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnOpening(lease<IInspectable>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnOpening(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnOpening(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IComboBoxOverrides>
+struct IComboBoxOverridesT : A
+{
+    void OnDropDownClosed(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IComboBoxOverrides>().OnDropDownClosed(e);
+    }
+
+    void OnDropDownOpened(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IComboBoxOverrides>().OnDropDownOpened(e);
+    }
+
+    HRESULT __stdcall abi_OnDropDownClosed(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDropDownClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDropDownOpened(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDropDownOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IContentControlOverrides>
+struct IContentControlOverridesT : A
+{
+    void OnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentChanged(oldContent, newContent);
+    }
+
+    void OnContentTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldContentTemplate, const Windows::UI::Xaml::DataTemplate & newContentTemplate)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentTemplateChanged(oldContentTemplate, newContentTemplate);
+    }
+
+    void OnContentTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldContentTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newContentTemplateSelector)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IContentControlOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
+    }
+
+    HRESULT __stdcall abi_OnContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IContentPresenterOverrides>
+struct IContentPresenterOverridesT : A
+{
+    void OnContentTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldContentTemplate, const Windows::UI::Xaml::DataTemplate & newContentTemplate)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IContentPresenterOverrides>().OnContentTemplateChanged(oldContentTemplate, newContentTemplate);
+    }
+
+    void OnContentTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldContentTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newContentTemplateSelector)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IContentPresenterOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
+    }
+
+    HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IControlOverrides>
+struct IControlOverridesT : A
+{
+    void OnPointerEntered(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerEntered(e);
+    }
+
+    void OnPointerPressed(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerPressed(e);
+    }
+
+    void OnPointerMoved(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerMoved(e);
+    }
+
+    void OnPointerReleased(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerReleased(e);
+    }
+
+    void OnPointerExited(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerExited(e);
+    }
+
+    void OnPointerCaptureLost(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerCaptureLost(e);
+    }
+
+    void OnPointerCanceled(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerCanceled(e);
+    }
+
+    void OnPointerWheelChanged(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnPointerWheelChanged(e);
+    }
+
+    void OnTapped(const Windows::UI::Xaml::Input::TappedRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnTapped(e);
+    }
+
+    void OnDoubleTapped(const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnDoubleTapped(e);
+    }
+
+    void OnHolding(const Windows::UI::Xaml::Input::HoldingRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnHolding(e);
+    }
+
+    void OnRightTapped(const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnRightTapped(e);
+    }
+
+    void OnManipulationStarting(const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationStarting(e);
+    }
+
+    void OnManipulationInertiaStarting(const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationInertiaStarting(e);
+    }
+
+    void OnManipulationStarted(const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationStarted(e);
+    }
+
+    void OnManipulationDelta(const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationDelta(e);
+    }
+
+    void OnManipulationCompleted(const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnManipulationCompleted(e);
+    }
+
+    void OnKeyUp(const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnKeyUp(e);
+    }
+
+    void OnKeyDown(const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnKeyDown(e);
+    }
+
+    void OnGotFocus(const Windows::UI::Xaml::RoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnGotFocus(e);
+    }
+
+    void OnLostFocus(const Windows::UI::Xaml::RoutedEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnLostFocus(e);
+    }
+
+    void OnDragEnter(const Windows::UI::Xaml::DragEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragEnter(e);
+    }
+
+    void OnDragLeave(const Windows::UI::Xaml::DragEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragLeave(e);
+    }
+
+    void OnDragOver(const Windows::UI::Xaml::DragEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnDragOver(e);
+    }
+
+    void OnDrop(const Windows::UI::Xaml::DragEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IControlOverrides>().OnDrop(e);
+    }
+
+    HRESULT __stdcall abi_OnPointerEntered(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerEntered(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerPressed(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerPressed(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerMoved(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerMoved(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerReleased(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerReleased(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerExited(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerExited(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerCaptureLost(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerCaptureLost(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerCanceled(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerCanceled(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnPointerWheelChanged(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnPointerWheelChanged(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnTapped(abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::TappedRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDoubleTapped(abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDoubleTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnHolding(abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnHolding(*reinterpret_cast<const Windows::UI::Xaml::Input::HoldingRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnRightTapped(abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnRightTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnManipulationStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnManipulationStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnManipulationInertiaStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnManipulationInertiaStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnManipulationStarted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnManipulationStarted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnManipulationDelta(abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnManipulationDelta(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnManipulationCompleted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnManipulationCompleted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnKeyUp(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnKeyUp(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnKeyDown(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnKeyDown(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnGotFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnGotFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnLostFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnLostFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDragEnter(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDragEnter(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDragLeave(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDragLeave(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDragOver(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDragOver(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDrop(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDrop(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides>
+struct IDataTemplateSelectorOverridesT : A
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides>().SelectTemplateCore(item, container);
+    }
+
+    HRESULT __stdcall abi_SelectTemplateCore(abi_arg_in<Windows::IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2>
+struct IDataTemplateSelectorOverrides2T : A
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2>().SelectTemplateCore(item);
+    }
+
+    HRESULT __stdcall abi_SelectTemplateForItemCore(abi_arg_in<Windows::IInspectable> item, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides>
+struct IGroupStyleSelectorOverridesT : A
+{
+    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyleCore(const Windows::IInspectable & group, uint32_t level)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides>().SelectGroupStyleCore(group, level);
+    }
+
+    HRESULT __stdcall abi_SelectGroupStyleCore(abi_arg_in<Windows::IInspectable> group, uint32_t level, abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->SelectGroupStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&group), level));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IInkToolbarCustomPenOverrides>
+struct IInkToolbarCustomPenOverridesT : A
+{
+    Windows::UI::Input::Inking::InkDrawingAttributes CreateInkDrawingAttributesCore(const Windows::UI::Xaml::Media::Brush & brush, double strokeWidth)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IInkToolbarCustomPenOverrides>().CreateInkDrawingAttributesCore(brush, strokeWidth);
+    }
+
+    HRESULT __stdcall abi_CreateInkDrawingAttributesCore(abi_arg_in<Windows::UI::Xaml::Media::IBrush> brush, double strokeWidth, abi_arg_out<Windows::UI::Input::Inking::IInkDrawingAttributes> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->CreateInkDrawingAttributesCore(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush), strokeWidth));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IItemsControlOverrides>
+struct IItemsControlOverridesT : A
+{
+    bool IsItemItsOwnContainerOverride(const Windows::IInspectable & item)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().IsItemItsOwnContainerOverride(item);
+    }
+
+    Windows::UI::Xaml::DependencyObject GetContainerForItemOverride()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().GetContainerForItemOverride();
+    }
+
+    void ClearContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().ClearContainerForItemOverride(element, item);
+    }
+
+    void PrepareContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().PrepareContainerForItemOverride(element, item);
+    }
+
+    void OnItemsChanged(const Windows::IInspectable & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemsChanged(e);
+    }
+
+    void OnItemContainerStyleChanged(const Windows::UI::Xaml::Style & oldItemContainerStyle, const Windows::UI::Xaml::Style & newItemContainerStyle)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle);
+    }
+
+    void OnItemContainerStyleSelectorChanged(const Windows::UI::Xaml::Controls::StyleSelector & oldItemContainerStyleSelector, const Windows::UI::Xaml::Controls::StyleSelector & newItemContainerStyleSelector)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector);
+    }
+
+    void OnItemTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldItemTemplate, const Windows::UI::Xaml::DataTemplate & newItemTemplate)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemTemplateChanged(oldItemTemplate, newItemTemplate);
+    }
+
+    void OnItemTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldItemTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newItemTemplateSelector)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector);
+    }
+
+    void OnGroupStyleSelectorChanged(const Windows::UI::Xaml::Controls::GroupStyleSelector & oldGroupStyleSelector, const Windows::UI::Xaml::Controls::GroupStyleSelector & newGroupStyleSelector)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IItemsControlOverrides>().OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector);
+    }
+
+    HRESULT __stdcall abi_IsItemItsOwnContainerOverride(abi_arg_in<Windows::IInspectable> item, bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->IsItemItsOwnContainerOverride(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetContainerForItemOverride(abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetContainerForItemOverride());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ClearContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<Windows::IInspectable> item) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->ClearContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_PrepareContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<Windows::IInspectable> item) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->PrepareContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<Windows::IInspectable> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnItemContainerStyleChanged(abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemContainerStyleChanged(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&oldItemContainerStyle), *reinterpret_cast<const Windows::UI::Xaml::Style *>(&newItemContainerStyle));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemContainerStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&oldItemContainerStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&newItemContainerStyleSelector));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnItemTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldItemTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newItemTemplate));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnItemTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldItemTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newItemTemplateSelector));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnGroupStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnGroupStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&oldGroupStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&newGroupStyleSelector));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IPageOverrides>
 struct IPageOverridesT : A
 {
-	void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatedFrom(e);
-	}
+    void OnNavigatedFrom(const Windows::UI::Xaml::Navigation::NavigationEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatedFrom(e);
+    }
 
-	void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatedTo(e);
-	}
+    void OnNavigatedTo(const Windows::UI::Xaml::Navigation::NavigationEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatedTo(e);
+    }
 
-	void OnNavigatingFrom(Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs const & e)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatingFrom(e);
-	}
+    void OnNavigatingFrom(const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IPageOverrides>().OnNavigatingFrom(e);
+    }
 
-	virtual HRESULT __stdcall abi_OnNavigatedFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnNavigatedFrom(lease<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnNavigatedFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnNavigatedFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_OnNavigatedTo(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnNavigatedTo(lease<Windows::UI::Xaml::Navigation::NavigationEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnNavigatedTo(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnNavigatedTo(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_OnNavigatingFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
-	{
-		try { static_cast<T *>(this)->OnNavigatingFrom(lease<Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>(e)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnNavigatingFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnNavigatingFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
-}}}}}
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IStyleSelectorOverrides>
+struct IStyleSelectorOverridesT : A
+{
+    Windows::UI::Xaml::Style SelectStyleCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IStyleSelectorOverrides>().SelectStyleCore(item, container);
+    }
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
+    HRESULT __stdcall abi_SelectStyleCore(abi_arg_in<Windows::IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->SelectStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IToggleSwitchOverrides>
+struct IToggleSwitchOverridesT : A
+{
+    void OnToggled()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnToggled();
+    }
+
+    void OnOnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnOnContentChanged(oldContent, newContent);
+    }
+
+    void OnOffContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnOffContentChanged(oldContent, newContent);
+    }
+
+    void OnHeaderChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IToggleSwitchOverrides>().OnHeaderChanged(oldContent, newContent);
+    }
+
+    HRESULT __stdcall abi_OnToggled() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnToggled();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnOnContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnOnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnOffContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnOffContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnHeaderChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnHeaderChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>
+struct IVirtualizingPanelOverridesT : A
+{
+    void OnItemsChanged(const Windows::IInspectable & sender, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs & args)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().OnItemsChanged(sender, args);
+    }
+
+    void OnClearChildren()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().OnClearChildren();
+    }
+
+    void BringIndexIntoView(int32_t index)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>().BringIndexIntoView(index);
+    }
+
+    HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&sender), *reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnClearChildren() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnClearChildren();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_BringIndexIntoView(int32_t index) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->BringIndexIntoView(index);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides>
+struct IVirtualizingStackPanelOverridesT : A
+{
+    void OnCleanUpVirtualizedItem(const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs & e)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides>().OnCleanUpVirtualizedItem(e);
+    }
+
+    HRESULT __stdcall abi_OnCleanUpVirtualizedItem(abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnCleanUpVirtualizedItem(*reinterpret_cast<const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs *>(&e));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverrides>
 struct IFlyoutBaseOverridesT : A
 {
-	Windows::UI::Xaml::Controls::Control CreatePresenter()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverrides>().CreatePresenter();
-	}
+    Windows::UI::Xaml::Controls::Control CreatePresenter()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverrides>().CreatePresenter();
+    }
 
-	virtual HRESULT __stdcall abi_CreatePresenter(abi_arg_out<Windows::UI::Xaml::Controls::IControl> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->CreatePresenter(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>
-struct IRangeBaseOverridesT : A
-{
-	void OnMinimumChanged(double const oldMinimum, double const newMinimum)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnMinimumChanged(oldMinimum, newMinimum);
-	}
-
-	void OnMaximumChanged(double const oldMaximum, double const newMaximum)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnMaximumChanged(oldMaximum, newMaximum);
-	}
-
-	void OnValueChanged(double const oldValue, double const newValue)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnValueChanged(oldValue, newValue);
-	}
-
-	virtual HRESULT __stdcall abi_OnMinimumChanged(double oldMinimum, double newMinimum) noexcept override
-	{
-		try { static_cast<T *>(this)->OnMinimumChanged(oldMinimum, newMinimum); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnMaximumChanged(double oldMaximum, double newMaximum) noexcept override
-	{
-		try { static_cast<T *>(this)->OnMaximumChanged(oldMaximum, newMaximum); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_OnValueChanged(double oldValue, double newValue) noexcept override
-	{
-		try { static_cast<T *>(this)->OnValueChanged(oldValue, newValue); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverrides>
-struct IToggleButtonOverridesT : A
-{
-	void OnToggle()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverrides>().OnToggle();
-	}
-
-	virtual HRESULT __stdcall abi_OnToggle() noexcept override
-	{
-		try { static_cast<T *>(this)->OnToggle(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_CreatePresenter(abi_arg_out<Windows::UI::Xaml::Controls::IControl> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->CreatePresenter());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
 };
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverrides>
 struct IPickerFlyoutBaseOverridesT : A
 {
-	void OnConfirmed()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverrides>().OnConfirmed();
-	}
+    void OnConfirmed()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverrides>().OnConfirmed();
+    }
 
-	bool ShouldShowConfirmationButtons()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverrides>().ShouldShowConfirmationButtons();
-	}
+    bool ShouldShowConfirmationButtons()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverrides>().ShouldShowConfirmationButtons();
+    }
 
-	virtual HRESULT __stdcall abi_OnConfirmed() noexcept override
-	{
-		try { static_cast<T *>(this)->OnConfirmed(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_OnConfirmed() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnConfirmed();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 
-	virtual HRESULT __stdcall abi_ShouldShowConfirmationButtons(bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->ShouldShowConfirmationButtons(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
+    HRESULT __stdcall abi_ShouldShowConfirmationButtons(bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->ShouldShowConfirmationButtons());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
-}}}}}}
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>
+struct IRangeBaseOverridesT : A
+{
+    void OnMinimumChanged(double oldMinimum, double newMinimum)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnMinimumChanged(oldMinimum, newMinimum);
+    }
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Documents {
+    void OnMaximumChanged(double oldMaximum, double newMaximum)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnMaximumChanged(oldMaximum, newMaximum);
+    }
+
+    void OnValueChanged(double oldValue, double newValue)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides>().OnValueChanged(oldValue, newValue);
+    }
+
+    HRESULT __stdcall abi_OnMinimumChanged(double oldMinimum, double newMinimum) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnMinimumChanged(oldMinimum, newMinimum);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnMaximumChanged(double oldMaximum, double newMaximum) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnMaximumChanged(oldMaximum, newMaximum);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnValueChanged(double oldValue, double newValue) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnValueChanged(oldValue, newValue);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverrides>
+struct IToggleButtonOverridesT : A
+{
+    void OnToggle()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverrides>().OnToggle();
+    }
+
+    HRESULT __stdcall abi_OnToggle() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnToggle();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Documents {
 
 template <typename T, typename A = ABI::Windows::UI::Xaml::Documents::ITextElementOverrides>
 struct ITextElementOverridesT : A
 {
-	void OnDisconnectVisualChildren()
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Documents::ITextElementOverrides>().OnDisconnectVisualChildren();
-	}
-
-	virtual HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
-	{
-		try { static_cast<T *>(this)->OnDisconnectVisualChildren(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media {
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Media::IGeneralTransformOverrides>
-struct IGeneralTransformOverridesT : A
-{
-	Windows::UI::Xaml::Media::GeneralTransform InverseCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().InverseCore();
-	}
-
-	bool TryTransformCore(Windows::Foundation::Point const & inPoint, Windows::Foundation::Point & outPoint)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().TryTransformCore(inPoint, outPoint);
-	}
-
-	Windows::Foundation::Rect TransformBoundsCore(Windows::Foundation::Rect const & rect)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().TransformBoundsCore(rect);
-	}
-
-	virtual HRESULT __stdcall get_InverseCore(abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> value) noexcept override
-	{
-		try { static_cast<T *>(this)->InverseCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point * outPoint, bool * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->TryTransformCore(inPoint, ); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->TransformBoundsCore(rect); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
-struct INavigationTransitionInfoOverridesT : A
-{
-	hstring GetNavigationStateCore()
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().GetNavigationStateCore();
-	}
-
-	void SetNavigationStateCore(hstring_ref navigationState)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
-	}
-
-	virtual HRESULT __stdcall abi_GetNavigationStateCore(HSTRING * returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetNavigationStateCore(); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	virtual HRESULT __stdcall abi_SetNavigationStateCore(HSTRING navigationState) noexcept override
-	{
-		try { static_cast<T *>(this)->SetNavigationStateCore(lease<hstring>(navigationState)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>
-struct IXamlRenderingBackgroundTaskOverridesT : A
-{
-	void OnRun(Windows::ApplicationModel::Background::IBackgroundTaskInstance const & taskInstance)
-	{
-		static_cast<T *>(this)->As<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>().OnRun(taskInstance);
-	}
-
-	virtual HRESULT __stdcall abi_OnRun(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
-	{
-		try { static_cast<T *>(this)->OnRun(lease<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(taskInstance)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Resources {
-
-template <typename T, typename A = ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
-struct ICustomXamlResourceLoaderOverridesT : A
-{
-	Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType)
-	{
-		return static_cast<T *>(this)->As<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
-	}
-
-	virtual HRESULT __stdcall abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, abi_arg_out<IInspectable> returnValue) noexcept override
-	{
-		try { static_cast<T *>(this)->GetResource(lease<hstring>(resourceId), lease<hstring>(objectType), lease<hstring>(propertyName), lease<hstring>(propertyType)); return S_OK; }
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml {
-
-template <typename T> struct DispatcherTimerT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDispatcherTimer>
-{
-	using composable = Windows::UI::Xaml::IDispatcherTimer;
-
-protected:
-
-	DispatcherTimerT()
-	{
-		GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DependencyObjectT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
-{
-	using composable = Windows::UI::Xaml::IDependencyObject;
-
-protected:
-
-	DependencyObjectT()
-	{
-		GetActivationFactory<DependencyObject, IDependencyObjectFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RoutedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs>
-{
-	using composable = Windows::UI::Xaml::IRoutedEventArgs;
-
-protected:
-
-	RoutedEventArgsT()
-	{
-		GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DataTemplateKeyT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDataTemplateKey>
-{
-	using composable = Windows::UI::Xaml::IDataTemplateKey;
-
-protected:
-
-	DataTemplateKeyT()
-	{
-		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	DataTemplateKeyT(IInspectable const & dataType)
-	{
-		GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PropertyMetadataT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IPropertyMetadata>
-{
-	using composable = Windows::UI::Xaml::IPropertyMetadata;
-
-protected:
-
-	PropertyMetadataT(IInspectable const & defaultValue)
-	{
-		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	PropertyMetadataT(IInspectable const & defaultValue, Windows::UI::Xaml::IPropertyChangedCallback const & propertyChangedCallback)
-	{
-		GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DependencyObjectCollectionT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>>
-{
-	using composable = Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>;
-
-protected:
-
-	DependencyObjectCollectionT()
-	{
-		GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FrameworkTemplateT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkTemplate>
-{
-	using composable = Windows::UI::Xaml::IFrameworkTemplate;
-
-protected:
-
-	FrameworkTemplateT()
-	{
-		GetActivationFactory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DataTemplateT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkTemplate, Windows::UI::Xaml::IDataTemplate>
-{
-	using composable = Windows::UI::Xaml::IDataTemplate;
-
-protected:
-
-	DataTemplateT()
-	{
-		GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ResourceDictionaryT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IResourceDictionary, Windows::Foundation::Collections::IMap<IInspectable, IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<IInspectable, IInspectable>>>
-{
-	using composable = Windows::UI::Xaml::IResourceDictionary;
-
-protected:
-
-	ResourceDictionaryT()
-	{
-		GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct StateTriggerBaseT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IStateTriggerBase, Windows::UI::Xaml::IStateTriggerBaseProtected>
-{
-	using composable = Windows::UI::Xaml::IStateTriggerBase;
-
-protected:
-
-	StateTriggerBaseT()
-	{
-		GetActivationFactory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct VisualStateManagerT :
-	overrides<Windows::UI::Xaml::IVisualStateManagerOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IVisualStateManager, Windows::UI::Xaml::IVisualStateManagerProtected>
-{
-	using composable = Windows::UI::Xaml::IVisualStateManager;
-
-protected:
-
-	VisualStateManagerT()
-	{
-		GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct VisualTransitionT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IVisualTransition>
-{
-	using composable = Windows::UI::Xaml::IVisualTransition;
-
-protected:
-
-	VisualTransitionT()
-	{
-		GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AdaptiveTriggerT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IStateTriggerBase, Windows::UI::Xaml::IStateTriggerBaseProtected, Windows::UI::Xaml::IAdaptiveTrigger>
-{
-	using composable = Windows::UI::Xaml::IAdaptiveTrigger;
-
-protected:
-
-	AdaptiveTriggerT()
-	{
-		GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FrameworkElementT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3>
-{
-	using composable = Windows::UI::Xaml::IFrameworkElement;
-
-protected:
-
-	FrameworkElementT()
-	{
-		GetActivationFactory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ApplicationT :
-	overrides<Windows::UI::Xaml::IApplicationOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IApplication>
-{
-	using composable = Windows::UI::Xaml::IApplication;
-
-protected:
-
-	ApplicationT()
-	{
-		GetActivationFactory<Application, IApplicationFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    void OnDisconnectVisualChildren()
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Documents::ITextElementOverrides>().OnDisconnectVisualChildren();
+    }
+
+    HRESULT __stdcall abi_OnDisconnectVisualChildren() noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnDisconnectVisualChildren();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 }}}}
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
-
-template <typename T> struct AutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IAutomationPeer;
-
-protected:
-
-	AutomationPeerT()
-	{
-		GetActivationFactory<AutomationPeer, IAutomationPeerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FrameworkElementAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer;
-
-protected:
-
-	FrameworkElementAutomationPeerT(Windows::UI::Xaml::FrameworkElement const & owner)
-	{
-		GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ButtonBaseAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer;
-
-protected:
-
-	ButtonBaseAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ButtonBase const & owner)
-	{
-		GetActivationFactory<ButtonBaseAutomationPeer, IButtonBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CaptureElementAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer;
-
-protected:
-
-	CaptureElementAutomationPeerT(Windows::UI::Xaml::Controls::CaptureElement const & owner)
-	{
-		GetActivationFactory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ComboBoxItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer;
-
-protected:
-
-	ComboBoxItemAutomationPeerT(Windows::UI::Xaml::Controls::ComboBoxItem const & owner)
-	{
-		GetActivationFactory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlipViewItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer;
-
-protected:
-
-	FlipViewItemAutomationPeerT(Windows::UI::Xaml::Controls::FlipViewItem const & owner)
-	{
-		GetActivationFactory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GroupItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer;
-
-protected:
-
-	GroupItemAutomationPeerT(Windows::UI::Xaml::Controls::GroupItem const & owner)
-	{
-		GetActivationFactory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ImageAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer;
-
-protected:
-
-	ImageAutomationPeerT(Windows::UI::Xaml::Controls::Image const & owner)
-	{
-		GetActivationFactory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListBoxItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer;
-
-protected:
-
-	ListBoxItemAutomationPeerT(Windows::UI::Xaml::Controls::ListBoxItem const & owner)
-	{
-		GetActivationFactory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MediaTransportControlsAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer;
-
-protected:
-
-	MediaTransportControlsAutomationPeerT(Windows::UI::Xaml::Controls::MediaTransportControls const & owner)
-	{
-		GetActivationFactory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PasswordBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer;
-
-protected:
-
-	PasswordBoxAutomationPeerT(Windows::UI::Xaml::Controls::PasswordBox const & owner)
-	{
-		GetActivationFactory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ProgressRingAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer;
-
-protected:
-
-	ProgressRingAutomationPeerT(Windows::UI::Xaml::Controls::ProgressRing const & owner)
-	{
-		GetActivationFactory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RichEditBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer;
-
-protected:
-
-	RichEditBoxAutomationPeerT(Windows::UI::Xaml::Controls::RichEditBox const & owner)
-	{
-		GetActivationFactory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RichTextBlockAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer;
-
-protected:
-
-	RichTextBlockAutomationPeerT(Windows::UI::Xaml::Controls::RichTextBlock const & owner)
-	{
-		GetActivationFactory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RichTextBlockOverflowAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer;
-
-protected:
-
-	RichTextBlockOverflowAutomationPeerT(Windows::UI::Xaml::Controls::RichTextBlockOverflow const & owner)
-	{
-		GetActivationFactory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SettingsFlyoutAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer;
-
-protected:
-
-	SettingsFlyoutAutomationPeerT(Windows::UI::Xaml::Controls::SettingsFlyout const & owner)
-	{
-		GetActivationFactory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TextBlockAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer;
-
-protected:
-
-	TextBlockAutomationPeerT(Windows::UI::Xaml::Controls::TextBlock const & owner)
-	{
-		GetActivationFactory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TextBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer;
-
-protected:
-
-	TextBoxAutomationPeerT(Windows::UI::Xaml::Controls::TextBox const & owner)
-	{
-		GetActivationFactory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ThumbAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer;
-
-protected:
-
-	ThumbAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::Thumb const & owner)
-	{
-		GetActivationFactory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DatePickerAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer;
-
-protected:
-
-	DatePickerAutomationPeerT(Windows::UI::Xaml::Controls::DatePicker const & owner)
-	{
-		GetActivationFactory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlyoutPresenterAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer;
-
-protected:
-
-	FlyoutPresenterAutomationPeerT(Windows::UI::Xaml::Controls::FlyoutPresenter const & owner)
-	{
-		GetActivationFactory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer;
-
-protected:
-
-	GridViewItemAutomationPeerT(Windows::UI::Xaml::Controls::GridViewItem const & owner)
-	{
-		GetActivationFactory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HubAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer;
-
-protected:
-
-	HubAutomationPeerT(Windows::UI::Xaml::Controls::Hub const & owner)
-	{
-		GetActivationFactory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewBaseHeaderItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer;
-
-protected:
-
-	ListViewBaseHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewBaseHeaderItem const & owner)
-	{
-		GetActivationFactory<ListViewBaseHeaderItemAutomationPeer, IListViewBaseHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer;
-
-protected:
-
-	ListViewItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewItem const & owner)
-	{
-		GetActivationFactory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MediaElementAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer;
-
-protected:
-
-	MediaElementAutomationPeerT(Windows::UI::Xaml::Controls::MediaElement const & owner)
-	{
-		GetActivationFactory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SearchBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer;
-
-protected:
-
-	SearchBoxAutomationPeerT(Windows::UI::Xaml::Controls::SearchBox const & owner)
-	{
-		GetActivationFactory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TimePickerAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer;
-
-protected:
-
-	TimePickerAutomationPeerT(Windows::UI::Xaml::Controls::TimePicker const & owner)
-	{
-		GetActivationFactory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewHeaderItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer;
-
-protected:
-
-	GridViewHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::GridViewHeaderItem const & owner)
-	{
-		GetActivationFactory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewHeaderItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer;
-
-protected:
-
-	ListViewHeaderItemAutomationPeerT(Windows::UI::Xaml::Controls::ListViewHeaderItem const & owner)
-	{
-		GetActivationFactory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer;
-
-protected:
-
-	ButtonAutomationPeerT(Windows::UI::Xaml::Controls::Button const & owner)
-	{
-		GetActivationFactory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HyperlinkButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer;
-
-protected:
-
-	HyperlinkButtonAutomationPeerT(Windows::UI::Xaml::Controls::HyperlinkButton const & owner)
-	{
-		GetActivationFactory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RepeatButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer;
-
-protected:
-
-	RepeatButtonAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::RepeatButton const & owner)
-	{
-		GetActivationFactory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer;
-
-protected:
-
-	MenuFlyoutItemAutomationPeerT(Windows::UI::Xaml::Controls::MenuFlyoutItem const & owner)
-	{
-		GetActivationFactory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider, Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer;
-
-protected:
-
-	AppBarButtonAutomationPeerT(Windows::UI::Xaml::Controls::AppBarButton const & owner)
-	{
-		GetActivationFactory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ItemsControlAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer;
-
-protected:
-
-	ItemsControlAutomationPeerT(Windows::UI::Xaml::Controls::ItemsControl const & owner)
-	{
-		GetActivationFactory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutPresenterAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer;
-
-protected:
-
-	MenuFlyoutPresenterAutomationPeerT(Windows::UI::Xaml::Controls::MenuFlyoutPresenter const & owner)
-	{
-		GetActivationFactory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RangeBaseAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer;
-
-protected:
-
-	RangeBaseAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::RangeBase const & owner)
-	{
-		GetActivationFactory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ProgressBarAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer;
-
-protected:
-
-	ProgressBarAutomationPeerT(Windows::UI::Xaml::Controls::ProgressBar const & owner)
-	{
-		GetActivationFactory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ScrollBarAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer;
-
-protected:
-
-	ScrollBarAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ScrollBar const & owner)
-	{
-		GetActivationFactory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SliderAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer;
-
-protected:
-
-	SliderAutomationPeerT(Windows::UI::Xaml::Controls::Slider const & owner)
-	{
-		GetActivationFactory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HubSectionAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer;
-
-protected:
-
-	HubSectionAutomationPeerT(Windows::UI::Xaml::Controls::HubSection const & owner)
-	{
-		GetActivationFactory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ScrollViewerAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer;
-
-protected:
-
-	ScrollViewerAutomationPeerT(Windows::UI::Xaml::Controls::ScrollViewer const & owner)
-	{
-		GetActivationFactory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SelectorAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer;
-
-protected:
-
-	SelectorAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::Selector const & owner)
-	{
-		GetActivationFactory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlipViewAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer;
-
-protected:
-
-	FlipViewAutomationPeerT(Windows::UI::Xaml::Controls::FlipView const & owner)
-	{
-		GetActivationFactory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer;
-
-protected:
-
-	ListBoxAutomationPeerT(Windows::UI::Xaml::Controls::ListBox const & owner)
-	{
-		GetActivationFactory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewBaseAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer;
-
-protected:
-
-	ListViewBaseAutomationPeerT(Windows::UI::Xaml::Controls::ListViewBase const & owner)
-	{
-		GetActivationFactory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider, Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer;
-
-protected:
-
-	GridViewAutomationPeerT(Windows::UI::Xaml::Controls::GridView const & owner)
-	{
-		GetActivationFactory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider, Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer;
-
-protected:
-
-	ListViewAutomationPeerT(Windows::UI::Xaml::Controls::ListView const & owner)
-	{
-		GetActivationFactory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SemanticZoomAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer;
-
-protected:
-
-	SemanticZoomAutomationPeerT(Windows::UI::Xaml::Controls::SemanticZoom const & owner)
-	{
-		GetActivationFactory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToggleSwitchAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer;
-
-protected:
-
-	ToggleSwitchAutomationPeerT(Windows::UI::Xaml::Controls::ToggleSwitch const & owner)
-	{
-		GetActivationFactory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToggleButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer;
-
-protected:
-
-	ToggleButtonAutomationPeerT(Windows::UI::Xaml::Controls::Primitives::ToggleButton const & owner)
-	{
-		GetActivationFactory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CheckBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer;
-
-protected:
-
-	CheckBoxAutomationPeerT(Windows::UI::Xaml::Controls::CheckBox const & owner)
-	{
-		GetActivationFactory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RadioButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer;
-
-protected:
-
-	RadioButtonAutomationPeerT(Windows::UI::Xaml::Controls::RadioButton const & owner)
-	{
-		GetActivationFactory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer;
-
-protected:
-
-	AppBarAutomationPeerT(Windows::UI::Xaml::Controls::AppBar const & owner)
-	{
-		GetActivationFactory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToggleMenuFlyoutItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer;
-
-protected:
-
-	ToggleMenuFlyoutItemAutomationPeerT(Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem const & owner)
-	{
-		GetActivationFactory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarToggleButtonAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer;
-
-protected:
-
-	AppBarToggleButtonAutomationPeerT(Windows::UI::Xaml::Controls::AppBarToggleButton const & owner)
-	{
-		GetActivationFactory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ComboBoxAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider, Windows::UI::Xaml::Automation::Provider::IValueProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer;
-
-protected:
-
-	ComboBoxAutomationPeerT(Windows::UI::Xaml::Controls::ComboBox const & owner)
-	{
-		GetActivationFactory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer;
-
-protected:
-
-	ItemAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer const & parent)
-	{
-		GetActivationFactory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SelectorItemAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer;
-
-protected:
-
-	SelectorItemAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer const & parent)
-	{
-		GetActivationFactory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ComboBoxItemDataAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer;
-
-protected:
-
-	ComboBoxItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer const & parent)
-	{
-		GetActivationFactory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlipViewItemDataAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer;
-
-protected:
-
-	FlipViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer const & parent)
-	{
-		GetActivationFactory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListBoxItemDataAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer;
-
-protected:
-
-	ListBoxItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer const & parent)
-	{
-		GetActivationFactory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewItemDataAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer;
-
-protected:
-
-	GridViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer const & parent)
-	{
-		GetActivationFactory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewItemDataAutomationPeerT :
-	overrides<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
-{
-	using composable = Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer;
-
-protected:
-
-	ListViewItemDataAutomationPeerT(IInspectable const & item, Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer const & parent)
-	{
-		GetActivationFactory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Controls {
-
-template <typename T> struct DataTemplateSelectorT :
-	overrides<Windows::UI::Xaml::Controls::IDataTemplateSelectorOverridesT<T>, Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::Controls::IDataTemplateSelector, Windows::UI::Xaml::Controls::IDataTemplateSelector2>
-{
-	using composable = Windows::UI::Xaml::Controls::IDataTemplateSelector;
-
-protected:
-
-	DataTemplateSelectorT()
-	{
-		GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct StyleSelectorT :
-	overrides<Windows::UI::Xaml::Controls::IStyleSelectorOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::Controls::IStyleSelector>
-{
-	using composable = Windows::UI::Xaml::Controls::IStyleSelector;
-
-protected:
-
-	StyleSelectorT()
-	{
-		GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GroupStyleT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Controls::IGroupStyle, Windows::UI::Xaml::Data::INotifyPropertyChanged, Windows::UI::Xaml::Controls::IGroupStyle2>
-{
-	using composable = Windows::UI::Xaml::Controls::IGroupStyle;
-
-protected:
-
-	GroupStyleT()
-	{
-		GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GroupStyleSelectorT :
-	overrides<Windows::UI::Xaml::Controls::IGroupStyleSelectorOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::Controls::IGroupStyleSelector>
-{
-	using composable = Windows::UI::Xaml::Controls::IGroupStyleSelector;
-
-protected:
-
-	GroupStyleSelectorT()
-	{
-		GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlyoutT :
-	overrides<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::IFlyout>
-{
-	using composable = Windows::UI::Xaml::Controls::IFlyout;
-
-protected:
-
-	FlyoutT()
-	{
-		GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutT :
-	overrides<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::IMenuFlyout, Windows::UI::Xaml::Controls::IMenuFlyout2>
-{
-	using composable = Windows::UI::Xaml::Controls::IMenuFlyout;
-
-protected:
-
-	MenuFlyoutT()
-	{
-		GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SelectionChangedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs>
-{
-	using composable = Windows::UI::Xaml::Controls::ISelectionChangedEventArgs;
-
-protected:
-
-	SelectionChangedEventArgsT(Windows::Foundation::Collections::IVector<IInspectable> const & removedItems, Windows::Foundation::Collections::IVector<IInspectable> const & addedItems)
-	{
-		GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel>
-{
-	using composable = Windows::UI::Xaml::Controls::IPanel;
-
-protected:
-
-	PanelT()
-	{
-		GetActivationFactory<Panel, IPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ContentPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4>
-{
-	using composable = Windows::UI::Xaml::Controls::IContentPresenter;
-
-protected:
-
-	ContentPresenterT()
-	{
-		GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CanvasT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::ICanvas>
-{
-	using composable = Windows::UI::Xaml::Controls::ICanvas;
-
-protected:
-
-	CanvasT()
-	{
-		GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2>
-{
-	using composable = Windows::UI::Xaml::Controls::IGrid;
-
-protected:
-
-	GridT()
-	{
-		GetActivationFactory<Grid, IGridFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RelativePanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IRelativePanel>
-{
-	using composable = Windows::UI::Xaml::Controls::IRelativePanel;
-
-protected:
-
-	RelativePanelT()
-	{
-		GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct StackPanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IStackPanel, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo, Windows::UI::Xaml::Controls::IStackPanel2, Windows::UI::Xaml::Controls::IInsertionPanel>
-{
-	using composable = Windows::UI::Xaml::Controls::IStackPanel;
-
-protected:
-
-	StackPanelT()
-	{
-		GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct InkCanvasT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IInkCanvas>
-{
-	using composable = Windows::UI::Xaml::Controls::IInkCanvas;
-
-protected:
-
-	InkCanvasT()
-	{
-		GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct BitmapIconT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IBitmapIcon>
-{
-	using composable = Windows::UI::Xaml::Controls::IBitmapIcon;
-
-protected:
-
-	BitmapIconT()
-	{
-		GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FontIconT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IFontIcon, Windows::UI::Xaml::Controls::IFontIcon2, Windows::UI::Xaml::Controls::IFontIcon3>
-{
-	using composable = Windows::UI::Xaml::Controls::IFontIcon;
-
-protected:
-
-	FontIconT()
-	{
-		GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PathIconT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IPathIcon>
-{
-	using composable = Windows::UI::Xaml::Controls::IPathIcon;
-
-protected:
-
-	PathIconT()
-	{
-		GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SwapChainBackgroundPanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel2>
-{
-	using composable = Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel;
-
-protected:
-
-	SwapChainBackgroundPanelT()
-	{
-		GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SwapChainPanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2, Windows::UI::Xaml::Controls::ISwapChainPanel>
-{
-	using composable = Windows::UI::Xaml::Controls::ISwapChainPanel;
-
-protected:
-
-	SwapChainPanelT()
-	{
-		GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ControlT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3>
-{
-	using composable = Windows::UI::Xaml::Controls::IControl;
-
-protected:
-
-	ControlT()
-	{
-		GetActivationFactory<Control, IControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ContentControlT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2>
-{
-	using composable = Windows::UI::Xaml::Controls::IContentControl;
-
-protected:
-
-	ContentControlT()
-	{
-		GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ItemsControlT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3>
-{
-	using composable = Windows::UI::Xaml::Controls::IItemsControl;
-
-protected:
-
-	ItemsControlT()
-	{
-		GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MediaTransportControlsT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IMediaTransportControls>
-{
-	using composable = Windows::UI::Xaml::Controls::IMediaTransportControls;
-
-protected:
-
-	MediaTransportControlsT()
-	{
-		GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RichEditBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IRichEditBox, Windows::UI::Xaml::Controls::IRichEditBox2, Windows::UI::Xaml::Controls::IRichEditBox3, Windows::UI::Xaml::Controls::IRichEditBox4>
-{
-	using composable = Windows::UI::Xaml::Controls::IRichEditBox;
-
-protected:
-
-	RichEditBoxT()
-	{
-		GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TextBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ITextBox, Windows::UI::Xaml::Controls::ITextBox2, Windows::UI::Xaml::Controls::ITextBox3, Windows::UI::Xaml::Controls::ITextBox4>
-{
-	using composable = Windows::UI::Xaml::Controls::ITextBox;
-
-protected:
-
-	TextBoxT()
-	{
-		GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct UserControlT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IUserControl>
-{
-	using composable = Windows::UI::Xaml::Controls::IUserControl;
-
-protected:
-
-	UserControlT()
-	{
-		GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GroupItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IGroupItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IGroupItem;
-
-protected:
-
-	GroupItemT()
-	{
-		GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SettingsFlyoutT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::ISettingsFlyout>
-{
-	using composable = Windows::UI::Xaml::Controls::ISettingsFlyout;
-
-protected:
-
-	SettingsFlyoutT()
-	{
-		GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToolTipT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IToolTip>
-{
-	using composable = Windows::UI::Xaml::Controls::IToolTip;
-
-protected:
-
-	ToolTipT()
-	{
-		GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ComboBoxItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IComboBoxItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IComboBoxItem;
-
-protected:
-
-	ComboBoxItemT()
-	{
-		GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlipViewItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IFlipViewItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IFlipViewItem;
-
-protected:
-
-	FlipViewItemT()
-	{
-		GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListBoxItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IListBoxItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IListBoxItem;
-
-protected:
-
-	ListBoxItemT()
-	{
-		GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ProgressBarT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::Primitives::IRangeBase, Windows::UI::Xaml::Controls::IProgressBar>
-{
-	using composable = Windows::UI::Xaml::Controls::IProgressBar;
-
-protected:
-
-	ProgressBarT()
-	{
-		GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SliderT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::Primitives::IRangeBase, Windows::UI::Xaml::Controls::ISlider, Windows::UI::Xaml::Controls::ISlider2>
-{
-	using composable = Windows::UI::Xaml::Controls::ISlider;
-
-protected:
-
-	SliderT()
-	{
-		GetActivationFactory<Slider, ISliderFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IButton, Windows::UI::Xaml::Controls::IButtonWithFlyout>
-{
-	using composable = Windows::UI::Xaml::Controls::IButton;
-
-protected:
-
-	ButtonT()
-	{
-		GetActivationFactory<Button, IButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HyperlinkButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IHyperlinkButton>
-{
-	using composable = Windows::UI::Xaml::Controls::IHyperlinkButton;
-
-protected:
-
-	HyperlinkButtonT()
-	{
-		GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewBaseT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5>
-{
-	using composable = Windows::UI::Xaml::Controls::IListViewBase;
-
-protected:
-
-	ListViewBaseT()
-	{
-		GetActivationFactory<ListViewBase, IListViewBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ComboBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Windows::UI::Xaml::Controls::IComboBoxOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IComboBox, Windows::UI::Xaml::Controls::IComboBox2>
-{
-	using composable = Windows::UI::Xaml::Controls::IComboBox;
-
-protected:
-
-	ComboBoxT()
-	{
-		GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlipViewT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IFlipView, Windows::UI::Xaml::Controls::IFlipView2>
-{
-	using composable = Windows::UI::Xaml::Controls::IFlipView;
-
-protected:
-
-	FlipViewT()
-	{
-		GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListBox, Windows::UI::Xaml::Controls::IListBox2>
-{
-	using composable = Windows::UI::Xaml::Controls::IListBox;
-
-protected:
-
-	ListBoxT()
-	{
-		GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CheckBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::ICheckBox>
-{
-	using composable = Windows::UI::Xaml::Controls::ICheckBox;
-
-protected:
-
-	CheckBoxT()
-	{
-		GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RadioButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton>
-{
-	using composable = Windows::UI::Xaml::Controls::IRadioButton;
-
-protected:
-
-	RadioButtonT()
-	{
-		GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CalendarViewT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ICalendarView>
-{
-	using composable = Windows::UI::Xaml::Controls::ICalendarView;
-
-protected:
-
-	CalendarViewT()
-	{
-		GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CalendarViewDayItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ICalendarViewDayItem>
-{
-	using composable = Windows::UI::Xaml::Controls::ICalendarViewDayItem;
-
-protected:
-
-	CalendarViewDayItemT()
-	{
-		GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HubSectionT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IHubSection>
-{
-	using composable = Windows::UI::Xaml::Controls::IHubSection;
-
-protected:
-
-	HubSectionT()
-	{
-		GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarSeparatorT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IAppBarSeparator, Windows::UI::Xaml::Controls::ICommandBarElement>
-{
-	using composable = Windows::UI::Xaml::Controls::IAppBarSeparator;
-
-protected:
-
-	AppBarSeparatorT()
-	{
-		GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CalendarDatePickerT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ICalendarDatePicker>
-{
-	using composable = Windows::UI::Xaml::Controls::ICalendarDatePicker;
-
-protected:
-
-	CalendarDatePickerT()
-	{
-		GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DatePickerT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IDatePicker>
-{
-	using composable = Windows::UI::Xaml::Controls::IDatePicker;
-
-protected:
-
-	DatePickerT()
-	{
-		GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HubT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IHub, Windows::UI::Xaml::Controls::ISemanticZoomInformation>
-{
-	using composable = Windows::UI::Xaml::Controls::IHub;
-
-protected:
-
-	HubT()
-	{
-		GetActivationFactory<Hub, IHubFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SearchBoxT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ISearchBox>
-{
-	using composable = Windows::UI::Xaml::Controls::ISearchBox;
-
-protected:
-
-	SearchBoxT()
-	{
-		GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SplitViewT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ISplitView>
-{
-	using composable = Windows::UI::Xaml::Controls::ISplitView;
-
-protected:
-
-	SplitViewT()
-	{
-		GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TimePickerT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::ITimePicker>
-{
-	using composable = Windows::UI::Xaml::Controls::ITimePicker;
-
-protected:
-
-	TimePickerT()
-	{
-		GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverrides3T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IAppBar, Windows::UI::Xaml::Controls::IAppBar2, Windows::UI::Xaml::Controls::IAppBar3>
-{
-	using composable = Windows::UI::Xaml::Controls::IAppBar;
-
-protected:
-
-	AppBarT()
-	{
-		GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CommandBarOverflowPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter>
-{
-	using composable = Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter;
-
-protected:
-
-	CommandBarOverflowPresenterT()
-	{
-		GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ContentDialogT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IContentDialog>
-{
-	using composable = Windows::UI::Xaml::Controls::IContentDialog;
-
-protected:
-
-	ContentDialogT()
-	{
-		GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FlyoutPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IFlyoutPresenter>
-{
-	using composable = Windows::UI::Xaml::Controls::IFlyoutPresenter;
-
-protected:
-
-	FlyoutPresenterT()
-	{
-		GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct FrameT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IFrame, Windows::UI::Xaml::Controls::INavigate, Windows::UI::Xaml::Controls::IFrame2, Windows::UI::Xaml::Controls::IFrame3>
-{
-	using composable = Windows::UI::Xaml::Controls::IFrame;
-
-protected:
-
-	FrameT()
-	{
-		GetActivationFactory<Frame, IFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IMenuFlyoutItem;
-
-protected:
-
-	MenuFlyoutItemT()
-	{
-		GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter2>
-{
-	using composable = Windows::UI::Xaml::Controls::IMenuFlyoutPresenter;
-
-protected:
-
-	MenuFlyoutPresenterT()
-	{
-		GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MenuFlyoutSeparatorT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutSeparator>
-{
-	using composable = Windows::UI::Xaml::Controls::IMenuFlyoutSeparator;
-
-protected:
-
-	MenuFlyoutSeparatorT()
-	{
-		GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PageT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IPageOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IUserControl, Windows::UI::Xaml::Controls::IPage>
-{
-	using composable = Windows::UI::Xaml::Controls::IPage;
-
-protected:
-
-	PageT()
-	{
-		GetActivationFactory<Page, IPageFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CommandBarT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverrides3T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IAppBar, Windows::UI::Xaml::Controls::IAppBar2, Windows::UI::Xaml::Controls::IAppBar3, Windows::UI::Xaml::Controls::ICommandBar, Windows::UI::Xaml::Controls::ICommandBar2>
-{
-	using composable = Windows::UI::Xaml::Controls::ICommandBar;
-
-protected:
-
-	CommandBarT()
-	{
-		GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewHeaderItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IListViewBaseHeaderItem, Windows::UI::Xaml::Controls::IGridViewHeaderItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IGridViewHeaderItem;
-
-protected:
-
-	GridViewHeaderItemT()
-	{
-		GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IGridViewItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IGridViewItem;
-
-protected:
-
-	GridViewItemT()
-	{
-		GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewHeaderItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IListViewBaseHeaderItem, Windows::UI::Xaml::Controls::IListViewHeaderItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IListViewHeaderItem;
-
-protected:
-
-	ListViewHeaderItemT()
-	{
-		GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IListViewItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IListViewItem;
-
-protected:
-
-	ListViewItemT()
-	{
-		GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToggleMenuFlyoutItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutItem, Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem;
-
-protected:
-
-	ToggleMenuFlyoutItemT()
-	{
-		GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IButton, Windows::UI::Xaml::Controls::IButtonWithFlyout, Windows::UI::Xaml::Controls::IAppBarButton, Windows::UI::Xaml::Controls::ICommandBarElement>
-{
-	using composable = Windows::UI::Xaml::Controls::IAppBarButton;
-
-protected:
-
-	AppBarButtonT()
-	{
-		GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct AppBarToggleButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IAppBarToggleButton, Windows::UI::Xaml::Controls::ICommandBarElement>
-{
-	using composable = Windows::UI::Xaml::Controls::IAppBarToggleButton;
-
-protected:
-
-	AppBarToggleButtonT()
-	{
-		GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5, Windows::UI::Xaml::Controls::IGridView>
-{
-	using composable = Windows::UI::Xaml::Controls::IGridView;
-
-protected:
-
-	GridViewT()
-	{
-		GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5, Windows::UI::Xaml::Controls::IListView>
-{
-	using composable = Windows::UI::Xaml::Controls::IListView;
-
-protected:
-
-	ListViewT()
-	{
-		GetActivationFactory<ListView, IListViewFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PivotT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::IPivot, Windows::UI::Xaml::Controls::IPivot2>
-{
-	using composable = Windows::UI::Xaml::Controls::IPivot;
-
-protected:
-
-	PivotT()
-	{
-		GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PivotItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IPivotItem>
-{
-	using composable = Windows::UI::Xaml::Controls::IPivotItem;
-
-protected:
-
-	PivotItemT()
-	{
-		GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+namespace Windows { namespace UI { namespace Xaml { namespace Media {
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Media::IGeneralTransformOverrides>
+struct IGeneralTransformOverridesT : A
+{
+    Windows::UI::Xaml::Media::GeneralTransform InverseCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().InverseCore();
+    }
+
+    bool TryTransformCore(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().TryTransformCore(inPoint, outPoint);
+    }
+
+    Windows::Foundation::Rect TransformBoundsCore(const Windows::Foundation::Rect & rect)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Media::IGeneralTransformOverrides>().TransformBoundsCore(rect);
+    }
+
+    HRESULT __stdcall get_InverseCore(abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> value) noexcept override
+    {
+        try
+        {
+            *value = detach(static_cast<T *>(this)->InverseCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point * outPoint, bool * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->TryTransformCore(inPoint, *outPoint));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->TransformBoundsCore(rect));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
+
+template <typename T, typename A = ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
+struct INavigationTransitionInfoOverridesT : A
+{
+    hstring GetNavigationStateCore()
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().GetNavigationStateCore();
+    }
+
+    void SetNavigationStateCore(hstring_ref navigationState)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
+    }
+
+    HRESULT __stdcall abi_GetNavigationStateCore(HSTRING * returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetNavigationStateCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetNavigationStateCore(HSTRING navigationState) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 }}}}}
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Maps {
+namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
 
-template <typename T> struct MapCustomExperienceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapCustomExperience>
+template <typename T, typename A = ABI::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>
+struct IXamlRenderingBackgroundTaskOverridesT : A
 {
-	using composable = Windows::UI::Xaml::Controls::Maps::IMapCustomExperience;
-
-protected:
-
-	MapCustomExperienceT()
-	{
-		GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MapElementT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapElement, Windows::UI::Xaml::Controls::Maps::IMapElement2>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::IMapElement;
-
-protected:
-
-	MapElementT()
-	{
-		GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MapRouteViewT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapRouteView>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::IMapRouteView;
-
-protected:
-
-	MapRouteViewT(Windows::Services::Maps::MapRoute const & route)
-	{
-		GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MapTileDataSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::IMapTileDataSource;
-
-protected:
-
-	MapTileDataSourceT()
-	{
-		GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct MapTileSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileSource>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::IMapTileSource;
-
-protected:
-
-	MapTileSourceT()
-	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource)
-	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange)
-	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange, Windows::Devices::Geolocation::GeoboundingBox const & bounds)
-	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	MapTileSourceT(Windows::UI::Xaml::Controls::Maps::MapTileDataSource const & dataSource, Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange const & zoomLevelRange, Windows::Devices::Geolocation::GeoboundingBox const & bounds, int const tileSizeInPixels)
-	{
-		GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CustomMapTileDataSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource;
-
-protected:
-
-	CustomMapTileDataSourceT()
-	{
-		GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct HttpMapTileDataSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource;
-
-protected:
-
-	HttpMapTileDataSourceT()
-	{
-		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	HttpMapTileDataSourceT(hstring_ref uriFormatString)
-	{
-		GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct LocalMapTileDataSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource>
-{
-	using composable = Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource;
-
-protected:
-
-	LocalMapTileDataSourceT()
-	{
-		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	LocalMapTileDataSourceT(hstring_ref uriFormatString)
-	{
-		GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
-
-template <typename T> struct FlyoutBaseT :
-	overrides<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IFlyoutBase;
-
-protected:
-
-	FlyoutBaseT()
-	{
-		GetActivationFactory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DragCompletedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs;
-
-protected:
-
-	DragCompletedEventArgsT(double const horizontalChange, double const verticalChange, bool const canceled)
-	{
-		GetActivationFactory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DragDeltaEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs;
-
-protected:
-
-	DragDeltaEventArgsT(double const horizontalChange, double const verticalChange)
-	{
-		GetActivationFactory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct DragStartedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs;
-
-protected:
-
-	DragStartedEventArgsT(double const horizontalOffset, double const verticalOffset)
-	{
-		GetActivationFactory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct CarouselPanelT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IVirtualizingPanelOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IVirtualizingPanel, Windows::UI::Xaml::Controls::IVirtualizingPanelProtected, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::ICarouselPanel;
-
-protected:
-
-	CarouselPanelT()
-	{
-		GetActivationFactory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct GridViewItemPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter;
-
-protected:
-
-	GridViewItemPresenterT()
-	{
-		GetActivationFactory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ListViewItemPresenterT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter2>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter;
-
-protected:
-
-	ListViewItemPresenterT()
-	{
-		GetActivationFactory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SelectorItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::ISelectorItem;
-
-protected:
-
-	SelectorItemT()
-	{
-		GetActivationFactory<SelectorItem, ISelectorItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RangeBaseT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::Primitives::IRangeBase>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IRangeBase;
-
-protected:
-
-	RangeBaseT()
-	{
-		GetActivationFactory<RangeBase, IRangeBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ButtonBaseT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IButtonBase;
-
-protected:
-
-	ButtonBaseT()
-	{
-		GetActivationFactory<ButtonBase, IButtonBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ToggleButtonT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IToggleButton;
-
-protected:
-
-	ToggleButtonT()
-	{
-		GetActivationFactory<ToggleButton, IToggleButtonFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PickerFlyoutBaseT :
-	overrides<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase;
-
-protected:
-
-	PickerFlyoutBaseT()
-	{
-		GetActivationFactory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PivotHeaderItemT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem>
-{
-	using composable = Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem;
-
-protected:
-
-	PivotHeaderItemT()
-	{
-		GetActivationFactory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Data {
-
-template <typename T> struct CurrentChangingEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Data::ICurrentChangingEventArgs>
-{
-	using composable = Windows::UI::Xaml::Data::ICurrentChangingEventArgs;
-
-protected:
-
-	CurrentChangingEventArgsT()
-	{
-		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	CurrentChangingEventArgsT(bool const isCancelable)
-	{
-		GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PropertyChangedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Data::IPropertyChangedEventArgs>
-{
-	using composable = Windows::UI::Xaml::Data::IPropertyChangedEventArgs;
-
-protected:
-
-	PropertyChangedEventArgsT(hstring_ref name)
-	{
-		GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct BindingBaseT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IBindingBase>
-{
-	using composable = Windows::UI::Xaml::Data::IBindingBase;
-
-protected:
-
-	BindingBaseT()
-	{
-		GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct RelativeSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IRelativeSource>
-{
-	using composable = Windows::UI::Xaml::Data::IRelativeSource;
-
-protected:
-
-	RelativeSourceT()
-	{
-		GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct BindingT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IBindingBase, Windows::UI::Xaml::Data::IBinding, Windows::UI::Xaml::Data::IBinding2>
-{
-	using composable = Windows::UI::Xaml::Data::IBinding;
-
-protected:
-
-	BindingT()
-	{
-		GetActivationFactory<Binding, IBindingFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ItemIndexRangeT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Data::IItemIndexRange>
-{
-	using composable = Windows::UI::Xaml::Data::IItemIndexRange;
-
-protected:
-
-	ItemIndexRangeT(int const firstIndex, unsigned const length)
-	{
-		GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, lease<Windows::IInspectable>(this), m_inner);
-	}
+    void OnRun(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance)
+    {
+        static_cast<T *>(this)->as<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>().OnRun(taskInstance);
+    }
+
+    HRESULT __stdcall abi_OnRun(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
+    {
+        try
+        {
+            static_cast<T *>(this)->OnRun(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTaskInstance *>(&taskInstance));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
 };
 
 }}}}}
 
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Documents {
+namespace Windows { namespace UI { namespace Xaml { namespace Resources {
 
-template <typename T> struct BlockT :
-	overrides<Windows::UI::Xaml::Documents::ITextElementOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::IBlock>
+template <typename T, typename A = ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
+struct ICustomXamlResourceLoaderOverridesT : A
 {
-	using composable = Windows::UI::Xaml::Documents::IBlock;
+    Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType)
+    {
+        return static_cast<T *>(this)->as<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
+    }
+
+    HRESULT __stdcall abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    {
+        try
+        {
+            *returnValue = detach(static_cast<T *>(this)->GetResource(*reinterpret_cast<const hstring *>(&resourceId), *reinterpret_cast<const hstring *>(&objectType), *reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const hstring *>(&propertyType)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml {
+
+template <typename T, typename ... Interfaces> struct AdaptiveTriggerT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IStateTriggerBase, Windows::UI::Xaml::IStateTriggerBaseProtected, Windows::UI::Xaml::IAdaptiveTrigger>
+{
+    using composable = AdaptiveTrigger;
 
 protected:
 
-	BlockT()
-	{
-		GetActivationFactory<Block, IBlockFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    AdaptiveTriggerT()
+    {
+        GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct InlineT :
-	overrides<Windows::UI::Xaml::Documents::ITextElementOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::IInline>
+template <typename T, typename ... Interfaces> struct ApplicationT :
+    overrides<T, Windows::UI::Xaml::IApplicationOverridesT<T>, Windows::UI::Xaml::IApplicationOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IApplication, Windows::UI::Xaml::IApplication2>
 {
-	using composable = Windows::UI::Xaml::Documents::IInline;
+    using composable = Application;
 
 protected:
 
-	InlineT()
-	{
-		GetActivationFactory<Inline, IInlineFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    ApplicationT()
+    {
+        GetActivationFactory<Application, IApplicationFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct SpanT :
-	overrides<Windows::UI::Xaml::Documents::ITextElementOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::Documents::ISpan>
+template <typename T, typename ... Interfaces> struct DataTemplateT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkTemplate, Windows::UI::Xaml::IDataTemplate>
 {
-	using composable = Windows::UI::Xaml::Documents::ISpan;
+    using composable = DataTemplate;
 
 protected:
 
-	SpanT()
-	{
-		GetActivationFactory<Span, ISpanFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    DataTemplateT()
+    {
+        GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Input {
-
-template <typename T> struct ManipulationStartedRoutedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
+template <typename T, typename ... Interfaces> struct DataTemplateKeyT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDataTemplateKey>
 {
-	using composable = Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs;
+    using composable = DataTemplateKey;
 
 protected:
 
-	ManipulationStartedRoutedEventArgsT()
-	{
-		GetActivationFactory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    DataTemplateKeyT()
+    {
+        GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(*this, m_inner);
+    }
+
+    DataTemplateKeyT(const Windows::IInspectable & dataType)
+    {
+        GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, *this, m_inner);
+    }
 };
 
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Interop {
-
-template <typename T> struct NotifyCollectionChangedEventArgsT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
+template <typename T, typename ... Interfaces> struct DependencyObjectT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
-	using composable = Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs;
+    using composable = DependencyObject;
 
 protected:
 
-	NotifyCollectionChangedEventArgsT(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction const action, Windows::UI::Xaml::Interop::IBindableVector const & newItems, Windows::UI::Xaml::Interop::IBindableVector const & oldItems, int const newIndex, int const oldIndex)
-	{
-		GetActivationFactory<NotifyCollectionChangedEventArgs, INotifyCollectionChangedEventArgsFactory>().CreateInstanceWithAllParameters(action, newItems, oldItems, newIndex, oldIndex, lease<Windows::IInspectable>(this), m_inner);
-	}
+    DependencyObjectT()
+    {
+        GetActivationFactory<DependencyObject, IDependencyObjectFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media {
-
-template <typename T> struct FontFamilyT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::Media::IFontFamily>
+template <typename T, typename ... Interfaces> struct DependencyObjectCollectionT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>>
 {
-	using composable = Windows::UI::Xaml::Media::IFontFamily;
+    using composable = DependencyObjectCollection;
 
 protected:
 
-	FontFamilyT(hstring_ref familyName)
-	{
-		GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, lease<Windows::IInspectable>(this), m_inner);
-	}
+    DependencyObjectCollectionT()
+    {
+        GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct BrushT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+template <typename T, typename ... Interfaces> struct DispatcherTimerT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDispatcherTimer>
 {
-	using composable = Windows::UI::Xaml::Media::IBrush;
+    using composable = DispatcherTimer;
 
 protected:
 
-	BrushT()
-	{
-		GetActivationFactory<Brush, IBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    DispatcherTimerT()
+    {
+        GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct CacheModeT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::ICacheMode>
+template <typename T, typename ... Interfaces> struct FrameworkElementT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4>
 {
-	using composable = Windows::UI::Xaml::Media::ICacheMode;
+    using composable = FrameworkElement;
 
 protected:
 
-	CacheModeT()
-	{
-		GetActivationFactory<CacheMode, ICacheModeFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    FrameworkElementT()
+    {
+        GetActivationFactory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct GeneralTransformT :
-	overrides<Windows::UI::Xaml::Media::IGeneralTransformOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IGeneralTransform>
+template <typename T, typename ... Interfaces> struct FrameworkTemplateT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkTemplate>
 {
-	using composable = Windows::UI::Xaml::Media::IGeneralTransform;
+    using composable = FrameworkTemplate;
 
 protected:
 
-	GeneralTransformT()
-	{
-		GetActivationFactory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    FrameworkTemplateT()
+    {
+        GetActivationFactory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct ProjectionT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IProjection>
+template <typename T, typename ... Interfaces> struct PropertyMetadataT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IPropertyMetadata>
 {
-	using composable = Windows::UI::Xaml::Media::IProjection;
+    using composable = PropertyMetadata;
 
 protected:
 
-	ProjectionT()
-	{
-		GetActivationFactory<Projection, IProjectionFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    PropertyMetadataT(const Windows::IInspectable & defaultValue)
+    {
+        GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, *this, m_inner);
+    }
+
+    PropertyMetadataT(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback)
+    {
+        GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, *this, m_inner);
+    }
 };
 
-template <typename T> struct GradientBrushT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IGradientBrush>
+template <typename T, typename ... Interfaces> struct ResourceDictionaryT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IResourceDictionary, Windows::Foundation::Collections::IMap<Windows::IInspectable, Windows::IInspectable>, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>>>
 {
-	using composable = Windows::UI::Xaml::Media::IGradientBrush;
+    using composable = ResourceDictionary;
 
 protected:
 
-	GradientBrushT()
-	{
-		GetActivationFactory<GradientBrush, IGradientBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    ResourceDictionaryT()
+    {
+        GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct TileBrushT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::ITileBrush>
+template <typename T, typename ... Interfaces> struct RoutedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs>
 {
-	using composable = Windows::UI::Xaml::Media::ITileBrush;
+    using composable = RoutedEventArgs;
 
 protected:
 
-	TileBrushT()
-	{
-		GetActivationFactory<TileBrush, ITileBrushFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    RoutedEventArgsT()
+    {
+        GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
-
-template <typename T> struct ColorKeyFrameT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IColorKeyFrame>
+template <typename T, typename ... Interfaces> struct StateTriggerBaseT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IStateTriggerBase, Windows::UI::Xaml::IStateTriggerBaseProtected>
 {
-	using composable = Windows::UI::Xaml::Media::Animation::IColorKeyFrame;
+    using composable = StateTriggerBase;
 
 protected:
 
-	ColorKeyFrameT()
-	{
-		GetActivationFactory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    StateTriggerBaseT()
+    {
+        GetActivationFactory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct DoubleKeyFrameT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame>
+template <typename T, typename ... Interfaces> struct VisualStateManagerT :
+    overrides<T, Windows::UI::Xaml::IVisualStateManagerOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IVisualStateManager, Windows::UI::Xaml::IVisualStateManagerProtected>
 {
-	using composable = Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame;
+    using composable = VisualStateManager;
 
 protected:
 
-	DoubleKeyFrameT()
-	{
-		GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
+    VisualStateManagerT()
+    {
+        GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
-template <typename T> struct NavigationTransitionInfoT :
-	overrides<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo>
+template <typename T, typename ... Interfaces> struct VisualTransitionT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IVisualTransition>
 {
-	using composable = Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo;
+    using composable = VisualTransition;
 
 protected:
 
-	NavigationTransitionInfoT()
-	{
-		GetActivationFactory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct ObjectKeyFrameT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame>
-{
-	using composable = Windows::UI::Xaml::Media::Animation::IObjectKeyFrame;
-
-protected:
-
-	ObjectKeyFrameT()
-	{
-		GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PointKeyFrameT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IPointKeyFrame>
-{
-	using composable = Windows::UI::Xaml::Media::Animation::IPointKeyFrame;
-
-protected:
-
-	PointKeyFrameT()
-	{
-		GetActivationFactory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct TimelineT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::ITimeline>
-{
-	using composable = Windows::UI::Xaml::Media::Animation::ITimeline;
-
-protected:
-
-	TimelineT()
-	{
-		GetActivationFactory<Timeline, ITimelineFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
-
-template <typename T> struct XamlRenderingBackgroundTaskT :
-	overrides<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>
-{
-	using composable = Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask;
-
-protected:
-
-	XamlRenderingBackgroundTaskT()
-	{
-		GetActivationFactory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct BitmapSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource, Windows::UI::Xaml::Media::Imaging::IBitmapSource>
-{
-	using composable = Windows::UI::Xaml::Media::Imaging::IBitmapSource;
-
-protected:
-
-	BitmapSourceT()
-	{
-		GetActivationFactory<BitmapSource, IBitmapSourceFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct SurfaceImageSourceT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource, Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>
-{
-	using composable = Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource;
-
-protected:
-
-	SurfaceImageSourceT(int const pixelWidth, int const pixelHeight)
-	{
-		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, lease<Windows::IInspectable>(this), m_inner);
-	}
-
-	SurfaceImageSourceT(int const pixelWidth, int const pixelHeight, bool const isOpaque)
-	{
-		GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Media3D {
-
-template <typename T> struct Transform3DT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Media3D::ITransform3D>
-{
-	using composable = Windows::UI::Xaml::Media::Media3D::ITransform3D;
-
-protected:
-
-	Transform3DT()
-	{
-		GetActivationFactory<Transform3D, ITransform3DFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Printing {
-
-template <typename T> struct PrintDocumentT :
-	overrides<::IInspectable>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Printing::IPrintDocument>
-{
-	using composable = Windows::UI::Xaml::Printing::IPrintDocument;
-
-protected:
-
-	PrintDocumentT()
-	{
-		GetActivationFactory<PrintDocument, IPrintDocumentFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Resources {
-
-template <typename T> struct CustomXamlResourceLoaderT :
-	overrides<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverridesT<T>>,
-	requires<T, Windows::UI::Xaml::Resources::ICustomXamlResourceLoader>
-{
-	using composable = Windows::UI::Xaml::Resources::ICustomXamlResourceLoader;
-
-protected:
-
-	CustomXamlResourceLoaderT()
-	{
-		GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}
-
-namespace winrt { namespace Windows { namespace UI { namespace Xaml { namespace Shapes {
-
-template <typename T> struct ShapeT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Shapes::IShape>
-{
-	using composable = Windows::UI::Xaml::Shapes::IShape;
-
-protected:
-
-	ShapeT()
-	{
-		GetActivationFactory<Shape, IShapeFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-template <typename T> struct PathT :
-	overrides<Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>>,
-	requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::Shapes::IShape, Windows::UI::Xaml::Shapes::IPath>
-{
-	using composable = Windows::UI::Xaml::Shapes::IPath;
-
-protected:
-
-	PathT()
-	{
-		GetActivationFactory<Path, IPathFactory>().CreateInstance(lease<Windows::IInspectable>(this), m_inner);
-	}
-};
-
-}}}}}
-
-namespace winrt {
-
-namespace Windows { namespace ApplicationModel { namespace Core {
-
-template <typename T>
-struct IFrameworkViewSourceT : impl::implements<IFrameworkViewSource>
-{
-	virtual HRESULT __stdcall abi_CreateView(abi_arg_out<IFrameworkView> view) noexcept override
-	{
-		try
-		{
-			*view = detach(static_cast<T *>(this)->CreateView());
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
-};
-
-template <typename T>
-struct IFrameworkViewT : impl::implements<IFrameworkView>
-{
-	void Initialize(CoreApplicationView const &) const noexcept
-	{
-	}
-
-	void SetWindow(UI::Core::CoreWindow const &) const noexcept
-	{
-	}
-
-	void Load(hstring_ref) const noexcept
-	{
-	}
-
-	void Run() const
-	{
-		UI::Core::CoreWindow window = UI::Core::CoreWindow::GetForCurrentThread();
-		window.Activate();
-
-		UI::Core::ICoreDispatcher dispatcher = window.Dispatcher();
-		dispatcher.ProcessEvents(UI::Core::CoreProcessEventsOption::ProcessUntilQuit);
-	}
-
-	void Uninitialize() const noexcept
-	{
-	}
-
-	HRESULT __stdcall abi_Initialize(abi_arg_in<ICoreApplicationView> view) noexcept override
-	{
-		try
-		{
-			static_cast<T *>(this)->Initialize(lease<CoreApplicationView>(view));
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	HRESULT __stdcall abi_SetWindow(abi_arg_in<UI::Core::ICoreWindow> window) noexcept override
-	{
-		try
-		{
-			static_cast<T *>(this)->SetWindow(lease<UI::Core::CoreWindow>(window));
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	HRESULT __stdcall abi_Load(HSTRING entryPoint) noexcept override
-	{
-		try
-		{
-			static_cast<T *>(this)->Load(lease<hstring>(entryPoint));
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	HRESULT __stdcall abi_Run() noexcept override
-	{
-		try
-		{
-			static_cast<T *>(this)->Run();
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
-
-	HRESULT __stdcall abi_Uninitialize() noexcept override
-	{
-		try
-		{
-			static_cast<T *>(this)->Uninitialize();
-			return S_OK;
-		}
-		catch (...) { return impl::to_hresult(); }
-	}
+    VisualTransitionT()
+    {
+        GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(*this, m_inner);
+    }
 };
 
 }}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
+
+template <typename T, typename ... Interfaces> struct AppBarAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider>
+{
+    using composable = AppBarAutomationPeer;
+
+protected:
+
+    AppBarAutomationPeerT(const Windows::UI::Xaml::Controls::AppBar & owner)
+    {
+        GetActivationFactory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AppBarButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider, Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer>
+{
+    using composable = AppBarButtonAutomationPeer;
+
+protected:
+
+    AppBarButtonAutomationPeerT(const Windows::UI::Xaml::Controls::AppBarButton & owner)
+    {
+        GetActivationFactory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AppBarToggleButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer>
+{
+    using composable = AppBarToggleButtonAutomationPeer;
+
+protected:
+
+    AppBarToggleButtonAutomationPeerT(const Windows::UI::Xaml::Controls::AppBarToggleButton & owner)
+    {
+        GetActivationFactory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5>
+{
+    using composable = AutomationPeer;
+
+protected:
+
+    AutomationPeerT()
+    {
+        GetActivationFactory<AutomationPeer, IAutomationPeerFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
+{
+    using composable = ButtonAutomationPeer;
+
+protected:
+
+    ButtonAutomationPeerT(const Windows::UI::Xaml::Controls::Button & owner)
+    {
+        GetActivationFactory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ButtonBaseAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer>
+{
+    using composable = ButtonBaseAutomationPeer;
+
+protected:
+
+    ButtonBaseAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::ButtonBase & owner)
+    {
+        GetActivationFactory<ButtonBaseAutomationPeer, IButtonBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CaptureElementAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer>
+{
+    using composable = CaptureElementAutomationPeer;
+
+protected:
+
+    CaptureElementAutomationPeerT(const Windows::UI::Xaml::Controls::CaptureElement & owner)
+    {
+        GetActivationFactory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CheckBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer>
+{
+    using composable = CheckBoxAutomationPeer;
+
+protected:
+
+    CheckBoxAutomationPeerT(const Windows::UI::Xaml::Controls::CheckBox & owner)
+    {
+        GetActivationFactory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ComboBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider, Windows::UI::Xaml::Automation::Provider::IValueProvider>
+{
+    using composable = ComboBoxAutomationPeer;
+
+protected:
+
+    ComboBoxAutomationPeerT(const Windows::UI::Xaml::Controls::ComboBox & owner)
+    {
+        GetActivationFactory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ComboBoxItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer>
+{
+    using composable = ComboBoxItemAutomationPeer;
+
+protected:
+
+    ComboBoxItemAutomationPeerT(const Windows::UI::Xaml::Controls::ComboBoxItem & owner)
+    {
+        GetActivationFactory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ComboBoxItemDataAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = ComboBoxItemDataAutomationPeer;
+
+protected:
+
+    ComboBoxItemDataAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer & parent)
+    {
+        GetActivationFactory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DatePickerAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer>
+{
+    using composable = DatePickerAutomationPeer;
+
+protected:
+
+    DatePickerAutomationPeerT(const Windows::UI::Xaml::Controls::DatePicker & owner)
+    {
+        GetActivationFactory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlipViewAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer>
+{
+    using composable = FlipViewAutomationPeer;
+
+protected:
+
+    FlipViewAutomationPeerT(const Windows::UI::Xaml::Controls::FlipView & owner)
+    {
+        GetActivationFactory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlipViewItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer>
+{
+    using composable = FlipViewItemAutomationPeer;
+
+protected:
+
+    FlipViewItemAutomationPeerT(const Windows::UI::Xaml::Controls::FlipViewItem & owner)
+    {
+        GetActivationFactory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlipViewItemDataAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = FlipViewItemDataAutomationPeer;
+
+protected:
+
+    FlipViewItemDataAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer & parent)
+    {
+        GetActivationFactory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlyoutPresenterAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer>
+{
+    using composable = FlyoutPresenterAutomationPeer;
+
+protected:
+
+    FlyoutPresenterAutomationPeerT(const Windows::UI::Xaml::Controls::FlyoutPresenter & owner)
+    {
+        GetActivationFactory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FrameworkElementAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer>
+{
+    using composable = FrameworkElementAutomationPeer;
+
+protected:
+
+    FrameworkElementAutomationPeerT(const Windows::UI::Xaml::FrameworkElement & owner)
+    {
+        GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider, Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer>
+{
+    using composable = GridViewAutomationPeer;
+
+protected:
+
+    GridViewAutomationPeerT(const Windows::UI::Xaml::Controls::GridView & owner)
+    {
+        GetActivationFactory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewHeaderItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer>
+{
+    using composable = GridViewHeaderItemAutomationPeer;
+
+protected:
+
+    GridViewHeaderItemAutomationPeerT(const Windows::UI::Xaml::Controls::GridViewHeaderItem & owner)
+    {
+        GetActivationFactory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer>
+{
+    using composable = GridViewItemAutomationPeer;
+
+protected:
+
+    GridViewItemAutomationPeerT(const Windows::UI::Xaml::Controls::GridViewItem & owner)
+    {
+        GetActivationFactory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewItemDataAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = GridViewItemDataAutomationPeer;
+
+protected:
+
+    GridViewItemDataAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer & parent)
+    {
+        GetActivationFactory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GroupItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer>
+{
+    using composable = GroupItemAutomationPeer;
+
+protected:
+
+    GroupItemAutomationPeerT(const Windows::UI::Xaml::Controls::GroupItem & owner)
+    {
+        GetActivationFactory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HubAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer>
+{
+    using composable = HubAutomationPeer;
+
+protected:
+
+    HubAutomationPeerT(const Windows::UI::Xaml::Controls::Hub & owner)
+    {
+        GetActivationFactory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HubSectionAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = HubSectionAutomationPeer;
+
+protected:
+
+    HubSectionAutomationPeerT(const Windows::UI::Xaml::Controls::HubSection & owner)
+    {
+        GetActivationFactory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HyperlinkButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
+{
+    using composable = HyperlinkButtonAutomationPeer;
+
+protected:
+
+    HyperlinkButtonAutomationPeerT(const Windows::UI::Xaml::Controls::HyperlinkButton & owner)
+    {
+        GetActivationFactory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ImageAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer>
+{
+    using composable = ImageAutomationPeer;
+
+protected:
+
+    ImageAutomationPeerT(const Windows::UI::Xaml::Controls::Image & owner)
+    {
+        GetActivationFactory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider>
+{
+    using composable = ItemAutomationPeer;
+
+protected:
+
+    ItemAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer & parent)
+    {
+        GetActivationFactory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ItemsControlAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2>
+{
+    using composable = ItemsControlAutomationPeer;
+
+protected:
+
+    ItemsControlAutomationPeerT(const Windows::UI::Xaml::Controls::ItemsControl & owner)
+    {
+        GetActivationFactory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer>
+{
+    using composable = ListBoxAutomationPeer;
+
+protected:
+
+    ListBoxAutomationPeerT(const Windows::UI::Xaml::Controls::ListBox & owner)
+    {
+        GetActivationFactory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListBoxItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer>
+{
+    using composable = ListBoxItemAutomationPeer;
+
+protected:
+
+    ListBoxItemAutomationPeerT(const Windows::UI::Xaml::Controls::ListBoxItem & owner)
+    {
+        GetActivationFactory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListBoxItemDataAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = ListBoxItemDataAutomationPeer;
+
+protected:
+
+    ListBoxItemDataAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer & parent)
+    {
+        GetActivationFactory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider, Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer>
+{
+    using composable = ListViewAutomationPeer;
+
+protected:
+
+    ListViewAutomationPeerT(const Windows::UI::Xaml::Controls::ListView & owner)
+    {
+        GetActivationFactory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewBaseAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider>
+{
+    using composable = ListViewBaseAutomationPeer;
+
+protected:
+
+    ListViewBaseAutomationPeerT(const Windows::UI::Xaml::Controls::ListViewBase & owner)
+    {
+        GetActivationFactory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewBaseHeaderItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer>
+{
+    using composable = ListViewBaseHeaderItemAutomationPeer;
+
+protected:
+
+    ListViewBaseHeaderItemAutomationPeerT(const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem & owner)
+    {
+        GetActivationFactory<ListViewBaseHeaderItemAutomationPeer, IListViewBaseHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewHeaderItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer>
+{
+    using composable = ListViewHeaderItemAutomationPeer;
+
+protected:
+
+    ListViewHeaderItemAutomationPeerT(const Windows::UI::Xaml::Controls::ListViewHeaderItem & owner)
+    {
+        GetActivationFactory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer>
+{
+    using composable = ListViewItemAutomationPeer;
+
+protected:
+
+    ListViewItemAutomationPeerT(const Windows::UI::Xaml::Controls::ListViewItem & owner)
+    {
+        GetActivationFactory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewItemDataAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider, Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    using composable = ListViewItemDataAutomationPeer;
+
+protected:
+
+    ListViewItemDataAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer & parent)
+    {
+        GetActivationFactory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaElementAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer>
+{
+    using composable = MediaElementAutomationPeer;
+
+protected:
+
+    MediaElementAutomationPeerT(const Windows::UI::Xaml::Controls::MediaElement & owner)
+    {
+        GetActivationFactory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaPlayerElementAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer>
+{
+    using composable = MediaPlayerElementAutomationPeer;
+
+protected:
+
+    MediaPlayerElementAutomationPeerT(const Windows::UI::Xaml::Controls::MediaPlayerElement & owner)
+    {
+        GetActivationFactory<MediaPlayerElementAutomationPeer, IMediaPlayerElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaTransportControlsAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer>
+{
+    using composable = MediaTransportControlsAutomationPeer;
+
+protected:
+
+    MediaTransportControlsAutomationPeerT(const Windows::UI::Xaml::Controls::MediaTransportControls & owner)
+    {
+        GetActivationFactory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
+{
+    using composable = MenuFlyoutItemAutomationPeer;
+
+protected:
+
+    MenuFlyoutItemAutomationPeerT(const Windows::UI::Xaml::Controls::MenuFlyoutItem & owner)
+    {
+        GetActivationFactory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutPresenterAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer>
+{
+    using composable = MenuFlyoutPresenterAutomationPeer;
+
+protected:
+
+    MenuFlyoutPresenterAutomationPeerT(const Windows::UI::Xaml::Controls::MenuFlyoutPresenter & owner)
+    {
+        GetActivationFactory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PasswordBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer>
+{
+    using composable = PasswordBoxAutomationPeer;
+
+protected:
+
+    PasswordBoxAutomationPeerT(const Windows::UI::Xaml::Controls::PasswordBox & owner)
+    {
+        GetActivationFactory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ProgressBarAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer>
+{
+    using composable = ProgressBarAutomationPeer;
+
+protected:
+
+    ProgressBarAutomationPeerT(const Windows::UI::Xaml::Controls::ProgressBar & owner)
+    {
+        GetActivationFactory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ProgressRingAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer>
+{
+    using composable = ProgressRingAutomationPeer;
+
+protected:
+
+    ProgressRingAutomationPeerT(const Windows::UI::Xaml::Controls::ProgressRing & owner)
+    {
+        GetActivationFactory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RadioButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider, Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider>
+{
+    using composable = RadioButtonAutomationPeer;
+
+protected:
+
+    RadioButtonAutomationPeerT(const Windows::UI::Xaml::Controls::RadioButton & owner)
+    {
+        GetActivationFactory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RangeBaseAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider>
+{
+    using composable = RangeBaseAutomationPeer;
+
+protected:
+
+    RangeBaseAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::RangeBase & owner)
+    {
+        GetActivationFactory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RepeatButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
+{
+    using composable = RepeatButtonAutomationPeer;
+
+protected:
+
+    RepeatButtonAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::RepeatButton & owner)
+    {
+        GetActivationFactory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RichEditBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer>
+{
+    using composable = RichEditBoxAutomationPeer;
+
+protected:
+
+    RichEditBoxAutomationPeerT(const Windows::UI::Xaml::Controls::RichEditBox & owner)
+    {
+        GetActivationFactory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RichTextBlockAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer>
+{
+    using composable = RichTextBlockAutomationPeer;
+
+protected:
+
+    RichTextBlockAutomationPeerT(const Windows::UI::Xaml::Controls::RichTextBlock & owner)
+    {
+        GetActivationFactory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RichTextBlockOverflowAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer>
+{
+    using composable = RichTextBlockOverflowAutomationPeer;
+
+protected:
+
+    RichTextBlockOverflowAutomationPeerT(const Windows::UI::Xaml::Controls::RichTextBlockOverflow & owner)
+    {
+        GetActivationFactory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ScrollBarAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer>
+{
+    using composable = ScrollBarAutomationPeer;
+
+protected:
+
+    ScrollBarAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::ScrollBar & owner)
+    {
+        GetActivationFactory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ScrollViewerAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer, Windows::UI::Xaml::Automation::Provider::IScrollProvider>
+{
+    using composable = ScrollViewerAutomationPeer;
+
+protected:
+
+    ScrollViewerAutomationPeerT(const Windows::UI::Xaml::Controls::ScrollViewer & owner)
+    {
+        GetActivationFactory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SearchBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer>
+{
+    using composable = SearchBoxAutomationPeer;
+
+protected:
+
+    SearchBoxAutomationPeerT(const Windows::UI::Xaml::Controls::SearchBox & owner)
+    {
+        GetActivationFactory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SelectorAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionProvider>
+{
+    using composable = SelectorAutomationPeer;
+
+protected:
+
+    SelectorAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::Selector & owner)
+    {
+        GetActivationFactory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SelectorItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider>
+{
+    using composable = SelectorItemAutomationPeer;
+
+protected:
+
+    SelectorItemAutomationPeerT(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer & parent)
+    {
+        GetActivationFactory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SemanticZoomAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
+{
+    using composable = SemanticZoomAutomationPeer;
+
+protected:
+
+    SemanticZoomAutomationPeerT(const Windows::UI::Xaml::Controls::SemanticZoom & owner)
+    {
+        GetActivationFactory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SettingsFlyoutAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer>
+{
+    using composable = SettingsFlyoutAutomationPeer;
+
+protected:
+
+    SettingsFlyoutAutomationPeerT(const Windows::UI::Xaml::Controls::SettingsFlyout & owner)
+    {
+        GetActivationFactory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SliderAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider, Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer>
+{
+    using composable = SliderAutomationPeer;
+
+protected:
+
+    SliderAutomationPeerT(const Windows::UI::Xaml::Controls::Slider & owner)
+    {
+        GetActivationFactory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TextBlockAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer>
+{
+    using composable = TextBlockAutomationPeer;
+
+protected:
+
+    TextBlockAutomationPeerT(const Windows::UI::Xaml::Controls::TextBlock & owner)
+    {
+        GetActivationFactory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TextBoxAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer>
+{
+    using composable = TextBoxAutomationPeer;
+
+protected:
+
+    TextBoxAutomationPeerT(const Windows::UI::Xaml::Controls::TextBox & owner)
+    {
+        GetActivationFactory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ThumbAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer>
+{
+    using composable = ThumbAutomationPeer;
+
+protected:
+
+    ThumbAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::Thumb & owner)
+    {
+        GetActivationFactory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TimePickerAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer>
+{
+    using composable = TimePickerAutomationPeer;
+
+protected:
+
+    TimePickerAutomationPeerT(const Windows::UI::Xaml::Controls::TimePicker & owner)
+    {
+        GetActivationFactory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToggleButtonAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
+{
+    using composable = ToggleButtonAutomationPeer;
+
+protected:
+
+    ToggleButtonAutomationPeerT(const Windows::UI::Xaml::Controls::Primitives::ToggleButton & owner)
+    {
+        GetActivationFactory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToggleMenuFlyoutItemAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
+{
+    using composable = ToggleMenuFlyoutItemAutomationPeer;
+
+protected:
+
+    ToggleMenuFlyoutItemAutomationPeerT(const Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem & owner)
+    {
+        GetActivationFactory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToggleSwitchAutomationPeerT :
+    overrides<T, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<T>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected, Windows::UI::Xaml::Automation::Peers::IAutomationPeer2, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer, Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer, Windows::UI::Xaml::Automation::Provider::IToggleProvider>
+{
+    using composable = ToggleSwitchAutomationPeer;
+
+protected:
+
+    ToggleSwitchAutomationPeerT(const Windows::UI::Xaml::Controls::ToggleSwitch & owner)
+    {
+        GetActivationFactory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, *this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Controls {
+
+template <typename T, typename ... Interfaces> struct AppBarT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverrides3T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IAppBar, Windows::UI::Xaml::Controls::IAppBar2, Windows::UI::Xaml::Controls::IAppBar3, Windows::UI::Xaml::Controls::IAppBar4>
+{
+    using composable = AppBar;
+
+protected:
+
+    AppBarT()
+    {
+        GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AppBarButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IButton, Windows::UI::Xaml::Controls::IButtonWithFlyout, Windows::UI::Xaml::Controls::IAppBarButton, Windows::UI::Xaml::Controls::ICommandBarElement, Windows::UI::Xaml::Controls::IAppBarButton3, Windows::UI::Xaml::Controls::ICommandBarElement2>
+{
+    using composable = AppBarButton;
+
+protected:
+
+    AppBarButtonT()
+    {
+        GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AppBarSeparatorT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IAppBarSeparator, Windows::UI::Xaml::Controls::ICommandBarElement, Windows::UI::Xaml::Controls::ICommandBarElement2>
+{
+    using composable = AppBarSeparator;
+
+protected:
+
+    AppBarSeparatorT()
+    {
+        GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct AppBarToggleButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IAppBarToggleButton, Windows::UI::Xaml::Controls::ICommandBarElement, Windows::UI::Xaml::Controls::IAppBarToggleButton3, Windows::UI::Xaml::Controls::ICommandBarElement2>
+{
+    using composable = AppBarToggleButton;
+
+protected:
+
+    AppBarToggleButtonT()
+    {
+        GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct BitmapIconT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IBitmapIcon>
+{
+    using composable = BitmapIcon;
+
+protected:
+
+    BitmapIconT()
+    {
+        GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IButton, Windows::UI::Xaml::Controls::IButtonWithFlyout>
+{
+    using composable = Button;
+
+protected:
+
+    ButtonT()
+    {
+        GetActivationFactory<Button, IButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CalendarDatePickerT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ICalendarDatePicker, Windows::UI::Xaml::Controls::ICalendarDatePicker2>
+{
+    using composable = CalendarDatePicker;
+
+protected:
+
+    CalendarDatePickerT()
+    {
+        GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CalendarViewT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ICalendarView>
+{
+    using composable = CalendarView;
+
+protected:
+
+    CalendarViewT()
+    {
+        GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CalendarViewDayItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ICalendarViewDayItem>
+{
+    using composable = CalendarViewDayItem;
+
+protected:
+
+    CalendarViewDayItemT()
+    {
+        GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CanvasT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::ICanvas>
+{
+    using composable = Canvas;
+
+protected:
+
+    CanvasT()
+    {
+        GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CheckBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::ICheckBox>
+{
+    using composable = CheckBox;
+
+protected:
+
+    CheckBoxT()
+    {
+        GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ComboBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Windows::UI::Xaml::Controls::IComboBoxOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IComboBox, Windows::UI::Xaml::Controls::IComboBox2, Windows::UI::Xaml::Controls::IComboBox3>
+{
+    using composable = ComboBox;
+
+protected:
+
+    ComboBoxT()
+    {
+        GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ComboBoxItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IComboBoxItem>
+{
+    using composable = ComboBoxItem;
+
+protected:
+
+    ComboBoxItemT()
+    {
+        GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CommandBarT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverridesT<T>, Windows::UI::Xaml::Controls::IAppBarOverrides3T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IAppBar, Windows::UI::Xaml::Controls::IAppBar2, Windows::UI::Xaml::Controls::IAppBar3, Windows::UI::Xaml::Controls::IAppBar4, Windows::UI::Xaml::Controls::ICommandBar, Windows::UI::Xaml::Controls::ICommandBar2, Windows::UI::Xaml::Controls::ICommandBar3>
+{
+    using composable = CommandBar;
+
+protected:
+
+    CommandBarT()
+    {
+        GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CommandBarOverflowPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter>
+{
+    using composable = CommandBarOverflowPresenter;
+
+protected:
+
+    CommandBarOverflowPresenterT()
+    {
+        GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ContentControlT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2>
+{
+    using composable = ContentControl;
+
+protected:
+
+    ContentControlT()
+    {
+        GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ContentDialogT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IContentDialog>
+{
+    using composable = ContentDialog;
+
+protected:
+
+    ContentDialogT()
+    {
+        GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ContentPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4>
+{
+    using composable = ContentPresenter;
+
+protected:
+
+    ContentPresenterT()
+    {
+        GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ControlT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4>
+{
+    using composable = Control;
+
+protected:
+
+    ControlT()
+    {
+        GetActivationFactory<Control, IControlFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DataTemplateSelectorT :
+    overrides<T, Windows::UI::Xaml::Controls::IDataTemplateSelectorOverridesT<T>, Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Controls::IDataTemplateSelector, Windows::UI::Xaml::Controls::IDataTemplateSelector2>
+{
+    using composable = DataTemplateSelector;
+
+protected:
+
+    DataTemplateSelectorT()
+    {
+        GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DatePickerT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IDatePicker, Windows::UI::Xaml::Controls::IDatePicker2>
+{
+    using composable = DatePicker;
+
+protected:
+
+    DatePickerT()
+    {
+        GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlipViewT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IFlipView, Windows::UI::Xaml::Controls::IFlipView2>
+{
+    using composable = FlipView;
+
+protected:
+
+    FlipViewT()
+    {
+        GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlipViewItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IFlipViewItem>
+{
+    using composable = FlipViewItem;
+
+protected:
+
+    FlipViewItemT()
+    {
+        GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlyoutT :
+    overrides<T, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2, Windows::UI::Xaml::Controls::IFlyout>
+{
+    using composable = Flyout;
+
+protected:
+
+    FlyoutT()
+    {
+        GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlyoutPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IFlyoutPresenter>
+{
+    using composable = FlyoutPresenter;
+
+protected:
+
+    FlyoutPresenterT()
+    {
+        GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FontIconT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IFontIcon, Windows::UI::Xaml::Controls::IFontIcon2, Windows::UI::Xaml::Controls::IFontIcon3>
+{
+    using composable = FontIcon;
+
+protected:
+
+    FontIconT()
+    {
+        GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FrameT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IFrame, Windows::UI::Xaml::Controls::INavigate, Windows::UI::Xaml::Controls::IFrame2, Windows::UI::Xaml::Controls::IFrame3>
+{
+    using composable = Frame;
+
+protected:
+
+    FrameT()
+    {
+        GetActivationFactory<Frame, IFrameFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2>
+{
+    using composable = Grid;
+
+protected:
+
+    GridT()
+    {
+        GetActivationFactory<Grid, IGridFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5, Windows::UI::Xaml::Controls::IGridView>
+{
+    using composable = GridView;
+
+protected:
+
+    GridViewT()
+    {
+        GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewHeaderItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IListViewBaseHeaderItem, Windows::UI::Xaml::Controls::IGridViewHeaderItem>
+{
+    using composable = GridViewHeaderItem;
+
+protected:
+
+    GridViewHeaderItemT()
+    {
+        GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IGridViewItem>
+{
+    using composable = GridViewItem;
+
+protected:
+
+    GridViewItemT()
+    {
+        GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GroupItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IGroupItem>
+{
+    using composable = GroupItem;
+
+protected:
+
+    GroupItemT()
+    {
+        GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GroupStyleT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Controls::IGroupStyle, Windows::UI::Xaml::Data::INotifyPropertyChanged, Windows::UI::Xaml::Controls::IGroupStyle2>
+{
+    using composable = GroupStyle;
+
+protected:
+
+    GroupStyleT()
+    {
+        GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GroupStyleSelectorT :
+    overrides<T, Windows::UI::Xaml::Controls::IGroupStyleSelectorOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Controls::IGroupStyleSelector>
+{
+    using composable = GroupStyleSelector;
+
+protected:
+
+    GroupStyleSelectorT()
+    {
+        GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HubT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IHub, Windows::UI::Xaml::Controls::ISemanticZoomInformation>
+{
+    using composable = Hub;
+
+protected:
+
+    HubT()
+    {
+        GetActivationFactory<Hub, IHubFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HubSectionT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IHubSection>
+{
+    using composable = HubSection;
+
+protected:
+
+    HubSectionT()
+    {
+        GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HyperlinkButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::IHyperlinkButton>
+{
+    using composable = HyperlinkButton;
+
+protected:
+
+    HyperlinkButtonT()
+    {
+        GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkCanvasT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IInkCanvas>
+{
+    using composable = InkCanvas;
+
+protected:
+
+    InkCanvasT()
+    {
+        GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IInkToolbar>
+{
+    using composable = InkToolbar;
+
+protected:
+
+    InkToolbarT()
+    {
+        GetActivationFactory<InkToolbar, IInkToolbarFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarBallpointPenButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarPenButton, Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton>
+{
+    using composable = InkToolbarBallpointPenButton;
+
+protected:
+
+    InkToolbarBallpointPenButtonT()
+    {
+        GetActivationFactory<InkToolbarBallpointPenButton, IInkToolbarBallpointPenButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarCustomPenT :
+    overrides<T, Windows::UI::Xaml::Controls::IInkToolbarCustomPenOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::IInkToolbarCustomPen>
+{
+    using composable = InkToolbarCustomPen;
+
+protected:
+
+    InkToolbarCustomPenT()
+    {
+        GetActivationFactory<InkToolbarCustomPen, IInkToolbarCustomPenFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarCustomPenButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarPenButton, Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton>
+{
+    using composable = InkToolbarCustomPenButton;
+
+protected:
+
+    InkToolbarCustomPenButtonT()
+    {
+        GetActivationFactory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarCustomToggleButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::ICheckBox, Windows::UI::Xaml::Controls::IInkToolbarToggleButton, Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton>
+{
+    using composable = InkToolbarCustomToggleButton;
+
+protected:
+
+    InkToolbarCustomToggleButtonT()
+    {
+        GetActivationFactory<InkToolbarCustomToggleButton, IInkToolbarCustomToggleButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarCustomToolButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton>
+{
+    using composable = InkToolbarCustomToolButton;
+
+protected:
+
+    InkToolbarCustomToolButtonT()
+    {
+        GetActivationFactory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarEraserButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarEraserButton>
+{
+    using composable = InkToolbarEraserButton;
+
+protected:
+
+    InkToolbarEraserButtonT()
+    {
+        GetActivationFactory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarHighlighterButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarPenButton, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton>
+{
+    using composable = InkToolbarHighlighterButton;
+
+protected:
+
+    InkToolbarHighlighterButtonT()
+    {
+        GetActivationFactory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarPenConfigurationControlT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl>
+{
+    using composable = InkToolbarPenConfigurationControl;
+
+protected:
+
+    InkToolbarPenConfigurationControlT()
+    {
+        GetActivationFactory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarPencilButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton, Windows::UI::Xaml::Controls::IInkToolbarToolButton, Windows::UI::Xaml::Controls::IInkToolbarPenButton, Windows::UI::Xaml::Controls::IInkToolbarPencilButton>
+{
+    using composable = InkToolbarPencilButton;
+
+protected:
+
+    InkToolbarPencilButtonT()
+    {
+        GetActivationFactory<InkToolbarPencilButton, IInkToolbarPencilButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InkToolbarRulerButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::ICheckBox, Windows::UI::Xaml::Controls::IInkToolbarToggleButton, Windows::UI::Xaml::Controls::IInkToolbarRulerButton>
+{
+    using composable = InkToolbarRulerButton;
+
+protected:
+
+    InkToolbarRulerButtonT()
+    {
+        GetActivationFactory<InkToolbarRulerButton, IInkToolbarRulerButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ItemsControlT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3>
+{
+    using composable = ItemsControl;
+
+protected:
+
+    ItemsControlT()
+    {
+        GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListBox, Windows::UI::Xaml::Controls::IListBox2>
+{
+    using composable = ListBox;
+
+protected:
+
+    ListBoxT()
+    {
+        GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListBoxItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IListBoxItem>
+{
+    using composable = ListBoxItem;
+
+protected:
+
+    ListBoxItemT()
+    {
+        GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5, Windows::UI::Xaml::Controls::IListView>
+{
+    using composable = ListView;
+
+protected:
+
+    ListViewT()
+    {
+        GetActivationFactory<ListView, IListViewFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewBaseT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::Primitives::ISelector, Windows::UI::Xaml::Controls::IListViewBase, Windows::UI::Xaml::Controls::ISemanticZoomInformation, Windows::UI::Xaml::Controls::IListViewBase2, Windows::UI::Xaml::Controls::IListViewBase3, Windows::UI::Xaml::Controls::IListViewBase4, Windows::UI::Xaml::Controls::IListViewBase5>
+{
+    using composable = ListViewBase;
+
+protected:
+
+    ListViewBaseT()
+    {
+        GetActivationFactory<ListViewBase, IListViewBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewHeaderItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IListViewBaseHeaderItem, Windows::UI::Xaml::Controls::IListViewHeaderItem>
+{
+    using composable = ListViewHeaderItem;
+
+protected:
+
+    ListViewHeaderItemT()
+    {
+        GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem, Windows::UI::Xaml::Controls::IListViewItem>
+{
+    using composable = ListViewItem;
+
+protected:
+
+    ListViewItemT()
+    {
+        GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaPlayerElementT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IMediaPlayerElement>
+{
+    using composable = MediaPlayerElement;
+
+protected:
+
+    MediaPlayerElementT()
+    {
+        GetActivationFactory<MediaPlayerElement, IMediaPlayerElementFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaPlayerPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IMediaPlayerPresenter>
+{
+    using composable = MediaPlayerPresenter;
+
+protected:
+
+    MediaPlayerPresenterT()
+    {
+        GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MediaTransportControlsT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IMediaTransportControls, Windows::UI::Xaml::Controls::IMediaTransportControls2>
+{
+    using composable = MediaTransportControls;
+
+protected:
+
+    MediaTransportControlsT()
+    {
+        GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutT :
+    overrides<T, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2, Windows::UI::Xaml::Controls::IMenuFlyout, Windows::UI::Xaml::Controls::IMenuFlyout2>
+{
+    using composable = MenuFlyout;
+
+protected:
+
+    MenuFlyoutT()
+    {
+        GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutItem>
+{
+    using composable = MenuFlyoutItem;
+
+protected:
+
+    MenuFlyoutItemT()
+    {
+        GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter2>
+{
+    using composable = MenuFlyoutPresenter;
+
+protected:
+
+    MenuFlyoutPresenterT()
+    {
+        GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MenuFlyoutSeparatorT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutSeparator>
+{
+    using composable = MenuFlyoutSeparator;
+
+protected:
+
+    MenuFlyoutSeparatorT()
+    {
+        GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PageT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IPageOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IUserControl, Windows::UI::Xaml::Controls::IPage>
+{
+    using composable = Page;
+
+protected:
+
+    PageT()
+    {
+        GetActivationFactory<Page, IPageFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel>
+{
+    using composable = Panel;
+
+protected:
+
+    PanelT()
+    {
+        GetActivationFactory<Panel, IPanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PathIconT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IIconElement, Windows::UI::Xaml::Controls::IPathIcon>
+{
+    using composable = PathIcon;
+
+protected:
+
+    PathIconT()
+    {
+        GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PivotT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IItemsControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IItemsControl, Windows::UI::Xaml::Controls::IItemsControl2, Windows::UI::Xaml::Controls::IItemContainerMapping, Windows::UI::Xaml::Controls::IItemsControl3, Windows::UI::Xaml::Controls::IPivot, Windows::UI::Xaml::Controls::IPivot2, Windows::UI::Xaml::Controls::IPivot3>
+{
+    using composable = Pivot;
+
+protected:
+
+    PivotT()
+    {
+        GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PivotItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IPivotItem>
+{
+    using composable = PivotItem;
+
+protected:
+
+    PivotItemT()
+    {
+        GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ProgressBarT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::Primitives::IRangeBase, Windows::UI::Xaml::Controls::IProgressBar>
+{
+    using composable = ProgressBar;
+
+protected:
+
+    ProgressBarT()
+    {
+        GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RadioButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton, Windows::UI::Xaml::Controls::IRadioButton>
+{
+    using composable = RadioButton;
+
+protected:
+
+    RadioButtonT()
+    {
+        GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RelativePanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IRelativePanel>
+{
+    using composable = RelativePanel;
+
+protected:
+
+    RelativePanelT()
+    {
+        GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RichEditBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IRichEditBox, Windows::UI::Xaml::Controls::IRichEditBox2, Windows::UI::Xaml::Controls::IRichEditBox3, Windows::UI::Xaml::Controls::IRichEditBox4>
+{
+    using composable = RichEditBox;
+
+protected:
+
+    RichEditBoxT()
+    {
+        GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SearchBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ISearchBox>
+{
+    using composable = SearchBox;
+
+protected:
+
+    SearchBoxT()
+    {
+        GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SelectionChangedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs>
+{
+    using composable = SelectionChangedEventArgs;
+
+protected:
+
+    SelectionChangedEventArgsT(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems)
+    {
+        GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SettingsFlyoutT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::ISettingsFlyout>
+{
+    using composable = SettingsFlyout;
+
+protected:
+
+    SettingsFlyoutT()
+    {
+        GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SliderT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::Primitives::IRangeBase, Windows::UI::Xaml::Controls::ISlider, Windows::UI::Xaml::Controls::ISlider2>
+{
+    using composable = Slider;
+
+protected:
+
+    SliderT()
+    {
+        GetActivationFactory<Slider, ISliderFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SplitViewT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ISplitView, Windows::UI::Xaml::Controls::ISplitView2>
+{
+    using composable = SplitView;
+
+protected:
+
+    SplitViewT()
+    {
+        GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct StackPanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IStackPanel, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo, Windows::UI::Xaml::Controls::IStackPanel2, Windows::UI::Xaml::Controls::IInsertionPanel>
+{
+    using composable = StackPanel;
+
+protected:
+
+    StackPanelT()
+    {
+        GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct StyleSelectorT :
+    overrides<T, Windows::UI::Xaml::Controls::IStyleSelectorOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Controls::IStyleSelector>
+{
+    using composable = StyleSelector;
+
+protected:
+
+    StyleSelectorT()
+    {
+        GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SwapChainBackgroundPanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel2>
+{
+    using composable = SwapChainBackgroundPanel;
+
+protected:
+
+    SwapChainBackgroundPanelT()
+    {
+        GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SwapChainPanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IGrid, Windows::UI::Xaml::Controls::IGrid2, Windows::UI::Xaml::Controls::ISwapChainPanel>
+{
+    using composable = SwapChainPanel;
+
+protected:
+
+    SwapChainPanelT()
+    {
+        GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TextBoxT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ITextBox, Windows::UI::Xaml::Controls::ITextBox2, Windows::UI::Xaml::Controls::ITextBox3, Windows::UI::Xaml::Controls::ITextBox4>
+{
+    using composable = TextBox;
+
+protected:
+
+    TextBoxT()
+    {
+        GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TimePickerT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::ITimePicker, Windows::UI::Xaml::Controls::ITimePicker2>
+{
+    using composable = TimePicker;
+
+protected:
+
+    TimePickerT()
+    {
+        GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToggleMenuFlyoutItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase, Windows::UI::Xaml::Controls::IMenuFlyoutItem, Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem>
+{
+    using composable = ToggleMenuFlyoutItem;
+
+protected:
+
+    ToggleMenuFlyoutItemT()
+    {
+        GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToolTipT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::IToolTip>
+{
+    using composable = ToolTip;
+
+protected:
+
+    ToolTipT()
+    {
+        GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct UserControlT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IUserControl>
+{
+    using composable = UserControl;
+
+protected:
+
+    UserControlT()
+    {
+        GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Maps {
+
+template <typename T, typename ... Interfaces> struct CustomMapTileDataSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource>
+{
+    using composable = CustomMapTileDataSource;
+
+protected:
+
+    CustomMapTileDataSourceT()
+    {
+        GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct HttpMapTileDataSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource>
+{
+    using composable = HttpMapTileDataSource;
+
+protected:
+
+    HttpMapTileDataSourceT()
+    {
+        GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+    }
+
+    HttpMapTileDataSourceT(hstring_ref uriFormatString)
+    {
+        GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct LocalMapTileDataSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource>
+{
+    using composable = LocalMapTileDataSource;
+
+protected:
+
+    LocalMapTileDataSourceT()
+    {
+        GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+    }
+
+    LocalMapTileDataSourceT(hstring_ref uriFormatString)
+    {
+        GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MapCustomExperienceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapCustomExperience>
+{
+    using composable = MapCustomExperience;
+
+protected:
+
+    MapCustomExperienceT()
+    {
+        GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MapElementT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapElement, Windows::UI::Xaml::Controls::Maps::IMapElement2>
+{
+    using composable = MapElement;
+
+protected:
+
+    MapElementT()
+    {
+        GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MapRouteViewT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapRouteView>
+{
+    using composable = MapRouteView;
+
+protected:
+
+    MapRouteViewT(const Windows::Services::Maps::MapRoute & route)
+    {
+        GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MapTileDataSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileDataSource>
+{
+    using composable = MapTileDataSource;
+
+protected:
+
+    MapTileDataSourceT()
+    {
+        GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct MapTileSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Maps::IMapTileSource>
+{
+    using composable = MapTileSource;
+
+protected:
+
+    MapTileSourceT()
+    {
+        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(*this, m_inner);
+    }
+
+    MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource)
+    {
+        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, *this, m_inner);
+    }
+
+    MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange)
+    {
+        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, *this, m_inner);
+    }
+
+    MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds)
+    {
+        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, *this, m_inner);
+    }
+
+    MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds, int32_t tileSizeInPixels)
+    {
+        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, *this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
+
+template <typename T, typename ... Interfaces> struct ButtonBaseT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase>
+{
+    using composable = ButtonBase;
+
+protected:
+
+    ButtonBaseT()
+    {
+        GetActivationFactory<ButtonBase, IButtonBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CarouselPanelT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IVirtualizingPanelOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IPanel, Windows::UI::Xaml::Controls::IVirtualizingPanel, Windows::UI::Xaml::Controls::IVirtualizingPanelProtected, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo>
+{
+    using composable = CarouselPanel;
+
+protected:
+
+    CarouselPanelT()
+    {
+        GetActivationFactory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DragCompletedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs>
+{
+    using composable = DragCompletedEventArgs;
+
+protected:
+
+    DragCompletedEventArgsT(double horizontalChange, double verticalChange, bool canceled)
+    {
+        GetActivationFactory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DragDeltaEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs>
+{
+    using composable = DragDeltaEventArgs;
+
+protected:
+
+    DragDeltaEventArgsT(double horizontalChange, double verticalChange)
+    {
+        GetActivationFactory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DragStartedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs>
+{
+    using composable = DragStartedEventArgs;
+
+protected:
+
+    DragStartedEventArgsT(double horizontalOffset, double verticalOffset)
+    {
+        GetActivationFactory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FlyoutBaseT :
+    overrides<T, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2>
+{
+    using composable = FlyoutBase;
+
+protected:
+
+    FlyoutBaseT()
+    {
+        GetActivationFactory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GridViewItemPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter>
+{
+    using composable = GridViewItemPresenter;
+
+protected:
+
+    GridViewItemPresenterT()
+    {
+        GetActivationFactory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ListViewItemPresenterT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IContentPresenterOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IContentPresenter, Windows::UI::Xaml::Controls::IContentPresenter2, Windows::UI::Xaml::Controls::IContentPresenter3, Windows::UI::Xaml::Controls::IContentPresenter4, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter2>
+{
+    using composable = ListViewItemPresenter;
+
+protected:
+
+    ListViewItemPresenterT()
+    {
+        GetActivationFactory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PickerFlyoutBaseT :
+    overrides<T, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase>
+{
+    using composable = PickerFlyoutBase;
+
+protected:
+
+    PickerFlyoutBaseT()
+    {
+        GetActivationFactory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PivotHeaderItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem>
+{
+    using composable = PivotHeaderItem;
+
+protected:
+
+    PivotHeaderItemT()
+    {
+        GetActivationFactory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RangeBaseT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::Primitives::IRangeBase>
+{
+    using composable = RangeBase;
+
+protected:
+
+    RangeBaseT()
+    {
+        GetActivationFactory<RangeBase, IRangeBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SelectorItemT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::ISelectorItem>
+{
+    using composable = SelectorItem;
+
+protected:
+
+    SelectorItemT()
+    {
+        GetActivationFactory<SelectorItem, ISelectorItemFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ToggleButtonT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Windows::UI::Xaml::Controls::IControlOverridesT<T>, Windows::UI::Xaml::Controls::IContentControlOverridesT<T>, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IContentControl, Windows::UI::Xaml::Controls::IContentControl2, Windows::UI::Xaml::Controls::Primitives::IButtonBase, Windows::UI::Xaml::Controls::Primitives::IToggleButton>
+{
+    using composable = ToggleButton;
+
+protected:
+
+    ToggleButtonT()
+    {
+        GetActivationFactory<ToggleButton, IToggleButtonFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Data {
+
+template <typename T, typename ... Interfaces> struct BindingT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IBindingBase, Windows::UI::Xaml::Data::IBinding, Windows::UI::Xaml::Data::IBinding2>
+{
+    using composable = Binding;
+
+protected:
+
+    BindingT()
+    {
+        GetActivationFactory<Binding, IBindingFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct BindingBaseT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IBindingBase>
+{
+    using composable = BindingBase;
+
+protected:
+
+    BindingBaseT()
+    {
+        GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CurrentChangingEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Data::ICurrentChangingEventArgs>
+{
+    using composable = CurrentChangingEventArgs;
+
+protected:
+
+    CurrentChangingEventArgsT()
+    {
+        GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(*this, m_inner);
+    }
+
+    CurrentChangingEventArgsT(bool isCancelable)
+    {
+        GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ItemIndexRangeT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Data::IItemIndexRange>
+{
+    using composable = ItemIndexRange;
+
+protected:
+
+    ItemIndexRangeT(int32_t firstIndex, uint32_t length)
+    {
+        GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PropertyChangedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Data::IPropertyChangedEventArgs>
+{
+    using composable = PropertyChangedEventArgs;
+
+protected:
+
+    PropertyChangedEventArgsT(hstring_ref name)
+    {
+        GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct RelativeSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Data::IRelativeSource>
+{
+    using composable = RelativeSource;
+
+protected:
+
+    RelativeSourceT()
+    {
+        GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Documents {
+
+template <typename T, typename ... Interfaces> struct BlockT :
+    overrides<T, Windows::UI::Xaml::Documents::ITextElementOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IBlock>
+{
+    using composable = Block;
+
+protected:
+
+    BlockT()
+    {
+        GetActivationFactory<Block, IBlockFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct InlineT :
+    overrides<T, Windows::UI::Xaml::Documents::ITextElementOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IInline>
+{
+    using composable = Inline;
+
+protected:
+
+    InlineT()
+    {
+        GetActivationFactory<Inline, IInlineFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SpanT :
+    overrides<T, Windows::UI::Xaml::Documents::ITextElementOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::Documents::ISpan>
+{
+    using composable = Span;
+
+protected:
+
+    SpanT()
+    {
+        GetActivationFactory<Span, ISpanFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Input {
+
+template <typename T, typename ... Interfaces> struct ManipulationStartedRoutedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
+{
+    using composable = ManipulationStartedRoutedEventArgs;
+
+protected:
+
+    ManipulationStartedRoutedEventArgsT()
+    {
+        GetActivationFactory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Interop {
+
+template <typename T, typename ... Interfaces> struct NotifyCollectionChangedEventArgsT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
+{
+    using composable = NotifyCollectionChangedEventArgs;
+
+protected:
+
+    NotifyCollectionChangedEventArgsT(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex)
+    {
+        GetActivationFactory<NotifyCollectionChangedEventArgs, INotifyCollectionChangedEventArgsFactory>().CreateInstanceWithAllParameters(action, newItems, oldItems, newIndex, oldIndex, *this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Media {
+
+template <typename T, typename ... Interfaces> struct BrushT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+{
+    using composable = Brush;
+
+protected:
+
+    BrushT()
+    {
+        GetActivationFactory<Brush, IBrushFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct CacheModeT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::ICacheMode>
+{
+    using composable = CacheMode;
+
+protected:
+
+    CacheModeT()
+    {
+        GetActivationFactory<CacheMode, ICacheModeFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct FontFamilyT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Media::IFontFamily>
+{
+    using composable = FontFamily;
+
+protected:
+
+    FontFamilyT(hstring_ref familyName)
+    {
+        GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GeneralTransformT :
+    overrides<T, Windows::UI::Xaml::Media::IGeneralTransformOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IGeneralTransform>
+{
+    using composable = GeneralTransform;
+
+protected:
+
+    GeneralTransformT()
+    {
+        GetActivationFactory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct GradientBrushT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IGradientBrush>
+{
+    using composable = GradientBrush;
+
+protected:
+
+    GradientBrushT()
+    {
+        GetActivationFactory<GradientBrush, IGradientBrushFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ProjectionT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IProjection>
+{
+    using composable = Projection;
+
+protected:
+
+    ProjectionT()
+    {
+        GetActivationFactory<Projection, IProjectionFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TileBrushT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::ITileBrush>
+{
+    using composable = TileBrush;
+
+protected:
+
+    TileBrushT()
+    {
+        GetActivationFactory<TileBrush, ITileBrushFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
+
+template <typename T, typename ... Interfaces> struct ColorKeyFrameT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IColorKeyFrame>
+{
+    using composable = ColorKeyFrame;
+
+protected:
+
+    ColorKeyFrameT()
+    {
+        GetActivationFactory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct DoubleKeyFrameT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame>
+{
+    using composable = DoubleKeyFrame;
+
+protected:
+
+    DoubleKeyFrameT()
+    {
+        GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct NavigationTransitionInfoT :
+    overrides<T, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo>
+{
+    using composable = NavigationTransitionInfo;
+
+protected:
+
+    NavigationTransitionInfoT()
+    {
+        GetActivationFactory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ObjectKeyFrameT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame>
+{
+    using composable = ObjectKeyFrame;
+
+protected:
+
+    ObjectKeyFrameT()
+    {
+        GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct PointKeyFrameT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::IPointKeyFrame>
+{
+    using composable = PointKeyFrame;
+
+protected:
+
+    PointKeyFrameT()
+    {
+        GetActivationFactory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct TimelineT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::ITimeline>
+{
+    using composable = Timeline;
+
+protected:
+
+    TimelineT()
+    {
+        GetActivationFactory<Timeline, ITimelineFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
+
+template <typename T, typename ... Interfaces> struct BitmapSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource, Windows::UI::Xaml::Media::Imaging::IBitmapSource>
+{
+    using composable = BitmapSource;
+
+protected:
+
+    BitmapSourceT()
+    {
+        GetActivationFactory<BitmapSource, IBitmapSourceFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct SurfaceImageSourceT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource, Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>
+{
+    using composable = SurfaceImageSource;
+
+protected:
+
+    SurfaceImageSourceT(int32_t pixelWidth, int32_t pixelHeight)
+    {
+        GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, *this, m_inner);
+    }
+
+    SurfaceImageSourceT(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque)
+    {
+        GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, *this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct XamlRenderingBackgroundTaskT :
+    overrides<T, Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>
+{
+    using composable = XamlRenderingBackgroundTask;
+
+protected:
+
+    XamlRenderingBackgroundTaskT()
+    {
+        GetActivationFactory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Media3D {
+
+template <typename T, typename ... Interfaces> struct Transform3DT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Media3D::ITransform3D>
+{
+    using composable = Transform3D;
+
+protected:
+
+    Transform3DT()
+    {
+        GetActivationFactory<Transform3D, ITransform3DFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Printing {
+
+template <typename T, typename ... Interfaces> struct PrintDocumentT :
+    overrides<T, Windows::IInspectable, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Printing::IPrintDocument>
+{
+    using composable = PrintDocument;
+
+protected:
+
+    PrintDocumentT()
+    {
+        GetActivationFactory<PrintDocument, IPrintDocumentFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Resources {
+
+template <typename T, typename ... Interfaces> struct CustomXamlResourceLoaderT :
+    overrides<T, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverridesT<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::Resources::ICustomXamlResourceLoader>
+{
+    using composable = CustomXamlResourceLoader;
+
+protected:
+
+    CustomXamlResourceLoaderT()
+    {
+        GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
+
+namespace Windows { namespace UI { namespace Xaml { namespace Shapes {
+
+template <typename T, typename ... Interfaces> struct PathT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Shapes::IShape, Windows::UI::Xaml::Shapes::IShape2, Windows::UI::Xaml::Shapes::IPath>
+{
+    using composable = Path;
+
+protected:
+
+    PathT()
+    {
+        GetActivationFactory<Path, IPathFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+template <typename T, typename ... Interfaces> struct ShapeT :
+    overrides<T, Windows::UI::Xaml::IUIElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverridesT<T>, Windows::UI::Xaml::IFrameworkElementOverrides2T<T>, Interfaces ...>,
+    requires<T, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::Shapes::IShape, Windows::UI::Xaml::Shapes::IShape2>
+{
+    using composable = Shape;
+
+protected:
+
+    ShapeT()
+    {
+        GetActivationFactory<Shape, IShapeFactory>().CreateInstance(*this, m_inner);
+    }
+};
+
+}}}}
 
 }

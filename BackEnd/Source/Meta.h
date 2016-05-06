@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include "debug.h"
 
 namespace Modern {
@@ -9,37 +8,29 @@ enum class Options
 {
     None,
 
-    Out = 0x0001,
-    NoLogo = 0x0002,
-    Time = 0x0004,
-    Debug = 0x0008,
-    Module = 0x0010
+    Out      = 0x0001,
+    NoLogo   = 0x0002,
+    Time     = 0x0004,
 };
 
 DEFINE_ENUM_FLAG_OPERATORS(Options)
 
-enum ParameterAttribute
+enum class ParameterFlags
 {
-    // None, In and Out should match the corresponding values:
-    // None = System.Reflection.ParameterAttributes.None
-    // In = System.Reflection.ParameterAttributes.In
-    // Out = System.Reflection.ParameterAttributes.Out
-
-    None = 0,
-    In = 1,
-    Out = 2,
-    Return = 65536,
-    ByRef = 131072,
-    Array = 262144,
-    Const = 524288
+    None      = 0,
+    In        = 0x00001,
+    Out       = 0x00002,
+    Return    = 0x10000,
+    Reference = 0x20000,
+    Array     = 0x40000,
 };
+
+DEFINE_ENUM_FLAG_OPERATORS(ParameterFlags)
 
 enum class TypeCategory
 {
     Unknown = 0,
 
-	// TODO: why are these bit flags? I don't think they need to be.
-	
     Value       = 0x0001, // 1
     String      = 0x0002, // 2
     Enumeration = 0x0004, // 4
@@ -47,14 +38,6 @@ enum class TypeCategory
     Interface   = 0x0010, // 16
     Delegate    = 0x0020, // 32
     Class       = 0x0040, // 64
-    Boolean     = 0x0080, // 128
-    Deprecated  = 0x0100, // 256
-};
-
-enum class CompositionType
-{
-    Protected = 1,
-    Public = 2
 };
 
 struct Parameter
@@ -62,49 +45,74 @@ struct Parameter
     std::string Name;
     std::string Type;
     std::string ClassType;
-    ParameterAttribute Attribute;
     TypeCategory Category;
+    ParameterFlags Flags;
 
     Parameter(char const * name,
               char const * type,
               char const * classType,
-              ParameterAttribute attribute,
-              TypeCategory category) :
+              TypeCategory category,
+              ParameterFlags flags) :
         Name(name),
         Type(type),
         ClassType(classType ? classType : ""),
-        Attribute(attribute),
-        Category(category)
+        Category(category),
+        Flags(flags)
     {}
 
-    char const * ModernType() const
+    std::string const & ModernType() const
     {
         if (ClassType.empty())
         {
-            return Type.c_str();
+            return Type;
         }
         else
         {
-            return ClassType.c_str();
+            return ClassType;
         }
     }
-};
 
-inline void swap(Parameter & left, Parameter & right)
-{
-    swap(left.Name, right.Name);
-    swap(left.Type, right.Type);
-    std::swap(left.Attribute, right.Attribute);
-    std::swap(left.Category, right.Category);
-}
+    bool HasFlag(ParameterFlags flag) const noexcept
+    {
+        return flag == (Flags & flag);
+    }
+
+    bool IsReturn() const noexcept
+    {
+        return HasFlag(ParameterFlags::Return);
+    }
+
+    bool IsIn() const noexcept
+    {
+        return HasFlag(ParameterFlags::In);
+    }
+
+    bool IsOut() const noexcept
+    {
+        return HasFlag(ParameterFlags::Out);
+    }
+
+    bool IsReference() const noexcept
+    {
+        return HasFlag(ParameterFlags::Reference);
+    }
+
+    bool IsArray() const noexcept
+    {
+        return HasFlag(ParameterFlags::Array);
+    }
+
+    bool IsReferenceOrReturn() const noexcept
+    {
+        return ParameterFlags::None != (Flags & (ParameterFlags::Reference | ParameterFlags::Return));
+    }
+};
 
 struct ParameterInfo
 {
     std::vector<Parameter> Parameters;
-    int HasReturnType = false;
-    bool HasDelegate = false;
-    // TODO: Remove once support for arrays is added
-    bool HasArrayParam = false;
+    bool HasReturnType = false;
+    std::string ReturnType;
 
     ParameterInfo() = default;
     ParameterInfo(ParameterInfo const &) = delete;
@@ -116,21 +124,6 @@ struct ParameterInfo
     {
         Parameters.clear();
         HasReturnType = false;
-        HasDelegate = false;
-        // TODO: Remove once support for arrays is added
-        HasArrayParam = false;
-    }
-
-    char const * ReturnType() const noexcept
-    {
-        if (HasReturnType)
-        {
-            return Parameters.back().ModernType();
-        }
-        else
-        {
-            return "void";
-        }
     }
 
     char const * ReturnTypeName() const noexcept

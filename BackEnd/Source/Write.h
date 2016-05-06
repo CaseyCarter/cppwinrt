@@ -53,7 +53,7 @@ inline void Append(std::string & target, char const * value, size_t const size)
 template <unsigned Count, typename ... Args>
 void AppendFormat(std::string & target, char const (&format)[Count], Args ... args)
 {
-    int const back = target.size();
+    int const back = static_cast<int>(target.size());
 
     int const size = snprintf(nullptr, 0, format, args ...);
 
@@ -76,24 +76,13 @@ void AppendFormat(P target, char const (&format)[Count], Args ... args)
 
 inline void Append(FILE * target, char const * const value, size_t const size)
 {
-    fprintf(target, "%.*s", size, value);
+    fprintf(target, "%.*s", static_cast<int>(size), value);
 }
 
 template <unsigned Count, typename ... Args>
 void AppendFormat(FILE * target, char const (&format)[Count], Args ... args)
 {
     fprintf(target, format, args ...);
-}
-
-inline void Append(size_t & target, char const *, size_t const size)
-{
-    target += size;
-}
-
-template <unsigned Count, typename ... Args>
-void AppendFormat(size_t & target, char const (&format)[Count], Args ... args)
-{
-    target += snprintf(nullptr, 0, format, args ...);
 }
 
 //
@@ -112,12 +101,6 @@ void WriteArgument(Target & target, char const * const value)
     AppendFormat(target, "%s", value);
 }
 
-template <typename Target, unsigned Count>
-void WriteArgument(Target & target, wchar_t const (&value)[Count])
-{
-    AppendFormat(target, "%.*ls", Count - 1, value);
-}
-
 template <typename Target>
 void WriteArgument(Target & target, int const value)
 {
@@ -133,7 +116,7 @@ void WriteArgument(Target & target, unsigned const value)
 template <typename Target>
 void WriteArgument(Target & target, unsigned long long const value)
 {
-	AppendFormat(target, "%ull", value);
+    AppendFormat(target, "%u", value);
 }
 
 template <typename Target>
@@ -145,15 +128,7 @@ void WriteArgument(Target & target, float const value)
 template <typename Target>
 void WriteArgument(Target & target, HRESULT const value)
 {
-	AppendFormat(target, "0x%X", value);
-}
-
-template <typename Target>
-void WriteArgument(Target & target, GUID const & value)
-{
-    wchar_t buffer[39];
-    StringFromGUID2(value, buffer, _countof(buffer));
-    AppendFormat(target, "%.*ls", 36, buffer + 1);
+    AppendFormat(target, "0x%X", value);
 }
 
 template <typename Target>

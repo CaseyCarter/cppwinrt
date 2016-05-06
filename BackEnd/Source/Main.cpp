@@ -1,14 +1,15 @@
 #include "Precompiled.h"
-#include "Path.h"
-#include "Strings.h"
-#include "Version.h"
-#include "Timer.h"
-#include "Output.h"
+
 #include "Arguments.h"
 #include "Database.h"
-#include "Year.h"
 #include "FormatMessage.h"
-#include <stdio.h>
+#include "Output.h"
+#include "Path.h"
+#include "Settings.h"
+#include "Strings.h"
+#include "Timer.h"
+#include "Version.h"
+#include "Year.h"
 
 struct UsageException {};
 
@@ -17,13 +18,13 @@ static void PrepareUsage();
 
 namespace Modern {
 
-    void CreateLibrary();
+void CreateLibrary();
 
 }
 
-int main(int argc, char ** argv)
+int __cdecl main(int argc, char ** argv)
 {
-	using namespace Modern;
+    using namespace Modern;
 
     OptimizeDebugOutput();
 
@@ -34,7 +35,7 @@ int main(int argc, char ** argv)
 
         if (Options::None == (Settings::Options & Options::NoLogo))
         {
-			Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
+            Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
         }
 
         // Do setup work for command line args
@@ -53,22 +54,22 @@ int main(int argc, char ** argv)
     }
     catch (UsageException)
     {
-		Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
-		Write(printf, Strings::Usage);
+        Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
+        Write(printf, Strings::Usage);
     }
     catch (Exception const & e)
     {
-		Write(printf, Strings::OutputError, Format(e.Result), e.Result);
+        Write(printf, Strings::OutputError, Format(e.Result), e.Result);
     }
     catch (SQLite::Exception const & e)
     {
-		Write(printf, Strings::SQLiteError, e.Message, e.Result);
+        Write(printf, Strings::SQLiteError, e.Message, e.Result);
     }
 }
 
 static void ParseUsage(int argc, char ** argv)
 {
-	using namespace Modern;
+    using namespace Modern;
 
     if (argc < 2)
     {
@@ -78,8 +79,6 @@ static void ParseUsage(int argc, char ** argv)
     Settings::DatabasePath = argv[1];
 
     Options last = Options::None;
-    std::regex const validNamespace("[\\w\\.\\*]+");
-    std::regex const validName("[\\w\\.]+");
 
     for (char const * arg : Arguments(argc - 2, argv + 2))
     {
@@ -102,7 +101,7 @@ static void ParseUsage(int argc, char ** argv)
                 last = Options::Time;
                 Settings::Options |= last;
             }
-			else
+            else
             {
                 throw UsageException();
             }
@@ -120,7 +119,7 @@ static void ParseUsage(int argc, char ** argv)
 
 static void PrepareUsage()
 {
-	using namespace Modern;
+    using namespace Modern;
 
     // Prepare the output path
     std::string out = Settings::OutPath;

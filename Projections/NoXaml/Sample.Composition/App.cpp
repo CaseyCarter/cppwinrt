@@ -12,12 +12,35 @@ using namespace Windows::UI::Composition;
 
 static float const BlockSize = 100.0f;
 
-struct View : IFrameworkViewT<View>
+struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
     CompositionTarget m_target = nullptr;
     VisualCollection m_visuals = nullptr;
     Visual m_selected = nullptr;
-    Vector2 m_offset = {};
+    float2 m_offset {};
+
+    IFrameworkView CreateView()
+    {
+        return *this;
+    }
+
+    void Initialize(CoreApplicationView const &)
+    {}
+
+    void Load(hstring_ref)
+    {}
+
+    void Uninitialize()
+    {}
+
+    void Run()
+    {
+        CoreWindow window = CoreWindow::GetForCurrentThread();
+        window.Activate();
+
+        CoreDispatcher dispatcher = window.Dispatcher();
+        dispatcher.ProcessEvents(CoreProcessEventsOption::ProcessUntilQuit);
+    }
 
     void SetWindow(CoreWindow const & window)
     {
@@ -27,62 +50,62 @@ struct View : IFrameworkViewT<View>
         m_target.Root(root);
         m_visuals = root.Children();
 
-        window.PointerPressed([&](auto const &, PointerEventArgs const & args)
-        {
-            Point point = args.CurrentPoint().Position();
+        window.PointerPressed({ this, &App::OnPointerPressed });
+        window.PointerMoved({ this, &App::OnPointerMoved });
 
-            if (args.KeyModifiers() == VirtualKeyModifiers::Control)
-            {
-                AddVisual(point);
-            }
-            else
-            {
-                SelectVisual(point);
-            }
-        });
-
-        window.PointerMoved([&](auto const &, PointerEventArgs const & args)
-        {
-            if (m_selected)
-            {
-                Point point = args.CurrentPoint().Position();
-
-                m_selected.Offset(Vector3
-                {
-                    point.X + m_offset.X,
-                    point.Y + m_offset.Y
-                });
-            }
-        });
-
-        window.PointerReleased([&](auto const &, auto const &)
+        window.PointerReleased([&](auto &&, auto &&)
         {
             m_selected = nullptr;
         });
     }
 
-    void ScaleVisuals()
+    void OnPointerPressed(Windows::IInspectable const &, PointerEventArgs const & args)
     {
-        for (Visual const & visual : m_visuals)
+        float2 const point = args.CurrentPoint().Position();
+
+        for (Visual visual : m_visuals)
         {
-            Vector3 offset = visual.Offset();
-            Vector2 size = visual.Size();
+            float3 const offset = visual.Offset();
+            float2 const size = visual.Size();
 
-            visual.Offset(Vector3
+            if (point.x >= offset.x &&
+                point.x < offset.x + size.x &&
+                point.y >= offset.y &&
+                point.y < offset.y + size.y)
             {
-                offset.X + size.X / 2.0f - BlockSize / 2.0f,
-                offset.Y + size.Y / 2.0f - BlockSize / 2.0f,
-            });
+                m_selected = visual;
+                m_offset.x = offset.x - point.x;
+                m_offset.y = offset.y - point.y;
+            }
+        }
 
-            visual.Size(Vector2
+        if (m_selected)
+        {
+            m_visuals.Remove(m_selected);
+            m_visuals.InsertAtTop(m_selected);
+        }
+        else
+        {
+            AddVisual(point);
+        }
+    }
+
+    void OnPointerMoved(Windows::IInspectable const &, PointerEventArgs const & args)
+    {
+        if (m_selected)
+        {
+            float2 const point = args.CurrentPoint().Position();
+
+            m_selected.Offset(float3
             {
-                BlockSize,
-                BlockSize,
+                point.x + m_offset.x,
+                point.y + m_offset.y,
+                0.0f
             });
         }
     }
 
-    void AddVisual(Point point)
+    void AddVisual(float2 const point)
     {
         Compositor compositor = m_visuals.Compositor();
         SpriteVisual visual = compositor.CreateSpriteVisual();
@@ -96,59 +119,31 @@ struct View : IFrameworkViewT<View>
         };
 
         static unsigned last = 0;
-        unsigned next = ++last % _countof(colors);
+        unsigned const next = ++last % _countof(colors);
         visual.Brush(compositor.CreateColorBrush(colors[next]));
 
-        visual.Size(Vector2
+        visual.Size(float2
         {
             BlockSize,
             BlockSize
         });
 
-        visual.Offset(Vector3
+        visual.Offset(float3
         {
-            point.X - BlockSize / 2.0f,
-            point.Y - BlockSize / 2.0f,
+            point.x - BlockSize / 2.0f,
+            point.y - BlockSize / 2.0f,
+            0.0f,
         });
 
         m_visuals.InsertAtTop(visual);
-    }
 
-    void SelectVisual(Point point)
-    {
-        for (Visual const & visual : m_visuals)
-        {
-            Vector3 offset = visual.Offset();
-            Vector2 size = visual.Size();
-
-            if (point.X >= offset.X &&
-                point.X < offset.X + size.X &&
-                point.Y >= offset.Y &&
-                point.Y < offset.Y + size.Y)
-            {
-                m_selected = visual;
-                m_offset.X = offset.X - point.X;
-                m_offset.Y = offset.Y - point.Y;
-            }
-        }
-
-        if (m_selected)
-        {
-            m_visuals.Remove(m_selected);
-            m_visuals.InsertAtTop(m_selected);
-        }
-    }
-};
-
-struct ViewSource : IFrameworkViewSourceT<ViewSource>
-{
-    IFrameworkView CreateView()
-    {
-        return make<View>();
+        m_selected = visual;
+        m_offset.x = -BlockSize / 2.0f;
+        m_offset.y = -BlockSize / 2.0f;
     }
 };
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(make<ViewSource>());
+    CoreApplication::Run(make<App>());
 }

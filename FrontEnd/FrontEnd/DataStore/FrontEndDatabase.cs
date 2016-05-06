@@ -190,10 +190,6 @@ namespace Microsoft.Wcl.DataStore
 
             this.Repository.Add(TypeNameUtilities.GetFullTypeNameInDotForm(info.FullName), info);
 
-            if (info.Delegate != null)
-            {
-                this.Repository.Add(TypeNameUtilities.GetFullTypeNameInDotForm(info.Delegate), info);
-            }
 
             watch.Stop();
         }
@@ -534,17 +530,9 @@ namespace Microsoft.Wcl.DataStore
                     TypeCategory typeCategory;
 
                     MetadataTypeToProjectedTypeConverter.GetProjectedTypeAndCategoryFromMetadataType(type, false, this.GetRepository(), out projectedType, out typeCategory);
-                    
+
                     // Special cases for struct fields;
-                    if (type == "String")
-                    {
-                        projectedType = "HSTRING";
-                    }
-                    else if (type == "Boolean")
-                    {
-                        projectedType = "boolean";
-                    }
-                    else if (type.StartsWith(FullTypeNameConstants.Windows_Foundation_IReference))
+                    if (type.StartsWith(FullTypeNameConstants.Windows_Foundation_IReference))
                     {
                         projectedType = String.Format(StringFormats.ProjectedStructureField, projectedType);
                     }
@@ -739,6 +727,8 @@ namespace Microsoft.Wcl.DataStore
             CREATE TEMP TABLE _Variables(Value);
             INSERT INTO _Variables (Value) Values(0);
 
+            -- Delete Open Generic Interfaces
+
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::IIterable`1');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
@@ -758,12 +748,6 @@ namespace Microsoft.Wcl.DataStore
             DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
 
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::IMapChangedEventArgs`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::IMapChangedEventHandler`2');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
@@ -799,12 +783,6 @@ namespace Microsoft.Wcl.DataStore
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
 
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::IVectorChangedEventHandler`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::IVectorView`1');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
@@ -817,37 +795,7 @@ namespace Microsoft.Wcl.DataStore
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
 
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncActionProgressHandler`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncActionWithProgressCompletedHandler`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncActionWithProgress`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncOperationCompletedHandler`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncOperationProgressHandler`2');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncOperationWithProgressCompletedHandler`2');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
@@ -865,12 +813,6 @@ namespace Microsoft.Wcl.DataStore
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
 
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IEventHandler`1');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IReferenceArray`1');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
@@ -883,18 +825,71 @@ namespace Microsoft.Wcl.DataStore
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
 
-            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::ITypedEventHandler`2');
-            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
-            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
-            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
-
             UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::IAsyncInfo');
             DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
             DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
             DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
             -- Special case compared to above cases
             UPDATE RequiredInterfaces SET Requires = 'IAsyncInfo' WHERE Requires = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            -- End of Delete Open Generic Interfaces
+
+            -- Delete Open Generic Delegates
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::VectorChangedEventHandler`1');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::Collections::MapChangedEventHandler`2');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::AsyncOperationWithProgressCompletedHandler`2');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::AsyncOperationCompletedHandler`1');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::AsyncActionWithProgressCompletedHandler`1');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::AsyncOperationProgressHandler`2');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::AsyncActionProgressHandler`1');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::TypedEventHandler`2');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            UPDATE _Variables SET Value = (SELECT RowId FROM Interfaces WHERE FullName = 'Windows::Foundation::EventHandler`1');
+            DELETE FROM Parameters WHERE MethodId IN (SELECT RowId FROM Methods WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1) );
+            DELETE FROM Methods WHERE InterfaceId IN (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM Interfaces WHERE RowId = (SELECT Value FROM _Variables WHERE RowId = 1);
+            DELETE FROM RequiredInterfaces WHERE InterfaceId = (SELECT Value FROM _Variables WHERE RowId = 1);
+
+            -- End of Delete Open Generic Delegates
 
             DELETE FROM RequiredInterfaces WHERE Requires=(SELECT RowId FROM Interfaces WHERE FullName='Windows::Foundation::IClosable');
             DELETE FROM ClassInterfaces WHERE Interface=(SELECT RowId FROM Interfaces WHERE FullName='Windows::Foundation::IClosable');
@@ -1048,4 +1043,3 @@ namespace Microsoft.Wcl.DataStore
             );";
     }
 }
-

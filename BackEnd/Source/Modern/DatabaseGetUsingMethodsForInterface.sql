@@ -29,4 +29,7 @@ CountedMethods(Method, Count) as
 	select Method, count(*) from BasePairs group by Method
 )
 
-select Interface, Method from BasePairs where Method in (select Method from CountedMethods where Count > 1)
+select Interface, Method
+from BasePairs
+where Method in (select Method from CountedMethods where Count > 1)
+order by Interface, Method

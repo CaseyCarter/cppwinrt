@@ -12,9 +12,9 @@
 template <typename ... Args>
 void MODERN_TRACE(char const * const message, Args ... args) noexcept
 {
-	char buffer[1024] = {};
-	sprintf_s(buffer, message, args ...);
-	OutputDebugStringA(buffer);
+    char buffer[1024] = {};
+    sprintf_s(buffer, message, args ...);
+    OutputDebugStringA(buffer);
 }
 
 #else

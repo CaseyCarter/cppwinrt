@@ -874,7 +874,7 @@ Windows::Media::Core::MediaSource|20||Windows::Media::Core::IMediaSource2|0|0
 Windows::Media::Core::MediaSourceError|20||Windows::Media::Core::IMediaSourceError|0|0
 Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs|20||Windows::Media::Core::IMediaSourceOpenOperationCompletedEventArgs|0|0
 Windows::Media::Core::MediaStreamSample|20||Windows::Media::Core::IMediaStreamSample|0|0
-Windows::Media::Core::MediaStreamSamplePropertySet|20||Windows::Foundation::Collections::IMap<GUID, IInspectable>|0|0
+Windows::Media::Core::MediaStreamSamplePropertySet|20||Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|0|0
 Windows::Media::Core::MediaStreamSampleProtectionProperties|20||Windows::Media::Core::IMediaStreamSampleProtectionProperties|0|0
 Windows::Media::Core::MediaStreamSource|20||Windows::Media::Core::IMediaStreamSource|0|0
 Windows::Media::Core::MediaStreamSourceClosedEventArgs|20||Windows::Media::Core::IMediaStreamSourceClosedEventArgs|0|0
@@ -1002,7 +1002,7 @@ Windows::Media::MediaProperties::H264ProfileIds|31|||0|0
 Windows::Media::MediaProperties::ImageEncodingProperties|31||Windows::Media::MediaProperties::IImageEncodingProperties|1|0
 Windows::Media::MediaProperties::MediaEncodingProfile|31||Windows::Media::MediaProperties::IMediaEncodingProfile|1|0
 Windows::Media::MediaProperties::MediaEncodingSubtypes|31|||0|0
-Windows::Media::MediaProperties::MediaPropertySet|31||Windows::Foundation::Collections::IMap<GUID, IInspectable>|1|0
+Windows::Media::MediaProperties::MediaPropertySet|31||Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|1|0
 Windows::Media::MediaProperties::MediaRatio|31||Windows::Media::MediaProperties::IMediaRatio|0|0
 Windows::Media::MediaProperties::Mpeg2ProfileIds|31|||0|0
 Windows::Media::MediaProperties::VideoEncodingProperties|31||Windows::Media::MediaProperties::IVideoEncodingProperties|1|0
@@ -1436,9 +1436,9 @@ Windows::Storage::StorageStreamTransaction|16||Windows::Storage::IStorageStreamT
 Windows::Storage::StreamedFileDataRequest|16||Windows::Storage::Streams::IOutputStream|0|0
 Windows::Storage::Streams::Buffer|25||Windows::Storage::Streams::IBuffer|0|0
 Windows::Storage::Streams::DataReader|25||Windows::Storage::Streams::IDataReader|0|0
-Windows::Storage::Streams::DataReaderLoadOperation|25||Windows::Foundation::IAsyncOperation<unsigned>|0|0
+Windows::Storage::Streams::DataReaderLoadOperation|25||Windows::Foundation::IAsyncOperation<uint32_t>|0|0
 Windows::Storage::Streams::DataWriter|25||Windows::Storage::Streams::IDataWriter|1|0
-Windows::Storage::Streams::DataWriterStoreOperation|25||Windows::Foundation::IAsyncOperation<unsigned>|0|0
+Windows::Storage::Streams::DataWriterStoreOperation|25||Windows::Foundation::IAsyncOperation<uint32_t>|0|0
 Windows::Storage::Streams::FileInputStream|25||Windows::Storage::Streams::IInputStream|0|0
 Windows::Storage::Streams::FileOutputStream|25||Windows::Storage::Streams::IOutputStream|0|0
 Windows::Storage::Streams::FileRandomAccessStream|25||Windows::Storage::Streams::IRandomAccessStream|0|0
@@ -1870,7 +1870,7 @@ Windows::UI::Xaml::Controls::IconElement|27||Windows::UI::Xaml::Controls::IIconE
 Windows::UI::Xaml::Controls::Image|27||Windows::UI::Xaml::Controls::IImage|1|0
 Windows::UI::Xaml::Controls::InkCanvas|27||Windows::UI::Xaml::Controls::IInkCanvas|0|0
 Windows::UI::Xaml::Controls::ItemClickEventArgs|27||Windows::UI::Xaml::Controls::IItemClickEventArgs|1|0
-Windows::UI::Xaml::Controls::ItemCollection|27||Windows::Foundation::Collections::IObservableVector<IInspectable>|0|0
+Windows::UI::Xaml::Controls::ItemCollection|27||Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>|0|0
 Windows::UI::Xaml::Controls::ItemContainerGenerator|27||Windows::UI::Xaml::Controls::IItemContainerGenerator|0|0
 Windows::UI::Xaml::Controls::ItemsControl|27||Windows::UI::Xaml::Controls::IItemsControl|0|0
 Windows::UI::Xaml::Controls::ItemsPanelTemplate|27||Windows::UI::Xaml::Controls::IItemsPanelTemplate|1|0

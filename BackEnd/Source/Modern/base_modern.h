@@ -1,11 +1,11 @@
 
 #pragma once
 
-#include <winrt\base.h>
+#include "winrt\base.h"
 
-#include <winrt\sdk.abi.h>
-#include <winrt\sdk.meta.h>
-#include <winrt\sdk.shim.h>
-#include <winrt\sdk.extend.h>
+#include "winrt\sdk.abi.h"
+#include "winrt\sdk.meta.h"
+#include "winrt\sdk.shim.h"
+#include "winrt\sdk.extend.h"
 
-#include <winrt\post.h>
+#undef WINRT_EXPORT

@@ -1,8 +1,8 @@
 #pragma once
 
+#include <string>
 #include <shlwapi.h>
 #include <shlobj.h>
-#include <string>
 #include "Handle.h"
 #include "ThrowWindowsError.h"
 
@@ -12,7 +12,7 @@ namespace Modern { namespace Path { namespace Internal {
 
 inline void Trim(std::string & path)
 {
-	path.resize(strlen(path.c_str()));
+    path.resize(strlen(path.c_str()));
 }
 
 inline void Append(std::string & path, char const * more, size_t size)
@@ -65,10 +65,10 @@ struct TaskMemTraits : HandleTraits<wchar_t *>
 
 struct FindFileTraits : HandleTraits<HANDLE>
 {
-	inline static void Close(Type value) noexcept
-	{
-		MODERN_VERIFY(FindClose(value));
-	}
+    inline static void Close(Type value) noexcept
+    {
+        MODERN_VERIFY(FindClose(value));
+    }
 };
 
 using FindFile = Handle<FindFileTraits>;
@@ -93,12 +93,12 @@ inline std::string ToRelative(std::string const & from, bool const fromFolder, s
 
 inline bool IsRelative(char const * path) noexcept
 {
-	return 0 != PathIsRelativeA(path);
+    return 0 != PathIsRelativeA(path);
 }
 
 inline bool IsRelative(std::string const & path) noexcept
 {
-	return IsRelative(path.c_str());
+    return IsRelative(path.c_str());
 }
 
 inline bool Exists(char const * filename)
@@ -156,26 +156,26 @@ inline void RenameExtension(std::string & path, char const * const extension)
 
 inline char const * FindExtension(char const * path) noexcept
 {
-	return PathFindExtensionA(path);
+    return PathFindExtensionA(path);
 }
 
 inline char const * FindExtension(std::string const & path)
 {
-	return PathFindExtensionA(path.c_str());
+    return PathFindExtensionA(path.c_str());
 }
 
 inline std::string GetCurrentDirectory()
 {
-	unsigned const size = GetCurrentDirectoryA(0, nullptr);
-	if (0 == size) ThrowWindowsError();
-	std::string result(size - 1, ' ');
+    unsigned const size = GetCurrentDirectoryA(0, nullptr);
+    if (0 == size) ThrowWindowsError();
+    std::string result(size - 1, ' ');
 
-	if (size - 1 != ::GetCurrentDirectoryA(size, &result[0]))
-	{
-		ThrowWindowsError();
-	}
+    if (size - 1 != ::GetCurrentDirectoryA(size, &result[0]))
+    {
+        ThrowWindowsError();
+    }
 
-	return result;
+    return result;
 }
 
 inline void SetCurrentDirectory(char const * path)
@@ -225,31 +225,26 @@ inline std::string GetKnownFolder(GUID const & id)
 template <typename Callback>
 void FindFiles(char const * query, Callback callback)
 {
-	std::string buffer;
+    std::string buffer;
 
-	if (IsRelative(query))
-	{
-		buffer = GetCurrentDirectory();
-		Append(buffer, query);
-		query = buffer.c_str();
-	}
+    if (IsRelative(query))
+    {
+        buffer = GetCurrentDirectory();
+        Append(buffer, query);
+        query = buffer.c_str();
+    }
 
-	WIN32_FIND_DATAA data {};
-	Internal::FindFile ff(FindFirstFileA(query, &data));
+    WIN32_FIND_DATAA data {};
+    Internal::FindFile ff(FindFirstFileA(query, &data));
 
-	if (ff)
-	{
-		do
-		{
-			if (FILE_ATTRIBUTE_DIRECTORY == (FILE_ATTRIBUTE_DIRECTORY & data.dwFileAttributes))
-			{
-				continue;
-			}
-
-			callback(data.cFileName);
-		}
-		while (FindNextFileA(get(ff), &data));
-	}
+    if (ff)
+    {
+        do
+        {
+            callback(data.cFileName, FILE_ATTRIBUTE_DIRECTORY == (FILE_ATTRIBUTE_DIRECTORY & data.dwFileAttributes));
+        }
+        while (FindNextFileA(get(ff), &data));
+    }
 }
 
 template <typename Callback>

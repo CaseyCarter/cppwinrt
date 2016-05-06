@@ -1,2 +1,2 @@
 
-SQLite error: %s (%d)
+SQLite error: % (%)

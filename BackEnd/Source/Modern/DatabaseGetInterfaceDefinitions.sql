@@ -1,3 +1,4 @@
-select RowId, substr(FullName, Name + 3), substr(FullName, 1, Name) as Namespace, Delegate is not null
+select RowId, substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace
 from Interfaces
-order by Namespace
+where not Delegate
+order by Namespace, Name

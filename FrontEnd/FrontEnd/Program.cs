@@ -19,6 +19,7 @@ namespace Microsoft.Wcl
                 args = new string[] { @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
                 @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
                 @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
+                @"D:\testmetadata\Windows.Devices.Sms.LegacySmsApiContract.winmd",
                 @"-db",
                 @"d:\modern\testdatabaseoutput.db" };
 
@@ -156,4 +157,3 @@ Usage:
 ";
     }
 }
-

@@ -1,4 +1,4 @@
-Invoke|abi_Invoke|Modern::Test::IDelegateTest|0
+Invoke|abi_Invoke|Modern::Test::DelegateTest|0
 DoTest|abi_DoTest|Modern::Test::IFooTest|0
 DoEmpty|abi_DoEmpty|Modern::Test::IOneMethodPerParameterType|0
 DoBYTE|abi_DoBYTE|Modern::Test::IOneMethodPerParameterType|0

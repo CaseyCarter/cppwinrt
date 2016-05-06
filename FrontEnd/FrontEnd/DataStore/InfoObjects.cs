@@ -33,7 +33,7 @@ namespace Microsoft.Wcl.DataStore
     {
         public string FullName;
         public int Name;
-        public string Delegate;
+        public bool Delegate;
         public string Uuid;
         public bool Deprecated;
 
