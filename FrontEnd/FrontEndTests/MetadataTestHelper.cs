@@ -1,9 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Wcl;
 using System.Diagnostics;
 using System.IO;
-
-using Microsoft.Wcl;
-using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Wtl.Tests
 {
@@ -99,12 +98,25 @@ namespace Microsoft.Wtl.Tests
                 File.Delete(testFileFullPath);
             }
 
+            // When the output of sqlite is obtained from the console output, it comes with windows style with respect to the end of lines.
             var databaseFilePath = GetDatabaseFullPath();
             MetadataTestHelper.GetDataFromSQLite(databaseFilePath, query, testFileFullPath, out rightString);
 
             string leftString = null;
             MetadataTestHelper.GetBaseFileContent(verifyFileFullPath, out leftString);
+
+            // Depending on certain variables of Git/Source-Control content of the file may come the Unix way with respect to end of lines.
+            // Change that to match windows style which is needed to compare against the content of the database. 
+            leftString = EnsureStringHasCRLF(leftString);
+
             Assert.AreEqual(leftString, rightString);
+        }
+
+        // Force a full match of \r\n first before matching any other option to avoid errors while replacing.
+        static Regex NewLineRegEx = new Regex(@"\r\n|\r|\n", RegexOptions.Compiled);
+        private static string EnsureStringHasCRLF(string input)
+        {
+            return NewLineRegEx.Replace(input, "\r\n");
         }
 
         private static string GetDatabaseFullPath()
