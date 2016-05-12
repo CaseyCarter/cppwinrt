@@ -110,7 +110,7 @@ namespace Microsoft.Wcl.ParameterizedTypeInstanceIID
             var interfaceGuid = Guid.Parse(info.Uuid);
             var isGenericInterface = GenericInterfaceParser.TryGetGenericInterfaceArgumentCount(nameElement, out genericInterfaceArgumentCount);
             
-            if (info.Delegate == null)
+            if (!info.Delegate)
             {
                 if (isGenericInterface)
                 {

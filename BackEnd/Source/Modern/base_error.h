@@ -1,208 +1,248 @@
 
-#ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
-#define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
-#endif
-
-namespace winrt {
-
 namespace impl {
 
-struct format_traits : handle_traits<char *>
+struct heap_traits : handle_traits<wchar_t *>
 {
-	static void close(type value) noexcept
-	{
-		WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
-	}
+    static void close(type value) noexcept
+    {
+        WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
+    }
 };
 
 struct bstr_traits : handle_traits<BSTR>
 {
-	static void close(type value) noexcept
-	{
-		SysFreeString(value);
-	}
+    static void close(type value) noexcept
+    {
+        SysFreeString(value);
+    }
 };
 
-template <>
-struct accessors<handle<bstr_traits>>
+inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size) noexcept
 {
-	static wchar_t const * get(handle<bstr_traits> const & object) noexcept
-	{
-		if (object)
-		{
-			return impl_get(object);
-		}
-		else
-		{
-			return L"";
-		}
-	}
+    const wchar_t * back = message + size - 1;
 
-	static BSTR * put(handle<bstr_traits> & object) noexcept
-	{
-		return impl_put(object);
-	}
+    while (size && isspace(*back))
+    {
+        --size;
+        --back;
+    }
+
+    hstring result;
+    WindowsCreateString(message, size, put(result));
+    return result;
+}
+
+}
+
+struct hresult_error
+{
+    struct from_abi {};
+
+    explicit hresult_error(const HRESULT code) noexcept :
+        m_code(code)
+    {
+        WINRT_RoOriginateError(code, nullptr);
+        WINRT_GetRestrictedErrorInfo(put(m_info));
+    }
+
+    hresult_error(const HRESULT code, hstring_ref message) noexcept :
+        m_code(code)
+    {
+        WINRT_RoOriginateError(code, get(message));
+        WINRT_GetRestrictedErrorInfo(put(m_info));
+    }
+
+    hresult_error(const HRESULT code, from_abi) noexcept :
+        m_code(code)
+    {
+        WINRT_GetRestrictedErrorInfo(put(m_info));
+    }
+
+    HRESULT code() const noexcept
+    {
+        return m_code;
+    }
+
+    hstring message() const noexcept
+    {
+        if (m_info)
+        {
+            handle<impl::bstr_traits> unused1;
+            handle<impl::bstr_traits> unused2;
+
+            HRESULT code = S_OK;
+            handle<impl::bstr_traits> message;
+
+            if (S_OK == m_info->GetErrorDetails(put(unused1), &code, put(message), put(unused2)))
+            {
+                if (code == m_code)
+                {
+                    return impl::trim_hresult_message(get(message), SysStringLen(get(message)));
+                }
+            }
+        }
+
+        handle<impl::heap_traits> message;
+
+        const uint32_t size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                                             nullptr,
+                                             m_code,
+                                             MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                                             reinterpret_cast<wchar_t *>(put(message)),
+                                             0,
+                                             nullptr);
+
+        return impl::trim_hresult_message(get(message), size);
+    }
+
+    HRESULT to_abi() const noexcept
+    {
+        WINRT_TRACE("winrt::hresult_error (0x%8X) %ls\n", code(), message().c_str());
+
+        if (m_info)
+        {
+            WINRT_SetRestrictedErrorInfo(get(m_info));
+        }
+
+        return m_code;
+    }
+
+private:
+
+    HRESULT m_code = S_OK;
+    com_ptr<IRestrictedErrorInfo> m_info;
 };
 
-inline void trim_trailing_whitespace(std::string & message) noexcept
+struct hresult_access_denied : hresult_error
 {
-	while (!message.empty() && (isspace(message.back())))
-	{
-		message.resize(message.size() - 1);
-	}
-}
-
-inline std::string format_message(HRESULT const result)
-{
-	handle<format_traits> buffer;
-	std::string message;
-
-	if (FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-					   nullptr,
-					   result,
-					   MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-					   reinterpret_cast<char *>(put(buffer)),
-					   0,
-					   nullptr))
-	{
-		message = get(buffer);
-		trim_trailing_whitespace(message);
-	}
-
-	return message;
-}
-
-inline std::string restricted_message(HRESULT const result)
-{
-	com_ptr<IRestrictedErrorInfo> info;
-
-	if (S_OK == GetRestrictedErrorInfo(put(info)))
-	{
-		handle<bstr_traits> description;
-		handle<bstr_traits> unused1;
-		handle<bstr_traits> unused2;
-		HRESULT unused3 = S_OK;
-
-		if (S_OK == info->GetErrorDetails(put(unused1), &unused3, put(description), put(unused2)))
-		{
-			std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
-			std::string message = convert.to_bytes(get(description));
-			trim_trailing_whitespace(message);
-			return message;
-		}
-	}
-
-	return format_message(result);
-}
-
-struct hresult_category : std::error_category
-{
-	char const * name() const noexcept override
-	{
-		return "HRESULT";
-	}
-
-	std::string message(int code) const override
-	{
-		return restricted_message(code);
-	}
+    hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
+    hresult_access_denied(hstring_ref message) : hresult_error(E_ACCESSDENIED, message) {}
+    hresult_access_denied(hresult_error::from_abi) : hresult_error(E_ACCESSDENIED, hresult_error::from_abi{}) {}
 };
 
-struct error_info
+struct hresult_wrong_thread : hresult_error
 {
-	error_info() = default;
-
-	error_info(HRESULT const value, wchar_t const * const message, size_t const size) noexcept
-	{
-		RoOriginateErrorW(value, static_cast<unsigned>(size), message);
-	}
+    hresult_wrong_thread() : hresult_error(RPC_E_WRONG_THREAD) {}
+    hresult_wrong_thread(hstring_ref message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
+    hresult_wrong_thread(hresult_error::from_abi) : hresult_error(RPC_E_WRONG_THREAD, hresult_error::from_abi{}) {}
 };
 
-}
-
-inline impl::hresult_category const & hresult_category() noexcept
+struct hresult_not_implemented : hresult_error
 {
-	static impl::hresult_category category;
-	return category;
-}
+    hresult_not_implemented() : hresult_error(E_NOTIMPL) {}
+    hresult_not_implemented(hstring_ref message) : hresult_error(E_NOTIMPL, message) {}
+    hresult_not_implemented(hresult_error::from_abi) : hresult_error(E_NOTIMPL, hresult_error::from_abi{}) {}
+};
 
-struct hresult_error :
-	impl::error_info,
-	std::system_error
+struct hresult_invalid_argument : hresult_error
 {
-	explicit hresult_error(HRESULT const value) : 
-		std::system_error(value, hresult_category())
-	{}
+    hresult_invalid_argument() : hresult_error(E_INVALIDARG) {}
+    hresult_invalid_argument(hstring_ref message) : hresult_error(E_INVALIDARG, message) {}
+    hresult_invalid_argument(hresult_error::from_abi) : hresult_error(E_INVALIDARG, hresult_error::from_abi{}) {}
+};
 
-	hresult_error(HRESULT const value, wchar_t const * const message) : 
-		impl::error_info(value, message, wcslen(message)), 
-		std::system_error(value, hresult_category())
-	{}
+struct hresult_bounds : hresult_error
+{
+    hresult_bounds() : hresult_error(E_BOUNDS) {}
+    hresult_bounds(hstring_ref message) : hresult_error(E_BOUNDS, message) {}
+    hresult_bounds(hresult_error::from_abi) : hresult_error(E_BOUNDS, hresult_error::from_abi{}) {}
+};
 
-	hresult_error(HRESULT const value, std::wstring const & message) : 
-		impl::error_info(value, message.c_str(), message.size()), 
-		std::system_error(value, hresult_category())
-	{}
+struct hresult_no_interface : hresult_error
+{
+    hresult_no_interface() : hresult_error(E_NOINTERFACE) {}
+    hresult_no_interface(hstring_ref message) : hresult_error(E_NOINTERFACE, message) {}
+    hresult_no_interface(hresult_error::from_abi) : hresult_error(E_NOINTERFACE, hresult_error::from_abi{}) {}
+};
+
+struct hresult_disconnected : hresult_error
+{
+    hresult_disconnected() : hresult_error(RPC_E_DISCONNECTED) {}
+    hresult_disconnected(hstring_ref message) : hresult_error(RPC_E_DISCONNECTED, message) {}
+    hresult_disconnected(hresult_error::from_abi) : hresult_error(RPC_E_DISCONNECTED, hresult_error::from_abi{}) {}
 };
 
 namespace impl {
 
-inline __declspec(noinline) void throw_hresult(HRESULT const result)
+[[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
 {
-	if (E_OUTOFMEMORY == result)
-	{
-		throw std::bad_alloc();
-	}
+    if (result == E_OUTOFMEMORY)
+    {
+        throw std::bad_alloc();
+    }
 
-	if (E_BOUNDS == result)
-	{
-		throw std::out_of_range("");
-	}
+    if (result == E_ACCESSDENIED)
+    {
+        throw hresult_access_denied(hresult_error::from_abi{});
+    }
 
-	if (E_INVALIDARG == result)
-	{
-		throw std::invalid_argument("");
-	}
+    if (result == RPC_E_WRONG_THREAD)
+    {
+        throw hresult_wrong_thread(hresult_error::from_abi{});
+    }
 
-	throw hresult_error(result);
+    if (result == E_NOTIMPL)
+    {
+        throw hresult_not_implemented(hresult_error::from_abi{});
+    }
+
+    if (result == E_INVALIDARG)
+    {
+        throw hresult_invalid_argument(hresult_error::from_abi{});
+    }
+
+    if (result == E_BOUNDS)
+    {
+        throw hresult_bounds(hresult_error::from_abi{});
+    }
+
+    if (result == E_NOINTERFACE)
+    {
+        throw hresult_no_interface(hresult_error::from_abi{});
+    }
+
+    throw hresult_error(result, hresult_error::from_abi{});
 }
 
 inline __declspec(noinline) HRESULT to_hresult() noexcept
 {
-	try
-	{
-		throw;
-	}
-	catch (hresult_error const & e)
-	{
-		return e.code().value();
-	}
-	catch (std::bad_alloc const &)
-	{
-		return E_OUTOFMEMORY;
-	}
-	catch (std::out_of_range const &)
-	{
-		return E_BOUNDS;
-	}
-	catch (std::invalid_argument const &)
-	{
-		return E_INVALIDARG;
-	}
-	catch (std::exception const &)
-	{
-		return E_FAIL;
-	}
+    HRESULT value = S_OK;
+
+    try
+    {
+        throw;
+    }
+    catch (const hresult_error & e)
+    {
+        return e.to_abi();
+    }
+    catch (const std::bad_alloc &)
+    {
+        return E_OUTOFMEMORY;
+    }
+    catch (const std::out_of_range &)
+    {
+        value = E_BOUNDS;
+    }
+    catch (const std::invalid_argument &)
+    {
+        value = E_INVALIDARG;
+    }
+    catch (const std::exception &)
+    {
+        value = E_FAIL;
+    }
+
+    WINRT_RoOriginateError(value, nullptr);
+    return value;
 }
 
 }
 
-__forceinline void check_hresult(HRESULT const result)
+__forceinline void check_hresult(const HRESULT result)
 {
-	if (result != S_OK)
-	{
-		impl::throw_hresult(result);
-	}
-}
-
+    if (result != S_OK)
+    {
+        impl::throw_hresult(result);
+    }
 }

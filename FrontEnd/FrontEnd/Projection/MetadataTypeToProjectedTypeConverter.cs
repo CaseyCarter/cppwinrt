@@ -17,24 +17,24 @@ namespace Microsoft.Wcl.Projection
     {
         static IDictionary<string, ProjectedTypeInfo> MetadataTypeToProjectedTypeTable = new Dictionary<string, ProjectedTypeInfo>()
         {
-                { "Object", new ProjectedTypeInfo() { ProjectedType = "IInspectable", TypeCategory = TypeCategory.Interface } },
-                { "Int16", new ProjectedTypeInfo() { ProjectedType = "short", TypeCategory = TypeCategory.Value } },
-                { "Int32", new ProjectedTypeInfo() { ProjectedType = "int", TypeCategory = TypeCategory.Value } },
-                { "Int64", new ProjectedTypeInfo() { ProjectedType = "long long", TypeCategory = TypeCategory.Value } },
-                { "UInt8", new ProjectedTypeInfo() { ProjectedType = "byte", TypeCategory = TypeCategory.Value } },
-                { "UInt16", new ProjectedTypeInfo() { ProjectedType = "unsigned short", TypeCategory = TypeCategory.Value } },
-                { "UInt32", new ProjectedTypeInfo() { ProjectedType = "unsigned", TypeCategory = TypeCategory.Value } },
-                { "UInt64", new ProjectedTypeInfo() { ProjectedType = "unsigned long long", TypeCategory = TypeCategory.Value } },
+                { "Object", new ProjectedTypeInfo() { ProjectedType = "Windows::IInspectable", TypeCategory = TypeCategory.Interface } },
+                { "Int16", new ProjectedTypeInfo() { ProjectedType = "int16_t", TypeCategory = TypeCategory.Value } },
+                { "Int32", new ProjectedTypeInfo() { ProjectedType = "int32_t", TypeCategory = TypeCategory.Value } },
+                { "Int64", new ProjectedTypeInfo() { ProjectedType = "int64_t", TypeCategory = TypeCategory.Value } },
+                { "UInt8", new ProjectedTypeInfo() { ProjectedType = "uint8_t", TypeCategory = TypeCategory.Value } },
+                { "UInt16", new ProjectedTypeInfo() { ProjectedType = "uint16_t", TypeCategory = TypeCategory.Value } },
+                { "UInt32", new ProjectedTypeInfo() { ProjectedType = "uint32_t", TypeCategory = TypeCategory.Value } },
+                { "UInt64", new ProjectedTypeInfo() { ProjectedType = "uint64_t", TypeCategory = TypeCategory.Value } },
                 { "String", new ProjectedTypeInfo() { ProjectedType = "hstring", TypeCategory = TypeCategory.String } },
-                { "Boolean", new ProjectedTypeInfo() { ProjectedType = "bool", TypeCategory = TypeCategory.Boolean } },
+                { "Boolean", new ProjectedTypeInfo() { ProjectedType = "bool", TypeCategory = TypeCategory.Value } },
                 { "Char16", new ProjectedTypeInfo() { ProjectedType = "wchar_t", TypeCategory = TypeCategory.Value } },
                 { "Double", new ProjectedTypeInfo() { ProjectedType = "double", TypeCategory = TypeCategory.Value } },
                 { "Single", new ProjectedTypeInfo() { ProjectedType = "float", TypeCategory = TypeCategory.Value } },
                 { "Guid", new ProjectedTypeInfo() { ProjectedType = "GUID", TypeCategory = TypeCategory.Value } },
-                { FullTypeNameConstants.Windows_Foundation_AsyncStatus, new ProjectedTypeInfo() { ProjectedType = "AsyncStatus", TypeCategory = TypeCategory.Value} },
-                { FullTypeNameConstants.Windows_Foundation_EventRegistrationToken, new ProjectedTypeInfo() { ProjectedType = "long long", TypeCategory = TypeCategory.Value } },
+                { FullTypeNameConstants.Windows_Foundation_AsyncStatus, new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Structure} },
+                { FullTypeNameConstants.Windows_Foundation_EventRegistrationToken, new ProjectedTypeInfo() { ProjectedType = "event_token", TypeCategory = TypeCategory.Value } },
                 { FullTypeNameConstants.Windows_Foundation_HResult, new ProjectedTypeInfo() { ProjectedType = "HRESULT", TypeCategory = TypeCategory.Value } },
-                { "AsyncStatus", new ProjectedTypeInfo() { ProjectedType = "AsyncStatus", TypeCategory = TypeCategory.Value } },
+                { "AsyncStatus", new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Structure } },
         };
 
         public static string GetProjectedTypeFromMetadataType(string metadataType, bool isGenericInterfaceArgument, IDictionary<string, object> repository)

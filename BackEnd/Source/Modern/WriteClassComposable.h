@@ -1,9 +1,9 @@
 
-template <typename T> struct %T :
-	overrides<%>,
-	requires<T, %>
+template <typename T, typename ... Interfaces> struct %T :
+    overrides<T, %, Interfaces ...>,
+    requires<T, %>
 {
-	using composable = %;
+    using composable = %;
 
 protected:
 %};

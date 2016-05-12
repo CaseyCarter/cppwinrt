@@ -1,4 +1,4 @@
-select substr(FullName, Name + 3), substr(FullName, 1, Name) as Namespace from Interfaces
+select substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace from Interfaces
 union all
-select substr(FullName, Name + 3), substr(FullName, 1, Name) as Namespace from Classes
-order by Namespace
+select substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace from Classes
+order by Namespace, Name

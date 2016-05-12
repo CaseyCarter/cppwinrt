@@ -1,8 +1,6 @@
 #pragma once
 
 #include "handle.h"
-#include "sqlite3.h"
-#include <string>
 
 namespace Modern { namespace SQLite { 
 
@@ -73,7 +71,9 @@ public:
     {
         Connection temp;
 
-        if (SQLITE_OK != sqlite3_open_v2(filename, put(temp.m_handle), SQLITE_OPEN_READONLY, nullptr))
+        // Read/write access is required to support SQLite profiling.
+
+        if (SQLITE_OK != sqlite3_open_v2(filename, put(temp.m_handle), SQLITE_OPEN_READWRITE, nullptr))
         {
             temp.ThrowLastError();
         }
@@ -319,17 +319,17 @@ public:
 
     void Bind(int const index, std::string const & value) const
     {
-        Bind(index, value.c_str(), value.size());
+        Bind(index, value.c_str(), static_cast<int>(value.size()));
     }
 
     void Bind(int const index, std::wstring const & value) const
     {
-        Bind(index, value.c_str(), value.size() * sizeof(wchar_t));
+        Bind(index, value.c_str(), static_cast<int>(value.size() * sizeof(wchar_t)));
     }
 
     void Bind(int const index, std::string && value) const
     {
-        if (SQLITE_OK != sqlite3_bind_text(Get(), index, value.c_str(), value.size(), SQLITE_TRANSIENT))
+        if (SQLITE_OK != sqlite3_bind_text(Get(), index, value.c_str(), static_cast<int>(value.size()), SQLITE_TRANSIENT))
         {
             ThrowLastError();
         }
@@ -337,7 +337,7 @@ public:
 
     void Bind(int const index, std::wstring && value) const
     {
-        if (SQLITE_OK != sqlite3_bind_text16(Get(), index, value.c_str(), value.size() * sizeof(wchar_t), SQLITE_TRANSIENT))
+        if (SQLITE_OK != sqlite3_bind_text16(Get(), index, value.c_str(), static_cast<int>(value.size() * sizeof(wchar_t)), SQLITE_TRANSIENT))
         {
             ThrowLastError();
         }

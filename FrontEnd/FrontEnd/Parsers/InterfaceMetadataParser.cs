@@ -20,16 +20,10 @@ namespace Microsoft.Wcl.Parsers
             var interfaceInfo = new InterfaceInfo();
             CustomAttributeInfo customAttributeInfo = null;
             Guid guid = Guid.Empty;
-            string delegateFullTypeName = null;
 
             var namespaceName = assembly.GetString(typeDef.Namespace);
             var typeName = assembly.GetString(typeDef.Name);
             var fullTypeName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
-            if (isDelegate)
-            {
-                delegateFullTypeName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, "I" + typeName);
-            }
-
             var customAttributes = CustomAttributeMetadataParser.GetAttributes(assembly, typeDef);
             if (!CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Guid, out customAttributeInfo))
             {
@@ -38,11 +32,11 @@ namespace Microsoft.Wcl.Parsers
 
             CustomAttributeMetadataParser.GetGuidValue(assembly, customAttributeInfo, out guid);
 
-            interfaceInfo.FullName = (isDelegate ? delegateFullTypeName : fullTypeName);
+            interfaceInfo.FullName = fullTypeName;
             interfaceInfo.Name = TypeNameUtilities.GetIndexOfTypeName(interfaceInfo.FullName);
             interfaceInfo.Uuid = guid.ToString();
-            interfaceInfo.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated); ;
-            interfaceInfo.Delegate = (isDelegate ? TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName) : null);
+            interfaceInfo.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated);
+            interfaceInfo.Delegate = isDelegate;
             interfaceInfo.MethodsInfo = GetMethodsInfo(assembly, typeDef, interfaceInfo.FullName, isDelegate, specialMethodNamesRepository);
             interfaceInfo.RequiredInterfacesInfo = GetRequiredInterfacesInfo(assembly, typeDef, interfaceInfo.FullName);
 
@@ -169,6 +163,16 @@ namespace Microsoft.Wcl.Parsers
                 var info = GetParameterInfo(assembly, parameterHandle, ref blobReader, returnSignatureTypeCode, firstParameterIsReturnParameter, methodId);
                 firstParameterIsReturnParameter = false;
                 list.Add(info);
+            }
+
+            // In order to support easier consumption of parameters in the backend,
+            // the return parameter should be placed at the end of the list of parameter info list.
+            // This matches the IDL, where retval is expected to be at the end.
+            if ( (list.Count > 1) && ( (list[0].Flags & ParameterAttributesInfo.Return) == ParameterAttributesInfo.Return) )
+            {
+                var returnParameter = list[0];
+                list.RemoveAt(0);
+                list.Add(returnParameter);
             }
 
             return list;

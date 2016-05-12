@@ -3,7 +3,6 @@
 #include "Output.h"
 #include "Strings.h"
 #include "Version.h"
-#include "Year.h"
 #include "Database.h"
 #include "Settings.h"
 
@@ -44,13 +43,37 @@ static void WriteStructureFields(Output & out)
     });
 }
 
-// TODO: once the delegate work is merged this function will go away.
-static void WriteTemplatePreamble(Output & output)
+static void WriteProducerForwardArgument(Output & out, Parameter const & param)
 {
-    Write(output, "template <typename F> ");
+    if (param.IsIn())
+    {
+        if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate || param.Category == TypeCategory::String)
+        {
+            Write(out, "*reinterpret_cast<const % *>(&%)", param.ModernType(), param.Name);
+        }
+        else if (param.IsArray())
+        {
+            Write(out, "array_ref<const %>(%, % + __%Size)", param.ModernType(), param.Name, param.Name, param.Name);
+        }
+        else
+        {
+            Write(out, param.Name);
+        }
+    }
+    else if (param.IsOut())
+    {
+        if (param.IsArray() && param.IsReferenceOrReturn())
+        {
+            Write(out, "detach<%>(__%Size, %)", param.ModernType(), param.Name, param.Name);
+        }
+        else
+        {
+            Write(out, "*%", param.Name);
+        }
+    }
 }
 
-static void WriteDelegateForwardArguments(Output & output)
+static void WriteProducerForwardArguments(Output & out)
 {
     bool first = true;
 
@@ -60,28 +83,56 @@ static void WriteDelegateForwardArguments(Output & output)
         {
             first = false;
         }
-        else if (!(param.Attribute & ParameterAttribute::Return))
+        else if (!param.IsReturn())
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        if (param.Attribute & ParameterAttribute::In)
-        {
-            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate || param.Category == TypeCategory::String)
-            {
-                Write(output, "lease<%>(%)", param.ModernType(), param.Name);
-            }
-            else
-            {
-                Write(output, param.Name);
-            }
-        }
-
-        // TODO: deal with out and return parameters
+        WriteProducerForwardArgument(out, param);
     }
 }
 
-static void WriteAbiArguments(Output & output)
+static void WriteAbiArgument(Output & out, Parameter const & param)
+{
+    if (param.IsArray())
+    {
+        if (param.IsIn() || !param.IsReferenceOrReturn())
+        {
+            Write(out, "%.size(), get(%)", param.Name, param.Name);
+        }
+        else
+        {
+            Write(out, "put_size(%), put(%)", param.Name, param.Name);
+        }
+    }
+    else
+    {
+        if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value)
+        {
+            if (param.IsIn())
+            {
+                Write(out, "%", param.Name);
+            }
+            else
+            {
+                Write(out, "&%", param.Name);
+            }
+        }
+        else
+        {
+            if (param.IsIn())
+            {
+                Write(out, "get(%)", param.Name);
+            }
+            else
+            {
+                Write(out, "put(%)", param.Name);
+            }
+        }
+    }
+}
+
+static void WriteAbiArguments(Output & out)
 {
     bool first = true;
 
@@ -93,35 +144,14 @@ static void WriteAbiArguments(Output & output)
         }
         else
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        if (param.Attribute & ParameterAttribute::In)
-        {
-            if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value || param.Category == TypeCategory::Boolean)
-            {
-                Write(output, "%", param.Name);
-            }
-            else
-            {
-                Write(output, "get(%)", param.Name);
-            }
-        }
-        else
-        {
-            if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value)
-            {
-                Write(output, "&%", param.Name);
-            }
-            else
-            {
-                Write(output, "put(%)", param.Name);
-            }
-        }
+        WriteAbiArgument(out, param);
     }
 }
 
-static void WriteComposableConstructorArguments(Output & output)
+static void WriteComposableConstructorArguments(Output & out)
 {
     MODERN_ASSERT(Settings::ParameterInfo.Parameters.size() >= 3);
 
@@ -129,17 +159,17 @@ static void WriteComposableConstructorArguments(Output & output)
     {
         Parameter const & param = Settings::ParameterInfo.Parameters[i];
 
-        Write(output, "%, ", param.Name);
+        Write(out, "%, ", param.Name);
     }
 }
 
-static void WriteModernArguments(Output & output, bool const hasDelegate)
+static void WriteModernArguments(Output & out)
 {
     bool first = true;
 
     for (Parameter const & param : Settings::ParameterInfo.Parameters)
     {
-        if (param.Attribute & ParameterAttribute::Return)
+        if (param.IsReturn())
         {
             break;
         }
@@ -150,30 +180,95 @@ static void WriteModernArguments(Output & output, bool const hasDelegate)
         }
         else
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        if (hasDelegate && param.Category == TypeCategory::Delegate)
+        Write(out, param.Name);
+    }
+}
+
+static void WriteAbiProducerParameter(Output & out, Parameter const & param)
+{
+    std::string paramType = param.Type;
+
+    if (param.Category == TypeCategory::String)
+    {
+        paramType = "HSTRING";
+    }
+
+    if (param.IsIn())
+    {
+        if (param.IsArray())
         {
-            size_t pos = param.Type.find('<');
+            Write(out, "uint32_t __%Size, ", param.Name);
 
-            if (std::string::npos == pos)
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                pos = param.Type.size();
+                Write(out, "abi_arg_in<%> * %", param.Type, param.Name);
             }
-
-            pos = param.Type.find_last_of(':', pos);
-
-            Write(output, "%%(%)", Substring(param.Type, pos + 1), &param.Type[pos + 2], param.Name);
+            else
+            {
+                Write(out, "% * %", paramType, param.Name);
+            }
         }
         else
         {
-            Write(output, param.Name);
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+            {
+                Write(out, "abi_arg_in<%> %", param.Type, param.Name);
+            }
+            else
+            {
+                Write(out, "% %", paramType, param.Name);
+            }
+        }
+    }
+    else
+    {
+        if (param.IsArray())
+        {
+            if (param.IsReferenceOrReturn())
+            {
+                Write(out, "uint32_t * __%Size, ", param.Name);
+
+                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+                {
+                    Write(out, "abi_arg_out<%> * %", param.Type, param.Name);
+                }
+                else
+                {
+                    Write(out, "% ** %", paramType, param.Name);
+                }
+            }
+            else
+            {
+                Write(out, "uint32_t __%Size, ", param.Name);
+
+                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+                {
+                    Write(out, "abi_arg_out<%> %", param.Type, param.Name);
+                }
+                else
+                {
+                    Write(out, "% * %", paramType, param.Name);
+                }
+            }
+        }
+        else
+        {
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+            {
+                Write(out, "abi_arg_out<%> %", param.Type, param.Name);
+            }
+            else
+            {
+                Write(out, "% * %", paramType, param.Name);
+            }
         }
     }
 }
 
-static void WriteDelegateAbiParameters(Output & output)
+static void WriteAbiProducerParameters(Output & out)
 {
     bool first = true;
 
@@ -185,45 +280,115 @@ static void WriteDelegateAbiParameters(Output & output)
         }
         else
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        if (param.Attribute & ParameterAttribute::In)
+        WriteAbiProducerParameter(out, param);
+    }
+}
+
+static void WriteAbiParameter(Output & out, Parameter const & param)
+{
+    std::string paramType = param.Type;
+
+    if (param.Category == TypeCategory::String)
+    {
+        paramType = "HSTRING";
+    }
+
+    if (param.IsIn())
+    {
+        if (param.IsArray())
         {
-            if (param.Category == TypeCategory::String)
+            Write(out, "uint32_t __%Size, ", param.Name);
+
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "HSTRING %", param.Name);
+                Write(out, "% ** %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
             {
-                Write(output, "abi_arg_in<%> %", param.Type, param.Name);
+                Write(out, "winrt::% * %", param.Type, param.Name);
             }
             else
             {
-                Write(output, "% %", param.Type, param.Name);
+                Write(out, "% * %", paramType, param.Name);
             }
         }
         else
         {
-            MODERN_ASSERT(param.Attribute & ParameterAttribute::Return || param.Attribute & ParameterAttribute::Out);
-
-            if (param.Category == TypeCategory::String)
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
             {
-                Write(output, "HSTRING * %", param.Name);
+                Write(out, "% * %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
             {
-                Write(output, "abi_arg_out<%> %", param.Type, param.Name);
+                Write(out, "winrt::% %", param.Type, param.Name);
             }
             else
             {
-                Write(output, "% * %", param.Type, param.Name);
+                Write(out, "% %", paramType, param.Name);
+            }
+        }
+    }
+    else
+    {
+        if (param.IsArray())
+        {
+            if (param.IsReferenceOrReturn())
+            {
+                Write(out, "uint32_t * __%Size, ", param.Name);
+
+                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+                {
+                    Write(out, "% *** %", param.Type, param.Name);
+                }
+                else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+                {
+                    Write(out, "winrt::% ** %", param.Type, param.Name);
+                }
+                else
+                {
+                    Write(out, "% ** %", paramType, param.Name);
+                }
+            }
+            else
+            {
+                Write(out, "uint32_t __%Size, ", param.Name);
+
+                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+                {
+                    Write(out, "% ** %", param.Type, param.Name);
+                }
+                else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+                {
+                    Write(out, "winrt::% * %", param.Type, param.Name);
+                }
+                else
+                {
+                    Write(out, "% * %", paramType, param.Name);
+                }
+            }
+        }
+        else
+        {
+            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
+            {
+                Write(out, "% ** %", param.Type, param.Name);
+            }
+            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+            {
+                Write(out, "winrt::% * %", param.Type, param.Name);
+            }
+            else
+            {
+                Write(out, "% * %", paramType, param.Name);
             }
         }
     }
 }
 
-static void WriteAbiParameters(Output & output)
+static void WriteAbiParameters(Output & out)
 {
     bool first = true;
 
@@ -235,89 +400,62 @@ static void WriteAbiParameters(Output & output)
         }
         else
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        if (param.Attribute & ParameterAttribute::In)
-        {
-            if (param.Category == TypeCategory::String)
-            {
-                Write(output, "HSTRING %", param.Name);
-            }
-            else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-            {
-                Write(output, "% * %", param.Type, param.Name);
-            }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
-            {
-                Write(output, "winrt::% %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(output, "% %", param.Type, param.Name);
-            }
-        }
-        else if (param.Attribute & ParameterAttribute::Out || param.Attribute & ParameterAttribute::Return)
-        {
-            if (param.Category == TypeCategory::String)
-            {
-                Write(output, "HSTRING * %", param.Name);
-            }
-            else if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-            {
-                Write(output, "% ** %", param.Type, param.Name);
-            }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
-            {
-                Write(output, "winrt::% * %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(output, "% * %", param.Type, param.Name);
-            }
-        }
+        WriteAbiParameter(out, param);
     }
 }
 
-static void WriteParameter(Output & output, Parameter const & param, bool const hasDelegate, bool const definition)
+static void WriteParameter(Output & out, Parameter const & param)
 {
-    if (param.Attribute & ParameterAttribute::In)
+    if (param.IsArray())
     {
-        if (param.Category == TypeCategory::String)
+        if (param.IsIn())
         {
-            Write(output, "hstring_ref %", param.Name);
+            Write(out, "array_ref<const %> %", param.ModernType(), param.Name);
         }
-        else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
+        else if (param.IsOut())
         {
-            Write(output, "% const & %", param.ModernType(), param.Name);
-        }
-        else if (param.Category == TypeCategory::Delegate)
-        {
-            if (hasDelegate)
+            if (param.IsReferenceOrReturn())
             {
-                Write(output, "F %", param.Name);
+                Write(out, "com_array<%> & %", param.ModernType(), param.Name);
             }
             else
             {
-                Write(output, "% const & %", param.Type, param.Name);
+                Write(out, "array_ref<%> %", param.ModernType(), param.Name);
             }
         }
-        else if (definition)
-        {
-            Write(output, "% const %", param.Type, param.Name);
-        }
-        else
-        {
-            Write(output, "% %", param.Type, param.Name);
-        }
     }
-    else if (param.Attribute & ParameterAttribute::Out)
+    else
     {
-        Write(output, "% & %", param.ModernType(), param.Name);
+        if (param.IsIn())
+        {
+            if (param.Category == TypeCategory::String)
+            {
+                Write(out, "hstring_ref %", param.Name);
+            }
+            else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
+            {
+                Write(out, "const % & %", param.ModernType(), param.Name);
+            }
+            else if (param.Category == TypeCategory::Delegate)
+            {
+                Write(out, "const % & %", param.Type, param.Name);
+            }
+            else
+            {
+                Write(out, "% %", param.Type, param.Name);
+            }
+        }
+        else if (param.IsOut())
+        {
+            Write(out, "% & %", param.ModernType(), param.Name);
+        }
     }
 }
 
-static void WriteComposableConstructorParameters(Output & output, bool const hasDelegate, bool const definition)
+static void WriteComposableConstructorParameters(Output & out)
 {
     MODERN_ASSERT(Settings::ParameterInfo.Parameters.size() >= 3);
 
@@ -327,14 +465,14 @@ static void WriteComposableConstructorParameters(Output & output, bool const has
 
         if (i != 0)
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        WriteParameter(output, param, hasDelegate, definition);
+        WriteParameter(out, param);
     }
 }
 
-static void WriteParameters(Output & output, bool const hasDelegate, bool const definition)
+static void WriteParameters(Output & out)
 {
     bool first = true;
 
@@ -344,333 +482,242 @@ static void WriteParameters(Output & output, bool const hasDelegate, bool const 
         {
             first = false;
         }
-        else if (!(param.Attribute & ParameterAttribute::Return))
+        else if (!param.IsReturn())
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        WriteParameter(output, param, hasDelegate, definition);
+        WriteParameter(out, param);
     }
 }
 
-static void WriteInterfaceMethod(Output & h, Output & methods, bool const hasDelegate)
+static void WriteMethodBodyPreCall(Output & out)
 {
-    Write(h, "\t");
-    Write(methods, "\ntemplate <typename T> ");
-
-    if (hasDelegate)
-    {
-        WriteTemplatePreamble(h);
-        WriteTemplatePreamble(methods);
-    }
-
-    Write(h, 
-          Strings::LibraryNonStaticMethodDeclarationOpen, 
-          Settings::ParameterInfo.ReturnType(),
-          Settings::MethodName);
-
-    WriteParameters(h, hasDelegate, false);
-
-    Write(h, 
-          Strings::LibraryNonStaticMethodDeclarationClose);
-
-    Write(methods, 
-          Strings::LibraryMethodDefinitionOpen, 
-          Settings::ParameterInfo.ReturnType(),
-          Settings::InterfaceName, 
-          Settings::MethodName);
-
-    WriteParameters(methods,
-                    hasDelegate,
-                    true);
-
-    if (hasDelegate)
-    {
-        if (Settings::ParameterInfo.HasReturnType)
-        {
-            Write(methods, 
-                  Strings::LibraryDelegateMethodDefinitionBodyReturnTypeOpen, 
-                  Settings::MethodName);
-        }
-        else
-        {
-            Write(methods, 
-                  Strings::LibraryDelegateMethodDefinitionBodyNoReturnTypeOpen, 
-                  Settings::MethodName);
-        }
-
-        WriteModernArguments(methods, hasDelegate);
-
-        Write(methods, 
-              Strings::LibraryDelegateMethodDefinitionClose);
-    }
-    else if (Settings::ParameterInfo.HasReturnType)
+    if (Settings::ParameterInfo.HasReturnType)
     {
         Parameter const & back = Settings::ParameterInfo.Parameters.back();
 
         if (back.Category == TypeCategory::String || (back.Category == TypeCategory::Interface && Settings::ParameterInfo.Parameters.back().ClassType.empty()))
         {
-            Write(methods,
-                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenDefault,
-                  Settings::ParameterInfo.ReturnType(),
-                  Settings::ParameterInfo.ReturnTypeName(),
-                  Settings::MethodAbi);
+            Write(out,
+                  "\n    % %;",
+                  Settings::ParameterInfo.ReturnType,
+                  Settings::ParameterInfo.ReturnTypeName());
         }
         else if (!Settings::ParameterInfo.Parameters.back().ClassType.empty())
         {
-            Write(methods, 
-                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpenClass,
-                  Settings::ParameterInfo.ReturnType(),
-                  Settings::ParameterInfo.ReturnTypeName(),
-                  Settings::MethodAbi);
+            Write(out,
+                  "\n    % % { nullptr };",
+                  Settings::ParameterInfo.ReturnType,
+                  Settings::ParameterInfo.ReturnTypeName());
         }
         else
         {
-            Write(methods, 
-                  Strings::LibraryNonStaticMethodDefinitionBodyReturnTypeOpen, 
-                  Settings::ParameterInfo.ReturnType(),
-                  Settings::ParameterInfo.ReturnTypeName(),
-                  Settings::MethodAbi);
+            Write(out,
+                  "\n    % % {};",
+                  Settings::ParameterInfo.ReturnType,
+                  Settings::ParameterInfo.ReturnTypeName());
         }
-
-        WriteAbiArguments(methods);
-
-        Write(methods, 
-              Strings::LibraryNonStaticMethodDefinitionReturnTypeClose, 
-              Settings::ParameterInfo.ReturnTypeName());
-    }
-    else
-    {
-        Write(methods, 
-              Strings::LibraryNonStaticMethodDefinitionBodyNoReturnTypeOpen, 
-              Settings::MethodAbi);
-
-        WriteAbiArguments(methods);
-
-        Write(methods, 
-              Strings::LibraryNonStaticMethodDefinitionNoReturnTypeClose);
     }
 }
 
-static void WriteInterfaceMethods(Output & h, Output & methods, Output & abi)
+static void WriteMethodBodyPostCall(Output & out)
 {
-    unsigned deprecated = 0;
+    if (Settings::ParameterInfo.HasReturnType)
+    {
+        Write(out,
+              "\n    return %;",
+              Settings::ParameterInfo.ReturnTypeName());
+    }
+}
 
+static void WriteMethodBody(Output & out)
+{
+    Write(out,
+          Strings::WriteMethodBody,
+          Bind(WriteMethodBodyPreCall),
+          Settings::MethodShim,
+          Settings::MethodAbi,
+          Bind(WriteAbiArguments),
+          Bind(WriteMethodBodyPostCall));
+}
+
+static void WriteInterfaceMethodDeclaration(Output & out)
+{
+    Write(out,
+          Strings::WriteInterfaceMethodDeclaration,
+          Settings::ParameterInfo.ReturnType,
+          Settings::MethodName,
+          Bind(WriteParameters));
+}
+
+static void WriteAbiInterfaceMethods(Output & out)
+{
     GetInterfaceMethods([&]
     {
-        // TODO: Remove once we add array support
-		if(!Settings::ParameterInfo.HasArrayParam)
-        {
-            Write(abi,
-                  Strings::WriteAbiInterfaceMethod,
-                  Settings::MethodAbi,
-                  Bind(WriteAbiParameters));
-
-            ParameterInfo & params = Settings::ParameterInfo;
-
-            WriteInterfaceMethod(h, methods, false);
-
-            if (params.HasDelegate)
-            {
-                WriteInterfaceMethod(h, methods, true);
-            }
-        }
-        else
-        {
-            Write(abi, Strings::WriteAbiInterfaceMethodDeprecated, ++deprecated);
-        }
+        Write(out,
+              Strings::WriteAbiInterfaceMethod,
+              Settings::MethodAbi,
+              Bind(WriteAbiParameters));
     });
 }
 
-static void WriteRequiredInterfaces(Output & output)
+static void WriteInterfaceProducerNotImplementedMethods(Output & out)
+{
+    GetInterfaceMethods([&]
+    {
+        Write(out,
+              Strings::WriteInterfaceProducerNotImplementedMethod,
+              Settings::ParameterInfo.ReturnType,
+              Settings::MethodName,
+              Bind(WriteParameters));
+    });
+}
+
+static void WriteInterfaceMethodDeclarations(Output & out)
+{
+    GetInterfaceMethods([&]
+    {
+        WriteInterfaceMethodDeclaration(out);
+    });
+}
+
+static void WriteRequiredInterfaces(Output & out)
 {
     bool first = true;
     std::string requires;
 
-    GetRequiredInterfaces([&](char const * const interfaceName)
+    GetRequiredInterfaces([&]
     {
         if (first)
         {
             first = false;
-            requires = interfaceName;
+            requires = Settings::RequiredInterfaceName;
         }
         else
         {
             requires += ", ";
-            requires += interfaceName;
+            requires += Settings::RequiredInterfaceName;
         }
     });
 
     if (!requires.empty())
     {
-        Write(output, 
-              Strings::LibraryInterfaceRequires, 
+        Write(out, 
+              Strings::WriteRequiredInterfaces,
               Settings::InterfaceName, 
               requires);
     }
 }
 
-static void WriteClassDefaultConstructor(Output & h, Output & methods)
+static void WriteClassDefaultConstructorDefinition(Output & out)
 {
-    Write(h,
-          Strings::LibraryClassDefaultConstructorDeclaration,
-          Settings::ClassName);
-
-    Write(methods,
-          Strings::LibraryClassDefaultConstructorDefinition,
+    Write(out,
+          Strings::WriteClassDefaultConstructorDefinition,
           Settings::ClassName,
           Settings::ClassName,
           Settings::ClassName,
           Settings::ClassName);
 }
 
-static void WriteStaticMethod(Output & h, Output & methods, bool const hasDelegate)
+static void WriteStaticMethodDefinition(Output & out)
 {
-    Write(h, "\t");
-    Write(methods, "\n");
-
-    if (hasDelegate)
-    {
-        WriteTemplatePreamble(h);
-        WriteTemplatePreamble(methods);
-    }
-    else
-    {
-        Write(methods, "inline ");
-    }
-
-    Write(h,
-          Strings::LibraryStaticMethodDeclarationOpen,
-          Settings::ParameterInfo.ReturnType(),
-          Settings::MethodName);
-
-    WriteParameters(h, hasDelegate, false);
-
-    Write(h, Strings::LibraryStaticMethodDeclarationClose);
-
-    Write(methods, Strings::LibraryStaticMethodDefinitionOpen, Settings::ParameterInfo.ReturnType(), Settings::ClassName, Settings::MethodName);
-
-    WriteParameters(methods, hasDelegate, true);
-
-    if (Settings::ParameterInfo.HasReturnType)
-    {
-        Write(methods, Strings::LibraryStaticMethodDefinitionBodyReturnTypeOpen, Settings::ClassName, Settings::InterfaceName, Settings::MethodName);
-    }
-    else
-    {
-        Write(methods, Strings::LibraryStaticMethodDefinitionBodyNoReturnTypeOpen, Settings::ClassName, Settings::InterfaceName, Settings::MethodName);
-    }
-
-    WriteModernArguments(methods, hasDelegate);
-    Write(methods, Strings::LibraryRequiredMethodDefinitionClose);
+    Write(out,
+          Strings::WriteStaticMethodDefinition,
+          Settings::ParameterInfo.ReturnType,
+          Settings::ClassName,
+          Settings::MethodName,
+          Bind(WriteParameters),
+          Settings::ParameterInfo.HasReturnType ? "return " : "",
+          Settings::ClassName,
+          Settings::InterfaceName,
+          Settings::MethodName,
+          Bind(WriteModernArguments));
 }
 
-static void WriteClassConstructor(Output & h, Output & methods, bool const hasDelegate)
+static void WriteStaticMethodDeclaration(Output & h)
 {
-    Write(h, "\t");
-    Write(methods, "\n");
+    Write(h,
+          Strings::WriteStaticMethodDeclaration,
+          Settings::ParameterInfo.ReturnType,
+          Settings::MethodName,
+          Bind(WriteParameters));
+}
 
-    if (hasDelegate)
-    {
-        WriteTemplatePreamble(h);
-        WriteTemplatePreamble(methods);
-    }
-    else
-    {
-        Write(methods, "inline ");
-    }
-
-    ParameterInfo & params = Settings::ParameterInfo;
-
+static void WriteClassConstructorDefinition(Output & out)
+{
     if (Settings::InterfaceComposable)
     {
-        Write(h,
-              Strings::WriteClassConstructorDeclaration,
-              Settings::ClassName,
-              Bind(WriteComposableConstructorParameters, hasDelegate, false));
+        ParameterInfo & params = Settings::ParameterInfo;
 
-        Write(methods,
+        Write(out,
               Strings::WriteClassConstructorDefinitionComposable,
               Settings::ClassName,
               Settings::ClassName,
-              Bind(WriteComposableConstructorParameters, hasDelegate, true),
+              Bind(WriteComposableConstructorParameters),
               params.Parameters[params.Parameters.size() - 3].Name,
               params.Parameters[params.Parameters.size() - 2].Name,
               Settings::ClassName,
               Settings::InterfaceName,
               Settings::MethodName,
-              Bind(WriteModernArguments, hasDelegate));
+              Bind(WriteModernArguments));
     }
     else
     {
-        Write(h,
-              Strings::WriteClassConstructorDeclaration,
-              Settings::ClassName,
-              Bind(WriteParameters, hasDelegate, false));
-
-        Write(methods,
+        Write(out,
               Strings::WriteClassConstructorDefinition,
               Settings::ClassName,
               Settings::ClassName,
-              Bind(WriteParameters, hasDelegate, true),
+              Bind(WriteParameters),
               Settings::ClassName,
               Settings::ClassName,
               Settings::InterfaceName,
               Settings::MethodName,
-              Bind(WriteModernArguments, hasDelegate));
+              Bind(WriteModernArguments));
     }
 }
 
-static void WriteStaticMethods(Output & h, Output & methods)
+static void WriteClassConstructor(Output & out)
 {
-    GetStaticInterfaces([&]
+    if (Settings::InterfaceComposable)
     {
-        GetInterfaceMethods([&]
-        {
-            // TODO: Remove once array support is added
-            if (Settings::ParameterInfo.HasArrayParam)
-            {
-                return;
-            }
-
-            ParameterInfo & params = Settings::ParameterInfo;
-
-            WriteStaticMethod(h, methods, false);
-
-            if (params.HasDelegate)
-            {
-                WriteStaticMethod(h, methods, true);
-            }
-        });
-    });
+        Write(out,
+              Strings::WriteClassConstructorDeclaration,
+              Settings::ClassName,
+              Bind(WriteComposableConstructorParameters));
+    }
+    else
+    {
+        Write(out,
+              Strings::WriteClassConstructorDeclaration,
+              Settings::ClassName,
+              Bind(WriteParameters));
+    }
 }
 
-static void WriteClassConstructors(Output & h, Output & methods)
+static void WriteClassConstructorDeclarations(Output & out)
 {
-    Write(h, "\t%(std::nullptr_t) noexcept {}\n", Settings::ClassName);
+    Write(out,
+          Strings::WriteClassNullptrConstructor,
+          Settings::ClassName);
 
     if (Settings::ClassActivatable)
     {
-        WriteClassDefaultConstructor(h, methods);
+        Write(out,
+              Strings::WriteClassDefaultConstructorDeclaration,
+              Settings::ClassName);
     }
 
     GetClassConstructorsPublic([&]
     {
         GetConstructorMethods([&]
         {
-            ParameterInfo & params = Settings::ParameterInfo;
-
-            WriteClassConstructor(h, methods, false);
-
-            if (params.HasDelegate)
-            {
-                WriteClassConstructor(h, methods, true);
-            }
+            WriteClassConstructor(out);
         });
     });
 }
 
-static void WriteComposableOverridables(Output & output)
+static void WriteComposableOverridables(Output & out)
 {
     bool first = true;
 
@@ -682,19 +729,19 @@ static void WriteComposableOverridables(Output & output)
         }
         else
         {
-            Write(output, ", ");
+            Write(out, ", ");
         }
 
-        Write(output, "%T<T>", Settings::InterfaceName);
+        Write(out, "%T<T>", Settings::InterfaceName);
     });
 
     if (first) // no overrides
     {
-        Write(output, "::IInspectable");
+        Write(out, "Windows::IInspectable");
     }
 }
 
-static void WriteComposableRequires(Output & output)
+static void WriteComposableRequires(Output & out)
 {
     bool first = true;
 
@@ -703,25 +750,25 @@ static void WriteComposableRequires(Output & output)
         if (first)
         {
             first = false;
-            Write(output, Settings::InterfaceName);
+            Write(out, Settings::InterfaceName);
         }
         else
         {
-            Write(output, ", %", Settings::InterfaceName);
+            Write(out, ", %", Settings::InterfaceName);
         }
     });
 }
 
-static void WriteComposableConstructors(Output & output)
+static void WriteComposableConstructors(Output & out)
 {
     GetComposableConstructors([&]
     {
         GetConstructorMethods([&]
         {
-            Write(output,
+            Write(out,
                   Strings::WriteComposableConstructor,
                   Settings::ClassName,
-                  Bind(WriteComposableConstructorParameters, false, true),
+                  Bind(WriteComposableConstructorParameters),
                   Settings::ClassName,
                   Settings::InterfaceName,
                   Settings::MethodName,
@@ -730,119 +777,269 @@ static void WriteComposableConstructors(Output & output)
     });
 }
 
-static void WriteOverrideDefaults(Output & output, int const interfaceId, char const * const interfaceName, char const * const interfaceNamespace)
+static void WriteOverrideDefaults(Output & out)
 {
-    auto returnType = []
+    GetInterfaceMethods([&]
     {
-        if (0 == strcmp(Settings::ParameterInfo.ReturnType(), "IInspectable"))
+        Write(out,
+              Strings::WriteOverrideDefault,
+              Settings::ParameterInfo.ReturnType,
+              Settings::MethodName,
+              Bind(WriteParameters),
+              Settings::ParameterInfo.HasReturnType ? "return " : "",
+              Settings::Namespace,
+              Settings::InterfaceName,
+              Settings::MethodName,
+              Bind(WriteModernArguments));
+    });
+}
+
+static void WriteDelegateOverrideVirtualInternalCall(Output & out)
+{
+    if (Settings::ParameterInfo.HasReturnType)
+    {
+        Parameter const & param = Settings::ParameterInfo.Parameters.back();
+
+        if (param.IsArray())
         {
-            return "Windows::IInspectable";
+            Write(out, "std::tie(*__%Size, *%)", param.Name, param.Name);
         }
         else
         {
-            return Settings::ParameterInfo.ReturnType();
+            Write(out, "*%", param.Name);
         }
-    };
 
-    Settings::InterfaceId = interfaceId;
-
-    GetInterfaceMethods([&]
+        Write(out,
+              " = detach(m_handler(%))",
+              Bind(WriteProducerForwardArguments));
+    }
+    else
     {
-        // TODO: Uncommend once array support is added
-        if (Settings::ParameterInfo.HasArrayParam)
-        {
-            return;
-        }
-
-        Write(output,
-              Strings::WriteOverrideDefault,
-              returnType(),
-              Settings::MethodName,
-              Bind(WriteParameters, false, true),
-              Settings::ParameterInfo.HasReturnType ? "return " : "",
-              interfaceNamespace,
-              interfaceName,
-              Settings::MethodName,
-              Bind(WriteModernArguments, false));
-    });
+        Write(out,
+              "m_handler(%)",
+              Bind(WriteProducerForwardArguments));
+    }
 }
 
-static void WriteOverrideVirtuals(Output & output, int const interfaceId)
+static void WriteOverrideVirtualInternalCall(Output & out)
 {
-    Settings::InterfaceId = interfaceId;
-
-    GetInterfaceMethods([&]
+    if (Settings::ParameterInfo.HasReturnType)
     {
-        // TODO: Uncommend once array support is added
-        if (Settings::ParameterInfo.HasArrayParam)
+        Parameter const & param = Settings::ParameterInfo.Parameters.back();
+
+        if (param.IsArray())
         {
-            return;
+            Write(out, "std::tie(*__%Size, *%)", param.Name, param.Name);
+        }
+        else
+        {
+            Write(out, "*%", param.Name);
         }
 
-        Write(output,
-              Strings::WriteOverrideVirtual,
-              Settings::MethodAbi,
-              Bind(WriteDelegateAbiParameters),
-              "",
+        Write(out,
+              " = detach(static_cast<T *>(this)->%(%))",
               Settings::MethodName,
-              Bind(WriteDelegateForwardArguments));
+              Bind(WriteProducerForwardArguments));
+    }
+    else
+    {
+        Write(out,
+              "static_cast<T *>(this)->%(%)",
+              Settings::MethodName,
+              Bind(WriteProducerForwardArguments));
+    }
+}
+
+static void WriteProducerCleanup(Output & out)
+{
+    for (Parameter const & param : Settings::ParameterInfo.Parameters)
+    {
+        if (param.Flags == ParameterFlags::In)
+        {
+            continue;
+        }
+
+        if (param.IsArray() && param.IsReferenceOrReturn())
+        {
+            Write(out, "\n            *__%Size = 0;", param.Name);
+            Write(out, "\n            *% = nullptr;", param.Name);
+        }
+        else if (param.Category == TypeCategory::String ||
+                 param.Category == TypeCategory::Interface ||
+                 param.Category == TypeCategory::Delegate)
+        {
+            Write(out, "\n            *% = nullptr;", param.Name);
+        }
+
+        MODERN_ASSERT(param.Category != TypeCategory::Class);
+    }
+}
+
+static void WriteInterfaceProducerVirtualMethods(Output & out)
+{
+    GetInterfaceMethods([&]
+    {
+        Write(out,
+              Strings::WriteInterfaceProducerVirtualMethod,
+              Settings::MethodAbi,
+              Bind(WriteAbiProducerParameters),
+              Bind(WriteOverrideVirtualInternalCall),
+              Bind(WriteProducerCleanup));
     });
 }
 
-static void WriteBases(Output & output)
+static void WriteBases(Output & out)
 {
     bool first = true;
     std::string bases;
 
-    GetBases([&](char const * const base)
+    GetBases([&]
     {
         if (first)
         {
             first = false;
-            bases = base;
+            bases = Settings::BaseName;
         }
         else
         {
             bases += ", ";
-            bases += base;
+            bases += Settings::BaseName;
         }
     });
 
     if (!bases.empty())
     {
-        Write(output,
-              ",\n\tbases<%, %>",
+        Write(out,
+              ",\r\n    bases<%, %>",
               Settings::ClassName,
               bases);
     }
 }
 
-static void WriteRequiredClassInterfaces(Output & output)
+static void WriteRequiredClassInterfaces(Output & out)
 {
     bool first = true;
     std::string requires;
 
-    GetRequiredClassInterfaces([&](char const * const interfaceName)
+    GetRequiredClassInterfaces([&]
     {
         if (first)
         {
             first = false;
-            requires = interfaceName;
+            requires = Settings::RequiredInterfaceName;
         }
         else
         {
             requires += ", ";
-            requires += interfaceName;
+            requires += Settings::RequiredInterfaceName;
         }
     });
 
     if (!requires.empty())
     {
-        Write(output,
-              Strings::LibraryInterfaceRequires,
+        Write(out,
+              Strings::WriteRequiredInterfaces,
               Settings::ClassName,
               requires);
     }
+}
+
+static void WriteUsingMethodsForInterface(Output & out)
+{
+    GetUsingMethodsForInterface([&]
+    {
+        Write(out,
+              Strings::WriteUsingMethod,
+              Settings::UsingInterface,
+              Settings::UsingMethod);
+    });
+}
+
+static void WriteDelegatePlaceholders(Output & out)
+{
+    for (uint32_t i = 0; i != Settings::ParameterInfo.Parameters.size(); ++i)
+    {
+        if (!Settings::ParameterInfo.Parameters[i].IsReturn())
+        {
+            Write(out, ", std::placeholders::_%", i + 1);
+        }
+    }
+}
+
+static void WriteDelegateProducer(Output & out)
+{
+    Write(out,
+          Strings::WriteDelegateProducer,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Bind(WriteAbiProducerParameters),
+          Bind(WriteDelegateOverrideVirtualInternalCall),
+          Bind(WriteProducerCleanup));
+}
+
+static void WriteDelegateShims(Output & out)
+{
+    Write(out,
+          Strings::WriteDelegateShims,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Bind(WriteDelegatePlaceholders),
+          Settings::ParameterInfo.ReturnType,
+          Settings::DelegateName,
+          Bind(WriteParameters),
+          Bind(WriteMethodBody));
+}
+
+static void WriteUsingMethodsForClass(Output & out)
+{
+    GetUsingMethodsForClass([&]
+    {
+        Write(out,
+              Strings::WriteUsingMethod,
+              Settings::UsingInterfaceName,
+              Settings::UsingMethodName);
+    });
+}
+
+void WriteStaticMethodDeclarations(Output & out)
+{
+    GetStaticInterfaces([&]
+    {
+        GetInterfaceMethods([&]
+        {
+            WriteStaticMethodDeclaration(out);
+        });
+    });
+}
+
+static void WriteClassDeclaration(Output & out)
+{
+    Write(out,
+          Strings::WriteClassDeclaration,
+          Settings::ClassName,
+          Settings::ClassDefaultInterface,
+          Bind(WriteBases),
+          Bind(WriteRequiredClassInterfaces),
+          Bind(WriteClassConstructorDeclarations),
+          Bind(WriteUsingMethodsForClass),
+          Bind(WriteStaticMethodDeclarations));
+}
+
+static void WriteStaticClassDeclaration(Output & out)
+{
+    Write(out,
+          Strings::WriteStaticClassDeclaration,
+          Settings::ClassName,
+          Settings::ClassName,
+          Bind(WriteStaticMethodDeclarations));
 }
 
 void WriteEnumerations(Output & out)
@@ -892,7 +1089,7 @@ void WriteAbiInterfaceDeclarations(Output & out)
     {
         if (out.WriteAbiNamespace(Settings::Namespace))
         {
-            Write(out, "\n");
+            Write(out, "\r\n");
         }
 
         Write(out, 
@@ -906,7 +1103,7 @@ void WriteAbiInterfaceDeclarations(Output & out)
 void WriteAbiClassDeclarations(Output & out)
 {
     out.WriteNamespace("ABI");
-    Write(out, "\n");
+    Write(out, "\r\n");
 
     GetAbiClassDeclarations([&]
     {
@@ -926,31 +1123,45 @@ void WriteDeclarations(Output & out)
     {
         if (out.WriteNamespace(Settings::Namespace))
         {
-            Write(out, "\n");
+            Write(out, "\r\n");
         }
 
         Write(out, 
-              Strings::WriteClassDeclaration, 
+              Strings::WriteStructureDeclaration,
               Settings::ClassName);
     });
 
     out.WriteNamespace();
 }
 
-void WriteImplementation(Output & out)
+void WriteInterfaceTraits(Output & out)
 {
     out.WriteNamespace("impl");
 
-    GetInterfaceNames([&]
+    GetInterfaceTraits([&]
     {
-        Write(out,
-              Strings::WriteImplementationInterface,
-              Settings::Namespace, 
-              Settings::InterfaceName,
-              Settings::Namespace,
-              Settings::InterfaceName,
-              Settings::Namespace,
-              Settings::InterfaceName);
+        if (Settings::InterfaceDelegate)
+        {
+            Write(out,
+                  Strings::WriteDelegateTraits,
+                  Settings::Namespace,
+                  Settings::InterfaceName,
+                  Settings::Namespace,
+                  Settings::InterfaceName);
+        }
+        else
+        {
+            Write(out,
+                  Strings::WriteInterfaceTraits,
+                  Settings::Namespace, 
+                  Settings::InterfaceName,
+                  Settings::Namespace,
+                  Settings::InterfaceName,
+                  Settings::Namespace,
+                  Settings::InterfaceName,
+                  Settings::Namespace,
+                  Settings::InterfaceName);
+        }
     });
 
     GetClassImplementations([&]
@@ -961,8 +1172,7 @@ void WriteImplementation(Output & out)
                   Strings::WriteClassImplementationStatic,
                   Settings::Namespace,
                   Settings::ClassName,
-                  Settings::ClassDotName,
-                  Settings::ClassDotNameLength);
+                  Settings::ClassDotName);
         }
         else // activatable/composable
         {
@@ -973,12 +1183,36 @@ void WriteImplementation(Output & out)
                   Settings::Namespace,
                   Settings::ClassName,
                   Settings::ClassDefaultInterface,
-                  Settings::ClassDotName,
-                  Settings::ClassDotNameLength);
+                  Settings::ClassDotName);
         }
     });
 
     out.WriteNamespace();
+}
+
+void WriteInterfaceProducers(Output & out)
+{
+    Write(out, Strings::WriteInterfaceProducersWarningPush);
+
+    GetInterfaces([&]
+    {
+        out.WriteNamespace(Settings::Namespace);
+
+        Write(out,
+              Strings::WriteInterfaceProducer,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::Namespace,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Bind(WriteInterfaceProducerNotImplementedMethods),
+              Bind(WriteInterfaceProducerVirtualMethods));
+    });
+
+    out.WriteNamespace();
+    Write(out, Strings::WriteInterfaceProducersWarningPop);
 }
 
 void WriteGenericInterfaces(Output & out)
@@ -987,13 +1221,13 @@ void WriteGenericInterfaces(Output & out)
     {
         if (out.WriteAbiNamespace(Settings::Namespace))
         {
-            Write(out, "\n");
+            Write(out, "\r\n");
         }
 
         Write(out,
-              Strings::LibraryGenericInterface, 
-              Settings::InterfaceGuid, 
-              Settings::InterfaceName, 
+              Strings::WriteGenericInterface,
+              Settings::InterfaceGuid,
+              Settings::InterfaceName,
               Settings::InterfaceName);
     });
 
@@ -1002,193 +1236,195 @@ void WriteGenericInterfaces(Output & out)
 
 void WriteInterfaceDefinitions(Output & out)
 {
+    GetDelegateDefinitions([&]
+    {
+        out.WriteNamespace(Settings::Namespace);
+
+        Write(out,
+              Strings::WriteDelegateDefinition,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::ParameterInfo.ReturnType,
+              Bind(WriteParameters));
+    });
+
     GetInterfaceDefinitions([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
-        if (Settings::InterfaceDelegate)
-        {
-            Write(out,
-                  Strings::LibraryInterfaceUnknownOpen, 
-                  Settings::InterfaceName, 
-                  Settings::InterfaceName,
-                  Settings::InterfaceName);
-        }
-        else
-        {
-            Write(out,
-                  Strings::LibraryInterfaceInspectableOpen, 
-                  Settings::InterfaceName,
-                  Settings::InterfaceName,
-                  Settings::InterfaceName);
-        }
-
-        WriteRequiredInterfaces(out);
-
         Write(out,
-              Strings::LibraryInterfaceDefinitionMacro,
-              Settings::InterfaceName,
-              Settings::InterfaceName);
-
-        GetUsingMethodsForInterface([&]
-        {
-            Write(out,
-                  Strings::LibraryClassUsingMethod, 
-                  Settings::UsingInterface, 
-                  Settings::UsingMethod);
-        });
-
-        Write(out,
-              Strings::LibraryInterfaceDefinitionClose);
+                Strings::WriteInterfaceDefinition,
+                Settings::InterfaceName,
+                Settings::InterfaceName,
+                Bind(WriteRequiredInterfaces),
+                Settings::InterfaceName,
+                Settings::InterfaceName,
+                Bind(WriteUsingMethodsForInterface));
     });
 
     out.WriteNamespace();
 }
 
-void WriteInterfaces(Output & h, Output & methods, Output & abi)
+void WriteAbiInterfaces(Output & out)
+{
+    GetAbiInterfaces([&]
+    {
+        out.WriteAbiNamespace(Settings::Namespace);
+
+        Write(out,
+              Strings::WriteAbiInterface,
+              Settings::InterfaceGuid,
+              Settings::InterfaceName,
+              Settings::InterfaceDelegate ? "IUnknown" : "IInspectable",
+              Bind(WriteAbiInterfaceMethods));
+    });
+
+    out.WriteNamespace();
+}
+
+void WriteInterfacesMethodDefinitions(Output & out)
+{
+    Settings::MethodShim = "shim()";
+
+    GetInterfaces([&]
+    {
+        out.WriteNamespace(Settings::Namespace);
+
+        GetInterfaceMethods([&]
+        {
+            Write(out,
+                  Strings::WriteInterfacesMethodDefinition,
+                  Settings::ParameterInfo.ReturnType,
+                  Settings::InterfaceName,
+                  Settings::MethodName,
+                  Bind(WriteParameters),
+                  Bind(WriteMethodBody));
+        });
+    });
+
+    out.WriteNamespace();
+}
+
+void WriteInterfaceConsumers(Output & out)
 {
     GetInterfaces([&]
     {
-        h.WriteNamespace(Settings::Namespace);
-        methods.WriteNamespace(Settings::Namespace);
-        abi.WriteAbiNamespace(Settings::Namespace);
+        out.WriteNamespace(Settings::Namespace);
 
-        Write(h, 
-              Strings::LibraryInterfaceImplOpen, 
+        Write(out,
+              Strings::WriteInterfaceConsumer,
               Settings::InterfaceName,
+              Settings::InterfaceName,
+              Bind(WriteInterfaceMethodDeclarations),
               Settings::InterfaceName);
-
-        if (Settings::InterfaceDelegate)
-        {
-            Write(abi, 
-                  Strings::LibraryAbiInterfaceUnknownOpen, 
-                  Settings::InterfaceGuid, 
-                  Settings::InterfaceName);
-        }
-        else
-        {
-            Write(abi, 
-                  Strings::LibraryAbiInterfaceInspectableOpen, 
-                  Settings::InterfaceGuid, 
-                  Settings::InterfaceName);
-        }
-
-        WriteInterfaceMethods(h, methods, abi);
-
-        Write(h, 
-              Strings::LibraryInterfaceClose);
-
-        Write(abi, 
-              Strings::LibraryInterfaceClose);
     });
 
-    h.WriteNamespace();
-    methods.WriteNamespace();
-    abi.WriteNamespace();
+    out.WriteNamespace();
 }
 
-void WriteComposable(Output & output)
+void WriteComposable(Output & out)
 {
     GetClassesComposable([&]
     {
-        output.WriteNamespace(Settings::Namespace);
+        out.WriteNamespace(Settings::Namespace);
 
-        Write(output,
+        Write(out,
               Strings::WriteClassComposable,
               Settings::ClassName,
               Bind(WriteComposableOverridables),
               Bind(WriteComposableRequires),
-              Settings::ClassDefaultInterface,
+              Settings::ClassName,
               Bind(WriteComposableConstructors));
     });
 
-    output.WriteNamespace();
+    out.WriteNamespace();
 }
 
-void WriteOverrides(Output & output)
+void WriteOverrides(Output & out)
 {
-    GetOverrides([&](int const id, char const * const name, char const * const ns)
+    GetOverrides([&]
     {
-        output.WriteNamespace(ns);
+        out.WriteNamespace(Settings::Namespace);
 
-        Write(output,
-              Strings::WriteOverrideTemplate,
-              ns,
-              name,
-              name,
-              Bind(WriteOverrideDefaults, id, name, ns),
-              Bind(WriteOverrideVirtuals, id));
+        Write(out,
+              Strings::WriteOverride,
+              Settings::Namespace,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Bind(WriteOverrideDefaults),
+              Bind(WriteInterfaceProducerVirtualMethods));
     });
 
-    output.WriteNamespace();
+    out.WriteNamespace();
 }
 
-void WriteClasses(Output & h, Output & methods)
+void WriteClassDeclarations(Output & out)
 {
     GetClasses([&]
     {
-        h.WriteNamespace(Settings::Namespace);
-        methods.WriteNamespace(Settings::Namespace);
+        out.WriteNamespace(Settings::Namespace);
 
         if (!Settings::ClassDefaultInterface.empty())
         {
-            Write(h, 
-                  Strings::LibraryClassOpen, 
-                  Settings::ClassName, 
-                  Settings::ClassDefaultInterface);
-
-            WriteBases(h);
-
-            WriteRequiredClassInterfaces(h);
-
-            Write(h, 
-                  Strings::LibraryClassOpenType);
-
-            WriteClassConstructors(h, methods);
-
-            GetUsingMethodsForClass([&](char const * const usingInterface, char const * const usingMethod)
-            {
-                Write(h, Strings::LibraryClassUsingMethod, usingInterface, usingMethod);
-            });
+            WriteClassDeclaration(out);
         }
         else
         {
-            Write(h, 
-                  Strings::LibraryClassStaticOpen, 
-                  Settings::ClassName,
-                  Settings::ClassName);
+            WriteStaticClassDeclaration(out);
         }
-
-        WriteStaticMethods(h, methods);
-        
-        Write(h, Strings::LibraryClassClose);
     });
 
-    h.WriteNamespace();
-    methods.WriteNamespace();
+    out.WriteNamespace();
+}
+
+void WriteClassDefinitions(Output & out)
+{
+    GetClasses([&]
+    {
+        out.WriteNamespace(Settings::Namespace);
+
+        if (!Settings::ClassDefaultInterface.empty())
+        {
+            if (Settings::ClassActivatable)
+            {
+                WriteClassDefaultConstructorDefinition(out);
+            }
+
+            GetClassConstructorsPublic([&]
+            {
+                GetConstructorMethods([&]
+                {
+                    WriteClassConstructorDefinition(out);
+                });
+            });
+        }
+
+        GetStaticInterfaces([&]
+        {
+            GetInterfaceMethods([&]
+            {
+                WriteStaticMethodDefinition(out);
+            });
+        });
+    });
+
+    out.WriteNamespace();
 }
 
 void WriteDelegates(Output & out)
 {
+    Settings::MethodShim = "(*this)";
+    Settings::MethodAbi = "abi_Invoke";
+
     GetDelegates([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
-        char const * const name = static_cast<char const *>(&Settings::DelegateName[1]);
-
-        Write(out,
-              Strings::WriteDelegateInternal,
-              name,
-              Settings::DelegateName, 
-              name,
-              Bind(WriteDelegateAbiParameters),
-              Bind(WriteDelegateForwardArguments));
-
-        Write(out,
-              Strings::WriteDelegateFunction, 
-              Settings::DelegateName,
-              name,
-              name);
+        WriteDelegateProducer(out);
+        WriteDelegateShims(out);
     });
 
     out.WriteNamespace();

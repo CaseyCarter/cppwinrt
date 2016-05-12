@@ -319,6 +319,9 @@ get_IncludeHidden|Windows::ApplicationModel::Appointments::IFindAppointmentsOpti
 get_MaxCount|Windows::ApplicationModel::Appointments::IFindAppointmentsOptions|0
 put_IncludeHidden|Windows::ApplicationModel::Appointments::IFindAppointmentsOptions|0
 put_MaxCount|Windows::ApplicationModel::Appointments::IFindAppointmentsOptions|0
+abi_Invoke|Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler|0
+abi_Invoke|Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler|0
+abi_Invoke|Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler|0
 get_MinimumReportInterval|Windows::ApplicationModel::Background::IActivitySensorTrigger|0
 get_ReportInterval|Windows::ApplicationModel::Background::IActivitySensorTrigger|0
 get_SubscribedActivities|Windows::ApplicationModel::Background::IActivitySensorTrigger|0
@@ -345,10 +348,8 @@ get_CancelOnConditionLoss|Windows::ApplicationModel::Background::IBackgroundTask
 put_CancelOnConditionLoss|Windows::ApplicationModel::Background::IBackgroundTaskBuilder2|0
 get_IsNetworkRequested|Windows::ApplicationModel::Background::IBackgroundTaskBuilder3|0
 put_IsNetworkRequested|Windows::ApplicationModel::Background::IBackgroundTaskBuilder3|0
-abi_Invoke|Windows::ApplicationModel::Background::IBackgroundTaskCanceledEventHandler|0
 abi_CheckResult|Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs|0
 get_InstanceId|Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs|0
-abi_Invoke|Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventHandler|0
 abi_Complete|Windows::ApplicationModel::Background::IBackgroundTaskDeferral|0
 abi_GetDeferral|Windows::ApplicationModel::Background::IBackgroundTaskInstance|0
 add_Canceled|Windows::ApplicationModel::Background::IBackgroundTaskInstance|0
@@ -362,7 +363,6 @@ remove_Canceled|Windows::ApplicationModel::Background::IBackgroundTaskInstance|0
 abi_GetThrottleCount|Windows::ApplicationModel::Background::IBackgroundTaskInstance2|0
 get_InstanceId|Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs|0
 get_Progress|Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs|0
-abi_Invoke|Windows::ApplicationModel::Background::IBackgroundTaskProgressEventHandler|0
 abi_Unregister|Windows::ApplicationModel::Background::IBackgroundTaskRegistration|0
 add_Completed|Windows::ApplicationModel::Background::IBackgroundTaskRegistration|0
 add_Progress|Windows::ApplicationModel::Background::IBackgroundTaskRegistration|0
@@ -1089,6 +1089,7 @@ abi_GetDeferral|Windows::ApplicationModel::Core::IHostedViewClosingEventArgs|0
 abi_Propagate|Windows::ApplicationModel::Core::IUnhandledError|0
 get_Handled|Windows::ApplicationModel::Core::IUnhandledError|0
 get_UnhandledError|Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventArgs|0
+abi_Invoke|Windows::ApplicationModel::DataTransfer::DataProviderHandler|0
 add_TargetRequested|Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager|0
 get_AreConcurrentOperationsEnabled|Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager|0
 put_AreConcurrentOperationsEnabled|Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager|0
@@ -1201,7 +1202,6 @@ abi_RequestAccessAsync|Windows::ApplicationModel::DataTransfer::IDataPackageView
 abi_RequestAccessWithEnterpriseIdAsync|Windows::ApplicationModel::DataTransfer::IDataPackageView3|0
 abi_UnlockAndAssumeEnterpriseIdentity|Windows::ApplicationModel::DataTransfer::IDataPackageView3|0
 abi_Complete|Windows::ApplicationModel::DataTransfer::IDataProviderDeferral|0
-abi_Invoke|Windows::ApplicationModel::DataTransfer::IDataProviderHandler|0
 abi_GetDeferral|Windows::ApplicationModel::DataTransfer::IDataProviderRequest|0
 abi_SetData|Windows::ApplicationModel::DataTransfer::IDataProviderRequest|0
 get_Deadline|Windows::ApplicationModel::DataTransfer::IDataProviderRequest|0
@@ -1771,7 +1771,6 @@ abi_GetUnfulfilledConsumablesAsync|Windows::ApplicationModel::Store::ICurrentApp
 abi_ReportConsumableFulfillmentAsync|Windows::ApplicationModel::Store::ICurrentAppWithConsumables|0
 abi_RequestProductPurchaseWithDisplayPropertiesAsync|Windows::ApplicationModel::Store::ICurrentAppWithConsumables|0
 abi_RequestProductPurchaseWithResultsAsync|Windows::ApplicationModel::Store::ICurrentAppWithConsumables|0
-abi_Invoke|Windows::ApplicationModel::Store::ILicenseChangedEventHandler|0
 add_LicenseChanged|Windows::ApplicationModel::Store::ILicenseInformation|0
 get_ExpirationDate|Windows::ApplicationModel::Store::ILicenseInformation|0
 get_IsActive|Windows::ApplicationModel::Store::ILicenseInformation|0
@@ -1811,6 +1810,7 @@ get_TransactionId|Windows::ApplicationModel::Store::IPurchaseResults|0
 get_OfferId|Windows::ApplicationModel::Store::IUnfulfilledConsumable|0
 get_ProductId|Windows::ApplicationModel::Store::IUnfulfilledConsumable|0
 get_TransactionId|Windows::ApplicationModel::Store::IUnfulfilledConsumable|0
+abi_Invoke|Windows::ApplicationModel::Store::LicenseChangedEventHandler|0
 abi_FilterUnsupportedSystemFeaturesAsync|Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics|0
 abi_IsStoreWebAccountId|Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics|0
 abi_SetMobileOperatorConfiguration|Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics|0
@@ -2167,7 +2167,6 @@ get_NormalizationFormat|Windows::Data::Text::IAlternateWordForm|0
 get_SourceTextSegment|Windows::Data::Text::IAlternateWordForm|0
 get_SourceTextSegment|Windows::Data::Text::ISelectableWordSegment|0
 get_Text|Windows::Data::Text::ISelectableWordSegment|0
-abi_Invoke|Windows::Data::Text::ISelectableWordSegmentsTokenizingHandler|0
 abi_GetTokenAt|Windows::Data::Text::ISelectableWordsSegmenter|0
 abi_GetTokens|Windows::Data::Text::ISelectableWordsSegmenter|0
 abi_Tokenize|Windows::Data::Text::ISelectableWordsSegmenter|0
@@ -2211,12 +2210,13 @@ abi_IsWhitespace|Windows::Data::Text::IUnicodeCharactersStatics|0
 get_AlternateForms|Windows::Data::Text::IWordSegment|0
 get_SourceTextSegment|Windows::Data::Text::IWordSegment|0
 get_Text|Windows::Data::Text::IWordSegment|0
-abi_Invoke|Windows::Data::Text::IWordSegmentsTokenizingHandler|0
 abi_GetTokenAt|Windows::Data::Text::IWordsSegmenter|0
 abi_GetTokens|Windows::Data::Text::IWordsSegmenter|0
 abi_Tokenize|Windows::Data::Text::IWordsSegmenter|0
 get_ResolvedLanguage|Windows::Data::Text::IWordsSegmenter|0
 abi_CreateWithLanguage|Windows::Data::Text::IWordsSegmenterFactory|0
+abi_Invoke|Windows::Data::Text::SelectableWordSegmentsTokenizingHandler|0
+abi_Invoke|Windows::Data::Text::WordSegmentsTokenizingHandler|0
 get_NotationName|Windows::Data::Xml::Dom::IDtdEntity|0
 get_PublicId|Windows::Data::Xml::Dom::IDtdEntity|0
 get_SystemId|Windows::Data::Xml::Dom::IDtdEntity|0
@@ -3486,11 +3486,11 @@ get_Name|Windows::Devices::Perception::Provider::IPerceptionPropertyChangeReques
 get_Status|Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest|0
 get_Value|Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest|0
 put_Status|Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest|0
-abi_Invoke|Windows::Devices::Perception::Provider::IPerceptionStartFaceAuthenticationHandler|0
-abi_Invoke|Windows::Devices::Perception::Provider::IPerceptionStopFaceAuthenticationHandler|0
 abi_AllocateFrame|Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator|0
 abi_CopyFromVideoFrame|Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator|0
 abi_Create|Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocatorFactory|0
+abi_Invoke|Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler|0
+abi_Invoke|Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler|0
 abi_CheckHealthAsync|Windows::Devices::PointOfService::IBarcodeScanner|0
 abi_ClaimScannerAsync|Windows::Devices::PointOfService::IBarcodeScanner|0
 abi_GetSupportedProfiles|Windows::Devices::PointOfService::IBarcodeScanner|0
@@ -4248,7 +4248,6 @@ put_MinLength|Windows::Devices::SmartCards::ISmartCardPinPolicy|0
 put_SpecialCharacters|Windows::Devices::SmartCards::ISmartCardPinPolicy|0
 put_UppercaseLetters|Windows::Devices::SmartCards::ISmartCardPinPolicy|0
 abi_Complete|Windows::Devices::SmartCards::ISmartCardPinResetDeferral|0
-abi_Invoke|Windows::Devices::SmartCards::ISmartCardPinResetHandler|0
 abi_GetDeferral|Windows::Devices::SmartCards::ISmartCardPinResetRequest|0
 abi_SetResponse|Windows::Devices::SmartCards::ISmartCardPinResetRequest|0
 get_Challenge|Windows::Devices::SmartCards::ISmartCardPinResetRequest|0
@@ -4278,6 +4277,7 @@ remove_CardRemoved|Windows::Devices::SmartCards::ISmartCardReader|0
 abi_FromIdAsync|Windows::Devices::SmartCards::ISmartCardReaderStatics|0
 abi_GetDeviceSelector|Windows::Devices::SmartCards::ISmartCardReaderStatics|0
 abi_GetDeviceSelectorWithKind|Windows::Devices::SmartCards::ISmartCardReaderStatics|0
+abi_Invoke|Windows::Devices::SmartCards::SmartCardPinResetHandler|0
 get_BinaryBody|Windows::Devices::Sms::ISmsAppMessage|0
 get_Body|Windows::Devices::Sms::ISmsAppMessage|0
 get_CallbackNumber|Windows::Devices::Sms::ISmsAppMessage|0
@@ -4674,6 +4674,8 @@ abi_GetSessionRequest|Windows::Devices::WiFiDirect::Services::IWiFiDirectService
 abi_FromIdAsync|Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStatics|0
 abi_GetSelector|Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStatics|0
 abi_GetSelectorWithFilter|Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStatics|0
+abi_Invoke|Windows::Foundation::AsyncActionCompletedHandler|0
+abi_Invoke|Windows::Foundation::DeferralCompletedHandler|0
 abi_TraceOperationCompletion|Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics|0
 abi_TraceOperationCreation|Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics|0
 abi_TraceOperationRelation|Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics|0
@@ -4870,10 +4872,8 @@ get_TraceLevel|Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs|
 abi_GetResults|Windows::Foundation::IAsyncAction|0
 get_Completed|Windows::Foundation::IAsyncAction|0
 put_Completed|Windows::Foundation::IAsyncAction|0
-abi_Invoke|Windows::Foundation::IAsyncActionCompletedHandler|0
 abi_Close|Windows::Foundation::IClosable|0
 abi_Complete|Windows::Foundation::IDeferral|0
-abi_Invoke|Windows::Foundation::IDeferralCompletedHandler|0
 abi_Create|Windows::Foundation::IDeferralFactory|0
 abi_GetActivationFactory|Windows::Foundation::IGetActivationFactory|0
 abi_CreateReference|Windows::Foundation::IMemoryBuffer|0
@@ -5471,6 +5471,7 @@ get_SignificantDigits|Windows::Globalization::NumberFormatting::ISignificantDigi
 put_SignificantDigits|Windows::Globalization::NumberFormatting::ISignificantDigitsOption|0
 abi_Trim|Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice|0
 get_Description|Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface|0
+abi_Invoke|Windows::Graphics::Display::DisplayPropertiesEventHandler|1
 abi_GetColorProfileAsync|Windows::Graphics::Display::IDisplayInformation|0
 add_ColorProfileChanged|Windows::Graphics::Display::IDisplayInformation|0
 add_DpiChanged|Windows::Graphics::Display::IDisplayInformation|0
@@ -5493,7 +5494,6 @@ add_DisplayContentsInvalidated|Windows::Graphics::Display::IDisplayInformationSt
 get_AutoRotationPreferences|Windows::Graphics::Display::IDisplayInformationStatics|0
 put_AutoRotationPreferences|Windows::Graphics::Display::IDisplayInformationStatics|0
 remove_DisplayContentsInvalidated|Windows::Graphics::Display::IDisplayInformationStatics|0
-abi_Invoke|Windows::Graphics::Display::IDisplayPropertiesEventHandler|1
 abi_GetColorProfileAsync|Windows::Graphics::Display::IDisplayPropertiesStatics|1
 add_ColorProfileChanged|Windows::Graphics::Display::IDisplayPropertiesStatics|1
 add_DisplayContentsInvalidated|Windows::Graphics::Display::IDisplayPropertiesStatics|1
@@ -5669,7 +5669,6 @@ abi_GetDeferral|Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs|0
 abi_SetSource|Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs|0
 get_Deadline|Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs|0
 abi_Complete|Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral|0
-abi_Invoke|Windows::Graphics::Printing::IPrintTaskSourceRequestedHandler|0
 get_Is3DManufacturingTargetEnabled|Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport|0
 get_IsPrinterTargetEnabled|Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport|0
 put_Is3DManufacturingTargetEnabled|Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport|0
@@ -5716,6 +5715,7 @@ remove_BeginValidation|Windows::Graphics::Printing::OptionDetails::IPrintTaskOpt
 remove_OptionChanged|Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails|0
 abi_GetFromPrintTaskOptions|Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic|0
 get_MaxCharacters|Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDetails|0
+abi_Invoke|Windows::Graphics::Printing::PrintTaskSourceRequestedHandler|0
 abi_CreateForPackageFamily|Windows::Management::Core::IApplicationDataManagerStatics|0
 get_ActivityId|Windows::Management::Deployment::IDeploymentResult|0
 get_ErrorText|Windows::Management::Deployment::IDeploymentResult|0
@@ -6085,7 +6085,6 @@ remove_CameraStreamStateChanged|Windows::Media::Capture::IMediaCapture4|0
 remove_ThermalStatusChanged|Windows::Media::Capture::IMediaCapture4|0
 get_Code|Windows::Media::Capture::IMediaCaptureFailedEventArgs|0
 get_Message|Windows::Media::Capture::IMediaCaptureFailedEventArgs|0
-abi_Invoke|Windows::Media::Capture::IMediaCaptureFailedEventHandler|0
 get_FocusState|Windows::Media::Capture::IMediaCaptureFocusChangedEventArgs|0
 get_AudioDeviceId|Windows::Media::Capture::IMediaCaptureInitializationSettings|0
 get_PhotoCaptureSource|Windows::Media::Capture::IMediaCaptureInitializationSettings|0
@@ -6150,9 +6149,10 @@ get_Frame|Windows::Media::Capture::IPhotoCapturedEventArgs|0
 get_Thumbnail|Windows::Media::Capture::IPhotoCapturedEventArgs|0
 get_CaptureTimeOffset|Windows::Media::Capture::IPhotoConfirmationCapturedEventArgs|0
 get_Frame|Windows::Media::Capture::IPhotoConfirmationCapturedEventArgs|0
-abi_Invoke|Windows::Media::Capture::IRecordLimitationExceededEventHandler|0
 get_InputProperties|Windows::Media::Capture::IVideoStreamConfiguration|0
 get_OutputProperties|Windows::Media::Capture::IVideoStreamConfiguration|0
+abi_Invoke|Windows::Media::Capture::MediaCaptureFailedEventHandler|0
+abi_Invoke|Windows::Media::Capture::RecordLimitationExceededEventHandler|0
 abi_DisconnectAsync|Windows::Media::Casting::ICastingConnection|0
 abi_RequestStartCastingAsync|Windows::Media::Casting::ICastingConnection|0
 add_ErrorOccurred|Windows::Media::Casting::ICastingConnection|0
@@ -7599,9 +7599,9 @@ get_Size|Windows::Media::Playback::IPlaybackMediaMarkerSequence|0
 get_NewPresentationMode|Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs|0
 get_OldPresentationMode|Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs|0
 get_Track|Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs|0
+abi_Invoke|Windows::Media::Protection::ComponentLoadFailedEventHandler|0
 get_Completion|Windows::Media::Protection::IComponentLoadFailedEventArgs|0
 get_Information|Windows::Media::Protection::IComponentLoadFailedEventArgs|0
-abi_Invoke|Windows::Media::Protection::IComponentLoadFailedEventHandler|0
 add_ComponentLoadFailed|Windows::Media::Protection::IMediaProtectionManager|0
 add_RebootNeeded|Windows::Media::Protection::IMediaProtectionManager|0
 add_ServiceRequested|Windows::Media::Protection::IMediaProtectionManager|0
@@ -7614,7 +7614,6 @@ abi_CreatePMPServer|Windows::Media::Protection::IMediaProtectionPMPServerFactory
 abi_Complete|Windows::Media::Protection::IMediaProtectionServiceCompletion|0
 get_ProtectionSystem|Windows::Media::Protection::IMediaProtectionServiceRequest|0
 get_Type|Windows::Media::Protection::IMediaProtectionServiceRequest|0
-abi_Invoke|Windows::Media::Protection::IRebootNeededEventHandler|0
 get_Items|Windows::Media::Protection::IRevocationAndRenewalInformation|0
 get_HeaderHash|Windows::Media::Protection::IRevocationAndRenewalItem|0
 get_Name|Windows::Media::Protection::IRevocationAndRenewalItem|0
@@ -7624,7 +7623,6 @@ get_RenewalId|Windows::Media::Protection::IRevocationAndRenewalItem|0
 get_Completion|Windows::Media::Protection::IServiceRequestedEventArgs|0
 get_Request|Windows::Media::Protection::IServiceRequestedEventArgs|0
 get_MediaPlaybackItem|Windows::Media::Protection::IServiceRequestedEventArgs2|0
-abi_Invoke|Windows::Media::Protection::IServiceRequestedEventHandler|0
 abi_Close|Windows::Media::Protection::PlayReady::INDClient|0
 abi_LicenseFetchAsync|Windows::Media::Protection::PlayReady::INDClient|0
 abi_ReRegistrationAsync|Windows::Media::Protection::PlayReady::INDClient|0
@@ -7784,6 +7782,8 @@ get_RevocationServiceRequestType|Windows::Media::Protection::PlayReady::IPlayRea
 get_PlayReadyCertificateSecurityLevel|Windows::Media::Protection::PlayReady::IPlayReadyStatics2|0
 abi_CheckSupportedHardware|Windows::Media::Protection::PlayReady::IPlayReadyStatics3|0
 get_SecureStopServiceRequestType|Windows::Media::Protection::PlayReady::IPlayReadyStatics3|0
+abi_Invoke|Windows::Media::Protection::RebootNeededEventHandler|0
+abi_Invoke|Windows::Media::Protection::ServiceRequestedEventHandler|0
 get_Status|Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs|0
 get_Result|Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs|0
 abi_CancelAsync|Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession|0
@@ -8169,7 +8169,6 @@ get_HasNewNetworkConnectivityLevel|Windows::Networking::Connectivity::INetworkSt
 get_HasNewWwanRegistrationState|Windows::Networking::Connectivity::INetworkStateChangeEventDetails|0
 get_HasNewTetheringClientCount|Windows::Networking::Connectivity::INetworkStateChangeEventDetails2|0
 get_HasNewTetheringOperationalState|Windows::Networking::Connectivity::INetworkStateChangeEventDetails2|0
-abi_Invoke|Windows::Networking::Connectivity::INetworkStatusChangedEventHandler|0
 get_BytesReceived|Windows::Networking::Connectivity::INetworkUsage|0
 get_BytesSent|Windows::Networking::Connectivity::INetworkUsage|0
 get_ConnectionDuration|Windows::Networking::Connectivity::INetworkUsage|0
@@ -8184,6 +8183,7 @@ abi_GetCurrentDataClass|Windows::Networking::Connectivity::IWwanConnectionProfil
 abi_GetNetworkRegistrationState|Windows::Networking::Connectivity::IWwanConnectionProfileDetails|0
 get_AccessPointName|Windows::Networking::Connectivity::IWwanConnectionProfileDetails|0
 get_HomeProviderId|Windows::Networking::Connectivity::IWwanConnectionProfileDetails|0
+abi_Invoke|Windows::Networking::Connectivity::NetworkStatusChangedEventHandler|0
 get_LocalHostName|Windows::Networking::IEndpointPair|0
 get_LocalServiceName|Windows::Networking::IEndpointPair|0
 get_RemoteHostName|Windows::Networking::IEndpointPair|0
@@ -8404,11 +8404,9 @@ abi_Close|Windows::Networking::NetworkOperators::IUssdSession|0
 abi_SendMessageAndGetReplyAsync|Windows::Networking::NetworkOperators::IUssdSession|0
 abi_CreateFromNetworkAccountId|Windows::Networking::NetworkOperators::IUssdSessionStatics|0
 abi_CreateFromNetworkInterfaceId|Windows::Networking::NetworkOperators::IUssdSessionStatics|0
+abi_Invoke|Windows::Networking::Proximity::DeviceArrivedEventHandler|0
+abi_Invoke|Windows::Networking::Proximity::DeviceDepartedEventHandler|0
 get_PeerInformation|Windows::Networking::Proximity::IConnectionRequestedEventArgs|0
-abi_Invoke|Windows::Networking::Proximity::IDeviceArrivedEventHandler|0
-abi_Invoke|Windows::Networking::Proximity::IDeviceDepartedEventHandler|0
-abi_Invoke|Windows::Networking::Proximity::IMessageReceivedHandler|0
-abi_Invoke|Windows::Networking::Proximity::IMessageTransmittedHandler|0
 abi_ConnectAsync|Windows::Networking::Proximity::IPeerFinderStatics|0
 abi_FindAllPeersAsync|Windows::Networking::Proximity::IPeerFinderStatics|0
 abi_Start|Windows::Networking::Proximity::IPeerFinderStatics|0
@@ -8477,6 +8475,8 @@ get_SubscriptionId|Windows::Networking::Proximity::IProximityMessage|0
 get_Id|Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs|0
 get_Socket|Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs|0
 get_State|Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs|0
+abi_Invoke|Windows::Networking::Proximity::MessageReceivedHandler|0
+abi_Invoke|Windows::Networking::Proximity::MessageTransmittedHandler|0
 abi_Close|Windows::Networking::PushNotifications::IPushNotificationChannel|0
 add_PushNotificationReceived|Windows::Networking::PushNotifications::IPushNotificationChannel|0
 get_ExpirationTime|Windows::Networking::PushNotifications::IPushNotificationChannel|0
@@ -9547,6 +9547,7 @@ add_ItemRemoved|Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList|
 remove_ItemRemoved|Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList|0
 abi_AddOrReplaceWithMetadataAndVisibility|Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2|0
 abi_AddWithMetadataAndVisibility|Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2|0
+abi_Invoke|Windows::Storage::ApplicationDataSetVersionHandler|0
 abi_GetFilesAsync|Windows::Storage::BulkAccess::IFileInformationFactory|0
 abi_GetFilesAsyncDefaultStartAndCount|Windows::Storage::BulkAccess::IFileInformationFactory|0
 abi_GetFoldersAsync|Windows::Storage::BulkAccess::IFileInformationFactory|0
@@ -9685,7 +9686,6 @@ get_Containers|Windows::Storage::IApplicationDataContainer|0
 get_Locality|Windows::Storage::IApplicationDataContainer|0
 get_Name|Windows::Storage::IApplicationDataContainer|0
 get_Values|Windows::Storage::IApplicationDataContainer|0
-abi_Invoke|Windows::Storage::IApplicationDataSetVersionHandler|0
 get_Current|Windows::Storage::IApplicationDataStatics|0
 abi_GetForUserAsync|Windows::Storage::IApplicationDataStatics2|0
 abi_CompleteUpdatesAsync|Windows::Storage::ICachedFileManagerStatics|0
@@ -9809,7 +9809,6 @@ get_Id|Windows::Storage::IStorageProvider|0
 abi_CommitAsync|Windows::Storage::IStorageStreamTransaction|0
 get_Stream|Windows::Storage::IStorageStreamTransaction|0
 abi_FailAndClose|Windows::Storage::IStreamedFileDataRequest|0
-abi_Invoke|Windows::Storage::IStreamedFileDataRequestedHandler|0
 get_EncodingBitrate|Windows::Storage::ISystemAudioProperties|0
 get_LatitudeDecimal|Windows::Storage::ISystemGPSProperties|0
 get_LongitudeDecimal|Windows::Storage::ISystemGPSProperties|0
@@ -10038,6 +10037,7 @@ get_Language|Windows::Storage::Search::IValueAndLanguage|0
 get_Value|Windows::Storage::Search::IValueAndLanguage|0
 put_Language|Windows::Storage::Search::IValueAndLanguage|0
 put_Value|Windows::Storage::Search::IValueAndLanguage|0
+abi_Invoke|Windows::Storage::StreamedFileDataRequestedHandler|0
 get_Capacity|Windows::Storage::Streams::IBuffer|0
 get_Length|Windows::Storage::Streams::IBuffer|0
 put_Length|Windows::Storage::Streams::IBuffer|0
@@ -10314,13 +10314,13 @@ abi_RunAsync|Windows::System::Threading::Core::IPreallocatedWorkItem|0
 abi_CreateWorkItem|Windows::System::Threading::Core::IPreallocatedWorkItemFactory|0
 abi_CreateWorkItemWithPriority|Windows::System::Threading::Core::IPreallocatedWorkItemFactory|0
 abi_CreateWorkItemWithPriorityAndOptions|Windows::System::Threading::Core::IPreallocatedWorkItemFactory|0
-abi_Invoke|Windows::System::Threading::Core::ISignalHandler|0
 abi_Enable|Windows::System::Threading::Core::ISignalNotifier|0
 abi_Terminate|Windows::System::Threading::Core::ISignalNotifier|0
 abi_AttachToEvent|Windows::System::Threading::Core::ISignalNotifierStatics|0
 abi_AttachToEventWithTimeout|Windows::System::Threading::Core::ISignalNotifierStatics|0
 abi_AttachToSemaphore|Windows::System::Threading::Core::ISignalNotifierStatics|0
 abi_AttachToSemaphoreWithTimeout|Windows::System::Threading::Core::ISignalNotifierStatics|0
+abi_Invoke|Windows::System::Threading::Core::SignalHandler|0
 abi_RunAsync|Windows::System::Threading::IThreadPoolStatics|0
 abi_RunWithPriorityAndOptionsAsync|Windows::System::Threading::IThreadPoolStatics|0
 abi_RunWithPriorityAsync|Windows::System::Threading::IThreadPoolStatics|0
@@ -10331,9 +10331,9 @@ abi_CreatePeriodicTimer|Windows::System::Threading::IThreadPoolTimerStatics|0
 abi_CreatePeriodicTimerWithCompletion|Windows::System::Threading::IThreadPoolTimerStatics|0
 abi_CreateTimer|Windows::System::Threading::IThreadPoolTimerStatics|0
 abi_CreateTimerWithCompletion|Windows::System::Threading::IThreadPoolTimerStatics|0
-abi_Invoke|Windows::System::Threading::ITimerDestroyedHandler|0
-abi_Invoke|Windows::System::Threading::ITimerElapsedHandler|0
-abi_Invoke|Windows::System::Threading::IWorkItemHandler|0
+abi_Invoke|Windows::System::Threading::TimerDestroyedHandler|0
+abi_Invoke|Windows::System::Threading::TimerElapsedHandler|0
+abi_Invoke|Windows::System::Threading::WorkItemHandler|0
 get_AdvertisingId|Windows::System::UserProfile::IAdvertisingManagerStatics|0
 abi_GetDefault|Windows::System::UserProfile::IFirstSignInSettingsStatics|0
 get_Calendars|Windows::System::UserProfile::IGlobalizationPreferencesStatics|0
@@ -10346,6 +10346,7 @@ abi_TrySetLockScreenImageAsync|Windows::System::UserProfile::IUserProfilePersona
 abi_TrySetWallpaperImageAsync|Windows::System::UserProfile::IUserProfilePersonalizationSettings|0
 abi_IsSupported|Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics|0
 get_Current|Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics|0
+abi_Invoke|Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler|0
 add_AccountCommandsRequested|Windows::UI::ApplicationSettings::IAccountsSettingsPane|0
 remove_AccountCommandsRequested|Windows::UI::ApplicationSettings::IAccountsSettingsPane|0
 abi_GetDeferral|Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs|0
@@ -10360,7 +10361,6 @@ abi_GetForCurrentView|Windows::UI::ApplicationSettings::IAccountsSettingsPaneSta
 abi_Show|Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics|0
 get_CredentialDeleted|Windows::UI::ApplicationSettings::ICredentialCommand|0
 get_PasswordCredential|Windows::UI::ApplicationSettings::ICredentialCommand|0
-abi_Invoke|Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler|0
 abi_CreateCredentialCommand|Windows::UI::ApplicationSettings::ICredentialCommandFactory|0
 abi_CreateCredentialCommandWithHandler|Windows::UI::ApplicationSettings::ICredentialCommandFactory|0
 abi_CreateSettingsCommand|Windows::UI::ApplicationSettings::ISettingsCommandFactory|0
@@ -10369,12 +10369,12 @@ get_Actions|Windows::UI::ApplicationSettings::IWebAccountCommand|0
 get_Invoked|Windows::UI::ApplicationSettings::IWebAccountCommand|0
 get_WebAccount|Windows::UI::ApplicationSettings::IWebAccountCommand|0
 abi_CreateWebAccountCommand|Windows::UI::ApplicationSettings::IWebAccountCommandFactory|0
-abi_Invoke|Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler|0
 get_Action|Windows::UI::ApplicationSettings::IWebAccountInvokedArgs|0
 get_Invoked|Windows::UI::ApplicationSettings::IWebAccountProviderCommand|0
 get_WebAccountProvider|Windows::UI::ApplicationSettings::IWebAccountProviderCommand|0
 abi_CreateWebAccountProviderCommand|Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory|0
-abi_Invoke|Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler|0
+abi_Invoke|Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler|0
+abi_Invoke|Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler|0
 get_ActualEndReason|Windows::UI::Composition::IAnimationEndedEventArgs|0
 abi_ClearAllParameters|Windows::UI::Composition::ICompositionAnimation|0
 abi_ClearParameter|Windows::UI::Composition::ICompositionAnimation|0
@@ -10520,6 +10520,7 @@ abi_InsertBelow|Windows::UI::Composition::IVisualCollection|0
 abi_Remove|Windows::UI::Composition::IVisualCollection|0
 abi_RemoveAll|Windows::UI::Composition::IVisualCollection|0
 get_Count|Windows::UI::Composition::IVisualCollection|0
+abi_Invoke|Windows::UI::Core::DispatchedHandler|0
 get_EventType|Windows::UI::Core::IAcceleratorKeyEventArgs|0
 get_KeyStatus|Windows::UI::Core::IAcceleratorKeyEventArgs|0
 get_VirtualKey|Windows::UI::Core::IAcceleratorKeyEventArgs|0
@@ -10644,8 +10645,6 @@ get_ShouldWaitForLayoutCompletion|Windows::UI::Core::ICoreWindowResizeManagerLay
 put_ShouldWaitForLayoutCompletion|Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability|0
 abi_GetForCurrentView|Windows::UI::Core::ICoreWindowResizeManagerStatics|0
 abi_GetForCurrentThread|Windows::UI::Core::ICoreWindowStatic|0
-abi_Invoke|Windows::UI::Core::IDispatchedHandler|0
-abi_Invoke|Windows::UI::Core::IIdleDispatchedHandler|0
 get_IsDispatcherIdle|Windows::UI::Core::IIdleDispatchedHandlerArgs|0
 abi_Initialize|Windows::UI::Core::IInitializeWithCoreWindow|0
 get_InputEnabled|Windows::UI::Core::IInputEnabledEventArgs|0
@@ -10668,6 +10667,7 @@ put_ProximityEvaluation|Windows::UI::Core::ITouchHitTestingEventArgs|0
 get_Visible|Windows::UI::Core::IVisibilityChangedEventArgs|0
 get_WindowActivationState|Windows::UI::Core::IWindowActivatedEventArgs|0
 get_Size|Windows::UI::Core::IWindowSizeChangedEventArgs|0
+abi_Invoke|Windows::UI::Core::IdleDispatchedHandler|0
 abi_FromArgb|Windows::UI::IColorHelperStatics|0
 get_AliceBlue|Windows::UI::IColorsStatics|0
 get_AntiqueWhite|Windows::UI::IColorsStatics|0
@@ -11239,7 +11239,7 @@ put_Label|Windows::UI::Popups::IUICommand|0
 abi_Create|Windows::UI::Popups::IUICommandFactory|0
 abi_CreateWithHandler|Windows::UI::Popups::IUICommandFactory|0
 abi_CreateWithHandlerAndId|Windows::UI::Popups::IUICommandFactory|0
-abi_Invoke|Windows::UI::Popups::IUICommandInvokedHandler|0
+abi_Invoke|Windows::UI::Popups::UICommandInvokedHandler|0
 abi_RequestCreateAsync|Windows::UI::StartScreen::ISecondaryTile|0
 abi_RequestCreateAsyncWithPoint|Windows::UI::StartScreen::ISecondaryTile|0
 abi_RequestCreateAsyncWithRect|Windows::UI::StartScreen::ISecondaryTile|0
@@ -11735,9 +11735,9 @@ add_ColorValuesChanged|Windows::UI::ViewManagement::IUISettings3|0
 remove_ColorValuesChanged|Windows::UI::ViewManagement::IUISettings3|0
 get_UserInteractionMode|Windows::UI::ViewManagement::IUIViewSettings|0
 abi_GetForCurrentView|Windows::UI::ViewManagement::IUIViewSettingsStatics|0
+abi_Invoke|Windows::UI::WebUI::ActivatedEventHandler|0
 abi_Complete|Windows::UI::WebUI::IActivatedDeferral|0
 get_ActivatedOperation|Windows::UI::WebUI::IActivatedEventArgsDeferral|0
-abi_Invoke|Windows::UI::WebUI::IActivatedEventHandler|0
 abi_GetDeferral|Windows::UI::WebUI::IActivatedOperation|0
 abi_TrySetPageRange|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
 get_BottomMargin|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
@@ -11757,9 +11757,6 @@ put_PercentScale|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
 put_RightMargin|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
 put_ShrinkToFit|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
 put_TopMargin|Windows::UI::WebUI::IHtmlPrintDocumentSource|0
-abi_Invoke|Windows::UI::WebUI::INavigatedEventHandler|0
-abi_Invoke|Windows::UI::WebUI::IResumingEventHandler|0
-abi_Invoke|Windows::UI::WebUI::ISuspendingEventHandler|0
 add_Activated|Windows::UI::WebUI::IWebUIActivationStatics|0
 add_Navigated|Windows::UI::WebUI::IWebUIActivationStatics|0
 add_Resuming|Windows::UI::WebUI::IWebUIActivationStatics|0
@@ -11774,6 +11771,10 @@ get_Current|Windows::UI::WebUI::IWebUIBackgroundTaskInstanceStatics|0
 abi_Complete|Windows::UI::WebUI::IWebUINavigatedDeferral|0
 get_NavigatedOperation|Windows::UI::WebUI::IWebUINavigatedEventArgs|0
 abi_GetDeferral|Windows::UI::WebUI::IWebUINavigatedOperation|0
+abi_Invoke|Windows::UI::WebUI::NavigatedEventHandler|0
+abi_Invoke|Windows::UI::WebUI::ResumingEventHandler|0
+abi_Invoke|Windows::UI::WebUI::SuspendingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::ApplicationInitializationCallback|0
 get_AnnotationTypeIdProperty|Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics|0
 get_AnnotationTypeNameProperty|Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics|0
 get_AuthorProperty|Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics|0
@@ -12226,6 +12227,13 @@ get_IsTopmost|Windows::UI::Xaml::Automation::Provider::IWindowProvider|0
 get_Maximizable|Windows::UI::Xaml::Automation::Provider::IWindowProvider|0
 get_Minimizable|Windows::UI::Xaml::Automation::Provider::IWindowProvider|0
 get_VisualState|Windows::UI::Xaml::Automation::Provider::IWindowProvider|0
+abi_Invoke|Windows::UI::Xaml::BindingFailedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::BackClickEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::DragItemsStartingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler|0
 add_Closed|Windows::UI::Xaml::Controls::IAppBar|0
 add_Opened|Windows::UI::Xaml::Controls::IAppBar|0
 get_IsOpen|Windows::UI::Xaml::Controls::IAppBar|0
@@ -12312,7 +12320,6 @@ put_Reason|Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgs|0
 get_ReasonProperty|Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgsStatics|0
 get_Handled|Windows::UI::Xaml::Controls::IBackClickEventArgs|0
 put_Handled|Windows::UI::Xaml::Controls::IBackClickEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IBackClickEventHandler|0
 get_UriSource|Windows::UI::Xaml::Controls::IBitmapIcon|0
 put_UriSource|Windows::UI::Xaml::Controls::IBitmapIcon|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IBitmapIconFactory|0
@@ -12517,7 +12524,6 @@ abi_RegisterUpdateCallbackWithPhase|Windows::UI::Xaml::Controls::ICalendarViewDa
 get_InRecycleQueue|Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs|0
 get_Item|Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs|0
 get_Phase|Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventHandler|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::ICalendarViewDayItemFactory|0
 get_DateProperty|Windows::UI::Xaml::Controls::ICalendarViewDayItemStatics|0
 get_IsBlackoutProperty|Windows::UI::Xaml::Controls::ICalendarViewDayItemStatics|0
@@ -12607,7 +12613,6 @@ get_Cancel|Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs|0
 get_UIElement|Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs|0
 get_Value|Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs|0
 put_Cancel|Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventHandler|0
 get_ActualWidth|Windows::UI::Xaml::Controls::IColumnDefinition|0
 get_MaxWidth|Windows::UI::Xaml::Controls::IColumnDefinition|0
 get_MinWidth|Windows::UI::Xaml::Controls::IColumnDefinition|0
@@ -12822,7 +12827,6 @@ get_CursorLeft|Windows::UI::Xaml::Controls::IContextMenuEventArgs|0
 get_CursorTop|Windows::UI::Xaml::Controls::IContextMenuEventArgs|0
 get_Handled|Windows::UI::Xaml::Controls::IContextMenuEventArgs|0
 put_Handled|Windows::UI::Xaml::Controls::IContextMenuEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IContextMenuOpeningEventHandler|0
 abi_ApplyTemplate|Windows::UI::Xaml::Controls::IControl|0
 abi_Focus|Windows::UI::Xaml::Controls::IControl|0
 add_IsEnabledChanged|Windows::UI::Xaml::Controls::IControl|0
@@ -13020,7 +13024,6 @@ get_Cancel|Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs|0
 get_Data|Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs|0
 get_Items|Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs|0
 put_Cancel|Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IDragItemsStartingEventHandler|0
 get_UseTouchAnimationsForAllNavigation|Windows::UI::Xaml::Controls::IFlipView2|0
 put_UseTouchAnimationsForAllNavigation|Windows::UI::Xaml::Controls::IFlipView2|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IFlipViewFactory|0
@@ -13167,7 +13170,6 @@ put_HeaderTemplate|Windows::UI::Xaml::Controls::IHubSection|0
 put_IsHeaderInteractive|Windows::UI::Xaml::Controls::IHubSection|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IHubSectionFactory|0
 get_Section|Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventHandler|0
 get_ContentTemplateProperty|Windows::UI::Xaml::Controls::IHubSectionStatics|0
 get_HeaderProperty|Windows::UI::Xaml::Controls::IHubSectionStatics|0
 get_HeaderTemplateProperty|Windows::UI::Xaml::Controls::IHubSectionStatics|0
@@ -13205,7 +13207,6 @@ get_StretchProperty|Windows::UI::Xaml::Controls::IImageStatics|0
 get_InkPresenter|Windows::UI::Xaml::Controls::IInkCanvas|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IInkCanvasFactory|0
 get_ClickedItem|Windows::UI::Xaml::Controls::IItemClickEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IItemClickEventHandler|0
 abi_ContainerFromIndex|Windows::UI::Xaml::Controls::IItemContainerGenerator|1
 abi_ContainerFromItem|Windows::UI::Xaml::Controls::IItemContainerGenerator|1
 abi_GenerateNext|Windows::UI::Xaml::Controls::IItemContainerGenerator|0
@@ -13463,8 +13464,6 @@ abi_CreateInstance|Windows::UI::Xaml::Controls::IListViewFactory|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IListViewHeaderItemFactory|0
 get_TemplateSettings|Windows::UI::Xaml::Controls::IListViewItem|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::IListViewItemFactory|0
-abi_Invoke|Windows::UI::Xaml::Controls::IListViewItemToKeyHandler|0
-abi_Invoke|Windows::UI::Xaml::Controls::IListViewKeyToItemHandler|0
 abi_GetRelativeScrollPosition|Windows::UI::Xaml::Controls::IListViewPersistenceHelperStatics|0
 abi_SetRelativeScrollPositionAsync|Windows::UI::Xaml::Controls::IListViewPersistenceHelperStatics|0
 abi_AddAudioEffect|Windows::UI::Xaml::Controls::IMediaElement|0
@@ -13681,7 +13680,6 @@ get_TextProperty|Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics|0
 abi_Navigate|Windows::UI::Xaml::Controls::INavigate|0
 get_Value|Windows::UI::Xaml::Controls::INotifyEventArgs|0
 get_CallingUri|Windows::UI::Xaml::Controls::INotifyEventArgs2|0
-abi_Invoke|Windows::UI::Xaml::Controls::INotifyEventHandler|0
 get_BottomAppBar|Windows::UI::Xaml::Controls::IPage|0
 get_Frame|Windows::UI::Xaml::Controls::IPage|0
 get_NavigationCacheMode|Windows::UI::Xaml::Controls::IPage|0
@@ -14288,11 +14286,9 @@ get_QueryText|Windows::UI::Xaml::Controls::ISearchBoxSuggestionsRequestedEventAr
 get_Request|Windows::UI::Xaml::Controls::ISearchBoxSuggestionsRequestedEventArgs|0
 get_AddedSections|Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs|0
 get_RemovedSections|Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::ISectionsInViewChangedEventHandler|0
 get_AddedItems|Windows::UI::Xaml::Controls::ISelectionChangedEventArgs|0
 get_RemovedItems|Windows::UI::Xaml::Controls::ISelectionChangedEventArgs|0
 abi_CreateInstanceWithRemovedItemsAndAddedItems|Windows::UI::Xaml::Controls::ISelectionChangedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Controls::ISelectionChangedEventHandler|0
 abi_ToggleActiveView|Windows::UI::Xaml::Controls::ISemanticZoom|0
 add_ViewChangeCompleted|Windows::UI::Xaml::Controls::ISemanticZoom|0
 add_ViewChangeStarted|Windows::UI::Xaml::Controls::ISemanticZoom|0
@@ -14336,7 +14332,6 @@ get_SourceItem|Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs|0
 put_DestinationItem|Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs|0
 put_IsSourceZoomedInView|Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs|0
 put_SourceItem|Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventHandler|0
 abi_Hide|Windows::UI::Xaml::Controls::ISettingsFlyout|0
 abi_Show|Windows::UI::Xaml::Controls::ISettingsFlyout|0
 abi_ShowIndependent|Windows::UI::Xaml::Controls::ISettingsFlyout|0
@@ -14619,7 +14614,6 @@ get_PreventKeyboardDisplayOnProgrammaticFocusProperty|Windows::UI::Xaml::Control
 get_SelectionHighlightColorProperty|Windows::UI::Xaml::Controls::ITextBoxStatics2|0
 get_DesiredCandidateWindowAlignmentProperty|Windows::UI::Xaml::Controls::ITextBoxStatics3|0
 get_TextReadingOrderProperty|Windows::UI::Xaml::Controls::ITextBoxStatics3|0
-abi_Invoke|Windows::UI::Xaml::Controls::ITextChangedEventHandler|0
 get_Length|Windows::UI::Xaml::Controls::ITextCompositionChangedEventArgs|0
 get_StartIndex|Windows::UI::Xaml::Controls::ITextCompositionChangedEventArgs|0
 get_Length|Windows::UI::Xaml::Controls::ITextCompositionEndedEventArgs|0
@@ -14628,7 +14622,6 @@ get_Length|Windows::UI::Xaml::Controls::ITextCompositionStartedEventArgs|0
 get_StartIndex|Windows::UI::Xaml::Controls::ITextCompositionStartedEventArgs|0
 get_Handled|Windows::UI::Xaml::Controls::ITextControlPasteEventArgs|0
 put_Handled|Windows::UI::Xaml::Controls::ITextControlPasteEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::ITextControlPasteEventHandler|0
 get_NewTime|Windows::UI::Xaml::Controls::ITimePickedEventArgs|0
 get_OldTime|Windows::UI::Xaml::Controls::ITimePickedEventArgs|0
 add_TimeChanged|Windows::UI::Xaml::Controls::ITimePicker|0
@@ -14870,7 +14863,6 @@ get_Uri|Windows::UI::Xaml::Controls::IWebViewNavigationCompletedEventArgs|0
 get_WebErrorStatus|Windows::UI::Xaml::Controls::IWebViewNavigationCompletedEventArgs|0
 get_Uri|Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs|0
 get_WebErrorStatus|Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventHandler|0
 get_Cancel|Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs|0
 get_Uri|Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs|0
 put_Cancel|Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs|0
@@ -14925,6 +14917,9 @@ get_ItemWidthProperty|Windows::UI::Xaml::Controls::IWrapGridStatics|0
 get_MaximumRowsOrColumnsProperty|Windows::UI::Xaml::Controls::IWrapGridStatics|0
 get_OrientationProperty|Windows::UI::Xaml::Controls::IWrapGridStatics|0
 get_VerticalChildrenAlignmentProperty|Windows::UI::Xaml::Controls::IWrapGridStatics|0
+abi_Invoke|Windows::UI::Xaml::Controls::ItemClickEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::ListViewItemToKeyHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::ListViewKeyToItemHandler|0
 add_BitmapRequested|Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource|0
 remove_BitmapRequested|Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource|0
 abi_CreateInstance|Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSourceFactory|0
@@ -15258,6 +15253,10 @@ abi_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView|Windows::UI::Xaml::Cont
 get_Location|Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama|0
 abi_FindNearbyWithLocationAndRadiusAsync|Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics|0
 abi_FindNearbyWithLocationAsync|Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics|0
+abi_Invoke|Windows::UI::Xaml::Controls::NotifyEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::DragCompletedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::DragDeltaEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::DragStartedEventHandler|0
 get_ClipRect|Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings|0
 get_CompactRootMargin|Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings|0
 get_CompactVerticalDelta|Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings|0
@@ -15339,15 +15338,12 @@ get_Canceled|Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs|0
 get_HorizontalChange|Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs|0
 get_VerticalChange|Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs|0
 abi_CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled|Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventHandler|0
 get_HorizontalChange|Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs|0
 get_VerticalChange|Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs|0
 abi_CreateInstanceWithHorizontalChangeAndVerticalChange|Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventHandler|0
 get_HorizontalOffset|Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs|0
 get_VerticalOffset|Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs|0
 abi_CreateInstanceWithHorizontalOffsetAndVerticalOffset|Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IDragStartedEventHandler|0
 abi_Hide|Windows::UI::Xaml::Controls::Primitives::IFlyoutBase|0
 abi_ShowAt|Windows::UI::Xaml::Controls::Primitives::IFlyoutBase|0
 add_Closed|Windows::UI::Xaml::Controls::Primitives::IFlyoutBase|0
@@ -15439,7 +15435,6 @@ get_ItemCount|Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs|0
 get_ItemUICount|Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs|0
 get_OldPosition|Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs|0
 get_Position|Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventHandler|0
 get_Disabled|Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgroundConverter|0
 get_Enabled|Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgroundConverter|0
 put_Disabled|Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgroundConverter|0
@@ -15652,7 +15647,6 @@ get_SmallChangeProperty|Windows::UI::Xaml::Controls::Primitives::IRangeBaseStati
 get_ValueProperty|Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics|0
 get_NewValue|Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs|0
 get_OldValue|Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventHandler|0
 get_Delay|Windows::UI::Xaml::Controls::Primitives::IRepeatButton|0
 get_Interval|Windows::UI::Xaml::Controls::Primitives::IRepeatButton|0
 put_Delay|Windows::UI::Xaml::Controls::Primitives::IRepeatButton|0
@@ -15672,7 +15666,6 @@ get_OrientationProperty|Windows::UI::Xaml::Controls::Primitives::IScrollBarStati
 get_ViewportSizeProperty|Windows::UI::Xaml::Controls::Primitives::IScrollBarStatics|0
 get_NewValue|Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs|0
 get_ScrollEventType|Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Controls::Primitives::IScrollEventHandler|0
 abi_GetIrregularSnapPoints|Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo|0
 abi_GetRegularSnapPoints|Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo|0
 add_HorizontalSnapPointsChanged|Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo|0
@@ -15751,6 +15744,17 @@ get_KnobOffToOnOffset|Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemp
 get_KnobOnToOffOffset|Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplateSettings|0
 get_FromHorizontalOffset|Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSettings|0
 get_FromVerticalOffset|Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSettings|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::Primitives::ScrollEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::SectionsInViewChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::SelectionChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::TextChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::TextControlPasteEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::CreateDefaultValueCallback|0
+abi_Invoke|Windows::UI::Xaml::Data::CurrentChangingEventHandler|0
 get_Converter|Windows::UI::Xaml::Data::IBinding|0
 get_ConverterLanguage|Windows::UI::Xaml::Data::IBinding|0
 get_ConverterParameter|Windows::UI::Xaml::Data::IBinding|0
@@ -15815,7 +15819,6 @@ get_IsCancelable|Windows::UI::Xaml::Data::ICurrentChangingEventArgs|0
 put_Cancel|Windows::UI::Xaml::Data::ICurrentChangingEventArgs|0
 abi_CreateInstance|Windows::UI::Xaml::Data::ICurrentChangingEventArgsFactory|0
 abi_CreateWithCancelableParameter|Windows::UI::Xaml::Data::ICurrentChangingEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Data::ICurrentChangingEventHandler|0
 abi_GetIndexedValue|Windows::UI::Xaml::Data::ICustomProperty|0
 abi_GetValue|Windows::UI::Xaml::Data::ICustomProperty|0
 abi_SetIndexedValue|Windows::UI::Xaml::Data::ICustomProperty|0
@@ -15837,7 +15840,6 @@ add_PropertyChanged|Windows::UI::Xaml::Data::INotifyPropertyChanged|0
 remove_PropertyChanged|Windows::UI::Xaml::Data::INotifyPropertyChanged|0
 get_PropertyName|Windows::UI::Xaml::Data::IPropertyChangedEventArgs|0
 abi_CreateInstance|Windows::UI::Xaml::Data::IPropertyChangedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Data::IPropertyChangedEventHandler|0
 get_Mode|Windows::UI::Xaml::Data::IRelativeSource|0
 put_Mode|Windows::UI::Xaml::Data::IRelativeSource|0
 abi_CreateInstance|Windows::UI::Xaml::Data::IRelativeSourceFactory|0
@@ -15849,6 +15851,9 @@ abi_LoadMoreItemsAsync|Windows::UI::Xaml::Data::ISupportIncrementalLoading|0
 get_HasMoreItems|Windows::UI::Xaml::Data::ISupportIncrementalLoading|0
 abi_Convert|Windows::UI::Xaml::Data::IValueConverter|0
 abi_ConvertBack|Windows::UI::Xaml::Data::IValueConverter|0
+abi_Invoke|Windows::UI::Xaml::Data::PropertyChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::DependencyPropertyChangedCallback|0
+abi_Invoke|Windows::UI::Xaml::DependencyPropertyChangedEventHandler|0
 get_LineHeight|Windows::UI::Xaml::Documents::IBlock|0
 get_LineStackingStrategy|Windows::UI::Xaml::Documents::IBlock|0
 get_Margin|Windows::UI::Xaml::Documents::IBlock|0
@@ -16084,6 +16089,8 @@ get_StylisticSet7Property|Windows::UI::Xaml::Documents::ITypographyStatics|0
 get_StylisticSet8Property|Windows::UI::Xaml::Documents::ITypographyStatics|0
 get_StylisticSet9Property|Windows::UI::Xaml::Documents::ITypographyStatics|0
 get_VariantsProperty|Windows::UI::Xaml::Documents::ITypographyStatics|0
+abi_Invoke|Windows::UI::Xaml::DragEventHandler|0
+abi_Invoke|Windows::UI::Xaml::ExceptionRoutedEventHandler|0
 abi_GetContainerVisual|Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics|0
 get_MinWindowHeight|Windows::UI::Xaml::IAdaptiveTrigger|0
 get_MinWindowWidth|Windows::UI::Xaml::IAdaptiveTrigger|0
@@ -16105,7 +16112,6 @@ remove_Resuming|Windows::UI::Xaml::IApplication|0
 remove_Suspending|Windows::UI::Xaml::IApplication|0
 remove_UnhandledException|Windows::UI::Xaml::IApplication|0
 abi_CreateInstance|Windows::UI::Xaml::IApplicationFactory|0
-abi_Invoke|Windows::UI::Xaml::IApplicationInitializationCallback|0
 abi_OnActivated|Windows::UI::Xaml::IApplicationOverrides|0
 abi_OnCachedFileUpdaterActivated|Windows::UI::Xaml::IApplicationOverrides|0
 abi_OnFileActivated|Windows::UI::Xaml::IApplicationOverrides|0
@@ -16120,10 +16126,8 @@ abi_LoadComponentWithResourceLocation|Windows::UI::Xaml::IApplicationStatics|0
 abi_Start|Windows::UI::Xaml::IApplicationStatics|0
 get_Current|Windows::UI::Xaml::IApplicationStatics|0
 get_Message|Windows::UI::Xaml::IBindingFailedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IBindingFailedEventHandler|0
 abi_FromRadii|Windows::UI::Xaml::ICornerRadiusHelperStatics|0
 abi_FromUniformRadius|Windows::UI::Xaml::ICornerRadiusHelperStatics|0
-abi_Invoke|Windows::UI::Xaml::ICreateDefaultValueCallback|0
 get_Handled|Windows::UI::Xaml::IDataContextChangedEventArgs|0
 get_NewValue|Windows::UI::Xaml::IDataContextChangedEventArgs|0
 put_Handled|Windows::UI::Xaml::IDataContextChangedEventArgs|0
@@ -16162,11 +16166,9 @@ abi_UnregisterPropertyChangedCallback|Windows::UI::Xaml::IDependencyObject2|0
 abi_CreateInstance|Windows::UI::Xaml::IDependencyObjectCollectionFactory|0
 abi_CreateInstance|Windows::UI::Xaml::IDependencyObjectFactory|0
 abi_GetMetadata|Windows::UI::Xaml::IDependencyProperty|0
-abi_Invoke|Windows::UI::Xaml::IDependencyPropertyChangedCallback|0
 get_NewValue|Windows::UI::Xaml::IDependencyPropertyChangedEventArgs|0
 get_OldValue|Windows::UI::Xaml::IDependencyPropertyChangedEventArgs|0
 get_Property|Windows::UI::Xaml::IDependencyPropertyChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IDependencyPropertyChangedEventHandler|0
 abi_Register|Windows::UI::Xaml::IDependencyPropertyStatics|0
 abi_RegisterAttached|Windows::UI::Xaml::IDependencyPropertyStatics|0
 get_UnsetValue|Windows::UI::Xaml::IDependencyPropertyStatics|0
@@ -16189,7 +16191,6 @@ get_DataView|Windows::UI::Xaml::IDragEventArgs2|0
 get_DragUIOverride|Windows::UI::Xaml::IDragEventArgs2|0
 get_Modifiers|Windows::UI::Xaml::IDragEventArgs2|0
 put_AcceptedOperation|Windows::UI::Xaml::IDragEventArgs2|0
-abi_Invoke|Windows::UI::Xaml::IDragEventHandler|0
 abi_Complete|Windows::UI::Xaml::IDragOperationDeferral|0
 abi_GetDeferral|Windows::UI::Xaml::IDragStartingEventArgs|0
 abi_GetPosition|Windows::UI::Xaml::IDragStartingEventArgs|0
@@ -16228,7 +16229,6 @@ get_Actions|Windows::UI::Xaml::IEventTrigger|0
 get_RoutedEvent|Windows::UI::Xaml::IEventTrigger|0
 put_RoutedEvent|Windows::UI::Xaml::IEventTrigger|0
 get_ErrorMessage|Windows::UI::Xaml::IExceptionRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IExceptionRoutedEventHandler|0
 abi_FindName|Windows::UI::Xaml::IFrameworkElement|0
 abi_SetBinding|Windows::UI::Xaml::IFrameworkElement|0
 add_LayoutUpdated|Windows::UI::Xaml::IFrameworkElement|0
@@ -16316,7 +16316,6 @@ abi_GetIsStar|Windows::UI::Xaml::IGridLengthHelperStatics|0
 get_Auto|Windows::UI::Xaml::IGridLengthHelperStatics|0
 get_ErrorTrace|Windows::UI::Xaml::IMediaFailedRoutedEventArgs|0
 abi_FromCoordinates|Windows::UI::Xaml::IPointHelperStatics|0
-abi_Invoke|Windows::UI::Xaml::IPropertyChangedCallback|0
 get_CreateDefaultValueCallback|Windows::UI::Xaml::IPropertyMetadata|0
 get_DefaultValue|Windows::UI::Xaml::IPropertyMetadata|0
 abi_CreateInstanceWithDefaultValue|Windows::UI::Xaml::IPropertyMetadataFactory|0
@@ -16348,7 +16347,6 @@ put_Source|Windows::UI::Xaml::IResourceDictionary|0
 abi_CreateInstance|Windows::UI::Xaml::IResourceDictionaryFactory|0
 get_OriginalSource|Windows::UI::Xaml::IRoutedEventArgs|0
 abi_CreateInstance|Windows::UI::Xaml::IRoutedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::IRoutedEventHandler|0
 get_Property|Windows::UI::Xaml::ISetter|0
 get_Value|Windows::UI::Xaml::ISetter|0
 put_Property|Windows::UI::Xaml::ISetter|0
@@ -16360,7 +16358,6 @@ get_IsSealed|Windows::UI::Xaml::ISetterBaseCollection|0
 abi_CreateInstance|Windows::UI::Xaml::ISetterFactory|0
 get_NewSize|Windows::UI::Xaml::ISizeChangedEventArgs|0
 get_PreviousSize|Windows::UI::Xaml::ISizeChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::ISizeChangedEventHandler|0
 abi_Equals|Windows::UI::Xaml::ISizeHelperStatics|0
 abi_FromDimensions|Windows::UI::Xaml::ISizeHelperStatics|0
 abi_GetIsEmpty|Windows::UI::Xaml::ISizeHelperStatics|0
@@ -16378,7 +16375,6 @@ get_TargetType|Windows::UI::Xaml::IStyle|0
 put_BasedOn|Windows::UI::Xaml::IStyle|0
 put_TargetType|Windows::UI::Xaml::IStyle|0
 abi_CreateInstance|Windows::UI::Xaml::IStyleFactory|0
-abi_Invoke|Windows::UI::Xaml::ISuspendingEventHandler|0
 get_Path|Windows::UI::Xaml::ITargetPropertyPath|0
 get_Target|Windows::UI::Xaml::ITargetPropertyPath|0
 put_Path|Windows::UI::Xaml::ITargetPropertyPath|0
@@ -16545,7 +16541,6 @@ get_Exception|Windows::UI::Xaml::IUnhandledExceptionEventArgs|0
 get_Handled|Windows::UI::Xaml::IUnhandledExceptionEventArgs|0
 get_Message|Windows::UI::Xaml::IUnhandledExceptionEventArgs|0
 put_Handled|Windows::UI::Xaml::IUnhandledExceptionEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IUnhandledExceptionEventHandler|0
 get_Name|Windows::UI::Xaml::IVisualState|0
 get_Storyboard|Windows::UI::Xaml::IVisualState|0
 put_Storyboard|Windows::UI::Xaml::IVisualState|0
@@ -16557,7 +16552,6 @@ get_OldState|Windows::UI::Xaml::IVisualStateChangedEventArgs|0
 put_Control|Windows::UI::Xaml::IVisualStateChangedEventArgs|0
 put_NewState|Windows::UI::Xaml::IVisualStateChangedEventArgs|0
 put_OldState|Windows::UI::Xaml::IVisualStateChangedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IVisualStateChangedEventHandler|0
 add_CurrentStateChanged|Windows::UI::Xaml::IVisualStateGroup|0
 add_CurrentStateChanging|Windows::UI::Xaml::IVisualStateGroup|0
 get_CurrentState|Windows::UI::Xaml::IVisualStateGroup|0
@@ -16603,17 +16597,14 @@ remove_Closed|Windows::UI::Xaml::IWindow|0
 remove_SizeChanged|Windows::UI::Xaml::IWindow|0
 remove_VisibilityChanged|Windows::UI::Xaml::IWindow|0
 abi_SetTitleBar|Windows::UI::Xaml::IWindow2|0
-abi_Invoke|Windows::UI::Xaml::IWindowActivatedEventHandler|0
-abi_Invoke|Windows::UI::Xaml::IWindowClosedEventHandler|0
 get_Window|Windows::UI::Xaml::IWindowCreatedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::IWindowSizeChangedEventHandler|0
 get_Current|Windows::UI::Xaml::IWindowStatics|0
-abi_Invoke|Windows::UI::Xaml::IWindowVisibilityChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::DoubleTappedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::HoldingEventHandler|0
 abi_CanExecute|Windows::UI::Xaml::Input::ICommand|0
 abi_Execute|Windows::UI::Xaml::Input::ICommand|0
 add_CanExecuteChanged|Windows::UI::Xaml::Input::ICommand|0
 remove_CanExecuteChanged|Windows::UI::Xaml::Input::ICommand|0
-abi_Invoke|Windows::UI::Xaml::Input::IDoubleTappedEventHandler|0
 abi_GetPosition|Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs|0
 get_PointerDeviceType|Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs|0
@@ -16622,7 +16613,6 @@ abi_GetFocusedElement|Windows::UI::Xaml::Input::IFocusManagerStatics|0
 abi_TryMoveFocus|Windows::UI::Xaml::Input::IFocusManagerStatics2|0
 abi_FindNextFocusableElement|Windows::UI::Xaml::Input::IFocusManagerStatics3|0
 abi_FindNextFocusableElementWithHint|Windows::UI::Xaml::Input::IFocusManagerStatics3|0
-abi_Invoke|Windows::UI::Xaml::Input::IHoldingEventHandler|0
 abi_GetPosition|Windows::UI::Xaml::Input::IHoldingRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IHoldingRoutedEventArgs|0
 get_HoldingState|Windows::UI::Xaml::Input::IHoldingRoutedEventArgs|0
@@ -16644,13 +16634,11 @@ get_Names|Windows::UI::Xaml::Input::IInputScope|0
 get_NameValue|Windows::UI::Xaml::Input::IInputScopeName|0
 put_NameValue|Windows::UI::Xaml::Input::IInputScopeName|0
 abi_CreateInstance|Windows::UI::Xaml::Input::IInputScopeNameFactory|0
-abi_Invoke|Windows::UI::Xaml::Input::IKeyEventHandler|0
 get_Handled|Windows::UI::Xaml::Input::IKeyRoutedEventArgs|0
 get_Key|Windows::UI::Xaml::Input::IKeyRoutedEventArgs|0
 get_KeyStatus|Windows::UI::Xaml::Input::IKeyRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IKeyRoutedEventArgs|0
 get_OriginalKey|Windows::UI::Xaml::Input::IKeyRoutedEventArgs2|0
-abi_Invoke|Windows::UI::Xaml::Input::IManipulationCompletedEventHandler|0
 get_Container|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
 get_Cumulative|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
@@ -16659,7 +16647,6 @@ get_PointerDeviceType|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEven
 get_Position|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
 get_Velocities|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Input::IManipulationDeltaEventHandler|0
 abi_Complete|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
 get_Container|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
 get_Cumulative|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
@@ -16670,7 +16657,6 @@ get_PointerDeviceType|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArg
 get_Position|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
 get_Velocities|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Input::IManipulationInertiaStartingEventHandler|0
 get_Container|Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs|0
 get_Cumulative|Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs|0
 get_Delta|Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs|0
@@ -16689,7 +16675,6 @@ get_Radius|Windows::UI::Xaml::Input::IManipulationPivot|0
 put_Center|Windows::UI::Xaml::Input::IManipulationPivot|0
 put_Radius|Windows::UI::Xaml::Input::IManipulationPivot|0
 abi_CreateInstanceWithCenterAndRadius|Windows::UI::Xaml::Input::IManipulationPivotFactory|0
-abi_Invoke|Windows::UI::Xaml::Input::IManipulationStartedEventHandler|0
 abi_Complete|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs|0
 get_Container|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs|0
 get_Cumulative|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs|0
@@ -16698,7 +16683,6 @@ get_PointerDeviceType|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventA
 get_Position|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs|0
 abi_CreateInstance|Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Input::IManipulationStartingEventHandler|0
 get_Container|Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs|0
 get_Mode|Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs|0
@@ -16711,23 +16695,30 @@ get_IsInContact|Windows::UI::Xaml::Input::IPointer|0
 get_IsInRange|Windows::UI::Xaml::Input::IPointer|0
 get_PointerDeviceType|Windows::UI::Xaml::Input::IPointer|0
 get_PointerId|Windows::UI::Xaml::Input::IPointer|0
-abi_Invoke|Windows::UI::Xaml::Input::IPointerEventHandler|0
 abi_GetCurrentPoint|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
 abi_GetIntermediatePoints|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
 get_KeyModifiers|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
 get_Pointer|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IPointerRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Input::IRightTappedEventHandler|0
 abi_GetPosition|Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs|0
 get_PointerDeviceType|Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Input::ITappedEventHandler|0
 abi_GetPosition|Windows::UI::Xaml::Input::ITappedRoutedEventArgs|0
 get_Handled|Windows::UI::Xaml::Input::ITappedRoutedEventArgs|0
 get_PointerDeviceType|Windows::UI::Xaml::Input::ITappedRoutedEventArgs|0
 put_Handled|Windows::UI::Xaml::Input::ITappedRoutedEventArgs|0
+abi_Invoke|Windows::UI::Xaml::Input::KeyEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::ManipulationCompletedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::ManipulationDeltaEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::ManipulationStartedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::ManipulationStartingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::PointerEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::RightTappedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Input::TappedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler|0
 abi_First|Windows::UI::Xaml::Interop::IBindableIterable|0
 abi_MoveNext|Windows::UI::Xaml::Interop::IBindableIterator|0
 get_Current|Windows::UI::Xaml::Interop::IBindableIterator|0
@@ -16744,7 +16735,6 @@ abi_RemoveAt|Windows::UI::Xaml::Interop::IBindableVector|0
 abi_RemoveAtEnd|Windows::UI::Xaml::Interop::IBindableVector|0
 abi_SetAt|Windows::UI::Xaml::Interop::IBindableVector|0
 get_Size|Windows::UI::Xaml::Interop::IBindableVector|0
-abi_Invoke|Windows::UI::Xaml::Interop::IBindableVectorChangedEventHandler|0
 abi_GetAt|Windows::UI::Xaml::Interop::IBindableVectorView|0
 abi_IndexOf|Windows::UI::Xaml::Interop::IBindableVectorView|0
 get_Size|Windows::UI::Xaml::Interop::IBindableVectorView|0
@@ -16756,7 +16746,7 @@ get_NewStartingIndex|Windows::UI::Xaml::Interop::INotifyCollectionChangedEventAr
 get_OldItems|Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs|0
 get_OldStartingIndex|Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs|0
 abi_CreateInstanceWithAllParameters|Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory|0
-abi_Invoke|Windows::UI::Xaml::Interop::INotifyCollectionChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler|0
 abi_Connect|Windows::UI::Xaml::Markup::IComponentConnector|0
 abi_GetBindingConnector|Windows::UI::Xaml::Markup::IComponentConnector2|0
 abi_ProcessBindings|Windows::UI::Xaml::Markup::IDataTemplateComponent|0
@@ -17434,7 +17424,6 @@ put_Point1|Windows::UI::Xaml::Media::IQuadraticBezierSegment|0
 put_Point2|Windows::UI::Xaml::Media::IQuadraticBezierSegment|0
 get_Point1Property|Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics|0
 get_Point2Property|Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics|0
-abi_Invoke|Windows::UI::Xaml::Media::IRateChangedRoutedEventHandler|0
 get_Rect|Windows::UI::Xaml::Media::IRectangleGeometry|0
 put_Rect|Windows::UI::Xaml::Media::IRectangleGeometry|0
 get_RectProperty|Windows::UI::Xaml::Media::IRectangleGeometryStatics|0
@@ -17494,7 +17483,6 @@ put_Time|Windows::UI::Xaml::Media::ITimelineMarker|0
 put_Type|Windows::UI::Xaml::Media::ITimelineMarker|0
 get_Marker|Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs|0
 put_Marker|Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventHandler|0
 get_TextProperty|Windows::UI::Xaml::Media::ITimelineMarkerStatics|0
 get_TimeProperty|Windows::UI::Xaml::Media::ITimelineMarkerStatics|0
 get_TypeProperty|Windows::UI::Xaml::Media::ITimelineMarkerStatics|0
@@ -17517,6 +17505,7 @@ abi_GetChild|Windows::UI::Xaml::Media::IVisualTreeHelperStatics|0
 abi_GetChildrenCount|Windows::UI::Xaml::Media::IVisualTreeHelperStatics|0
 abi_GetParent|Windows::UI::Xaml::Media::IVisualTreeHelperStatics|0
 abi_GetOpenPopups|Windows::UI::Xaml::Media::IVisualTreeHelperStatics2|0
+abi_Invoke|Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler|0
 add_DownloadProgress|Windows::UI::Xaml::Media::Imaging::IBitmapImage|0
 add_ImageFailed|Windows::UI::Xaml::Media::Imaging::IBitmapImage|0
 add_ImageOpened|Windows::UI::Xaml::Media::Imaging::IBitmapImage|0
@@ -17548,7 +17537,6 @@ get_PixelHeightProperty|Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics|
 get_PixelWidthProperty|Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics|0
 get_Progress|Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs|0
 put_Progress|Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventHandler|0
 abi_GetPixelsAsync|Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap|0
 abi_RenderAsync|Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap|0
 abi_RenderToSizeAsync|Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap|0
@@ -17618,15 +17606,14 @@ get_DepthProperty|Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
 get_OffsetXProperty|Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics|0
 get_OffsetYProperty|Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics|0
 abi_CreateInstance|Windows::UI::Xaml::Media::Media3D::ITransform3DFactory|0
-abi_Invoke|Windows::UI::Xaml::Navigation::ILoadCompletedEventHandler|0
-abi_Invoke|Windows::UI::Xaml::Navigation::INavigatedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Media::RateChangedRoutedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Media::TimelineMarkerRoutedEventHandler|0
 get_Cancel|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs|0
 get_NavigationMode|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs|0
 get_SourcePageType|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs|0
 put_Cancel|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs|0
 get_NavigationTransitionInfo|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2|0
 get_Parameter|Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2|0
-abi_Invoke|Windows::UI::Xaml::Navigation::INavigatingCancelEventHandler|0
 get_Content|Windows::UI::Xaml::Navigation::INavigationEventArgs|0
 get_NavigationMode|Windows::UI::Xaml::Navigation::INavigationEventArgs|0
 get_Parameter|Windows::UI::Xaml::Navigation::INavigationEventArgs|0
@@ -17638,20 +17625,22 @@ get_Exception|Windows::UI::Xaml::Navigation::INavigationFailedEventArgs|0
 get_Handled|Windows::UI::Xaml::Navigation::INavigationFailedEventArgs|0
 get_SourcePageType|Windows::UI::Xaml::Navigation::INavigationFailedEventArgs|0
 put_Handled|Windows::UI::Xaml::Navigation::INavigationFailedEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Navigation::INavigationFailedEventHandler|0
-abi_Invoke|Windows::UI::Xaml::Navigation::INavigationStoppedEventHandler|0
 get_NavigationTransitionInfo|Windows::UI::Xaml::Navigation::IPageStackEntry|0
 get_Parameter|Windows::UI::Xaml::Navigation::IPageStackEntry|0
 get_SourcePageType|Windows::UI::Xaml::Navigation::IPageStackEntry|0
 abi_CreateInstance|Windows::UI::Xaml::Navigation::IPageStackEntryFactory|0
 get_SourcePageTypeProperty|Windows::UI::Xaml::Navigation::IPageStackEntryStatics|0
+abi_Invoke|Windows::UI::Xaml::Navigation::LoadCompletedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Navigation::NavigatedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Navigation::NavigatingCancelEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Navigation::NavigationFailedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Navigation::NavigationStoppedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Printing::AddPagesEventHandler|0
+abi_Invoke|Windows::UI::Xaml::Printing::GetPreviewPageEventHandler|0
 get_PrintTaskOptions|Windows::UI::Xaml::Printing::IAddPagesEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Printing::IAddPagesEventHandler|0
 get_PageNumber|Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Printing::IGetPreviewPageEventHandler|0
 get_CurrentPreviewPageNumber|Windows::UI::Xaml::Printing::IPaginateEventArgs|0
 get_PrintTaskOptions|Windows::UI::Xaml::Printing::IPaginateEventArgs|0
-abi_Invoke|Windows::UI::Xaml::Printing::IPaginateEventHandler|0
 abi_AddPage|Windows::UI::Xaml::Printing::IPrintDocument|0
 abi_AddPagesComplete|Windows::UI::Xaml::Printing::IPrintDocument|0
 abi_InvalidatePreview|Windows::UI::Xaml::Printing::IPrintDocument|0
@@ -17666,10 +17655,13 @@ remove_GetPreviewPage|Windows::UI::Xaml::Printing::IPrintDocument|0
 remove_Paginate|Windows::UI::Xaml::Printing::IPrintDocument|0
 abi_CreateInstance|Windows::UI::Xaml::Printing::IPrintDocumentFactory|0
 get_DocumentSourceProperty|Windows::UI::Xaml::Printing::IPrintDocumentStatics|0
+abi_Invoke|Windows::UI::Xaml::Printing::PaginateEventHandler|0
+abi_Invoke|Windows::UI::Xaml::PropertyChangedCallback|0
 abi_CreateInstance|Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory|0
 abi_GetResource|Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides|0
 get_Current|Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics|0
 put_Current|Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics|0
+abi_Invoke|Windows::UI::Xaml::RoutedEventHandler|0
 get_X1|Windows::UI::Xaml::Shapes::ILine|0
 get_X2|Windows::UI::Xaml::Shapes::ILine|0
 get_Y1|Windows::UI::Xaml::Shapes::ILine|0
@@ -17739,6 +17731,14 @@ get_StrokeMiterLimitProperty|Windows::UI::Xaml::Shapes::IShapeStatics|0
 get_StrokeProperty|Windows::UI::Xaml::Shapes::IShapeStatics|0
 get_StrokeStartLineCapProperty|Windows::UI::Xaml::Shapes::IShapeStatics|0
 get_StrokeThicknessProperty|Windows::UI::Xaml::Shapes::IShapeStatics|0
+abi_Invoke|Windows::UI::Xaml::SizeChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::SuspendingEventHandler|0
+abi_Invoke|Windows::UI::Xaml::UnhandledExceptionEventHandler|0
+abi_Invoke|Windows::UI::Xaml::VisualStateChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::WindowActivatedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::WindowClosedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::WindowSizeChangedEventHandler|0
+abi_Invoke|Windows::UI::Xaml::WindowVisibilityChangedEventHandler|0
 abi_CancelAsyncOperations|Windows::Web::AtomPub::IAtomPubClient|0
 abi_CreateMediaResourceAsync|Windows::Web::AtomPub::IAtomPubClient|0
 abi_CreateResourceAsync|Windows::Web::AtomPub::IAtomPubClient|0

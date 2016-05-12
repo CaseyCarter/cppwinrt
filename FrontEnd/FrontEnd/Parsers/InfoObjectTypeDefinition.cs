@@ -22,11 +22,11 @@ namespace Microsoft.Wcl.Parsers
             {
                 return TypeDefinitionKind.RuntimeClass;
             }
-            else if (obj is InterfaceInfo && ((InterfaceInfo)obj).Delegate != null)
+            else if (obj is InterfaceInfo && ((InterfaceInfo)obj).Delegate)
             {
                 return TypeDefinitionKind.Delegate;
             }
-            else if (obj is InterfaceInfo && ((InterfaceInfo)obj).Delegate == null)
+            else if (obj is InterfaceInfo)
             {
                 return TypeDefinitionKind.Interface;
             }

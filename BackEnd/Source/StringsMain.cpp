@@ -1,6 +1,7 @@
 #include "Path.h"
 #include "FileView.h"
 #include "Output.h"
+#include <algorithm>
 
 namespace Modern {
     
@@ -14,9 +15,9 @@ void WriteArgument(Target & target, char const value)
 
 int main()
 {
-	using namespace Modern;
-	
-	OptimizeDebugOutput();
+    using namespace Modern;
+    
+    OptimizeDebugOutput();
 
     Path::SetCurrentDirectory("Source\\Modern");
 
@@ -26,14 +27,21 @@ int main()
     Write(h, "#pragma once\n\nnamespace Modern { namespace Strings {\n\n");
     Write(cpp, "#include \"Precompiled.h\"\n\nnamespace Modern { namespace Strings {\n\n");
 
-    Path::FindFiles("*", [&](char const * name)
+    Path::FindFiles("*", [&](char const * name, bool const folder)
     {
+        if (folder)
+        {
+            return;
+        }
+
         FileView file(name);
         MODERN_ASSERT(file);
 
         size_t fileSize = file.Size() + 1;
         size_t const length = Path::FindExtension(name) - name;
-        std::string const variableName(name, length);
+        std::string variableName(name, length);
+
+        std::replace(begin(variableName), end(variableName), '.', '_');
 
         Write(cpp, "extern char const %[] = { ", variableName);
 
@@ -43,6 +51,12 @@ int main()
             {
                 --fileSize;
                 continue;
+            }
+
+            if ('\n' == c)
+            {
+                ++fileSize;
+                Write(cpp, "0x%,", '\r');
             }
 
             Write(cpp, "0x%,", c);

@@ -16,9 +16,6 @@
     <ClCompile Include="Source\Settings.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\sqlite3.c">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Strings.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
@@ -28,10 +25,10 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
-      <UniqueIdentifier>{ab3c5ed4-5d63-4aba-b7cd-5cc38793f2e5}</UniqueIdentifier>
+      <UniqueIdentifier>{25230c82-d36a-4013-ba43-4b2b655e980a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Sources">
-      <UniqueIdentifier>{4aa6dfd7-a10f-4c1f-950d-25a5b538d32b}</UniqueIdentifier>
+      <UniqueIdentifier>{f7e5e81b-4100-4896-9615-8f12e949a05f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +68,6 @@
     <ClInclude Include="Source\SQLite.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\sqlite3.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Strings.h">
       <Filter>Headers</Filter>
     </ClInclude>
@@ -86,7 +80,7 @@
     <ClInclude Include="Source\Version.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\write.h">
+    <ClInclude Include="Source\Write.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Writers.h">

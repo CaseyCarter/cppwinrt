@@ -1,122 +1,122 @@
 
 inline bool operator==(hstring_ref left, hstring_ref right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, hstring const & right) noexcept
+inline bool operator==(hstring_ref left, const hstring & right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring const & left, hstring_ref right) noexcept
+inline bool operator==(const hstring & left, hstring_ref right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring const & left, hstring const & right) noexcept
+inline bool operator==(const hstring & left, const hstring & right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, wchar_t const * const right) noexcept
+inline bool operator==(hstring_ref left, const wchar_t * const right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right, right + wcslen(right));
+    return std::equal(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator==(wchar_t const * const left, hstring_ref right) noexcept
+inline bool operator==(const wchar_t * const left, hstring_ref right) noexcept
 {
-	return std::equal(left, left + wcslen(left), right.begin(), right.end());
+    return std::equal(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, std::wstring const & right) noexcept
+inline bool operator==(hstring_ref left, const std::wstring & right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(std::wstring const & left, hstring_ref right) noexcept
+inline bool operator==(const std::wstring & left, hstring_ref right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring const & left, wchar_t const * const right) noexcept
+inline bool operator==(const hstring & left, const wchar_t * const right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right, right + wcslen(right));
+    return std::equal(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator==(wchar_t const * const left, hstring const & right) noexcept
+inline bool operator==(const wchar_t * const left, const hstring & right) noexcept
 {
-	return std::equal(left, left + wcslen(left), right.begin(), right.end());
+    return std::equal(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator==(hstring const & left, std::wstring const & right) noexcept
+inline bool operator==(const hstring & left, const std::wstring & right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(std::wstring const & left, hstring const & right) noexcept
+inline bool operator==(const std::wstring & left, const hstring & right) noexcept
 {
-	return std::equal(left.begin(), left.end(), right.begin(), right.end());
+    return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
 inline bool operator<(hstring_ref left, hstring_ref right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, hstring const & right) noexcept
+inline bool operator<(hstring_ref left, const hstring & right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring const & left, hstring_ref right) noexcept
+inline bool operator<(const hstring & left, hstring_ref right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring const & left, hstring const & right) noexcept
+inline bool operator<(const hstring & left, const hstring & right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, wchar_t const * const right) noexcept
+inline bool operator<(hstring_ref left, const wchar_t * const right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right, right + wcslen(right));
+    return std::lexicographical_compare(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator<(wchar_t const * const left, hstring_ref right) noexcept
+inline bool operator<(const wchar_t * const left, hstring_ref right) noexcept
 {
-	return std::lexicographical_compare(left, left + wcslen(left), right.begin(), right.end());
+    return std::lexicographical_compare(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, std::wstring const & right) noexcept
+inline bool operator<(hstring_ref left, const std::wstring & right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(std::wstring const & left, hstring_ref right) noexcept
+inline bool operator<(const std::wstring & left, hstring_ref right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring const & left, wchar_t const * const right) noexcept
+inline bool operator<(const hstring & left, const wchar_t * const right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right, right + wcslen(right));
+    return std::lexicographical_compare(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator<(wchar_t const * const left, hstring const & right) noexcept
+inline bool operator<(const wchar_t * const left, const hstring & right) noexcept
 {
-	return std::lexicographical_compare(left, left + wcslen(left), right.begin(), right.end());
+    return std::lexicographical_compare(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator<(hstring const & left, std::wstring const & right) noexcept
+inline bool operator<(const hstring & left, const std::wstring & right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(std::wstring const & left, hstring const & right) noexcept
+inline bool operator<(const std::wstring & left, const hstring & right) noexcept
 {
-	return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
+    return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
 inline bool operator!=(hstring_ref left, hstring_ref right) noexcept { return !(left == right); }
@@ -124,59 +124,57 @@ inline bool operator >(hstring_ref left, hstring_ref right) noexcept { return ri
 inline bool operator<=(hstring_ref left, hstring_ref right) noexcept { return !(right < left); }
 inline bool operator>=(hstring_ref left, hstring_ref right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, wchar_t const * const right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, wchar_t const * const right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, wchar_t const * const right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, wchar_t const * const right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_ref left, const wchar_t * const right) noexcept { return !(left == right); }
+inline bool operator >(hstring_ref left, const wchar_t * const right) noexcept { return right < left; }
+inline bool operator<=(hstring_ref left, const wchar_t * const right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_ref left, const wchar_t * const right) noexcept { return !(left < right); }
 
-inline bool operator!=(wchar_t const * const left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(wchar_t const * const left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(wchar_t const * const left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(wchar_t const * const left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const wchar_t * const left, hstring_ref right) noexcept { return !(left == right); }
+inline bool operator >(const wchar_t * const left, hstring_ref right) noexcept { return right < left; }
+inline bool operator<=(const wchar_t * const left, hstring_ref right) noexcept { return !(right < left); }
+inline bool operator>=(const wchar_t * const left, hstring_ref right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, std::wstring const & right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, std::wstring const & right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, std::wstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, std::wstring const & right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_ref left, const std::wstring & right) noexcept { return !(left == right); }
+inline bool operator >(hstring_ref left, const std::wstring & right) noexcept { return right < left; }
+inline bool operator<=(hstring_ref left, const std::wstring & right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_ref left, const std::wstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(std::wstring const & left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(std::wstring const & left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(std::wstring const & left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(std::wstring const & left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const std::wstring & left, hstring_ref right) noexcept { return !(left == right); }
+inline bool operator >(const std::wstring & left, hstring_ref right) noexcept { return right < left; }
+inline bool operator<=(const std::wstring & left, hstring_ref right) noexcept { return !(right < left); }
+inline bool operator>=(const std::wstring & left, hstring_ref right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, hstring const & right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, hstring const & right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, hstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, hstring const & right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_ref left, const hstring & right) noexcept { return !(left == right); }
+inline bool operator >(hstring_ref left, const hstring & right) noexcept { return right < left; }
+inline bool operator<=(hstring_ref left, const hstring & right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_ref left, const hstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring const & left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(hstring const & left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(hstring const & left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(hstring const & left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const hstring & left, hstring_ref right) noexcept { return !(left == right); }
+inline bool operator >(const hstring & left, hstring_ref right) noexcept { return right < left; }
+inline bool operator<=(const hstring & left, hstring_ref right) noexcept { return !(right < left); }
+inline bool operator>=(const hstring & left, hstring_ref right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring const & left, hstring const & right) noexcept { return !(left == right); }
-inline bool operator >(hstring const & left, hstring const & right) noexcept { return right < left; }
-inline bool operator<=(hstring const & left, hstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring const & left, hstring const & right) noexcept { return !(left < right); }
+inline bool operator!=(const hstring & left, const hstring & right) noexcept { return !(left == right); }
+inline bool operator >(const hstring & left, const hstring & right) noexcept { return right < left; }
+inline bool operator<=(const hstring & left, const hstring & right) noexcept { return !(right < left); }
+inline bool operator>=(const hstring & left, const hstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring const & left, wchar_t const * const right) noexcept { return !(left == right); }
-inline bool operator >(hstring const & left, wchar_t const * const right) noexcept { return right < left; }
-inline bool operator<=(hstring const & left, wchar_t const * const right) noexcept { return !(right < left); }
-inline bool operator>=(hstring const & left, wchar_t const * const right) noexcept { return !(left < right); }
+inline bool operator!=(const hstring & left, const wchar_t * const right) noexcept { return !(left == right); }
+inline bool operator >(const hstring & left, const wchar_t * const right) noexcept { return right < left; }
+inline bool operator<=(const hstring & left, const wchar_t * const right) noexcept { return !(right < left); }
+inline bool operator>=(const hstring & left, const wchar_t * const right) noexcept { return !(left < right); }
 
-inline bool operator!=(wchar_t const * const left, hstring const & right) noexcept { return !(left == right); }
-inline bool operator >(wchar_t const * const left, hstring const & right) noexcept { return right < left; }
-inline bool operator<=(wchar_t const * const left, hstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(wchar_t const * const left, hstring const & right) noexcept { return !(left < right); }
+inline bool operator!=(const wchar_t * const left, const hstring & right) noexcept { return !(left == right); }
+inline bool operator >(const wchar_t * const left, const hstring & right) noexcept { return right < left; }
+inline bool operator<=(const wchar_t * const left, const hstring & right) noexcept { return !(right < left); }
+inline bool operator>=(const wchar_t * const left, const hstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring const & left, std::wstring const & right) noexcept { return !(left == right); }
-inline bool operator >(hstring const & left, std::wstring const & right) noexcept { return right < left; }
-inline bool operator<=(hstring const & left, std::wstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring const & left, std::wstring const & right) noexcept { return !(left < right); }
+inline bool operator!=(const hstring & left, const std::wstring & right) noexcept { return !(left == right); }
+inline bool operator >(const hstring & left, const std::wstring & right) noexcept { return right < left; }
+inline bool operator<=(const hstring & left, const std::wstring & right) noexcept { return !(right < left); }
+inline bool operator>=(const hstring & left, const std::wstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(std::wstring const & left, hstring const & right) noexcept { return !(left == right); }
-inline bool operator >(std::wstring const & left, hstring const & right) noexcept { return right < left; }
-inline bool operator<=(std::wstring const & left, hstring const & right) noexcept { return !(right < left); }
-inline bool operator>=(std::wstring const & left, hstring const & right) noexcept { return !(left < right); }
-
-}
+inline bool operator!=(const std::wstring & left, const hstring & right) noexcept { return !(left == right); }
+inline bool operator >(const std::wstring & left, const hstring & right) noexcept { return right < left; }
+inline bool operator<=(const std::wstring & left, const hstring & right) noexcept { return !(right < left); }
+inline bool operator>=(const std::wstring & left, const hstring & right) noexcept { return !(left < right); }

@@ -1,14 +1,12 @@
 #include "pch.h"
 
-using namespace std;
 using namespace winrt;
-
-using namespace Windows::Foundation;
-using namespace Windows::Foundation::Collections;
-using namespace Windows::Web::Syndication;
 
 std::future<void> Sample()
 {
+    using namespace Windows::Foundation;
+    using namespace Windows::Web::Syndication;
+
     Uri uri(L"http://kennykerr.ca/feed");
     SyndicationClient client;
 

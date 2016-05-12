@@ -1,7 +1,5 @@
 #pragma once
 
-#include <time.h>
-
 namespace Modern {
 
 inline unsigned Year() noexcept

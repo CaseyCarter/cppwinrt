@@ -23,8 +23,9 @@ Required(Id) as
 
 select FullName from Required, Interfaces where Id = Interfaces.RowId and Id not in (select Id from Exclude)
 union all
-select Interface from ClassInterfaces
+select Interface as FullName from ClassInterfaces
 where ClassId in (select Id from Family)
 and typeof(Interface) = 'text'
 and Interface not in (select Requires from RequiredInterfaces where InterfaceId = (select Interface from ClassInterfaces where ClassId = ?1 and IsDefault))
 and Interface not in (select Interface from ClassInterfaces where ClassId = ?1 and IsDefault)
+order by FullName

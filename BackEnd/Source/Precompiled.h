@@ -1,12 +1,14 @@
 #pragma once
 
-#pragma warning(disable:4091)
-#include <Windows.h>
-#undef CreateDirectory
-#undef FormatMessage
-#undef GetCurrentDirectory
+#include <shlobj.h>
+#include <shlwapi.h>
+#include <windows.h>
+#include <winsqlite\winsqlite3.h>
 
-#include <vector>
-#include <regex>
-#include <set>
+#include <functional>
+#include <new>
+#include <string>
 #include <time.h>
+#include <vector>
+
+#pragma comment(lib, "winsqlite3")

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 namespace Modern {
 
 inline std::wstring Format(DWORD const result,

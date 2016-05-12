@@ -9,4 +9,5 @@ Required(Id) as
 
 select FullName from Required r join Interfaces i on r.Id = i.RowId
 union all
-select Requires from RequiredInterfaces where InterfaceId = ?1 and typeof(Requires) = 'text'
+select Requires as FullName from RequiredInterfaces where InterfaceId = ?1 and typeof(Requires) = 'text'
+order by FullName

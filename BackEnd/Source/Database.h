@@ -11,39 +11,7 @@ using SQLite::Statement;
 
 void Initialize();
 Statement Prepare(char const * text);
-
-inline void StructureDepends(int const structureId, int const depends)
-{
-    static Statement s = Prepare(Strings::DatabaseStructureDepends);
-    s.Reset(structureId, depends);
-    s.Execute();
-}
-
-//
-// Library
-//
-
-template <typename T> void GetIncludes(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetIncludes);
-    s.Reset();
-
-    while (s.Step())
-    {
-        callback(s.GetString());
-    }
-}
-
-template <typename T> void GetHeaders(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetHeaders);
-    s.Reset();
-
-    while (s.Step())
-    {
-        callback(s.GetString());
-    }
-}
+void Project();
 
 template <typename T> void GetEnumerations(T callback)
 {
@@ -86,18 +54,6 @@ template <typename T> void GetEnumerators(T callback)
         Settings::EnumeratorValue = s.GetString(1);
 
         callback();
-    }
-}
-
-template <typename T> void GetEnumeratorsInt(int const enumerationId, T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetEnumeratorsInt);
-    s.Reset(enumerationId);
-
-    while (s.Step())
-    {
-        callback(s.GetString(0),
-                 s.GetInt(1));
     }
 }
 
@@ -173,9 +129,9 @@ template <typename T> void GetAbiClassDeclarations(T callback)
     }
 }
 
-template <typename T> void GetClassDeclarations(T callback)
+template <typename T> void GetClassImplementations(T callback)
 {
-    static Statement s = Prepare(Strings::DatabaseGetClassDeclarations);
+    static Statement s = Prepare(Strings::DatabaseGetClassImplementations);
     s.Reset();
 
     while (s.Step())
@@ -188,23 +144,6 @@ template <typename T> void GetClassDeclarations(T callback)
 
         callback();
     }
-}
-
-template <typename T> void GetClassImplementations(T callback)
-{
-	static Statement s = Prepare(Strings::DatabaseGetClassImplementations);
-	s.Reset();
-
-	while (s.Step())
-	{
-        Settings::ClassName = s.GetString(0);
-        Settings::Namespace = s.GetString(1);
-        Settings::ClassDefaultInterface = s.GetString(2);
-        Settings::ClassDotName = s.GetString(3);
-        Settings::ClassDotNameLength = s.GetStringLength(3);
-
-		callback();
-	}
 }
 
 template <typename T> void GetClassOverrides(T callback)
@@ -270,9 +209,11 @@ template <typename T> void GetOverrides(T callback)
 
     while (s.Step())
     {
-        callback(s.GetInt(0),
-                 s.GetString(1),
-                 s.GetString(2));
+        Settings::InterfaceId = s.GetInt(0);
+        Settings::InterfaceName = s.GetString(1);
+        Settings::Namespace = s.GetString(2);
+
+        callback();
     }
 }
 
@@ -283,7 +224,9 @@ template <typename T> void GetBases(T callback)
 
     while (s.Step())
     {
-        callback(s.GetString());
+        Settings::BaseName = s.GetString();
+
+        callback();
     }
 }
 
@@ -304,64 +247,68 @@ template <typename T> void GetClasses(T callback)
     }
 }
 
-template <typename T> void GetComponentClasses(T callback)
+template <typename T> void GetInterfaceTraits(T callback)
 {
-    static Statement s = Prepare(Strings::DatabaseGetComponentClasses);
+    static Statement s = Prepare(Strings::DatabaseGetInterfaceTraits);
     s.Reset();
 
     while (s.Step())
     {
-        Settings::ClassId = s.GetInt(0);
-        Settings::ClassName = s.GetString(1);
-        Settings::Namespace = s.GetString(2);
-        Settings::ClassDotName = s.GetString(3);
-        Settings::ClassDefaultInterface = s.GetString(4);
-        Settings::ClassActivatable = s.GetBool(5);
-
-        callback();
-    }
-}
-
-template <typename T> void GetOverridables(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetOverridables);
-    s.Reset();
-
-    while (s.Step())
-    {
-        callback(s.GetString(0),
-                 s.GetString(1));
-    }
-}
-
-template <typename T> void GetInterfaceNames(T callback)
-{
-	static Statement s = Prepare(Strings::DatabaseGetInterfaceNames);
-	s.Reset();
-
-	while (s.Step())
-	{
         Settings::InterfaceName = s.GetString(0);
         Settings::Namespace = s.GetString(1);
+        Settings::InterfaceDelegate = s.GetBool(2);
 
         callback();
-	}
+    }
+}
+
+template <typename T> void GetDelegateDefinitions(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetDelegateDefinitions);
+    s.Reset();
+
+    while (s.Step())
+    {
+        Settings::InterfaceId = s.GetInt(0);
+        Settings::InterfaceName = s.GetString(1);
+        Settings::Namespace = s.GetString(2);
+        Settings::MethodId = s.GetInt(3);
+        GetParameters();
+
+        callback();
+    }
 }
 
 template <typename T> void GetInterfaceDefinitions(T callback)
 {
-	static Statement s = Prepare(Strings::DatabaseGetInterfaceDefinitions);
-	s.Reset();
+    static Statement s = Prepare(Strings::DatabaseGetInterfaceDefinitions);
+    s.Reset();
 
-	while (s.Step())
-	{
+    while (s.Step())
+    {
         Settings::InterfaceId = s.GetInt(0);
         Settings::InterfaceName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
-        Settings::InterfaceDelegate = s.GetBool(3);
 
         callback();
-	}
+    }
+}
+
+template <typename T> void GetAbiInterfaces(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetAbiInterfaces);
+    s.Reset();
+
+    while (s.Step())
+    {
+        Settings::InterfaceId = s.GetInt(0);
+        Settings::InterfaceName = s.GetString(1);
+        Settings::Namespace = s.GetString(2);
+        Settings::InterfaceGuid = s.GetString(3);
+        Settings::InterfaceDelegate = s.GetBool(4);
+
+        callback();
+    }
 }
 
 template <typename T> void GetInterfaces(T callback)
@@ -374,8 +321,7 @@ template <typename T> void GetInterfaces(T callback)
         Settings::InterfaceId = s.GetInt(0);
         Settings::InterfaceName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
-        Settings::InterfaceDelegate = s.GetBool(3);
-        Settings::InterfaceGuid = s.GetString(4);
+        Settings::InterfaceGuid = s.GetString(3);
 
         callback();
     }
@@ -406,8 +352,6 @@ template <typename T> void GetInterfaceMethods(T callback)
         Settings::MethodId = s.GetInt(0);
         Settings::MethodName = s.GetString(1);
         Settings::MethodAbi = s.GetString(2);
-        Settings::MethodDeprecated = s.GetBool(3);
-
         GetParameters();
 
         callback();
@@ -425,11 +369,7 @@ template <typename T> void GetConstructorMethods(T callback)
         Settings::MethodName = s.GetString(1);
         GetParameters();
 
-        // TODO: Remove once arrays are implemented
-        if (!Settings::ParameterInfo.HasArrayParam)
-        {
-            callback();
-        }
+        callback();
     }
 }
 
@@ -443,48 +383,29 @@ inline void GetParameters()
 
     while (s.Step())
     {
-        // TODO: Remove once array support is added
-        if (static_cast<ParameterAttribute>(s.GetInt(3)) & ParameterAttribute::Array)
-        {
-            info.HasArrayParam = true;
-        }
-
-        if (static_cast<ParameterAttribute>(s.GetInt(3)) & ParameterAttribute::Return)
-        {
-            info.HasReturnType = true;
-            continue;
-        }
-
         info.Parameters.emplace_back(s.GetString(0),
                                      s.GetString(1),
                                      s.GetString(2),
-                                     static_cast<ParameterAttribute>(s.GetInt(3)),
-                                     static_cast<TypeCategory>(s.GetInt(4)));
-
-        Parameter const & back = info.Parameters.back();
-
-        if (back.Attribute & ParameterAttribute::In)
-        {
-            if (back.Category == TypeCategory::String)
-            {
-                //++info.StringCount;
-            }
-            else if (back.Category == TypeCategory::Delegate)
-            {
-                info.HasDelegate = true;
-            }
-        }
+                                     static_cast<TypeCategory>(s.GetInt(3)),
+                                     static_cast<ParameterFlags>(s.GetInt(4)));
     }
 
-    if (info.HasReturnType)
+    if (!info.Parameters.empty() && ParameterFlags::Return == (info.Parameters.back().Flags & ParameterFlags::Return))
     {
-        s.Reset();
-        s.Step();
-        info.Parameters.emplace_back(s.GetString(0),
-            s.GetString(1),
-            s.GetString(2),
-            static_cast<ParameterAttribute>(s.GetInt(3)),
-            static_cast<TypeCategory>(s.GetInt(4)));
+        info.HasReturnType = true;
+        
+        if (ParameterFlags::Array == (info.Parameters.back().Flags & ParameterFlags::Array))
+        {
+            info.ReturnType = "com_array<" + info.Parameters.back().ModernType() + ">";
+        }
+        else
+        {
+            info.ReturnType = info.Parameters.back().ModernType();
+        }
+    }
+    else
+    {
+        info.ReturnType = "void";
     }
 }
 
@@ -495,30 +416,20 @@ template <typename T> void GetRequiredInterfaces(T callback)
 
     while (s.Step())
     {
-        callback(s.GetString());
+        Settings::RequiredInterfaceName = s.GetString();
+
+        callback();
     }
 }
 
 template <typename T> void GetRequiredClassInterfaces(T callback)
 {
-	static Statement s = Prepare(Strings::DatabaseGetRequiredClassInterfaces);
-	s.Reset(Settings::ClassId);
-
-	while (s.Step())
-	{
-		callback(s.GetString());
-	}
-}
-
-template <typename T> void GetRequiredComponentClassInterfaces(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetRequiredComponentClassInterfaces);
+    static Statement s = Prepare(Strings::DatabaseGetRequiredClassInterfaces);
     s.Reset(Settings::ClassId);
 
     while (s.Step())
     {
-        Settings::InterfaceId = s.GetInt(0);
-        Settings::InterfaceName = s.GetString(1);
+        Settings::RequiredInterfaceName = s.GetString();
 
         callback();
     }
@@ -569,14 +480,16 @@ template <typename T> void GetUsingMethodsForInterface(T callback)
 
 template <typename T> void GetUsingMethodsForClass(T callback)
 {
-	static Statement s = Prepare(Strings::DatabaseGetUsingMethodsForClass);
-	s.Reset(Settings::ClassId);
+    static Statement s = Prepare(Strings::DatabaseGetUsingMethodsForClass);
+    s.Reset(Settings::ClassId);
 
-	while (s.Step())
-	{
-		callback(s.GetString(0),
-			s.GetString(1));
-	}
+    while (s.Step())
+    {
+        Settings::UsingInterfaceName = s.GetString(0);
+        Settings::UsingMethodName = s.GetString(1);
+
+        callback();
+    }
 }
 
 template <typename T> void GetDelegates(T callback)
@@ -588,46 +501,11 @@ template <typename T> void GetDelegates(T callback)
     {
         Settings::DelegateName = s.GetString(0);
         Settings::Namespace = s.GetString(1);
-        Settings::DelegateImplementation = s.GetString(2);
-        Settings::MethodId = s.GetInt(3);
+        Settings::MethodId = s.GetInt(2);
         GetParameters();
 
         callback();
     }
-}
-
-template <typename T> void GetComponentClassInterfaceNames(T callback)
-{
-	static Statement s = Prepare(Strings::DatabaseGetComponentClassInterfaceNames);
-	s.Reset(Settings::ClassId);
-
-	while (s.Step())
-	{
-		Settings::InterfaceName = s.GetString(0);
-
-		callback();
-	}
-}
-
-template <typename T> void GetComponentClassFactoryInterfaceNames(T callback)
-{
-	static Statement s = Prepare(Strings::DatabaseGetComponentClassFactoryInterfaceNames);
-	s.Reset(Settings::ClassId);
-
-	while (s.Step())
-	{
-		Settings::InterfaceName = s.GetString();
-
-		callback();
-	}
-}
-
-inline bool IncludesCoreWindow()
-{
-    static Statement s = Prepare(Strings::DatabaseIncludesCoreWindow);
-    s.Reset();
-    MODERN_VERIFY(s.Step());
-    return s.GetBool();
 }
 
 }}

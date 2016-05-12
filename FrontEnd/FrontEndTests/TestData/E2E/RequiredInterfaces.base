@@ -105,10 +105,10 @@ Windows::ApplicationModel::Contacts::IContactManagerStatics3|Windows::Applicatio
 Windows::ApplicationModel::Contacts::IContactSignificantOther2|Windows::ApplicationModel::Contacts::IContactSignificantOther
 Windows::ApplicationModel::Contacts::IContactStore2|Windows::ApplicationModel::Contacts::IContactStore
 Windows::ApplicationModel::Contacts::IContactWebsite2|Windows::ApplicationModel::Contacts::IContactWebsite
-Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>
-Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet|Windows::Foundation::Collections::IMap<hstring, IInspectable>
-Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>
-Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView|Windows::Foundation::Collections::IMapView<hstring, IInspectable>
+Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>
+Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>
+Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>
+Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>
 Windows::ApplicationModel::Email::IEmailMailbox2|Windows::ApplicationModel::Email::IEmailMailbox
 Windows::ApplicationModel::Resources::Core::IResourceMap|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>>
 Windows::ApplicationModel::Resources::Core::IResourceMap|Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>
@@ -206,9 +206,9 @@ Windows::Devices::Sms::ISmsStatusMessage|Windows::Devices::Sms::ISmsMessageBase
 Windows::Devices::Sms::ISmsTextMessage2|Windows::Devices::Sms::ISmsMessageBase
 Windows::Devices::Sms::ISmsVoicemailMessage|Windows::Devices::Sms::ISmsMessageBase
 Windows::Devices::Sms::ISmsWapMessage|Windows::Devices::Sms::ISmsMessageBase
-Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>
-Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IMap<hstring, IInspectable>
-Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IObservableMap<hstring, IInspectable>
+Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>
+Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>
+Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>
 Windows::Foundation::Diagnostics::ILoggingActivity2|Windows::Foundation::Diagnostics::ILoggingActivity
 Windows::Foundation::Diagnostics::ILoggingActivity2|Windows::Foundation::Diagnostics::ILoggingTarget
 Windows::Foundation::Diagnostics::ILoggingChannel2|Windows::Foundation::Diagnostics::ILoggingChannel
@@ -383,8 +383,8 @@ Windows::Storage::Streams::IRandomAccessStreamWithContentType|Windows::Storage::
 Windows::Storage::Streams::IRandomAccessStreamWithContentType|Windows::Storage::Streams::IInputStream
 Windows::Storage::Streams::IRandomAccessStreamWithContentType|Windows::Storage::Streams::IOutputStream
 Windows::Storage::Streams::IRandomAccessStreamWithContentType|Windows::Storage::Streams::IRandomAccessStream
-Windows::System::UserProfile::IFirstSignInSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, IInspectable>>
-Windows::System::UserProfile::IFirstSignInSettings|Windows::Foundation::Collections::IMapView<hstring, IInspectable>
+Windows::System::UserProfile::IFirstSignInSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>
+Windows::System::UserProfile::IFirstSignInSettings|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>
 Windows::UI::Composition::ICompositionEffectSourceParameter|Windows::Graphics::Effects::IGraphicsEffectSource
 Windows::UI::Composition::IVisualCollection|Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>
 Windows::UI::Core::IAcceleratorKeyEventArgs|Windows::UI::Core::ICoreWindowEventArgs
@@ -408,9 +408,9 @@ Windows::UI::Xaml::Automation::Provider::ITextEditProvider|Windows::UI::Xaml::Au
 Windows::UI::Xaml::Automation::Provider::ITextProvider2|Windows::UI::Xaml::Automation::Provider::ITextProvider
 Windows::UI::Xaml::Automation::Provider::ITextRangeProvider2|Windows::UI::Xaml::Automation::Provider::ITextRangeProvider
 Windows::UI::Xaml::Automation::Provider::ITransformProvider2|Windows::UI::Xaml::Automation::Provider::ITransformProvider
-Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IIterable<IInspectable>
-Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IObservableVector<IInspectable>
-Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IVector<IInspectable>
+Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IIterable<Windows::IInspectable>
+Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>
+Windows::UI::Xaml::Data::ICollectionView|Windows::Foundation::Collections::IVector<Windows::IInspectable>
 Windows::UI::Xaml::ISetterBaseCollection|Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::SetterBase>
 Windows::UI::Xaml::ISetterBaseCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::SetterBase>
 Windows::UI::Xaml::Interop::IBindableObservableVector|Windows::UI::Xaml::Interop::IBindableIterable

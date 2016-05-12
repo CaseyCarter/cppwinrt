@@ -1,14 +1,14 @@
-value|bool||128|1|abi_Invoke
-byteParam|byte||1|1|abi_DoBYTE
-int16Param|short||1|1|abi_DoINT16
-uint16Param|unsigned short||1|1|abi_DoUINT16
-int32Param|int||1|1|abi_DoINT32
-uint32Param|unsigned||1|1|abi_DoUINT32
-int64Param|long long||1|1|abi_DoINT64
-uint64Param|unsigned long long||1|1|abi_DoUINT64
+value|bool||1|1|abi_Invoke
+byteParam|uint8_t||1|1|abi_DoBYTE
+int16Param|int16_t||1|1|abi_DoINT16
+uint16Param|uint16_t||1|1|abi_DoUINT16
+int32Param|int32_t||1|1|abi_DoINT32
+uint32Param|uint32_t||1|1|abi_DoUINT32
+int64Param|int64_t||1|1|abi_DoINT64
+uint64Param|uint64_t||1|1|abi_DoUINT64
 floatParam|float||1|1|abi_DoFLOAT
 doubleParam|double||1|1|abi_DoDOUBLE
-booleanParam|bool||128|1|abi_Doboolean
+booleanParam|bool||1|1|abi_Doboolean
 wcharParam|wchar_t||1|1|abi_DoWCHAR
 hstringParam|hstring||2|1|abi_DoHSTRING
 structParam|Windows::Foundation::TimeSpan||8|1|abi_DoStruct
@@ -16,16 +16,16 @@ enumParam|Windows::Foundation::PropertyType||4|1|abi_DoEnum
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_DoInterface
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|1|abi_DoRuntimeclass
 delegateParam|Modern::Test::IDelegateTest||32|1|abi_DoDelegate
-byteParam|byte||1|262145|abi_DoBYTEArray
-int16Param|short||1|262145|abi_DoINT16Array
-uint16Param|unsigned short||1|262145|abi_DoUINT16Array
-int32Param|int||1|262145|abi_DoINT32Array
-uint32Param|unsigned||1|262145|abi_DoUINT32Array
-int64Param|long long||1|262145|abi_DoINT64Array
-uint64Param|unsigned long long||1|262145|abi_DoUINT64Array
+byteParam|uint8_t||1|262145|abi_DoBYTEArray
+int16Param|int16_t||1|262145|abi_DoINT16Array
+uint16Param|uint16_t||1|262145|abi_DoUINT16Array
+int32Param|int32_t||1|262145|abi_DoINT32Array
+uint32Param|uint32_t||1|262145|abi_DoUINT32Array
+int64Param|int64_t||1|262145|abi_DoINT64Array
+uint64Param|uint64_t||1|262145|abi_DoUINT64Array
 floatParam|float||1|262145|abi_DoFLOATArray
 doubleParam|double||1|262145|abi_DoDOUBLEArray
-booleanParam|bool||128|262145|abi_DobooleanArray
+booleanParam|bool||1|262145|abi_DobooleanArray
 wcharParam|wchar_t||1|262145|abi_DoWCHARArray
 hstringParam|hstring||2|262145|abi_DoHSTRINGArray
 structParam|Windows::Foundation::TimeSpan||8|262145|abi_DoStructArray
@@ -33,16 +33,16 @@ enumParam|Windows::Foundation::PropertyType||4|262145|abi_DoEnumArray
 interfaceParam|Windows::Foundation::IPropertyValue||16|262145|abi_DoInterfaceArray
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|262145|abi_DoRuntimeclassArray
 delegateParam|Modern::Test::IDelegateTest||32|262145|abi_DoDelegateArray
-byteParam|byte||1|1|abi_Do
-int16Param|short||1|1|abi_Do
-uint16Param|unsigned short||1|1|abi_Do
-int32Param|int||1|1|abi_Do
-uint32Param|unsigned||1|1|abi_Do
-int64Param|long long||1|1|abi_Do
-uint64Param|unsigned long long||1|1|abi_Do
+byteParam|uint8_t||1|1|abi_Do
+int16Param|int16_t||1|1|abi_Do
+uint16Param|uint16_t||1|1|abi_Do
+int32Param|int32_t||1|1|abi_Do
+uint32Param|uint32_t||1|1|abi_Do
+int64Param|int64_t||1|1|abi_Do
+uint64Param|uint64_t||1|1|abi_Do
 floatParam|float||1|1|abi_Do
 doubleParam|double||1|1|abi_Do
-booleanParam|bool||128|1|abi_Do
+booleanParam|bool||1|1|abi_Do
 wcharParam|wchar_t||1|1|abi_Do
 hstringParam|hstring||2|1|abi_Do
 structParam|Windows::Foundation::TimeSpan||8|1|abi_Do
@@ -50,16 +50,16 @@ enumParam|Windows::Foundation::PropertyType||4|1|abi_Do
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_Do
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|1|abi_Do
 delegateParam|Modern::Test::IDelegateTest||32|1|abi_Do
-byteParamArray|byte||1|262145|abi_Do
-int16ParamArray|short||1|262145|abi_Do
-uint16ParamArray|unsigned short||1|262145|abi_Do
-int32ParamArray|int||1|262145|abi_Do
-uint32ParamArray|unsigned||1|262145|abi_Do
-int64ParamArray|long long||1|262145|abi_Do
-uint64ParamArray|unsigned long long||1|262145|abi_Do
+byteParamArray|uint8_t||1|262145|abi_Do
+int16ParamArray|int16_t||1|262145|abi_Do
+uint16ParamArray|uint16_t||1|262145|abi_Do
+int32ParamArray|int32_t||1|262145|abi_Do
+uint32ParamArray|uint32_t||1|262145|abi_Do
+int64ParamArray|int64_t||1|262145|abi_Do
+uint64ParamArray|uint64_t||1|262145|abi_Do
 floatParamArray|float||1|262145|abi_Do
 doubleParamArray|double||1|262145|abi_Do
-booleanParamArray|bool||128|262145|abi_Do
+booleanParamArray|bool||1|262145|abi_Do
 wcharParamArray|wchar_t||1|262145|abi_Do
 hstringParamArray|hstring||2|262145|abi_Do
 structParamArray|Windows::Foundation::TimeSpan||8|262145|abi_Do
@@ -67,16 +67,16 @@ enumParamArray|Windows::Foundation::PropertyType||4|262145|abi_Do
 interfaceParamArray|Windows::Foundation::IPropertyValue||16|262145|abi_Do
 runtimeclassParamArray|Modern::Test::IFooTest|Modern::Test::BarTest|16|262145|abi_Do
 delegateParamArray|Modern::Test::IDelegateTest||32|262145|abi_Do
-byteParameter|byte||1|65536|abi_DoBYTE
-int16Parameter|short||1|65536|abi_DoINT16
-uint16Parameter|unsigned short||1|65536|abi_DoUINT16
-int32Parameter|int||1|65536|abi_DoINT32
-uint32Parameter|unsigned||1|65536|abi_DoUINT32
-int64Parameter|long long||1|65536|abi_DoINT64
-uint64Parameter|unsigned long long||1|65536|abi_DoUINT64
+byteParameter|uint8_t||1|65536|abi_DoBYTE
+int16Parameter|int16_t||1|65536|abi_DoINT16
+uint16Parameter|uint16_t||1|65536|abi_DoUINT16
+int32Parameter|int32_t||1|65536|abi_DoINT32
+uint32Parameter|uint32_t||1|65536|abi_DoUINT32
+int64Parameter|int64_t||1|65536|abi_DoINT64
+uint64Parameter|uint64_t||1|65536|abi_DoUINT64
 floatParameter|float||1|65536|abi_DoFLOAT
 doubleParameter|double||1|65536|abi_DoDOUBLE
-booleanParameter|bool||128|65536|abi_Doboolean
+booleanParameter|bool||1|65536|abi_Doboolean
 wcharParameter|wchar_t||1|65536|abi_DoWCHAR
 hstringParameter|hstring||2|65536|abi_DoHSTRING
 enumParameter|Windows::Foundation::PropertyType||4|65536|abi_DoEnum
@@ -84,16 +84,16 @@ structParameter|Windows::Foundation::TimeSpan||8|65536|abi_DoStruct
 interfaceParameter|Windows::Foundation::IPropertyValue||16|65536|abi_DoInterface
 runtimeclassParameter|Modern::Test::IFooTest|Modern::Test::BarTest|16|65536|abi_DoRuntimeclass
 delegateParameter|Modern::Test::IDelegateTest||32|65536|abi_DoDelegate
-byteParameter|byte||1|131074|abi_DoBYTE
-int16Parameter|short||1|131074|abi_DoINT16
-uint16Parameter|unsigned short||1|131074|abi_DoUINT16
-int32Parameter|int||1|131074|abi_DoINT32
-uint32Parameter|unsigned||1|131074|abi_DoUINT32
-int64Parameter|long long||1|131074|abi_DoINT64
-uint64Parameter|unsigned long long||1|131074|abi_DoUINT64
+byteParameter|uint8_t||1|131074|abi_DoBYTE
+int16Parameter|int16_t||1|131074|abi_DoINT16
+uint16Parameter|uint16_t||1|131074|abi_DoUINT16
+int32Parameter|int32_t||1|131074|abi_DoINT32
+uint32Parameter|uint32_t||1|131074|abi_DoUINT32
+int64Parameter|int64_t||1|131074|abi_DoINT64
+uint64Parameter|uint64_t||1|131074|abi_DoUINT64
 floatParameter|float||1|131074|abi_DoFLOAT
 doubleParameter|double||1|131074|abi_DoDOUBLE
-booleanParameter|bool||128|131074|abi_Doboolean
+booleanParameter|bool||1|131074|abi_Doboolean
 wcharParameter|wchar_t||1|131074|abi_DoWCHAR
 hstringParameter|hstring||2|131074|abi_DoHSTRING
 enumParameter|Windows::Foundation::PropertyType||4|131074|abi_DoEnum
@@ -101,16 +101,16 @@ structParameter|Windows::Foundation::TimeSpan||8|131074|abi_DoStruct
 interfaceParameter|Windows::Foundation::IPropertyValue||16|131074|abi_DoInterface
 runtimeclassParameter|Modern::Test::IFooTest|Modern::Test::BarTest|16|131074|abi_DoRuntimeclass
 delegateParameter|Modern::Test::IDelegateTest||32|131074|abi_DoDelegate
-byteParam|byte||1|262146|abi_DoBYTEArray
-int16Param|short||1|262146|abi_DoINT16Array
-uint16Param|unsigned short||1|262146|abi_DoUINT16Array
-int32Param|int||1|262146|abi_DoINT32Array
-uint32Param|unsigned||1|262146|abi_DoUINT32Array
-int64Param|long long||1|262146|abi_DoINT64Array
-uint64Param|unsigned long long||1|262146|abi_DoUINT64Array
+byteParam|uint8_t||1|262146|abi_DoBYTEArray
+int16Param|int16_t||1|262146|abi_DoINT16Array
+uint16Param|uint16_t||1|262146|abi_DoUINT16Array
+int32Param|int32_t||1|262146|abi_DoINT32Array
+uint32Param|uint32_t||1|262146|abi_DoUINT32Array
+int64Param|int64_t||1|262146|abi_DoINT64Array
+uint64Param|uint64_t||1|262146|abi_DoUINT64Array
 floatParam|float||1|262146|abi_DoFLOATArray
 doubleParam|double||1|262146|abi_DoDOUBLEArray
-booleanParam|bool||128|262146|abi_DobooleanArray
+booleanParam|bool||1|262146|abi_DobooleanArray
 wcharParam|wchar_t||1|262146|abi_DoWCHARArray
 hstringParam|hstring||2|262146|abi_DoHSTRINGArray
 structParam|Windows::Foundation::TimeSpan||8|262146|abi_DoStructArray
@@ -118,47 +118,47 @@ enumParam|Windows::Foundation::PropertyType||4|262146|abi_DoEnumArray
 interfaceParam|Windows::Foundation::IPropertyValue||16|262146|abi_DoInterfaceArray
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|262146|abi_DoRuntimeclassArray
 delegateParam|Modern::Test::IDelegateTest||32|262146|abi_DoDelegateArray
-byteParam|byte||1|393218|abi_DoBYTEArray
-int16Param|short||1|393218|abi_DoINT16Array
-uint16Param|unsigned short||1|393218|abi_DoUINT16Array
-int32Param|int||1|393218|abi_DoINT32Array
-uint32Param|unsigned||1|393218|abi_DoUINT32Array
-int64Param|long long||1|393218|abi_DoINT64Array
-uint64Param|unsigned long long||1|393218|abi_DoUINT64Array
+byteParam|uint8_t||1|393218|abi_DoBYTEArray
+int16Param|int16_t||1|393218|abi_DoINT16Array
+uint16Param|uint16_t||1|393218|abi_DoUINT16Array
+int32Param|int32_t||1|393218|abi_DoINT32Array
+uint32Param|uint32_t||1|393218|abi_DoUINT32Array
+int64Param|int64_t||1|393218|abi_DoINT64Array
+uint64Param|uint64_t||1|393218|abi_DoUINT64Array
 floatParam|float||1|393218|abi_DoFLOATArray
 doubleParam|double||1|393218|abi_DoDOUBLEArray
-booleanParam|bool||128|393218|abi_DobooleanArray
+booleanParam|bool||1|393218|abi_DobooleanArray
 wcharParam|wchar_t||1|393218|abi_DoWCHARArray
 hstringParam|hstring||2|393218|abi_DoHSTRINGArray
 structParam|Windows::Foundation::TimeSpan||8|393218|abi_DoStructArray
 enumParam|Windows::Foundation::PropertyType||4|393218|abi_DoEnumArray
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|1|abi_Do
-byteParam|byte||1|1|abi_Do
-int16Param|short||1|1|abi_Do
-uint16Param|unsigned short||1|1|abi_Do
-int32Param|int||1|1|abi_Do
-uint32Param|unsigned||1|1|abi_Do
-int64Param|long long||1|1|abi_Do
-uint64Param|unsigned long long||1|1|abi_Do
+byteParam|uint8_t||1|1|abi_Do
+int16Param|int16_t||1|1|abi_Do
+uint16Param|uint16_t||1|1|abi_Do
+int32Param|int32_t||1|1|abi_Do
+uint32Param|uint32_t||1|1|abi_Do
+int64Param|int64_t||1|1|abi_Do
+uint64Param|uint64_t||1|1|abi_Do
 floatParam|float||1|1|abi_Do
 doubleParam|double||1|1|abi_Do
-booleanParam|bool||128|1|abi_Do
+booleanParam|bool||1|1|abi_Do
 wcharParam|wchar_t||1|1|abi_Do
 hstringParam|hstring||2|1|abi_Do
 structParam|Windows::Foundation::TimeSpan||8|1|abi_Do
 enumParam|Windows::Foundation::PropertyType||4|1|abi_Do
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_Do
 delegateParam|Modern::Test::IDelegateTest||32|1|abi_Do
-byteParamArray|byte||1|262146|abi_Do
-int16ParamArray|short||1|262146|abi_Do
-uint16ParamArray|unsigned short||1|262146|abi_Do
-int32ParamArray|int||1|262146|abi_Do
-uint32ParamArray|unsigned||1|262146|abi_Do
-int64ParamArray|long long||1|262146|abi_Do
-uint64ParamArray|unsigned long long||1|262146|abi_Do
+byteParamArray|uint8_t||1|262146|abi_Do
+int16ParamArray|int16_t||1|262146|abi_Do
+uint16ParamArray|uint16_t||1|262146|abi_Do
+int32ParamArray|int32_t||1|262146|abi_Do
+uint32ParamArray|uint32_t||1|262146|abi_Do
+int64ParamArray|int64_t||1|262146|abi_Do
+uint64ParamArray|uint64_t||1|262146|abi_Do
 floatParamArray|float||1|262146|abi_Do
 doubleParamArray|double||1|262146|abi_Do
-booleanParamArray|bool||128|262146|abi_Do
+booleanParamArray|bool||1|262146|abi_Do
 wcharParamArray|wchar_t||1|262146|abi_Do
 hstringParamArray|hstring||2|262146|abi_Do
 structParamArray|Windows::Foundation::TimeSpan||8|262146|abi_Do
@@ -166,13 +166,13 @@ enumParamArray|Windows::Foundation::PropertyType||4|262146|abi_Do
 interfaceParamArray|Windows::Foundation::IPropertyValue||16|262146|abi_Do
 runtimeclassParamArray|Modern::Test::IFooTest|Modern::Test::BarTest|16|262146|abi_Do
 delegateParamArray|Modern::Test::IDelegateTest||32|262146|abi_Do
-byteParam|Windows::Foundation::Collections::IVector<byte>||16|1|abi_DoBYTE
-int16Param|Windows::Foundation::Collections::IVector<short>||16|1|abi_DoINT16
-uint16Param|Windows::Foundation::Collections::IVector<unsigned short>||16|1|abi_DoUINT16
-int32Param|Windows::Foundation::Collections::IVector<int>||16|1|abi_DoINT32
-uint32Param|Windows::Foundation::Collections::IVector<unsigned>||16|1|abi_DoUINT32
-int64Param|Windows::Foundation::Collections::IVector<long long>||16|1|abi_DoINT64
-uint64Param|Windows::Foundation::Collections::IVector<unsigned long long>||16|1|abi_DoUINT64
+byteParam|Windows::Foundation::Collections::IVector<uint8_t>||16|1|abi_DoBYTE
+int16Param|Windows::Foundation::Collections::IVector<int16_t>||16|1|abi_DoINT16
+uint16Param|Windows::Foundation::Collections::IVector<uint16_t>||16|1|abi_DoUINT16
+int32Param|Windows::Foundation::Collections::IVector<int32_t>||16|1|abi_DoINT32
+uint32Param|Windows::Foundation::Collections::IVector<uint32_t>||16|1|abi_DoUINT32
+int64Param|Windows::Foundation::Collections::IVector<int64_t>||16|1|abi_DoINT64
+uint64Param|Windows::Foundation::Collections::IVector<uint64_t>||16|1|abi_DoUINT64
 floatParam|Windows::Foundation::Collections::IVector<float>||16|1|abi_DoFLOAT
 doubleParam|Windows::Foundation::Collections::IVector<double>||16|1|abi_DoDOUBLE
 booleanParam|Windows::Foundation::Collections::IVector<bool>||16|1|abi_Doboolean
@@ -183,13 +183,13 @@ enumParam|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::
 interfaceParam|Windows::Foundation::Collections::IVector<Windows::Foundation::IPropertyValue>||16|1|abi_DoInterface
 runtimeclassParam|Windows::Foundation::Collections::IVector<Modern::Test::BarTest>||16|1|abi_DoRuntimeclass
 delegateParam|Windows::Foundation::Collections::IVector<Modern::Test::DelegateTest>||16|1|abi_DoDelegate
-byteParam|Windows::Foundation::Collections::IMap<hstring, byte>||16|1|abi_DoBYTE
-int16Param|Windows::Foundation::Collections::IMap<hstring, short>||16|1|abi_DoINT16
-uint16Param|Windows::Foundation::Collections::IMap<hstring, unsigned short>||16|1|abi_DoUINT16
-int32Param|Windows::Foundation::Collections::IMap<hstring, int>||16|1|abi_DoINT32
-uint32Param|Windows::Foundation::Collections::IMap<hstring, unsigned>||16|1|abi_DoUINT32
-int64Param|Windows::Foundation::Collections::IMap<hstring, long long>||16|1|abi_DoINT64
-uint64Param|Windows::Foundation::Collections::IMap<hstring, unsigned long long>||16|1|abi_DoUINT64
+byteParam|Windows::Foundation::Collections::IMap<hstring, uint8_t>||16|1|abi_DoBYTE
+int16Param|Windows::Foundation::Collections::IMap<hstring, int16_t>||16|1|abi_DoINT16
+uint16Param|Windows::Foundation::Collections::IMap<hstring, uint16_t>||16|1|abi_DoUINT16
+int32Param|Windows::Foundation::Collections::IMap<hstring, int32_t>||16|1|abi_DoINT32
+uint32Param|Windows::Foundation::Collections::IMap<hstring, uint32_t>||16|1|abi_DoUINT32
+int64Param|Windows::Foundation::Collections::IMap<hstring, int64_t>||16|1|abi_DoINT64
+uint64Param|Windows::Foundation::Collections::IMap<hstring, uint64_t>||16|1|abi_DoUINT64
 floatParam|Windows::Foundation::Collections::IMap<hstring, float>||16|1|abi_DoFLOAT
 doubleParam|Windows::Foundation::Collections::IMap<hstring, double>||16|1|abi_DoDOUBLE
 booleanParam|Windows::Foundation::Collections::IMap<hstring, bool>||16|1|abi_Doboolean
@@ -200,17 +200,17 @@ enumParam|Windows::Foundation::Collections::IMap<hstring, winrt::Windows::Founda
 interfaceParam|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IPropertyValue>||16|1|abi_DoInterface
 runtimeclassParam|Windows::Foundation::Collections::IMap<hstring, Modern::Test::BarTest>||16|1|abi_DoRuntimeclass
 delegateParam|Windows::Foundation::Collections::IMap<hstring, Modern::Test::DelegateTest>||16|1|abi_DoDelegate
-retValue|int||1|65536|abi_Do1
 value1|hstring||2|1|abi_Do1
-retValue|int||1|65536|abi_Do2
+retValue|int32_t||1|65536|abi_Do1
 value1|hstring||2|1|abi_Do2
 value2|hstring||2|131074|abi_Do2
-array|int||1|262145|abi_PassArray
-array|int||1|262146|abi_FillArray
-array|int||1|393218|abi_ReceiveArray
-cookie|long long||1|65536|add_AccountCommandsRequested
+retValue|int32_t||1|65536|abi_Do2
+array|int32_t||1|262145|abi_PassArray
+array|int32_t||1|262146|abi_FillArray
+array|int32_t||1|393218|abi_ReceiveArray
 handler|Windows::Foundation::ITypedEventHandler<Modern::Test::IFooTest, bool>||32|1|add_AccountCommandsRequested
-cookie|long long||1|1|remove_AccountCommandsRequested
+cookie|event_token||1|65536|add_AccountCommandsRequested
+cookie|event_token||1|1|remove_AccountCommandsRequested
 value|Modern::Test::IFooTest||16|65536|get_ConsumeInput
 value|Modern::Test::IFooTest||16|1|put_ConsumeInput
 pInput|Windows::Foundation::TimeSpan||8|655361|abi_Method

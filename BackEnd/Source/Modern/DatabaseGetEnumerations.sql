@@ -1,3 +1,3 @@
-select RowId, substr(FullName, Name + 3), substr(FullName, 1, Name) as Namespace, Flags
+select RowId, substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace, Flags
 from Enumerations
-order by Namespace
+order by Namespace, Name

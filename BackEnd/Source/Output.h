@@ -1,16 +1,13 @@
 #pragma once
 
 #include "handle.h"
-#include <stdio.h>
-#include <functional>
 #include "FileView.h"
-#include "Path.h"
 #include "ThrowWindowsError.h"
 #include "Write.h"
 
 namespace Modern {
 
-size_t const OutputCapacity = 16384 * 1000;
+size_t const OutputCapacity = 32 * 1024 * 1000;
 
 inline void OptimizeDebugOutput()
 {
@@ -40,17 +37,13 @@ public:
         }
     }
 
-    OutputFile(std::string const & filename) :
-        OutputFile(filename.c_str())
-    {}
-
     void Append(char const * value, size_t const size)
     {
         DWORD copied = 0;
 
         if (!WriteFile(get(m_file),
                        value,
-                       size,
+                       static_cast<DWORD>(size),
                        &copied,
                        nullptr))
         {
@@ -185,138 +178,7 @@ public:
         file.Append(Begin(), Size());
     }
 
-	void Print(Output const & other) noexcept
-	{
-        Append(other.Begin(), other.Size());
-	}
-
-    void OpenModernNamespace()
-    {
-        MODERN_ASSERT(m_namespace.empty());
-
-        Write(*this, "\nnamespace winrt {\n");
-    }
-
-    void CloseModernNamespace()
-    {
-        MODERN_ASSERT(m_namespace.empty());
-
-        Write(*this, "\n}\n");
-    }
-
-	bool WriteNamespace(char const * ns = "")
-	{
-		if (m_namespace == ns)
-		{
-			return false;
-		}
-
-		if (!m_namespace.empty())
-		{
-			Write(*this, "\n");
-
-			for (unsigned i = 0; i != m_namespaceLevels; ++i)
-			{
-                Write(*this, "}");
-			}
-
-            Write(*this, "\n");
-		}
-
-		m_namespace = ns;
-		m_namespaceLevels = 0;
-
-		if (!m_namespace.empty())
-		{
-            Write(*this, "\nnamespace winrt { ");
-			++m_namespaceLevels;
-
-			size_t begin = 0;
-			size_t end = 0;
-
-			for (;;)
-			{
-				++m_namespaceLevels;
-
-				end = m_namespace.find("::", begin);
-
-				if (std::string::npos == end)
-				{
-                    Write(*this, "namespace % {\n", Offset(m_namespace, begin));
-					break;
-				}
-
-                Write(*this, "namespace % { ", Substring(&m_namespace[begin], end - begin));
-
-				begin = end + 2;
-			}
-		}
-
-		return true;
-	}
-
-    bool WriteNamespace(std::string const & ns)
-    {
-        return WriteNamespace(ns.c_str());
-    }
-
-	bool WriteAbiNamespace(char const * ns)
-	{
-		if (m_namespace == ns)
-		{
-			return false;
-		}
-
-		if (!m_namespace.empty())
-		{
-            Write(*this, "\n");
-
-			for (unsigned i = 0; i != m_namespaceLevels; ++i)
-			{
-                Write(*this, "}");
-			}
-
-            Write(*this, "\n");
-		}
-
-		m_namespace = ns;
-		m_namespaceLevels = 0;
-
-		if (!m_namespace.empty())
-		{
-            Write(*this, "\nnamespace winrt { namespace ABI { ");
-			m_namespaceLevels += 2;
-
-			size_t begin = 0;
-			size_t end = 0;
-
-			for (;;)
-			{
-				++m_namespaceLevels;
-
-				end = m_namespace.find("::", begin);
-
-				if (std::string::npos == end)
-				{
-                    Write(*this, "namespace % {\n", Offset(m_namespace, begin));
-					break;
-				}
-
-                Write(*this, "namespace % { ", Substring(&m_namespace[begin], end - begin));
-
-				begin = end + 2;
-			}
-		}
-
-		return true;
-	}
-
-    bool WriteAbiNamespace(std::string const & ns)
-    {
-        return WriteAbiNamespace(ns.c_str());
-    }
-
-    bool WriteImplementationNamespace(char const * ns)
+    bool WriteNamespace(char const * ns = "")
     {
         if (m_namespace == ns)
         {
@@ -325,14 +187,14 @@ public:
 
         if (!m_namespace.empty())
         {
-            Write(*this, "\n");
+            Write(*this, "\r\n");
 
             for (unsigned i = 0; i != m_namespaceLevels; ++i)
             {
                 Write(*this, "}");
             }
 
-            Write(*this, "\n");
+            Write(*this, "\r\n");
         }
 
         m_namespace = ns;
@@ -340,8 +202,62 @@ public:
 
         if (!m_namespace.empty())
         {
-            Write(*this, "\nnamespace winrt { ");
-            m_namespaceLevels += 2;
+            Write(*this, "\r\n");
+            size_t begin = 0;
+            size_t end = 0;
+
+            for (;;)
+            {
+                ++m_namespaceLevels;
+
+                end = m_namespace.find("::", begin);
+
+                if (std::string::npos == end)
+                {
+                    Write(*this, "namespace % {\r\n", Offset(m_namespace, begin));
+                    break;
+                }
+
+                Write(*this, "namespace % { ", Substring(&m_namespace[begin], end - begin));
+
+                begin = end + 2;
+            }
+        }
+
+        return true;
+    }
+
+    bool WriteNamespace(std::string const & ns)
+    {
+        return WriteNamespace(ns.c_str());
+    }
+
+    bool WriteAbiNamespace(char const * ns)
+    {
+        if (m_namespace == ns)
+        {
+            return false;
+        }
+
+        if (!m_namespace.empty())
+        {
+            Write(*this, "\r\n");
+
+            for (unsigned i = 0; i != m_namespaceLevels; ++i)
+            {
+                Write(*this, "}");
+            }
+
+            Write(*this, "\r\n");
+        }
+
+        m_namespace = ns;
+        m_namespaceLevels = 0;
+
+        if (!m_namespace.empty())
+        {
+            Write(*this, "\r\nnamespace ABI { ");
+            ++m_namespaceLevels;
 
             size_t begin = 0;
             size_t end = 0;
@@ -354,7 +270,7 @@ public:
 
                 if (std::string::npos == end)
                 {
-                    Write(*this, "namespace % { ", Offset(m_namespace, begin));
+                    Write(*this, "namespace % {\r\n", Offset(m_namespace, begin));
                     break;
                 }
 
@@ -362,23 +278,16 @@ public:
 
                 begin = end + 2;
             }
-
-            Write(*this, "namespace component {\n");
         }
 
         return true;
     }
 
-    bool WriteImplementationNamespace(std::string const & ns)
+    bool WriteAbiNamespace(std::string const & ns)
     {
-        return WriteImplementationNamespace(ns.c_str());
+        return WriteAbiNamespace(ns.c_str());
     }
 };
-
-inline void Append(Output & target, char const * value)
-{
-    target.Append(value);
-}
 
 inline void Append(Output & target, char const * value, size_t const size)
 {
@@ -390,6 +299,5 @@ void AppendFormat(Output & target, char const (&format)[Count], Args ... args)
 {
     target.AppendFormat(format, args ...);
 }
-
 
 }
