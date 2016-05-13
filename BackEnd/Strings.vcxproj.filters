@@ -276,78 +276,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Modern\DatabaseAddClass.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassComposable.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassConstructor.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassDeclaration.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassDefaultConstructor.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassDefaultInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddClassStatic.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddDelegate.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddDelegateDeclaration.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddEnumeration.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddEnumerationDeclaration.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddEnumerator.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddField.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddGenericInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddInterfaceDeclaration.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddMethod.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddParameter.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddParameterWithClass.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddRequiredInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddSource.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddStructure.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseAddStructureDeclaration.sql">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="Source\Modern\DatabaseGetAbiClassDeclarations.sql">
       <Filter>Assets</Filter>
     </None>
@@ -451,9 +379,6 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\DatabaseGetUsingMethodsForInterface.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\DatabaseSourceParsed.sql">
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\PostSql.sql">

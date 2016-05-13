@@ -112,30 +112,6 @@
     <Text Include="Source\Modern\Usage.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Modern\DatabaseAddClass.sql" />
-    <None Include="Source\Modern\DatabaseAddClassComposable.sql" />
-    <None Include="Source\Modern\DatabaseAddClassConstructor.sql" />
-    <None Include="Source\Modern\DatabaseAddClassDeclaration.sql" />
-    <None Include="Source\Modern\DatabaseAddClassDefaultConstructor.sql" />
-    <None Include="Source\Modern\DatabaseAddClassDefaultInterface.sql" />
-    <None Include="Source\Modern\DatabaseAddClassInterface.sql" />
-    <None Include="Source\Modern\DatabaseAddClassStatic.sql" />
-    <None Include="Source\Modern\DatabaseAddDelegate.sql" />
-    <None Include="Source\Modern\DatabaseAddDelegateDeclaration.sql" />
-    <None Include="Source\Modern\DatabaseAddEnumeration.sql" />
-    <None Include="Source\Modern\DatabaseAddEnumerationDeclaration.sql" />
-    <None Include="Source\Modern\DatabaseAddEnumerator.sql" />
-    <None Include="Source\Modern\DatabaseAddField.sql" />
-    <None Include="Source\Modern\DatabaseAddGenericInterface.sql" />
-    <None Include="Source\Modern\DatabaseAddInterface.sql" />
-    <None Include="Source\Modern\DatabaseAddInterfaceDeclaration.sql" />
-    <None Include="Source\Modern\DatabaseAddMethod.sql" />
-    <None Include="Source\Modern\DatabaseAddParameter.sql" />
-    <None Include="Source\Modern\DatabaseAddParameterWithClass.sql" />
-    <None Include="Source\Modern\DatabaseAddRequiredInterface.sql" />
-    <None Include="Source\Modern\DatabaseAddSource.sql" />
-    <None Include="Source\Modern\DatabaseAddStructure.sql" />
-    <None Include="Source\Modern\DatabaseAddStructureDeclaration.sql" />
     <None Include="Source\Modern\DatabaseGetAbiClassDeclarations.sql" />
     <None Include="Source\Modern\DatabaseGetAbiInterfaces.sql" />
     <None Include="Source\Modern\DatabaseGetBases.sql" />
@@ -171,7 +147,6 @@
     <None Include="Source\Modern\DatabaseGetStructures.sql" />
     <None Include="Source\Modern\DatabaseGetUsingMethodsForClass.sql" />
     <None Include="Source\Modern\DatabaseGetUsingMethodsForInterface.sql" />
-    <None Include="Source\Modern\DatabaseSourceParsed.sql" />
     <None Include="Source\Modern\PostSql.sql" />
     <None Include="Source\Modern\PreSql.sql" />
     <None Include="Source\Modern\WindowsNumerics.inl" />
