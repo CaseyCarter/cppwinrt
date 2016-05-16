@@ -1,0 +1,7 @@
+-winmd Projection\UAP\Windows.ApplicationModel.Calls.CallsVoipContract.winmd
+-winmd Projection\UAP\Windows.Devices.Printers.PrintersContract.winmd
+-winmd Projection\UAP\Windows.Foundation.FoundationContract.winmd
+-winmd Projection\UAP\Windows.Foundation.UniversalApiContract.winmd
+-winmd Projection\UAP\Windows.Graphics.Printing3D.Printing3DContract.winmd
+-winmd Projection\UAP\Windows.Networking.Connectivity.WwanContract.winmd
+-db Metadata.db

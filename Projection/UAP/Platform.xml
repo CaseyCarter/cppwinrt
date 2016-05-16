@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPlatform name="UAP" friendlyName="Windows 10" version="10.0.10586.0">  
+   <MinimumVisualStudioVersion>14.0.22213.01</MinimumVisualStudioVersion> 
+   <ContainedApiContracts>  
+      <ApiContract name="Windows.ApplicationModel.Calls.CallsVoipContract" version="1.0.0.0" />
+      <ApiContract name="Windows.Devices.Printers.PrintersContract" version="1.0.0.0" />  
+      <ApiContract name="Windows.Foundation.FoundationContract" version="2.0.0.0" />  
+      <ApiContract name="Windows.Foundation.UniversalApiContract" version="2.0.0.0" />  
+      <ApiContract name="Windows.Graphics.Printing3D.Printing3DContract" version="2.0.0.0" />   
+      <ApiContract name="Windows.Networking.Connectivity.WwanContract" version="1.0.0.0" />  
+   </ContainedApiContracts>  
+</ApplicationPlatform>  
+ 

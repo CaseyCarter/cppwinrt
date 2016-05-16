@@ -22,6 +22,9 @@
     <ClCompile Include="Source\Writers.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Source\sqlite3.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
@@ -87,6 +90,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Year.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\sqlite3.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

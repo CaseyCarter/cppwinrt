@@ -11,7 +11,7 @@ extern char const base_collections_consume[26589];
 extern char const base_composable[573];
 extern char const base_com_ptr[4396];
 extern char const base_dependencies[2612];
-extern char const base_error[6866];
+extern char const base_error[6901];
 extern char const base_event_consume[50];
 extern char const base_foundation[867];
 extern char const base_generic[27685];
