@@ -20,19 +20,6 @@ enum class AsyncStatus
 
 namespace ABI { namespace Windows {
 
-struct __declspec(uuid("00000000-0000-0000-C000-000000000046")) __declspec(novtable) IUnknown
-{
-    virtual HRESULT __stdcall abi_QueryInterface(const GUID & riid, void ** ppvObject) = 0;
-    virtual uint32_t __stdcall abi_AddRef() = 0;
-    virtual uint32_t __stdcall abi_Release() = 0;
-
-    template <typename T>
-    HRESULT abi_QueryInterface(T ** value) noexcept
-    {
-        return abi_QueryInterface(__uuidof(T), reinterpret_cast<void **>(value));
-    }
-};
-
 struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
 {
     virtual HRESULT __stdcall get_Iids(uint32_t * iidCount, GUID ** iids) = 0;
@@ -68,10 +55,10 @@ template <typename T>
 using default_interface = typename traits<T>::default_interface;
 
 template <typename T>
-using arg_in = std::conditional_t<std::is_base_of_v<Windows::IUnknown, default_interface<T>>, default_interface<T> *, T>;
+using arg_in = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
 
 template <typename T>
-using arg_out = std::conditional_t<std::is_base_of_v<Windows::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
+using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
 
 }
 
@@ -140,6 +127,13 @@ struct bases
     }
 };
 
+template <typename T>
+class no_ref : public T
+{
+    unsigned long __stdcall AddRef();
+    unsigned long __stdcall Release();
+};
+
 }
 
 template <typename T>
@@ -155,9 +149,9 @@ template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
 
 template <typename T>
-auto ptr(ABI::Windows::IUnknown * object) noexcept
+auto ptr(IUnknown * object) noexcept
 {
-    return static_cast<abi<T> *>(object);
+    return static_cast<impl::no_ref<abi<T>> *>(object);
 }
 
 template <typename T>

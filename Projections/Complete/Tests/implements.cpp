@@ -23,7 +23,7 @@ struct count_implements
 // IUnknown
 //
 
-struct impl_abi_unknown : implements<impl_abi_unknown, ABI::Windows::IUnknown>, count_implements
+struct impl_abi_unknown : implements<impl_abi_unknown, IUnknown>, count_implements
 {};
 
 TEST_CASE("implements, abi_unknown")
@@ -31,10 +31,10 @@ TEST_CASE("implements, abi_unknown")
     REQUIRE(s_refs == 0);
 
     {
-        com_ptr<ABI::Windows::IUnknown> unknown = make<impl_abi_unknown>();
+        com_ptr<IUnknown> unknown = make<impl_abi_unknown>();
         REQUIRE(s_refs == 1);
 
-        unknown.as<ABI::Windows::IUnknown>(); // query self succeeds
+        unknown.as<IUnknown>(); // query self succeeds
 
         REQUIRE_THROWS_AS(unknown.as<ABI::Windows::IInspectable>(), hresult_no_interface);
     }
@@ -72,7 +72,7 @@ TEST_CASE("implements, abi_inspectable")
     REQUIRE(s_refs == 0);
 
     {
-        com_ptr<ABI::Windows::IUnknown> unknown = make<impl_abi_inspectable>();
+        com_ptr<IUnknown> unknown = make<impl_abi_inspectable>();
         REQUIRE(s_refs == 1);
 
         unknown.as<IUnknown>();
@@ -302,11 +302,11 @@ TEST_CASE("implements, impl_GetIids_Uri_first_cloaked4")
     REQUIRE(s_refs == 0);
 
     {
-        com_ptr<ABI::Windows::IUnknown> uri = make<impl_GetIids_Uri_first_cloaked4>();
+        com_ptr<IUnknown> uri = make<impl_GetIids_Uri_first_cloaked4>();
 
         REQUIRE(s_refs == 1);
 
-        com_ptr<ABI::Windows::IUnknown> a = uri.as<ABI::Windows::IUnknown>();
+        com_ptr<IUnknown> a = uri.as<IUnknown>();
         com_ptr<ABI::Windows::IInspectable> b = uri.as<ABI::Windows::IInspectable>();
         LicenseChangedEventHandler c = uri.as<LicenseChangedEventHandler>();
         com_ptr<LicenseChangedEventHandler> d = uri.as<abi<LicenseChangedEventHandler>>();

@@ -131,7 +131,7 @@ protected:
 
     void * query_interface(const GUID & id) noexcept
     {
-        if (id == __uuidof(ABI::Windows::IUnknown) || id == __uuidof(::IAgileObject))
+        if (id == __uuidof(IUnknown) || id == __uuidof(::IAgileObject))
         {
             return find_unknown<Interfaces ...>();
         }
@@ -153,12 +153,12 @@ public:
 
     auto impl_unknown() const noexcept
     {
-        return static_cast<ABI::Windows::IUnknown *>(find_unknown<Interfaces ...>());
+        return static_cast<IUnknown *>(find_unknown<Interfaces ...>());
     }
 
     operator Windows::IUnknown() const noexcept
     {
-        return impl::winrt_cast<Windows::IUnknown>(static_cast<ABI::Windows::IUnknown *>(find_unknown<Interfaces ...>()));
+        return impl::winrt_cast<Windows::IUnknown>(static_cast<IUnknown *>(find_unknown<Interfaces ...>()));
     }
 
     operator Windows::IInspectable() const noexcept
@@ -166,7 +166,7 @@ public:
         return impl::winrt_cast<Windows::IInspectable>(static_cast<ABI::Windows::IInspectable *>(find_inspectable<Interfaces ...>()));
     }
 
-    HRESULT __stdcall abi_QueryInterface(const GUID & id, void ** object) noexcept override
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
     {
         *object = query_interface(id);
 
@@ -175,16 +175,16 @@ public:
             return E_NOINTERFACE;
         }
 
-        static_cast<ABI::Windows::IUnknown *>(*object)->abi_AddRef();
+        static_cast<IUnknown *>(*object)->AddRef();
         return S_OK;
     }
 
-    uint32_t __stdcall abi_AddRef() noexcept override
+    unsigned long __stdcall AddRef() noexcept override
     {
         return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
     }
 
-    uint32_t __stdcall abi_Release() noexcept override
+    unsigned long __stdcall Release() noexcept override
     {
         const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
 

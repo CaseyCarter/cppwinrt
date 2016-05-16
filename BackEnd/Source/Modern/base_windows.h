@@ -43,7 +43,7 @@ struct IUnknown
 
     auto operator->() const noexcept
     {
-        return m_ptr;
+        return static_cast<impl::no_ref< ::IUnknown> *>(m_ptr);
     }
 
     IUnknown & operator=(std::nullptr_t) noexcept
@@ -56,7 +56,7 @@ struct IUnknown
     auto as() const
     {
         std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->abi_QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
 
@@ -85,7 +85,7 @@ struct IUnknown
 
 protected:
 
-    void impl_copy(ABI::Windows::IUnknown * other) noexcept
+    void impl_copy(::IUnknown * other) noexcept
     {
         if (m_ptr != other)
         {
@@ -115,15 +115,15 @@ protected:
         }
     }
 
-    ABI::Windows::IUnknown * m_ptr = nullptr;
-    
+    ::IUnknown * m_ptr = nullptr;
+
 private:
 
     void impl_addref() const noexcept
     {
         if (m_ptr)
         {
-            m_ptr->abi_AddRef();
+            m_ptr->AddRef();
         }
     }
 
@@ -134,7 +134,7 @@ private:
         if (temp)
         {
             m_ptr = nullptr;
-            temp->abi_Release();
+            temp->Release();
         }
     }
 };
@@ -145,7 +145,7 @@ namespace impl {
 
 template <> struct traits<Windows::IUnknown>
 {
-    using abi = ABI::Windows::IUnknown;
+    using abi = ::IUnknown;
 };
 
 template <typename T>
@@ -173,7 +173,7 @@ struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::valu
 
         if (value)
         {
-            value->abi_AddRef();
+            value->AddRef();
             *put(object) = value;
         }
     }
@@ -184,7 +184,7 @@ struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::valu
         if (object)
         {
             value = get(object);
-            value->abi_AddRef();
+            value->AddRef();
         }
         else
         {

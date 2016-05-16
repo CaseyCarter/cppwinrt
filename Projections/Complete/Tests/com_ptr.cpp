@@ -48,7 +48,7 @@ TEST_CASE("com_ptr, ::IUnknown")
     com_ptr<::IUnknown> a; // default ctor
     com_ptr<::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == stringable->abi_QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == stringable->QueryInterface(put(b))); // attach
 
     com_ptr<::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -71,43 +71,7 @@ TEST_CASE("com_ptr, ::IUnknown")
 }
 
 //
-// This test makes sure com_ptr works with winrt::ABI::Windows::IUnknown's virtual functions.
-//
-TEST_CASE("com_ptr, ABI::Windows::IUnknown")
-{
-    bool destroyed = true;
-
-    IStringable stringable = make<Stringable>(L"Hello world!", &destroyed);
-
-    REQUIRE(!destroyed);
-
-    com_ptr<ABI::Windows::IUnknown> a; // default ctor
-    com_ptr<ABI::Windows::IUnknown> b = nullptr; // nullptr_t ctor
-
-    REQUIRE(S_OK == stringable->abi_QueryInterface(put(b))); // attach
-
-    com_ptr<ABI::Windows::IUnknown> c = b; // copy ctor, AddRef
-    b = nullptr;
-
-    com_ptr<ABI::Windows::IUnknown> d = std::move(c); // move ctor
-    c = std::move(d); // move assign
-    d = c; // copy assign, AddRef
-
-    stringable = c.as<IStringable>();
-
-    c = nullptr;
-    d = nullptr;
-
-    REQUIRE(!destroyed);
-
-    REQUIRE(L"Hello world!" == stringable.ToString());
-    stringable = nullptr;
-
-    REQUIRE(destroyed);
-}
-
-//
-// Same as winrt::ABI::Windows::IUnknown above but using projection type deduction
+// Same as ::IUnknown above but using projection type deduction
 //
 TEST_CASE("com_ptr, Windows::IUnknown")
 {
@@ -120,12 +84,12 @@ TEST_CASE("com_ptr, Windows::IUnknown")
     com_ptr<Windows::IUnknown> a; // default ctor
     com_ptr<Windows::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == stringable->abi_QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == stringable->QueryInterface(put(b))); // attach
 
     com_ptr<Windows::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
 
-    com_ptr<ABI::Windows::IUnknown> d = std::move(c); // move ctor
+    com_ptr<IUnknown> d = std::move(c); // move ctor
     c = std::move(d); // move assign
     d = c; // copy assign, AddRef
 
@@ -245,12 +209,12 @@ TEST_CASE("com_ptr, accessors")
 
     REQUIRE(!destroyed);
 
-    com_ptr<ABI::Windows::IUnknown> b;
+    com_ptr<IUnknown> b;
     b.copy_from(get(a)); // get
     REQUIRE(a);
 
-    com_ptr<ABI::Windows::IUnknown> c;
-    b->abi_QueryInterface(put(c)); // put
+    com_ptr<IUnknown> c;
+    b->QueryInterface(put(c)); // put
     REQUIRE(c);
 
     b = nullptr;
@@ -290,7 +254,7 @@ static com_ptr<IUnknown> test_make_unknown()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IUnknown> result;
-    REQUIRE(S_OK == s->abi_QueryInterface(put(result)));
+    REQUIRE(S_OK == s->QueryInterface(put(result)));
     return result;
 }
 
@@ -332,7 +296,7 @@ static com_ptr<IInspectable> test_make_inspectable()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IInspectable> result;
-    REQUIRE(S_OK == s->abi_QueryInterface(put(result)));
+    REQUIRE(S_OK == s->QueryInterface(put(result)));
     return result;
 }
 

@@ -70,7 +70,7 @@ struct com_ptr
 
     auto operator->() const noexcept
     {
-        return m_ptr;
+        return static_cast<impl::no_ref<type> *>(m_ptr);
     }
 
     friend type * impl_get(const com_ptr & object) noexcept
@@ -100,7 +100,7 @@ struct com_ptr
     auto as() const
     {
         std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        query_interface(m_ptr, __uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
 
@@ -131,7 +131,7 @@ private:
     {
         if (m_ptr)
         {
-            addref(m_ptr);
+            m_ptr->AddRef();
         }
     }
 
@@ -142,38 +142,8 @@ private:
         if (temp)
         {
             m_ptr = nullptr;
-            release(temp);
+            temp->Release();
         }
-    }
-
-    static void query_interface(::IUnknown * ptr, const GUID & iid, void ** object)
-    {
-        check_hresult(ptr->QueryInterface(iid, object));
-    }
-
-    static void query_interface(ABI::Windows::IUnknown * ptr, const GUID & iid, void ** object)
-    {
-        check_hresult(ptr->abi_QueryInterface(iid, object));
-    }
-
-    static void addref(::IUnknown * ptr) noexcept
-    {
-        ptr->AddRef();
-    }
-
-    static void addref(ABI::Windows::IUnknown * ptr) noexcept
-    {
-        ptr->abi_AddRef();
-    }
-
-    static void release(::IUnknown * ptr) noexcept
-    {
-        ptr->Release();
-    }
-
-    static void release(ABI::Windows::IUnknown * ptr) noexcept
-    {
-        ptr->abi_Release();
     }
 
     template <typename U>

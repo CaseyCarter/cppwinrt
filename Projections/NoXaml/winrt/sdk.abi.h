@@ -575,6 +575,9 @@ enum class ChatMessageValidationStatus
     InvalidRecipients = 8,
     InvalidBody = 9,
     InvalidOther = 10,
+    ValidWithLargeMessage = 11,
+    VoiceRoamingRestriction = 12,
+    DataRoamingRestriction = 13,
 };
 
 enum class ChatRestoreHistorySpan
@@ -1338,6 +1341,7 @@ enum class StoreSystemFeature
     VideoMemory2GB = 30,
     VideoMemory4GB = 31,
     VideoMemory6GB = 32,
+    VideoMemory1GB = 33,
 };
 
 }}}}
@@ -10506,6 +10510,9 @@ enum class HttpDiagnosticRequestInitiator
     HtmlDownload = 7,
     Prefetch = 8,
     Other = 9,
+    CrossOriginPreFlight = 10,
+    Fetch = 11,
+    Beacon = 12,
 };
 
 }}}}
@@ -16047,6 +16054,16 @@ struct SpatialSurfaceMesh;
 struct SpatialSurfaceMeshBuffer;
 struct SpatialSurfaceMeshOptions;
 struct SpatialSurfaceObserver;
+
+}}}}}
+
+namespace ABI { namespace Windows { namespace Security { namespace Authentication { namespace Identity {
+
+struct EnterpriseKeyCredentialRegistrationInfo;
+struct EnterpriseKeyCredentialRegistrationManager;
+struct IEnterpriseKeyCredentialRegistrationInfo;
+struct IEnterpriseKeyCredentialRegistrationManager;
+struct IEnterpriseKeyCredentialRegistrationManagerStatics;
 
 }}}}}
 
@@ -40142,6 +40159,29 @@ struct __declspec(uuid("165951ed-2108-4168-9175-87e027bc9285")) __declspec(novta
 
 }}}}}
 
+namespace ABI { namespace Windows { namespace Security { namespace Authentication { namespace Identity {
+
+struct __declspec(uuid("38321acc-672b-4823-b603-6b3c753daf97")) __declspec(novtable) IEnterpriseKeyCredentialRegistrationInfo : IInspectable
+{
+    virtual HRESULT __stdcall get_TenantId(HSTRING * value) = 0;
+    virtual HRESULT __stdcall get_TenantName(HSTRING * value) = 0;
+    virtual HRESULT __stdcall get_Subject(HSTRING * value) = 0;
+    virtual HRESULT __stdcall get_KeyId(HSTRING * value) = 0;
+    virtual HRESULT __stdcall get_KeyName(HSTRING * value) = 0;
+};
+
+struct __declspec(uuid("83f3be3f-a25f-4cba-bb8e-bdc32d03c297")) __declspec(novtable) IEnterpriseKeyCredentialRegistrationManager : IInspectable
+{
+    virtual HRESULT __stdcall abi_GetRegistrationsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> ** value) = 0;
+};
+
+struct __declspec(uuid("77b85e9e-acf4-4bc0-bac2-40bb46efbb3f")) __declspec(novtable) IEnterpriseKeyCredentialRegistrationManagerStatics : IInspectable
+{
+    virtual HRESULT __stdcall get_Current(Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager ** value) = 0;
+};
+
+}}}}}
+
 namespace ABI { namespace Windows { namespace Security { namespace Authentication { namespace Identity { namespace Core {
 
 struct __declspec(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa")) __declspec(novtable) IMicrosoftAccountMultiFactorAuthenticationManager : IInspectable
@@ -40261,7 +40301,7 @@ struct __declspec(uuid("1adf0f65-e3b7-4155-997f-b756ef65beba")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestStartRegisteringDeviceAsync(HSTRING deviceId, winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows::Storage::Streams::IBuffer * deviceKey, Windows::Storage::Streams::IBuffer * mutualAuthenticationKey, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_FindAllRegisteredDeviceInfoAsync(winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceFindScope queryType, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo>> ** deviceInfoList) = 0;
     virtual HRESULT __stdcall abi_UnregisterDeviceAsync(HSTRING deviceId, Windows::Foundation::IAsyncAction ** result) = 0;
-    virtual HRESULT __stdcall abi_UpdateDeviceConfigurationDataAsync(HSTRING devieId, Windows::Storage::Streams::IBuffer * deviceConfigurationData, Windows::Foundation::IAsyncAction ** result) = 0;
+    virtual HRESULT __stdcall abi_UpdateDeviceConfigurationDataAsync(HSTRING deviceId, Windows::Storage::Streams::IBuffer * deviceConfigurationData, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
 }}}}}}
@@ -42102,7 +42142,7 @@ struct __declspec(uuid("ea5dab72-6a00-4052-be5b-bfdab4433352")) __declspec(novta
     virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("a63eab16-aad7-4f59-8ac8-ed179a71c9ac")) __declspec(novtable) IStoreContext : IInspectable
+struct __declspec(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab")) __declspec(novtable) IStoreContext : IInspectable
 {
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
     virtual HRESULT __stdcall add_OfflineLicensesChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> * handler, event_token * token) = 0;
@@ -42121,7 +42161,7 @@ struct __declspec(uuid("a63eab16-aad7-4f59-8ac8-ed179a71c9ac")) __declspec(novta
     virtual HRESULT __stdcall abi_AcquireStoreLicenseForOptionalPackageAsync(Windows::ApplicationModel::IPackage * optionalPackage, Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestPurchaseAsync(HSTRING storeId, Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, Windows::Services::Store::IStorePurchaseProperties * storePurchaseProperties, Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> ** operation) = 0;
-    virtual HRESULT __stdcall abi_GetAppAndSupplementalStorePackageUpdatesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetAppAndOptionalStorePackageUpdatesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestDownloadStorePackageUpdatesAsync(Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> * storePackageUpdates, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, winrt::Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestDownloadAndInstallStorePackageUpdatesAsync(Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> * storePackageUpdates, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, winrt::Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestDownloadAndInstallStorePackagesAsync(Windows::Foundation::Collections::IIterable<hstring> * storeIds, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, winrt::Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
@@ -42224,14 +42264,10 @@ struct __declspec(uuid("b7674f73-3c87-4ee1-8201-f428359bd3af")) __declspec(novta
     virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("4cb31a83-8a74-3ba5-b397-d867a5caaebd")) __declspec(novtable) IStorePurchaseProperties : IInspectable
+struct __declspec(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b")) __declspec(novtable) IStorePurchaseProperties : IInspectable
 {
     virtual HRESULT __stdcall get_Name(HSTRING * value) = 0;
     virtual HRESULT __stdcall put_Name(HSTRING value) = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING * value) = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) = 0;
-    virtual HRESULT __stdcall get_ImageUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
-    virtual HRESULT __stdcall put_ImageUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING * value) = 0;
     virtual HRESULT __stdcall put_ExtendedJsonData(HSTRING value) = 0;
 };
@@ -50836,6 +50872,8 @@ template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurface
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer> { using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer; };
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions> { using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions; };
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver> { using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver; };
+template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> { using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo; };
+template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager> { using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager; };
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager> { using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager; };
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> { using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult; };
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> { using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo; };
@@ -54699,6 +54737,18 @@ template <> struct __declspec(uuid("989f4c21-ef69-56ad-ba8c-e5d25a3c624e")) __de
 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
+template <> struct __declspec(uuid("3b631cbb-63f8-5eff-8815-69c822c09ce1")) __declspec(novtable) IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};
+
+}}}}
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+template <> struct __declspec(uuid("0bd64c2f-8b1d-56d4-a707-fab5315e7278")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> {};
+
+}}}
+
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+
 template <> struct __declspec(uuid("45f03233-e7a8-5ade-9ff3-0b8a1c6ba76b")) __declspec(novtable) IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> : impl_IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> {};
 template <> struct __declspec(uuid("cb72d686-9516-520d-a274-fa4cd1762cb2")) __declspec(novtable) IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> : impl_IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> {};
 
@@ -54853,7 +54903,7 @@ template <> struct __declspec(uuid("01e5f751-8c50-52cb-abc2-e9862402c78a")) __de
 namespace ABI { namespace Windows { namespace Foundation {
 
 template <> struct __declspec(uuid("2acdffe8-259c-5eae-93c1-13a23c74dfee")) __declspec(novtable) IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> : impl_IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> {};
-template <> struct __declspec(uuid("ec4c2bb4-d2e8-52e7-b3e7-c0ed0f78c09d")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> {};
+template <> struct __declspec(uuid("d5a00ac7-082d-547c-a04b-2540c1cde97a")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> {};
 template <> struct __declspec(uuid("3866370b-afc6-5d01-84c2-4574628de539")) __declspec(novtable) IAsyncOperation<Windows::Services::Store::StoreAppLicense> : impl_IAsyncOperation<Windows::Services::Store::StoreAppLicense> {};
 template <> struct __declspec(uuid("9e61e86b-6afb-50ae-afc1-c59f545108dd")) __declspec(novtable) IAsyncOperation<Windows::Services::Store::StoreProductResult> : impl_IAsyncOperation<Windows::Services::Store::StoreProductResult> {};
 template <> struct __declspec(uuid("9699e7bb-ea1f-5e03-9439-c80e6977b711")) __declspec(novtable) IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> : impl_IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> {};
@@ -58120,6 +58170,19 @@ template <> struct __declspec(uuid("02e84540-f4a1-589f-9360-a0502e6dc9c0")) __de
 template <> struct __declspec(uuid("8d7f8240-81cf-5896-95fa-e7b223f769f9")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> : impl_AsyncOperationCompletedHandler<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> {};
 template <> struct __declspec(uuid("cecbb0ca-0a27-57d4-a35d-4998f199dac9")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> {};
 template <> struct __declspec(uuid("6cc53e8c-d0e4-5ded-94f4-7c73b132d2a4")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> {};
+
+}}}
+
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+
+template <> struct __declspec(uuid("e7eea796-77f9-5473-a913-734ea0e3ff46")) __declspec(novtable) IIterable<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IIterable<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};
+template <> struct __declspec(uuid("e3497259-1737-5fad-803b-9d2d29273e3b")) __declspec(novtable) IIterator<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IIterator<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};
+
+}}}}
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+template <> struct __declspec(uuid("67746c40-ade0-5981-ae23-104891748853")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> : impl_AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> {};
 
 }}}
 

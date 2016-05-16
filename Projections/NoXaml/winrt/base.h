@@ -357,19 +357,6 @@ enum class AsyncStatus
 
 namespace ABI { namespace Windows {
 
-struct __declspec(uuid("00000000-0000-0000-C000-000000000046")) __declspec(novtable) IUnknown
-{
-    virtual HRESULT __stdcall abi_QueryInterface(const GUID & riid, void ** ppvObject) = 0;
-    virtual uint32_t __stdcall abi_AddRef() = 0;
-    virtual uint32_t __stdcall abi_Release() = 0;
-
-    template <typename T>
-    HRESULT abi_QueryInterface(T ** value) noexcept
-    {
-        return abi_QueryInterface(__uuidof(T), reinterpret_cast<void **>(value));
-    }
-};
-
 struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
 {
     virtual HRESULT __stdcall get_Iids(uint32_t * iidCount, GUID ** iids) = 0;
@@ -405,10 +392,10 @@ template <typename T>
 using default_interface = typename traits<T>::default_interface;
 
 template <typename T>
-using arg_in = std::conditional_t<std::is_base_of_v<Windows::IUnknown, default_interface<T>>, default_interface<T> *, T>;
+using arg_in = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
 
 template <typename T>
-using arg_out = std::conditional_t<std::is_base_of_v<Windows::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
+using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
 
 }
 
@@ -477,6 +464,13 @@ struct bases
     }
 };
 
+template <typename T>
+class no_ref : public T
+{
+    unsigned long __stdcall AddRef();
+    unsigned long __stdcall Release();
+};
+
 }
 
 template <typename T>
@@ -492,9 +486,9 @@ template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
 
 template <typename T>
-auto ptr(ABI::Windows::IUnknown * object) noexcept
+auto ptr(IUnknown * object) noexcept
 {
-    return static_cast<abi<T> *>(object);
+    return static_cast<impl::no_ref<abi<T>> *>(object);
 }
 
 template <typename T>
@@ -596,7 +590,7 @@ struct com_ptr
 
     auto operator->() const noexcept
     {
-        return m_ptr;
+        return static_cast<impl::no_ref<type> *>(m_ptr);
     }
 
     friend type * impl_get(const com_ptr & object) noexcept
@@ -626,7 +620,7 @@ struct com_ptr
     auto as() const
     {
         std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        query_interface(m_ptr, __uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
 
@@ -657,7 +651,7 @@ private:
     {
         if (m_ptr)
         {
-            addref(m_ptr);
+            m_ptr->AddRef();
         }
     }
 
@@ -668,38 +662,8 @@ private:
         if (temp)
         {
             m_ptr = nullptr;
-            release(temp);
+            temp->Release();
         }
-    }
-
-    static void query_interface(::IUnknown * ptr, const GUID & iid, void ** object)
-    {
-        check_hresult(ptr->QueryInterface(iid, object));
-    }
-
-    static void query_interface(ABI::Windows::IUnknown * ptr, const GUID & iid, void ** object)
-    {
-        check_hresult(ptr->abi_QueryInterface(iid, object));
-    }
-
-    static void addref(::IUnknown * ptr) noexcept
-    {
-        ptr->AddRef();
-    }
-
-    static void addref(ABI::Windows::IUnknown * ptr) noexcept
-    {
-        ptr->abi_AddRef();
-    }
-
-    static void release(::IUnknown * ptr) noexcept
-    {
-        ptr->Release();
-    }
-
-    static void release(ABI::Windows::IUnknown * ptr) noexcept
-    {
-        ptr->abi_Release();
     }
 
     template <typename U>
@@ -2225,7 +2189,7 @@ struct IUnknown
 
     auto operator->() const noexcept
     {
-        return m_ptr;
+        return static_cast<impl::no_ref< ::IUnknown> *>(m_ptr);
     }
 
     IUnknown & operator=(std::nullptr_t) noexcept
@@ -2238,7 +2202,7 @@ struct IUnknown
     auto as() const
     {
         std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->abi_QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
 
@@ -2267,7 +2231,7 @@ struct IUnknown
 
 protected:
 
-    void impl_copy(ABI::Windows::IUnknown * other) noexcept
+    void impl_copy(::IUnknown * other) noexcept
     {
         if (m_ptr != other)
         {
@@ -2297,15 +2261,15 @@ protected:
         }
     }
 
-    ABI::Windows::IUnknown * m_ptr = nullptr;
-    
+    ::IUnknown * m_ptr = nullptr;
+
 private:
 
     void impl_addref() const noexcept
     {
         if (m_ptr)
         {
-            m_ptr->abi_AddRef();
+            m_ptr->AddRef();
         }
     }
 
@@ -2316,7 +2280,7 @@ private:
         if (temp)
         {
             m_ptr = nullptr;
-            temp->abi_Release();
+            temp->Release();
         }
     }
 };
@@ -2327,7 +2291,7 @@ namespace impl {
 
 template <> struct traits<Windows::IUnknown>
 {
-    using abi = ABI::Windows::IUnknown;
+    using abi = ::IUnknown;
 };
 
 template <typename T>
@@ -2355,7 +2319,7 @@ struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::valu
 
         if (value)
         {
-            value->abi_AddRef();
+            value->AddRef();
             *put(object) = value;
         }
     }
@@ -2366,7 +2330,7 @@ struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::valu
         if (object)
         {
             value = get(object);
-            value->abi_AddRef();
+            value->AddRef();
         }
         else
         {
@@ -2717,7 +2681,7 @@ protected:
 
     void * query_interface(const GUID & id) noexcept
     {
-        if (id == __uuidof(ABI::Windows::IUnknown) || id == __uuidof(::IAgileObject))
+        if (id == __uuidof(IUnknown) || id == __uuidof(::IAgileObject))
         {
             return find_unknown<Interfaces ...>();
         }
@@ -2739,12 +2703,12 @@ public:
 
     auto impl_unknown() const noexcept
     {
-        return static_cast<ABI::Windows::IUnknown *>(find_unknown<Interfaces ...>());
+        return static_cast<IUnknown *>(find_unknown<Interfaces ...>());
     }
 
     operator Windows::IUnknown() const noexcept
     {
-        return impl::winrt_cast<Windows::IUnknown>(static_cast<ABI::Windows::IUnknown *>(find_unknown<Interfaces ...>()));
+        return impl::winrt_cast<Windows::IUnknown>(static_cast<IUnknown *>(find_unknown<Interfaces ...>()));
     }
 
     operator Windows::IInspectable() const noexcept
@@ -2752,7 +2716,7 @@ public:
         return impl::winrt_cast<Windows::IInspectable>(static_cast<ABI::Windows::IInspectable *>(find_inspectable<Interfaces ...>()));
     }
 
-    HRESULT __stdcall abi_QueryInterface(const GUID & id, void ** object) noexcept override
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
     {
         *object = query_interface(id);
 
@@ -2761,16 +2725,16 @@ public:
             return E_NOINTERFACE;
         }
 
-        static_cast<ABI::Windows::IUnknown *>(*object)->abi_AddRef();
+        static_cast<IUnknown *>(*object)->AddRef();
         return S_OK;
     }
 
-    uint32_t __stdcall abi_AddRef() noexcept override
+    unsigned long __stdcall AddRef() noexcept override
     {
         return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
     }
 
-    uint32_t __stdcall abi_Release() noexcept override
+    unsigned long __stdcall Release() noexcept override
     {
         const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
 
@@ -2887,16 +2851,16 @@ struct overrides : implements<T, R ...>
         return m_inner.as<Qi>();
     }
 
-    HRESULT __stdcall abi_QueryInterface(const GUID & id, void ** object) noexcept override
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
     {
         *object = query_interface(id);
 
         if (*object == nullptr)
         {
-            return m_inner->abi_QueryInterface(id, object);
+            return m_inner->QueryInterface(id, object);
         }
 
-        static_cast<ABI::Windows::IUnknown *>(*object)->abi_AddRef();
+        static_cast<IUnknown *>(*object)->AddRef();
         return S_OK;
     }
 
