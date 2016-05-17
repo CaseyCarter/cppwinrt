@@ -15,7 +15,7 @@ structParam|Windows::Foundation::TimeSpan||8|1|abi_DoStruct
 enumParam|Windows::Foundation::PropertyType||4|1|abi_DoEnum
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_DoInterface
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|1|abi_DoRuntimeclass
-delegateParam|Modern::Test::IDelegateTest||32|1|abi_DoDelegate
+delegateParam|Modern::Test::DelegateTest||32|1|abi_DoDelegate
 byteParam|uint8_t||1|262145|abi_DoBYTEArray
 int16Param|int16_t||1|262145|abi_DoINT16Array
 uint16Param|uint16_t||1|262145|abi_DoUINT16Array
@@ -32,7 +32,7 @@ structParam|Windows::Foundation::TimeSpan||8|262145|abi_DoStructArray
 enumParam|Windows::Foundation::PropertyType||4|262145|abi_DoEnumArray
 interfaceParam|Windows::Foundation::IPropertyValue||16|262145|abi_DoInterfaceArray
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|262145|abi_DoRuntimeclassArray
-delegateParam|Modern::Test::IDelegateTest||32|262145|abi_DoDelegateArray
+delegateParam|Modern::Test::DelegateTest||32|262145|abi_DoDelegateArray
 byteParam|uint8_t||1|1|abi_Do
 int16Param|int16_t||1|1|abi_Do
 uint16Param|uint16_t||1|1|abi_Do
@@ -49,7 +49,7 @@ structParam|Windows::Foundation::TimeSpan||8|1|abi_Do
 enumParam|Windows::Foundation::PropertyType||4|1|abi_Do
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_Do
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|1|abi_Do
-delegateParam|Modern::Test::IDelegateTest||32|1|abi_Do
+delegateParam|Modern::Test::DelegateTest||32|1|abi_Do
 byteParamArray|uint8_t||1|262145|abi_Do
 int16ParamArray|int16_t||1|262145|abi_Do
 uint16ParamArray|uint16_t||1|262145|abi_Do
@@ -66,7 +66,7 @@ structParamArray|Windows::Foundation::TimeSpan||8|262145|abi_Do
 enumParamArray|Windows::Foundation::PropertyType||4|262145|abi_Do
 interfaceParamArray|Windows::Foundation::IPropertyValue||16|262145|abi_Do
 runtimeclassParamArray|Modern::Test::IFooTest|Modern::Test::BarTest|16|262145|abi_Do
-delegateParamArray|Modern::Test::IDelegateTest||32|262145|abi_Do
+delegateParamArray|Modern::Test::DelegateTest||32|262145|abi_Do
 byteParameter|uint8_t||1|65536|abi_DoBYTE
 int16Parameter|int16_t||1|65536|abi_DoINT16
 uint16Parameter|uint16_t||1|65536|abi_DoUINT16
@@ -83,7 +83,7 @@ enumParameter|Windows::Foundation::PropertyType||4|65536|abi_DoEnum
 structParameter|Windows::Foundation::TimeSpan||8|65536|abi_DoStruct
 interfaceParameter|Windows::Foundation::IPropertyValue||16|65536|abi_DoInterface
 runtimeclassParameter|Modern::Test::IFooTest|Modern::Test::BarTest|16|65536|abi_DoRuntimeclass
-delegateParameter|Modern::Test::IDelegateTest||32|65536|abi_DoDelegate
+delegateParameter|Modern::Test::DelegateTest||32|65536|abi_DoDelegate
 byteParameter|uint8_t||1|131074|abi_DoBYTE
 int16Parameter|int16_t||1|131074|abi_DoINT16
 uint16Parameter|uint16_t||1|131074|abi_DoUINT16
@@ -100,7 +100,7 @@ enumParameter|Windows::Foundation::PropertyType||4|131074|abi_DoEnum
 structParameter|Windows::Foundation::TimeSpan||8|131074|abi_DoStruct
 interfaceParameter|Windows::Foundation::IPropertyValue||16|131074|abi_DoInterface
 runtimeclassParameter|Modern::Test::IFooTest|Modern::Test::BarTest|16|131074|abi_DoRuntimeclass
-delegateParameter|Modern::Test::IDelegateTest||32|131074|abi_DoDelegate
+delegateParameter|Modern::Test::DelegateTest||32|131074|abi_DoDelegate
 byteParam|uint8_t||1|262146|abi_DoBYTEArray
 int16Param|int16_t||1|262146|abi_DoINT16Array
 uint16Param|uint16_t||1|262146|abi_DoUINT16Array
@@ -117,7 +117,7 @@ structParam|Windows::Foundation::TimeSpan||8|262146|abi_DoStructArray
 enumParam|Windows::Foundation::PropertyType||4|262146|abi_DoEnumArray
 interfaceParam|Windows::Foundation::IPropertyValue||16|262146|abi_DoInterfaceArray
 runtimeclassParam|Modern::Test::IFooTest|Modern::Test::BarTest|16|262146|abi_DoRuntimeclassArray
-delegateParam|Modern::Test::IDelegateTest||32|262146|abi_DoDelegateArray
+delegateParam|Modern::Test::DelegateTest||32|262146|abi_DoDelegateArray
 byteParam|uint8_t||1|393218|abi_DoBYTEArray
 int16Param|int16_t||1|393218|abi_DoINT16Array
 uint16Param|uint16_t||1|393218|abi_DoUINT16Array
@@ -148,7 +148,7 @@ hstringParam|hstring||2|1|abi_Do
 structParam|Windows::Foundation::TimeSpan||8|1|abi_Do
 enumParam|Windows::Foundation::PropertyType||4|1|abi_Do
 interfaceParam|Windows::Foundation::IPropertyValue||16|1|abi_Do
-delegateParam|Modern::Test::IDelegateTest||32|1|abi_Do
+delegateParam|Modern::Test::DelegateTest||32|1|abi_Do
 byteParamArray|uint8_t||1|262146|abi_Do
 int16ParamArray|int16_t||1|262146|abi_Do
 uint16ParamArray|uint16_t||1|262146|abi_Do
@@ -165,7 +165,7 @@ structParamArray|Windows::Foundation::TimeSpan||8|262146|abi_Do
 enumParamArray|Windows::Foundation::PropertyType||4|262146|abi_Do
 interfaceParamArray|Windows::Foundation::IPropertyValue||16|262146|abi_Do
 runtimeclassParamArray|Modern::Test::IFooTest|Modern::Test::BarTest|16|262146|abi_Do
-delegateParamArray|Modern::Test::IDelegateTest||32|262146|abi_Do
+delegateParamArray|Modern::Test::DelegateTest||32|262146|abi_Do
 byteParam|Windows::Foundation::Collections::IVector<uint8_t>||16|1|abi_DoBYTE
 int16Param|Windows::Foundation::Collections::IVector<int16_t>||16|1|abi_DoINT16
 uint16Param|Windows::Foundation::Collections::IVector<uint16_t>||16|1|abi_DoUINT16
@@ -208,7 +208,7 @@ retValue|int32_t||1|65536|abi_Do2
 array|int32_t||1|262145|abi_PassArray
 array|int32_t||1|262146|abi_FillArray
 array|int32_t||1|393218|abi_ReceiveArray
-handler|Windows::Foundation::ITypedEventHandler<Modern::Test::IFooTest, bool>||32|1|add_AccountCommandsRequested
+handler|Windows::Foundation::TypedEventHandler<Modern::Test::IFooTest, bool>||32|1|add_AccountCommandsRequested
 cookie|event_token||1|65536|add_AccountCommandsRequested
 cookie|event_token||1|1|remove_AccountCommandsRequested
 value|Modern::Test::IFooTest||16|65536|get_ConsumeInput

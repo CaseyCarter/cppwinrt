@@ -122,6 +122,7 @@
     <None Include="TestData\E2E\Enumerations.base" />
     <None Include="TestData\E2E\Enumerators.base" />
     <None Include="TestData\E2E\Fields.base" />
+    <None Include="TestData\E2E\GenericInterfaces.base" />
     <None Include="TestData\E2E\Interfaces.base" />
     <None Include="TestData\E2E\Methods.base" />
     <None Include="TestData\E2E\Parameters.base" />
