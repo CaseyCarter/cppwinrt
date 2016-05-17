@@ -1278,7 +1278,7 @@ void WriteAbiInterfaces(Output & out)
               Strings::WriteAbiInterface,
               Settings::InterfaceGuid,
               Settings::InterfaceName,
-              Settings::InterfaceDelegate ? "IUnknown" : "IInspectable",
+              Settings::InterfaceDelegate ? "IUnknown" : "Windows::IInspectable",
               Bind(WriteAbiInterfaceMethods));
     });
 
