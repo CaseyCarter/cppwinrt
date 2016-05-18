@@ -321,15 +321,15 @@ TEST_CASE("hresult_invalid_argument")
     }
 }
 
-TEST_CASE("hresult_bounds")
+TEST_CASE("hresult_out_of_bounds")
 {
     // An original error raised within C++/WinRT
 
     try
     {
-        throw hresult_bounds(); // default restricted error info message
+        throw hresult_out_of_bounds(); // default restricted error info message
     }
-    catch (hresult_bounds const & e)
+    catch (hresult_out_of_bounds const & e)
     {
         REQUIRE(E_BOUNDS == e.code());
         REQUIRE(L"The operation attempted to access data outside the valid range" == e.message());
@@ -337,9 +337,9 @@ TEST_CASE("hresult_bounds")
 
     try
     {
-        throw hresult_bounds(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_out_of_bounds(hresult_error::from_abi{}); // no restricted error info at all
     }
-    catch (hresult_bounds const & e)
+    catch (hresult_out_of_bounds const & e)
     {
         REQUIRE(E_BOUNDS == e.code());
         REQUIRE(L"The operation attempted to access data outside the valid range" == e.message());
@@ -347,9 +347,9 @@ TEST_CASE("hresult_bounds")
 
     try
     {
-        throw hresult_bounds(L"test message"); // custom message for restricted error info message
+        throw hresult_out_of_bounds(L"test message"); // custom message for restricted error info message
     }
-    catch (hresult_bounds const & e)
+    catch (hresult_out_of_bounds const & e)
     {
         REQUIRE(E_BOUNDS == e.code());
         REQUIRE(L"test message" == e.message());

@@ -141,11 +141,11 @@ struct hresult_invalid_argument : hresult_error
     hresult_invalid_argument(hresult_error::from_abi) : hresult_error(E_INVALIDARG, hresult_error::from_abi{}) {}
 };
 
-struct hresult_bounds : hresult_error
+struct hresult_out_of_bounds : hresult_error
 {
-    hresult_bounds() : hresult_error(E_BOUNDS) {}
-    hresult_bounds(hstring_ref message) : hresult_error(E_BOUNDS, message) {}
-    hresult_bounds(hresult_error::from_abi) : hresult_error(E_BOUNDS, hresult_error::from_abi{}) {}
+    hresult_out_of_bounds() : hresult_error(E_BOUNDS) {}
+    hresult_out_of_bounds(hstring_ref message) : hresult_error(E_BOUNDS, message) {}
+    hresult_out_of_bounds(hresult_error::from_abi) : hresult_error(E_BOUNDS, hresult_error::from_abi{}) {}
 };
 
 struct hresult_no_interface : hresult_error
@@ -193,7 +193,7 @@ namespace impl {
 
     if (result == E_BOUNDS)
     {
-        throw hresult_bounds(hresult_error::from_abi{});
+        throw hresult_out_of_bounds(hresult_error::from_abi{});
     }
 
     if (result == E_NOINTERFACE)
