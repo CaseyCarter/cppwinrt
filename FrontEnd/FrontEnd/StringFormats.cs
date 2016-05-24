@@ -38,7 +38,6 @@ namespace Microsoft.Wcl
         public const string ProjectedAbiMethod = "abi_{0}";
         public const string OpenTypeFormat = "!!{0}";
         public const string ProjectedTypeInWinRTNamespace = "winrt::{0}";
-        public const string ProjectedStructureField = "ABI::{0}*";
         public const string OpenGenericDependency1 = "{0}<{1}>";
         public const string OpenGenericDependency2 = "{0}<Windows::Foundation::Collections::IKeyValuePair`2<{1}>>";
     }

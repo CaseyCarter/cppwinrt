@@ -65,12 +65,6 @@ using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interf
 namespace impl {
 
 template <typename T>
-struct traits
-{
-    using abi = T;
-};
-
-template <typename T>
 class has_GetAt
 {
     template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
@@ -135,9 +129,6 @@ class no_ref : public T
 };
 
 }
-
-template <typename T>
-using abi = typename impl::traits<T>::abi;
 
 template <typename T>
 using abi_arg_in = ABI::arg_in<abi<T>>;

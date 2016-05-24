@@ -52,7 +52,7 @@ Windows::Security::Authentication::OnlineId::UserAuthenticationOperation|Windows
 Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
 Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
 Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Storage::AccessCache::AccessListEntryView|Windows::Foundation::Collections::IVectorView<winrt::Windows::Storage::AccessCache::AccessListEntry>|1|0|0
+Windows::Storage::AccessCache::AccessListEntryView|Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>|1|0|0
 Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
 Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
 Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
@@ -62,7 +62,7 @@ Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collecti
 Windows::Storage::Pickers::FileExtensionVector|Windows::Foundation::Collections::IVector<hstring>|1|0|0
 Windows::Storage::Pickers::FilePickerFileTypesOrderedMap|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>|1|0|0
 Windows::Storage::Pickers::FilePickerSelectedFilesArray|Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>|1|0|0
-Windows::Storage::Search::SortEntryVector|Windows::Foundation::Collections::IVector<winrt::Windows::Storage::Search::SortEntry>|1|0|0
+Windows::Storage::Search::SortEntryVector|Windows::Foundation::Collections::IVector<Windows::Storage::Search::SortEntry>|1|0|0
 Windows::Storage::Streams::DataReaderLoadOperation|Windows::Foundation::IAsyncOperation<uint32_t>|1|0|0
 Windows::Storage::Streams::DataWriterStoreOperation|Windows::Foundation::IAsyncOperation<uint32_t>|1|0|0
 Windows::System::UserProfile::FirstSignInSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
@@ -87,7 +87,7 @@ Windows::UI::Xaml::Media::GeometryCollection|Windows::Foundation::Collections::I
 Windows::UI::Xaml::Media::GradientStopCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::GradientStop>|1|0|0
 Windows::UI::Xaml::Media::PathFigureCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathFigure>|1|0|0
 Windows::UI::Xaml::Media::PathSegmentCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathSegment>|1|0|0
-Windows::UI::Xaml::Media::PointCollection|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|1|0|0
+Windows::UI::Xaml::Media::PointCollection|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|1|0|0
 Windows::UI::Xaml::Media::TimelineMarkerCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::TimelineMarker>|1|0|0
 Windows::UI::Xaml::Media::TransformCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Transform>|1|0|0
 Windows::UI::Xaml::ResourceDictionary|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>>|0|0|0

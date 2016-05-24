@@ -19,6 +19,7 @@ int StructureId;
 std::string StructureName;
 std::string FieldName;
 std::string FieldType;
+TypeCategory FieldCategory;
 
 int ClassId;
 std::string ClassName;

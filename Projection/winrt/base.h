@@ -105,32 +105,47 @@ WINRT_EXPORT namespace winrt {
 
 namespace impl {
 
+template <typename T>
+struct traits
+{
+    using abi = T;
+};
+
+}
+
+template <typename T>
+using abi = typename impl::traits<T>::abi;
+
+namespace impl {
+
 template <typename T, typename Enable = void>
 struct accessors
 {
-    static T get(const T & object) noexcept
+    static abi<T> get(const T & object) noexcept
     {
-        return object;
+        return reinterpret_cast<const abi<T> &>(object);
     }
 
-    static T * put(T & object) noexcept
+    static abi<T> * put(T & object) noexcept
     {
-        return &object;
+        return reinterpret_cast<abi<T> *>(&object);
     }
 
-    static void copy_from(T & object, const T & value) noexcept
+    static void copy_from(T & object, const abi<T> & value) noexcept
     {
-        object = value;
+        object = reinterpret_cast<const T &>(value);
     }
 
-    static void copy_to(const T & object, T & value) noexcept
+    static void copy_to(const T & object, abi<T> & value) noexcept
     {
-        value = object;
+        reinterpret_cast<T &>(value) = object;
     }
 
-    static T detach(T & object) noexcept
+    static abi<T> detach(T & object) noexcept
     {
-        return object;
+        abi<T> result {};
+        reinterpret_cast<T &>(result) = std::move(object);
+        return result;
     }
 };
 
@@ -402,12 +417,6 @@ using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interf
 namespace impl {
 
 template <typename T>
-struct traits
-{
-    using abi = T;
-};
-
-template <typename T>
 class has_GetAt
 {
     template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
@@ -472,9 +481,6 @@ class no_ref : public T
 };
 
 }
-
-template <typename T>
-using abi = typename impl::traits<T>::abi;
 
 template <typename T>
 using abi_arg_in = ABI::arg_in<abi<T>>;
@@ -4678,6 +4684,26 @@ struct Size
 using TimeSpan = std::chrono::duration<int64_t, std::ratio<1, 10'000'000>>;
 
 }}
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+using Point = winrt::Windows::Foundation::Point;
+using Size = winrt::Windows::Foundation::Size;
+using TimeSpan = winrt::Windows::Foundation::TimeSpan;
+
+}}}
+
+namespace ABI { namespace Windows { namespace Foundation { namespace Numerics {
+
+using float2 = winrt::Windows::Foundation::Numerics::float2;
+using float3 = winrt::Windows::Foundation::Numerics::float3;
+using float4 = winrt::Windows::Foundation::Numerics::float4;
+using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
+using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
+using plane = winrt::Windows::Foundation::Numerics::plane;
+using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
+
+}}}}
 
 namespace Windows { namespace Foundation {
 

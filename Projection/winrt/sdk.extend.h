@@ -191,11 +191,11 @@ struct IFrameworkElementOverridesT : A
         static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides>().OnApplyTemplate();
     }
 
-    HRESULT __stdcall abi_MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size * returnValue) noexcept override
+    HRESULT __stdcall abi_MeasureOverride(abi_arg_in<Windows::Foundation::Size> availableSize, abi_arg_out<Windows::Foundation::Size> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->MeasureOverride(availableSize));
+            *returnValue = detach(static_cast<T *>(this)->MeasureOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&availableSize)));
             return S_OK;
         }
         catch (...)
@@ -204,11 +204,11 @@ struct IFrameworkElementOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size * returnValue) noexcept override
+    HRESULT __stdcall abi_ArrangeOverride(abi_arg_in<Windows::Foundation::Size> finalSize, abi_arg_out<Windows::Foundation::Size> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->ArrangeOverride(finalSize));
+            *returnValue = detach(static_cast<T *>(this)->ArrangeOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&finalSize)));
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct IFrameworkElementOverrides2T : A
         return static_cast<T *>(this)->as<Windows::UI::Xaml::IFrameworkElementOverrides2>().GoToElementStateCore(stateName, useTransitions);
     }
 
-    HRESULT __stdcall abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_GoToElementStateCore(abi_arg_in<hstring> stateName, bool useTransitions, bool * returnValue) noexcept override
     {
         try
         {
@@ -266,7 +266,7 @@ struct IUIElementOverridesT : A
         static_cast<T *>(this)->as<Windows::UI::Xaml::IUIElementOverrides>().OnDisconnectVisualChildren();
     }
 
-    Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>> FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect)
+    Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect)
     {
         return static_cast<T *>(this)->as<Windows::UI::Xaml::IUIElementOverrides>().FindSubElementsForTouchTargeting(point, boundingRect);
     }
@@ -298,11 +298,11 @@ struct IUIElementOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>>> returnValue) noexcept override
+    HRESULT __stdcall abi_FindSubElementsForTouchTargeting(abi_arg_in<Windows::Foundation::Point> point, abi_arg_in<Windows::Foundation::Rect> boundingRect, abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>>> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->FindSubElementsForTouchTargeting(point, boundingRect));
+            *returnValue = detach(static_cast<T *>(this)->FindSubElementsForTouchTargeting(*reinterpret_cast<const Windows::Foundation::Point *>(&point), *reinterpret_cast<const Windows::Foundation::Rect *>(&boundingRect)));
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct IVisualStateManagerOverridesT : A
         return static_cast<T *>(this)->as<Windows::UI::Xaml::IVisualStateManagerOverrides>().GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
     }
 
-    HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, HSTRING stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_GoToStateCore(abi_arg_in<Windows::UI::Xaml::Controls::IControl> control, abi_arg_in<Windows::UI::Xaml::IFrameworkElement> templateRoot, abi_arg_in<hstring> stateName, abi_arg_in<Windows::UI::Xaml::IVisualStateGroup> group, abi_arg_in<Windows::UI::Xaml::IVisualState> state, bool useTransitions, bool * returnValue) noexcept override
     {
         try
         {
@@ -491,7 +491,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetAcceleratorKeyCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetAcceleratorKeyCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -505,7 +505,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetAccessKeyCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetAccessKeyCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -532,7 +532,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetAutomationIdCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetAutomationIdCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -546,7 +546,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetBoundingRectangleCore(Windows::Foundation::Rect * returnValue) noexcept override
+    HRESULT __stdcall abi_GetBoundingRectangleCore(abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
     {
         try
         {
@@ -573,7 +573,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetClassNameCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetClassNameCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -587,7 +587,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetClickablePointCore(Windows::Foundation::Point * returnValue) noexcept override
+    HRESULT __stdcall abi_GetClickablePointCore(abi_arg_out<Windows::Foundation::Point> returnValue) noexcept override
     {
         try
         {
@@ -600,7 +600,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetHelpTextCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetHelpTextCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -614,7 +614,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetItemStatusCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetItemStatusCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -628,7 +628,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetItemTypeCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetItemTypeCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -656,7 +656,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetLocalizedControlTypeCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetLocalizedControlTypeCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -670,7 +670,7 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetNameCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNameCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -814,11 +814,11 @@ struct IAutomationPeerOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_GetPeerFromPointCore(Windows::Foundation::Point point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    HRESULT __stdcall abi_GetPeerFromPointCore(abi_arg_in<Windows::Foundation::Point> point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->GetPeerFromPointCore(point));
+            *returnValue = detach(static_cast<T *>(this)->GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
         catch (...)
@@ -935,11 +935,11 @@ struct IAutomationPeerOverrides3T : A
         }
     }
 
-    HRESULT __stdcall abi_GetElementFromPointCore(Windows::Foundation::Point pointInWindowCoordinates, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetElementFromPointCore(abi_arg_in<Windows::Foundation::Point> pointInWindowCoordinates, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->GetElementFromPointCore(pointInWindowCoordinates));
+            *returnValue = detach(static_cast<T *>(this)->GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
         catch (...)
@@ -1043,7 +1043,7 @@ struct IAutomationPeerOverrides4T : A
         }
     }
 
-    HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -2457,11 +2457,11 @@ struct IGeneralTransformOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point * outPoint, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_TryTransformCore(abi_arg_in<Windows::Foundation::Point> inPoint, abi_arg_out<Windows::Foundation::Point> outPoint, bool * returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->TryTransformCore(inPoint, *outPoint));
+            *returnValue = detach(static_cast<T *>(this)->TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
         catch (...)
@@ -2470,11 +2470,11 @@ struct IGeneralTransformOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) noexcept override
+    HRESULT __stdcall abi_TransformBoundsCore(abi_arg_in<Windows::Foundation::Rect> rect, abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach(static_cast<T *>(this)->TransformBoundsCore(rect));
+            *returnValue = detach(static_cast<T *>(this)->TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
         catch (...)
@@ -2501,7 +2501,7 @@ struct INavigationTransitionInfoOverridesT : A
         static_cast<T *>(this)->as<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
     }
 
-    HRESULT __stdcall abi_GetNavigationStateCore(HSTRING * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNavigationStateCore(abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
@@ -2515,7 +2515,7 @@ struct INavigationTransitionInfoOverridesT : A
         }
     }
 
-    HRESULT __stdcall abi_SetNavigationStateCore(HSTRING navigationState) noexcept override
+    HRESULT __stdcall abi_SetNavigationStateCore(abi_arg_in<hstring> navigationState) noexcept override
     {
         try
         {
@@ -2567,7 +2567,7 @@ struct ICustomXamlResourceLoaderOverridesT : A
         return static_cast<T *>(this)->as<Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
     }
 
-    HRESULT __stdcall abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetResource(abi_arg_in<hstring> resourceId, abi_arg_in<hstring> objectType, abi_arg_in<hstring> propertyName, abi_arg_in<hstring> propertyType, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {

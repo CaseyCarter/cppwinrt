@@ -243,8 +243,8 @@ BytesReceived|uint64_t|1|Windows::Web::Http::HttpProgress
 BytesSent|uint64_t|1|Windows::Web::Http::HttpProgress
 Retries|uint32_t|1|Windows::Web::Http::HttpProgress
 Stage|Windows::Web::Http::HttpProgressStage|4|Windows::Web::Http::HttpProgress
-TotalBytesToReceive|ABI::Windows::Foundation::IReference<uint64_t>*|16|Windows::Web::Http::HttpProgress
-TotalBytesToSend|ABI::Windows::Foundation::IReference<uint64_t>*|16|Windows::Web::Http::HttpProgress
+TotalBytesToReceive|Windows::Foundation::IReference<uint64_t>|16|Windows::Web::Http::HttpProgress
+TotalBytesToSend|Windows::Foundation::IReference<uint64_t>|16|Windows::Web::Http::HttpProgress
 BytesRetrieved|uint32_t|1|Windows::Web::Syndication::RetrievalProgress
 TotalBytesToRetrieve|uint32_t|1|Windows::Web::Syndication::RetrievalProgress
 BytesRetrieved|uint32_t|1|Windows::Web::Syndication::TransferProgress

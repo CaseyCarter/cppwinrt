@@ -178,7 +178,7 @@ doubleParam|Windows::Foundation::Collections::IVector<double>||16|1|abi_DoDOUBLE
 booleanParam|Windows::Foundation::Collections::IVector<bool>||16|1|abi_Doboolean
 wcharParam|Windows::Foundation::Collections::IVector<wchar_t>||16|1|abi_DoWCHAR
 hstringParam|Windows::Foundation::Collections::IVector<hstring>||16|1|abi_DoHSTRING
-structParam|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::TimeSpan>||16|1|abi_DoStruct
+structParam|Windows::Foundation::Collections::IVector<Windows::Foundation::TimeSpan>||16|1|abi_DoStruct
 enumParam|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::PropertyType>||16|1|abi_DoEnum
 interfaceParam|Windows::Foundation::Collections::IVector<Windows::Foundation::IPropertyValue>||16|1|abi_DoInterface
 runtimeclassParam|Windows::Foundation::Collections::IVector<Modern::Test::BarTest>||16|1|abi_DoRuntimeclass
@@ -195,7 +195,7 @@ doubleParam|Windows::Foundation::Collections::IMap<hstring, double>||16|1|abi_Do
 booleanParam|Windows::Foundation::Collections::IMap<hstring, bool>||16|1|abi_Doboolean
 wcharParam|Windows::Foundation::Collections::IMap<hstring, wchar_t>||16|1|abi_DoWCHAR
 hstringParam|Windows::Foundation::Collections::IMap<hstring, hstring>||16|1|abi_DoHSTRING
-structParam|Windows::Foundation::Collections::IMap<hstring, winrt::Windows::Foundation::TimeSpan>||16|1|abi_DoStruct
+structParam|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::TimeSpan>||16|1|abi_DoStruct
 enumParam|Windows::Foundation::Collections::IMap<hstring, winrt::Windows::Foundation::PropertyType>||16|1|abi_DoEnum
 interfaceParam|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IPropertyValue>||16|1|abi_DoInterface
 runtimeclassParam|Windows::Foundation::Collections::IMap<hstring, Modern::Test::BarTest>||16|1|abi_DoRuntimeclass

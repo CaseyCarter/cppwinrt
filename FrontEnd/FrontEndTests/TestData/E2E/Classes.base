@@ -1369,7 +1369,7 @@ Windows::Services::Maps::MapRouteFinderResult|23||Windows::Services::Maps::IMapR
 Windows::Services::Maps::MapRouteLeg|23||Windows::Services::Maps::IMapRouteLeg|0|0
 Windows::Services::Maps::MapRouteManeuver|23||Windows::Services::Maps::IMapRouteManeuver|0|0
 Windows::Services::Maps::MapService|23|||0|0
-Windows::Storage::AccessCache::AccessListEntryView|29||Windows::Foundation::Collections::IVectorView<winrt::Windows::Storage::AccessCache::AccessListEntry>|0|0
+Windows::Storage::AccessCache::AccessListEntryView|29||Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>|0|0
 Windows::Storage::AccessCache::ItemRemovedEventArgs|29||Windows::Storage::AccessCache::IItemRemovedEventArgs|0|0
 Windows::Storage::AccessCache::StorageApplicationPermissions|29|||0|0
 Windows::Storage::AccessCache::StorageItemAccessList|29||Windows::Storage::AccessCache::IStorageItemAccessList|0|0
@@ -1420,7 +1420,7 @@ Windows::Storage::Search::ContentIndexer|24||Windows::Storage::Search::IContentI
 Windows::Storage::Search::ContentIndexerQuery|24||Windows::Storage::Search::IContentIndexerQuery|0|0
 Windows::Storage::Search::IndexableContent|24||Windows::Storage::Search::IIndexableContent|1|0
 Windows::Storage::Search::QueryOptions|24||Windows::Storage::Search::IQueryOptions|1|0
-Windows::Storage::Search::SortEntryVector|24||Windows::Foundation::Collections::IVector<winrt::Windows::Storage::Search::SortEntry>|0|0
+Windows::Storage::Search::SortEntryVector|24||Windows::Foundation::Collections::IVector<Windows::Storage::Search::SortEntry>|0|0
 Windows::Storage::Search::StorageFileQueryResult|24||Windows::Storage::Search::IStorageFileQueryResult|0|0
 Windows::Storage::Search::StorageFolderQueryResult|24||Windows::Storage::Search::IStorageFolderQueryResult|0|0
 Windows::Storage::Search::StorageItemQueryResult|24||Windows::Storage::Search::IStorageItemQueryResult|0|0
@@ -2259,7 +2259,7 @@ Windows::UI::Xaml::Media::PathGeometry|24||Windows::UI::Xaml::Media::IPathGeomet
 Windows::UI::Xaml::Media::PathSegment|24||Windows::UI::Xaml::Media::IPathSegment|0|0
 Windows::UI::Xaml::Media::PathSegmentCollection|24||Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathSegment>|1|0
 Windows::UI::Xaml::Media::PlaneProjection|24||Windows::UI::Xaml::Media::IPlaneProjection|1|0
-Windows::UI::Xaml::Media::PointCollection|24||Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|1|0
+Windows::UI::Xaml::Media::PointCollection|24||Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|1|0
 Windows::UI::Xaml::Media::PolyBezierSegment|24||Windows::UI::Xaml::Media::IPolyBezierSegment|1|0
 Windows::UI::Xaml::Media::PolyLineSegment|24||Windows::UI::Xaml::Media::IPolyLineSegment|1|0
 Windows::UI::Xaml::Media::PolyQuadraticBezierSegment|24||Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment|1|0

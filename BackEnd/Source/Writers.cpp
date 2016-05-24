@@ -43,17 +43,56 @@ static void WriteStructureFields(Output & out)
     });
 }
 
+static void WriteAbiStructureFields(Output & out)
+{
+    GetFields([&]
+    {
+        if (Settings::FieldCategory == TypeCategory::Enumeration)
+        {
+            Write(out,
+                  Strings::WriteStructureField,
+                  "winrt::" + Settings::FieldType,
+                  Settings::FieldName);
+        }
+        else if (Settings::FieldCategory == TypeCategory::Interface)
+        {
+            Write(out,
+                  Strings::WriteStructureField,
+                  Settings::FieldType + " *",
+                  Settings::FieldName);
+        }
+        else
+        {
+            Write(out,
+                  Strings::WriteStructureField,
+                  Settings::FieldType,
+                  Settings::FieldName);
+        }
+    });
+}
+
 static void WriteProducerForwardArgument(Output & out, Parameter const & param)
 {
     if (param.IsIn())
     {
-        if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate || param.Category == TypeCategory::String)
+        if (param.Category == TypeCategory::Interface ||
+            param.Category == TypeCategory::Delegate ||
+            param.Category == TypeCategory::String ||
+            param.Category == TypeCategory::Structure)
         {
-            Write(out, "*reinterpret_cast<const % *>(&%)", param.ModernType(), param.Name);
+            Write(out,
+                  "*reinterpret_cast<const % *>(&%)",
+                  param.ModernType(),
+                  param.Name);
         }
         else if (param.IsArray())
         {
-            Write(out, "array_ref<const %>(%, % + __%Size)", param.ModernType(), param.Name, param.Name, param.Name);
+            Write(out,
+                  "array_ref<const %>(%, % + __%Size)",
+                  param.ModernType(),
+                  param.Name,
+                  param.Name,
+                  param.Name);
         }
         else
         {
@@ -62,13 +101,20 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
     }
     else if (param.IsOut())
     {
-        if (param.IsArray() && param.IsReferenceOrReturn())
+        if (param.IsArray() &&
+            param.IsReferenceOrReturn())
         {
-            Write(out, "detach<%>(__%Size, %)", param.ModernType(), param.Name, param.Name);
+            Write(out,
+                  "detach<%>(__%Size, %)",
+                  param.ModernType(),
+                  param.Name,
+                  param.Name);
         }
         else
         {
-            Write(out, "*%", param.Name);
+            Write(out,
+                  "*%",
+                  param.Name);
         }
     }
 }
@@ -107,7 +153,7 @@ static void WriteAbiArgument(Output & out, Parameter const & param)
     }
     else
     {
-        if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure || param.Category == TypeCategory::Value)
+        if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Value)
         {
             if (param.IsIn())
             {
@@ -191,36 +237,19 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
 {
     std::string paramType = param.Type;
 
-    if (param.Category == TypeCategory::String)
-    {
-        paramType = "HSTRING";
-    }
-
     if (param.IsIn())
     {
         if (param.IsArray())
         {
-            Write(out, "uint32_t __%Size, ", param.Name);
-
-            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-            {
-                Write(out, "abi_arg_in<%> * %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(out, "% * %", paramType, param.Name);
-            }
+            Write(out, "uint32_t __%Size, abi_arg_in<%> * %", param.Name, param.Type, param.Name);
+        }
+        else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
+        {
+            Write(out, "% %", param.Type, param.Name);
         }
         else
         {
-            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-            {
-                Write(out, "abi_arg_in<%> %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(out, "% %", paramType, param.Name);
-            }
+            Write(out, "abi_arg_in<%> %", param.Type, param.Name);
         }
     }
     else
@@ -229,41 +258,20 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         {
             if (param.IsReferenceOrReturn())
             {
-                Write(out, "uint32_t * __%Size, ", param.Name);
-
-                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-                {
-                    Write(out, "abi_arg_out<%> * %", param.Type, param.Name);
-                }
-                else
-                {
-                    Write(out, "% ** %", paramType, param.Name);
-                }
+                Write(out, "uint32_t * __%Size, abi_arg_out<%> * %", param.Name, param.Type, param.Name);
             }
             else
             {
-                Write(out, "uint32_t __%Size, ", param.Name);
-
-                if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-                {
-                    Write(out, "abi_arg_out<%> %", param.Type, param.Name);
-                }
-                else
-                {
-                    Write(out, "% * %", paramType, param.Name);
-                }
+                Write(out, "uint32_t __%Size, abi_arg_out<%> %", param.Name, param.Type, param.Name);
             }
+        }
+        else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
+        {
+            Write(out, "% * %", param.Type, param.Name);
         }
         else
         {
-            if (param.Category == TypeCategory::Interface || param.Category == TypeCategory::Delegate)
-            {
-                Write(out, "abi_arg_out<%> %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(out, "% * %", paramType, param.Name);
-            }
+            Write(out, "abi_arg_out<%> %", param.Type, param.Name);
         }
     }
 }
@@ -291,11 +299,6 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
 {
     std::string paramType = param.Type;
 
-    if (param.Category == TypeCategory::String)
-    {
-        paramType = "HSTRING";
-    }
-
     if (param.IsIn())
     {
         if (param.IsArray())
@@ -306,7 +309,7 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
             {
                 Write(out, "% ** %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+            else if (param.Category == TypeCategory::Enumeration)
             {
                 Write(out, "winrt::% * %", param.Type, param.Name);
             }
@@ -321,7 +324,7 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
             {
                 Write(out, "% * %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+            else if (param.Category == TypeCategory::Enumeration)
             {
                 Write(out, "winrt::% %", param.Type, param.Name);
             }
@@ -343,7 +346,7 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
                 {
                     Write(out, "% *** %", param.Type, param.Name);
                 }
-                else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+                else if (param.Category == TypeCategory::Enumeration)
                 {
                     Write(out, "winrt::% ** %", param.Type, param.Name);
                 }
@@ -360,7 +363,7 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
                 {
                     Write(out, "% ** %", param.Type, param.Name);
                 }
-                else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+                else if (param.Category == TypeCategory::Enumeration)
                 {
                     Write(out, "winrt::% * %", param.Type, param.Name);
                 }
@@ -376,7 +379,7 @@ static void WriteAbiParameter(Output & out, Parameter const & param)
             {
                 Write(out, "% ** %", param.Type, param.Name);
             }
-            else if (param.Category == TypeCategory::Enumeration || param.Category == TypeCategory::Structure)
+            else if (param.Category == TypeCategory::Enumeration)
             {
                 Write(out, "winrt::% * %", param.Type, param.Name);
             }
@@ -1072,12 +1075,48 @@ void WriteStructures(Output & out)
 {
     GetStructures([&]
     {
+        out.WriteAbiNamespace(Settings::Namespace);
+
+        Write(out,
+              Strings::WriteStructure,
+              Settings::StructureName,
+              Bind(WriteAbiStructureFields));
+    });
+
+    GetNonAbiStructures([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteNonAbiStructure,
+              Settings::StructureName,
+              Settings::Namespace,
+              Settings::StructureName);
+    });
+
+    GetAbiStructures([&]
+    {
         out.WriteNamespace(Settings::Namespace);
 
         Write(out,
               Strings::WriteStructure,
               Settings::StructureName,
               Bind(WriteStructureFields));
+    });
+
+    out.WriteNamespace("impl");
+
+    GetAbiStructures([&]
+    {
+        Write(out,
+              Strings::WriteSimpleTraits,
+              Settings::Namespace,
+              Settings::StructureName,
+              Settings::Namespace,
+              Settings::StructureName);
     });
 
     out.WriteNamespace();
@@ -1143,7 +1182,7 @@ void WriteInterfaceTraits(Output & out)
         if (Settings::InterfaceDelegate)
         {
             Write(out,
-                  Strings::WriteDelegateTraits,
+                  Strings::WriteSimpleTraits,
                   Settings::Namespace,
                   Settings::InterfaceName,
                   Settings::Namespace,

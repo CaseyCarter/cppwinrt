@@ -31,10 +31,10 @@ namespace Microsoft.Wcl.Projection
                 { "Double", new ProjectedTypeInfo() { ProjectedType = "double", TypeCategory = TypeCategory.Value } },
                 { "Single", new ProjectedTypeInfo() { ProjectedType = "float", TypeCategory = TypeCategory.Value } },
                 { "Guid", new ProjectedTypeInfo() { ProjectedType = "GUID", TypeCategory = TypeCategory.Value } },
-                { FullTypeNameConstants.Windows_Foundation_AsyncStatus, new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Structure} },
+                { FullTypeNameConstants.Windows_Foundation_AsyncStatus, new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Enumeration} },
                 { FullTypeNameConstants.Windows_Foundation_EventRegistrationToken, new ProjectedTypeInfo() { ProjectedType = "event_token", TypeCategory = TypeCategory.Value } },
                 { FullTypeNameConstants.Windows_Foundation_HResult, new ProjectedTypeInfo() { ProjectedType = "HRESULT", TypeCategory = TypeCategory.Value } },
-                { "AsyncStatus", new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Structure } },
+                { "AsyncStatus", new ProjectedTypeInfo() { ProjectedType = "Windows::AsyncStatus", TypeCategory = TypeCategory.Enumeration } },
         };
 
         public static string GetProjectedTypeFromMetadataType(string metadataType, bool isGenericInterfaceArgument, IDictionary<string, object> repository)
@@ -237,8 +237,8 @@ namespace Microsoft.Wcl.Projection
                         return metadataType;
                         
                     case TypeDefinitionKind.Struct:
-                        return String.Format(StringFormats.ProjectedTypeInWinRTNamespace, metadataType);
-                        
+                        return metadataType;
+
                     case TypeDefinitionKind.Enum:
                         return String.Format(StringFormats.ProjectedTypeInWinRTNamespace, metadataType);
                         

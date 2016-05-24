@@ -72,6 +72,36 @@ template <typename T> void GetStructures(T callback)
     }
 }
 
+template <typename T> void GetAbiStructures(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetAbiStructures);
+    s.Reset();
+
+    while (s.Step())
+    {
+        Settings::StructureId = s.GetInt(0);
+        Settings::StructureName = s.GetString(1);
+        Settings::Namespace = s.GetString(2);
+
+        callback();
+    }
+}
+
+template <typename T> void GetNonAbiStructures(T callback)
+{
+    static Statement s = Prepare(Strings::DatabaseGetNonAbiStructures);
+    s.Reset();
+
+    while (s.Step())
+    {
+        Settings::StructureId = s.GetInt(0);
+        Settings::StructureName = s.GetString(1);
+        Settings::Namespace = s.GetString(2);
+
+        callback();
+    }
+}
+
 template <typename T> void GetFields(T callback)
 {
     static Statement s = Prepare(Strings::DatabaseGetFields);
@@ -81,6 +111,7 @@ template <typename T> void GetFields(T callback)
     {
         Settings::FieldName = s.GetString(0);
         Settings::FieldType = s.GetString(1);
+        Settings::FieldCategory = static_cast<TypeCategory>(s.GetInt(2));
 
         callback();
     }

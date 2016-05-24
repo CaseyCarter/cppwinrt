@@ -7,7 +7,7 @@ Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>|32|60310303-49
 Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>|32|e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b|Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>
 Windows::Foundation::Collections::IObservableMap<hstring, hstring>|32|1e036276-2f60-55f6-b7f3-f86079e6900b|Windows.Foundation.Collections.IObservableMap`2<String, String>
 Windows::Foundation::IReference<uint32_t>|19|513ef3af-e784-5325-a91e-97c2b8111cf3|Windows.Foundation.IReference`1<UInt32>
-Windows::Foundation::Collections::IVectorView<winrt::Modern::Test::Struct1>|32|24664d70-746e-5444-92f3-ca7e654658b1|Windows.Foundation.Collections.IVectorView`1<Modern.Test.Struct1>
+Windows::Foundation::Collections::IVectorView<Modern::Test::Struct1>|32|24664d70-746e-5444-92f3-ca7e654658b1|Windows.Foundation.Collections.IVectorView`1<Modern.Test.Struct1>
 Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable>|19|c7e65ce2-fad5-5e3b-9c58-186ca8c1dd57|Windows.Foundation.TypedEventHandler`2<Object, Object>
 Windows::Foundation::EventHandler<Windows::IInspectable>|19|c50898f6-c536-5f47-8583-8b2c2438a13b|Windows.Foundation.EventHandler`1<Object>
 Windows::Foundation::Collections::IVector<winrt::Modern::Test::EnumTestsWithFlags>|32|14a71952-0c5e-594f-83f7-58d6377acfa5|Windows.Foundation.Collections.IVector`1<Modern.Test.EnumTestsWithFlags>
@@ -16,8 +16,8 @@ Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>|32|bb
 Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|32|5db5fa32-707c-5849-a06b-91c8eb9d10e8|Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>
 Windows::Foundation::Collections::IMapView<hstring, hstring>|32|ac7f26f2-feb7-5b2a-8ac4-345bc62caede|Windows.Foundation.Collections.IMapView`2<String, String>
 Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>|32|05eb86f1-7140-5517-b88d-cbaebe57e6b1|Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>
-Windows::Foundation::Collections::IIterable<winrt::Modern::Test::Struct1>|32|89d31f97-1921-56cd-8d16-573c7b3dcb21|Windows.Foundation.Collections.IIterable`1<Modern.Test.Struct1>
-Windows::Foundation::Collections::IIterator<winrt::Modern::Test::Struct1>|32|9efdd1a1-83e3-57c1-8090-cb11795a17e0|Windows.Foundation.Collections.IIterator`1<Modern.Test.Struct1>
+Windows::Foundation::Collections::IIterable<Modern::Test::Struct1>|32|89d31f97-1921-56cd-8d16-573c7b3dcb21|Windows.Foundation.Collections.IIterable`1<Modern.Test.Struct1>
+Windows::Foundation::Collections::IIterator<Modern::Test::Struct1>|32|9efdd1a1-83e3-57c1-8090-cb11795a17e0|Windows.Foundation.Collections.IIterator`1<Modern.Test.Struct1>
 Windows::Foundation::Collections::IIterable<winrt::Modern::Test::EnumTestsWithFlags>|32|fe0ceca5-fd5b-5897-aff4-687993f0f879|Windows.Foundation.Collections.IIterable`1<Modern.Test.EnumTestsWithFlags>
 Windows::Foundation::Collections::IIterator<winrt::Modern::Test::EnumTestsWithFlags>|32|40d9b693-f047-5dac-b9e0-176dd3e4c841|Windows.Foundation.Collections.IIterator`1<Modern.Test.EnumTestsWithFlags>
 Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IVector<winrt::Modern::Test::EnumTestsWithFlags>>|32|a9ed51cc-8cb9-51ac-bcf2-33426e094636|Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IVector`1<Modern.Test.EnumTestsWithFlags>>

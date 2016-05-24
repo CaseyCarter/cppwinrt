@@ -531,12 +531,6 @@ namespace Microsoft.Wcl.DataStore
 
                     MetadataTypeToProjectedTypeConverter.GetProjectedTypeAndCategoryFromMetadataType(type, false, this.GetRepository(), out projectedType, out typeCategory);
 
-                    // Special cases for struct fields;
-                    if (type.StartsWith(FullTypeNameConstants.Windows_Foundation_IReference))
-                    {
-                        projectedType = String.Format(StringFormats.ProjectedStructureField, projectedType);
-                    }
-
                     typeParameter.Value = projectedType;
                     rowIdParameter.Value = rowId;
                     categoryParameter.Value = typeCategory;

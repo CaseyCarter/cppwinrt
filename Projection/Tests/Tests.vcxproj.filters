@@ -12,6 +12,7 @@
     <ClCompile Include="hstring.cpp" />
     <ClCompile Include="weak.cpp" />
     <ClCompile Include="handle.cpp" />
+    <ClCompile Include="struct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoInitialize.h" />

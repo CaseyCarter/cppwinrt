@@ -1,32 +1,47 @@
 
 namespace impl {
 
+template <typename T>
+struct traits
+{
+    using abi = T;
+};
+
+}
+
+template <typename T>
+using abi = typename impl::traits<T>::abi;
+
+namespace impl {
+
 template <typename T, typename Enable = void>
 struct accessors
 {
-    static T get(const T & object) noexcept
+    static abi<T> get(const T & object) noexcept
     {
-        return object;
+        return reinterpret_cast<const abi<T> &>(object);
     }
 
-    static T * put(T & object) noexcept
+    static abi<T> * put(T & object) noexcept
     {
-        return &object;
+        return reinterpret_cast<abi<T> *>(&object);
     }
 
-    static void copy_from(T & object, const T & value) noexcept
+    static void copy_from(T & object, const abi<T> & value) noexcept
     {
-        object = value;
+        object = reinterpret_cast<const T &>(value);
     }
 
-    static void copy_to(const T & object, T & value) noexcept
+    static void copy_to(const T & object, abi<T> & value) noexcept
     {
-        value = object;
+        reinterpret_cast<T &>(value) = object;
     }
 
-    static T detach(T & object) noexcept
+    static abi<T> detach(T & object) noexcept
     {
-        return object;
+        abi<T> result {};
+        reinterpret_cast<T &>(result) = std::move(object);
+        return result;
     }
 };
 

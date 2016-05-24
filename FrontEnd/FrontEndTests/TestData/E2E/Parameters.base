@@ -6,7 +6,7 @@ value|hstring||2|4|get_Verb
 value|Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation|Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation|16|4|get_AddAppointmentOperation
 value|Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation|Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation|16|4|get_RemoveAppointmentOperation
 value|Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation|Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation|16|4|get_ReplaceAppointmentOperation
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
 value|hstring||2|4|get_LocalId
 value|hstring||2|4|get_RoamingId
 value|Windows::Foundation::TimeSpan||8|4|get_Duration
@@ -89,13 +89,13 @@ value|hstring||2|4|get_ShowTimeFrame
 value|hstring||2|4|get_ShowAppointmentDetails
 value|hstring||2|1|abi_ReportError
 value|hstring||2|4|get_AppointmentId
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
 value|hstring||2|4|get_SourcePackageFamilyName
 itemId|hstring||2|1|abi_ReportCompleted
 value|hstring||2|1|abi_ReportError
 value|hstring||2|4|get_AppointmentId
 value|Windows::ApplicationModel::Appointments::IAppointment|Windows::ApplicationModel::Appointments::Appointment|16|4|get_AppointmentInformation
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_InstanceStartDate
 value|hstring||2|4|get_SourcePackageFamilyName
 value|bool||1|4|get_AllDay
 value|Windows::ApplicationModel::Appointments::AppointmentBusyStatus||4|4|get_BusyStatus
@@ -105,7 +105,7 @@ value|Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Appoi
 value|hstring||2|4|get_Location
 value|Windows::ApplicationModel::Appointments::IAppointmentParticipant|Windows::ApplicationModel::Appointments::AppointmentOrganizer|16|4|get_Organizer
 value|Windows::ApplicationModel::Appointments::IAppointmentRecurrence|Windows::ApplicationModel::Appointments::AppointmentRecurrence|16|4|get_Recurrence
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Reminder
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Reminder
 value|Windows::ApplicationModel::Appointments::AppointmentSensitivity||4|4|get_Sensitivity
 value|Windows::Foundation::DateTime||8|4|get_StartTime
 value|hstring||2|4|get_Subject
@@ -117,7 +117,7 @@ value|Windows::Foundation::TimeSpan||8|1|put_Duration
 value|hstring||2|1|put_Location
 value|Windows::ApplicationModel::Appointments::IAppointmentParticipant|Windows::ApplicationModel::Appointments::AppointmentOrganizer|16|1|put_Organizer
 value|Windows::ApplicationModel::Appointments::IAppointmentRecurrence|Windows::ApplicationModel::Appointments::AppointmentRecurrence|16|1|put_Recurrence
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Reminder
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Reminder
 value|Windows::ApplicationModel::Appointments::AppointmentSensitivity||4|1|put_Sensitivity
 value|Windows::Foundation::DateTime||8|1|put_StartTime
 value|hstring||2|1|put_Subject
@@ -130,8 +130,8 @@ value|bool||1|4|get_IsOrganizedByUser
 value|bool||1|4|get_IsResponseRequested
 value|hstring||2|4|get_LocalId
 value|hstring||2|4|get_OnlineMeetingLink
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_OriginalStartTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ReplyTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_OriginalStartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ReplyTime
 value|hstring||2|4|get_RoamingId
 value|Windows::ApplicationModel::Appointments::AppointmentParticipantResponse||4|4|get_UserResponse
 value|bool||1|1|put_AllowNewTimeProposal
@@ -139,7 +139,7 @@ value|bool||1|1|put_IsCanceledMeeting
 value|bool||1|1|put_IsOrganizedByUser
 value|bool||1|1|put_IsResponseRequested
 value|hstring||2|1|put_OnlineMeetingLink
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ReplyTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ReplyTime
 value|hstring||2|1|put_RoamingId
 value|Windows::ApplicationModel::Appointments::AppointmentParticipantResponse||4|1|put_UserResponse
 value|uint64_t||1|4|get_ChangeNumber
@@ -338,7 +338,7 @@ value|uint32_t||1|4|get_Interval
 value|uint32_t||1|4|get_Month
 value|Windows::Foundation::IReference<uint32_t>||16|4|get_Occurrences
 value|Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit||4|4|get_Unit
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Until
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Until
 value|Windows::ApplicationModel::Appointments::AppointmentWeekOfMonth||4|4|get_WeekOfMonth
 value|uint32_t||1|1|put_Day
 value|Windows::ApplicationModel::Appointments::AppointmentDaysOfWeek||4|1|put_DaysOfWeek
@@ -346,7 +346,7 @@ value|uint32_t||1|1|put_Interval
 value|uint32_t||1|1|put_Month
 value|Windows::Foundation::IReference<uint32_t>||16|1|put_Occurrences
 value|Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit||4|1|put_Unit
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Until
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Until
 value|Windows::ApplicationModel::Appointments::AppointmentWeekOfMonth||4|1|put_WeekOfMonth
 value|Windows::ApplicationModel::Appointments::RecurrenceType||4|4|get_RecurrenceType
 value|hstring||2|4|get_TimeZone
@@ -580,7 +580,7 @@ trigger|Windows::ApplicationModel::Background::IBackgroundTrigger|Windows::Appli
 applicationId|hstring||2|1|abi_Create
 trigger|Windows::ApplicationModel::Background::IBackgroundTrigger|Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger|16|4|abi_Create
 value|Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress|Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress|16|4|get_Address
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Duration
 value|hstring||2|4|get_Id
 value|bool||1|4|get_IsCallerIdBlocked
 value|bool||1|4|get_IsEmergency
@@ -598,7 +598,7 @@ value|hstring||2|4|get_SourceId
 value|Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind||4|4|get_SourceIdKind
 value|Windows::Foundation::DateTime||8|4|get_StartTime
 value|Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress|Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress|16|1|put_Address
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Duration
 value|bool||1|1|put_IsCallerIdBlocked
 value|bool||1|1|put_IsEmergency
 value|bool||1|1|put_IsIncoming
@@ -858,16 +858,16 @@ value|Windows::Foundation::IReference<uint32_t>||16|4|get_RemainingCharacterCoun
 value|Windows::ApplicationModel::Chat::ChatMessageValidationStatus||4|4|get_Status
 result|hstring||2|4|get_SearchString
 value|hstring||2|1|put_SearchString
-result|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_DeliveryTime
+result|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_DeliveryTime
 result|bool||1|4|get_IsErrorPermanent
-result|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ReadTime
+result|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ReadTime
 result|Windows::ApplicationModel::Chat::ChatMessageStatus||4|4|get_Status
 result|hstring||2|4|get_TransportAddress
 result|int32_t||1|4|get_TransportErrorCode
 result|Windows::ApplicationModel::Chat::ChatTransportErrorCodeCategory||4|4|get_TransportErrorCodeCategory
 result|Windows::ApplicationModel::Chat::ChatTransportInterpretedErrorCode||4|4|get_TransportInterpretedErrorCode
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_DeliveryTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ReadTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_DeliveryTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ReadTime
 value|hstring||2|1|put_TransportAddress
 result|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::IChatItem>>||16|4|abi_ReadBatchAsync
 count|int32_t||1|1|abi_ReadBatchWithCountAsync
@@ -1211,7 +1211,7 @@ value|Windows::ApplicationModel::Contacts::ContactNameOrder||4|4|get_SystemSortO
 value|Windows::ApplicationModel::Contacts::ContactNameOrder||4|1|put_SystemDisplayNameOrder
 value|Windows::ApplicationModel::Contacts::ContactNameOrder||4|1|put_SystemSortOrder
 value|Windows::ApplicationModel::Contacts::ContactMatchReasonKind||4|4|get_Field
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>||16|4|get_Segments
+value|Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>||16|4|get_Segments
 value|hstring||2|4|get_Text
 value|hstring||2|4|get_DisplayName
 value|hstring||2|4|get_FirstName
@@ -1790,17 +1790,17 @@ value|bool||1|4|get_IsEnabled
 value|hstring||2|4|get_Response
 value|bool||1|1|put_IsEnabled
 value|hstring||2|1|put_Response
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_EndTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_EndTime
 value|Windows::ApplicationModel::Email::IEmailMailboxAutoReply|Windows::ApplicationModel::Email::EmailMailboxAutoReply|16|4|get_InternalReply
 value|bool||1|4|get_IsEnabled
 value|Windows::ApplicationModel::Email::IEmailMailboxAutoReply|Windows::ApplicationModel::Email::EmailMailboxAutoReply|16|4|get_KnownExternalReply
 value|Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind||4|4|get_ResponseKind
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_StartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_StartTime
 value|Windows::ApplicationModel::Email::IEmailMailboxAutoReply|Windows::ApplicationModel::Email::EmailMailboxAutoReply|16|4|get_UnknownExternalReply
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_EndTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_EndTime
 value|bool||1|1|put_IsEnabled
 value|Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind||4|1|put_ResponseKind
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_StartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_StartTime
 value|bool||1|4|get_CanForwardMeetings
 value|bool||1|4|get_CanGetAndSetExternalAutoReplies
 value|bool||1|4|get_CanGetAndSetInternalAutoReplies
@@ -1834,29 +1834,29 @@ message|Windows::ApplicationModel::Email::IEmailMessage|Windows::ApplicationMode
 accessType|Windows::ApplicationModel::Email::EmailStoreAccessType||4|1|abi_RequestStoreAsync
 result|Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore>||16|4|abi_RequestStoreAsync
 value|bool||1|4|get_AllowNewTimeProposal
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_AppointmentOriginalStartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_AppointmentOriginalStartTime
 value|hstring||2|4|get_AppointmentRoamingId
 value|Windows::Foundation::TimeSpan||8|4|get_Duration
 value|bool||1|4|get_IsAllDay
 value|bool||1|4|get_IsResponseRequested
 value|hstring||2|4|get_Location
-duration|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_ProposedDuration
-proposedStartTime|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ProposedStartTime
+duration|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_ProposedDuration
+proposedStartTime|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ProposedStartTime
 value|Windows::ApplicationModel::Appointments::IAppointmentRecurrence|Windows::ApplicationModel::Appointments::AppointmentRecurrence|16|4|get_Recurrence
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_RecurrenceStartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_RecurrenceStartTime
 value|uint64_t||1|4|get_RemoteChangeNumber
 value|Windows::Foundation::DateTime||8|4|get_StartTime
 value|bool||1|1|put_AllowNewTimeProposal
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_AppointmentOriginalStartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_AppointmentOriginalStartTime
 value|hstring||2|1|put_AppointmentRoamingId
 value|Windows::Foundation::TimeSpan||8|1|put_Duration
 value|bool||1|1|put_IsAllDay
 value|bool||1|1|put_IsResponseRequested
 value|hstring||2|1|put_Location
-duration|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_ProposedDuration
-proposedStartTime|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ProposedStartTime
+duration|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_ProposedDuration
+proposedStartTime|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ProposedStartTime
 value|Windows::ApplicationModel::Appointments::IAppointmentRecurrence|Windows::ApplicationModel::Appointments::AppointmentRecurrence|16|1|put_Recurrence
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_RecurrenceStartTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_RecurrenceStartTime
 value|uint64_t||1|1|put_RemoteChangeNumber
 value|Windows::Foundation::DateTime||8|1|put_StartTime
 value|Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailAttachment>||16|4|get_Attachments
@@ -1897,7 +1897,7 @@ value|int32_t||1|4|get_OriginalCodePage
 value|hstring||2|4|get_Preview
 value|hstring||2|4|get_RemoteId
 value|Windows::ApplicationModel::Email::IEmailRecipient|Windows::ApplicationModel::Email::EmailRecipient|16|4|get_Sender
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_SentTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_SentTime
 value|bool||1|1|put_AllowInternetImages
 value|Windows::ApplicationModel::Email::EmailMessageDownloadState||4|1|put_DownloadState
 value|uint32_t||1|1|put_EstimatedDownloadSizeInBytes
@@ -1913,7 +1913,7 @@ value|int32_t||1|1|put_OriginalCodePage
 value|hstring||2|1|put_Preview
 value|hstring||2|1|put_RemoteId
 value|Windows::ApplicationModel::Email::IEmailRecipient|Windows::ApplicationModel::Email::EmailRecipient|16|1|put_Sender
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_SentTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_SentTime
 value|Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>||16|4|get_Messages
 value|Windows::ApplicationModel::Email::EmailBatchStatus||4|4|get_Status
 result|Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessageBatch>||16|4|abi_ReadBatchAsync
@@ -2500,7 +2500,7 @@ value|Windows::UI::Color||8|4|get_BodyFontColor
 value|hstring||2|4|get_DisplayMessage
 value|hstring||2|4|get_DisplayName
 value|Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletItemCustomProperty>||16|4|get_DisplayProperties
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationDate
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_HeaderBackgroundImage
 value|Windows::UI::Color||8|4|get_HeaderColor
 value|Windows::UI::Color||8|4|get_HeaderFontColor
@@ -2510,14 +2510,14 @@ value|bool||1|4|get_IsDisplayMessageLaunchable
 value|bool||1|4|get_IsMoreTransactionHistoryLaunchable
 value|hstring||2|4|get_IssuerDisplayName
 value|Windows::ApplicationModel::Wallet::WalletItemKind||4|4|get_Kind
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_LastUpdated
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_LastUpdated
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_Logo159x159
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_Logo336x336
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_Logo99x99
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_LogoImage
 value|hstring||2|4|get_LogoText
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|4|get_PromotionalImage
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_RelevantDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_RelevantDate
 value|hstring||2|4|get_RelevantDateDisplayMessage
 value|Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletRelevantLocation>||16|4|get_RelevantLocations
 value|Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletTransaction>||16|4|get_TransactionHistory
@@ -2528,7 +2528,7 @@ value|Windows::UI::Color||8|1|put_BodyColor
 value|Windows::UI::Color||8|1|put_BodyFontColor
 value|hstring||2|1|put_DisplayMessage
 value|hstring||2|1|put_DisplayName
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationDate
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_HeaderBackgroundImage
 value|Windows::UI::Color||8|1|put_HeaderColor
 value|Windows::UI::Color||8|1|put_HeaderFontColor
@@ -2536,14 +2536,14 @@ value|bool||1|1|put_IsAcknowledged
 value|bool||1|1|put_IsDisplayMessageLaunchable
 value|bool||1|1|put_IsMoreTransactionHistoryLaunchable
 value|hstring||2|1|put_IssuerDisplayName
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_LastUpdated
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_LastUpdated
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_Logo159x159
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_Logo336x336
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_Logo99x99
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_LogoImage
 value|hstring||2|1|put_LogoText
 value|Windows::Storage::Streams::IRandomAccessStreamReference||16|1|put_PromotionalImage
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_RelevantDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_RelevantDate
 value|hstring||2|1|put_RelevantDateDisplayMessage
 value|bool||1|4|get_AutoDetectLinks
 value|Windows::ApplicationModel::Wallet::WalletDetailViewPosition||4|4|get_DetailViewPosition
@@ -2592,13 +2592,13 @@ value|hstring||2|4|get_DisplayAmount
 value|hstring||2|4|get_DisplayLocation
 value|bool||1|4|get_IgnoreTimeOfDay
 value|bool||1|4|get_IsLaunchable
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_TransactionDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_TransactionDate
 value|hstring||2|1|put_Description
 value|hstring||2|1|put_DisplayAmount
 value|hstring||2|1|put_DisplayLocation
 value|bool||1|1|put_IgnoreTimeOfDay
 value|bool||1|1|put_IsLaunchable
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_TransactionDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_TransactionDate
 value|hstring||2|4|get_Name
 value|hstring||2|1|put_Name
 WalletVerb|Windows::ApplicationModel::Wallet::IWalletVerb|Windows::ApplicationModel::Wallet::WalletVerb|16|4|abi_CreateWalletVerb
@@ -2752,10 +2752,10 @@ value|hstring||2|4|get_ResolvedLanguage
 language|hstring||2|1|abi_CreateWithLanguage
 result|Windows::Data::Text::ISelectableWordsSegmenter|Windows::Data::Text::SelectableWordsSegmenter|16|4|abi_CreateWithLanguage
 content|hstring||2|1|abi_Find
-result|Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>||16|4|abi_Find
+result|Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>||16|4|abi_Find
 propertyContent|hstring||2|1|abi_FindInProperty
 propertyName|hstring||2|1|abi_FindInProperty
-result|Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>||16|4|abi_FindInProperty
+result|Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>||16|4|abi_FindInProperty
 aqsFilter|hstring||2|1|abi_Create
 result|Windows::Data::Text::ISemanticTextQuery|Windows::Data::Text::SemanticTextQuery|16|4|abi_Create
 aqsFilter|hstring||2|1|abi_CreateWithLanguage
@@ -3031,7 +3031,7 @@ document|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocum
 xsltProcessor|Windows::Data::Xml::Xsl::IXsltProcessor|Windows::Data::Xml::Xsl::XsltProcessor|16|4|abi_CreateInstance
 value|GUID||1|4|get_AppId
 value|Windows::Foundation::Collections::IMap<hstring, hstring>||16|4|get_AppNames
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_DateOfManufacture
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_DateOfManufacture
 value|hstring||2|4|get_DefaultAppName
 value|hstring||2|4|get_DefaultDescription
 value|hstring||2|4|get_DefaultManufacturer
@@ -3042,7 +3042,7 @@ value|hstring||2|4|get_ModelNumber
 value|hstring||2|4|get_SoftwareVersion
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|4|get_SupportUrl
 value|GUID||1|1|put_AppId
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_DateOfManufacture
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_DateOfManufacture
 value|hstring||2|1|put_DefaultAppName
 value|hstring||2|1|put_DefaultDescription
 value|hstring||2|1|put_DefaultManufacturer
@@ -3053,7 +3053,7 @@ value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_Su
 value|hstring||2|4|get_AJSoftwareVersion
 value|GUID||1|4|get_AppId
 value|hstring||2|4|get_AppName
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_DateOfManufacture
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_DateOfManufacture
 value|Windows::Globalization::ILanguage|Windows::Globalization::Language|16|4|get_DefaultLanguage
 value|hstring||2|4|get_Description
 value|hstring||2|4|get_DeviceId
@@ -3559,12 +3559,12 @@ operation|Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Blue
 deviceSelector|hstring||2|4|abi_GetDeviceSelector
 value|Windows::Foundation::IReference<int16_t>||16|4|get_InRangeThresholdInDBm
 value|Windows::Foundation::IReference<int16_t>||16|4|get_OutOfRangeThresholdInDBm
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_OutOfRangeTimeout
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_SamplingInterval
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_OutOfRangeTimeout
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_SamplingInterval
 value|Windows::Foundation::IReference<int16_t>||16|1|put_InRangeThresholdInDBm
 value|Windows::Foundation::IReference<int16_t>||16|1|put_OutOfRangeThresholdInDBm
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_OutOfRangeTimeout
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_SamplingInterval
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_OutOfRangeTimeout
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_SamplingInterval
 asyncOp|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<uint32_t, Windows::Storage::Streams::IBuffer>>||16|4|abi_GetSdpRawAttributesAsync
 asyncOp|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<uint32_t, Windows::Storage::Streams::IBuffer>>||16|4|abi_GetSdpRawAttributesWithCacheModeAsync
 cacheMode|Windows::Devices::Bluetooth::BluetoothCacheMode||4|1|abi_GetSdpRawAttributesWithCacheModeAsync
@@ -3837,13 +3837,13 @@ northwestCorner|Windows::Devices::Geolocation::BasicGeoposition||8|1|abi_CreateW
 southeastCorner|Windows::Devices::Geolocation::BasicGeoposition||8|1|abi_CreateWithAltitudeReferenceAndSpatialReference
 spatialReferenceId|uint32_t||1|1|abi_CreateWithAltitudeReferenceAndSpatialReference
 value|Windows::Devices::Geolocation::IGeoboundingBox|Windows::Devices::Geolocation::GeoboundingBox|16|4|abi_CreateWithAltitudeReferenceAndSpatialReference
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryCompute
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryCompute
 value|Windows::Devices::Geolocation::IGeoboundingBox|Windows::Devices::Geolocation::GeoboundingBox|16|4|abi_TryCompute
 altitudeRefSystem|Windows::Devices::Geolocation::AltitudeReferenceSystem||4|1|abi_TryComputeWithAltitudeReference
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryComputeWithAltitudeReference
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryComputeWithAltitudeReference
 value|Windows::Devices::Geolocation::IGeoboundingBox|Windows::Devices::Geolocation::GeoboundingBox|16|4|abi_TryComputeWithAltitudeReference
 altitudeRefSystem|Windows::Devices::Geolocation::AltitudeReferenceSystem||4|1|abi_TryComputeWithAltitudeReferenceAndSpatialReference
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryComputeWithAltitudeReferenceAndSpatialReference
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_TryComputeWithAltitudeReferenceAndSpatialReference
 spatialReferenceId|uint32_t||1|1|abi_TryComputeWithAltitudeReferenceAndSpatialReference
 value|Windows::Devices::Geolocation::IGeoboundingBox|Windows::Devices::Geolocation::GeoboundingBox|16|4|abi_TryComputeWithAltitudeReferenceAndSpatialReference
 value|Windows::Devices::Geolocation::BasicGeoposition||8|4|get_Center
@@ -3874,7 +3874,7 @@ ppValue|Windows::Foundation::IReference<double>||16|4|get_VerticalDilutionOfPrec
 value|Windows::Devices::Geolocation::IGeopoint|Windows::Devices::Geolocation::Geopoint|16|4|get_Point
 pValue|Windows::Devices::Geolocation::PositionSource||4|4|get_PositionSource
 ppValue|Windows::Devices::Geolocation::IGeocoordinateSatelliteData|Windows::Devices::Geolocation::GeocoordinateSatelliteData|16|4|get_SatelliteData
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_PositionSourceTimestamp
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_PositionSourceTimestamp
 value|Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition>||16|4|abi_GetGeopositionAsync
 maximumAge|Windows::Foundation::TimeSpan||8|1|abi_GetGeopositionAsyncWithAgeAndTimeout
 timeout|Windows::Foundation::TimeSpan||8|1|abi_GetGeopositionAsyncWithAgeAndTimeout
@@ -3900,14 +3900,14 @@ startTime|Windows::Foundation::DateTime||8|1|abi_GetGeopositionHistoryWithDurati
 result|Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus>||16|4|abi_RequestAccessAsync
 value|Windows::Foundation::IReference<uint32_t>||16|4|get_DesiredAccuracyInMeters
 value|Windows::Foundation::IReference<uint32_t>||16|1|put_DesiredAccuracyInMeters
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|4|get_Positions
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_Create
+value|Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition>||16|4|get_Positions
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_Create
 value|Windows::Devices::Geolocation::IGeopath|Windows::Devices::Geolocation::Geopath|16|4|abi_Create
 altitudeReferenceSystem|Windows::Devices::Geolocation::AltitudeReferenceSystem||4|1|abi_CreateWithAltitudeReference
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_CreateWithAltitudeReference
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_CreateWithAltitudeReference
 value|Windows::Devices::Geolocation::IGeopath|Windows::Devices::Geolocation::Geopath|16|4|abi_CreateWithAltitudeReference
 altitudeReferenceSystem|Windows::Devices::Geolocation::AltitudeReferenceSystem||4|1|abi_CreateWithAltitudeReferenceAndSpatialReference
-positions|Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_CreateWithAltitudeReferenceAndSpatialReference
+positions|Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>||16|1|abi_CreateWithAltitudeReferenceAndSpatialReference
 spatialReferenceId|uint32_t||1|1|abi_CreateWithAltitudeReferenceAndSpatialReference
 value|Windows::Devices::Geolocation::IGeopath|Windows::Devices::Geolocation::Geopath|16|4|abi_CreateWithAltitudeReferenceAndSpatialReference
 value|Windows::Devices::Geolocation::BasicGeoposition||8|4|get_Position
@@ -4071,7 +4071,7 @@ value|uint32_t||1|4|get_MaxContacts
 value|Windows::Foundation::Rect||8|4|get_PhysicalDeviceRect
 value|Windows::Devices::Input::PointerDeviceType||4|4|get_PointerDeviceType
 value|Windows::Foundation::Rect||8|4|get_ScreenRect
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Input::PointerDeviceUsage>||16|4|get_SupportedUsages
+value|Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage>||16|4|get_SupportedUsages
 value|uint32_t||1|4|get_MaxPointersWithZDistance
 pointerDevice|Windows::Devices::Input::IPointerDevice|Windows::Devices::Input::PointerDevice|16|4|abi_GetPointerDevice
 pointerId|uint32_t||1|1|abi_GetPointerDevice
@@ -5937,11 +5937,11 @@ serviceInfoFilter|Windows::Storage::Streams::IBuffer||16|1|abi_GetSelectorWithFi
 serviceName|hstring||2|1|abi_GetSelectorWithFilter
 serviceSelector|hstring||2|4|abi_GetSelectorWithFilter
 asyncInfo|Windows::Foundation::IAsyncAction||16|1|abi_Invoke
-asyncStatus|Windows::AsyncStatus||8|1|abi_Invoke
+asyncStatus|Windows::AsyncStatus||4|1|abi_Invoke
 operationId|uint64_t||1|1|abi_TraceOperationCompletion
 platformId|GUID||1|1|abi_TraceOperationCompletion
 source|Windows::Foundation::Diagnostics::CausalitySource||4|1|abi_TraceOperationCompletion
-status|Windows::AsyncStatus||8|1|abi_TraceOperationCompletion
+status|Windows::AsyncStatus||4|1|abi_TraceOperationCompletion
 traceLevel|Windows::Foundation::Diagnostics::CausalityTraceLevel||4|1|abi_TraceOperationCompletion
 operationId|uint64_t||1|1|abi_TraceOperationCreation
 operationName|hstring||2|1|abi_TraceOperationCreation
@@ -7524,10 +7524,10 @@ value|GUID||1|4|get_ActivityId
 value|hstring||2|4|get_ErrorText
 value|HRESULT||1|4|get_ExtendedErrorCode
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_AddPackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_AddPackageAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_AddPackageAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_AddPackageAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_AddPackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_CleanupPackageForUserAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_CleanupPackageForUserAsync
 packageName|hstring||2|1|abi_CleanupPackageForUserAsync
 userSecurityId|hstring||2|1|abi_CleanupPackageForUserAsync
 packageFullName|hstring||2|1|abi_FindPackageByPackageFullName
@@ -7553,18 +7553,18 @@ userSecurityId|hstring||2|1|abi_FindPackagesByUserSecurityIdPackageFamilyName
 packageFullName|hstring||2|1|abi_FindUsers
 users|Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation>||16|4|abi_FindUsers
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_RegisterPackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_RegisterPackageAsync
 manifestUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RegisterPackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageAsync
 packageFullName|hstring||2|1|abi_RemovePackageAsync
 packageFullName|hstring||2|1|abi_SetPackageState
 packageState|Windows::Management::Deployment::PackageState||4|1|abi_SetPackageState
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_StagePackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_StagePackageAsync
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_UpdatePackageAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_UpdatePackageAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_UpdatePackageAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_UpdatePackageAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_UpdatePackageAsync
 packageCollection|Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>||16|4|abi_FindPackagesByNamePublisherWithPackageTypes
@@ -7589,20 +7589,20 @@ userSecurityId|hstring||2|1|abi_FindPackagesByUserSecurityIdWithPackageTypes
 packageCollection|Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>||16|4|abi_FindPackagesWithPackageTypes
 packageTypes|Windows::Management::Deployment::PackageTypes||4|1|abi_FindPackagesWithPackageTypes
 dependencyPackageFullNames|Windows::Foundation::Collections::IIterable<hstring>||16|1|abi_RegisterPackageByFullNameAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageByFullNameAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageByFullNameAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_RegisterPackageByFullNameAsync
 mainPackageFullName|hstring||2|1|abi_RegisterPackageByFullNameAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageWithOptionsAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageWithOptionsAsync
 packageFullName|hstring||2|1|abi_RemovePackageWithOptionsAsync
 removalOptions|Windows::Management::Deployment::RemovalOptions||4|1|abi_RemovePackageWithOptionsAsync
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_StagePackageWithOptionsAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageWithOptionsAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageWithOptionsAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_StagePackageWithOptionsAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_StagePackageWithOptionsAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StageUserDataAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StageUserDataAsync
 packageFullName|hstring||2|1|abi_StageUserDataAsync
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_AddPackageToVolumeAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_AddPackageToVolumeAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_AddPackageToVolumeAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_AddPackageToVolumeAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_AddPackageToVolumeAsync
 targetVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_AddPackageToVolumeAsync
@@ -7614,30 +7614,30 @@ volume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Depl
 volumeName|hstring||2|1|abi_FindPackageVolumeByName
 volumeCollection|Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageVolume>||16|4|abi_FindPackageVolumes
 volume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|4|abi_GetDefaultPackageVolume
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_MovePackageToVolumeAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_MovePackageToVolumeAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_MovePackageToVolumeAsync
 packageFullName|hstring||2|1|abi_MovePackageToVolumeAsync
 targetVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_MovePackageToVolumeAsync
 appDataVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_RegisterPackageWithAppDataVolumeAsync
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_RegisterPackageWithAppDataVolumeAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageWithAppDataVolumeAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RegisterPackageWithAppDataVolumeAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_RegisterPackageWithAppDataVolumeAsync
 manifestUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RegisterPackageWithAppDataVolumeAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageVolumeAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_RemovePackageVolumeAsync
 volume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_RemovePackageVolumeAsync
 volume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_SetDefaultPackageVolume
 packageFullName|hstring||2|1|abi_SetPackageStatus
 status|Windows::Management::Deployment::PackageStatus||4|1|abi_SetPackageStatus
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_SetPackageVolumeOfflineAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_SetPackageVolumeOfflineAsync
 packageVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_SetPackageVolumeOfflineAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_SetPackageVolumeOnlineAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_SetPackageVolumeOnlineAsync
 packageVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_SetPackageVolumeOnlineAsync
 dependencyPackageUris|Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>||16|1|abi_StagePackageToVolumeAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageToVolumeAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StagePackageToVolumeAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_StagePackageToVolumeAsync
 packageUri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_StagePackageToVolumeAsync
 targetVolume|Windows::Management::Deployment::IPackageVolume|Windows::Management::Deployment::PackageVolume|16|1|abi_StagePackageToVolumeAsync
-deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, winrt::Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StageUserDataWithOptionsAsync
+deploymentOperation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>||16|4|abi_StageUserDataWithOptionsAsync
 deploymentOptions|Windows::Management::Deployment::DeploymentOptions||4|1|abi_StageUserDataWithOptionsAsync
 packageFullName|hstring||2|1|abi_StageUserDataWithOptionsAsync
 value|Windows::Management::Deployment::PackageInstallState||4|4|get_InstallState
@@ -7701,16 +7701,16 @@ position|Windows::Foundation::TimeSpan||8|1|abi_Seek
 handler|Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable>||32|1|add_FileCompleted
 token|event_token||1|4|add_FileCompleted
 value|Windows::Foundation::TimeSpan||8|4|get_Duration
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_EndTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_EndTime
 value|Windows::Foundation::IReference<int32_t>||16|4|get_LoopCount
 value|double||1|4|get_PlaybackSpeedFactor
 value|Windows::Foundation::TimeSpan||8|4|get_Position
 value|Windows::Storage::IStorageFile|Windows::Storage::StorageFile|16|4|get_SourceFile
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_StartTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_EndTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_StartTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_EndTime
 value|Windows::Foundation::IReference<int32_t>||16|1|put_LoopCount
 value|double||1|1|put_PlaybackSpeedFactor
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_StartTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_StartTime
 token|event_token||1|1|remove_FileCompleted
 result|Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason>||16|4|abi_FinalizeAsync
 value|Windows::Storage::IStorageFile||16|4|get_File
@@ -7934,7 +7934,7 @@ value|float||1|1|put_MaxDurationInSeconds
 value|Windows::Media::Capture::CameraCaptureUIMaxVideoResolution||4|1|put_MaxResolution
 value|uint32_t||1|4|get_Height
 value|uint32_t||1|4|get_Width
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Exposure
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Exposure
 value|Windows::Foundation::IReference<float>||16|4|get_ExposureCompensation
 value|Windows::Foundation::IReference<float>||16|4|get_FlashPowerPercent
 value|Windows::Foundation::IReference<bool>||16|4|get_Flashed
@@ -7947,7 +7947,7 @@ value|Windows::Foundation::IReference<winrt::Windows::Media::Devices::MediaCaptu
 value|Windows::Foundation::IReference<double>||16|4|get_IsoAnalogGain
 value|Windows::Foundation::IReference<double>||16|4|get_IsoDigitalGain
 value|Windows::Media::MediaProperties::IMediaRatio|Windows::Media::MediaProperties::MediaRatio|16|4|get_SensorFrameRate
-value|Windows::Foundation::IReference<winrt::Windows::Media::Capture::WhiteBalanceGain>||16|4|get_WhiteBalanceGain
+value|Windows::Foundation::IReference<Windows::Media::Capture::WhiteBalanceGain>||16|4|get_WhiteBalanceGain
 value|Windows::Graphics::Imaging::ISoftwareBitmap|Windows::Graphics::Imaging::SoftwareBitmap|16|4|get_SoftwareBitmap
 value|Windows::Media::Capture::ICapturedFrame|Windows::Media::Capture::CapturedFrame|16|4|get_Frame
 value|Windows::Media::Capture::ICapturedFrame|Windows::Media::Capture::CapturedFrame|16|4|get_Thumbnail
@@ -8266,7 +8266,7 @@ value|Windows::Media::Core::IMediaCue||16|4|get_Cue
 handler|Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs>||32|1|add_OpenOperationCompleted
 token|event_token||1|4|add_OpenOperationCompleted
 value|Windows::Foundation::Collections::IPropertySet|Windows::Foundation::Collections::ValueSet|16|4|get_CustomProperties
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Duration
 value|Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedMetadataTrack>||16|4|get_ExternalTimedMetadataTracks
 value|Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedTextSource>||16|4|get_ExternalTimedTextSources
 value|bool||1|4|get_IsOpen
@@ -8374,7 +8374,7 @@ value|Windows::Media::Core::IMediaStreamSourceSampleRequest|Windows::Media::Core
 value|Windows::Media::Core::IMediaStreamSourceStartingRequest|Windows::Media::Core::MediaStreamSourceStartingRequest|16|4|get_Request
 deferral|Windows::Media::Core::IMediaStreamSourceStartingRequestDeferral|Windows::Media::Core::MediaStreamSourceStartingRequestDeferral|16|4|abi_GetDeferral
 position|Windows::Foundation::TimeSpan||8|1|abi_SetActualStartPosition
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_StartPosition
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_StartPosition
 deferral|Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequestDeferral|Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral|16|4|abi_GetDeferral
 value|Windows::Media::Core::IMediaStreamDescriptor||16|4|get_NewStreamDescriptor
 value|Windows::Media::Core::IMediaStreamDescriptor||16|4|get_OldStreamDescriptor
@@ -8388,7 +8388,7 @@ buffer|Windows::Storage::Streams::IBuffer||16|1|abi_AppendBuffer
 stream|Windows::Storage::Streams::IInputStream||16|1|abi_AppendStream
 maxSize|uint64_t||1|1|abi_AppendStreamMaxSize
 stream|Windows::Storage::Streams::IInputStream||16|1|abi_AppendStreamMaxSize
-end|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|abi_Remove
+end|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|abi_Remove
 start|Windows::Foundation::TimeSpan||8|1|abi_Remove
 handler|Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>||32|1|add_Aborted
 token|event_token||1|4|add_Aborted
@@ -8400,13 +8400,13 @@ handler|Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBu
 token|event_token||1|4|add_UpdateStarting
 handler|Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>||32|1|add_Updated
 token|event_token||1|4|add_Updated
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_AppendWindowEnd
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_AppendWindowEnd
 value|Windows::Foundation::TimeSpan||8|4|get_AppendWindowStart
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Core::MseTimeRange>||16|4|get_Buffered
+value|Windows::Foundation::Collections::IVectorView<Windows::Media::Core::MseTimeRange>||16|4|get_Buffered
 value|bool||1|4|get_IsUpdating
 value|Windows::Media::Core::MseAppendMode||4|4|get_Mode
 value|Windows::Foundation::TimeSpan||8|4|get_TimestampOffset
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_AppendWindowEnd
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_AppendWindowEnd
 value|Windows::Foundation::TimeSpan||8|1|put_AppendWindowStart
 value|Windows::Media::Core::MseAppendMode||4|1|put_Mode
 value|Windows::Foundation::TimeSpan||8|1|put_TimestampOffset
@@ -8433,10 +8433,10 @@ token|event_token||1|4|add_Ended
 handler|Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable>||32|1|add_Opened
 token|event_token||1|4|add_Opened
 value|Windows::Media::Core::IMseSourceBufferList|Windows::Media::Core::MseSourceBufferList|16|4|get_ActiveSourceBuffers
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Duration
 value|Windows::Media::Core::MseReadyState||4|4|get_ReadyState
 value|Windows::Media::Core::IMseSourceBufferList|Windows::Media::Core::MseSourceBufferList|16|4|get_SourceBuffers
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Duration
 token|event_token||1|1|remove_Closed
 token|event_token||1|1|remove_Ended
 token|event_token||1|1|remove_Opened
@@ -8612,9 +8612,9 @@ value|bool||1|4|get_Supported
 value|Windows::Foundation::IReference<float>||16|4|get_Value
 value|Windows::Foundation::IReference<float>||16|1|put_Value
 value|bool||1|4|get_Auto
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Value
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Value
 value|bool||1|1|put_Auto
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Value
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Value
 value|bool||1|4|get_PowerSupported
 value|bool||1|4|get_RedEyeReductionSupported
 value|bool||1|4|get_Supported
@@ -9023,7 +9023,7 @@ framePrecision|Windows::Media::Editing::VideoFramePrecision||4|1|abi_GetThumbnai
 operation|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>>||16|4|abi_GetThumbnailsAsync
 scaledHeight|int32_t||1|1|abi_GetThumbnailsAsync
 scaledWidth|int32_t||1|1|abi_GetThumbnailsAsync
-timesFromStart|Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::TimeSpan>||16|1|abi_GetThumbnailsAsync
+timesFromStart|Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan>||16|1|abi_GetThumbnailsAsync
 destination|Windows::Storage::IStorageFile||16|1|abi_RenderToFileAsync
 operation|Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double>||16|4|abi_RenderToFileAsync
 destination|Windows::Storage::IStorageFile||16|1|abi_RenderToFileWithProfileAsync
@@ -9227,17 +9227,17 @@ activatableClassId|hstring||2|1|abi_RegisterVideoEncoderWithSettings
 configuration|Windows::Foundation::Collections::IPropertySet||16|1|abi_RegisterVideoEncoderWithSettings
 inputSubtype|GUID||1|1|abi_RegisterVideoEncoderWithSettings
 outputSubtype|GUID||1|1|abi_RegisterVideoEncoderWithSettings
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Duration
 value|Windows::Foundation::Collections::IPropertySet||16|4|get_ExtendedProperties
 value|bool||1|4|get_IsDiscontinuous
 value|bool||1|4|get_IsReadOnly
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_RelativeTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_SystemRelativeTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_RelativeTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_SystemRelativeTime
 value|hstring||2|4|get_Type
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Duration
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Duration
 value|bool||1|1|put_IsDiscontinuous
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_RelativeTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_SystemRelativeTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_RelativeTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_SystemRelativeTime
 value|hstring||2|4|get_MediaMarkerType
 value|hstring||2|4|get_Text
 value|Windows::Foundation::TimeSpan||8|4|get_Time
@@ -9366,7 +9366,7 @@ value|uint32_t||1|4|get_TotalCount
 value|uint64_t||1|4|get_TotalSizeInBytes
 value|uint32_t||1|4|get_VideosCount
 value|uint64_t||1|4|get_VideosSizeInBytes
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, winrt::Windows::Media::Import::PhotoImportProgress>||16|4|abi_ImportItemsAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>||16|4|abi_ImportItemsAsync
 action|Windows::Foundation::IAsyncAction||16|4|abi_SelectNewAsync
 value|Windows::Media::Import::PhotoImportImportMode||4|1|abi_SetImportMode
 token|event_token||1|4|add_ItemImported
@@ -9432,7 +9432,7 @@ result|Windows::Foundation::Collections::IVectorView<Windows::Media::Import::Pho
 operation|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_IsSupportedAsync
 operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double>||16|4|get_ContinueDeletingImportedItemsFromSourceAsync
 operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t>||16|4|get_ContinueFindingItemsAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, winrt::Windows::Media::Import::PhotoImportProgress>||16|4|get_ContinueImportingItemsAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>||16|4|get_ContinueImportingItemsAsync
 value|Windows::Media::Import::IPhotoImportSession|Windows::Media::Import::PhotoImportSession|16|4|get_Session
 value|Windows::Media::Import::PhotoImportStage||4|4|get_Stage
 value|bool||1|4|get_IsSelectionEmpty
@@ -9456,7 +9456,7 @@ result|Windows::Media::Import::IPhotoImportSession|Windows::Media::Import::Photo
 value|Windows::Foundation::IReference<uint32_t>||16|4|get_BatteryLevelPercent
 value|hstring||2|4|get_ConnectionProtocol
 value|Windows::Media::Import::PhotoImportConnectionTransport||4|4|get_ConnectionTransport
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_DateTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_DateTime
 value|hstring||2|4|get_Description
 value|hstring||2|4|get_DisplayName
 value|hstring||2|4|get_Id
@@ -9735,7 +9735,7 @@ value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_Pr
 value|double||1|4|get_Rate
 value|hstring||2|4|get_Album
 value|hstring||2|4|get_Author
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Date
 value|hstring||2|4|get_Description
 value|hstring||2|4|get_Genre
 value|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>||16|4|get_Properties
@@ -10094,7 +10094,7 @@ chainDepth|uint32_t||1|1|abi_GetKIDAtChainDepth
 kid|GUID||1|4|abi_GetKIDAtChainDepth
 value|uint32_t||1|4|get_ChainDepth
 value|GUID||1|4|get_DomainAccountID
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationDate
 value|uint32_t||1|4|get_ExpireAfterFirstPlay
 value|bool||1|4|get_FullyEvaluated
 value|bool||1|4|get_UsableForPlay
@@ -10495,7 +10495,7 @@ operations|Windows::Foundation::Collections::IIterable<Windows::Networking::Back
 value|Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>||16|4|get_ContentUris
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|4|get_IndirectContentUri
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_IndirectContentUri
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_LastSuccessfulPrefetchTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_LastSuccessfulPrefetchTime
 operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>||16|4|abi_AttachAsync
 operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>||16|4|abi_StartAsync
 value|Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress||8|4|get_Progress
@@ -10595,7 +10595,7 @@ value|Windows::Foundation::IReference<uint32_t>||16|4|get_DataLimitInMegabytes
 value|Windows::Networking::Connectivity::IDataPlanUsage|Windows::Networking::Connectivity::DataPlanUsage|16|4|get_DataPlanUsage
 value|Windows::Foundation::IReference<uint64_t>||16|4|get_InboundBitsPerSecond
 value|Windows::Foundation::IReference<uint32_t>||16|4|get_MaxTransferSizeInMegabytes
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_NextBillingCycle
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_NextBillingCycle
 value|Windows::Foundation::IReference<uint64_t>||16|4|get_OutboundBitsPerSecond
 value|Windows::Foundation::DateTime||8|4|get_LastSyncTime
 value|uint32_t||1|4|get_MegabytesUsed
@@ -12543,7 +12543,7 @@ operation|Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem>||
 options|Windows::Storage::AccessCache::AccessCacheOptions||4|1|abi_GetItemWithOptionsAsync
 token|hstring||2|1|abi_GetItemWithOptionsAsync
 token|hstring||2|1|abi_Remove
-entries|Windows::Foundation::Collections::IVectorView<winrt::Windows::Storage::AccessCache::AccessListEntry>|Windows::Storage::AccessCache::AccessListEntryView|16|4|get_Entries
+entries|Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>|Windows::Storage::AccessCache::AccessListEntryView|16|4|get_Entries
 value|uint32_t||1|4|get_MaximumItemsAllowed
 eventCookie|event_token||1|4|add_ItemRemoved
 handler|Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs>||32|1|add_ItemRemoved
@@ -13173,12 +13173,12 @@ searchFilter|hstring||2|1|abi_CreateQuery
 propertiesToRetrieve|Windows::Foundation::Collections::IIterable<hstring>||16|1|abi_CreateQueryWithSortOrder
 query|Windows::Storage::Search::IContentIndexerQuery|Windows::Storage::Search::ContentIndexerQuery|16|4|abi_CreateQueryWithSortOrder
 searchFilter|hstring||2|1|abi_CreateQueryWithSortOrder
-sortOrder|Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry>||16|1|abi_CreateQueryWithSortOrder
+sortOrder|Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry>||16|1|abi_CreateQueryWithSortOrder
 propertiesToRetrieve|Windows::Foundation::Collections::IIterable<hstring>||16|1|abi_CreateQueryWithSortOrderAndLanguage
 query|Windows::Storage::Search::IContentIndexerQuery|Windows::Storage::Search::ContentIndexerQuery|16|4|abi_CreateQueryWithSortOrderAndLanguage
 searchFilter|hstring||2|1|abi_CreateQueryWithSortOrderAndLanguage
 searchFilterLanguage|hstring||2|1|abi_CreateQueryWithSortOrderAndLanguage
-sortOrder|Windows::Foundation::Collections::IIterable<winrt::Windows::Storage::Search::SortEntry>||16|1|abi_CreateQueryWithSortOrderAndLanguage
+sortOrder|Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry>||16|1|abi_CreateQueryWithSortOrderAndLanguage
 index|Windows::Storage::Search::IContentIndexer|Windows::Storage::Search::ContentIndexer|16|4|abi_GetIndexer
 index|Windows::Storage::Search::IContentIndexer|Windows::Storage::Search::ContentIndexer|16|4|abi_GetIndexerWithName
 indexName|hstring||2|1|abi_GetIndexerWithName
@@ -13203,7 +13203,7 @@ value|Windows::Storage::Search::FolderDepth||4|4|get_FolderDepth
 value|hstring||2|4|get_GroupPropertyName
 value|Windows::Storage::Search::IndexerOption||4|4|get_IndexerOption
 value|hstring||2|4|get_Language
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Storage::Search::SortEntry>||16|4|get_SortOrder
+value|Windows::Foundation::Collections::IVector<Windows::Storage::Search::SortEntry>||16|4|get_SortOrder
 value|hstring||2|4|get_UserSearchFilter
 value|hstring||2|1|put_ApplicationSearchFilter
 value|Windows::Storage::Search::FolderDepth||4|1|put_FolderDepth
@@ -13221,7 +13221,7 @@ operation|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections:
 startIndex|uint32_t||1|1|abi_GetFilesAsync
 operation|Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>>||16|4|abi_GetFilesAsyncDefaultStartAndCount
 file|Windows::Storage::IStorageFile|Windows::Storage::StorageFile|16|1|abi_GetMatchingPropertiesWithRanges
-result|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVectorView<winrt::Windows::Data::Text::TextSegment>>||16|4|abi_GetMatchingPropertiesWithRanges
+result|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>>||16|4|abi_GetMatchingPropertiesWithRanges
 queryOptions|Windows::Storage::Search::IQueryOptions|Windows::Storage::Search::QueryOptions|16|1|abi_AreQueryOptionsSupported
 value|bool||1|4|abi_AreQueryOptionsSupported
 query|Windows::Storage::Search::CommonFileQuery||4|1|abi_CreateFileQuery
@@ -13509,12 +13509,12 @@ operation|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_LaunchFolderAsync
 folder|Windows::Storage::IStorageFolder||16|1|abi_LaunchFolderWithOptionsAsync
 operation|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_LaunchFolderWithOptionsAsync
 options|Windows::System::IFolderLauncherOptions|Windows::System::FolderLauncherOptions|16|1|abi_LaunchFolderWithOptionsAsync
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|4|get_InvocationPoint
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|4|get_InvocationPoint
 value|Windows::UI::Popups::Placement||4|4|get_PreferredPlacement
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Rect>||16|4|get_SelectionRect
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|1|put_InvocationPoint
+value|Windows::Foundation::IReference<Windows::Foundation::Rect>||16|4|get_SelectionRect
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|1|put_InvocationPoint
 value|Windows::UI::Popups::Placement||4|1|put_PreferredPlacement
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Rect>||16|1|put_SelectionRect
+value|Windows::Foundation::IReference<Windows::Foundation::Rect>||16|1|put_SelectionRect
 value|Windows::UI::ViewManagement::ViewSizePreference||4|4|get_DesiredRemainingView
 value|Windows::UI::ViewManagement::ViewSizePreference||4|1|put_DesiredRemainingView
 handler|Windows::Foundation::EventHandler<Windows::IInspectable>||32|1|add_AppMemoryUsageDecreased
@@ -14550,7 +14550,7 @@ value|Windows::Foundation::Numerics::Matrix3x2||8|1|put_PointTransform
 pointerPoint|Windows::UI::Input::IPointerPoint|Windows::UI::Input::PointerPoint|16|1|abi_AppendToStroke
 previousPointerPoint|Windows::UI::Input::IPointerPoint|Windows::UI::Input::PointerPoint|16|4|abi_AppendToStroke
 pointerPoint|Windows::UI::Input::IPointerPoint|Windows::UI::Input::PointerPoint|16|1|abi_BeginStroke
-points|Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>||16|1|abi_CreateStroke
+points|Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>||16|1|abi_CreateStroke
 stroke|Windows::UI::Input::Inking::IInkStroke|Windows::UI::Input::Inking::InkStroke|16|4|abi_CreateStroke
 pointerPoint|Windows::UI::Input::IPointerPoint|Windows::UI::Input::PointerPoint|16|1|abi_EndStroke
 stroke|Windows::UI::Input::Inking::IInkStroke|Windows::UI::Input::Inking::InkStroke|16|4|abi_EndStroke
@@ -14575,7 +14575,7 @@ from|Windows::Foundation::Point||8|1|abi_SelectWithLine
 invalidatedRectangle|Windows::Foundation::Rect||8|4|abi_SelectWithLine
 to|Windows::Foundation::Point||8|1|abi_SelectWithLine
 invalidatedRectangle|Windows::Foundation::Rect||8|4|abi_SelectWithPolyLine
-polyline|Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>||16|1|abi_SelectWithPolyLine
+polyline|Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>||16|1|abi_SelectWithPolyLine
 recognitionResults|Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>||16|1|abi_UpdateRecognitionResults
 value|Windows::Foundation::Rect||8|4|get_BoundingRect
 strokes|Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke>||16|1|abi_AddStrokes
@@ -14625,8 +14625,8 @@ cookie|event_token||1|1|remove_PointerMoved
 cookie|event_token||1|1|remove_PointerPressed
 cookie|event_token||1|1|remove_PointerReleased
 value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|4|get_Content
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationTime
 content|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|1|abi_CreateBadgeNotification
 notification|Windows::UI::Notifications::IBadgeNotification|Windows::UI::Notifications::BadgeNotification|16|4|abi_CreateBadgeNotification
 updater|Windows::UI::Notifications::IBadgeUpdater|Windows::UI::Notifications::BadgeUpdater|16|4|abi_CreateBadgeUpdaterForApplication
@@ -14644,10 +14644,10 @@ startTime|Windows::Foundation::DateTime||8|1|abi_StartPeriodicUpdateAtTime
 notification|Windows::UI::Notifications::IBadgeNotification|Windows::UI::Notifications::BadgeNotification|16|1|abi_Update
 value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|4|get_Content
 value|Windows::Foundation::DateTime||8|4|get_DeliveryTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationTime
 value|hstring||2|4|get_Id
 value|hstring||2|4|get_Tag
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationTime
 value|hstring||2|1|put_Id
 value|hstring||2|1|put_Tag
 content|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|1|abi_CreateScheduledTileNotification
@@ -14657,7 +14657,7 @@ value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument
 value|Windows::Foundation::DateTime||8|4|get_DeliveryTime
 value|hstring||2|4|get_Id
 value|uint32_t||1|4|get_MaximumSnoozeCount
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_SnoozeInterval
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_SnoozeInterval
 value|hstring||2|1|put_Id
 value|hstring||2|4|get_Group
 value|bool||1|4|get_SuppressPopup
@@ -14674,8 +14674,8 @@ maximumSnoozeCount|uint32_t||1|1|abi_CreateScheduledToastNotificationRecurring
 notification|Windows::UI::Notifications::IScheduledToastNotification|Windows::UI::Notifications::ScheduledToastNotification|16|4|abi_CreateScheduledToastNotificationRecurring
 snoozeInterval|Windows::Foundation::TimeSpan||8|1|abi_CreateScheduledToastNotificationRecurring
 value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|4|get_Content
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationTime
 content|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|1|abi_CreateTileFlyoutNotification
 notification|Windows::UI::Notifications::ITileFlyoutNotification|Windows::UI::Notifications::TileFlyoutNotification|16|4|abi_CreateTileFlyoutNotification
 updater|Windows::UI::Notifications::ITileFlyoutUpdater|Windows::UI::Notifications::TileFlyoutUpdater|16|4|abi_CreateTileFlyoutUpdaterForApplication
@@ -14693,9 +14693,9 @@ tileFlyoutContent|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri
 notification|Windows::UI::Notifications::ITileFlyoutNotification|Windows::UI::Notifications::TileFlyoutNotification|16|1|abi_Update
 value|Windows::UI::Notifications::NotificationSetting||4|4|get_Setting
 value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|4|get_Content
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationTime
 value|hstring||2|4|get_Tag
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationTime
 value|hstring||2|1|put_Tag
 content|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|1|abi_CreateTileNotification
 notification|Windows::UI::Notifications::ITileNotification|Windows::UI::Notifications::TileNotification|16|4|abi_CreateTileNotification
@@ -14735,8 +14735,8 @@ handler|Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Toast
 handler|Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs>||32|1|add_Failed
 token|event_token||1|4|add_Failed
 value|Windows::Data::Xml::Dom::IXmlDocument|Windows::Data::Xml::Dom::XmlDocument|16|4|get_Content
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_ExpirationTime
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_ExpirationTime
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_ExpirationTime
 cookie|event_token||1|1|remove_Activated
 cookie|event_token||1|1|remove_Dismissed
 token|event_token||1|1|remove_Failed
@@ -15371,30 +15371,30 @@ viewId|int32_t||1|1|abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync
 operation|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_TryShowAsStandaloneWithSizePreferenceAsync
 sizePreference|Windows::UI::ViewManagement::ViewSizePreference||4|1|abi_TryShowAsStandaloneWithSizePreferenceAsync
 viewId|int32_t||1|1|abi_TryShowAsStandaloneWithSizePreferenceAsync
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_BackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonHoverBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonHoverForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonInactiveBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonInactiveForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonPressedBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ButtonPressedForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_ForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_InactiveBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_InactiveForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_BackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonHoverBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonHoverForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonInactiveBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonInactiveForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonPressedBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ButtonPressedForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_ForegroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_InactiveBackgroundColor
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_InactiveForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_BackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonHoverBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonHoverForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonInactiveBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonInactiveForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonPressedBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ButtonPressedForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_ForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_InactiveBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_InactiveForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_BackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonHoverBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonHoverForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonInactiveBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonInactiveForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonPressedBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ButtonPressedForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_ForegroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_InactiveBackgroundColor
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_InactiveForegroundColor
 handler|Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs>||32|1|add_Hiding
 token|event_token||1|4|add_Hiding
 handler|Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs>||32|1|add_Showing
@@ -16397,7 +16397,7 @@ token|event_token||1|4|add_Opened
 value|Windows::Foundation::EventHandler<Windows::IInspectable>||32|1|add_Opened
 value|hstring||2|4|get_CalendarIdentifier
 value|Windows::UI::Xaml::IStyle|Windows::UI::Xaml::Style|16|4|get_CalendarViewStyle
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Date
 value|hstring||2|4|get_DateFormat
 value|hstring||2|4|get_DayOfWeekFormat
 value|Windows::UI::Xaml::Controls::CalendarViewDisplayMode||4|4|get_DisplayMode
@@ -16413,7 +16413,7 @@ value|Windows::Foundation::DateTime||8|4|get_MinDate
 value|hstring||2|4|get_PlaceholderText
 value|hstring||2|1|put_CalendarIdentifier
 value|Windows::UI::Xaml::IStyle|Windows::UI::Xaml::Style|16|1|put_CalendarViewStyle
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Date
 value|hstring||2|1|put_DateFormat
 value|hstring||2|1|put_DayOfWeekFormat
 value|Windows::UI::Xaml::Controls::CalendarViewDisplayMode||4|1|put_DisplayMode
@@ -16431,8 +16431,8 @@ token|event_token||1|1|remove_CalendarViewDayItemChanging
 token|event_token||1|1|remove_Closed
 token|event_token||1|1|remove_DateChanged
 token|event_token||1|1|remove_Opened
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_NewDate
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_OldDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_NewDate
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_OldDate
 inner|Windows::IInspectable||16|2|abi_CreateInstance
 instance|Windows::UI::Xaml::Controls::ICalendarDatePicker|Windows::UI::Xaml::Controls::CalendarDatePicker|16|4|abi_CreateInstance
 outer|Windows::IInspectable||16|1|abi_CreateInstance
@@ -16500,7 +16500,7 @@ value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_PressedBorderBrush
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_PressedForeground
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_SelectedBorderBrush
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::DateTime>||16|4|get_SelectedDates
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::DateTime>||16|4|get_SelectedDates
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_SelectedForeground
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_SelectedHoverBorderBrush
 value|Windows::UI::Xaml::Media::IBrush|Windows::UI::Xaml::Media::Brush|16|4|get_SelectedPressedBorderBrush
@@ -16561,7 +16561,7 @@ value|Windows::UI::Xaml::VerticalAlignment||4|1|put_VerticalDayItemAlignment
 value|Windows::UI::Xaml::VerticalAlignment||4|1|put_VerticalFirstOfMonthLabelAlignment
 token|event_token||1|1|remove_CalendarViewDayItemChanging
 token|event_token||1|1|remove_SelectedDatesChanged
-colors|Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Color>||16|1|abi_SetDensityColors
+colors|Windows::Foundation::Collections::IIterable<Windows::UI::Color>||16|1|abi_SetDensityColors
 value|Windows::Foundation::DateTime||8|4|get_Date
 value|bool||1|4|get_IsBlackout
 value|bool||1|1|put_IsBlackout
@@ -16579,8 +16579,8 @@ value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProper
 inner|Windows::IInspectable||16|2|abi_CreateInstance
 instance|Windows::UI::Xaml::Controls::ICalendarView|Windows::UI::Xaml::Controls::CalendarView|16|4|abi_CreateInstance
 outer|Windows::IInspectable||16|1|abi_CreateInstance
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Foundation::DateTime>||16|4|get_AddedDates
-value|Windows::Foundation::Collections::IVectorView<winrt::Windows::Foundation::DateTime>||16|4|get_RemovedDates
+value|Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime>||16|4|get_AddedDates
+value|Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime>||16|4|get_RemovedDates
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_BlackoutForegroundProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_CalendarIdentifierProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_CalendarItemBackgroundProperty
@@ -17067,7 +17067,7 @@ token|event_token||1|1|remove_DateChanged
 inner|Windows::IInspectable||16|2|abi_CreateInstance
 instance|Windows::UI::Xaml::Controls::IDatePicker|Windows::UI::Xaml::Controls::DatePicker|16|4|abi_CreateInstance
 outer|Windows::IInspectable||16|1|abi_CreateInstance
-returnValue|Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>>||16|4|abi_ShowAtAsync
+returnValue|Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::DateTime>>||16|4|abi_ShowAtAsync
 target|Windows::UI::Xaml::IFrameworkElement|Windows::UI::Xaml::FrameworkElement|16|1|abi_ShowAtAsync
 token|event_token||1|4|add_DatePicked
 value|Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::DatePickerFlyout, Windows::UI::Xaml::Controls::DatePickedEventArgs>||32|1|add_DatePicked
@@ -17579,7 +17579,7 @@ value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProper
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_SelectedValuePathProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_SelectedValueProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_SelectionModeProperty
-returnValue|Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
+returnValue|Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
 item|Windows::IInspectable||16|1|abi_ScrollIntoView
 alignment|Windows::UI::Xaml::Controls::ScrollIntoViewAlignment||4|1|abi_ScrollIntoViewWithAlignment
 item|Windows::IInspectable||16|1|abi_ScrollIntoViewWithAlignment
@@ -19039,7 +19039,7 @@ token|event_token||1|1|remove_TimeChanged
 inner|Windows::IInspectable||16|2|abi_CreateInstance
 instance|Windows::UI::Xaml::Controls::ITimePicker|Windows::UI::Xaml::Controls::TimePicker|16|4|abi_CreateInstance
 outer|Windows::IInspectable||16|1|abi_CreateInstance
-returnValue|Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>>||16|4|abi_ShowAtAsync
+returnValue|Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>||16|4|abi_ShowAtAsync
 target|Windows::UI::Xaml::IFrameworkElement|Windows::UI::Xaml::FrameworkElement|16|1|abi_ShowAtAsync
 token|event_token||1|4|add_TimePicked
 value|Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TimePickerFlyout, Windows::UI::Xaml::Controls::TimePickedEventArgs>||32|1|add_TimePicked
@@ -19445,7 +19445,7 @@ isInView|bool||1|2|abi_IsLocationInView
 location|Windows::Devices::Geolocation::IGeopoint|Windows::Devices::Geolocation::Geopoint|16|1|abi_IsLocationInView
 animation|Windows::UI::Xaml::Controls::Maps::MapAnimationKind||4|1|abi_TrySetViewBoundsAsync
 bounds|Windows::Devices::Geolocation::IGeoboundingBox|Windows::Devices::Geolocation::GeoboundingBox|16|1|abi_TrySetViewBoundsAsync
-margin|Windows::Foundation::IReference<winrt::Windows::UI::Xaml::Thickness>||16|1|abi_TrySetViewBoundsAsync
+margin|Windows::Foundation::IReference<Windows::UI::Xaml::Thickness>||16|1|abi_TrySetViewBoundsAsync
 returnValue|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_TrySetViewBoundsAsync
 center|Windows::Devices::Geolocation::IGeopoint|Windows::Devices::Geolocation::Geopoint|16|1|abi_TrySetViewWithCenterAndZoomAsync
 returnValue|Windows::Foundation::IAsyncOperation<bool>||16|4|abi_TrySetViewWithCenterAndZoomAsync
@@ -20427,7 +20427,7 @@ binding|Windows::UI::Xaml::Data::IBindingBase|Windows::UI::Xaml::Data::BindingBa
 dp|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|1|abi_SetBinding
 target|Windows::UI::Xaml::IDependencyObject|Windows::UI::Xaml::DependencyObject|16|1|abi_SetBinding
 count|uint32_t||1|1|abi_LoadMoreItemsAsync
-returnValue|Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
+returnValue|Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
 item|Windows::IInspectable||16|1|abi_MoveCurrentTo
 returnValue|bool||1|4|abi_MoveCurrentTo
 returnValue|bool||1|4|abi_MoveCurrentToFirst
@@ -20522,7 +20522,7 @@ index|int32_t||1|1|abi_IsSelected
 returnValue|bool||1|4|abi_IsSelected
 itemIndexRange|Windows::UI::Xaml::Data::IItemIndexRange|Windows::UI::Xaml::Data::ItemIndexRange|16|1|abi_SelectRange
 count|uint32_t||1|1|abi_LoadMoreItemsAsync
-operation|Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
+operation|Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult>||16|4|abi_LoadMoreItemsAsync
 value|bool||1|4|get_HasMoreItems
 language|hstring||2|1|abi_Convert
 parameter|Windows::IInspectable||16|1|abi_Convert
@@ -21447,7 +21447,7 @@ token|event_token||1|1|remove_DragStarting
 token|event_token||1|1|remove_DropCompleted
 boundingRect|Windows::Foundation::Rect||8|1|abi_FindSubElementsForTouchTargeting
 point|Windows::Foundation::Point||8|1|abi_FindSubElementsForTouchTargeting
-returnValue|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<winrt::Windows::Foundation::Point>>||16|4|abi_FindSubElementsForTouchTargeting
+returnValue|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>>||16|4|abi_FindSubElementsForTouchTargeting
 returnValue|Windows::UI::Xaml::Automation::Peers::IAutomationPeer|Windows::UI::Xaml::Automation::Peers::AutomationPeer|16|4|abi_OnCreateAutomationPeer
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_AllowDropProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_CacheModeProperty
@@ -21900,16 +21900,16 @@ value|int32_t||1|1|put_Bounces
 value|double||1|1|put_Bounciness
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_BouncesProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_BouncinessProperty
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_By
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_By
 value|Windows::UI::Xaml::Media::Animation::IEasingFunctionBase|Windows::UI::Xaml::Media::Animation::EasingFunctionBase|16|4|get_EasingFunction
 value|bool||1|4|get_EnableDependentAnimation
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_From
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|4|get_To
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_By
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_From
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|4|get_To
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_By
 value|Windows::UI::Xaml::Media::Animation::IEasingFunctionBase|Windows::UI::Xaml::Media::Animation::EasingFunctionBase|16|1|put_EasingFunction
 value|bool||1|1|put_EnableDependentAnimation
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_From
-value|Windows::Foundation::IReference<winrt::Windows::UI::Color>||16|1|put_To
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_From
+value|Windows::Foundation::IReference<Windows::UI::Color>||16|1|put_To
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_ByProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_EasingFunctionProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_EnableDependentAnimationProperty
@@ -22103,16 +22103,16 @@ value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProper
 value|Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation||4|4|get_Edge
 value|Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation||4|1|put_Edge
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_EdgeProperty
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|4|get_By
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|4|get_By
 value|Windows::UI::Xaml::Media::Animation::IEasingFunctionBase|Windows::UI::Xaml::Media::Animation::EasingFunctionBase|16|4|get_EasingFunction
 value|bool||1|4|get_EnableDependentAnimation
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|4|get_From
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|4|get_To
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|1|put_By
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|4|get_From
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|4|get_To
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|1|put_By
 value|Windows::UI::Xaml::Media::Animation::IEasingFunctionBase|Windows::UI::Xaml::Media::Animation::EasingFunctionBase|16|1|put_EasingFunction
 value|bool||1|1|put_EnableDependentAnimation
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|1|put_From
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::Point>||16|1|put_To
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|1|put_From
+value|Windows::Foundation::IReference<Windows::Foundation::Point>||16|1|put_To
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_ByProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_EasingFunctionProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_EnableDependentAnimationProperty
@@ -22292,13 +22292,13 @@ value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProper
 token|event_token||1|4|add_Completed
 value|Windows::Foundation::EventHandler<Windows::IInspectable>||32|1|add_Completed
 value|bool||1|4|get_AutoReverse
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_BeginTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_BeginTime
 value|Windows::UI::Xaml::Duration||8|4|get_Duration
 value|Windows::UI::Xaml::Media::Animation::FillBehavior||4|4|get_FillBehavior
 value|Windows::UI::Xaml::Media::Animation::RepeatBehavior||8|4|get_RepeatBehavior
 value|double||1|4|get_SpeedRatio
 value|bool||1|1|put_AutoReverse
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_BeginTime
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_BeginTime
 value|Windows::UI::Xaml::Duration||8|1|put_Duration
 value|Windows::UI::Xaml::Media::Animation::FillBehavior||4|1|put_FillBehavior
 value|Windows::UI::Xaml::Media::Animation::RepeatBehavior||8|1|put_RepeatBehavior
@@ -22554,14 +22554,14 @@ value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProper
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_RotationXProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_RotationYProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_RotationZProperty
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_PointsProperty
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_PointsProperty
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_PointsProperty
 inner|Windows::IInspectable||16|2|abi_CreateInstance
 instance|Windows::UI::Xaml::Media::IProjection|Windows::UI::Xaml::Media::Projection|16|4|abi_CreateInstance
@@ -22926,15 +22926,15 @@ instance|Windows::UI::Xaml::Shapes::IPath|Windows::UI::Xaml::Shapes::Path|16|4|a
 outer|Windows::IInspectable||16|1|abi_CreateInstance
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_DataProperty
 value|Windows::UI::Xaml::Media::FillRule||4|4|get_FillRule
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
 value|Windows::UI::Xaml::Media::FillRule||4|1|put_FillRule
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_FillRuleProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_PointsProperty
 value|Windows::UI::Xaml::Media::FillRule||4|4|get_FillRule
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|4|get_Points
 value|Windows::UI::Xaml::Media::FillRule||4|1|put_FillRule
-value|Windows::Foundation::Collections::IVector<winrt::Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
+value|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|Windows::UI::Xaml::Media::PointCollection|16|1|put_Points
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_FillRuleProperty
 value|Windows::UI::Xaml::IDependencyProperty|Windows::UI::Xaml::DependencyProperty|16|4|get_PointsProperty
 value|double||1|4|get_RadiusX
@@ -22999,31 +22999,31 @@ sender|Windows::IInspectable||16|1|abi_Invoke
 description|hstring||2|1|abi_CreateMediaResourceAsync
 mediaStream|Windows::Storage::Streams::IInputStream||16|1|abi_CreateMediaResourceAsync
 mediaType|hstring||2|1|abi_CreateMediaResourceAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_CreateMediaResourceAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>||16|4|abi_CreateMediaResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_CreateMediaResourceAsync
 description|hstring||2|1|abi_CreateResourceAsync
 item|Windows::Web::Syndication::ISyndicationItem|Windows::Web::Syndication::SyndicationItem|16|1|abi_CreateResourceAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_CreateResourceAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>||16|4|abi_CreateResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_CreateResourceAsync
-operation|Windows::Foundation::IAsyncActionWithProgress<winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_DeleteResourceAsync
+operation|Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>||16|4|abi_DeleteResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_DeleteResourceAsync
 item|Windows::Web::Syndication::ISyndicationItem|Windows::Web::Syndication::SyndicationItem|16|1|abi_DeleteResourceItemAsync
-operation|Windows::Foundation::IAsyncActionWithProgress<winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_DeleteResourceItemAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, winrt::Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveMediaResourceAsync
+operation|Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>||16|4|abi_DeleteResourceItemAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveMediaResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RetrieveMediaResourceAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, winrt::Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveResourceAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RetrieveResourceAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, winrt::Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveServiceDocumentAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveServiceDocumentAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RetrieveServiceDocumentAsync
 mediaStream|Windows::Storage::Streams::IInputStream||16|1|abi_UpdateMediaResourceAsync
 mediaType|hstring||2|1|abi_UpdateMediaResourceAsync
-operation|Windows::Foundation::IAsyncActionWithProgress<winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateMediaResourceAsync
+operation|Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateMediaResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_UpdateMediaResourceAsync
 item|Windows::Web::Syndication::ISyndicationItem|Windows::Web::Syndication::SyndicationItem|16|1|abi_UpdateResourceAsync
-operation|Windows::Foundation::IAsyncActionWithProgress<winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateResourceAsync
+operation|Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateResourceAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_UpdateResourceAsync
 item|Windows::Web::Syndication::ISyndicationItem|Windows::Web::Syndication::SyndicationItem|16|1|abi_UpdateResourceItemAsync
-operation|Windows::Foundation::IAsyncActionWithProgress<winrt::Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateResourceItemAsync
+operation|Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>||16|4|abi_UpdateResourceItemAsync
 atomPubClient|Windows::Web::AtomPub::IAtomPubClient|Windows::Web::AtomPub::AtomPubClient|16|4|abi_CreateAtomPubClientWithCredentials
 serverCredential|Windows::Security::Credentials::IPasswordCredential|Windows::Security::Credentials::PasswordCredential|16|1|abi_CreateAtomPubClientWithCredentials
 value|Windows::Foundation::Collections::IVectorView<hstring>||16|4|get_Accepts
@@ -23058,19 +23058,19 @@ value|Windows::Web::Http::Filters::HttpCacheReadBehavior||4|4|get_ReadBehavior
 value|Windows::Web::Http::Filters::HttpCacheWriteBehavior||4|4|get_WriteBehavior
 value|Windows::Web::Http::Filters::HttpCacheReadBehavior||4|1|put_ReadBehavior
 value|Windows::Web::Http::Filters::HttpCacheWriteBehavior||4|1|put_WriteBehavior
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestAsync
 request|Windows::Web::Http::IHttpRequestMessage|Windows::Web::Http::HttpRequestMessage|16|1|abi_SendRequestAsync
 input|hstring||2|1|abi_ParseAdd
 input|hstring||2|1|abi_TryParseAdd
 succeeded|bool||1|4|abi_TryParseAdd
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_MaxAge
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_MaxStale
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_MinFresh
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_SharedMaxAge
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_MaxAge
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_MaxStale
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_MinFresh
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_SharedMaxAge
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_MaxAge
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_MaxStale
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_MinFresh
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_SharedMaxAge
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_MaxAge
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_MaxStale
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_MinFresh
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_SharedMaxAge
 value|Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue>||16|4|get_Parameters
 value|hstring||2|4|get_Scheme
 value|hstring||2|4|get_Token
@@ -23155,16 +23155,16 @@ value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|4|get_Co
 value|Windows::Storage::Streams::IBuffer||16|4|get_ContentMD5
 value|Windows::Web::Http::Headers::IHttpContentRangeHeaderValue|Windows::Web::Http::Headers::HttpContentRangeHeaderValue|16|4|get_ContentRange
 value|Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue|Windows::Web::Http::Headers::HttpMediaTypeHeaderValue|16|4|get_ContentType
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Expires
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_LastModified
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Expires
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_LastModified
 value|Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue|Windows::Web::Http::Headers::HttpContentDispositionHeaderValue|16|1|put_ContentDisposition
 value|Windows::Foundation::IReference<uint64_t>||16|1|put_ContentLength
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_ContentLocation
 value|Windows::Storage::Streams::IBuffer||16|1|put_ContentMD5
 value|Windows::Web::Http::Headers::IHttpContentRangeHeaderValue|Windows::Web::Http::Headers::HttpContentRangeHeaderValue|16|1|put_ContentRange
 value|Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue|Windows::Web::Http::Headers::HttpMediaTypeHeaderValue|16|1|put_ContentType
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Expires
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_LastModified
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Expires
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_LastModified
 value|Windows::Foundation::IReference<uint64_t>||16|4|get_FirstBytePosition
 value|Windows::Foundation::IReference<uint64_t>||16|4|get_LastBytePosition
 value|Windows::Foundation::IReference<uint64_t>||16|4|get_Length
@@ -23213,8 +23213,8 @@ input|hstring||2|1|abi_Parse
 credentialsHeaderValue|Windows::Web::Http::Headers::IHttpCredentialsHeaderValue|Windows::Web::Http::Headers::HttpCredentialsHeaderValue|16|2|abi_TryParse
 input|hstring||2|1|abi_TryParse
 succeeded|bool||1|4|abi_TryParse
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Date
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Delta
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Date
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Delta
 dateOrDeltaHeaderValue|Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue|Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue|16|4|abi_Parse
 input|hstring||2|1|abi_Parse
 dateOrDeltaHeaderValue|Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue|Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue|16|2|abi_TryParse
@@ -23342,23 +23342,23 @@ value|Windows::Web::Http::Headers::IHttpCredentialsHeaderValue|Windows::Web::Htt
 value|Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCollection|Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection|16|4|get_CacheControl
 value|Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueCollection|Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection|16|4|get_Connection
 value|Windows::Web::Http::Headers::IHttpCookiePairHeaderValueCollection|Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection|16|4|get_Cookie
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Date
 value|Windows::Web::Http::Headers::IHttpExpectationHeaderValueCollection|Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection|16|4|get_Expect
 value|hstring||2|4|get_From
 value|Windows::Networking::IHostName|Windows::Networking::HostName|16|4|get_Host
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_IfModifiedSince
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_IfUnmodifiedSince
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_IfModifiedSince
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_IfUnmodifiedSince
 value|Windows::Foundation::IReference<uint32_t>||16|4|get_MaxForwards
 value|Windows::Web::Http::Headers::IHttpCredentialsHeaderValue|Windows::Web::Http::Headers::HttpCredentialsHeaderValue|16|4|get_ProxyAuthorization
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|4|get_Referer
 value|Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueCollection|Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection|16|4|get_TransferEncoding
 value|Windows::Web::Http::Headers::IHttpProductInfoHeaderValueCollection|Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection|16|4|get_UserAgent
 value|Windows::Web::Http::Headers::IHttpCredentialsHeaderValue|Windows::Web::Http::Headers::HttpCredentialsHeaderValue|16|1|put_Authorization
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Date
 value|hstring||2|1|put_From
 value|Windows::Networking::IHostName|Windows::Networking::HostName|16|1|put_Host
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_IfModifiedSince
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_IfUnmodifiedSince
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_IfModifiedSince
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_IfUnmodifiedSince
 value|Windows::Foundation::IReference<uint32_t>||16|1|put_MaxForwards
 value|Windows::Web::Http::Headers::IHttpCredentialsHeaderValue|Windows::Web::Http::Headers::HttpCredentialsHeaderValue|16|1|put_ProxyAuthorization
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_Referer
@@ -23367,18 +23367,18 @@ value|hstring||2|1|abi_Append
 name|hstring||2|1|abi_TryAppendWithoutValidation
 succeeded|bool||1|4|abi_TryAppendWithoutValidation
 value|hstring||2|1|abi_TryAppendWithoutValidation
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|4|get_Age
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|4|get_Age
 value|Windows::Web::Http::Headers::IHttpMethodHeaderValueCollection|Windows::Web::Http::Headers::HttpMethodHeaderValueCollection|16|4|get_Allow
 value|Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCollection|Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection|16|4|get_CacheControl
 value|Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueCollection|Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection|16|4|get_Connection
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Date
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Date
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|4|get_Location
 value|Windows::Web::Http::Headers::IHttpChallengeHeaderValueCollection|Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection|16|4|get_ProxyAuthenticate
 value|Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue|Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue|16|4|get_RetryAfter
 value|Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueCollection|Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection|16|4|get_TransferEncoding
 value|Windows::Web::Http::Headers::IHttpChallengeHeaderValueCollection|Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection|16|4|get_WwwAuthenticate
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::TimeSpan>||16|1|put_Age
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Date
+value|Windows::Foundation::IReference<Windows::Foundation::TimeSpan>||16|1|put_Age
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Date
 value|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|put_Location
 value|Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue|Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue|16|1|put_RetryAfter
 value|Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue>||16|4|get_Parameters
@@ -23399,29 +23399,29 @@ bufferContent|Windows::Web::Http::IHttpContent|Windows::Web::Http::HttpBufferCon
 content|Windows::Storage::Streams::IBuffer||16|1|abi_CreateFromBufferWithOffset
 count|uint32_t||1|1|abi_CreateFromBufferWithOffset
 offset|uint32_t||1|1|abi_CreateFromBufferWithOffset
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_DeleteAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_DeleteAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_DeleteAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_GetAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_GetAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_GetAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_GetBufferAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, Windows::Web::Http::HttpProgress>||16|4|abi_GetBufferAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_GetBufferAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_GetInputStreamAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Http::HttpProgress>||16|4|abi_GetInputStreamAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_GetInputStreamAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<hstring, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_GetStringAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<hstring, Windows::Web::Http::HttpProgress>||16|4|abi_GetStringAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_GetStringAsync
 completionOption|Windows::Web::Http::HttpCompletionOption||4|1|abi_GetWithOptionAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_GetWithOptionAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_GetWithOptionAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_GetWithOptionAsync
 content|Windows::Web::Http::IHttpContent||16|1|abi_PostAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_PostAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_PostAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_PostAsync
 content|Windows::Web::Http::IHttpContent||16|1|abi_PutAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_PutAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_PutAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_PutAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestAsync
 request|Windows::Web::Http::IHttpRequestMessage|Windows::Web::Http::HttpRequestMessage|16|1|abi_SendRequestAsync
 completionOption|Windows::Web::Http::HttpCompletionOption||4|1|abi_SendRequestWithOptionAsync
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, winrt::Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestWithOptionAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>||16|4|abi_SendRequestWithOptionAsync
 request|Windows::Web::Http::IHttpRequestMessage|Windows::Web::Http::HttpRequestMessage|16|1|abi_SendRequestWithOptionAsync
 value|Windows::Web::Http::Headers::IHttpRequestHeaderCollection|Windows::Web::Http::Headers::HttpRequestHeaderCollection|16|4|get_DefaultRequestHeaders
 client|Windows::Web::Http::IHttpClient|Windows::Web::Http::HttpClient|16|4|abi_Create
@@ -23436,13 +23436,13 @@ operation|Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>||
 outputStream|Windows::Storage::Streams::IOutputStream||16|1|abi_WriteToStreamAsync
 value|Windows::Web::Http::Headers::IHttpContentHeaderCollection|Windows::Web::Http::Headers::HttpContentHeaderCollection|16|4|get_Headers
 value|hstring||2|4|get_Domain
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|4|get_Expires
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|4|get_Expires
 value|bool||1|4|get_HttpOnly
 value|hstring||2|4|get_Name
 value|hstring||2|4|get_Path
 value|bool||1|4|get_Secure
 value|hstring||2|4|get_Value
-value|Windows::Foundation::IReference<winrt::Windows::Foundation::DateTime>||16|1|put_Expires
+value|Windows::Foundation::IReference<Windows::Foundation::DateTime>||16|1|put_Expires
 value|bool||1|1|put_HttpOnly
 value|bool||1|1|put_Secure
 value|hstring||2|1|put_Value
@@ -23554,7 +23554,7 @@ category|Windows::Web::Syndication::ISyndicationCategory|Windows::Web::Syndicati
 label|hstring||2|1|abi_CreateSyndicationCategoryEx
 scheme|hstring||2|1|abi_CreateSyndicationCategoryEx
 term|hstring||2|1|abi_CreateSyndicationCategoryEx
-operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, winrt::Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveFeedAsync
+operation|Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress>||16|4|abi_RetrieveFeedAsync
 uri|Windows::Foundation::IUriRuntimeClass|Windows::Foundation::Uri|16|1|abi_RetrieveFeedAsync
 name|hstring||2|1|abi_SetRequestHeader
 value|hstring||2|1|abi_SetRequestHeader
