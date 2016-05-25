@@ -117,10 +117,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <GenerateManifest>false</GenerateManifest>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <GenerateManifest>false</GenerateManifest>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,28 +142,28 @@
     <PostBuildEvent>
       <Command>rd /q /s "$(TargetDir)TestData
 md "$(TargetDir)TestData
-md "$(TargetDir)TEstData\InterfacesInput"
-copy "$(TargetDir)Interface*" "$(TargetDir)TEstData\InterfacesInput\" 
-md "$(TargetDir)TEstData\RuntimeclassInput"
-copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TEstData\RuntimeclassInput\*" 
-md "$(TargetDir)TEstData\ClassStaticsInput"
-copy "$(TargetDir)ClassStatics*" "$(TargetDir)TEstData\ClassStaticsInput\*" 
-md "$(TargetDir)TEstData\ClassConstructorsInput"
-copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TEstData\ClassConstructorsInput\*" 
-md "$(TargetDir)TEstData\EnumerationsInput"
-copy "$(TargetDir)Enumerations*" "$(TargetDir)TEstData\EnumerationsInput\*" 
-md "$(TargetDir)TEstData\StructuresInput"
-copy "$(TargetDir)Structures*" "$(TargetDir)TEstData\StructuresInput\*" 
-md "$(TargetDir)TEstData\DelegatesInput"
-copy "$(TargetDir)Delegate*" "$(TargetDir)TEstData\DelegatesInput\*" 
-md "$(TargetDir)TEstData\ParameterizedTypeIIDInput"
-copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-md "$(TargetDir)TEstData\PlatformVersion"
-copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*" </Command>
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -182,28 +186,28 @@ copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*
     <PostBuildEvent>
       <Command>rd /q /s "$(TargetDir)TestData
 md "$(TargetDir)TestData
-md "$(TargetDir)TEstData\InterfacesInput"
-copy "$(TargetDir)Interface*" "$(TargetDir)TEstData\InterfacesInput\" 
-md "$(TargetDir)TEstData\RuntimeclassInput"
-copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TEstData\RuntimeclassInput\*" 
-md "$(TargetDir)TEstData\ClassStaticsInput"
-copy "$(TargetDir)ClassStatics*" "$(TargetDir)TEstData\ClassStaticsInput\*" 
-md "$(TargetDir)TEstData\ClassConstructorsInput"
-copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TEstData\ClassConstructorsInput\*" 
-md "$(TargetDir)TEstData\EnumerationsInput"
-copy "$(TargetDir)Enumerations*" "$(TargetDir)TEstData\EnumerationsInput\*" 
-md "$(TargetDir)TEstData\StructuresInput"
-copy "$(TargetDir)Structures*" "$(TargetDir)TEstData\StructuresInput\*" 
-md "$(TargetDir)TEstData\DelegatesInput"
-copy "$(TargetDir)Delegate*" "$(TargetDir)TEstData\DelegatesInput\*" 
-md "$(TargetDir)TEstData\ParameterizedTypeIIDInput"
-copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TEstData\ParameterizedTypeIIDInput\*" 
-md "$(TargetDir)TEstData\PlatformVersion"
-copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*" </Command>
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
@@ -238,6 +242,35 @@ copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
+    <Midl>
+      <AdditionalOptions>/struct_by_ref %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
+    <PostBuildEvent>
+      <Command>rd /q /s "$(TargetDir)TestData
+md "$(TargetDir)TestData
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -249,6 +282,35 @@ copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TEstData\platformversion\*
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
+    <Midl>
+      <AdditionalOptions>/struct_by_ref %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
+    <PostBuildEvent>
+      <Command>rd /q /s "$(TargetDir)TestData
+md "$(TargetDir)TestData
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="TestIDLs.h" />
