@@ -84,7 +84,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        throw hresult_invalid_argument(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -105,7 +105,7 @@ TEST_CASE("hresult,restricted,producing")
     try
     {
         WINRT_RoOriginateError(E_INVALIDARG, get(hstring_ref(L"Correctly matched error info")));
-        throw hresult_invalid_argument(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -116,7 +116,7 @@ TEST_CASE("hresult,restricted,producing")
     try
     {
         WINRT_RoOriginateError(E_FAIL, get(hstring_ref(L"Incorrectly matched error info")));
-        throw hresult_invalid_argument(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -197,7 +197,7 @@ TEST_CASE("hresult_access_denied")
 
     try
     {
-        throw hresult_access_denied(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_access_denied(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_access_denied const & e)
     {
@@ -232,7 +232,7 @@ TEST_CASE("hresult_wrong_thread")
 
     try
     {
-        throw hresult_wrong_thread(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_wrong_thread(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_wrong_thread const & e)
     {
@@ -267,7 +267,7 @@ TEST_CASE("hresult_not_implemented")
 
     try
     {
-        throw hresult_not_implemented(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_not_implemented(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_not_implemented const & e)
     {
@@ -302,7 +302,7 @@ TEST_CASE("hresult_invalid_argument")
 
     try
     {
-        throw hresult_invalid_argument(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -337,7 +337,7 @@ TEST_CASE("hresult_out_of_bounds")
 
     try
     {
-        throw hresult_out_of_bounds(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_out_of_bounds(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_out_of_bounds const & e)
     {
@@ -372,7 +372,7 @@ TEST_CASE("hresult_no_interface")
 
     try
     {
-        throw hresult_no_interface(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_no_interface(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_no_interface const & e)
     {
@@ -407,7 +407,7 @@ TEST_CASE("hresult_disconnected")
 
     try
     {
-        throw hresult_disconnected(hresult_error::from_abi{}); // no restricted error info at all
+        throw hresult_disconnected(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_disconnected const & e)
     {

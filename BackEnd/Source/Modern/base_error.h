@@ -36,7 +36,8 @@ inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size
 
 struct hresult_error
 {
-    struct from_abi {};
+    struct from_abi_t {};
+    static constexpr from_abi_t from_abi {};
 
     explicit hresult_error(const HRESULT code) noexcept :
         m_code(code)
@@ -52,7 +53,7 @@ struct hresult_error
         WINRT_GetRestrictedErrorInfo(put(m_info));
     }
 
-    hresult_error(const HRESULT code, from_abi) noexcept :
+    hresult_error(const HRESULT code, from_abi_t) noexcept :
         m_code(code)
     {
         WINRT_GetRestrictedErrorInfo(put(m_info));
@@ -117,49 +118,49 @@ struct hresult_access_denied : hresult_error
 {
     hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
     hresult_access_denied(hstring_ref message) : hresult_error(E_ACCESSDENIED, message) {}
-    hresult_access_denied(hresult_error::from_abi) : hresult_error(E_ACCESSDENIED, hresult_error::from_abi{}) {}
+    hresult_access_denied(from_abi_t) : hresult_error(E_ACCESSDENIED, from_abi) {}
 };
 
 struct hresult_wrong_thread : hresult_error
 {
     hresult_wrong_thread() : hresult_error(RPC_E_WRONG_THREAD) {}
     hresult_wrong_thread(hstring_ref message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
-    hresult_wrong_thread(hresult_error::from_abi) : hresult_error(RPC_E_WRONG_THREAD, hresult_error::from_abi{}) {}
+    hresult_wrong_thread(from_abi_t) : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
 };
 
 struct hresult_not_implemented : hresult_error
 {
     hresult_not_implemented() : hresult_error(E_NOTIMPL) {}
     hresult_not_implemented(hstring_ref message) : hresult_error(E_NOTIMPL, message) {}
-    hresult_not_implemented(hresult_error::from_abi) : hresult_error(E_NOTIMPL, hresult_error::from_abi{}) {}
+    hresult_not_implemented(from_abi_t) : hresult_error(E_NOTIMPL, from_abi) {}
 };
 
 struct hresult_invalid_argument : hresult_error
 {
     hresult_invalid_argument() : hresult_error(E_INVALIDARG) {}
     hresult_invalid_argument(hstring_ref message) : hresult_error(E_INVALIDARG, message) {}
-    hresult_invalid_argument(hresult_error::from_abi) : hresult_error(E_INVALIDARG, hresult_error::from_abi{}) {}
+    hresult_invalid_argument(from_abi_t) : hresult_error(E_INVALIDARG, from_abi) {}
 };
 
 struct hresult_out_of_bounds : hresult_error
 {
     hresult_out_of_bounds() : hresult_error(E_BOUNDS) {}
     hresult_out_of_bounds(hstring_ref message) : hresult_error(E_BOUNDS, message) {}
-    hresult_out_of_bounds(hresult_error::from_abi) : hresult_error(E_BOUNDS, hresult_error::from_abi{}) {}
+    hresult_out_of_bounds(from_abi_t) : hresult_error(E_BOUNDS, from_abi) {}
 };
 
 struct hresult_no_interface : hresult_error
 {
     hresult_no_interface() : hresult_error(E_NOINTERFACE) {}
     hresult_no_interface(hstring_ref message) : hresult_error(E_NOINTERFACE, message) {}
-    hresult_no_interface(hresult_error::from_abi) : hresult_error(E_NOINTERFACE, hresult_error::from_abi{}) {}
+    hresult_no_interface(from_abi_t) : hresult_error(E_NOINTERFACE, from_abi) {}
 };
 
 struct hresult_disconnected : hresult_error
 {
     hresult_disconnected() : hresult_error(RPC_E_DISCONNECTED) {}
     hresult_disconnected(hstring_ref message) : hresult_error(RPC_E_DISCONNECTED, message) {}
-    hresult_disconnected(hresult_error::from_abi) : hresult_error(RPC_E_DISCONNECTED, hresult_error::from_abi{}) {}
+    hresult_disconnected(from_abi_t) : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
 };
 
 namespace impl {
@@ -173,35 +174,35 @@ namespace impl {
 
     if (result == E_ACCESSDENIED)
     {
-        throw hresult_access_denied(hresult_error::from_abi{});
+        throw hresult_access_denied(hresult_error::from_abi);
     }
 
     if (result == RPC_E_WRONG_THREAD)
     {
-        throw hresult_wrong_thread(hresult_error::from_abi{});
+        throw hresult_wrong_thread(hresult_error::from_abi);
     }
 
     if (result == E_NOTIMPL)
     {
-        throw hresult_not_implemented(hresult_error::from_abi{});
+        throw hresult_not_implemented(hresult_error::from_abi);
     }
 
     if (result == E_INVALIDARG)
     {
-        throw hresult_invalid_argument(hresult_error::from_abi{});
+        throw hresult_invalid_argument(hresult_error::from_abi);
     }
 
     if (result == E_BOUNDS)
     {
-        throw hresult_out_of_bounds(hresult_error::from_abi{});
+        throw hresult_out_of_bounds(hresult_error::from_abi);
     }
 
     if (result == E_NOINTERFACE)
     {
-        throw hresult_no_interface(hresult_error::from_abi{});
+        throw hresult_no_interface(hresult_error::from_abi);
     }
 
-    throw hresult_error(result, hresult_error::from_abi{});
+    throw hresult_error(result, hresult_error::from_abi);
 }
 
 inline __declspec(noinline) HRESULT to_hresult() noexcept
