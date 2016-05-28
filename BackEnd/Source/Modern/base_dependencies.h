@@ -1,6 +1,7 @@
 
-#pragma comment(lib, "runtimeobject")
-#pragma comment(lib, "oleaut32")
+#ifndef WINRT_NO_DEFAULT_LIB 
+#pragma comment(lib, "windowsapp") 
+#endif
 
 #include <ctxtcall.h>
 #include <restrictederrorinfo.h>
