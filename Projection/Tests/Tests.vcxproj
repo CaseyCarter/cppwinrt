@@ -181,7 +181,6 @@
     <ClCompile Include="weak.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutoInitialize.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -109,8 +109,6 @@ struct TestHttpProgress
 
 TEST_CASE("struct, HttpProgress")
 {
-    AutoInitialize init;
-
     TestHttpProgress object;
 
     HttpProgress value = object.out();

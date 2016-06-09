@@ -40,8 +40,6 @@ TEST_CASE("delegate,return")
         using namespace Windows::Foundation;
         using namespace Windows::UI::Xaml;
 
-        AutoInitialize init;
-
         CreateDefaultValueCallback handler = []
         {
             return Uri(L"http://moderncpp.com/");
@@ -139,8 +137,6 @@ TEST_CASE("delegate,binding")
         using namespace Windows::Foundation;
         using namespace Windows::UI::Xaml;
 
-        AutoInitialize init;
-
         CreateDefaultValueCallback handler = Handler;
 
         Windows::IInspectable result = handler();
@@ -154,8 +150,6 @@ TEST_CASE("delegate,binding")
     {
         using namespace Windows::Foundation;
         using namespace Windows::UI::Xaml;
-
-        AutoInitialize init;
 
         MemberHandler that;
 
@@ -172,8 +166,6 @@ TEST_CASE("delegate,binding")
     {
         using namespace Windows::Foundation;
         using namespace Windows::UI::Xaml;
-
-        AutoInitialize init;
 
         CreateDefaultValueCallback handler = []
         {

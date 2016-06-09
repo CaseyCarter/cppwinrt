@@ -43,8 +43,6 @@ TEST_CASE("hresult,restricted,consuming")
 {
     // An error originates in a component and is consumed within C++/WinRT
 
-    AutoInitialize apartment;
-
     try
     {
         Uri uri(L"BAD");
@@ -139,8 +137,6 @@ TEST_CASE("hresult,propagate,implements")
     // An error raised within an implementation (component) that crosses the ABI and consumed within C++/WinRT.
     // This is the same as the URI case above, but implemented purely within the projection.
 
-    AutoInitialize apartment;
-
     try
     {
         IStringable value = make<SamplePropagate>();
@@ -166,8 +162,6 @@ TEST_CASE("hresult,originate,implements")
     // An error raised within an implementation (component) that crosses the ABI and consumed within C++/WinRT.
     // In this case we're not merely propagating an error. We're actually raising an original error originating
     // in this implementation.
-
-    AutoInitialize apartment;
 
     try
     {

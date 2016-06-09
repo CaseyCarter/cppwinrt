@@ -8,8 +8,6 @@ TEST_CASE("weak")
 {
     SECTION("resolved")
     {
-        AutoInitialize init;
-
         Uri a(L"http://host/path");
 
         weak<Uri> w = a;
@@ -30,8 +28,6 @@ TEST_CASE("weak")
 
     SECTION("unresolved")
     {
-        AutoInitialize init;
-
         // default construct
         weak<Uri> w;
 
@@ -42,8 +38,6 @@ TEST_CASE("weak")
 
     SECTION("make_weak")
     {
-        AutoInitialize init;
-
         Uri a(L"http://host/path");
         auto w = make_weak(a);
         Uri b = w.resolve();

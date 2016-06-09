@@ -48,7 +48,6 @@ static std::future<SyndicationFeed> GetSyndicationFeed()
 //
 TEST_CASE("array,SmsBinaryMessage")
 {
-    AutoInitialize init;
     CertificateQuery query;
     query.Thumbprint({ 1, 2, 3 }); // PassArray pattern
 
@@ -65,8 +64,6 @@ TEST_CASE("array,SmsBinaryMessage")
 //
 TEST_CASE("array,CreateInt32Array,GetInt32Array")
 {
-    AutoInitialize init;
-
     com_array<int> a;
     PropertyValue::CreateInt32Array({ 1, 2, 3 }). // PassArray pattern
         as<IPropertyValue>().GetInt32Array(a); // ReceiveArray pattern
@@ -82,8 +79,6 @@ TEST_CASE("array,CreateInt32Array,GetInt32Array")
 //
 TEST_CASE("array,DataReader")
 {
-    AutoInitialize init;
-
     auto reader = CreateDataReader({1, 2, 3}).get();
 
     std::array<byte, 3> a;
@@ -100,8 +95,6 @@ TEST_CASE("array,DataReader")
 //
 TEST_CASE("array,DataReader,std::vector")
 {
-    AutoInitialize init;
-
     auto reader = CreateDataReader({ 1, 2, 3 }).get();
 
     std::vector<byte> a(3);
@@ -123,7 +116,6 @@ TEST_CASE("array,EBO")
     //
     SECTION("collection")
     {
-        AutoInitialize init;
         SyndicationFeed feed = GetSyndicationFeed().get();
 
         std::vector<hstring> expected;
@@ -151,7 +143,6 @@ TEST_CASE("array,EBO")
     //
     SECTION("iterator")
     {
-        AutoInitialize init;
         SyndicationFeed feed = GetSyndicationFeed().get();
 
         std::vector<hstring> expected;
@@ -1061,8 +1052,6 @@ TEST_CASE("array,PropertyValue")
 {
     SECTION("consume,array,int32_t")
     {
-        AutoInitialize init;
-
         auto inspectable = PropertyValue::CreateInt32Array({ 1, 2, 3 });
         auto pv = inspectable.as<IPropertyValue>();
 
@@ -1077,8 +1066,6 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,int32_t")
     {
-        AutoInitialize init;
-
         auto pv = make<ProducePropertyValueArray>();
 
         com_array<int32_t> a;
@@ -1092,8 +1079,6 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("consume,array,Size")
     {
-        AutoInitialize init;
-
         auto inspectable = PropertyValue::CreateSizeArray({ { 1,1 },{ 2,2 },{ 3,3 } });
         auto pv = inspectable.as<IPropertyValue>();
 
@@ -1108,8 +1093,6 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,Size")
     {
-        AutoInitialize init;
-
         auto pv = make<ProducePropertyValueArray>();
 
         com_array<Size> a;
@@ -1123,8 +1106,6 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("consume,array,Inspectable")
     {
-        AutoInitialize init;
-
         auto inspectable = PropertyValue::CreateInspectableArray({ Uri(L"http://one/"), Uri(L"http://two/"), Uri(L"http://three/") });
         auto pv = inspectable.as<IPropertyValue>();
 
@@ -1139,8 +1120,6 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,Inspectable")
     {
-        AutoInitialize init;
-
         auto pv = make<ProducePropertyValueArray>();
 
         com_array<Windows::IInspectable> a;
