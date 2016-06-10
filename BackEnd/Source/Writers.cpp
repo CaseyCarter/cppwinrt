@@ -1083,6 +1083,8 @@ void WriteStructures(Output & out)
               Bind(WriteAbiStructureFields));
     });
 
+    out.WriteNamespace();
+
     GetNonAbiStructures([&]
     {
         if (out.WriteNamespace(Settings::Namespace))
