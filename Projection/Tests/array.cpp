@@ -1149,23 +1149,23 @@ static T test_make(Args ... args)
 template <typename Left, typename Right>
 static void test_compare()
 {
-    REQUIRE(test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c', 'd'));
+    REQUIRE((test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c', 'd')));
 
-    REQUIRE(test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c', 'd'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c'));
+    REQUIRE((test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c', 'd')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c')));
 
-    REQUIRE(test_make<Left>('a', 'b', 'c', 'd') > test_make<Right>('a', 'b', 'c'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c') > test_make<Right>('a', 'b', 'c', 'd'));
+    REQUIRE((test_make<Left>('a', 'b', 'c', 'd') > test_make<Right>('a', 'b', 'c')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') > test_make<Right>('a', 'b', 'c', 'd')));
 
-    REQUIRE(test_make<Left>('a', 'b', 'c') < test_make<Right>('a', 'b', 'c', 'd'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c', 'd') < test_make<Right>('a', 'b', 'c'));
+    REQUIRE((test_make<Left>('a', 'b', 'c') < test_make<Right>('a', 'b', 'c', 'd')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c', 'd') < test_make<Right>('a', 'b', 'c')));
 
-    REQUIRE(test_make<Left>('a', 'b', 'c', 'd') >= test_make<Right>('a', 'b', 'c'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c') >= test_make<Right>('a', 'b', 'c', 'd'));
+    REQUIRE((test_make<Left>('a', 'b', 'c', 'd') >= test_make<Right>('a', 'b', 'c')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') >= test_make<Right>('a', 'b', 'c', 'd')));
 
-    REQUIRE(test_make<Left>('a', 'b', 'c') <= test_make<Right>('a', 'b', 'c', 'd'));
-    REQUIRE_FALSE(test_make<Left>('a', 'b', 'c', 'd') <= test_make<Right>('a', 'b', 'c'));
+    REQUIRE((test_make<Left>('a', 'b', 'c') <= test_make<Right>('a', 'b', 'c', 'd')));
+    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c', 'd') <= test_make<Right>('a', 'b', 'c')));
 }
 
 TEST_CASE("std::vector,compare,std::vector")
