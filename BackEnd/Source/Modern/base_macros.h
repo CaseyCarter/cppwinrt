@@ -34,6 +34,10 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 #define WINRT_EBO __declspec(empty_bases)
 #endif
 
+#ifdef _WIN64
+#define WINRT_64
+#endif
+
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
 #endif

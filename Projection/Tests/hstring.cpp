@@ -589,10 +589,33 @@ TEST_CASE("wchar_t const *,compare,hstring_ref")
 
 TEST_CASE("hstring,map")
 {
-    std::map<hstring, int> m { { L"abc", 0 }, { L"def", 0 } };
+    // Ensures that std::less<winrt::hstring> can be instantiated.
+
+    std::map<hstring, int> m{ { L"abc", 10 },{ L"def", 20 } };
+    REQUIRE(m[L"abc"] == 10);
+    REQUIRE(m[L"def"] == 20);
 }
 
 TEST_CASE("hstring,unordered_map")
 {
-    std::unordered_map<hstring, int> m{ { L"abc", 0 },{ L"def", 0 } };
+    // Ensures that std::hash<winrt::hstring> can be instantiated.
+
+    std::unordered_map<hstring, int> m{ { L"abc", 10 },{ L"def", 20 } };
+    REQUIRE(m[L"abc"] == 10);
+    REQUIRE(m[L"def"] == 20);
+}
+
+static bool compare_hash(const std::wstring & value)
+{
+    return std::hash<std::wstring>{}(value) == std::hash<winrt::hstring>{}(value);
+}
+
+TEST_CASE("hstring,hash")
+{
+    // Ensures that std::hash<winrt::hstring> and std::hash<std::wstring> behave the same.
+    // Since they both implement the same FNV-1a hash function the results should be the same.
+
+    REQUIRE(compare_hash(L""));
+    REQUIRE(compare_hash(L"Hello"));
+    REQUIRE(compare_hash(L"World"));
 }

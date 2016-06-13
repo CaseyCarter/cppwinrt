@@ -98,6 +98,10 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 #define WINRT_EBO __declspec(empty_bases)
 #endif
 
+#ifdef _WIN64
+#define WINRT_64
+#endif
+
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
 #endif
@@ -4808,14 +4812,33 @@ inline void await_resume(const IAsyncAction & object)
 
 namespace std {
 
-template <> struct hash<winrt::hstring> : unary_function<winrt::hstring, size_t>
+template <> struct hash<winrt::hstring>
 {
-    size_t operator()(winrt::hstring const & value) const noexcept
+    size_t operator()(const winrt::hstring & value) const noexcept
     {
-        uint32_t length = 0;
-        wchar_t const * const buffer = WindowsGetStringRawBuffer(get(value), &length);
+#ifdef WINRT_64
+        const size_t fnv_offset_basis = 14695981039346656037ULL;
+        const size_t fnv_prime = 1099511628211ULL;
+#else
+        const size_t fnv_offset_basis = 2166136261U;
+        const size_t fnv_prime = 16777619U;
+#endif
 
-        return _Hash_seq(reinterpret_cast<const unsigned char *>(buffer), length * sizeof(wchar_t));
+        uint32_t length = 0;
+
+        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get(value),
+                                                                                                   &length));
+
+        length *= sizeof(wchar_t);
+        size_t result = fnv_offset_basis;
+
+        for (size_t next = 0; next < length; ++next)
+        {
+            result ^= buffer[next];
+            result *= fnv_prime;
+        }
+
+        return result;
     }
 };
 
