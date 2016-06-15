@@ -1133,62 +1133,101 @@ TEST_CASE("array,PropertyValue")
 }
 
 //
-// Comparisons
+// Testing comparisons of array_ref is tricky because we need to ensure that the array storage remains alive for the duration
+// of the test. Previously this was done with an initializer_list but the list went out of scope before the comparison was performed
+// leading to failures in some builds.
 //
 
-template <typename T, typename ... Args>
-static T test_make(Args ... args)
+struct compare_results
 {
-    return T{ args ... };
+    bool equal;
+    bool not_equal;
+    bool greater;
+    bool less;
+    bool greater_equal;
+    bool less_equal;
+};
+
+static compare_results compare_com_array(com_array<char> const & left, com_array<char> const & right)
+{
+    return
+    {
+        left == right,
+        left != right,
+        left > right,
+        left < right,
+        left >= right,
+        left <= right
+    };
 }
 
-//
-// This test_compare function produces various productions of arrays for generic types of arrays
-// so that we can run the same set of tests against different classes of arrays.
-//
-template <typename Left, typename Right>
-static void test_compare()
+static compare_results compare_array_ref(array_ref<char const> left, array_ref<char const> right)
 {
-    REQUIRE((test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') == test_make<Right>('a', 'b', 'c', 'd')));
-
-    REQUIRE((test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c', 'd')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') != test_make<Right>('a', 'b', 'c')));
-
-    REQUIRE((test_make<Left>('a', 'b', 'c', 'd') > test_make<Right>('a', 'b', 'c')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') > test_make<Right>('a', 'b', 'c', 'd')));
-
-    REQUIRE((test_make<Left>('a', 'b', 'c') < test_make<Right>('a', 'b', 'c', 'd')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c', 'd') < test_make<Right>('a', 'b', 'c')));
-
-    REQUIRE((test_make<Left>('a', 'b', 'c', 'd') >= test_make<Right>('a', 'b', 'c')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c') >= test_make<Right>('a', 'b', 'c', 'd')));
-
-    REQUIRE((test_make<Left>('a', 'b', 'c') <= test_make<Right>('a', 'b', 'c', 'd')));
-    REQUIRE_FALSE((test_make<Left>('a', 'b', 'c', 'd') <= test_make<Right>('a', 'b', 'c')));
-}
-
-TEST_CASE("std::vector,compare,std::vector")
-{
-    // This tests the test_compare function itself.
-    // It is only here to serve as a reference point for the following tests.
-    // There is nothing in production code that can affect this test.
-
-    test_compare<std::vector<char>, std::vector<char>>();
+    return
+    {
+        left == right,
+        left != right,
+        left > right,
+        left < right,
+        left >= right,
+        left <= right
+    };
 }
 
 TEST_CASE("com_array,compare,com_array")
 {
-    // Tests the comparison operators against com_array 
+    compare_results result{};
 
-    test_compare<com_array<char>, com_array<char>>();
+    result = compare_com_array({ 'a', 'b', 'c' }, { 'a', 'b', 'c' });
+    REQUIRE(result.equal);
+    REQUIRE(!result.not_equal);
+    REQUIRE(!result.greater);
+    REQUIRE(!result.less);
+    REQUIRE(result.greater_equal);
+    REQUIRE(result.less_equal);
+
+    result = compare_com_array({ 'a', 'b', 'c' }, { 'a', 'b', 'c', 'd' });
+    REQUIRE(!result.equal);
+    REQUIRE(result.not_equal);
+    REQUIRE(!result.greater);
+    REQUIRE(result.less);
+    REQUIRE(!result.greater_equal);
+    REQUIRE(result.less_equal);
+
+    result = compare_com_array({ 'a', 'b', 'c', 'd' }, { 'a', 'b', 'c' });
+    REQUIRE(!result.equal);
+    REQUIRE(result.not_equal);
+    REQUIRE(result.greater);
+    REQUIRE(!result.less);
+    REQUIRE(result.greater_equal);
+    REQUIRE(!result.less_equal);
 }
 
 TEST_CASE("array_ref,compare,array_ref")
 {
-    // Tests the comparison operators against array_ref 
+    compare_results result{};
 
-    test_compare<array_ref<char const>, array_ref<char const>>();
+    result = compare_array_ref({ 'a', 'b', 'c' }, { 'a', 'b', 'c' });
+    REQUIRE(result.equal);
+    REQUIRE(!result.not_equal);
+    REQUIRE(!result.greater);
+    REQUIRE(!result.less);
+    REQUIRE(result.greater_equal);
+    REQUIRE(result.less_equal);
+
+    result = compare_array_ref({ 'a', 'b', 'c' }, { 'a', 'b', 'c', 'd' });
+    REQUIRE(!result.equal);
+    REQUIRE(result.not_equal);
+    REQUIRE(!result.greater);
+    REQUIRE(result.less);
+    REQUIRE(!result.greater_equal);
+    REQUIRE(result.less_equal);
+
+    result = compare_array_ref({ 'a', 'b', 'c', 'd' }, { 'a', 'b', 'c' });
+    REQUIRE(!result.equal);
+    REQUIRE(result.not_equal);
+    REQUIRE(result.greater);
+    REQUIRE(!result.less);
+    REQUIRE(result.greater_equal);
+    REQUIRE(!result.less_equal);
 }
-
-
