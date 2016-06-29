@@ -72,7 +72,7 @@ class has_GetAt
 
 public:
 
-    static constexpr bool value = get_value<T>(nullptr);
+    static constexpr bool value = get_value<T>(0);
 };
 
 template <typename T>
@@ -83,7 +83,7 @@ class has_composable
 
 public:
 
-    static constexpr bool value = get_value<T>(nullptr);
+    static constexpr bool value = get_value<T>(0);
 };
 
 template <typename T>

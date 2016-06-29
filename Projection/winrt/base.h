@@ -75,7 +75,7 @@ template <typename ... Args>
 void WINRT_TRACE(const char * const message, Args ... args) noexcept
 {
     char buffer[1024] {};
-    sprintf_s(buffer, message, args ...);
+    snprintf(buffer, sizeof(buffer), message, args ...);
     OutputDebugStringA(buffer);
 }
 
@@ -429,7 +429,7 @@ class has_GetAt
 
 public:
 
-    static constexpr bool value = get_value<T>(nullptr);
+    static constexpr bool value = get_value<T>(0);
 };
 
 template <typename T>
@@ -440,7 +440,7 @@ class has_composable
 
 public:
 
-    static constexpr bool value = get_value<T>(nullptr);
+    static constexpr bool value = get_value<T>(0);
 };
 
 template <typename T>
@@ -1557,6 +1557,13 @@ struct hresult_disconnected : hresult_error
     hresult_disconnected(from_abi_t) : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
 };
 
+struct hresult_class_not_available : hresult_error
+{
+    hresult_class_not_available() : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
+    hresult_class_not_available(hstring_ref message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
+    hresult_class_not_available(from_abi_t) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
+};
+
 namespace impl {
 
 [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
@@ -1594,6 +1601,16 @@ namespace impl {
     if (result == E_NOINTERFACE)
     {
         throw hresult_no_interface(hresult_error::from_abi);
+    }
+
+    if (result == RPC_E_DISCONNECTED)
+    {
+        throw hresult_disconnected(hresult_error::from_abi);
+    }
+
+    if (result == CLASS_E_CLASSNOTAVAILABLE)
+    {
+        throw hresult_class_not_available(hresult_error::from_abi);
     }
 
     throw hresult_error(result, hresult_error::from_abi);

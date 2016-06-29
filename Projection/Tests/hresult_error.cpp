@@ -177,7 +177,7 @@ TEST_CASE("hresult,originate,implements")
 
 TEST_CASE("hresult_access_denied")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(E_ACCESSDENIED), hresult_access_denied);
 
     try
     {
@@ -212,7 +212,7 @@ TEST_CASE("hresult_access_denied")
 
 TEST_CASE("hresult_wrong_thread")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(RPC_E_WRONG_THREAD), hresult_wrong_thread);
 
     try
     {
@@ -247,7 +247,7 @@ TEST_CASE("hresult_wrong_thread")
 
 TEST_CASE("hresult_not_implemented")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(E_NOTIMPL), hresult_not_implemented);
 
     try
     {
@@ -282,7 +282,7 @@ TEST_CASE("hresult_not_implemented")
 
 TEST_CASE("hresult_invalid_argument")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(E_INVALIDARG), hresult_invalid_argument);
 
     try
     {
@@ -317,7 +317,7 @@ TEST_CASE("hresult_invalid_argument")
 
 TEST_CASE("hresult_out_of_bounds")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(E_BOUNDS), hresult_out_of_bounds);
 
     try
     {
@@ -352,7 +352,7 @@ TEST_CASE("hresult_out_of_bounds")
 
 TEST_CASE("hresult_no_interface")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(E_NOINTERFACE), hresult_no_interface);
 
     try
     {
@@ -387,7 +387,7 @@ TEST_CASE("hresult_no_interface")
 
 TEST_CASE("hresult_disconnected")
 {
-    // An original error raised within C++/WinRT
+    REQUIRE_THROWS_AS(check_hresult(RPC_E_DISCONNECTED), hresult_disconnected);
 
     try
     {
@@ -416,6 +416,41 @@ TEST_CASE("hresult_disconnected")
     catch (hresult_disconnected const & e)
     {
         REQUIRE(RPC_E_DISCONNECTED == e.code());
+        REQUIRE(L"test message" == e.message());
+    }
+}
+
+TEST_CASE("hresult_class_not_available")
+{
+    REQUIRE_THROWS_AS(check_hresult(CLASS_E_CLASSNOTAVAILABLE), hresult_class_not_available);
+
+    try
+    {
+        throw hresult_class_not_available(); // default restricted error info message
+    }
+    catch (hresult_class_not_available const & e)
+    {
+        REQUIRE(CLASS_E_CLASSNOTAVAILABLE == e.code());
+        REQUIRE(L"ClassFactory cannot supply requested class" == e.message());
+    }
+
+    try
+    {
+        throw hresult_class_not_available(hresult_error::from_abi); // no restricted error info at all
+    }
+    catch (hresult_class_not_available const & e)
+    {
+        REQUIRE(CLASS_E_CLASSNOTAVAILABLE == e.code());
+        REQUIRE(L"ClassFactory cannot supply requested class" == e.message());
+    }
+
+    try
+    {
+        throw hresult_class_not_available(L"test message"); // custom message for restricted error info message
+    }
+    catch (hresult_class_not_available const & e)
+    {
+        REQUIRE(CLASS_E_CLASSNOTAVAILABLE == e.code());
         REQUIRE(L"test message" == e.message());
     }
 }

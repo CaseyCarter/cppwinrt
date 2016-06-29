@@ -11,7 +11,7 @@ template <typename ... Args>
 void WINRT_TRACE(const char * const message, Args ... args) noexcept
 {
     char buffer[1024] {};
-    sprintf_s(buffer, message, args ...);
+    snprintf(buffer, sizeof(buffer), message, args ...);
     OutputDebugStringA(buffer);
 }
 
