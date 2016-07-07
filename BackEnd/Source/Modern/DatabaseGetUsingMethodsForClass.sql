@@ -16,7 +16,7 @@ Required(Id) as
 
 BaseMethods(Id) as
 (
-	select RowId from Methods where InterfaceId in (select Id from Required) and not Deprecated
+	select RowId from Methods where InterfaceId in (select Id from Required)
 ),
 
 BasePairs(Interface, Method) as

@@ -10,6 +10,12 @@ namespace Modern {
 
 using namespace Database;
 
+template <unsigned Count>
+bool StartsWith(std::string const & target, char const (&match)[Count]) noexcept
+{
+    return target.compare(0, Count - 1, match) == 0;
+}
+
 static void WriteEnumeratorsFlag(Output & out)
 {
     GetEnumeratorsFlag([&]
@@ -552,6 +558,17 @@ static void WriteInterfaceMethodDeclaration(Output & out)
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
+
+    if (StartsWith(Settings::MethodAbi, "add_"))
+    {
+        Write(out,
+              Strings::WriteInterfaceEventMethodDeclaration,
+              Settings::MethodName,
+              Settings::InterfaceName,
+              Settings::MethodName,
+              Settings::MethodName,
+              Bind(WriteParameters));
+    }
 }
 
 static void WriteAbiInterfaceMethods(Output & out)
@@ -562,18 +579,6 @@ static void WriteAbiInterfaceMethods(Output & out)
               Strings::WriteAbiInterfaceMethod,
               Settings::MethodAbi,
               Bind(WriteAbiParameters));
-    });
-}
-
-static void WriteInterfaceProducerNotImplementedMethods(Output & out)
-{
-    GetInterfaceMethods([&]
-    {
-        Write(out,
-              Strings::WriteInterfaceProducerNotImplementedMethod,
-              Settings::ParameterInfo.ReturnType,
-              Settings::MethodName,
-              Bind(WriteParameters));
     });
 }
 
@@ -636,15 +641,43 @@ static void WriteStaticMethodDefinition(Output & out)
           Settings::InterfaceName,
           Settings::MethodName,
           Bind(WriteModernArguments));
+
+    if (StartsWith(Settings::MethodAbi, "add_"))
+    {
+        Write(out,
+              Strings::WriteStaticEventMethodDefinition,
+              Settings::InterfaceName,
+              Settings::ClassName,
+              Settings::MethodName,
+              Bind(WriteParameters),
+              Settings::ClassName,
+              Settings::InterfaceName,
+              Settings::Namespace,
+              Settings::InterfaceName,
+              Settings::MethodName,
+              Settings::MethodName,
+              Settings::ParameterInfo.Parameters[0].Name);
+    }
 }
 
-static void WriteStaticMethodDeclaration(Output & h)
+static void WriteStaticMethodDeclaration(Output & out)
 {
-    Write(h,
+    Write(out,
           Strings::WriteStaticMethodDeclaration,
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
+
+    if (StartsWith(Settings::MethodAbi, "add_"))
+    {
+        Write(out,
+              Strings::WriteStaticEventMethodDeclaration,
+              Settings::MethodName,
+              Settings::InterfaceName,
+              Settings::MethodName,
+              Settings::MethodName,
+              Bind(WriteParameters));
+    }
 }
 
 static void WriteClassConstructorDefinition(Output & out)
@@ -735,7 +768,7 @@ static void WriteComposableOverridables(Output & out)
             Write(out, ", ");
         }
 
-        Write(out, "%T<T>", Settings::InterfaceName);
+        Write(out, "%T<D>", Settings::InterfaceName);
     });
 
     if (first) // no overrides
@@ -790,7 +823,6 @@ static void WriteOverrideDefaults(Output & out)
               Settings::MethodName,
               Bind(WriteParameters),
               Settings::ParameterInfo.HasReturnType ? "return " : "",
-              Settings::Namespace,
               Settings::InterfaceName,
               Settings::MethodName,
               Bind(WriteModernArguments));
@@ -813,13 +845,13 @@ static void WriteDelegateOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach(m_handler(%))",
+              " = detach((*this)(%))",
               Bind(WriteProducerForwardArguments));
     }
     else
     {
         Write(out,
-              "m_handler(%)",
+              "(*this)(%)",
               Bind(WriteProducerForwardArguments));
     }
 }
@@ -840,14 +872,14 @@ static void WriteOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach(static_cast<T *>(this)->%(%))",
+              " = detach(shim().%(%))",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }
     else
     {
         Write(out,
-              "static_cast<T *>(this)->%(%)",
+              "shim().%(%)",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }
@@ -913,7 +945,7 @@ static void WriteBases(Output & out)
     if (!bases.empty())
     {
         Write(out,
-              ",\r\n    bases<%, %>",
+              ",\r\n    impl::bases<%, %>",
               Settings::ClassName,
               bases);
     }
@@ -958,17 +990,6 @@ static void WriteUsingMethodsForInterface(Output & out)
     });
 }
 
-static void WriteDelegatePlaceholders(Output & out)
-{
-    for (uint32_t i = 0; i != Settings::ParameterInfo.Parameters.size(); ++i)
-    {
-        if (!Settings::ParameterInfo.Parameters[i].IsReturn())
-        {
-            Write(out, ", std::placeholders::_%", i + 1);
-        }
-    }
-}
-
 static void WriteDelegateProducer(Output & out)
 {
     Write(out,
@@ -984,6 +1005,8 @@ static void WriteDelegateProducer(Output & out)
 
 static void WriteDelegateShims(Output & out)
 {
+    char const * const hasReturn = Settings::ParameterInfo.HasReturnType ? "return " : "";
+
     Write(out,
           Strings::WriteDelegateShims,
           Settings::DelegateName,
@@ -994,7 +1017,11 @@ static void WriteDelegateShims(Output & out)
           Settings::DelegateName,
           Settings::DelegateName,
           Settings::DelegateName,
-          Bind(WriteDelegatePlaceholders),
+          hasReturn,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          Settings::DelegateName,
+          hasReturn,
           Settings::ParameterInfo.ReturnType,
           Settings::DelegateName,
           Bind(WriteParameters),
@@ -1067,8 +1094,6 @@ void WriteEnumerations(Output & out)
                   Bind(WriteEnumerators));
         }
     });
-
-    out.WriteNamespace();
 }
 
 void WriteStructures(Output & out)
@@ -1120,8 +1145,6 @@ void WriteStructures(Output & out)
               Settings::Namespace,
               Settings::StructureName);
     });
-
-    out.WriteNamespace();
 }
 
 void WriteAbiInterfaceDeclarations(Output & out)
@@ -1137,8 +1160,6 @@ void WriteAbiInterfaceDeclarations(Output & out)
               Strings::WriteStructureDeclaration, 
               Settings::InterfaceName);
     });
-
-    out.WriteNamespace();
 }
 
 void WriteAbiClassDeclarations(Output & out)
@@ -1154,8 +1175,6 @@ void WriteAbiClassDeclarations(Output & out)
               Settings::ClassName,
               Settings::InterfaceName);
     });
-
-    out.WriteNamespace();
 }
 
 void WriteDeclarations(Output & out)
@@ -1171,8 +1190,6 @@ void WriteDeclarations(Output & out)
               Strings::WriteStructureDeclaration,
               Settings::ClassName);
     });
-
-    out.WriteNamespace();
 }
 
 void WriteInterfaceTraits(Output & out)
@@ -1195,8 +1212,6 @@ void WriteInterfaceTraits(Output & out)
             Write(out,
                   Strings::WriteInterfaceTraits,
                   Settings::Namespace, 
-                  Settings::InterfaceName,
-                  Settings::Namespace,
                   Settings::InterfaceName,
                   Settings::Namespace,
                   Settings::InterfaceName,
@@ -1227,33 +1242,22 @@ void WriteInterfaceTraits(Output & out)
                   Settings::ClassDotName);
         }
     });
-
-    out.WriteNamespace();
 }
 
 void WriteInterfaceProducers(Output & out)
 {
-    Write(out, Strings::WriteInterfaceProducersWarningPush);
+    out.WriteNamespace("impl");
 
     GetInterfaces([&]
     {
-        out.WriteNamespace(Settings::Namespace);
-
         Write(out,
               Strings::WriteInterfaceProducer,
-              Settings::InterfaceName,
-              Settings::InterfaceName,
+              Settings::Namespace,
               Settings::InterfaceName,
               Settings::Namespace,
               Settings::InterfaceName,
-              Settings::InterfaceName,
-              Settings::InterfaceName,
-              Bind(WriteInterfaceProducerNotImplementedMethods),
               Bind(WriteInterfaceProducerVirtualMethods));
     });
-
-    out.WriteNamespace();
-    Write(out, Strings::WriteInterfaceProducersWarningPop);
 }
 
 void WriteGenericInterfaces(Output & out)
@@ -1271,8 +1275,6 @@ void WriteGenericInterfaces(Output & out)
               Settings::InterfaceName,
               Settings::InterfaceName);
     });
-
-    out.WriteNamespace();
 }
 
 void WriteInterfaceDefinitions(Output & out)
@@ -1283,6 +1285,7 @@ void WriteInterfaceDefinitions(Output & out)
 
         Write(out,
               Strings::WriteDelegateDefinition,
+              Settings::InterfaceName,
               Settings::InterfaceName,
               Settings::InterfaceName,
               Settings::InterfaceName,
@@ -1305,8 +1308,6 @@ void WriteInterfaceDefinitions(Output & out)
                 Settings::InterfaceName,
                 Bind(WriteUsingMethodsForInterface));
     });
-
-    out.WriteNamespace();
 }
 
 void WriteAbiInterfaces(Output & out)
@@ -1322,8 +1323,6 @@ void WriteAbiInterfaces(Output & out)
               Settings::InterfaceDelegate ? "IUnknown" : "Windows::IInspectable",
               Bind(WriteAbiInterfaceMethods));
     });
-
-    out.WriteNamespace();
 }
 
 void WriteInterfacesMethodDefinitions(Output & out)
@@ -1343,10 +1342,24 @@ void WriteInterfacesMethodDefinitions(Output & out)
                   Settings::MethodName,
                   Bind(WriteParameters),
                   Bind(WriteMethodBody));
+
+            if (StartsWith(Settings::MethodAbi, "add_"))
+            {
+                Write(out,
+                      Strings::WriteInterfacesEventMethodDefinition,
+                      Settings::InterfaceName,
+                      Settings::InterfaceName,
+                      Settings::MethodName,
+                      Bind(WriteParameters),
+                      Settings::InterfaceName,
+                      Settings::Namespace,
+                      Settings::InterfaceName,
+                      Settings::MethodName,
+                      Settings::MethodName,
+                      Settings::ParameterInfo.Parameters[0].Name);
+            }
         });
     });
-
-    out.WriteNamespace();
 }
 
 void WriteInterfaceConsumers(Output & out)
@@ -1359,11 +1372,8 @@ void WriteInterfaceConsumers(Output & out)
               Strings::WriteInterfaceConsumer,
               Settings::InterfaceName,
               Settings::InterfaceName,
-              Bind(WriteInterfaceMethodDeclarations),
-              Settings::InterfaceName);
+              Bind(WriteInterfaceMethodDeclarations));
     });
-
-    out.WriteNamespace();
 }
 
 void WriteComposable(Output & out)
@@ -1380,8 +1390,6 @@ void WriteComposable(Output & out)
               Settings::ClassName,
               Bind(WriteComposableConstructors));
     });
-
-    out.WriteNamespace();
 }
 
 void WriteOverrides(Output & out)
@@ -1395,11 +1403,12 @@ void WriteOverrides(Output & out)
               Settings::Namespace,
               Settings::InterfaceName,
               Settings::InterfaceName,
+              Settings::InterfaceName,
+              Settings::Namespace,
+              Settings::InterfaceName,
               Bind(WriteOverrideDefaults),
               Bind(WriteInterfaceProducerVirtualMethods));
     });
-
-    out.WriteNamespace();
 }
 
 void WriteClassDeclarations(Output & out)
@@ -1417,8 +1426,6 @@ void WriteClassDeclarations(Output & out)
             WriteStaticClassDeclaration(out);
         }
     });
-
-    out.WriteNamespace();
 }
 
 void WriteClassDefinitions(Output & out)
@@ -1451,8 +1458,6 @@ void WriteClassDefinitions(Output & out)
             });
         });
     });
-
-    out.WriteNamespace();
 }
 
 void WriteDelegates(Output & out)
@@ -1467,8 +1472,6 @@ void WriteDelegates(Output & out)
         WriteDelegateProducer(out);
         WriteDelegateShims(out);
     });
-
-    out.WriteNamespace();
 }
 
 }

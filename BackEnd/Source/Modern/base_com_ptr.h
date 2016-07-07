@@ -65,12 +65,17 @@ struct com_ptr
 
     explicit operator bool() const noexcept
     {
-        return nullptr != m_ptr;
+        return m_ptr != nullptr;
     }
 
     auto operator->() const noexcept
     {
         return static_cast<impl::no_ref<type> *>(m_ptr);
+    }
+
+    const T & operator *() const noexcept
+    {
+        return *m_ptr;
     }
 
     friend type * impl_get(const com_ptr & object) noexcept
@@ -101,6 +106,14 @@ struct com_ptr
     {
         std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        return temp;
+    }
+
+    template <typename U>
+    auto try_as() const
+    {
+        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
 

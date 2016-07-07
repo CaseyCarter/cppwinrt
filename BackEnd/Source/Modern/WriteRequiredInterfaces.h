@@ -1,2 +1,2 @@
 ,
-    requires<%, %>
+    impl::require<%, %>

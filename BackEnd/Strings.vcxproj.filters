@@ -23,13 +23,13 @@
     <ClInclude Include="Source\Modern\base_array.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\base_async.h">
+    <ClInclude Include="Source\Modern\base_async_consume.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_async_produce.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_await_consume.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\base_await_produce.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_collections_consume.h">
@@ -41,6 +41,9 @@
     <ClInclude Include="Source\Modern\base_com_ptr.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\base_composable.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Modern\base_dependencies.h">
       <Filter>Assets</Filter>
     </ClInclude>
@@ -50,19 +53,22 @@
     <ClInclude Include="Source\Modern\base_event_consume.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\base_event_produce.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Modern\base_foundation.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\base_generic.h">
+    <ClInclude Include="Source\Modern\base_generic_consume.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_generic_produce.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_handle.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_implements.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_implements_old.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_lock.h">
@@ -80,13 +86,7 @@
     <ClInclude Include="Source\Modern\base_module.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\base_reference.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Modern\base_std.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\base_streams.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_string.h">
@@ -197,15 +197,6 @@
     <ClInclude Include="Source\Modern\WriteInterfaceProducer.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\WriteInterfaceProducerNotImplementedMethod.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\WriteInterfaceProducersWarningPop.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\WriteInterfaceProducersWarningPush.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Modern\WriteInterfaceProducerVirtualMethod.h">
       <Filter>Assets</Filter>
     </ClInclude>
@@ -218,6 +209,9 @@
     <ClInclude Include="Source\Modern\WriteMethodBody.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\WriteNonAbiStructure.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Modern\WriteOverride.h">
       <Filter>Assets</Filter>
     </ClInclude>
@@ -225,6 +219,9 @@
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\WriteRequiredInterfaces.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteSimpleTraits.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\WriteStaticClassDeclaration.h">
@@ -248,18 +245,21 @@
     <ClInclude Include="Source\Modern\WriteUsingMethod.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\WriteInterfaceEventMethodDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteInterfacesEventMethodDefinition.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteStaticEventMethodDeclaration.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteStaticEventMethodDefinition.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\Modern\ConsoleHeader.txt">
-      <Filter>Assets</Filter>
-    </Text>
-    <Text Include="Source\Modern\LibraryProjecting.txt">
-      <Filter>Assets</Filter>
-    </Text>
-    <Text Include="Source\Modern\LibraryReading.txt">
-      <Filter>Assets</Filter>
-    </Text>
-    <Text Include="Source\Modern\LibraryWriting.txt">
       <Filter>Assets</Filter>
     </Text>
     <Text Include="Source\Modern\OutputError.txt">
@@ -280,6 +280,9 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\DatabaseGetAbiInterfaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetAbiStructures.sql">
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\DatabaseGetBases.sql">
@@ -351,6 +354,9 @@
     <None Include="Source\Modern\DatabaseGetInterfaceTraits.sql">
       <Filter>Assets</Filter>
     </None>
+    <None Include="Source\Modern\DatabaseGetNonAbiStructures.sql">
+      <Filter>Assets</Filter>
+    </None>
     <None Include="Source\Modern\DatabaseGetOverridables.sql">
       <Filter>Assets</Filter>
     </None>
@@ -382,9 +388,6 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\PostSql.sql">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="Source\Modern\PreSql.sql">
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\WindowsNumerics.inl">

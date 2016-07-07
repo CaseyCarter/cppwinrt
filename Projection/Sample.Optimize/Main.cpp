@@ -3,16 +3,22 @@
 namespace cx
 {
     using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Collections;
     using namespace Windows::ApplicationModel;
     using namespace Windows::ApplicationModel::Appointments;
+    using namespace Windows::ApplicationModel::Chat;
 }
 
 namespace winrt
 {
     using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Collections;
     using namespace Windows::ApplicationModel;
     using namespace Windows::ApplicationModel::Appointments;
+    using namespace Windows::ApplicationModel::Chat;
 }
+
+static constexpr uint64_t TestPasses = 1'000'000;
 
 //
 // Illustrates calling factory methods - logical constructors and static methods (via RoGetActivationFactory).
@@ -21,7 +27,7 @@ uint64_t factory_sample_cx()
 {
     uint64_t check = 0;
 
-    for (unsigned i = 0; i != 1'000'000; ++i)
+    for (unsigned i = 0; i != TestPasses; ++i)
     {
         cx::Uri uri(L"http://host/path");
 
@@ -37,7 +43,7 @@ uint64_t factory_sample()
 {
     uint64_t check = 0;
 
-    for (unsigned i = 0; i != 1'000'000; ++i)
+    for (unsigned i = 0; i != TestPasses; ++i)
     {
         winrt::Uri uri(L"http://host/path");
 
@@ -55,7 +61,7 @@ uint64_t factory_sample_optimized()
     auto uriFactory = winrt::GetActivationFactory<winrt::Uri, winrt::IUriRuntimeClassFactory>();
     auto designModeFactory = winrt::GetActivationFactory<winrt::DesignMode, winrt::IDesignModeStatics>();
 
-    for (unsigned i = 0; i != 1'000'000; ++i)
+    for (unsigned i = 0; i != TestPasses; ++i)
     {
         auto uri = uriFactory.CreateUri(L"http://host/path");
 
@@ -75,7 +81,7 @@ uint64_t required_sample_cx()
     uint64_t check = 0;
     cx::Uri uri(L"http://host/path");
 
-    for (unsigned i = 0; i != 10'000'000; ++i)
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
     {
         auto result = uri.ToString();
 
@@ -90,7 +96,7 @@ uint64_t required_sample()
     uint64_t check = 0;
     winrt::Uri uri(L"http://host/path");
 
-    for (unsigned i = 0; i != 10'000'000; ++i)
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
     {
         auto result = uri.ToString();
 
@@ -106,11 +112,80 @@ uint64_t required_sample_optimized()
     winrt::Uri uri(L"http://host/path");
     auto stringable = uri.as<winrt::IStringable>();
 
-    for (unsigned i = 0; i != 10'000'000; ++i)
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
     {
         auto result = stringable.ToString();
 
         check += result.size();
+    }
+
+    return check;
+}
+
+//
+// Illustrates the performance of fast-pass strings
+//
+struct Sample : winrt::implements<Sample, winrt::IChatQueryOptions>
+{
+    uint64_t m_check = 0;
+
+    winrt::hstring SearchString() { return L""; }
+
+    void SearchString(winrt::hstring_ref value)
+    {
+        m_check += value.size();
+    }
+};
+
+uint64_t fast_strings_cx()
+{
+    winrt::IChatQueryOptions winrt_sample = winrt::make<Sample>();
+    cx::IChatQueryOptions ^ sample = reinterpret_cast<cx::IChatQueryOptions ^>(winrt::get(winrt_sample));
+
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
+    {
+        sample->SearchString = L"value";
+    }
+
+    Sample * s = winrt::to_impl<Sample>(winrt_sample);
+    return s->m_check;
+}
+
+uint64_t fast_strings()
+{
+    winrt::IChatQueryOptions sample = winrt::make<Sample>();
+
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
+    {
+        sample.SearchString(L"value");
+    }
+
+    Sample * s = winrt::to_impl<Sample>(sample);
+    return s->m_check;
+}
+
+//
+// Illustrates the performance of calling factory functions (without the overhead of arguments)
+//
+uint64_t isolated_factory_sample_cx()
+{
+    uint64_t check = 0;
+
+    for (unsigned i = 0; i != 4 * TestPasses; ++i)
+    {
+        check += (cx::PropertyValue::CreateEmpty(), 1);
+    }
+
+    return check;
+}
+
+uint64_t isolated_factory_sample()
+{
+    uint64_t check = 0;
+
+    for (unsigned i = 0; i != 4 * TestPasses; ++i)
+    {
+        check += (winrt::PropertyValue::CreateEmpty(), 1);
     }
 
     return check;
@@ -135,12 +210,20 @@ int main()
     winrt::Initialize();
 
     printf("\nCalling factory and static methods via RoGetActivationFactory\n");
-    measure("cx", factory_sample_cx);
-    measure("modern", factory_sample);
-    measure("optimized", factory_sample_optimized);
+    measure("C++/CX", factory_sample_cx);
+    measure("C++/WinRT", factory_sample);
+    measure("C++/WinRT (Dev15)", factory_sample_optimized);
 
     printf("\nCalling required methods via QueryInterface\n");
-    measure("cx", required_sample_cx);
-    measure("modern", required_sample);
-    measure("optimized", required_sample_optimized);
+    measure("C++/CX", required_sample_cx);
+    measure("C++/WinRT", required_sample);
+    measure("C++/WinRT (Dev15)", required_sample_optimized);
+
+    printf("\nCalling a static factory method with no arguments\n");
+    measure("C++/CX", isolated_factory_sample_cx);
+    measure("C++/WinRT", isolated_factory_sample);
+
+    printf("\nCalling fast-pass strings\n");
+    measure("C++/CX", fast_strings_cx);
+    measure("C++/WinRT", fast_strings);
 }

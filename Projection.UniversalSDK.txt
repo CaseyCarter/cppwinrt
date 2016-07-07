@@ -1,7 +1,20 @@
--winmd Projection\UAP\Windows.ApplicationModel.Calls.CallsVoipContract.winmd
--winmd Projection\UAP\Windows.Devices.Printers.PrintersContract.winmd
--winmd Projection\UAP\Windows.Foundation.FoundationContract.winmd
--winmd Projection\UAP\Windows.Foundation.UniversalApiContract.winmd
--winmd Projection\UAP\Windows.Graphics.Printing3D.Printing3DContract.winmd
--winmd Projection\UAP\Windows.Networking.Connectivity.WwanContract.winmd
+-winmd Projection\UAP\Windows.ApplicationModel.winmd
+-winmd Projection\UAP\Windows.Data.winmd
+-winmd Projection\UAP\Windows.Devices.winmd
+-winmd Projection\UAP\Windows.Foundation.winmd
+-winmd Projection\UAP\Windows.Gaming.winmd
+-winmd Projection\UAP\Windows.Globalization.winmd
+-winmd Projection\UAP\Windows.Graphics.winmd
+-winmd Projection\UAP\Windows.Management.winmd
+-winmd Projection\UAP\Windows.Media.winmd
+-winmd Projection\UAP\Windows.Networking.winmd
+-winmd Projection\UAP\Windows.Perception.winmd
+-winmd Projection\UAP\Windows.Security.winmd
+-winmd Projection\UAP\Windows.Services.winmd
+-winmd Projection\UAP\Windows.Storage.winmd
+-winmd Projection\UAP\Windows.System.winmd
+-winmd Projection\UAP\Windows.UI.winmd
+-winmd Projection\UAP\Windows.UI.Xaml.winmd
+-winmd Projection\UAP\Windows.Web.winmd
+
 -db Metadata.db

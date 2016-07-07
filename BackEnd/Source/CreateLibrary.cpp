@@ -98,10 +98,13 @@ static void WriteBaseHeader()
     Write(out, Strings::base_composable);            // #include "base_composable.h"
     Write(out, Strings::base_event_consume);         // #include "base_event_consume.h"
     Write(out, Strings::base_activation);            // #include "base_activation.h"
-    Write(out, Strings::base_generic);               // #include "base_generic.h"
+    Write(out, Strings::base_delegate);              // #include "base_delegate.h"
+    Write(out, Strings::base_reference);             // #include "base_reference.h"
     Write(out, Strings::base_collections_consume);   // #include "base_collections_consume.h"
-    Write(out, Strings::base_async);                 // #include "base_async.h"
+    Write(out, Strings::base_collections_produce);   // #include "base_collections_produce.h"
     Write(out, Strings::base_foundation);            // #include "base_foundation.h"
+    Write(out, Strings::base_async_consume);         // #include "base_async_consume.h"
+    Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
     Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"
 
     WriteRootNamespaceEnd(out);
@@ -131,6 +134,7 @@ static void WriteLibrary()
     WriteAbiInterfaces(abi);
     WriteAbiClassDeclarations(abi);
     WriteGenericInterfaces(abi);
+    abi.WriteNamespace();
     WriteRootNamespaceEnd(abi);
     abi.WriteTo("sdk.abi.h");
 
@@ -144,6 +148,7 @@ static void WriteLibrary()
     WriteInterfaceDefinitions(meta);
     WriteClassDeclarations(meta);
     WriteInterfaceProducers(meta);
+    meta.WriteNamespace();
     WriteRootNamespaceEnd(meta);
     meta.WriteTo("sdk.meta.h");
 
@@ -154,6 +159,7 @@ static void WriteLibrary()
     WriteDelegates(shim);
     WriteInterfacesMethodDefinitions(shim);
     WriteClassDefinitions(shim);
+    shim.WriteNamespace();
     WriteRootNamespaceEnd(shim);
     shim.WriteTo("sdk.shim.h");
 
@@ -163,6 +169,7 @@ static void WriteLibrary()
     WriteRootNamespaceBegin(extend);
     WriteOverrides(extend);
     WriteComposable(extend);
+    extend.WriteNamespace();
     WriteRootNamespaceEnd(extend);
     extend.WriteTo("sdk.extend.h");
 }

@@ -13,7 +13,6 @@ enum class CollectionChange
 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
-
 struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
 {
     virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
@@ -27,28 +26,47 @@ namespace Windows { namespace Foundation { namespace Collections {
 struct IVectorChangedEventArgs;
 
 template <typename D>
-class impl_IVectorChangedEventArgs
+class WINRT_EBO impl_IVectorChangedEventArgs
 {
     auto shim() const { return impl::shim<D, IVectorChangedEventArgs>(this); }
 
 public:
 
-    CollectionChange CollectionChange() const;
-    uint32_t Index() const;
+    CollectionChange CollectionChange() const
+    {
+        Collections::CollectionChange value {};
+        check_hresult(shim()->get_CollectionChange(&value));
+        return value;
+    }
+
+    uint32_t Index() const
+    {
+        uint32_t index = 0;
+        check_hresult(shim()->get_Index(&index));
+        return index;
+    }
 };
 
 }}}
 
 namespace impl {
 
+template <typename T>
+class has_GetAt
+{
+    template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
+    template <typename> static constexpr bool get_value(...) { return false; }
+
+public:
+
+    static constexpr bool value = get_value<T>(0);
+};
+
 template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
-    template <typename T> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<T>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
 };
-
-template <typename From, typename To>
-using is_convertible = typename std::is_convertible<From, To>::type *;
 
 }
 
@@ -56,29 +74,18 @@ namespace Windows { namespace Foundation { namespace Collections {
 
 struct IVectorChangedEventArgs :
     IInspectable,
-    impl_IVectorChangedEventArgs<IVectorChangedEventArgs>
+    impl::consume<IVectorChangedEventArgs>
 {
     IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
-template <typename T> CollectionChange impl_IVectorChangedEventArgs<T>::CollectionChange() const
-{
-    Collections::CollectionChange value = {};
-    check_hresult(shim()->get_CollectionChange(&value));
-    return value;
-}
-
-template <typename T> uint32_t impl_IVectorChangedEventArgs<T>::Index() const
-{
-    uint32_t index = 0;
-    check_hresult(shim()->get_Index(&index));
-    return index;
-}
-
 }}}
 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> struct MapChangedEventHandler;
+template <typename T> struct VectorChangedEventHandler;
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -88,10 +95,20 @@ template <typename T> struct IVector;
 template <typename K, typename V> struct IMapView;
 template <typename K, typename V> struct IMap;
 template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct MapChangedEventHandler;
 template <typename K, typename V> struct IObservableMap;
-template <typename T> struct VectorChangedEventHandler;
 template <typename T> struct IObservableVector;
+
+template <typename K, typename V>
+struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
+};
+
+template <typename T>
+struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
+};
 
 template <typename T>
 struct __declspec(novtable) impl_IIterator : IInspectable
@@ -100,7 +117,6 @@ struct __declspec(novtable) impl_IIterator : IInspectable
     virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
     virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
     virtual HRESULT __stdcall abi_GetMany(uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
-
 };
 
 template <typename T>
@@ -172,34 +188,25 @@ struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
 };
 
 template <typename K, typename V>
-struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
-};
-
-template <typename K, typename V>
 struct __declspec(novtable) impl_IObservableMap : IInspectable
 {
-    virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, long long * token) = 0;
-    virtual HRESULT __stdcall remove_MapChanged(long long token) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
+    virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IObservableVector : IInspectable
 {
-    virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, long long *  token) = 0;
-    virtual HRESULT __stdcall remove_VectorChanged(long long token) = 0;
+    virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, event_token *  token) = 0;
+    virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
 
 }}}}
 
 namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> struct MapChangedEventHandler;
+template <typename T> struct VectorChangedEventHandler;
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -209,13 +216,11 @@ template <typename T> struct IVector;
 template <typename K, typename V> struct IMapView;
 template <typename K, typename V> struct IMap;
 template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct MapChangedEventHandler;
 template <typename K, typename V> struct IObservableMap;
-template <typename T> struct VectorChangedEventHandler;
 template <typename T> struct IObservableVector;
 
 template <typename D, typename T>
-class impl_consume_IIterator
+class impl_IIterator
 {
     auto shim() const { return impl::shim<D, IIterator<T>>(this); }
 
@@ -223,7 +228,7 @@ public:
 
     T Current() const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->get_Current(put(result)));
         return result;
     }
@@ -266,7 +271,7 @@ public:
 };
 
 template <typename D, typename T>
-class impl_consume_IIterable
+class impl_IIterable
 {
     auto shim() const { return impl::shim<D, IIterable<T>>(this); }
 
@@ -281,7 +286,7 @@ public:
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IKeyValuePair
+class impl_IKeyValuePair
 {
     auto shim() const { return impl::shim<D, IKeyValuePair<K, V>>(this); }
 
@@ -289,31 +294,31 @@ public:
 
     K Key() const
     {
-        K result = impl::argument<K>::empty();
+        K result = impl::empty_value<K>();
         check_hresult(shim()->get_Key(put(result)));
         return result;
     }
 
     V Value() const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->get_Value(put(result)));
         return result;
     }
 
-    bool operator==(const IKeyValuePair<K, V> & other) const noexcept
+    bool operator==(const IKeyValuePair<K, V> & other) const
     {
         return Key() == other.Key() && Value() == other.Value();
     }
 
-    bool operator!=(const IKeyValuePair<K, V> & other) const noexcept
+    bool operator!=(const IKeyValuePair<K, V> & other) const
     {
         return !(*this == other);
     }
 };
 
 template <typename D, typename T>
-class impl_consume_IVectorView
+class impl_IVectorView
 {
     auto shim() const { return impl::shim<D, IVectorView<T>>(this); }
 
@@ -321,7 +326,7 @@ public:
 
     T GetAt(const uint32_t index) const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->abi_GetAt(index, put(result)));
         return result;
     }
@@ -339,10 +344,17 @@ public:
         check_hresult(shim()->abi_IndexOf(get(value), &index, put(found)));
         return found;
     }
+
+    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const
+    {
+        uint32_t actual = 0;
+        check_hresult(shim()->abi_GetMany(startIndex, values.size(), get(values), &actual));
+        return actual;
+    }
 };
 
 template <typename D, typename T>
-class impl_consume_IVector
+class impl_IVector
 {
     auto shim() const { return impl::shim<D, IVector<T>>(this); }
 
@@ -350,7 +362,7 @@ public:
 
     T GetAt(const uint32_t index) const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->abi_GetAt(index, put(result)));
         return result;
     }
@@ -413,15 +425,14 @@ public:
         return actual;
     }
 
-    template <typename Array>
-    void ReplaceAll(const Array & values) const
+    void ReplaceAll(array_ref<const T> value) const
     {
-        check_hresult(shim()->abi_ReplaceAll(static_cast<uint32_t>(values.size()), reinterpret_cast<abi_arg_out<T>>(const_cast<Array &>(values).data())));
+        check_hresult(shim()->abi_ReplaceAll(value.size(), get(value)));
     }
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IMapView
+class impl_IMapView
 {
     auto shim() const { return impl::shim<D, IMapView<K, V>>(this); }
 
@@ -429,7 +440,7 @@ public:
 
     V Lookup(const K & key) const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->abi_Lookup(get(key), put(result)));
         return result;
     }
@@ -455,7 +466,7 @@ public:
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IMap
+class impl_IMap
 {
     auto shim() const { return impl::shim<D, IMap<K, V>>(this); }
 
@@ -463,7 +474,7 @@ public:
 
     V Lookup(const K & key) const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->abi_Lookup(get(key), put(result)));
         return result;
     }
@@ -508,7 +519,7 @@ public:
 };
 
 template <typename D, typename K>
-class impl_consume_IMapChangedEventArgs
+class impl_IMapChangedEventArgs
 {
     auto shim() const { return impl::shim<D, IMapChangedEventArgs<K>>(this); }
 
@@ -516,82 +527,70 @@ public:
 
     CollectionChange CollectionChange() const
     {
-        CollectionChange value = {};
+        Collections::CollectionChange value{};
         check_hresult(shim()->get_CollectionChange(&value));
         return value;
     }
 
     K Key() const
     {
-        K result = impl::argument<K>::empty();
+        K result = impl::empty_value<K>();
         check_hresult(shim()->get_Key(put(result)));
         return result;
     }
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_MapChangedEventHandler
-{
-    auto shim() const { return impl::shim<D, MapChangedEventHandler<K, V>>(this); }
-
-public:
-
-    void Invoke(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
-    {
-        check_hresult(shim()->abi_Invoke(get(sender), get(args)));
-    }
-};
-
-template <typename D, typename K, typename V>
-class impl_consume_IObservableMap
+class impl_IObservableMap
 {
     auto shim() const { return impl::shim<D, IObservableMap<K, V>>(this); }
 
 public:
 
-    long long MapChanged(const MapChangedEventHandler<K, V> & handler) const
+    event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const
     {
-        long long cookie = {};
+        event_token cookie {};
         check_hresult(shim()->add_MapChanged(get(handler), &cookie));
         return cookie;
     }
 
-    void MapChanged(const long long cookie) const
+    void MapChanged(const event_token cookie) const
     {
         check_hresult(shim()->remove_MapChanged(cookie));
     }
-};
 
-template <typename D, typename T>
-class impl_consume_VectorChangedEventHandler
-{
-    auto shim() const { return impl::shim<D, VectorChangedEventHandler<T>>(this); }
+    using MapChanged_revoker = event_revoker<IObservableMap<K, V>>;
 
-public:
-
-    void Invoke(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
+    MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
     {
-        check_hresult(shim()->abi_Invoke(get(sender), get(args)));
+        return return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
     }
 };
 
 template <typename D, typename T>
-class impl_consume_IObservableVector
+class impl_IObservableVector
 {
     auto shim() const { return impl::shim<D, IObservableVector<T>>(this); }
 
 public:
 
-    long long VectorChanged(const VectorChangedEventHandler<T> & handler) const
+    event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const
     {
-        long long cookie = {};
+        event_token cookie {};
         check_hresult(shim()->add_VectorChanged(get(handler), &cookie));
         return cookie;
     }
 
-    void VectorChanged(const long long cookie) const
+    void VectorChanged(const event_token cookie) const
     {
         check_hresult(shim()->remove_VectorChanged(cookie));
+    }
+
+    using VectorChanged_revoker = event_revoker<IObservableVector<T>>;
+
+    VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
+    {
+        return return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
     }
 };
 
@@ -599,76 +598,74 @@ public:
 
 namespace impl {
 
-template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IIterator<D, T>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IIterable<D, T>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IKeyValuePair<D, K, V>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IVectorView<D, T>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IVector<D, T>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMapView<D, K, V>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMap<D, K, V>;
-};
-
-template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMapChangedEventArgs<D, K>;
-};
-
 template <typename K, typename V> struct traits<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>
 {
     using abi = ABI::Windows::Foundation::Collections::MapChangedEventHandler<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_MapChangedEventHandler<D, K, V>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IObservableMap<D, K, V>;
 };
 
 template <typename T> struct traits<Windows::Foundation::Collections::VectorChangedEventHandler<T>>
 {
     using abi = ABI::Windows::Foundation::Collections::VectorChangedEventHandler<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_VectorChangedEventHandler<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterator<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterable<D, T>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorView<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVector<D, T>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMap<D, K, V>;
+};
+
+template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
 };
 
 template <typename T> struct traits<Windows::Foundation::Collections::IObservableVector<T>>
 {
     using abi = ABI::Windows::Foundation::Collections::IObservableVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IObservableVector<D, T>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
 };
 
 template <typename T>
@@ -712,9 +709,31 @@ private:
 namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T>
+struct WINRT_EBO VectorChangedEventHandler : IUnknown
+{
+    VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<VectorChangedEventHandler>(m_ptr); }
+    template <typename L> VectorChangedEventHandler(L handler);
+    template <typename F> VectorChangedEventHandler(F * handler);
+    template <typename O, typename M> VectorChangedEventHandler(O * object, M method);
+    void operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const;
+};
+
+template <typename K, typename V>
+struct WINRT_EBO MapChangedEventHandler : IUnknown
+{
+    MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<MapChangedEventHandler>(m_ptr); }
+    template <typename L> MapChangedEventHandler(L handler);
+    template <typename F> MapChangedEventHandler(F * handler);
+    template <typename O, typename M> MapChangedEventHandler(O * object, M method);
+    void operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const;
+};
+
+template <typename T>
 struct WINRT_EBO IIterator :
     IInspectable,
-    consume<IIterator<T>>
+    impl::consume<IIterator<T>>
 {
     IIterator(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterator>(m_ptr); }
@@ -723,7 +742,7 @@ struct WINRT_EBO IIterator :
 template <typename T>
 struct WINRT_EBO IIterable :
     IInspectable,
-    consume<IIterable<T>>
+    impl::consume<IIterable<T>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
@@ -732,7 +751,7 @@ struct WINRT_EBO IIterable :
 template <typename K, typename V>
 struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     IInspectable,
-    consume<IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IIterable<IKeyValuePair<K, V>>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
@@ -741,7 +760,7 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
 template <typename K, typename V>
 struct WINRT_EBO IKeyValuePair :
     IInspectable,
-    consume<IKeyValuePair<K, V>>
+    impl::consume<IKeyValuePair<K, V>>
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
@@ -750,8 +769,8 @@ struct WINRT_EBO IKeyValuePair :
 template <typename T>
 struct WINRT_EBO IVectorView :
     IInspectable,
-    consume<IVectorView<T>>,
-    requires<IVectorView<T>, IIterable<T>>
+    impl::consume<IVectorView<T>>,
+    impl::require<IVectorView<T>, IIterable<T>>
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVectorView>(m_ptr); }
@@ -760,8 +779,8 @@ struct WINRT_EBO IVectorView :
 template <typename T>
 struct WINRT_EBO IVector :
     IInspectable,
-    consume<IVector<T>>,
-    requires<IVector<T>, IIterable<T>>
+    impl::consume<IVector<T>>,
+    impl::require<IVector<T>, IIterable<T>>
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
@@ -770,8 +789,8 @@ struct WINRT_EBO IVector :
 template <typename K, typename V>
 struct WINRT_EBO IMapView :
     IInspectable,
-    consume<IMapView<K, V>>,
-    requires<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IMapView<K, V>>,
+    impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMapView>(m_ptr); }
@@ -780,8 +799,8 @@ struct WINRT_EBO IMapView :
 template <typename K, typename V>
 struct WINRT_EBO IMap :
     IInspectable,
-    consume<IMap<K, V>>,
-    requires<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IMap<K, V>>,
+    impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMap>(m_ptr); }
@@ -790,51 +809,105 @@ struct WINRT_EBO IMap :
 template <typename K>
 struct WINRT_EBO IMapChangedEventArgs :
     IInspectable,
-    consume<IMapChangedEventArgs<K>>
+    impl::consume<IMapChangedEventArgs<K>>
 {
     IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMapChangedEventArgs>(m_ptr); }
 };
 
 template <typename K, typename V>
-struct WINRT_EBO MapChangedEventHandler :
-    IUnknown,
-    consume<MapChangedEventHandler<K, V>>
-{
-    MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MapChangedEventHandler>(m_ptr); }
-    template <typename H> MapChangedEventHandler(H handler);
-};
-
-template <typename K, typename V>
 struct WINRT_EBO IObservableMap :
     IInspectable,
-    consume<IObservableMap<K, V>>,
-    requires<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IObservableMap<K, V>>,
+    impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IObservableMap(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IObservableMap>(m_ptr); }
 };
 
 template <typename T>
-struct WINRT_EBO VectorChangedEventHandler :
-    IUnknown,
-    consume<VectorChangedEventHandler<T>>
-{
-    VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<VectorChangedEventHandler>(m_ptr); }
-    template <typename H> VectorChangedEventHandler(H handler);
-};
-
-template <typename T>
 struct WINRT_EBO IObservableVector :
     IInspectable,
-    consume<IObservableVector<T>>,
-    requires<IObservableVector<T>, IVector<T>, IIterable<T>>
+    impl::consume<IObservableVector<T>>,
+    impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
 {
     IObservableVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
+
+}}}
+
+namespace impl {
+
+template <typename K, typename V, typename H>
+struct map_changed_event_handler : implements<map_changed_event_handler<K, V, H>, abi<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>>, H
+{
+    map_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableMap<K, V>> sender, abi_arg_in<Windows::Foundation::Collections::IMapChangedEventArgs<K>> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableMap<K, V> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IMapChangedEventArgs<K> *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename T, typename H>
+struct vector_changed_event_handler : implements<vector_changed_event_handler<T, H>, abi<Windows::Foundation::Collections::VectorChangedEventHandler<T>>>, H
+{
+    vector_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableVector<T>> sender, abi_arg_in<Windows::Foundation::Collections::IVectorChangedEventArgs> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableVector<T> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IVectorChangedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+}
+
+namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
+    MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
+{}
+
+template <typename K, typename V> template <typename F> MapChangedEventHandler<K, V>::MapChangedEventHandler(F * handler) :
+    MapChangedEventHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename K, typename V> template <typename O, typename M> MapChangedEventHandler<K, V>::MapChangedEventHandler(O * object, M method) :
+    MapChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
+
+template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
+    VectorChangedEventHandler(impl::make_delegate<impl::vector_changed_event_handler<T, L>, VectorChangedEventHandler<T>>(std::forward<L>(handler)))
+{}
+
+template <typename T> template <typename F> VectorChangedEventHandler<T>::VectorChangedEventHandler(F * handler) :
+    VectorChangedEventHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename T> template <typename O, typename M> VectorChangedEventHandler<T>::VectorChangedEventHandler(O * object, M method) :
+    VectorChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
 
 template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
 auto begin(const T & collection) -> decltype(collection.First())

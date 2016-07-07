@@ -73,10 +73,9 @@ struct TestReference : implements<TestReference, IReference<uint64_t>>
         }
     }
 
-    HRESULT __stdcall get_Value(uint64_t * value) noexcept override
+    uint64_t Value()
     {
-        *value = 200;
-        return S_OK;
+        return 200;
     }
 };
 

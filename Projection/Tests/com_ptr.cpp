@@ -129,7 +129,7 @@ TEST_CASE("com_ptr, convertible")
 {
     bool destroyed = true;
 
-    com_ptr<IStringable> stringable = make<Stringable, abi<IStringable>>(L"Hello world!", &destroyed);
+    com_ptr<IStringable> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
 
     com_ptr<Windows::IUnknown> a = stringable; // convertible copy ctor
 
@@ -167,7 +167,7 @@ TEST_CASE("com_ptr, convertible, abi")
 {
     bool destroyed = true;
 
-    com_ptr<abi<IStringable>> stringable = make<Stringable, abi<IStringable>>(L"Hello world!", &destroyed);
+    com_ptr<abi<IStringable>> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
 
     com_ptr<abi<Windows::IUnknown>> a = stringable; // convertible copy ctor
 
@@ -205,7 +205,7 @@ TEST_CASE("com_ptr, accessors")
 {
     bool destroyed = true;
 
-    com_ptr<IStringable> a = make<Stringable, abi<IStringable>>(L"Hello world!", &destroyed);
+    com_ptr<IStringable> a = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
 
     REQUIRE(!destroyed);
 

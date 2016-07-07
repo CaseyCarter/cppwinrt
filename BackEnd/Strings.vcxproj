@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="ClangDebug|Win32">
+      <Configuration>ClangDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ClangDebug|x64">
+      <Configuration>ClangDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -25,28 +33,28 @@
     <ClInclude Include="Source\Modern\base_accessors.h" />
     <ClInclude Include="Source\Modern\base_activation.h" />
     <ClInclude Include="Source\Modern\base_array.h" />
-    <ClInclude Include="Source\Modern\base_async.h" />
+    <ClInclude Include="Source\Modern\base_async_consume.h" />
+    <ClInclude Include="Source\Modern\base_async_produce.h" />
     <ClInclude Include="Source\Modern\base_await_consume.h" />
-    <ClInclude Include="Source\Modern\base_await_produce.h" />
     <ClInclude Include="Source\Modern\base_collections_consume.h" />
     <ClInclude Include="Source\Modern\base_collections_produce.h" />
+    <ClInclude Include="Source\Modern\base_composable.h" />
     <ClInclude Include="Source\Modern\base_com_ptr.h" />
     <ClInclude Include="Source\Modern\base_dependencies.h" />
     <ClInclude Include="Source\Modern\base_error.h" />
     <ClInclude Include="Source\Modern\base_event_consume.h" />
-    <ClInclude Include="Source\Modern\base_event_produce.h" />
     <ClInclude Include="Source\Modern\base_foundation.h" />
-    <ClInclude Include="Source\Modern\base_generic.h" />
+    <ClInclude Include="Source\Modern\base_generic_consume.h" />
+    <ClInclude Include="Source\Modern\base_generic_produce.h" />
     <ClInclude Include="Source\Modern\base_handle.h" />
     <ClInclude Include="Source\Modern\base_implements.h" />
+    <ClInclude Include="Source\Modern\base_implements_old.h" />
     <ClInclude Include="Source\Modern\base_lock.h" />
     <ClInclude Include="Source\Modern\base_macros.h" />
     <ClInclude Include="Source\Modern\base_meta.h" />
     <ClInclude Include="Source\Modern\base_modern.h" />
     <ClInclude Include="Source\Modern\base_module.h" />
-    <ClInclude Include="Source\Modern\base_reference.h" />
     <ClInclude Include="Source\Modern\base_std.h" />
-    <ClInclude Include="Source\Modern\base_streams.h" />
     <ClInclude Include="Source\Modern\base_string.h" />
     <ClInclude Include="Source\Modern\base_string_hstring.h" />
     <ClInclude Include="Source\Modern\base_string_hstring_ref.h" />
@@ -81,19 +89,22 @@
     <ClInclude Include="Source\Modern\WriteGenericInterface.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceConsumer.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceDefinition.h" />
+    <ClInclude Include="Source\Modern\WriteInterfaceEventMethodDeclaration.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceMethodDeclaration.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceProducer.h" />
-    <ClInclude Include="Source\Modern\WriteInterfaceProducerNotImplementedMethod.h" />
-    <ClInclude Include="Source\Modern\WriteInterfaceProducersWarningPop.h" />
-    <ClInclude Include="Source\Modern\WriteInterfaceProducersWarningPush.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceProducerVirtualMethod.h" />
+    <ClInclude Include="Source\Modern\WriteInterfacesEventMethodDefinition.h" />
     <ClInclude Include="Source\Modern\WriteInterfacesMethodDefinition.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceTraits.h" />
     <ClInclude Include="Source\Modern\WriteMethodBody.h" />
+    <ClInclude Include="Source\Modern\WriteNonAbiStructure.h" />
     <ClInclude Include="Source\Modern\WriteOverride.h" />
     <ClInclude Include="Source\Modern\WriteOverrideDefault.h" />
     <ClInclude Include="Source\Modern\WriteRequiredInterfaces.h" />
+    <ClInclude Include="Source\Modern\WriteSimpleTraits.h" />
     <ClInclude Include="Source\Modern\WriteStaticClassDeclaration.h" />
+    <ClInclude Include="Source\Modern\WriteStaticEventMethodDeclaration.h" />
+    <ClInclude Include="Source\Modern\WriteStaticEventMethodDefinition.h" />
     <ClInclude Include="Source\Modern\WriteStaticMethodDeclaration.h" />
     <ClInclude Include="Source\Modern\WriteStaticMethodDefinition.h" />
     <ClInclude Include="Source\Modern\WriteStructure.h" />
@@ -103,9 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\Modern\ConsoleHeader.txt" />
-    <Text Include="Source\Modern\LibraryProjecting.txt" />
-    <Text Include="Source\Modern\LibraryReading.txt" />
-    <Text Include="Source\Modern\LibraryWriting.txt" />
     <Text Include="Source\Modern\OutputError.txt" />
     <Text Include="Source\Modern\SQLiteError.txt" />
     <Text Include="Source\Modern\TimeCompleted.txt" />
@@ -114,6 +122,7 @@
   <ItemGroup>
     <None Include="Source\Modern\DatabaseGetAbiClassDeclarations.sql" />
     <None Include="Source\Modern\DatabaseGetAbiInterfaces.sql" />
+    <None Include="Source\Modern\DatabaseGetAbiStructures.sql" />
     <None Include="Source\Modern\DatabaseGetBases.sql" />
     <None Include="Source\Modern\DatabaseGetCategory.sql" />
     <None Include="Source\Modern\DatabaseGetClassConstructorsPublic.sql" />
@@ -137,6 +146,7 @@
     <None Include="Source\Modern\DatabaseGetInterfaceMethods.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaces.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaceTraits.sql" />
+    <None Include="Source\Modern\DatabaseGetNonAbiStructures.sql" />
     <None Include="Source\Modern\DatabaseGetOverridables.sql" />
     <None Include="Source\Modern\DatabaseGetOverrides.sql" />
     <None Include="Source\Modern\DatabaseGetParameters.sql" />
@@ -148,7 +158,6 @@
     <None Include="Source\Modern\DatabaseGetUsingMethodsForClass.sql" />
     <None Include="Source\Modern\DatabaseGetUsingMethodsForInterface.sql" />
     <None Include="Source\Modern\PostSql.sql" />
-    <None Include="Source\Modern\PreSql.sql" />
     <None Include="Source\Modern\WindowsNumerics.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -166,7 +175,21 @@
     <CharacterSet>Unicode</CharacterSet>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
@@ -195,7 +218,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -210,7 +239,17 @@
     <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)x64\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
@@ -242,7 +281,40 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>

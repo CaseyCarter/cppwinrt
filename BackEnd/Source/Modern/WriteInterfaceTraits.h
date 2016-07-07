@@ -2,6 +2,5 @@
 template <> struct traits<%::%>
 {
     using abi = ABI::%::%;
-    template <typename T> using consume = %::impl_consume_%<T>;
-    template <typename T> using produce = %::impl_produce_%<T>;
+    template <typename D> using consume = %::impl_%<D>;
 };

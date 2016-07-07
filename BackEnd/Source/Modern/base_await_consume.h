@@ -10,7 +10,7 @@ void impl_suspend(const T & object, F resume)
     object.Completed([resume, context](const auto &, AsyncStatus)
     {
         ComCallData data = {};
-        data.pUserDefined = resume.to_address();
+        data.pUserDefined = resume.address();
 
         check_hresult(context->ContextCallback([](ComCallData * data)
         {

@@ -1,8 +1,7 @@
 
-template <typename T> struct impl_% : implements<impl_%<T>, abi<%>>
+template <typename H> struct impl_% : implements<impl_%<H>, abi<%>>, H
 {
-    T m_handler;
-    impl_%(T handler) : m_handler(handler) {}
+    impl_%(H && handler) : H(std::forward<H>(handler)) {}
 
     HRESULT __stdcall abi_Invoke(%) noexcept override
     {

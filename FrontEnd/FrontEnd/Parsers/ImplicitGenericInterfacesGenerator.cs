@@ -1,6 +1,7 @@
 ﻿using Microsoft.Wcl.DataStore;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Microsoft.Wcl.Parsers
 {
@@ -16,6 +17,7 @@ namespace Microsoft.Wcl.Parsers
         {
             public string Dependency;
             public string Format;
+            public int[] ArgumentIndexes;
         }
 
         static IList<GenericInterfaceDependency> GenericInterfaceDependencies = new List<GenericInterfaceDependency>()
@@ -57,11 +59,14 @@ namespace Microsoft.Wcl.Parsers
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IObservableMap`2",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
-                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IMap`2", Format =  StringFormats.OpenGenericDependency1 }, } },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IMap`2", Format =  StringFormats.OpenGenericDependency1 },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::MapChangedEventHandler`2", Format =  StringFormats.OpenGenericDependency1 },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IMapChangedEventArgs`1", Format =  StringFormats.OpenGenericDependency1, ArgumentIndexes = new int[] { 0 } },} },
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IObservableVector`1",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
-                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IVector`1", Format =  StringFormats.OpenGenericDependency1 }, } },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IVector`1", Format =  StringFormats.OpenGenericDependency1 },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::VectorChangedEventHandler`1", Format =  StringFormats.OpenGenericDependency1 },} },
         };
 
         static public List<GenericInterfaceInfo> GenerateDependencyGenericInterfaces(GenericInterfaceInfo info)
@@ -85,7 +90,25 @@ namespace Microsoft.Wcl.Parsers
                     {
                         foreach (var dependency in set.Dependencies)
                         {
-                            string newDependency = String.Format(dependency.Format, dependency.Dependency, arguments);
+                            string newDependency = null;
+                            // Some templates need all arguments, some need only some of them.
+                            // Create the appropiate payload based on what the dependency definition is.
+                            if (dependency.ArgumentIndexes == null)
+                            {
+                                newDependency = String.Format(dependency.Format, dependency.Dependency, arguments);
+                            }
+                            else
+                            {
+                                string[] parts = arguments.Split(new char[] { ',' });
+                                StringBuilder templateArguments = new StringBuilder();
+                                foreach (var index in dependency.ArgumentIndexes)
+                                {
+                                    templateArguments.AppendFormat("{0}, ", parts[index].Trim());
+                                }
+                                templateArguments.Length -= 2;
+
+                                newDependency = String.Format(dependency.Format, dependency.Dependency, templateArguments.ToString());
+                            }
 
                             GenericInterfaceInfo newInfo = new GenericInterfaceInfo()
                             {

@@ -1,1 +1,1 @@
-cl /c /EHsc /experimental:module winrt.ixx
+cl /c /EHsc /experimental:module /std:c++latest winrt.ixx

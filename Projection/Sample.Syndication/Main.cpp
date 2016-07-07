@@ -2,14 +2,13 @@
 
 using namespace winrt;
 
+using namespace Windows::Foundation;
+using namespace Windows::Web::Syndication;
+
 std::future<void> Sample()
 {
-    using namespace Windows::Foundation;
-    using namespace Windows::Web::Syndication;
-
     Uri uri(L"http://kennykerr.ca/feed");
     SyndicationClient client;
-
     SyndicationFeed feed = await client.RetrieveFeedAsync(uri);
 
     for (SyndicationItem item : feed.Items())

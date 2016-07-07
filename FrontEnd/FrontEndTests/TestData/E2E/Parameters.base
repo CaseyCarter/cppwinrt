@@ -5937,11 +5937,11 @@ serviceInfoFilter|Windows::Storage::Streams::IBuffer||16|1|abi_GetSelectorWithFi
 serviceName|hstring||2|1|abi_GetSelectorWithFilter
 serviceSelector|hstring||2|4|abi_GetSelectorWithFilter
 asyncInfo|Windows::Foundation::IAsyncAction||16|1|abi_Invoke
-asyncStatus|Windows::AsyncStatus||4|1|abi_Invoke
+asyncStatus|Windows::Foundation::AsyncStatus||4|1|abi_Invoke
 operationId|uint64_t||1|1|abi_TraceOperationCompletion
 platformId|GUID||1|1|abi_TraceOperationCompletion
 source|Windows::Foundation::Diagnostics::CausalitySource||4|1|abi_TraceOperationCompletion
-status|Windows::AsyncStatus||4|1|abi_TraceOperationCompletion
+status|Windows::Foundation::AsyncStatus||4|1|abi_TraceOperationCompletion
 traceLevel|Windows::Foundation::Diagnostics::CausalityTraceLevel||4|1|abi_TraceOperationCompletion
 operationId|uint64_t||1|1|abi_TraceOperationCreation
 operationName|hstring||2|1|abi_TraceOperationCreation

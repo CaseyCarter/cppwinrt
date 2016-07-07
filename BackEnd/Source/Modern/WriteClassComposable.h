@@ -1,7 +1,7 @@
 
-template <typename T, typename ... Interfaces> struct %T :
-    overrides<T, %, Interfaces ...>,
-    requires<T, %>
+template <typename D, typename ... Interfaces> struct %T :
+    overrides<D, %, Interfaces ...>,
+    impl::require<D, %>
 {
     using composable = %;
 

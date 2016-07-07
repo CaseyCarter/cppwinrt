@@ -5,6 +5,7 @@ using namespace winrt;
 using namespace Windows;
 using namespace Windows::Graphics::Display;
 using namespace Windows::Foundation;
+using namespace Windows::Foundation::Collections;
 
 //
 // Each of the sections in this test case exercises a unique edge case presented by an existing delegate in the Windows SDK.
@@ -588,6 +589,108 @@ TEST_CASE("delegate,TypedEventHandler")
     {
         TypedEventHandler_Member object;
         TypedEventHandler<DisplayInformation, IInspectable> h{ &object, &TypedEventHandler_Member::Handler };
+        h(nullptr, nullptr);
+    }
+}
+
+static void VectorChangedEventHandler_Free(IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+{
+    REQUIRE(sender == nullptr);
+    REQUIRE(args == nullptr);
+}
+
+struct VectorChangedEventHandler_Member
+{
+    void Handler(IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+    {
+        REQUIRE(sender == nullptr);
+        REQUIRE(args == nullptr);
+    }
+};
+
+TEST_CASE("delegate,VectorChangedEventHandler")
+{
+    //
+    // This section verifies that the default and nullptr_t constructor is present.
+    //
+    SECTION("default")
+    {
+        VectorChangedEventHandler<IInspectable> a;
+        VectorChangedEventHandler<IInspectable> b = nullptr;
+    }
+
+    SECTION("lambda")
+    {
+        VectorChangedEventHandler<IInspectable> h = [](IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+        {
+            REQUIRE(sender == nullptr);
+            REQUIRE(args == nullptr);
+        };
+
+        h(nullptr, nullptr);
+    }
+
+    SECTION("free function")
+    {
+        VectorChangedEventHandler<IInspectable> h = VectorChangedEventHandler_Free;
+        h(nullptr, nullptr);
+    }
+
+    SECTION("member function")
+    {
+        VectorChangedEventHandler_Member object;
+        VectorChangedEventHandler<IInspectable> h{ &object, &VectorChangedEventHandler_Member::Handler };
+        h(nullptr, nullptr);
+    }
+}
+
+static void MapChangedEventHandler_Free(IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+{
+    REQUIRE(sender == nullptr);
+    REQUIRE(args == nullptr);
+}
+
+struct MapChangedEventHandler_Member
+{
+    void Handler(IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+    {
+        REQUIRE(sender == nullptr);
+        REQUIRE(args == nullptr);
+    }
+};
+
+TEST_CASE("delegate,MapChangedEventHandler")
+{
+    //
+    // This section verifies that the default and nullptr_t constructor is present.
+    //
+    SECTION("default")
+    {
+        MapChangedEventHandler<hstring, IInspectable> a;
+        MapChangedEventHandler<hstring, IInspectable> b = nullptr;
+    }
+
+    SECTION("lambda")
+    {
+        MapChangedEventHandler<hstring, IInspectable> h = [](IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+        {
+            REQUIRE(sender == nullptr);
+            REQUIRE(args == nullptr);
+        };
+
+        h(nullptr, nullptr);
+    }
+
+    SECTION("free function")
+    {
+        MapChangedEventHandler<hstring, IInspectable> h = MapChangedEventHandler_Free;
+        h(nullptr, nullptr);
+    }
+
+    SECTION("member function")
+    {
+        MapChangedEventHandler_Member object;
+        MapChangedEventHandler<hstring, IInspectable> h{ &object, &MapChangedEventHandler_Member::Handler };
         h(nullptr, nullptr);
     }
 }

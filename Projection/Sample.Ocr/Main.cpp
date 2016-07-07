@@ -2,6 +2,11 @@
 
 using namespace winrt;
 
+using namespace Windows::Storage;
+using namespace Windows::Storage::Streams;
+using namespace Windows::Graphics::Imaging;
+using namespace Windows::Media::Ocr;
+
 static hstring MessagePath()
 {
     // StorageFile.GetFileFromPathAsync doesn't appear to honor the "current directory"
@@ -17,11 +22,6 @@ static hstring MessagePath()
 
 static std::future<hstring> Sample()
 {
-    using namespace Windows::Storage;
-    using namespace Windows::Storage::Streams;
-    using namespace Windows::Graphics::Imaging;
-    using namespace Windows::Media::Ocr;
-
     StorageFile file = await StorageFile::GetFileFromPathAsync(MessagePath());
     IRandomAccessStream stream = await file.OpenAsync(FileAccessMode::Read);
 

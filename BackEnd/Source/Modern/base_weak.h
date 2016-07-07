@@ -21,7 +21,7 @@ struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novta
 template <typename T>
 struct weak
 {
-    weak() noexcept = default;
+    weak(std::nullptr_t = nullptr) noexcept {}
 
     weak(const T & object)
     {
@@ -33,6 +33,11 @@ struct weak
         T object = nullptr;
         m_ref->abi_Resolve(put(object));
         return object;
+    }
+
+    explicit operator bool() const noexcept
+    {
+        return static_cast<bool>(m_ref);
     }
 
 private:

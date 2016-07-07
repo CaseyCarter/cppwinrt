@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include <array>
 #include <future>
+#include "produce_IPropertyValue.h"
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -1024,24 +1025,6 @@ TEST_CASE("com_array,move")
 // Now some tests covering producing and consuming arrays
 //
 
-struct ProducePropertyValueArray : implements<ProducePropertyValueArray, IPropertyValue>
-{
-    void GetInt32Array(com_array<int32_t> & value)
-    {
-        value = { 1, 2, 3 };
-    }
-
-    void GetSizeArray(com_array<Windows::Foundation::Size> & value)
-    {
-        value = { {1,1}, {2,2}, {3,3} };
-    }
-
-    void GetInspectableArray(com_array<Windows::IInspectable> & value)
-    {
-        value = { Uri(L"http://one/"), Uri(L"http://two/"), Uri(L"http://three/") };
-    }
-};
-
 bool operator==(Size left, Size right)
 {
     return left.Width == right.Width &&
@@ -1066,7 +1049,7 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,int32_t")
     {
-        auto pv = make<ProducePropertyValueArray>();
+        auto pv = make<produce_IPropertyValue>();
 
         com_array<int32_t> a;
         pv.GetInt32Array(a);
@@ -1093,7 +1076,7 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,Size")
     {
-        auto pv = make<ProducePropertyValueArray>();
+        auto pv = make<produce_IPropertyValue>();
 
         com_array<Size> a;
         pv.GetSizeArray(a);
@@ -1120,7 +1103,7 @@ TEST_CASE("array,PropertyValue")
 
     SECTION("produce,array,Inspectable")
     {
-        auto pv = make<ProducePropertyValueArray>();
+        auto pv = make<produce_IPropertyValue>();
 
         com_array<Windows::IInspectable> a;
         pv.GetInspectableArray(a);

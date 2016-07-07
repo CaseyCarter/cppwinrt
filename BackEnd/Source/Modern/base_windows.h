@@ -1,6 +1,28 @@
 
 namespace Windows {
 
+enum class TrustLevel
+{
+    BaseTrust,
+    PartialTrust,
+    FullTrust,
+};
+
+}
+
+namespace ABI { namespace Windows {
+
+struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
+{
+    virtual HRESULT __stdcall abi_GetIids(uint32_t * iidCount, GUID ** iids) = 0;
+    virtual HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * className) = 0;
+    virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
+};
+
+}}
+
+namespace Windows {
+
 struct IUnknown
 {
     IUnknown() noexcept = default;
@@ -57,6 +79,14 @@ struct IUnknown
     {
         std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        return temp;
+    }
+
+    template <typename U>
+    auto try_as() const
+    {
+        std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
 
@@ -237,43 +267,6 @@ inline bool operator>=(const IUnknown & left, const IUnknown & right) noexcept
 namespace Windows {
 
 struct IInspectable;
-struct IAsyncInfo;
-struct IActivationFactory;
-
-template <typename T>
-class impl_IInspectable
-{
-    auto shim() const { return impl::shim<T, IInspectable>(this); }
-
-public:
-
-    hstring RuntimeClassName() const;
-    com_array<GUID> Iids() const;
-};
-
-template <typename T>
-class impl_IAsyncInfo
-{
-    auto shim() const { return impl::shim<T, IAsyncInfo>(this); }
-
-public:
-
-    uint32_t Id() const;
-    AsyncStatus Status() const;
-    HRESULT ErrorCode() const;
-    void Cancel() const;
-    void Close() const;
-};
-
-template <typename T>
-class impl_IActivationFactory
-{
-    auto shim() const { return impl::shim<T, IActivationFactory>(this); }
-
-public:
-
-    IInspectable ActivateInstance() const;
-};
 
 }
 
@@ -282,123 +275,53 @@ namespace impl {
 template <> struct traits<Windows::IInspectable>
 {
     using abi = ABI::Windows::IInspectable;
-    template <typename T> using consume = Windows::impl_IInspectable<T>;
-};
-
-template <> struct traits<Windows::IAsyncInfo>
-{
-    using abi = ABI::Windows::IAsyncInfo;
-    template <typename T> using consume = Windows::impl_IAsyncInfo<T>;
-};
-
-template <> struct traits<Windows::IActivationFactory>
-{
-    using abi = ABI::Windows::IActivationFactory;
-    template <typename T> using consume = Windows::impl_IActivationFactory<T>;
 };
 
 }
 
 namespace Windows {
 
-struct IInspectable :
-    IUnknown,
-    impl_IInspectable<IInspectable>
+struct IInspectable : IUnknown
 {
     IInspectable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IInspectable>(m_ptr); }
 };
 
-struct IAsyncInfo :
-    IUnknown,
-    impl_IAsyncInfo<IAsyncInfo>
+inline com_array<GUID> GetIids(const IInspectable & object)
 {
-    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
-};
-
-struct IActivationFactory :
-    IUnknown,
-    impl_IActivationFactory<IActivationFactory>
-{
-    IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
-};
-
-template <typename T> hstring impl_IInspectable<T>::RuntimeClassName() const
-{
-    hstring name;
-    check_hresult(shim()->get_RuntimeClassName(put(name)));
-    return name;
+    com_array<GUID> value;
+    check_hresult(object->abi_GetIids(put_size(value), put(value)));
+    return value;
 }
 
-template <typename T> com_array<GUID> impl_IInspectable<T>::Iids() const
+inline hstring GetRuntimeClassName(const IInspectable & object)
 {
-    com_array<GUID> result;
-    check_hresult(shim()->get_Iids(put_size(result), put(result)));
-    return result;
+    hstring value;
+    check_hresult(object->abi_GetRuntimeClassName(put(value)));
+    return value;
 }
 
-template <typename T> uint32_t impl_IAsyncInfo<T>::Id() const
+inline TrustLevel GetTrustLevel(const IInspectable & object)
 {
-    uint32_t id = 0;
-    check_hresult(shim()->get_Id(&id));
-    return id;
-}
-
-template <typename T> AsyncStatus impl_IAsyncInfo<T>::Status() const
-{
-    AsyncStatus status = {};
-    check_hresult(shim()->get_Status(&status));
-    return status;
-}
-
-template <typename T> HRESULT impl_IAsyncInfo<T>::ErrorCode() const
-{
-    HRESULT code = S_OK;
-    check_hresult(shim()->get_ErrorCode(&code));
-    return code;
-}
-
-template <typename T> void impl_IAsyncInfo<T>::Cancel() const
-{
-    check_hresult(shim()->abi_Cancel());
-}
-
-template <typename T> void impl_IAsyncInfo<T>::Close() const
-{
-    check_hresult(shim()->abi_Close());
-}
-
-template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance() const
-{
-    IInspectable instance;
-    check_hresult(shim()->abi_ActivateInstance(put(instance)));
-    return instance;
+    Windows::TrustLevel value{};
+    check_hresult(object->abi_GetTrustLevel(&value));
+    return value;
 }
 
 }
 
-template <typename T, typename I = typename T::default_interface, typename ... Args, std::enable_if_t<!impl::has_composable<T>::value> * = nullptr>
-auto make(Args && ... args)
+namespace impl {
+
+template <typename T, std::enable_if_t<!std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+T empty_value()
 {
-    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance;
+    return {};
 }
 
-template <typename T, typename I = typename T::default_interface, typename ... Args, std::enable_if_t<impl::has_composable<T>::value> * = nullptr>
-auto make(Args && ... args)
+template <typename T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+T empty_value()
 {
-    com_ptr<I> instance;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance.template as<typename T::composable>();
+    return nullptr;
 }
 
-template <typename T, typename ... Args>
-auto make_self(Args && ... args)
-{
-    com_ptr<T> instance;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance;
 }

@@ -1,11 +1,9 @@
 
-template <typename T>
-class WINRT_EBO impl_consume_%
+template <typename D>
+class WINRT_EBO impl_%
 {
-    auto shim() const { return impl::shim<T, %>(this); }
+    auto shim() const { return impl::shim<D, %>(this); }
 
 public:
 
 %};
-
-template <typename T> struct impl_produce_%;

@@ -13,13 +13,11 @@
 
 #include <atomic>
 #include <chrono>
-#include <functional>
 #include <vector>
 
 extern "C"
 {
     HRESULT __stdcall WINRT_GetRestrictedErrorInfo(IRestrictedErrorInfo ** info);
-    HRESULT __stdcall WINRT_RoActivateInstance(HSTRING classId, void ** instance);
     HRESULT __stdcall WINRT_RoGetActivationFactory(HSTRING classId, const GUID & iid, void ** factory);
     HRESULT __stdcall WINRT_RoInitialize(uint32_t type);
     BOOL    __stdcall WINRT_RoOriginateError(HRESULT error, HSTRING message);
@@ -29,7 +27,6 @@ extern "C"
 
 #ifdef _M_IX86
 #pragma comment(linker, "/alternatename:_WINRT_GetRestrictedErrorInfo@4=_GetRestrictedErrorInfo@4")
-#pragma comment(linker, "/alternatename:_WINRT_RoActivateInstance@8=_RoActivateInstance@8")
 #pragma comment(linker, "/alternatename:_WINRT_RoGetActivationFactory@12=_RoGetActivationFactory@12")
 #pragma comment(linker, "/alternatename:_WINRT_RoInitialize@4=_RoInitialize@4")
 #pragma comment(linker, "/alternatename:_WINRT_RoOriginateError@8=_RoOriginateError@8")
@@ -37,7 +34,6 @@ extern "C"
 #pragma comment(linker, "/alternatename:_WINRT_SetRestrictedErrorInfo@4=_SetRestrictedErrorInfo@4")
 #else
 #pragma comment(linker, "/alternatename:WINRT_GetRestrictedErrorInfo=GetRestrictedErrorInfo")
-#pragma comment(linker, "/alternatename:WINRT_RoActivateInstance=RoActivateInstance")
 #pragma comment(linker, "/alternatename:WINRT_RoGetActivationFactory=RoGetActivationFactory")
 #pragma comment(linker, "/alternatename:WINRT_RoInitialize=RoInitialize")
 #pragma comment(linker, "/alternatename:WINRT_RoOriginateError=RoOriginateError")
@@ -100,6 +96,21 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 
 #ifdef _WIN64
 #define WINRT_64
+#endif
+
+#if defined(__clang__)
+
+#define WINRT_IGNORE_MISSING_OVERRIDE_BEGIN \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang diagnostic ignored \"-Winconsistent-missing-override\"")
+#define WINRT_IGNORE_MISSING_OVERRIDE_END \
+    _Pragma("clang diagnostic pop")
+
+#else
+
+#define WINRT_IGNORE_MISSING_OVERRIDE_BEGIN
+#define WINRT_IGNORE_MISSING_OVERRIDE_END
+
 #endif
 
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
@@ -356,50 +367,6 @@ struct accessors<handle<T>>
 
 }
 
-namespace Windows {
-
-enum class TrustLevel
-{
-    BaseTrust,
-    PartialTrust,
-    FullTrust,
-};
-
-enum class AsyncStatus
-{
-    Started,
-    Completed,
-    Canceled,
-    Error,
-};
-
-}
-
-namespace ABI { namespace Windows {
-
-struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
-{
-    virtual HRESULT __stdcall get_Iids(uint32_t * iidCount, GUID ** iids) = 0;
-    virtual HRESULT __stdcall get_RuntimeClassName(HSTRING * className) = 0;
-    virtual HRESULT __stdcall get_TrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
-};
-
-struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t * id) = 0;
-    virtual HRESULT __stdcall get_Status(winrt::Windows::AsyncStatus * status) = 0;
-    virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
-    virtual HRESULT __stdcall abi_Cancel() = 0;
-    virtual HRESULT __stdcall abi_Close() = 0;
-};
-
-struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
-{
-    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
-};
-
-}}
-
 namespace ABI {
 
 template <typename T>
@@ -421,68 +388,46 @@ using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interf
 
 namespace impl {
 
-template <typename T>
-class has_GetAt
-{
-    template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
-    template <typename> static constexpr bool get_value(...) { return false; }
-
-public:
-
-    static constexpr bool value = get_value<T>(0);
-};
-
-template <typename T>
-class has_composable
-{
-    template <typename U> static constexpr bool get_value(typename U::composable *) { return true; }
-    template <typename>   static constexpr bool get_value(...) { return false; }
-
-public:
-
-    static constexpr bool value = get_value<T>(0);
-};
-
-template <typename T>
-class can_produce
-{
-    template <typename U> static constexpr bool get_value(typename impl::traits<U>::produce *) { return true; }
-    template <typename>   static constexpr bool get_value(...) { return false; }
-
-public:
-
-    static constexpr bool value = get_value<T>(nullptr);
-};
-
 template <typename Crtp, typename Qi, typename Base>
 auto shim(const Base * base)
 {
     return get(static_cast<const Qi &>(static_cast<const Crtp &>(*base)));
 }
 
-template <typename T, typename R>
-struct requires : traits<R>::template consume<requires<T, R>>
+template <typename D, typename I>
+struct require_one : traits<I>::template consume<D>
 {
-    operator R() const noexcept
+    operator I() const noexcept
     {
-        return static_cast<const T *>(this)->template as<R>();
+        return static_cast<const D *>(this)->template as<I>();
     }
 };
 
-template <typename T, typename B>
-struct bases
+template <typename D, typename ... I>
+struct WINRT_EBO require : impl::require_one<D, I> ...
+{};
+
+template <typename D, typename I>
+struct bases_one
 {
-    operator B() const noexcept
+    operator I() const noexcept
     {
-        return static_cast<const T *>(this)->as<B>();
+        return static_cast<const D *>(this)->as<I>();
     }
 };
+
+template <typename D, typename ... I>
+struct WINRT_EBO bases : impl::bases_one<D, I> ...
+{};
+
+template <typename T>
+using consume = typename traits<T>::template consume<T>;
 
 template <typename T>
 class no_ref : public T
 {
-    unsigned long __stdcall AddRef();
-    unsigned long __stdcall Release();
+    unsigned long __stdcall AddRef() noexcept;
+    unsigned long __stdcall Release() noexcept;
 };
 
 }
@@ -497,39 +442,11 @@ template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
 
 template <typename T>
-auto ptr(IUnknown * object) noexcept
+auto ptr(::IUnknown * object) noexcept
 {
     return static_cast<impl::no_ref<abi<T>> *>(object);
 }
 
-template <typename T>
-using consume = typename impl::traits<T>::template consume<T>;
-
-template <typename T, typename ... R>
-struct WINRT_EBO requires : impl::requires<T, R> ...
-{};
-
-template <typename T, typename ... B>
-struct WINRT_EBO bases : impl::bases<T, B> ...
-{};
-
-namespace impl {
-
-template <typename To, typename From>
-auto abi_cast(From * from) noexcept
-{
-    return const_cast<abi<To> *>(static_cast<const abi<To> *>(from));
-}
-
-template <typename To, typename From>
-auto winrt_cast(From * from) noexcept
-{
-    To result = nullptr;
-    copy_from(result, abi_cast<To>(from));
-    return result;
-}
-
-}
 namespace Windows {
 
 struct IUnknown;
@@ -596,12 +513,17 @@ struct com_ptr
 
     explicit operator bool() const noexcept
     {
-        return nullptr != m_ptr;
+        return m_ptr != nullptr;
     }
 
     auto operator->() const noexcept
     {
         return static_cast<impl::no_ref<type> *>(m_ptr);
+    }
+
+    const T & operator *() const noexcept
+    {
+        return *m_ptr;
     }
 
     friend type * impl_get(const com_ptr & object) noexcept
@@ -632,6 +554,14 @@ struct com_ptr
     {
         std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        return temp;
+    }
+
+    template <typename U>
+    auto try_as() const
+    {
+        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
 
@@ -2176,6 +2106,28 @@ auto detach(uint32_t * __valueSize, abi_arg_out<T> * value) noexcept
 
 namespace Windows {
 
+enum class TrustLevel
+{
+    BaseTrust,
+    PartialTrust,
+    FullTrust,
+};
+
+}
+
+namespace ABI { namespace Windows {
+
+struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
+{
+    virtual HRESULT __stdcall abi_GetIids(uint32_t * iidCount, GUID ** iids) = 0;
+    virtual HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * className) = 0;
+    virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
+};
+
+}}
+
+namespace Windows {
+
 struct IUnknown
 {
     IUnknown() noexcept = default;
@@ -2232,6 +2184,14 @@ struct IUnknown
     {
         std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        return temp;
+    }
+
+    template <typename U>
+    auto try_as() const
+    {
+        std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
 
@@ -2412,43 +2372,6 @@ inline bool operator>=(const IUnknown & left, const IUnknown & right) noexcept
 namespace Windows {
 
 struct IInspectable;
-struct IAsyncInfo;
-struct IActivationFactory;
-
-template <typename T>
-class impl_IInspectable
-{
-    auto shim() const { return impl::shim<T, IInspectable>(this); }
-
-public:
-
-    hstring RuntimeClassName() const;
-    com_array<GUID> Iids() const;
-};
-
-template <typename T>
-class impl_IAsyncInfo
-{
-    auto shim() const { return impl::shim<T, IAsyncInfo>(this); }
-
-public:
-
-    uint32_t Id() const;
-    AsyncStatus Status() const;
-    HRESULT ErrorCode() const;
-    void Cancel() const;
-    void Close() const;
-};
-
-template <typename T>
-class impl_IActivationFactory
-{
-    auto shim() const { return impl::shim<T, IActivationFactory>(this); }
-
-public:
-
-    IInspectable ActivateInstance() const;
-};
 
 }
 
@@ -2457,126 +2380,58 @@ namespace impl {
 template <> struct traits<Windows::IInspectable>
 {
     using abi = ABI::Windows::IInspectable;
-    template <typename T> using consume = Windows::impl_IInspectable<T>;
-};
-
-template <> struct traits<Windows::IAsyncInfo>
-{
-    using abi = ABI::Windows::IAsyncInfo;
-    template <typename T> using consume = Windows::impl_IAsyncInfo<T>;
-};
-
-template <> struct traits<Windows::IActivationFactory>
-{
-    using abi = ABI::Windows::IActivationFactory;
-    template <typename T> using consume = Windows::impl_IActivationFactory<T>;
 };
 
 }
 
 namespace Windows {
 
-struct IInspectable :
-    IUnknown,
-    impl_IInspectable<IInspectable>
+struct IInspectable : IUnknown
 {
     IInspectable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IInspectable>(m_ptr); }
 };
 
-struct IAsyncInfo :
-    IUnknown,
-    impl_IAsyncInfo<IAsyncInfo>
+inline com_array<GUID> GetIids(const IInspectable & object)
 {
-    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
-};
-
-struct IActivationFactory :
-    IUnknown,
-    impl_IActivationFactory<IActivationFactory>
-{
-    IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
-};
-
-template <typename T> hstring impl_IInspectable<T>::RuntimeClassName() const
-{
-    hstring name;
-    check_hresult(shim()->get_RuntimeClassName(put(name)));
-    return name;
+    com_array<GUID> value;
+    check_hresult(object->abi_GetIids(put_size(value), put(value)));
+    return value;
 }
 
-template <typename T> com_array<GUID> impl_IInspectable<T>::Iids() const
+inline hstring GetRuntimeClassName(const IInspectable & object)
 {
-    com_array<GUID> result;
-    check_hresult(shim()->get_Iids(put_size(result), put(result)));
-    return result;
+    hstring value;
+    check_hresult(object->abi_GetRuntimeClassName(put(value)));
+    return value;
 }
 
-template <typename T> uint32_t impl_IAsyncInfo<T>::Id() const
+inline TrustLevel GetTrustLevel(const IInspectable & object)
 {
-    uint32_t id = 0;
-    check_hresult(shim()->get_Id(&id));
-    return id;
-}
-
-template <typename T> AsyncStatus impl_IAsyncInfo<T>::Status() const
-{
-    AsyncStatus status = {};
-    check_hresult(shim()->get_Status(&status));
-    return status;
-}
-
-template <typename T> HRESULT impl_IAsyncInfo<T>::ErrorCode() const
-{
-    HRESULT code = S_OK;
-    check_hresult(shim()->get_ErrorCode(&code));
-    return code;
-}
-
-template <typename T> void impl_IAsyncInfo<T>::Cancel() const
-{
-    check_hresult(shim()->abi_Cancel());
-}
-
-template <typename T> void impl_IAsyncInfo<T>::Close() const
-{
-    check_hresult(shim()->abi_Close());
-}
-
-template <typename T> IInspectable impl_IActivationFactory<T>::ActivateInstance() const
-{
-    IInspectable instance;
-    check_hresult(shim()->abi_ActivateInstance(put(instance)));
-    return instance;
+    Windows::TrustLevel value{};
+    check_hresult(object->abi_GetTrustLevel(&value));
+    return value;
 }
 
 }
 
-template <typename T, typename I = typename T::default_interface, typename ... Args, std::enable_if_t<!impl::has_composable<T>::value> * = nullptr>
-auto make(Args && ... args)
+namespace impl {
+
+template <typename T, std::enable_if_t<!std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+T empty_value()
 {
-    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance;
+    return {};
 }
 
-template <typename T, typename I = typename T::default_interface, typename ... Args, std::enable_if_t<impl::has_composable<T>::value> * = nullptr>
-auto make(Args && ... args)
+template <typename T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+T empty_value()
 {
-    com_ptr<I> instance;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance.template as<typename T::composable>();
+    return nullptr;
 }
 
-template <typename T, typename ... Args>
-auto make_self(Args && ... args)
-{
-    com_ptr<T> instance;
-    *put(instance) = new T(std::forward<Args>(args) ...);
-    return instance;
 }
+
+struct non_agile {};
 
 template <typename Interface>
 struct cloaked : Interface {};
@@ -2598,89 +2453,367 @@ struct uncloak<cloaked<T>>
 template <typename T>
 using uncloak_t = typename uncloak<T>::type;
 
-template <typename T, typename Interface, typename Enable = void>
-struct derive_from : abi<uncloak_t<Interface>> {};
+template <typename I>
+struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
 
-template <typename T, typename Interface>
-struct derive_from<T, Interface, std::enable_if_t<can_produce<uncloak_t<Interface>>::value>> : traits<uncloak_t<Interface>>::template produce<T> {};
+template <typename I>
+struct is_cloaked<cloaked<I>> : std::true_type {};
+
+template <typename I>
+constexpr bool is_cloaked_v = is_cloaked<I>::value;
+
+template <typename ... I>
+struct first_interface
+{
+    using type = void;
+};
+
+template <typename First, typename ... Rest>
+struct first_interface<First, Rest ...>
+{
+    using type = std::conditional_t<std::is_same<non_agile, First>::value, typename first_interface<Rest ...>::type, First>;
+};
+
+template <typename D, typename I>
+struct produce;
+
+template <typename D, typename I, typename Enable = void>
+struct producer;
+
+template <typename T>
+class has_composable
+{
+    template <typename U> static constexpr bool get_value(typename U::composable *) { return true; }
+    template <typename>   static constexpr bool get_value(...) { return false; }
+
+public:
+
+    static constexpr bool value = get_value<T>(0);
+};
+
+template <typename T>
+void clear_abi(T *) noexcept
+{}
+
+template <typename T>
+void clear_abi(T ** value) noexcept
+{
+    *value = nullptr;
+}
 
 }
 
-template <typename T, typename ... Interfaces>
-class __declspec(novtable) implements : public impl::derive_from<T, Interfaces> ...
+template <typename D, typename I>
+D * to_impl(const I & from) noexcept
 {
-    template <typename Interface>
-    struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<Interface>>, std::false_type, std::true_type> {};
+    return &static_cast<impl::produce<D, I> *>(get(from))->shim();
+}
 
-    template <typename Interface>
-    struct is_cloaked<cloaked<Interface>> : std::true_type {};
+template <typename I, typename D>
+abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
+{
+    return reinterpret_cast<abi<I> *>(const_cast<impl::producer<D, I> *>(from));
+}
 
-    template <typename First, typename ... Rest>
-    struct first
+template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
+auto make(Args && ... args)
+{
+    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
+    *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    return instance;
+}
+
+template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<impl::has_composable<D>::value> * = nullptr>
+auto make(Args && ... args)
+{
+    com_ptr<I> instance;
+    *put(instance) = new D(std::forward<Args>(args) ...);
+    return instance.template as<typename D::composable>();
+}
+
+template <typename D, typename ... Args>
+auto make_self(Args && ... args)
+{
+    com_ptr<D> instance;
+    *put(instance) = new D(std::forward<Args>(args) ...);
+    return instance;
+}
+
+namespace impl {
+
+template <typename D, typename I, typename H>
+auto make_delegate(H && handler)
+{
+    I instance = nullptr;
+    *put(instance) = to_abi<abi<I>>(new D(std::forward<H>(handler)));
+    return instance;
+}
+
+template <typename D, typename I, typename Enable>
+struct producer
+{
+    operator I() const noexcept
     {
-        using type = impl::uncloak_t<First>;
-    };
+        I result = nullptr;
+        copy_from(result, const_cast<produce<D, I> *>(&vtable));
+        return result;
+    }
+
+private:
+
+    produce<D, I> vtable;
+};
+
+template <typename D, typename I>
+struct produce_base : abi<I>
+{
+    D & shim() noexcept
+    {
+        return *static_cast<D *>(reinterpret_cast<producer<D, I> *>(this));
+    }
+
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
+    {
+        return shim().QueryInterface(id, object);
+    }
+
+    unsigned long __stdcall AddRef() noexcept override
+    {
+        return shim().AddRef();
+    }
+
+    unsigned long __stdcall Release() noexcept override
+    {
+        return shim().Release();
+    }
+
+    WINRT_IGNORE_MISSING_OVERRIDE_BEGIN
+
+    HRESULT __stdcall abi_GetIids(uint32_t * count, GUID ** array) noexcept
+    {
+        return shim().abi_GetIids(count, array);
+    }
+
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept
+    {
+        return shim().abi_GetRuntimeClassName(name);
+    }
+
+    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    {
+        return shim().abi_GetTrustLevel(trustLevel);
+    }
+
+    WINRT_IGNORE_MISSING_OVERRIDE_END
+};
+
+template <typename D, typename I>
+struct producer<D, I, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>> : produce_base<D, I>
+{};
+
+template <typename D>
+struct producer<D, non_agile>
+{};
+
+template <typename D>
+struct produce<D, Windows::IUnknown> : produce_base<D, Windows::IUnknown>
+{};
+
+template <typename D>
+struct produce<D, Windows::IInspectable> : produce_base<D, Windows::IInspectable>
+{};
+
+}
+
+template <typename D, typename ... I>
+struct implements : impl::producer<D, impl::uncloak_t<I>> ...
+{
+    using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
+
+    operator Windows::IInspectable() const noexcept
+    {
+        Windows::IInspectable result;
+        copy_from(result, find_inspectable<I ...>());
+        return result;
+    }
+
+protected:
+
+    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
+    {
+        *object = find_interface<impl::uncloak_t<I> ...>(id);
+
+        if (*object == nullptr)
+        {
+            if (id == __uuidof(::IUnknown))
+            {
+                *object = get_unknown();
+            }
+            else if (is_inspectable<I ...>() && id == __uuidof(ABI::Windows::IInspectable))
+            {
+                *object = find_inspectable<I ...>();
+            }
+            else if (!is_non_agile<I ...>())
+            {
+                if (id == __uuidof(IAgileObject))
+                {
+                    *object = get_unknown();
+                }
+                else if (id == __uuidof(IMarshal))
+                {
+                    com_ptr< ::IUnknown> marshaler;
+
+                    const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(),
+                                                                     put(marshaler));
+
+                    if (hr != S_OK)
+                    {
+                        return hr;
+                    }
+
+                    return marshaler->QueryInterface(id, object);
+                }
+            }
+
+            if (*object == nullptr)
+            {
+                return E_NOINTERFACE;
+            }
+        }
+
+        static_cast< ::IUnknown *>(*object)->AddRef();
+        return S_OK;
+    }
+
+    unsigned long __stdcall AddRef() noexcept
+    {
+        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+    }
+
+    unsigned long __stdcall Release() noexcept
+    {
+        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
+
+        if (remaining == 0)
+        {
+            std::atomic_thread_fence(std::memory_order_acquire);
+            delete static_cast<D *>(this);
+        }
+
+        return remaining;
+    }
+
+    HRESULT abi_GetIids(uint32_t * count, GUID ** array) const noexcept
+    {
+        *count = uncloaked_interfaces<I ...>();
+
+        if (*count == 0)
+        {
+            *array = nullptr;
+            return S_OK;
+        }
+
+        *array = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * *count));
+
+        if (*array == nullptr)
+        {
+            return E_OUTOFMEMORY;
+        }
+
+        copy_guids<I ...>(*array);
+        return S_OK;
+    }
+
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept
+    {
+        try
+        {
+            *name = detach(static_cast<D *>(this)->GetRuntimeClassName());
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+
+    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    {
+        try
+        {
+            *trustLevel = static_cast<D *>(this)->GetTrustLevel();
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+
+private:
 
     template <int = 0>
-    constexpr uint32_t uncloaked_interfaces() const noexcept
+    static constexpr uint32_t uncloaked_interfaces() noexcept
     {
         return 0;
     }
 
     template <typename First, typename ... Rest>
-    constexpr uint32_t uncloaked_interfaces() const noexcept
+    static constexpr uint32_t uncloaked_interfaces() noexcept
     {
-        return !is_cloaked<First>::value + uncloaked_interfaces<Rest ...>();
+        return !impl::is_cloaked_v<First> + uncloaked_interfaces<Rest ...>();
     }
 
     template <int = 0>
-    void copy_interfaces(GUID *) const noexcept {}
-
-    template <typename First, typename ... Rest>
-    void copy_interfaces(GUID * ids, std::enable_if_t<is_cloaked<First>::value> * = nullptr) const noexcept
+    void copy_guids(GUID *) const noexcept
     {
-        copy_interfaces<Rest ...>(ids);
     }
 
     template <typename First, typename ... Rest>
-    void copy_interfaces(GUID * ids, std::enable_if_t<!is_cloaked<First>::value> * = nullptr) const noexcept
+    void copy_guids(GUID * ids, std::enable_if_t<impl::is_cloaked_v<First>> * = nullptr) const noexcept
+    {
+        copy_guids<Rest ...>(ids);
+    }
+
+    template <typename First, typename ... Rest>
+    void copy_guids(GUID * ids, std::enable_if_t<!impl::is_cloaked_v<First>> * = nullptr) const noexcept
     {
         *ids++ = __uuidof(abi<First>);
-        copy_interfaces<Rest ...>(ids);
+        copy_guids<Rest ...>(ids);
     }
 
     template <int = 0>
-    constexpr bool is_inspectable() const noexcept
+    static constexpr bool is_inspectable() noexcept
     {
         return false;
     }
 
     template <typename First, typename ... Rest>
-    constexpr bool is_inspectable() const noexcept
+    static constexpr bool is_inspectable() noexcept
     {
-        return std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>> || is_inspectable<Rest ...>();
-    }
-
-    template <typename First, typename ... Rest>
-    auto find_unknown() const noexcept
-    {
-        return impl::abi_cast<impl::uncloak_t<First>>(this);
+        return std::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
     }
 
     template <int = 0>
-    auto find_inspectable() const noexcept
+    static constexpr bool is_non_agile() noexcept
+    {
+        return false;
+    }
+
+    template <typename First, typename ... Rest>
+    static constexpr bool is_non_agile() noexcept
+    {
+        return std::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
+    }
+
+    template <int = 0>
+    ABI::Windows::IInspectable * find_inspectable() const noexcept
     {
         return nullptr;
     }
 
     template <typename First, typename ... Rest>
-    auto find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
-        return impl::abi_cast<impl::uncloak_t<First>>(this);
+        return to_abi<First>(this);
     }
 
     template <typename First, typename ... Rest>
-    auto find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return find_inspectable<Rest ...>();
     }
@@ -2692,136 +2825,41 @@ class __declspec(novtable) implements : public impl::derive_from<T, Interfaces> 
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<std::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
-        if (id == __uuidof(abi<impl::uncloak_t<First>>))
+        return find_interface<Rest ...>(id);
+    }
+
+    template <typename First, typename ... Rest>
+    void * find_interface(const GUID & id, std::enable_if_t<!std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    {
+        if (id == __uuidof(abi<First>))
         {
-            return impl::abi_cast<impl::uncloak_t<First>>(this);
+            return to_abi<First>(this);
         }
 
         return find_interface<Rest ...>(id);
     }
 
-protected:
-
-    std::atomic<uint32_t> m_references{1};
-
-    implements() noexcept = default;
-
-    void * query_interface(const GUID & id) noexcept
+    ::IUnknown * get_unknown() const noexcept
     {
-        if (id == __uuidof(IUnknown) || id == __uuidof(::IAgileObject))
-        {
-            return find_unknown<Interfaces ...>();
-        }
-
-        if (is_inspectable<Interfaces ...>() && id == __uuidof(ABI::Windows::IInspectable))
-        {
-            return find_inspectable<Interfaces ...>();
-        }
-
-        return find_interface<Interfaces ...>(id);
+        return to_abi<first_interface>(this);
     }
 
-public:
-
-    using default_interface = typename first<Interfaces ...>::type;
-
-    implements(const implements &) = delete;
-    implements & operator=(const implements &) = delete;
-
-    auto impl_unknown() const noexcept
-    {
-        return static_cast<IUnknown *>(find_unknown<Interfaces ...>());
-    }
-
-    operator Windows::IUnknown() const noexcept
-    {
-        return impl::winrt_cast<Windows::IUnknown>(static_cast<IUnknown *>(find_unknown<Interfaces ...>()));
-    }
-
-    operator Windows::IInspectable() const noexcept
-    {
-        return impl::winrt_cast<Windows::IInspectable>(static_cast<ABI::Windows::IInspectable *>(find_inspectable<Interfaces ...>()));
-    }
-
-    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
-    {
-        *object = query_interface(id);
-
-        if (*object == nullptr)
-        {
-            return E_NOINTERFACE;
-        }
-
-        static_cast<IUnknown *>(*object)->AddRef();
-        return S_OK;
-    }
-
-    unsigned long __stdcall AddRef() noexcept override
-    {
-        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-    }
-
-    unsigned long __stdcall Release() noexcept override
-    {
-        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
-
-        if (remaining == 0)
-        {
-            std::atomic_thread_fence(std::memory_order_acquire);
-            delete static_cast<T *>(this);
-        }
-
-        return remaining;
-    }
-
-    hstring RuntimeClassName()
+    hstring GetRuntimeClassName() const
     {
         throw hresult_not_implemented();
     }
 
-    HRESULT __stdcall get_RuntimeClassName(HSTRING * name) noexcept
+    Windows::TrustLevel GetTrustLevel() const noexcept
     {
-        try
-        {
-            *name = detach(static_cast<T *>(this)->RuntimeClassName());
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
+        return Windows::TrustLevel::BaseTrust;
     }
 
-    HRESULT __stdcall get_Iids(uint32_t * count, GUID ** array) noexcept
-    {
-        *count = 0;
-        *array = nullptr;
+    template <typename D, typename I>
+    friend struct impl::produce_base;
 
-        const uint32_t localCount = uncloaked_interfaces<Interfaces ...>();
-
-        if (0 == localCount)
-        {
-            return S_OK;
-        }
-
-        GUID * localArray = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * localCount));
-
-        if (nullptr == localArray)
-        {
-            return E_OUTOFMEMORY;
-        }
-
-        copy_interfaces<Interfaces ...>(localArray);
-
-        *count = localCount;
-        *array = localArray;
-        return S_OK;
-    }
-
-    HRESULT __stdcall get_TrustLevel(Windows::TrustLevel * trustLevel) noexcept
-    {
-        *trustLevel = Windows::TrustLevel::BaseTrust;
-        return S_OK;
-    }
+    std::atomic<uint32_t> m_references { 1 };
 };
 
 namespace ABI { namespace Windows {
@@ -2846,7 +2884,7 @@ struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novta
 template <typename T>
 struct weak
 {
-    weak() noexcept = default;
+    weak(std::nullptr_t = nullptr) noexcept {}
 
     weak(const T & object)
     {
@@ -2860,6 +2898,11 @@ struct weak
         return object;
     }
 
+    explicit operator bool() const noexcept
+    {
+        return static_cast<bool>(m_ref);
+    }
+
 private:
 
     com_ptr<ABI::Windows::IWeakReference> m_ref;
@@ -2871,8 +2914,8 @@ weak<T> make_weak(T const & object)
     return object;
 }
 
-template <typename T, typename ... R>
-struct overrides : implements<T, R ...>
+template <typename D, typename ... R>
+struct overrides : implements<D, R ...>
 {
     template <typename Qi>
     Qi as() const
@@ -2880,17 +2923,16 @@ struct overrides : implements<T, R ...>
         return m_inner.as<Qi>();
     }
 
-    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
+    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
     {
-        *object = query_interface(id);
+        HRESULT result = implements<D, R ...>::QueryInterface(id, object);
 
-        if (*object == nullptr)
+        if (result == E_NOINTERFACE)
         {
-            return m_inner->QueryInterface(id, object);
+            result = m_inner->QueryInterface(id, object);
         }
 
-        static_cast<IUnknown *>(*object)->AddRef();
-        return S_OK;
+        return result;
     }
 
 protected:
@@ -2903,22 +2945,198 @@ struct event_token
     int64_t value;
 };
 
+struct auto_revoke_t {};
+constexpr auto_revoke_t auto_revoke {};
+
+template <typename I>
+struct event_revoker
+{
+    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
+
+    event_revoker() noexcept = default;
+    event_revoker(const event_revoker &) = delete;
+    event_revoker & operator=(const event_revoker &) = delete;
+    event_revoker(event_revoker &&) = default;
+    event_revoker & operator=(event_revoker &&) = default;
+
+    event_revoker(const I & object, method_type method, event_token token) :
+        m_object(object),
+        m_method(method),
+        m_token(token)
+    {}
+
+    ~event_revoker() noexcept
+    {
+        revoke();
+    }
+
+    void revoke() noexcept
+    {
+        if (!m_object)
+        {
+            return;
+        }
+
+        if (I object = m_object.resolve())
+        {
+            ((*get(object)).*(m_method))(m_token);
+        }
+
+        m_object = nullptr;
+    }
+
+private:
+
+    weak<I> m_object;
+    method_type m_method {};
+    event_token m_token {};
+};
+
+template <typename I>
+struct factory_event_revoker
+{
+    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
+
+    factory_event_revoker() noexcept = default;
+    factory_event_revoker(const factory_event_revoker &) = delete;
+    factory_event_revoker & operator=(const factory_event_revoker &) = delete;
+    factory_event_revoker(factory_event_revoker &&) = default;
+    factory_event_revoker & operator=(factory_event_revoker &&) = default;
+
+    factory_event_revoker(const I & object, method_type method, event_token token) :
+        m_object(object),
+        m_method(method),
+        m_token(token)
+    {}
+
+    ~factory_event_revoker() noexcept
+    {
+        revoke();
+    }
+
+    void revoke() noexcept
+    {
+        if (!m_object)
+        {
+            return;
+        }
+
+        ((*get(m_object)).*(m_method))(m_token);
+        m_object = nullptr;
+    }
+
+private:
+
+    I m_object;
+    method_type m_method {};
+    event_token m_token {};
+};
+
 namespace impl {
 
-inline void ActivateInstance(HSTRING classId, Windows::IInspectable & instance)
+template <typename D, typename I, typename S, typename M>
+auto make_event_revoker(S source, M method, event_token token)
 {
-    check_hresult(WINRT_RoActivateInstance(classId, reinterpret_cast<void **>(put(instance))));
-}
-
-template <typename Interface>
-void ActivateInstance(HSTRING classId, Interface & result)
-{
-    Windows::IInspectable instance;
-    ActivateInstance(classId, instance);
-    result = instance.as<Interface>();
+    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
 }
 
 }
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
+{
+    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
+};
+
+}}}
+
+namespace Windows { namespace Foundation {
+
+struct IActivationFactory;
+
+template <typename D>
+class WINRT_EBO impl_IActivationFactory
+{
+    auto shim() const { return impl::shim<D, IActivationFactory>(this); }
+
+public:
+
+    IInspectable ActivateInstance() const
+    {
+        IInspectable instance;
+        check_hresult(shim()->abi_ActivateInstance(put(instance)));
+        return instance;
+    }
+};
+
+}}
+
+namespace impl {
+
+template <> struct traits<Windows::Foundation::IActivationFactory>
+{
+    using abi = ABI::Windows::Foundation::IActivationFactory;
+    template <typename D> using consume = Windows::Foundation::impl_IActivationFactory<D>;
+};
+
+template <typename D>
+struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
+{
+    HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::IInspectable> instance) noexcept final
+    {
+        try
+        {
+            *instance = detach(shim().ActivateInstance());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename Class, typename Interface>
+Interface get_agile_activation_factory()
+{
+    hstring_ref classId(impl::traits<Class>::name());
+
+    Interface factory;
+    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+
+    if (!factory.template try_as<IAgileObject>())
+    {
+        return nullptr;
+    }
+
+    return factory;
+}
+
+template <typename Class, typename Interface>
+Interface get_activation_factory()
+{
+    hstring_ref classId(impl::traits<Class>::name());
+
+    Interface factory;
+    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    return factory;
+}
+
+}
+
+namespace Windows { namespace Foundation {
+
+struct IActivationFactory :
+    IInspectable,
+    impl::consume<IActivationFactory>
+{
+    IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
+};
+
+}}
 
 enum class InitializeType
 {
@@ -2936,101 +3154,29 @@ inline void Uninitialize() noexcept
     WINRT_RoUninitialize();
 }
 
-template <typename Class, typename Instance = Class>
-Instance ActivateInstance()
-{
-    hstring_ref classId(impl::traits<Class>::name());
-
-    Instance instance = nullptr;
-    impl::ActivateInstance(get(classId), instance);
-    return instance;
-}
-
-template <typename Class, typename Interface = Windows::IActivationFactory>
+template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
 Interface GetActivationFactory()
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
 
-    Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    if (!factory)
+    {
+        return impl::get_activation_factory<Class, Interface>();
+    }
+
     return factory;
 }
 
-namespace impl {
-
-template <typename T, typename Enable = void>
-struct argument
+template <typename Class, typename Instance = Class>
+Instance ActivateInstance()
 {
-    static constexpr T empty() noexcept
-    {
-        return{};
-    }
-};
-
-template <typename T>
-struct argument<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::value>>
-{
-    static constexpr T empty() noexcept
-    {
-        return nullptr;
-    }
-};
-
+    return GetActivationFactory<Class>().ActivateInstance().template as<Instance>();
 }
 
 namespace ABI { namespace Windows { namespace Foundation {
 
-template <typename TProgress> struct AsyncActionProgressHandler;
-template <typename TProgress> struct IAsyncActionWithProgress;
-template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
-template <typename TResult> struct AsyncOperationCompletedHandler;
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
-template <typename TResult> struct IAsyncOperation;
-template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-template <typename T> struct IReference;
-
-template <typename TProgress>
-struct __declspec(novtable) impl_AsyncActionProgressHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
-};
-
-template <typename TProgress>
-struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
-{
-    virtual HRESULT __stdcall put_Progress(AsyncActionProgressHandler<TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Progress(AsyncActionProgressHandler<TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall put_Completed(AsyncActionWithProgressCompletedHandler<TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncActionWithProgressCompletedHandler<TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults() = 0;
-};
-
-template <typename TProgress>
-struct __declspec(novtable) impl_AsyncActionWithProgressCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_AsyncOperationProgressHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_AsyncOperationWithProgressCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
-};
-
-template <typename TResult>
-struct __declspec(novtable) impl_AsyncOperationCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::AsyncStatus status) = 0;
-};
 
 template <typename T>
 struct __declspec(novtable) impl_EventHandler : IUnknown
@@ -3044,198 +3190,16 @@ struct __declspec(novtable) impl_TypedEventHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
 };
 
-template <typename TResult>
-struct __declspec(novtable) impl_IAsyncOperation : IInspectable
-{
-    virtual HRESULT __stdcall put_Completed(AsyncOperationCompletedHandler<TResult> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncOperationCompletedHandler<TResult> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
-{
-    virtual HRESULT __stdcall put_Progress(AsyncOperationProgressHandler<TResult, TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Progress(AsyncOperationProgressHandler<TResult, TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall put_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IReference : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
-};
-
 }}}
 
 namespace Windows { namespace Foundation {
 
-template <typename TProgress> struct AsyncActionProgressHandler;
-template <typename TProgress> struct IAsyncActionWithProgress;
-template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
-template <typename TResult> struct AsyncOperationCompletedHandler;
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
-template <typename TResult> struct IAsyncOperation;
-template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-template <typename T> struct IReference;
-
-template <typename D, typename TProgress>
-class impl_consume_IAsyncActionWithProgress
-{
-    auto shim() const { return impl::shim<D, IAsyncActionWithProgress<TProgress>>(this); }
-
-public:
-
-    void Progress(const AsyncActionProgressHandler<TProgress> & handler) const
-    {
-        check_hresult(shim()->put_Progress(get(handler)));
-    }
-
-    AsyncActionProgressHandler<TProgress> Progress() const
-    {
-        AsyncActionProgressHandler<TProgress> handler;
-        check_hresult(shim()->get_Progress(put(handler)));
-        return handler;
-    }
-
-    void Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
-    {
-        check_hresult(shim()->put_Completed(get(handler)));
-    }
-
-    AsyncActionWithProgressCompletedHandler<TProgress> Completed() const
-    {
-        AsyncActionWithProgressCompletedHandler<TProgress> handler;
-        check_hresult(shim()->get_Completed(put(handler)));
-        return handler;
-    }
-
-    void GetResults() const
-    {
-        check_hresult(shim()->abi_GetResults());
-    }
-};
-
-template <typename D, typename TResult>
-class impl_consume_IAsyncOperation
-{
-    auto shim() const { return impl::shim<D, IAsyncOperation<TResult>>(this); }
-
-public:
-
-    void Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
-    {
-        check_hresult(shim()->put_Completed(get(handler)));
-    }
-
-    AsyncOperationCompletedHandler<TResult> Completed() const
-    {
-        AsyncOperationCompletedHandler<TResult> temp;
-        check_hresult(shim()->get_Completed(put(temp)));
-        return temp;
-    }
-
-    TResult GetResults() const
-    {
-        TResult result = impl::argument<TResult>::empty();
-        check_hresult(shim()->abi_GetResults(put(result)));
-        return result;
-    }
-};
-
-template <typename D, typename TResult, typename TProgress>
-class impl_consume_IAsyncOperationWithProgress
-{
-    auto shim() const { return impl::shim<D, IAsyncOperationWithProgress<TResult, TProgress>>(this); }
-
-public:
-
-    void Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
-    {
-        check_hresult(shim()->put_Progress(get(handler)));
-    }
-
-    AsyncOperationProgressHandler<TResult, TProgress> Progress() const
-    {
-        AsyncOperationProgressHandler<TResult, TProgress> handler;
-        check_hresult(shim()->get_Progress(put(handler)));
-        return handler;
-    }
-
-    void Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
-    {
-        check_hresult(shim()->put_Completed(get(handler)));
-    }
-
-    AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const
-    {
-        AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-        check_hresult(shim()->get_Completed(put(handler)));
-        return handler;
-    }
-
-    TResult GetResults() const
-    {
-        TResult result = impl::argument<TResult>::empty();
-        check_hresult(shim()->abi_GetResults(put(result)));
-        return result;
-    }
-};
-
-template <typename D, typename T>
-class impl_consume_IReference
-{
-    auto shim() const { return impl::shim<D, IReference<T>>(this); }
-
-public:
-
-    T Value() const
-    {
-        T result = impl::argument<T>::empty();
-        check_hresult(shim()->get_Value(put(result)));
-        return result;
-    }
-};
 
 }}
 
 namespace impl {
-
-template <typename TProgress> struct traits<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncActionProgressHandler<abi<TProgress>>;
-};
-
-template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::IAsyncActionWithProgress<abi<TProgress>>;
-    template <typename D> using consume = Windows::Foundation::impl_consume_IAsyncActionWithProgress<D, TProgress>;
-};
-
-template <typename TProgress> struct traits<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncActionWithProgressCompletedHandler<abi<TProgress>>;
-};
-
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationProgressHandler<abi<TResult>, abi<TProgress>>;
-};
-
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<abi<TResult>, abi<TProgress>>;
-};
-
-template <typename TResult> struct traits<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationCompletedHandler<abi<TResult>>;
-};
 
 template <typename T> struct traits<Windows::Foundation::EventHandler<T>>
 {
@@ -3247,97 +3211,65 @@ template <typename TSender, typename TArgs> struct traits<Windows::Foundation::T
     using abi = ABI::Windows::Foundation::TypedEventHandler<abi<TSender>, abi<TArgs>>;
 };
 
-template <typename TResult> struct traits<Windows::Foundation::IAsyncOperation<TResult>>
+template <typename T, typename H>
+struct event_handler : implements<event_handler<T, H>, abi<Windows::Foundation::EventHandler<T>>>, H
 {
-    using abi = ABI::Windows::Foundation::IAsyncOperation<abi<TResult>>;
-    template <typename D> using consume = Windows::Foundation::impl_consume_IAsyncOperation<D, TResult>;
+    event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<T> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
 };
 
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+template <typename TSender, typename TArgs, typename H>
+struct typed_event_handler : implements<typed_event_handler<TSender, TArgs, H>, abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>>, H
 {
-    using abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<abi<TResult>, abi<TProgress>>;
-    template <typename D> using consume = Windows::Foundation::impl_consume_IAsyncOperationWithProgress<D, TResult, TProgress>;
-};
+    typed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-template <typename T> struct traits<Windows::Foundation::IReference<T>>
-{
-    using abi = ABI::Windows::Foundation::IReference<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::impl_consume_IReference<D, T>;
+    HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const TSender *>(&sender), *reinterpret_cast<const TArgs *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
 };
 
 }
 
 namespace Windows { namespace Foundation {
 
-
-template <typename TProgress>
-struct WINRT_EBO AsyncActionProgressHandler : IUnknown
-{
-    AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionProgressHandler>(m_ptr); }
-    template <typename H> AsyncActionProgressHandler(H handler);
-    template <typename Object, typename Method> AsyncActionProgressHandler(Object * object, Method method);
-    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const;
-};
-
-template <typename TProgress>
-struct WINRT_EBO IAsyncActionWithProgress :
-    IInspectable,
-    consume<IAsyncActionWithProgress<TProgress>>,
-    requires<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
-{
-    IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncActionWithProgress>(m_ptr); }
-};
-
-template <typename TProgress>
-struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
-{
-    AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionWithProgressCompletedHandler>(m_ptr); }
-    template <typename H> AsyncActionWithProgressCompletedHandler(H handler);
-    template <typename Object, typename Method> AsyncActionWithProgressCompletedHandler(Object * object, Method method);
-    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const;
-};
-
-template <typename TResult, typename TProgress>
-struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
-{
-    AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationProgressHandler>(m_ptr); }
-    template <typename H> AsyncOperationProgressHandler(H handler);
-    template <typename Object, typename Method> AsyncOperationProgressHandler(Object * object, Method method);
-    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const;
-};
-
-template <typename TResult, typename TProgress>
-struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
-{
-    AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationWithProgressCompletedHandler>(m_ptr); }
-    template <typename H> AsyncOperationWithProgressCompletedHandler(H handler);
-    template <typename Object, typename Method> AsyncOperationWithProgressCompletedHandler(Object * object, Method method);
-    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const;
-};
-
-template <typename TResult>
-struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
-{
-    AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationCompletedHandler>(m_ptr); }
-    template <typename H> AsyncOperationCompletedHandler(H handler);
-    template <typename Object, typename Method> AsyncOperationCompletedHandler(Object * object, Method method);
-    void operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const;
-};
-
 template <typename T>
 struct WINRT_EBO EventHandler : IUnknown
 {
     EventHandler(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<EventHandler>(m_ptr); }
-    template <typename Handler> EventHandler(Handler handler);
-    template <typename Object, typename Method> EventHandler(Object * object, Method method);
-    void operator()(const IInspectable & sender, const T & args) const;
+
+    template <typename L>
+    EventHandler(L handler) :
+        EventHandler(impl::make_delegate<impl::event_handler<T, L>, EventHandler<T>>(std::forward<L>(handler)))
+    {}
+
+    template <typename F> EventHandler(F * handler) :
+        EventHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename O, typename M> EventHandler(O * object, M method) :
+        EventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    void operator()(const IInspectable & sender, const T & args) const
+    {
+        check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    }
 };
 
 template <typename TSender, typename TArgs>
@@ -3345,254 +3277,99 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 {
     TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<TypedEventHandler>(m_ptr); }
-    template <typename Handler> TypedEventHandler(Handler handler);
-    template <typename Object, typename Method> TypedEventHandler(Object * object, Method method);
-    void operator()(const TSender & sender, const TArgs & args) const;
+
+    template <typename L>
+    TypedEventHandler(L handler) :
+        TypedEventHandler(impl::make_delegate<impl::typed_event_handler<TSender, TArgs, L>, TypedEventHandler<TSender, TArgs>>(std::forward<L>(handler)))
+    {}
+
+    template <typename F> TypedEventHandler(F * handler) :
+        TypedEventHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename O, typename M> TypedEventHandler(O * object, M method) :
+        TypedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    void operator()(const TSender & sender, const TArgs & args) const
+    {
+        check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    }
 };
 
-template <typename TResult>
-struct WINRT_EBO IAsyncOperation :
-    IInspectable,
-    consume<IAsyncOperation<TResult>>,
-    requires<IAsyncOperation<TResult>, IAsyncInfo>
+}}
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+template <typename T> struct IReference;
+
+template <typename T>
+struct __declspec(novtable) impl_IReference : IInspectable
 {
-    IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncOperation>(m_ptr); }
+    virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
 };
 
-template <typename TResult, typename TProgress>
-struct WINRT_EBO IAsyncOperationWithProgress :
-    IInspectable,
-    consume<IAsyncOperationWithProgress<TResult, TProgress>>,
-    requires<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
+}}}
+
+namespace Windows { namespace Foundation {
+
+template <typename T> struct IReference;
+
+template <typename D, typename T>
+class impl_IReference
 {
-    IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
+    auto shim() const { return impl::shim<D, IReference<T>>(this); }
+
+public:
+
+    T Value() const
+    {
+        T result {};
+        check_hresult(shim()->get_Value(put(result)));
+        return result;
+    }
 };
 
-struct IPropertyValue;
+}}
+
+namespace impl {
+
+template <typename T> struct traits<Windows::Foundation::IReference<T>>
+{
+    using abi = ABI::Windows::Foundation::IReference<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::impl_IReference<D, T>;
+};
+
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<abi<T>>>
+{
+    HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
+    {
+        try
+        {
+            *value = detach(shim().Value());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            return to_hresult();
+        }
+    }
+};
+
+}
+
+namespace Windows { namespace Foundation {
 
 template <typename T>
 struct WINRT_EBO IReference :
     IInspectable,
-    consume<IReference<T>> //,
-    // requires<IReference<T>, IPropertyValue>
+    impl::consume<IReference<T>>
 {
     IReference(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IReference>(m_ptr); }
-
-    IReference(const T & value);
 };
-
-template <typename TProgress, typename H>
-struct impl_AsyncActionProgressHandler : implements<impl_AsyncActionProgressHandler<TProgress, H>, abi<AsyncActionProgressHandler<TProgress>>>
-{
-    H m_handler;
-    impl_AsyncActionProgressHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IAsyncActionWithProgress<TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TProgress> template <typename H> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(H handler) :
-    AsyncActionProgressHandler(make<impl_AsyncActionProgressHandler<TProgress, H>, AsyncActionProgressHandler>(handler))
-{}
-
-template <typename TProgress> template <typename Object, typename Method> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(Object * object, Method method) :
-    AsyncActionProgressHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
-}
-
-template <typename TProgress, typename H>
-struct impl_AsyncActionWithProgressCompletedHandler : implements<impl_AsyncActionWithProgressCompletedHandler<TProgress, H>, abi<AsyncActionWithProgressCompletedHandler<TProgress>>>
-{
-    H m_handler;
-    impl_AsyncActionWithProgressCompletedHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncActionWithProgress<TProgress>> sender, AsyncStatus args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IAsyncActionWithProgress<TProgress> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TProgress> template <typename H> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(H handler) :
-    AsyncActionWithProgressCompletedHandler(make<impl_AsyncActionWithProgressCompletedHandler<TProgress, H>, AsyncActionWithProgressCompletedHandler<TProgress>>(handler))
-{}
-
-template <typename TProgress> template <typename Object, typename Method> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(Object * object, Method method) :
-    AsyncActionWithProgressCompletedHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), args));
-}
-
-template <typename TResult, typename TProgress, typename H>
-struct impl_AsyncOperationProgressHandler : implements<impl_AsyncOperationProgressHandler<TResult, TProgress, H>, abi<AsyncOperationProgressHandler<TResult, TProgress>>>
-{
-    H m_handler;
-    impl_AsyncOperationProgressHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TResult, typename TProgress> template <typename H> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(H handler) :
-    AsyncOperationProgressHandler(make<impl_AsyncOperationProgressHandler<TResult, TProgress, H>, AsyncOperationProgressHandler<TResult, TProgress>>(handler))
-{}
-
-template <typename TResult, typename TProgress> template <typename Object, typename Method> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(Object * object, Method method) :
-    AsyncOperationProgressHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
-}
-
-template <typename TResult, typename TProgress, typename H>
-struct impl_AsyncOperationWithProgressCompletedHandler : implements<impl_AsyncOperationWithProgressCompletedHandler<TResult, TProgress, H>, abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>>
-{
-    H m_handler;
-    impl_AsyncOperationWithProgressCompletedHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperationWithProgress<TResult, TProgress>> sender, AsyncStatus args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TResult, typename TProgress> template <typename H> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(H handler) :
-    AsyncOperationWithProgressCompletedHandler(make<impl_AsyncOperationWithProgressCompletedHandler<TResult, TProgress, H>, AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(handler))
-{}
-
-template <typename TResult, typename TProgress> template <typename Object, typename Method> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(Object * object, Method method) :
-    AsyncOperationWithProgressCompletedHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), args));
-}
-
-template <typename TResult, typename H>
-struct impl_AsyncOperationCompletedHandler : implements<impl_AsyncOperationCompletedHandler<TResult, H>, abi<AsyncOperationCompletedHandler<TResult>>>
-{
-    H m_handler;
-    impl_AsyncOperationCompletedHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncOperation<TResult>> sender, AsyncStatus args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IAsyncOperation<TResult> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TResult> template <typename H> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(H handler) :
-    AsyncOperationCompletedHandler(make<impl_AsyncOperationCompletedHandler<TResult, H>, AsyncOperationCompletedHandler<TResult>>(handler))
-{}
-
-template <typename TResult> template <typename Object, typename Method> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(Object * object, Method method) :
-    AsyncOperationCompletedHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), args));
-}
-
-template <typename T, typename H>
-struct impl_EventHandler : implements<impl_EventHandler<T, H>, abi<EventHandler<T>>>
-{
-    H m_handler;
-    impl_EventHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IInspectable> sender, abi_arg_in<T> args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename T> template <typename Handler> EventHandler<T>::EventHandler(Handler handler) :
-    EventHandler(make<impl_EventHandler<T, Handler>, EventHandler<T>>(handler))
-{}
-
-template <typename T> template <typename Object, typename Method> EventHandler<T>::EventHandler(Object * object, Method method) :
-    EventHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename T> void EventHandler<T>::operator()(const IInspectable & sender, const T & args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
-}
-
-template <typename TSender, typename TArgs, typename H>
-struct impl_TypedEventHandler : implements<impl_TypedEventHandler<TSender, TArgs, H>, abi<TypedEventHandler<TSender, TArgs>>>
-{
-    H m_handler;
-    impl_TypedEventHandler(H handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
-    {
-        try
-        {
-            m_handler(*reinterpret_cast<const TSender *>(&sender), *reinterpret_cast<const TArgs *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-template <typename TSender, typename TArgs> template <typename Handler> TypedEventHandler<TSender, TArgs>::TypedEventHandler(Handler handler) :
-    TypedEventHandler(make<impl_TypedEventHandler<TSender, TArgs, Handler>, TypedEventHandler<TSender, TArgs>>(handler))
-{}
-
-template <typename TSender, typename TArgs> template <typename Object, typename Method> TypedEventHandler<TSender, TArgs>::TypedEventHandler(Object * object, Method method) :
-    TypedEventHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-template <typename TSender, typename TArgs> void TypedEventHandler<TSender, TArgs>::operator()(const TSender & sender, const TArgs & args) const
-{
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
-}
 
 }}
 
@@ -3610,7 +3387,6 @@ enum class CollectionChange
 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
-
 struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
 {
     virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
@@ -3624,28 +3400,47 @@ namespace Windows { namespace Foundation { namespace Collections {
 struct IVectorChangedEventArgs;
 
 template <typename D>
-class impl_IVectorChangedEventArgs
+class WINRT_EBO impl_IVectorChangedEventArgs
 {
     auto shim() const { return impl::shim<D, IVectorChangedEventArgs>(this); }
 
 public:
 
-    CollectionChange CollectionChange() const;
-    uint32_t Index() const;
+    CollectionChange CollectionChange() const
+    {
+        Collections::CollectionChange value {};
+        check_hresult(shim()->get_CollectionChange(&value));
+        return value;
+    }
+
+    uint32_t Index() const
+    {
+        uint32_t index = 0;
+        check_hresult(shim()->get_Index(&index));
+        return index;
+    }
 };
 
 }}}
 
 namespace impl {
 
+template <typename T>
+class has_GetAt
+{
+    template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
+    template <typename> static constexpr bool get_value(...) { return false; }
+
+public:
+
+    static constexpr bool value = get_value<T>(0);
+};
+
 template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
-    template <typename T> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<T>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
 };
-
-template <typename From, typename To>
-using is_convertible = typename std::is_convertible<From, To>::type *;
 
 }
 
@@ -3653,29 +3448,18 @@ namespace Windows { namespace Foundation { namespace Collections {
 
 struct IVectorChangedEventArgs :
     IInspectable,
-    impl_IVectorChangedEventArgs<IVectorChangedEventArgs>
+    impl::consume<IVectorChangedEventArgs>
 {
     IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
-template <typename T> CollectionChange impl_IVectorChangedEventArgs<T>::CollectionChange() const
-{
-    Collections::CollectionChange value = {};
-    check_hresult(shim()->get_CollectionChange(&value));
-    return value;
-}
-
-template <typename T> uint32_t impl_IVectorChangedEventArgs<T>::Index() const
-{
-    uint32_t index = 0;
-    check_hresult(shim()->get_Index(&index));
-    return index;
-}
-
 }}}
 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> struct MapChangedEventHandler;
+template <typename T> struct VectorChangedEventHandler;
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -3685,10 +3469,20 @@ template <typename T> struct IVector;
 template <typename K, typename V> struct IMapView;
 template <typename K, typename V> struct IMap;
 template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct MapChangedEventHandler;
 template <typename K, typename V> struct IObservableMap;
-template <typename T> struct VectorChangedEventHandler;
 template <typename T> struct IObservableVector;
+
+template <typename K, typename V>
+struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
+};
+
+template <typename T>
+struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
+};
 
 template <typename T>
 struct __declspec(novtable) impl_IIterator : IInspectable
@@ -3697,7 +3491,6 @@ struct __declspec(novtable) impl_IIterator : IInspectable
     virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
     virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
     virtual HRESULT __stdcall abi_GetMany(uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
-
 };
 
 template <typename T>
@@ -3769,34 +3562,25 @@ struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
 };
 
 template <typename K, typename V>
-struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
-};
-
-template <typename K, typename V>
 struct __declspec(novtable) impl_IObservableMap : IInspectable
 {
-    virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, long long * token) = 0;
-    virtual HRESULT __stdcall remove_MapChanged(long long token) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
+    virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
 };
 
 template <typename T>
 struct __declspec(novtable) impl_IObservableVector : IInspectable
 {
-    virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, long long *  token) = 0;
-    virtual HRESULT __stdcall remove_VectorChanged(long long token) = 0;
+    virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, event_token *  token) = 0;
+    virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
 
 }}}}
 
 namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> struct MapChangedEventHandler;
+template <typename T> struct VectorChangedEventHandler;
 
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
@@ -3806,13 +3590,11 @@ template <typename T> struct IVector;
 template <typename K, typename V> struct IMapView;
 template <typename K, typename V> struct IMap;
 template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct MapChangedEventHandler;
 template <typename K, typename V> struct IObservableMap;
-template <typename T> struct VectorChangedEventHandler;
 template <typename T> struct IObservableVector;
 
 template <typename D, typename T>
-class impl_consume_IIterator
+class impl_IIterator
 {
     auto shim() const { return impl::shim<D, IIterator<T>>(this); }
 
@@ -3820,7 +3602,7 @@ public:
 
     T Current() const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->get_Current(put(result)));
         return result;
     }
@@ -3863,7 +3645,7 @@ public:
 };
 
 template <typename D, typename T>
-class impl_consume_IIterable
+class impl_IIterable
 {
     auto shim() const { return impl::shim<D, IIterable<T>>(this); }
 
@@ -3878,7 +3660,7 @@ public:
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IKeyValuePair
+class impl_IKeyValuePair
 {
     auto shim() const { return impl::shim<D, IKeyValuePair<K, V>>(this); }
 
@@ -3886,31 +3668,31 @@ public:
 
     K Key() const
     {
-        K result = impl::argument<K>::empty();
+        K result = impl::empty_value<K>();
         check_hresult(shim()->get_Key(put(result)));
         return result;
     }
 
     V Value() const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->get_Value(put(result)));
         return result;
     }
 
-    bool operator==(const IKeyValuePair<K, V> & other) const noexcept
+    bool operator==(const IKeyValuePair<K, V> & other) const
     {
         return Key() == other.Key() && Value() == other.Value();
     }
 
-    bool operator!=(const IKeyValuePair<K, V> & other) const noexcept
+    bool operator!=(const IKeyValuePair<K, V> & other) const
     {
         return !(*this == other);
     }
 };
 
 template <typename D, typename T>
-class impl_consume_IVectorView
+class impl_IVectorView
 {
     auto shim() const { return impl::shim<D, IVectorView<T>>(this); }
 
@@ -3918,7 +3700,7 @@ public:
 
     T GetAt(const uint32_t index) const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->abi_GetAt(index, put(result)));
         return result;
     }
@@ -3936,10 +3718,17 @@ public:
         check_hresult(shim()->abi_IndexOf(get(value), &index, put(found)));
         return found;
     }
+
+    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const
+    {
+        uint32_t actual = 0;
+        check_hresult(shim()->abi_GetMany(startIndex, values.size(), get(values), &actual));
+        return actual;
+    }
 };
 
 template <typename D, typename T>
-class impl_consume_IVector
+class impl_IVector
 {
     auto shim() const { return impl::shim<D, IVector<T>>(this); }
 
@@ -3947,7 +3736,7 @@ public:
 
     T GetAt(const uint32_t index) const
     {
-        T result = impl::argument<T>::empty();
+        T result = impl::empty_value<T>();
         check_hresult(shim()->abi_GetAt(index, put(result)));
         return result;
     }
@@ -4010,15 +3799,14 @@ public:
         return actual;
     }
 
-    template <typename Array>
-    void ReplaceAll(const Array & values) const
+    void ReplaceAll(array_ref<const T> value) const
     {
-        check_hresult(shim()->abi_ReplaceAll(static_cast<uint32_t>(values.size()), reinterpret_cast<abi_arg_out<T>>(const_cast<Array &>(values).data())));
+        check_hresult(shim()->abi_ReplaceAll(value.size(), get(value)));
     }
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IMapView
+class impl_IMapView
 {
     auto shim() const { return impl::shim<D, IMapView<K, V>>(this); }
 
@@ -4026,7 +3814,7 @@ public:
 
     V Lookup(const K & key) const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->abi_Lookup(get(key), put(result)));
         return result;
     }
@@ -4052,7 +3840,7 @@ public:
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_IMap
+class impl_IMap
 {
     auto shim() const { return impl::shim<D, IMap<K, V>>(this); }
 
@@ -4060,7 +3848,7 @@ public:
 
     V Lookup(const K & key) const
     {
-        V result = impl::argument<V>::empty();
+        V result = impl::empty_value<V>();
         check_hresult(shim()->abi_Lookup(get(key), put(result)));
         return result;
     }
@@ -4105,7 +3893,7 @@ public:
 };
 
 template <typename D, typename K>
-class impl_consume_IMapChangedEventArgs
+class impl_IMapChangedEventArgs
 {
     auto shim() const { return impl::shim<D, IMapChangedEventArgs<K>>(this); }
 
@@ -4113,82 +3901,70 @@ public:
 
     CollectionChange CollectionChange() const
     {
-        CollectionChange value = {};
+        Collections::CollectionChange value{};
         check_hresult(shim()->get_CollectionChange(&value));
         return value;
     }
 
     K Key() const
     {
-        K result = impl::argument<K>::empty();
+        K result = impl::empty_value<K>();
         check_hresult(shim()->get_Key(put(result)));
         return result;
     }
 };
 
 template <typename D, typename K, typename V>
-class impl_consume_MapChangedEventHandler
-{
-    auto shim() const { return impl::shim<D, MapChangedEventHandler<K, V>>(this); }
-
-public:
-
-    void Invoke(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
-    {
-        check_hresult(shim()->abi_Invoke(get(sender), get(args)));
-    }
-};
-
-template <typename D, typename K, typename V>
-class impl_consume_IObservableMap
+class impl_IObservableMap
 {
     auto shim() const { return impl::shim<D, IObservableMap<K, V>>(this); }
 
 public:
 
-    long long MapChanged(const MapChangedEventHandler<K, V> & handler) const
+    event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const
     {
-        long long cookie = {};
+        event_token cookie {};
         check_hresult(shim()->add_MapChanged(get(handler), &cookie));
         return cookie;
     }
 
-    void MapChanged(const long long cookie) const
+    void MapChanged(const event_token cookie) const
     {
         check_hresult(shim()->remove_MapChanged(cookie));
     }
-};
 
-template <typename D, typename T>
-class impl_consume_VectorChangedEventHandler
-{
-    auto shim() const { return impl::shim<D, VectorChangedEventHandler<T>>(this); }
+    using MapChanged_revoker = event_revoker<IObservableMap<K, V>>;
 
-public:
-
-    void Invoke(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
+    MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
     {
-        check_hresult(shim()->abi_Invoke(get(sender), get(args)));
+        return return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
     }
 };
 
 template <typename D, typename T>
-class impl_consume_IObservableVector
+class impl_IObservableVector
 {
     auto shim() const { return impl::shim<D, IObservableVector<T>>(this); }
 
 public:
 
-    long long VectorChanged(const VectorChangedEventHandler<T> & handler) const
+    event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const
     {
-        long long cookie = {};
+        event_token cookie {};
         check_hresult(shim()->add_VectorChanged(get(handler), &cookie));
         return cookie;
     }
 
-    void VectorChanged(const long long cookie) const
+    void VectorChanged(const event_token cookie) const
     {
         check_hresult(shim()->remove_VectorChanged(cookie));
+    }
+
+    using VectorChanged_revoker = event_revoker<IObservableVector<T>>;
+
+    VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
+    {
+        return return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
     }
 };
 
@@ -4196,76 +3972,74 @@ public:
 
 namespace impl {
 
-template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IIterator<D, T>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IIterable<D, T>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IKeyValuePair<D, K, V>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IVectorView<D, T>;
-};
-
-template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IVector<D, T>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMapView<D, K, V>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMap<D, K, V>;
-};
-
-template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IMapChangedEventArgs<D, K>;
-};
-
 template <typename K, typename V> struct traits<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>
 {
     using abi = ABI::Windows::Foundation::Collections::MapChangedEventHandler<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_MapChangedEventHandler<D, K, V>;
-};
-
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IObservableMap<D, K, V>;
 };
 
 template <typename T> struct traits<Windows::Foundation::Collections::VectorChangedEventHandler<T>>
 {
     using abi = ABI::Windows::Foundation::Collections::VectorChangedEventHandler<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_VectorChangedEventHandler<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterator<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterable<D, T>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorView<D, T>;
+};
+
+template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVector<D, T>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMap<D, K, V>;
+};
+
+template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
+};
+
+template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
+{
+    using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
 };
 
 template <typename T> struct traits<Windows::Foundation::Collections::IObservableVector<T>>
 {
     using abi = ABI::Windows::Foundation::Collections::IObservableVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_consume_IObservableVector<D, T>;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
 };
 
 template <typename T>
@@ -4309,9 +4083,31 @@ private:
 namespace Windows { namespace Foundation { namespace Collections {
 
 template <typename T>
+struct WINRT_EBO VectorChangedEventHandler : IUnknown
+{
+    VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<VectorChangedEventHandler>(m_ptr); }
+    template <typename L> VectorChangedEventHandler(L handler);
+    template <typename F> VectorChangedEventHandler(F * handler);
+    template <typename O, typename M> VectorChangedEventHandler(O * object, M method);
+    void operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const;
+};
+
+template <typename K, typename V>
+struct WINRT_EBO MapChangedEventHandler : IUnknown
+{
+    MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<MapChangedEventHandler>(m_ptr); }
+    template <typename L> MapChangedEventHandler(L handler);
+    template <typename F> MapChangedEventHandler(F * handler);
+    template <typename O, typename M> MapChangedEventHandler(O * object, M method);
+    void operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const;
+};
+
+template <typename T>
 struct WINRT_EBO IIterator :
     IInspectable,
-    consume<IIterator<T>>
+    impl::consume<IIterator<T>>
 {
     IIterator(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterator>(m_ptr); }
@@ -4320,7 +4116,7 @@ struct WINRT_EBO IIterator :
 template <typename T>
 struct WINRT_EBO IIterable :
     IInspectable,
-    consume<IIterable<T>>
+    impl::consume<IIterable<T>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
@@ -4329,7 +4125,7 @@ struct WINRT_EBO IIterable :
 template <typename K, typename V>
 struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     IInspectable,
-    consume<IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IIterable<IKeyValuePair<K, V>>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
@@ -4338,7 +4134,7 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
 template <typename K, typename V>
 struct WINRT_EBO IKeyValuePair :
     IInspectable,
-    consume<IKeyValuePair<K, V>>
+    impl::consume<IKeyValuePair<K, V>>
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
@@ -4347,8 +4143,8 @@ struct WINRT_EBO IKeyValuePair :
 template <typename T>
 struct WINRT_EBO IVectorView :
     IInspectable,
-    consume<IVectorView<T>>,
-    requires<IVectorView<T>, IIterable<T>>
+    impl::consume<IVectorView<T>>,
+    impl::require<IVectorView<T>, IIterable<T>>
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVectorView>(m_ptr); }
@@ -4357,8 +4153,8 @@ struct WINRT_EBO IVectorView :
 template <typename T>
 struct WINRT_EBO IVector :
     IInspectable,
-    consume<IVector<T>>,
-    requires<IVector<T>, IIterable<T>>
+    impl::consume<IVector<T>>,
+    impl::require<IVector<T>, IIterable<T>>
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
@@ -4367,8 +4163,8 @@ struct WINRT_EBO IVector :
 template <typename K, typename V>
 struct WINRT_EBO IMapView :
     IInspectable,
-    consume<IMapView<K, V>>,
-    requires<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IMapView<K, V>>,
+    impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMapView>(m_ptr); }
@@ -4377,8 +4173,8 @@ struct WINRT_EBO IMapView :
 template <typename K, typename V>
 struct WINRT_EBO IMap :
     IInspectable,
-    consume<IMap<K, V>>,
-    requires<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IMap<K, V>>,
+    impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMap>(m_ptr); }
@@ -4387,51 +4183,105 @@ struct WINRT_EBO IMap :
 template <typename K>
 struct WINRT_EBO IMapChangedEventArgs :
     IInspectable,
-    consume<IMapChangedEventArgs<K>>
+    impl::consume<IMapChangedEventArgs<K>>
 {
     IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMapChangedEventArgs>(m_ptr); }
 };
 
 template <typename K, typename V>
-struct WINRT_EBO MapChangedEventHandler :
-    IUnknown,
-    consume<MapChangedEventHandler<K, V>>
-{
-    MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MapChangedEventHandler>(m_ptr); }
-    template <typename H> MapChangedEventHandler(H handler);
-};
-
-template <typename K, typename V>
 struct WINRT_EBO IObservableMap :
     IInspectable,
-    consume<IObservableMap<K, V>>,
-    requires<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    impl::consume<IObservableMap<K, V>>,
+    impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IObservableMap(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IObservableMap>(m_ptr); }
 };
 
 template <typename T>
-struct WINRT_EBO VectorChangedEventHandler :
-    IUnknown,
-    consume<VectorChangedEventHandler<T>>
-{
-    VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<VectorChangedEventHandler>(m_ptr); }
-    template <typename H> VectorChangedEventHandler(H handler);
-};
-
-template <typename T>
 struct WINRT_EBO IObservableVector :
     IInspectable,
-    consume<IObservableVector<T>>,
-    requires<IObservableVector<T>, IVector<T>, IIterable<T>>
+    impl::consume<IObservableVector<T>>,
+    impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
 {
     IObservableVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
+
+}}}
+
+namespace impl {
+
+template <typename K, typename V, typename H>
+struct map_changed_event_handler : implements<map_changed_event_handler<K, V, H>, abi<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>>, H
+{
+    map_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableMap<K, V>> sender, abi_arg_in<Windows::Foundation::Collections::IMapChangedEventArgs<K>> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableMap<K, V> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IMapChangedEventArgs<K> *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename T, typename H>
+struct vector_changed_event_handler : implements<vector_changed_event_handler<T, H>, abi<Windows::Foundation::Collections::VectorChangedEventHandler<T>>>, H
+{
+    vector_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableVector<T>> sender, abi_arg_in<Windows::Foundation::Collections::IVectorChangedEventArgs> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableVector<T> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IVectorChangedEventArgs *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+}
+
+namespace Windows { namespace Foundation { namespace Collections {
+
+template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
+    MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
+{}
+
+template <typename K, typename V> template <typename F> MapChangedEventHandler<K, V>::MapChangedEventHandler(F * handler) :
+    MapChangedEventHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename K, typename V> template <typename O, typename M> MapChangedEventHandler<K, V>::MapChangedEventHandler(O * object, M method) :
+    MapChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
+
+template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
+    VectorChangedEventHandler(impl::make_delegate<impl::vector_changed_event_handler<T, L>, VectorChangedEventHandler<T>>(std::forward<L>(handler)))
+{}
+
+template <typename T> template <typename F> VectorChangedEventHandler<T>::VectorChangedEventHandler(F * handler) :
+    VectorChangedEventHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename T> template <typename O, typename M> VectorChangedEventHandler<T>::VectorChangedEventHandler(O * object, M method) :
+    VectorChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
 
 template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
 auto begin(const T & collection) -> decltype(collection.First())
@@ -4467,198 +4317,618 @@ impl::fast_iterator<T> end(const T & collection)
 
 }}}
 
-namespace ABI { namespace Windows { namespace Foundation {
-
-struct AsyncActionCompletedHandler;
-struct IAsyncAction;
-
-struct __declspec(uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")) __declspec(novtable) AsyncActionCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncAction * asyncInfo, winrt::Windows::AsyncStatus asyncStatus) = 0;
-};
-
-struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
-{
-    virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults() = 0;
-};
-
-}}}
-
-namespace Windows { namespace Foundation {
-
-struct AsyncActionCompletedHandler;
-struct IAsyncAction;
-
-template <typename T>
-class WINRT_EBO impl_consume_IAsyncAction
-{
-    auto shim() const { return impl::shim<T, IAsyncAction>(this); }
-
-public:
-
-    void Completed(const AsyncActionCompletedHandler & handler) const;
-    AsyncActionCompletedHandler Completed() const;
-    void GetResults() const;
-};
-
-template <typename T> struct impl_produce_IAsyncAction;
-
-}}
-
 namespace impl {
 
-template <> struct traits<Windows::Foundation::AsyncActionCompletedHandler>
+template <typename D>
+struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : produce_base<D, Windows::Foundation::Collections::IVectorChangedEventArgs>
 {
-    using abi = ABI::Windows::Foundation::AsyncActionCompletedHandler;
-};
-
-template <> struct traits<Windows::Foundation::IAsyncAction>
-{
-    using abi = ABI::Windows::Foundation::IAsyncAction;
-    template <typename T> using consume = Windows::Foundation::impl_consume_IAsyncAction<T>;
-    template <typename T> using produce = Windows::Foundation::impl_produce_IAsyncAction<T>;
-};
-
-}
-
-namespace Windows { namespace Foundation {
-
-struct AsyncActionCompletedHandler : IUnknown
-{
-    AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionCompletedHandler>(m_ptr); }
-    template <typename H> AsyncActionCompletedHandler(H handler);
-    template <typename O, typename M> AsyncActionCompletedHandler(O * object, M method);
-    void operator()(const IAsyncAction & asyncInfo, AsyncStatus asyncStatus) const;
-};
-
-struct IAsyncAction :
-    Windows::IInspectable,
-    consume<IAsyncAction>,
-    requires<IAsyncAction, IAsyncInfo>
-{
-    IAsyncAction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncAction>(m_ptr); }
-};
-
-template <typename T>
-struct impl_produce_IAsyncAction : abi<IAsyncAction>
-{
-    using IAsyncAction = winrt::Windows::Foundation::IAsyncAction;
-
-    operator IAsyncAction() const noexcept
-    {
-        return impl::winrt_cast<IAsyncAction>(this);
-    }
-
-    void Completed(const AsyncActionCompletedHandler & handler)
-    {
-        throw hresult_not_implemented();
-    }
-
-    AsyncActionCompletedHandler Completed()
-    {
-        throw hresult_not_implemented();
-    }
-
-    void GetResults()
-    {
-        throw hresult_not_implemented();
-    }
-
-    HRESULT __stdcall put_Completed(abi_arg_in<AsyncActionCompletedHandler> handler) noexcept override
+    HRESULT __stdcall get_CollectionChange(Windows::Foundation::Collections::CollectionChange * value) noexcept final
     {
         try
         {
-            static_cast<T *>(this)->Completed(*reinterpret_cast<const AsyncActionCompletedHandler *>(&handler));
+            *value = shim().CollectionChange();
             return S_OK;
         }
         catch (...)
         {
-            return impl::to_hresult();
+            return to_hresult();
         }
     }
 
-    HRESULT __stdcall get_Completed(abi_arg_out<AsyncActionCompletedHandler> handler) noexcept override
+    HRESULT __stdcall get_Index(uint32_t * value) noexcept final
     {
         try
         {
-            *handler = detach(static_cast<T *>(this)->Completed());
+            *value = shim().Index();
             return S_OK;
         }
         catch (...)
         {
-            *handler = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetResults() noexcept override
-    {
-        try
-        {
-            static_cast<T *>(this)->GetResults();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
+            return to_hresult();
         }
     }
 };
 
-template <typename T> struct impl_AsyncActionCompletedHandler : implements<impl_AsyncActionCompletedHandler<T>, abi<AsyncActionCompletedHandler>>
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base<D, Windows::Foundation::Collections::IIterator<T>>
 {
-    T m_handler;
-    impl_AsyncActionCompletedHandler(T handler) : m_handler(handler) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<IAsyncAction> asyncInfo, AsyncStatus asyncStatus) noexcept override
+    HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept final
     {
         try
         {
-            m_handler(*reinterpret_cast<const IAsyncAction *>(&asyncInfo), asyncStatus);
+            *current = detach(shim().Current());
             return S_OK;
         }
         catch (...)
         {
-            return impl::to_hresult();
+            clear_abi(current);
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept final
+    {
+        try
+        {
+            *hasCurrent = shim().HasCurrent();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept final
+    {
+        try
+        {
+            *hasCurrent = shim().MoveNext();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetMany(uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+    {
+        try
+        {
+            *actual = shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            *actual = 0;
+            return to_hresult();
         }
     }
 };
 
-template <typename H> AsyncActionCompletedHandler::AsyncActionCompletedHandler(H handler) :
-    AsyncActionCompletedHandler(make<impl_AsyncActionCompletedHandler<H>, AsyncActionCompletedHandler>(handler))
-{}
-
-template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionCompletedHandler(O * object, M method) :
-    AsyncActionCompletedHandler(std::bind(std::mem_fn(method), object, std::placeholders::_1, std::placeholders::_2))
-{}
-
-inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base<D, Windows::Foundation::Collections::IIterable<T>>
 {
-    check_hresult((*this)->abi_Invoke(get(asyncInfo), asyncStatus));
-}
+    HRESULT __stdcall abi_First(abi_arg_out<Windows::Foundation::Collections::IIterator<T>> first) noexcept final
+    {
+        try
+        {
+            *first = detach(shim().First());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *first = nullptr;
+            return to_hresult();
+        }
+    }
+};
 
-template <typename T> void impl_consume_IAsyncAction<T>::Completed(const AsyncActionCompletedHandler & handler) const
+template <typename D, typename K, typename V>
+struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produce_base<D, Windows::Foundation::Collections::IKeyValuePair<K, V>>
 {
-    check_hresult(shim()->put_Completed(get(handler)));
-}
+    HRESULT __stdcall get_Key(abi_arg_out<K> key) noexcept final
+    {
+        try
+        {
+            *key = detach(shim().Key());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(key);
+            return to_hresult();
+        }
+    }
 
-template <typename T> AsyncActionCompletedHandler impl_consume_IAsyncAction<T>::Completed() const
+    HRESULT __stdcall get_Value(abi_arg_out<V> value) noexcept final
+    {
+        try
+        {
+            *value = detach(shim().Value());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_base<D, Windows::Foundation::Collections::IVectorView<T>>
 {
-    AsyncActionCompletedHandler handler{};
-    check_hresult(shim()->get_Completed(put(handler)));
-    return handler;
-}
+    HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
+    {
+        try
+        {
+            *item = detach(shim().GetAt(index));
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(item);
+            return to_hresult();
+        }
+    }
 
-template <typename T> void impl_consume_IAsyncAction<T>::GetResults() const
+    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+    {
+        try
+        {
+            *size = shim().Size();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
+    {
+        try
+        {
+            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+    {
+        try
+        {
+            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            *actual = 0;
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D, Windows::Foundation::Collections::IVector<T>>
 {
-    check_hresult(shim()->abi_GetResults());
-}
+    HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
+    {
+        try
+        {
+            *item = detach(shim().GetAt(index));
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(item);
+            return to_hresult();
+        }
+    }
 
-}}
+    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+    {
+        try
+        {
+            *size = shim().Size();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IVectorView<T>> view) noexcept final
+    {
+        try
+        {
+            *view = detach(shim().GetView());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *view = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
+    {
+        try
+        {
+            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetAt(uint32_t index, abi_arg_in<T> item) noexcept final
+    {
+        try
+        {
+            shim().SetAt(index, *reinterpret_cast<const T *>(&item));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_InsertAt(uint32_t index, abi_arg_in<T> item) noexcept final
+    {
+        try
+        {
+            shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RemoveAt(uint32_t index) noexcept final
+    {
+        try
+        {
+            shim().RemoveAt(index);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept final
+    {
+        try
+        {
+            shim().Append(*reinterpret_cast<const T *>(&item));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RemoveAtEnd() noexcept final
+    {
+        try
+        {
+            shim().RemoveAtEnd();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Clear() noexcept final
+    {
+        try
+        {
+            shim().Clear();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+    {
+        try
+        {
+            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            *actual = 0;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ReplaceAll(uint32_t count, abi_arg_out<T> item) noexcept final
+    {
+        try
+        {
+            shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename K, typename V>
+struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_base<D, Windows::Foundation::Collections::IMapView<K, V>>
+{
+    HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
+    {
+        try
+        {
+            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+    {
+        try
+        {
+            *size = shim().Size();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
+    {
+        try
+        {
+            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Split(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> firstPartition, abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> secondPartition) noexcept final
+    {
+        try
+        {
+            shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *firstPartition = nullptr;
+            *secondPartition = nullptr;
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename K, typename V>
+struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IMap<K, V>>
+{
+    HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
+    {
+        try
+        {
+            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+    {
+        try
+        {
+            *size = shim().Size();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
+    {
+        try
+        {
+            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> view) noexcept final
+    {
+        try
+        {
+            *view = detach(shim().GetView());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *view = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Insert(abi_arg_in<K> key, abi_arg_in<V> value, bool * replaced) noexcept final
+    {
+        try
+        {
+            *replaced = shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Remove(abi_arg_in<K> key) noexcept final
+    {
+        try
+        {
+            shim().Remove(*reinterpret_cast<const K *>(&key));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Clear() noexcept final
+    {
+        try
+        {
+            shim().Clear();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename K>
+struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : produce_base<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+{
+    HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) noexcept final
+    {
+        try
+        {
+            *value = shim().CollectionChange();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Key(abi_arg_out<K> value) noexcept final
+    {
+        try
+        {
+            *value = detach(shim().Key());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(value);
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename K, typename V>
+struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IObservableMap<K, V>>
+{
+    HRESULT __stdcall add_MapChanged(abi_arg_in<Windows::Foundation::Collections::MapChangedEventHandler<K, V>> handler, event_token * token) noexcept final
+    {
+        try
+        {
+            *token = shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_MapChanged(event_token token) noexcept final
+    {
+        try
+        {
+            shim().MapChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename T>
+struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : produce_base<D, Windows::Foundation::Collections::IObservableVector<T>>
+{
+    HRESULT __stdcall add_VectorChanged(abi_arg_in<Windows::Foundation::Collections::VectorChangedEventHandler<T>> handler, event_token * token) noexcept final
+    {
+        try
+        {
+            *token = shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_VectorChanged(event_token token) noexcept final
+    {
+        try
+        {
+            shim().VectorChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+}
  
 namespace Windows { namespace Foundation {
 
@@ -4730,6 +5000,996 @@ using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
 namespace Windows { namespace Foundation {
 
+enum class AsyncStatus
+{
+    Started,
+    Completed,
+    Canceled,
+    Error,
+};
+
+}}
+
+namespace ABI { namespace Windows { namespace Foundation {
+
+struct AsyncActionCompletedHandler;
+template <typename TProgress> struct AsyncActionProgressHandler;
+template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
+template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
+template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
+template <typename TResult> struct AsyncOperationCompletedHandler;
+
+struct IAsyncAction;
+struct IAsyncInfo;
+template <typename TProgress> struct IAsyncActionWithProgress;
+template <typename TResult> struct IAsyncOperation;
+template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
+
+struct __declspec(uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")) __declspec(novtable) AsyncActionCompletedHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncAction * asyncInfo, winrt::Windows::Foundation::AsyncStatus asyncStatus) = 0;
+};
+
+template <typename TProgress>
+struct __declspec(novtable) impl_AsyncActionProgressHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
+};
+
+template <typename TProgress>
+struct __declspec(novtable) impl_AsyncActionWithProgressCompletedHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+};
+
+template <typename TResult, typename TProgress>
+struct __declspec(novtable) impl_AsyncOperationProgressHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
+};
+
+template <typename TResult, typename TProgress>
+struct __declspec(novtable) impl_AsyncOperationWithProgressCompletedHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+};
+
+template <typename TResult>
+struct __declspec(novtable) impl_AsyncOperationCompletedHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+};
+
+struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
+{
+    virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
+    virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
+    virtual HRESULT __stdcall abi_GetResults() = 0;
+};
+
+struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
+{
+    virtual HRESULT __stdcall get_Id(uint32_t * id) = 0;
+    virtual HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) = 0;
+    virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
+    virtual HRESULT __stdcall abi_Cancel() = 0;
+    virtual HRESULT __stdcall abi_Close() = 0;
+};
+
+template <typename TProgress>
+struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
+{
+    virtual HRESULT __stdcall put_Progress(AsyncActionProgressHandler<TProgress> * handler) = 0;
+    virtual HRESULT __stdcall get_Progress(AsyncActionProgressHandler<TProgress> ** handler) = 0;
+    virtual HRESULT __stdcall put_Completed(AsyncActionWithProgressCompletedHandler<TProgress> * handler) = 0;
+    virtual HRESULT __stdcall get_Completed(AsyncActionWithProgressCompletedHandler<TProgress> ** handler) = 0;
+    virtual HRESULT __stdcall abi_GetResults() = 0;
+};
+
+
+template <typename TResult>
+struct __declspec(novtable) impl_IAsyncOperation : IInspectable
+{
+    virtual HRESULT __stdcall put_Completed(AsyncOperationCompletedHandler<TResult> * handler) = 0;
+    virtual HRESULT __stdcall get_Completed(AsyncOperationCompletedHandler<TResult> ** handler) = 0;
+    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
+};
+
+template <typename TResult, typename TProgress>
+struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
+{
+    virtual HRESULT __stdcall put_Progress(AsyncOperationProgressHandler<TResult, TProgress> * handler) = 0;
+    virtual HRESULT __stdcall get_Progress(AsyncOperationProgressHandler<TResult, TProgress> ** handler) = 0;
+    virtual HRESULT __stdcall put_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> * handler) = 0;
+    virtual HRESULT __stdcall get_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
+    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
+};
+
+}}}
+
+namespace Windows { namespace Foundation {
+
+struct AsyncActionCompletedHandler;
+template <typename TProgress> struct AsyncActionProgressHandler;
+template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
+template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
+template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
+template <typename TResult> struct AsyncOperationCompletedHandler;
+
+struct IAsyncAction;
+struct IAsyncInfo;
+template <typename TProgress> struct IAsyncActionWithProgress;
+template <typename TResult> struct IAsyncOperation;
+template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
+
+template <typename D>
+class WINRT_EBO impl_IAsyncAction
+{
+    auto shim() const { return impl::shim<D, IAsyncAction>(this); }
+
+public:
+
+    void Completed(const AsyncActionCompletedHandler & handler) const;
+    AsyncActionCompletedHandler Completed() const;
+    void GetResults() const;
+};
+
+template <typename D>
+class WINRT_EBO impl_IAsyncInfo
+{
+    auto shim() const { return impl::shim<D, IAsyncInfo>(this); }
+
+public:
+
+    uint32_t Id() const
+    {
+        uint32_t id = 0;
+        check_hresult(shim()->get_Id(&id));
+        return id;
+    }
+
+    AsyncStatus Status() const
+    {
+        AsyncStatus status{};
+        check_hresult(shim()->get_Status(&status));
+        return status;
+    }
+
+    HRESULT ErrorCode() const
+    {
+        HRESULT code = S_OK;
+        check_hresult(shim()->get_ErrorCode(&code));
+        return code;
+    }
+
+    void Cancel() const
+    {
+        check_hresult(shim()->abi_Cancel());
+    }
+
+    void Close() const
+    {
+        check_hresult(shim()->abi_Close());
+    }
+};
+
+template <typename D, typename TProgress>
+class impl_IAsyncActionWithProgress
+{
+    auto shim() const { return impl::shim<D, IAsyncActionWithProgress<TProgress>>(this); }
+
+public:
+
+    void Progress(const AsyncActionProgressHandler<TProgress> & handler) const
+    {
+        check_hresult(shim()->put_Progress(get(handler)));
+    }
+
+    AsyncActionProgressHandler<TProgress> Progress() const
+    {
+        AsyncActionProgressHandler<TProgress> handler;
+        check_hresult(shim()->get_Progress(put(handler)));
+        return handler;
+    }
+
+    void Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
+    {
+        check_hresult(shim()->put_Completed(get(handler)));
+    }
+
+    AsyncActionWithProgressCompletedHandler<TProgress> Completed() const
+    {
+        AsyncActionWithProgressCompletedHandler<TProgress> handler;
+        check_hresult(shim()->get_Completed(put(handler)));
+        return handler;
+    }
+
+    void GetResults() const
+    {
+        check_hresult(shim()->abi_GetResults());
+    }
+};
+
+template <typename D, typename TResult>
+class impl_IAsyncOperation
+{
+    auto shim() const { return impl::shim<D, IAsyncOperation<TResult>>(this); }
+
+public:
+
+    void Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
+    {
+        check_hresult(shim()->put_Completed(get(handler)));
+    }
+
+    AsyncOperationCompletedHandler<TResult> Completed() const
+    {
+        AsyncOperationCompletedHandler<TResult> temp;
+        check_hresult(shim()->get_Completed(put(temp)));
+        return temp;
+    }
+
+    TResult GetResults() const
+    {
+        TResult result = impl::empty_value<TResult>();
+        check_hresult(shim()->abi_GetResults(put(result)));
+        return result;
+    }
+};
+
+template <typename D, typename TResult, typename TProgress>
+class impl_IAsyncOperationWithProgress
+{
+    auto shim() const { return impl::shim<D, IAsyncOperationWithProgress<TResult, TProgress>>(this); }
+
+public:
+
+    void Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
+    {
+        check_hresult(shim()->put_Progress(get(handler)));
+    }
+
+    AsyncOperationProgressHandler<TResult, TProgress> Progress() const
+    {
+        AsyncOperationProgressHandler<TResult, TProgress> handler;
+        check_hresult(shim()->get_Progress(put(handler)));
+        return handler;
+    }
+
+    void Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
+    {
+        check_hresult(shim()->put_Completed(get(handler)));
+    }
+
+    AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const
+    {
+        AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
+        check_hresult(shim()->get_Completed(put(handler)));
+        return handler;
+    }
+
+    TResult GetResults() const
+    {
+        TResult result = impl::empty_value<TResult>();
+        check_hresult(shim()->abi_GetResults(put(result)));
+        return result;
+    }
+};
+
+}}
+
+namespace impl {
+
+template <> struct traits<Windows::Foundation::AsyncActionCompletedHandler>
+{
+    using abi = ABI::Windows::Foundation::AsyncActionCompletedHandler;
+};
+
+template <typename TProgress> struct traits<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+{
+    using abi = ABI::Windows::Foundation::AsyncActionProgressHandler<abi<TProgress>>;
+};
+
+template <typename TProgress> struct traits<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+{
+    using abi = ABI::Windows::Foundation::AsyncActionWithProgressCompletedHandler<abi<TProgress>>;
+};
+
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+{
+    using abi = ABI::Windows::Foundation::AsyncOperationProgressHandler<abi<TResult>, abi<TProgress>>;
+};
+
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+{
+    using abi = ABI::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<abi<TResult>, abi<TProgress>>;
+};
+
+template <typename TResult> struct traits<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+{
+    using abi = ABI::Windows::Foundation::AsyncOperationCompletedHandler<abi<TResult>>;
+};
+
+template <> struct traits<Windows::Foundation::IAsyncAction>
+{
+    using abi = ABI::Windows::Foundation::IAsyncAction;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncAction<D>;
+};
+
+template <> struct traits<Windows::Foundation::IAsyncInfo>
+{
+    using abi = ABI::Windows::Foundation::IAsyncInfo;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncInfo<D>;
+};
+
+template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+{
+    using abi = ABI::Windows::Foundation::IAsyncActionWithProgress<abi<TProgress>>;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncActionWithProgress<D, TProgress>;
+};
+
+template <typename TResult> struct traits<Windows::Foundation::IAsyncOperation<TResult>>
+{
+    using abi = ABI::Windows::Foundation::IAsyncOperation<abi<TResult>>;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncOperation<D, TResult>;
+};
+
+template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+{
+    using abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<abi<TResult>, abi<TProgress>>;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncOperationWithProgress<D, TResult, TProgress>;
+};
+
+}
+
+namespace Windows { namespace Foundation {
+
+struct AsyncActionCompletedHandler : IUnknown
+{
+    AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncActionCompletedHandler>(m_ptr); }
+    template <typename L> AsyncActionCompletedHandler(L handler);
+    template <typename F> AsyncActionCompletedHandler(F * handler);
+    template <typename O, typename M> AsyncActionCompletedHandler(O * object, M method);
+    void operator()(const IAsyncAction & asyncInfo, AsyncStatus asyncStatus) const;
+};
+
+template <typename TProgress>
+struct WINRT_EBO AsyncActionProgressHandler : IUnknown
+{
+    AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncActionProgressHandler>(m_ptr); }
+    template <typename L> AsyncActionProgressHandler(L handler);
+    template <typename F> AsyncActionProgressHandler(F * handler);
+    template <typename O, typename M> AsyncActionProgressHandler(O * object, M method);
+    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const;
+};
+
+template <typename TProgress>
+struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
+{
+    AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncActionWithProgressCompletedHandler>(m_ptr); }
+    template <typename L> AsyncActionWithProgressCompletedHandler(L handler);
+    template <typename F> AsyncActionWithProgressCompletedHandler(F * handler);
+    template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O * object, M method);
+    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const;
+};
+
+template <typename TResult, typename TProgress>
+struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
+{
+    AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncOperationProgressHandler>(m_ptr); }
+    template <typename L> AsyncOperationProgressHandler(L handler);
+    template <typename F> AsyncOperationProgressHandler(F * handler);
+    template <typename O, typename M> AsyncOperationProgressHandler(O * object, M method);
+    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const;
+};
+
+template <typename TResult, typename TProgress>
+struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
+{
+    AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncOperationWithProgressCompletedHandler>(m_ptr); }
+    template <typename L> AsyncOperationWithProgressCompletedHandler(L handler);
+    template <typename F> AsyncOperationWithProgressCompletedHandler(F * handler);
+    template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O * object, M method);
+    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const;
+};
+
+template <typename TResult>
+struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
+{
+    AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<AsyncOperationCompletedHandler>(m_ptr); }
+    template <typename L> AsyncOperationCompletedHandler(L handler);
+    template <typename F> AsyncOperationCompletedHandler(F * handler);
+    template <typename O, typename M> AsyncOperationCompletedHandler(O * object, M method);
+    void operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const;
+};
+
+struct IAsyncAction :
+    IInspectable,
+    impl::consume<IAsyncAction>,
+    impl::require<IAsyncAction, IAsyncInfo>
+{
+    IAsyncAction(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncAction>(m_ptr); }
+};
+
+struct IAsyncInfo :
+    IUnknown,
+    impl::consume<IAsyncInfo>
+{
+    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
+};
+
+template <typename TProgress>
+struct WINRT_EBO IAsyncActionWithProgress :
+    IInspectable,
+    impl::consume<IAsyncActionWithProgress<TProgress>>,
+    impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
+{
+    IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncActionWithProgress>(m_ptr); }
+};
+
+template <typename TResult>
+struct WINRT_EBO IAsyncOperation :
+    IInspectable,
+    impl::consume<IAsyncOperation<TResult>>,
+    impl::require<IAsyncOperation<TResult>, IAsyncInfo>
+{
+    IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncOperation>(m_ptr); }
+};
+
+template <typename TResult, typename TProgress>
+struct WINRT_EBO IAsyncOperationWithProgress :
+    IInspectable,
+    impl::consume<IAsyncOperationWithProgress<TResult, TProgress>>,
+    impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
+{
+    IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
+};
+
+}}
+
+namespace impl {
+
+template <typename H> struct async_action_completed_handler : implements<async_action_completed_handler<H>, abi<Windows::Foundation::AsyncActionCompletedHandler>>, H
+{
+    async_action_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncAction> asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncAction *>(&asyncInfo), asyncStatus);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename TProgress, typename H>
+struct async_action_progress_handler : implements<async_action_progress_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>>, H
+{
+    async_action_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename TProgress, typename H>
+struct async_action_with_progress_completed_handler : implements<async_action_with_progress_completed_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>>, H
+{
+    async_action_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), args);
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename TResult, typename TProgress, typename H>
+struct async_operation_progress_handler : implements<async_operation_progress_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>>, H
+{
+    async_operation_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename TResult, typename TProgress, typename H>
+struct async_operation_with_progress_completed_handler : implements<async_operation_with_progress_completed_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>>, H
+{
+    async_operation_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), args);
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+template <typename TResult, typename H>
+struct async_operation_completed_handler : implements<async_operation_completed_handler<TResult, H>, abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>>, H
+{
+    async_operation_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperation<TResult>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperation<TResult> *>(&sender), args);
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+};
+
+}
+
+namespace Windows { namespace Foundation {
+
+template <typename L> AsyncActionCompletedHandler::AsyncActionCompletedHandler(L handler) :
+    AsyncActionCompletedHandler(impl::make_delegate<impl::async_action_completed_handler<L>, AsyncActionCompletedHandler>(std::forward<L>(handler)))
+{}
+
+template <typename F> AsyncActionCompletedHandler::AsyncActionCompletedHandler(F * handler) :
+    AsyncActionCompletedHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionCompletedHandler(O * object, M method) :
+    AsyncActionCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
+{
+    check_hresult((*this)->abi_Invoke(get(asyncInfo), asyncStatus));
+}
+
+template <typename TProgress> template <typename L> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(L handler) :
+    AsyncActionProgressHandler(impl::make_delegate<impl::async_action_progress_handler<TProgress, L>, AsyncActionProgressHandler>(std::forward<L>(handler)))
+{}
+
+template <typename TProgress> template <typename F> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(F * handler) :
+    AsyncActionProgressHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename TProgress> template <typename O, typename M> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(O * object, M method) :
+    AsyncActionProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
+
+template <typename TProgress> template <typename L> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(L handler) :
+    AsyncActionWithProgressCompletedHandler(impl::make_delegate<impl::async_action_with_progress_completed_handler<TProgress, L>, AsyncActionWithProgressCompletedHandler<TProgress>>(std::forward<L>(handler)))
+{}
+
+template <typename TProgress> template <typename F> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(F * handler) :
+    AsyncActionWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename TProgress> template <typename O, typename M> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(O * object, M method) :
+    AsyncActionWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), args));
+}
+
+template <typename TResult, typename TProgress> template <typename L> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(L handler) :
+    AsyncOperationProgressHandler(impl::make_delegate<impl::async_operation_progress_handler<TResult, TProgress, L>, AsyncOperationProgressHandler<TResult, TProgress>>(std::forward<L>(handler)))
+{}
+
+template <typename TResult, typename TProgress> template <typename F> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(F * handler) :
+    AsyncOperationProgressHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(O * object, M method) :
+    AsyncOperationProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+}
+
+template <typename TResult, typename TProgress> template <typename L> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(L handler) :
+    AsyncOperationWithProgressCompletedHandler(impl::make_delegate<impl::async_operation_with_progress_completed_handler<TResult, TProgress, L>, AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(std::forward<L>(handler)))
+{}
+
+template <typename TResult, typename TProgress> template <typename F> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(F * handler) :
+    AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(O * object, M method) :
+    AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), args));
+}
+
+template <typename TResult> template <typename L> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(L handler) :
+    AsyncOperationCompletedHandler(impl::make_delegate<impl::async_operation_completed_handler<TResult, L>, AsyncOperationCompletedHandler<TResult>>(std::forward<L>(handler)))
+{}
+
+template <typename TResult> template <typename F> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(F * handler) :
+    AsyncOperationCompletedHandler([=](auto && ... args) { handler(args ...); })
+{}
+
+template <typename TResult> template <typename O, typename M> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(O * object, M method) :
+    AsyncOperationCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+{}
+
+template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
+{
+    check_hresult((*this)->abi_Invoke(get(sender), args));
+}
+
+template <typename D> void impl_IAsyncAction<D>::Completed(const AsyncActionCompletedHandler & handler) const
+{
+    check_hresult(shim()->put_Completed(get(handler)));
+}
+
+template <typename D> AsyncActionCompletedHandler impl_IAsyncAction<D>::Completed() const
+{
+    AsyncActionCompletedHandler handler{};
+    check_hresult(shim()->get_Completed(put(handler)));
+    return handler;
+}
+
+template <typename D> void impl_IAsyncAction<D>::GetResults() const
+{
+    check_hresult(shim()->abi_GetResults());
+}
+
+}}
+
+namespace impl {
+
+template <typename D>
+struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
+{
+    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
+    {
+        try
+        {
+            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Completed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetResults() noexcept final
+    {
+        try
+        {
+            shim().GetResults();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Foundation::IAsyncInfo>
+{
+    HRESULT __stdcall get_Id(uint32_t * id) noexcept final
+    {
+        try
+        {
+            *id = shim().Id();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) noexcept final
+    {
+        try
+        {
+            *status = shim().Status();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) noexcept final
+    {
+        try
+        {
+            *errorCode = shim().ErrorCode();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Cancel() noexcept final
+    {
+        try
+        {
+            shim().Cancel();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Close() noexcept final
+    {
+        try
+        {
+            shim().Close();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename TProgress>
+struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+{
+    HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+    {
+        try
+        {
+            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Progress());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+    {
+        try
+        {
+            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Completed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetResults() noexcept final
+    {
+        try
+        {
+            shim().GetResults();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename TResult>
+struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
+{
+    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+    {
+        try
+        {
+            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Completed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
+    {
+        try
+        {
+            *results = detach(shim().GetResults());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(results);
+            return to_hresult();
+        }
+    }
+};
+
+template <typename D, typename TResult, typename TProgress>
+struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+{
+    HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+    {
+        try
+        {
+            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Progress());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
+    {
+        try
+        {
+            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
+    {
+        try
+        {
+            *handler = detach(shim().Completed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *handler = nullptr;
+            return to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
+    {
+        try
+        {
+            *results = detach(shim().GetResults());
+            return S_OK;
+        }
+        catch (...)
+        {
+            clear_abi(results);
+            return to_hresult();
+        }
+    }
+};
+
+}
+
+namespace Windows { namespace Foundation {
+
 template <typename T, typename F>
 void impl_suspend(const T & object, F resume)
 {
@@ -4739,7 +5999,7 @@ void impl_suspend(const T & object, F resume)
     object.Completed([resume, context](const auto &, AsyncStatus)
     {
         ComCallData data = {};
-        data.pUserDefined = resume.to_address();
+        data.pUserDefined = resume.address();
 
         check_hresult(context->ContextCallback([](ComCallData * data)
         {

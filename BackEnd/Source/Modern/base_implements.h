@@ -1,4 +1,6 @@
 
+struct non_agile {};
+
 template <typename Interface>
 struct cloaked : Interface {};
 
@@ -19,89 +21,367 @@ struct uncloak<cloaked<T>>
 template <typename T>
 using uncloak_t = typename uncloak<T>::type;
 
-template <typename T, typename Interface, typename Enable = void>
-struct derive_from : abi<uncloak_t<Interface>> {};
+template <typename I>
+struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
 
-template <typename T, typename Interface>
-struct derive_from<T, Interface, std::enable_if_t<can_produce<uncloak_t<Interface>>::value>> : traits<uncloak_t<Interface>>::template produce<T> {};
+template <typename I>
+struct is_cloaked<cloaked<I>> : std::true_type {};
+
+template <typename I>
+constexpr bool is_cloaked_v = is_cloaked<I>::value;
+
+template <typename ... I>
+struct first_interface
+{
+    using type = void;
+};
+
+template <typename First, typename ... Rest>
+struct first_interface<First, Rest ...>
+{
+    using type = std::conditional_t<std::is_same<non_agile, First>::value, typename first_interface<Rest ...>::type, First>;
+};
+
+template <typename D, typename I>
+struct produce;
+
+template <typename D, typename I, typename Enable = void>
+struct producer;
+
+template <typename T>
+class has_composable
+{
+    template <typename U> static constexpr bool get_value(typename U::composable *) { return true; }
+    template <typename>   static constexpr bool get_value(...) { return false; }
+
+public:
+
+    static constexpr bool value = get_value<T>(0);
+};
+
+template <typename T>
+void clear_abi(T *) noexcept
+{}
+
+template <typename T>
+void clear_abi(T ** value) noexcept
+{
+    *value = nullptr;
+}
 
 }
 
-template <typename T, typename ... Interfaces>
-class __declspec(novtable) implements : public impl::derive_from<T, Interfaces> ...
+template <typename D, typename I>
+D * to_impl(const I & from) noexcept
 {
-    template <typename Interface>
-    struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<Interface>>, std::false_type, std::true_type> {};
+    return &static_cast<impl::produce<D, I> *>(get(from))->shim();
+}
 
-    template <typename Interface>
-    struct is_cloaked<cloaked<Interface>> : std::true_type {};
+template <typename I, typename D>
+abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
+{
+    return reinterpret_cast<abi<I> *>(const_cast<impl::producer<D, I> *>(from));
+}
 
-    template <typename First, typename ... Rest>
-    struct first
+template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
+auto make(Args && ... args)
+{
+    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
+    *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    return instance;
+}
+
+template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<impl::has_composable<D>::value> * = nullptr>
+auto make(Args && ... args)
+{
+    com_ptr<I> instance;
+    *put(instance) = new D(std::forward<Args>(args) ...);
+    return instance.template as<typename D::composable>();
+}
+
+template <typename D, typename ... Args>
+auto make_self(Args && ... args)
+{
+    com_ptr<D> instance;
+    *put(instance) = new D(std::forward<Args>(args) ...);
+    return instance;
+}
+
+namespace impl {
+
+template <typename D, typename I, typename H>
+auto make_delegate(H && handler)
+{
+    I instance = nullptr;
+    *put(instance) = to_abi<abi<I>>(new D(std::forward<H>(handler)));
+    return instance;
+}
+
+template <typename D, typename I, typename Enable>
+struct producer
+{
+    operator I() const noexcept
     {
-        using type = impl::uncloak_t<First>;
-    };
+        I result = nullptr;
+        copy_from(result, const_cast<produce<D, I> *>(&vtable));
+        return result;
+    }
+
+private:
+
+    produce<D, I> vtable;
+};
+
+template <typename D, typename I>
+struct produce_base : abi<I>
+{
+    D & shim() noexcept
+    {
+        return *static_cast<D *>(reinterpret_cast<producer<D, I> *>(this));
+    }
+
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
+    {
+        return shim().QueryInterface(id, object);
+    }
+
+    unsigned long __stdcall AddRef() noexcept override
+    {
+        return shim().AddRef();
+    }
+
+    unsigned long __stdcall Release() noexcept override
+    {
+        return shim().Release();
+    }
+
+    WINRT_IGNORE_MISSING_OVERRIDE_BEGIN
+
+    HRESULT __stdcall abi_GetIids(uint32_t * count, GUID ** array) noexcept
+    {
+        return shim().abi_GetIids(count, array);
+    }
+
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept
+    {
+        return shim().abi_GetRuntimeClassName(name);
+    }
+
+    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    {
+        return shim().abi_GetTrustLevel(trustLevel);
+    }
+
+    WINRT_IGNORE_MISSING_OVERRIDE_END
+};
+
+template <typename D, typename I>
+struct producer<D, I, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>> : produce_base<D, I>
+{};
+
+template <typename D>
+struct producer<D, non_agile>
+{};
+
+template <typename D>
+struct produce<D, Windows::IUnknown> : produce_base<D, Windows::IUnknown>
+{};
+
+template <typename D>
+struct produce<D, Windows::IInspectable> : produce_base<D, Windows::IInspectable>
+{};
+
+}
+
+template <typename D, typename ... I>
+struct implements : impl::producer<D, impl::uncloak_t<I>> ...
+{
+    using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
+
+    operator Windows::IInspectable() const noexcept
+    {
+        Windows::IInspectable result;
+        copy_from(result, find_inspectable<I ...>());
+        return result;
+    }
+
+protected:
+
+    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
+    {
+        *object = find_interface<impl::uncloak_t<I> ...>(id);
+
+        if (*object == nullptr)
+        {
+            if (id == __uuidof(::IUnknown))
+            {
+                *object = get_unknown();
+            }
+            else if (is_inspectable<I ...>() && id == __uuidof(ABI::Windows::IInspectable))
+            {
+                *object = find_inspectable<I ...>();
+            }
+            else if (!is_non_agile<I ...>())
+            {
+                if (id == __uuidof(IAgileObject))
+                {
+                    *object = get_unknown();
+                }
+                else if (id == __uuidof(IMarshal))
+                {
+                    com_ptr< ::IUnknown> marshaler;
+
+                    const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(),
+                                                                     put(marshaler));
+
+                    if (hr != S_OK)
+                    {
+                        return hr;
+                    }
+
+                    return marshaler->QueryInterface(id, object);
+                }
+            }
+
+            if (*object == nullptr)
+            {
+                return E_NOINTERFACE;
+            }
+        }
+
+        static_cast< ::IUnknown *>(*object)->AddRef();
+        return S_OK;
+    }
+
+    unsigned long __stdcall AddRef() noexcept
+    {
+        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+    }
+
+    unsigned long __stdcall Release() noexcept
+    {
+        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
+
+        if (remaining == 0)
+        {
+            std::atomic_thread_fence(std::memory_order_acquire);
+            delete static_cast<D *>(this);
+        }
+
+        return remaining;
+    }
+
+    HRESULT abi_GetIids(uint32_t * count, GUID ** array) const noexcept
+    {
+        *count = uncloaked_interfaces<I ...>();
+
+        if (*count == 0)
+        {
+            *array = nullptr;
+            return S_OK;
+        }
+
+        *array = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * *count));
+
+        if (*array == nullptr)
+        {
+            return E_OUTOFMEMORY;
+        }
+
+        copy_guids<I ...>(*array);
+        return S_OK;
+    }
+
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept
+    {
+        try
+        {
+            *name = detach(static_cast<D *>(this)->GetRuntimeClassName());
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+
+    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    {
+        try
+        {
+            *trustLevel = static_cast<D *>(this)->GetTrustLevel();
+            return S_OK;
+        }
+        catch (...) { return impl::to_hresult(); }
+    }
+
+private:
 
     template <int = 0>
-    constexpr uint32_t uncloaked_interfaces() const noexcept
+    static constexpr uint32_t uncloaked_interfaces() noexcept
     {
         return 0;
     }
 
     template <typename First, typename ... Rest>
-    constexpr uint32_t uncloaked_interfaces() const noexcept
+    static constexpr uint32_t uncloaked_interfaces() noexcept
     {
-        return !is_cloaked<First>::value + uncloaked_interfaces<Rest ...>();
+        return !impl::is_cloaked_v<First> + uncloaked_interfaces<Rest ...>();
     }
 
     template <int = 0>
-    void copy_interfaces(GUID *) const noexcept {}
-
-    template <typename First, typename ... Rest>
-    void copy_interfaces(GUID * ids, std::enable_if_t<is_cloaked<First>::value> * = nullptr) const noexcept
+    void copy_guids(GUID *) const noexcept
     {
-        copy_interfaces<Rest ...>(ids);
     }
 
     template <typename First, typename ... Rest>
-    void copy_interfaces(GUID * ids, std::enable_if_t<!is_cloaked<First>::value> * = nullptr) const noexcept
+    void copy_guids(GUID * ids, std::enable_if_t<impl::is_cloaked_v<First>> * = nullptr) const noexcept
+    {
+        copy_guids<Rest ...>(ids);
+    }
+
+    template <typename First, typename ... Rest>
+    void copy_guids(GUID * ids, std::enable_if_t<!impl::is_cloaked_v<First>> * = nullptr) const noexcept
     {
         *ids++ = __uuidof(abi<First>);
-        copy_interfaces<Rest ...>(ids);
+        copy_guids<Rest ...>(ids);
     }
 
     template <int = 0>
-    constexpr bool is_inspectable() const noexcept
+    static constexpr bool is_inspectable() noexcept
     {
         return false;
     }
 
     template <typename First, typename ... Rest>
-    constexpr bool is_inspectable() const noexcept
+    static constexpr bool is_inspectable() noexcept
     {
-        return std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>> || is_inspectable<Rest ...>();
-    }
-
-    template <typename First, typename ... Rest>
-    auto find_unknown() const noexcept
-    {
-        return impl::abi_cast<impl::uncloak_t<First>>(this);
+        return std::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
     }
 
     template <int = 0>
-    auto find_inspectable() const noexcept
+    static constexpr bool is_non_agile() noexcept
+    {
+        return false;
+    }
+
+    template <typename First, typename ... Rest>
+    static constexpr bool is_non_agile() noexcept
+    {
+        return std::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
+    }
+
+    template <int = 0>
+    ABI::Windows::IInspectable * find_inspectable() const noexcept
     {
         return nullptr;
     }
 
     template <typename First, typename ... Rest>
-    auto find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
-        return impl::abi_cast<impl::uncloak_t<First>>(this);
+        return to_abi<First>(this);
     }
 
     template <typename First, typename ... Rest>
-    auto find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<impl::uncloak_t<First>>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return find_inspectable<Rest ...>();
     }
@@ -113,134 +393,39 @@ class __declspec(novtable) implements : public impl::derive_from<T, Interfaces> 
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<std::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
-        if (id == __uuidof(abi<impl::uncloak_t<First>>))
+        return find_interface<Rest ...>(id);
+    }
+
+    template <typename First, typename ... Rest>
+    void * find_interface(const GUID & id, std::enable_if_t<!std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    {
+        if (id == __uuidof(abi<First>))
         {
-            return impl::abi_cast<impl::uncloak_t<First>>(this);
+            return to_abi<First>(this);
         }
 
         return find_interface<Rest ...>(id);
     }
 
-protected:
-
-    std::atomic<uint32_t> m_references{1};
-
-    implements() noexcept = default;
-
-    void * query_interface(const GUID & id) noexcept
+    ::IUnknown * get_unknown() const noexcept
     {
-        if (id == __uuidof(IUnknown) || id == __uuidof(::IAgileObject))
-        {
-            return find_unknown<Interfaces ...>();
-        }
-
-        if (is_inspectable<Interfaces ...>() && id == __uuidof(ABI::Windows::IInspectable))
-        {
-            return find_inspectable<Interfaces ...>();
-        }
-
-        return find_interface<Interfaces ...>(id);
+        return to_abi<first_interface>(this);
     }
 
-public:
-
-    using default_interface = typename first<Interfaces ...>::type;
-
-    implements(const implements &) = delete;
-    implements & operator=(const implements &) = delete;
-
-    auto impl_unknown() const noexcept
-    {
-        return static_cast<IUnknown *>(find_unknown<Interfaces ...>());
-    }
-
-    operator Windows::IUnknown() const noexcept
-    {
-        return impl::winrt_cast<Windows::IUnknown>(static_cast<IUnknown *>(find_unknown<Interfaces ...>()));
-    }
-
-    operator Windows::IInspectable() const noexcept
-    {
-        return impl::winrt_cast<Windows::IInspectable>(static_cast<ABI::Windows::IInspectable *>(find_inspectable<Interfaces ...>()));
-    }
-
-    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
-    {
-        *object = query_interface(id);
-
-        if (*object == nullptr)
-        {
-            return E_NOINTERFACE;
-        }
-
-        static_cast<IUnknown *>(*object)->AddRef();
-        return S_OK;
-    }
-
-    unsigned long __stdcall AddRef() noexcept override
-    {
-        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-    }
-
-    unsigned long __stdcall Release() noexcept override
-    {
-        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
-
-        if (remaining == 0)
-        {
-            std::atomic_thread_fence(std::memory_order_acquire);
-            delete static_cast<T *>(this);
-        }
-
-        return remaining;
-    }
-
-    hstring RuntimeClassName()
+    hstring GetRuntimeClassName() const
     {
         throw hresult_not_implemented();
     }
 
-    HRESULT __stdcall get_RuntimeClassName(HSTRING * name) noexcept
+    Windows::TrustLevel GetTrustLevel() const noexcept
     {
-        try
-        {
-            *name = detach(static_cast<T *>(this)->RuntimeClassName());
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
+        return Windows::TrustLevel::BaseTrust;
     }
 
-    HRESULT __stdcall get_Iids(uint32_t * count, GUID ** array) noexcept
-    {
-        *count = 0;
-        *array = nullptr;
+    template <typename D, typename I>
+    friend struct impl::produce_base;
 
-        const uint32_t localCount = uncloaked_interfaces<Interfaces ...>();
-
-        if (0 == localCount)
-        {
-            return S_OK;
-        }
-
-        GUID * localArray = static_cast<GUID *>(CoTaskMemAlloc(sizeof(GUID) * localCount));
-
-        if (nullptr == localArray)
-        {
-            return E_OUTOFMEMORY;
-        }
-
-        copy_interfaces<Interfaces ...>(localArray);
-
-        *count = localCount;
-        *array = localArray;
-        return S_OK;
-    }
-
-    HRESULT __stdcall get_TrustLevel(Windows::TrustLevel * trustLevel) noexcept
-    {
-        *trustLevel = Windows::TrustLevel::BaseTrust;
-        return S_OK;
-    }
+    std::atomic<uint32_t> m_references { 1 };
 };

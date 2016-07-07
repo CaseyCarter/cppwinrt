@@ -1,6 +1,6 @@
 
-template <typename T, typename ... R>
-struct overrides : implements<T, R ...>
+template <typename D, typename ... R>
+struct overrides : implements<D, R ...>
 {
     template <typename Qi>
     Qi as() const
@@ -8,17 +8,16 @@ struct overrides : implements<T, R ...>
         return m_inner.as<Qi>();
     }
 
-    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
+    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
     {
-        *object = query_interface(id);
+        HRESULT result = implements<D, R ...>::QueryInterface(id, object);
 
-        if (*object == nullptr)
+        if (result == E_NOINTERFACE)
         {
-            return m_inner->QueryInterface(id, object);
+            result = m_inner->QueryInterface(id, object);
         }
 
-        static_cast<IUnknown *>(*object)->AddRef();
-        return S_OK;
+        return result;
     }
 
 protected:

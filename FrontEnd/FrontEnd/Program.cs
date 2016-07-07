@@ -14,21 +14,21 @@ namespace Microsoft.Wcl
     {
         static int Main(string[] args)
         {
-            if (Debugger.IsAttached)
-            {
-                args = new string[] { @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
-                @"D:\testmetadata\Windows.Devices.Sms.LegacySmsApiContract.winmd",
-                @"-db",
-                @"d:\modern\testdatabaseoutput.db" };
+            //if (Debugger.IsAttached)
+            //{
+            //    args = new string[] { @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
+            //    @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
+            //    @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
+            //    @"D:\testmetadata\Windows.Devices.Sms.LegacySmsApiContract.winmd",
+            //    @"-db",
+            //    @"d:\modern\testdatabaseoutput.db" };
 
-                int value = ProcessMain(args);
-                FrontEndConfiguration.Output.WriteLine("Done");
-                Console.ReadKey();
-                return value;
-            }
-            else
+            //    int value = ProcessMain(args);
+            //    FrontEndConfiguration.Output.WriteLine("Done");
+            //    Console.ReadKey();
+            //    return value;
+            //}
+            //else
             {
                 try
                 {

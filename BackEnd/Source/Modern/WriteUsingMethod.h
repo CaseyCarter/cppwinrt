@@ -1,1 +1,1 @@
-    using impl_consume_%::%;
+    using impl_%::%;
