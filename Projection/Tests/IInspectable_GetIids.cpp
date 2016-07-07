@@ -23,7 +23,7 @@ struct Test_GetIids : implements<Test_GetIids,
 {
     hstring ToString() { return{}; }
     void Close() {}
-    HRESULT get_DesignModeEnabled(bool * result) { *result = false; return S_OK; }
+    HRESULT __stdcall get_DesignModeEnabled(bool * result) { *result = false; return S_OK; }
     HRESULT __stdcall abi_Invoke() override { return S_OK; }
 };
 
