@@ -14,21 +14,54 @@ namespace Microsoft.Wcl
     {
         static int Main(string[] args)
         {
-            //if (Debugger.IsAttached)
-            //{
-            //    args = new string[] { @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
-            //    @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
-            //    @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
-            //    @"D:\testmetadata\Windows.Devices.Sms.LegacySmsApiContract.winmd",
-            //    @"-db",
-            //    @"d:\modern\testdatabaseoutput.db" };
+            if (Debugger.IsAttached)
+            {
+                args = new string[] {
+                // For reference, the below 3 are the smallest set that can be used to satisfy the dependencies needed by universal api contract
+                @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
+                @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
+                @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
+                // The below is a full set of the SDK as it was in TH2.
+                //@"-winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Calls.CallsPhoneContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Calls.CallsVoipContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Calls.LockScreenCallContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Resources.Management.ResourceIndexerContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Search.SearchContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.Custom.CustomDeviceContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.DevicesLowLevelContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.Printers.Extensions.ExtensionsContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.Printers.PrintersContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.Scanners.ScannerDeviceContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Devices.Sms.LegacySmsApiContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Foundation.FoundationContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Foundation.UniversalApiContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Gaming.Preview.GamesEnumerationContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Graphics.Printing3D.Printing3DContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Media.Playlists.PlaylistsContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Media.Protection.ProtectionRenewalContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Networking.Connectivity.WwanContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Security.EnterpriseData.EnterpriseDataContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Services.Maps.GuidanceContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Services.Maps.LocalSearchContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.System.SystemManagementContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.System.UserProfile.UserProfileContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd",
+                //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd",
+                @"-db",
+                @"d:\modern\testdatabaseoutput.db" };
 
-            //    int value = ProcessMain(args);
-            //    FrontEndConfiguration.Output.WriteLine("Done");
-            //    Console.ReadKey();
-            //    return value;
-            //}
-            //else
+                int value = ProcessMain(args);
+                FrontEndConfiguration.Output.WriteLine("Done");
+                Console.ReadKey();
+                return value;
+            }
+            else
             {
                 try
                 {

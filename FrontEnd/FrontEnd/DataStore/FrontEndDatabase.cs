@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using System.Data;
 using Microsoft.Wcl.Projection;
+using Microsoft.Wcl.Parsers;
 
 namespace Microsoft.Wcl.DataStore
 {
@@ -44,6 +45,10 @@ namespace Microsoft.Wcl.DataStore
         private SQLiteCommand StructFieldCommand { get; set; }
 
         private SQLiteCommand GenericInterfacesCommand { get; set; }
+
+        private SQLiteCommand NamespaceToTypeCategoryDependencyCommand { get; set; }
+
+        private SQLiteCommand NamespaceToGenericInterfaceDepedencyCommand { get; set; }
 
         private SQLiteTransaction Transaction { get; set; }
 
@@ -88,6 +93,8 @@ namespace Microsoft.Wcl.DataStore
             this.StructCommand = this.Database.CreateCommand();
             this.StructFieldCommand = this.Database.CreateCommand();
             this.GenericInterfacesCommand = this.Database.CreateCommand();
+            this.NamespaceToTypeCategoryDependencyCommand = this.Database.CreateCommand();
+            this.NamespaceToGenericInterfaceDepedencyCommand = this.Database.CreateCommand();
 
             var list = new[]
             {
@@ -103,7 +110,9 @@ namespace Microsoft.Wcl.DataStore
                 new { Command = EnumFieldCommand,  TableName = "Enumerators",   ColumnNames =  new string []{ "Name", "Value", "EnumerationId", "Deprecated" } },
                 new { Command = StructCommand,  TableName = "Structures",   ColumnNames =  new string []{ "FullName", "Name", "Depends", "Deprecated" } },
                 new { Command = StructFieldCommand,  TableName = "Fields",   ColumnNames =  new string []{ "Name", "Type", "StructureId" } },
-                new { Command = GenericInterfacesCommand,  TableName = "GenericInterfaces",   ColumnNames =  new string []{ "FullName", "Name", "Uuid", "MetadataFullNameInDotForm" } },
+                new { Command = GenericInterfacesCommand,  TableName = "GenericInterfaces",   ColumnNames =  new string []{ "FullName", "Name", "Uuid", "MetadataFullNameInDotForm", "MetadataFullNameInCppForm", "Depth" } },
+                new { Command = NamespaceToTypeCategoryDependencyCommand,  TableName = "NamespaceToTypeCategoryDependency",   ColumnNames =  new string []{ "Namespace", "DependentNamespace", "TypeCategory" } },
+                new { Command = NamespaceToGenericInterfaceDepedencyCommand,  TableName = "NamespaceToGenericInterfaceDependency",   ColumnNames =  new string []{ "Namespace", "GenericInterfaceId" } },
             };
 
             foreach (var item in list)
@@ -287,10 +296,40 @@ namespace Microsoft.Wcl.DataStore
         {
             watch.Start();
 
-            object[] values = { info.FullName, info.Name, info.Uuid, info.MetadataFullTypeNameInDotForm };
+            object[] values = { info.FullName, info.Name, info.Uuid, info.MetadataFullTypeNameInDotForm, info.MetadataFullTypeNameInCppForm, info.Depth };
             FrontEndDatabase.UpdateCommandValues(this.GenericInterfacesCommand, values);
             var insertedCount = this.GenericInterfacesCommand.ExecuteNonQuery();
             this.ThrowIfCommandQueryFailed(insertedCount, 1, this.GenericInterfacesCommand.CommandText);
+
+            watch.Stop();
+        }
+
+        public void InsertNamespaceToTypeCategoryDependency(string topLevelNamespaceName, string dependentNamespace, IList<TypeCategory> dependentTypeCategories)
+        {
+            watch.Start();
+
+            foreach (var typeCategory in dependentTypeCategories)
+            {
+                object[] values = { topLevelNamespaceName, dependentNamespace, typeCategory };
+                FrontEndDatabase.UpdateCommandValues(this.NamespaceToTypeCategoryDependencyCommand, values);
+                var insertedCount = this.NamespaceToTypeCategoryDependencyCommand.ExecuteNonQuery();
+                this.ThrowIfCommandQueryFailed(insertedCount, 1, this.NamespaceToTypeCategoryDependencyCommand.CommandText);
+            }
+
+            watch.Stop();
+        }
+
+        public void InsertNamespaceToGenericInterfaceDependency(string namespaceName, IList<string> dependentGenericInterfaces)
+        {
+            watch.Start();
+
+            foreach (var item in dependentGenericInterfaces)
+            {
+                object[] values = { namespaceName, item };
+                FrontEndDatabase.UpdateCommandValues(this.NamespaceToGenericInterfaceDepedencyCommand, values);
+                var insertedCount = this.NamespaceToGenericInterfaceDepedencyCommand.ExecuteNonQuery();
+                this.ThrowIfCommandQueryFailed(insertedCount, 1, this.NamespaceToGenericInterfaceDepedencyCommand.CommandText);
+            }
 
             watch.Stop();
         }
@@ -332,6 +371,8 @@ namespace Microsoft.Wcl.DataStore
                 info.FullName = fullTypeName;
                 info.Name = TypeNameUtilities.GetIndexOfTypeName(openInterfaceFullTypeName);
                 info.MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(fullTypeName);
+                info.MetadataFullTypeNameInCppForm = fullTypeName;
+                info.Depth = GenericInterfaceParser.GetGenericInterfaceDepthness(fullTypeName);
 
                 // Insert to database is derefed until uuid are calculated. This avoids insert + update.
                 this.GenericInterfacesRepository.Add(fullTypeName, info);
@@ -895,6 +936,8 @@ namespace Microsoft.Wcl.DataStore
 
             DELETE FROM Structures WHERE FullName LIKE '%Contract';
 
+            UPDATE NamespaceToGenericInterfaceDependency SET GenericInterfaceId = (SELECT RowId FROM GenericInterfaces WHERE MetadataFullNameInCppForm = GenericInterfaceId);
+
             -- Deal with parameters where the type is array. Current compiler sets those methods as Deprecated.
             -- UPDATE Methods SET Deprecated = 1 WHERE RowId IN (SELECT MethodId FROM Parameters WHERE Flags & 262144);
             ";
@@ -970,7 +1013,9 @@ namespace Microsoft.Wcl.DataStore
 	            FullName,
 	            Name,
 	            Uuid,
-                MetadataFullNameInDotForm
+                MetadataFullNameInDotForm,
+                MetadataFullNameInCppForm,
+                Depth
             );
 
             create table Methods
@@ -1034,6 +1079,19 @@ namespace Microsoft.Wcl.DataStore
 	            Type,
 	            Category,
 	            StructureId
+            );
+
+            create table NamespaceToTypeCategoryDependency
+            (
+                Namespace,
+                DependentNamespace,
+                TypeCategory
+            );
+
+            create table NamespaceToGenericInterfaceDependency
+            (
+                Namespace,
+                GenericInterfaceId
             );";
     }
 }

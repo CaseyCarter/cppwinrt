@@ -54,8 +54,8 @@ namespace Microsoft.Wcl.Parsers
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IMapView`2",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
-                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IKeyValuePair`2", Format =  StringFormats.OpenGenericDependency1 },
-                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IIterable`1", Format =  StringFormats.OpenGenericDependency2 }, } },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IIterable`1", Format =  StringFormats.OpenGenericDependency2 },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IKeyValuePair`2", Format =  StringFormats.OpenGenericDependency1 }, } },
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IObservableMap`2",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
@@ -74,6 +74,12 @@ namespace Microsoft.Wcl.Parsers
             var list = new List<GenericInterfaceInfo>();
 
             GenerateDependencyGenericInterfacesHelper(info, list);
+
+            // Generation is done from top to bottom of the graph,
+            // but definition needs to be done from bottom to top.
+            // Return the list in reverse order so that back end get's them in the order
+            // that they are needed from the compiler POV.
+            list.Reverse();
 
             return list;
         }
@@ -114,7 +120,9 @@ namespace Microsoft.Wcl.Parsers
                             {
                                 FullName = newDependency,
                                 Name = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(newDependency),
-                                MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(newDependency)
+                                MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(newDependency),
+                                MetadataFullTypeNameInCppForm = newDependency,
+                                Depth = GenericInterfaceParser.GetGenericInterfaceDepthness(newDependency)
                             };
 
                             list.Add(newInfo);

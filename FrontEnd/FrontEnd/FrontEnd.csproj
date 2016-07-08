@@ -82,6 +82,9 @@
     <Compile Include="Arguments\ArgumentValidator.cs" />
     <Compile Include="Arguments\ResponseFile.cs" />
     <Compile Include="HResultConstants.cs" />
+    <Compile Include="NamespaceDependencies\NamespaceDependenciesResolver.cs" />
+    <Compile Include="NamespaceDependencies\NamespaceToGenericInterfacesDependencyResolver.cs" />
+    <Compile Include="NamespaceDependencies\NamespaceToTypeCategoryDependencyResolver.cs" />
     <Compile Include="Parsers\GenericIntefacesPreProcessor.cs" />
     <Compile Include="DataStore\InfoObjects.cs" />
     <Compile Include="Parsers\GenericInterfaceParser.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Parsers\GenericInterfacesIIDsGenerator.cs" />
     <Compile Include="Parsers\ImplicitGenericInterfacesGenerator.cs" />
     <Compile Include="Parsers\InfoObjectTypeDefinition.cs" />
+    <Compile Include="Parsers\InnerGenericInterfacesGeneratator.cs" />
     <Compile Include="Parsers\MetadataParserHelpers.cs" />
     <Compile Include="Parsers\TypeModifier.cs" />
     <Compile Include="Projection\MetadataTypeToProjectedTypeConverter.cs" />

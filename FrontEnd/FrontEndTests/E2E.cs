@@ -9,7 +9,7 @@ namespace Microsoft.Wtl.Tests
     {
         public E2E()
         {
-            
+
         }
 
         [TestInitialize]
@@ -163,6 +163,26 @@ namespace Microsoft.Wtl.Tests
                 @"TestData\E2E",
                 "GenericInterfaces.test",
                 "SELECT * FROM GenericInterfaces ORDER BY FullName;");
+        }
+
+        [TestMethod]
+        public void ParseNamespaceToTypeCategoryDependency()
+        {
+            MetadataTestHelper.VerifyDatabaseByQuery(@"TestData\E2E",
+                "NamespaceToTypeCategoryDependency.base",
+                @"TestData\E2E",
+                "NamespaceToTypeCategoryDependency.test",
+                "SELECT * FROM NamespaceToTypeCategoryDependency;");
+        }
+
+        [TestMethod]
+        public void ParseNamespaceToGenericInterfaceDependency()
+        {
+            MetadataTestHelper.VerifyDatabaseByQuery(@"TestData\E2E",
+                "NamespaceToGenericInterfaceDependency.base",
+                @"TestData\E2E",
+                "NamespaceToGenericInterfaceDependency.test",
+                "SELECT * FROM NamespaceToGenericInterfaceDependency;");
         }
     }
 }

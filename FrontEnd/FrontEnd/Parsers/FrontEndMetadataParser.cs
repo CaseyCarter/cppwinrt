@@ -44,7 +44,6 @@ namespace Microsoft.Wcl.Parsers
                 }
 
                 watch.Stop();
-                FrontEndConfiguration.Output.WriteLine(StringMessageFormats.TimeInsertingToDatabase, FrontEndDatabase.watch.ElapsedMilliseconds);
                 FrontEndConfiguration.Output.WriteLine(StringMessageFormats.TimeProcessingMetadata, watch.ElapsedMilliseconds);
             }
             finally

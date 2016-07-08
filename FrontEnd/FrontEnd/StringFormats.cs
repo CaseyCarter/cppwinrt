@@ -31,6 +31,7 @@ namespace Microsoft.Wcl
         public const string CouldNotParseWinmd = "Could not parse winmd {0}";
         public const string CouldNotFindFriendlyMethodNameInRepository = "Could not find friendly method name information in the repository for method {0}";
         public const string ResponseFileNotFound = "Could not find response file {0}";
+        public const string CouldNotGetArgumentCountFromGenericType = "Could not get argument count from generic type {0}";
     }
 
     internal static class StringFormats
@@ -57,5 +58,7 @@ namespace Microsoft.Wcl
         public const string TotalTimeToProcessInput = "Total time {0}ms";
         public const string SemanticChecks = "Running semantic checks";
         public const string TimeToRunSemanticChecks = "Time to run semantic checks {0}ms";
+        public const string ResolvingNamespaceDependencies = "Resolving namespace dependencies";
+        public const string TimeToResolveNamespaceDependencies = "Time to resolve namespace dependencies {0}ms";
     }
 }

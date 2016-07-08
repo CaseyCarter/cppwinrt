@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using Microsoft.Wcl.Projection;
 using System.Collections.Generic;
 
 namespace Microsoft.Wcl.DataStore
@@ -11,6 +11,8 @@ namespace Microsoft.Wcl.DataStore
         void InsertStructInfo(StructInfo info);
         void InsertEnumInfo(EnumInfo info);
         void InsertGenericInterfaceInfo(GenericInterfaceInfo info);
+        void InsertNamespaceToTypeCategoryDependency(string topLevelNamespaceName, string dependentNamespace, IList<TypeCategory> dependentTypeCategories);
+        void InsertNamespaceToGenericInterfaceDependency(string namespaceName, IList<string> dependentGenericInterfaces);
         void UpdateSchema();
         void ReconcileData();
         void Save();

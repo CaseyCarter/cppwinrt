@@ -91,8 +91,11 @@
     <Compile Include="DatabaseTests.cs" />
     <Compile Include="EnumerationsTests.cs" />
     <Compile Include="FrontEndPhase1Tests.cs" />
+    <Compile Include="ImplicitGenericInterfaces.cs" />
     <Compile Include="InterfaceTests.cs" />
     <Compile Include="MetadataTestHelper.cs" />
+    <Compile Include="NamespaceToGenericInterfaceDependencyTests.cs" />
+    <Compile Include="NamespaceToTypeCategoryDependencyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponseFileTests.cs" />
     <Compile Include="RuntimeclassTests.cs" />
@@ -125,6 +128,8 @@
     <None Include="TestData\E2E\GenericInterfaces.base" />
     <None Include="TestData\E2E\Interfaces.base" />
     <None Include="TestData\E2E\Methods.base" />
+    <None Include="TestData\E2E\NamespaceToGenericInterfaceDependency.base" />
+    <None Include="TestData\E2E\NamespaceToTypeCategoryDependency.base" />
     <None Include="TestData\E2E\Parameters.base" />
     <None Include="TestData\E2E\RequiredInterfaces.base" />
     <None Include="TestData\E2E\Structures.base" />
@@ -137,6 +142,9 @@
     <None Include="TestData\InterfacesInput\Interface1_Methods.base" />
     <None Include="TestData\InterfacesInput\Interface1_Parameters.base" />
     <None Include="TestData\InterfacesInput\Interface1_RequiredInterfaces.base" />
+    <None Include="TestData\NamespaceToGenericInterfaceDependencyInput\NamespaceToGenericInterfaceDependency1.base" />
+    <None Include="TestData\NamespaceToGenericInterfaceDependencyInput\NamespaceToGenericInterfaceDependency2.base" />
+    <None Include="TestData\NamespaceToTypeCategoryDependencyInput\NamespaceToTypeCategoryDependency1.base" />
     <None Include="TestData\ParameterizedTypeIIDInput\ParameterizedTypeIID_Basic.base" />
     <None Include="TestData\PlatformVersion\ClassConstructors.base" />
     <None Include="TestData\PlatformVersion\Classes.base" />

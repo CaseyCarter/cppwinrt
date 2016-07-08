@@ -1,8 +1,6 @@
 ﻿using Microsoft.Wcl.DataStore;
-using Microsoft.Wcl.ParameterizedTypeInstanceIID;
+using Microsoft.Wcl.NamespaceDependencies;
 using Microsoft.Wcl.Parsers;
-using System;
-using System.Diagnostics;
 
 namespace Microsoft.Wcl.Steps
 {
@@ -26,7 +24,14 @@ namespace Microsoft.Wcl.Steps
             var dataStorePreProcessor = new GenericIntefacesPreProcessor(configuration);
             dataStorePreProcessor.Run();
 
+            // Resolve misc dependencies namespaces have, like generic interfaces, other namespaces and such.
+            // *** NOTE: This has to be the last action within this step because it uses the generic interfaces added in previous lines.
+            var namespaceDependepenciesResolver = new NamespaceDependenciesResolver(this.Configuration);
+            namespaceDependepenciesResolver.ResolveAndInsertIntoRepository();
+
             this.Configuration.DataStore.UpdateSchema();
+
+            FrontEndConfiguration.Output.WriteLine(StringMessageFormats.TimeInsertingToDatabase, FrontEndDatabase.watch.ElapsedMilliseconds);
         }
 
         private FrontEndConfiguration Configuration { get; set; }

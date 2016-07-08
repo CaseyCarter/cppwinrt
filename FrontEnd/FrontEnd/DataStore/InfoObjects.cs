@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Wcl.Projection;
+using System;
 using System.Collections.Generic;
 
 namespace Microsoft.Wcl.DataStore
@@ -150,8 +151,40 @@ namespace Microsoft.Wcl.DataStore
         public string FullName;
         public int Name;
         public string Uuid;
+        public int Depth;
 
-        // Not in the database.
+        
         public string MetadataFullTypeNameInDotForm;
+        public string MetadataFullTypeNameInCppForm;
+
+        public List<GenericInterfaceInfo> ImplicitGenericInterfaces;
+        public List<GenericInterfaceInfo> InnerGenericInterfaces;
+    }
+
+    class NamespaceDependencyInfo
+    {
+        /// <summary>
+        /// Top level namespace (refered as A in all comments below).
+        /// </summary>
+        public string NamespaceName;
+
+        /// <summary>
+        /// Namespace A depends on Namespace B. Namespace B uses X Type Categories.
+        /// </summary>
+        public Dictionary<string, NamespaceToTypeCategoryDependencyInfoEntry> DependentNamespaceTypeCategoriesTable = new Dictionary<string, NamespaceToTypeCategoryDependencyInfoEntry>();
+
+        /// <summary>
+        /// Namespace A depends on X Generic Interfaces
+        /// </summary>
+        public List<string> DependentGenericInterfaces = new List<string>();
+
+        /// <summary>
+        /// Namespace B uses X Type Categories
+        /// </summary>
+        public class NamespaceToTypeCategoryDependencyInfoEntry
+        {
+            public string DependentNamespaceName;
+            public List<TypeCategory> Categories = new List<TypeCategory>();
+        }
     }
 }

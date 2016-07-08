@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Microsoft.Wcl.Steps
+﻿namespace Microsoft.Wcl.Steps
 {
     /// <summary>
     /// Step 3 deals with reconciling data so that it can be consumed by the back end when the projection is built.

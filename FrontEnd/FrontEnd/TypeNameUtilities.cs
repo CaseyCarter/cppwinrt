@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Microsoft.Wcl
 {
@@ -30,10 +26,25 @@ namespace Microsoft.Wcl
             return fullTypeName.LastIndexOf("::");
         }
 
+        public static bool IsTypeInANamespace(string fullTypeName)
+        {
+            return fullTypeName.Contains("::");
+        }
+
         public static int GetIndexOfTypeNameForGenericInterface(string fullTypeName)
         {
             var indexLessThan = fullTypeName.IndexOf("<");
             return fullTypeName.LastIndexOf("::", indexLessThan - 1, indexLessThan);
+        }
+
+        public static string GetNamespaceNameFromType(string fullTypeName)
+        {
+            return fullTypeName.Substring(0, GetIndexOfTypeName(fullTypeName));
+        }
+
+        public static string GetNamespaceNameFromGenericInterface(string fullTypeName)
+        {
+            return fullTypeName.Substring(0, GetIndexOfTypeNameForGenericInterface(fullTypeName));
         }
     }
 }
