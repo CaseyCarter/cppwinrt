@@ -2,52 +2,56 @@ Modern::Test1|Windows::Foundation::IReference<Windows::Foundation::DateTime>|1
 Modern::Test2|Windows::Foundation::Collections::VectorChangedEventHandler<float>|28
 Modern::Test2|Windows::Foundation::Collections::IIterator<float>|29
 Modern::Test2|Windows::Foundation::Collections::IIterable<float>|30
+Modern::Test2|Windows::Foundation::Collections::IVectorView<float>|31
 Modern::Test2|Windows::Foundation::Collections::IVector<float>|3
 Modern::Test2|Windows::Foundation::Collections::IObservableVector<float>|2
-Modern::Test2|Windows::Foundation::Collections::IMapChangedEventArgs<hstring>|31
-Modern::Test2|Windows::Foundation::Collections::MapChangedEventHandler<hstring, Windows::Foundation::Collections::IVector<float>>|32
-Modern::Test2|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>|33
-Modern::Test2|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>>|34
-Modern::Test2|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>>|35
-Modern::Test2|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<float>>|36
-Modern::Test2|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<float>>|37
+Modern::Test2|Windows::Foundation::Collections::IMapChangedEventArgs<hstring>|32
+Modern::Test2|Windows::Foundation::Collections::MapChangedEventHandler<hstring, Windows::Foundation::Collections::IVector<float>>|33
+Modern::Test2|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>|34
+Modern::Test2|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>>|35
+Modern::Test2|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<float>>>|36
+Modern::Test2|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<float>>|37
+Modern::Test2|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<float>>|38
 Modern::Test2|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::Collections::IVector<float>>|4
-Modern::Test3|Windows::Foundation::Collections::IIterator<int32_t>|38
+Modern::Test3|Windows::Foundation::Collections::IIterator<int32_t>|39
 Modern::Test3|Windows::Foundation::Collections::IIterable<int32_t>|6
+Modern::Test3|Windows::Foundation::Collections::IVectorView<int32_t>|40
 Modern::Test3|Windows::Foundation::Collections::IVector<int32_t>|5
 Modern::Test3|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<int32_t>>|8
-Modern::Test3|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<int32_t>>>|39
+Modern::Test3|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<int32_t>>>|41
 Modern::Test3|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<int32_t>>>|9
-Modern::Test3|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<int32_t>>|40
+Modern::Test3|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<int32_t>>|42
 Modern::Test3|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<int32_t>>|7
-Modern::Test4|Windows::Foundation::Collections::IIterator<double>|41
+Modern::Test4|Windows::Foundation::Collections::IIterator<double>|43
 Modern::Test4|Windows::Foundation::Collections::IIterable<double>|11
+Modern::Test4|Windows::Foundation::Collections::IVectorView<double>|44
 Modern::Test4|Windows::Foundation::Collections::IVector<double>|10
 Modern::Test4|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<double>>|13
-Modern::Test4|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<double>>>|42
+Modern::Test4|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<double>>>|45
 Modern::Test4|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<double>>>|14
-Modern::Test4|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<double>>|43
+Modern::Test4|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<double>>|46
 Modern::Test4|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<double>>|12
-Modern::Test5|Windows::Foundation::Collections::IIterator<hstring>|44
+Modern::Test5|Windows::Foundation::Collections::IIterator<hstring>|47
 Modern::Test5|Windows::Foundation::Collections::IIterable<hstring>|16
+Modern::Test5|Windows::Foundation::Collections::IVectorView<hstring>|48
 Modern::Test5|Windows::Foundation::Collections::IVector<hstring>|15
 Modern::Test5|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<hstring>>|18
-Modern::Test5|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<hstring>>>|45
+Modern::Test5|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<hstring>>>|49
 Modern::Test5|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::Collections::IVector<hstring>>>|19
-Modern::Test5|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<hstring>>|46
+Modern::Test5|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVector<hstring>>|50
 Modern::Test5|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>|17
-Windows::Foundation::Collections|Windows::Foundation::Collections::IMapChangedEventArgs<hstring>|31
-Windows::Foundation::Collections|Windows::Foundation::Collections::MapChangedEventHandler<hstring, Windows::IInspectable>|47
+Windows::Foundation::Collections|Windows::Foundation::Collections::IMapChangedEventArgs<hstring>|32
+Windows::Foundation::Collections|Windows::Foundation::Collections::MapChangedEventHandler<hstring, Windows::IInspectable>|51
 Windows::Foundation::Collections|Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>|22
-Windows::Foundation::Collections|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|48
+Windows::Foundation::Collections|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|52
 Windows::Foundation::Collections|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|23
-Windows::Foundation::Collections|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>|49
+Windows::Foundation::Collections|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>|53
 Windows::Foundation::Collections|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|21
 Windows::Foundation::Collections|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|20
 Windows::Foundation::Collections|Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>|25
-Windows::Foundation::Collections|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>|50
+Windows::Foundation::Collections|Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>|54
 Windows::Foundation::Collections|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>|26
-Windows::Foundation::Collections|Windows::Foundation::Collections::IMapView<hstring, hstring>|51
+Windows::Foundation::Collections|Windows::Foundation::Collections::IMapView<hstring, hstring>|55
 Windows::Foundation::Collections|Windows::Foundation::Collections::IMap<hstring, hstring>|24
-Windows::Foundation::Collections|Windows::Foundation::Collections::MapChangedEventHandler<hstring, hstring>|52
+Windows::Foundation::Collections|Windows::Foundation::Collections::MapChangedEventHandler<hstring, hstring>|56
 Windows::Foundation::Collections|Windows::Foundation::Collections::IObservableMap<hstring, hstring>|27

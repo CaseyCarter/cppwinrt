@@ -42,7 +42,7 @@ namespace Microsoft.Wcl.Parsers
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IVector`1",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
-                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IIterable`1", Format =  StringFormats.OpenGenericDependency1 }, } },
+                    new GenericInterfaceDependecyItem() { Dependency = "Windows::Foundation::Collections::IVectorView`1", Format =  StringFormats.OpenGenericDependency1 }, } },
 
             new GenericInterfaceDependency() { FullTypeName = "Windows::Foundation::Collections::IIterable`1",
                 Dependencies = new List<GenericInterfaceDependecyItem>() {
