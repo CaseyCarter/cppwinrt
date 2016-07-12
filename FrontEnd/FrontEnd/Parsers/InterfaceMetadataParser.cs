@@ -33,7 +33,9 @@ namespace Microsoft.Wcl.Parsers
             CustomAttributeMetadataParser.GetGuidValue(assembly, customAttributeInfo, out guid);
 
             interfaceInfo.FullName = fullTypeName;
-            interfaceInfo.Name = TypeNameUtilities.GetIndexOfTypeName(interfaceInfo.FullName);
+            var nameIndex = TypeNameUtilities.GetIndexOfTypeName(interfaceInfo.FullName);
+            interfaceInfo.Namespace = interfaceInfo.FullName.Substring(0, nameIndex);
+            interfaceInfo.Name = interfaceInfo.FullName.Substring(nameIndex + 2);
             interfaceInfo.Uuid = guid.ToString();
             interfaceInfo.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated);
             interfaceInfo.Delegate = isDelegate;
@@ -150,6 +152,15 @@ namespace Microsoft.Wcl.Parsers
                 info.Type = returnFullTypeName;
                 info.Flags = ParameterAttributesInfo.Return;
                 info.MethodFullName = methodId;
+                info.TypeNamespace = string.Empty;
+                info.TypeName = string.Empty;
+
+                var nameIndex = TypeNameUtilities.GetIndexOfTypeName(returnFullTypeName);
+                if (nameIndex > 0)
+                {
+                    info.TypeNamespace = returnFullTypeName.Substring(0, nameIndex);
+                    info.TypeName = returnFullTypeName.Substring(nameIndex + 2);
+                }
 
                 list.Add(info);
             }
@@ -223,6 +234,13 @@ namespace Microsoft.Wcl.Parsers
             info.Type = parameterFullTypeName;
             info.Flags = parameterAttributes;
             info.MethodFullName = methodFullName;
+
+            var nameIndex = TypeNameUtilities.GetIndexOfTypeName(parameterFullTypeName);
+            if (nameIndex > 0)
+            {
+                info.TypeNamespace = parameterFullTypeName.Substring(0, nameIndex);
+                info.TypeName = parameterFullTypeName.Substring(nameIndex + 2);
+            }
 
             return info;
         }

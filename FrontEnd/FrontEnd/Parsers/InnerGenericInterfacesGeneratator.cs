@@ -21,10 +21,13 @@ namespace Microsoft.Wcl.Parsers
 
             foreach (var innerGenericType in list)
             {
+                var nameIndex = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(innerGenericType.FullTypeName);
+
                 GenericInterfaceInfo newInfo = new GenericInterfaceInfo()
                 {
                     FullName = innerGenericType.FullTypeName,
-                    Name = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(innerGenericType.FullTypeName),
+                    Namespace = innerGenericType.FullTypeName.Substring(0, nameIndex),
+                    Name = innerGenericType.FullTypeName.Substring(nameIndex + 2),
                     MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(innerGenericType.FullTypeName),
                     MetadataFullTypeNameInCppForm = innerGenericType.FullTypeName,
                     Depth = GenericInterfaceParser.GetGenericInterfaceDepthness(innerGenericType.FullTypeName)

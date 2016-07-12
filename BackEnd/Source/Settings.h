@@ -6,9 +6,14 @@ namespace Modern::Settings {
 
 extern std::string OutPath;
 extern std::string DatabasePath;
+extern const std::string PublicPath;
+extern const std::string InternalPath;
 extern Modern::Options Options;
 
 extern std::string Namespace;
+extern std::string NamespaceDotName;
+extern std::string FileNamespace;
+extern std::string FileNamespaceDotName;
 
 extern int EnumerationId;
 extern std::string EnumerationName;
@@ -29,6 +34,7 @@ extern std::string ClassDotName;
 extern unsigned ClassDotNameLength;
 extern bool ClassActivatable;
 extern std::string BaseName;
+extern std::string GenericDefine;
 
 extern int InterfaceId;
 extern std::string InterfaceName;

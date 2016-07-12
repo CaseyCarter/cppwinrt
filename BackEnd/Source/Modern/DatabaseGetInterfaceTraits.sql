@@ -1,3 +1,4 @@
-select substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace, Delegate
+select Name, Namespace, Delegate
 from Interfaces
-order by Namespace, Name
+where Namespace = ?1
+order by Name

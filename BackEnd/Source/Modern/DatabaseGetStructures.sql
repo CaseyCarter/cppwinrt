@@ -1,2 +1,3 @@
-select RowId, substr(FullName, Name + 3), substr(FullName, 1, Name)
+select RowId, Name, Namespace
 from Structures
+where Namespace = ?1

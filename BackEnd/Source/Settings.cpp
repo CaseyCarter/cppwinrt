@@ -4,10 +4,15 @@
 namespace Modern::Settings {
 
 std::string OutPath;
+const std::string PublicPath = "winrt\\";
+const std::string InternalPath = "internal\\";
 std::string DatabasePath;
 Modern::Options Options;
 
 std::string Namespace;
+std::string NamespaceDotName;
+std::string FileNamespace;
+std::string FileNamespaceDotName;
 
 int EnumerationId;
 std::string EnumerationName;
@@ -28,6 +33,7 @@ std::string ClassDotName;
 unsigned ClassDotNameLength;
 bool ClassActivatable;
 std::string BaseName;
+std::string GenericDefine;
 
 int InterfaceId;
 std::string InterfaceName;

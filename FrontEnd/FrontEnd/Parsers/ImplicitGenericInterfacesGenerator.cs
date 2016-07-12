@@ -116,10 +116,12 @@ namespace Microsoft.Wcl.Parsers
                                 newDependency = String.Format(dependency.Format, dependency.Dependency, templateArguments.ToString());
                             }
 
+                            var nameIndex = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(newDependency);
                             GenericInterfaceInfo newInfo = new GenericInterfaceInfo()
                             {
                                 FullName = newDependency,
-                                Name = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(newDependency),
+                                Namespace = newDependency.Substring(0, nameIndex),
+                                Name = newDependency.Substring(nameIndex + 2),
                                 MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(newDependency),
                                 MetadataFullTypeNameInCppForm = newDependency,
                                 Depth = GenericInterfaceParser.GetGenericInterfaceDepthness(newDependency)

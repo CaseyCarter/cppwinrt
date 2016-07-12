@@ -1,2 +1,4 @@
-select substr(FullName, Name + 3), substr(FullName, 1, Name), Uuid
+select Name, Namespace, Uuid, RowId, replace(Uuid, "-", "_")
 from GenericInterfaces
+where RowId in (select GenericInterfaceId from NamespaceToGenericInterfaceDependency where Namespace=?1)
+order by Depth

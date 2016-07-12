@@ -1,4 +1,5 @@
-select RowId, substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace, DefaultInterface
+select RowId, Name, Namespace, DefaultInterface
 from Classes
-where RowId in (select ClassId from ClassConstructors where Composable and Interface in (select InterfaceId from Methods))
-order by Namespace, Name
+where RowId in (select ClassId from ClassConstructors where Composable and Interface in (select InterfaceId from Methods)) 
+  and Namespace = ?1
+order by Name

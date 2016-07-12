@@ -23,7 +23,10 @@ namespace Microsoft.Wcl.Parsers
             var customAttributeList = CustomAttributeMetadataParser.GetAttributes(assembly, typeDef); 
 
             info.FullName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
-            info.Name = TypeNameUtilities.GetIndexOfTypeName(info.FullName);
+            var nameIndex = TypeNameUtilities.GetIndexOfTypeName(info.FullName);
+            info.Namespace = info.FullName.Substring(0, nameIndex);
+            info.Name = info.FullName.Substring(nameIndex + 2);
+
             info.Flags = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributeList, CustomAttributeKind.Flags); ;
             info.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributeList, CustomAttributeKind.Deprecated);
             info.FieldNames = this.GetFieldsNames(assembly, typeDef.GetFields(), fullTypeName);

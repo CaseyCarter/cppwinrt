@@ -98,19 +98,19 @@ namespace Microsoft.Wcl.DataStore
 
             var list = new[]
             {
-                new { Command = InterfacesCommand,  TableName = "Interfaces",   ColumnNames =  new string []{ "FullName", "Name", "Delegate", "Uuid", "Deprecated" } },
+                new { Command = InterfacesCommand,  TableName = "Interfaces",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Delegate", "Uuid", "Deprecated" } },
                 new { Command = InterfacedMethodCommand,  TableName = "Methods",   ColumnNames =  new string []{ "Name", "AbiName", "InterfaceId", "Deprecated" } },
-                new { Command = InterfaceMethodParameterCommand,  TableName = "Parameters",   ColumnNames =  new string []{ "Name", "Type", "Flags", "MethodId" } },
+                new { Command = InterfaceMethodParameterCommand,  TableName = "Parameters",   ColumnNames =  new string []{ "Name", "Type", "TypeName", "TypeNamespace", "Flags", "MethodId" } },
                 new { Command = InterfaceRequiredInterfaceCommand,  TableName = "RequiredInterfaces",   ColumnNames =  new string []{ "InterfaceId", "Requires" } },
-                new { Command = RuntimeclassCommand,  TableName = "Classes",   ColumnNames =  new string []{ "FullName", "Name", "Base", "DefaultInterface", "Activatable", "Deprecated" } },
+                new { Command = RuntimeclassCommand,  TableName = "Classes",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Base", "DefaultInterface", "Activatable", "Deprecated" } },
                 new { Command = RuntimeclassInterfaceCommand,  TableName = "ClassInterfaces",   ColumnNames =  new string []{ "ClassId", "Interface", "IsDefault", "Overridable", "Protected" } },
                 new { Command = RuntimeclassStaticInterfaceCommand,  TableName = "ClassStatics",   ColumnNames =  new string []{ "ClassId", "Interface" } },
                 new { Command = RuntimeclassConstructorInterfaceCommand,  TableName = "ClassConstructors",   ColumnNames =  new string []{ "ClassId", "Interface", "Composable", "Protected" } },
-                new { Command = EnumCommand,  TableName = "Enumerations",   ColumnNames =  new string []{ "FullName", "Name", "Flags", "Deprecated" } },
+                new { Command = EnumCommand,  TableName = "Enumerations",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Flags", "Deprecated" } },
                 new { Command = EnumFieldCommand,  TableName = "Enumerators",   ColumnNames =  new string []{ "Name", "Value", "EnumerationId", "Deprecated" } },
-                new { Command = StructCommand,  TableName = "Structures",   ColumnNames =  new string []{ "FullName", "Name", "Depends", "Deprecated" } },
-                new { Command = StructFieldCommand,  TableName = "Fields",   ColumnNames =  new string []{ "Name", "Type", "StructureId" } },
-                new { Command = GenericInterfacesCommand,  TableName = "GenericInterfaces",   ColumnNames =  new string []{ "FullName", "Name", "Uuid", "MetadataFullNameInDotForm", "MetadataFullNameInCppForm", "Depth" } },
+                new { Command = StructCommand,  TableName = "Structures",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Depends", "Deprecated" } },
+                new { Command = StructFieldCommand,  TableName = "Fields",   ColumnNames =  new string []{ "Name", "Type", "TypeNamespace", "TypeName", "StructureId" } },
+                new { Command = GenericInterfacesCommand,  TableName = "GenericInterfaces",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Uuid", "MetadataFullNameInDotForm", "MetadataFullNameInCppForm", "Depth" } },
                 new { Command = NamespaceToTypeCategoryDependencyCommand,  TableName = "NamespaceToTypeCategoryDependency",   ColumnNames =  new string []{ "Namespace", "DependentNamespace", "TypeCategory" } },
                 new { Command = NamespaceToGenericInterfaceDepedencyCommand,  TableName = "NamespaceToGenericInterfaceDependency",   ColumnNames =  new string []{ "Namespace", "GenericInterfaceId" } },
             };
@@ -138,7 +138,7 @@ namespace Microsoft.Wcl.DataStore
         {
             watch.Start();
 
-            object[] values = { info.FullTypeName, info.Name, info.Base, info.DefaultInterface, info.Activatable, info.Deprecated };
+            object[] values = { info.FullTypeName, info.Namespace, info.Name, info.Base, info.DefaultInterface, info.Activatable, info.Deprecated };
 
             FrontEndDatabase.UpdateCommandValues(this.RuntimeclassCommand, values);
             var rowId = (long)this.RuntimeclassCommand.ExecuteScalar();
@@ -189,7 +189,7 @@ namespace Microsoft.Wcl.DataStore
         {
             watch.Start();
 
-            object[] values = { info.FullName, info.Name, info.Delegate, info.Uuid, info.Deprecated };
+            object[] values = { info.FullName, info.Namespace, info.Name, info.Delegate, info.Uuid, info.Deprecated };
 
             FrontEndDatabase.UpdateCommandValues(this.InterfacesCommand, values);
             var rowId = (long)this.InterfacesCommand.ExecuteScalar();
@@ -219,7 +219,7 @@ namespace Microsoft.Wcl.DataStore
         {
             foreach (var info in methodParametersInfo)
             {
-                object[] values = { info.Name, info.Type, info.Flags, methodRowId };
+                object[] values = { info.Name, info.Type, info.TypeNamespace, info.TypeName, info.Flags, methodRowId };
                 FrontEndDatabase.UpdateCommandValues(this.InterfaceMethodParameterCommand, values);
                 var insertedCount = this.InterfaceMethodParameterCommand.ExecuteNonQuery();
                 this.ThrowIfCommandQueryFailed(insertedCount, 1, this.InterfaceMethodParameterCommand.CommandText);
@@ -241,7 +241,7 @@ namespace Microsoft.Wcl.DataStore
         {
             watch.Start();
 
-            object[] values = { info.FullName, info.Name, info.Flags, info.Deprecated };
+            object[] values = { info.FullName, info.Namespace, info.Name, info.Flags, info.Deprecated };
             FrontEndDatabase.UpdateCommandValues(this.EnumCommand, values);
             var rowId = (long)this.EnumCommand.ExecuteScalar();
 
@@ -270,7 +270,7 @@ namespace Microsoft.Wcl.DataStore
         {
             watch.Start();
 
-            object[] values = { info.FullName, info.Name, info.Depends, info.Deprecated };
+            object[] values = { info.FullName, info.Namespace, info.Name, info.Depends, info.Deprecated };
             FrontEndDatabase.UpdateCommandValues(this.StructCommand, values);
             var rowId = (long)this.StructCommand.ExecuteScalar();
 
@@ -285,7 +285,7 @@ namespace Microsoft.Wcl.DataStore
         {
             foreach (var info in structFieldsInfo)
             {
-                object[] values = { info.Name, info.Type, structRowId };
+                object[] values = { info.Name, info.Type, info.TypeNamespace, info.TypeName, structRowId };
                 FrontEndDatabase.UpdateCommandValues(this.StructFieldCommand, values);
                 var insertedCount = this.StructFieldCommand.ExecuteNonQuery();
                 this.ThrowIfCommandQueryFailed(insertedCount, 1, this.StructFieldCommand.CommandText);
@@ -294,9 +294,12 @@ namespace Microsoft.Wcl.DataStore
 
         public void InsertGenericInterfaceInfo(GenericInterfaceInfo info)
         {
+            Debug.Assert(info.MetadataFullTypeNameInCppForm != null);
+            Debug.Assert(info.Depth != 0);
+
             watch.Start();
 
-            object[] values = { info.FullName, info.Name, info.Uuid, info.MetadataFullTypeNameInDotForm, info.MetadataFullTypeNameInCppForm, info.Depth };
+            object[] values = { info.FullName, info.Namespace, info.Name, info.Uuid, info.MetadataFullTypeNameInDotForm, info.MetadataFullTypeNameInCppForm, info.Depth };
             FrontEndDatabase.UpdateCommandValues(this.GenericInterfacesCommand, values);
             var insertedCount = this.GenericInterfacesCommand.ExecuteNonQuery();
             this.ThrowIfCommandQueryFailed(insertedCount, 1, this.GenericInterfacesCommand.CommandText);
@@ -369,10 +372,18 @@ namespace Microsoft.Wcl.DataStore
             {
                 var info = new GenericInterfaceInfo();
                 info.FullName = fullTypeName;
-                info.Name = TypeNameUtilities.GetIndexOfTypeName(openInterfaceFullTypeName);
+                info.Namespace = null;
+                info.Name = null;
                 info.MetadataFullTypeNameInDotForm = TypeNameUtilities.GetFullTypeNameInDotForm(fullTypeName);
                 info.MetadataFullTypeNameInCppForm = fullTypeName;
                 info.Depth = GenericInterfaceParser.GetGenericInterfaceDepthness(fullTypeName);
+                
+                var nameIndex = TypeNameUtilities.GetIndexOfTypeName(openInterfaceFullTypeName);
+                if (nameIndex > 0)
+                {
+                    info.Namespace = openInterfaceFullTypeName.Substring(0, nameIndex);
+                    info.Name = openInterfaceFullTypeName.Substring(nameIndex + 2);
+                }
 
                 // Insert to database is derefed until uuid are calculated. This avoids insert + update.
                 this.GenericInterfacesRepository.Add(fullTypeName, info);
@@ -556,6 +567,12 @@ namespace Microsoft.Wcl.DataStore
                 var typeParameter = updateCommand.CreateParameter();
                 typeParameter.ParameterName = "Type";
                 updateCommand.Parameters.Add(typeParameter);
+                var typeNamespaceParameter = updateCommand.CreateParameter();
+                typeNamespaceParameter.ParameterName = "TypeNamespace";
+                updateCommand.Parameters.Add(typeNamespaceParameter);
+                var typeNameParameter = updateCommand.CreateParameter();
+                typeNameParameter.ParameterName = "TypeName";
+                updateCommand.Parameters.Add(typeNameParameter);
                 var categoryParameter = updateCommand.CreateParameter();
                 categoryParameter.ParameterName = "Category";
                 updateCommand.Parameters.Add(categoryParameter);
@@ -575,6 +592,17 @@ namespace Microsoft.Wcl.DataStore
                     typeParameter.Value = projectedType;
                     rowIdParameter.Value = rowId;
                     categoryParameter.Value = typeCategory;
+
+                    typeNamespaceParameter.Value = null;
+                    typeNameParameter.Value = null;
+
+                    var nameIndex = TypeNameUtilities.GetIndexOfTypeNameForAnyInterface(projectedType);
+                    if (nameIndex > 0)
+                    {
+                        typeNamespaceParameter.Value = projectedType.Substring(0, nameIndex);
+                        typeNameParameter.Value = projectedType.Substring(nameIndex + 2);
+                    }
+
                     var updatedCount = updateCommand.ExecuteNonQuery();
                     this.ThrowIfCommandQueryFailed(updatedCount, 1, updateCommand.CommandText);
                 }
@@ -594,6 +622,12 @@ namespace Microsoft.Wcl.DataStore
                 var typeParameter = updateCommand.CreateParameter();
                 typeParameter.ParameterName = "Type";
                 updateCommand.Parameters.Add(typeParameter);
+                var typeNamespaceParameter = updateCommand.CreateParameter();
+                typeNamespaceParameter.ParameterName = "TypeNamespace";
+                updateCommand.Parameters.Add(typeNamespaceParameter);
+                var typeNameParameter = updateCommand.CreateParameter();
+                typeNameParameter.ParameterName = "TypeName";
+                updateCommand.Parameters.Add(typeNameParameter);
                 var rowIdParameter = updateCommand.CreateParameter();
                 rowIdParameter.ParameterName = "RowId";
                 updateCommand.Parameters.Add(rowIdParameter);
@@ -616,9 +650,19 @@ namespace Microsoft.Wcl.DataStore
                     MetadataTypeToProjectedTypeConverter.GetProjectedTypeAndCategoryFromMetadataType(type, false, this.GetRepository(), out projectedType, out typeCategory, out projectedClassType);
 
                     typeParameter.Value = projectedType;
+                    typeNamespaceParameter.Value = null;
+                    typeNameParameter.Value = null;
                     rowIdParameter.Value = rowId;
                     classTypeParameter.Value = projectedClassType;
                     typeCategoryParameter.Value = typeCategory;
+
+                    var nameIndex = TypeNameUtilities.GetIndexOfTypeNameForAnyInterface(projectedType);
+                    if (nameIndex > 0)
+                    {
+                        typeNamespaceParameter.Value = projectedType.Substring(0, nameIndex);
+                        typeNameParameter.Value = projectedType.Substring(nameIndex + 2);
+                    }
+
                     var updatedCount = updateCommand.ExecuteNonQuery();
                     this.ThrowIfCommandQueryFailed(updatedCount, 1, updateCommand.CommandText);
                 }
@@ -672,6 +716,12 @@ namespace Microsoft.Wcl.DataStore
                 var projectedTypeParameter = updateCommand.CreateParameter();
                 projectedTypeParameter.ParameterName = "ProjectedType";
                 updateCommand.Parameters.Add(projectedTypeParameter);
+                var namespaceParameter = updateCommand.CreateParameter();
+                namespaceParameter.ParameterName = "Namespace";
+                updateCommand.Parameters.Add(namespaceParameter);
+                var nameParameter = updateCommand.CreateParameter();
+                nameParameter.ParameterName = "Name";
+                updateCommand.Parameters.Add(nameParameter);
 
                 while (reader.Read())
                 {
@@ -682,6 +732,11 @@ namespace Microsoft.Wcl.DataStore
                     projectedType = TypeNameUtilities.GetFullTypeNameInCPPForm(projectedType);
                     rowIdParameter.Value = rowId;
                     projectedTypeParameter.Value = projectedType;
+
+                    var nameIndex = TypeNameUtilities.GetIndexOfTypeNameForGenericInterface(projectedType);
+                    namespaceParameter.Value = projectedType.Substring(0, nameIndex);
+                    nameParameter.Value = projectedType.Substring(nameIndex + 2);
+
                     var updatedCount = updateCommand.ExecuteNonQuery();
                     this.ThrowIfCommandQueryFailed(updatedCount, 1, updateCommand.CommandText);
                 }
@@ -741,21 +796,21 @@ namespace Microsoft.Wcl.DataStore
             -- Must be executed at least after the UPDATE ClassInterfaces query from above.
             DELETE from ClassInterfaces WHERE ClassId in (SELECT RowId FROM Classes WHERE DefaultInterface LIKE '%<%') AND NOT IsDefault AND typeof(Interface) = 'text'; 
 
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::AsyncStatus');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::AsyncStatus');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::AsyncStatus';
             DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Collections::CollectionChange');
-			DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Collections::CollectionChange';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::AttributeTargets');
+            DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Collections::CollectionChange';
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::AttributeTargets');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::AttributeTargets';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::CompositionType');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::CompositionType');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::CompositionType';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::DeprecationType');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::DeprecationType');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::DeprecationType';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::MarshalingType');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::MarshalingType');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::MarshalingType';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::Platform');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::Platform');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::Platform';
-			DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::ThreadingModel');
+            DELETE FROM Enumerators WHERE EnumerationId = (SELECT RowId FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::ThreadingModel');
             DELETE FROM Enumerations WHERE FullName = 'Windows::Foundation::Metadata::ThreadingModel';
 
             -- Temp table used to save multiple queries for the same value via a query that matches a string.
@@ -949,16 +1004,16 @@ namespace Microsoft.Wcl.DataStore
         public const string UpdateRuntimeClassDefaultInterfacesUpdateQueryText = @"UPDATE Classes SET DefaultInterface=@DefaultInterface WHERE RowId=@RowId;";
 
         public const string UpdateStructureFieldTypesSelectQueryText = @"SELECT RowId, Type, Category FROM Fields;";
-        public const string UpdateStructureFieldTypesUpdateQueryText = @"UPDATE Fields SET Type=@Type, Category=@Category WHERE RowId=@RowId;";
+        public const string UpdateStructureFieldTypesUpdateQueryText = @"UPDATE Fields SET Type=@Type, TypeNamespace=@TypeNamespace, TypeName=@TypeName, Category=@Category WHERE RowId=@RowId;";
 
         public const string UpdateParameterTypesSelectQueryText = @"SELECT Parameters.RowId, Parameters.Type, Methods.AbiName FROM Parameters, Methods WHERE Parameters.MethodId = Methods.RowId;";
-        public const string UpdateParameterTypesUpdateQueryText = @"UPDATE Parameters SET Type=@Type, ClassType=@ClassType, Category=@Category WHERE RowId=@RowId;";
+        public const string UpdateParameterTypesUpdateQueryText = @"UPDATE Parameters SET Type=@Type, TypeNamespace=@TypeNamespace, TypeName=@TypeName, ClassType=@ClassType, Category=@Category WHERE RowId=@RowId;";
 
         public const string UpdateRequiredInterfacesSelectQueryText = @"SELECT RowId, Requires FROM RequiredInterfaces WHERE instr(Requires, '<') > 0;";
         public const string UpdateRequiredInterfacesUpdateQueryText = @"UPDATE RequiredInterfaces SET Requires=@Requires WHERE RowId=@RowId;";
 
         public const string UpdateGenericInterfacesSelectQueryText = @"SELECT RowId, MetadataFullNameInDotForm FROM GenericInterfaces;";
-        public const string UpdateGenericInterfacesUpdateQueryText = @"UPDATE GenericInterfaces SET FullName=@ProjectedType WHERE RowId=@RowId;";
+        public const string UpdateGenericInterfacesUpdateQueryText = @"UPDATE GenericInterfaces SET FullName=@ProjectedType, Namespace=@Namespace, Name=@Name WHERE RowId=@RowId;";
 
         public const string CreateIndexesQueryText = @"
             create unique index ClassesIndex on Classes(FullName);
@@ -970,115 +1025,140 @@ namespace Microsoft.Wcl.DataStore
             create index ParametersIndex on Parameters(MethodId);
             create unique index StructuresIndex on Structures(FullName);
             create index FieldsIndex on Fields(StructureId);
+            create index FieldsNameIndex on Fields(Type);
+            create index ClassNamespaceIndex on Classes(Namespace);
+            create index EnumNamespaceIndex on Enumerations(Namespace);
+            create index FieldsNamespaceIndex on Fields(TypeNamespace);
+            create index InterfaceNamespaceIndex on Interfaces(Namespace);
+            create index ParameterNamespaceIndex on Parameters(TypeNamespace);
+            create index ParameterTypeIndex on Parameters(Type);
+            create index StructureNamespaceIndex on Structures(Namespace);
+            create Index ConstructorInterfaceIndex on ClassConstructors(Interface);
+            create Index ConstructorClassIndex on ClassConstructors(ClassId);
+            create Index ClassInterfaceIndex on ClassInterfaces(ClassId);
+            create Index ClassInterfaceInterfaceIndex on ClassInterfaces(Interface);
+            create Index GenericNamespaceIndex on NamespaceToTypeCategoryDependency(Namespace);
+            create Index GenericDependentNamespaceIndex on NamespaceToTypeCategoryDependency(DependentNamespace);
+            create Index GenericInterfaceNamespaceIndex on NamespaceToGenericInterfaceDependency(Namespace);
             ";
 
         public const string dbText = @"
             create table Classes
             (
-	            FullName,
-	            Name,
-	            Base,
-	            DefaultInterface default '',
-	            Activatable default 0,
-	            Deprecated
+                FullName,
+                Namespace,
+                Name,
+                Base,
+                DefaultInterface default '',
+                Activatable default 0,
+                Deprecated
             );
 
             create table Enumerations
             (
-	            FullName,
-	            Name,
-	            Flags,
-	            Deprecated
+                FullName,
+                Namespace,
+                Name,
+                Flags,
+                Deprecated
             );
 
             create table Enumerators
             (
-	            Name,
-	            Value,
-	            EnumerationId,
-	            Deprecated
+                Name,
+                Value,
+                EnumerationId,
+                Deprecated
             );
 
             create table Interfaces
             (
-	            FullName,
-	            Name,
-	            Delegate,
-	            Uuid,
-	            Deprecated
+                FullName,
+                Namespace,
+                Name,
+                Delegate,
+                Uuid,
+                Deprecated
             );
 
             create table GenericInterfaces
             (
-	            FullName,
-	            Name,
-	            Uuid,
+                FullName,
+                Namespace,
+                Name,
+                Uuid,
                 MetadataFullNameInDotForm,
                 MetadataFullNameInCppForm,
                 Depth
             );
 
+
             create table Methods
             (
-	            Name,
-	            AbiName,
-	            InterfaceId,
-	            Deprecated
+                Name,
+                AbiName,
+                InterfaceId,
+                Deprecated
             );
 
             create table Parameters
             (
-	            Name,
-	            Type,
-	            ClassType,
-	            Category,
-	            Flags,
-	            MethodId
+                Name,
+                Type,
+                TypeNamespace,
+                TypeName,
+                ClassType,
+                Category,
+                Flags,
+                MethodId
             );
 
             create table RequiredInterfaces
             (
-	            InterfaceId,
-	            Requires
+                InterfaceId,
+                Requires
             );
 
             create table ClassInterfaces
             (
-	            ClassId,
-	            Interface,
-	            IsDefault,
-	            Overridable,
-	            Protected
+                ClassId,
+                Interface,
+                IsDefault,
+                Overridable,
+                Protected
             );
 
             create table ClassStatics
             (
-	            ClassId,
-	            Interface
+                ClassId,
+                Interface
             );
 
             create table ClassConstructors
             (
-	            ClassId,
-	            Interface,
-	            Composable,
-	            Protected
+                ClassId,
+                Interface,
+                Composable,
+                Protected
             );
 
             create table Structures
             (
-	            FullName,
-	            Name,
-	            Depends default 0,
-	            Deprecated
+                FullName,
+                Namespace,
+                Name,
+                Depends default 0,
+                Deprecated
             );
 
             create table Fields
             (
-	            Name,
-	            Type,
-	            Category,
-	            StructureId
+                Name,
+                Type,
+                TypeNamespace,
+                TypeName,
+                Category,
+                StructureId
             );
 
             create table NamespaceToTypeCategoryDependency

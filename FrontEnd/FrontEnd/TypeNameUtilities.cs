@@ -36,6 +36,20 @@ namespace Microsoft.Wcl
             var indexLessThan = fullTypeName.IndexOf("<");
             return fullTypeName.LastIndexOf("::", indexLessThan - 1, indexLessThan);
         }
+        
+        public static int GetIndexOfTypeNameForAnyInterface(string fullTypeName)
+        {
+            if(fullTypeName.Contains("<"))
+            {
+                return GetIndexOfTypeNameForGenericInterface(fullTypeName);
+                
+            }
+            else
+            {
+                return GetIndexOfTypeName(fullTypeName);
+            }
+        }
+        
 
         public static string GetNamespaceNameFromType(string fullTypeName)
         {

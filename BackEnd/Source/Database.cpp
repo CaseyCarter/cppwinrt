@@ -23,7 +23,7 @@ static void Profile(void *, const char * statement, sqlite3_uint64 const ns)
 void Initialize()
 {
     db.Open(Settings::DatabasePath.c_str());
-    
+
 #if defined(WINRT_PROFILE)
     sqlite3_profile(db.Get(), Profile, nullptr);
 #endif

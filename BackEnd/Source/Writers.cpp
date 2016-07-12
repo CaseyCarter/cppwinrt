@@ -744,12 +744,9 @@ static void WriteClassConstructorDeclarations(Output & out)
               Settings::ClassName);
     }
 
-    GetClassConstructorsPublic([&]
+    GetPublicConstructorMethods([&]
     {
-        GetConstructorMethods([&]
-        {
-            WriteClassConstructor(out);
-        });
+        WriteClassConstructor(out);
     });
 }
 
@@ -799,17 +796,14 @@ static void WriteComposableConstructors(Output & out)
 {
     GetComposableConstructors([&]
     {
-        GetConstructorMethods([&]
-        {
-            Write(out,
-                  Strings::WriteComposableConstructor,
-                  Settings::ClassName,
-                  Bind(WriteComposableConstructorParameters),
-                  Settings::ClassName,
-                  Settings::InterfaceName,
-                  Settings::MethodName,
-                  Bind(WriteComposableConstructorArguments));
-        });
+        Write(out,
+            Strings::WriteComposableConstructor,
+            Settings::ClassName,
+            Bind(WriteComposableConstructorParameters),
+            Settings::ClassName,
+            Settings::InterfaceName,
+            Settings::MethodName,
+            Bind(WriteComposableConstructorArguments));
     });
 }
 
@@ -1003,31 +997,6 @@ static void WriteDelegateProducer(Output & out)
           Bind(WriteProducerCleanup));
 }
 
-static void WriteDelegateShims(Output & out)
-{
-    char const * const hasReturn = Settings::ParameterInfo.HasReturnType ? "return " : "";
-
-    Write(out,
-          Strings::WriteDelegateShims,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          hasReturn,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          Settings::DelegateName,
-          hasReturn,
-          Settings::ParameterInfo.ReturnType,
-          Settings::DelegateName,
-          Bind(WriteParameters),
-          Bind(WriteMethodBody));
-}
-
 static void WriteUsingMethodsForClass(Output & out)
 {
     GetUsingMethodsForClass([&]
@@ -1041,12 +1010,9 @@ static void WriteUsingMethodsForClass(Output & out)
 
 void WriteStaticMethodDeclarations(Output & out)
 {
-    GetStaticInterfaces([&]
+    GetStaticMethodDeclarations([&]
     {
-        GetInterfaceMethods([&]
-        {
-            WriteStaticMethodDeclaration(out);
-        });
+        WriteStaticMethodDeclaration(out);
     });
 }
 
@@ -1134,10 +1100,10 @@ void WriteStructures(Output & out)
               Bind(WriteStructureFields));
     });
 
-    out.WriteNamespace("impl");
-
     GetAbiStructures([&]
     {
+        out.WriteNamespace("impl");
+
         Write(out,
               Strings::WriteSimpleTraits,
               Settings::Namespace,
@@ -1145,21 +1111,8 @@ void WriteStructures(Output & out)
               Settings::Namespace,
               Settings::StructureName);
     });
-}
 
-void WriteAbiInterfaceDeclarations(Output & out)
-{
-    GetInterfaceDeclarations([&]
-    {
-        if (out.WriteAbiNamespace(Settings::Namespace))
-        {
-            Write(out, "\r\n");
-        }
-
-        Write(out, 
-              Strings::WriteStructureDeclaration, 
-              Settings::InterfaceName);
-    });
+    out.WriteNamespace();
 }
 
 void WriteAbiClassDeclarations(Output & out)
@@ -1175,21 +1128,8 @@ void WriteAbiClassDeclarations(Output & out)
               Settings::ClassName,
               Settings::InterfaceName);
     });
-}
 
-void WriteDeclarations(Output & out)
-{
-    GetDeclarations([&]
-    {
-        if (out.WriteNamespace(Settings::Namespace))
-        {
-            Write(out, "\r\n");
-        }
-
-        Write(out, 
-              Strings::WriteStructureDeclaration,
-              Settings::ClassName);
-    });
+    out.WriteNamespace();
 }
 
 void WriteInterfaceTraits(Output & out)
@@ -1270,11 +1210,15 @@ void WriteGenericInterfaces(Output & out)
         }
 
         Write(out,
-              Strings::WriteGenericInterface,
-              Settings::InterfaceGuid,
-              Settings::InterfaceName,
-              Settings::InterfaceName);
+            Strings::WriteGenericInterface,
+            Settings::GenericDefine,
+            Settings::GenericDefine,
+            Settings::InterfaceGuid,
+            Settings::InterfaceName,
+            Settings::InterfaceName);
     });
+
+    out.WriteNamespace();
 }
 
 void WriteInterfaceDefinitions(Output & out)
@@ -1300,13 +1244,13 @@ void WriteInterfaceDefinitions(Output & out)
         out.WriteNamespace(Settings::Namespace);
 
         Write(out,
-                Strings::WriteInterfaceDefinition,
-                Settings::InterfaceName,
-                Settings::InterfaceName,
-                Bind(WriteRequiredInterfaces),
-                Settings::InterfaceName,
-                Settings::InterfaceName,
-                Bind(WriteUsingMethodsForInterface));
+              Strings::WriteInterfaceDefinition,
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Bind(WriteRequiredInterfaces),
+              Settings::InterfaceName,
+              Settings::InterfaceName,
+              Bind(WriteUsingMethodsForInterface));
     });
 }
 
@@ -1329,36 +1273,33 @@ void WriteInterfacesMethodDefinitions(Output & out)
 {
     Settings::MethodShim = "shim()";
 
-    GetInterfaces([&]
+    GetInterfaceMethodDefinitions([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
-        GetInterfaceMethods([&]
+        Write(out,
+              Strings::WriteInterfacesMethodDefinition,
+              Settings::ParameterInfo.ReturnType,
+              Settings::InterfaceName,
+              Settings::MethodName,
+              Bind(WriteParameters),
+              Bind(WriteMethodBody));
+
+        if (StartsWith(Settings::MethodAbi, "add_"))
         {
             Write(out,
-                  Strings::WriteInterfacesMethodDefinition,
-                  Settings::ParameterInfo.ReturnType,
+                  Strings::WriteInterfacesEventMethodDefinition,
+                  Settings::InterfaceName,
                   Settings::InterfaceName,
                   Settings::MethodName,
                   Bind(WriteParameters),
-                  Bind(WriteMethodBody));
-
-            if (StartsWith(Settings::MethodAbi, "add_"))
-            {
-                Write(out,
-                      Strings::WriteInterfacesEventMethodDefinition,
-                      Settings::InterfaceName,
-                      Settings::InterfaceName,
-                      Settings::MethodName,
-                      Bind(WriteParameters),
-                      Settings::InterfaceName,
-                      Settings::Namespace,
-                      Settings::InterfaceName,
-                      Settings::MethodName,
-                      Settings::MethodName,
-                      Settings::ParameterInfo.Parameters[0].Name);
-            }
-        });
+                  Settings::InterfaceName,
+                  Settings::Namespace,
+                  Settings::InterfaceName,
+                  Settings::MethodName,
+                  Settings::MethodName,
+                  Settings::ParameterInfo.Parameters[0].Name);
+        }
     });
 }
 
@@ -1376,9 +1317,9 @@ void WriteInterfaceConsumers(Output & out)
     });
 }
 
-void WriteComposable(Output & out)
+bool WriteComposable(Output & out)
 {
-    GetClassesComposable([&]
+    return GetClassesComposable([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
@@ -1392,9 +1333,9 @@ void WriteComposable(Output & out)
     });
 }
 
-void WriteOverrides(Output & out)
+bool WriteOverrides(Output & out)
 {
-    GetOverrides([&]
+    return GetOverrides([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
@@ -1441,21 +1382,15 @@ void WriteClassDefinitions(Output & out)
                 WriteClassDefaultConstructorDefinition(out);
             }
 
-            GetClassConstructorsPublic([&]
+            GetPublicConstructorMethods([&]
             {
-                GetConstructorMethods([&]
-                {
-                    WriteClassConstructorDefinition(out);
-                });
+                WriteClassConstructorDefinition(out);
             });
         }
 
-        GetStaticInterfaces([&]
+        GetStaticMethodDeclarations([&]
         {
-            GetInterfaceMethods([&]
-            {
-                WriteStaticMethodDefinition(out);
-            });
+            WriteStaticMethodDefinition(out);
         });
     });
 }
@@ -1470,7 +1405,241 @@ void WriteDelegates(Output & out)
         out.WriteNamespace(Settings::Namespace);
 
         WriteDelegateProducer(out);
-        WriteDelegateShims(out);
+    });
+
+    out.WriteNamespace();
+}
+
+void WriteForwards(Output & out)
+{
+    GetStructures([&]
+    {
+        if (out.WriteAbiNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::StructureName);
+    });
+
+    out.WriteNamespace();
+
+    GetNonAbiStructures([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteNonAbiStructure,
+              Settings::StructureName,
+              Settings::Namespace,
+              Settings::StructureName);
+    });
+
+    GetAbiStructures([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::StructureName);
+    });
+
+    out.WriteNamespace();
+
+    GetAbiInterfaces([&]
+    {
+        if (out.WriteAbiNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::InterfaceName);
+    });
+
+    GetAbiClassDeclarations([&]
+    {
+        if (out.WriteAbiNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::ClassName);
+    });
+
+    out.WriteNamespace();
+
+    GetDelegates([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::DelegateName);
+    });
+
+    GetInterfaces([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+            Strings::WriteStructureDeclaration,
+            Settings::InterfaceName);
+    });
+
+    GetClasses([&]
+    {
+        if (out.WriteNamespace(Settings::Namespace))
+        {
+            Write(out, "\r\n");
+        }
+
+        Write(out,
+              Strings::WriteStructureDeclaration,
+              Settings::ClassName);
+    });
+
+    out.WriteNamespace();
+}
+
+void WriteInterfaceImplForwards(Output & out)
+{
+    out.WriteNamespace(Settings::Namespace);
+    Write(out, "\r\n");
+
+    GetInterfaces([&]
+    {
+        Write(out,
+              Strings::WriteInterfaceConsumerForward,
+              Settings::InterfaceName);
+    });
+
+
+    GetDelegates([&]
+    {
+        Write(out,
+              Strings::WriteDelegateForward,
+              Settings::DelegateName);
+    });
+
+    out.WriteNamespace();
+}
+
+void WriteRequiredAbiHeadersForAbi(Output & out)
+{
+    GetGenericInterfaceArguments([&]
+    {
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".abi.h");
+    });
+}
+
+void WriteRequiredAbiHeadersForInterface(Output & out)
+{
+    GetFieldNamespaces([&]
+    {
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".abi.h");
+    });
+}
+
+void WriteRequiredForwards(Output & out)
+{
+    Write(out, Strings::WriteInclude, "base.h");
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".forward.h");
+
+    GetRequiredForwards([&]
+    {
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".forward.h");
+    });
+}
+
+void WriteRequiredInterfaceIncludes(Output & out)
+{
+    GetRequiredInterfaceIncludes([&]
+    {
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".interface.h");
+    });
+}
+
+void WriteRequiredClasses(Output & out)
+{
+    std::vector<std::string> namespacesToIgnore;
+
+    GetRequiredParamImpls([&]
+    {
+        if (std::find(namespacesToIgnore.begin(), namespacesToIgnore.end(), Settings::Namespace) == namespacesToIgnore.end())
+        {
+            Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::NamespaceDotName + ".class.h");
+            namespacesToIgnore.push_back(Settings::Namespace);
+        }
+    });
+}
+
+void WriteRequiredOverrides(Output & out)
+{
+    GetClassOverrideIncludes([&]
+    {
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".override.h");
+    });
+}
+
+void WriteDelegateShims(Output & out)
+{
+    Settings::MethodShim = "(*this)";
+    Settings::MethodAbi = "abi_Invoke";
+
+    GetDelegates([&]
+    {
+        out.WriteNamespace(Settings::Namespace);
+
+        char const * const hasReturn = Settings::ParameterInfo.HasReturnType ? "return " : "";
+
+        Write(out,
+              Strings::WriteDelegateShims,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              hasReturn,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              Settings::DelegateName,
+              hasReturn,
+              Settings::ParameterInfo.ReturnType,
+              Settings::DelegateName,
+              Bind(WriteParameters),
+              Bind(WriteMethodBody));
+    });
+}
+
+void WriteDefinitionsForRequiredInterfaces(Output & out)
+{
+    GetRequiredInterfaceHeaders([&]
+    {
+        if (Settings::FileNamespace.find(Settings::Namespace) == std::string::npos)
+        {
+            Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".h");
+        }
     });
 }
 

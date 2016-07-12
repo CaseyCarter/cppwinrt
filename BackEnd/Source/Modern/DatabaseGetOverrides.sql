@@ -1,5 +1,5 @@
-select Interfaces.RowId, substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace
-from ClassInterfaces, Interfaces
-where Overridable
-and Interface = Interfaces.RowId
-order by Namespace, Name
+select RowId, Name, Namespace
+from Interfaces
+where RowId in (select Interface from ClassInterfaces where Overridable) 
+  and Namespace = ?1
+order by Name

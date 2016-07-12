@@ -24,7 +24,9 @@ namespace Microsoft.Wcl.Parsers
             var customAttributes = CustomAttributeMetadataParser.GetAttributes(assembly, typeDef.GetCustomAttributes());
 
             info.FullName = TypeNameUtilities.GetFormattedFullTypeName(namespaceName, typeName);
-            info.Name = TypeNameUtilities.GetIndexOfTypeName(info.FullName);
+            var nameIndex = TypeNameUtilities.GetIndexOfTypeName(info.FullName);
+            info.Namespace = info.FullName.Substring(0, nameIndex);
+            info.Name = info.FullName.Substring(nameIndex + 2);
             info.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated);
             info.FieldsInfo = GetStructFieldsInfo(assembly, typeDef, info.FullName, out depends);
             info.Depends = depends;

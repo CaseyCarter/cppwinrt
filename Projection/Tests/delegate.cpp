@@ -46,7 +46,7 @@ TEST_CASE("delegate,return")
             return Uri(L"http://moderncpp.com/");
         };
 
-        Windows::IInspectable result = handler();
+        IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -61,7 +61,7 @@ TEST_CASE("delegate,return")
         using namespace Windows::UI::Xaml::Controls;
 
         {
-            ListViewItemToKeyHandler handler = [] (Windows::IInspectable const &) { return L"raw"; };
+            ListViewItemToKeyHandler handler = [] (IInspectable const &) { return L"raw"; };
 
             hstring result = handler(nullptr);
 
@@ -69,7 +69,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](Windows::IInspectable const &) { return std::wstring(L"std"); };
+            ListViewItemToKeyHandler handler = [](IInspectable const &) { return std::wstring(L"std"); };
 
             hstring result = handler(nullptr);
 
@@ -77,7 +77,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](Windows::IInspectable const &)
+            ListViewItemToKeyHandler handler = [](IInspectable const &)
             {
                 return hstring_ref(L"hstring_ref");
             };
@@ -88,7 +88,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](Windows::IInspectable const &)
+            ListViewItemToKeyHandler handler = [](IInspectable const &)
             {
                 return hstring(L"hstring");
             };
@@ -112,11 +112,11 @@ TEST_CASE("delegate,return")
             return nullptr;
         };
 
-        IAsyncOperation<Windows::IInspectable> result = handler(L"key");
+        IAsyncOperation<IInspectable> result = handler(L"key");
     }
 }
 
-Windows::IInspectable Handler()
+IInspectable Handler()
 {
     return Uri(L"http://free/");
 }
@@ -125,7 +125,7 @@ struct MemberHandler
 {
     Uri m_uri { L"http://member/" };
 
-    Windows::IInspectable Handler()
+    IInspectable Handler()
     {
         return m_uri;
     }
@@ -140,7 +140,7 @@ TEST_CASE("delegate,binding")
 
         CreateDefaultValueCallback handler = Handler;
 
-        Windows::IInspectable result = handler();
+        IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -156,7 +156,7 @@ TEST_CASE("delegate,binding")
 
         CreateDefaultValueCallback handler = { &that, &MemberHandler::Handler };
 
-        Windows::IInspectable result = handler();
+        IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -173,7 +173,7 @@ TEST_CASE("delegate,binding")
             return Uri(L"http://lambda/");
         };
 
-        Windows::IInspectable result = handler();
+        IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 

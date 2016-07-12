@@ -13,7 +13,8 @@ namespace Microsoft.Wcl.DataStore
     internal class EnumInfo
     {
         public string FullName;
-        public int Name;
+        public string Namespace;
+        public string Name;
         public bool Flags;
         public bool Deprecated;
 
@@ -33,7 +34,8 @@ namespace Microsoft.Wcl.DataStore
     internal class InterfaceInfo
     {
         public string FullName;
-        public int Name;
+        public string Namespace;
+        public string Name;
         public bool Delegate;
         public string Uuid;
         public bool Deprecated;
@@ -65,6 +67,8 @@ namespace Microsoft.Wcl.DataStore
     {
         public string Name;
         public string Type;
+        public string TypeNamespace;
+        public string TypeName;
         public ParameterAttributesInfo Flags;
 
         public string MethodFullName;
@@ -85,8 +89,8 @@ namespace Microsoft.Wcl.DataStore
     internal class RuntimeClassInfo
     {
         public string FullTypeName;
-        // It is actually the index
-        public int Name;
+        public string Namespace;
+        public string Name;
         public string Base;
         public string DefaultInterface;
         public bool Activatable;
@@ -130,7 +134,8 @@ namespace Microsoft.Wcl.DataStore
     internal class StructInfo
     {
         public string FullName;
-        public int Name;
+        public string Namespace;
+        public string Name;
         public int Depends;
         public bool Deprecated;
 
@@ -141,6 +146,8 @@ namespace Microsoft.Wcl.DataStore
     {
         public string Name;
         public string Type;
+        public string TypeNamespace;
+        public string TypeName;
         public string Category;
 
         public string StructFullTypeName;
@@ -149,7 +156,8 @@ namespace Microsoft.Wcl.DataStore
     internal class GenericInterfaceInfo
     {
         public string FullName;
-        public int Name;
+        public string Namespace;
+        public string Name;
         public string Uuid;
         public int Depth;
 

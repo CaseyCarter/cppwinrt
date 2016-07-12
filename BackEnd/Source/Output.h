@@ -172,9 +172,9 @@ namespace Modern {
             MODERN_ASSERT(Size() <= OutputCapacity);
         }
 
-        void WriteTo(char const * filename)
+        void WriteTo(std::string const & filename)
         {
-            OutputFile file(filename);
+            OutputFile file(filename.c_str());
             file.Append(Begin(), Size());
         }
 

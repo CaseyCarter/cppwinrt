@@ -27,7 +27,9 @@ namespace Microsoft.Wcl.Parsers
             GetInterfacesInfo(assembly, typeDef, fullTypeName, out defaultInterfaceFullTypeName, out classInterfaces);
 
             runtimeClassInfo.FullTypeName = fullTypeName;
-            runtimeClassInfo.Name = TypeNameUtilities.GetIndexOfTypeName(runtimeClassInfo.FullTypeName);
+            var nameIndex = TypeNameUtilities.GetIndexOfTypeName(runtimeClassInfo.FullTypeName);
+            runtimeClassInfo.Namespace = runtimeClassInfo.FullTypeName.Substring(0, nameIndex);
+            runtimeClassInfo.Name = runtimeClassInfo.FullTypeName.Substring(nameIndex + 2);
             runtimeClassInfo.Activatable = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.DefaultActivatable);
             runtimeClassInfo.DefaultInterface = (defaultInterfaceFullTypeName != null ? defaultInterfaceFullTypeName : string.Empty);
             runtimeClassInfo.InterfacesInfo = classInterfaces;

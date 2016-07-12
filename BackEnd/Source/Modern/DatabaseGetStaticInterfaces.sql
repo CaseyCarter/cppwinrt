@@ -1,4 +1,4 @@
-select Interface, substr(FullName, Name + 3)
-from ClassStatics c join Interfaces i on c.Interface = i.RowId
-where ClassId = ?
-order by FullName
+select Interface, Name, Namespace
+from Interfaces
+where RowId in (select Interface from ClassStatics where ClassId = ?1)
+order by Name

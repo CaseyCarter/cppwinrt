@@ -28,7 +28,7 @@ static void WriteLogo(Target & target)
 template <typename Target>
 static void WriteRootNamespaceBegin(Target & target)
 {
-    Write(target, "\r\nWINRT_EXPORT namespace winrt {\r\n");
+    Write(target, "\r\n\r\nWINRT_EXPORT namespace winrt {\r\n");
 }
 
 template <typename Target>
@@ -37,21 +37,14 @@ static void WriteRootNamespaceEnd(Target & target)
     Write(target, "\r\n}\r\n");
 }
 
-static void WriteModernHeader()
-{
-    OutputFile target("..\\winrt.h");
-    WriteLogo(target);
-    Write(target, Strings::base_modern);
-}
-
 static void WriteWindowsNumerics()
 {
     // Note: this is in the RS1 SDK - remove this once the RS1 SDK is available.
 
-    OutputFile impl("..\\WindowsNumerics.impl.h");
+    OutputFile impl("WindowsNumerics.impl.h");
     Write(impl, Strings::WindowsNumerics_impl);
 
-    OutputFile inl("..\\WindowsNumerics.inl");
+    OutputFile inl("WindowsNumerics.inl");
     Write(inl, Strings::WindowsNumerics);
 }
 
@@ -113,66 +106,207 @@ static void WriteBaseHeader()
     Write(out, Strings::base_std);
 }
 
+static void GenerateForward()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    WriteRootNamespaceBegin(out);
+
+    WriteForwards(out);
+    WriteEnumerations(out);
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName +  ".forward.h");
+}
+
+
+static void GenerateAbi()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    WriteRequiredForwards(out);
+    WriteRequiredAbiHeadersForAbi(out);
+
+    WriteRootNamespaceBegin(out);
+
+    WriteStructures(out);
+    WriteAbiInterfaces(out);
+    WriteAbiClassDeclarations(out);
+
+    WriteInterfaceImplForwards(out);
+
+    WriteInterfaceTraits(out);
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName + ".abi.h");
+}
+
+static void GenerateInterface()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName +  ".abi.h");
+
+    WriteRequiredAbiHeadersForInterface(out);
+    WriteRequiredInterfaceIncludes(out);
+
+    WriteRootNamespaceBegin(out);
+
+    WriteGenericInterfaces(out);
+    WriteInterfaceConsumers(out);
+    WriteInterfaceDefinitions(out);
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName + ".interface.h");
+}
+
+static void GenerateClassDecl()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".interface.h");
+
+    WriteRootNamespaceBegin(out);
+
+    WriteDelegates(out);
+    WriteClassDeclarations(out);
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName + ".class.h");
+}
+
+static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::vector<std::string>& processedNamespaces)
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".class.h");
+    WriteRequiredClasses(out);
+
+    // Include the full definition of parent namespaces. Some may not have any declarations. If not, go back another level.
+    std::string parentNamespace = Settings::FileNamespaceDotName;
+    
+    size_t dotIndex;
+    while ((dotIndex = parentNamespace.find_last_of(".")) != std::string::npos)
+    {
+        parentNamespace = parentNamespace.substr(0, dotIndex);
+        if (std::find(processedNamespaces.begin(), processedNamespaces.end(), parentNamespace) != processedNamespaces.end())
+        {
+            Write(out, Strings::WriteInclude, parentNamespace + ".h");
+            break;
+        }
+    }
+
+    WriteDefinitionsForRequiredInterfaces(out);
+
+    if (overridesExist)
+    {
+        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".override.h");
+    }
+
+    if (composablesExist)
+    {
+        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".composable.h");
+    }
+
+    WriteRootNamespaceBegin(out);
+
+    WriteDelegateShims(out);
+    WriteInterfaceProducers(out);
+    WriteInterfacesMethodDefinitions(out);
+    WriteClassDefinitions(out);
+    
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo("..\\" + Settings::FileNamespaceDotName + ".h");
+}
+
+static bool GenerateOverrides()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    WriteRootNamespaceBegin(out);
+
+    if (!WriteOverrides(out))
+    {
+        return false;
+    }
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName + ".override.h");
+
+    return true;
+}
+
+static bool GenerateComposables()
+{
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+
+    WriteRequiredOverrides(out);
+
+    WriteRootNamespaceBegin(out);
+
+    if (!WriteComposable(out))
+    {
+        return false;
+    }
+
+    out.WriteNamespace();
+    WriteRootNamespaceEnd(out);
+    out.WriteTo(Settings::FileNamespaceDotName + ".composable.h");
+
+    return true;
+}
+
 static void WriteLibrary()
 {
     std::string path = Settings::OutPath;
-    Path::Append(path, "winrt");
+    Path::Append(path, Settings::PublicPath + Settings::InternalPath);
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
-    WriteModernHeader();
     WriteModule();
     WriteBaseHeader();
     WriteWindowsNumerics();
 
-    Output abi;
-    WriteLogo(abi);
-    Write(abi, Strings::PragmaOnce);
-    WriteRootNamespaceBegin(abi);
-    WriteEnumerations(abi);
-    WriteStructures(abi);
-    WriteAbiInterfaceDeclarations(abi);
-    WriteAbiInterfaces(abi);
-    WriteAbiClassDeclarations(abi);
-    WriteGenericInterfaces(abi);
-    abi.WriteNamespace();
-    WriteRootNamespaceEnd(abi);
-    abi.WriteTo("sdk.abi.h");
+    std::vector<std::string> processedNamespaces;
 
-    Output meta;
-    WriteLogo(meta);
-    Write(meta, Strings::PragmaOnce);
-    WriteRootNamespaceBegin(meta);
-    WriteDeclarations(meta);
-    WriteInterfaceConsumers(meta);
-    WriteInterfaceTraits(meta);
-    WriteInterfaceDefinitions(meta);
-    WriteClassDeclarations(meta);
-    WriteInterfaceProducers(meta);
-    meta.WriteNamespace();
-    WriteRootNamespaceEnd(meta);
-    meta.WriteTo("sdk.meta.h");
+    Output out;
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
 
-    Output shim;
-    WriteLogo(shim);
-    Write(shim, Strings::PragmaOnce);
-    WriteRootNamespaceBegin(shim);
-    WriteDelegates(shim);
-    WriteInterfacesMethodDefinitions(shim);
-    WriteClassDefinitions(shim);
-    shim.WriteNamespace();
-    WriteRootNamespaceEnd(shim);
-    shim.WriteTo("sdk.shim.h");
+    Database::GetNamespaces([&]()
+    {
+        processedNamespaces.push_back(Settings::FileNamespaceDotName);
 
-    Output extend;
-    WriteLogo(extend);
-    Write(extend, Strings::PragmaOnce);
-    WriteRootNamespaceBegin(extend);
-    WriteOverrides(extend);
-    WriteComposable(extend);
-    extend.WriteNamespace();
-    WriteRootNamespaceEnd(extend);
-    extend.WriteTo("sdk.extend.h");
+        GenerateForward();
+        GenerateAbi();
+        GenerateInterface();
+        GenerateClassDecl();
+        GenerateClassImpl(GenerateOverrides(), GenerateComposables(), processedNamespaces);
+
+        Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".h");
+    });
+
+    out.WriteTo("..\\winrt.h");
 }
 
 }

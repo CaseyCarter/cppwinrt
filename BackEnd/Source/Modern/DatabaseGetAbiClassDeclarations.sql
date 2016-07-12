@@ -1,4 +1,5 @@
-select substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace, DefaultInterface
+select Name, Namespace, DefaultInterface
 from Classes
-where DefaultInterface <> ''
-order by Namespace, Name
+where DefaultInterface <> '' 
+  and Namespace = ?1
+order by Name

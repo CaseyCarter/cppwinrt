@@ -1,3 +1,4 @@
-select RowId, substr(FullName, Name + 3) as Name, substr(FullName, 1, Name) as Namespace, DefaultInterface, Activatable
+select RowId, Name, Namespace, DefaultInterface, Activatable
 from Classes
-order by Namespace, Name
+where Namespace = ?1
+order by Name

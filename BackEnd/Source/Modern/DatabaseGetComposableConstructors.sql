@@ -1,3 +1,6 @@
-select Interface, substr(FullName, Name + 3)
-from ClassConstructors c join Interfaces i on c.Interface = i.RowId
-where ClassId = ? and Composable
+select c.Interface, i.Name, m.RowId, m.Name
+from ClassConstructors c 
+  join Interfaces i on c.Interface = i.RowId
+  join methods m on m.InterfaceId = c.Interface
+where ClassId = ? 
+  and Composable

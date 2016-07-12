@@ -10,7 +10,7 @@ namespace Microsoft.Wcl.Steps
     internal class WinmdFileNotFoundException : FileNotFoundException
     {
         public WinmdFileNotFoundException(string winmd) : base(String.Format(StringExceptionFormats.WinmdFileNotFound, winmd))
-        {            
+        {
         }
     }
 
