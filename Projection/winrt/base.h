@@ -42,8 +42,8 @@ extern "C"
 #endif
 
 #define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt { namespace Windows { namespace Foundation { namespace Numerics
-#define _WINDOWS_NUMERICS_END_NAMESPACE_ }}}
+#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_END_NAMESPACE_
 
 #ifdef __clang__
 #define _XM_NO_INTRINSICS_
@@ -63,6 +63,7 @@ extern "C"
 
 #include <assert.h>
 
+#define WINRT_DEBUG
 #define WINRT_ASSERT assert
 #define WINRT_VERIFY WINRT_ASSERT
 #define WINRT_VERIFY_(result, expression) WINRT_ASSERT(result == expression)
@@ -2115,7 +2116,7 @@ enum class TrustLevel
 
 }
 
-namespace ABI { namespace Windows {
+namespace ABI::Windows {
 
 struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
 {
@@ -2124,7 +2125,7 @@ struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novta
     virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
 };
 
-}}
+}
 
 namespace Windows {
 
@@ -2862,7 +2863,7 @@ private:
     std::atomic<uint32_t> m_references { 1 };
 };
 
-namespace ABI { namespace Windows {
+namespace ABI::Windows {
 
 struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : IUnknown
 {
@@ -2879,19 +2880,19 @@ struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novta
     virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
 };
 
-}}
+}
 
 template <typename T>
-struct weak
+struct weak_ref
 {
-    weak(std::nullptr_t = nullptr) noexcept {}
+    weak_ref(std::nullptr_t = nullptr) noexcept {}
 
-    weak(const T & object)
+    weak_ref(const T & object)
     {
         check_hresult(object.as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
     }
 
-    T resolve() const noexcept
+    T get() const noexcept
     {
         T object = nullptr;
         m_ref->abi_Resolve(put(object));
@@ -2909,7 +2910,7 @@ private:
 };
 
 template <typename T>
-weak<T> make_weak(T const & object)
+weak_ref<T> make_weak(T const & object)
 {
     return object;
 }
@@ -2977,7 +2978,7 @@ struct event_revoker
             return;
         }
 
-        if (I object = m_object.resolve())
+        if (I object = m_object.get())
         {
             ((*get(object)).*(m_method))(m_token);
         }
@@ -2987,7 +2988,7 @@ struct event_revoker
 
 private:
 
-    weak<I> m_object;
+    weak_ref<I> m_object;
     method_type m_method {};
     event_token m_token {};
 };
@@ -3042,16 +3043,16 @@ auto make_event_revoker(S source, M method, event_token token)
 
 }
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
 {
     virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct IActivationFactory;
 
@@ -3070,7 +3071,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -3126,7 +3127,7 @@ Interface get_activation_factory()
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct IActivationFactory :
     IInspectable,
@@ -3136,7 +3137,7 @@ struct IActivationFactory :
     auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
 };
 
-}}
+}
 
 enum class InitializeType
 {
@@ -3173,7 +3174,7 @@ Instance ActivateInstance()
     return GetActivationFactory<Class>().ActivateInstance().template as<Instance>();
 }
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
@@ -3190,14 +3191,14 @@ struct __declspec(novtable) impl_TypedEventHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
 
-}}
+}
 
 namespace impl {
 
@@ -3245,7 +3246,7 @@ struct typed_event_handler : implements<typed_event_handler<TSender, TArgs, H>, 
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T>
 struct WINRT_EBO EventHandler : IUnknown
@@ -3297,9 +3298,9 @@ struct WINRT_EBO TypedEventHandler : IUnknown
     }
 };
 
-}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 template <typename T> struct IReference;
 
@@ -3309,9 +3310,9 @@ struct __declspec(novtable) impl_IReference : IInspectable
     virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T> struct IReference;
 
@@ -3330,7 +3331,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -3360,7 +3361,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T>
 struct WINRT_EBO IReference :
@@ -3371,9 +3372,9 @@ struct WINRT_EBO IReference :
     auto operator->() const noexcept { return ptr<IReference>(m_ptr); }
 };
 
-}}
+}
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 enum class CollectionChange
 {
@@ -3383,9 +3384,9 @@ enum class CollectionChange
     ItemChanged,
 };
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace ABI::Windows::Foundation::Collections {
 
 struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
 {
@@ -3393,9 +3394,9 @@ struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novta
     virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
 };
 
-}}}}
+}
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 struct IVectorChangedEventArgs;
 
@@ -3421,7 +3422,7 @@ public:
     }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -3444,7 +3445,7 @@ template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventA
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 struct IVectorChangedEventArgs :
     IInspectable,
@@ -3454,9 +3455,9 @@ struct IVectorChangedEventArgs :
     auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace ABI::Windows::Foundation::Collections {
 
 template <typename K, typename V> struct MapChangedEventHandler;
 template <typename T> struct VectorChangedEventHandler;
@@ -3575,9 +3576,9 @@ struct __declspec(novtable) impl_IObservableVector : IInspectable
     virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
 
-}}}}
+}
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename K, typename V> struct MapChangedEventHandler;
 template <typename T> struct VectorChangedEventHandler;
@@ -3968,7 +3969,7 @@ public:
     }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -4080,7 +4081,7 @@ private:
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename T>
 struct WINRT_EBO VectorChangedEventHandler : IUnknown
@@ -4209,7 +4210,7 @@ struct WINRT_EBO IObservableVector :
     auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -4247,7 +4248,7 @@ struct vector_changed_event_handler : implements<vector_changed_event_handler<T,
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
     MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
@@ -4315,7 +4316,7 @@ impl::fast_iterator<T> end(const T & collection)
     return impl::fast_iterator<T>(collection, collection.Size());
 }
 
-}}}
+}
 
 namespace impl {
 
@@ -4930,7 +4931,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
 
 }
  
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct Point
 {
@@ -4976,17 +4977,17 @@ struct Size
 
 using TimeSpan = std::chrono::duration<int64_t, std::ratio<1, 10'000'000>>;
 
-}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 using Point = winrt::Windows::Foundation::Point;
 using Size = winrt::Windows::Foundation::Size;
 using TimeSpan = winrt::Windows::Foundation::TimeSpan;
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Numerics {
+namespace ABI::Windows::Foundation::Numerics {
 
 using float2 = winrt::Windows::Foundation::Numerics::float2;
 using float3 = winrt::Windows::Foundation::Numerics::float3;
@@ -4996,9 +4997,9 @@ using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
 using plane = winrt::Windows::Foundation::Numerics::plane;
 using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
-}}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 enum class AsyncStatus
 {
@@ -5008,9 +5009,9 @@ enum class AsyncStatus
     Error,
 };
 
-}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 struct AsyncActionCompletedHandler;
 template <typename TProgress> struct AsyncActionProgressHandler;
@@ -5105,9 +5106,9 @@ struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
     virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct AsyncActionCompletedHandler;
 template <typename TProgress> struct AsyncActionProgressHandler;
@@ -5276,7 +5277,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -5342,7 +5343,7 @@ template <typename TResult, typename TProgress> struct traits<Windows::Foundatio
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct AsyncActionCompletedHandler : IUnknown
 {
@@ -5456,7 +5457,7 @@ struct WINRT_EBO IAsyncOperationWithProgress :
     auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -5560,7 +5561,7 @@ struct async_operation_completed_handler : implements<async_operation_completed_
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename L> AsyncActionCompletedHandler::AsyncActionCompletedHandler(L handler) :
     AsyncActionCompletedHandler(impl::make_delegate<impl::async_action_completed_handler<L>, AsyncActionCompletedHandler>(std::forward<L>(handler)))
@@ -5681,7 +5682,7 @@ template <typename D> void impl_IAsyncAction<D>::GetResults() const
     check_hresult(shim()->abi_GetResults());
 }
 
-}}
+}
 
 namespace impl {
 
@@ -5988,7 +5989,50 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
 
 }
 
-namespace Windows { namespace Foundation {
+template <typename T>
+struct agile_ref
+{
+    agile_ref(std::nullptr_t = nullptr) noexcept {}
+
+    agile_ref(const T & object)
+    {
+#ifdef WINRT_DEBUG
+        if (object.try_as<IAgileObject>())
+        {
+            WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
+        }
+#endif
+
+        check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
+                                          __uuidof(abi_default_interface<T>),
+                                          winrt::get(object),
+                                          put(m_ref)));
+    }
+
+    T get() const
+    {
+        T result = nullptr;
+        check_hresult(m_ref->Resolve(put(result)));
+        return result;
+    }
+
+    explicit operator bool() const noexcept
+    {
+        return static_cast<bool>(m_ref);
+    }
+
+private:
+
+    com_ptr<IAgileReference> m_ref;
+};
+
+template <typename T>
+agile_ref<T> make_agile(const T & object)
+{
+    return object;
+}
+
+namespace Windows::Foundation {
 
 template <typename T, typename F>
 void impl_suspend(const T & object, F resume)
@@ -5999,7 +6043,7 @@ void impl_suspend(const T & object, F resume)
     object.Completed([resume, context](const auto &, AsyncStatus)
     {
         ComCallData data = {};
-        data.pUserDefined = resume.to_address();
+        data.pUserDefined = resume.address();
 
         check_hresult(context->ContextCallback([](ComCallData * data)
         {
@@ -6083,7 +6127,7 @@ inline void await_resume(const IAsyncAction & object)
     object.GetResults();
 }
 
-}}
+}
 
 }
 

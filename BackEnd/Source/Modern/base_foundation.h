@@ -1,5 +1,5 @@
  
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct Point
 {
@@ -45,17 +45,17 @@ struct Size
 
 using TimeSpan = std::chrono::duration<int64_t, std::ratio<1, 10'000'000>>;
 
-}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 using Point = winrt::Windows::Foundation::Point;
 using Size = winrt::Windows::Foundation::Size;
 using TimeSpan = winrt::Windows::Foundation::TimeSpan;
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Numerics {
+namespace ABI::Windows::Foundation::Numerics {
 
 using float2 = winrt::Windows::Foundation::Numerics::float2;
 using float3 = winrt::Windows::Foundation::Numerics::float3;
@@ -65,4 +65,4 @@ using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
 using plane = winrt::Windows::Foundation::Numerics::plane;
 using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
-}}}}
+}

@@ -10,29 +10,29 @@ TEST_CASE("weak")
     {
         Uri a(L"http://host/path");
 
-        weak<Uri> w = a;
-        Uri b = w.resolve();
+        weak_ref<Uri> w = a;
+        Uri b = w.get();
         REQUIRE(b.Host() == L"host");
 
         // still one outstanding reference
         b = nullptr;
-        b = w.resolve();
+        b = w.get();
         REQUIRE(b != nullptr);
 
         // no outstanding references
         a = nullptr;
         b = nullptr;
-        b = w.resolve();
+        b = w.get();
         REQUIRE(b == nullptr);
     }
 
     SECTION("unresolved")
     {
         // default construct
-        weak<Uri> w;
+        weak_ref<Uri> w;
 
         w = Uri(L"http://host/path"); // reference is lost right here
-        Uri b = w.resolve();
+        Uri b = w.get();
         REQUIRE(b == nullptr);
     }
 
@@ -40,7 +40,7 @@ TEST_CASE("weak")
     {
         Uri a(L"http://host/path");
         auto w = make_weak(a);
-        Uri b = w.resolve();
+        Uri b = w.get();
         REQUIRE(b.Host() == L"host");
     }
 }
@@ -61,7 +61,7 @@ TEST_CASE("weak,none")
 
     try
     {
-        weak<IStringable> w = s;
+        weak_ref<IStringable> w = s;
         REQUIRE(false);
     }
     catch (hresult_no_interface const &) {}

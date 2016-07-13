@@ -1,21 +1,28 @@
 #include "pch.h"
+#include "Iterable.h"
 
 namespace cx
 {
     using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Numerics;
     using namespace Windows::Foundation::Collections;
     using namespace Windows::ApplicationModel;
     using namespace Windows::ApplicationModel::Appointments;
     using namespace Windows::ApplicationModel::Chat;
+    using namespace Windows::Security::Cryptography::Certificates;
+    using namespace Windows::UI::Input::Inking;
 }
 
 namespace winrt
 {
     using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Numerics;
     using namespace Windows::Foundation::Collections;
     using namespace Windows::ApplicationModel;
     using namespace Windows::ApplicationModel::Appointments;
     using namespace Windows::ApplicationModel::Chat;
+    using namespace Windows::Security::Cryptography::Certificates;
+    using namespace Windows::UI::Input::Inking;
 }
 
 static constexpr uint64_t TestPasses = 1'000'000;
@@ -191,6 +198,113 @@ uint64_t isolated_factory_sample()
     return check;
 }
 
+//
+// Illustrates the performance of array input parameters
+//
+uint64_t array_input_cx()
+{
+    cx::CertificateQuery query;
+    uint64_t check = 0;
+
+    std::vector<byte> values { 1, 2, 3 };
+
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
+    {
+        query.Thumbprint = ref new Platform::Array<byte>(values.data(),
+                                                         static_cast<uint32_t>(values.size()));
+        check += 1;
+    }
+
+    return check;
+}
+
+uint64_t array_input_cx_undocumented()
+{
+    cx::CertificateQuery query;
+    uint64_t check = 0;
+
+    std::vector<byte> values{ 1, 2, 3 };
+
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
+    {
+        query.Thumbprint = Platform::ArrayReference<byte>(values.data(),
+                                                          static_cast<uint32_t>(values.size()));
+        check += 1;
+    }
+
+    return check;
+}
+
+uint64_t array_input()
+{
+    winrt::CertificateQuery query;
+    uint64_t check = 0;
+
+    std::vector<byte> values{ 1, 2, 3 };
+
+    for (unsigned i = 0; i != 10 * TestPasses; ++i)
+    {
+        query.Thumbprint(values);
+        check += 1;
+    }
+
+    return check;
+}
+
+//
+// Illustrates the performance of collection input parameters
+//
+
+uint64_t collection_input_copy_cx()
+{
+    cx::InkStrokeBuilder builder;
+    uint64_t check = 0;
+
+    std::vector<cx::Point> points;
+
+    for (unsigned i = 0; i < 200; ++i)
+    {
+        points.emplace_back(10.0f * i, 10.0f * i);
+    }
+
+    cx::IIterable<cx::Point> ^ vector = ref new Platform::Collections::Vector<cx::Point>(points);
+
+    for (unsigned i = 0; i != TestPasses / 100; ++i)
+    {
+        builder.CreateStroke(vector);
+        check += 1;
+    }
+
+    return check;
+}
+
+uint64_t collection_input_copy()
+{
+    winrt::InkStrokeBuilder builder;
+    uint64_t check = 0;
+
+    std::vector<winrt::Point> points;
+
+    for (unsigned i = 0; i < 200; ++i)
+    {
+        points.emplace_back(10.0f * i, 10.0f * i);
+    }
+
+    winrt::IIterable<winrt::Point> vector = winrt::make<winrt::Iterable<winrt::Point>>(points);
+
+    for (unsigned i = 0; i != TestPasses / 100; ++i)
+    {
+        builder.CreateStroke(vector);
+        check += 1;
+    }
+
+    return check;
+}
+
+//
+// Test runner
+//
+
 template <typename F>
 void measure(char const * name, F function)
 {
@@ -223,7 +337,16 @@ int main()
     measure("C++/CX", isolated_factory_sample_cx);
     measure("C++/WinRT", isolated_factory_sample);
 
-    printf("\nCalling fast-pass strings\n");
+    printf("\nCalling methods with fast-pass strings\n");
     measure("C++/CX", fast_strings_cx);
     measure("C++/WinRT", fast_strings);
+
+    printf("\nCalling methods with array input parameters\n");
+    measure("C++/CX", array_input_cx);
+    measure("C++/CX (undocumented)", array_input_cx_undocumented);
+    measure("C++/WinRT", array_input);
+
+    printf("\nCalling methods with collection input parameters (copy)\n");
+    measure("C++/CX", collection_input_copy_cx);
+    measure("C++/WinRT", collection_input_copy);
 }

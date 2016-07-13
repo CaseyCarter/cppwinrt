@@ -3,6 +3,7 @@
 
 #include <assert.h>
 
+#define WINRT_DEBUG
 #define WINRT_ASSERT assert
 #define WINRT_VERIFY WINRT_ASSERT
 #define WINRT_VERIFY_(result, expression) WINRT_ASSERT(result == expression)

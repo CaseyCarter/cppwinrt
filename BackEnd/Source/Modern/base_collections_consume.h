@@ -1,5 +1,5 @@
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 enum class CollectionChange
 {
@@ -9,9 +9,9 @@ enum class CollectionChange
     ItemChanged,
 };
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace ABI::Windows::Foundation::Collections {
 
 struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
 {
@@ -19,9 +19,9 @@ struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novta
     virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
 };
 
-}}}}
+}
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 struct IVectorChangedEventArgs;
 
@@ -47,7 +47,7 @@ public:
     }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -70,7 +70,7 @@ template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventA
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 struct IVectorChangedEventArgs :
     IInspectable,
@@ -80,9 +80,9 @@ struct IVectorChangedEventArgs :
     auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
-}}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+namespace ABI::Windows::Foundation::Collections {
 
 template <typename K, typename V> struct MapChangedEventHandler;
 template <typename T> struct VectorChangedEventHandler;
@@ -201,9 +201,9 @@ struct __declspec(novtable) impl_IObservableVector : IInspectable
     virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
 
-}}}}
+}
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename K, typename V> struct MapChangedEventHandler;
 template <typename T> struct VectorChangedEventHandler;
@@ -594,7 +594,7 @@ public:
     }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -706,7 +706,7 @@ private:
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename T>
 struct WINRT_EBO VectorChangedEventHandler : IUnknown
@@ -835,7 +835,7 @@ struct WINRT_EBO IObservableVector :
     auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
 
-}}}
+}
 
 namespace impl {
 
@@ -873,7 +873,7 @@ struct vector_changed_event_handler : implements<vector_changed_event_handler<T,
 
 }
 
-namespace Windows { namespace Foundation { namespace Collections {
+namespace Windows::Foundation::Collections {
 
 template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
     MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
@@ -941,4 +941,4 @@ impl::fast_iterator<T> end(const T & collection)
     return impl::fast_iterator<T>(collection, collection.Size());
 }
 
-}}}
+}

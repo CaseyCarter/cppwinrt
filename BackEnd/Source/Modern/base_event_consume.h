@@ -36,7 +36,7 @@ struct event_revoker
             return;
         }
 
-        if (I object = m_object.resolve())
+        if (I object = m_object.get())
         {
             ((*get(object)).*(m_method))(m_token);
         }
@@ -46,7 +46,7 @@ struct event_revoker
 
 private:
 
-    weak<I> m_object;
+    weak_ref<I> m_object;
     method_type m_method {};
     event_token m_token {};
 };

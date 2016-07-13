@@ -4,7 +4,7 @@
 
 // #define WINRT_PROFILE
 
-namespace Modern { namespace Database {
+namespace Modern::Database {
 
 static SQLite::Connection db;
 
@@ -39,4 +39,4 @@ SQLite::Statement Prepare(char const * text)
     return SQLite::Statement(db, text);
 }
 
-}}
+}

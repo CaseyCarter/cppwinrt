@@ -1,5 +1,5 @@
 
-namespace ABI { namespace Windows {
+namespace ABI::Windows {
 
 struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : IUnknown
 {
@@ -16,19 +16,19 @@ struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novta
     virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
 };
 
-}}
+}
 
 template <typename T>
-struct weak
+struct weak_ref
 {
-    weak(std::nullptr_t = nullptr) noexcept {}
+    weak_ref(std::nullptr_t = nullptr) noexcept {}
 
-    weak(const T & object)
+    weak_ref(const T & object)
     {
         check_hresult(object.as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
     }
 
-    T resolve() const noexcept
+    T get() const noexcept
     {
         T object = nullptr;
         m_ref->abi_Resolve(put(object));
@@ -46,7 +46,7 @@ private:
 };
 
 template <typename T>
-weak<T> make_weak(T const & object)
+weak_ref<T> make_weak(T const & object)
 {
     return object;
 }

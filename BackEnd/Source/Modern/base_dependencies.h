@@ -38,8 +38,8 @@ extern "C"
 #endif
 
 #define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt { namespace Windows { namespace Foundation { namespace Numerics
-#define _WINDOWS_NUMERICS_END_NAMESPACE_ }}}
+#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_END_NAMESPACE_
 
 #ifdef __clang__
 #define _XM_NO_INTRINSICS_

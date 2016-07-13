@@ -5,7 +5,7 @@
 
 WINRT_EXPORT namespace winrt {
 
-namespace Windows { namespace UI { namespace Xaml {
+namespace Windows::UI::Xaml {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::IApplicationOverrides>
 class IApplicationOverridesT : public A
@@ -393,9 +393,9 @@ public:
     }
 };
 
-}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
+namespace Windows::UI::Xaml::Automation::Peers {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>
 class IAutomationPeerOverridesT : public A
@@ -1291,9 +1291,9 @@ public:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Controls {
+namespace Windows::UI::Xaml::Controls {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Controls::IAppBarOverrides>
 class IAppBarOverridesT : public A
@@ -2577,9 +2577,9 @@ public:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
+namespace Windows::UI::Xaml::Controls::Primitives {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverrides>
 class IFlyoutBaseOverridesT : public A
@@ -2748,9 +2748,9 @@ public:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Documents {
+namespace Windows::UI::Xaml::Documents {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Documents::ITextElementOverrides>
 class ITextElementOverridesT : public A
@@ -2780,9 +2780,9 @@ public:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media {
+namespace Windows::UI::Xaml::Media {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Media::IGeneralTransformOverrides>
 class IGeneralTransformOverridesT : public A
@@ -2849,9 +2849,9 @@ public:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
+namespace Windows::UI::Xaml::Media::Animation {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
 class INavigationTransitionInfoOverridesT : public A
@@ -2900,9 +2900,9 @@ public:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
+namespace Windows::UI::Xaml::Media::Imaging {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>
 class IXamlRenderingBackgroundTaskOverridesT : public A
@@ -2932,9 +2932,9 @@ public:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Resources {
+namespace Windows::UI::Xaml::Resources {
 
 template <typename D, typename A = ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
 class ICustomXamlResourceLoaderOverridesT : public A
@@ -2965,9 +2965,9 @@ public:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml {
+namespace Windows::UI::Xaml {
 
 template <typename D, typename ... Interfaces> struct AdaptiveTriggerT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -3189,9 +3189,9 @@ protected:
     }
 };
 
-}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Automation { namespace Peers {
+namespace Windows::UI::Xaml::Automation::Peers {
 
 template <typename D, typename ... Interfaces> struct AppBarAutomationPeerT :
     overrides<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverridesT<D>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2T<D>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3T<D>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4T<D>, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5T<D>, Interfaces ...>,
@@ -4117,9 +4117,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Controls {
+namespace Windows::UI::Xaml::Controls {
 
 template <typename D, typename ... Interfaces> struct AppBarT :
     overrides<D, Windows::UI::Xaml::IUIElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverrides2T<D>, Windows::UI::Xaml::Controls::IControlOverridesT<D>, Windows::UI::Xaml::Controls::IContentControlOverridesT<D>, Windows::UI::Xaml::Controls::IAppBarOverridesT<D>, Windows::UI::Xaml::Controls::IAppBarOverrides3T<D>, Interfaces ...>,
@@ -5325,9 +5325,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Maps {
+namespace Windows::UI::Xaml::Controls::Maps {
 
 template <typename D, typename ... Interfaces> struct CustomMapTileDataSourceT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -5471,9 +5471,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Controls { namespace Primitives {
+namespace Windows::UI::Xaml::Controls::Primitives {
 
 template <typename D, typename ... Interfaces> struct ButtonBaseT :
     overrides<D, Windows::UI::Xaml::IUIElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverrides2T<D>, Windows::UI::Xaml::Controls::IControlOverridesT<D>, Windows::UI::Xaml::Controls::IContentControlOverridesT<D>, Interfaces ...>,
@@ -5657,9 +5657,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Data {
+namespace Windows::UI::Xaml::Data {
 
 template <typename D, typename ... Interfaces> struct BindingT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -5750,9 +5750,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Documents {
+namespace Windows::UI::Xaml::Documents {
 
 template <typename D, typename ... Interfaces> struct BlockT :
     overrides<D, Windows::UI::Xaml::Documents::ITextElementOverridesT<D>, Interfaces ...>,
@@ -5796,9 +5796,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Input {
+namespace Windows::UI::Xaml::Input {
 
 template <typename D, typename ... Interfaces> struct ManipulationStartedRoutedEventArgsT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -5814,9 +5814,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Interop {
+namespace Windows::UI::Xaml::Interop {
 
 template <typename D, typename ... Interfaces> struct NotifyCollectionChangedEventArgsT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -5832,9 +5832,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media {
+namespace Windows::UI::Xaml::Media {
 
 template <typename D, typename ... Interfaces> struct BrushT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -5934,9 +5934,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Animation {
+namespace Windows::UI::Xaml::Media::Animation {
 
 template <typename D, typename ... Interfaces> struct ColorKeyFrameT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -6022,9 +6022,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Imaging {
+namespace Windows::UI::Xaml::Media::Imaging {
 
 template <typename D, typename ... Interfaces> struct BitmapSourceT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -6073,9 +6073,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Media { namespace Media3D {
+namespace Windows::UI::Xaml::Media::Media3D {
 
 template <typename D, typename ... Interfaces> struct Transform3DT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -6091,9 +6091,9 @@ protected:
     }
 };
 
-}}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Printing {
+namespace Windows::UI::Xaml::Printing {
 
 template <typename D, typename ... Interfaces> struct PrintDocumentT :
     overrides<D, Windows::IInspectable, Interfaces ...>,
@@ -6109,9 +6109,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Resources {
+namespace Windows::UI::Xaml::Resources {
 
 template <typename D, typename ... Interfaces> struct CustomXamlResourceLoaderT :
     overrides<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverridesT<D>, Interfaces ...>,
@@ -6127,9 +6127,9 @@ protected:
     }
 };
 
-}}}}
+}
 
-namespace Windows { namespace UI { namespace Xaml { namespace Shapes {
+namespace Windows::UI::Xaml::Shapes {
 
 template <typename D, typename ... Interfaces> struct PathT :
     overrides<D, Windows::UI::Xaml::IUIElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverridesT<D>, Windows::UI::Xaml::IFrameworkElementOverrides2T<D>, Interfaces ...>,
@@ -6159,6 +6159,6 @@ protected:
     }
 };
 
-}}}}
+}
 
 }

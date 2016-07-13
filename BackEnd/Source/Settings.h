@@ -2,7 +2,7 @@
 
 #include "Meta.h"
 
-namespace Modern { namespace Settings {
+namespace Modern::Settings {
 
 extern std::string OutPath;
 extern std::string DatabasePath;
@@ -53,4 +53,4 @@ extern std::string DelegateImplementation;
 
 extern Modern::ParameterInfo ParameterInfo;
 
-}}
+}

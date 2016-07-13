@@ -5,7 +5,7 @@
 #include "Strings.h"
 #include "Settings.h"
 
-namespace Modern { namespace Database {
+namespace Modern::Database {
 
 using SQLite::Statement;
 
@@ -539,4 +539,4 @@ template <typename T> void GetDelegates(T callback)
     }
 }
 
-}}
+}

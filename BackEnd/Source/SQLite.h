@@ -3,7 +3,7 @@
 #include "handle.h"
 #include "sqlite3.h"
 
-namespace Modern { namespace SQLite { 
+namespace Modern::SQLite { 
 
 enum class Type
 {
@@ -439,4 +439,4 @@ inline void BatchExecute(Connection const & connection, char const * const text)
     }
 }
 
-}}
+}

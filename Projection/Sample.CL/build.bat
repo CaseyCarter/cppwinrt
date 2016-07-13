@@ -1,1 +1,1 @@
-cl main.cpp /I .. /EHsc
+cl main.cpp /I .. /EHsc /std:c++latest

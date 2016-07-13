@@ -1,6 +1,6 @@
 #pragma once
 
-namespace winrt { namespace Microsoft { namespace Sample
+namespace winrt::Microsoft::Sample
 {
     struct Hen {};
 
@@ -18,4 +18,4 @@ namespace winrt { namespace Microsoft { namespace Sample
         }
     };
 
-}}}
+}

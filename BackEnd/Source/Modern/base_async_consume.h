@@ -1,5 +1,5 @@
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 enum class AsyncStatus
 {
@@ -9,9 +9,9 @@ enum class AsyncStatus
     Error,
 };
 
-}}
+}
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 struct AsyncActionCompletedHandler;
 template <typename TProgress> struct AsyncActionProgressHandler;
@@ -106,9 +106,9 @@ struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
     virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct AsyncActionCompletedHandler;
 template <typename TProgress> struct AsyncActionProgressHandler;
@@ -277,7 +277,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -343,7 +343,7 @@ template <typename TResult, typename TProgress> struct traits<Windows::Foundatio
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct AsyncActionCompletedHandler : IUnknown
 {
@@ -457,7 +457,7 @@ struct WINRT_EBO IAsyncOperationWithProgress :
     auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -561,7 +561,7 @@ struct async_operation_completed_handler : implements<async_operation_completed_
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename L> AsyncActionCompletedHandler::AsyncActionCompletedHandler(L handler) :
     AsyncActionCompletedHandler(impl::make_delegate<impl::async_action_completed_handler<L>, AsyncActionCompletedHandler>(std::forward<L>(handler)))
@@ -682,4 +682,4 @@ template <typename D> void impl_IAsyncAction<D>::GetResults() const
     check_hresult(shim()->abi_GetResults());
 }
 
-}}
+}

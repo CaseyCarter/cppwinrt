@@ -10,7 +10,7 @@ enum class TrustLevel
 
 }
 
-namespace ABI { namespace Windows {
+namespace ABI::Windows {
 
 struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
 {
@@ -19,7 +19,7 @@ struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novta
     virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
 };
 
-}}
+}
 
 namespace Windows {
 

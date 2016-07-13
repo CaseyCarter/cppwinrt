@@ -1,5 +1,5 @@
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 template <typename T> struct IReference;
 
@@ -9,9 +9,9 @@ struct __declspec(novtable) impl_IReference : IInspectable
     virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T> struct IReference;
 
@@ -30,7 +30,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -60,7 +60,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T>
 struct WINRT_EBO IReference :
@@ -71,4 +71,4 @@ struct WINRT_EBO IReference :
     auto operator->() const noexcept { return ptr<IReference>(m_ptr); }
 };
 
-}}
+}

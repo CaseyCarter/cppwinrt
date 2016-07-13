@@ -2,7 +2,7 @@
 
 namespace winrt {
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::IInspectable
 {
@@ -17,9 +17,9 @@ struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novta
 template <> struct __declspec(uuid("3750b1b2-2a32-4747-9462-d3918eb35c96")) __declspec(novtable) 
 TypedEventHandler<int, int> : impl_TypedEventHandler<int, int> {};
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct IClosable;
 struct IStringable;
@@ -52,7 +52,7 @@ public:
     }
 };
 
-}}
+}
 
 namespace impl {
 
@@ -70,7 +70,7 @@ template <> struct traits<Windows::Foundation::IStringable>
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 struct IClosable :
     Windows::IInspectable,
@@ -88,7 +88,7 @@ struct IStringable :
     auto operator->() const noexcept { return ptr<IStringable>(m_ptr); }
 };
 
-}}
+}
 
 namespace impl {
 

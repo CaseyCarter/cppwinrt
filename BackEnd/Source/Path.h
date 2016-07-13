@@ -8,7 +8,7 @@
 
 #pragma comment(lib, "shlwapi")
 
-namespace Modern { namespace Path { namespace Internal {
+namespace Modern::Path::Internal {
 
 inline void Trim(std::string & path)
 {
@@ -73,9 +73,9 @@ struct FindFileTraits : HandleTraits<HANDLE>
 
 using FindFile = Handle<FindFileTraits>;
 
-}}}
+}
 
-namespace Modern { namespace Path {
+namespace Modern::Path {
 
 inline std::string ToRelative(std::string const & from, bool const fromFolder, std::string const & to, bool const toFolder)
 {
@@ -289,4 +289,4 @@ void FindFolders(std::string const & query, Callback callback)
     FindFolders(query.c_str(), callback);
 }
 
-}}
+}

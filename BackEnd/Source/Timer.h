@@ -2,7 +2,7 @@
 
 #include "debug.h"
 
-namespace Modern { namespace Timer {
+namespace Modern::Timer {
 
 inline long long Now() noexcept
 {
@@ -21,4 +21,4 @@ inline float Elapsed(long long const begin) noexcept
     return static_cast<float>(end - begin) / frequency.QuadPart;
 }
 
-}}
+}

@@ -24,6 +24,7 @@
     <ClCompile Include="IUnknown_QueryInterface.cpp" />
     <ClCompile Include="delegate_lambda.cpp" />
     <ClCompile Include="agility.cpp" />
+    <ClCompile Include="agile_ref.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

@@ -109,7 +109,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,7 +136,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,7 +162,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -190,7 +190,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Iterable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

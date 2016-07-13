@@ -102,7 +102,7 @@
       <SDLCheck>false</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
-      <AdditionalOptions>/await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DisableSpecificWarnings>4702</DisableSpecificWarnings>
@@ -121,7 +121,7 @@
       <SDLCheck>false</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
-      <AdditionalOptions>/await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DisableSpecificWarnings>4702</DisableSpecificWarnings>
@@ -142,7 +142,7 @@
       <SDLCheck>false</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
-      <AdditionalOptions>/await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4702</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -163,7 +163,7 @@
       <SDLCheck>false</SDLCheck>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
-      <AdditionalOptions>/await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4702</DisableSpecificWarnings>
     </ClCompile>
     <Link>

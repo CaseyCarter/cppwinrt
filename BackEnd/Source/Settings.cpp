@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "Settings.h"
 
-namespace Modern { namespace Settings {
+namespace Modern::Settings {
 
 std::string OutPath;
 std::string DatabasePath;
@@ -52,4 +52,4 @@ std::string DelegateImplementation;
 
 Modern::ParameterInfo ParameterInfo;
 
-}}
+}

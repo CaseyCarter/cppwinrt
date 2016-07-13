@@ -116,7 +116,7 @@ namespace Modern {
         char * m_begin = nullptr;
         char * m_position = nullptr;
         std::string m_namespace;
-        unsigned m_namespaceLevels = 0;
+        bool m_abi = false;
 
     public:
 
@@ -178,106 +178,25 @@ namespace Modern {
             file.Append(Begin(), Size());
         }
 
-        bool WriteNamespace(char const * ns = "")
+        bool WriteNamespace(std::string const & ns = {})
         {
-            if (m_namespace == ns)
+            if (m_namespace == ns && !m_abi)
             {
                 return false;
             }
 
+            m_abi = false;
+
             if (!m_namespace.empty())
             {
-                Write(*this, "\r\n");
-
-                for (unsigned i = 0; i != m_namespaceLevels; ++i)
-                {
-                    Write(*this, "}");
-                }
-
-                Write(*this, "\r\n");
+                Write(*this, "\r\n}\r\n");
             }
 
             m_namespace = ns;
-            m_namespaceLevels = 0;
 
             if (!m_namespace.empty())
             {
-                Write(*this, "\r\n");
-                size_t begin = 0;
-                size_t end = 0;
-
-                for (;;)
-                {
-                    ++m_namespaceLevels;
-
-                    end = m_namespace.find("::", begin);
-
-                    if (std::string::npos == end)
-                    {
-                        Write(*this, "namespace % {\r\n", Offset(m_namespace, begin));
-                        break;
-                    }
-
-                    Write(*this, "namespace % { ", Substring(&m_namespace[begin], end - begin));
-
-                    begin = end + 2;
-                }
-            }
-
-            return true;
-        }
-
-        bool WriteNamespace(std::string const & ns)
-        {
-            return WriteNamespace(ns.c_str());
-        }
-
-        bool WriteAbiNamespace(char const * ns)
-        {
-            if (m_namespace == ns)
-            {
-                return false;
-            }
-
-            if (!m_namespace.empty())
-            {
-                Write(*this, "\r\n");
-
-                for (unsigned i = 0; i != m_namespaceLevels; ++i)
-                {
-                    Write(*this, "}");
-                }
-
-                Write(*this, "\r\n");
-            }
-
-            m_namespace = ns;
-            m_namespaceLevels = 0;
-
-            if (!m_namespace.empty())
-            {
-                Write(*this, "\r\nnamespace ABI { ");
-                ++m_namespaceLevels;
-
-                size_t begin = 0;
-                size_t end = 0;
-
-                for (;;)
-                {
-                    ++m_namespaceLevels;
-
-                    end = m_namespace.find("::", begin);
-
-                    if (std::string::npos == end)
-                    {
-                        Write(*this, "namespace % {\r\n", Offset(m_namespace, begin));
-                        break;
-                    }
-
-                    Write(*this, "namespace % { ", Substring(&m_namespace[begin], end - begin));
-
-                    begin = end + 2;
-                }
+                Write(*this, "\r\nnamespace % {\r\n", m_namespace);
             }
 
             return true;
@@ -285,7 +204,26 @@ namespace Modern {
 
         bool WriteAbiNamespace(std::string const & ns)
         {
-            return WriteAbiNamespace(ns.c_str());
+            if (m_namespace == ns && m_abi)
+            {
+                return false;
+            }
+
+            m_abi = true;
+
+            if (!m_namespace.empty())
+            {
+                Write(*this, "\r\n}\r\n");
+            }
+
+            m_namespace = ns;
+
+            if (!m_namespace.empty())
+            {
+                Write(*this, "\r\nnamespace ABI::% {\r\n", m_namespace);
+            }
+
+            return true;
         }
     };
 

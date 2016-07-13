@@ -1,5 +1,5 @@
 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI::Windows::Foundation {
 
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
@@ -16,14 +16,14 @@ struct __declspec(novtable) impl_TypedEventHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
 };
 
-}}}
+}
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T> struct EventHandler;
 template <typename TSender, typename TArgs> struct TypedEventHandler;
 
-}}
+}
 
 namespace impl {
 
@@ -71,7 +71,7 @@ struct typed_event_handler : implements<typed_event_handler<TSender, TArgs, H>, 
 
 }
 
-namespace Windows { namespace Foundation {
+namespace Windows::Foundation {
 
 template <typename T>
 struct WINRT_EBO EventHandler : IUnknown
@@ -123,4 +123,4 @@ struct WINRT_EBO TypedEventHandler : IUnknown
     }
 };
 
-}}
+}

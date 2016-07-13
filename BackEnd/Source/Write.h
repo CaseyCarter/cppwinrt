@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Modern { namespace Internal {
+namespace Modern::Internal {
 
 template <char Placeholder, typename Target>
 void Write(Target & target, char const * const value, size_t const size)
@@ -37,7 +37,7 @@ unsigned CountPlaceholders(char const * format)
     return count;
 }
 
-}}
+}
 
 namespace Modern {
 

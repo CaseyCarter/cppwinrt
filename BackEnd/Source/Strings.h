@@ -1,37 +1,38 @@
 #pragma once
 
-namespace Modern { namespace Strings {
+namespace Modern::Strings {
 
 extern char const base_accessors[1910];
-extern char const base_activation[3342];
+extern char const base_activation[3294];
+extern char const base_agile[995];
 extern char const base_array[11310];
-extern char const base_async_consume[29655];
+extern char const base_async_consume[29583];
 extern char const base_async_produce[8169];
-extern char const base_await_consume[2534];
-extern char const base_collections_consume[30433];
+extern char const base_await_consume[2519];
+extern char const base_collections_consume[30217];
 extern char const base_collections_produce[15808];
 extern char const base_composable[552];
 extern char const base_com_ptr[4775];
-extern char const base_delegate[4166];
-extern char const base_dependencies[2328];
+extern char const base_delegate[4118];
+extern char const base_dependencies[2291];
 extern char const base_error[7327];
 extern char const base_event_consume[2355];
-extern char const base_foundation[1633];
+extern char const base_foundation[1561];
 extern char const base_handle[2972];
 extern char const base_implements[11474];
 extern char const base_lock[834];
-extern char const base_macros[1305];
+extern char const base_macros[1326];
 extern char const base_meta[1837];
 extern char const base_modern[186];
 extern char const base_module[71];
-extern char const base_reference[1662];
+extern char const base_reference[1614];
 extern char const base_std[919];
 extern char const base_string[6205];
 extern char const base_string_hstring[2909];
 extern char const base_string_hstring_ref[2633];
 extern char const base_string_operators[9313];
 extern char const base_weak[1326];
-extern char const base_windows[6939];
+extern char const base_windows[6927];
 extern char const ConsoleHeader[76];
 extern char const DatabaseGetAbiClassDeclarations[170];
 extern char const DatabaseGetAbiInterfaces[148];
@@ -127,4 +128,4 @@ extern char const WriteStructureDeclaration[12];
 extern char const WriteStructureField[11];
 extern char const WriteUsingMethod[23];
 
-}}
+}
