@@ -234,6 +234,39 @@ copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestDat
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
+    <PostBuildEvent>
+      <Command>rd /q /s "$(TargetDir)TestData
+md "$(TargetDir)TestData
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
+md "$(TargetDir)TestData\GenericInterfacesInput"
+copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+md "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput"
+copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput\*"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
     <ClCompile>
@@ -245,6 +278,39 @@ copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestDat
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
+    <PostBuildEvent>
+      <Command>rd /q /s "$(TargetDir)TestData
+md "$(TargetDir)TestData
+md "$(TargetDir)TestData\InterfacesInput"
+copy "$(TargetDir)Interface*" "$(TargetDir)TestData\InterfacesInput\" 
+md "$(TargetDir)TestData\RuntimeclassInput"
+copy "$(TargetDir)Runtimeclass*" "$(TargetDir)TestData\RuntimeclassInput\*" 
+md "$(TargetDir)TestData\ClassStaticsInput"
+copy "$(TargetDir)ClassStatics*" "$(TargetDir)TestData\ClassStaticsInput\*" 
+md "$(TargetDir)TestData\ClassConstructorsInput"
+copy "$(TargetDir)ClassConstructors*" "$(TargetDir)TestData\ClassConstructorsInput\*" 
+md "$(TargetDir)TestData\EnumerationsInput"
+copy "$(TargetDir)Enumerations*" "$(TargetDir)TestData\EnumerationsInput\*" 
+md "$(TargetDir)TestData\StructuresInput"
+copy "$(TargetDir)Structures*" "$(TargetDir)TestData\StructuresInput\*" 
+md "$(TargetDir)TestData\DelegatesInput"
+copy "$(TargetDir)Delegate*" "$(TargetDir)TestData\DelegatesInput\*" 
+md "$(TargetDir)TestData\ParameterizedTypeIIDInput"
+copy "$(TargetDir)ParameterizedTypeIID*" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)BasicTests.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
+md "$(TargetDir)TestData\PlatformVersion"
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
+md "$(TargetDir)TestData\GenericInterfacesInput"
+copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+md "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput"
+copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput\*"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -283,7 +349,14 @@ copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeI
 copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
 md "$(TargetDir)TestData\PlatformVersion"
-copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
+md "$(TargetDir)TestData\GenericInterfacesInput"
+copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+md "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput"
+copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput\*"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -323,7 +396,14 @@ copy "$(TargetDir)TestInterfaces.winmd" "$(TargetDir)TestData\ParameterizedTypeI
 copy "$(TargetDir)testmetadataformatstringwithrange.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
 copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\ParameterizedTypeIIDInput\*" 
 md "$(TargetDir)TestData\PlatformVersion"
-copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*" </Command>
+copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
+md "$(TargetDir)TestData\GenericInterfacesInput"
+copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
+md "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput"
+copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestData\NamespaceToTypeCategoryDependencyInput\*"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
