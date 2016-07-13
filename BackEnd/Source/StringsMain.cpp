@@ -24,8 +24,8 @@ int main()
     Output h;
     Output cpp;
 
-    Write(h, "#pragma once\n\nnamespace Modern::Strings {\n\n");
-    Write(cpp, "#include \"Precompiled.h\"\n\nnamespace Modern::Strings {\n\n");
+    Write(h, "#pragma once\r\n\r\nnamespace Modern::Strings {\r\n\r\n");
+    Write(cpp, "#include \"Precompiled.h\"\r\n\r\nnamespace Modern::Strings {\r\n\r\n");
 
     Path::FindFiles("*", [&](char const * name, bool const folder)
     {
@@ -62,12 +62,12 @@ int main()
             Write(cpp, "0x%,", c);
         }
 
-        Write(cpp, "0x00 };\n\n");
-        Write(h, "extern char const %[%];\n", variableName, fileSize);
+        Write(cpp, "0x00 };\r\n\r\n");
+        Write(h, "extern char const %[%];\r\n", variableName, fileSize);
     });
 
-    Write(h, "\n}\n");
-    Write(cpp, "}\n");
+    Write(h, "\r\n}\r\n");
+    Write(cpp, "}\r\n");
 
     h.WriteTo("..\\Strings.h");
     cpp.WriteTo("..\\Strings.cpp");
