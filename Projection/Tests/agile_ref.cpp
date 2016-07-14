@@ -2,26 +2,25 @@
 #include "catch.hpp"
 
 using namespace winrt;
-using namespace Windows::Media::Capture;
-using namespace Windows::Media::Devices;
+using namespace Windows::Foundation;
 using namespace Windows::System::Threading;
 
 std::future<void> test_agile_ref()
 {
-    MediaCapture object;
+    Uri object = L"http://host/path";
 
     //
     // Here we're creating an agile_ref explicitly and using a traditional lambda variable capture
     // to pass it to the delegate.
     //
 
-    agile_ref<MediaCapture> ref = object;
+    agile_ref<Uri> ref = object;
 
     await ThreadPool::RunAsync([ref](auto && ...)
     {
-        MediaCapture object = ref.get();
+        Uri object = ref.get();
 
-        REQUIRE(object.CameraStreamState() == CameraStreamState::NotStreaming);
+        REQUIRE(object.ToString() == L"http://host/path");
     });
 
     //
@@ -31,9 +30,9 @@ std::future<void> test_agile_ref()
 
     await ThreadPool::RunAsync([ref = make_agile(object)](auto && ...)
     {
-        MediaCapture object = ref.get();
+        Uri object = ref.get();
 
-        REQUIRE(object.CameraStreamState() == CameraStreamState::NotStreaming);
+        REQUIRE(object.ToString() == L"http://host/path");
     });
 }
 
