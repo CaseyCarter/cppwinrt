@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Printing.class.h"
 #include "internal\Windows.Graphics.Printing.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
+#include "internal\Windows.UI.Xaml.Printing.class.h"
 #include "Windows.UI.Xaml.h"
 #include "internal\Windows.UI.Xaml.Printing.composable.h"
 

@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.AllJoyn.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Globalization.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.Security.Cryptography.Certificates.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Networking.Sockets.class.h"
+#include "internal\Windows.Devices.AllJoyn.class.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {

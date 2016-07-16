@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Perception.Provider.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Graphics.Imaging.class.h"
 #include "internal\Windows.Devices.Perception.class.h"
 #include "internal\Windows.Media.class.h"
+#include "internal\Windows.Devices.Perception.Provider.class.h"
 #include "Windows.Devices.Perception.h"
 
 WINRT_EXPORT namespace winrt {

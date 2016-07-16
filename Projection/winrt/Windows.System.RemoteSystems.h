@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.System.RemoteSystems.class.h"
 #include "internal\Windows.Networking.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.System.RemoteSystems.class.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.Headers.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Networking.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.Web.Http.Headers.class.h"
 #include "Windows.Web.Http.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"

@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Bluetooth.Background.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Devices.Bluetooth.Rfcomm.class.h"
 #include "internal\Windows.Devices.Bluetooth.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.Devices.Bluetooth.GenericAttributeProfile.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Devices.Bluetooth.Advertisement.class.h"
+#include "internal\Windows.Devices.Bluetooth.Background.class.h"
 #include "Windows.Devices.Bluetooth.h"
 
 WINRT_EXPORT namespace winrt {

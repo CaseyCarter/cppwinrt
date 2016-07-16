@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Shapes.class.h"
 #include "internal\Windows.UI.Xaml.Media.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.UI.Composition.class.h"
+#include "internal\Windows.UI.Xaml.Shapes.class.h"
 #include "Windows.UI.Xaml.h"
 #include "internal\Windows.UI.Xaml.Shapes.composable.h"
 

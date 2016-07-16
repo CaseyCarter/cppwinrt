@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Composition.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Graphics.DirectX.class.h"
 #include "internal\Windows.UI.Core.class.h"
 #include "internal\Windows.Graphics.Effects.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.UI.Composition.class.h"
 #include "Windows.UI.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.Graphics.Effects.h"

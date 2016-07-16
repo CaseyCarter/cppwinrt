@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Cryptography.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
+#include "internal\Windows.Security.Cryptography.class.h"
 
 WINRT_EXPORT namespace winrt {
 

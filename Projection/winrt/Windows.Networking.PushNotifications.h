@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.PushNotifications.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.System.class.h"
 #include "internal\Windows.UI.Notifications.class.h"
+#include "internal\Windows.Networking.PushNotifications.class.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {

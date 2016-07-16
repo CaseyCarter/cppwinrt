@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Authentication.Web.Core.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.System.class.h"
+#include "internal\Windows.Security.Authentication.Web.Core.class.h"
 #include "Windows.Security.Authentication.Web.h"
 
 WINRT_EXPORT namespace winrt {

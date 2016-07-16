@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Xml.Dom.class.h"
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
+#include "internal\Windows.Data.Xml.Dom.class.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {

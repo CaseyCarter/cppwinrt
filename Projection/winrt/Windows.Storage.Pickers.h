@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Pickers.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.class.h"
+#include "internal\Windows.Storage.Pickers.class.h"
 #include "Windows.Storage.h"
 #include "Windows.Foundation.Collections.h"
 

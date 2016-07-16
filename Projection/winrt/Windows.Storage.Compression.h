@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Compression.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
+#include "internal\Windows.Storage.Compression.class.h"
 #include "Windows.Storage.h"
 #include "Windows.Storage.Streams.h"
 

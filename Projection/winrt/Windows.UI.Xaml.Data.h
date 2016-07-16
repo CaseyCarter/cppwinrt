@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Data.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.Xaml.Interop.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
+#include "internal\Windows.UI.Xaml.Data.class.h"
 #include "Windows.UI.Xaml.h"
 #include "internal\Windows.UI.Xaml.Data.composable.h"
 

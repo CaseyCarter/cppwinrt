@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Playback.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.class.h"
@@ -15,6 +14,7 @@
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Media.Core.class.h"
+#include "internal\Windows.Media.Playback.class.h"
 #include "Windows.Media.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.Media.Core.h"

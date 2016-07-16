@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Store.Preview.InstallControl.class.h"
 #include "internal\Windows.System.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Management.Deployment.class.h"
+#include "internal\Windows.ApplicationModel.Store.Preview.InstallControl.class.h"
 #include "Windows.ApplicationModel.Store.Preview.h"
 
 WINRT_EXPORT namespace winrt {

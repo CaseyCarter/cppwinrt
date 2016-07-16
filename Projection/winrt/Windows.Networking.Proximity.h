@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.Proximity.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Networking.Sockets.class.h"
 #include "internal\Windows.Networking.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.Networking.Proximity.class.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {

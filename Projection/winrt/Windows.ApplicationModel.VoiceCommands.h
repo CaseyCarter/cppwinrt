@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.VoiceCommands.class.h"
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.SpeechRecognition.class.h"
 #include "internal\Windows.Globalization.class.h"
 #include "internal\Windows.ApplicationModel.AppService.class.h"
+#include "internal\Windows.ApplicationModel.VoiceCommands.class.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

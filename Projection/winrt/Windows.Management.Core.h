@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Management.Core.class.h"
 #include "internal\Windows.Storage.class.h"
+#include "internal\Windows.Management.Core.class.h"
 
 WINRT_EXPORT namespace winrt {
 

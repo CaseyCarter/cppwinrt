@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Protection.PlayReady.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.Protection.class.h"
 #include "internal\Windows.Media.Core.class.h"
 #include "internal\Windows.Storage.class.h"
+#include "internal\Windows.Media.Protection.PlayReady.class.h"
 #include "Windows.Media.Protection.h"
 #include "Windows.Foundation.Collections.h"
 

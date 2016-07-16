@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.UI.Xaml.Controls.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.ApplicationModel.class.h"
@@ -23,6 +22,7 @@
 #include "internal\Windows.UI.Xaml.Media.Animation.class.h"
 #include "internal\Windows.UI.Xaml.Data.class.h"
 #include "internal\Windows.ApplicationModel.Activation.class.h"
+#include "internal\Windows.UI.Xaml.class.h"
 #include "Windows.UI.h"
 #include "Windows.ApplicationModel.Core.h"
 #include "Windows.Foundation.Collections.h"

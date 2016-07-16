@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Gaming.Input.ForceFeedback.class.h"
 #include "internal\Windows.Foundation.class.h"
+#include "internal\Windows.Gaming.Input.ForceFeedback.class.h"
 #include "Windows.Gaming.Input.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.System.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Security.Cryptography.Core.class.h"
+#include "internal\Windows.Security.Credentials.class.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {

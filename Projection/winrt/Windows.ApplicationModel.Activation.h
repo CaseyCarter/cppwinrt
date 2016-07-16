@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Activation.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.ApplicationModel.Appointments.AppointmentsProvider.class.h"
 #include "internal\Windows.ApplicationModel.UserDataAccounts.Provider.class.h"
@@ -21,6 +20,7 @@
 #include "internal\Windows.ApplicationModel.Background.class.h"
 #include "internal\Windows.Devices.Enumeration.class.h"
 #include "internal\Windows.Media.SpeechRecognition.class.h"
+#include "internal\Windows.ApplicationModel.Activation.class.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

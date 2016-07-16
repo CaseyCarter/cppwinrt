@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Email.DataProvider.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.ApplicationModel.Email.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.ApplicationModel.Email.DataProvider.class.h"
 #include "Windows.ApplicationModel.Email.h"
 
 WINRT_EXPORT namespace winrt {

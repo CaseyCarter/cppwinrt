@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Search.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.Storage.FileProperties.class.h"
+#include "internal\Windows.Storage.Search.class.h"
 #include "Windows.Storage.h"
 #include "Windows.Foundation.Collections.h"
 

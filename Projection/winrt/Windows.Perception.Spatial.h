@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Perception.Spatial.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Perception.class.h"
+#include "internal\Windows.Perception.Spatial.class.h"
 #include "Windows.Perception.h"
 
 WINRT_EXPORT namespace winrt {

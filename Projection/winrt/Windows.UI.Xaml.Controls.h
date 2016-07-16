@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Controls.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.UI.Xaml.Interop.class.h"
@@ -33,6 +32,7 @@
 #include "internal\Windows.Globalization.class.h"
 #include "internal\Windows.UI.Xaml.Media.Animation.class.h"
 #include "internal\Windows.UI.Core.class.h"
+#include "internal\Windows.UI.Xaml.Controls.class.h"
 #include "Windows.UI.Xaml.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.UI.Xaml.Controls.Primitives.h"

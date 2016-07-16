@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Adc.Provider.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.Devices.Adc.Provider.class.h"
 #include "Windows.Devices.Adc.h"
 
 WINRT_EXPORT namespace winrt {

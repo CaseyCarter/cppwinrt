@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Composition.Effects.class.h"
 #include "internal\Windows.Graphics.Effects.class.h"
+#include "internal\Windows.UI.Composition.Effects.class.h"
 #include "Windows.UI.Composition.h"
 #include "Windows.Graphics.Effects.h"
 

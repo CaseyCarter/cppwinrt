@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Capture.Frames.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Media.Capture.class.h"
@@ -16,6 +15,7 @@
 #include "internal\Windows.Graphics.Imaging.class.h"
 #include "internal\Windows.Graphics.DirectX.Direct3D11.class.h"
 #include "internal\Windows.Media.class.h"
+#include "internal\Windows.Media.Capture.Frames.class.h"
 #include "Windows.Media.Capture.h"
 
 WINRT_EXPORT namespace winrt {

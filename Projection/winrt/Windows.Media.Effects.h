@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Effects.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.class.h"
 #include "internal\Windows.Graphics.DirectX.Direct3D11.class.h"
@@ -15,6 +14,7 @@
 #include "internal\Windows.Media.MediaProperties.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.Media.Transcoding.class.h"
+#include "internal\Windows.Media.Effects.class.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

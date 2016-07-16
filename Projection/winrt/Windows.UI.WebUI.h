@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.UI.WebUI.class.h"
 #include "internal\Windows.ApplicationModel.Activation.class.h"
 #include "internal\Windows.ApplicationModel.class.h"
+#include "internal\Windows.UI.WebUI.class.h"
 #include "Windows.UI.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.ApplicationModel.Activation.h"

@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Input.Spatial.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Perception.Spatial.class.h"
 #include "internal\Windows.Perception.class.h"
 #include "internal\Windows.Perception.People.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.UI.Input.Spatial.class.h"
 #include "Windows.UI.Input.h"
 
 WINRT_EXPORT namespace winrt {

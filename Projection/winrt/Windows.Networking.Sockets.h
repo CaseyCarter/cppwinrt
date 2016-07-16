@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.Sockets.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Networking.class.h"
@@ -12,6 +11,7 @@
 #include "internal\Windows.Security.Cryptography.Certificates.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Web.class.h"
+#include "internal\Windows.Networking.Sockets.class.h"
 #include "Windows.Networking.h"
 #include "Windows.ApplicationModel.Background.h"
 

@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.System.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.Popups.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.UI.ViewManagement.class.h"
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.System.RemoteSystems.class.h"
+#include "internal\Windows.System.class.h"
 
 WINRT_EXPORT namespace winrt {
 

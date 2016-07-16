@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Media.Animation.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.UI.Xaml.Controls.Primitives.class.h"
 #include "internal\Windows.UI.Composition.class.h"
 #include "internal\Windows.UI.Xaml.Controls.class.h"
+#include "internal\Windows.UI.Xaml.Media.Animation.class.h"
 #include "Windows.UI.Xaml.Media.h"
 #include "Windows.Foundation.Collections.h"
 #include "internal\Windows.UI.Xaml.Media.Animation.override.h"

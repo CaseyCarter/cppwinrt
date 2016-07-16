@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.System.Threading.Core.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.System.Threading.class.h"
+#include "internal\Windows.System.Threading.Core.class.h"
 #include "Windows.System.Threading.h"
 
 WINRT_EXPORT namespace winrt {

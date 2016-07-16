@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Controls.Maps.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Devices.Geolocation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.Services.Maps.class.h"
+#include "internal\Windows.UI.Xaml.Controls.Maps.class.h"
 #include "Windows.UI.Xaml.Controls.h"
 #include "internal\Windows.UI.Xaml.Controls.Maps.composable.h"
 

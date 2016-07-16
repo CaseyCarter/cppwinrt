@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Pdf.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Storage.class.h"
+#include "internal\Windows.Data.Pdf.class.h"
 
 WINRT_EXPORT namespace winrt {
 

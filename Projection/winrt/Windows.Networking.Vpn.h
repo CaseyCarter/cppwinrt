@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.Vpn.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Networking.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Security.Cryptography.Certificates.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
+#include "internal\Windows.Networking.Vpn.class.h"
 #include "Windows.Networking.h"
 #include "Windows.Foundation.Collections.h"
 

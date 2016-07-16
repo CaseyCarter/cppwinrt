@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.BackgroundTransfer.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
@@ -12,6 +11,7 @@
 #include "internal\Windows.UI.Notifications.class.h"
 #include "internal\Windows.Web.class.h"
 #include "internal\Windows.ApplicationModel.Background.class.h"
+#include "internal\Windows.Networking.BackgroundTransfer.class.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {

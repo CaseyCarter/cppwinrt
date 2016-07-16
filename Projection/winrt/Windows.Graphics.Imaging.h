@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.Imaging.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Graphics.DirectX.Direct3D11.class.h"
+#include "internal\Windows.Graphics.Imaging.class.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.Storage.Streams.h"

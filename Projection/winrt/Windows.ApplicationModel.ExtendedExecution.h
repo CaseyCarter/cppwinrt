@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.ExtendedExecution.class.h"
 #include "internal\Windows.Foundation.class.h"
+#include "internal\Windows.ApplicationModel.ExtendedExecution.class.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

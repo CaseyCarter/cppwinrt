@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Networking.class.h"
 #include "internal\Windows.Networking.Connectivity.class.h"
+#include "internal\Windows.Networking.class.h"
 #include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.WiFiDirect.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Devices.Enumeration.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
+#include "internal\Windows.Devices.WiFiDirect.class.h"
 #include "Windows.Devices.h"
 #include "Windows.Devices.Enumeration.h"
 

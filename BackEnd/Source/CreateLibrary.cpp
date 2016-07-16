@@ -193,8 +193,8 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 
-    Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".class.h");
     WriteRequiredClasses(out);
+    Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".class.h");
 
     // Include the full definition of parent namespaces. Some may not have any declarations. If not, go back another level.
     std::string parentNamespace = Settings::FileNamespaceDotName;

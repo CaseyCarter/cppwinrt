@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Media.FaceAnalysis.class.h"
 #include "internal\Windows.Graphics.Imaging.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.class.h"
+#include "internal\Windows.Media.FaceAnalysis.class.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

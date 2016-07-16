@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Media.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.UI.Xaml.Media.Media3D.class.h"
 #include "internal\Windows.UI.class.h"
+#include "internal\Windows.UI.Xaml.Media.class.h"
 #include "Windows.UI.Xaml.h"
 #include "Windows.Foundation.Collections.h"
 #include "internal\Windows.UI.Xaml.Media.override.h"

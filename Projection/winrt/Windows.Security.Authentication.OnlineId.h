@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Authentication.OnlineId.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Foundation.class.h"
+#include "internal\Windows.Security.Authentication.OnlineId.class.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {

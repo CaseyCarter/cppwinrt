@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Media.Imaging.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.ApplicationModel.Background.class.h"
 #include "internal\Windows.Graphics.Imaging.class.h"
+#include "internal\Windows.UI.Xaml.Media.Imaging.class.h"
 #include "Windows.UI.Xaml.Media.h"
 #include "internal\Windows.UI.Xaml.Media.Imaging.override.h"
 #include "internal\Windows.UI.Xaml.Media.Imaging.composable.h"

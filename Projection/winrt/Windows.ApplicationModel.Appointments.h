@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Appointments.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Popups.class.h"
 #include "internal\Windows.System.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.class.h"
+#include "internal\Windows.ApplicationModel.Appointments.class.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

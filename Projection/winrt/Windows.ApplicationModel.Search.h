@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Search.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Storage.Streams.class.h"
+#include "internal\Windows.ApplicationModel.Search.class.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

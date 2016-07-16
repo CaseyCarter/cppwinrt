@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Documents.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.Media.class.h"
 #include "internal\Windows.UI.Text.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.UI.Xaml.Documents.class.h"
 #include "Windows.UI.Xaml.h"
 #include "Windows.Foundation.Collections.h"
 #include "internal\Windows.UI.Xaml.Documents.override.h"

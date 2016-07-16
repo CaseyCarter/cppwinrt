@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Xml.Xsl.class.h"
 #include "internal\Windows.Data.Xml.Dom.class.h"
+#include "internal\Windows.Data.Xml.Xsl.class.h"
 
 WINRT_EXPORT namespace winrt {
 

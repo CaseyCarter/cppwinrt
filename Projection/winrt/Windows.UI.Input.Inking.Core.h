@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Input.Inking.Core.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Input.Inking.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.UI.Input.Inking.Core.class.h"
 #include "Windows.UI.Input.Inking.h"
 
 WINRT_EXPORT namespace winrt {

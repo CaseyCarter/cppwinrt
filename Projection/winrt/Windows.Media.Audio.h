@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Audio.class.h"
 #include "internal\Windows.Media.Render.class.h"
 #include "internal\Windows.Media.MediaProperties.class.h"
 #include "internal\Windows.Devices.Enumeration.class.h"
@@ -13,6 +12,7 @@
 #include "internal\Windows.Storage.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Media.Effects.class.h"
+#include "internal\Windows.Media.Audio.class.h"
 #include "Windows.Media.h"
 #include "Windows.Media.Effects.h"
 

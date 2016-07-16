@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Input.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
 #include "internal\Windows.Devices.Input.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.System.class.h"
 #include "internal\Windows.UI.Core.class.h"
+#include "internal\Windows.UI.Xaml.Input.class.h"
 #include "Windows.UI.Xaml.h"
 #include "internal\Windows.UI.Xaml.Input.composable.h"
 

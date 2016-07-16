@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Automation.Provider.class.h"
 #include "internal\Windows.UI.Xaml.Automation.class.h"
 #include "internal\Windows.UI.class.h"
 #include "internal\Windows.UI.Xaml.Automation.Text.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.UI.Xaml.Automation.Peers.class.h"
+#include "internal\Windows.UI.Xaml.Automation.Provider.class.h"
 #include "Windows.UI.Xaml.Automation.h"
 
 WINRT_EXPORT namespace winrt {

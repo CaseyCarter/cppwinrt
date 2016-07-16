@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Automation.Peers.class.h"
 #include "internal\Windows.UI.Xaml.Controls.Primitives.class.h"
 #include "internal\Windows.UI.Xaml.Controls.class.h"
 #include "internal\Windows.UI.Xaml.Automation.class.h"
@@ -11,6 +10,7 @@
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.Xaml.Automation.Provider.class.h"
 #include "internal\Windows.UI.Xaml.class.h"
+#include "internal\Windows.UI.Xaml.Automation.Peers.class.h"
 #include "Windows.UI.Xaml.Automation.h"
 #include "Windows.UI.Xaml.Automation.Provider.h"
 #include "internal\Windows.UI.Xaml.Automation.Peers.override.h"

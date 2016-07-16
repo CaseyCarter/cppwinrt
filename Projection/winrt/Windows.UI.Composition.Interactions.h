@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Composition.Interactions.class.h"
 #include "internal\Windows.UI.Composition.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.UI.Input.class.h"
+#include "internal\Windows.UI.Composition.Interactions.class.h"
 #include "Windows.UI.Composition.h"
 #include "Windows.Foundation.Collections.h"
 

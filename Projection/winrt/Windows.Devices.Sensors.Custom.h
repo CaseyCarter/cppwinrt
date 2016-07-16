@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Sensors.Custom.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
+#include "internal\Windows.Devices.Sensors.Custom.class.h"
 #include "Windows.Devices.Sensors.h"
 
 WINRT_EXPORT namespace winrt {

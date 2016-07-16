@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.Filters.class.h"
 #include "internal\Windows.Web.Http.class.h"
 #include "internal\Windows.Foundation.class.h"
 #include "internal\Windows.Security.Cryptography.Certificates.class.h"
 #include "internal\Windows.Networking.Sockets.class.h"
 #include "internal\Windows.Foundation.Collections.class.h"
 #include "internal\Windows.Security.Credentials.class.h"
+#include "internal\Windows.Web.Http.Filters.class.h"
 #include "Windows.Web.Http.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Appointments.AppointmentsProvider.class.h"
 #include "internal\Windows.ApplicationModel.Appointments.class.h"
 #include "internal\Windows.Foundation.class.h"
+#include "internal\Windows.ApplicationModel.Appointments.AppointmentsProvider.class.h"
 #include "Windows.ApplicationModel.Appointments.h"
 
 WINRT_EXPORT namespace winrt {
