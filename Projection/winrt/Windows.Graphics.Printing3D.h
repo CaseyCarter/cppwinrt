@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.class.h"
-#include "internal\Windows.Graphics.Printing3D.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.3.h"
+#include "internal\Windows.Graphics.Printing3D.3.h"
 
 WINRT_EXPORT namespace winrt {
 

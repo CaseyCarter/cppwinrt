@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Security.Cryptography.DataProtection.class.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Security.Cryptography.DataProtection.3.h"
 #include "Windows.Security.Cryptography.h"
 
 WINRT_EXPORT namespace winrt {

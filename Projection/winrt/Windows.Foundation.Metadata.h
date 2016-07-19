@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Metadata.class.h"
+#include "internal\Windows.Foundation.Metadata.3.h"
 #include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {

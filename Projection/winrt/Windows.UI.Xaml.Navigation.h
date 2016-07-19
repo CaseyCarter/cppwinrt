@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Interop.class.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.Xaml.class.h"
-#include "internal\Windows.UI.Xaml.Navigation.class.h"
+#include "internal\Windows.UI.Xaml.Interop.3.h"
+#include "internal\Windows.UI.Xaml.Media.Animation.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.Xaml.3.h"
+#include "internal\Windows.UI.Xaml.Navigation.3.h"
 #include "Windows.UI.Xaml.h"
 
 WINRT_EXPORT namespace winrt {

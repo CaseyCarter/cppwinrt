@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Media.Streaming.Adaptive.class.h"
+#include "internal\Windows.Web.Http.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Media.Streaming.Adaptive.3.h"
 #include "Windows.Media.h"
 #include "Windows.Media.Core.h"
 

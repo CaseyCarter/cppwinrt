@@ -3,12 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Composition.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.Input.class.h"
-#include "internal\Windows.UI.Composition.Interactions.class.h"
+#include "internal\Windows.UI.Composition.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.Input.3.h"
+#include "internal\Windows.UI.Composition.Interactions.3.h"
 #include "Windows.UI.Composition.h"
+#include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {

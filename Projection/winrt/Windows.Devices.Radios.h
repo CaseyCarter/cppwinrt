@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Radios.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Radios.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {

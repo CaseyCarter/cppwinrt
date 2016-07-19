@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.System.Threading.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.System.Threading.3.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {

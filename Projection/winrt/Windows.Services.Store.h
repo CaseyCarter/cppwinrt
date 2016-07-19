@@ -3,11 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.System.class.h"
-#include "internal\Windows.ApplicationModel.class.h"
-#include "internal\Windows.Services.Store.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.System.3.h"
+#include "internal\Windows.ApplicationModel.3.h"
+#include "internal\Windows.Services.Store.3.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

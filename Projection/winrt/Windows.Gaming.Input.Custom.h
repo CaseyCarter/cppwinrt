@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Gaming.Input.class.h"
-#include "internal\Windows.Gaming.Input.Custom.class.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Gaming.Input.3.h"
+#include "internal\Windows.Gaming.Input.Custom.3.h"
 #include "Windows.Gaming.Input.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.Core.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.class.h"
-#include "internal\Windows.UI.Input.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.UI.Input.Inking.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.Core.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.3.h"
+#include "internal\Windows.UI.Input.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.UI.Input.Inking.3.h"
 #include "Windows.UI.Input.h"
 
 WINRT_EXPORT namespace winrt {

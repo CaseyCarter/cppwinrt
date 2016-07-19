@@ -3,10 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.class.h"
-#include "internal\Windows.Devices.Lights.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.3.h"
+#include "internal\Windows.Devices.Lights.3.h"
 #include "Windows.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

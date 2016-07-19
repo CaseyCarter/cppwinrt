@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.class.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.ShareTarget.class.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
+#include "internal\Windows.ApplicationModel.DataTransfer.ShareTarget.3.h"
 #include "Windows.ApplicationModel.DataTransfer.h"
 
 WINRT_EXPORT namespace winrt {

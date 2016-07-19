@@ -4,11 +4,17 @@
 
 namespace Modern::Settings {
 
+extern Modern::Options Options;
 extern std::string OutPath;
 extern std::string DatabasePath;
 extern const std::string PublicPath;
 extern const std::string InternalPath;
-extern Modern::Options Options;
+extern const std::string ForwardLayerExtension;
+extern const std::string AbiLayerExtension;
+extern const std::string InterfaceLayerExtension;
+extern const std::string ClassDeclLayerExtension;
+extern const std::string OverrideLayerExtension;
+extern const std::string ComposableLayerExtension;
 
 extern std::string Namespace;
 extern std::string NamespaceDotName;

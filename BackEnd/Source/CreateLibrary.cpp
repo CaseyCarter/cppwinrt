@@ -119,9 +119,8 @@ static void GenerateForward()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName +  ".forward.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::ForwardLayerExtension);
 }
-
 
 static void GenerateAbi()
 {
@@ -144,7 +143,7 @@ static void GenerateAbi()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName + ".abi.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::AbiLayerExtension);
 }
 
 static void GenerateInterface()
@@ -153,7 +152,7 @@ static void GenerateInterface()
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 
-    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName +  ".abi.h");
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + Settings::AbiLayerExtension);
 
     WriteRequiredAbiHeadersForInterface(out);
     WriteRequiredInterfaceIncludes(out);
@@ -166,7 +165,7 @@ static void GenerateInterface()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName + ".interface.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::InterfaceLayerExtension);
 }
 
 static void GenerateClassDecl()
@@ -175,7 +174,7 @@ static void GenerateClassDecl()
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 
-    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".interface.h");
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + Settings::InterfaceLayerExtension);
 
     WriteRootNamespaceBegin(out);
 
@@ -184,7 +183,7 @@ static void GenerateClassDecl()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName + ".class.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::ClassDeclLayerExtension);
 }
 
 static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::vector<std::string>& processedNamespaces)
@@ -194,7 +193,7 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     Write(out, Strings::PragmaOnce);
 
     WriteRequiredClasses(out);
-    Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".class.h");
+    Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + Settings::ClassDeclLayerExtension);
 
     // Include the full definition of parent namespaces. Some may not have any declarations. If not, go back another level.
     std::string parentNamespace = Settings::FileNamespaceDotName;
@@ -214,12 +213,12 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
 
     if (overridesExist)
     {
-        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".override.h");
+        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + Settings::OverrideLayerExtension);
     }
 
     if (composablesExist)
     {
-        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + ".composable.h");
+        Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + Settings::ComposableLayerExtension);
     }
 
     WriteRootNamespaceBegin(out);
@@ -249,7 +248,7 @@ static bool GenerateOverrides()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName + ".override.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::OverrideLayerExtension);
 
     return true;
 }
@@ -271,7 +270,7 @@ static bool GenerateComposables()
 
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    out.WriteTo(Settings::FileNamespaceDotName + ".composable.h");
+    out.WriteTo(Settings::FileNamespaceDotName + Settings::ComposableLayerExtension);
 
     return true;
 }

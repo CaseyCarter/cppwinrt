@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.System.RemoteDesktop.class.h"
+#include "internal\Windows.System.RemoteDesktop.3.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.ApplicationModel.Resources.Core.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.ApplicationModel.Resources.Core.3.h"
 #include "Windows.ApplicationModel.Resources.h"
 #include "Windows.Foundation.Collections.h"
 

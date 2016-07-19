@@ -3,17 +3,17 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.Xaml.Controls.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.Xaml.class.h"
-#include "internal\Windows.UI.Xaml.Media.class.h"
-#include "internal\Windows.UI.Xaml.Input.class.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.Xaml.Controls.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.Xaml.3.h"
+#include "internal\Windows.UI.Xaml.Media.3.h"
+#include "internal\Windows.UI.Xaml.Input.3.h"
+#include "internal\Windows.UI.Xaml.Controls.Primitives.3.h"
 #include "Windows.UI.Xaml.Controls.h"
 #include "Windows.UI.Xaml.Data.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.override.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.composable.h"
+#include "internal\Windows.UI.Xaml.Controls.Primitives.4.h"
+#include "internal\Windows.UI.Xaml.Controls.Primitives.5.h"
 
 WINRT_EXPORT namespace winrt {
 

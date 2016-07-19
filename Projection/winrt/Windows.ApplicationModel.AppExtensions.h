@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.ApplicationModel.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.ApplicationModel.AppExtensions.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.ApplicationModel.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.ApplicationModel.AppExtensions.3.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

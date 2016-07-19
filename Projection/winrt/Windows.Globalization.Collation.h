@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Globalization.Collation.class.h"
+#include "internal\Windows.Globalization.Collation.3.h"
 #include "Windows.Globalization.h"
 #include "Windows.Foundation.Collections.h"
 

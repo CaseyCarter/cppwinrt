@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Printers.Extensions.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Printers.Extensions.3.h"
 #include "Windows.Devices.Printers.h"
 
 WINRT_EXPORT namespace winrt {

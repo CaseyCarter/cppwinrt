@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Perception.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Perception.3.h"
 
 WINRT_EXPORT namespace winrt {
 

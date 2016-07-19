@@ -3,10 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.I2c.Provider.class.h"
-#include "internal\Windows.Devices.I2c.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.I2c.Provider.3.h"
+#include "internal\Windows.Devices.I2c.3.h"
 #include "Windows.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.System.Power.Diagnostics.class.h"
+#include "internal\Windows.System.Power.Diagnostics.3.h"
 #include "Windows.System.Power.h"
 
 WINRT_EXPORT namespace winrt {

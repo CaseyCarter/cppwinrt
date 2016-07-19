@@ -3,13 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Enumeration.class.h"
-#include "internal\Windows.Networking.Sockets.class.h"
-#include "internal\Windows.Devices.WiFiDirect.Services.class.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal\Windows.Networking.Sockets.3.h"
+#include "internal\Windows.Devices.WiFiDirect.Services.3.h"
 #include "Windows.Devices.WiFiDirect.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

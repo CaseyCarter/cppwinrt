@@ -3,18 +3,18 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Controls.Primitives.class.h"
-#include "internal\Windows.UI.Xaml.Controls.class.h"
-#include "internal\Windows.UI.Xaml.Automation.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.Xaml.Automation.Provider.class.h"
-#include "internal\Windows.UI.Xaml.class.h"
-#include "internal\Windows.UI.Xaml.Automation.Peers.class.h"
+#include "internal\Windows.UI.Xaml.Controls.Primitives.3.h"
+#include "internal\Windows.UI.Xaml.Controls.3.h"
+#include "internal\Windows.UI.Xaml.Automation.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.Xaml.Automation.Provider.3.h"
+#include "internal\Windows.UI.Xaml.3.h"
+#include "internal\Windows.UI.Xaml.Automation.Peers.3.h"
 #include "Windows.UI.Xaml.Automation.h"
 #include "Windows.UI.Xaml.Automation.Provider.h"
-#include "internal\Windows.UI.Xaml.Automation.Peers.override.h"
-#include "internal\Windows.UI.Xaml.Automation.Peers.composable.h"
+#include "internal\Windows.UI.Xaml.Automation.Peers.4.h"
+#include "internal\Windows.UI.Xaml.Automation.Peers.5.h"
 
 WINRT_EXPORT namespace winrt {
 

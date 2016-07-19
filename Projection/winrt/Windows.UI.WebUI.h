@@ -3,13 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Activation.class.h"
-#include "internal\Windows.ApplicationModel.class.h"
-#include "internal\Windows.UI.WebUI.class.h"
+#include "internal\Windows.ApplicationModel.Activation.3.h"
+#include "internal\Windows.ApplicationModel.3.h"
+#include "internal\Windows.UI.WebUI.3.h"
 #include "Windows.UI.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.ApplicationModel.Activation.h"
 #include "Windows.ApplicationModel.Background.h"
+#include "Windows.Foundation.h"
 #include "Windows.Graphics.Printing.h"
 
 WINRT_EXPORT namespace winrt {

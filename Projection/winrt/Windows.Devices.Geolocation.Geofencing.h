@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Geolocation.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Devices.Geolocation.Geofencing.class.h"
+#include "internal\Windows.Devices.Geolocation.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Devices.Geolocation.Geofencing.3.h"
 #include "Windows.Devices.Geolocation.h"
 
 WINRT_EXPORT namespace winrt {

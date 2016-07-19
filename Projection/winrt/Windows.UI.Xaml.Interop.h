@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Interop.class.h"
+#include "internal\Windows.UI.Xaml.Interop.3.h"
 #include "Windows.UI.Xaml.h"
-#include "internal\Windows.UI.Xaml.Interop.composable.h"
+#include "internal\Windows.UI.Xaml.Interop.5.h"
 
 WINRT_EXPORT namespace winrt {
 

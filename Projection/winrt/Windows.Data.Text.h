@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Data.Text.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Data.Text.3.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,12 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Networking.class.h"
-#include "internal\Windows.Networking.Connectivity.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Networking.3.h"
+#include "internal\Windows.Networking.Connectivity.3.h"
 #include "Windows.Networking.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

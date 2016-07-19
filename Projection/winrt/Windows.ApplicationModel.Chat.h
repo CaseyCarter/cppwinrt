@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Media.MediaProperties.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Security.Credentials.class.h"
-#include "internal\Windows.ApplicationModel.Chat.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Media.MediaProperties.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Security.Credentials.3.h"
+#include "internal\Windows.ApplicationModel.Chat.3.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {

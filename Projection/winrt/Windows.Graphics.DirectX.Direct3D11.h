@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.DirectX.Direct3D11.class.h"
+#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "Windows.Graphics.DirectX.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.class.h"
+#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.3.h"
 #include "Windows.ApplicationModel.DataTransfer.h"
 
 WINRT_EXPORT namespace winrt {

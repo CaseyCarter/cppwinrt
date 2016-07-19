@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Gaming.UI.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Gaming.UI.3.h"
 
 WINRT_EXPORT namespace winrt {
 

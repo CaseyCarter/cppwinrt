@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.ApplicationModel.Wallet.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.ApplicationModel.Wallet.System.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.ApplicationModel.Wallet.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.ApplicationModel.Wallet.System.3.h"
 #include "Windows.ApplicationModel.Wallet.h"
 
 WINRT_EXPORT namespace winrt {

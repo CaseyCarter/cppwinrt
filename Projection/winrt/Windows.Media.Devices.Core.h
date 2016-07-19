@@ -3,12 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Media.MediaProperties.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Perception.Spatial.class.h"
-#include "internal\Windows.Media.Devices.Core.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Media.MediaProperties.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Perception.Spatial.3.h"
+#include "internal\Windows.Media.Devices.Core.3.h"
 #include "Windows.Media.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,14 +3,15 @@
 
 #pragma once
 
-#include "internal\Windows.UI.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Graphics.DirectX.class.h"
-#include "internal\Windows.UI.Core.class.h"
-#include "internal\Windows.Graphics.Effects.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.UI.Composition.class.h"
+#include "internal\Windows.UI.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Graphics.DirectX.3.h"
+#include "internal\Windows.UI.Core.3.h"
+#include "internal\Windows.Graphics.Effects.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.UI.Composition.3.h"
 #include "Windows.UI.h"
+#include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.Graphics.Effects.h"
 

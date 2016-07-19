@@ -1546,7 +1546,7 @@ void WriteRequiredAbiHeadersForAbi(Output & out)
 {
     GetGenericInterfaceArguments([&]
     {
-        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".abi.h");
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::AbiLayerExtension);
     });
 }
 
@@ -1554,18 +1554,18 @@ void WriteRequiredAbiHeadersForInterface(Output & out)
 {
     GetFieldNamespaces([&]
     {
-        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".abi.h");
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::AbiLayerExtension);
     });
 }
 
 void WriteRequiredForwards(Output & out)
 {
     Write(out, Strings::WriteInclude, "base.h");
-    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".forward.h");
+    Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + Settings::ForwardLayerExtension);
 
     GetRequiredForwards([&]
     {
-        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".forward.h");
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::ForwardLayerExtension);
     });
 }
 
@@ -1573,7 +1573,7 @@ void WriteRequiredInterfaceIncludes(Output & out)
 {
     GetRequiredInterfaceIncludes([&]
     {
-        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".interface.h");
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::InterfaceLayerExtension);
     });
 }
 
@@ -1585,7 +1585,7 @@ void WriteRequiredClasses(Output & out)
     {
         if (std::find(namespacesToIgnore.begin(), namespacesToIgnore.end(), Settings::Namespace) == namespacesToIgnore.end())
         {
-            Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::NamespaceDotName + ".class.h");
+            Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::NamespaceDotName + Settings::ClassDeclLayerExtension);
             namespacesToIgnore.push_back(Settings::Namespace);
         }
     });
@@ -1595,7 +1595,7 @@ void WriteRequiredOverrides(Output & out)
 {
     GetClassOverrideIncludes([&]
     {
-        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".override.h");
+        Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::OverrideLayerExtension);
     });
 }
 

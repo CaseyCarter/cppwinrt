@@ -3,11 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Spi.Provider.class.h"
-#include "internal\Windows.Devices.Spi.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Spi.Provider.3.h"
+#include "internal\Windows.Devices.Spi.3.h"
 #include "Windows.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

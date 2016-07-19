@@ -3,11 +3,17 @@
 
 namespace Modern::Settings {
 
+Modern::Options Options;
 std::string OutPath;
+std::string DatabasePath;
 const std::string PublicPath = "winrt\\";
 const std::string InternalPath = "internal\\";
-std::string DatabasePath;
-Modern::Options Options;
+const std::string ForwardLayerExtension = ".0.h";
+const std::string AbiLayerExtension = ".1.h";
+const std::string InterfaceLayerExtension = ".2.h";
+const std::string ClassDeclLayerExtension = ".3.h";
+const std::string OverrideLayerExtension = ".4.h";
+const std::string ComposableLayerExtension = ".5.h";
 
 std::string Namespace;
 std::string NamespaceDotName;

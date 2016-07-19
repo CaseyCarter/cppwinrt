@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Networking.Connectivity.class.h"
-#include "internal\Windows.Security.Credentials.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Devices.WiFi.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Networking.Connectivity.3.h"
+#include "internal\Windows.Security.Credentials.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Devices.WiFi.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {

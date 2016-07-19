@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.class.h"
-#include "internal\Windows.Security.EnterpriseData.class.h"
-#include "internal\Windows.Storage.class.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.class.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.3.h"
+#include "internal\Windows.Security.EnterpriseData.3.h"
+#include "internal\Windows.Storage.3.h"
+#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.Collections.h"
 

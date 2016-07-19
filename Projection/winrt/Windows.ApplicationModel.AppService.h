@@ -3,12 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.System.RemoteSystems.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.System.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.ApplicationModel.AppService.class.h"
+#include "internal\Windows.System.RemoteSystems.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.System.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.ApplicationModel.AppService.3.h"
 #include "Windows.ApplicationModel.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

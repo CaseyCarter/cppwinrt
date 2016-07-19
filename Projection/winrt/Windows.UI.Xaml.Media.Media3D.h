@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.class.h"
-#include "internal\Windows.UI.Xaml.Media.Media3D.class.h"
+#include "internal\Windows.UI.Xaml.3.h"
+#include "internal\Windows.UI.Xaml.Media.Media3D.3.h"
 #include "Windows.UI.Xaml.Media.h"
-#include "internal\Windows.UI.Xaml.Media.Media3D.composable.h"
+#include "internal\Windows.UI.Xaml.Media.Media3D.5.h"
 
 WINRT_EXPORT namespace winrt {
 

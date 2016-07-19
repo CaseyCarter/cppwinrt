@@ -3,10 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Gpio.Provider.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Gpio.class.h"
+#include "internal\Windows.Devices.Gpio.Provider.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Gpio.3.h"
 #include "Windows.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

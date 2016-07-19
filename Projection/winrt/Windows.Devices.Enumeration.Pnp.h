@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Devices.Enumeration.class.h"
-#include "internal\Windows.Devices.Enumeration.Pnp.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal\Windows.Devices.Enumeration.Pnp.3.h"
 #include "Windows.Devices.Enumeration.h"
 #include "Windows.Foundation.Collections.h"
 

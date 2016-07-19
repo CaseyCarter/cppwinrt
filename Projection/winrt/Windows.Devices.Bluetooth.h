@@ -3,14 +3,15 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Networking.class.h"
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Devices.Enumeration.class.h"
-#include "internal\Windows.Devices.Bluetooth.Rfcomm.class.h"
-#include "internal\Windows.Devices.Bluetooth.GenericAttributeProfile.class.h"
-#include "internal\Windows.Devices.Bluetooth.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Networking.3.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal\Windows.Devices.Bluetooth.Rfcomm.3.h"
+#include "internal\Windows.Devices.Bluetooth.GenericAttributeProfile.3.h"
+#include "internal\Windows.Devices.Bluetooth.3.h"
 #include "Windows.Devices.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,20 +3,21 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.class.h"
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.Media.Capture.class.h"
-#include "internal\Windows.Devices.Enumeration.class.h"
-#include "internal\Windows.Perception.Spatial.class.h"
-#include "internal\Windows.Media.Devices.Core.class.h"
-#include "internal\Windows.Media.Devices.class.h"
-#include "internal\Windows.Media.MediaProperties.class.h"
-#include "internal\Windows.Storage.Streams.class.h"
-#include "internal\Windows.Graphics.Imaging.class.h"
-#include "internal\Windows.Graphics.DirectX.Direct3D11.class.h"
-#include "internal\Windows.Media.class.h"
-#include "internal\Windows.Media.Capture.Frames.class.h"
+#include "internal\Windows.Foundation.Collections.3.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.Media.Capture.3.h"
+#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal\Windows.Perception.Spatial.3.h"
+#include "internal\Windows.Media.Devices.Core.3.h"
+#include "internal\Windows.Media.Devices.3.h"
+#include "internal\Windows.Media.MediaProperties.3.h"
+#include "internal\Windows.Storage.Streams.3.h"
+#include "internal\Windows.Graphics.Imaging.3.h"
+#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal\Windows.Media.3.h"
+#include "internal\Windows.Media.Capture.Frames.3.h"
 #include "Windows.Media.Capture.h"
+#include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
 

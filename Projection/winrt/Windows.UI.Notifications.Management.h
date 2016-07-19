@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.class.h"
-#include "internal\Windows.UI.Notifications.class.h"
-#include "internal\Windows.UI.Notifications.Management.class.h"
+#include "internal\Windows.Foundation.3.h"
+#include "internal\Windows.UI.Notifications.3.h"
+#include "internal\Windows.UI.Notifications.Management.3.h"
 #include "Windows.UI.Notifications.h"
 
 WINRT_EXPORT namespace winrt {

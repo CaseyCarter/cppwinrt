@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Security.EnterpriseData.class.h"
+#include "internal\Windows.Security.EnterpriseData.3.h"
 
 WINRT_EXPORT namespace winrt {
 
