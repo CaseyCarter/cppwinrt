@@ -4703,289 +4703,289 @@ template <typename D> bool impl_IHttpTransferCodingHeaderValueCollection<D>::Try
 }
 
 inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_ref scheme) :
-    HttpChallengeHeaderValue(GetActivationFactory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromScheme(scheme))
+    HttpChallengeHeaderValue(get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromScheme(scheme))
 {}
 
 inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_ref scheme, hstring_ref token) :
-    HttpChallengeHeaderValue(GetActivationFactory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
+    HttpChallengeHeaderValue(get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
 {}
 
 inline Windows::Web::Http::Headers::HttpChallengeHeaderValue HttpChallengeHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpChallengeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue)
 {
-    return GetActivationFactory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().TryParse(input, challengeHeaderValue);
+    return get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().TryParse(input, challengeHeaderValue);
 }
 
 inline HttpConnectionOptionHeaderValue::HttpConnectionOptionHeaderValue(hstring_ref token) :
-    HttpConnectionOptionHeaderValue(GetActivationFactory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueFactory>().Create(token))
+    HttpConnectionOptionHeaderValue(get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueFactory>().Create(token))
 {}
 
 inline Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue HttpConnectionOptionHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpConnectionOptionHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue)
 {
-    return GetActivationFactory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().TryParse(input, connectionOptionHeaderValue);
+    return get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().TryParse(input, connectionOptionHeaderValue);
 }
 
 inline HttpContentCodingHeaderValue::HttpContentCodingHeaderValue(hstring_ref contentCoding) :
-    HttpContentCodingHeaderValue(GetActivationFactory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueFactory>().Create(contentCoding))
+    HttpContentCodingHeaderValue(get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueFactory>().Create(contentCoding))
 {}
 
 inline Windows::Web::Http::Headers::HttpContentCodingHeaderValue HttpContentCodingHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpContentCodingHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue)
 {
-    return GetActivationFactory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().TryParse(input, contentCodingHeaderValue);
+    return get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().TryParse(input, contentCodingHeaderValue);
 }
 
 inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding) :
-    HttpContentCodingWithQualityHeaderValue(GetActivationFactory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValue(contentCoding))
+    HttpContentCodingWithQualityHeaderValue(get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValue(contentCoding))
 {}
 
 inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding, double quality) :
-    HttpContentCodingWithQualityHeaderValue(GetActivationFactory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValueWithQuality(contentCoding, quality))
+    HttpContentCodingWithQualityHeaderValue(get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValueWithQuality(contentCoding, quality))
 {}
 
 inline Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue HttpContentCodingWithQualityHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpContentCodingWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue)
 {
-    return GetActivationFactory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().TryParse(input, contentCodingWithQualityHeaderValue);
+    return get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().TryParse(input, contentCodingWithQualityHeaderValue);
 }
 
 inline HttpContentDispositionHeaderValue::HttpContentDispositionHeaderValue(hstring_ref dispositionType) :
-    HttpContentDispositionHeaderValue(GetActivationFactory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueFactory>().Create(dispositionType))
+    HttpContentDispositionHeaderValue(get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueFactory>().Create(dispositionType))
 {}
 
 inline Windows::Web::Http::Headers::HttpContentDispositionHeaderValue HttpContentDispositionHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpContentDispositionHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue)
 {
-    return GetActivationFactory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().TryParse(input, contentDispositionHeaderValue);
+    return get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().TryParse(input, contentDispositionHeaderValue);
 }
 
 inline HttpContentHeaderCollection::HttpContentHeaderCollection() :
-    HttpContentHeaderCollection(ActivateInstance<HttpContentHeaderCollection>())
+    HttpContentHeaderCollection(activate_instance<HttpContentHeaderCollection>())
 {}
 
 inline HttpContentRangeHeaderValue::HttpContentRangeHeaderValue(uint64_t length) :
-    HttpContentRangeHeaderValue(GetActivationFactory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromLength(length))
+    HttpContentRangeHeaderValue(get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromLength(length))
 {}
 
 inline HttpContentRangeHeaderValue::HttpContentRangeHeaderValue(uint64_t from, uint64_t to) :
-    HttpContentRangeHeaderValue(GetActivationFactory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromRange(from, to))
+    HttpContentRangeHeaderValue(get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromRange(from, to))
 {}
 
 inline HttpContentRangeHeaderValue::HttpContentRangeHeaderValue(uint64_t from, uint64_t to, uint64_t length) :
-    HttpContentRangeHeaderValue(GetActivationFactory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromRangeWithLength(from, to, length))
+    HttpContentRangeHeaderValue(get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromRangeWithLength(from, to, length))
 {}
 
 inline Windows::Web::Http::Headers::HttpContentRangeHeaderValue HttpContentRangeHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpContentRangeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue)
 {
-    return GetActivationFactory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().TryParse(input, contentRangeHeaderValue);
+    return get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().TryParse(input, contentRangeHeaderValue);
 }
 
 inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_ref name) :
-    HttpCookiePairHeaderValue(GetActivationFactory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromName(name))
+    HttpCookiePairHeaderValue(get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromName(name))
 {}
 
 inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_ref name, hstring_ref value) :
-    HttpCookiePairHeaderValue(GetActivationFactory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromNameWithValue(name, value))
+    HttpCookiePairHeaderValue(get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
 inline Windows::Web::Http::Headers::HttpCookiePairHeaderValue HttpCookiePairHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpCookiePairHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue)
 {
-    return GetActivationFactory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().TryParse(input, cookiePairHeaderValue);
+    return get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().TryParse(input, cookiePairHeaderValue);
 }
 
 inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_ref scheme) :
-    HttpCredentialsHeaderValue(GetActivationFactory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromScheme(scheme))
+    HttpCredentialsHeaderValue(get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromScheme(scheme))
 {}
 
 inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_ref scheme, hstring_ref token) :
-    HttpCredentialsHeaderValue(GetActivationFactory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
+    HttpCredentialsHeaderValue(get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
 {}
 
 inline Windows::Web::Http::Headers::HttpCredentialsHeaderValue HttpCredentialsHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpCredentialsHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue)
 {
-    return GetActivationFactory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().TryParse(input, credentialsHeaderValue);
+    return get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().TryParse(input, credentialsHeaderValue);
 }
 
 inline Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue HttpDateOrDeltaHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpDateOrDeltaHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue)
 {
-    return GetActivationFactory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().TryParse(input, dateOrDeltaHeaderValue);
+    return get_activation_factory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().TryParse(input, dateOrDeltaHeaderValue);
 }
 
 inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_ref name) :
-    HttpExpectationHeaderValue(GetActivationFactory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromName(name))
+    HttpExpectationHeaderValue(get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromName(name))
 {}
 
 inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_ref name, hstring_ref value) :
-    HttpExpectationHeaderValue(GetActivationFactory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromNameWithValue(name, value))
+    HttpExpectationHeaderValue(get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
 inline Windows::Web::Http::Headers::HttpExpectationHeaderValue HttpExpectationHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpExpectationHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue)
 {
-    return GetActivationFactory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().TryParse(input, expectationHeaderValue);
+    return get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().TryParse(input, expectationHeaderValue);
 }
 
 inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange) :
-    HttpLanguageRangeWithQualityHeaderValue(GetActivationFactory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRange(languageRange))
+    HttpLanguageRangeWithQualityHeaderValue(get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRange(languageRange))
 {}
 
 inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange, double quality) :
-    HttpLanguageRangeWithQualityHeaderValue(GetActivationFactory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRangeWithQuality(languageRange, quality))
+    HttpLanguageRangeWithQualityHeaderValue(get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRangeWithQuality(languageRange, quality))
 {}
 
 inline Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue HttpLanguageRangeWithQualityHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpLanguageRangeWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue)
 {
-    return GetActivationFactory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().TryParse(input, languageRangeWithQualityHeaderValue);
+    return get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().TryParse(input, languageRangeWithQualityHeaderValue);
 }
 
 inline HttpMediaTypeHeaderValue::HttpMediaTypeHeaderValue(hstring_ref mediaType) :
-    HttpMediaTypeHeaderValue(GetActivationFactory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueFactory>().Create(mediaType))
+    HttpMediaTypeHeaderValue(get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueFactory>().Create(mediaType))
 {}
 
 inline Windows::Web::Http::Headers::HttpMediaTypeHeaderValue HttpMediaTypeHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpMediaTypeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue)
 {
-    return GetActivationFactory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().TryParse(input, mediaTypeHeaderValue);
+    return get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().TryParse(input, mediaTypeHeaderValue);
 }
 
 inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType) :
-    HttpMediaTypeWithQualityHeaderValue(GetActivationFactory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaType(mediaType))
+    HttpMediaTypeWithQualityHeaderValue(get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaType(mediaType))
 {}
 
 inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType, double quality) :
-    HttpMediaTypeWithQualityHeaderValue(GetActivationFactory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaTypeWithQuality(mediaType, quality))
+    HttpMediaTypeWithQualityHeaderValue(get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaTypeWithQuality(mediaType, quality))
 {}
 
 inline Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue HttpMediaTypeWithQualityHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpMediaTypeWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue)
 {
-    return GetActivationFactory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().TryParse(input, mediaTypeWithQualityHeaderValue);
+    return get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().TryParse(input, mediaTypeWithQualityHeaderValue);
 }
 
 inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_ref name) :
-    HttpNameValueHeaderValue(GetActivationFactory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromName(name))
+    HttpNameValueHeaderValue(get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromName(name))
 {}
 
 inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_ref name, hstring_ref value) :
-    HttpNameValueHeaderValue(GetActivationFactory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromNameWithValue(name, value))
+    HttpNameValueHeaderValue(get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
 inline Windows::Web::Http::Headers::HttpNameValueHeaderValue HttpNameValueHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpNameValueHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue)
 {
-    return GetActivationFactory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().TryParse(input, nameValueHeaderValue);
+    return get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().TryParse(input, nameValueHeaderValue);
 }
 
 inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_ref productName) :
-    HttpProductHeaderValue(GetActivationFactory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromName(productName))
+    HttpProductHeaderValue(get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromName(productName))
 {}
 
 inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_ref productName, hstring_ref productVersion) :
-    HttpProductHeaderValue(GetActivationFactory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
+    HttpProductHeaderValue(get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
 {}
 
 inline Windows::Web::Http::Headers::HttpProductHeaderValue HttpProductHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpProductHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue)
 {
-    return GetActivationFactory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().TryParse(input, productHeaderValue);
+    return get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().TryParse(input, productHeaderValue);
 }
 
 inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_ref productComment) :
-    HttpProductInfoHeaderValue(GetActivationFactory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromComment(productComment))
+    HttpProductInfoHeaderValue(get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromComment(productComment))
 {}
 
 inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_ref productName, hstring_ref productVersion) :
-    HttpProductInfoHeaderValue(GetActivationFactory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
+    HttpProductInfoHeaderValue(get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
 {}
 
 inline Windows::Web::Http::Headers::HttpProductInfoHeaderValue HttpProductInfoHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpProductInfoHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue)
 {
-    return GetActivationFactory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().TryParse(input, productInfoHeaderValue);
+    return get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().TryParse(input, productInfoHeaderValue);
 }
 
 inline HttpTransferCodingHeaderValue::HttpTransferCodingHeaderValue(hstring_ref input) :
-    HttpTransferCodingHeaderValue(GetActivationFactory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueFactory>().Create(input))
+    HttpTransferCodingHeaderValue(get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueFactory>().Create(input))
 {}
 
 inline Windows::Web::Http::Headers::HttpTransferCodingHeaderValue HttpTransferCodingHeaderValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().Parse(input);
+    return get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().Parse(input);
 }
 
 inline bool HttpTransferCodingHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue)
 {
-    return GetActivationFactory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().TryParse(input, transferCodingHeaderValue);
+    return get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().TryParse(input, transferCodingHeaderValue);
 }
 
 }

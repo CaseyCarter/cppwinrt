@@ -405,58 +405,58 @@ template <typename D> bool impl_ISharedModeSettingsStatics<D>::IsEnabled() const
 
 inline Windows::System::Profile::AnalyticsVersionInfo AnalyticsInfo::VersionInfo()
 {
-    return GetActivationFactory<AnalyticsInfo, IAnalyticsInfoStatics>().VersionInfo();
+    return get_activation_factory<AnalyticsInfo, IAnalyticsInfoStatics>().VersionInfo();
 }
 
 inline hstring AnalyticsInfo::DeviceForm()
 {
-    return GetActivationFactory<AnalyticsInfo, IAnalyticsInfoStatics>().DeviceForm();
+    return get_activation_factory<AnalyticsInfo, IAnalyticsInfoStatics>().DeviceForm();
 }
 
 inline Windows::System::Profile::HardwareToken HardwareIdentification::GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce)
 {
-    return GetActivationFactory<HardwareIdentification, IHardwareIdentificationStatics>().GetPackageSpecificToken(nonce);
+    return get_activation_factory<HardwareIdentification, IHardwareIdentificationStatics>().GetPackageSpecificToken(nonce);
 }
 
 inline Windows::System::Profile::PlatformDataCollectionLevel PlatformDiagnosticsAndUsageDataSettings::CollectionLevel()
 {
-    return GetActivationFactory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevel();
+    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevel();
 }
 
 inline event_token PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(handler);
+    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(handler);
 }
 
 inline factory_event_revoker<IPlatformDiagnosticsAndUsageDataSettingsStatics> PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>();
+    auto factory = get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>();
     return { factory, &ABI::Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics::remove_CollectionLevelChanged, factory.CollectionLevelChanged(handler) };
 }
 
 inline void PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(event_token token)
 {
-    GetActivationFactory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(token);
+    get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(token);
 }
 
 inline bool PlatformDiagnosticsAndUsageDataSettings::CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level)
 {
-    return GetActivationFactory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CanCollectDiagnostics(level);
+    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, IPlatformDiagnosticsAndUsageDataSettingsStatics>().CanCollectDiagnostics(level);
 }
 
 inline bool SharedModeSettings::IsEnabled()
 {
-    return GetActivationFactory<SharedModeSettings, ISharedModeSettingsStatics>().IsEnabled();
+    return get_activation_factory<SharedModeSettings, ISharedModeSettingsStatics>().IsEnabled();
 }
 
 inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::GetSystemIdForPublisher()
 {
-    return GetActivationFactory<SystemIdentification, ISystemIdentificationStatics>().GetSystemIdForPublisher();
+    return get_activation_factory<SystemIdentification, ISystemIdentificationStatics>().GetSystemIdForPublisher();
 }
 
 inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::GetSystemIdForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<SystemIdentification, ISystemIdentificationStatics>().GetSystemIdForUser(user);
+    return get_activation_factory<SystemIdentification, ISystemIdentificationStatics>().GetSystemIdForUser(user);
 }
 
 }

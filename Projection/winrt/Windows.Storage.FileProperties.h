@@ -1776,17 +1776,17 @@ template <typename D> Windows::Foundation::DateTime impl_IBasicProperties<D>::It
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> GeotagHelper::GetGeotagAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<GeotagHelper, IGeotagHelperStatics>().GetGeotagAsync(file);
+    return get_activation_factory<GeotagHelper, IGeotagHelperStatics>().GetGeotagAsync(file);
 }
 
 inline Windows::Foundation::IAsyncAction GeotagHelper::SetGeotagFromGeolocatorAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geolocator & geolocator)
 {
-    return GetActivationFactory<GeotagHelper, IGeotagHelperStatics>().SetGeotagFromGeolocatorAsync(file, geolocator);
+    return get_activation_factory<GeotagHelper, IGeotagHelperStatics>().SetGeotagFromGeolocatorAsync(file, geolocator);
 }
 
 inline Windows::Foundation::IAsyncAction GeotagHelper::SetGeotagAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geopoint & geopoint)
 {
-    return GetActivationFactory<GeotagHelper, IGeotagHelperStatics>().SetGeotagAsync(file, geopoint);
+    return get_activation_factory<GeotagHelper, IGeotagHelperStatics>().SetGeotagAsync(file, geopoint);
 }
 
 }

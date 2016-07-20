@@ -3732,66 +3732,66 @@ template <typename D> Windows::Web::WebErrorStatus impl_IWebSocketErrorStatics<D
 }
 
 inline DatagramSocket::DatagramSocket() :
-    DatagramSocket(ActivateInstance<DatagramSocket>())
+    DatagramSocket(activate_instance<DatagramSocket>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName)
 {
-    return GetActivationFactory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
+    return get_activation_factory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
 {
-    return GetActivationFactory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
+    return get_activation_factory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
 }
 
 inline MessageWebSocket::MessageWebSocket() :
-    MessageWebSocket(ActivateInstance<MessageWebSocket>())
+    MessageWebSocket(activate_instance<MessageWebSocket>())
 {}
 
 inline SocketActivityContext::SocketActivityContext(const Windows::Storage::Streams::IBuffer & data) :
-    SocketActivityContext(GetActivationFactory<SocketActivityContext, ISocketActivityContextFactory>().Create(data))
+    SocketActivityContext(get_activation_factory<SocketActivityContext, ISocketActivityContextFactory>().Create(data))
 {}
 
 inline Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> SocketActivityInformation::AllSockets()
 {
-    return GetActivationFactory<SocketActivityInformation, ISocketActivityInformationStatics>().AllSockets();
+    return get_activation_factory<SocketActivityInformation, ISocketActivityInformationStatics>().AllSockets();
 }
 
 inline Windows::Networking::Sockets::SocketErrorStatus SocketError::GetStatus(int32_t hresult)
 {
-    return GetActivationFactory<SocketError, ISocketErrorStatics>().GetStatus(hresult);
+    return get_activation_factory<SocketError, ISocketErrorStatics>().GetStatus(hresult);
 }
 
 inline StreamSocket::StreamSocket() :
-    StreamSocket(ActivateInstance<StreamSocket>())
+    StreamSocket(activate_instance<StreamSocket>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName)
 {
-    return GetActivationFactory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
+    return get_activation_factory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
 {
-    return GetActivationFactory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
+    return get_activation_factory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
 }
 
 inline StreamSocketListener::StreamSocketListener() :
-    StreamSocketListener(ActivateInstance<StreamSocketListener>())
+    StreamSocketListener(activate_instance<StreamSocketListener>())
 {}
 
 inline StreamWebSocket::StreamWebSocket() :
-    StreamWebSocket(ActivateInstance<StreamWebSocket>())
+    StreamWebSocket(activate_instance<StreamWebSocket>())
 {}
 
 inline Windows::Web::WebErrorStatus WebSocketError::GetStatus(int32_t hresult)
 {
-    return GetActivationFactory<WebSocketError, IWebSocketErrorStatics>().GetStatus(hresult);
+    return get_activation_factory<WebSocketError, IWebSocketErrorStatics>().GetStatus(hresult);
 }
 
 inline WebSocketKeepAlive::WebSocketKeepAlive() :
-    WebSocketKeepAlive(ActivateInstance<WebSocketKeepAlive>())
+    WebSocketKeepAlive(activate_instance<WebSocketKeepAlive>())
 {}
 
 }

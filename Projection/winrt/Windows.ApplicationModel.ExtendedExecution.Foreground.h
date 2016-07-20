@@ -185,7 +185,7 @@ template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Reason(W
 }
 
 inline ExtendedExecutionForegroundSession::ExtendedExecutionForegroundSession() :
-    ExtendedExecutionForegroundSession(ActivateInstance<ExtendedExecutionForegroundSession>())
+    ExtendedExecutionForegroundSession(activate_instance<ExtendedExecutionForegroundSession>())
 {}
 
 }

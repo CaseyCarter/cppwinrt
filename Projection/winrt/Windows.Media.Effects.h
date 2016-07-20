@@ -1396,51 +1396,51 @@ template <typename D> Windows::Media::Transcoding::MediaVideoProcessingAlgorithm
 }
 
 inline AudioEffectDefinition::AudioEffectDefinition(hstring_ref activatableClassId) :
-    AudioEffectDefinition(GetActivationFactory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().Create(activatableClassId))
+    AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().Create(activatableClassId))
 {}
 
 inline AudioEffectDefinition::AudioEffectDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
-    AudioEffectDefinition(GetActivationFactory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 
 inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category)
 {
-    return GetActivationFactory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category);
+    return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category);
 }
 
 inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode)
 {
-    return GetActivationFactory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category, mode);
+    return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category, mode);
 }
 
 inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category)
 {
-    return GetActivationFactory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category);
+    return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category);
 }
 
 inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode)
 {
-    return GetActivationFactory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category, mode);
+    return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category, mode);
 }
 
 inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_ref activatableClassId) :
-    VideoCompositorDefinition(GetActivationFactory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().Create(activatableClassId))
+    VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().Create(activatableClassId))
 {}
 
 inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
-    VideoCompositorDefinition(GetActivationFactory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 
 inline VideoEffectDefinition::VideoEffectDefinition(hstring_ref activatableClassId) :
-    VideoEffectDefinition(GetActivationFactory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().Create(activatableClassId))
+    VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().Create(activatableClassId))
 {}
 
 inline VideoEffectDefinition::VideoEffectDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
-    VideoEffectDefinition(GetActivationFactory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 
 inline VideoTransformEffectDefinition::VideoTransformEffectDefinition() :
-    VideoTransformEffectDefinition(ActivateInstance<VideoTransformEffectDefinition>())
+    VideoTransformEffectDefinition(activate_instance<VideoTransformEffectDefinition>())
 {}
 
 }

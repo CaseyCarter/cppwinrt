@@ -223,7 +223,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Appli
 }
 
 inline ExtendedExecutionSession::ExtendedExecutionSession() :
-    ExtendedExecutionSession(ActivateInstance<ExtendedExecutionSession>())
+    ExtendedExecutionSession(activate_instance<ExtendedExecutionSession>())
 {}
 
 }

@@ -87,7 +87,7 @@ template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_ref te
 }
 
 inline CharacterGroupings::CharacterGroupings() :
-    CharacterGroupings(ActivateInstance<CharacterGroupings>())
+    CharacterGroupings(activate_instance<CharacterGroupings>())
 {}
 
 }

@@ -726,19 +726,19 @@ template <typename D> void impl_IHdcpSession<D>::ProtectionChanged(event_token t
 }
 
 inline HdcpSession::HdcpSession() :
-    HdcpSession(ActivateInstance<HdcpSession>())
+    HdcpSession(activate_instance<HdcpSession>())
 {}
 
 inline MediaProtectionManager::MediaProtectionManager() :
-    MediaProtectionManager(ActivateInstance<MediaProtectionManager>())
+    MediaProtectionManager(activate_instance<MediaProtectionManager>())
 {}
 
 inline MediaProtectionPMPServer::MediaProtectionPMPServer(const Windows::Foundation::Collections::IPropertySet & pProperties) :
-    MediaProtectionPMPServer(GetActivationFactory<MediaProtectionPMPServer, IMediaProtectionPMPServerFactory>().CreatePMPServer(pProperties))
+    MediaProtectionPMPServer(get_activation_factory<MediaProtectionPMPServer, IMediaProtectionPMPServerFactory>().CreatePMPServer(pProperties))
 {}
 
 inline ProtectionCapabilities::ProtectionCapabilities() :
-    ProtectionCapabilities(ActivateInstance<ProtectionCapabilities>())
+    ProtectionCapabilities(activate_instance<ProtectionCapabilities>())
 {}
 
 }

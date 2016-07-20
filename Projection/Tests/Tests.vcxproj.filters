@@ -26,6 +26,9 @@
     <ClCompile Include="agility.cpp" />
     <ClCompile Include="agile_ref.cpp" />
     <ClCompile Include="include_required.cpp" />
+    <ClCompile Include="Collections.cpp" />
+    <ClCompile Include="implements_references.cpp" />
+    <ClCompile Include="make_self.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

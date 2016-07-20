@@ -40,7 +40,7 @@ template <typename D> bool impl_IInteractiveSessionStatics<D>::IsRemote() const
 
 inline bool InteractiveSession::IsRemote()
 {
-    return GetActivationFactory<InteractiveSession, IInteractiveSessionStatics>().IsRemote();
+    return get_activation_factory<InteractiveSession, IInteractiveSessionStatics>().IsRemote();
 }
 
 }

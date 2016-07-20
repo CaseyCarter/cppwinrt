@@ -795,66 +795,66 @@ template <typename D> Windows::Data::Json::JsonErrorStatus impl_IJsonErrorStatic
 }
 
 inline JsonArray::JsonArray() :
-    JsonArray(ActivateInstance<JsonArray>())
+    JsonArray(activate_instance<JsonArray>())
 {}
 
 inline Windows::Data::Json::JsonArray JsonArray::Parse(hstring_ref input)
 {
-    return GetActivationFactory<JsonArray, IJsonArrayStatics>().Parse(input);
+    return get_activation_factory<JsonArray, IJsonArrayStatics>().Parse(input);
 }
 
 inline bool JsonArray::TryParse(hstring_ref input, Windows::Data::Json::JsonArray & result)
 {
-    return GetActivationFactory<JsonArray, IJsonArrayStatics>().TryParse(input, result);
+    return get_activation_factory<JsonArray, IJsonArrayStatics>().TryParse(input, result);
 }
 
 inline Windows::Data::Json::JsonErrorStatus JsonError::GetJsonStatus(int32_t hresult)
 {
-    return GetActivationFactory<JsonError, IJsonErrorStatics2>().GetJsonStatus(hresult);
+    return get_activation_factory<JsonError, IJsonErrorStatics2>().GetJsonStatus(hresult);
 }
 
 inline JsonObject::JsonObject() :
-    JsonObject(ActivateInstance<JsonObject>())
+    JsonObject(activate_instance<JsonObject>())
 {}
 
 inline Windows::Data::Json::JsonObject JsonObject::Parse(hstring_ref input)
 {
-    return GetActivationFactory<JsonObject, IJsonObjectStatics>().Parse(input);
+    return get_activation_factory<JsonObject, IJsonObjectStatics>().Parse(input);
 }
 
 inline bool JsonObject::TryParse(hstring_ref input, Windows::Data::Json::JsonObject & result)
 {
-    return GetActivationFactory<JsonObject, IJsonObjectStatics>().TryParse(input, result);
+    return get_activation_factory<JsonObject, IJsonObjectStatics>().TryParse(input, result);
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::Parse(hstring_ref input)
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics>().Parse(input);
+    return get_activation_factory<JsonValue, IJsonValueStatics>().Parse(input);
 }
 
 inline bool JsonValue::TryParse(hstring_ref input, Windows::Data::Json::JsonValue & result)
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics>().TryParse(input, result);
+    return get_activation_factory<JsonValue, IJsonValueStatics>().TryParse(input, result);
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateBooleanValue(bool input)
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics>().CreateBooleanValue(input);
+    return get_activation_factory<JsonValue, IJsonValueStatics>().CreateBooleanValue(input);
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateNumberValue(double input)
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics>().CreateNumberValue(input);
+    return get_activation_factory<JsonValue, IJsonValueStatics>().CreateNumberValue(input);
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateStringValue(hstring_ref input)
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics>().CreateStringValue(input);
+    return get_activation_factory<JsonValue, IJsonValueStatics>().CreateStringValue(input);
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateNullValue()
 {
-    return GetActivationFactory<JsonValue, IJsonValueStatics2>().CreateNullValue();
+    return get_activation_factory<JsonValue, IJsonValueStatics2>().CreateNullValue();
 }
 
 }

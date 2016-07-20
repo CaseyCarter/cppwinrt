@@ -4818,160 +4818,160 @@ template <typename D> Windows::Devices::Sensors::AltimeterReading impl_IAltimete
 
 inline Windows::Devices::Sensors::Accelerometer Accelerometer::GetDefault()
 {
-    return GetActivationFactory<Accelerometer, IAccelerometerStatics>().GetDefault();
+    return get_activation_factory<Accelerometer, IAccelerometerStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Accelerometer Accelerometer::GetDefault(Windows::Devices::Sensors::AccelerometerReadingType readingType)
 {
-    return GetActivationFactory<Accelerometer, IAccelerometerStatics2>().GetDefault(readingType);
+    return get_activation_factory<Accelerometer, IAccelerometerStatics2>().GetDefault(readingType);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> ActivitySensor::GetDefaultAsync()
 {
-    return GetActivationFactory<ActivitySensor, IActivitySensorStatics>().GetDefaultAsync();
+    return get_activation_factory<ActivitySensor, IActivitySensorStatics>().GetDefaultAsync();
 }
 
 inline hstring ActivitySensor::GetDeviceSelector()
 {
-    return GetActivationFactory<ActivitySensor, IActivitySensorStatics>().GetDeviceSelector();
+    return get_activation_factory<ActivitySensor, IActivitySensorStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> ActivitySensor::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<ActivitySensor, IActivitySensorStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<ActivitySensor, IActivitySensorStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> ActivitySensor::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime)
 {
-    return GetActivationFactory<ActivitySensor, IActivitySensorStatics>().GetSystemHistoryAsync(fromTime);
+    return get_activation_factory<ActivitySensor, IActivitySensorStatics>().GetSystemHistoryAsync(fromTime);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> ActivitySensor::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime, const Windows::Foundation::TimeSpan & duration)
 {
-    return GetActivationFactory<ActivitySensor, IActivitySensorStatics>().GetSystemHistoryAsync(fromTime, duration);
+    return get_activation_factory<ActivitySensor, IActivitySensorStatics>().GetSystemHistoryAsync(fromTime, duration);
 }
 
 inline Windows::Devices::Sensors::Altimeter Altimeter::GetDefault()
 {
-    return GetActivationFactory<Altimeter, IAltimeterStatics>().GetDefault();
+    return get_activation_factory<Altimeter, IAltimeterStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Barometer Barometer::GetDefault()
 {
-    return GetActivationFactory<Barometer, IBarometerStatics>().GetDefault();
+    return get_activation_factory<Barometer, IBarometerStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Compass Compass::GetDefault()
 {
-    return GetActivationFactory<Compass, ICompassStatics>().GetDefault();
+    return get_activation_factory<Compass, ICompassStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Gyrometer Gyrometer::GetDefault()
 {
-    return GetActivationFactory<Gyrometer, IGyrometerStatics>().GetDefault();
+    return get_activation_factory<Gyrometer, IGyrometerStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Inclinometer Inclinometer::GetDefault()
 {
-    return GetActivationFactory<Inclinometer, IInclinometerStatics>().GetDefault();
+    return get_activation_factory<Inclinometer, IInclinometerStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Inclinometer Inclinometer::GetDefaultForRelativeReadings()
 {
-    return GetActivationFactory<Inclinometer, IInclinometerStatics2>().GetDefaultForRelativeReadings();
+    return get_activation_factory<Inclinometer, IInclinometerStatics2>().GetDefaultForRelativeReadings();
 }
 
 inline Windows::Devices::Sensors::Inclinometer Inclinometer::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype)
 {
-    return GetActivationFactory<Inclinometer, IInclinometerStatics3>().GetDefault(sensorReadingtype);
+    return get_activation_factory<Inclinometer, IInclinometerStatics3>().GetDefault(sensorReadingtype);
 }
 
 inline Windows::Devices::Sensors::LightSensor LightSensor::GetDefault()
 {
-    return GetActivationFactory<LightSensor, ILightSensorStatics>().GetDefault();
+    return get_activation_factory<LightSensor, ILightSensorStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::Magnetometer Magnetometer::GetDefault()
 {
-    return GetActivationFactory<Magnetometer, IMagnetometerStatics>().GetDefault();
+    return get_activation_factory<Magnetometer, IMagnetometerStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::OrientationSensor OrientationSensor::GetDefault()
 {
-    return GetActivationFactory<OrientationSensor, IOrientationSensorStatics>().GetDefault();
+    return get_activation_factory<OrientationSensor, IOrientationSensorStatics>().GetDefault();
 }
 
 inline Windows::Devices::Sensors::OrientationSensor OrientationSensor::GetDefaultForRelativeReadings()
 {
-    return GetActivationFactory<OrientationSensor, IOrientationSensorStatics2>().GetDefaultForRelativeReadings();
+    return get_activation_factory<OrientationSensor, IOrientationSensorStatics2>().GetDefaultForRelativeReadings();
 }
 
 inline Windows::Devices::Sensors::OrientationSensor OrientationSensor::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype)
 {
-    return GetActivationFactory<OrientationSensor, IOrientationSensorStatics3>().GetDefault(sensorReadingtype);
+    return get_activation_factory<OrientationSensor, IOrientationSensorStatics3>().GetDefault(sensorReadingtype);
 }
 
 inline Windows::Devices::Sensors::OrientationSensor OrientationSensor::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingType, Windows::Devices::Sensors::SensorOptimizationGoal optimizationGoal)
 {
-    return GetActivationFactory<OrientationSensor, IOrientationSensorStatics3>().GetDefault(sensorReadingType, optimizationGoal);
+    return get_activation_factory<OrientationSensor, IOrientationSensorStatics3>().GetDefault(sensorReadingType, optimizationGoal);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> Pedometer::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<Pedometer, IPedometerStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> Pedometer::GetDefaultAsync()
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics>().GetDefaultAsync();
+    return get_activation_factory<Pedometer, IPedometerStatics>().GetDefaultAsync();
 }
 
 inline hstring Pedometer::GetDeviceSelector()
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics>().GetDeviceSelector();
+    return get_activation_factory<Pedometer, IPedometerStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> Pedometer::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime)
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics>().GetSystemHistoryAsync(fromTime);
+    return get_activation_factory<Pedometer, IPedometerStatics>().GetSystemHistoryAsync(fromTime);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> Pedometer::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime, const Windows::Foundation::TimeSpan & duration)
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics>().GetSystemHistoryAsync(fromTime, duration);
+    return get_activation_factory<Pedometer, IPedometerStatics>().GetSystemHistoryAsync(fromTime, duration);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading> Pedometer::GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails)
 {
-    return GetActivationFactory<Pedometer, IPedometerStatics2>().GetReadingsFromTriggerDetails(triggerDetails);
+    return get_activation_factory<Pedometer, IPedometerStatics2>().GetReadingsFromTriggerDetails(triggerDetails);
 }
 
 inline PedometerDataThreshold::PedometerDataThreshold(const Windows::Devices::Sensors::Pedometer & sensor, int32_t stepGoal) :
-    PedometerDataThreshold(GetActivationFactory<PedometerDataThreshold, IPedometerDataThresholdFactory>().Create(sensor, stepGoal))
+    PedometerDataThreshold(get_activation_factory<PedometerDataThreshold, IPedometerDataThresholdFactory>().Create(sensor, stepGoal))
 {}
 
 inline hstring ProximitySensor::GetDeviceSelector()
 {
-    return GetActivationFactory<ProximitySensor, IProximitySensorStatics>().GetDeviceSelector();
+    return get_activation_factory<ProximitySensor, IProximitySensorStatics>().GetDeviceSelector();
 }
 
 inline Windows::Devices::Sensors::ProximitySensor ProximitySensor::FromId(hstring_ref sensorId)
 {
-    return GetActivationFactory<ProximitySensor, IProximitySensorStatics>().FromId(sensorId);
+    return get_activation_factory<ProximitySensor, IProximitySensorStatics>().FromId(sensorId);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ProximitySensorReading> ProximitySensor::GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails)
 {
-    return GetActivationFactory<ProximitySensor, IProximitySensorStatics2>().GetReadingsFromTriggerDetails(triggerDetails);
+    return get_activation_factory<ProximitySensor, IProximitySensorStatics2>().GetReadingsFromTriggerDetails(triggerDetails);
 }
 
 inline ProximitySensorDataThreshold::ProximitySensorDataThreshold(const Windows::Devices::Sensors::ProximitySensor & sensor) :
-    ProximitySensorDataThreshold(GetActivationFactory<ProximitySensorDataThreshold, IProximitySensorDataThresholdFactory>().Create(sensor))
+    ProximitySensorDataThreshold(get_activation_factory<ProximitySensorDataThreshold, IProximitySensorDataThresholdFactory>().Create(sensor))
 {}
 
 inline Windows::Devices::Sensors::SimpleOrientationSensor SimpleOrientationSensor::GetDefault()
 {
-    return GetActivationFactory<SimpleOrientationSensor, ISimpleOrientationSensorStatics>().GetDefault();
+    return get_activation_factory<SimpleOrientationSensor, ISimpleOrientationSensorStatics>().GetDefault();
 }
 
 }

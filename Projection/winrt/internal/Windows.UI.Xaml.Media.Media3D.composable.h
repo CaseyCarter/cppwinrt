@@ -18,7 +18,7 @@ protected:
 
     Transform3DT()
     {
-        GetActivationFactory<Transform3D, ITransform3DFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Transform3D, ITransform3DFactory>().CreateInstance(*this, m_inner);
     }
 };
 

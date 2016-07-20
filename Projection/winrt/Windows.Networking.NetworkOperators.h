@@ -4448,163 +4448,163 @@ template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IU
 
 inline bool HotspotAuthenticationContext::TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context)
 {
-    return GetActivationFactory<HotspotAuthenticationContext, IHotspotAuthenticationContextStatics>().TryGetAuthenticationContext(evenToken, context);
+    return get_activation_factory<HotspotAuthenticationContext, IHotspotAuthenticationContextStatics>().TryGetAuthenticationContext(evenToken, context);
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::EFSpn()
 {
-    return GetActivationFactory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().EFSpn();
+    return get_activation_factory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().EFSpn();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::Gid1()
 {
-    return GetActivationFactory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().Gid1();
+    return get_activation_factory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().Gid1();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::Gid2()
 {
-    return GetActivationFactory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().Gid2();
+    return get_activation_factory<KnownCSimFilePaths, IKnownCSimFilePathsStatics>().Gid2();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::EFSpn()
 {
-    return GetActivationFactory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().EFSpn();
+    return get_activation_factory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().EFSpn();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::Gid1()
 {
-    return GetActivationFactory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().Gid1();
+    return get_activation_factory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().Gid1();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::Gid2()
 {
-    return GetActivationFactory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().Gid2();
+    return get_activation_factory<KnownRuimFilePaths, IKnownRuimFilePathsStatics>().Gid2();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::EFOns()
 {
-    return GetActivationFactory<KnownSimFilePaths, IKnownSimFilePathsStatics>().EFOns();
+    return get_activation_factory<KnownSimFilePaths, IKnownSimFilePathsStatics>().EFOns();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::EFSpn()
 {
-    return GetActivationFactory<KnownSimFilePaths, IKnownSimFilePathsStatics>().EFSpn();
+    return get_activation_factory<KnownSimFilePaths, IKnownSimFilePathsStatics>().EFSpn();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::Gid1()
 {
-    return GetActivationFactory<KnownSimFilePaths, IKnownSimFilePathsStatics>().Gid1();
+    return get_activation_factory<KnownSimFilePaths, IKnownSimFilePathsStatics>().Gid1();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::Gid2()
 {
-    return GetActivationFactory<KnownSimFilePaths, IKnownSimFilePathsStatics>().Gid2();
+    return get_activation_factory<KnownSimFilePaths, IKnownSimFilePathsStatics>().Gid2();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFSpn()
 {
-    return GetActivationFactory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFSpn();
+    return get_activation_factory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFSpn();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFOpl()
 {
-    return GetActivationFactory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFOpl();
+    return get_activation_factory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFOpl();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFPnn()
 {
-    return GetActivationFactory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFPnn();
+    return get_activation_factory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().EFPnn();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::Gid1()
 {
-    return GetActivationFactory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().Gid1();
+    return get_activation_factory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().Gid1();
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::Gid2()
 {
-    return GetActivationFactory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().Gid2();
+    return get_activation_factory<KnownUSimFilePaths, IKnownUSimFilePathsStatics>().Gid2();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> MobileBroadbandAccount::AvailableNetworkAccountIds()
 {
-    return GetActivationFactory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().AvailableNetworkAccountIds();
+    return get_activation_factory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().AvailableNetworkAccountIds();
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandAccount MobileBroadbandAccount::CreateFromNetworkAccountId(hstring_ref networkAccountId)
 {
-    return GetActivationFactory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return get_activation_factory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
 
 inline MobileBroadbandAccountWatcher::MobileBroadbandAccountWatcher() :
-    MobileBroadbandAccountWatcher(ActivateInstance<MobileBroadbandAccountWatcher>())
+    MobileBroadbandAccountWatcher(activate_instance<MobileBroadbandAccountWatcher>())
 {}
 
 inline hstring MobileBroadbandModem::GetDeviceSelector()
 {
-    return GetActivationFactory<MobileBroadbandModem, IMobileBroadbandModemStatics>().GetDeviceSelector();
+    return get_activation_factory<MobileBroadbandModem, IMobileBroadbandModemStatics>().GetDeviceSelector();
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::FromId(hstring_ref deviceId)
 {
-    return GetActivationFactory<MobileBroadbandModem, IMobileBroadbandModemStatics>().FromId(deviceId);
+    return get_activation_factory<MobileBroadbandModem, IMobileBroadbandModemStatics>().FromId(deviceId);
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::GetDefault()
 {
-    return GetActivationFactory<MobileBroadbandModem, IMobileBroadbandModemStatics>().GetDefault();
+    return get_activation_factory<MobileBroadbandModem, IMobileBroadbandModemStatics>().GetDefault();
 }
 
 inline NetworkOperatorTetheringAccessPointConfiguration::NetworkOperatorTetheringAccessPointConfiguration() :
-    NetworkOperatorTetheringAccessPointConfiguration(ActivateInstance<NetworkOperatorTetheringAccessPointConfiguration>())
+    NetworkOperatorTetheringAccessPointConfiguration(activate_instance<NetworkOperatorTetheringAccessPointConfiguration>())
 {}
 
 inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapability(hstring_ref networkAccountId)
 {
-    return GetActivationFactory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().GetTetheringCapability(networkAccountId);
+    return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().GetTetheringCapability(networkAccountId);
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromNetworkAccountId(hstring_ref networkAccountId)
 {
-    return GetActivationFactory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
 
 inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapabilityFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile)
 {
-    return GetActivationFactory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics2>().GetTetheringCapabilityFromConnectionProfile(profile);
+    return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics2>().GetTetheringCapabilityFromConnectionProfile(profile);
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile)
 {
-    return GetActivationFactory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics2>().CreateFromConnectionProfile(profile);
+    return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics2>().CreateFromConnectionProfile(profile);
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile, const Windows::Networking::Connectivity::NetworkAdapter & adapter)
 {
-    return GetActivationFactory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics3>().CreateFromConnectionProfile(profile, adapter);
+    return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics3>().CreateFromConnectionProfile(profile, adapter);
 }
 
 inline ProvisioningAgent::ProvisioningAgent() :
-    ProvisioningAgent(ActivateInstance<ProvisioningAgent>())
+    ProvisioningAgent(activate_instance<ProvisioningAgent>())
 {}
 
 inline Windows::Networking::NetworkOperators::ProvisioningAgent ProvisioningAgent::CreateFromNetworkAccountId(hstring_ref networkAccountId)
 {
-    return GetActivationFactory<ProvisioningAgent, IProvisioningAgentStaticMethods>().CreateFromNetworkAccountId(networkAccountId);
+    return get_activation_factory<ProvisioningAgent, IProvisioningAgentStaticMethods>().CreateFromNetworkAccountId(networkAccountId);
 }
 
 inline UssdMessage::UssdMessage(hstring_ref messageText) :
-    UssdMessage(GetActivationFactory<UssdMessage, IUssdMessageFactory>().CreateMessage(messageText))
+    UssdMessage(get_activation_factory<UssdMessage, IUssdMessageFactory>().CreateMessage(messageText))
 {}
 
 inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkAccountId(hstring_ref networkAccountId)
 {
-    return GetActivationFactory<UssdSession, IUssdSessionStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return get_activation_factory<UssdSession, IUssdSessionStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
 
 inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId)
 {
-    return GetActivationFactory<UssdSession, IUssdSessionStatics>().CreateFromNetworkInterfaceId(networkInterfaceId);
+    return get_activation_factory<UssdSession, IUssdSessionStatics>().CreateFromNetworkInterfaceId(networkInterfaceId);
 }
 
 }

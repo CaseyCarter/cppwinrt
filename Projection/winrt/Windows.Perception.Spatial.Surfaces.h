@@ -693,31 +693,31 @@ template <typename D> void impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChan
 }
 
 inline SpatialSurfaceMeshOptions::SpatialSurfaceMeshOptions() :
-    SpatialSurfaceMeshOptions(ActivateInstance<SpatialSurfaceMeshOptions>())
+    SpatialSurfaceMeshOptions(activate_instance<SpatialSurfaceMeshOptions>())
 {}
 
 inline Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedVertexPositionFormats()
 {
-    return GetActivationFactory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedVertexPositionFormats();
+    return get_activation_factory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedVertexPositionFormats();
 }
 
 inline Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedTriangleIndexFormats()
 {
-    return GetActivationFactory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedTriangleIndexFormats();
+    return get_activation_factory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedTriangleIndexFormats();
 }
 
 inline Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedVertexNormalFormats()
 {
-    return GetActivationFactory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedVertexNormalFormats();
+    return get_activation_factory<SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>().SupportedVertexNormalFormats();
 }
 
 inline SpatialSurfaceObserver::SpatialSurfaceObserver() :
-    SpatialSurfaceObserver(ActivateInstance<SpatialSurfaceObserver>())
+    SpatialSurfaceObserver(activate_instance<SpatialSurfaceObserver>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialSurfaceObserver::RequestAccessAsync()
 {
-    return GetActivationFactory<SpatialSurfaceObserver, ISpatialSurfaceObserverStatics>().RequestAccessAsync();
+    return get_activation_factory<SpatialSurfaceObserver, ISpatialSurfaceObserverStatics>().RequestAccessAsync();
 }
 
 }

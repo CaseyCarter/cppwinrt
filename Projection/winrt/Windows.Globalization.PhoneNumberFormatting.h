@@ -448,41 +448,41 @@ template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::WrapWithLeft
 }
 
 inline PhoneNumberFormatter::PhoneNumberFormatter() :
-    PhoneNumberFormatter(ActivateInstance<PhoneNumberFormatter>())
+    PhoneNumberFormatter(activate_instance<PhoneNumberFormatter>())
 {}
 
 inline void PhoneNumberFormatter::TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber)
 {
-    GetActivationFactory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().TryCreate(regionCode, phoneNumber);
+    get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().TryCreate(regionCode, phoneNumber);
 }
 
 inline int32_t PhoneNumberFormatter::GetCountryCodeForRegion(hstring_ref regionCode)
 {
-    return GetActivationFactory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetCountryCodeForRegion(regionCode);
+    return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetCountryCodeForRegion(regionCode);
 }
 
 inline hstring PhoneNumberFormatter::GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit)
 {
-    return GetActivationFactory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit);
+    return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit);
 }
 
 inline hstring PhoneNumberFormatter::WrapWithLeftToRightMarkers(hstring_ref number)
 {
-    return GetActivationFactory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().WrapWithLeftToRightMarkers(number);
+    return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().WrapWithLeftToRightMarkers(number);
 }
 
 inline PhoneNumberInfo::PhoneNumberInfo(hstring_ref number) :
-    PhoneNumberInfo(GetActivationFactory<PhoneNumberInfo, IPhoneNumberInfoFactory>().Create(number))
+    PhoneNumberInfo(get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoFactory>().Create(number))
 {}
 
 inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
 {
-    return GetActivationFactory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, phoneNumber);
+    return get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, phoneNumber);
 }
 
 inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
 {
-    return GetActivationFactory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, regionCode, phoneNumber);
+    return get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, regionCode, phoneNumber);
 }
 
 }

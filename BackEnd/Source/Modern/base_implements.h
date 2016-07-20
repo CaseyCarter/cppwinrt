@@ -77,10 +77,16 @@ D * to_impl(const I & from) noexcept
     return &static_cast<impl::produce<D, I> *>(get(from))->shim();
 }
 
-template <typename I, typename D>
+template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::IUnknown, I>::value> * = nullptr>
 abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
 {
     return reinterpret_cast<abi<I> *>(const_cast<impl::producer<D, I> *>(from));
+}
+
+template <typename I, typename D, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value> * = nullptr>
+abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
+{
+    return const_cast<impl::producer<D, I> *>(from);
 }
 
 template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
@@ -155,36 +161,28 @@ struct produce_base : abi<I>
         return shim().Release();
     }
 
-    WINRT_IGNORE_MISSING_OVERRIDE_BEGIN
-
-    HRESULT __stdcall abi_GetIids(uint32_t * count, GUID ** array) noexcept
+    HRESULT __stdcall abi_GetIids(uint32_t * count, GUID ** array) noexcept override
     {
         return shim().abi_GetIids(count, array);
     }
 
-    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * name) noexcept override
     {
         return shim().abi_GetRuntimeClassName(name);
     }
 
-    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept override
     {
         return shim().abi_GetTrustLevel(trustLevel);
     }
-
-    WINRT_IGNORE_MISSING_OVERRIDE_END
 };
 
 template <typename D, typename I>
-struct producer<D, I, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>> : produce_base<D, I>
+struct producer<D, I, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>> : abi<I>
 {};
 
 template <typename D>
 struct producer<D, non_agile>
-{};
-
-template <typename D>
-struct produce<D, Windows::IUnknown> : produce_base<D, Windows::IUnknown>
 {};
 
 template <typename D>
@@ -205,9 +203,7 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
         return result;
     }
 
-protected:
-
-    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept
     {
         *object = find_interface<impl::uncloak_t<I> ...>(id);
 
@@ -270,6 +266,12 @@ protected:
 
         return remaining;
     }
+
+protected:
+
+    implements(uint32_t references = 1) :
+        m_references(references)
+    {}
 
     HRESULT abi_GetIids(uint32_t * count, GUID ** array) const noexcept
     {

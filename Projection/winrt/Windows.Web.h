@@ -65,7 +65,7 @@ template <typename D> Windows::Web::WebErrorStatus impl_IWebErrorStatics<D>::Get
 
 inline Windows::Web::WebErrorStatus WebError::GetStatus(int32_t hresult)
 {
-    return GetActivationFactory<WebError, IWebErrorStatics>().GetStatus(hresult);
+    return get_activation_factory<WebError, IWebErrorStatics>().GetStatus(hresult);
 }
 
 }

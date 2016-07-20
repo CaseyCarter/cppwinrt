@@ -2420,31 +2420,31 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Xml::D
 }
 
 inline XmlDocument::XmlDocument() :
-    XmlDocument(ActivateInstance<XmlDocument>())
+    XmlDocument(activate_instance<XmlDocument>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> XmlDocument::LoadFromUriAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<XmlDocument, IXmlDocumentStatics>().LoadFromUriAsync(uri);
+    return get_activation_factory<XmlDocument, IXmlDocumentStatics>().LoadFromUriAsync(uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> XmlDocument::LoadFromUriAsync(const Windows::Foundation::Uri & uri, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings)
 {
-    return GetActivationFactory<XmlDocument, IXmlDocumentStatics>().LoadFromUriAsync(uri, loadSettings);
+    return get_activation_factory<XmlDocument, IXmlDocumentStatics>().LoadFromUriAsync(uri, loadSettings);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> XmlDocument::LoadFromFileAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<XmlDocument, IXmlDocumentStatics>().LoadFromFileAsync(file);
+    return get_activation_factory<XmlDocument, IXmlDocumentStatics>().LoadFromFileAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> XmlDocument::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings)
 {
-    return GetActivationFactory<XmlDocument, IXmlDocumentStatics>().LoadFromFileAsync(file, loadSettings);
+    return get_activation_factory<XmlDocument, IXmlDocumentStatics>().LoadFromFileAsync(file, loadSettings);
 }
 
 inline XmlLoadSettings::XmlLoadSettings() :
-    XmlLoadSettings(ActivateInstance<XmlLoadSettings>())
+    XmlLoadSettings(activate_instance<XmlLoadSettings>())
 {}
 
 }

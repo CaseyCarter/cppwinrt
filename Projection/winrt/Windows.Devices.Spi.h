@@ -599,37 +599,37 @@ template <typename D> void impl_ISpiDevice<D>::TransferFullDuplex(array_ref<cons
 }
 
 inline SpiConnectionSettings::SpiConnectionSettings(int32_t chipSelectLine) :
-    SpiConnectionSettings(GetActivationFactory<SpiConnectionSettings, ISpiConnectionSettingsFactory>().Create(chipSelectLine))
+    SpiConnectionSettings(get_activation_factory<SpiConnectionSettings, ISpiConnectionSettingsFactory>().Create(chipSelectLine))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController> SpiController::GetDefaultAsync()
 {
-    return GetActivationFactory<SpiController, ISpiControllerStatics>().GetDefaultAsync();
+    return get_activation_factory<SpiController, ISpiControllerStatics>().GetDefaultAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> SpiController::GetControllersAsync(const Windows::Devices::Spi::Provider::ISpiProvider & provider)
 {
-    return GetActivationFactory<SpiController, ISpiControllerStatics>().GetControllersAsync(provider);
+    return get_activation_factory<SpiController, ISpiControllerStatics>().GetControllersAsync(provider);
 }
 
 inline hstring SpiDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<SpiDevice, ISpiDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<SpiDevice, ISpiDeviceStatics>().GetDeviceSelector();
 }
 
 inline hstring SpiDevice::GetDeviceSelector(hstring_ref friendlyName)
 {
-    return GetActivationFactory<SpiDevice, ISpiDeviceStatics>().GetDeviceSelector(friendlyName);
+    return get_activation_factory<SpiDevice, ISpiDeviceStatics>().GetDeviceSelector(friendlyName);
 }
 
 inline Windows::Devices::Spi::SpiBusInfo SpiDevice::GetBusInfo(hstring_ref busId)
 {
-    return GetActivationFactory<SpiDevice, ISpiDeviceStatics>().GetBusInfo(busId);
+    return get_activation_factory<SpiDevice, ISpiDeviceStatics>().GetBusInfo(busId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> SpiDevice::FromIdAsync(hstring_ref busId, const Windows::Devices::Spi::SpiConnectionSettings & settings)
 {
-    return GetActivationFactory<SpiDevice, ISpiDeviceStatics>().FromIdAsync(busId, settings);
+    return get_activation_factory<SpiDevice, ISpiDeviceStatics>().FromIdAsync(busId, settings);
 }
 
 }

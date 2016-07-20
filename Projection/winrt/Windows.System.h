@@ -2927,328 +2927,328 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
 }
 
 inline FolderLauncherOptions::FolderLauncherOptions() :
-    FolderLauncherOptions(ActivateInstance<FolderLauncherOptions>())
+    FolderLauncherOptions(activate_instance<FolderLauncherOptions>())
 {}
 
 inline hstring KnownUserProperties::DisplayName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().DisplayName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().DisplayName();
 }
 
 inline hstring KnownUserProperties::FirstName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().FirstName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().FirstName();
 }
 
 inline hstring KnownUserProperties::LastName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().LastName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().LastName();
 }
 
 inline hstring KnownUserProperties::ProviderName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().ProviderName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().ProviderName();
 }
 
 inline hstring KnownUserProperties::AccountName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().AccountName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().AccountName();
 }
 
 inline hstring KnownUserProperties::GuestHost()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().GuestHost();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().GuestHost();
 }
 
 inline hstring KnownUserProperties::PrincipalName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().PrincipalName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().PrincipalName();
 }
 
 inline hstring KnownUserProperties::DomainName()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().DomainName();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().DomainName();
 }
 
 inline hstring KnownUserProperties::SessionInitiationProtocolUri()
 {
-    return GetActivationFactory<KnownUserProperties, IKnownUserPropertiesStatics>().SessionInitiationProtocolUri();
+    return get_activation_factory<KnownUserProperties, IKnownUserPropertiesStatics>().SessionInitiationProtocolUri();
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchFileAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics>().LaunchFileAsync(file);
+    return get_activation_factory<Launcher, ILauncherStatics>().LaunchFileAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchFileAsync(const Windows::Storage::IStorageFile & file, const Windows::System::LauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics>().LaunchFileAsync(file, options);
+    return get_activation_factory<Launcher, ILauncherStatics>().LaunchFileAsync(file, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchUriAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics>().LaunchUriAsync(uri);
+    return get_activation_factory<Launcher, ILauncherStatics>().LaunchUriAsync(uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics>().LaunchUriAsync(uri, options);
+    return get_activation_factory<Launcher, ILauncherStatics>().LaunchUriAsync(uri, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> Launcher::LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().LaunchUriForResultsAsync(uri, options);
+    return get_activation_factory<Launcher, ILauncherStatics2>().LaunchUriForResultsAsync(uri, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> Launcher::LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().LaunchUriForResultsAsync(uri, options, inputData);
+    return get_activation_factory<Launcher, ILauncherStatics2>().LaunchUriForResultsAsync(uri, options, inputData);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().LaunchUriAsync(uri, options, inputData);
+    return get_activation_factory<Launcher, ILauncherStatics2>().LaunchUriAsync(uri, options, inputData);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType);
+    return get_activation_factory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType, packageFamilyName);
+    return get_activation_factory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType, packageFamilyName);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryFileSupportAsync(const Windows::Storage::StorageFile & file)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file);
+    return get_activation_factory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file, packageFamilyName);
+    return get_activation_factory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file, packageFamilyName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_ref scheme)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme);
+    return get_activation_factory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme, launchQuerySupportType);
+    return get_activation_factory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme, launchQuerySupportType);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindFileHandlersAsync(hstring_ref extension)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics2>().FindFileHandlersAsync(extension);
+    return get_activation_factory<Launcher, ILauncherStatics2>().FindFileHandlersAsync(extension);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics3>().LaunchFolderAsync(folder);
+    return get_activation_factory<Launcher, ILauncherStatics3>().LaunchFolderAsync(folder);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Launcher::LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder, const Windows::System::FolderLauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics3>().LaunchFolderAsync(folder, options);
+    return get_activation_factory<Launcher, ILauncherStatics3>().LaunchFolderAsync(folder, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri);
+    return get_activation_factory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri, packageFamilyName);
+    return get_activation_factory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri, packageFamilyName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindAppUriHandlersAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().FindAppUriHandlersAsync(uri);
+    return get_activation_factory<Launcher, ILauncherStatics4>().FindAppUriHandlersAsync(uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> Launcher::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri);
+    return get_activation_factory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> Launcher::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri, options);
+    return get_activation_factory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> Launcher::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri, options, inputData);
+    return get_activation_factory<Launcher, ILauncherStatics4>().LaunchUriForUserAsync(user, uri, options, inputData);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> Launcher::LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().LaunchUriForResultsForUserAsync(user, uri, options);
+    return get_activation_factory<Launcher, ILauncherStatics4>().LaunchUriForResultsForUserAsync(user, uri, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> Launcher::LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData)
 {
-    return GetActivationFactory<Launcher, ILauncherStatics4>().LaunchUriForResultsForUserAsync(user, uri, options, inputData);
+    return get_activation_factory<Launcher, ILauncherStatics4>().LaunchUriForResultsForUserAsync(user, uri, options, inputData);
 }
 
 inline LauncherOptions::LauncherOptions() :
-    LauncherOptions(ActivateInstance<LauncherOptions>())
+    LauncherOptions(activate_instance<LauncherOptions>())
 {}
 
 inline uint64_t MemoryManager::AppMemoryUsage()
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsage();
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsage();
 }
 
 inline uint64_t MemoryManager::AppMemoryUsageLimit()
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimit();
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimit();
 }
 
 inline Windows::System::AppMemoryUsageLevel MemoryManager::AppMemoryUsageLevel()
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLevel();
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLevel();
 }
 
 inline event_token MemoryManager::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(handler);
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(handler);
 }
 
 inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<MemoryManager, IMemoryManagerStatics>();
+    auto factory = get_activation_factory<MemoryManager, IMemoryManagerStatics>();
     return { factory, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageIncreased, factory.AppMemoryUsageIncreased(handler) };
 }
 
 inline void MemoryManager::AppMemoryUsageIncreased(event_token token)
 {
-    GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(token);
+    get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(token);
 }
 
 inline event_token MemoryManager::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageDecreased(handler);
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageDecreased(handler);
 }
 
 inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<MemoryManager, IMemoryManagerStatics>();
+    auto factory = get_activation_factory<MemoryManager, IMemoryManagerStatics>();
     return { factory, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageDecreased, factory.AppMemoryUsageDecreased(handler) };
 }
 
 inline void MemoryManager::AppMemoryUsageDecreased(event_token token)
 {
-    GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageDecreased(token);
+    get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageDecreased(token);
 }
 
 inline event_token MemoryManager::AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler)
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimitChanging(handler);
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimitChanging(handler);
 }
 
 inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageLimitChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<MemoryManager, IMemoryManagerStatics>();
+    auto factory = get_activation_factory<MemoryManager, IMemoryManagerStatics>();
     return { factory, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageLimitChanging, factory.AppMemoryUsageLimitChanging(handler) };
 }
 
 inline void MemoryManager::AppMemoryUsageLimitChanging(event_token token)
 {
-    GetActivationFactory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimitChanging(token);
+    get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLimitChanging(token);
 }
 
 inline Windows::System::AppMemoryReport MemoryManager::GetAppMemoryReport()
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics2>().GetAppMemoryReport();
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics2>().GetAppMemoryReport();
 }
 
 inline Windows::System::ProcessMemoryReport MemoryManager::GetProcessMemoryReport()
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics2>().GetProcessMemoryReport();
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics2>().GetProcessMemoryReport();
 }
 
 inline bool MemoryManager::TrySetAppMemoryUsageLimit(uint64_t value)
 {
-    return GetActivationFactory<MemoryManager, IMemoryManagerStatics3>().TrySetAppMemoryUsageLimit(value);
+    return get_activation_factory<MemoryManager, IMemoryManagerStatics3>().TrySetAppMemoryUsageLimit(value);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> RemoteLauncher::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri);
+    return get_activation_factory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> RemoteLauncher::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options)
 {
-    return GetActivationFactory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri, options);
+    return get_activation_factory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> RemoteLauncher::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData)
 {
-    return GetActivationFactory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri, options, inputData);
+    return get_activation_factory<RemoteLauncher, IRemoteLauncherStatics>().LaunchUriAsync(remoteSystemConnectionRequest, uri, options, inputData);
 }
 
 inline RemoteLauncherOptions::RemoteLauncherOptions() :
-    RemoteLauncherOptions(ActivateInstance<RemoteLauncherOptions>())
+    RemoteLauncherOptions(activate_instance<RemoteLauncherOptions>())
 {}
 
 inline Windows::System::UserWatcher User::CreateWatcher()
 {
-    return GetActivationFactory<User, IUserStatics>().CreateWatcher();
+    return get_activation_factory<User, IUserStatics>().CreateWatcher();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> User::FindAllAsync()
 {
-    return GetActivationFactory<User, IUserStatics>().FindAllAsync();
+    return get_activation_factory<User, IUserStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> User::FindAllAsync(Windows::System::UserType type)
 {
-    return GetActivationFactory<User, IUserStatics>().FindAllAsync(type);
+    return get_activation_factory<User, IUserStatics>().FindAllAsync(type);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> User::FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status)
 {
-    return GetActivationFactory<User, IUserStatics>().FindAllAsync(type, status);
+    return get_activation_factory<User, IUserStatics>().FindAllAsync(type, status);
 }
 
 inline Windows::System::User User::GetFromId(hstring_ref nonRoamableId)
 {
-    return GetActivationFactory<User, IUserStatics>().GetFromId(nonRoamableId);
+    return get_activation_factory<User, IUserStatics>().GetFromId(nonRoamableId);
 }
 
 inline Windows::System::User UserDeviceAssociation::FindUserFromDeviceId(hstring_ref deviceId)
 {
-    return GetActivationFactory<UserDeviceAssociation, IUserDeviceAssociationStatics>().FindUserFromDeviceId(deviceId);
+    return get_activation_factory<UserDeviceAssociation, IUserDeviceAssociationStatics>().FindUserFromDeviceId(deviceId);
 }
 
 inline event_token UserDeviceAssociation::UserDeviceAssociationChanged(const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler)
 {
-    return GetActivationFactory<UserDeviceAssociation, IUserDeviceAssociationStatics>().UserDeviceAssociationChanged(handler);
+    return get_activation_factory<UserDeviceAssociation, IUserDeviceAssociationStatics>().UserDeviceAssociationChanged(handler);
 }
 
 inline factory_event_revoker<IUserDeviceAssociationStatics> UserDeviceAssociation::UserDeviceAssociationChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<UserDeviceAssociation, IUserDeviceAssociationStatics>();
+    auto factory = get_activation_factory<UserDeviceAssociation, IUserDeviceAssociationStatics>();
     return { factory, &ABI::Windows::System::IUserDeviceAssociationStatics::remove_UserDeviceAssociationChanged, factory.UserDeviceAssociationChanged(handler) };
 }
 
 inline void UserDeviceAssociation::UserDeviceAssociationChanged(event_token token)
 {
-    GetActivationFactory<UserDeviceAssociation, IUserDeviceAssociationStatics>().UserDeviceAssociationChanged(token);
+    get_activation_factory<UserDeviceAssociation, IUserDeviceAssociationStatics>().UserDeviceAssociationChanged(token);
 }
 
 inline UserPicker::UserPicker() :
-    UserPicker(ActivateInstance<UserPicker>())
+    UserPicker(activate_instance<UserPicker>())
 {}
 
 inline bool UserPicker::IsSupported()
 {
-    return GetActivationFactory<UserPicker, IUserPickerStatics>().IsSupported();
+    return get_activation_factory<UserPicker, IUserPickerStatics>().IsSupported();
 }
 
 }

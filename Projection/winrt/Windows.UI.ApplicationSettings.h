@@ -710,47 +710,47 @@ template <typename D> void impl_IAccountsSettingsPane<D>::AccountCommandsRequest
 
 inline Windows::UI::ApplicationSettings::AccountsSettingsPane AccountsSettingsPane::GetForCurrentView()
 {
-    return GetActivationFactory<AccountsSettingsPane, IAccountsSettingsPaneStatics>().GetForCurrentView();
+    return get_activation_factory<AccountsSettingsPane, IAccountsSettingsPaneStatics>().GetForCurrentView();
 }
 
 inline void AccountsSettingsPane::Show()
 {
-    GetActivationFactory<AccountsSettingsPane, IAccountsSettingsPaneStatics>().Show();
+    get_activation_factory<AccountsSettingsPane, IAccountsSettingsPaneStatics>().Show();
 }
 
 inline Windows::Foundation::IAsyncAction AccountsSettingsPane::ShowManageAccountsAsync()
 {
-    return GetActivationFactory<AccountsSettingsPane, IAccountsSettingsPaneStatics2>().ShowManageAccountsAsync();
+    return get_activation_factory<AccountsSettingsPane, IAccountsSettingsPaneStatics2>().ShowManageAccountsAsync();
 }
 
 inline Windows::Foundation::IAsyncAction AccountsSettingsPane::ShowAddAccountAsync()
 {
-    return GetActivationFactory<AccountsSettingsPane, IAccountsSettingsPaneStatics2>().ShowAddAccountAsync();
+    return get_activation_factory<AccountsSettingsPane, IAccountsSettingsPaneStatics2>().ShowAddAccountAsync();
 }
 
 inline CredentialCommand::CredentialCommand(const Windows::Security::Credentials::PasswordCredential & passwordCredential) :
-    CredentialCommand(GetActivationFactory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommand(passwordCredential))
+    CredentialCommand(get_activation_factory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommand(passwordCredential))
 {}
 
 inline CredentialCommand::CredentialCommand(const Windows::Security::Credentials::PasswordCredential & passwordCredential, const Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler & deleted) :
-    CredentialCommand(GetActivationFactory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommandWithHandler(passwordCredential, deleted))
+    CredentialCommand(get_activation_factory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommandWithHandler(passwordCredential, deleted))
 {}
 
 inline SettingsCommand::SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) :
-    SettingsCommand(GetActivationFactory<SettingsCommand, ISettingsCommandFactory>().CreateSettingsCommand(settingsCommandId, label, handler))
+    SettingsCommand(get_activation_factory<SettingsCommand, ISettingsCommandFactory>().CreateSettingsCommand(settingsCommandId, label, handler))
 {}
 
 inline Windows::UI::ApplicationSettings::SettingsCommand SettingsCommand::AccountsCommand()
 {
-    return GetActivationFactory<SettingsCommand, ISettingsCommandStatics>().AccountsCommand();
+    return get_activation_factory<SettingsCommand, ISettingsCommandStatics>().AccountsCommand();
 }
 
 inline WebAccountCommand::WebAccountCommand(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler & invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions) :
-    WebAccountCommand(GetActivationFactory<WebAccountCommand, IWebAccountCommandFactory>().CreateWebAccountCommand(webAccount, invoked, actions))
+    WebAccountCommand(get_activation_factory<WebAccountCommand, IWebAccountCommandFactory>().CreateWebAccountCommand(webAccount, invoked, actions))
 {}
 
 inline WebAccountProviderCommand::WebAccountProviderCommand(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, const Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler & invoked) :
-    WebAccountProviderCommand(GetActivationFactory<WebAccountProviderCommand, IWebAccountProviderCommandFactory>().CreateWebAccountProviderCommand(webAccountProvider, invoked))
+    WebAccountProviderCommand(get_activation_factory<WebAccountProviderCommand, IWebAccountProviderCommandFactory>().CreateWebAccountProviderCommand(webAccountProvider, invoked))
 {}
 
 }

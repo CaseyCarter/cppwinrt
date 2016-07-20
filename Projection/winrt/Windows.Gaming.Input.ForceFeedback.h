@@ -607,19 +607,19 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IForceFeed
 }
 
 inline ConditionForceEffect::ConditionForceEffect(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind) :
-    ConditionForceEffect(GetActivationFactory<ConditionForceEffect, IConditionForceEffectFactory>().CreateInstance(effectKind))
+    ConditionForceEffect(get_activation_factory<ConditionForceEffect, IConditionForceEffectFactory>().CreateInstance(effectKind))
 {}
 
 inline ConstantForceEffect::ConstantForceEffect() :
-    ConstantForceEffect(ActivateInstance<ConstantForceEffect>())
+    ConstantForceEffect(activate_instance<ConstantForceEffect>())
 {}
 
 inline PeriodicForceEffect::PeriodicForceEffect(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind) :
-    PeriodicForceEffect(GetActivationFactory<PeriodicForceEffect, IPeriodicForceEffectFactory>().CreateInstance(effectKind))
+    PeriodicForceEffect(get_activation_factory<PeriodicForceEffect, IPeriodicForceEffectFactory>().CreateInstance(effectKind))
 {}
 
 inline RampForceEffect::RampForceEffect() :
-    RampForceEffect(ActivateInstance<RampForceEffect>())
+    RampForceEffect(activate_instance<RampForceEffect>())
 {}
 
 }

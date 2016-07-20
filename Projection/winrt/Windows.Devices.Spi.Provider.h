@@ -403,7 +403,7 @@ template <typename D> void impl_ISpiDeviceProvider<D>::TransferFullDuplex(array_
 }
 
 inline ProviderSpiConnectionSettings::ProviderSpiConnectionSettings(int32_t chipSelectLine) :
-    ProviderSpiConnectionSettings(GetActivationFactory<ProviderSpiConnectionSettings, IProviderSpiConnectionSettingsFactory>().Create(chipSelectLine))
+    ProviderSpiConnectionSettings(get_activation_factory<ProviderSpiConnectionSettings, IProviderSpiConnectionSettingsFactory>().Create(chipSelectLine))
 {}
 
 }

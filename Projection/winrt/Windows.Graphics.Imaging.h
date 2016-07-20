@@ -2168,162 +2168,162 @@ template <typename D> Windows::Graphics::Imaging::BitmapPlaneDescription impl_IB
 
 inline GUID BitmapDecoder::BmpDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().BmpDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().BmpDecoderId();
 }
 
 inline GUID BitmapDecoder::JpegDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().JpegDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().JpegDecoderId();
 }
 
 inline GUID BitmapDecoder::PngDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().PngDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().PngDecoderId();
 }
 
 inline GUID BitmapDecoder::TiffDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().TiffDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().TiffDecoderId();
 }
 
 inline GUID BitmapDecoder::GifDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().GifDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().GifDecoderId();
 }
 
 inline GUID BitmapDecoder::JpegXRDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().JpegXRDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().JpegXRDecoderId();
 }
 
 inline GUID BitmapDecoder::IcoDecoderId()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().IcoDecoderId();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().IcoDecoderId();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> BitmapDecoder::GetDecoderInformationEnumerator()
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().GetDecoderInformationEnumerator();
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().GetDecoderInformationEnumerator();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> BitmapDecoder::CreateAsync(const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().CreateAsync(stream);
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().CreateAsync(stream);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> BitmapDecoder::CreateAsync(GUID decoderId, const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<BitmapDecoder, IBitmapDecoderStatics>().CreateAsync(decoderId, stream);
+    return get_activation_factory<BitmapDecoder, IBitmapDecoderStatics>().CreateAsync(decoderId, stream);
 }
 
 inline GUID BitmapEncoder::BmpEncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().BmpEncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().BmpEncoderId();
 }
 
 inline GUID BitmapEncoder::JpegEncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().JpegEncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().JpegEncoderId();
 }
 
 inline GUID BitmapEncoder::PngEncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().PngEncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().PngEncoderId();
 }
 
 inline GUID BitmapEncoder::TiffEncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().TiffEncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().TiffEncoderId();
 }
 
 inline GUID BitmapEncoder::GifEncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().GifEncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().GifEncoderId();
 }
 
 inline GUID BitmapEncoder::JpegXREncoderId()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().JpegXREncoderId();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().JpegXREncoderId();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> BitmapEncoder::GetEncoderInformationEnumerator()
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().GetEncoderInformationEnumerator();
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().GetEncoderInformationEnumerator();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream);
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions)
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream, encodingOptions);
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream, encodingOptions);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateForTranscodingAsync(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder)
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().CreateForTranscodingAsync(stream, bitmapDecoder);
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateForTranscodingAsync(stream, bitmapDecoder);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateForInPlacePropertyEncodingAsync(const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder)
 {
-    return GetActivationFactory<BitmapEncoder, IBitmapEncoderStatics>().CreateForInPlacePropertyEncodingAsync(bitmapDecoder);
+    return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateForInPlacePropertyEncodingAsync(bitmapDecoder);
 }
 
 inline BitmapPropertySet::BitmapPropertySet() :
-    BitmapPropertySet(ActivateInstance<BitmapPropertySet>())
+    BitmapPropertySet(activate_instance<BitmapPropertySet>())
 {}
 
 inline BitmapTransform::BitmapTransform() :
-    BitmapTransform(ActivateInstance<BitmapTransform>())
+    BitmapTransform(activate_instance<BitmapTransform>())
 {}
 
 inline BitmapTypedValue::BitmapTypedValue(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) :
-    BitmapTypedValue(GetActivationFactory<BitmapTypedValue, IBitmapTypedValueFactory>().Create(value, type))
+    BitmapTypedValue(get_activation_factory<BitmapTypedValue, IBitmapTypedValueFactory>().Create(value, type))
 {}
 
 inline SoftwareBitmap::SoftwareBitmap(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) :
-    SoftwareBitmap(GetActivationFactory<SoftwareBitmap, ISoftwareBitmapFactory>().Create(format, width, height))
+    SoftwareBitmap(get_activation_factory<SoftwareBitmap, ISoftwareBitmapFactory>().Create(format, width, height))
 {}
 
 inline SoftwareBitmap::SoftwareBitmap(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) :
-    SoftwareBitmap(GetActivationFactory<SoftwareBitmap, ISoftwareBitmapFactory>().CreateWithAlpha(format, width, height, alpha))
+    SoftwareBitmap(get_activation_factory<SoftwareBitmap, ISoftwareBitmapFactory>().CreateWithAlpha(format, width, height, alpha))
 {}
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Copy(const Windows::Graphics::Imaging::SoftwareBitmap & source)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().Copy(source);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().Copy(source);
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().Convert(source, format);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().Convert(source, format);
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().Convert(source, format, alpha);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().Convert(source, format, alpha);
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height);
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height, alpha);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height, alpha);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> SoftwareBitmap::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> SoftwareBitmap::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha)
 {
-    return GetActivationFactory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface, alpha);
+    return get_activation_factory<SoftwareBitmap, ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface, alpha);
 }
 
 }

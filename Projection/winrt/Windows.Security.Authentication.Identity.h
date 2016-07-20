@@ -175,7 +175,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 
 inline Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager EnterpriseKeyCredentialRegistrationManager::Current()
 {
-    return GetActivationFactory<EnterpriseKeyCredentialRegistrationManager, IEnterpriseKeyCredentialRegistrationManagerStatics>().Current();
+    return get_activation_factory<EnterpriseKeyCredentialRegistrationManager, IEnterpriseKeyCredentialRegistrationManagerStatics>().Current();
 }
 
 }

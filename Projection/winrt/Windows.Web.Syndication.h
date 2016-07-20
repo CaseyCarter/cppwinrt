@@ -2922,116 +2922,116 @@ template <typename D> Windows::Web::Syndication::SyndicationErrorStatus impl_ISy
 }
 
 inline SyndicationAttribute::SyndicationAttribute() :
-    SyndicationAttribute(ActivateInstance<SyndicationAttribute>())
+    SyndicationAttribute(activate_instance<SyndicationAttribute>())
 {}
 
 inline SyndicationAttribute::SyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) :
-    SyndicationAttribute(GetActivationFactory<SyndicationAttribute, ISyndicationAttributeFactory>().CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue))
+    SyndicationAttribute(get_activation_factory<SyndicationAttribute, ISyndicationAttributeFactory>().CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue))
 {}
 
 inline SyndicationCategory::SyndicationCategory() :
-    SyndicationCategory(ActivateInstance<SyndicationCategory>())
+    SyndicationCategory(activate_instance<SyndicationCategory>())
 {}
 
 inline SyndicationCategory::SyndicationCategory(hstring_ref term) :
-    SyndicationCategory(GetActivationFactory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategory(term))
+    SyndicationCategory(get_activation_factory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategory(term))
 {}
 
 inline SyndicationCategory::SyndicationCategory(hstring_ref term, hstring_ref scheme, hstring_ref label) :
-    SyndicationCategory(GetActivationFactory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategoryEx(term, scheme, label))
+    SyndicationCategory(get_activation_factory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategoryEx(term, scheme, label))
 {}
 
 inline SyndicationClient::SyndicationClient() :
-    SyndicationClient(ActivateInstance<SyndicationClient>())
+    SyndicationClient(activate_instance<SyndicationClient>())
 {}
 
 inline SyndicationClient::SyndicationClient(const Windows::Security::Credentials::PasswordCredential & serverCredential) :
-    SyndicationClient(GetActivationFactory<SyndicationClient, ISyndicationClientFactory>().CreateSyndicationClient(serverCredential))
+    SyndicationClient(get_activation_factory<SyndicationClient, ISyndicationClientFactory>().CreateSyndicationClient(serverCredential))
 {}
 
 inline SyndicationContent::SyndicationContent() :
-    SyndicationContent(ActivateInstance<SyndicationContent>())
+    SyndicationContent(activate_instance<SyndicationContent>())
 {}
 
 inline SyndicationContent::SyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) :
-    SyndicationContent(GetActivationFactory<SyndicationContent, ISyndicationContentFactory>().CreateSyndicationContent(text, type))
+    SyndicationContent(get_activation_factory<SyndicationContent, ISyndicationContentFactory>().CreateSyndicationContent(text, type))
 {}
 
 inline SyndicationContent::SyndicationContent(const Windows::Foundation::Uri & sourceUri) :
-    SyndicationContent(GetActivationFactory<SyndicationContent, ISyndicationContentFactory>().CreateSyndicationContentWithSourceUri(sourceUri))
+    SyndicationContent(get_activation_factory<SyndicationContent, ISyndicationContentFactory>().CreateSyndicationContentWithSourceUri(sourceUri))
 {}
 
 inline Windows::Web::Syndication::SyndicationErrorStatus SyndicationError::GetStatus(int32_t hresult)
 {
-    return GetActivationFactory<SyndicationError, ISyndicationErrorStatics>().GetStatus(hresult);
+    return get_activation_factory<SyndicationError, ISyndicationErrorStatics>().GetStatus(hresult);
 }
 
 inline SyndicationFeed::SyndicationFeed() :
-    SyndicationFeed(ActivateInstance<SyndicationFeed>())
+    SyndicationFeed(activate_instance<SyndicationFeed>())
 {}
 
 inline SyndicationFeed::SyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) :
-    SyndicationFeed(GetActivationFactory<SyndicationFeed, ISyndicationFeedFactory>().CreateSyndicationFeed(title, subtitle, uri))
+    SyndicationFeed(get_activation_factory<SyndicationFeed, ISyndicationFeedFactory>().CreateSyndicationFeed(title, subtitle, uri))
 {}
 
 inline SyndicationGenerator::SyndicationGenerator() :
-    SyndicationGenerator(ActivateInstance<SyndicationGenerator>())
+    SyndicationGenerator(activate_instance<SyndicationGenerator>())
 {}
 
 inline SyndicationGenerator::SyndicationGenerator(hstring_ref text) :
-    SyndicationGenerator(GetActivationFactory<SyndicationGenerator, ISyndicationGeneratorFactory>().CreateSyndicationGenerator(text))
+    SyndicationGenerator(get_activation_factory<SyndicationGenerator, ISyndicationGeneratorFactory>().CreateSyndicationGenerator(text))
 {}
 
 inline SyndicationItem::SyndicationItem() :
-    SyndicationItem(ActivateInstance<SyndicationItem>())
+    SyndicationItem(activate_instance<SyndicationItem>())
 {}
 
 inline SyndicationItem::SyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) :
-    SyndicationItem(GetActivationFactory<SyndicationItem, ISyndicationItemFactory>().CreateSyndicationItem(title, content, uri))
+    SyndicationItem(get_activation_factory<SyndicationItem, ISyndicationItemFactory>().CreateSyndicationItem(title, content, uri))
 {}
 
 inline SyndicationLink::SyndicationLink() :
-    SyndicationLink(ActivateInstance<SyndicationLink>())
+    SyndicationLink(activate_instance<SyndicationLink>())
 {}
 
 inline SyndicationLink::SyndicationLink(const Windows::Foundation::Uri & uri) :
-    SyndicationLink(GetActivationFactory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLink(uri))
+    SyndicationLink(get_activation_factory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLink(uri))
 {}
 
 inline SyndicationLink::SyndicationLink(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) :
-    SyndicationLink(GetActivationFactory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLinkEx(uri, relationship, title, mediaType, length))
+    SyndicationLink(get_activation_factory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLinkEx(uri, relationship, title, mediaType, length))
 {}
 
 inline SyndicationNode::SyndicationNode() :
-    SyndicationNode(ActivateInstance<SyndicationNode>())
+    SyndicationNode(activate_instance<SyndicationNode>())
 {}
 
 inline SyndicationNode::SyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) :
-    SyndicationNode(GetActivationFactory<SyndicationNode, ISyndicationNodeFactory>().CreateSyndicationNode(nodeName, nodeNamespace, nodeValue))
+    SyndicationNode(get_activation_factory<SyndicationNode, ISyndicationNodeFactory>().CreateSyndicationNode(nodeName, nodeNamespace, nodeValue))
 {}
 
 inline SyndicationPerson::SyndicationPerson() :
-    SyndicationPerson(ActivateInstance<SyndicationPerson>())
+    SyndicationPerson(activate_instance<SyndicationPerson>())
 {}
 
 inline SyndicationPerson::SyndicationPerson(hstring_ref name) :
-    SyndicationPerson(GetActivationFactory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPerson(name))
+    SyndicationPerson(get_activation_factory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPerson(name))
 {}
 
 inline SyndicationPerson::SyndicationPerson(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) :
-    SyndicationPerson(GetActivationFactory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPersonEx(name, email, uri))
+    SyndicationPerson(get_activation_factory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPersonEx(name, email, uri))
 {}
 
 inline SyndicationText::SyndicationText() :
-    SyndicationText(ActivateInstance<SyndicationText>())
+    SyndicationText(activate_instance<SyndicationText>())
 {}
 
 inline SyndicationText::SyndicationText(hstring_ref text) :
-    SyndicationText(GetActivationFactory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationText(text))
+    SyndicationText(get_activation_factory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationText(text))
 {}
 
 inline SyndicationText::SyndicationText(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) :
-    SyndicationText(GetActivationFactory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationTextEx(text, type))
+    SyndicationText(get_activation_factory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationTextEx(text, type))
 {}
 
 }

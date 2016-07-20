@@ -1067,51 +1067,51 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Sec
 
 inline Windows::Foundation::IAsyncOperation<bool> KeyCredentialManager::IsSupportedAsync()
 {
-    return GetActivationFactory<KeyCredentialManager, IKeyCredentialManagerStatics>().IsSupportedAsync();
+    return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().IsSupportedAsync();
 }
 
 inline Windows::Foundation::IAsyncAction KeyCredentialManager::RenewAttestationAsync()
 {
-    return GetActivationFactory<KeyCredentialManager, IKeyCredentialManagerStatics>().RenewAttestationAsync();
+    return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().RenewAttestationAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option)
 {
-    return GetActivationFactory<KeyCredentialManager, IKeyCredentialManagerStatics>().RequestCreateAsync(name, option);
+    return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().RequestCreateAsync(name, option);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::OpenAsync(hstring_ref name)
 {
-    return GetActivationFactory<KeyCredentialManager, IKeyCredentialManagerStatics>().OpenAsync(name);
+    return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().OpenAsync(name);
 }
 
 inline Windows::Foundation::IAsyncAction KeyCredentialManager::DeleteAsync(hstring_ref name)
 {
-    return GetActivationFactory<KeyCredentialManager, IKeyCredentialManagerStatics>().DeleteAsync(name);
+    return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().DeleteAsync(name);
 }
 
 inline PasswordCredential::PasswordCredential() :
-    PasswordCredential(ActivateInstance<PasswordCredential>())
+    PasswordCredential(activate_instance<PasswordCredential>())
 {}
 
 inline PasswordCredential::PasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) :
-    PasswordCredential(GetActivationFactory<PasswordCredential, ICredentialFactory>().CreatePasswordCredential(resource, userName, password))
+    PasswordCredential(get_activation_factory<PasswordCredential, ICredentialFactory>().CreatePasswordCredential(resource, userName, password))
 {}
 
 inline PasswordCredentialPropertyStore::PasswordCredentialPropertyStore() :
-    PasswordCredentialPropertyStore(ActivateInstance<PasswordCredentialPropertyStore>())
+    PasswordCredentialPropertyStore(activate_instance<PasswordCredentialPropertyStore>())
 {}
 
 inline PasswordVault::PasswordVault() :
-    PasswordVault(ActivateInstance<PasswordVault>())
+    PasswordVault(activate_instance<PasswordVault>())
 {}
 
 inline WebAccount::WebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) :
-    WebAccount(GetActivationFactory<WebAccount, IWebAccountFactory>().CreateWebAccount(webAccountProvider, userName, state))
+    WebAccount(get_activation_factory<WebAccount, IWebAccountFactory>().CreateWebAccount(webAccountProvider, userName, state))
 {}
 
 inline WebAccountProvider::WebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) :
-    WebAccountProvider(GetActivationFactory<WebAccountProvider, IWebAccountProviderFactory>().CreateWebAccountProvider(id, displayName, iconUri))
+    WebAccountProvider(get_activation_factory<WebAccountProvider, IWebAccountProviderFactory>().CreateWebAccountProvider(id, displayName, iconUri))
 {}
 
 }

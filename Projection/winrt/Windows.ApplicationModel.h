@@ -1986,22 +1986,22 @@ template <typename D> bool impl_IDesignModeStatics<D>::DesignModeEnabled() const
 
 inline bool DesignMode::DesignModeEnabled()
 {
-    return GetActivationFactory<DesignMode, IDesignModeStatics>().DesignModeEnabled();
+    return get_activation_factory<DesignMode, IDesignModeStatics>().DesignModeEnabled();
 }
 
 inline Windows::ApplicationModel::Package Package::Current()
 {
-    return GetActivationFactory<Package, IPackageStatics>().Current();
+    return get_activation_factory<Package, IPackageStatics>().Current();
 }
 
 inline Windows::ApplicationModel::PackageCatalog PackageCatalog::OpenForCurrentPackage()
 {
-    return GetActivationFactory<PackageCatalog, IPackageCatalogStatics>().OpenForCurrentPackage();
+    return get_activation_factory<PackageCatalog, IPackageCatalogStatics>().OpenForCurrentPackage();
 }
 
 inline Windows::ApplicationModel::PackageCatalog PackageCatalog::OpenForCurrentUser()
 {
-    return GetActivationFactory<PackageCatalog, IPackageCatalogStatics>().OpenForCurrentUser();
+    return get_activation_factory<PackageCatalog, IPackageCatalogStatics>().OpenForCurrentUser();
 }
 
 }

@@ -6782,11 +6782,11 @@ template <typename D> void impl_IVisualUnorderedCollection<D>::RemoveAll() const
 }
 
 inline CompositionEffectSourceParameter::CompositionEffectSourceParameter(hstring_ref name) :
-    CompositionEffectSourceParameter(GetActivationFactory<CompositionEffectSourceParameter, ICompositionEffectSourceParameterFactory>().Create(name))
+    CompositionEffectSourceParameter(get_activation_factory<CompositionEffectSourceParameter, ICompositionEffectSourceParameterFactory>().Create(name))
 {}
 
 inline Compositor::Compositor() :
-    Compositor(ActivateInstance<Compositor>())
+    Compositor(activate_instance<Compositor>())
 {}
 
 }

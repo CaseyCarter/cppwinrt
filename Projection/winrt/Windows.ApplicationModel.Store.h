@@ -1800,180 +1800,180 @@ template <typename D> Windows::ApplicationModel::Store::ProductPurchaseDisplayPr
 
 inline Windows::ApplicationModel::Store::LicenseInformation CurrentApp::LicenseInformation()
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().LicenseInformation();
+    return get_activation_factory<CurrentApp, ICurrentApp>().LicenseInformation();
 }
 
 inline Windows::Foundation::Uri CurrentApp::LinkUri()
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().LinkUri();
+    return get_activation_factory<CurrentApp, ICurrentApp>().LinkUri();
 }
 
 inline GUID CurrentApp::AppId()
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().AppId();
+    return get_activation_factory<CurrentApp, ICurrentApp>().AppId();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::RequestAppPurchaseAsync(bool includeReceipt)
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().RequestAppPurchaseAsync(includeReceipt);
+    return get_activation_factory<CurrentApp, ICurrentApp>().RequestAppPurchaseAsync(includeReceipt);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt)
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().RequestProductPurchaseAsync(productId, includeReceipt);
+    return get_activation_factory<CurrentApp, ICurrentApp>().RequestProductPurchaseAsync(productId, includeReceipt);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationAsync()
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().LoadListingInformationAsync();
+    return get_activation_factory<CurrentApp, ICurrentApp>().LoadListingInformationAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetAppReceiptAsync()
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().GetAppReceiptAsync();
+    return get_activation_factory<CurrentApp, ICurrentApp>().GetAppReceiptAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetProductReceiptAsync(hstring_ref productId)
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp>().GetProductReceiptAsync(productId);
+    return get_activation_factory<CurrentApp, ICurrentApp>().GetProductReceiptAsync(productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId)
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp2Statics>().GetCustomerPurchaseIdAsync(serviceTicket, publisherUserId);
+    return get_activation_factory<CurrentApp, ICurrentApp2Statics>().GetCustomerPurchaseIdAsync(serviceTicket, publisherUserId);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId)
 {
-    return GetActivationFactory<CurrentApp, ICurrentApp2Statics>().GetCustomerCollectionsIdAsync(serviceTicket, publisherUserId);
+    return get_activation_factory<CurrentApp, ICurrentApp2Statics>().GetCustomerCollectionsIdAsync(serviceTicket, publisherUserId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds)
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
+    return get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords)
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
+    return get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
 }
 
 inline void CurrentApp::ReportProductFulfillment(hstring_ref productId)
 {
-    GetActivationFactory<CurrentApp, ICurrentAppStaticsWithFiltering>().ReportProductFulfillment(productId);
+    get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().ReportProductFulfillment(productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetAppPurchaseCampaignIdAsync()
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppWithCampaignId>().GetAppPurchaseCampaignIdAsync();
+    return get_activation_factory<CurrentApp, ICurrentAppWithCampaignId>().GetAppPurchaseCampaignIdAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentApp::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId)
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
+    return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId)
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId);
+    return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
+    return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> CurrentApp::GetUnfulfilledConsumablesAsync()
 {
-    return GetActivationFactory<CurrentApp, ICurrentAppWithConsumables>().GetUnfulfilledConsumablesAsync();
+    return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().GetUnfulfilledConsumablesAsync();
 }
 
 inline Windows::ApplicationModel::Store::LicenseInformation CurrentAppSimulator::LicenseInformation()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().LicenseInformation();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().LicenseInformation();
 }
 
 inline Windows::Foundation::Uri CurrentAppSimulator::LinkUri()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().LinkUri();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().LinkUri();
 }
 
 inline GUID CurrentAppSimulator::AppId()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().AppId();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().AppId();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::RequestAppPurchaseAsync(bool includeReceipt)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().RequestAppPurchaseAsync(includeReceipt);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().RequestAppPurchaseAsync(includeReceipt);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().RequestProductPurchaseAsync(productId, includeReceipt);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().RequestProductPurchaseAsync(productId, includeReceipt);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationAsync()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().LoadListingInformationAsync();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().LoadListingInformationAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetAppReceiptAsync()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().GetAppReceiptAsync();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().GetAppReceiptAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetProductReceiptAsync(hstring_ref productId)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().GetProductReceiptAsync(productId);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().GetProductReceiptAsync(productId);
 }
 
 inline Windows::Foundation::IAsyncAction CurrentAppSimulator::ReloadSimulatorAsync(const Windows::Storage::StorageFile & simulatorSettingsFile)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulator>().ReloadSimulatorAsync(simulatorSettingsFile);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().ReloadSimulatorAsync(simulatorSettingsFile);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetAppPurchaseCampaignIdAsync()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorWithCampaignId>().GetAppPurchaseCampaignIdAsync();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithCampaignId>().GetAppPurchaseCampaignIdAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentAppSimulator::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> CurrentAppSimulator::GetUnfulfilledConsumablesAsync()
 {
-    return GetActivationFactory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().GetUnfulfilledConsumablesAsync();
+    return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().GetUnfulfilledConsumablesAsync();
 }
 
 inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties() :
-    ProductPurchaseDisplayProperties(ActivateInstance<ProductPurchaseDisplayProperties>())
+    ProductPurchaseDisplayProperties(activate_instance<ProductPurchaseDisplayProperties>())
 {}
 
 inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties(hstring_ref name) :
-    ProductPurchaseDisplayProperties(GetActivationFactory<ProductPurchaseDisplayProperties, IProductPurchaseDisplayPropertiesFactory>().CreateProductPurchaseDisplayProperties(name))
+    ProductPurchaseDisplayProperties(get_activation_factory<ProductPurchaseDisplayProperties, IProductPurchaseDisplayPropertiesFactory>().CreateProductPurchaseDisplayProperties(name))
 {}
 
 }

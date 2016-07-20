@@ -20,7 +20,7 @@ protected:
 
     ButtonBaseT()
     {
-        GetActivationFactory<ButtonBase, IButtonBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ButtonBase, IButtonBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -34,7 +34,7 @@ protected:
 
     CarouselPanelT()
     {
-        GetActivationFactory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CarouselPanel, ICarouselPanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -48,7 +48,7 @@ protected:
 
     DragCompletedEventArgsT(double horizontalChange, double verticalChange, bool canceled)
     {
-        GetActivationFactory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, *this, m_inner);
+        get_activation_factory<DragCompletedEventArgs, IDragCompletedEventArgsFactory>().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, *this, m_inner);
     }
 };
 
@@ -62,7 +62,7 @@ protected:
 
     DragDeltaEventArgsT(double horizontalChange, double verticalChange)
     {
-        GetActivationFactory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, *this, m_inner);
+        get_activation_factory<DragDeltaEventArgs, IDragDeltaEventArgsFactory>().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, *this, m_inner);
     }
 };
 
@@ -76,7 +76,7 @@ protected:
 
     DragStartedEventArgsT(double horizontalOffset, double verticalOffset)
     {
-        GetActivationFactory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, *this, m_inner);
+        get_activation_factory<DragStartedEventArgs, IDragStartedEventArgsFactory>().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, *this, m_inner);
     }
 };
 
@@ -90,7 +90,7 @@ protected:
 
     FlyoutBaseT()
     {
-        GetActivationFactory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FlyoutBase, IFlyoutBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -104,7 +104,7 @@ protected:
 
     GridViewItemPresenterT()
     {
-        GetActivationFactory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GridViewItemPresenter, IGridViewItemPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -118,7 +118,7 @@ protected:
 
     ListViewItemPresenterT()
     {
-        GetActivationFactory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListViewItemPresenter, IListViewItemPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -132,7 +132,7 @@ protected:
 
     PickerFlyoutBaseT()
     {
-        GetActivationFactory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PickerFlyoutBase, IPickerFlyoutBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -146,7 +146,7 @@ protected:
 
     PivotHeaderItemT()
     {
-        GetActivationFactory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PivotHeaderItem, IPivotHeaderItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -160,7 +160,7 @@ protected:
 
     RangeBaseT()
     {
-        GetActivationFactory<RangeBase, IRangeBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RangeBase, IRangeBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -174,7 +174,7 @@ protected:
 
     SelectorItemT()
     {
-        GetActivationFactory<SelectorItem, ISelectorItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SelectorItem, ISelectorItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -188,7 +188,7 @@ protected:
 
     ToggleButtonT()
     {
-        GetActivationFactory<ToggleButton, IToggleButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ToggleButton, IToggleButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 

@@ -2,6 +2,7 @@
 #include "catch.hpp"
 
 using namespace winrt;
+using namespace Windows;
 using namespace Windows::Graphics::Display;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
@@ -132,7 +133,7 @@ TEST_CASE("delegate,lambda,EventHandler")
 {
     Movable movable = 1;
 
-    EventHandler<Windows::IInspectable> h = [capture = std::move(movable)](auto && ...)
+    EventHandler<IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };
@@ -146,7 +147,7 @@ TEST_CASE("delegate,lambda,TypedEventHandler")
 {
     Movable movable = 1;
 
-    TypedEventHandler<DisplayInformation, Windows::IInspectable> h = [capture = std::move(movable)](auto && ...)
+    TypedEventHandler<DisplayInformation, IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };
@@ -160,7 +161,7 @@ TEST_CASE("delegate,lambda,VectorChangedEventHandler")
 {
     Movable movable = 1;
 
-    VectorChangedEventHandler<Windows::IInspectable> h = [capture = std::move(movable)](auto && ...)
+    VectorChangedEventHandler<IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };

@@ -796,7 +796,7 @@ template <typename D> void impl_IHttpBaseProtocolFilter4<D>::ClearAuthentication
 }
 
 inline HttpBaseProtocolFilter::HttpBaseProtocolFilter() :
-    HttpBaseProtocolFilter(ActivateInstance<HttpBaseProtocolFilter>())
+    HttpBaseProtocolFilter(activate_instance<HttpBaseProtocolFilter>())
 {}
 
 }

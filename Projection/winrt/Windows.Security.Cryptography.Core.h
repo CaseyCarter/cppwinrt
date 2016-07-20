@@ -3798,702 +3798,702 @@ template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::Capi
 
 inline hstring AsymmetricAlgorithmNames::RsaPkcs1()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaPkcs1();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaPkcs1();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha1()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha1();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha1();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha384()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha384();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha384();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha512()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha512();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaOaepSha512();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP256Sha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP256Sha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP256Sha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP384Sha384()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP384Sha384();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP384Sha384();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP521Sha512()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP521Sha512();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().EcdsaP521Sha512();
 }
 
 inline hstring AsymmetricAlgorithmNames::DsaSha1()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().DsaSha1();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().DsaSha1();
 }
 
 inline hstring AsymmetricAlgorithmNames::DsaSha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().DsaSha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().DsaSha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha1()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha1();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha1();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha384()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha384();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha384();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha512()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha512();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha512();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha1()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha1();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha1();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha384()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha384();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha384();
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha512()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha512();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha512();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha256()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha256();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha256();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha384()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha384();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha384();
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha512()
 {
-    return GetActivationFactory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha512();
+    return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha512();
 }
 
 inline Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider AsymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
 {
-    return GetActivationFactory<AsymmetricKeyAlgorithmProvider, IAsymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return get_activation_factory<AsymmetricKeyAlgorithmProvider, IAsymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Encrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().Encrypt(key, data, iv);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().Encrypt(key, data, iv);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Decrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().Decrypt(key, data, iv);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().Decrypt(key, data, iv);
 }
 
 inline Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData CryptographicEngine::EncryptAndAuthenticate(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & nonce, const Windows::Storage::Streams::IBuffer & authenticatedData)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().EncryptAndAuthenticate(key, data, nonce, authenticatedData);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().EncryptAndAuthenticate(key, data, nonce, authenticatedData);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::DecryptAndAuthenticate(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & nonce, const Windows::Storage::Streams::IBuffer & authenticationTag, const Windows::Storage::Streams::IBuffer & authenticatedData)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Sign(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().Sign(key, data);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().Sign(key, data);
 }
 
 inline bool CryptographicEngine::VerifySignature(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & signature)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().VerifySignature(key, data, signature);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().VerifySignature(key, data, signature);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::DeriveKeyMaterial(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Security::Cryptography::Core::KeyDerivationParameters & parameters, uint32_t desiredKeySize)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics>().DeriveKeyMaterial(key, parameters, desiredKeySize);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics>().DeriveKeyMaterial(key, parameters, desiredKeySize);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::SignHashedData(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics2>().SignHashedData(key, data);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics2>().SignHashedData(key, data);
 }
 
 inline bool CryptographicEngine::VerifySignatureWithHashInput(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & signature)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics2>().VerifySignatureWithHashInput(key, data, signature);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics2>().VerifySignatureWithHashInput(key, data, signature);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::DecryptAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics2>().DecryptAsync(key, data, iv);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics2>().DecryptAsync(key, data, iv);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::SignAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics2>().SignAsync(key, data);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics2>().SignAsync(key, data);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::SignHashedDataAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data)
 {
-    return GetActivationFactory<CryptographicEngine, ICryptographicEngineStatics2>().SignHashedDataAsync(key, data);
+    return get_activation_factory<CryptographicEngine, ICryptographicEngineStatics2>().SignHashedDataAsync(key, data);
 }
 
 inline hstring EccCurveNames::BrainpoolP160r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP160r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP160r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP160t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP160t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP160t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP192r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP192r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP192r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP192t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP192t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP192t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP224r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP224r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP224r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP224t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP224t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP224t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP256r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP256r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP256r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP256t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP256t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP256t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP320r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP320r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP320r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP320t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP320t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP320t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP384r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP384r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP384r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP384t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP384t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP384t1();
 }
 
 inline hstring EccCurveNames::BrainpoolP512r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP512r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP512r1();
 }
 
 inline hstring EccCurveNames::BrainpoolP512t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP512t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().BrainpoolP512t1();
 }
 
 inline hstring EccCurveNames::Curve25519()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().Curve25519();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().Curve25519();
 }
 
 inline hstring EccCurveNames::Ec192wapi()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().Ec192wapi();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().Ec192wapi();
 }
 
 inline hstring EccCurveNames::NistP192()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NistP192();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NistP192();
 }
 
 inline hstring EccCurveNames::NistP224()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NistP224();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NistP224();
 }
 
 inline hstring EccCurveNames::NistP256()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NistP256();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NistP256();
 }
 
 inline hstring EccCurveNames::NistP384()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NistP384();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NistP384();
 }
 
 inline hstring EccCurveNames::NistP521()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NistP521();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NistP521();
 }
 
 inline hstring EccCurveNames::NumsP256t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NumsP256t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NumsP256t1();
 }
 
 inline hstring EccCurveNames::NumsP384t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NumsP384t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NumsP384t1();
 }
 
 inline hstring EccCurveNames::NumsP512t1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().NumsP512t1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().NumsP512t1();
 }
 
 inline hstring EccCurveNames::SecP160k1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP160k1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP160k1();
 }
 
 inline hstring EccCurveNames::SecP160r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP160r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP160r1();
 }
 
 inline hstring EccCurveNames::SecP160r2()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP160r2();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP160r2();
 }
 
 inline hstring EccCurveNames::SecP192k1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP192k1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP192k1();
 }
 
 inline hstring EccCurveNames::SecP192r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP192r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP192r1();
 }
 
 inline hstring EccCurveNames::SecP224k1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP224k1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP224k1();
 }
 
 inline hstring EccCurveNames::SecP224r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP224r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP224r1();
 }
 
 inline hstring EccCurveNames::SecP256k1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP256k1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP256k1();
 }
 
 inline hstring EccCurveNames::SecP256r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP256r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP256r1();
 }
 
 inline hstring EccCurveNames::SecP384r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP384r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP384r1();
 }
 
 inline hstring EccCurveNames::SecP521r1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().SecP521r1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().SecP521r1();
 }
 
 inline hstring EccCurveNames::Wtls7()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().Wtls7();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().Wtls7();
 }
 
 inline hstring EccCurveNames::Wtls9()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().Wtls9();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().Wtls9();
 }
 
 inline hstring EccCurveNames::Wtls12()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().Wtls12();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().Wtls12();
 }
 
 inline hstring EccCurveNames::X962P192v1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P192v1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P192v1();
 }
 
 inline hstring EccCurveNames::X962P192v2()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P192v2();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P192v2();
 }
 
 inline hstring EccCurveNames::X962P192v3()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P192v3();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P192v3();
 }
 
 inline hstring EccCurveNames::X962P239v1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P239v1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P239v1();
 }
 
 inline hstring EccCurveNames::X962P239v2()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P239v2();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P239v2();
 }
 
 inline hstring EccCurveNames::X962P239v3()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P239v3();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P239v3();
 }
 
 inline hstring EccCurveNames::X962P256v1()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().X962P256v1();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().X962P256v1();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> EccCurveNames::AllEccCurveNames()
 {
-    return GetActivationFactory<EccCurveNames, IEccCurveNamesStatics>().AllEccCurveNames();
+    return get_activation_factory<EccCurveNames, IEccCurveNamesStatics>().AllEccCurveNames();
 }
 
 inline hstring HashAlgorithmNames::Md5()
 {
-    return GetActivationFactory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Md5();
+    return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Md5();
 }
 
 inline hstring HashAlgorithmNames::Sha1()
 {
-    return GetActivationFactory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha1();
+    return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha1();
 }
 
 inline hstring HashAlgorithmNames::Sha256()
 {
-    return GetActivationFactory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha256();
+    return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha256();
 }
 
 inline hstring HashAlgorithmNames::Sha384()
 {
-    return GetActivationFactory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha384();
+    return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha384();
 }
 
 inline hstring HashAlgorithmNames::Sha512()
 {
-    return GetActivationFactory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha512();
+    return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha512();
 }
 
 inline Windows::Security::Cryptography::Core::HashAlgorithmProvider HashAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
 {
-    return GetActivationFactory<HashAlgorithmProvider, IHashAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return get_activation_factory<HashAlgorithmProvider, IHashAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Md5()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Md5();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Md5();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha1()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha1();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha1();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha256()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha256();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha256();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha384()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha384();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha384();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha512()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha512();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha512();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacMd5()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacMd5();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacMd5();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha1()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha1();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha1();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha256()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha256();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha256();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha384()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha384();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha384();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha512()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha512();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha512();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatMd5()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatMd5();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatMd5();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha1()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha1();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha1();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha256()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha256();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha256();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha384()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha384();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha384();
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha512()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha512();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha512();
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfMd5()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfMd5();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfMd5();
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha1()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha1();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha1();
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha256()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha256();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha256();
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha384()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha384();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha384();
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha512()
 {
-    return GetActivationFactory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha512();
+    return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha512();
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider KeyDerivationAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
 {
-    return GetActivationFactory<KeyDerivationAlgorithmProvider, IKeyDerivationAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return get_activation_factory<KeyDerivationAlgorithmProvider, IKeyDerivationAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForPbkdf2(const Windows::Storage::Streams::IBuffer & pbkdf2Salt, uint32_t iterationCount)
 {
-    return GetActivationFactory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForPbkdf2(pbkdf2Salt, iterationCount);
+    return get_activation_factory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForPbkdf2(pbkdf2Salt, iterationCount);
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForSP800108(const Windows::Storage::Streams::IBuffer & label, const Windows::Storage::Streams::IBuffer & context)
 {
-    return GetActivationFactory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForSP800108(label, context);
+    return get_activation_factory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForSP800108(label, context);
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForSP80056a(const Windows::Storage::Streams::IBuffer & algorithmId, const Windows::Storage::Streams::IBuffer & partyUInfo, const Windows::Storage::Streams::IBuffer & partyVInfo, const Windows::Storage::Streams::IBuffer & suppPubInfo, const Windows::Storage::Streams::IBuffer & suppPrivInfo)
 {
-    return GetActivationFactory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo);
+    return get_activation_factory<KeyDerivationParameters, IKeyDerivationParametersStatics>().BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo);
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm)
 {
-    return GetActivationFactory<KeyDerivationParameters, IKeyDerivationParametersStatics2>().BuildForCapi1Kdf(capi1KdfTargetAlgorithm);
+    return get_activation_factory<KeyDerivationParameters, IKeyDerivationParametersStatics2>().BuildForCapi1Kdf(capi1KdfTargetAlgorithm);
 }
 
 inline hstring MacAlgorithmNames::HmacMd5()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacMd5();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacMd5();
 }
 
 inline hstring MacAlgorithmNames::HmacSha1()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha1();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha1();
 }
 
 inline hstring MacAlgorithmNames::HmacSha256()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha256();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha256();
 }
 
 inline hstring MacAlgorithmNames::HmacSha384()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha384();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha384();
 }
 
 inline hstring MacAlgorithmNames::HmacSha512()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha512();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().HmacSha512();
 }
 
 inline hstring MacAlgorithmNames::AesCmac()
 {
-    return GetActivationFactory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().AesCmac();
+    return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().AesCmac();
 }
 
 inline Windows::Security::Cryptography::Core::MacAlgorithmProvider MacAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
 {
-    return GetActivationFactory<MacAlgorithmProvider, IMacAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return get_activation_factory<MacAlgorithmProvider, IMacAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> PersistedKeyProvider::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
 {
-    return GetActivationFactory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding);
+    return get_activation_factory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding);
 }
 
 inline Windows::Security::Cryptography::Core::CryptographicKey PersistedKeyProvider::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
 {
-    return GetActivationFactory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding);
+    return get_activation_factory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding);
 }
 
 inline hstring SymmetricAlgorithmNames::DesCbc()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesCbc();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesCbc();
 }
 
 inline hstring SymmetricAlgorithmNames::DesEcb()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesEcb();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesEcb();
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesCbc()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesCbc();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesCbc();
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesEcb()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesEcb();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesEcb();
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2Cbc()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2Cbc();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2Cbc();
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2Ecb()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2Ecb();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2Ecb();
 }
 
 inline hstring SymmetricAlgorithmNames::AesCbc()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCbc();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCbc();
 }
 
 inline hstring SymmetricAlgorithmNames::AesEcb()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesEcb();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesEcb();
 }
 
 inline hstring SymmetricAlgorithmNames::AesGcm()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesGcm();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesGcm();
 }
 
 inline hstring SymmetricAlgorithmNames::AesCcm()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCcm();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCcm();
 }
 
 inline hstring SymmetricAlgorithmNames::AesCbcPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCbcPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesCbcPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::AesEcbPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesEcbPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().AesEcbPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::DesCbcPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesCbcPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesCbcPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::DesEcbPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesEcbPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().DesEcbPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesCbcPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesCbcPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesCbcPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesEcbPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesEcbPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().TripleDesEcbPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2CbcPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2CbcPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2CbcPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2EcbPkcs7()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2EcbPkcs7();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc2EcbPkcs7();
 }
 
 inline hstring SymmetricAlgorithmNames::Rc4()
 {
-    return GetActivationFactory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc4();
+    return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc4();
 }
 
 inline Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider SymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
 {
-    return GetActivationFactory<SymmetricKeyAlgorithmProvider, ISymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return get_activation_factory<SymmetricKeyAlgorithmProvider, ISymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
 }

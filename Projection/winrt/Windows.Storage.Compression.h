@@ -160,15 +160,15 @@ template <typename D> Windows::Storage::Compression::Decompressor impl_IDecompre
 }
 
 inline Compressor::Compressor(const Windows::Storage::Streams::IOutputStream & underlyingStream) :
-    Compressor(GetActivationFactory<Compressor, ICompressorFactory>().CreateCompressor(underlyingStream))
+    Compressor(get_activation_factory<Compressor, ICompressorFactory>().CreateCompressor(underlyingStream))
 {}
 
 inline Compressor::Compressor(const Windows::Storage::Streams::IOutputStream & underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize) :
-    Compressor(GetActivationFactory<Compressor, ICompressorFactory>().CreateCompressorEx(underlyingStream, algorithm, blockSize))
+    Compressor(get_activation_factory<Compressor, ICompressorFactory>().CreateCompressorEx(underlyingStream, algorithm, blockSize))
 {}
 
 inline Decompressor::Decompressor(const Windows::Storage::Streams::IInputStream & underlyingStream) :
-    Decompressor(GetActivationFactory<Decompressor, IDecompressorFactory>().CreateDecompressor(underlyingStream))
+    Decompressor(get_activation_factory<Decompressor, IDecompressorFactory>().CreateDecompressor(underlyingStream))
 {}
 
 }

@@ -7568,86 +7568,86 @@ template <typename D> uint32_t impl_IEmailItemCounts<D>::Unread() const
 }
 
 inline EmailAttachment::EmailAttachment() :
-    EmailAttachment(ActivateInstance<EmailAttachment>())
+    EmailAttachment(activate_instance<EmailAttachment>())
 {}
 
 inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) :
-    EmailAttachment(GetActivationFactory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
+    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
 {}
 
 inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
-    EmailAttachment(GetActivationFactory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
+    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
 {}
 
 inline EmailIrmInfo::EmailIrmInfo() :
-    EmailIrmInfo(ActivateInstance<EmailIrmInfo>())
+    EmailIrmInfo(activate_instance<EmailIrmInfo>())
 {}
 
 inline EmailIrmInfo::EmailIrmInfo(const Windows::Foundation::DateTime & expiration, const Windows::ApplicationModel::Email::EmailIrmTemplate & irmTemplate) :
-    EmailIrmInfo(GetActivationFactory<EmailIrmInfo, IEmailIrmInfoFactory>().Create(expiration, irmTemplate))
+    EmailIrmInfo(get_activation_factory<EmailIrmInfo, IEmailIrmInfoFactory>().Create(expiration, irmTemplate))
 {}
 
 inline EmailIrmTemplate::EmailIrmTemplate() :
-    EmailIrmTemplate(ActivateInstance<EmailIrmTemplate>())
+    EmailIrmTemplate(activate_instance<EmailIrmTemplate>())
 {}
 
 inline EmailIrmTemplate::EmailIrmTemplate(hstring_ref id, hstring_ref name, hstring_ref description) :
-    EmailIrmTemplate(GetActivationFactory<EmailIrmTemplate, IEmailIrmTemplateFactory>().Create(id, name, description))
+    EmailIrmTemplate(get_activation_factory<EmailIrmTemplate, IEmailIrmTemplateFactory>().Create(id, name, description))
 {}
 
 inline EmailMailboxAutoReplySettings::EmailMailboxAutoReplySettings() :
-    EmailMailboxAutoReplySettings(ActivateInstance<EmailMailboxAutoReplySettings>())
+    EmailMailboxAutoReplySettings(activate_instance<EmailMailboxAutoReplySettings>())
 {}
 
 inline Windows::Foundation::IAsyncAction EmailManager::ShowComposeNewEmailAsync(const Windows::ApplicationModel::Email::EmailMessage & message)
 {
-    return GetActivationFactory<EmailManager, IEmailManagerStatics>().ShowComposeNewEmailAsync(message);
+    return get_activation_factory<EmailManager, IEmailManagerStatics>().ShowComposeNewEmailAsync(message);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> EmailManager::RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType)
 {
-    return GetActivationFactory<EmailManager, IEmailManagerStatics2>().RequestStoreAsync(accessType);
+    return get_activation_factory<EmailManager, IEmailManagerStatics2>().RequestStoreAsync(accessType);
 }
 
 inline Windows::ApplicationModel::Email::EmailManagerForUser EmailManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<EmailManager, IEmailManagerStatics3>().GetForUser(user);
+    return get_activation_factory<EmailManager, IEmailManagerStatics3>().GetForUser(user);
 }
 
 inline EmailMeetingInfo::EmailMeetingInfo() :
-    EmailMeetingInfo(ActivateInstance<EmailMeetingInfo>())
+    EmailMeetingInfo(activate_instance<EmailMeetingInfo>())
 {}
 
 inline EmailMessage::EmailMessage() :
-    EmailMessage(ActivateInstance<EmailMessage>())
+    EmailMessage(activate_instance<EmailMessage>())
 {}
 
 inline EmailQueryOptions::EmailQueryOptions() :
-    EmailQueryOptions(ActivateInstance<EmailQueryOptions>())
+    EmailQueryOptions(activate_instance<EmailQueryOptions>())
 {}
 
 inline EmailQueryOptions::EmailQueryOptions(hstring_ref text) :
-    EmailQueryOptions(GetActivationFactory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithText(text))
+    EmailQueryOptions(get_activation_factory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithText(text))
 {}
 
 inline EmailQueryOptions::EmailQueryOptions(hstring_ref text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) :
-    EmailQueryOptions(GetActivationFactory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
+    EmailQueryOptions(get_activation_factory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
 {}
 
 inline EmailRecipient::EmailRecipient() :
-    EmailRecipient(ActivateInstance<EmailRecipient>())
+    EmailRecipient(activate_instance<EmailRecipient>())
 {}
 
 inline EmailRecipient::EmailRecipient(hstring_ref address) :
-    EmailRecipient(GetActivationFactory<EmailRecipient, IEmailRecipientFactory>().Create(address))
+    EmailRecipient(get_activation_factory<EmailRecipient, IEmailRecipientFactory>().Create(address))
 {}
 
 inline EmailRecipient::EmailRecipient(hstring_ref address, hstring_ref name) :
-    EmailRecipient(GetActivationFactory<EmailRecipient, IEmailRecipientFactory>().CreateWithName(address, name))
+    EmailRecipient(get_activation_factory<EmailRecipient, IEmailRecipientFactory>().CreateWithName(address, name))
 {}
 
 inline EmailRecipientResolutionResult::EmailRecipientResolutionResult() :
-    EmailRecipientResolutionResult(ActivateInstance<EmailRecipientResolutionResult>())
+    EmailRecipientResolutionResult(activate_instance<EmailRecipientResolutionResult>())
 {}
 
 }

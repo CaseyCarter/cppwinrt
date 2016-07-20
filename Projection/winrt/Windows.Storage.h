@@ -4531,396 +4531,396 @@ template <typename D> void impl_IApplicationDataContainer<D>::DeleteContainer(hs
 
 inline Windows::Storage::ApplicationData ApplicationData::Current()
 {
-    return GetActivationFactory<ApplicationData, IApplicationDataStatics>().Current();
+    return get_activation_factory<ApplicationData, IApplicationDataStatics>().Current();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::ApplicationData> ApplicationData::GetForUserAsync(const Windows::System::User & user)
 {
-    return GetActivationFactory<ApplicationData, IApplicationDataStatics2>().GetForUserAsync(user);
+    return get_activation_factory<ApplicationData, IApplicationDataStatics2>().GetForUserAsync(user);
 }
 
 inline ApplicationDataCompositeValue::ApplicationDataCompositeValue() :
-    ApplicationDataCompositeValue(ActivateInstance<ApplicationDataCompositeValue>())
+    ApplicationDataCompositeValue(activate_instance<ApplicationDataCompositeValue>())
 {}
 
 inline void CachedFileManager::DeferUpdates(const Windows::Storage::IStorageFile & file)
 {
-    GetActivationFactory<CachedFileManager, ICachedFileManagerStatics>().DeferUpdates(file);
+    get_activation_factory<CachedFileManager, ICachedFileManagerStatics>().DeferUpdates(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> CachedFileManager::CompleteUpdatesAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<CachedFileManager, ICachedFileManagerStatics>().CompleteUpdatesAsync(file);
+    return get_activation_factory<CachedFileManager, ICachedFileManagerStatics>().CompleteUpdatesAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_ref desiredName)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_ref desiredName)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName, option);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName, option);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName, option);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName, option);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName, option);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName, option);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
 {
-    return GetActivationFactory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName, option);
+    return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName, option);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> FileIO::ReadTextAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().ReadTextAsync(file);
+    return get_activation_factory<FileIO, IFileIOStatics>().ReadTextAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> FileIO::ReadTextAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().ReadTextAsync(file, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().ReadTextAsync(file, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents);
+    return get_activation_factory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents, encoding);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> FileIO::ReadLinesAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().ReadLinesAsync(file);
+    return get_activation_factory<FileIO, IFileIOStatics>().ReadLinesAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> FileIO::ReadLinesAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().ReadLinesAsync(file, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().ReadLinesAsync(file, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines);
+    return get_activation_factory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines, encoding);
+    return get_activation_factory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines, encoding);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> FileIO::ReadBufferAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().ReadBufferAsync(file);
+    return get_activation_factory<FileIO, IFileIOStatics>().ReadBufferAsync(file);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteBufferAsync(const Windows::Storage::IStorageFile & file, const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteBufferAsync(file, buffer);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteBufferAsync(file, buffer);
 }
 
 inline Windows::Foundation::IAsyncAction FileIO::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer)
 {
-    return GetActivationFactory<FileIO, IFileIOStatics>().WriteBytesAsync(file, buffer);
+    return get_activation_factory<FileIO, IFileIOStatics>().WriteBytesAsync(file, buffer);
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::CameraRoll()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersCameraRollStatics>().CameraRoll();
+    return get_activation_factory<KnownFolders, IKnownFoldersCameraRollStatics>().CameraRoll();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::Playlists()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersPlaylistsStatics>().Playlists();
+    return get_activation_factory<KnownFolders, IKnownFoldersPlaylistsStatics>().Playlists();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::SavedPictures()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersSavedPicturesStatics>().SavedPictures();
+    return get_activation_factory<KnownFolders, IKnownFoldersSavedPicturesStatics>().SavedPictures();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::MusicLibrary()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().MusicLibrary();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().MusicLibrary();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::PicturesLibrary()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().PicturesLibrary();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().PicturesLibrary();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::VideosLibrary()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().VideosLibrary();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().VideosLibrary();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::DocumentsLibrary()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().DocumentsLibrary();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().DocumentsLibrary();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::HomeGroup()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().HomeGroup();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().HomeGroup();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::RemovableDevices()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().RemovableDevices();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().RemovableDevices();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::MediaServerDevices()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics>().MediaServerDevices();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics>().MediaServerDevices();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::Objects3D()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics2>().Objects3D();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics2>().Objects3D();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::AppCaptures()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics2>().AppCaptures();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics2>().AppCaptures();
 }
 
 inline Windows::Storage::StorageFolder KnownFolders::RecordedCalls()
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics2>().RecordedCalls();
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics2>().RecordedCalls();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> KnownFolders::GetFolderForUserAsync(const Windows::System::User & user, Windows::Storage::KnownFolderId folderId)
 {
-    return GetActivationFactory<KnownFolders, IKnownFoldersStatics3>().GetFolderForUserAsync(user, folderId);
+    return get_activation_factory<KnownFolders, IKnownFoldersStatics3>().GetFolderForUserAsync(user, folderId);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_ref absolutePath)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath);
+    return get_activation_factory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents);
+    return get_activation_factory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents, encoding);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_ref absolutePath)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath);
+    return get_activation_factory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines, encoding);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines);
+    return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines, encoding);
+    return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines, encoding);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> PathIO::ReadBufferAsync(hstring_ref absolutePath)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().ReadBufferAsync(absolutePath);
+    return get_activation_factory<PathIO, IPathIOStatics>().ReadBufferAsync(absolutePath);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteBufferAsync(hstring_ref absolutePath, const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteBufferAsync(absolutePath, buffer);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteBufferAsync(absolutePath, buffer);
 }
 
 inline Windows::Foundation::IAsyncAction PathIO::WriteBytesAsync(hstring_ref absolutePath, array_ref<const uint8_t> buffer)
 {
-    return GetActivationFactory<PathIO, IPathIOStatics>().WriteBytesAsync(absolutePath, buffer);
+    return get_activation_factory<PathIO, IPathIOStatics>().WriteBytesAsync(absolutePath, buffer);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::GetFileFromPathAsync(hstring_ref path)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().GetFileFromPathAsync(path);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().GetFileFromPathAsync(path);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::GetFileFromApplicationUriAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().GetFileFromApplicationUriAsync(uri);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().GetFileFromApplicationUriAsync(uri);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().CreateStreamedFileAsync(displayNameWithExtension, dataRequested, thumbnail);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().CreateStreamedFileAsync(displayNameWithExtension, dataRequested, thumbnail);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::ReplaceWithStreamedFileAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileAsync(fileToReplace, dataRequested, thumbnail);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileAsync(fileToReplace, dataRequested, thumbnail);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().CreateStreamedFileFromUriAsync(displayNameWithExtension, uri, thumbnail);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().CreateStreamedFileFromUriAsync(displayNameWithExtension, uri, thumbnail);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::ReplaceWithStreamedFileFromUriAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
-    return GetActivationFactory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileFromUriAsync(fileToReplace, uri, thumbnail);
+    return get_activation_factory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileFromUriAsync(fileToReplace, uri, thumbnail);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> StorageFolder::GetFolderFromPathAsync(hstring_ref path)
 {
-    return GetActivationFactory<StorageFolder, IStorageFolderStatics>().GetFolderFromPathAsync(path);
+    return get_activation_factory<StorageFolder, IStorageFolderStatics>().GetFolderFromPathAsync(path);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> StorageLibrary::GetLibraryAsync(Windows::Storage::KnownLibraryId libraryId)
 {
-    return GetActivationFactory<StorageLibrary, IStorageLibraryStatics>().GetLibraryAsync(libraryId);
+    return get_activation_factory<StorageLibrary, IStorageLibraryStatics>().GetLibraryAsync(libraryId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> StorageLibrary::GetLibraryForUserAsync(const Windows::System::User & user, Windows::Storage::KnownLibraryId libraryId)
 {
-    return GetActivationFactory<StorageLibrary, IStorageLibraryStatics2>().GetLibraryForUserAsync(user, libraryId);
+    return get_activation_factory<StorageLibrary, IStorageLibraryStatics2>().GetLibraryForUserAsync(user, libraryId);
 }
 
 inline hstring SystemProperties::Author()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Author();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Author();
 }
 
 inline hstring SystemProperties::Comment()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Comment();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Comment();
 }
 
 inline hstring SystemProperties::ItemNameDisplay()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().ItemNameDisplay();
+    return get_activation_factory<SystemProperties, ISystemProperties>().ItemNameDisplay();
 }
 
 inline hstring SystemProperties::Keywords()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Keywords();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Keywords();
 }
 
 inline hstring SystemProperties::Rating()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Rating();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Rating();
 }
 
 inline hstring SystemProperties::Title()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Title();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Title();
 }
 
 inline Windows::Storage::SystemAudioProperties SystemProperties::Audio()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Audio();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Audio();
 }
 
 inline Windows::Storage::SystemGPSProperties SystemProperties::GPS()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().GPS();
+    return get_activation_factory<SystemProperties, ISystemProperties>().GPS();
 }
 
 inline Windows::Storage::SystemMediaProperties SystemProperties::Media()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Media();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Media();
 }
 
 inline Windows::Storage::SystemMusicProperties SystemProperties::Music()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Music();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Music();
 }
 
 inline Windows::Storage::SystemPhotoProperties SystemProperties::Photo()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Photo();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Photo();
 }
 
 inline Windows::Storage::SystemVideoProperties SystemProperties::Video()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Video();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Video();
 }
 
 inline Windows::Storage::SystemImageProperties SystemProperties::Image()
 {
-    return GetActivationFactory<SystemProperties, ISystemProperties>().Image();
+    return get_activation_factory<SystemProperties, ISystemProperties>().Image();
 }
 
 }

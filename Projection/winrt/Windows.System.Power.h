@@ -796,241 +796,241 @@ template <typename D> void impl_IForegroundEnergyManagerStatics<D>::RecentEnergy
 
 inline uint32_t BackgroundEnergyManager::LowUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().LowUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().LowUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::NearMaxAcceptableUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().NearMaxAcceptableUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().NearMaxAcceptableUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::MaxAcceptableUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().MaxAcceptableUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().MaxAcceptableUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::ExcessiveUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().ExcessiveUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().ExcessiveUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::NearTerminationUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().NearTerminationUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().NearTerminationUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::TerminationUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().TerminationUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().TerminationUsageLevel();
 }
 
 inline uint32_t BackgroundEnergyManager::RecentEnergyUsage()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsage();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsage();
 }
 
 inline uint32_t BackgroundEnergyManager::RecentEnergyUsageLevel()
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageLevel();
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageLevel();
 }
 
 inline event_token BackgroundEnergyManager::RecentEnergyUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageIncreased(handler);
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageIncreased(handler);
 }
 
 inline factory_event_revoker<IBackgroundEnergyManagerStatics> BackgroundEnergyManager::RecentEnergyUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>();
+    auto factory = get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IBackgroundEnergyManagerStatics::remove_RecentEnergyUsageIncreased, factory.RecentEnergyUsageIncreased(handler) };
 }
 
 inline void BackgroundEnergyManager::RecentEnergyUsageIncreased(event_token token)
 {
-    GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageIncreased(token);
+    get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageIncreased(token);
 }
 
 inline event_token BackgroundEnergyManager::RecentEnergyUsageReturnedToLow(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(handler);
+    return get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(handler);
 }
 
 inline factory_event_revoker<IBackgroundEnergyManagerStatics> BackgroundEnergyManager::RecentEnergyUsageReturnedToLow(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>();
+    auto factory = get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IBackgroundEnergyManagerStatics::remove_RecentEnergyUsageReturnedToLow, factory.RecentEnergyUsageReturnedToLow(handler) };
 }
 
 inline void BackgroundEnergyManager::RecentEnergyUsageReturnedToLow(event_token token)
 {
-    GetActivationFactory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(token);
+    get_activation_factory<BackgroundEnergyManager, IBackgroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(token);
 }
 
 inline uint32_t ForegroundEnergyManager::LowUsageLevel()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().LowUsageLevel();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().LowUsageLevel();
 }
 
 inline uint32_t ForegroundEnergyManager::NearMaxAcceptableUsageLevel()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().NearMaxAcceptableUsageLevel();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().NearMaxAcceptableUsageLevel();
 }
 
 inline uint32_t ForegroundEnergyManager::MaxAcceptableUsageLevel()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().MaxAcceptableUsageLevel();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().MaxAcceptableUsageLevel();
 }
 
 inline uint32_t ForegroundEnergyManager::ExcessiveUsageLevel()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().ExcessiveUsageLevel();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().ExcessiveUsageLevel();
 }
 
 inline uint32_t ForegroundEnergyManager::RecentEnergyUsage()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsage();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsage();
 }
 
 inline uint32_t ForegroundEnergyManager::RecentEnergyUsageLevel()
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageLevel();
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageLevel();
 }
 
 inline event_token ForegroundEnergyManager::RecentEnergyUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageIncreased(handler);
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageIncreased(handler);
 }
 
 inline factory_event_revoker<IForegroundEnergyManagerStatics> ForegroundEnergyManager::RecentEnergyUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>();
+    auto factory = get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IForegroundEnergyManagerStatics::remove_RecentEnergyUsageIncreased, factory.RecentEnergyUsageIncreased(handler) };
 }
 
 inline void ForegroundEnergyManager::RecentEnergyUsageIncreased(event_token token)
 {
-    GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageIncreased(token);
+    get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageIncreased(token);
 }
 
 inline event_token ForegroundEnergyManager::RecentEnergyUsageReturnedToLow(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(handler);
+    return get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(handler);
 }
 
 inline factory_event_revoker<IForegroundEnergyManagerStatics> ForegroundEnergyManager::RecentEnergyUsageReturnedToLow(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>();
+    auto factory = get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IForegroundEnergyManagerStatics::remove_RecentEnergyUsageReturnedToLow, factory.RecentEnergyUsageReturnedToLow(handler) };
 }
 
 inline void ForegroundEnergyManager::RecentEnergyUsageReturnedToLow(event_token token)
 {
-    GetActivationFactory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(token);
+    get_activation_factory<ForegroundEnergyManager, IForegroundEnergyManagerStatics>().RecentEnergyUsageReturnedToLow(token);
 }
 
 inline Windows::System::Power::EnergySaverStatus PowerManager::EnergySaverStatus()
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().EnergySaverStatus();
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().EnergySaverStatus();
 }
 
 inline event_token PowerManager::EnergySaverStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().EnergySaverStatusChanged(handler);
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().EnergySaverStatusChanged(handler);
 }
 
 inline factory_event_revoker<IPowerManagerStatics> PowerManager::EnergySaverStatusChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PowerManager, IPowerManagerStatics>();
+    auto factory = get_activation_factory<PowerManager, IPowerManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IPowerManagerStatics::remove_EnergySaverStatusChanged, factory.EnergySaverStatusChanged(handler) };
 }
 
 inline void PowerManager::EnergySaverStatusChanged(event_token token)
 {
-    GetActivationFactory<PowerManager, IPowerManagerStatics>().EnergySaverStatusChanged(token);
+    get_activation_factory<PowerManager, IPowerManagerStatics>().EnergySaverStatusChanged(token);
 }
 
 inline Windows::System::Power::BatteryStatus PowerManager::BatteryStatus()
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().BatteryStatus();
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().BatteryStatus();
 }
 
 inline event_token PowerManager::BatteryStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().BatteryStatusChanged(handler);
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().BatteryStatusChanged(handler);
 }
 
 inline factory_event_revoker<IPowerManagerStatics> PowerManager::BatteryStatusChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PowerManager, IPowerManagerStatics>();
+    auto factory = get_activation_factory<PowerManager, IPowerManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IPowerManagerStatics::remove_BatteryStatusChanged, factory.BatteryStatusChanged(handler) };
 }
 
 inline void PowerManager::BatteryStatusChanged(event_token token)
 {
-    GetActivationFactory<PowerManager, IPowerManagerStatics>().BatteryStatusChanged(token);
+    get_activation_factory<PowerManager, IPowerManagerStatics>().BatteryStatusChanged(token);
 }
 
 inline Windows::System::Power::PowerSupplyStatus PowerManager::PowerSupplyStatus()
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().PowerSupplyStatus();
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().PowerSupplyStatus();
 }
 
 inline event_token PowerManager::PowerSupplyStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().PowerSupplyStatusChanged(handler);
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().PowerSupplyStatusChanged(handler);
 }
 
 inline factory_event_revoker<IPowerManagerStatics> PowerManager::PowerSupplyStatusChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PowerManager, IPowerManagerStatics>();
+    auto factory = get_activation_factory<PowerManager, IPowerManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IPowerManagerStatics::remove_PowerSupplyStatusChanged, factory.PowerSupplyStatusChanged(handler) };
 }
 
 inline void PowerManager::PowerSupplyStatusChanged(event_token token)
 {
-    GetActivationFactory<PowerManager, IPowerManagerStatics>().PowerSupplyStatusChanged(token);
+    get_activation_factory<PowerManager, IPowerManagerStatics>().PowerSupplyStatusChanged(token);
 }
 
 inline int32_t PowerManager::RemainingChargePercent()
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingChargePercent();
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingChargePercent();
 }
 
 inline event_token PowerManager::RemainingChargePercentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingChargePercentChanged(handler);
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingChargePercentChanged(handler);
 }
 
 inline factory_event_revoker<IPowerManagerStatics> PowerManager::RemainingChargePercentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PowerManager, IPowerManagerStatics>();
+    auto factory = get_activation_factory<PowerManager, IPowerManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IPowerManagerStatics::remove_RemainingChargePercentChanged, factory.RemainingChargePercentChanged(handler) };
 }
 
 inline void PowerManager::RemainingChargePercentChanged(event_token token)
 {
-    GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingChargePercentChanged(token);
+    get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingChargePercentChanged(token);
 }
 
 inline Windows::Foundation::TimeSpan PowerManager::RemainingDischargeTime()
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingDischargeTime();
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingDischargeTime();
 }
 
 inline event_token PowerManager::RemainingDischargeTimeChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingDischargeTimeChanged(handler);
+    return get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingDischargeTimeChanged(handler);
 }
 
 inline factory_event_revoker<IPowerManagerStatics> PowerManager::RemainingDischargeTimeChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<PowerManager, IPowerManagerStatics>();
+    auto factory = get_activation_factory<PowerManager, IPowerManagerStatics>();
     return { factory, &ABI::Windows::System::Power::IPowerManagerStatics::remove_RemainingDischargeTimeChanged, factory.RemainingDischargeTimeChanged(handler) };
 }
 
 inline void PowerManager::RemainingDischargeTimeChanged(event_token token)
 {
-    GetActivationFactory<PowerManager, IPowerManagerStatics>().RemainingDischargeTimeChanged(token);
+    get_activation_factory<PowerManager, IPowerManagerStatics>().RemainingDischargeTimeChanged(token);
 }
 
 }

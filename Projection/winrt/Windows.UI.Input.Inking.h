@@ -2914,36 +2914,36 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 }
 
 inline InkDrawingAttributes::InkDrawingAttributes() :
-    InkDrawingAttributes(ActivateInstance<InkDrawingAttributes>())
+    InkDrawingAttributes(activate_instance<InkDrawingAttributes>())
 {}
 
 inline Windows::UI::Input::Inking::InkDrawingAttributes InkDrawingAttributes::CreateForPencil()
 {
-    return GetActivationFactory<InkDrawingAttributes, IInkDrawingAttributesStatics>().CreateForPencil();
+    return get_activation_factory<InkDrawingAttributes, IInkDrawingAttributesStatics>().CreateForPencil();
 }
 
 inline InkManager::InkManager() :
-    InkManager(ActivateInstance<InkManager>())
+    InkManager(activate_instance<InkManager>())
 {}
 
 inline InkPoint::InkPoint(const Windows::Foundation::Point & position, float pressure) :
-    InkPoint(GetActivationFactory<InkPoint, IInkPointFactory>().CreateInkPoint(position, pressure))
+    InkPoint(get_activation_factory<InkPoint, IInkPointFactory>().CreateInkPoint(position, pressure))
 {}
 
 inline InkPresenterRuler::InkPresenterRuler(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) :
-    InkPresenterRuler(GetActivationFactory<InkPresenterRuler, IInkPresenterRulerFactory>().Create(inkPresenter))
+    InkPresenterRuler(get_activation_factory<InkPresenterRuler, IInkPresenterRulerFactory>().Create(inkPresenter))
 {}
 
 inline InkRecognizerContainer::InkRecognizerContainer() :
-    InkRecognizerContainer(ActivateInstance<InkRecognizerContainer>())
+    InkRecognizerContainer(activate_instance<InkRecognizerContainer>())
 {}
 
 inline InkStrokeBuilder::InkStrokeBuilder() :
-    InkStrokeBuilder(ActivateInstance<InkStrokeBuilder>())
+    InkStrokeBuilder(activate_instance<InkStrokeBuilder>())
 {}
 
 inline InkStrokeContainer::InkStrokeContainer() :
-    InkStrokeContainer(ActivateInstance<InkStrokeContainer>())
+    InkStrokeContainer(activate_instance<InkStrokeContainer>())
 {}
 
 }

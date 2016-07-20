@@ -951,153 +951,153 @@ template <typename D> void impl_IDisplayPropertiesStatics<D>::DisplayContentsInv
 
 inline Windows::Graphics::Display::DisplayInformation DisplayInformation::GetForCurrentView()
 {
-    return GetActivationFactory<DisplayInformation, IDisplayInformationStatics>().GetForCurrentView();
+    return get_activation_factory<DisplayInformation, IDisplayInformationStatics>().GetForCurrentView();
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayInformation::AutoRotationPreferences()
 {
-    return GetActivationFactory<DisplayInformation, IDisplayInformationStatics>().AutoRotationPreferences();
+    return get_activation_factory<DisplayInformation, IDisplayInformationStatics>().AutoRotationPreferences();
 }
 
 inline void DisplayInformation::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value)
 {
-    GetActivationFactory<DisplayInformation, IDisplayInformationStatics>().AutoRotationPreferences(value);
+    get_activation_factory<DisplayInformation, IDisplayInformationStatics>().AutoRotationPreferences(value);
 }
 
 inline event_token DisplayInformation::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<DisplayInformation, IDisplayInformationStatics>().DisplayContentsInvalidated(handler);
+    return get_activation_factory<DisplayInformation, IDisplayInformationStatics>().DisplayContentsInvalidated(handler);
 }
 
 inline factory_event_revoker<IDisplayInformationStatics> DisplayInformation::DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<DisplayInformation, IDisplayInformationStatics>();
+    auto factory = get_activation_factory<DisplayInformation, IDisplayInformationStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayInformationStatics::remove_DisplayContentsInvalidated, factory.DisplayContentsInvalidated(handler) };
 }
 
 inline void DisplayInformation::DisplayContentsInvalidated(event_token token)
 {
-    GetActivationFactory<DisplayInformation, IDisplayInformationStatics>().DisplayContentsInvalidated(token);
+    get_activation_factory<DisplayInformation, IDisplayInformationStatics>().DisplayContentsInvalidated(token);
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::CurrentOrientation()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().CurrentOrientation();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().CurrentOrientation();
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::NativeOrientation()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().NativeOrientation();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().NativeOrientation();
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::AutoRotationPreferences()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().AutoRotationPreferences();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().AutoRotationPreferences();
 }
 
 inline void DisplayProperties::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().AutoRotationPreferences(value);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().AutoRotationPreferences(value);
 }
 
 inline event_token DisplayProperties::OrientationChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().OrientationChanged(handler);
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().OrientationChanged(handler);
 }
 
 inline factory_event_revoker<IDisplayPropertiesStatics> DisplayProperties::OrientationChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    auto factory = GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>();
+    auto factory = get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayPropertiesStatics::remove_OrientationChanged, factory.OrientationChanged(handler) };
 }
 
 inline void DisplayProperties::OrientationChanged(event_token token)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().OrientationChanged(token);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().OrientationChanged(token);
 }
 
 inline Windows::Graphics::Display::ResolutionScale DisplayProperties::ResolutionScale()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().ResolutionScale();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().ResolutionScale();
 }
 
 inline float DisplayProperties::LogicalDpi()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpi();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpi();
 }
 
 inline event_token DisplayProperties::LogicalDpiChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpiChanged(handler);
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpiChanged(handler);
 }
 
 inline factory_event_revoker<IDisplayPropertiesStatics> DisplayProperties::LogicalDpiChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    auto factory = GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>();
+    auto factory = get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayPropertiesStatics::remove_LogicalDpiChanged, factory.LogicalDpiChanged(handler) };
 }
 
 inline void DisplayProperties::LogicalDpiChanged(event_token token)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpiChanged(token);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().LogicalDpiChanged(token);
 }
 
 inline bool DisplayProperties::StereoEnabled()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabled();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabled();
 }
 
 inline event_token DisplayProperties::StereoEnabledChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabledChanged(handler);
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabledChanged(handler);
 }
 
 inline factory_event_revoker<IDisplayPropertiesStatics> DisplayProperties::StereoEnabledChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    auto factory = GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>();
+    auto factory = get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayPropertiesStatics::remove_StereoEnabledChanged, factory.StereoEnabledChanged(handler) };
 }
 
 inline void DisplayProperties::StereoEnabledChanged(event_token token)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabledChanged(token);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().StereoEnabledChanged(token);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> DisplayProperties::GetColorProfileAsync()
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().GetColorProfileAsync();
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().GetColorProfileAsync();
 }
 
 inline event_token DisplayProperties::ColorProfileChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().ColorProfileChanged(handler);
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().ColorProfileChanged(handler);
 }
 
 inline factory_event_revoker<IDisplayPropertiesStatics> DisplayProperties::ColorProfileChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    auto factory = GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>();
+    auto factory = get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayPropertiesStatics::remove_ColorProfileChanged, factory.ColorProfileChanged(handler) };
 }
 
 inline void DisplayProperties::ColorProfileChanged(event_token token)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().ColorProfileChanged(token);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().ColorProfileChanged(token);
 }
 
 inline event_token DisplayProperties::DisplayContentsInvalidated(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    return GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().DisplayContentsInvalidated(handler);
+    return get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().DisplayContentsInvalidated(handler);
 }
 
 inline factory_event_revoker<IDisplayPropertiesStatics> DisplayProperties::DisplayContentsInvalidated(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler)
 {
-    auto factory = GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>();
+    auto factory = get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayPropertiesStatics::remove_DisplayContentsInvalidated, factory.DisplayContentsInvalidated(handler) };
 }
 
 inline void DisplayProperties::DisplayContentsInvalidated(event_token token)
 {
-    GetActivationFactory<DisplayProperties, IDisplayPropertiesStatics>().DisplayContentsInvalidated(token);
+    get_activation_factory<DisplayProperties, IDisplayPropertiesStatics>().DisplayContentsInvalidated(token);
 }
 
 }

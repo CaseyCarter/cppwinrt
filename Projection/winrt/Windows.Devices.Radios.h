@@ -234,22 +234,22 @@ template <typename D> Windows::Devices::Radios::RadioKind impl_IRadio<D>::Kind()
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> Radio::GetRadiosAsync()
 {
-    return GetActivationFactory<Radio, IRadioStatics>().GetRadiosAsync();
+    return get_activation_factory<Radio, IRadioStatics>().GetRadiosAsync();
 }
 
 inline hstring Radio::GetDeviceSelector()
 {
-    return GetActivationFactory<Radio, IRadioStatics>().GetDeviceSelector();
+    return get_activation_factory<Radio, IRadioStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> Radio::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<Radio, IRadioStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<Radio, IRadioStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> Radio::RequestAccessAsync()
 {
-    return GetActivationFactory<Radio, IRadioStatics>().RequestAccessAsync();
+    return get_activation_factory<Radio, IRadioStatics>().RequestAccessAsync();
 }
 
 }

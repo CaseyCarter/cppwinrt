@@ -2694,123 +2694,123 @@ template <typename D> Windows::Foundation::Point impl_ITappedRoutedEventArgs<D>:
 }
 
 inline AccessKeyDisplayDismissedEventArgs::AccessKeyDisplayDismissedEventArgs() :
-    AccessKeyDisplayDismissedEventArgs(ActivateInstance<AccessKeyDisplayDismissedEventArgs>())
+    AccessKeyDisplayDismissedEventArgs(activate_instance<AccessKeyDisplayDismissedEventArgs>())
 {}
 
 inline AccessKeyDisplayRequestedEventArgs::AccessKeyDisplayRequestedEventArgs() :
-    AccessKeyDisplayRequestedEventArgs(ActivateInstance<AccessKeyDisplayRequestedEventArgs>())
+    AccessKeyDisplayRequestedEventArgs(activate_instance<AccessKeyDisplayRequestedEventArgs>())
 {}
 
 inline AccessKeyInvokedEventArgs::AccessKeyInvokedEventArgs() :
-    AccessKeyInvokedEventArgs(ActivateInstance<AccessKeyInvokedEventArgs>())
+    AccessKeyInvokedEventArgs(activate_instance<AccessKeyInvokedEventArgs>())
 {}
 
 inline bool AccessKeyManager::IsDisplayModeEnabled()
 {
-    return GetActivationFactory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabled();
+    return get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabled();
 }
 
 inline event_token AccessKeyManager::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value)
 {
-    return GetActivationFactory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabledChanged(value);
+    return get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabledChanged(value);
 }
 
 inline factory_event_revoker<IAccessKeyManagerStatics> AccessKeyManager::IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value)
 {
-    auto factory = GetActivationFactory<AccessKeyManager, IAccessKeyManagerStatics>();
+    auto factory = get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Input::IAccessKeyManagerStatics::remove_IsDisplayModeEnabledChanged, factory.IsDisplayModeEnabledChanged(value) };
 }
 
 inline void AccessKeyManager::IsDisplayModeEnabledChanged(event_token token)
 {
-    GetActivationFactory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabledChanged(token);
+    get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabledChanged(token);
 }
 
 inline void AccessKeyManager::ExitDisplayMode()
 {
-    GetActivationFactory<AccessKeyManager, IAccessKeyManagerStatics>().ExitDisplayMode();
+    get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().ExitDisplayMode();
 }
 
 inline ContextRequestedEventArgs::ContextRequestedEventArgs() :
-    ContextRequestedEventArgs(ActivateInstance<ContextRequestedEventArgs>())
+    ContextRequestedEventArgs(activate_instance<ContextRequestedEventArgs>())
 {}
 
 inline DoubleTappedRoutedEventArgs::DoubleTappedRoutedEventArgs() :
-    DoubleTappedRoutedEventArgs(ActivateInstance<DoubleTappedRoutedEventArgs>())
+    DoubleTappedRoutedEventArgs(activate_instance<DoubleTappedRoutedEventArgs>())
 {}
 
 inline Windows::IInspectable FocusManager::GetFocusedElement()
 {
-    return GetActivationFactory<FocusManager, IFocusManagerStatics>().GetFocusedElement();
+    return get_activation_factory<FocusManager, IFocusManagerStatics>().GetFocusedElement();
 }
 
 inline bool FocusManager::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection)
 {
-    return GetActivationFactory<FocusManager, IFocusManagerStatics2>().TryMoveFocus(focusNavigationDirection);
+    return get_activation_factory<FocusManager, IFocusManagerStatics2>().TryMoveFocus(focusNavigationDirection);
 }
 
 inline Windows::UI::Xaml::UIElement FocusManager::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection)
 {
-    return GetActivationFactory<FocusManager, IFocusManagerStatics3>().FindNextFocusableElement(focusNavigationDirection);
+    return get_activation_factory<FocusManager, IFocusManagerStatics3>().FindNextFocusableElement(focusNavigationDirection);
 }
 
 inline Windows::UI::Xaml::UIElement FocusManager::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect)
 {
-    return GetActivationFactory<FocusManager, IFocusManagerStatics3>().FindNextFocusableElement(focusNavigationDirection, hintRect);
+    return get_activation_factory<FocusManager, IFocusManagerStatics3>().FindNextFocusableElement(focusNavigationDirection, hintRect);
 }
 
 inline HoldingRoutedEventArgs::HoldingRoutedEventArgs() :
-    HoldingRoutedEventArgs(ActivateInstance<HoldingRoutedEventArgs>())
+    HoldingRoutedEventArgs(activate_instance<HoldingRoutedEventArgs>())
 {}
 
 inline InputScope::InputScope() :
-    InputScope(ActivateInstance<InputScope>())
+    InputScope(activate_instance<InputScope>())
 {}
 
 inline InputScopeName::InputScopeName() :
-    InputScopeName(ActivateInstance<InputScopeName>())
+    InputScopeName(activate_instance<InputScopeName>())
 {}
 
 inline InputScopeName::InputScopeName(Windows::UI::Xaml::Input::InputScopeNameValue nameValue) :
-    InputScopeName(GetActivationFactory<InputScopeName, IInputScopeNameFactory>().CreateInstance(nameValue))
+    InputScopeName(get_activation_factory<InputScopeName, IInputScopeNameFactory>().CreateInstance(nameValue))
 {}
 
 inline ManipulationCompletedRoutedEventArgs::ManipulationCompletedRoutedEventArgs() :
-    ManipulationCompletedRoutedEventArgs(ActivateInstance<ManipulationCompletedRoutedEventArgs>())
+    ManipulationCompletedRoutedEventArgs(activate_instance<ManipulationCompletedRoutedEventArgs>())
 {}
 
 inline ManipulationDeltaRoutedEventArgs::ManipulationDeltaRoutedEventArgs() :
-    ManipulationDeltaRoutedEventArgs(ActivateInstance<ManipulationDeltaRoutedEventArgs>())
+    ManipulationDeltaRoutedEventArgs(activate_instance<ManipulationDeltaRoutedEventArgs>())
 {}
 
 inline ManipulationInertiaStartingRoutedEventArgs::ManipulationInertiaStartingRoutedEventArgs() :
-    ManipulationInertiaStartingRoutedEventArgs(ActivateInstance<ManipulationInertiaStartingRoutedEventArgs>())
+    ManipulationInertiaStartingRoutedEventArgs(activate_instance<ManipulationInertiaStartingRoutedEventArgs>())
 {}
 
 inline ManipulationPivot::ManipulationPivot() :
-    ManipulationPivot(ActivateInstance<ManipulationPivot>())
+    ManipulationPivot(activate_instance<ManipulationPivot>())
 {}
 
 inline ManipulationPivot::ManipulationPivot(const Windows::Foundation::Point & center, double radius) :
-    ManipulationPivot(GetActivationFactory<ManipulationPivot, IManipulationPivotFactory>().CreateInstanceWithCenterAndRadius(center, radius))
+    ManipulationPivot(get_activation_factory<ManipulationPivot, IManipulationPivotFactory>().CreateInstanceWithCenterAndRadius(center, radius))
 {}
 
 inline ManipulationStartedRoutedEventArgs::ManipulationStartedRoutedEventArgs()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(outer, inner));
 }
 
 inline ManipulationStartingRoutedEventArgs::ManipulationStartingRoutedEventArgs() :
-    ManipulationStartingRoutedEventArgs(ActivateInstance<ManipulationStartingRoutedEventArgs>())
+    ManipulationStartingRoutedEventArgs(activate_instance<ManipulationStartingRoutedEventArgs>())
 {}
 
 inline RightTappedRoutedEventArgs::RightTappedRoutedEventArgs() :
-    RightTappedRoutedEventArgs(ActivateInstance<RightTappedRoutedEventArgs>())
+    RightTappedRoutedEventArgs(activate_instance<RightTappedRoutedEventArgs>())
 {}
 
 inline TappedRoutedEventArgs::TappedRoutedEventArgs() :
-    TappedRoutedEventArgs(ActivateInstance<TappedRoutedEventArgs>())
+    TappedRoutedEventArgs(activate_instance<TappedRoutedEventArgs>())
 {}
 
 }

@@ -983,24 +983,24 @@ template <typename D> Windows::UI::Input::Preview::Injection::InputInjector impl
 }
 
 inline InjectedInputKeyboardInfo::InjectedInputKeyboardInfo() :
-    InjectedInputKeyboardInfo(ActivateInstance<InjectedInputKeyboardInfo>())
+    InjectedInputKeyboardInfo(activate_instance<InjectedInputKeyboardInfo>())
 {}
 
 inline InjectedInputMouseInfo::InjectedInputMouseInfo() :
-    InjectedInputMouseInfo(ActivateInstance<InjectedInputMouseInfo>())
+    InjectedInputMouseInfo(activate_instance<InjectedInputMouseInfo>())
 {}
 
 inline InjectedInputPenInfo::InjectedInputPenInfo() :
-    InjectedInputPenInfo(ActivateInstance<InjectedInputPenInfo>())
+    InjectedInputPenInfo(activate_instance<InjectedInputPenInfo>())
 {}
 
 inline InjectedInputTouchInfo::InjectedInputTouchInfo() :
-    InjectedInputTouchInfo(ActivateInstance<InjectedInputTouchInfo>())
+    InjectedInputTouchInfo(activate_instance<InjectedInputTouchInfo>())
 {}
 
 inline Windows::UI::Input::Preview::Injection::InputInjector InputInjector::TryCreate()
 {
-    return GetActivationFactory<InputInjector, IInputInjectorStatics>().TryCreate();
+    return get_activation_factory<InputInjector, IInputInjectorStatics>().TryCreate();
 }
 
 }

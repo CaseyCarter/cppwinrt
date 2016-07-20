@@ -4075,269 +4075,269 @@ template <typename D> Windows::Foundation::Collections::ValueSet impl_IToastNoti
 }
 
 inline AdaptiveNotificationText::AdaptiveNotificationText() :
-    AdaptiveNotificationText(ActivateInstance<AdaptiveNotificationText>())
+    AdaptiveNotificationText(activate_instance<AdaptiveNotificationText>())
 {}
 
 inline BadgeNotification::BadgeNotification(const Windows::Data::Xml::Dom::XmlDocument & content) :
-    BadgeNotification(GetActivationFactory<BadgeNotification, IBadgeNotificationFactory>().CreateBadgeNotification(content))
+    BadgeNotification(get_activation_factory<BadgeNotification, IBadgeNotificationFactory>().CreateBadgeNotification(content))
 {}
 
 inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForApplication()
 {
-    return GetActivationFactory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication();
+    return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication();
 }
 
 inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForApplication(hstring_ref applicationId)
 {
-    return GetActivationFactory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication(applicationId);
+    return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication(applicationId);
 }
 
 inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId)
 {
-    return GetActivationFactory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForSecondaryTile(tileId);
+    return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForSecondaryTile(tileId);
 }
 
 inline Windows::Data::Xml::Dom::XmlDocument BadgeUpdateManager::GetTemplateContent(Windows::UI::Notifications::BadgeTemplateType type)
 {
-    return GetActivationFactory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().GetTemplateContent(type);
+    return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().GetTemplateContent(type);
 }
 
 inline Windows::UI::Notifications::BadgeUpdateManagerForUser BadgeUpdateManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<BadgeUpdateManager, IBadgeUpdateManagerStatics2>().GetForUser(user);
+    return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics2>().GetForUser(user);
 }
 
 inline hstring KnownAdaptiveNotificationHints::Style()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Style();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Style();
 }
 
 inline hstring KnownAdaptiveNotificationHints::Wrap()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Wrap();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Wrap();
 }
 
 inline hstring KnownAdaptiveNotificationHints::MaxLines()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().MaxLines();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().MaxLines();
 }
 
 inline hstring KnownAdaptiveNotificationHints::MinLines()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().MinLines();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().MinLines();
 }
 
 inline hstring KnownAdaptiveNotificationHints::TextStacking()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().TextStacking();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().TextStacking();
 }
 
 inline hstring KnownAdaptiveNotificationHints::Align()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Align();
+    return get_activation_factory<KnownAdaptiveNotificationHints, IKnownAdaptiveNotificationHintsStatics>().Align();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Caption()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Caption();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Caption();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Body()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Body();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Body();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Base()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Base();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Base();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Subtitle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Subtitle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Subtitle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Title()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Title();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Title();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Subheader()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Subheader();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Subheader();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::Header()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Header();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().Header();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::TitleNumeral()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().TitleNumeral();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().TitleNumeral();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::SubheaderNumeral()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderNumeral();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderNumeral();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::HeaderNumeral()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderNumeral();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderNumeral();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::CaptionSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().CaptionSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().CaptionSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::BodySubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().BodySubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().BodySubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::BaseSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().BaseSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().BaseSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::SubtitleSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubtitleSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubtitleSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::TitleSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().TitleSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().TitleSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::SubheaderSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::SubheaderNumeralSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderNumeralSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().SubheaderNumeralSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::HeaderSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderSubtle();
 }
 
 inline hstring KnownAdaptiveNotificationTextStyles::HeaderNumeralSubtle()
 {
-    return GetActivationFactory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderNumeralSubtle();
+    return get_activation_factory<KnownAdaptiveNotificationTextStyles, IKnownAdaptiveNotificationTextStylesStatics>().HeaderNumeralSubtle();
 }
 
 inline hstring KnownNotificationBindings::ToastGeneric()
 {
-    return GetActivationFactory<KnownNotificationBindings, IKnownNotificationBindingsStatics>().ToastGeneric();
+    return get_activation_factory<KnownNotificationBindings, IKnownNotificationBindingsStatics>().ToastGeneric();
 }
 
 inline Notification::Notification() :
-    Notification(ActivateInstance<Notification>())
+    Notification(activate_instance<Notification>())
 {}
 
 inline ScheduledTileNotification::ScheduledTileNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) :
-    ScheduledTileNotification(GetActivationFactory<ScheduledTileNotification, IScheduledTileNotificationFactory>().CreateScheduledTileNotification(content, deliveryTime))
+    ScheduledTileNotification(get_activation_factory<ScheduledTileNotification, IScheduledTileNotificationFactory>().CreateScheduledTileNotification(content, deliveryTime))
 {}
 
 inline ScheduledToastNotification::ScheduledToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) :
-    ScheduledToastNotification(GetActivationFactory<ScheduledToastNotification, IScheduledToastNotificationFactory>().CreateScheduledToastNotification(content, deliveryTime))
+    ScheduledToastNotification(get_activation_factory<ScheduledToastNotification, IScheduledToastNotificationFactory>().CreateScheduledToastNotification(content, deliveryTime))
 {}
 
 inline ScheduledToastNotification::ScheduledToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime, const Windows::Foundation::TimeSpan & snoozeInterval, uint32_t maximumSnoozeCount) :
-    ScheduledToastNotification(GetActivationFactory<ScheduledToastNotification, IScheduledToastNotificationFactory>().CreateScheduledToastNotificationRecurring(content, deliveryTime, snoozeInterval, maximumSnoozeCount))
+    ScheduledToastNotification(get_activation_factory<ScheduledToastNotification, IScheduledToastNotificationFactory>().CreateScheduledToastNotificationRecurring(content, deliveryTime, snoozeInterval, maximumSnoozeCount))
 {}
 
 inline TileFlyoutNotification::TileFlyoutNotification(const Windows::Data::Xml::Dom::XmlDocument & content) :
-    TileFlyoutNotification(GetActivationFactory<TileFlyoutNotification, ITileFlyoutNotificationFactory>().CreateTileFlyoutNotification(content))
+    TileFlyoutNotification(get_activation_factory<TileFlyoutNotification, ITileFlyoutNotificationFactory>().CreateTileFlyoutNotification(content))
 {}
 
 inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForApplication()
 {
-    return GetActivationFactory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication();
+    return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication();
 }
 
 inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId)
 {
-    return GetActivationFactory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication(applicationId);
+    return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication(applicationId);
 }
 
 inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId)
 {
-    return GetActivationFactory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForSecondaryTile(tileId);
+    return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForSecondaryTile(tileId);
 }
 
 inline Windows::Data::Xml::Dom::XmlDocument TileFlyoutUpdateManager::GetTemplateContent(Windows::UI::Notifications::TileFlyoutTemplateType type)
 {
-    return GetActivationFactory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().GetTemplateContent(type);
+    return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().GetTemplateContent(type);
 }
 
 inline TileNotification::TileNotification(const Windows::Data::Xml::Dom::XmlDocument & content) :
-    TileNotification(GetActivationFactory<TileNotification, ITileNotificationFactory>().CreateTileNotification(content))
+    TileNotification(get_activation_factory<TileNotification, ITileNotificationFactory>().CreateTileNotification(content))
 {}
 
 inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForApplication()
 {
-    return GetActivationFactory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication();
+    return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication();
 }
 
 inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForApplication(hstring_ref applicationId)
 {
-    return GetActivationFactory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication(applicationId);
+    return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication(applicationId);
 }
 
 inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForSecondaryTile(hstring_ref tileId)
 {
-    return GetActivationFactory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForSecondaryTile(tileId);
+    return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForSecondaryTile(tileId);
 }
 
 inline Windows::Data::Xml::Dom::XmlDocument TileUpdateManager::GetTemplateContent(Windows::UI::Notifications::TileTemplateType type)
 {
-    return GetActivationFactory<TileUpdateManager, ITileUpdateManagerStatics>().GetTemplateContent(type);
+    return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().GetTemplateContent(type);
 }
 
 inline Windows::UI::Notifications::TileUpdateManagerForUser TileUpdateManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<TileUpdateManager, ITileUpdateManagerStatics2>().GetForUser(user);
+    return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics2>().GetForUser(user);
 }
 
 inline ToastNotification::ToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content) :
-    ToastNotification(GetActivationFactory<ToastNotification, IToastNotificationFactory>().CreateToastNotification(content))
+    ToastNotification(get_activation_factory<ToastNotification, IToastNotificationFactory>().CreateToastNotification(content))
 {}
 
 inline Windows::UI::Notifications::ToastNotifier ToastNotificationManager::CreateToastNotifier()
 {
-    return GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier();
+    return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier();
 }
 
 inline Windows::UI::Notifications::ToastNotifier ToastNotificationManager::CreateToastNotifier(hstring_ref applicationId)
 {
-    return GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier(applicationId);
+    return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier(applicationId);
 }
 
 inline Windows::Data::Xml::Dom::XmlDocument ToastNotificationManager::GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type)
 {
-    return GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics>().GetTemplateContent(type);
+    return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics>().GetTemplateContent(type);
 }
 
 inline Windows::UI::Notifications::ToastNotificationHistory ToastNotificationManager::History()
 {
-    return GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics2>().History();
+    return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics2>().History();
 }
 
 inline Windows::UI::Notifications::ToastNotificationManagerForUser ToastNotificationManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics4>().GetForUser(user);
+    return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics4>().GetForUser(user);
 }
 
 inline void ToastNotificationManager::ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value)
 {
-    GetActivationFactory<ToastNotificationManager, IToastNotificationManagerStatics4>().ConfigureNotificationMirroring(value);
+    get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics4>().ConfigureNotificationMirroring(value);
 }
 
 }

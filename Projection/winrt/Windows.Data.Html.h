@@ -40,7 +40,7 @@ template <typename D> hstring impl_IHtmlUtilities<D>::ConvertToText(hstring_ref 
 
 inline hstring HtmlUtilities::ConvertToText(hstring_ref html)
 {
-    return GetActivationFactory<HtmlUtilities, IHtmlUtilities>().ConvertToText(html);
+    return get_activation_factory<HtmlUtilities, IHtmlUtilities>().ConvertToText(html);
 }
 
 }

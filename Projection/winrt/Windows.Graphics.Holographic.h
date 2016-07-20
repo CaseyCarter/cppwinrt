@@ -902,7 +902,7 @@ template <typename D> void impl_IHolographicFrame<D>::WaitForFrameToFinish() con
 
 inline Windows::Graphics::Holographic::HolographicSpace HolographicSpace::CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window)
 {
-    return GetActivationFactory<HolographicSpace, IHolographicSpaceStatics>().CreateForCoreWindow(window);
+    return get_activation_factory<HolographicSpace, IHolographicSpaceStatics>().CreateForCoreWindow(window);
 }
 
 }

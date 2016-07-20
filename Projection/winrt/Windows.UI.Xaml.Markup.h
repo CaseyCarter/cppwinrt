@@ -1216,132 +1216,132 @@ template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromObj
 
 inline Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation XamlBinaryWriter::Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider)
 {
-    return GetActivationFactory<XamlBinaryWriter, IXamlBinaryWriterStatics>().Write(inputStreams, outputStreams, xamlMetadataProvider);
+    return get_activation_factory<XamlBinaryWriter, IXamlBinaryWriterStatics>().Write(inputStreams, outputStreams, xamlMetadataProvider);
 }
 
 inline Windows::UI::Xaml::DependencyProperty XamlBindingHelper::DataTemplateComponentProperty()
 {
-    return GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().DataTemplateComponentProperty();
+    return get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().DataTemplateComponentProperty();
 }
 
 inline Windows::UI::Xaml::Markup::IDataTemplateComponent XamlBindingHelper::GetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().GetDataTemplateComponent(element);
+    return get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().GetDataTemplateComponent(element);
 }
 
 inline void XamlBindingHelper::SetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::Markup::IDataTemplateComponent & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetDataTemplateComponent(element, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetDataTemplateComponent(element, value);
 }
 
 inline void XamlBindingHelper::SuspendRendering(const Windows::UI::Xaml::UIElement & target)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SuspendRendering(target);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SuspendRendering(target);
 }
 
 inline void XamlBindingHelper::ResumeRendering(const Windows::UI::Xaml::UIElement & target)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().ResumeRendering(target);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().ResumeRendering(target);
 }
 
 inline Windows::IInspectable XamlBindingHelper::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value)
 {
-    return GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().ConvertValue(type, value);
+    return get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().ConvertValue(type, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromString(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromString(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromBoolean(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromBoolean(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromChar16(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromChar16(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDateTime(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDateTime(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromDouble(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDouble(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDouble(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt32(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt32(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromUInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt32(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt32(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt64(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt64(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromUInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt64(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt64(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromSingle(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSingle(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSingle(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromPoint(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromPoint(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromPoint(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromRect(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromRect(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromRect(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromSize(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSize(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSize(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromTimeSpan(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromTimeSpan(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromTimeSpan(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromByte(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromByte(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromByte(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromUri(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUri(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUri(dependencyObject, propertyToSet, value);
 }
 
 inline void XamlBindingHelper::SetPropertyFromObject(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::IInspectable & value)
 {
-    GetActivationFactory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromObject(dependencyObject, propertyToSet, value);
+    get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromObject(dependencyObject, propertyToSet, value);
 }
 
 inline Windows::IInspectable XamlReader::Load(hstring_ref xaml)
 {
-    return GetActivationFactory<XamlReader, IXamlReaderStatics>().Load(xaml);
+    return get_activation_factory<XamlReader, IXamlReaderStatics>().Load(xaml);
 }
 
 inline Windows::IInspectable XamlReader::LoadWithInitialTemplateValidation(hstring_ref xaml)
 {
-    return GetActivationFactory<XamlReader, IXamlReaderStatics>().LoadWithInitialTemplateValidation(xaml);
+    return get_activation_factory<XamlReader, IXamlReaderStatics>().LoadWithInitialTemplateValidation(xaml);
 }
 
 }

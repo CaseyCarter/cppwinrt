@@ -718,12 +718,12 @@ template <typename D> Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSourc
 
 inline Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource CoreInkIndependentInputSource::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter)
 {
-    return GetActivationFactory<CoreInkIndependentInputSource, ICoreInkIndependentInputSourceStatics>().Create(inkPresenter);
+    return get_activation_factory<CoreInkIndependentInputSource, ICoreInkIndependentInputSourceStatics>().Create(inkPresenter);
 }
 
 inline Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource CoreWetStrokeUpdateSource::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter)
 {
-    return GetActivationFactory<CoreWetStrokeUpdateSource, ICoreWetStrokeUpdateSourceStatics>().Create(inkPresenter);
+    return get_activation_factory<CoreWetStrokeUpdateSource, ICoreWetStrokeUpdateSourceStatics>().Create(inkPresenter);
 }
 
 }

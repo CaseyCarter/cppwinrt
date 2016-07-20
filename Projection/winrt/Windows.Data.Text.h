@@ -1270,116 +1270,116 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 }
 
 inline SelectableWordsSegmenter::SelectableWordsSegmenter(hstring_ref language) :
-    SelectableWordsSegmenter(GetActivationFactory<SelectableWordsSegmenter, ISelectableWordsSegmenterFactory>().CreateWithLanguage(language))
+    SelectableWordsSegmenter(get_activation_factory<SelectableWordsSegmenter, ISelectableWordsSegmenterFactory>().CreateWithLanguage(language))
 {}
 
 inline SemanticTextQuery::SemanticTextQuery(hstring_ref aqsFilter) :
-    SemanticTextQuery(GetActivationFactory<SemanticTextQuery, ISemanticTextQueryFactory>().Create(aqsFilter))
+    SemanticTextQuery(get_activation_factory<SemanticTextQuery, ISemanticTextQueryFactory>().Create(aqsFilter))
 {}
 
 inline SemanticTextQuery::SemanticTextQuery(hstring_ref aqsFilter, hstring_ref filterLanguage) :
-    SemanticTextQuery(GetActivationFactory<SemanticTextQuery, ISemanticTextQueryFactory>().CreateWithLanguage(aqsFilter, filterLanguage))
+    SemanticTextQuery(get_activation_factory<SemanticTextQuery, ISemanticTextQueryFactory>().CreateWithLanguage(aqsFilter, filterLanguage))
 {}
 
 inline TextConversionGenerator::TextConversionGenerator(hstring_ref languageTag) :
-    TextConversionGenerator(GetActivationFactory<TextConversionGenerator, ITextConversionGeneratorFactory>().Create(languageTag))
+    TextConversionGenerator(get_activation_factory<TextConversionGenerator, ITextConversionGeneratorFactory>().Create(languageTag))
 {}
 
 inline TextPredictionGenerator::TextPredictionGenerator(hstring_ref languageTag) :
-    TextPredictionGenerator(GetActivationFactory<TextPredictionGenerator, ITextPredictionGeneratorFactory>().Create(languageTag))
+    TextPredictionGenerator(get_activation_factory<TextPredictionGenerator, ITextPredictionGeneratorFactory>().Create(languageTag))
 {}
 
 inline TextReverseConversionGenerator::TextReverseConversionGenerator(hstring_ref languageTag) :
-    TextReverseConversionGenerator(GetActivationFactory<TextReverseConversionGenerator, ITextReverseConversionGeneratorFactory>().Create(languageTag))
+    TextReverseConversionGenerator(get_activation_factory<TextReverseConversionGenerator, ITextReverseConversionGeneratorFactory>().Create(languageTag))
 {}
 
 inline uint32_t UnicodeCharacters::GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate);
 }
 
 inline void UnicodeCharacters::GetSurrogatePairFromCodepoint(uint32_t codepoint, wchar_t & highSurrogate, wchar_t & lowSurrogate)
 {
-    GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().GetSurrogatePairFromCodepoint(codepoint, highSurrogate, lowSurrogate);
+    get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().GetSurrogatePairFromCodepoint(codepoint, highSurrogate, lowSurrogate);
 }
 
 inline bool UnicodeCharacters::IsHighSurrogate(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsHighSurrogate(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsHighSurrogate(codepoint);
 }
 
 inline bool UnicodeCharacters::IsLowSurrogate(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsLowSurrogate(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsLowSurrogate(codepoint);
 }
 
 inline bool UnicodeCharacters::IsSupplementary(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsSupplementary(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsSupplementary(codepoint);
 }
 
 inline bool UnicodeCharacters::IsNoncharacter(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsNoncharacter(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsNoncharacter(codepoint);
 }
 
 inline bool UnicodeCharacters::IsWhitespace(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsWhitespace(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsWhitespace(codepoint);
 }
 
 inline bool UnicodeCharacters::IsAlphabetic(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsAlphabetic(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsAlphabetic(codepoint);
 }
 
 inline bool UnicodeCharacters::IsCased(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsCased(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsCased(codepoint);
 }
 
 inline bool UnicodeCharacters::IsUppercase(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsUppercase(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsUppercase(codepoint);
 }
 
 inline bool UnicodeCharacters::IsLowercase(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsLowercase(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsLowercase(codepoint);
 }
 
 inline bool UnicodeCharacters::IsIdStart(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsIdStart(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsIdStart(codepoint);
 }
 
 inline bool UnicodeCharacters::IsIdContinue(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsIdContinue(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsIdContinue(codepoint);
 }
 
 inline bool UnicodeCharacters::IsGraphemeBase(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsGraphemeBase(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsGraphemeBase(codepoint);
 }
 
 inline bool UnicodeCharacters::IsGraphemeExtend(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().IsGraphemeExtend(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().IsGraphemeExtend(codepoint);
 }
 
 inline Windows::Data::Text::UnicodeNumericType UnicodeCharacters::GetNumericType(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().GetNumericType(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().GetNumericType(codepoint);
 }
 
 inline Windows::Data::Text::UnicodeGeneralCategory UnicodeCharacters::GetGeneralCategory(uint32_t codepoint)
 {
-    return GetActivationFactory<UnicodeCharacters, IUnicodeCharactersStatics>().GetGeneralCategory(codepoint);
+    return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().GetGeneralCategory(codepoint);
 }
 
 inline WordsSegmenter::WordsSegmenter(hstring_ref language) :
-    WordsSegmenter(GetActivationFactory<WordsSegmenter, IWordsSegmenterFactory>().CreateWithLanguage(language))
+    WordsSegmenter(get_activation_factory<WordsSegmenter, IWordsSegmenterFactory>().CreateWithLanguage(language))
 {}
 
 }

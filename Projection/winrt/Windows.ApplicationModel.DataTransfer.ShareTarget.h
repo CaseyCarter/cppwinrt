@@ -375,7 +375,7 @@ template <typename D> void impl_IShareOperation2<D>::DismissUI() const
 }
 
 inline QuickLink::QuickLink() :
-    QuickLink(ActivateInstance<QuickLink>())
+    QuickLink(activate_instance<QuickLink>())
 {}
 
 }

@@ -933,83 +933,83 @@ template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResp
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManager::GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().GetTokenSilentlyAsync(request);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().GetTokenSilentlyAsync(request);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManager::GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().GetTokenSilentlyAsync(request, webAccount);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().GetTokenSilentlyAsync(request, webAccount);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManager::RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().RequestTokenAsync(request);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().RequestTokenAsync(request);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManager::RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().RequestTokenAsync(request, webAccount);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().RequestTokenAsync(request, webAccount);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAuthenticationCoreManager::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref webAccountId)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountAsync(provider, webAccountId);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountAsync(provider, webAccountId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId, authority);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId, authority);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, const Windows::System::User & user)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics2>().FindAccountProviderAsync(webAccountProviderId, authority, user);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics2>().FindAccountProviderAsync(webAccountProviderId, authority, user);
 }
 
 inline Windows::Security::Authentication::Web::Core::WebAccountMonitor WebAuthenticationCoreManager::CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts)
 {
-    return GetActivationFactory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics3>().CreateWebAccountMonitor(webAccounts);
+    return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics3>().CreateWebAccountMonitor(webAccounts);
 }
 
 inline WebProviderError::WebProviderError(uint32_t errorCode, hstring_ref errorMessage) :
-    WebProviderError(GetActivationFactory<WebProviderError, IWebProviderErrorFactory>().Create(errorCode, errorMessage))
+    WebProviderError(get_activation_factory<WebProviderError, IWebProviderErrorFactory>().Create(errorCode, errorMessage))
 {}
 
 inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId) :
-    WebTokenRequest(GetActivationFactory<WebTokenRequest, IWebTokenRequestFactory>().Create(provider, scope, clientId))
+    WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().Create(provider, scope, clientId))
 {}
 
 inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) :
-    WebTokenRequest(GetActivationFactory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithPromptType(provider, scope, clientId, promptType))
+    WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithPromptType(provider, scope, clientId, promptType))
 {}
 
 inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider) :
-    WebTokenRequest(GetActivationFactory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithProvider(provider))
+    WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithProvider(provider))
 {}
 
 inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope) :
-    WebTokenRequest(GetActivationFactory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithScope(provider, scope))
+    WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithScope(provider, scope))
 {}
 
 inline WebTokenResponse::WebTokenResponse() :
-    WebTokenResponse(ActivateInstance<WebTokenResponse>())
+    WebTokenResponse(activate_instance<WebTokenResponse>())
 {}
 
 inline WebTokenResponse::WebTokenResponse(hstring_ref token) :
-    WebTokenResponse(GetActivationFactory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithToken(token))
+    WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithToken(token))
 {}
 
 inline WebTokenResponse::WebTokenResponse(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount) :
-    WebTokenResponse(GetActivationFactory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAndAccount(token, webAccount))
+    WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAndAccount(token, webAccount))
 {}
 
 inline WebTokenResponse::WebTokenResponse(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) :
-    WebTokenResponse(GetActivationFactory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAccountAndError(token, webAccount, error))
+    WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAccountAndError(token, webAccount, error))
 {}
 
 }

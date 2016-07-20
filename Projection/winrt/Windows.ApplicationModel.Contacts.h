@@ -8016,257 +8016,257 @@ template <typename D> void impl_IContactCardDelayedDataLoader<D>::SetData(const 
 }
 
 inline Contact::Contact() :
-    Contact(ActivateInstance<Contact>())
+    Contact(activate_instance<Contact>())
 {}
 
 inline ContactAddress::ContactAddress() :
-    ContactAddress(ActivateInstance<ContactAddress>())
+    ContactAddress(activate_instance<ContactAddress>())
 {}
 
 inline ContactAnnotation::ContactAnnotation() :
-    ContactAnnotation(ActivateInstance<ContactAnnotation>())
+    ContactAnnotation(activate_instance<ContactAnnotation>())
 {}
 
 inline ContactCardOptions::ContactCardOptions() :
-    ContactCardOptions(ActivateInstance<ContactCardOptions>())
+    ContactCardOptions(activate_instance<ContactCardOptions>())
 {}
 
 inline ContactConnectedServiceAccount::ContactConnectedServiceAccount() :
-    ContactConnectedServiceAccount(ActivateInstance<ContactConnectedServiceAccount>())
+    ContactConnectedServiceAccount(activate_instance<ContactConnectedServiceAccount>())
 {}
 
 inline ContactDate::ContactDate() :
-    ContactDate(ActivateInstance<ContactDate>())
+    ContactDate(activate_instance<ContactDate>())
 {}
 
 inline ContactEmail::ContactEmail() :
-    ContactEmail(ActivateInstance<ContactEmail>())
+    ContactEmail(activate_instance<ContactEmail>())
 {}
 
 inline ContactField::ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) :
-    ContactField(GetActivationFactory<ContactField, IContactFieldFactory>().CreateField(value, type))
+    ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(value, type))
 {}
 
 inline ContactField::ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
-    ContactField(GetActivationFactory<ContactField, IContactFieldFactory>().CreateField(value, type, category))
+    ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(value, type, category))
 {}
 
 inline ContactField::ContactField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
-    ContactField(GetActivationFactory<ContactField, IContactFieldFactory>().CreateField(name, value, type, category))
+    ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(name, value, type, category))
 {}
 
 inline ContactFieldFactory::ContactFieldFactory() :
-    ContactFieldFactory(ActivateInstance<ContactFieldFactory>())
+    ContactFieldFactory(activate_instance<ContactFieldFactory>())
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName) :
-    ContactInstantMessageField(GetActivationFactory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName))
+    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName))
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
-    ContactInstantMessageField(GetActivationFactory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category))
+    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category))
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) :
-    ContactInstantMessageField(GetActivationFactory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category, service, displayText, verb))
+    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category, service, displayText, verb))
 {}
 
 inline ContactJobInfo::ContactJobInfo() :
-    ContactJobInfo(ActivateInstance<ContactJobInfo>())
+    ContactJobInfo(activate_instance<ContactJobInfo>())
 {}
 
 inline hstring ContactLaunchActionVerbs::Call()
 {
-    return GetActivationFactory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Call();
+    return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Call();
 }
 
 inline hstring ContactLaunchActionVerbs::Message()
 {
-    return GetActivationFactory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Message();
+    return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Message();
 }
 
 inline hstring ContactLaunchActionVerbs::Map()
 {
-    return GetActivationFactory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Map();
+    return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Map();
 }
 
 inline hstring ContactLaunchActionVerbs::Post()
 {
-    return GetActivationFactory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Post();
+    return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().Post();
 }
 
 inline hstring ContactLaunchActionVerbs::VideoCall()
 {
-    return GetActivationFactory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().VideoCall();
+    return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().VideoCall();
 }
 
 inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress) :
-    ContactLocationField(GetActivationFactory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress))
+    ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress))
 {}
 
 inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
-    ContactLocationField(GetActivationFactory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category))
+    ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category))
 {}
 
 inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) :
-    ContactLocationField(GetActivationFactory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category, street, city, region, country, postalCode))
+    ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category, street, city, region, country, postalCode))
 {}
 
 inline void ContactManager::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics>().ShowContactCard(contact, selection);
+    get_activation_factory<ContactManager, IContactManagerStatics>().ShowContactCard(contact, selection);
 }
 
 inline void ContactManager::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics>().ShowContactCard(contact, selection, preferredPlacement);
+    get_activation_factory<ContactManager, IContactManagerStatics>().ShowContactCard(contact, selection, preferredPlacement);
 }
 
 inline Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader ContactManager::ShowDelayLoadedContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement);
+    return get_activation_factory<ContactManager, IContactManagerStatics>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> ContactManager::RequestStoreAsync()
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics2>().RequestStoreAsync();
+    return get_activation_factory<ContactManager, IContactManagerStatics2>().RequestStoreAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ContactManager::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().ConvertContactToVCardAsync(contact);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().ConvertContactToVCardAsync(contact);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ContactManager::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact, uint32_t maxBytes)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().ConvertContactToVCardAsync(contact, maxBytes);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().ConvertContactToVCardAsync(contact, maxBytes);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ContactManager::ConvertVCardToContactAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & vCard)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().ConvertVCardToContactAsync(vCard);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().ConvertVCardToContactAsync(vCard);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> ContactManager::RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().RequestStoreAsync(accessType);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().RequestStoreAsync(accessType);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> ContactManager::RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().RequestAnnotationStoreAsync(accessType);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().RequestAnnotationStoreAsync(accessType);
 }
 
 inline bool ContactManager::IsShowContactCardSupported()
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().IsShowContactCardSupported();
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().IsShowContactCardSupported();
 }
 
 inline void ContactManager::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::ApplicationModel::Contacts::ContactCardOptions & contactCardOptions)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics3>().ShowContactCard(contact, selection, preferredPlacement, contactCardOptions);
+    get_activation_factory<ContactManager, IContactManagerStatics3>().ShowContactCard(contact, selection, preferredPlacement, contactCardOptions);
 }
 
 inline bool ContactManager::IsShowDelayLoadedContactCardSupported()
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().IsShowDelayLoadedContactCardSupported();
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().IsShowDelayLoadedContactCardSupported();
 }
 
 inline Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader ContactManager::ShowDelayLoadedContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::ApplicationModel::Contacts::ContactCardOptions & contactCardOptions)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement, contactCardOptions);
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement, contactCardOptions);
 }
 
 inline void ContactManager::ShowFullContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::ApplicationModel::Contacts::FullContactCardOptions & fullContactCardOptions)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics3>().ShowFullContactCard(contact, fullContactCardOptions);
+    get_activation_factory<ContactManager, IContactManagerStatics3>().ShowFullContactCard(contact, fullContactCardOptions);
 }
 
 inline Windows::ApplicationModel::Contacts::ContactNameOrder ContactManager::SystemDisplayNameOrder()
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().SystemDisplayNameOrder();
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().SystemDisplayNameOrder();
 }
 
 inline void ContactManager::SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics3>().SystemDisplayNameOrder(value);
+    get_activation_factory<ContactManager, IContactManagerStatics3>().SystemDisplayNameOrder(value);
 }
 
 inline Windows::ApplicationModel::Contacts::ContactNameOrder ContactManager::SystemSortOrder()
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics3>().SystemSortOrder();
+    return get_activation_factory<ContactManager, IContactManagerStatics3>().SystemSortOrder();
 }
 
 inline void ContactManager::SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value)
 {
-    GetActivationFactory<ContactManager, IContactManagerStatics3>().SystemSortOrder(value);
+    get_activation_factory<ContactManager, IContactManagerStatics3>().SystemSortOrder(value);
 }
 
 inline Windows::ApplicationModel::Contacts::ContactManagerForUser ContactManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<ContactManager, IContactManagerStatics4>().GetForUser(user);
+    return get_activation_factory<ContactManager, IContactManagerStatics4>().GetForUser(user);
 }
 
 inline ContactPhone::ContactPhone() :
-    ContactPhone(ActivateInstance<ContactPhone>())
+    ContactPhone(activate_instance<ContactPhone>())
 {}
 
 inline ContactPicker::ContactPicker() :
-    ContactPicker(ActivateInstance<ContactPicker>())
+    ContactPicker(activate_instance<ContactPicker>())
 {}
 
 inline ContactQueryOptions::ContactQueryOptions() :
-    ContactQueryOptions(ActivateInstance<ContactQueryOptions>())
+    ContactQueryOptions(activate_instance<ContactQueryOptions>())
 {}
 
 inline ContactQueryOptions::ContactQueryOptions(hstring_ref text) :
-    ContactQueryOptions(GetActivationFactory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithText(text))
+    ContactQueryOptions(get_activation_factory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithText(text))
 {}
 
 inline ContactQueryOptions::ContactQueryOptions(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) :
-    ContactQueryOptions(GetActivationFactory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
+    ContactQueryOptions(get_activation_factory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
 {}
 
 inline ContactSignificantOther::ContactSignificantOther() :
-    ContactSignificantOther(ActivateInstance<ContactSignificantOther>())
+    ContactSignificantOther(activate_instance<ContactSignificantOther>())
 {}
 
 inline ContactWebsite::ContactWebsite() :
-    ContactWebsite(ActivateInstance<ContactWebsite>())
+    ContactWebsite(activate_instance<ContactWebsite>())
 {}
 
 inline FullContactCardOptions::FullContactCardOptions() :
-    FullContactCardOptions(ActivateInstance<FullContactCardOptions>())
+    FullContactCardOptions(activate_instance<FullContactCardOptions>())
 {}
 
 inline hstring KnownContactField::Email()
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().Email();
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().Email();
 }
 
 inline hstring KnownContactField::PhoneNumber()
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().PhoneNumber();
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().PhoneNumber();
 }
 
 inline hstring KnownContactField::Location()
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().Location();
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().Location();
 }
 
 inline hstring KnownContactField::InstantMessage()
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().InstantMessage();
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().InstantMessage();
 }
 
 inline Windows::ApplicationModel::Contacts::ContactFieldType KnownContactField::ConvertNameToType(hstring_ref name)
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().ConvertNameToType(name);
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().ConvertNameToType(name);
 }
 
 inline hstring KnownContactField::ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type)
 {
-    return GetActivationFactory<KnownContactField, IKnownContactFieldStatics>().ConvertTypeToName(type);
+    return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().ConvertTypeToName(type);
 }
 
 }

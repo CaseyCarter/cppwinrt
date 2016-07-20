@@ -548,27 +548,27 @@ template <typename D> void impl_IRemoveAppointmentOperation<D>::DismissUI() cons
 
 inline hstring AppointmentsProviderLaunchActionVerbs::AddAppointment()
 {
-    return GetActivationFactory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().AddAppointment();
+    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().AddAppointment();
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ReplaceAppointment()
 {
-    return GetActivationFactory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().ReplaceAppointment();
+    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().ReplaceAppointment();
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::RemoveAppointment()
 {
-    return GetActivationFactory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().RemoveAppointment();
+    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().RemoveAppointment();
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ShowTimeFrame()
 {
-    return GetActivationFactory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().ShowTimeFrame();
+    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics>().ShowTimeFrame();
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ShowAppointmentDetails()
 {
-    return GetActivationFactory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics2>().ShowAppointmentDetails();
+    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, IAppointmentsProviderLaunchActionVerbsStatics2>().ShowAppointmentDetails();
 }
 
 }

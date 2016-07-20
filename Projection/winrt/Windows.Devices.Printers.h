@@ -156,12 +156,12 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> Print3DDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<Print3DDevice, IPrint3DDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<Print3DDevice, IPrint3DDeviceStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring Print3DDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<Print3DDevice, IPrint3DDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<Print3DDevice, IPrint3DDeviceStatics>().GetDeviceSelector();
 }
 
 }

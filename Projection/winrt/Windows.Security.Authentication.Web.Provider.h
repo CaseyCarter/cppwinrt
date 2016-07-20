@@ -1207,105 +1207,105 @@ template <typename D> Windows::Security::Authentication::Web::Provider::IWebAcco
 }
 
 inline WebAccountClientView::WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri) :
-    WebAccountClientView(GetActivationFactory<WebAccountClientView, IWebAccountClientViewFactory>().Create(viewType, applicationCallbackUri))
+    WebAccountClientView(get_activation_factory<WebAccountClientView, IWebAccountClientViewFactory>().Create(viewType, applicationCallbackUri))
 {}
 
 inline WebAccountClientView::WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri, hstring_ref accountPairwiseId) :
-    WebAccountClientView(GetActivationFactory<WebAccountClientView, IWebAccountClientViewFactory>().CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId))
+    WebAccountClientView(get_activation_factory<WebAccountClientView, IWebAccountClientViewFactory>().CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId))
 {}
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::DeleteWebAccountAsync(const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().DeleteWebAccountAsync(webAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().DeleteWebAccountAsync(webAccount);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> WebAccountManager::FindAllProviderWebAccountsAsync()
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().FindAllProviderWebAccountsAsync();
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().FindAllProviderWebAccountsAsync();
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::PushCookiesAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> & cookies)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().PushCookiesAsync(uri, cookies);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().PushCookiesAsync(uri, cookies);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::SetViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Provider::WebAccountClientView & view)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().SetViewAsync(webAccount, view);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().SetViewAsync(webAccount, view);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::ClearViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Foundation::Uri & applicationCallbackUri)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().ClearViewAsync(webAccount, applicationCallbackUri);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().ClearViewAsync(webAccount, applicationCallbackUri);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Provider::WebAccountClientView>> WebAccountManager::GetViewsAsync(const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().GetViewsAsync(webAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().GetViewsAsync(webAccount);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::SetWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Storage::Streams::IRandomAccessStream & webAccountPicture)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().SetWebAccountPictureAsync(webAccount, webAccountPicture);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().SetWebAccountPictureAsync(webAccount, webAccountPicture);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::ClearWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics>().ClearWebAccountPictureAsync(webAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().ClearWebAccountPictureAsync(webAccount);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountManagerStatics2>().PullCookiesAsync(uriString, callerPFN);
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics2>().PullCookiesAsync(uriString, callerPFN);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_ref perUserWebAccountId)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountMapManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope, perUserWebAccountId);
+    return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope, perUserWebAccountId);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::SetPerAppToPerUserAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount, hstring_ref perUserWebAccountId)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountMapManagerStatics>().SetPerAppToPerUserAccountAsync(perAppAccount, perUserWebAccountId);
+    return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().SetPerAppToPerUserAccountAsync(perAppAccount, perUserWebAccountId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::GetPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountMapManagerStatics>().GetPerUserFromPerAppAccountAsync(perAppAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().GetPerUserFromPerAppAccountAsync(perAppAccount);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::ClearPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountMapManagerStatics>().ClearPerUserFromPerAppAccountAsync(perAppAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().ClearPerUserFromPerAppAccountAsync(perAppAccount);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountScopeManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope);
+    return get_activation_factory<WebAccountManager, IWebAccountScopeManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope);
 }
 
 inline Windows::Foundation::IAsyncAction WebAccountManager::SetScopeAsync(const Windows::Security::Credentials::WebAccount & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountScopeManagerStatics>().SetScopeAsync(webAccount, scope);
+    return get_activation_factory<WebAccountManager, IWebAccountScopeManagerStatics>().SetScopeAsync(webAccount, scope);
 }
 
 inline Windows::Security::Authentication::Web::Provider::WebAccountScope WebAccountManager::GetScope(const Windows::Security::Credentials::WebAccount & webAccount)
 {
-    return GetActivationFactory<WebAccountManager, IWebAccountScopeManagerStatics>().GetScope(webAccount);
+    return get_activation_factory<WebAccountManager, IWebAccountScopeManagerStatics>().GetScope(webAccount);
 }
 
 inline WebProviderTokenResponse::WebProviderTokenResponse(const Windows::Security::Authentication::Web::Core::WebTokenResponse & webTokenResponse) :
-    WebProviderTokenResponse(GetActivationFactory<WebProviderTokenResponse, IWebProviderTokenResponseFactory>().Create(webTokenResponse))
+    WebProviderTokenResponse(get_activation_factory<WebProviderTokenResponse, IWebProviderTokenResponseFactory>().Create(webTokenResponse))
 {}
 
 }

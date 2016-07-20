@@ -1076,116 +1076,116 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTra
 }
 
 inline CompositeTransform3D::CompositeTransform3D() :
-    CompositeTransform3D(ActivateInstance<CompositeTransform3D>())
+    CompositeTransform3D(activate_instance<CompositeTransform3D>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterXProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterXProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterYProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterYProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterZProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterZProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().CenterZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationXProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationXProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationYProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationYProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationZProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationZProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().RotationZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleXProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleXProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleYProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleYProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleZProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleZProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().ScaleZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateXProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateXProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateYProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateYProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateZProperty()
 {
-    return GetActivationFactory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateZProperty();
+    return get_activation_factory<CompositeTransform3D, ICompositeTransform3DStatics>().TranslateZProperty();
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Identity()
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().Identity();
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().Identity();
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Multiply(const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix1, const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix2)
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().Multiply(matrix1, matrix2);
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().Multiply(matrix1, matrix2);
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44)
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44);
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44);
 }
 
 inline bool Matrix3DHelper::GetHasInverse(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target)
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().GetHasInverse(target);
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().GetHasInverse(target);
 }
 
 inline bool Matrix3DHelper::GetIsIdentity(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target)
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().GetIsIdentity(target);
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().GetIsIdentity(target);
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Invert(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target)
 {
-    return GetActivationFactory<Matrix3DHelper, IMatrix3DHelperStatics>().Invert(target);
+    return get_activation_factory<Matrix3DHelper, IMatrix3DHelperStatics>().Invert(target);
 }
 
 inline PerspectiveTransform3D::PerspectiveTransform3D() :
-    PerspectiveTransform3D(ActivateInstance<PerspectiveTransform3D>())
+    PerspectiveTransform3D(activate_instance<PerspectiveTransform3D>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::DepthProperty()
 {
-    return GetActivationFactory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().DepthProperty();
+    return get_activation_factory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().DepthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::OffsetXProperty()
 {
-    return GetActivationFactory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().OffsetXProperty();
+    return get_activation_factory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().OffsetXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::OffsetYProperty()
 {
-    return GetActivationFactory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().OffsetYProperty();
+    return get_activation_factory<PerspectiveTransform3D, IPerspectiveTransform3DStatics>().OffsetYProperty();
 }
 
 }

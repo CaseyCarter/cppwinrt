@@ -2631,81 +2631,81 @@ template <typename D> Windows::Networking::Connectivity::WwanDataClass impl_IWwa
 }
 
 inline CellularApnContext::CellularApnContext() :
-    CellularApnContext(ActivateInstance<CellularApnContext>())
+    CellularApnContext(activate_instance<CellularApnContext>())
 {}
 
 inline ConnectionProfileFilter::ConnectionProfileFilter() :
-    ConnectionProfileFilter(ActivateInstance<ConnectionProfileFilter>())
+    ConnectionProfileFilter(activate_instance<ConnectionProfileFilter>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionSession> ConnectivityManager::AcquireConnectionAsync(const Windows::Networking::Connectivity::CellularApnContext & cellularApnContext)
 {
-    return GetActivationFactory<ConnectivityManager, IConnectivityManagerStatics>().AcquireConnectionAsync(cellularApnContext);
+    return get_activation_factory<ConnectivityManager, IConnectivityManagerStatics>().AcquireConnectionAsync(cellularApnContext);
 }
 
 inline void ConnectivityManager::AddHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy)
 {
-    GetActivationFactory<ConnectivityManager, IConnectivityManagerStatics>().AddHttpRoutePolicy(routePolicy);
+    get_activation_factory<ConnectivityManager, IConnectivityManagerStatics>().AddHttpRoutePolicy(routePolicy);
 }
 
 inline void ConnectivityManager::RemoveHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy)
 {
-    GetActivationFactory<ConnectivityManager, IConnectivityManagerStatics>().RemoveHttpRoutePolicy(routePolicy);
+    get_activation_factory<ConnectivityManager, IConnectivityManagerStatics>().RemoveHttpRoutePolicy(routePolicy);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> NetworkInformation::GetConnectionProfiles()
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetConnectionProfiles();
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetConnectionProfiles();
 }
 
 inline Windows::Networking::Connectivity::ConnectionProfile NetworkInformation::GetInternetConnectionProfile()
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetInternetConnectionProfile();
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetInternetConnectionProfile();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> NetworkInformation::GetLanIdentifiers()
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetLanIdentifiers();
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetLanIdentifiers();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> NetworkInformation::GetHostNames()
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetHostNames();
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetHostNames();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> NetworkInformation::GetProxyConfigurationAsync(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetProxyConfigurationAsync(uri);
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetProxyConfigurationAsync(uri);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> NetworkInformation::GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions)
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().GetSortedEndpointPairs(destinationList, sortOptions);
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetSortedEndpointPairs(destinationList, sortOptions);
 }
 
 inline event_token NetworkInformation::NetworkStatusChanged(const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler)
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics>().NetworkStatusChanged(networkStatusHandler);
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics>().NetworkStatusChanged(networkStatusHandler);
 }
 
 inline factory_event_revoker<INetworkInformationStatics> NetworkInformation::NetworkStatusChanged(auto_revoke_t, const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler)
 {
-    auto factory = GetActivationFactory<NetworkInformation, INetworkInformationStatics>();
+    auto factory = get_activation_factory<NetworkInformation, INetworkInformationStatics>();
     return { factory, &ABI::Windows::Networking::Connectivity::INetworkInformationStatics::remove_NetworkStatusChanged, factory.NetworkStatusChanged(networkStatusHandler) };
 }
 
 inline void NetworkInformation::NetworkStatusChanged(event_token eventCookie)
 {
-    GetActivationFactory<NetworkInformation, INetworkInformationStatics>().NetworkStatusChanged(eventCookie);
+    get_activation_factory<NetworkInformation, INetworkInformationStatics>().NetworkStatusChanged(eventCookie);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> NetworkInformation::FindConnectionProfilesAsync(const Windows::Networking::Connectivity::ConnectionProfileFilter & pProfileFilter)
 {
-    return GetActivationFactory<NetworkInformation, INetworkInformationStatics2>().FindConnectionProfilesAsync(pProfileFilter);
+    return get_activation_factory<NetworkInformation, INetworkInformationStatics2>().FindConnectionProfilesAsync(pProfileFilter);
 }
 
 inline RoutePolicy::RoutePolicy(const Windows::Networking::Connectivity::ConnectionProfile & connectionProfile, const Windows::Networking::HostName & hostName, Windows::Networking::DomainNameType type) :
-    RoutePolicy(GetActivationFactory<RoutePolicy, IRoutePolicyFactory>().CreateRoutePolicy(connectionProfile, hostName, type))
+    RoutePolicy(get_activation_factory<RoutePolicy, IRoutePolicyFactory>().CreateRoutePolicy(connectionProfile, hostName, type))
 {}
 
 }

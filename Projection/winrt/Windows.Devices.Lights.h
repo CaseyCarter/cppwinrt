@@ -311,17 +311,17 @@ template <typename D> void impl_ILamp<D>::AvailabilityChanged(event_token token)
 
 inline hstring Lamp::GetDeviceSelector()
 {
-    return GetActivationFactory<Lamp, ILampStatics>().GetDeviceSelector();
+    return get_activation_factory<Lamp, ILampStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> Lamp::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<Lamp, ILampStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<Lamp, ILampStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> Lamp::GetDefaultAsync()
 {
-    return GetActivationFactory<Lamp, ILampStatics>().GetDefaultAsync();
+    return get_activation_factory<Lamp, ILampStatics>().GetDefaultAsync();
 }
 
 }

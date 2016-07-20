@@ -7298,1180 +7298,1180 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
 
 inline hstring ApplicationLanguages::PrimaryLanguageOverride()
 {
-    return GetActivationFactory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride();
+    return get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride();
 }
 
 inline void ApplicationLanguages::PrimaryLanguageOverride(hstring_ref value)
 {
-    GetActivationFactory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride(value);
+    get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride(value);
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> ApplicationLanguages::Languages()
 {
-    return GetActivationFactory<ApplicationLanguages, IApplicationLanguagesStatics>().Languages();
+    return get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().Languages();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> ApplicationLanguages::ManifestLanguages()
 {
-    return GetActivationFactory<ApplicationLanguages, IApplicationLanguagesStatics>().ManifestLanguages();
+    return get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().ManifestLanguages();
 }
 
 inline Calendar::Calendar() :
-    Calendar(ActivateInstance<Calendar>())
+    Calendar(activate_instance<Calendar>())
 {}
 
 inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages) :
-    Calendar(GetActivationFactory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
+    Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
 {}
 
 inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) :
-    Calendar(GetActivationFactory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
+    Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
 {}
 
 inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) :
-    Calendar(GetActivationFactory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
+    Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
 {}
 
 inline hstring CalendarIdentifiers::Gregorian()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Gregorian();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Gregorian();
 }
 
 inline hstring CalendarIdentifiers::Hebrew()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Hebrew();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Hebrew();
 }
 
 inline hstring CalendarIdentifiers::Hijri()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Hijri();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Hijri();
 }
 
 inline hstring CalendarIdentifiers::Japanese()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Japanese();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Japanese();
 }
 
 inline hstring CalendarIdentifiers::Julian()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Julian();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Julian();
 }
 
 inline hstring CalendarIdentifiers::Korean()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Korean();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Korean();
 }
 
 inline hstring CalendarIdentifiers::Taiwan()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Taiwan();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Taiwan();
 }
 
 inline hstring CalendarIdentifiers::Thai()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Thai();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().Thai();
 }
 
 inline hstring CalendarIdentifiers::UmAlQura()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics>().UmAlQura();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics>().UmAlQura();
 }
 
 inline hstring CalendarIdentifiers::Persian()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics2>().Persian();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics2>().Persian();
 }
 
 inline hstring CalendarIdentifiers::ChineseLunar()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().ChineseLunar();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().ChineseLunar();
 }
 
 inline hstring CalendarIdentifiers::JapaneseLunar()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().JapaneseLunar();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().JapaneseLunar();
 }
 
 inline hstring CalendarIdentifiers::KoreanLunar()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().KoreanLunar();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().KoreanLunar();
 }
 
 inline hstring CalendarIdentifiers::TaiwanLunar()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().TaiwanLunar();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().TaiwanLunar();
 }
 
 inline hstring CalendarIdentifiers::VietnameseLunar()
 {
-    return GetActivationFactory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().VietnameseLunar();
+    return get_activation_factory<CalendarIdentifiers, ICalendarIdentifiersStatics3>().VietnameseLunar();
 }
 
 inline hstring ClockIdentifiers::TwelveHour()
 {
-    return GetActivationFactory<ClockIdentifiers, IClockIdentifiersStatics>().TwelveHour();
+    return get_activation_factory<ClockIdentifiers, IClockIdentifiersStatics>().TwelveHour();
 }
 
 inline hstring ClockIdentifiers::TwentyFourHour()
 {
-    return GetActivationFactory<ClockIdentifiers, IClockIdentifiersStatics>().TwentyFourHour();
+    return get_activation_factory<ClockIdentifiers, IClockIdentifiersStatics>().TwentyFourHour();
 }
 
 inline hstring CurrencyIdentifiers::AED()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AED();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AED();
 }
 
 inline hstring CurrencyIdentifiers::AFN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AFN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AFN();
 }
 
 inline hstring CurrencyIdentifiers::ALL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ALL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ALL();
 }
 
 inline hstring CurrencyIdentifiers::AMD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AMD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AMD();
 }
 
 inline hstring CurrencyIdentifiers::ANG()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ANG();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ANG();
 }
 
 inline hstring CurrencyIdentifiers::AOA()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AOA();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AOA();
 }
 
 inline hstring CurrencyIdentifiers::ARS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ARS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ARS();
 }
 
 inline hstring CurrencyIdentifiers::AUD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AUD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AUD();
 }
 
 inline hstring CurrencyIdentifiers::AWG()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AWG();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AWG();
 }
 
 inline hstring CurrencyIdentifiers::AZN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AZN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().AZN();
 }
 
 inline hstring CurrencyIdentifiers::BAM()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BAM();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BAM();
 }
 
 inline hstring CurrencyIdentifiers::BBD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BBD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BBD();
 }
 
 inline hstring CurrencyIdentifiers::BDT()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BDT();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BDT();
 }
 
 inline hstring CurrencyIdentifiers::BGN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BGN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BGN();
 }
 
 inline hstring CurrencyIdentifiers::BHD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BHD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BHD();
 }
 
 inline hstring CurrencyIdentifiers::BIF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BIF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BIF();
 }
 
 inline hstring CurrencyIdentifiers::BMD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BMD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BMD();
 }
 
 inline hstring CurrencyIdentifiers::BND()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BND();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BND();
 }
 
 inline hstring CurrencyIdentifiers::BOB()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BOB();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BOB();
 }
 
 inline hstring CurrencyIdentifiers::BRL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BRL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BRL();
 }
 
 inline hstring CurrencyIdentifiers::BSD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BSD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BSD();
 }
 
 inline hstring CurrencyIdentifiers::BTN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BTN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BTN();
 }
 
 inline hstring CurrencyIdentifiers::BWP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BWP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BWP();
 }
 
 inline hstring CurrencyIdentifiers::BYR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BYR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BYR();
 }
 
 inline hstring CurrencyIdentifiers::BZD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BZD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().BZD();
 }
 
 inline hstring CurrencyIdentifiers::CAD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CAD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CAD();
 }
 
 inline hstring CurrencyIdentifiers::CDF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CDF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CDF();
 }
 
 inline hstring CurrencyIdentifiers::CHF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CHF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CHF();
 }
 
 inline hstring CurrencyIdentifiers::CLP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CLP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CLP();
 }
 
 inline hstring CurrencyIdentifiers::CNY()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CNY();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CNY();
 }
 
 inline hstring CurrencyIdentifiers::COP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().COP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().COP();
 }
 
 inline hstring CurrencyIdentifiers::CRC()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CRC();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CRC();
 }
 
 inline hstring CurrencyIdentifiers::CUP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CUP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CUP();
 }
 
 inline hstring CurrencyIdentifiers::CVE()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CVE();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CVE();
 }
 
 inline hstring CurrencyIdentifiers::CZK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CZK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().CZK();
 }
 
 inline hstring CurrencyIdentifiers::DJF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DJF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DJF();
 }
 
 inline hstring CurrencyIdentifiers::DKK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DKK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DKK();
 }
 
 inline hstring CurrencyIdentifiers::DOP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DOP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DOP();
 }
 
 inline hstring CurrencyIdentifiers::DZD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DZD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().DZD();
 }
 
 inline hstring CurrencyIdentifiers::EGP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().EGP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().EGP();
 }
 
 inline hstring CurrencyIdentifiers::ERN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ERN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ERN();
 }
 
 inline hstring CurrencyIdentifiers::ETB()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ETB();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ETB();
 }
 
 inline hstring CurrencyIdentifiers::EUR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().EUR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().EUR();
 }
 
 inline hstring CurrencyIdentifiers::FJD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().FJD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().FJD();
 }
 
 inline hstring CurrencyIdentifiers::FKP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().FKP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().FKP();
 }
 
 inline hstring CurrencyIdentifiers::GBP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GBP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GBP();
 }
 
 inline hstring CurrencyIdentifiers::GEL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GEL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GEL();
 }
 
 inline hstring CurrencyIdentifiers::GHS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GHS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GHS();
 }
 
 inline hstring CurrencyIdentifiers::GIP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GIP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GIP();
 }
 
 inline hstring CurrencyIdentifiers::GMD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GMD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GMD();
 }
 
 inline hstring CurrencyIdentifiers::GNF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GNF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GNF();
 }
 
 inline hstring CurrencyIdentifiers::GTQ()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GTQ();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GTQ();
 }
 
 inline hstring CurrencyIdentifiers::GYD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GYD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().GYD();
 }
 
 inline hstring CurrencyIdentifiers::HKD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HKD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HKD();
 }
 
 inline hstring CurrencyIdentifiers::HNL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HNL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HNL();
 }
 
 inline hstring CurrencyIdentifiers::HRK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HRK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HRK();
 }
 
 inline hstring CurrencyIdentifiers::HTG()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HTG();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HTG();
 }
 
 inline hstring CurrencyIdentifiers::HUF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HUF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().HUF();
 }
 
 inline hstring CurrencyIdentifiers::IDR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IDR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IDR();
 }
 
 inline hstring CurrencyIdentifiers::ILS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ILS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ILS();
 }
 
 inline hstring CurrencyIdentifiers::INR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().INR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().INR();
 }
 
 inline hstring CurrencyIdentifiers::IQD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IQD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IQD();
 }
 
 inline hstring CurrencyIdentifiers::IRR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IRR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().IRR();
 }
 
 inline hstring CurrencyIdentifiers::ISK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ISK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ISK();
 }
 
 inline hstring CurrencyIdentifiers::JMD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JMD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JMD();
 }
 
 inline hstring CurrencyIdentifiers::JOD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JOD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JOD();
 }
 
 inline hstring CurrencyIdentifiers::JPY()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JPY();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().JPY();
 }
 
 inline hstring CurrencyIdentifiers::KES()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KES();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KES();
 }
 
 inline hstring CurrencyIdentifiers::KGS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KGS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KGS();
 }
 
 inline hstring CurrencyIdentifiers::KHR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KHR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KHR();
 }
 
 inline hstring CurrencyIdentifiers::KMF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KMF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KMF();
 }
 
 inline hstring CurrencyIdentifiers::KPW()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KPW();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KPW();
 }
 
 inline hstring CurrencyIdentifiers::KRW()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KRW();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KRW();
 }
 
 inline hstring CurrencyIdentifiers::KWD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KWD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KWD();
 }
 
 inline hstring CurrencyIdentifiers::KYD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KYD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KYD();
 }
 
 inline hstring CurrencyIdentifiers::KZT()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KZT();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().KZT();
 }
 
 inline hstring CurrencyIdentifiers::LAK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LAK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LAK();
 }
 
 inline hstring CurrencyIdentifiers::LBP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LBP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LBP();
 }
 
 inline hstring CurrencyIdentifiers::LKR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LKR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LKR();
 }
 
 inline hstring CurrencyIdentifiers::LRD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LRD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LRD();
 }
 
 inline hstring CurrencyIdentifiers::LSL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LSL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LSL();
 }
 
 inline hstring CurrencyIdentifiers::LTL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LTL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LTL();
 }
 
 inline hstring CurrencyIdentifiers::LVL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LVL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LVL();
 }
 
 inline hstring CurrencyIdentifiers::LYD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LYD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().LYD();
 }
 
 inline hstring CurrencyIdentifiers::MAD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MAD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MAD();
 }
 
 inline hstring CurrencyIdentifiers::MDL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MDL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MDL();
 }
 
 inline hstring CurrencyIdentifiers::MGA()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MGA();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MGA();
 }
 
 inline hstring CurrencyIdentifiers::MKD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MKD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MKD();
 }
 
 inline hstring CurrencyIdentifiers::MMK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MMK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MMK();
 }
 
 inline hstring CurrencyIdentifiers::MNT()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MNT();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MNT();
 }
 
 inline hstring CurrencyIdentifiers::MOP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MOP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MOP();
 }
 
 inline hstring CurrencyIdentifiers::MRO()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MRO();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MRO();
 }
 
 inline hstring CurrencyIdentifiers::MUR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MUR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MUR();
 }
 
 inline hstring CurrencyIdentifiers::MVR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MVR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MVR();
 }
 
 inline hstring CurrencyIdentifiers::MWK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MWK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MWK();
 }
 
 inline hstring CurrencyIdentifiers::MXN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MXN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MXN();
 }
 
 inline hstring CurrencyIdentifiers::MYR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MYR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MYR();
 }
 
 inline hstring CurrencyIdentifiers::MZN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MZN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().MZN();
 }
 
 inline hstring CurrencyIdentifiers::NAD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NAD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NAD();
 }
 
 inline hstring CurrencyIdentifiers::NGN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NGN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NGN();
 }
 
 inline hstring CurrencyIdentifiers::NIO()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NIO();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NIO();
 }
 
 inline hstring CurrencyIdentifiers::NOK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NOK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NOK();
 }
 
 inline hstring CurrencyIdentifiers::NPR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NPR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NPR();
 }
 
 inline hstring CurrencyIdentifiers::NZD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NZD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().NZD();
 }
 
 inline hstring CurrencyIdentifiers::OMR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().OMR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().OMR();
 }
 
 inline hstring CurrencyIdentifiers::PAB()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PAB();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PAB();
 }
 
 inline hstring CurrencyIdentifiers::PEN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PEN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PEN();
 }
 
 inline hstring CurrencyIdentifiers::PGK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PGK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PGK();
 }
 
 inline hstring CurrencyIdentifiers::PHP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PHP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PHP();
 }
 
 inline hstring CurrencyIdentifiers::PKR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PKR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PKR();
 }
 
 inline hstring CurrencyIdentifiers::PLN()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PLN();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PLN();
 }
 
 inline hstring CurrencyIdentifiers::PYG()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PYG();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().PYG();
 }
 
 inline hstring CurrencyIdentifiers::QAR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().QAR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().QAR();
 }
 
 inline hstring CurrencyIdentifiers::RON()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RON();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RON();
 }
 
 inline hstring CurrencyIdentifiers::RSD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RSD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RSD();
 }
 
 inline hstring CurrencyIdentifiers::RUB()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RUB();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RUB();
 }
 
 inline hstring CurrencyIdentifiers::RWF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RWF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().RWF();
 }
 
 inline hstring CurrencyIdentifiers::SAR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SAR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SAR();
 }
 
 inline hstring CurrencyIdentifiers::SBD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SBD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SBD();
 }
 
 inline hstring CurrencyIdentifiers::SCR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SCR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SCR();
 }
 
 inline hstring CurrencyIdentifiers::SDG()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SDG();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SDG();
 }
 
 inline hstring CurrencyIdentifiers::SEK()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SEK();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SEK();
 }
 
 inline hstring CurrencyIdentifiers::SGD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SGD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SGD();
 }
 
 inline hstring CurrencyIdentifiers::SHP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SHP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SHP();
 }
 
 inline hstring CurrencyIdentifiers::SLL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SLL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SLL();
 }
 
 inline hstring CurrencyIdentifiers::SOS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SOS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SOS();
 }
 
 inline hstring CurrencyIdentifiers::SRD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SRD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SRD();
 }
 
 inline hstring CurrencyIdentifiers::STD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().STD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().STD();
 }
 
 inline hstring CurrencyIdentifiers::SYP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SYP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SYP();
 }
 
 inline hstring CurrencyIdentifiers::SZL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SZL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().SZL();
 }
 
 inline hstring CurrencyIdentifiers::THB()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().THB();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().THB();
 }
 
 inline hstring CurrencyIdentifiers::TJS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TJS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TJS();
 }
 
 inline hstring CurrencyIdentifiers::TMT()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TMT();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TMT();
 }
 
 inline hstring CurrencyIdentifiers::TND()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TND();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TND();
 }
 
 inline hstring CurrencyIdentifiers::TOP()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TOP();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TOP();
 }
 
 inline hstring CurrencyIdentifiers::TRY()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TRY();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TRY();
 }
 
 inline hstring CurrencyIdentifiers::TTD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TTD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TTD();
 }
 
 inline hstring CurrencyIdentifiers::TWD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TWD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TWD();
 }
 
 inline hstring CurrencyIdentifiers::TZS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TZS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().TZS();
 }
 
 inline hstring CurrencyIdentifiers::UAH()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UAH();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UAH();
 }
 
 inline hstring CurrencyIdentifiers::UGX()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UGX();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UGX();
 }
 
 inline hstring CurrencyIdentifiers::USD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().USD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().USD();
 }
 
 inline hstring CurrencyIdentifiers::UYU()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UYU();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UYU();
 }
 
 inline hstring CurrencyIdentifiers::UZS()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UZS();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().UZS();
 }
 
 inline hstring CurrencyIdentifiers::VEF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VEF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VEF();
 }
 
 inline hstring CurrencyIdentifiers::VND()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VND();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VND();
 }
 
 inline hstring CurrencyIdentifiers::VUV()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VUV();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().VUV();
 }
 
 inline hstring CurrencyIdentifiers::WST()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().WST();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().WST();
 }
 
 inline hstring CurrencyIdentifiers::XAF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XAF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XAF();
 }
 
 inline hstring CurrencyIdentifiers::XCD()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XCD();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XCD();
 }
 
 inline hstring CurrencyIdentifiers::XOF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XOF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XOF();
 }
 
 inline hstring CurrencyIdentifiers::XPF()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XPF();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XPF();
 }
 
 inline hstring CurrencyIdentifiers::XXX()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XXX();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().XXX();
 }
 
 inline hstring CurrencyIdentifiers::YER()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().YER();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().YER();
 }
 
 inline hstring CurrencyIdentifiers::ZAR()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZAR();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZAR();
 }
 
 inline hstring CurrencyIdentifiers::ZMW()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZMW();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZMW();
 }
 
 inline hstring CurrencyIdentifiers::ZWL()
 {
-    return GetActivationFactory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZWL();
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZWL();
 }
 
 inline GeographicRegion::GeographicRegion() :
-    GeographicRegion(ActivateInstance<GeographicRegion>())
+    GeographicRegion(activate_instance<GeographicRegion>())
 {}
 
 inline GeographicRegion::GeographicRegion(hstring_ref geographicRegionCode) :
-    GeographicRegion(GetActivationFactory<GeographicRegion, IGeographicRegionFactory>().CreateGeographicRegion(geographicRegionCode))
+    GeographicRegion(get_activation_factory<GeographicRegion, IGeographicRegionFactory>().CreateGeographicRegion(geographicRegionCode))
 {}
 
 inline bool GeographicRegion::IsSupported(hstring_ref geographicRegionCode)
 {
-    return GetActivationFactory<GeographicRegion, IGeographicRegionStatics>().IsSupported(geographicRegionCode);
+    return get_activation_factory<GeographicRegion, IGeographicRegionStatics>().IsSupported(geographicRegionCode);
 }
 
 inline Language::Language(hstring_ref languageTag) :
-    Language(GetActivationFactory<Language, ILanguageFactory>().CreateLanguage(languageTag))
+    Language(get_activation_factory<Language, ILanguageFactory>().CreateLanguage(languageTag))
 {}
 
 inline bool Language::IsWellFormed(hstring_ref languageTag)
 {
-    return GetActivationFactory<Language, ILanguageStatics>().IsWellFormed(languageTag);
+    return get_activation_factory<Language, ILanguageStatics>().IsWellFormed(languageTag);
 }
 
 inline hstring Language::CurrentInputMethodLanguageTag()
 {
-    return GetActivationFactory<Language, ILanguageStatics>().CurrentInputMethodLanguageTag();
+    return get_activation_factory<Language, ILanguageStatics>().CurrentInputMethodLanguageTag();
 }
 
 inline bool Language::TrySetInputMethodLanguageTag(hstring_ref languageTag)
 {
-    return GetActivationFactory<Language, ILanguageStatics2>().TrySetInputMethodLanguageTag(languageTag);
+    return get_activation_factory<Language, ILanguageStatics2>().TrySetInputMethodLanguageTag(languageTag);
 }
 
 inline hstring NumeralSystemIdentifiers::Arab()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Arab();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Arab();
 }
 
 inline hstring NumeralSystemIdentifiers::ArabExt()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().ArabExt();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().ArabExt();
 }
 
 inline hstring NumeralSystemIdentifiers::Bali()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Bali();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Bali();
 }
 
 inline hstring NumeralSystemIdentifiers::Beng()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Beng();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Beng();
 }
 
 inline hstring NumeralSystemIdentifiers::Cham()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Cham();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Cham();
 }
 
 inline hstring NumeralSystemIdentifiers::Deva()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Deva();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Deva();
 }
 
 inline hstring NumeralSystemIdentifiers::FullWide()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().FullWide();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().FullWide();
 }
 
 inline hstring NumeralSystemIdentifiers::Gujr()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Gujr();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Gujr();
 }
 
 inline hstring NumeralSystemIdentifiers::Guru()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Guru();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Guru();
 }
 
 inline hstring NumeralSystemIdentifiers::HaniDec()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().HaniDec();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().HaniDec();
 }
 
 inline hstring NumeralSystemIdentifiers::Java()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Java();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Java();
 }
 
 inline hstring NumeralSystemIdentifiers::Kali()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Kali();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Kali();
 }
 
 inline hstring NumeralSystemIdentifiers::Khmr()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Khmr();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Khmr();
 }
 
 inline hstring NumeralSystemIdentifiers::Knda()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Knda();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Knda();
 }
 
 inline hstring NumeralSystemIdentifiers::Lana()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Lana();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Lana();
 }
 
 inline hstring NumeralSystemIdentifiers::LanaTham()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().LanaTham();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().LanaTham();
 }
 
 inline hstring NumeralSystemIdentifiers::Laoo()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Laoo();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Laoo();
 }
 
 inline hstring NumeralSystemIdentifiers::Latn()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Latn();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Latn();
 }
 
 inline hstring NumeralSystemIdentifiers::Lepc()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Lepc();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Lepc();
 }
 
 inline hstring NumeralSystemIdentifiers::Limb()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Limb();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Limb();
 }
 
 inline hstring NumeralSystemIdentifiers::Mlym()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mlym();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mlym();
 }
 
 inline hstring NumeralSystemIdentifiers::Mong()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mong();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mong();
 }
 
 inline hstring NumeralSystemIdentifiers::Mtei()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mtei();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mtei();
 }
 
 inline hstring NumeralSystemIdentifiers::Mymr()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mymr();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Mymr();
 }
 
 inline hstring NumeralSystemIdentifiers::MymrShan()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().MymrShan();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().MymrShan();
 }
 
 inline hstring NumeralSystemIdentifiers::Nkoo()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Nkoo();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Nkoo();
 }
 
 inline hstring NumeralSystemIdentifiers::Olck()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Olck();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Olck();
 }
 
 inline hstring NumeralSystemIdentifiers::Orya()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Orya();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Orya();
 }
 
 inline hstring NumeralSystemIdentifiers::Saur()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Saur();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Saur();
 }
 
 inline hstring NumeralSystemIdentifiers::Sund()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Sund();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Sund();
 }
 
 inline hstring NumeralSystemIdentifiers::Talu()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Talu();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Talu();
 }
 
 inline hstring NumeralSystemIdentifiers::TamlDec()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().TamlDec();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().TamlDec();
 }
 
 inline hstring NumeralSystemIdentifiers::Telu()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Telu();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Telu();
 }
 
 inline hstring NumeralSystemIdentifiers::Thai()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Thai();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Thai();
 }
 
 inline hstring NumeralSystemIdentifiers::Tibt()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Tibt();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Tibt();
 }
 
 inline hstring NumeralSystemIdentifiers::Vaii()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Vaii();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics>().Vaii();
 }
 
 inline hstring NumeralSystemIdentifiers::Brah()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().Brah();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().Brah();
 }
 
 inline hstring NumeralSystemIdentifiers::Osma()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().Osma();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().Osma();
 }
 
 inline hstring NumeralSystemIdentifiers::MathBold()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathBold();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathBold();
 }
 
 inline hstring NumeralSystemIdentifiers::MathDbl()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathDbl();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathDbl();
 }
 
 inline hstring NumeralSystemIdentifiers::MathSans()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathSans();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathSans();
 }
 
 inline hstring NumeralSystemIdentifiers::MathSanb()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathSanb();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathSanb();
 }
 
 inline hstring NumeralSystemIdentifiers::MathMono()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathMono();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().MathMono();
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthBold()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthBold();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthBold();
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthDbl()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthDbl();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthDbl();
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthSans()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthSans();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthSans();
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthSanb()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthSanb();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthSanb();
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthMono()
 {
-    return GetActivationFactory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthMono();
+    return get_activation_factory<NumeralSystemIdentifiers, INumeralSystemIdentifiersStatics2>().ZmthMono();
 }
 
 }

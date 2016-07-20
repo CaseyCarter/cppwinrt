@@ -249,42 +249,42 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Au
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> WebAuthenticationBroker::AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri)
 {
-    return GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().AuthenticateAsync(options, requestUri, callbackUri);
+    return get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().AuthenticateAsync(options, requestUri, callbackUri);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> WebAuthenticationBroker::AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri)
 {
-    return GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().AuthenticateAsync(options, requestUri);
+    return get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().AuthenticateAsync(options, requestUri);
 }
 
 inline Windows::Foundation::Uri WebAuthenticationBroker::GetCurrentApplicationCallbackUri()
 {
-    return GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().GetCurrentApplicationCallbackUri();
+    return get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics>().GetCurrentApplicationCallbackUri();
 }
 
 inline void WebAuthenticationBroker::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri)
 {
-    GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri);
+    get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri);
 }
 
 inline void WebAuthenticationBroker::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri)
 {
-    GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri, callbackUri);
+    get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri, callbackUri);
 }
 
 inline void WebAuthenticationBroker::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri, const Windows::Foundation::Collections::ValueSet & continuationData, Windows::Security::Authentication::Web::WebAuthenticationOptions options)
 {
-    GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri, callbackUri, continuationData, options);
+    get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateAndContinue(requestUri, callbackUri, continuationData, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> WebAuthenticationBroker::AuthenticateSilentlyAsync(const Windows::Foundation::Uri & requestUri)
 {
-    return GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateSilentlyAsync(requestUri);
+    return get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateSilentlyAsync(requestUri);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> WebAuthenticationBroker::AuthenticateSilentlyAsync(const Windows::Foundation::Uri & requestUri, Windows::Security::Authentication::Web::WebAuthenticationOptions options)
 {
-    return GetActivationFactory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateSilentlyAsync(requestUri, options);
+    return get_activation_factory<WebAuthenticationBroker, IWebAuthenticationBrokerStatics2>().AuthenticateSilentlyAsync(requestUri, options);
 }
 
 }

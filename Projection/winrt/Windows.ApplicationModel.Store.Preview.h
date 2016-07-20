@@ -784,87 +784,87 @@ template <typename D> void impl_IStoreConfigurationStatics3<D>::SetPurchasePromp
 
 inline void StoreConfiguration::SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor);
 }
 
 inline void StoreConfiguration::SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
 }
 
 inline void StoreConfiguration::SetStoreWebAccountId(hstring_ref webAccountId)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().SetStoreWebAccountId(webAccountId);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetStoreWebAccountId(webAccountId);
 }
 
 inline bool StoreConfiguration::IsStoreWebAccountId(hstring_ref webAccountId)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().IsStoreWebAccountId(webAccountId);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().IsStoreWebAccountId(webAccountId);
 }
 
 inline Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo StoreConfiguration::HardwareManufacturerInfo()
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().HardwareManufacturerInfo();
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().HardwareManufacturerInfo();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> StoreConfiguration::FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics>().FilterUnsupportedSystemFeaturesAsync(systemFeatures);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().FilterUnsupportedSystemFeaturesAsync(systemFeatures);
 }
 
 inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::PurchasePromptingPolicy()
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy();
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy();
 }
 
 inline void StoreConfiguration::PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy(value);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy(value);
 }
 
 inline bool StoreConfiguration::HasStoreWebAccount()
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().HasStoreWebAccount();
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().HasStoreWebAccount();
 }
 
 inline bool StoreConfiguration::HasStoreWebAccountForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().HasStoreWebAccountForUser(user);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().HasStoreWebAccountForUser(user);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> StoreConfiguration::GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().GetStoreLogDataAsync(options);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().GetStoreLogDataAsync(options);
 }
 
 inline void StoreConfiguration::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().SetStoreWebAccountIdForUser(user, webAccountId);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().SetStoreWebAccountIdForUser(user, webAccountId);
 }
 
 inline bool StoreConfiguration::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().IsStoreWebAccountIdForUser(user, webAccountId);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().IsStoreWebAccountIdForUser(user, webAccountId);
 }
 
 inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::GetPurchasePromptingPolicyForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().GetPurchasePromptingPolicyForUser(user);
+    return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().GetPurchasePromptingPolicyForUser(user);
 }
 
 inline void StoreConfiguration::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value)
 {
-    GetActivationFactory<StoreConfiguration, IStoreConfigurationStatics3>().SetPurchasePromptingPolicyForUser(user, value);
+    get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().SetPurchasePromptingPolicyForUser(user, value);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> StorePreview::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId)
 {
-    return GetActivationFactory<StorePreview, IStorePreview>().RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId);
+    return get_activation_factory<StorePreview, IStorePreview>().RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> StorePreview::LoadAddOnProductInfosAsync()
 {
-    return GetActivationFactory<StorePreview, IStorePreview>().LoadAddOnProductInfosAsync();
+    return get_activation_factory<StorePreview, IStorePreview>().LoadAddOnProductInfosAsync();
 }
 
 }

@@ -146,44 +146,44 @@ template <typename D> bool impl_IGameBarStatics<D>::IsInputRedirected() const
 
 inline event_token GameBar::VisibilityChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<GameBar, IGameBarStatics>().VisibilityChanged(handler);
+    return get_activation_factory<GameBar, IGameBarStatics>().VisibilityChanged(handler);
 }
 
 inline factory_event_revoker<IGameBarStatics> GameBar::VisibilityChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<GameBar, IGameBarStatics>();
+    auto factory = get_activation_factory<GameBar, IGameBarStatics>();
     return { factory, &ABI::Windows::Gaming::UI::IGameBarStatics::remove_VisibilityChanged, factory.VisibilityChanged(handler) };
 }
 
 inline void GameBar::VisibilityChanged(event_token token)
 {
-    GetActivationFactory<GameBar, IGameBarStatics>().VisibilityChanged(token);
+    get_activation_factory<GameBar, IGameBarStatics>().VisibilityChanged(token);
 }
 
 inline event_token GameBar::IsInputRedirectedChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<GameBar, IGameBarStatics>().IsInputRedirectedChanged(handler);
+    return get_activation_factory<GameBar, IGameBarStatics>().IsInputRedirectedChanged(handler);
 }
 
 inline factory_event_revoker<IGameBarStatics> GameBar::IsInputRedirectedChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<GameBar, IGameBarStatics>();
+    auto factory = get_activation_factory<GameBar, IGameBarStatics>();
     return { factory, &ABI::Windows::Gaming::UI::IGameBarStatics::remove_IsInputRedirectedChanged, factory.IsInputRedirectedChanged(handler) };
 }
 
 inline void GameBar::IsInputRedirectedChanged(event_token token)
 {
-    GetActivationFactory<GameBar, IGameBarStatics>().IsInputRedirectedChanged(token);
+    get_activation_factory<GameBar, IGameBarStatics>().IsInputRedirectedChanged(token);
 }
 
 inline bool GameBar::Visible()
 {
-    return GetActivationFactory<GameBar, IGameBarStatics>().Visible();
+    return get_activation_factory<GameBar, IGameBarStatics>().Visible();
 }
 
 inline bool GameBar::IsInputRedirected()
 {
-    return GetActivationFactory<GameBar, IGameBarStatics>().IsInputRedirected();
+    return get_activation_factory<GameBar, IGameBarStatics>().IsInputRedirected();
 }
 
 }

@@ -18,7 +18,7 @@ protected:
 
     BindingT()
     {
-        GetActivationFactory<Binding, IBindingFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Binding, IBindingFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,7 +32,7 @@ protected:
 
     BindingBaseT()
     {
-        GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<BindingBase, IBindingBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -46,12 +46,12 @@ protected:
 
     CurrentChangingEventArgsT()
     {
-        GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(*this, m_inner);
     }
 
     CurrentChangingEventArgsT(bool isCancelable)
     {
-        GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, *this, m_inner);
+        get_activation_factory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, *this, m_inner);
     }
 };
 
@@ -65,7 +65,7 @@ protected:
 
     ItemIndexRangeT(int32_t firstIndex, uint32_t length)
     {
-        GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, *this, m_inner);
+        get_activation_factory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, *this, m_inner);
     }
 };
 
@@ -79,7 +79,7 @@ protected:
 
     PropertyChangedEventArgsT(hstring_ref name)
     {
-        GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, *this, m_inner);
+        get_activation_factory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, *this, m_inner);
     }
 };
 
@@ -93,7 +93,7 @@ protected:
 
     RelativeSourceT()
     {
-        GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RelativeSource, IRelativeSourceFactory>().CreateInstance(*this, m_inner);
     }
 };
 

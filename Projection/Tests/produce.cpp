@@ -14,7 +14,7 @@ using namespace Windows::Foundation;
 // IUnknown - tests the most basic support of producing implementations.
 //
 
-struct produce_IUnknown : implements<produce_IUnknown, Windows::IUnknown>
+struct produce_IUnknown : implements<produce_IUnknown, ::IUnknown>
 {
     bool & m_destroyed;
     produce_IUnknown(bool & destroyed) : m_destroyed(destroyed) { m_destroyed = false; }
@@ -24,7 +24,7 @@ struct produce_IUnknown : implements<produce_IUnknown, Windows::IUnknown>
 TEST_CASE("produce_IUnknown")
 {
     bool destroyed = false;
-    Windows::IUnknown p = make<produce_IUnknown>(destroyed);
+    com_ptr<::IUnknown> p = make<produce_IUnknown>(destroyed);
 
     {
         // Basic query works for IUnknown.
@@ -116,24 +116,6 @@ TEST_CASE("produce_IInspectable")
     REQUIRE(destroyed);
 }
 
-// Unprojected (ABI) interfaces can be implemented.
-
-struct produce_IInspectable_ABI : implements<produce_IInspectable_ABI, ABI::Windows::IInspectable>
-{
-    bool & m_destroyed;
-    produce_IInspectable_ABI(bool & destroyed) : m_destroyed(destroyed) { m_destroyed = false; }
-    ~produce_IInspectable_ABI() { m_destroyed = true; }
-};
-
-TEST_CASE("produce_IInspectable_ABI")
-{
-    bool destroyed = false;
-    com_ptr<ABI::Windows::IInspectable> p = make<produce_IInspectable_ABI>(destroyed);
-    REQUIRE(!destroyed);
-    p = nullptr;
-    REQUIRE(destroyed);
-}
-
 // RuntimeClassName may optionally be implemented with the projection.
 
 struct produce_IInspectable_No_RuntimeClassName : implements<produce_IInspectable_No_RuntimeClassName, Windows::IInspectable>
@@ -188,34 +170,6 @@ TEST_CASE("produce_IActivationFactory")
 
     IStringable i = p.ActivateInstance().as<IStringable>();
     REQUIRE(i.ToString() == L"produce_IActivationFactory_Instance");
-
-    REQUIRE(!destroyed);
-    p = nullptr;
-    REQUIRE(destroyed);
-}
-
-// Unprojected (ABI) interfaces can be implemented.
-
-struct produce_IActivationFactory_ABI : implements<produce_IActivationFactory_ABI, ABI::Windows::Foundation::IActivationFactory>
-{
-    bool & m_destroyed;
-    produce_IActivationFactory_ABI(bool & destroyed) : m_destroyed(destroyed) { m_destroyed = false; }
-    ~produce_IActivationFactory_ABI() { m_destroyed = true; }
-
-    HRESULT __stdcall abi_ActivateInstance(ABI::Windows::IInspectable ** instance)
-    {
-        *instance = nullptr;
-        return E_NOTIMPL;
-    }
-};
-
-TEST_CASE("produce_IActivationFactory_ABI")
-{
-    bool destroyed = false;
-    com_ptr<ABI::Windows::Foundation::IActivationFactory> p = make<produce_IActivationFactory_ABI>(destroyed);
-
-    com_ptr<Windows::IInspectable> i;
-    REQUIRE(E_NOTIMPL == p->abi_ActivateInstance(put(i)));
 
     REQUIRE(!destroyed);
     p = nullptr;

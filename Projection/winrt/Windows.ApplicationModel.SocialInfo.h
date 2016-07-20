@@ -1221,19 +1221,19 @@ template <typename D> Windows::ApplicationModel::SocialInfo::SocialItemThumbnail
 }
 
 inline SocialFeedChildItem::SocialFeedChildItem() :
-    SocialFeedChildItem(ActivateInstance<SocialFeedChildItem>())
+    SocialFeedChildItem(activate_instance<SocialFeedChildItem>())
 {}
 
 inline SocialFeedItem::SocialFeedItem() :
-    SocialFeedItem(ActivateInstance<SocialFeedItem>())
+    SocialFeedItem(activate_instance<SocialFeedItem>())
 {}
 
 inline SocialFeedSharedItem::SocialFeedSharedItem() :
-    SocialFeedSharedItem(ActivateInstance<SocialFeedSharedItem>())
+    SocialFeedSharedItem(activate_instance<SocialFeedSharedItem>())
 {}
 
 inline SocialItemThumbnail::SocialItemThumbnail() :
-    SocialItemThumbnail(ActivateInstance<SocialItemThumbnail>())
+    SocialItemThumbnail(activate_instance<SocialItemThumbnail>())
 {}
 
 }

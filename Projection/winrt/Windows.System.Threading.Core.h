@@ -258,35 +258,35 @@ template <typename D> void impl_ISignalNotifier<D>::Terminate() const
 }
 
 inline PreallocatedWorkItem::PreallocatedWorkItem(const Windows::System::Threading::WorkItemHandler & handler) :
-    PreallocatedWorkItem(GetActivationFactory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItem(handler))
+    PreallocatedWorkItem(get_activation_factory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItem(handler))
 {}
 
 inline PreallocatedWorkItem::PreallocatedWorkItem(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) :
-    PreallocatedWorkItem(GetActivationFactory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItemWithPriority(handler, priority))
+    PreallocatedWorkItem(get_activation_factory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItemWithPriority(handler, priority))
 {}
 
 inline PreallocatedWorkItem::PreallocatedWorkItem(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) :
-    PreallocatedWorkItem(GetActivationFactory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItemWithPriorityAndOptions(handler, priority, options))
+    PreallocatedWorkItem(get_activation_factory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItemWithPriorityAndOptions(handler, priority, options))
 {}
 
 inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler)
 {
-    return GetActivationFactory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler);
+    return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler);
 }
 
 inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
 {
-    return GetActivationFactory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler, timeout);
+    return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler, timeout);
 }
 
 inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler)
 {
-    return GetActivationFactory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler);
+    return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler);
 }
 
 inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
 {
-    return GetActivationFactory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler, timeout);
+    return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler, timeout);
 }
 
 }

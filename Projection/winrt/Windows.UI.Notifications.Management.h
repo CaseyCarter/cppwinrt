@@ -209,7 +209,7 @@ template <typename D> void impl_IUserNotificationListener<D>::RemoveNotification
 
 inline Windows::UI::Notifications::Management::UserNotificationListener UserNotificationListener::Current()
 {
-    return GetActivationFactory<UserNotificationListener, IUserNotificationListenerStatics>().Current();
+    return get_activation_factory<UserNotificationListener, IUserNotificationListenerStatics>().Current();
 }
 
 }

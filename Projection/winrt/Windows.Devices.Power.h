@@ -282,17 +282,17 @@ template <typename D> hstring impl_IBatteryStatics<D>::GetDeviceSelector() const
 
 inline Windows::Devices::Power::Battery Battery::AggregateBattery()
 {
-    return GetActivationFactory<Battery, IBatteryStatics>().AggregateBattery();
+    return get_activation_factory<Battery, IBatteryStatics>().AggregateBattery();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> Battery::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<Battery, IBatteryStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<Battery, IBatteryStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring Battery::GetDeviceSelector()
 {
-    return GetActivationFactory<Battery, IBatteryStatics>().GetDeviceSelector();
+    return get_activation_factory<Battery, IBatteryStatics>().GetDeviceSelector();
 }
 
 }

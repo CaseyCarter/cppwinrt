@@ -2796,27 +2796,27 @@ template <typename D> bool impl_IPhotoImportSelectionChangedEventArgs<D>::IsSele
 
 inline Windows::Foundation::IAsyncOperation<bool> PhotoImportManager::IsSupportedAsync()
 {
-    return GetActivationFactory<PhotoImportManager, IPhotoImportManagerStatics>().IsSupportedAsync();
+    return get_activation_factory<PhotoImportManager, IPhotoImportManagerStatics>().IsSupportedAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>> PhotoImportManager::FindAllSourcesAsync()
 {
-    return GetActivationFactory<PhotoImportManager, IPhotoImportManagerStatics>().FindAllSourcesAsync();
+    return get_activation_factory<PhotoImportManager, IPhotoImportManagerStatics>().FindAllSourcesAsync();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation> PhotoImportManager::GetPendingOperations()
 {
-    return GetActivationFactory<PhotoImportManager, IPhotoImportManagerStatics>().GetPendingOperations();
+    return get_activation_factory<PhotoImportManager, IPhotoImportManagerStatics>().GetPendingOperations();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromIdAsync(hstring_ref sourceId)
 {
-    return GetActivationFactory<PhotoImportSource, IPhotoImportSourceStatics>().FromIdAsync(sourceId);
+    return get_activation_factory<PhotoImportSource, IPhotoImportSourceStatics>().FromIdAsync(sourceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromFolderAsync(const Windows::Storage::IStorageFolder & sourceRootFolder)
 {
-    return GetActivationFactory<PhotoImportSource, IPhotoImportSourceStatics>().FromFolderAsync(sourceRootFolder);
+    return get_activation_factory<PhotoImportSource, IPhotoImportSourceStatics>().FromFolderAsync(sourceRootFolder);
 }
 
 }

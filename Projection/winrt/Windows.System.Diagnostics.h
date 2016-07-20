@@ -700,12 +700,12 @@ template <typename D> Windows::Foundation::TimeSpan impl_IProcessCpuUsageReport<
 
 inline Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> ProcessDiagnosticInfo::GetForProcesses()
 {
-    return GetActivationFactory<ProcessDiagnosticInfo, IProcessDiagnosticInfoStatics>().GetForProcesses();
+    return get_activation_factory<ProcessDiagnosticInfo, IProcessDiagnosticInfoStatics>().GetForProcesses();
 }
 
 inline Windows::System::Diagnostics::ProcessDiagnosticInfo ProcessDiagnosticInfo::GetForCurrentProcess()
 {
-    return GetActivationFactory<ProcessDiagnosticInfo, IProcessDiagnosticInfoStatics>().GetForCurrentProcess();
+    return get_activation_factory<ProcessDiagnosticInfo, IProcessDiagnosticInfoStatics>().GetForCurrentProcess();
 }
 
 }

@@ -1845,27 +1845,27 @@ template <typename D> void impl_IVisualInteractionSource<D>::TryRedirectForManip
 
 inline Windows::UI::Composition::Interactions::InteractionTracker InteractionTracker::Create(const Windows::UI::Composition::Compositor & compositor)
 {
-    return GetActivationFactory<InteractionTracker, IInteractionTrackerStatics>().Create(compositor);
+    return get_activation_factory<InteractionTracker, IInteractionTrackerStatics>().Create(compositor);
 }
 
 inline Windows::UI::Composition::Interactions::InteractionTracker InteractionTracker::CreateWithOwner(const Windows::UI::Composition::Compositor & compositor, const Windows::UI::Composition::Interactions::IInteractionTrackerOwner & owner)
 {
-    return GetActivationFactory<InteractionTracker, IInteractionTrackerStatics>().CreateWithOwner(compositor, owner);
+    return get_activation_factory<InteractionTracker, IInteractionTrackerStatics>().CreateWithOwner(compositor, owner);
 }
 
 inline Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion InteractionTrackerInertiaMotion::Create(const Windows::UI::Composition::Compositor & compositor)
 {
-    return GetActivationFactory<InteractionTrackerInertiaMotion, IInteractionTrackerInertiaMotionStatics>().Create(compositor);
+    return get_activation_factory<InteractionTrackerInertiaMotion, IInteractionTrackerInertiaMotionStatics>().Create(compositor);
 }
 
 inline Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue InteractionTrackerInertiaRestingValue::Create(const Windows::UI::Composition::Compositor & compositor)
 {
-    return GetActivationFactory<InteractionTrackerInertiaRestingValue, IInteractionTrackerInertiaRestingValueStatics>().Create(compositor);
+    return get_activation_factory<InteractionTrackerInertiaRestingValue, IInteractionTrackerInertiaRestingValueStatics>().Create(compositor);
 }
 
 inline Windows::UI::Composition::Interactions::VisualInteractionSource VisualInteractionSource::Create(const Windows::UI::Composition::Visual & source)
 {
-    return GetActivationFactory<VisualInteractionSource, IVisualInteractionSourceStatics>().Create(source);
+    return get_activation_factory<VisualInteractionSource, IVisualInteractionSourceStatics>().Create(source);
 }
 
 }

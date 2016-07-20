@@ -4788,222 +4788,222 @@ template <typename D> Windows::Media::VideoFrame impl_IPerceptionInfraredFrame<D
 
 inline hstring KnownCameraIntrinsicsProperties::FocalLength()
 {
-    return GetActivationFactory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().FocalLength();
+    return get_activation_factory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().FocalLength();
 }
 
 inline hstring KnownCameraIntrinsicsProperties::PrincipalPoint()
 {
-    return GetActivationFactory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().PrincipalPoint();
+    return get_activation_factory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().PrincipalPoint();
 }
 
 inline hstring KnownCameraIntrinsicsProperties::RadialDistortion()
 {
-    return GetActivationFactory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().RadialDistortion();
+    return get_activation_factory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().RadialDistortion();
 }
 
 inline hstring KnownCameraIntrinsicsProperties::TangentialDistortion()
 {
-    return GetActivationFactory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().TangentialDistortion();
+    return get_activation_factory<KnownCameraIntrinsicsProperties, IKnownCameraIntrinsicsPropertiesStatics>().TangentialDistortion();
 }
 
 inline hstring KnownPerceptionColorFrameSourceProperties::Exposure()
 {
-    return GetActivationFactory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().Exposure();
+    return get_activation_factory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().Exposure();
 }
 
 inline hstring KnownPerceptionColorFrameSourceProperties::AutoExposureEnabled()
 {
-    return GetActivationFactory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().AutoExposureEnabled();
+    return get_activation_factory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().AutoExposureEnabled();
 }
 
 inline hstring KnownPerceptionColorFrameSourceProperties::ExposureCompensation()
 {
-    return GetActivationFactory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().ExposureCompensation();
+    return get_activation_factory<KnownPerceptionColorFrameSourceProperties, IKnownPerceptionColorFrameSourcePropertiesStatics>().ExposureCompensation();
 }
 
 inline hstring KnownPerceptionDepthFrameSourceProperties::MinDepth()
 {
-    return GetActivationFactory<KnownPerceptionDepthFrameSourceProperties, IKnownPerceptionDepthFrameSourcePropertiesStatics>().MinDepth();
+    return get_activation_factory<KnownPerceptionDepthFrameSourceProperties, IKnownPerceptionDepthFrameSourcePropertiesStatics>().MinDepth();
 }
 
 inline hstring KnownPerceptionDepthFrameSourceProperties::MaxDepth()
 {
-    return GetActivationFactory<KnownPerceptionDepthFrameSourceProperties, IKnownPerceptionDepthFrameSourcePropertiesStatics>().MaxDepth();
+    return get_activation_factory<KnownPerceptionDepthFrameSourceProperties, IKnownPerceptionDepthFrameSourcePropertiesStatics>().MaxDepth();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::Id()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().Id();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().Id();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::PhysicalDeviceIds()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().PhysicalDeviceIds();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().PhysicalDeviceIds();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::FrameKind()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().FrameKind();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().FrameKind();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::DeviceModelVersion()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().DeviceModelVersion();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().DeviceModelVersion();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::EnclosureLocation()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().EnclosureLocation();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics>().EnclosureLocation();
 }
 
 inline hstring KnownPerceptionFrameSourceProperties::DeviceId()
 {
-    return GetActivationFactory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics2>().DeviceId();
+    return get_activation_factory<KnownPerceptionFrameSourceProperties, IKnownPerceptionFrameSourcePropertiesStatics2>().DeviceId();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::Exposure()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().Exposure();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().Exposure();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::AutoExposureEnabled()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().AutoExposureEnabled();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().AutoExposureEnabled();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::ExposureCompensation()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().ExposureCompensation();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().ExposureCompensation();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::ActiveIlluminationEnabled()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().ActiveIlluminationEnabled();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().ActiveIlluminationEnabled();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::AmbientSubtractionEnabled()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().AmbientSubtractionEnabled();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().AmbientSubtractionEnabled();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::StructureLightPatternEnabled()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().StructureLightPatternEnabled();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().StructureLightPatternEnabled();
 }
 
 inline hstring KnownPerceptionInfraredFrameSourceProperties::InterleavedIlluminationEnabled()
 {
-    return GetActivationFactory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().InterleavedIlluminationEnabled();
+    return get_activation_factory<KnownPerceptionInfraredFrameSourceProperties, IKnownPerceptionInfraredFrameSourcePropertiesStatics>().InterleavedIlluminationEnabled();
 }
 
 inline hstring KnownPerceptionVideoFrameSourceProperties::VideoProfile()
 {
-    return GetActivationFactory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().VideoProfile();
+    return get_activation_factory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().VideoProfile();
 }
 
 inline hstring KnownPerceptionVideoFrameSourceProperties::SupportedVideoProfiles()
 {
-    return GetActivationFactory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().SupportedVideoProfiles();
+    return get_activation_factory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().SupportedVideoProfiles();
 }
 
 inline hstring KnownPerceptionVideoFrameSourceProperties::AvailableVideoProfiles()
 {
-    return GetActivationFactory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().AvailableVideoProfiles();
+    return get_activation_factory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().AvailableVideoProfiles();
 }
 
 inline hstring KnownPerceptionVideoFrameSourceProperties::IsMirrored()
 {
-    return GetActivationFactory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().IsMirrored();
+    return get_activation_factory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().IsMirrored();
 }
 
 inline hstring KnownPerceptionVideoFrameSourceProperties::CameraIntrinsics()
 {
-    return GetActivationFactory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().CameraIntrinsics();
+    return get_activation_factory<KnownPerceptionVideoFrameSourceProperties, IKnownPerceptionVideoFrameSourcePropertiesStatics>().CameraIntrinsics();
 }
 
 inline hstring KnownPerceptionVideoProfileProperties::BitmapPixelFormat()
 {
-    return GetActivationFactory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().BitmapPixelFormat();
+    return get_activation_factory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().BitmapPixelFormat();
 }
 
 inline hstring KnownPerceptionVideoProfileProperties::BitmapAlphaMode()
 {
-    return GetActivationFactory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().BitmapAlphaMode();
+    return get_activation_factory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().BitmapAlphaMode();
 }
 
 inline hstring KnownPerceptionVideoProfileProperties::Width()
 {
-    return GetActivationFactory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().Width();
+    return get_activation_factory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().Width();
 }
 
 inline hstring KnownPerceptionVideoProfileProperties::Height()
 {
-    return GetActivationFactory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().Height();
+    return get_activation_factory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().Height();
 }
 
 inline hstring KnownPerceptionVideoProfileProperties::FrameDuration()
 {
-    return GetActivationFactory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().FrameDuration();
+    return get_activation_factory<KnownPerceptionVideoProfileProperties, IKnownPerceptionVideoProfilePropertiesStatics>().FrameDuration();
 }
 
 inline Windows::Devices::Perception::PerceptionColorFrameSourceWatcher PerceptionColorFrameSource::CreateWatcher()
 {
-    return GetActivationFactory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().CreateWatcher();
+    return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().CreateWatcher();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> PerceptionColorFrameSource::FindAllAsync()
 {
-    return GetActivationFactory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FindAllAsync();
+    return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> PerceptionColorFrameSource::FromIdAsync(hstring_ref id)
 {
-    return GetActivationFactory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FromIdAsync(id);
+    return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FromIdAsync(id);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> PerceptionColorFrameSource::RequestAccessAsync()
 {
-    return GetActivationFactory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().RequestAccessAsync();
+    return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().RequestAccessAsync();
 }
 
 inline Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher PerceptionDepthFrameSource::CreateWatcher()
 {
-    return GetActivationFactory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().CreateWatcher();
+    return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().CreateWatcher();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> PerceptionDepthFrameSource::FindAllAsync()
 {
-    return GetActivationFactory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FindAllAsync();
+    return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> PerceptionDepthFrameSource::FromIdAsync(hstring_ref id)
 {
-    return GetActivationFactory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FromIdAsync(id);
+    return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FromIdAsync(id);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> PerceptionDepthFrameSource::RequestAccessAsync()
 {
-    return GetActivationFactory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().RequestAccessAsync();
+    return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().RequestAccessAsync();
 }
 
 inline Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher PerceptionInfraredFrameSource::CreateWatcher()
 {
-    return GetActivationFactory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().CreateWatcher();
+    return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().CreateWatcher();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> PerceptionInfraredFrameSource::FindAllAsync()
 {
-    return GetActivationFactory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FindAllAsync();
+    return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> PerceptionInfraredFrameSource::FromIdAsync(hstring_ref id)
 {
-    return GetActivationFactory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FromIdAsync(id);
+    return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FromIdAsync(id);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> PerceptionInfraredFrameSource::RequestAccessAsync()
 {
-    return GetActivationFactory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().RequestAccessAsync();
+    return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().RequestAccessAsync();
 }
 
 }

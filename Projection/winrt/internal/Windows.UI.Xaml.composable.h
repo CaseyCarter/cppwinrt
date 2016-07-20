@@ -18,7 +18,7 @@ protected:
 
     AdaptiveTriggerT()
     {
-        GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,7 +32,7 @@ protected:
 
     ApplicationT()
     {
-        GetActivationFactory<Application, IApplicationFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Application, IApplicationFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -46,7 +46,7 @@ protected:
 
     DataTemplateT()
     {
-        GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DataTemplate, IDataTemplateFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -60,12 +60,12 @@ protected:
 
     DataTemplateKeyT()
     {
-        GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(*this, m_inner);
     }
 
     DataTemplateKeyT(const Windows::IInspectable & dataType)
     {
-        GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, *this, m_inner);
+        get_activation_factory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, *this, m_inner);
     }
 };
 
@@ -79,7 +79,7 @@ protected:
 
     DependencyObjectT()
     {
-        GetActivationFactory<DependencyObject, IDependencyObjectFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DependencyObject, IDependencyObjectFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -93,7 +93,7 @@ protected:
 
     DependencyObjectCollectionT()
     {
-        GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -107,7 +107,7 @@ protected:
 
     DispatcherTimerT()
     {
-        GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -121,7 +121,7 @@ protected:
 
     FrameworkElementT()
     {
-        GetActivationFactory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FrameworkElement, IFrameworkElementFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -135,7 +135,7 @@ protected:
 
     FrameworkTemplateT()
     {
-        GetActivationFactory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FrameworkTemplate, IFrameworkTemplateFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -149,12 +149,12 @@ protected:
 
     PropertyMetadataT(const Windows::IInspectable & defaultValue)
     {
-        GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, *this, m_inner);
+        get_activation_factory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, *this, m_inner);
     }
 
     PropertyMetadataT(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback)
     {
-        GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, *this, m_inner);
+        get_activation_factory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, *this, m_inner);
     }
 };
 
@@ -168,7 +168,7 @@ protected:
 
     ResourceDictionaryT()
     {
-        GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -182,7 +182,7 @@ protected:
 
     RoutedEventArgsT()
     {
-        GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -196,7 +196,7 @@ protected:
 
     StateTriggerBaseT()
     {
-        GetActivationFactory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<StateTriggerBase, IStateTriggerBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -210,7 +210,7 @@ protected:
 
     VisualStateManagerT()
     {
-        GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -224,7 +224,7 @@ protected:
 
     VisualTransitionT()
     {
-        GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<VisualTransition, IVisualTransitionFactory>().CreateInstance(*this, m_inner);
     }
 };
 

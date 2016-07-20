@@ -261,62 +261,62 @@ template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionOpacity imp
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionColor ClosedCaptionProperties::FontColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontColor();
 }
 
 inline Windows::UI::Color ClosedCaptionProperties::ComputedFontColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedFontColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedFontColor();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionOpacity ClosedCaptionProperties::FontOpacity()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontOpacity();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontOpacity();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionSize ClosedCaptionProperties::FontSize()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontSize();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontSize();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionStyle ClosedCaptionProperties::FontStyle()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontStyle();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontStyle();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect ClosedCaptionProperties::FontEffect()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontEffect();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().FontEffect();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionColor ClosedCaptionProperties::BackgroundColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().BackgroundColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().BackgroundColor();
 }
 
 inline Windows::UI::Color ClosedCaptionProperties::ComputedBackgroundColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedBackgroundColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedBackgroundColor();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionOpacity ClosedCaptionProperties::BackgroundOpacity()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().BackgroundOpacity();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().BackgroundOpacity();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionColor ClosedCaptionProperties::RegionColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().RegionColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().RegionColor();
 }
 
 inline Windows::UI::Color ClosedCaptionProperties::ComputedRegionColor()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedRegionColor();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().ComputedRegionColor();
 }
 
 inline Windows::Media::ClosedCaptioning::ClosedCaptionOpacity ClosedCaptionProperties::RegionOpacity()
 {
-    return GetActivationFactory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().RegionOpacity();
+    return get_activation_factory<ClosedCaptionProperties, IClosedCaptionPropertiesStatics>().RegionOpacity();
 }
 
 }

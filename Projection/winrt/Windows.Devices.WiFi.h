@@ -595,22 +595,22 @@ template <typename D> Windows::Devices::WiFi::WiFiConnectionStatus impl_IWiFiCon
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> WiFiAdapter::FindAllAdaptersAsync()
 {
-    return GetActivationFactory<WiFiAdapter, IWiFiAdapterStatics>().FindAllAdaptersAsync();
+    return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().FindAllAdaptersAsync();
 }
 
 inline hstring WiFiAdapter::GetDeviceSelector()
 {
-    return GetActivationFactory<WiFiAdapter, IWiFiAdapterStatics>().GetDeviceSelector();
+    return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> WiFiAdapter::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<WiFiAdapter, IWiFiAdapterStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiAccessStatus> WiFiAdapter::RequestAccessAsync()
 {
-    return GetActivationFactory<WiFiAdapter, IWiFiAdapterStatics>().RequestAccessAsync();
+    return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().RequestAccessAsync();
 }
 
 }

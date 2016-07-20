@@ -787,77 +787,77 @@ template <typename D> void impl_IRfcommServiceProvider2<D>::StartAdvertising(con
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommDeviceService::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring RfcommDeviceService::GetDeviceSelector(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics>().GetDeviceSelector(serviceId);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics>().GetDeviceSelector(serviceId);
 }
 
 inline hstring RfcommDeviceService::GetDeviceSelectorForBluetoothDevice(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDevice(bluetoothDevice);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDevice(bluetoothDevice);
 }
 
 inline hstring RfcommDeviceService::GetDeviceSelectorForBluetoothDevice(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDevice(bluetoothDevice, cacheMode);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDevice(bluetoothDevice, cacheMode);
 }
 
 inline hstring RfcommDeviceService::GetDeviceSelectorForBluetoothDeviceAndServiceId(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceAndServiceId(bluetoothDevice, serviceId);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceAndServiceId(bluetoothDevice, serviceId);
 }
 
 inline hstring RfcommDeviceService::GetDeviceSelectorForBluetoothDeviceAndServiceId(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode)
 {
-    return GetActivationFactory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceAndServiceId(bluetoothDevice, serviceId, cacheMode);
+    return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceAndServiceId(bluetoothDevice, serviceId, cacheMode);
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::FromUuid(GUID uuid)
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().FromUuid(uuid);
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().FromUuid(uuid);
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::FromShortId(uint32_t shortId)
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().FromShortId(shortId);
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().FromShortId(shortId);
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::SerialPort()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().SerialPort();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().SerialPort();
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::ObexObjectPush()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().ObexObjectPush();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().ObexObjectPush();
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::ObexFileTransfer()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().ObexFileTransfer();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().ObexFileTransfer();
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::PhoneBookAccessPce()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().PhoneBookAccessPce();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().PhoneBookAccessPce();
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::PhoneBookAccessPse()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().PhoneBookAccessPse();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().PhoneBookAccessPse();
 }
 
 inline Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RfcommServiceId::GenericFileTransfer()
 {
-    return GetActivationFactory<RfcommServiceId, IRfcommServiceIdStatics>().GenericFileTransfer();
+    return get_activation_factory<RfcommServiceId, IRfcommServiceIdStatics>().GenericFileTransfer();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider> RfcommServiceProvider::CreateAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId)
 {
-    return GetActivationFactory<RfcommServiceProvider, IRfcommServiceProviderStatics>().CreateAsync(serviceId);
+    return get_activation_factory<RfcommServiceProvider, IRfcommServiceProviderStatics>().CreateAsync(serviceId);
 }
 
 }

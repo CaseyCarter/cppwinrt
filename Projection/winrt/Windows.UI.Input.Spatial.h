@@ -2158,17 +2158,17 @@ template <typename D> Windows::UI::Input::Spatial::SpatialInteractionManager imp
 }
 
 inline SpatialGestureRecognizer::SpatialGestureRecognizer(Windows::UI::Input::Spatial::SpatialGestureSettings settings) :
-    SpatialGestureRecognizer(GetActivationFactory<SpatialGestureRecognizer, ISpatialGestureRecognizerFactory>().Create(settings))
+    SpatialGestureRecognizer(get_activation_factory<SpatialGestureRecognizer, ISpatialGestureRecognizerFactory>().Create(settings))
 {}
 
 inline Windows::UI::Input::Spatial::SpatialInteractionManager SpatialInteractionManager::GetForCurrentView()
 {
-    return GetActivationFactory<SpatialInteractionManager, ISpatialInteractionManagerStatics>().GetForCurrentView();
+    return get_activation_factory<SpatialInteractionManager, ISpatialInteractionManagerStatics>().GetForCurrentView();
 }
 
 inline Windows::UI::Input::Spatial::SpatialPointerPose SpatialPointerPose::TryGetAtTimestamp(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::PerceptionTimestamp & timestamp)
 {
-    return GetActivationFactory<SpatialPointerPose, ISpatialPointerPoseStatics>().TryGetAtTimestamp(coordinateSystem, timestamp);
+    return get_activation_factory<SpatialPointerPose, ISpatialPointerPoseStatics>().TryGetAtTimestamp(coordinateSystem, timestamp);
 }
 
 }

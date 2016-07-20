@@ -668,31 +668,31 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options)
 {
-    return GetActivationFactory<CredentialPicker, ICredentialPickerStatics>().PickAsync(options);
+    return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(options);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_ref targetName, hstring_ref message)
 {
-    return GetActivationFactory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message);
+    return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption)
 {
-    return GetActivationFactory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message, caption);
+    return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message, caption);
 }
 
 inline CredentialPickerOptions::CredentialPickerOptions() :
-    CredentialPickerOptions(ActivateInstance<CredentialPickerOptions>())
+    CredentialPickerOptions(activate_instance<CredentialPickerOptions>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> UserConsentVerifier::CheckAvailabilityAsync()
 {
-    return GetActivationFactory<UserConsentVerifier, IUserConsentVerifierStatics>().CheckAvailabilityAsync();
+    return get_activation_factory<UserConsentVerifier, IUserConsentVerifierStatics>().CheckAvailabilityAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> UserConsentVerifier::RequestVerificationAsync(hstring_ref message)
 {
-    return GetActivationFactory<UserConsentVerifier, IUserConsentVerifierStatics>().RequestVerificationAsync(message);
+    return get_activation_factory<UserConsentVerifier, IUserConsentVerifierStatics>().RequestVerificationAsync(message);
 }
 
 }

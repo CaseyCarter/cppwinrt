@@ -4246,66 +4246,66 @@ template <typename D> Windows::UI::Input::RadialControllerConfiguration impl_IRa
 
 inline Windows::UI::Input::EdgeGesture EdgeGesture::GetForCurrentView()
 {
-    return GetActivationFactory<EdgeGesture, IEdgeGestureStatics>().GetForCurrentView();
+    return get_activation_factory<EdgeGesture, IEdgeGestureStatics>().GetForCurrentView();
 }
 
 inline GestureRecognizer::GestureRecognizer() :
-    GestureRecognizer(ActivateInstance<GestureRecognizer>())
+    GestureRecognizer(activate_instance<GestureRecognizer>())
 {}
 
 inline Windows::UI::Input::KeyboardDeliveryInterceptor KeyboardDeliveryInterceptor::GetForCurrentView()
 {
-    return GetActivationFactory<KeyboardDeliveryInterceptor, IKeyboardDeliveryInterceptorStatics>().GetForCurrentView();
+    return get_activation_factory<KeyboardDeliveryInterceptor, IKeyboardDeliveryInterceptorStatics>().GetForCurrentView();
 }
 
 inline Windows::UI::Input::PointerPoint PointerPoint::GetCurrentPoint(uint32_t pointerId)
 {
-    return GetActivationFactory<PointerPoint, IPointerPointStatics>().GetCurrentPoint(pointerId);
+    return get_activation_factory<PointerPoint, IPointerPointStatics>().GetCurrentPoint(pointerId);
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> PointerPoint::GetIntermediatePoints(uint32_t pointerId)
 {
-    return GetActivationFactory<PointerPoint, IPointerPointStatics>().GetIntermediatePoints(pointerId);
+    return get_activation_factory<PointerPoint, IPointerPointStatics>().GetIntermediatePoints(pointerId);
 }
 
 inline Windows::UI::Input::PointerPoint PointerPoint::GetCurrentPoint(uint32_t pointerId, const Windows::UI::Input::IPointerPointTransform & transform)
 {
-    return GetActivationFactory<PointerPoint, IPointerPointStatics>().GetCurrentPoint(pointerId, transform);
+    return get_activation_factory<PointerPoint, IPointerPointStatics>().GetCurrentPoint(pointerId, transform);
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> PointerPoint::GetIntermediatePoints(uint32_t pointerId, const Windows::UI::Input::IPointerPointTransform & transform)
 {
-    return GetActivationFactory<PointerPoint, IPointerPointStatics>().GetIntermediatePoints(pointerId, transform);
+    return get_activation_factory<PointerPoint, IPointerPointStatics>().GetIntermediatePoints(pointerId, transform);
 }
 
 inline Windows::UI::Input::PointerVisualizationSettings PointerVisualizationSettings::GetForCurrentView()
 {
-    return GetActivationFactory<PointerVisualizationSettings, IPointerVisualizationSettingsStatics>().GetForCurrentView();
+    return get_activation_factory<PointerVisualizationSettings, IPointerVisualizationSettingsStatics>().GetForCurrentView();
 }
 
 inline bool RadialController::IsSupported()
 {
-    return GetActivationFactory<RadialController, IRadialControllerStatics>().IsSupported();
+    return get_activation_factory<RadialController, IRadialControllerStatics>().IsSupported();
 }
 
 inline Windows::UI::Input::RadialController RadialController::CreateForCurrentView()
 {
-    return GetActivationFactory<RadialController, IRadialControllerStatics>().CreateForCurrentView();
+    return get_activation_factory<RadialController, IRadialControllerStatics>().CreateForCurrentView();
 }
 
 inline Windows::UI::Input::RadialControllerConfiguration RadialControllerConfiguration::GetForCurrentView()
 {
-    return GetActivationFactory<RadialControllerConfiguration, IRadialControllerConfigurationStatics>().GetForCurrentView();
+    return get_activation_factory<RadialControllerConfiguration, IRadialControllerConfigurationStatics>().GetForCurrentView();
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon)
 {
-    return GetActivationFactory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromIcon(displayText, icon);
+    return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromIcon(displayText, icon);
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value)
 {
-    return GetActivationFactory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromKnownIcon(displayText, value);
+    return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromKnownIcon(displayText, value);
 }
 
 }

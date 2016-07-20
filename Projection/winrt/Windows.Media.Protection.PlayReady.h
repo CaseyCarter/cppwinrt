@@ -3498,178 +3498,178 @@ template <typename D> com_array<uint8_t> impl_IPlayReadySecureStopServiceRequest
 }
 
 inline NDClient::NDClient(const Windows::Media::Protection::PlayReady::INDDownloadEngine & downloadEngine, const Windows::Media::Protection::PlayReady::INDStreamParser & streamParser, const Windows::Media::Protection::PlayReady::INDMessenger & pMessenger) :
-    NDClient(GetActivationFactory<NDClient, INDClientFactory>().CreateInstance(downloadEngine, streamParser, pMessenger))
+    NDClient(get_activation_factory<NDClient, INDClientFactory>().CreateInstance(downloadEngine, streamParser, pMessenger))
 {}
 
 inline NDCustomData::NDCustomData(array_ref<const uint8_t> customDataTypeIDBytes, array_ref<const uint8_t> customDataBytes) :
-    NDCustomData(GetActivationFactory<NDCustomData, INDCustomDataFactory>().CreateInstance(customDataTypeIDBytes, customDataBytes))
+    NDCustomData(get_activation_factory<NDCustomData, INDCustomDataFactory>().CreateInstance(customDataTypeIDBytes, customDataBytes))
 {}
 
 inline NDDownloadEngineNotifier::NDDownloadEngineNotifier() :
-    NDDownloadEngineNotifier(ActivateInstance<NDDownloadEngineNotifier>())
+    NDDownloadEngineNotifier(activate_instance<NDDownloadEngineNotifier>())
 {}
 
 inline NDLicenseFetchDescriptor::NDLicenseFetchDescriptor(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_ref<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) :
-    NDLicenseFetchDescriptor(GetActivationFactory<NDLicenseFetchDescriptor, INDLicenseFetchDescriptorFactory>().CreateInstance(contentIDType, contentIDBytes, licenseFetchChallengeCustomData))
+    NDLicenseFetchDescriptor(get_activation_factory<NDLicenseFetchDescriptor, INDLicenseFetchDescriptorFactory>().CreateInstance(contentIDType, contentIDBytes, licenseFetchChallengeCustomData))
 {}
 
 inline NDStorageFileHelper::NDStorageFileHelper() :
-    NDStorageFileHelper(ActivateInstance<NDStorageFileHelper>())
+    NDStorageFileHelper(activate_instance<NDStorageFileHelper>())
 {}
 
 inline NDStreamParserNotifier::NDStreamParserNotifier() :
-    NDStreamParserNotifier(ActivateInstance<NDStreamParserNotifier>())
+    NDStreamParserNotifier(activate_instance<NDStreamParserNotifier>())
 {}
 
 inline NDTCPMessenger::NDTCPMessenger(hstring_ref remoteHostName, uint32_t remoteHostPort) :
-    NDTCPMessenger(GetActivationFactory<NDTCPMessenger, INDTCPMessengerFactory>().CreateInstance(remoteHostName, remoteHostPort))
+    NDTCPMessenger(get_activation_factory<NDTCPMessenger, INDTCPMessengerFactory>().CreateInstance(remoteHostName, remoteHostPort))
 {}
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
-    PlayReadyContentHeader(GetActivationFactory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
-    PlayReadyContentHeader(GetActivationFactory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(GUID contentKeyId, hstring_ref contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
-    PlayReadyContentHeader(GetActivationFactory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_ref<const uint8_t> headerBytes) :
-    PlayReadyContentHeader(GetActivationFactory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromPlayReadyHeader(headerBytes))
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromPlayReadyHeader(headerBytes))
 {}
 
 inline Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest PlayReadyContentResolver::ServiceRequest(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader)
 {
-    return GetActivationFactory<PlayReadyContentResolver, IPlayReadyContentResolver>().ServiceRequest(contentHeader);
+    return get_activation_factory<PlayReadyContentResolver, IPlayReadyContentResolver>().ServiceRequest(contentHeader);
 }
 
 inline PlayReadyDomainIterable::PlayReadyDomainIterable(GUID domainAccountId) :
-    PlayReadyDomainIterable(GetActivationFactory<PlayReadyDomainIterable, IPlayReadyDomainIterableFactory>().CreateInstance(domainAccountId))
+    PlayReadyDomainIterable(get_activation_factory<PlayReadyDomainIterable, IPlayReadyDomainIterableFactory>().CreateInstance(domainAccountId))
 {}
 
 inline PlayReadyDomainJoinServiceRequest::PlayReadyDomainJoinServiceRequest() :
-    PlayReadyDomainJoinServiceRequest(ActivateInstance<PlayReadyDomainJoinServiceRequest>())
+    PlayReadyDomainJoinServiceRequest(activate_instance<PlayReadyDomainJoinServiceRequest>())
 {}
 
 inline PlayReadyDomainLeaveServiceRequest::PlayReadyDomainLeaveServiceRequest() :
-    PlayReadyDomainLeaveServiceRequest(ActivateInstance<PlayReadyDomainLeaveServiceRequest>())
+    PlayReadyDomainLeaveServiceRequest(activate_instance<PlayReadyDomainLeaveServiceRequest>())
 {}
 
 inline PlayReadyITADataGenerator::PlayReadyITADataGenerator() :
-    PlayReadyITADataGenerator(ActivateInstance<PlayReadyITADataGenerator>())
+    PlayReadyITADataGenerator(activate_instance<PlayReadyITADataGenerator>())
 {}
 
 inline PlayReadyIndividualizationServiceRequest::PlayReadyIndividualizationServiceRequest() :
-    PlayReadyIndividualizationServiceRequest(ActivateInstance<PlayReadyIndividualizationServiceRequest>())
+    PlayReadyIndividualizationServiceRequest(activate_instance<PlayReadyIndividualizationServiceRequest>())
 {}
 
 inline PlayReadyLicenseAcquisitionServiceRequest::PlayReadyLicenseAcquisitionServiceRequest() :
-    PlayReadyLicenseAcquisitionServiceRequest(ActivateInstance<PlayReadyLicenseAcquisitionServiceRequest>())
+    PlayReadyLicenseAcquisitionServiceRequest(activate_instance<PlayReadyLicenseAcquisitionServiceRequest>())
 {}
 
 inline PlayReadyLicenseIterable::PlayReadyLicenseIterable() :
-    PlayReadyLicenseIterable(ActivateInstance<PlayReadyLicenseIterable>())
+    PlayReadyLicenseIterable(activate_instance<PlayReadyLicenseIterable>())
 {}
 
 inline PlayReadyLicenseIterable::PlayReadyLicenseIterable(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) :
-    PlayReadyLicenseIterable(GetActivationFactory<PlayReadyLicenseIterable, IPlayReadyLicenseIterableFactory>().CreateInstance(contentHeader, fullyEvaluated))
+    PlayReadyLicenseIterable(get_activation_factory<PlayReadyLicenseIterable, IPlayReadyLicenseIterableFactory>().CreateInstance(contentHeader, fullyEvaluated))
 {}
 
 inline Windows::Foundation::IAsyncAction PlayReadyLicenseManagement::DeleteLicenses(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader)
 {
-    return GetActivationFactory<PlayReadyLicenseManagement, IPlayReadyLicenseManagement>().DeleteLicenses(contentHeader);
+    return get_activation_factory<PlayReadyLicenseManagement, IPlayReadyLicenseManagement>().DeleteLicenses(contentHeader);
 }
 
 inline PlayReadyLicenseSession::PlayReadyLicenseSession(const Windows::Foundation::Collections::IPropertySet & configuration) :
-    PlayReadyLicenseSession(GetActivationFactory<PlayReadyLicenseSession, IPlayReadyLicenseSessionFactory>().CreateInstance(configuration))
+    PlayReadyLicenseSession(get_activation_factory<PlayReadyLicenseSession, IPlayReadyLicenseSessionFactory>().CreateInstance(configuration))
 {}
 
 inline PlayReadyMeteringReportServiceRequest::PlayReadyMeteringReportServiceRequest() :
-    PlayReadyMeteringReportServiceRequest(ActivateInstance<PlayReadyMeteringReportServiceRequest>())
+    PlayReadyMeteringReportServiceRequest(activate_instance<PlayReadyMeteringReportServiceRequest>())
 {}
 
 inline PlayReadyRevocationServiceRequest::PlayReadyRevocationServiceRequest() :
-    PlayReadyRevocationServiceRequest(ActivateInstance<PlayReadyRevocationServiceRequest>())
+    PlayReadyRevocationServiceRequest(activate_instance<PlayReadyRevocationServiceRequest>())
 {}
 
 inline PlayReadySecureStopIterable::PlayReadySecureStopIterable(array_ref<const uint8_t> publisherCertBytes) :
-    PlayReadySecureStopIterable(GetActivationFactory<PlayReadySecureStopIterable, IPlayReadySecureStopIterableFactory>().CreateInstance(publisherCertBytes))
+    PlayReadySecureStopIterable(get_activation_factory<PlayReadySecureStopIterable, IPlayReadySecureStopIterableFactory>().CreateInstance(publisherCertBytes))
 {}
 
 inline PlayReadySecureStopServiceRequest::PlayReadySecureStopServiceRequest(array_ref<const uint8_t> publisherCertBytes) :
-    PlayReadySecureStopServiceRequest(GetActivationFactory<PlayReadySecureStopServiceRequest, IPlayReadySecureStopServiceRequestFactory>().CreateInstance(publisherCertBytes))
+    PlayReadySecureStopServiceRequest(get_activation_factory<PlayReadySecureStopServiceRequest, IPlayReadySecureStopServiceRequestFactory>().CreateInstance(publisherCertBytes))
 {}
 
 inline PlayReadySecureStopServiceRequest::PlayReadySecureStopServiceRequest(GUID sessionID, array_ref<const uint8_t> publisherCertBytes) :
-    PlayReadySecureStopServiceRequest(GetActivationFactory<PlayReadySecureStopServiceRequest, IPlayReadySecureStopServiceRequestFactory>().CreateInstanceFromSessionID(sessionID, publisherCertBytes))
+    PlayReadySecureStopServiceRequest(get_activation_factory<PlayReadySecureStopServiceRequest, IPlayReadySecureStopServiceRequestFactory>().CreateInstanceFromSessionID(sessionID, publisherCertBytes))
 {}
 
 inline GUID PlayReadyStatics::DomainJoinServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().DomainJoinServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().DomainJoinServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::DomainLeaveServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().DomainLeaveServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().DomainLeaveServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::IndividualizationServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().IndividualizationServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().IndividualizationServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::LicenseAcquirerServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().LicenseAcquirerServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().LicenseAcquirerServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::MeteringReportServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().MeteringReportServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().MeteringReportServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::RevocationServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().RevocationServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().RevocationServiceRequestType();
 }
 
 inline GUID PlayReadyStatics::MediaProtectionSystemId()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().MediaProtectionSystemId();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().MediaProtectionSystemId();
 }
 
 inline uint32_t PlayReadyStatics::PlayReadySecurityVersion()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics>().PlayReadySecurityVersion();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics>().PlayReadySecurityVersion();
 }
 
 inline uint32_t PlayReadyStatics::PlayReadyCertificateSecurityLevel()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics2>().PlayReadyCertificateSecurityLevel();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics2>().PlayReadyCertificateSecurityLevel();
 }
 
 inline GUID PlayReadyStatics::SecureStopServiceRequestType()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics3>().SecureStopServiceRequestType();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics3>().SecureStopServiceRequestType();
 }
 
 inline bool PlayReadyStatics::CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures hwdrmFeature)
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics3>().CheckSupportedHardware(hwdrmFeature);
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics3>().CheckSupportedHardware(hwdrmFeature);
 }
 
 inline hstring PlayReadyStatics::InputTrustAuthorityToCreate()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics4>().InputTrustAuthorityToCreate();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics4>().InputTrustAuthorityToCreate();
 }
 
 inline GUID PlayReadyStatics::ProtectionSystemId()
 {
-    return GetActivationFactory<PlayReadyStatics, IPlayReadyStatics4>().ProtectionSystemId();
+    return get_activation_factory<PlayReadyStatics, IPlayReadyStatics4>().ProtectionSystemId();
 }
 
 }

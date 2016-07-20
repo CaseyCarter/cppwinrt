@@ -972,108 +972,108 @@ template <typename D> bool impl_IHtmlPrintDocumentSource<D>::TrySetPageRange(hst
 
 inline event_token WebUIApplication::Activated(const Windows::UI::WebUI::ActivatedEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Activated(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Activated(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics> WebUIApplication::Activated(auto_revoke_t, const Windows::UI::WebUI::ActivatedEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics::remove_Activated, factory.Activated(handler) };
 }
 
 inline void WebUIApplication::Activated(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Activated(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Activated(token);
 }
 
 inline event_token WebUIApplication::Suspending(const Windows::UI::WebUI::SuspendingEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Suspending(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Suspending(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics> WebUIApplication::Suspending(auto_revoke_t, const Windows::UI::WebUI::SuspendingEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics::remove_Suspending, factory.Suspending(handler) };
 }
 
 inline void WebUIApplication::Suspending(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Suspending(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Suspending(token);
 }
 
 inline event_token WebUIApplication::Resuming(const Windows::UI::WebUI::ResumingEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Resuming(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Resuming(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics> WebUIApplication::Resuming(auto_revoke_t, const Windows::UI::WebUI::ResumingEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics::remove_Resuming, factory.Resuming(handler) };
 }
 
 inline void WebUIApplication::Resuming(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Resuming(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Resuming(token);
 }
 
 inline event_token WebUIApplication::Navigated(const Windows::UI::WebUI::NavigatedEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Navigated(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Navigated(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics> WebUIApplication::Navigated(auto_revoke_t, const Windows::UI::WebUI::NavigatedEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics::remove_Navigated, factory.Navigated(handler) };
 }
 
 inline void WebUIApplication::Navigated(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics>().Navigated(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics>().Navigated(token);
 }
 
 inline event_token WebUIApplication::LeavingBackground(const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>().LeavingBackground(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics2>().LeavingBackground(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics2> WebUIApplication::LeavingBackground(auto_revoke_t, const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics2>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics2::remove_LeavingBackground, factory.LeavingBackground(handler) };
 }
 
 inline void WebUIApplication::LeavingBackground(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>().LeavingBackground(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics2>().LeavingBackground(token);
 }
 
 inline event_token WebUIApplication::EnteredBackground(const Windows::UI::WebUI::EnteredBackgroundEventHandler & handler)
 {
-    return GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>().EnteredBackground(handler);
+    return get_activation_factory<WebUIApplication, IWebUIActivationStatics2>().EnteredBackground(handler);
 }
 
 inline factory_event_revoker<IWebUIActivationStatics2> WebUIApplication::EnteredBackground(auto_revoke_t, const Windows::UI::WebUI::EnteredBackgroundEventHandler & handler)
 {
-    auto factory = GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>();
+    auto factory = get_activation_factory<WebUIApplication, IWebUIActivationStatics2>();
     return { factory, &ABI::Windows::UI::WebUI::IWebUIActivationStatics2::remove_EnteredBackground, factory.EnteredBackground(handler) };
 }
 
 inline void WebUIApplication::EnteredBackground(event_token token)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>().EnteredBackground(token);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics2>().EnteredBackground(token);
 }
 
 inline void WebUIApplication::EnablePrelaunch(bool value)
 {
-    GetActivationFactory<WebUIApplication, IWebUIActivationStatics2>().EnablePrelaunch(value);
+    get_activation_factory<WebUIApplication, IWebUIActivationStatics2>().EnablePrelaunch(value);
 }
 
 inline Windows::UI::WebUI::IWebUIBackgroundTaskInstance WebUIBackgroundTaskInstance::Current()
 {
-    return GetActivationFactory<WebUIBackgroundTaskInstance, IWebUIBackgroundTaskInstanceStatics>().Current();
+    return get_activation_factory<WebUIBackgroundTaskInstance, IWebUIBackgroundTaskInstanceStatics>().Current();
 }
 
 }

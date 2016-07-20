@@ -2068,36 +2068,36 @@ template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWal
 }
 
 inline WalletBarcode::WalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) :
-    WalletBarcode(GetActivationFactory<WalletBarcode, IWalletBarcodeFactory>().CreateWalletBarcode(symbology, value))
+    WalletBarcode(get_activation_factory<WalletBarcode, IWalletBarcodeFactory>().CreateWalletBarcode(symbology, value))
 {}
 
 inline WalletBarcode::WalletBarcode(const Windows::Storage::Streams::IRandomAccessStreamReference & streamToBarcodeImage) :
-    WalletBarcode(GetActivationFactory<WalletBarcode, IWalletBarcodeFactory>().CreateCustomWalletBarcode(streamToBarcodeImage))
+    WalletBarcode(get_activation_factory<WalletBarcode, IWalletBarcodeFactory>().CreateCustomWalletBarcode(streamToBarcodeImage))
 {}
 
 inline WalletItem::WalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) :
-    WalletItem(GetActivationFactory<WalletItem, IWalletItemFactory>().CreateWalletItem(kind, displayName))
+    WalletItem(get_activation_factory<WalletItem, IWalletItemFactory>().CreateWalletItem(kind, displayName))
 {}
 
 inline WalletItemCustomProperty::WalletItemCustomProperty(hstring_ref name, hstring_ref value) :
-    WalletItemCustomProperty(GetActivationFactory<WalletItemCustomProperty, IWalletItemCustomPropertyFactory>().CreateWalletItemCustomProperty(name, value))
+    WalletItemCustomProperty(get_activation_factory<WalletItemCustomProperty, IWalletItemCustomPropertyFactory>().CreateWalletItemCustomProperty(name, value))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItemStore> WalletManager::RequestStoreAsync()
 {
-    return GetActivationFactory<WalletManager, IWalletManagerStatics>().RequestStoreAsync();
+    return get_activation_factory<WalletManager, IWalletManagerStatics>().RequestStoreAsync();
 }
 
 inline WalletRelevantLocation::WalletRelevantLocation() :
-    WalletRelevantLocation(ActivateInstance<WalletRelevantLocation>())
+    WalletRelevantLocation(activate_instance<WalletRelevantLocation>())
 {}
 
 inline WalletTransaction::WalletTransaction() :
-    WalletTransaction(ActivateInstance<WalletTransaction>())
+    WalletTransaction(activate_instance<WalletTransaction>())
 {}
 
 inline WalletVerb::WalletVerb(hstring_ref name) :
-    WalletVerb(GetActivationFactory<WalletVerb, IWalletVerbFactory>().CreateWalletVerb(name))
+    WalletVerb(get_activation_factory<WalletVerb, IWalletVerbFactory>().CreateWalletVerb(name))
 {}
 
 }

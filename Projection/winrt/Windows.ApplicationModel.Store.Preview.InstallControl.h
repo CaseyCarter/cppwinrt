@@ -1219,7 +1219,7 @@ template <typename D> void impl_IAppInstallManager3<D>::MoveToFrontOfDownloadQue
 }
 
 inline AppInstallManager::AppInstallManager() :
-    AppInstallManager(ActivateInstance<AppInstallManager>())
+    AppInstallManager(activate_instance<AppInstallManager>())
 {}
 
 }

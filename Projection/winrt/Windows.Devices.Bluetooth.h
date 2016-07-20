@@ -2622,371 +2622,371 @@ template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::SamplingInter
 
 inline Windows::Devices::Bluetooth::BluetoothClassOfDevice BluetoothClassOfDevice::FromRawValue(uint32_t rawValue)
 {
-    return GetActivationFactory<BluetoothClassOfDevice, IBluetoothClassOfDeviceStatics>().FromRawValue(rawValue);
+    return get_activation_factory<BluetoothClassOfDevice, IBluetoothClassOfDeviceStatics>().FromRawValue(rawValue);
 }
 
 inline Windows::Devices::Bluetooth::BluetoothClassOfDevice BluetoothClassOfDevice::FromParts(Windows::Devices::Bluetooth::BluetoothMajorClass majorClass, Windows::Devices::Bluetooth::BluetoothMinorClass minorClass, Windows::Devices::Bluetooth::BluetoothServiceCapabilities serviceCapabilities)
 {
-    return GetActivationFactory<BluetoothClassOfDevice, IBluetoothClassOfDeviceStatics>().FromParts(majorClass, minorClass, serviceCapabilities);
+    return get_activation_factory<BluetoothClassOfDevice, IBluetoothClassOfDeviceStatics>().FromParts(majorClass, minorClass, serviceCapabilities);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> BluetoothDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> BluetoothDevice::FromHostNameAsync(const Windows::Networking::HostName & hostName)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics>().FromHostNameAsync(hostName);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics>().FromHostNameAsync(hostName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> BluetoothDevice::FromBluetoothAddressAsync(uint64_t address)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics>().FromBluetoothAddressAsync(address);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics>().FromBluetoothAddressAsync(address);
 }
 
 inline hstring BluetoothDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics>().GetDeviceSelector();
 }
 
 inline hstring BluetoothDevice::GetDeviceSelectorFromPairingState(bool pairingState)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromPairingState(pairingState);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromPairingState(pairingState);
 }
 
 inline hstring BluetoothDevice::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
 }
 
 inline hstring BluetoothDevice::GetDeviceSelectorFromDeviceName(hstring_ref deviceName)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
 }
 
 inline hstring BluetoothDevice::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress);
 }
 
 inline hstring BluetoothDevice::GetDeviceSelectorFromClassOfDevice(const Windows::Devices::Bluetooth::BluetoothClassOfDevice & classOfDevice)
 {
-    return GetActivationFactory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromClassOfDevice(classOfDevice);
+    return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromClassOfDevice(classOfDevice);
 }
 
 inline Windows::Devices::Bluetooth::BluetoothLEAppearance BluetoothLEAppearance::FromRawValue(uint16_t rawValue)
 {
-    return GetActivationFactory<BluetoothLEAppearance, IBluetoothLEAppearanceStatics>().FromRawValue(rawValue);
+    return get_activation_factory<BluetoothLEAppearance, IBluetoothLEAppearanceStatics>().FromRawValue(rawValue);
 }
 
 inline Windows::Devices::Bluetooth::BluetoothLEAppearance BluetoothLEAppearance::FromParts(uint16_t appearanceCategory, uint16_t appearanceSubCategory)
 {
-    return GetActivationFactory<BluetoothLEAppearance, IBluetoothLEAppearanceStatics>().FromParts(appearanceCategory, appearanceSubCategory);
+    return get_activation_factory<BluetoothLEAppearance, IBluetoothLEAppearanceStatics>().FromParts(appearanceCategory, appearanceSubCategory);
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Uncategorized()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Uncategorized();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Uncategorized();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Phone()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Phone();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Phone();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Computer()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Computer();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Computer();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Watch()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Watch();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Watch();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Clock()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Clock();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Clock();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Display()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Display();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Display();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::RemoteControl()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().RemoteControl();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().RemoteControl();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::EyeGlasses()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().EyeGlasses();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().EyeGlasses();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Tag()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Tag();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Tag();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Keyring()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Keyring();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Keyring();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::MediaPlayer()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().MediaPlayer();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().MediaPlayer();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::BarcodeScanner()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().BarcodeScanner();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().BarcodeScanner();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Thermometer()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Thermometer();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Thermometer();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::HeartRate()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().HeartRate();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().HeartRate();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::BloodPressure()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().BloodPressure();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().BloodPressure();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::HumanInterfaceDevice()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().HumanInterfaceDevice();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().HumanInterfaceDevice();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::GlucoseMeter()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().GlucoseMeter();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().GlucoseMeter();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::RunningWalking()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().RunningWalking();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().RunningWalking();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::Cycling()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Cycling();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().Cycling();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::PulseOximeter()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().PulseOximeter();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().PulseOximeter();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::WeightScale()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().WeightScale();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().WeightScale();
 }
 
 inline uint16_t BluetoothLEAppearanceCategories::OutdoorSportActivity()
 {
-    return GetActivationFactory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().OutdoorSportActivity();
+    return get_activation_factory<BluetoothLEAppearanceCategories, IBluetoothLEAppearanceCategoriesStatics>().OutdoorSportActivity();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::Generic()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Generic();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Generic();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::SportsWatch()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().SportsWatch();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().SportsWatch();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::ThermometerEar()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().ThermometerEar();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().ThermometerEar();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::HeartRateBelt()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().HeartRateBelt();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().HeartRateBelt();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::BloodPressureArm()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BloodPressureArm();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BloodPressureArm();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::BloodPressureWrist()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BloodPressureWrist();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BloodPressureWrist();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::Keyboard()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Keyboard();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Keyboard();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::Mouse()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Mouse();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Mouse();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::Joystick()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Joystick();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Joystick();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::Gamepad()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Gamepad();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().Gamepad();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::DigitizerTablet()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().DigitizerTablet();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().DigitizerTablet();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CardReader()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CardReader();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CardReader();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::DigitalPen()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().DigitalPen();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().DigitalPen();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::BarcodeScanner()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BarcodeScanner();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().BarcodeScanner();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::RunningWalkingInShoe()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingInShoe();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingInShoe();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::RunningWalkingOnShoe()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingOnShoe();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingOnShoe();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::RunningWalkingOnHip()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingOnHip();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().RunningWalkingOnHip();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CyclingComputer()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingComputer();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingComputer();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CyclingSpeedSensor()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingSpeedSensor();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingSpeedSensor();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CyclingCadenceSensor()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingCadenceSensor();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingCadenceSensor();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CyclingPowerSensor()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingPowerSensor();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingPowerSensor();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::CyclingSpeedCadenceSensor()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingSpeedCadenceSensor();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().CyclingSpeedCadenceSensor();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::OximeterFingertip()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().OximeterFingertip();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().OximeterFingertip();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::OximeterWristWorn()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().OximeterWristWorn();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().OximeterWristWorn();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::LocationDisplay()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationDisplay();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationDisplay();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::LocationNavigationDisplay()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationNavigationDisplay();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationNavigationDisplay();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::LocationPod()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationPod();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationPod();
 }
 
 inline uint16_t BluetoothLEAppearanceSubcategories::LocationNavigationPod()
 {
-    return GetActivationFactory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationNavigationPod();
+    return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationNavigationPod();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> BluetoothLEDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().FromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> BluetoothLEDevice::FromBluetoothAddressAsync(uint64_t bluetoothAddress)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().FromBluetoothAddressAsync(bluetoothAddress);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().FromBluetoothAddressAsync(bluetoothAddress);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().GetDeviceSelector();
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromPairingState(bool pairingState)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromPairingState(pairingState);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromPairingState(pairingState);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromDeviceName(hstring_ref deviceName)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, bluetoothAddressType);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, bluetoothAddressType);
 }
 
 inline hstring BluetoothLEDevice::GetDeviceSelectorFromAppearance(const Windows::Devices::Bluetooth::BluetoothLEAppearance & appearance)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromAppearance(appearance);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromAppearance(appearance);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> BluetoothLEDevice::FromBluetoothAddressAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType)
 {
-    return GetActivationFactory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().FromBluetoothAddressAsync(bluetoothAddress, bluetoothAddressType);
+    return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().FromBluetoothAddressAsync(bluetoothAddress, bluetoothAddressType);
 }
 
 inline BluetoothSignalStrengthFilter::BluetoothSignalStrengthFilter() :
-    BluetoothSignalStrengthFilter(ActivateInstance<BluetoothSignalStrengthFilter>())
+    BluetoothSignalStrengthFilter(activate_instance<BluetoothSignalStrengthFilter>())
 {}
 
 }

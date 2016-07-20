@@ -1067,54 +1067,54 @@ template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiF
 }
 
 inline WiFiDirectAdvertisementPublisher::WiFiDirectAdvertisementPublisher() :
-    WiFiDirectAdvertisementPublisher(ActivateInstance<WiFiDirectAdvertisementPublisher>())
+    WiFiDirectAdvertisementPublisher(activate_instance<WiFiDirectAdvertisementPublisher>())
 {}
 
 inline WiFiDirectConnectionListener::WiFiDirectConnectionListener() :
-    WiFiDirectConnectionListener(ActivateInstance<WiFiDirectConnectionListener>())
+    WiFiDirectConnectionListener(activate_instance<WiFiDirectConnectionListener>())
 {}
 
 inline WiFiDirectConnectionParameters::WiFiDirectConnectionParameters() :
-    WiFiDirectConnectionParameters(ActivateInstance<WiFiDirectConnectionParameters>())
+    WiFiDirectConnectionParameters(activate_instance<WiFiDirectConnectionParameters>())
 {}
 
 inline Windows::Devices::Enumeration::DevicePairingKinds WiFiDirectConnectionParameters::GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod)
 {
-    return GetActivationFactory<WiFiDirectConnectionParameters, IWiFiDirectConnectionParametersStatics>().GetDevicePairingKinds(configurationMethod);
+    return get_activation_factory<WiFiDirectConnectionParameters, IWiFiDirectConnectionParametersStatics>().GetDevicePairingKinds(configurationMethod);
 }
 
 inline hstring WiFiDirectDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring WiFiDirectDevice::GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type)
 {
-    return GetActivationFactory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().GetDeviceSelector(type);
+    return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().GetDeviceSelector(type);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters)
 {
-    return GetActivationFactory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().FromIdAsync(deviceId, connectionParameters);
+    return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().FromIdAsync(deviceId, connectionParameters);
 }
 
 inline WiFiDirectInformationElement::WiFiDirectInformationElement() :
-    WiFiDirectInformationElement(ActivateInstance<WiFiDirectInformationElement>())
+    WiFiDirectInformationElement(activate_instance<WiFiDirectInformationElement>())
 {}
 
 inline Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> WiFiDirectInformationElement::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<WiFiDirectInformationElement, IWiFiDirectInformationElementStatics>().CreateFromBuffer(buffer);
+    return get_activation_factory<WiFiDirectInformationElement, IWiFiDirectInformationElementStatics>().CreateFromBuffer(buffer);
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> WiFiDirectInformationElement::CreateFromDeviceInformation(const Windows::Devices::Enumeration::DeviceInformation & deviceInformation)
 {
-    return GetActivationFactory<WiFiDirectInformationElement, IWiFiDirectInformationElementStatics>().CreateFromDeviceInformation(deviceInformation);
+    return get_activation_factory<WiFiDirectInformationElement, IWiFiDirectInformationElementStatics>().CreateFromDeviceInformation(deviceInformation);
 }
 
 }

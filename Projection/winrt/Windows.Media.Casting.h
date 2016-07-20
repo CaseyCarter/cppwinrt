@@ -868,26 +868,26 @@ template <typename D> void impl_ICastingDevicePicker<D>::Hide() const
 
 inline hstring CastingDevice::GetDeviceSelector(Windows::Media::Casting::CastingPlaybackTypes type)
 {
-    return GetActivationFactory<CastingDevice, ICastingDeviceStatics>().GetDeviceSelector(type);
+    return get_activation_factory<CastingDevice, ICastingDeviceStatics>().GetDeviceSelector(type);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> CastingDevice::GetDeviceSelectorFromCastingSourceAsync(const Windows::Media::Casting::CastingSource & castingSource)
 {
-    return GetActivationFactory<CastingDevice, ICastingDeviceStatics>().GetDeviceSelectorFromCastingSourceAsync(castingSource);
+    return get_activation_factory<CastingDevice, ICastingDeviceStatics>().GetDeviceSelectorFromCastingSourceAsync(castingSource);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> CastingDevice::FromIdAsync(hstring_ref value)
 {
-    return GetActivationFactory<CastingDevice, ICastingDeviceStatics>().FromIdAsync(value);
+    return get_activation_factory<CastingDevice, ICastingDeviceStatics>().FromIdAsync(value);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> CastingDevice::DeviceInfoSupportsCastingAsync(const Windows::Devices::Enumeration::DeviceInformation & device)
 {
-    return GetActivationFactory<CastingDevice, ICastingDeviceStatics>().DeviceInfoSupportsCastingAsync(device);
+    return get_activation_factory<CastingDevice, ICastingDeviceStatics>().DeviceInfoSupportsCastingAsync(device);
 }
 
 inline CastingDevicePicker::CastingDevicePicker() :
-    CastingDevicePicker(ActivateInstance<CastingDevicePicker>())
+    CastingDevicePicker(activate_instance<CastingDevicePicker>())
 {}
 
 }

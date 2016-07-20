@@ -677,21 +677,21 @@ template <typename D> void impl_IDialDevicePicker<D>::SetDisplayStatus(const Win
 
 inline hstring DialDevice::GetDeviceSelector(hstring_ref appName)
 {
-    return GetActivationFactory<DialDevice, IDialDeviceStatics>().GetDeviceSelector(appName);
+    return get_activation_factory<DialDevice, IDialDeviceStatics>().GetDeviceSelector(appName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> DialDevice::FromIdAsync(hstring_ref value)
 {
-    return GetActivationFactory<DialDevice, IDialDeviceStatics>().FromIdAsync(value);
+    return get_activation_factory<DialDevice, IDialDeviceStatics>().FromIdAsync(value);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> DialDevice::DeviceInfoSupportsDialAsync(const Windows::Devices::Enumeration::DeviceInformation & device)
 {
-    return GetActivationFactory<DialDevice, IDialDeviceStatics>().DeviceInfoSupportsDialAsync(device);
+    return get_activation_factory<DialDevice, IDialDeviceStatics>().DeviceInfoSupportsDialAsync(device);
 }
 
 inline DialDevicePicker::DialDevicePicker() :
-    DialDevicePicker(ActivateInstance<DialDevicePicker>())
+    DialDevicePicker(activate_instance<DialDevicePicker>())
 {}
 
 }

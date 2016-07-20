@@ -1155,91 +1155,91 @@ template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame im
 
 inline hstring KnownPerceptionFrameKind::Color()
 {
-    return GetActivationFactory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Color();
+    return get_activation_factory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Color();
 }
 
 inline hstring KnownPerceptionFrameKind::Depth()
 {
-    return GetActivationFactory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Depth();
+    return get_activation_factory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Depth();
 }
 
 inline hstring KnownPerceptionFrameKind::Infrared()
 {
-    return GetActivationFactory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Infrared();
+    return get_activation_factory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Infrared();
 }
 
 inline PerceptionControlGroup::PerceptionControlGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids) :
-    PerceptionControlGroup(GetActivationFactory<PerceptionControlGroup, IPerceptionControlGroupFactory>().Create(ids))
+    PerceptionControlGroup(get_activation_factory<PerceptionControlGroup, IPerceptionControlGroupFactory>().Create(ids))
 {}
 
 inline PerceptionCorrelation::PerceptionCorrelation(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) :
-    PerceptionCorrelation(GetActivationFactory<PerceptionCorrelation, IPerceptionCorrelationFactory>().Create(targetId, position, orientation))
+    PerceptionCorrelation(get_activation_factory<PerceptionCorrelation, IPerceptionCorrelationFactory>().Create(targetId, position, orientation))
 {}
 
 inline PerceptionCorrelationGroup::PerceptionCorrelationGroup(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) :
-    PerceptionCorrelationGroup(GetActivationFactory<PerceptionCorrelationGroup, IPerceptionCorrelationGroupFactory>().Create(relativeLocations))
+    PerceptionCorrelationGroup(get_activation_factory<PerceptionCorrelationGroup, IPerceptionCorrelationGroupFactory>().Create(relativeLocations))
 {}
 
 inline PerceptionFaceAuthenticationGroup::PerceptionFaceAuthenticationGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) :
-    PerceptionFaceAuthenticationGroup(GetActivationFactory<PerceptionFaceAuthenticationGroup, IPerceptionFaceAuthenticationGroupFactory>().Create(ids, startHandler, stopHandler))
+    PerceptionFaceAuthenticationGroup(get_activation_factory<PerceptionFaceAuthenticationGroup, IPerceptionFaceAuthenticationGroupFactory>().Create(ids, startHandler, stopHandler))
 {}
 
 inline PerceptionFrameProviderInfo::PerceptionFrameProviderInfo() :
-    PerceptionFrameProviderInfo(ActivateInstance<PerceptionFrameProviderInfo>())
+    PerceptionFrameProviderInfo(activate_instance<PerceptionFrameProviderInfo>())
 {}
 
 inline void PerceptionFrameProviderManagerService::RegisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterFrameProviderInfo(manager, frameProviderInfo);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterFrameProviderInfo(manager, frameProviderInfo);
 }
 
 inline void PerceptionFrameProviderManagerService::UnregisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterFrameProviderInfo(manager, frameProviderInfo);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterFrameProviderInfo(manager, frameProviderInfo);
 }
 
 inline void PerceptionFrameProviderManagerService::RegisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterFaceAuthenticationGroup(manager, faceAuthenticationGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterFaceAuthenticationGroup(manager, faceAuthenticationGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::UnregisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterFaceAuthenticationGroup(manager, faceAuthenticationGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterFaceAuthenticationGroup(manager, faceAuthenticationGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::RegisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterControlGroup(manager, controlGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterControlGroup(manager, controlGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::UnregisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterControlGroup(manager, controlGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterControlGroup(manager, controlGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::RegisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterCorrelationGroup(manager, correlationGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().RegisterCorrelationGroup(manager, correlationGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::UnregisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterCorrelationGroup(manager, correlationGroup);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UnregisterCorrelationGroup(manager, correlationGroup);
 }
 
 inline void PerceptionFrameProviderManagerService::UpdateAvailabilityForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, bool available)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UpdateAvailabilityForProvider(provider, available);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().UpdateAvailabilityForProvider(provider, available);
 }
 
 inline void PerceptionFrameProviderManagerService::PublishFrameForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, const Windows::Devices::Perception::Provider::PerceptionFrame & frame)
 {
-    GetActivationFactory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().PublishFrameForProvider(provider, frame);
+    get_activation_factory<PerceptionFrameProviderManagerService, IPerceptionFrameProviderManagerServiceStatics>().PublishFrameForProvider(provider, frame);
 }
 
 inline PerceptionVideoFrameAllocator::PerceptionVideoFrameAllocator(uint32_t maxOutstandingFrameCountForWrite, Windows::Graphics::Imaging::BitmapPixelFormat format, const Windows::Foundation::Size & resolution, Windows::Graphics::Imaging::BitmapAlphaMode alpha) :
-    PerceptionVideoFrameAllocator(GetActivationFactory<PerceptionVideoFrameAllocator, IPerceptionVideoFrameAllocatorFactory>().Create(maxOutstandingFrameCountForWrite, format, resolution, alpha))
+    PerceptionVideoFrameAllocator(get_activation_factory<PerceptionVideoFrameAllocator, IPerceptionVideoFrameAllocatorFactory>().Create(maxOutstandingFrameCountForWrite, format, resolution, alpha))
 {}
 
 }

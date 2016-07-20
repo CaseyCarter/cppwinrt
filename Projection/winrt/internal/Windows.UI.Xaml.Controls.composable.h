@@ -20,7 +20,7 @@ protected:
 
     AppBarT()
     {
-        GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<AppBar, IAppBarFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -34,7 +34,7 @@ protected:
 
     AppBarButtonT()
     {
-        GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<AppBarButton, IAppBarButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -48,7 +48,7 @@ protected:
 
     AppBarSeparatorT()
     {
-        GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -62,7 +62,7 @@ protected:
 
     AppBarToggleButtonT()
     {
-        GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -76,7 +76,7 @@ protected:
 
     BitmapIconT()
     {
-        GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<BitmapIcon, IBitmapIconFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -90,7 +90,7 @@ protected:
 
     ButtonT()
     {
-        GetActivationFactory<Button, IButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Button, IButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -104,7 +104,7 @@ protected:
 
     CalendarDatePickerT()
     {
-        GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -118,7 +118,7 @@ protected:
 
     CalendarViewT()
     {
-        GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CalendarView, ICalendarViewFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -132,7 +132,7 @@ protected:
 
     CalendarViewDayItemT()
     {
-        GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -146,7 +146,7 @@ protected:
 
     CanvasT()
     {
-        GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Canvas, ICanvasFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -160,7 +160,7 @@ protected:
 
     CheckBoxT()
     {
-        GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CheckBox, ICheckBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -174,7 +174,7 @@ protected:
 
     ComboBoxT()
     {
-        GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ComboBox, IComboBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -188,7 +188,7 @@ protected:
 
     ComboBoxItemT()
     {
-        GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -202,7 +202,7 @@ protected:
 
     CommandBarT()
     {
-        GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CommandBar, ICommandBarFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -216,7 +216,7 @@ protected:
 
     CommandBarOverflowPresenterT()
     {
-        GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -230,7 +230,7 @@ protected:
 
     ContentControlT()
     {
-        GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ContentControl, IContentControlFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -244,7 +244,7 @@ protected:
 
     ContentDialogT()
     {
-        GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ContentDialog, IContentDialogFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -258,7 +258,7 @@ protected:
 
     ContentPresenterT()
     {
-        GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ContentPresenter, IContentPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -272,7 +272,7 @@ protected:
 
     ControlT()
     {
-        GetActivationFactory<Control, IControlFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Control, IControlFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -286,7 +286,7 @@ protected:
 
     DataTemplateSelectorT()
     {
-        GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -300,7 +300,7 @@ protected:
 
     DatePickerT()
     {
-        GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DatePicker, IDatePickerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -314,7 +314,7 @@ protected:
 
     FlipViewT()
     {
-        GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FlipView, IFlipViewFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -328,7 +328,7 @@ protected:
 
     FlipViewItemT()
     {
-        GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -342,7 +342,7 @@ protected:
 
     FlyoutT()
     {
-        GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Flyout, IFlyoutFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -356,7 +356,7 @@ protected:
 
     FlyoutPresenterT()
     {
-        GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -370,7 +370,7 @@ protected:
 
     FontIconT()
     {
-        GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<FontIcon, IFontIconFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -384,7 +384,7 @@ protected:
 
     FrameT()
     {
-        GetActivationFactory<Frame, IFrameFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Frame, IFrameFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -398,7 +398,7 @@ protected:
 
     GridT()
     {
-        GetActivationFactory<Grid, IGridFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Grid, IGridFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -412,7 +412,7 @@ protected:
 
     GridViewT()
     {
-        GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GridView, IGridViewFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -426,7 +426,7 @@ protected:
 
     GridViewHeaderItemT()
     {
-        GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -440,7 +440,7 @@ protected:
 
     GridViewItemT()
     {
-        GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GridViewItem, IGridViewItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -454,7 +454,7 @@ protected:
 
     GroupItemT()
     {
-        GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GroupItem, IGroupItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -468,7 +468,7 @@ protected:
 
     GroupStyleT()
     {
-        GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GroupStyle, IGroupStyleFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -482,7 +482,7 @@ protected:
 
     GroupStyleSelectorT()
     {
-        GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -496,7 +496,7 @@ protected:
 
     HubT()
     {
-        GetActivationFactory<Hub, IHubFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Hub, IHubFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -510,7 +510,7 @@ protected:
 
     HubSectionT()
     {
-        GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<HubSection, IHubSectionFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -524,7 +524,7 @@ protected:
 
     HyperlinkButtonT()
     {
-        GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -538,7 +538,7 @@ protected:
 
     InkCanvasT()
     {
-        GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkCanvas, IInkCanvasFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -552,7 +552,7 @@ protected:
 
     InkToolbarT()
     {
-        GetActivationFactory<InkToolbar, IInkToolbarFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbar, IInkToolbarFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -566,7 +566,7 @@ protected:
 
     InkToolbarBallpointPenButtonT()
     {
-        GetActivationFactory<InkToolbarBallpointPenButton, IInkToolbarBallpointPenButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarBallpointPenButton, IInkToolbarBallpointPenButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -580,7 +580,7 @@ protected:
 
     InkToolbarCustomPenT()
     {
-        GetActivationFactory<InkToolbarCustomPen, IInkToolbarCustomPenFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarCustomPen, IInkToolbarCustomPenFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -594,7 +594,7 @@ protected:
 
     InkToolbarCustomPenButtonT()
     {
-        GetActivationFactory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -608,7 +608,7 @@ protected:
 
     InkToolbarCustomToggleButtonT()
     {
-        GetActivationFactory<InkToolbarCustomToggleButton, IInkToolbarCustomToggleButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarCustomToggleButton, IInkToolbarCustomToggleButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -622,7 +622,7 @@ protected:
 
     InkToolbarCustomToolButtonT()
     {
-        GetActivationFactory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -636,7 +636,7 @@ protected:
 
     InkToolbarEraserButtonT()
     {
-        GetActivationFactory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -650,7 +650,7 @@ protected:
 
     InkToolbarHighlighterButtonT()
     {
-        GetActivationFactory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -664,7 +664,7 @@ protected:
 
     InkToolbarPenConfigurationControlT()
     {
-        GetActivationFactory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -678,7 +678,7 @@ protected:
 
     InkToolbarPencilButtonT()
     {
-        GetActivationFactory<InkToolbarPencilButton, IInkToolbarPencilButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarPencilButton, IInkToolbarPencilButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -692,7 +692,7 @@ protected:
 
     InkToolbarRulerButtonT()
     {
-        GetActivationFactory<InkToolbarRulerButton, IInkToolbarRulerButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<InkToolbarRulerButton, IInkToolbarRulerButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -706,7 +706,7 @@ protected:
 
     ItemsControlT()
     {
-        GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ItemsControl, IItemsControlFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -720,7 +720,7 @@ protected:
 
     ListBoxT()
     {
-        GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListBox, IListBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -734,7 +734,7 @@ protected:
 
     ListBoxItemT()
     {
-        GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListBoxItem, IListBoxItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -748,7 +748,7 @@ protected:
 
     ListViewT()
     {
-        GetActivationFactory<ListView, IListViewFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListView, IListViewFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -762,7 +762,7 @@ protected:
 
     ListViewBaseT()
     {
-        GetActivationFactory<ListViewBase, IListViewBaseFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListViewBase, IListViewBaseFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -776,7 +776,7 @@ protected:
 
     ListViewHeaderItemT()
     {
-        GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -790,7 +790,7 @@ protected:
 
     ListViewItemT()
     {
-        GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ListViewItem, IListViewItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -804,7 +804,7 @@ protected:
 
     MediaPlayerElementT()
     {
-        GetActivationFactory<MediaPlayerElement, IMediaPlayerElementFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MediaPlayerElement, IMediaPlayerElementFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -818,7 +818,7 @@ protected:
 
     MediaPlayerPresenterT()
     {
-        GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MediaPlayerPresenter, IMediaPlayerPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -832,7 +832,7 @@ protected:
 
     MediaTransportControlsT()
     {
-        GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -846,7 +846,7 @@ protected:
 
     MenuFlyoutT()
     {
-        GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -860,7 +860,7 @@ protected:
 
     MenuFlyoutItemT()
     {
-        GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -874,7 +874,7 @@ protected:
 
     MenuFlyoutPresenterT()
     {
-        GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -888,7 +888,7 @@ protected:
 
     MenuFlyoutSeparatorT()
     {
-        GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -902,7 +902,7 @@ protected:
 
     PageT()
     {
-        GetActivationFactory<Page, IPageFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Page, IPageFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -916,7 +916,7 @@ protected:
 
     PanelT()
     {
-        GetActivationFactory<Panel, IPanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Panel, IPanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -930,7 +930,7 @@ protected:
 
     PathIconT()
     {
-        GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PathIcon, IPathIconFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -944,7 +944,7 @@ protected:
 
     PivotT()
     {
-        GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Pivot, IPivotFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -958,7 +958,7 @@ protected:
 
     PivotItemT()
     {
-        GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PivotItem, IPivotItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -972,7 +972,7 @@ protected:
 
     ProgressBarT()
     {
-        GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ProgressBar, IProgressBarFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -986,7 +986,7 @@ protected:
 
     RadioButtonT()
     {
-        GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RadioButton, IRadioButtonFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1000,7 +1000,7 @@ protected:
 
     RelativePanelT()
     {
-        GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RelativePanel, IRelativePanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1014,7 +1014,7 @@ protected:
 
     RichEditBoxT()
     {
-        GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<RichEditBox, IRichEditBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1028,7 +1028,7 @@ protected:
 
     SearchBoxT()
     {
-        GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SearchBox, ISearchBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1042,7 +1042,7 @@ protected:
 
     SelectionChangedEventArgsT(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems)
     {
-        GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, *this, m_inner);
+        get_activation_factory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, *this, m_inner);
     }
 };
 
@@ -1056,7 +1056,7 @@ protected:
 
     SettingsFlyoutT()
     {
-        GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1070,7 +1070,7 @@ protected:
 
     SliderT()
     {
-        GetActivationFactory<Slider, ISliderFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Slider, ISliderFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1084,7 +1084,7 @@ protected:
 
     SplitViewT()
     {
-        GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SplitView, ISplitViewFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1098,7 +1098,7 @@ protected:
 
     StackPanelT()
     {
-        GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<StackPanel, IStackPanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1112,7 +1112,7 @@ protected:
 
     StyleSelectorT()
     {
-        GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<StyleSelector, IStyleSelectorFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1126,7 +1126,7 @@ protected:
 
     SwapChainBackgroundPanelT()
     {
-        GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1140,7 +1140,7 @@ protected:
 
     SwapChainPanelT()
     {
-        GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1154,7 +1154,7 @@ protected:
 
     TextBoxT()
     {
-        GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<TextBox, ITextBoxFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1168,7 +1168,7 @@ protected:
 
     TimePickerT()
     {
-        GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<TimePicker, ITimePickerFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1182,7 +1182,7 @@ protected:
 
     ToggleMenuFlyoutItemT()
     {
-        GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1196,7 +1196,7 @@ protected:
 
     ToolTipT()
     {
-        GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ToolTip, IToolTipFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -1210,7 +1210,7 @@ protected:
 
     UserControlT()
     {
-        GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<UserControl, IUserControlFactory>().CreateInstance(*this, m_inner);
     }
 };
 

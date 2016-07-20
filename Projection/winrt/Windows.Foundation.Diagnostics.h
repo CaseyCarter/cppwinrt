@@ -3717,100 +3717,100 @@ template <typename D> Windows::Foundation::Diagnostics::FileLoggingSession impl_
 
 inline void AsyncCausalityTracer::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_ref operationName, uint64_t relatedContext)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext);
 }
 
 inline void AsyncCausalityTracer::TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationCompletion(traceLevel, source, platformId, operationId, status);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationCompletion(traceLevel, source, platformId, operationId, status);
 }
 
 inline void AsyncCausalityTracer::TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation relation)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationRelation(traceLevel, source, platformId, operationId, relation);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationRelation(traceLevel, source, platformId, operationId, relation);
 }
 
 inline void AsyncCausalityTracer::TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work);
 }
 
 inline void AsyncCausalityTracer::TraceSynchronousWorkCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, Windows::Foundation::Diagnostics::CausalitySynchronousWork work)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceSynchronousWorkCompletion(traceLevel, source, work);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceSynchronousWorkCompletion(traceLevel, source, work);
 }
 
 inline event_token AsyncCausalityTracer::TracingStatusChanged(const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> & handler)
 {
-    return GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TracingStatusChanged(handler);
+    return get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TracingStatusChanged(handler);
 }
 
 inline factory_event_revoker<IAsyncCausalityTracerStatics> AsyncCausalityTracer::TracingStatusChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>();
+    auto factory = get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>();
     return { factory, &ABI::Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics::remove_TracingStatusChanged, factory.TracingStatusChanged(handler) };
 }
 
 inline void AsyncCausalityTracer::TracingStatusChanged(event_token cookie)
 {
-    GetActivationFactory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TracingStatusChanged(cookie);
+    get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TracingStatusChanged(cookie);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails> ErrorDetails::CreateFromHResultAsync(int32_t errorCode)
 {
-    return GetActivationFactory<ErrorDetails, IErrorDetailsStatics>().CreateFromHResultAsync(errorCode);
+    return get_activation_factory<ErrorDetails, IErrorDetailsStatics>().CreateFromHResultAsync(errorCode);
 }
 
 inline FileLoggingSession::FileLoggingSession(hstring_ref name) :
-    FileLoggingSession(GetActivationFactory<FileLoggingSession, IFileLoggingSessionFactory>().Create(name))
+    FileLoggingSession(get_activation_factory<FileLoggingSession, IFileLoggingSessionFactory>().Create(name))
 {}
 
 inline LoggingActivity::LoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) :
-    LoggingActivity(GetActivationFactory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivity(activityName, loggingChannel))
+    LoggingActivity(get_activation_factory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivity(activityName, loggingChannel))
 {}
 
 inline LoggingActivity::LoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) :
-    LoggingActivity(GetActivationFactory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivityWithLevel(activityName, loggingChannel, level))
+    LoggingActivity(get_activation_factory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivityWithLevel(activityName, loggingChannel, level))
 {}
 
 inline LoggingChannel::LoggingChannel(hstring_ref name) :
-    LoggingChannel(GetActivationFactory<LoggingChannel, ILoggingChannelFactory>().Create(name))
+    LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory>().Create(name))
 {}
 
 inline LoggingChannel::LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) :
-    LoggingChannel(GetActivationFactory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptions(name, options))
+    LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptions(name, options))
 {}
 
 inline LoggingChannel::LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) :
-    LoggingChannel(GetActivationFactory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptionsAndId(name, options, id))
+    LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptionsAndId(name, options, id))
 {}
 
 inline LoggingChannelOptions::LoggingChannelOptions() :
-    LoggingChannelOptions(ActivateInstance<LoggingChannelOptions>())
+    LoggingChannelOptions(activate_instance<LoggingChannelOptions>())
 {}
 
 inline LoggingChannelOptions::LoggingChannelOptions(GUID group) :
-    LoggingChannelOptions(GetActivationFactory<LoggingChannelOptions, ILoggingChannelOptionsFactory>().Create(group))
+    LoggingChannelOptions(get_activation_factory<LoggingChannelOptions, ILoggingChannelOptionsFactory>().Create(group))
 {}
 
 inline LoggingFields::LoggingFields() :
-    LoggingFields(ActivateInstance<LoggingFields>())
+    LoggingFields(activate_instance<LoggingFields>())
 {}
 
 inline LoggingOptions::LoggingOptions() :
-    LoggingOptions(ActivateInstance<LoggingOptions>())
+    LoggingOptions(activate_instance<LoggingOptions>())
 {}
 
 inline LoggingOptions::LoggingOptions(int64_t keywords) :
-    LoggingOptions(GetActivationFactory<LoggingOptions, ILoggingOptionsFactory>().CreateWithKeywords(keywords))
+    LoggingOptions(get_activation_factory<LoggingOptions, ILoggingOptionsFactory>().CreateWithKeywords(keywords))
 {}
 
 inline LoggingSession::LoggingSession(hstring_ref name) :
-    LoggingSession(GetActivationFactory<LoggingSession, ILoggingSessionFactory>().Create(name))
+    LoggingSession(get_activation_factory<LoggingSession, ILoggingSessionFactory>().Create(name))
 {}
 
 inline RuntimeBrokerErrorSettings::RuntimeBrokerErrorSettings() :
-    RuntimeBrokerErrorSettings(ActivateInstance<RuntimeBrokerErrorSettings>())
+    RuntimeBrokerErrorSettings(activate_instance<RuntimeBrokerErrorSettings>())
 {}
 
 }

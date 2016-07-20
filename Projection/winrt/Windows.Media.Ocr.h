@@ -331,27 +331,27 @@ template <typename D> Windows::Media::Ocr::OcrEngine impl_IOcrEngineStatics<D>::
 
 inline uint32_t OcrEngine::MaxImageDimension()
 {
-    return GetActivationFactory<OcrEngine, IOcrEngineStatics>().MaxImageDimension();
+    return get_activation_factory<OcrEngine, IOcrEngineStatics>().MaxImageDimension();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> OcrEngine::AvailableRecognizerLanguages()
 {
-    return GetActivationFactory<OcrEngine, IOcrEngineStatics>().AvailableRecognizerLanguages();
+    return get_activation_factory<OcrEngine, IOcrEngineStatics>().AvailableRecognizerLanguages();
 }
 
 inline bool OcrEngine::IsLanguageSupported(const Windows::Globalization::Language & language)
 {
-    return GetActivationFactory<OcrEngine, IOcrEngineStatics>().IsLanguageSupported(language);
+    return get_activation_factory<OcrEngine, IOcrEngineStatics>().IsLanguageSupported(language);
 }
 
 inline Windows::Media::Ocr::OcrEngine OcrEngine::TryCreateFromLanguage(const Windows::Globalization::Language & language)
 {
-    return GetActivationFactory<OcrEngine, IOcrEngineStatics>().TryCreateFromLanguage(language);
+    return get_activation_factory<OcrEngine, IOcrEngineStatics>().TryCreateFromLanguage(language);
 }
 
 inline Windows::Media::Ocr::OcrEngine OcrEngine::TryCreateFromUserProfileLanguages()
 {
-    return GetActivationFactory<OcrEngine, IOcrEngineStatics>().TryCreateFromUserProfileLanguages();
+    return get_activation_factory<OcrEngine, IOcrEngineStatics>().TryCreateFromUserProfileLanguages();
 }
 
 }

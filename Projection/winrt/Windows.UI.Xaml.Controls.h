@@ -61102,4783 +61102,4783 @@ template <typename D> Windows::UI::Xaml::Controls::PivotItem impl_IPivotItemFact
 inline AppBar::AppBar()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBar, IAppBarFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<AppBar, IAppBarFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBar::IsOpenProperty()
 {
-    return GetActivationFactory<AppBar, IAppBarStatics>().IsOpenProperty();
+    return get_activation_factory<AppBar, IAppBarStatics>().IsOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBar::IsStickyProperty()
 {
-    return GetActivationFactory<AppBar, IAppBarStatics>().IsStickyProperty();
+    return get_activation_factory<AppBar, IAppBarStatics>().IsStickyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBar::ClosedDisplayModeProperty()
 {
-    return GetActivationFactory<AppBar, IAppBarStatics2>().ClosedDisplayModeProperty();
+    return get_activation_factory<AppBar, IAppBarStatics2>().ClosedDisplayModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBar::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<AppBar, IAppBarStatics4>().LightDismissOverlayModeProperty();
+    return get_activation_factory<AppBar, IAppBarStatics4>().LightDismissOverlayModeProperty();
 }
 
 inline AppBarButton::AppBarButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarButton, IAppBarButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<AppBarButton, IAppBarButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::LabelProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics>().LabelProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics>().LabelProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::IconProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics>().IconProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics>().IconProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::IsCompactProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics>().IsCompactProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics>().IsCompactProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::LabelPositionProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics3>().LabelPositionProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics3>().LabelPositionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::IsInOverflowProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics3>().IsInOverflowProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics3>().IsInOverflowProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarButton::DynamicOverflowOrderProperty()
 {
-    return GetActivationFactory<AppBarButton, IAppBarButtonStatics3>().DynamicOverflowOrderProperty();
+    return get_activation_factory<AppBarButton, IAppBarButtonStatics3>().DynamicOverflowOrderProperty();
 }
 
 inline AppBarSeparator::AppBarSeparator()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<AppBarSeparator, IAppBarSeparatorFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarSeparator::IsCompactProperty()
 {
-    return GetActivationFactory<AppBarSeparator, IAppBarSeparatorStatics>().IsCompactProperty();
+    return get_activation_factory<AppBarSeparator, IAppBarSeparatorStatics>().IsCompactProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarSeparator::IsInOverflowProperty()
 {
-    return GetActivationFactory<AppBarSeparator, IAppBarSeparatorStatics3>().IsInOverflowProperty();
+    return get_activation_factory<AppBarSeparator, IAppBarSeparatorStatics3>().IsInOverflowProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarSeparator::DynamicOverflowOrderProperty()
 {
-    return GetActivationFactory<AppBarSeparator, IAppBarSeparatorStatics3>().DynamicOverflowOrderProperty();
+    return get_activation_factory<AppBarSeparator, IAppBarSeparatorStatics3>().DynamicOverflowOrderProperty();
 }
 
 inline AppBarToggleButton::AppBarToggleButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<AppBarToggleButton, IAppBarToggleButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::LabelProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics>().LabelProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics>().LabelProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::IconProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics>().IconProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics>().IconProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::IsCompactProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics>().IsCompactProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics>().IsCompactProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::LabelPositionProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics3>().LabelPositionProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics3>().LabelPositionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::IsInOverflowProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics3>().IsInOverflowProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics3>().IsInOverflowProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AppBarToggleButton::DynamicOverflowOrderProperty()
 {
-    return GetActivationFactory<AppBarToggleButton, IAppBarToggleButtonStatics3>().DynamicOverflowOrderProperty();
+    return get_activation_factory<AppBarToggleButton, IAppBarToggleButtonStatics3>().DynamicOverflowOrderProperty();
 }
 
 inline AutoSuggestBox::AutoSuggestBox() :
-    AutoSuggestBox(ActivateInstance<AutoSuggestBox>())
+    AutoSuggestBox(activate_instance<AutoSuggestBox>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::MaxSuggestionListHeightProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().MaxSuggestionListHeightProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().MaxSuggestionListHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::IsSuggestionListOpenProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().IsSuggestionListOpenProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().IsSuggestionListOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::TextMemberPathProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextMemberPathProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextMemberPathProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::TextProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::UpdateTextOnSelectProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().UpdateTextOnSelectProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().UpdateTextOnSelectProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().PlaceholderTextProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::HeaderProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().HeaderProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::AutoMaximizeSuggestionAreaProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().AutoMaximizeSuggestionAreaProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().AutoMaximizeSuggestionAreaProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::TextBoxStyleProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextBoxStyleProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics>().TextBoxStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::QueryIconProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics2>().QueryIconProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics2>().QueryIconProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBox::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<AutoSuggestBox, IAutoSuggestBoxStatics3>().LightDismissOverlayModeProperty();
+    return get_activation_factory<AutoSuggestBox, IAutoSuggestBoxStatics3>().LightDismissOverlayModeProperty();
 }
 
 inline AutoSuggestBoxQuerySubmittedEventArgs::AutoSuggestBoxQuerySubmittedEventArgs() :
-    AutoSuggestBoxQuerySubmittedEventArgs(ActivateInstance<AutoSuggestBoxQuerySubmittedEventArgs>())
+    AutoSuggestBoxQuerySubmittedEventArgs(activate_instance<AutoSuggestBoxQuerySubmittedEventArgs>())
 {}
 
 inline AutoSuggestBoxSuggestionChosenEventArgs::AutoSuggestBoxSuggestionChosenEventArgs() :
-    AutoSuggestBoxSuggestionChosenEventArgs(ActivateInstance<AutoSuggestBoxSuggestionChosenEventArgs>())
+    AutoSuggestBoxSuggestionChosenEventArgs(activate_instance<AutoSuggestBoxSuggestionChosenEventArgs>())
 {}
 
 inline AutoSuggestBoxTextChangedEventArgs::AutoSuggestBoxTextChangedEventArgs() :
-    AutoSuggestBoxTextChangedEventArgs(ActivateInstance<AutoSuggestBoxTextChangedEventArgs>())
+    AutoSuggestBoxTextChangedEventArgs(activate_instance<AutoSuggestBoxTextChangedEventArgs>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty AutoSuggestBoxTextChangedEventArgs::ReasonProperty()
 {
-    return GetActivationFactory<AutoSuggestBoxTextChangedEventArgs, IAutoSuggestBoxTextChangedEventArgsStatics>().ReasonProperty();
+    return get_activation_factory<AutoSuggestBoxTextChangedEventArgs, IAutoSuggestBoxTextChangedEventArgsStatics>().ReasonProperty();
 }
 
 inline BackClickEventArgs::BackClickEventArgs() :
-    BackClickEventArgs(ActivateInstance<BackClickEventArgs>())
+    BackClickEventArgs(activate_instance<BackClickEventArgs>())
 {}
 
 inline BitmapIcon::BitmapIcon()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<BitmapIcon, IBitmapIconFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<BitmapIcon, IBitmapIconFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapIcon::UriSourceProperty()
 {
-    return GetActivationFactory<BitmapIcon, IBitmapIconStatics>().UriSourceProperty();
+    return get_activation_factory<BitmapIcon, IBitmapIconStatics>().UriSourceProperty();
 }
 
 inline Border::Border() :
-    Border(ActivateInstance<Border>())
+    Border(activate_instance<Border>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Border::BorderBrushProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().BorderBrushProperty();
+    return get_activation_factory<Border, IBorderStatics>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Border::BorderThicknessProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().BorderThicknessProperty();
+    return get_activation_factory<Border, IBorderStatics>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Border::BackgroundProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().BackgroundProperty();
+    return get_activation_factory<Border, IBorderStatics>().BackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Border::CornerRadiusProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().CornerRadiusProperty();
+    return get_activation_factory<Border, IBorderStatics>().CornerRadiusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Border::PaddingProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().PaddingProperty();
+    return get_activation_factory<Border, IBorderStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Border::ChildTransitionsProperty()
 {
-    return GetActivationFactory<Border, IBorderStatics>().ChildTransitionsProperty();
+    return get_activation_factory<Border, IBorderStatics>().ChildTransitionsProperty();
 }
 
 inline Button::Button()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Button, IButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Button, IButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Button::FlyoutProperty()
 {
-    return GetActivationFactory<Button, IButtonStaticsWithFlyout>().FlyoutProperty();
+    return get_activation_factory<Button, IButtonStaticsWithFlyout>().FlyoutProperty();
 }
 
 inline CalendarDatePicker::CalendarDatePicker()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CalendarDatePicker, ICalendarDatePickerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::DateProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().DateProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().DateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::IsCalendarOpenProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().IsCalendarOpenProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().IsCalendarOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::DateFormatProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().DateFormatProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().DateFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::PlaceholderTextProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().PlaceholderTextProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::HeaderProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().HeaderProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::HeaderTemplateProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().HeaderTemplateProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::CalendarViewStyleProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().CalendarViewStyleProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().CalendarViewStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::MinDateProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().MinDateProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().MinDateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::MaxDateProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().MaxDateProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().MaxDateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::IsTodayHighlightedProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().IsTodayHighlightedProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().IsTodayHighlightedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::DisplayModeProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().DisplayModeProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().DisplayModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::FirstDayOfWeekProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().FirstDayOfWeekProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().FirstDayOfWeekProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::DayOfWeekFormatProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().DayOfWeekFormatProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().DayOfWeekFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::CalendarIdentifierProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().CalendarIdentifierProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().CalendarIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::IsOutOfScopeEnabledProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().IsOutOfScopeEnabledProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().IsOutOfScopeEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::IsGroupLabelVisibleProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics>().IsGroupLabelVisibleProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics>().IsGroupLabelVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarDatePicker::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<CalendarDatePicker, ICalendarDatePickerStatics2>().LightDismissOverlayModeProperty();
+    return get_activation_factory<CalendarDatePicker, ICalendarDatePickerStatics2>().LightDismissOverlayModeProperty();
 }
 
 inline CalendarView::CalendarView()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CalendarView, ICalendarViewFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CalendarView, ICalendarViewFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarIdentifierProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarIdentifierProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DayOfWeekFormatProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DayOfWeekFormatProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DayOfWeekFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::IsGroupLabelVisibleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().IsGroupLabelVisibleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().IsGroupLabelVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DisplayModeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DisplayModeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DisplayModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstDayOfWeekProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstDayOfWeekProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstDayOfWeekProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::IsOutOfScopeEnabledProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().IsOutOfScopeEnabledProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().IsOutOfScopeEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::IsTodayHighlightedProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().IsTodayHighlightedProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().IsTodayHighlightedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MaxDateProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MaxDateProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MaxDateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MinDateProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MinDateProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MinDateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::NumberOfWeeksInViewProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().NumberOfWeeksInViewProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().NumberOfWeeksInViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectedDatesProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectedDatesProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectedDatesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectionModeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectionModeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::TemplateSettingsProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().TemplateSettingsProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().TemplateSettingsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FocusBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FocusBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FocusBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectedHoverBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectedHoverBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectedHoverBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectedPressedBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectedPressedBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectedPressedBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectedBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectedBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectedBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::HoverBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().HoverBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().HoverBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::PressedBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().PressedBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().PressedBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarItemBorderBrushProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarItemBorderBrushProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarItemBorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::OutOfScopeBackgroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().OutOfScopeBackgroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().OutOfScopeBackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarItemBackgroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarItemBackgroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarItemBackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::PressedForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().PressedForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().PressedForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::TodayForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().TodayForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().TodayForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::BlackoutForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().BlackoutForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().BlackoutForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::SelectedForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().SelectedForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().SelectedForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::OutOfScopeForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().OutOfScopeForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().OutOfScopeForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarItemForegroundProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarItemForegroundProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarItemForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DayItemFontFamilyProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DayItemFontFamilyProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DayItemFontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DayItemFontSizeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DayItemFontSizeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DayItemFontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DayItemFontStyleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DayItemFontStyleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DayItemFontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::DayItemFontWeightProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().DayItemFontWeightProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().DayItemFontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::TodayFontWeightProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().TodayFontWeightProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().TodayFontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfMonthLabelFontFamilyProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontFamilyProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfMonthLabelFontSizeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontSizeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfMonthLabelFontStyleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontStyleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfMonthLabelFontWeightProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontWeightProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfMonthLabelFontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MonthYearItemFontFamilyProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MonthYearItemFontFamilyProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MonthYearItemFontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MonthYearItemFontSizeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MonthYearItemFontSizeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MonthYearItemFontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MonthYearItemFontStyleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MonthYearItemFontStyleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MonthYearItemFontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::MonthYearItemFontWeightProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().MonthYearItemFontWeightProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().MonthYearItemFontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfYearDecadeLabelFontFamilyProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontFamilyProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfYearDecadeLabelFontSizeProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontSizeProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfYearDecadeLabelFontStyleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontStyleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::FirstOfYearDecadeLabelFontWeightProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontWeightProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().FirstOfYearDecadeLabelFontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::HorizontalDayItemAlignmentProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().HorizontalDayItemAlignmentProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().HorizontalDayItemAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::VerticalDayItemAlignmentProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().VerticalDayItemAlignmentProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().VerticalDayItemAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::HorizontalFirstOfMonthLabelAlignmentProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().HorizontalFirstOfMonthLabelAlignmentProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().HorizontalFirstOfMonthLabelAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::VerticalFirstOfMonthLabelAlignmentProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().VerticalFirstOfMonthLabelAlignmentProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().VerticalFirstOfMonthLabelAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarItemBorderThicknessProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarItemBorderThicknessProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarItemBorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarView::CalendarViewDayItemStyleProperty()
 {
-    return GetActivationFactory<CalendarView, ICalendarViewStatics>().CalendarViewDayItemStyleProperty();
+    return get_activation_factory<CalendarView, ICalendarViewStatics>().CalendarViewDayItemStyleProperty();
 }
 
 inline CalendarViewDayItem::CalendarViewDayItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CalendarViewDayItem, ICalendarViewDayItemFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarViewDayItem::IsBlackoutProperty()
 {
-    return GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemStatics>().IsBlackoutProperty();
+    return get_activation_factory<CalendarViewDayItem, ICalendarViewDayItemStatics>().IsBlackoutProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CalendarViewDayItem::DateProperty()
 {
-    return GetActivationFactory<CalendarViewDayItem, ICalendarViewDayItemStatics>().DateProperty();
+    return get_activation_factory<CalendarViewDayItem, ICalendarViewDayItemStatics>().DateProperty();
 }
 
 inline Canvas::Canvas()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Canvas, ICanvasFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Canvas, ICanvasFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Canvas::LeftProperty()
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().LeftProperty();
+    return get_activation_factory<Canvas, ICanvasStatics>().LeftProperty();
 }
 
 inline double Canvas::GetLeft(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().GetLeft(element);
+    return get_activation_factory<Canvas, ICanvasStatics>().GetLeft(element);
 }
 
 inline void Canvas::SetLeft(const Windows::UI::Xaml::UIElement & element, double length)
 {
-    GetActivationFactory<Canvas, ICanvasStatics>().SetLeft(element, length);
+    get_activation_factory<Canvas, ICanvasStatics>().SetLeft(element, length);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Canvas::TopProperty()
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().TopProperty();
+    return get_activation_factory<Canvas, ICanvasStatics>().TopProperty();
 }
 
 inline double Canvas::GetTop(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().GetTop(element);
+    return get_activation_factory<Canvas, ICanvasStatics>().GetTop(element);
 }
 
 inline void Canvas::SetTop(const Windows::UI::Xaml::UIElement & element, double length)
 {
-    GetActivationFactory<Canvas, ICanvasStatics>().SetTop(element, length);
+    get_activation_factory<Canvas, ICanvasStatics>().SetTop(element, length);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Canvas::ZIndexProperty()
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().ZIndexProperty();
+    return get_activation_factory<Canvas, ICanvasStatics>().ZIndexProperty();
 }
 
 inline int32_t Canvas::GetZIndex(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<Canvas, ICanvasStatics>().GetZIndex(element);
+    return get_activation_factory<Canvas, ICanvasStatics>().GetZIndex(element);
 }
 
 inline void Canvas::SetZIndex(const Windows::UI::Xaml::UIElement & element, int32_t value)
 {
-    GetActivationFactory<Canvas, ICanvasStatics>().SetZIndex(element, value);
+    get_activation_factory<Canvas, ICanvasStatics>().SetZIndex(element, value);
 }
 
 inline CaptureElement::CaptureElement() :
-    CaptureElement(ActivateInstance<CaptureElement>())
+    CaptureElement(activate_instance<CaptureElement>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CaptureElement::SourceProperty()
 {
-    return GetActivationFactory<CaptureElement, ICaptureElementStatics>().SourceProperty();
+    return get_activation_factory<CaptureElement, ICaptureElementStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CaptureElement::StretchProperty()
 {
-    return GetActivationFactory<CaptureElement, ICaptureElementStatics>().StretchProperty();
+    return get_activation_factory<CaptureElement, ICaptureElementStatics>().StretchProperty();
 }
 
 inline CheckBox::CheckBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CheckBox, ICheckBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CheckBox, ICheckBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline ChoosingGroupHeaderContainerEventArgs::ChoosingGroupHeaderContainerEventArgs() :
-    ChoosingGroupHeaderContainerEventArgs(ActivateInstance<ChoosingGroupHeaderContainerEventArgs>())
+    ChoosingGroupHeaderContainerEventArgs(activate_instance<ChoosingGroupHeaderContainerEventArgs>())
 {}
 
 inline ChoosingItemContainerEventArgs::ChoosingItemContainerEventArgs() :
-    ChoosingItemContainerEventArgs(ActivateInstance<ChoosingItemContainerEventArgs>())
+    ChoosingItemContainerEventArgs(activate_instance<ChoosingItemContainerEventArgs>())
 {}
 
 inline ColumnDefinition::ColumnDefinition() :
-    ColumnDefinition(ActivateInstance<ColumnDefinition>())
+    ColumnDefinition(activate_instance<ColumnDefinition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ColumnDefinition::WidthProperty()
 {
-    return GetActivationFactory<ColumnDefinition, IColumnDefinitionStatics>().WidthProperty();
+    return get_activation_factory<ColumnDefinition, IColumnDefinitionStatics>().WidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColumnDefinition::MaxWidthProperty()
 {
-    return GetActivationFactory<ColumnDefinition, IColumnDefinitionStatics>().MaxWidthProperty();
+    return get_activation_factory<ColumnDefinition, IColumnDefinitionStatics>().MaxWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColumnDefinition::MinWidthProperty()
 {
-    return GetActivationFactory<ColumnDefinition, IColumnDefinitionStatics>().MinWidthProperty();
+    return get_activation_factory<ColumnDefinition, IColumnDefinitionStatics>().MinWidthProperty();
 }
 
 inline ComboBox::ComboBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ComboBox, IComboBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ComboBox, IComboBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::IsDropDownOpenProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics>().IsDropDownOpenProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics>().IsDropDownOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::MaxDropDownHeightProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics>().MaxDropDownHeightProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics>().MaxDropDownHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::HeaderProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics2>().HeaderProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics2>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::HeaderTemplateProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics2>().HeaderTemplateProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics2>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics2>().PlaceholderTextProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics2>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics3>().LightDismissOverlayModeProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics3>().LightDismissOverlayModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ComboBox::IsTextSearchEnabledProperty()
 {
-    return GetActivationFactory<ComboBox, IComboBoxStatics3>().IsTextSearchEnabledProperty();
+    return get_activation_factory<ComboBox, IComboBoxStatics3>().IsTextSearchEnabledProperty();
 }
 
 inline ComboBoxItem::ComboBoxItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ComboBoxItem, IComboBoxItemFactory>().CreateInstance(outer, inner));
 }
 
 inline CommandBar::CommandBar()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CommandBar, ICommandBarFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CommandBar, ICommandBarFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::PrimaryCommandsProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics>().PrimaryCommandsProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics>().PrimaryCommandsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::SecondaryCommandsProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics>().SecondaryCommandsProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics>().SecondaryCommandsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::CommandBarOverflowPresenterStyleProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics2>().CommandBarOverflowPresenterStyleProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics2>().CommandBarOverflowPresenterStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::DefaultLabelPositionProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics3>().DefaultLabelPositionProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics3>().DefaultLabelPositionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::OverflowButtonVisibilityProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics3>().OverflowButtonVisibilityProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics3>().OverflowButtonVisibilityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommandBar::IsDynamicOverflowEnabledProperty()
 {
-    return GetActivationFactory<CommandBar, ICommandBarStatics3>().IsDynamicOverflowEnabledProperty();
+    return get_activation_factory<CommandBar, ICommandBarStatics3>().IsDynamicOverflowEnabledProperty();
 }
 
 inline CommandBarOverflowPresenter::CommandBarOverflowPresenter()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CommandBarOverflowPresenter, ICommandBarOverflowPresenterFactory>().CreateInstance(outer, inner));
 }
 
 inline ContainerContentChangingEventArgs::ContainerContentChangingEventArgs() :
-    ContainerContentChangingEventArgs(ActivateInstance<ContainerContentChangingEventArgs>())
+    ContainerContentChangingEventArgs(activate_instance<ContainerContentChangingEventArgs>())
 {}
 
 inline ContentControl::ContentControl()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ContentControl, IContentControlFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ContentControl, IContentControlFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentControl::ContentProperty()
 {
-    return GetActivationFactory<ContentControl, IContentControlStatics>().ContentProperty();
+    return get_activation_factory<ContentControl, IContentControlStatics>().ContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentControl::ContentTemplateProperty()
 {
-    return GetActivationFactory<ContentControl, IContentControlStatics>().ContentTemplateProperty();
+    return get_activation_factory<ContentControl, IContentControlStatics>().ContentTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentControl::ContentTemplateSelectorProperty()
 {
-    return GetActivationFactory<ContentControl, IContentControlStatics>().ContentTemplateSelectorProperty();
+    return get_activation_factory<ContentControl, IContentControlStatics>().ContentTemplateSelectorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentControl::ContentTransitionsProperty()
 {
-    return GetActivationFactory<ContentControl, IContentControlStatics>().ContentTransitionsProperty();
+    return get_activation_factory<ContentControl, IContentControlStatics>().ContentTransitionsProperty();
 }
 
 inline ContentDialog::ContentDialog()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ContentDialog, IContentDialogFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ContentDialog, IContentDialogFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::TitleProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().TitleProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().TitleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::TitleTemplateProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().TitleTemplateProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().TitleTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::FullSizeDesiredProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().FullSizeDesiredProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().FullSizeDesiredProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::PrimaryButtonTextProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().PrimaryButtonTextProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().PrimaryButtonTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::SecondaryButtonTextProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().SecondaryButtonTextProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().SecondaryButtonTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::PrimaryButtonCommandProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().PrimaryButtonCommandProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().PrimaryButtonCommandProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::SecondaryButtonCommandProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().SecondaryButtonCommandProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().SecondaryButtonCommandProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::PrimaryButtonCommandParameterProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().PrimaryButtonCommandParameterProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().PrimaryButtonCommandParameterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::SecondaryButtonCommandParameterProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().SecondaryButtonCommandParameterProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().SecondaryButtonCommandParameterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::IsPrimaryButtonEnabledProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().IsPrimaryButtonEnabledProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().IsPrimaryButtonEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::IsSecondaryButtonEnabledProperty()
 {
-    return GetActivationFactory<ContentDialog, IContentDialogStatics>().IsSecondaryButtonEnabledProperty();
+    return get_activation_factory<ContentDialog, IContentDialogStatics>().IsSecondaryButtonEnabledProperty();
 }
 
 inline ContentPresenter::ContentPresenter()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ContentPresenter, IContentPresenterFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ContentPresenter, IContentPresenterFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::ContentProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().ContentProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().ContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::ContentTemplateProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().ContentTemplateProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().ContentTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::ContentTemplateSelectorProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().ContentTemplateSelectorProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().ContentTemplateSelectorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::ContentTransitionsProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().ContentTransitionsProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().ContentTransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::FontSizeProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().FontSizeProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::FontFamilyProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().FontFamilyProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::FontWeightProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().FontWeightProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::FontStyleProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().FontStyleProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::FontStretchProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().FontStretchProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().FontStretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::CharacterSpacingProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().CharacterSpacingProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().CharacterSpacingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::ForegroundProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics>().ForegroundProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics>().ForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::OpticalMarginAlignmentProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics2>().OpticalMarginAlignmentProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics2>().OpticalMarginAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::TextLineBoundsProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics2>().TextLineBoundsProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics2>().TextLineBoundsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics3>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics3>().IsTextScaleFactorEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::TextWrappingProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().TextWrappingProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().TextWrappingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::MaxLinesProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().MaxLinesProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().MaxLinesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::LineStackingStrategyProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().LineStackingStrategyProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().LineStackingStrategyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::LineHeightProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().LineHeightProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().LineHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::BorderBrushProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().BorderBrushProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::BorderThicknessProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().BorderThicknessProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::CornerRadiusProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().CornerRadiusProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().CornerRadiusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::PaddingProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().PaddingProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::BackgroundProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().BackgroundProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().BackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::HorizontalContentAlignmentProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().HorizontalContentAlignmentProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().HorizontalContentAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentPresenter::VerticalContentAlignmentProperty()
 {
-    return GetActivationFactory<ContentPresenter, IContentPresenterStatics4>().VerticalContentAlignmentProperty();
+    return get_activation_factory<ContentPresenter, IContentPresenterStatics4>().VerticalContentAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FontSizeProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FontSizeProperty();
+    return get_activation_factory<Control, IControlStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FontFamilyProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FontFamilyProperty();
+    return get_activation_factory<Control, IControlStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FontWeightProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FontWeightProperty();
+    return get_activation_factory<Control, IControlStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FontStyleProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FontStyleProperty();
+    return get_activation_factory<Control, IControlStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FontStretchProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FontStretchProperty();
+    return get_activation_factory<Control, IControlStatics>().FontStretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::CharacterSpacingProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().CharacterSpacingProperty();
+    return get_activation_factory<Control, IControlStatics>().CharacterSpacingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::ForegroundProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().ForegroundProperty();
+    return get_activation_factory<Control, IControlStatics>().ForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsTabStopProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().IsTabStopProperty();
+    return get_activation_factory<Control, IControlStatics>().IsTabStopProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsEnabledProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().IsEnabledProperty();
+    return get_activation_factory<Control, IControlStatics>().IsEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::TabIndexProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().TabIndexProperty();
+    return get_activation_factory<Control, IControlStatics>().TabIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::TabNavigationProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().TabNavigationProperty();
+    return get_activation_factory<Control, IControlStatics>().TabNavigationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::TemplateProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().TemplateProperty();
+    return get_activation_factory<Control, IControlStatics>().TemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::PaddingProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().PaddingProperty();
+    return get_activation_factory<Control, IControlStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::HorizontalContentAlignmentProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().HorizontalContentAlignmentProperty();
+    return get_activation_factory<Control, IControlStatics>().HorizontalContentAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::VerticalContentAlignmentProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().VerticalContentAlignmentProperty();
+    return get_activation_factory<Control, IControlStatics>().VerticalContentAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::BackgroundProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().BackgroundProperty();
+    return get_activation_factory<Control, IControlStatics>().BackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::BorderThicknessProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().BorderThicknessProperty();
+    return get_activation_factory<Control, IControlStatics>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::BorderBrushProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().BorderBrushProperty();
+    return get_activation_factory<Control, IControlStatics>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::DefaultStyleKeyProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().DefaultStyleKeyProperty();
+    return get_activation_factory<Control, IControlStatics>().DefaultStyleKeyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::FocusStateProperty()
 {
-    return GetActivationFactory<Control, IControlStatics>().FocusStateProperty();
+    return get_activation_factory<Control, IControlStatics>().FocusStateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<Control, IControlStatics2>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<Control, IControlStatics2>().IsTextScaleFactorEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::UseSystemFocusVisualsProperty()
 {
-    return GetActivationFactory<Control, IControlStatics3>().UseSystemFocusVisualsProperty();
+    return get_activation_factory<Control, IControlStatics3>().UseSystemFocusVisualsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsTemplateFocusTargetProperty()
 {
-    return GetActivationFactory<Control, IControlStatics3>().IsTemplateFocusTargetProperty();
+    return get_activation_factory<Control, IControlStatics3>().IsTemplateFocusTargetProperty();
 }
 
 inline bool Control::GetIsTemplateFocusTarget(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Control, IControlStatics3>().GetIsTemplateFocusTarget(element);
+    return get_activation_factory<Control, IControlStatics3>().GetIsTemplateFocusTarget(element);
 }
 
 inline void Control::SetIsTemplateFocusTarget(const Windows::UI::Xaml::FrameworkElement & element, bool value)
 {
-    GetActivationFactory<Control, IControlStatics3>().SetIsTemplateFocusTarget(element, value);
+    get_activation_factory<Control, IControlStatics3>().SetIsTemplateFocusTarget(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsFocusEngagementEnabledProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().IsFocusEngagementEnabledProperty();
+    return get_activation_factory<Control, IControlStatics4>().IsFocusEngagementEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::IsFocusEngagedProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().IsFocusEngagedProperty();
+    return get_activation_factory<Control, IControlStatics4>().IsFocusEngagedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::RequiresPointerProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().RequiresPointerProperty();
+    return get_activation_factory<Control, IControlStatics4>().RequiresPointerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::XYFocusLeftProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().XYFocusLeftProperty();
+    return get_activation_factory<Control, IControlStatics4>().XYFocusLeftProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::XYFocusRightProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().XYFocusRightProperty();
+    return get_activation_factory<Control, IControlStatics4>().XYFocusRightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::XYFocusUpProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().XYFocusUpProperty();
+    return get_activation_factory<Control, IControlStatics4>().XYFocusUpProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::XYFocusDownProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().XYFocusDownProperty();
+    return get_activation_factory<Control, IControlStatics4>().XYFocusDownProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Control::ElementSoundModeProperty()
 {
-    return GetActivationFactory<Control, IControlStatics4>().ElementSoundModeProperty();
+    return get_activation_factory<Control, IControlStatics4>().ElementSoundModeProperty();
 }
 
 inline ControlTemplate::ControlTemplate() :
-    ControlTemplate(ActivateInstance<ControlTemplate>())
+    ControlTemplate(activate_instance<ControlTemplate>())
 {}
 
 inline DataTemplateSelector::DataTemplateSelector()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DataTemplateSelector, IDataTemplateSelectorFactory>().CreateInstance(outer, inner));
 }
 
 inline DatePickedEventArgs::DatePickedEventArgs() :
-    DatePickedEventArgs(ActivateInstance<DatePickedEventArgs>())
+    DatePickedEventArgs(activate_instance<DatePickedEventArgs>())
 {}
 
 inline DatePicker::DatePicker()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DatePicker, IDatePickerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DatePicker, IDatePickerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::HeaderProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().HeaderProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::HeaderTemplateProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().HeaderTemplateProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::CalendarIdentifierProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().CalendarIdentifierProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().CalendarIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::DateProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().DateProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().DateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::DayVisibleProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().DayVisibleProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().DayVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::MonthVisibleProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().MonthVisibleProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().MonthVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::YearVisibleProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().YearVisibleProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().YearVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::DayFormatProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().DayFormatProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().DayFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::MonthFormatProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().MonthFormatProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().MonthFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::YearFormatProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().YearFormatProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().YearFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::MinYearProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().MinYearProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().MinYearProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::MaxYearProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().MaxYearProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().MaxYearProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::OrientationProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics>().OrientationProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePicker::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<DatePicker, IDatePickerStatics2>().LightDismissOverlayModeProperty();
+    return get_activation_factory<DatePicker, IDatePickerStatics2>().LightDismissOverlayModeProperty();
 }
 
 inline DatePickerFlyout::DatePickerFlyout() :
-    DatePickerFlyout(ActivateInstance<DatePickerFlyout>())
+    DatePickerFlyout(activate_instance<DatePickerFlyout>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::CalendarIdentifierProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().CalendarIdentifierProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().CalendarIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::DateProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().DateProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().DateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::DayVisibleProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().DayVisibleProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().DayVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::MonthVisibleProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().MonthVisibleProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().MonthVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::YearVisibleProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().YearVisibleProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().YearVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::MinYearProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().MinYearProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().MinYearProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::MaxYearProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics>().MaxYearProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics>().MaxYearProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::DayFormatProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics2>().DayFormatProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics2>().DayFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::MonthFormatProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics2>().MonthFormatProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics2>().MonthFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyout::YearFormatProperty()
 {
-    return GetActivationFactory<DatePickerFlyout, IDatePickerFlyoutStatics2>().YearFormatProperty();
+    return get_activation_factory<DatePickerFlyout, IDatePickerFlyoutStatics2>().YearFormatProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyoutItem::PrimaryTextProperty()
 {
-    return GetActivationFactory<DatePickerFlyoutItem, IDatePickerFlyoutItemStatics>().PrimaryTextProperty();
+    return get_activation_factory<DatePickerFlyoutItem, IDatePickerFlyoutItemStatics>().PrimaryTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DatePickerFlyoutItem::SecondaryTextProperty()
 {
-    return GetActivationFactory<DatePickerFlyoutItem, IDatePickerFlyoutItemStatics>().SecondaryTextProperty();
+    return get_activation_factory<DatePickerFlyoutItem, IDatePickerFlyoutItemStatics>().SecondaryTextProperty();
 }
 
 inline DragItemsStartingEventArgs::DragItemsStartingEventArgs() :
-    DragItemsStartingEventArgs(ActivateInstance<DragItemsStartingEventArgs>())
+    DragItemsStartingEventArgs(activate_instance<DragItemsStartingEventArgs>())
 {}
 
 inline DynamicOverflowItemsChangingEventArgs::DynamicOverflowItemsChangingEventArgs() :
-    DynamicOverflowItemsChangingEventArgs(ActivateInstance<DynamicOverflowItemsChangingEventArgs>())
+    DynamicOverflowItemsChangingEventArgs(activate_instance<DynamicOverflowItemsChangingEventArgs>())
 {}
 
 inline FlipView::FlipView()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlipView, IFlipViewFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<FlipView, IFlipViewFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty FlipView::UseTouchAnimationsForAllNavigationProperty()
 {
-    return GetActivationFactory<FlipView, IFlipViewStatics2>().UseTouchAnimationsForAllNavigationProperty();
+    return get_activation_factory<FlipView, IFlipViewStatics2>().UseTouchAnimationsForAllNavigationProperty();
 }
 
 inline FlipViewItem::FlipViewItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<FlipViewItem, IFlipViewItemFactory>().CreateInstance(outer, inner));
 }
 
 inline Flyout::Flyout()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Flyout, IFlyoutFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Flyout, IFlyoutFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Flyout::ContentProperty()
 {
-    return GetActivationFactory<Flyout, IFlyoutStatics>().ContentProperty();
+    return get_activation_factory<Flyout, IFlyoutStatics>().ContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Flyout::FlyoutPresenterStyleProperty()
 {
-    return GetActivationFactory<Flyout, IFlyoutStatics>().FlyoutPresenterStyleProperty();
+    return get_activation_factory<Flyout, IFlyoutStatics>().FlyoutPresenterStyleProperty();
 }
 
 inline FlyoutPresenter::FlyoutPresenter()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<FlyoutPresenter, IFlyoutPresenterFactory>().CreateInstance(outer, inner));
 }
 
 inline FontIcon::FontIcon()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FontIcon, IFontIconFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<FontIcon, IFontIconFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::GlyphProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics>().GlyphProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics>().GlyphProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::FontSizeProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics>().FontSizeProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::FontFamilyProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics>().FontFamilyProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::FontWeightProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics>().FontWeightProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::FontStyleProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics>().FontStyleProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics2>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics2>().IsTextScaleFactorEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FontIcon::MirroredWhenRightToLeftProperty()
 {
-    return GetActivationFactory<FontIcon, IFontIconStatics3>().MirroredWhenRightToLeftProperty();
+    return get_activation_factory<FontIcon, IFontIconStatics3>().MirroredWhenRightToLeftProperty();
 }
 
 inline Frame::Frame()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Frame, IFrameFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Frame, IFrameFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::CacheSizeProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().CacheSizeProperty();
+    return get_activation_factory<Frame, IFrameStatics>().CacheSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::CanGoBackProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().CanGoBackProperty();
+    return get_activation_factory<Frame, IFrameStatics>().CanGoBackProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::CanGoForwardProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().CanGoForwardProperty();
+    return get_activation_factory<Frame, IFrameStatics>().CanGoForwardProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::CurrentSourcePageTypeProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().CurrentSourcePageTypeProperty();
+    return get_activation_factory<Frame, IFrameStatics>().CurrentSourcePageTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::SourcePageTypeProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().SourcePageTypeProperty();
+    return get_activation_factory<Frame, IFrameStatics>().SourcePageTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::BackStackDepthProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics>().BackStackDepthProperty();
+    return get_activation_factory<Frame, IFrameStatics>().BackStackDepthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::BackStackProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics2>().BackStackProperty();
+    return get_activation_factory<Frame, IFrameStatics2>().BackStackProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Frame::ForwardStackProperty()
 {
-    return GetActivationFactory<Frame, IFrameStatics2>().ForwardStackProperty();
+    return get_activation_factory<Frame, IFrameStatics2>().ForwardStackProperty();
 }
 
 inline Grid::Grid()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Grid, IGridFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Grid, IGridFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::RowProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics>().RowProperty();
+    return get_activation_factory<Grid, IGridStatics>().RowProperty();
 }
 
 inline int32_t Grid::GetRow(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Grid, IGridStatics>().GetRow(element);
+    return get_activation_factory<Grid, IGridStatics>().GetRow(element);
 }
 
 inline void Grid::SetRow(const Windows::UI::Xaml::FrameworkElement & element, int32_t value)
 {
-    GetActivationFactory<Grid, IGridStatics>().SetRow(element, value);
+    get_activation_factory<Grid, IGridStatics>().SetRow(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::ColumnProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics>().ColumnProperty();
+    return get_activation_factory<Grid, IGridStatics>().ColumnProperty();
 }
 
 inline int32_t Grid::GetColumn(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Grid, IGridStatics>().GetColumn(element);
+    return get_activation_factory<Grid, IGridStatics>().GetColumn(element);
 }
 
 inline void Grid::SetColumn(const Windows::UI::Xaml::FrameworkElement & element, int32_t value)
 {
-    GetActivationFactory<Grid, IGridStatics>().SetColumn(element, value);
+    get_activation_factory<Grid, IGridStatics>().SetColumn(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::RowSpanProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics>().RowSpanProperty();
+    return get_activation_factory<Grid, IGridStatics>().RowSpanProperty();
 }
 
 inline int32_t Grid::GetRowSpan(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Grid, IGridStatics>().GetRowSpan(element);
+    return get_activation_factory<Grid, IGridStatics>().GetRowSpan(element);
 }
 
 inline void Grid::SetRowSpan(const Windows::UI::Xaml::FrameworkElement & element, int32_t value)
 {
-    GetActivationFactory<Grid, IGridStatics>().SetRowSpan(element, value);
+    get_activation_factory<Grid, IGridStatics>().SetRowSpan(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::ColumnSpanProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics>().ColumnSpanProperty();
+    return get_activation_factory<Grid, IGridStatics>().ColumnSpanProperty();
 }
 
 inline int32_t Grid::GetColumnSpan(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Grid, IGridStatics>().GetColumnSpan(element);
+    return get_activation_factory<Grid, IGridStatics>().GetColumnSpan(element);
 }
 
 inline void Grid::SetColumnSpan(const Windows::UI::Xaml::FrameworkElement & element, int32_t value)
 {
-    GetActivationFactory<Grid, IGridStatics>().SetColumnSpan(element, value);
+    get_activation_factory<Grid, IGridStatics>().SetColumnSpan(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::BorderBrushProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics2>().BorderBrushProperty();
+    return get_activation_factory<Grid, IGridStatics2>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::BorderThicknessProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics2>().BorderThicknessProperty();
+    return get_activation_factory<Grid, IGridStatics2>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::CornerRadiusProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics2>().CornerRadiusProperty();
+    return get_activation_factory<Grid, IGridStatics2>().CornerRadiusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Grid::PaddingProperty()
 {
-    return GetActivationFactory<Grid, IGridStatics2>().PaddingProperty();
+    return get_activation_factory<Grid, IGridStatics2>().PaddingProperty();
 }
 
 inline GridView::GridView()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridView, IGridViewFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GridView, IGridViewFactory>().CreateInstance(outer, inner));
 }
 
 inline GridViewHeaderItem::GridViewHeaderItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GridViewHeaderItem, IGridViewHeaderItemFactory>().CreateInstance(outer, inner));
 }
 
 inline GridViewItem::GridViewItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewItem, IGridViewItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GridViewItem, IGridViewItemFactory>().CreateInstance(outer, inner));
 }
 
 inline GroupItem::GroupItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GroupItem, IGroupItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GroupItem, IGroupItemFactory>().CreateInstance(outer, inner));
 }
 
 inline GroupStyle::GroupStyle()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GroupStyle, IGroupStyleFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GroupStyle, IGroupStyleFactory>().CreateInstance(outer, inner));
 }
 
 inline GroupStyleSelector::GroupStyleSelector()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<GroupStyleSelector, IGroupStyleSelectorFactory>().CreateInstance(outer, inner));
 }
 
 inline Hub::Hub()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Hub, IHubFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Hub, IHubFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::HeaderProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().HeaderProperty();
+    return get_activation_factory<Hub, IHubStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::HeaderTemplateProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().HeaderTemplateProperty();
+    return get_activation_factory<Hub, IHubStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::OrientationProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().OrientationProperty();
+    return get_activation_factory<Hub, IHubStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::DefaultSectionIndexProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().DefaultSectionIndexProperty();
+    return get_activation_factory<Hub, IHubStatics>().DefaultSectionIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::SemanticZoomOwnerProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().SemanticZoomOwnerProperty();
+    return get_activation_factory<Hub, IHubStatics>().SemanticZoomOwnerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::IsActiveViewProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().IsActiveViewProperty();
+    return get_activation_factory<Hub, IHubStatics>().IsActiveViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hub::IsZoomedInViewProperty()
 {
-    return GetActivationFactory<Hub, IHubStatics>().IsZoomedInViewProperty();
+    return get_activation_factory<Hub, IHubStatics>().IsZoomedInViewProperty();
 }
 
 inline HubSection::HubSection()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HubSection, IHubSectionFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<HubSection, IHubSectionFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty HubSection::HeaderProperty()
 {
-    return GetActivationFactory<HubSection, IHubSectionStatics>().HeaderProperty();
+    return get_activation_factory<HubSection, IHubSectionStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty HubSection::HeaderTemplateProperty()
 {
-    return GetActivationFactory<HubSection, IHubSectionStatics>().HeaderTemplateProperty();
+    return get_activation_factory<HubSection, IHubSectionStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty HubSection::ContentTemplateProperty()
 {
-    return GetActivationFactory<HubSection, IHubSectionStatics>().ContentTemplateProperty();
+    return get_activation_factory<HubSection, IHubSectionStatics>().ContentTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty HubSection::IsHeaderInteractiveProperty()
 {
-    return GetActivationFactory<HubSection, IHubSectionStatics>().IsHeaderInteractiveProperty();
+    return get_activation_factory<HubSection, IHubSectionStatics>().IsHeaderInteractiveProperty();
 }
 
 inline HubSectionHeaderClickEventArgs::HubSectionHeaderClickEventArgs() :
-    HubSectionHeaderClickEventArgs(ActivateInstance<HubSectionHeaderClickEventArgs>())
+    HubSectionHeaderClickEventArgs(activate_instance<HubSectionHeaderClickEventArgs>())
 {}
 
 inline HyperlinkButton::HyperlinkButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<HyperlinkButton, IHyperlinkButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty HyperlinkButton::NavigateUriProperty()
 {
-    return GetActivationFactory<HyperlinkButton, IHyperlinkButtonStatics>().NavigateUriProperty();
+    return get_activation_factory<HyperlinkButton, IHyperlinkButtonStatics>().NavigateUriProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty IconElement::ForegroundProperty()
 {
-    return GetActivationFactory<IconElement, IIconElementStatics>().ForegroundProperty();
+    return get_activation_factory<IconElement, IIconElementStatics>().ForegroundProperty();
 }
 
 inline Image::Image() :
-    Image(ActivateInstance<Image>())
+    Image(activate_instance<Image>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Image::SourceProperty()
 {
-    return GetActivationFactory<Image, IImageStatics>().SourceProperty();
+    return get_activation_factory<Image, IImageStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Image::StretchProperty()
 {
-    return GetActivationFactory<Image, IImageStatics>().StretchProperty();
+    return get_activation_factory<Image, IImageStatics>().StretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Image::NineGridProperty()
 {
-    return GetActivationFactory<Image, IImageStatics>().NineGridProperty();
+    return get_activation_factory<Image, IImageStatics>().NineGridProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Image::PlayToSourceProperty()
 {
-    return GetActivationFactory<Image, IImageStatics>().PlayToSourceProperty();
+    return get_activation_factory<Image, IImageStatics>().PlayToSourceProperty();
 }
 
 inline InkCanvas::InkCanvas()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkCanvas, IInkCanvasFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkCanvas, IInkCanvasFactory>().CreateInstance(outer, inner));
 }
 
 inline InkToolbar::InkToolbar()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbar, IInkToolbarFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbar, IInkToolbarFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::InitialControlsProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().InitialControlsProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().InitialControlsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::ChildrenProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().ChildrenProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().ChildrenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::ActiveToolProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().ActiveToolProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().ActiveToolProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::InkDrawingAttributesProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().InkDrawingAttributesProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().InkDrawingAttributesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::IsRulerButtonCheckedProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().IsRulerButtonCheckedProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().IsRulerButtonCheckedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbar::TargetInkCanvasProperty()
 {
-    return GetActivationFactory<InkToolbar, IInkToolbarStatics>().TargetInkCanvasProperty();
+    return get_activation_factory<InkToolbar, IInkToolbarStatics>().TargetInkCanvasProperty();
 }
 
 inline InkToolbarBallpointPenButton::InkToolbarBallpointPenButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarBallpointPenButton, IInkToolbarBallpointPenButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarBallpointPenButton, IInkToolbarBallpointPenButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline InkToolbarCustomPenButton::InkToolbarCustomPenButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarCustomPenButton::CustomPenProperty()
 {
-    return GetActivationFactory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonStatics>().CustomPenProperty();
+    return get_activation_factory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonStatics>().CustomPenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarCustomPenButton::ConfigurationContentProperty()
 {
-    return GetActivationFactory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonStatics>().ConfigurationContentProperty();
+    return get_activation_factory<InkToolbarCustomPenButton, IInkToolbarCustomPenButtonStatics>().ConfigurationContentProperty();
 }
 
 inline InkToolbarCustomToggleButton::InkToolbarCustomToggleButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarCustomToggleButton, IInkToolbarCustomToggleButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarCustomToggleButton, IInkToolbarCustomToggleButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline InkToolbarCustomToolButton::InkToolbarCustomToolButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarCustomToolButton::ConfigurationContentProperty()
 {
-    return GetActivationFactory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonStatics>().ConfigurationContentProperty();
+    return get_activation_factory<InkToolbarCustomToolButton, IInkToolbarCustomToolButtonStatics>().ConfigurationContentProperty();
 }
 
 inline InkToolbarEraserButton::InkToolbarEraserButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline InkToolbarHighlighterButton::InkToolbarHighlighterButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::PaletteProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().PaletteProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().PaletteProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::MinStrokeWidthProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().MinStrokeWidthProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().MinStrokeWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::MaxStrokeWidthProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().MaxStrokeWidthProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().MaxStrokeWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::SelectedBrushProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedBrushProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::SelectedBrushIndexProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedBrushIndexProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedBrushIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::SelectedStrokeWidthProperty()
 {
-    return GetActivationFactory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedStrokeWidthProperty();
+    return get_activation_factory<InkToolbarPenButton, IInkToolbarPenButtonStatics>().SelectedStrokeWidthProperty();
 }
 
 inline InkToolbarPenConfigurationControl::InkToolbarPenConfigurationControl()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenConfigurationControl::PenButtonProperty()
 {
-    return GetActivationFactory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlStatics>().PenButtonProperty();
+    return get_activation_factory<InkToolbarPenConfigurationControl, IInkToolbarPenConfigurationControlStatics>().PenButtonProperty();
 }
 
 inline InkToolbarPencilButton::InkToolbarPencilButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarPencilButton, IInkToolbarPencilButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarPencilButton, IInkToolbarPencilButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline InkToolbarRulerButton::InkToolbarRulerButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<InkToolbarRulerButton, IInkToolbarRulerButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<InkToolbarRulerButton, IInkToolbarRulerButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarRulerButton::RulerProperty()
 {
-    return GetActivationFactory<InkToolbarRulerButton, IInkToolbarRulerButtonStatics>().RulerProperty();
+    return get_activation_factory<InkToolbarRulerButton, IInkToolbarRulerButtonStatics>().RulerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarToolButton::IsExtensionGlyphShownProperty()
 {
-    return GetActivationFactory<InkToolbarToolButton, IInkToolbarToolButtonStatics>().IsExtensionGlyphShownProperty();
+    return get_activation_factory<InkToolbarToolButton, IInkToolbarToolButtonStatics>().IsExtensionGlyphShownProperty();
 }
 
 inline ItemClickEventArgs::ItemClickEventArgs() :
-    ItemClickEventArgs(ActivateInstance<ItemClickEventArgs>())
+    ItemClickEventArgs(activate_instance<ItemClickEventArgs>())
 {}
 
 inline ItemsControl::ItemsControl()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ItemsControl, IItemsControlFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ItemsControl, IItemsControlFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemsSourceProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemsSourceProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemsSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemTemplateProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemTemplateProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemTemplateSelectorProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemTemplateSelectorProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemTemplateSelectorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemsPanelProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemsPanelProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemsPanelProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::DisplayMemberPathProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().DisplayMemberPathProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().DisplayMemberPathProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemContainerStyleProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemContainerStyleProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemContainerStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemContainerStyleSelectorProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemContainerStyleSelectorProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemContainerStyleSelectorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::ItemContainerTransitionsProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemContainerTransitionsProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemContainerTransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::GroupStyleSelectorProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().GroupStyleSelectorProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().GroupStyleSelectorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsControl::IsGroupingProperty()
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().IsGroupingProperty();
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().IsGroupingProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ItemsControl ItemsControl::GetItemsOwner(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().GetItemsOwner(element);
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().GetItemsOwner(element);
 }
 
 inline Windows::UI::Xaml::Controls::ItemsControl ItemsControl::ItemsControlFromItemContainer(const Windows::UI::Xaml::DependencyObject & container)
 {
-    return GetActivationFactory<ItemsControl, IItemsControlStatics>().ItemsControlFromItemContainer(container);
+    return get_activation_factory<ItemsControl, IItemsControlStatics>().ItemsControlFromItemContainer(container);
 }
 
 inline ItemsPanelTemplate::ItemsPanelTemplate() :
-    ItemsPanelTemplate(ActivateInstance<ItemsPanelTemplate>())
+    ItemsPanelTemplate(activate_instance<ItemsPanelTemplate>())
 {}
 
 inline ItemsPickedEventArgs::ItemsPickedEventArgs() :
-    ItemsPickedEventArgs(ActivateInstance<ItemsPickedEventArgs>())
+    ItemsPickedEventArgs(activate_instance<ItemsPickedEventArgs>())
 {}
 
 inline ItemsPresenter::ItemsPresenter() :
-    ItemsPresenter(ActivateInstance<ItemsPresenter>())
+    ItemsPresenter(activate_instance<ItemsPresenter>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::HeaderProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics>().HeaderProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::HeaderTemplateProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics>().HeaderTemplateProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::HeaderTransitionsProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics>().HeaderTransitionsProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics>().HeaderTransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::PaddingProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics>().PaddingProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::FooterProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics2>().FooterProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics2>().FooterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::FooterTemplateProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics2>().FooterTemplateProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics2>().FooterTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsPresenter::FooterTransitionsProperty()
 {
-    return GetActivationFactory<ItemsPresenter, IItemsPresenterStatics2>().FooterTransitionsProperty();
+    return get_activation_factory<ItemsPresenter, IItemsPresenterStatics2>().FooterTransitionsProperty();
 }
 
 inline ItemsStackPanel::ItemsStackPanel() :
-    ItemsStackPanel(ActivateInstance<ItemsStackPanel>())
+    ItemsStackPanel(activate_instance<ItemsStackPanel>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ItemsStackPanel::GroupPaddingProperty()
 {
-    return GetActivationFactory<ItemsStackPanel, IItemsStackPanelStatics>().GroupPaddingProperty();
+    return get_activation_factory<ItemsStackPanel, IItemsStackPanelStatics>().GroupPaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsStackPanel::OrientationProperty()
 {
-    return GetActivationFactory<ItemsStackPanel, IItemsStackPanelStatics>().OrientationProperty();
+    return get_activation_factory<ItemsStackPanel, IItemsStackPanelStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsStackPanel::GroupHeaderPlacementProperty()
 {
-    return GetActivationFactory<ItemsStackPanel, IItemsStackPanelStatics>().GroupHeaderPlacementProperty();
+    return get_activation_factory<ItemsStackPanel, IItemsStackPanelStatics>().GroupHeaderPlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsStackPanel::CacheLengthProperty()
 {
-    return GetActivationFactory<ItemsStackPanel, IItemsStackPanelStatics>().CacheLengthProperty();
+    return get_activation_factory<ItemsStackPanel, IItemsStackPanelStatics>().CacheLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsStackPanel::AreStickyGroupHeadersEnabledProperty()
 {
-    return GetActivationFactory<ItemsStackPanel, IItemsStackPanelStatics2>().AreStickyGroupHeadersEnabledProperty();
+    return get_activation_factory<ItemsStackPanel, IItemsStackPanelStatics2>().AreStickyGroupHeadersEnabledProperty();
 }
 
 inline ItemsWrapGrid::ItemsWrapGrid() :
-    ItemsWrapGrid(ActivateInstance<ItemsWrapGrid>())
+    ItemsWrapGrid(activate_instance<ItemsWrapGrid>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::GroupPaddingProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().GroupPaddingProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().GroupPaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::OrientationProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().OrientationProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::MaximumRowsOrColumnsProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().MaximumRowsOrColumnsProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().MaximumRowsOrColumnsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::ItemWidthProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().ItemWidthProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().ItemWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::ItemHeightProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().ItemHeightProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().ItemHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::GroupHeaderPlacementProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().GroupHeaderPlacementProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().GroupHeaderPlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::CacheLengthProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics>().CacheLengthProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics>().CacheLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ItemsWrapGrid::AreStickyGroupHeadersEnabledProperty()
 {
-    return GetActivationFactory<ItemsWrapGrid, IItemsWrapGridStatics2>().AreStickyGroupHeadersEnabledProperty();
+    return get_activation_factory<ItemsWrapGrid, IItemsWrapGridStatics2>().AreStickyGroupHeadersEnabledProperty();
 }
 
 inline ListBox::ListBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListBox, IListBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ListBox, IListBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListBox::SelectionModeProperty()
 {
-    return GetActivationFactory<ListBox, IListBoxStatics>().SelectionModeProperty();
+    return get_activation_factory<ListBox, IListBoxStatics>().SelectionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListBox::SingleSelectionFollowsFocusProperty()
 {
-    return GetActivationFactory<ListBox, IListBoxStatics2>().SingleSelectionFollowsFocusProperty();
+    return get_activation_factory<ListBox, IListBoxStatics2>().SingleSelectionFollowsFocusProperty();
 }
 
 inline ListBoxItem::ListBoxItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListBoxItem, IListBoxItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ListBoxItem, IListBoxItemFactory>().CreateInstance(outer, inner));
 }
 
 inline ListPickerFlyout::ListPickerFlyout() :
-    ListPickerFlyout(ActivateInstance<ListPickerFlyout>())
+    ListPickerFlyout(activate_instance<ListPickerFlyout>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::ItemsSourceProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().ItemsSourceProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().ItemsSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::ItemTemplateProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().ItemTemplateProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().ItemTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::DisplayMemberPathProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().DisplayMemberPathProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().DisplayMemberPathProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::SelectionModeProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectionModeProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::SelectedIndexProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedIndexProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::SelectedItemProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedItemProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedItemProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::SelectedValueProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedValueProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListPickerFlyout::SelectedValuePathProperty()
 {
-    return GetActivationFactory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedValuePathProperty();
+    return get_activation_factory<ListPickerFlyout, IListPickerFlyoutStatics>().SelectedValuePathProperty();
 }
 
 inline ListView::ListView()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListView, IListViewFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ListView, IListViewFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::SelectionModeProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().SelectionModeProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().SelectionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IsSwipeEnabledProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IsSwipeEnabledProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IsSwipeEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::CanDragItemsProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().CanDragItemsProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().CanDragItemsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::CanReorderItemsProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().CanReorderItemsProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().CanReorderItemsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IsItemClickEnabledProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IsItemClickEnabledProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IsItemClickEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::DataFetchSizeProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().DataFetchSizeProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().DataFetchSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IncrementalLoadingThresholdProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IncrementalLoadingThresholdProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IncrementalLoadingThresholdProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IncrementalLoadingTriggerProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IncrementalLoadingTriggerProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IncrementalLoadingTriggerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::SemanticZoomOwnerProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().SemanticZoomOwnerProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().SemanticZoomOwnerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IsActiveViewProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IsActiveViewProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IsActiveViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IsZoomedInViewProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().IsZoomedInViewProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().IsZoomedInViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::HeaderProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().HeaderProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::HeaderTemplateProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().HeaderTemplateProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::HeaderTransitionsProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics>().HeaderTransitionsProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics>().HeaderTransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::ShowsScrollingPlaceholdersProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics2>().ShowsScrollingPlaceholdersProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics2>().ShowsScrollingPlaceholdersProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::FooterProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics2>().FooterProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics2>().FooterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::FooterTemplateProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics2>().FooterTemplateProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics2>().FooterTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::FooterTransitionsProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics2>().FooterTransitionsProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics2>().FooterTransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::ReorderModeProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics3>().ReorderModeProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics3>().ReorderModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::IsMultiSelectCheckBoxEnabledProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics4>().IsMultiSelectCheckBoxEnabledProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics4>().IsMultiSelectCheckBoxEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ListViewBase::SingleSelectionFollowsFocusProperty()
 {
-    return GetActivationFactory<ListViewBase, IListViewBaseStatics5>().SingleSelectionFollowsFocusProperty();
+    return get_activation_factory<ListViewBase, IListViewBaseStatics5>().SingleSelectionFollowsFocusProperty();
 }
 
 inline ListViewHeaderItem::ListViewHeaderItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ListViewHeaderItem, IListViewHeaderItemFactory>().CreateInstance(outer, inner));
 }
 
 inline ListViewItem::ListViewItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewItem, IListViewItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ListViewItem, IListViewItemFactory>().CreateInstance(outer, inner));
 }
 
 inline hstring ListViewPersistenceHelper::GetRelativeScrollPosition(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, const Windows::UI::Xaml::Controls::ListViewItemToKeyHandler & itemToKeyHandler)
 {
-    return GetActivationFactory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().GetRelativeScrollPosition(listViewBase, itemToKeyHandler);
+    return get_activation_factory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().GetRelativeScrollPosition(listViewBase, itemToKeyHandler);
 }
 
 inline Windows::Foundation::IAsyncAction ListViewPersistenceHelper::SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler)
 {
-    return GetActivationFactory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().SetRelativeScrollPositionAsync(listViewBase, relativeScrollPosition, keyToItemHandler);
+    return get_activation_factory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().SetRelativeScrollPositionAsync(listViewBase, relativeScrollPosition, keyToItemHandler);
 }
 
 inline MediaElement::MediaElement() :
-    MediaElement(ActivateInstance<MediaElement>())
+    MediaElement(activate_instance<MediaElement>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::PosterSourceProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().PosterSourceProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().PosterSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::SourceProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().SourceProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::IsMutedProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().IsMutedProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().IsMutedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::IsAudioOnlyProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().IsAudioOnlyProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().IsAudioOnlyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AutoPlayProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AutoPlayProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AutoPlayProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::VolumeProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().VolumeProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().VolumeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::BalanceProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().BalanceProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().BalanceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::NaturalVideoHeightProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().NaturalVideoHeightProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().NaturalVideoHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::NaturalVideoWidthProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().NaturalVideoWidthProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().NaturalVideoWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::NaturalDurationProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().NaturalDurationProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().NaturalDurationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::PositionProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().PositionProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().PositionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::DownloadProgressProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().DownloadProgressProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().DownloadProgressProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::BufferingProgressProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().BufferingProgressProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().BufferingProgressProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::DownloadProgressOffsetProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().DownloadProgressOffsetProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().DownloadProgressOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::CurrentStateProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().CurrentStateProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().CurrentStateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::CanSeekProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().CanSeekProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().CanSeekProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::CanPauseProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().CanPauseProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().CanPauseProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AudioStreamCountProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AudioStreamCountProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AudioStreamCountProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AudioStreamIndexProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AudioStreamIndexProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AudioStreamIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::PlaybackRateProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().PlaybackRateProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().PlaybackRateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::IsLoopingProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().IsLoopingProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().IsLoopingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::PlayToSourceProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().PlayToSourceProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().PlayToSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::DefaultPlaybackRateProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().DefaultPlaybackRateProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().DefaultPlaybackRateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AspectRatioWidthProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AspectRatioWidthProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AspectRatioWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AspectRatioHeightProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AspectRatioHeightProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AspectRatioHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::RealTimePlaybackProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().RealTimePlaybackProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().RealTimePlaybackProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AudioCategoryProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AudioCategoryProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AudioCategoryProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AudioDeviceTypeProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().AudioDeviceTypeProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().AudioDeviceTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::ProtectionManagerProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().ProtectionManagerProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().ProtectionManagerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::Stereo3DVideoPackingModeProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().Stereo3DVideoPackingModeProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().Stereo3DVideoPackingModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::Stereo3DVideoRenderModeProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().Stereo3DVideoRenderModeProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().Stereo3DVideoRenderModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::IsStereo3DVideoProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().IsStereo3DVideoProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().IsStereo3DVideoProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::ActualStereo3DVideoPackingModeProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics>().ActualStereo3DVideoPackingModeProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics>().ActualStereo3DVideoPackingModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::AreTransportControlsEnabledProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics2>().AreTransportControlsEnabledProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics2>().AreTransportControlsEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::StretchProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics2>().StretchProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics2>().StretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::IsFullWindowProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics2>().IsFullWindowProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics2>().IsFullWindowProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaElement::PlayToPreferredSourceUriProperty()
 {
-    return GetActivationFactory<MediaElement, IMediaElementStatics2>().PlayToPreferredSourceUriProperty();
+    return get_activation_factory<MediaElement, IMediaElementStatics2>().PlayToPreferredSourceUriProperty();
 }
 
 inline MediaPlayerElement::MediaPlayerElement()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaPlayerElement, IMediaPlayerElementFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MediaPlayerElement, IMediaPlayerElementFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::SourceProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().SourceProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::AreTransportControlsEnabledProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().AreTransportControlsEnabledProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().AreTransportControlsEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::PosterSourceProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().PosterSourceProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().PosterSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::StretchProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().StretchProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().StretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::AutoPlayProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().AutoPlayProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().AutoPlayProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::IsFullWindowProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().IsFullWindowProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().IsFullWindowProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerElement::MediaPlayerProperty()
 {
-    return GetActivationFactory<MediaPlayerElement, IMediaPlayerElementStatics>().MediaPlayerProperty();
+    return get_activation_factory<MediaPlayerElement, IMediaPlayerElementStatics>().MediaPlayerProperty();
 }
 
 inline MediaPlayerPresenter::MediaPlayerPresenter()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MediaPlayerPresenter, IMediaPlayerPresenterFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerPresenter::MediaPlayerProperty()
 {
-    return GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().MediaPlayerProperty();
+    return get_activation_factory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().MediaPlayerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerPresenter::StretchProperty()
 {
-    return GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().StretchProperty();
+    return get_activation_factory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().StretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaPlayerPresenter::IsFullWindowProperty()
 {
-    return GetActivationFactory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().IsFullWindowProperty();
+    return get_activation_factory<MediaPlayerPresenter, IMediaPlayerPresenterStatics>().IsFullWindowProperty();
 }
 
 inline MediaTransportControls::MediaTransportControls()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MediaTransportControls, IMediaTransportControlsFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFullWindowButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFullWindowButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFullWindowButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFullWindowEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFullWindowEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFullWindowEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsZoomButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsZoomButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsZoomButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsZoomEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsZoomEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsZoomEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFastForwardButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastForwardButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastForwardButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFastForwardEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastForwardEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastForwardEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFastRewindButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastRewindButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastRewindButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsFastRewindEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastRewindEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsFastRewindEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsStopButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsStopButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsStopButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsStopEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsStopEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsStopEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsVolumeButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsVolumeButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsVolumeButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsVolumeEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsVolumeEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsVolumeEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsPlaybackRateButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsPlaybackRateButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsPlaybackRateButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsPlaybackRateEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsPlaybackRateEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsPlaybackRateEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSeekBarVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsSeekBarVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsSeekBarVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSeekEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsSeekEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsSeekEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsCompactProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics>().IsCompactProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics>().IsCompactProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSkipForwardButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipForwardButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipForwardButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSkipForwardEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipForwardEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipForwardEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSkipBackwardButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipBackwardButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipBackwardButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsSkipBackwardEnabledProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipBackwardEnabledProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsSkipBackwardEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsNextTrackButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsNextTrackButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsNextTrackButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::IsPreviousTrackButtonVisibleProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().IsPreviousTrackButtonVisibleProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().IsPreviousTrackButtonVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControls::FastPlayFallbackBehaviourProperty()
 {
-    return GetActivationFactory<MediaTransportControls, IMediaTransportControlsStatics2>().FastPlayFallbackBehaviourProperty();
+    return get_activation_factory<MediaTransportControls, IMediaTransportControlsStatics2>().FastPlayFallbackBehaviourProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MediaTransportControlsHelper::DropoutOrderProperty()
 {
-    return GetActivationFactory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().DropoutOrderProperty();
+    return get_activation_factory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().DropoutOrderProperty();
 }
 
 inline Windows::Foundation::IReference<int32_t> MediaTransportControlsHelper::GetDropoutOrder(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().GetDropoutOrder(element);
+    return get_activation_factory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().GetDropoutOrder(element);
 }
 
 inline void MediaTransportControlsHelper::SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value)
 {
-    GetActivationFactory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().SetDropoutOrder(element, value);
+    get_activation_factory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().SetDropoutOrder(element, value);
 }
 
 inline MenuFlyout::MenuFlyout()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MenuFlyout, IMenuFlyoutFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MenuFlyout::MenuFlyoutPresenterStyleProperty()
 {
-    return GetActivationFactory<MenuFlyout, IMenuFlyoutStatics>().MenuFlyoutPresenterStyleProperty();
+    return get_activation_factory<MenuFlyout, IMenuFlyoutStatics>().MenuFlyoutPresenterStyleProperty();
 }
 
 inline MenuFlyoutItem::MenuFlyoutItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MenuFlyoutItem::TextProperty()
 {
-    return GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemStatics>().TextProperty();
+    return get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemStatics>().TextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MenuFlyoutItem::CommandProperty()
 {
-    return GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemStatics>().CommandProperty();
+    return get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemStatics>().CommandProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MenuFlyoutItem::CommandParameterProperty()
 {
-    return GetActivationFactory<MenuFlyoutItem, IMenuFlyoutItemStatics>().CommandParameterProperty();
+    return get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemStatics>().CommandParameterProperty();
 }
 
 inline MenuFlyoutPresenter::MenuFlyoutPresenter()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MenuFlyoutPresenter, IMenuFlyoutPresenterFactory>().CreateInstance(outer, inner));
 }
 
 inline MenuFlyoutSeparator::MenuFlyoutSeparator()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MenuFlyoutSeparator, IMenuFlyoutSeparatorFactory>().CreateInstance(outer, inner));
 }
 
 inline MenuFlyoutSubItem::MenuFlyoutSubItem() :
-    MenuFlyoutSubItem(ActivateInstance<MenuFlyoutSubItem>())
+    MenuFlyoutSubItem(activate_instance<MenuFlyoutSubItem>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MenuFlyoutSubItem::TextProperty()
 {
-    return GetActivationFactory<MenuFlyoutSubItem, IMenuFlyoutSubItemStatics>().TextProperty();
+    return get_activation_factory<MenuFlyoutSubItem, IMenuFlyoutSubItemStatics>().TextProperty();
 }
 
 inline Page::Page()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Page, IPageFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Page, IPageFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Page::FrameProperty()
 {
-    return GetActivationFactory<Page, IPageStatics>().FrameProperty();
+    return get_activation_factory<Page, IPageStatics>().FrameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Page::TopAppBarProperty()
 {
-    return GetActivationFactory<Page, IPageStatics>().TopAppBarProperty();
+    return get_activation_factory<Page, IPageStatics>().TopAppBarProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Page::BottomAppBarProperty()
 {
-    return GetActivationFactory<Page, IPageStatics>().BottomAppBarProperty();
+    return get_activation_factory<Page, IPageStatics>().BottomAppBarProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Panel::BackgroundProperty()
 {
-    return GetActivationFactory<Panel, IPanelStatics>().BackgroundProperty();
+    return get_activation_factory<Panel, IPanelStatics>().BackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Panel::IsItemsHostProperty()
 {
-    return GetActivationFactory<Panel, IPanelStatics>().IsItemsHostProperty();
+    return get_activation_factory<Panel, IPanelStatics>().IsItemsHostProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Panel::ChildrenTransitionsProperty()
 {
-    return GetActivationFactory<Panel, IPanelStatics>().ChildrenTransitionsProperty();
+    return get_activation_factory<Panel, IPanelStatics>().ChildrenTransitionsProperty();
 }
 
 inline PasswordBox::PasswordBox() :
-    PasswordBox(ActivateInstance<PasswordBox>())
+    PasswordBox(activate_instance<PasswordBox>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::PasswordProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics>().PasswordProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics>().PasswordProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::PasswordCharProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics>().PasswordCharProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics>().PasswordCharProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::IsPasswordRevealButtonEnabledProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics>().IsPasswordRevealButtonEnabledProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics>().IsPasswordRevealButtonEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::MaxLengthProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics>().MaxLengthProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics>().MaxLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::HeaderProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics2>().HeaderProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics2>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::HeaderTemplateProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics2>().HeaderTemplateProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics2>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics2>().PlaceholderTextProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics2>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::SelectionHighlightColorProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics2>().SelectionHighlightColorProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics2>().SelectionHighlightColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::PreventKeyboardDisplayOnProgrammaticFocusProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::PasswordRevealModeProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics3>().PasswordRevealModeProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics3>().PasswordRevealModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::TextReadingOrderProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics3>().TextReadingOrderProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics3>().TextReadingOrderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PasswordBox::InputScopeProperty()
 {
-    return GetActivationFactory<PasswordBox, IPasswordBoxStatics3>().InputScopeProperty();
+    return get_activation_factory<PasswordBox, IPasswordBoxStatics3>().InputScopeProperty();
 }
 
 inline PathIcon::PathIcon()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PathIcon, IPathIconFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<PathIcon, IPathIconFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathIcon::DataProperty()
 {
-    return GetActivationFactory<PathIcon, IPathIconStatics>().DataProperty();
+    return get_activation_factory<PathIcon, IPathIconStatics>().DataProperty();
 }
 
 inline PickerConfirmedEventArgs::PickerConfirmedEventArgs() :
-    PickerConfirmedEventArgs(ActivateInstance<PickerConfirmedEventArgs>())
+    PickerConfirmedEventArgs(activate_instance<PickerConfirmedEventArgs>())
 {}
 
 inline PickerFlyout::PickerFlyout() :
-    PickerFlyout(ActivateInstance<PickerFlyout>())
+    PickerFlyout(activate_instance<PickerFlyout>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PickerFlyout::ContentProperty()
 {
-    return GetActivationFactory<PickerFlyout, IPickerFlyoutStatics>().ContentProperty();
+    return get_activation_factory<PickerFlyout, IPickerFlyoutStatics>().ContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PickerFlyout::ConfirmationButtonsVisibleProperty()
 {
-    return GetActivationFactory<PickerFlyout, IPickerFlyoutStatics>().ConfirmationButtonsVisibleProperty();
+    return get_activation_factory<PickerFlyout, IPickerFlyoutStatics>().ConfirmationButtonsVisibleProperty();
 }
 
 inline Pivot::Pivot()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Pivot, IPivotFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Pivot, IPivotFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::TitleProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().TitleProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().TitleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::TitleTemplateProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().TitleTemplateProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().TitleTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::HeaderTemplateProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().HeaderTemplateProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::SelectedIndexProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().SelectedIndexProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().SelectedIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::SelectedItemProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().SelectedItemProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().SelectedItemProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::IsLockedProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().IsLockedProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().IsLockedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::SlideInAnimationGroupProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().SlideInAnimationGroupProperty();
+    return get_activation_factory<Pivot, IPivotStatics>().SlideInAnimationGroupProperty();
 }
 
 inline Windows::UI::Xaml::Controls::PivotSlideInAnimationGroup Pivot::GetSlideInAnimationGroup(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<Pivot, IPivotStatics>().GetSlideInAnimationGroup(element);
+    return get_activation_factory<Pivot, IPivotStatics>().GetSlideInAnimationGroup(element);
 }
 
 inline void Pivot::SetSlideInAnimationGroup(const Windows::UI::Xaml::FrameworkElement & element, Windows::UI::Xaml::Controls::PivotSlideInAnimationGroup value)
 {
-    GetActivationFactory<Pivot, IPivotStatics>().SetSlideInAnimationGroup(element, value);
+    get_activation_factory<Pivot, IPivotStatics>().SetSlideInAnimationGroup(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::LeftHeaderProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics2>().LeftHeaderProperty();
+    return get_activation_factory<Pivot, IPivotStatics2>().LeftHeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::LeftHeaderTemplateProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics2>().LeftHeaderTemplateProperty();
+    return get_activation_factory<Pivot, IPivotStatics2>().LeftHeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::RightHeaderProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics2>().RightHeaderProperty();
+    return get_activation_factory<Pivot, IPivotStatics2>().RightHeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::RightHeaderTemplateProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics2>().RightHeaderTemplateProperty();
+    return get_activation_factory<Pivot, IPivotStatics2>().RightHeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::HeaderFocusVisualPlacementProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics3>().HeaderFocusVisualPlacementProperty();
+    return get_activation_factory<Pivot, IPivotStatics3>().HeaderFocusVisualPlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Pivot::IsHeaderItemsCarouselEnabledProperty()
 {
-    return GetActivationFactory<Pivot, IPivotStatics3>().IsHeaderItemsCarouselEnabledProperty();
+    return get_activation_factory<Pivot, IPivotStatics3>().IsHeaderItemsCarouselEnabledProperty();
 }
 
 inline PivotItem::PivotItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PivotItem, IPivotItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<PivotItem, IPivotItemFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty PivotItem::HeaderProperty()
 {
-    return GetActivationFactory<PivotItem, IPivotItemStatics>().HeaderProperty();
+    return get_activation_factory<PivotItem, IPivotItemStatics>().HeaderProperty();
 }
 
 inline PivotItemEventArgs::PivotItemEventArgs() :
-    PivotItemEventArgs(ActivateInstance<PivotItemEventArgs>())
+    PivotItemEventArgs(activate_instance<PivotItemEventArgs>())
 {}
 
 inline ProgressBar::ProgressBar()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ProgressBar, IProgressBarFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ProgressBar, IProgressBarFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ProgressBar::IsIndeterminateProperty()
 {
-    return GetActivationFactory<ProgressBar, IProgressBarStatics>().IsIndeterminateProperty();
+    return get_activation_factory<ProgressBar, IProgressBarStatics>().IsIndeterminateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ProgressBar::ShowErrorProperty()
 {
-    return GetActivationFactory<ProgressBar, IProgressBarStatics>().ShowErrorProperty();
+    return get_activation_factory<ProgressBar, IProgressBarStatics>().ShowErrorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ProgressBar::ShowPausedProperty()
 {
-    return GetActivationFactory<ProgressBar, IProgressBarStatics>().ShowPausedProperty();
+    return get_activation_factory<ProgressBar, IProgressBarStatics>().ShowPausedProperty();
 }
 
 inline ProgressRing::ProgressRing() :
-    ProgressRing(ActivateInstance<ProgressRing>())
+    ProgressRing(activate_instance<ProgressRing>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ProgressRing::IsActiveProperty()
 {
-    return GetActivationFactory<ProgressRing, IProgressRingStatics>().IsActiveProperty();
+    return get_activation_factory<ProgressRing, IProgressRingStatics>().IsActiveProperty();
 }
 
 inline RadioButton::RadioButton()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RadioButton, IRadioButtonFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<RadioButton, IRadioButtonFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty RadioButton::GroupNameProperty()
 {
-    return GetActivationFactory<RadioButton, IRadioButtonStatics>().GroupNameProperty();
+    return get_activation_factory<RadioButton, IRadioButtonStatics>().GroupNameProperty();
 }
 
 inline RelativePanel::RelativePanel()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RelativePanel, IRelativePanelFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<RelativePanel, IRelativePanelFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::LeftOfProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().LeftOfProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().LeftOfProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetLeftOf(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetLeftOf(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetLeftOf(element);
 }
 
 inline void RelativePanel::SetLeftOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetLeftOf(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetLeftOf(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AboveProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AboveProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AboveProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAbove(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAbove(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAbove(element);
 }
 
 inline void RelativePanel::SetAbove(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAbove(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAbove(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::RightOfProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().RightOfProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().RightOfProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetRightOf(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetRightOf(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetRightOf(element);
 }
 
 inline void RelativePanel::SetRightOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetRightOf(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetRightOf(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::BelowProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().BelowProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().BelowProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetBelow(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetBelow(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetBelow(element);
 }
 
 inline void RelativePanel::SetBelow(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetBelow(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetBelow(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignHorizontalCenterWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignHorizontalCenterWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignHorizontalCenterWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignHorizontalCenterWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignHorizontalCenterWith(element);
 }
 
 inline void RelativePanel::SetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignHorizontalCenterWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignHorizontalCenterWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignVerticalCenterWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignVerticalCenterWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignVerticalCenterWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignVerticalCenterWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignVerticalCenterWith(element);
 }
 
 inline void RelativePanel::SetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignVerticalCenterWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignVerticalCenterWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignLeftWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignLeftWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignLeftWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignLeftWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignLeftWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignLeftWith(element);
 }
 
 inline void RelativePanel::SetAlignLeftWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignLeftWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignLeftWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignTopWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignTopWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignTopWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignTopWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignTopWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignTopWith(element);
 }
 
 inline void RelativePanel::SetAlignTopWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignTopWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignTopWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignRightWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignRightWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignRightWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignRightWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignRightWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignRightWith(element);
 }
 
 inline void RelativePanel::SetAlignRightWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignRightWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignRightWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignBottomWithProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignBottomWithProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignBottomWithProperty();
 }
 
 inline Windows::IInspectable RelativePanel::GetAlignBottomWith(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignBottomWith(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignBottomWith(element);
 }
 
 inline void RelativePanel::SetAlignBottomWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignBottomWith(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignBottomWith(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignLeftWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignLeftWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignLeftWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignLeftWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignLeftWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignLeftWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignLeftWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignTopWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignTopWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignTopWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignTopWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignTopWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignTopWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignTopWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignTopWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignTopWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignRightWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignRightWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignRightWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignRightWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignRightWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignRightWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignRightWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignRightWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignRightWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignBottomWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignBottomWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignBottomWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignBottomWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignBottomWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignBottomWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignBottomWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignBottomWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignBottomWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignHorizontalCenterWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignHorizontalCenterWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignHorizontalCenterWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignHorizontalCenterWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignHorizontalCenterWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignHorizontalCenterWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignHorizontalCenterWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignHorizontalCenterWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignHorizontalCenterWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::AlignVerticalCenterWithPanelProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().AlignVerticalCenterWithPanelProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().AlignVerticalCenterWithPanelProperty();
 }
 
 inline bool RelativePanel::GetAlignVerticalCenterWithPanel(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().GetAlignVerticalCenterWithPanel(element);
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().GetAlignVerticalCenterWithPanel(element);
 }
 
 inline void RelativePanel::SetAlignVerticalCenterWithPanel(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<RelativePanel, IRelativePanelStatics>().SetAlignVerticalCenterWithPanel(element, value);
+    get_activation_factory<RelativePanel, IRelativePanelStatics>().SetAlignVerticalCenterWithPanel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::BorderBrushProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().BorderBrushProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::BorderThicknessProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().BorderThicknessProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::CornerRadiusProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().CornerRadiusProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().CornerRadiusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RelativePanel::PaddingProperty()
 {
-    return GetActivationFactory<RelativePanel, IRelativePanelStatics>().PaddingProperty();
+    return get_activation_factory<RelativePanel, IRelativePanelStatics>().PaddingProperty();
 }
 
 inline RichEditBox::RichEditBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RichEditBox, IRichEditBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<RichEditBox, IRichEditBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::IsReadOnlyProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().IsReadOnlyProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().IsReadOnlyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::AcceptsReturnProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().AcceptsReturnProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().AcceptsReturnProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::TextAlignmentProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().TextAlignmentProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().TextAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::TextWrappingProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().TextWrappingProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().TextWrappingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::IsSpellCheckEnabledProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().IsSpellCheckEnabledProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().IsSpellCheckEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::IsTextPredictionEnabledProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().IsTextPredictionEnabledProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().IsTextPredictionEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::InputScopeProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics>().InputScopeProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics>().InputScopeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::HeaderProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().HeaderProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::HeaderTemplateProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().HeaderTemplateProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().PlaceholderTextProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::SelectionHighlightColorProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().SelectionHighlightColorProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().SelectionHighlightColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::PreventKeyboardDisplayOnProgrammaticFocusProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::IsColorFontEnabledProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics2>().IsColorFontEnabledProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics2>().IsColorFontEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::DesiredCandidateWindowAlignmentProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics3>().DesiredCandidateWindowAlignmentProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics3>().DesiredCandidateWindowAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::TextReadingOrderProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics3>().TextReadingOrderProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics3>().TextReadingOrderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichEditBox::ClipboardCopyFormatProperty()
 {
-    return GetActivationFactory<RichEditBox, IRichEditBoxStatics4>().ClipboardCopyFormatProperty();
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics4>().ClipboardCopyFormatProperty();
 }
 
 inline RichTextBlock::RichTextBlock() :
-    RichTextBlock(ActivateInstance<RichTextBlock>())
+    RichTextBlock(activate_instance<RichTextBlock>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::FontSizeProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().FontSizeProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::FontFamilyProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().FontFamilyProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::FontWeightProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().FontWeightProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::FontStyleProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().FontStyleProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::FontStretchProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().FontStretchProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().FontStretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::ForegroundProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().ForegroundProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().ForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextWrappingProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().TextWrappingProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().TextWrappingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextTrimmingProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().TextTrimmingProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().TextTrimmingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextAlignmentProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().TextAlignmentProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().TextAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::PaddingProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().PaddingProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::LineHeightProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().LineHeightProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().LineHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::LineStackingStrategyProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().LineStackingStrategyProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().LineStackingStrategyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::CharacterSpacingProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().CharacterSpacingProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().CharacterSpacingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::OverflowContentTargetProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().OverflowContentTargetProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().OverflowContentTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::IsTextSelectionEnabledProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().IsTextSelectionEnabledProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().IsTextSelectionEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::HasOverflowContentProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().HasOverflowContentProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().HasOverflowContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::SelectedTextProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().SelectedTextProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().SelectedTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextIndentProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics>().TextIndentProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics>().TextIndentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::MaxLinesProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().MaxLinesProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().MaxLinesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextLineBoundsProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().TextLineBoundsProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().TextLineBoundsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::SelectionHighlightColorProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().SelectionHighlightColorProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().SelectionHighlightColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::OpticalMarginAlignmentProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().OpticalMarginAlignmentProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().OpticalMarginAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::IsColorFontEnabledProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().IsColorFontEnabledProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().IsColorFontEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextReadingOrderProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics2>().TextReadingOrderProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics2>().TextReadingOrderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<RichTextBlock, IRichTextBlockStatics3>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics3>().IsTextScaleFactorEnabledProperty();
 }
 
 inline RichTextBlockOverflow::RichTextBlockOverflow() :
-    RichTextBlockOverflow(ActivateInstance<RichTextBlockOverflow>())
+    RichTextBlockOverflow(activate_instance<RichTextBlockOverflow>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlockOverflow::OverflowContentTargetProperty()
 {
-    return GetActivationFactory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().OverflowContentTargetProperty();
+    return get_activation_factory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().OverflowContentTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlockOverflow::PaddingProperty()
 {
-    return GetActivationFactory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().PaddingProperty();
+    return get_activation_factory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlockOverflow::HasOverflowContentProperty()
 {
-    return GetActivationFactory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().HasOverflowContentProperty();
+    return get_activation_factory<RichTextBlockOverflow, IRichTextBlockOverflowStatics>().HasOverflowContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RichTextBlockOverflow::MaxLinesProperty()
 {
-    return GetActivationFactory<RichTextBlockOverflow, IRichTextBlockOverflowStatics2>().MaxLinesProperty();
+    return get_activation_factory<RichTextBlockOverflow, IRichTextBlockOverflowStatics2>().MaxLinesProperty();
 }
 
 inline RowDefinition::RowDefinition() :
-    RowDefinition(ActivateInstance<RowDefinition>())
+    RowDefinition(activate_instance<RowDefinition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RowDefinition::HeightProperty()
 {
-    return GetActivationFactory<RowDefinition, IRowDefinitionStatics>().HeightProperty();
+    return get_activation_factory<RowDefinition, IRowDefinitionStatics>().HeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RowDefinition::MaxHeightProperty()
 {
-    return GetActivationFactory<RowDefinition, IRowDefinitionStatics>().MaxHeightProperty();
+    return get_activation_factory<RowDefinition, IRowDefinitionStatics>().MaxHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RowDefinition::MinHeightProperty()
 {
-    return GetActivationFactory<RowDefinition, IRowDefinitionStatics>().MinHeightProperty();
+    return get_activation_factory<RowDefinition, IRowDefinitionStatics>().MinHeightProperty();
 }
 
 inline ScrollContentPresenter::ScrollContentPresenter() :
-    ScrollContentPresenter(ActivateInstance<ScrollContentPresenter>())
+    ScrollContentPresenter(activate_instance<ScrollContentPresenter>())
 {}
 
 inline ScrollViewer::ScrollViewer() :
-    ScrollViewer(ActivateInstance<ScrollViewer>())
+    ScrollViewer(activate_instance<ScrollViewer>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::HorizontalSnapPointsAlignmentProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().HorizontalSnapPointsAlignmentProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().HorizontalSnapPointsAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::VerticalSnapPointsAlignmentProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().VerticalSnapPointsAlignmentProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().VerticalSnapPointsAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::HorizontalSnapPointsTypeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().HorizontalSnapPointsTypeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().HorizontalSnapPointsTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::VerticalSnapPointsTypeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().VerticalSnapPointsTypeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().VerticalSnapPointsTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ZoomSnapPointsTypeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ZoomSnapPointsTypeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ZoomSnapPointsTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::HorizontalOffsetProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().HorizontalOffsetProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().HorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ViewportWidthProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ViewportWidthProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ViewportWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ScrollableWidthProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ScrollableWidthProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ScrollableWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ComputedHorizontalScrollBarVisibilityProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ComputedHorizontalScrollBarVisibilityProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ComputedHorizontalScrollBarVisibilityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ExtentWidthProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ExtentWidthProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ExtentWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::VerticalOffsetProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().VerticalOffsetProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().VerticalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ViewportHeightProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ViewportHeightProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ViewportHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ScrollableHeightProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ScrollableHeightProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ScrollableHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ComputedVerticalScrollBarVisibilityProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ComputedVerticalScrollBarVisibilityProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ComputedVerticalScrollBarVisibilityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ExtentHeightProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ExtentHeightProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ExtentHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::MinZoomFactorProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().MinZoomFactorProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().MinZoomFactorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::MaxZoomFactorProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().MaxZoomFactorProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().MaxZoomFactorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ZoomFactorProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ZoomFactorProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ZoomFactorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ZoomSnapPointsProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ZoomSnapPointsProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ZoomSnapPointsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::HorizontalScrollBarVisibilityProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().HorizontalScrollBarVisibilityProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().HorizontalScrollBarVisibilityProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ScrollBarVisibility ScrollViewer::GetHorizontalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetHorizontalScrollBarVisibility(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetHorizontalScrollBarVisibility(element);
 }
 
 inline void ScrollViewer::SetHorizontalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollBarVisibility horizontalScrollBarVisibility)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetHorizontalScrollBarVisibility(element, horizontalScrollBarVisibility);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetHorizontalScrollBarVisibility(element, horizontalScrollBarVisibility);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::VerticalScrollBarVisibilityProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().VerticalScrollBarVisibilityProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().VerticalScrollBarVisibilityProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ScrollBarVisibility ScrollViewer::GetVerticalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetVerticalScrollBarVisibility(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetVerticalScrollBarVisibility(element);
 }
 
 inline void ScrollViewer::SetVerticalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollBarVisibility verticalScrollBarVisibility)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetVerticalScrollBarVisibility(element, verticalScrollBarVisibility);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetVerticalScrollBarVisibility(element, verticalScrollBarVisibility);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsHorizontalRailEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsHorizontalRailEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsHorizontalRailEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsHorizontalRailEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsHorizontalRailEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsHorizontalRailEnabled(element);
 }
 
 inline void ScrollViewer::SetIsHorizontalRailEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isHorizontalRailEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsHorizontalRailEnabled(element, isHorizontalRailEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsHorizontalRailEnabled(element, isHorizontalRailEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsVerticalRailEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsVerticalRailEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsVerticalRailEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsVerticalRailEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsVerticalRailEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsVerticalRailEnabled(element);
 }
 
 inline void ScrollViewer::SetIsVerticalRailEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isVerticalRailEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsVerticalRailEnabled(element, isVerticalRailEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsVerticalRailEnabled(element, isVerticalRailEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsHorizontalScrollChainingEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsHorizontalScrollChainingEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsHorizontalScrollChainingEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsHorizontalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsHorizontalScrollChainingEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsHorizontalScrollChainingEnabled(element);
 }
 
 inline void ScrollViewer::SetIsHorizontalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isHorizontalScrollChainingEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsHorizontalScrollChainingEnabled(element, isHorizontalScrollChainingEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsHorizontalScrollChainingEnabled(element, isHorizontalScrollChainingEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsVerticalScrollChainingEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsVerticalScrollChainingEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsVerticalScrollChainingEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsVerticalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsVerticalScrollChainingEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsVerticalScrollChainingEnabled(element);
 }
 
 inline void ScrollViewer::SetIsVerticalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isVerticalScrollChainingEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsVerticalScrollChainingEnabled(element, isVerticalScrollChainingEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsVerticalScrollChainingEnabled(element, isVerticalScrollChainingEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsZoomChainingEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsZoomChainingEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsZoomChainingEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsZoomChainingEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsZoomChainingEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsZoomChainingEnabled(element);
 }
 
 inline void ScrollViewer::SetIsZoomChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isZoomChainingEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsZoomChainingEnabled(element, isZoomChainingEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsZoomChainingEnabled(element, isZoomChainingEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsScrollInertiaEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsScrollInertiaEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsScrollInertiaEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsScrollInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsScrollInertiaEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsScrollInertiaEnabled(element);
 }
 
 inline void ScrollViewer::SetIsScrollInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isScrollInertiaEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsScrollInertiaEnabled(element, isScrollInertiaEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsScrollInertiaEnabled(element, isScrollInertiaEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsZoomInertiaEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsZoomInertiaEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsZoomInertiaEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsZoomInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsZoomInertiaEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsZoomInertiaEnabled(element);
 }
 
 inline void ScrollViewer::SetIsZoomInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isZoomInertiaEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsZoomInertiaEnabled(element, isZoomInertiaEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsZoomInertiaEnabled(element, isZoomInertiaEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::HorizontalScrollModeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().HorizontalScrollModeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().HorizontalScrollModeProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ScrollMode ScrollViewer::GetHorizontalScrollMode(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetHorizontalScrollMode(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetHorizontalScrollMode(element);
 }
 
 inline void ScrollViewer::SetHorizontalScrollMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollMode horizontalScrollMode)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetHorizontalScrollMode(element, horizontalScrollMode);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetHorizontalScrollMode(element, horizontalScrollMode);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::VerticalScrollModeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().VerticalScrollModeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().VerticalScrollModeProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ScrollMode ScrollViewer::GetVerticalScrollMode(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetVerticalScrollMode(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetVerticalScrollMode(element);
 }
 
 inline void ScrollViewer::SetVerticalScrollMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollMode verticalScrollMode)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetVerticalScrollMode(element, verticalScrollMode);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetVerticalScrollMode(element, verticalScrollMode);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::ZoomModeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().ZoomModeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().ZoomModeProperty();
 }
 
 inline Windows::UI::Xaml::Controls::ZoomMode ScrollViewer::GetZoomMode(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetZoomMode(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetZoomMode(element);
 }
 
 inline void ScrollViewer::SetZoomMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ZoomMode zoomMode)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetZoomMode(element, zoomMode);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetZoomMode(element, zoomMode);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::IsDeferredScrollingEnabledProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().IsDeferredScrollingEnabledProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().IsDeferredScrollingEnabledProperty();
 }
 
 inline bool ScrollViewer::GetIsDeferredScrollingEnabled(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetIsDeferredScrollingEnabled(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetIsDeferredScrollingEnabled(element);
 }
 
 inline void ScrollViewer::SetIsDeferredScrollingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isDeferredScrollingEnabled)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetIsDeferredScrollingEnabled(element, isDeferredScrollingEnabled);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetIsDeferredScrollingEnabled(element, isDeferredScrollingEnabled);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::BringIntoViewOnFocusChangeProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().BringIntoViewOnFocusChangeProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().BringIntoViewOnFocusChangeProperty();
 }
 
 inline bool ScrollViewer::GetBringIntoViewOnFocusChange(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics>().GetBringIntoViewOnFocusChange(element);
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics>().GetBringIntoViewOnFocusChange(element);
 }
 
 inline void ScrollViewer::SetBringIntoViewOnFocusChange(const Windows::UI::Xaml::DependencyObject & element, bool bringIntoViewOnFocusChange)
 {
-    GetActivationFactory<ScrollViewer, IScrollViewerStatics>().SetBringIntoViewOnFocusChange(element, bringIntoViewOnFocusChange);
+    get_activation_factory<ScrollViewer, IScrollViewerStatics>().SetBringIntoViewOnFocusChange(element, bringIntoViewOnFocusChange);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::TopLeftHeaderProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics2>().TopLeftHeaderProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics2>().TopLeftHeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::LeftHeaderProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics2>().LeftHeaderProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics2>().LeftHeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScrollViewer::TopHeaderProperty()
 {
-    return GetActivationFactory<ScrollViewer, IScrollViewerStatics2>().TopHeaderProperty();
+    return get_activation_factory<ScrollViewer, IScrollViewerStatics2>().TopHeaderProperty();
 }
 
 inline ScrollViewerViewChangedEventArgs::ScrollViewerViewChangedEventArgs() :
-    ScrollViewerViewChangedEventArgs(ActivateInstance<ScrollViewerViewChangedEventArgs>())
+    ScrollViewerViewChangedEventArgs(activate_instance<ScrollViewerViewChangedEventArgs>())
 {}
 
 inline SearchBox::SearchBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SearchBox, ISearchBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<SearchBox, ISearchBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::SearchHistoryEnabledProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().SearchHistoryEnabledProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().SearchHistoryEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::SearchHistoryContextProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().SearchHistoryContextProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().SearchHistoryContextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().PlaceholderTextProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::QueryTextProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().QueryTextProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().QueryTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::FocusOnKeyboardInputProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().FocusOnKeyboardInputProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().FocusOnKeyboardInputProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SearchBox::ChooseSuggestionOnEnterProperty()
 {
-    return GetActivationFactory<SearchBox, ISearchBoxStatics>().ChooseSuggestionOnEnterProperty();
+    return get_activation_factory<SearchBox, ISearchBoxStatics>().ChooseSuggestionOnEnterProperty();
 }
 
 inline SearchBoxResultSuggestionChosenEventArgs::SearchBoxResultSuggestionChosenEventArgs() :
-    SearchBoxResultSuggestionChosenEventArgs(ActivateInstance<SearchBoxResultSuggestionChosenEventArgs>())
+    SearchBoxResultSuggestionChosenEventArgs(activate_instance<SearchBoxResultSuggestionChosenEventArgs>())
 {}
 
 inline SelectionChangedEventArgs::SelectionChangedEventArgs(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, outer, inner));
+    impl_move(get_activation_factory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, outer, inner));
 }
 
 inline SemanticZoom::SemanticZoom() :
-    SemanticZoom(ActivateInstance<SemanticZoom>())
+    SemanticZoom(activate_instance<SemanticZoom>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SemanticZoom::ZoomedInViewProperty()
 {
-    return GetActivationFactory<SemanticZoom, ISemanticZoomStatics>().ZoomedInViewProperty();
+    return get_activation_factory<SemanticZoom, ISemanticZoomStatics>().ZoomedInViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SemanticZoom::ZoomedOutViewProperty()
 {
-    return GetActivationFactory<SemanticZoom, ISemanticZoomStatics>().ZoomedOutViewProperty();
+    return get_activation_factory<SemanticZoom, ISemanticZoomStatics>().ZoomedOutViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SemanticZoom::IsZoomedInViewActiveProperty()
 {
-    return GetActivationFactory<SemanticZoom, ISemanticZoomStatics>().IsZoomedInViewActiveProperty();
+    return get_activation_factory<SemanticZoom, ISemanticZoomStatics>().IsZoomedInViewActiveProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SemanticZoom::CanChangeViewsProperty()
 {
-    return GetActivationFactory<SemanticZoom, ISemanticZoomStatics>().CanChangeViewsProperty();
+    return get_activation_factory<SemanticZoom, ISemanticZoomStatics>().CanChangeViewsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SemanticZoom::IsZoomOutButtonEnabledProperty()
 {
-    return GetActivationFactory<SemanticZoom, ISemanticZoomStatics>().IsZoomOutButtonEnabledProperty();
+    return get_activation_factory<SemanticZoom, ISemanticZoomStatics>().IsZoomOutButtonEnabledProperty();
 }
 
 inline SemanticZoomLocation::SemanticZoomLocation() :
-    SemanticZoomLocation(ActivateInstance<SemanticZoomLocation>())
+    SemanticZoomLocation(activate_instance<SemanticZoomLocation>())
 {}
 
 inline SemanticZoomViewChangedEventArgs::SemanticZoomViewChangedEventArgs() :
-    SemanticZoomViewChangedEventArgs(ActivateInstance<SemanticZoomViewChangedEventArgs>())
+    SemanticZoomViewChangedEventArgs(activate_instance<SemanticZoomViewChangedEventArgs>())
 {}
 
 inline SettingsFlyout::SettingsFlyout()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<SettingsFlyout, ISettingsFlyoutFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty SettingsFlyout::TitleProperty()
 {
-    return GetActivationFactory<SettingsFlyout, ISettingsFlyoutStatics>().TitleProperty();
+    return get_activation_factory<SettingsFlyout, ISettingsFlyoutStatics>().TitleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SettingsFlyout::HeaderBackgroundProperty()
 {
-    return GetActivationFactory<SettingsFlyout, ISettingsFlyoutStatics>().HeaderBackgroundProperty();
+    return get_activation_factory<SettingsFlyout, ISettingsFlyoutStatics>().HeaderBackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SettingsFlyout::HeaderForegroundProperty()
 {
-    return GetActivationFactory<SettingsFlyout, ISettingsFlyoutStatics>().HeaderForegroundProperty();
+    return get_activation_factory<SettingsFlyout, ISettingsFlyoutStatics>().HeaderForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SettingsFlyout::IconSourceProperty()
 {
-    return GetActivationFactory<SettingsFlyout, ISettingsFlyoutStatics>().IconSourceProperty();
+    return get_activation_factory<SettingsFlyout, ISettingsFlyoutStatics>().IconSourceProperty();
 }
 
 inline Slider::Slider()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Slider, ISliderFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Slider, ISliderFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::IntermediateValueProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().IntermediateValueProperty();
+    return get_activation_factory<Slider, ISliderStatics>().IntermediateValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::StepFrequencyProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().StepFrequencyProperty();
+    return get_activation_factory<Slider, ISliderStatics>().StepFrequencyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::SnapsToProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().SnapsToProperty();
+    return get_activation_factory<Slider, ISliderStatics>().SnapsToProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::TickFrequencyProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().TickFrequencyProperty();
+    return get_activation_factory<Slider, ISliderStatics>().TickFrequencyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::TickPlacementProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().TickPlacementProperty();
+    return get_activation_factory<Slider, ISliderStatics>().TickPlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::OrientationProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().OrientationProperty();
+    return get_activation_factory<Slider, ISliderStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::IsDirectionReversedProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().IsDirectionReversedProperty();
+    return get_activation_factory<Slider, ISliderStatics>().IsDirectionReversedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::IsThumbToolTipEnabledProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().IsThumbToolTipEnabledProperty();
+    return get_activation_factory<Slider, ISliderStatics>().IsThumbToolTipEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::ThumbToolTipValueConverterProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics>().ThumbToolTipValueConverterProperty();
+    return get_activation_factory<Slider, ISliderStatics>().ThumbToolTipValueConverterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::HeaderProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics2>().HeaderProperty();
+    return get_activation_factory<Slider, ISliderStatics2>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Slider::HeaderTemplateProperty()
 {
-    return GetActivationFactory<Slider, ISliderStatics2>().HeaderTemplateProperty();
+    return get_activation_factory<Slider, ISliderStatics2>().HeaderTemplateProperty();
 }
 
 inline SplitView::SplitView()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SplitView, ISplitViewFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<SplitView, ISplitViewFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::ContentProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().ContentProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().ContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::PaneProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().PaneProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().PaneProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::IsPaneOpenProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().IsPaneOpenProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().IsPaneOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::OpenPaneLengthProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().OpenPaneLengthProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().OpenPaneLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::CompactPaneLengthProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().CompactPaneLengthProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().CompactPaneLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::PanePlacementProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().PanePlacementProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().PanePlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::DisplayModeProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().DisplayModeProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().DisplayModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::TemplateSettingsProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().TemplateSettingsProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().TemplateSettingsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::PaneBackgroundProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics>().PaneBackgroundProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics>().PaneBackgroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitView::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<SplitView, ISplitViewStatics2>().LightDismissOverlayModeProperty();
+    return get_activation_factory<SplitView, ISplitViewStatics2>().LightDismissOverlayModeProperty();
 }
 
 inline StackPanel::StackPanel()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<StackPanel, IStackPanelFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<StackPanel, IStackPanelFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::AreScrollSnapPointsRegularProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics>().AreScrollSnapPointsRegularProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics>().AreScrollSnapPointsRegularProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::OrientationProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics>().OrientationProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::BorderBrushProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics2>().BorderBrushProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics2>().BorderBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::BorderThicknessProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics2>().BorderThicknessProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics2>().BorderThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::CornerRadiusProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics2>().CornerRadiusProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics2>().CornerRadiusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty StackPanel::PaddingProperty()
 {
-    return GetActivationFactory<StackPanel, IStackPanelStatics2>().PaddingProperty();
+    return get_activation_factory<StackPanel, IStackPanelStatics2>().PaddingProperty();
 }
 
 inline StyleSelector::StyleSelector()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<StyleSelector, IStyleSelectorFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<StyleSelector, IStyleSelectorFactory>().CreateInstance(outer, inner));
 }
 
 inline SwapChainBackgroundPanel::SwapChainBackgroundPanel()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<SwapChainBackgroundPanel, ISwapChainBackgroundPanelFactory>().CreateInstance(outer, inner));
 }
 
 inline SwapChainPanel::SwapChainPanel()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<SwapChainPanel, ISwapChainPanelFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwapChainPanel::CompositionScaleXProperty()
 {
-    return GetActivationFactory<SwapChainPanel, ISwapChainPanelStatics>().CompositionScaleXProperty();
+    return get_activation_factory<SwapChainPanel, ISwapChainPanelStatics>().CompositionScaleXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwapChainPanel::CompositionScaleYProperty()
 {
-    return GetActivationFactory<SwapChainPanel, ISwapChainPanelStatics>().CompositionScaleYProperty();
+    return get_activation_factory<SwapChainPanel, ISwapChainPanelStatics>().CompositionScaleYProperty();
 }
 
 inline SymbolIcon::SymbolIcon() :
-    SymbolIcon(ActivateInstance<SymbolIcon>())
+    SymbolIcon(activate_instance<SymbolIcon>())
 {}
 
 inline SymbolIcon::SymbolIcon(Windows::UI::Xaml::Controls::Symbol symbol) :
-    SymbolIcon(GetActivationFactory<SymbolIcon, ISymbolIconFactory>().CreateInstanceWithSymbol(symbol))
+    SymbolIcon(get_activation_factory<SymbolIcon, ISymbolIconFactory>().CreateInstanceWithSymbol(symbol))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SymbolIcon::SymbolProperty()
 {
-    return GetActivationFactory<SymbolIcon, ISymbolIconStatics>().SymbolProperty();
+    return get_activation_factory<SymbolIcon, ISymbolIconStatics>().SymbolProperty();
 }
 
 inline TextBlock::TextBlock() :
-    TextBlock(ActivateInstance<TextBlock>())
+    TextBlock(activate_instance<TextBlock>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::FontSizeProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().FontSizeProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::FontFamilyProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().FontFamilyProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::FontWeightProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().FontWeightProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::FontStyleProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().FontStyleProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::FontStretchProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().FontStretchProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().FontStretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::CharacterSpacingProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().CharacterSpacingProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().CharacterSpacingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::ForegroundProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().ForegroundProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().ForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextWrappingProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().TextWrappingProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().TextWrappingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextTrimmingProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().TextTrimmingProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().TextTrimmingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextAlignmentProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().TextAlignmentProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().TextAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().TextProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().TextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::PaddingProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().PaddingProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().PaddingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::LineHeightProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().LineHeightProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().LineHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::LineStackingStrategyProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().LineStackingStrategyProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().LineStackingStrategyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::IsTextSelectionEnabledProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().IsTextSelectionEnabledProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().IsTextSelectionEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::SelectedTextProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics>().SelectedTextProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics>().SelectedTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::SelectionHighlightColorProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().SelectionHighlightColorProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().SelectionHighlightColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::MaxLinesProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().MaxLinesProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().MaxLinesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextLineBoundsProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().TextLineBoundsProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().TextLineBoundsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::OpticalMarginAlignmentProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().OpticalMarginAlignmentProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().OpticalMarginAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::IsColorFontEnabledProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().IsColorFontEnabledProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().IsColorFontEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::TextReadingOrderProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics2>().TextReadingOrderProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics2>().TextReadingOrderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBlock::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<TextBlock, ITextBlockStatics3>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<TextBlock, ITextBlockStatics3>().IsTextScaleFactorEnabledProperty();
 }
 
 inline TextBox::TextBox()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<TextBox, ITextBoxFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<TextBox, ITextBoxFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::TextProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().TextProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().TextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::MaxLengthProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().MaxLengthProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().MaxLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::IsReadOnlyProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().IsReadOnlyProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().IsReadOnlyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::AcceptsReturnProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().AcceptsReturnProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().AcceptsReturnProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::TextAlignmentProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().TextAlignmentProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().TextAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::TextWrappingProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().TextWrappingProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().TextWrappingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::IsSpellCheckEnabledProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().IsSpellCheckEnabledProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().IsSpellCheckEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::IsTextPredictionEnabledProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().IsTextPredictionEnabledProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().IsTextPredictionEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::InputScopeProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics>().InputScopeProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics>().InputScopeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::HeaderProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().HeaderProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::HeaderTemplateProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().HeaderTemplateProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::PlaceholderTextProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().PlaceholderTextProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().PlaceholderTextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::SelectionHighlightColorProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().SelectionHighlightColorProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().SelectionHighlightColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::PreventKeyboardDisplayOnProgrammaticFocusProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().PreventKeyboardDisplayOnProgrammaticFocusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::IsColorFontEnabledProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics2>().IsColorFontEnabledProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics2>().IsColorFontEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::DesiredCandidateWindowAlignmentProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics3>().DesiredCandidateWindowAlignmentProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics3>().DesiredCandidateWindowAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextBox::TextReadingOrderProperty()
 {
-    return GetActivationFactory<TextBox, ITextBoxStatics3>().TextReadingOrderProperty();
+    return get_activation_factory<TextBox, ITextBoxStatics3>().TextReadingOrderProperty();
 }
 
 inline TimePickedEventArgs::TimePickedEventArgs() :
-    TimePickedEventArgs(ActivateInstance<TimePickedEventArgs>())
+    TimePickedEventArgs(activate_instance<TimePickedEventArgs>())
 {}
 
 inline TimePicker::TimePicker()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<TimePicker, ITimePickerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<TimePicker, ITimePickerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::HeaderProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics>().HeaderProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::HeaderTemplateProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics>().HeaderTemplateProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::ClockIdentifierProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics>().ClockIdentifierProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics>().ClockIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::MinuteIncrementProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics>().MinuteIncrementProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics>().MinuteIncrementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::TimeProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics>().TimeProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics>().TimeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePicker::LightDismissOverlayModeProperty()
 {
-    return GetActivationFactory<TimePicker, ITimePickerStatics2>().LightDismissOverlayModeProperty();
+    return get_activation_factory<TimePicker, ITimePickerStatics2>().LightDismissOverlayModeProperty();
 }
 
 inline TimePickerFlyout::TimePickerFlyout() :
-    TimePickerFlyout(ActivateInstance<TimePickerFlyout>())
+    TimePickerFlyout(activate_instance<TimePickerFlyout>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TimePickerFlyout::ClockIdentifierProperty()
 {
-    return GetActivationFactory<TimePickerFlyout, ITimePickerFlyoutStatics>().ClockIdentifierProperty();
+    return get_activation_factory<TimePickerFlyout, ITimePickerFlyoutStatics>().ClockIdentifierProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePickerFlyout::TimeProperty()
 {
-    return GetActivationFactory<TimePickerFlyout, ITimePickerFlyoutStatics>().TimeProperty();
+    return get_activation_factory<TimePickerFlyout, ITimePickerFlyoutStatics>().TimeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimePickerFlyout::MinuteIncrementProperty()
 {
-    return GetActivationFactory<TimePickerFlyout, ITimePickerFlyoutStatics>().MinuteIncrementProperty();
+    return get_activation_factory<TimePickerFlyout, ITimePickerFlyoutStatics>().MinuteIncrementProperty();
 }
 
 inline ToggleMenuFlyoutItem::ToggleMenuFlyoutItem()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleMenuFlyoutItem::IsCheckedProperty()
 {
-    return GetActivationFactory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemStatics>().IsCheckedProperty();
+    return get_activation_factory<ToggleMenuFlyoutItem, IToggleMenuFlyoutItemStatics>().IsCheckedProperty();
 }
 
 inline ToggleSwitch::ToggleSwitch() :
-    ToggleSwitch(ActivateInstance<ToggleSwitch>())
+    ToggleSwitch(activate_instance<ToggleSwitch>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::IsOnProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().IsOnProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().IsOnProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::HeaderProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().HeaderProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().HeaderProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::HeaderTemplateProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().HeaderTemplateProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().HeaderTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::OnContentProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().OnContentProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().OnContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::OnContentTemplateProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().OnContentTemplateProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().OnContentTemplateProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::OffContentProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().OffContentProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().OffContentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToggleSwitch::OffContentTemplateProperty()
 {
-    return GetActivationFactory<ToggleSwitch, IToggleSwitchStatics>().OffContentTemplateProperty();
+    return get_activation_factory<ToggleSwitch, IToggleSwitchStatics>().OffContentTemplateProperty();
 }
 
 inline ToolTip::ToolTip()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ToolTip, IToolTipFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ToolTip, IToolTipFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTip::HorizontalOffsetProperty()
 {
-    return GetActivationFactory<ToolTip, IToolTipStatics>().HorizontalOffsetProperty();
+    return get_activation_factory<ToolTip, IToolTipStatics>().HorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTip::IsOpenProperty()
 {
-    return GetActivationFactory<ToolTip, IToolTipStatics>().IsOpenProperty();
+    return get_activation_factory<ToolTip, IToolTipStatics>().IsOpenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTip::PlacementProperty()
 {
-    return GetActivationFactory<ToolTip, IToolTipStatics>().PlacementProperty();
+    return get_activation_factory<ToolTip, IToolTipStatics>().PlacementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTip::PlacementTargetProperty()
 {
-    return GetActivationFactory<ToolTip, IToolTipStatics>().PlacementTargetProperty();
+    return get_activation_factory<ToolTip, IToolTipStatics>().PlacementTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTip::VerticalOffsetProperty()
 {
-    return GetActivationFactory<ToolTip, IToolTipStatics>().VerticalOffsetProperty();
+    return get_activation_factory<ToolTip, IToolTipStatics>().VerticalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTipService::PlacementProperty()
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().PlacementProperty();
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().PlacementProperty();
 }
 
 inline Windows::UI::Xaml::Controls::Primitives::PlacementMode ToolTipService::GetPlacement(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().GetPlacement(element);
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().GetPlacement(element);
 }
 
 inline void ToolTipService::SetPlacement(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::Primitives::PlacementMode value)
 {
-    GetActivationFactory<ToolTipService, IToolTipServiceStatics>().SetPlacement(element, value);
+    get_activation_factory<ToolTipService, IToolTipServiceStatics>().SetPlacement(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTipService::PlacementTargetProperty()
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().PlacementTargetProperty();
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().PlacementTargetProperty();
 }
 
 inline Windows::UI::Xaml::UIElement ToolTipService::GetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().GetPlacementTarget(element);
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().GetPlacementTarget(element);
 }
 
 inline void ToolTipService::SetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value)
 {
-    GetActivationFactory<ToolTipService, IToolTipServiceStatics>().SetPlacementTarget(element, value);
+    get_activation_factory<ToolTipService, IToolTipServiceStatics>().SetPlacementTarget(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ToolTipService::ToolTipProperty()
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().ToolTipProperty();
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().ToolTipProperty();
 }
 
 inline Windows::IInspectable ToolTipService::GetToolTip(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<ToolTipService, IToolTipServiceStatics>().GetToolTip(element);
+    return get_activation_factory<ToolTipService, IToolTipServiceStatics>().GetToolTip(element);
 }
 
 inline void ToolTipService::SetToolTip(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & value)
 {
-    GetActivationFactory<ToolTipService, IToolTipServiceStatics>().SetToolTip(element, value);
+    get_activation_factory<ToolTipService, IToolTipServiceStatics>().SetToolTip(element, value);
 }
 
 inline UserControl::UserControl()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<UserControl, IUserControlFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<UserControl, IUserControlFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty UserControl::ContentProperty()
 {
-    return GetActivationFactory<UserControl, IUserControlStatics>().ContentProperty();
+    return get_activation_factory<UserControl, IUserControlStatics>().ContentProperty();
 }
 
 inline VariableSizedWrapGrid::VariableSizedWrapGrid() :
-    VariableSizedWrapGrid(ActivateInstance<VariableSizedWrapGrid>())
+    VariableSizedWrapGrid(activate_instance<VariableSizedWrapGrid>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::ItemHeightProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ItemHeightProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ItemHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::ItemWidthProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ItemWidthProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ItemWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::OrientationProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().OrientationProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::HorizontalChildrenAlignmentProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().HorizontalChildrenAlignmentProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().HorizontalChildrenAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::VerticalChildrenAlignmentProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().VerticalChildrenAlignmentProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().VerticalChildrenAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::MaximumRowsOrColumnsProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().MaximumRowsOrColumnsProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().MaximumRowsOrColumnsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::RowSpanProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().RowSpanProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().RowSpanProperty();
 }
 
 inline int32_t VariableSizedWrapGrid::GetRowSpan(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().GetRowSpan(element);
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().GetRowSpan(element);
 }
 
 inline void VariableSizedWrapGrid::SetRowSpan(const Windows::UI::Xaml::UIElement & element, int32_t value)
 {
-    GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().SetRowSpan(element, value);
+    get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().SetRowSpan(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty VariableSizedWrapGrid::ColumnSpanProperty()
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ColumnSpanProperty();
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().ColumnSpanProperty();
 }
 
 inline int32_t VariableSizedWrapGrid::GetColumnSpan(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().GetColumnSpan(element);
+    return get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().GetColumnSpan(element);
 }
 
 inline void VariableSizedWrapGrid::SetColumnSpan(const Windows::UI::Xaml::UIElement & element, int32_t value)
 {
-    GetActivationFactory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().SetColumnSpan(element, value);
+    get_activation_factory<VariableSizedWrapGrid, IVariableSizedWrapGridStatics>().SetColumnSpan(element, value);
 }
 
 inline Viewbox::Viewbox() :
-    Viewbox(ActivateInstance<Viewbox>())
+    Viewbox(activate_instance<Viewbox>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Viewbox::StretchProperty()
 {
-    return GetActivationFactory<Viewbox, IViewboxStatics>().StretchProperty();
+    return get_activation_factory<Viewbox, IViewboxStatics>().StretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Viewbox::StretchDirectionProperty()
 {
-    return GetActivationFactory<Viewbox, IViewboxStatics>().StretchDirectionProperty();
+    return get_activation_factory<Viewbox, IViewboxStatics>().StretchDirectionProperty();
 }
 
 inline VirtualizingStackPanel::VirtualizingStackPanel() :
-    VirtualizingStackPanel(ActivateInstance<VirtualizingStackPanel>())
+    VirtualizingStackPanel(activate_instance<VirtualizingStackPanel>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty VirtualizingStackPanel::AreScrollSnapPointsRegularProperty()
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().AreScrollSnapPointsRegularProperty();
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().AreScrollSnapPointsRegularProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VirtualizingStackPanel::OrientationProperty()
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().OrientationProperty();
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty VirtualizingStackPanel::VirtualizationModeProperty()
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().VirtualizationModeProperty();
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().VirtualizationModeProperty();
 }
 
 inline Windows::UI::Xaml::Controls::VirtualizationMode VirtualizingStackPanel::GetVirtualizationMode(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().GetVirtualizationMode(element);
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().GetVirtualizationMode(element);
 }
 
 inline void VirtualizingStackPanel::SetVirtualizationMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::VirtualizationMode value)
 {
-    GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().SetVirtualizationMode(element, value);
+    get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().SetVirtualizationMode(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty VirtualizingStackPanel::IsVirtualizingProperty()
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().IsVirtualizingProperty();
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().IsVirtualizingProperty();
 }
 
 inline bool VirtualizingStackPanel::GetIsVirtualizing(const Windows::UI::Xaml::DependencyObject & o)
 {
-    return GetActivationFactory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().GetIsVirtualizing(o);
+    return get_activation_factory<VirtualizingStackPanel, IVirtualizingStackPanelStatics>().GetIsVirtualizing(o);
 }
 
 inline WebView::WebView() :
-    WebView(ActivateInstance<WebView>())
+    WebView(activate_instance<WebView>())
 {}
 
 inline WebView::WebView(Windows::UI::Xaml::Controls::WebViewExecutionMode executionMode) :
-    WebView(GetActivationFactory<WebView, IWebViewFactory4>().CreateInstanceWithExecutionMode(executionMode))
+    WebView(get_activation_factory<WebView, IWebViewFactory4>().CreateInstanceWithExecutionMode(executionMode))
 {}
 
 inline Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> WebView::AnyScriptNotifyUri()
 {
-    return GetActivationFactory<WebView, IWebViewStatics>().AnyScriptNotifyUri();
+    return get_activation_factory<WebView, IWebViewStatics>().AnyScriptNotifyUri();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::SourceProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics>().SourceProperty();
+    return get_activation_factory<WebView, IWebViewStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::AllowedScriptNotifyUrisProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics>().AllowedScriptNotifyUrisProperty();
+    return get_activation_factory<WebView, IWebViewStatics>().AllowedScriptNotifyUrisProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::DataTransferPackageProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics>().DataTransferPackageProperty();
+    return get_activation_factory<WebView, IWebViewStatics>().DataTransferPackageProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::CanGoBackProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics2>().CanGoBackProperty();
+    return get_activation_factory<WebView, IWebViewStatics2>().CanGoBackProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::CanGoForwardProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics2>().CanGoForwardProperty();
+    return get_activation_factory<WebView, IWebViewStatics2>().CanGoForwardProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::DocumentTitleProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics2>().DocumentTitleProperty();
+    return get_activation_factory<WebView, IWebViewStatics2>().DocumentTitleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::DefaultBackgroundColorProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics2>().DefaultBackgroundColorProperty();
+    return get_activation_factory<WebView, IWebViewStatics2>().DefaultBackgroundColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::ContainsFullScreenElementProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics3>().ContainsFullScreenElementProperty();
+    return get_activation_factory<WebView, IWebViewStatics3>().ContainsFullScreenElementProperty();
 }
 
 inline Windows::UI::Xaml::Controls::WebViewExecutionMode WebView::DefaultExecutionMode()
 {
-    return GetActivationFactory<WebView, IWebViewStatics4>().DefaultExecutionMode();
+    return get_activation_factory<WebView, IWebViewStatics4>().DefaultExecutionMode();
 }
 
 inline Windows::Foundation::IAsyncAction WebView::ClearTemporaryWebDataAsync()
 {
-    return GetActivationFactory<WebView, IWebViewStatics4>().ClearTemporaryWebDataAsync();
+    return get_activation_factory<WebView, IWebViewStatics4>().ClearTemporaryWebDataAsync();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::XYFocusLeftProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics5>().XYFocusLeftProperty();
+    return get_activation_factory<WebView, IWebViewStatics5>().XYFocusLeftProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::XYFocusRightProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics5>().XYFocusRightProperty();
+    return get_activation_factory<WebView, IWebViewStatics5>().XYFocusRightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::XYFocusUpProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics5>().XYFocusUpProperty();
+    return get_activation_factory<WebView, IWebViewStatics5>().XYFocusUpProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WebView::XYFocusDownProperty()
 {
-    return GetActivationFactory<WebView, IWebViewStatics5>().XYFocusDownProperty();
+    return get_activation_factory<WebView, IWebViewStatics5>().XYFocusDownProperty();
 }
 
 inline WebViewBrush::WebViewBrush() :
-    WebViewBrush(ActivateInstance<WebViewBrush>())
+    WebViewBrush(activate_instance<WebViewBrush>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty WebViewBrush::SourceNameProperty()
 {
-    return GetActivationFactory<WebViewBrush, IWebViewBrushStatics>().SourceNameProperty();
+    return get_activation_factory<WebViewBrush, IWebViewBrushStatics>().SourceNameProperty();
 }
 
 inline WrapGrid::WrapGrid() :
-    WrapGrid(ActivateInstance<WrapGrid>())
+    WrapGrid(activate_instance<WrapGrid>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::ItemWidthProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().ItemWidthProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().ItemWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::ItemHeightProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().ItemHeightProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().ItemHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::OrientationProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().OrientationProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::HorizontalChildrenAlignmentProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().HorizontalChildrenAlignmentProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().HorizontalChildrenAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::VerticalChildrenAlignmentProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().VerticalChildrenAlignmentProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().VerticalChildrenAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty WrapGrid::MaximumRowsOrColumnsProperty()
 {
-    return GetActivationFactory<WrapGrid, IWrapGridStatics>().MaximumRowsOrColumnsProperty();
+    return get_activation_factory<WrapGrid, IWrapGridStatics>().MaximumRowsOrColumnsProperty();
 }
 
 }

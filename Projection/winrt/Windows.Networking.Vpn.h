@@ -4286,100 +4286,100 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Netwo
 }
 
 inline VpnAppId::VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) :
-    VpnAppId(GetActivationFactory<VpnAppId, IVpnAppIdFactory>().Create(type, value))
+    VpnAppId(get_activation_factory<VpnAppId, IVpnAppIdFactory>().Create(type, value))
 {}
 
 inline void VpnChannel::ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event)
 {
-    GetActivationFactory<VpnChannel, IVpnChannelStatics>().ProcessEventAsync(thirdPartyPlugIn, event);
+    get_activation_factory<VpnChannel, IVpnChannelStatics>().ProcessEventAsync(thirdPartyPlugIn, event);
 }
 
 inline VpnCustomCheckBox::VpnCustomCheckBox() :
-    VpnCustomCheckBox(ActivateInstance<VpnCustomCheckBox>())
+    VpnCustomCheckBox(activate_instance<VpnCustomCheckBox>())
 {}
 
 inline VpnCustomComboBox::VpnCustomComboBox() :
-    VpnCustomComboBox(ActivateInstance<VpnCustomComboBox>())
+    VpnCustomComboBox(activate_instance<VpnCustomComboBox>())
 {}
 
 inline VpnCustomEditBox::VpnCustomEditBox() :
-    VpnCustomEditBox(ActivateInstance<VpnCustomEditBox>())
+    VpnCustomEditBox(activate_instance<VpnCustomEditBox>())
 {}
 
 inline VpnCustomErrorBox::VpnCustomErrorBox() :
-    VpnCustomErrorBox(ActivateInstance<VpnCustomErrorBox>())
+    VpnCustomErrorBox(activate_instance<VpnCustomErrorBox>())
 {}
 
 inline VpnCustomPromptBooleanInput::VpnCustomPromptBooleanInput() :
-    VpnCustomPromptBooleanInput(ActivateInstance<VpnCustomPromptBooleanInput>())
+    VpnCustomPromptBooleanInput(activate_instance<VpnCustomPromptBooleanInput>())
 {}
 
 inline VpnCustomPromptOptionSelector::VpnCustomPromptOptionSelector() :
-    VpnCustomPromptOptionSelector(ActivateInstance<VpnCustomPromptOptionSelector>())
+    VpnCustomPromptOptionSelector(activate_instance<VpnCustomPromptOptionSelector>())
 {}
 
 inline VpnCustomPromptText::VpnCustomPromptText() :
-    VpnCustomPromptText(ActivateInstance<VpnCustomPromptText>())
+    VpnCustomPromptText(activate_instance<VpnCustomPromptText>())
 {}
 
 inline VpnCustomPromptTextInput::VpnCustomPromptTextInput() :
-    VpnCustomPromptTextInput(ActivateInstance<VpnCustomPromptTextInput>())
+    VpnCustomPromptTextInput(activate_instance<VpnCustomPromptTextInput>())
 {}
 
 inline VpnCustomTextBox::VpnCustomTextBox() :
-    VpnCustomTextBox(ActivateInstance<VpnCustomTextBox>())
+    VpnCustomTextBox(activate_instance<VpnCustomTextBox>())
 {}
 
 inline VpnDomainNameAssignment::VpnDomainNameAssignment() :
-    VpnDomainNameAssignment(ActivateInstance<VpnDomainNameAssignment>())
+    VpnDomainNameAssignment(activate_instance<VpnDomainNameAssignment>())
 {}
 
 inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) :
-    VpnDomainNameInfo(GetActivationFactory<VpnDomainNameInfo, IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
+    VpnDomainNameInfo(get_activation_factory<VpnDomainNameInfo, IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
 {}
 
 inline VpnInterfaceId::VpnInterfaceId(array_ref<const uint8_t> address) :
-    VpnInterfaceId(GetActivationFactory<VpnInterfaceId, IVpnInterfaceIdFactory>().CreateVpnInterfaceId(address))
+    VpnInterfaceId(get_activation_factory<VpnInterfaceId, IVpnInterfaceIdFactory>().CreateVpnInterfaceId(address))
 {}
 
 inline VpnManagementAgent::VpnManagementAgent() :
-    VpnManagementAgent(ActivateInstance<VpnManagementAgent>())
+    VpnManagementAgent(activate_instance<VpnManagementAgent>())
 {}
 
 inline VpnNamespaceAssignment::VpnNamespaceAssignment() :
-    VpnNamespaceAssignment(ActivateInstance<VpnNamespaceAssignment>())
+    VpnNamespaceAssignment(activate_instance<VpnNamespaceAssignment>())
 {}
 
 inline VpnNamespaceInfo::VpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) :
-    VpnNamespaceInfo(GetActivationFactory<VpnNamespaceInfo, IVpnNamespaceInfoFactory>().CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList))
+    VpnNamespaceInfo(get_activation_factory<VpnNamespaceInfo, IVpnNamespaceInfoFactory>().CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList))
 {}
 
 inline VpnNativeProfile::VpnNativeProfile() :
-    VpnNativeProfile(ActivateInstance<VpnNativeProfile>())
+    VpnNativeProfile(activate_instance<VpnNativeProfile>())
 {}
 
 inline VpnPacketBuffer::VpnPacketBuffer(const Windows::Networking::Vpn::VpnPacketBuffer & parentBuffer, uint32_t offset, uint32_t length) :
-    VpnPacketBuffer(GetActivationFactory<VpnPacketBuffer, IVpnPacketBufferFactory>().CreateVpnPacketBuffer(parentBuffer, offset, length))
+    VpnPacketBuffer(get_activation_factory<VpnPacketBuffer, IVpnPacketBufferFactory>().CreateVpnPacketBuffer(parentBuffer, offset, length))
 {}
 
 inline VpnPlugInProfile::VpnPlugInProfile() :
-    VpnPlugInProfile(ActivateInstance<VpnPlugInProfile>())
+    VpnPlugInProfile(activate_instance<VpnPlugInProfile>())
 {}
 
 inline VpnRoute::VpnRoute(const Windows::Networking::HostName & address, uint8_t prefixSize) :
-    VpnRoute(GetActivationFactory<VpnRoute, IVpnRouteFactory>().CreateVpnRoute(address, prefixSize))
+    VpnRoute(get_activation_factory<VpnRoute, IVpnRouteFactory>().CreateVpnRoute(address, prefixSize))
 {}
 
 inline VpnRouteAssignment::VpnRouteAssignment() :
-    VpnRouteAssignment(ActivateInstance<VpnRouteAssignment>())
+    VpnRouteAssignment(activate_instance<VpnRouteAssignment>())
 {}
 
 inline VpnTrafficFilter::VpnTrafficFilter(const Windows::Networking::Vpn::VpnAppId & appId) :
-    VpnTrafficFilter(GetActivationFactory<VpnTrafficFilter, IVpnTrafficFilterFactory>().Create(appId))
+    VpnTrafficFilter(get_activation_factory<VpnTrafficFilter, IVpnTrafficFilterFactory>().Create(appId))
 {}
 
 inline VpnTrafficFilterAssignment::VpnTrafficFilterAssignment() :
-    VpnTrafficFilterAssignment(ActivateInstance<VpnTrafficFilterAssignment>())
+    VpnTrafficFilterAssignment(activate_instance<VpnTrafficFilterAssignment>())
 {}
 
 }

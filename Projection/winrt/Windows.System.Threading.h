@@ -289,37 +289,37 @@ template <typename D> Windows::System::Threading::ThreadPoolTimer impl_IThreadPo
 
 inline Windows::Foundation::IAsyncAction ThreadPool::RunAsync(const Windows::System::Threading::WorkItemHandler & handler)
 {
-    return GetActivationFactory<ThreadPool, IThreadPoolStatics>().RunAsync(handler);
+    return get_activation_factory<ThreadPool, IThreadPoolStatics>().RunAsync(handler);
 }
 
 inline Windows::Foundation::IAsyncAction ThreadPool::RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority)
 {
-    return GetActivationFactory<ThreadPool, IThreadPoolStatics>().RunAsync(handler, priority);
+    return get_activation_factory<ThreadPool, IThreadPoolStatics>().RunAsync(handler, priority);
 }
 
 inline Windows::Foundation::IAsyncAction ThreadPool::RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options)
 {
-    return GetActivationFactory<ThreadPool, IThreadPoolStatics>().RunAsync(handler, priority, options);
+    return get_activation_factory<ThreadPool, IThreadPoolStatics>().RunAsync(handler, priority, options);
 }
 
 inline Windows::System::Threading::ThreadPoolTimer ThreadPoolTimer::CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period)
 {
-    return GetActivationFactory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreatePeriodicTimer(handler, period);
+    return get_activation_factory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreatePeriodicTimer(handler, period);
 }
 
 inline Windows::System::Threading::ThreadPoolTimer ThreadPoolTimer::CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay)
 {
-    return GetActivationFactory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreateTimer(handler, delay);
+    return get_activation_factory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreateTimer(handler, delay);
 }
 
 inline Windows::System::Threading::ThreadPoolTimer ThreadPoolTimer::CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period, const Windows::System::Threading::TimerDestroyedHandler & destroyed)
 {
-    return GetActivationFactory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreatePeriodicTimer(handler, period, destroyed);
+    return get_activation_factory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreatePeriodicTimer(handler, period, destroyed);
 }
 
 inline Windows::System::Threading::ThreadPoolTimer ThreadPoolTimer::CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay, const Windows::System::Threading::TimerDestroyedHandler & destroyed)
 {
-    return GetActivationFactory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreateTimer(handler, delay, destroyed);
+    return get_activation_factory<ThreadPoolTimer, IThreadPoolTimerStatics>().CreateTimer(handler, delay, destroyed);
 }
 
 }

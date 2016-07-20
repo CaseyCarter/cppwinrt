@@ -1063,150 +1063,150 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gam
 
 inline event_token ArcadeStick::ArcadeStickAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value)
 {
-    return GetActivationFactory<ArcadeStick, IArcadeStickStatics>().ArcadeStickAdded(value);
+    return get_activation_factory<ArcadeStick, IArcadeStickStatics>().ArcadeStickAdded(value);
 }
 
 inline factory_event_revoker<IArcadeStickStatics> ArcadeStick::ArcadeStickAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value)
 {
-    auto factory = GetActivationFactory<ArcadeStick, IArcadeStickStatics>();
+    auto factory = get_activation_factory<ArcadeStick, IArcadeStickStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IArcadeStickStatics::remove_ArcadeStickAdded, factory.ArcadeStickAdded(value) };
 }
 
 inline void ArcadeStick::ArcadeStickAdded(event_token token)
 {
-    GetActivationFactory<ArcadeStick, IArcadeStickStatics>().ArcadeStickAdded(token);
+    get_activation_factory<ArcadeStick, IArcadeStickStatics>().ArcadeStickAdded(token);
 }
 
 inline event_token ArcadeStick::ArcadeStickRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value)
 {
-    return GetActivationFactory<ArcadeStick, IArcadeStickStatics>().ArcadeStickRemoved(value);
+    return get_activation_factory<ArcadeStick, IArcadeStickStatics>().ArcadeStickRemoved(value);
 }
 
 inline factory_event_revoker<IArcadeStickStatics> ArcadeStick::ArcadeStickRemoved(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value)
 {
-    auto factory = GetActivationFactory<ArcadeStick, IArcadeStickStatics>();
+    auto factory = get_activation_factory<ArcadeStick, IArcadeStickStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IArcadeStickStatics::remove_ArcadeStickRemoved, factory.ArcadeStickRemoved(value) };
 }
 
 inline void ArcadeStick::ArcadeStickRemoved(event_token token)
 {
-    GetActivationFactory<ArcadeStick, IArcadeStickStatics>().ArcadeStickRemoved(token);
+    get_activation_factory<ArcadeStick, IArcadeStickStatics>().ArcadeStickRemoved(token);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> ArcadeStick::ArcadeSticks()
 {
-    return GetActivationFactory<ArcadeStick, IArcadeStickStatics>().ArcadeSticks();
+    return get_activation_factory<ArcadeStick, IArcadeStickStatics>().ArcadeSticks();
 }
 
 inline event_token Gamepad::GamepadAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value)
 {
-    return GetActivationFactory<Gamepad, IGamepadStatics>().GamepadAdded(value);
+    return get_activation_factory<Gamepad, IGamepadStatics>().GamepadAdded(value);
 }
 
 inline factory_event_revoker<IGamepadStatics> Gamepad::GamepadAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value)
 {
-    auto factory = GetActivationFactory<Gamepad, IGamepadStatics>();
+    auto factory = get_activation_factory<Gamepad, IGamepadStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IGamepadStatics::remove_GamepadAdded, factory.GamepadAdded(value) };
 }
 
 inline void Gamepad::GamepadAdded(event_token token)
 {
-    GetActivationFactory<Gamepad, IGamepadStatics>().GamepadAdded(token);
+    get_activation_factory<Gamepad, IGamepadStatics>().GamepadAdded(token);
 }
 
 inline event_token Gamepad::GamepadRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value)
 {
-    return GetActivationFactory<Gamepad, IGamepadStatics>().GamepadRemoved(value);
+    return get_activation_factory<Gamepad, IGamepadStatics>().GamepadRemoved(value);
 }
 
 inline factory_event_revoker<IGamepadStatics> Gamepad::GamepadRemoved(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value)
 {
-    auto factory = GetActivationFactory<Gamepad, IGamepadStatics>();
+    auto factory = get_activation_factory<Gamepad, IGamepadStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IGamepadStatics::remove_GamepadRemoved, factory.GamepadRemoved(value) };
 }
 
 inline void Gamepad::GamepadRemoved(event_token token)
 {
-    GetActivationFactory<Gamepad, IGamepadStatics>().GamepadRemoved(token);
+    get_activation_factory<Gamepad, IGamepadStatics>().GamepadRemoved(token);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> Gamepad::Gamepads()
 {
-    return GetActivationFactory<Gamepad, IGamepadStatics>().Gamepads();
+    return get_activation_factory<Gamepad, IGamepadStatics>().Gamepads();
 }
 
 inline event_token RacingWheel::RacingWheelAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value)
 {
-    return GetActivationFactory<RacingWheel, IRacingWheelStatics>().RacingWheelAdded(value);
+    return get_activation_factory<RacingWheel, IRacingWheelStatics>().RacingWheelAdded(value);
 }
 
 inline factory_event_revoker<IRacingWheelStatics> RacingWheel::RacingWheelAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value)
 {
-    auto factory = GetActivationFactory<RacingWheel, IRacingWheelStatics>();
+    auto factory = get_activation_factory<RacingWheel, IRacingWheelStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IRacingWheelStatics::remove_RacingWheelAdded, factory.RacingWheelAdded(value) };
 }
 
 inline void RacingWheel::RacingWheelAdded(event_token token)
 {
-    GetActivationFactory<RacingWheel, IRacingWheelStatics>().RacingWheelAdded(token);
+    get_activation_factory<RacingWheel, IRacingWheelStatics>().RacingWheelAdded(token);
 }
 
 inline event_token RacingWheel::RacingWheelRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value)
 {
-    return GetActivationFactory<RacingWheel, IRacingWheelStatics>().RacingWheelRemoved(value);
+    return get_activation_factory<RacingWheel, IRacingWheelStatics>().RacingWheelRemoved(value);
 }
 
 inline factory_event_revoker<IRacingWheelStatics> RacingWheel::RacingWheelRemoved(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value)
 {
-    auto factory = GetActivationFactory<RacingWheel, IRacingWheelStatics>();
+    auto factory = get_activation_factory<RacingWheel, IRacingWheelStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IRacingWheelStatics::remove_RacingWheelRemoved, factory.RacingWheelRemoved(value) };
 }
 
 inline void RacingWheel::RacingWheelRemoved(event_token token)
 {
-    GetActivationFactory<RacingWheel, IRacingWheelStatics>().RacingWheelRemoved(token);
+    get_activation_factory<RacingWheel, IRacingWheelStatics>().RacingWheelRemoved(token);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> RacingWheel::RacingWheels()
 {
-    return GetActivationFactory<RacingWheel, IRacingWheelStatics>().RacingWheels();
+    return get_activation_factory<RacingWheel, IRacingWheelStatics>().RacingWheels();
 }
 
 inline event_token UINavigationController::UINavigationControllerAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value)
 {
-    return GetActivationFactory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerAdded(value);
+    return get_activation_factory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerAdded(value);
 }
 
 inline factory_event_revoker<IUINavigationControllerStatics> UINavigationController::UINavigationControllerAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value)
 {
-    auto factory = GetActivationFactory<UINavigationController, IUINavigationControllerStatics>();
+    auto factory = get_activation_factory<UINavigationController, IUINavigationControllerStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IUINavigationControllerStatics::remove_UINavigationControllerAdded, factory.UINavigationControllerAdded(value) };
 }
 
 inline void UINavigationController::UINavigationControllerAdded(event_token token)
 {
-    GetActivationFactory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerAdded(token);
+    get_activation_factory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerAdded(token);
 }
 
 inline event_token UINavigationController::UINavigationControllerRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value)
 {
-    return GetActivationFactory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerRemoved(value);
+    return get_activation_factory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerRemoved(value);
 }
 
 inline factory_event_revoker<IUINavigationControllerStatics> UINavigationController::UINavigationControllerRemoved(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value)
 {
-    auto factory = GetActivationFactory<UINavigationController, IUINavigationControllerStatics>();
+    auto factory = get_activation_factory<UINavigationController, IUINavigationControllerStatics>();
     return { factory, &ABI::Windows::Gaming::Input::IUINavigationControllerStatics::remove_UINavigationControllerRemoved, factory.UINavigationControllerRemoved(value) };
 }
 
 inline void UINavigationController::UINavigationControllerRemoved(event_token token)
 {
-    GetActivationFactory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerRemoved(token);
+    get_activation_factory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllerRemoved(token);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> UINavigationController::UINavigationControllers()
 {
-    return GetActivationFactory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllers();
+    return get_activation_factory<UINavigationController, IUINavigationControllerStatics>().UINavigationControllers();
 }
 
 }

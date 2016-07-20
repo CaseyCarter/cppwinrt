@@ -3067,42 +3067,42 @@ template <typename D> void impl_IMediaTimelineController<D>::StateChanged(event_
 }
 
 inline AudioFrame::AudioFrame(uint32_t capacity) :
-    AudioFrame(GetActivationFactory<AudioFrame, IAudioFrameFactory>().Create(capacity))
+    AudioFrame(get_activation_factory<AudioFrame, IAudioFrameFactory>().Create(capacity))
 {}
 
 inline MediaExtensionManager::MediaExtensionManager() :
-    MediaExtensionManager(ActivateInstance<MediaExtensionManager>())
+    MediaExtensionManager(activate_instance<MediaExtensionManager>())
 {}
 
 inline hstring MediaMarkerTypes::Bookmark()
 {
-    return GetActivationFactory<MediaMarkerTypes, IMediaMarkerTypesStatics>().Bookmark();
+    return get_activation_factory<MediaMarkerTypes, IMediaMarkerTypesStatics>().Bookmark();
 }
 
 inline MediaTimelineController::MediaTimelineController() :
-    MediaTimelineController(ActivateInstance<MediaTimelineController>())
+    MediaTimelineController(activate_instance<MediaTimelineController>())
 {}
 
 inline Windows::Media::SystemMediaTransportControls SystemMediaTransportControls::GetForCurrentView()
 {
-    return GetActivationFactory<SystemMediaTransportControls, ISystemMediaTransportControlsStatics>().GetForCurrentView();
+    return get_activation_factory<SystemMediaTransportControls, ISystemMediaTransportControlsStatics>().GetForCurrentView();
 }
 
 inline SystemMediaTransportControlsTimelineProperties::SystemMediaTransportControlsTimelineProperties() :
-    SystemMediaTransportControlsTimelineProperties(ActivateInstance<SystemMediaTransportControlsTimelineProperties>())
+    SystemMediaTransportControlsTimelineProperties(activate_instance<SystemMediaTransportControlsTimelineProperties>())
 {}
 
 inline hstring VideoEffects::VideoStabilization()
 {
-    return GetActivationFactory<VideoEffects, IVideoEffectsStatics>().VideoStabilization();
+    return get_activation_factory<VideoEffects, IVideoEffectsStatics>().VideoStabilization();
 }
 
 inline VideoFrame::VideoFrame(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) :
-    VideoFrame(GetActivationFactory<VideoFrame, IVideoFrameFactory>().Create(format, width, height))
+    VideoFrame(get_activation_factory<VideoFrame, IVideoFrameFactory>().Create(format, width, height))
 {}
 
 inline VideoFrame::VideoFrame(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) :
-    VideoFrame(GetActivationFactory<VideoFrame, IVideoFrameFactory>().CreateWithAlpha(format, width, height, alpha))
+    VideoFrame(get_activation_factory<VideoFrame, IVideoFrameFactory>().CreateWithAlpha(format, width, height, alpha))
 {}
 
 }

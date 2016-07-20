@@ -7303,549 +7303,549 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStat
 inline CustomMapTileDataSource::CustomMapTileDataSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
 inline HttpMapTileDataSource::HttpMapTileDataSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
 inline HttpMapTileDataSource::HttpMapTileDataSource(hstring_ref uriFormatString)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));
+    impl_move(get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));
 }
 
 inline LocalMapTileDataSource::LocalMapTileDataSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
 inline LocalMapTileDataSource::LocalMapTileDataSource(hstring_ref uriFormatString)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));
+    impl_move(get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));
 }
 
 inline MapActualCameraChangedEventArgs::MapActualCameraChangedEventArgs() :
-    MapActualCameraChangedEventArgs(ActivateInstance<MapActualCameraChangedEventArgs>())
+    MapActualCameraChangedEventArgs(activate_instance<MapActualCameraChangedEventArgs>())
 {}
 
 inline MapActualCameraChangingEventArgs::MapActualCameraChangingEventArgs() :
-    MapActualCameraChangingEventArgs(ActivateInstance<MapActualCameraChangingEventArgs>())
+    MapActualCameraChangingEventArgs(activate_instance<MapActualCameraChangingEventArgs>())
 {}
 
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location) :
-    MapCamera(GetActivationFactory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocation(location))
+    MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocation(location))
 {}
 
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees) :
-    MapCamera(GetActivationFactory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationAndHeading(location, headingInDegrees))
+    MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationAndHeading(location, headingInDegrees))
 {}
 
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) :
-    MapCamera(GetActivationFactory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationHeadingAndPitch(location, headingInDegrees, pitchInDegrees))
+    MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationHeadingAndPitch(location, headingInDegrees, pitchInDegrees))
 {}
 
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees) :
-    MapCamera(GetActivationFactory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(location, headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees))
+    MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(location, headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees))
 {}
 
 inline MapControl::MapControl() :
-    MapControl(ActivateInstance<MapControl>())
+    MapControl(activate_instance<MapControl>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::CenterProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().CenterProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().CenterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::ChildrenProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().ChildrenProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().ChildrenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::ColorSchemeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().ColorSchemeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().ColorSchemeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::DesiredPitchProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().DesiredPitchProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().DesiredPitchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::HeadingProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().HeadingProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().HeadingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::LandmarksVisibleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().LandmarksVisibleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().LandmarksVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::LoadingStatusProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().LoadingStatusProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().LoadingStatusProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::MapServiceTokenProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().MapServiceTokenProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().MapServiceTokenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::PedestrianFeaturesVisibleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().PedestrianFeaturesVisibleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().PedestrianFeaturesVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::PitchProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().PitchProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().PitchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::StyleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().StyleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().StyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TrafficFlowVisibleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().TrafficFlowVisibleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().TrafficFlowVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TransformOriginProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().TransformOriginProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().TransformOriginProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::WatermarkModeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().WatermarkModeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().WatermarkModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::ZoomLevelProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().ZoomLevelProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().ZoomLevelProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::MapElementsProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().MapElementsProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().MapElementsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::RoutesProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().RoutesProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().RoutesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TileSourcesProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().TileSourcesProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().TileSourcesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::LocationProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().LocationProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().LocationProperty();
 }
 
 inline Windows::Devices::Geolocation::Geopoint MapControl::GetLocation(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().GetLocation(element);
+    return get_activation_factory<MapControl, IMapControlStatics>().GetLocation(element);
 }
 
 inline void MapControl::SetLocation(const Windows::UI::Xaml::DependencyObject & element, const Windows::Devices::Geolocation::Geopoint & value)
 {
-    GetActivationFactory<MapControl, IMapControlStatics>().SetLocation(element, value);
+    get_activation_factory<MapControl, IMapControlStatics>().SetLocation(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::NormalizedAnchorPointProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().NormalizedAnchorPointProperty();
+    return get_activation_factory<MapControl, IMapControlStatics>().NormalizedAnchorPointProperty();
 }
 
 inline Windows::Foundation::Point MapControl::GetNormalizedAnchorPoint(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<MapControl, IMapControlStatics>().GetNormalizedAnchorPoint(element);
+    return get_activation_factory<MapControl, IMapControlStatics>().GetNormalizedAnchorPoint(element);
 }
 
 inline void MapControl::SetNormalizedAnchorPoint(const Windows::UI::Xaml::DependencyObject & element, const Windows::Foundation::Point & value)
 {
-    GetActivationFactory<MapControl, IMapControlStatics>().SetNormalizedAnchorPoint(element, value);
+    get_activation_factory<MapControl, IMapControlStatics>().SetNormalizedAnchorPoint(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::BusinessLandmarksVisibleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().BusinessLandmarksVisibleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().BusinessLandmarksVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TransitFeaturesVisibleProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().TransitFeaturesVisibleProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().TransitFeaturesVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::PanInteractionModeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().PanInteractionModeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().PanInteractionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::RotateInteractionModeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().RotateInteractionModeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().RotateInteractionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TiltInteractionModeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().TiltInteractionModeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().TiltInteractionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::ZoomInteractionModeProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().ZoomInteractionModeProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().ZoomInteractionModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::Is3DSupportedProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().Is3DSupportedProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().Is3DSupportedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::IsStreetsideSupportedProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().IsStreetsideSupportedProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().IsStreetsideSupportedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::SceneProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics2>().SceneProperty();
+    return get_activation_factory<MapControl, IMapControlStatics2>().SceneProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::BusinessLandmarksEnabledProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics4>().BusinessLandmarksEnabledProperty();
+    return get_activation_factory<MapControl, IMapControlStatics4>().BusinessLandmarksEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapControl::TransitFeaturesEnabledProperty()
 {
-    return GetActivationFactory<MapControl, IMapControlStatics4>().TransitFeaturesEnabledProperty();
+    return get_activation_factory<MapControl, IMapControlStatics4>().TransitFeaturesEnabledProperty();
 }
 
 inline MapCustomExperience::MapCustomExperience()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(outer, inner));
 }
 
 inline MapCustomExperienceChangedEventArgs::MapCustomExperienceChangedEventArgs() :
-    MapCustomExperienceChangedEventArgs(ActivateInstance<MapCustomExperienceChangedEventArgs>())
+    MapCustomExperienceChangedEventArgs(activate_instance<MapCustomExperienceChangedEventArgs>())
 {}
 
 inline MapElement::MapElement()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MapElement, IMapElementFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapElement::ZIndexProperty()
 {
-    return GetActivationFactory<MapElement, IMapElementStatics>().ZIndexProperty();
+    return get_activation_factory<MapElement, IMapElementStatics>().ZIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapElement::VisibleProperty()
 {
-    return GetActivationFactory<MapElement, IMapElementStatics>().VisibleProperty();
+    return get_activation_factory<MapElement, IMapElementStatics>().VisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapElement::MapTabIndexProperty()
 {
-    return GetActivationFactory<MapElement, IMapElementStatics2>().MapTabIndexProperty();
+    return get_activation_factory<MapElement, IMapElementStatics2>().MapTabIndexProperty();
 }
 
 inline MapElementClickEventArgs::MapElementClickEventArgs() :
-    MapElementClickEventArgs(ActivateInstance<MapElementClickEventArgs>())
+    MapElementClickEventArgs(activate_instance<MapElementClickEventArgs>())
 {}
 
 inline MapElementPointerEnteredEventArgs::MapElementPointerEnteredEventArgs() :
-    MapElementPointerEnteredEventArgs(ActivateInstance<MapElementPointerEnteredEventArgs>())
+    MapElementPointerEnteredEventArgs(activate_instance<MapElementPointerEnteredEventArgs>())
 {}
 
 inline MapElementPointerExitedEventArgs::MapElementPointerExitedEventArgs() :
-    MapElementPointerExitedEventArgs(ActivateInstance<MapElementPointerExitedEventArgs>())
+    MapElementPointerExitedEventArgs(activate_instance<MapElementPointerExitedEventArgs>())
 {}
 
 inline MapIcon::MapIcon() :
-    MapIcon(ActivateInstance<MapIcon>())
+    MapIcon(activate_instance<MapIcon>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MapIcon::LocationProperty()
 {
-    return GetActivationFactory<MapIcon, IMapIconStatics>().LocationProperty();
+    return get_activation_factory<MapIcon, IMapIconStatics>().LocationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapIcon::TitleProperty()
 {
-    return GetActivationFactory<MapIcon, IMapIconStatics>().TitleProperty();
+    return get_activation_factory<MapIcon, IMapIconStatics>().TitleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapIcon::NormalizedAnchorPointProperty()
 {
-    return GetActivationFactory<MapIcon, IMapIconStatics>().NormalizedAnchorPointProperty();
+    return get_activation_factory<MapIcon, IMapIconStatics>().NormalizedAnchorPointProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapIcon::CollisionBehaviorDesiredProperty()
 {
-    return GetActivationFactory<MapIcon, IMapIconStatics2>().CollisionBehaviorDesiredProperty();
+    return get_activation_factory<MapIcon, IMapIconStatics2>().CollisionBehaviorDesiredProperty();
 }
 
 inline MapInputEventArgs::MapInputEventArgs() :
-    MapInputEventArgs(ActivateInstance<MapInputEventArgs>())
+    MapInputEventArgs(activate_instance<MapInputEventArgs>())
 {}
 
 inline MapItemsControl::MapItemsControl() :
-    MapItemsControl(ActivateInstance<MapItemsControl>())
+    MapItemsControl(activate_instance<MapItemsControl>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MapItemsControl::ItemsSourceProperty()
 {
-    return GetActivationFactory<MapItemsControl, IMapItemsControlStatics>().ItemsSourceProperty();
+    return get_activation_factory<MapItemsControl, IMapItemsControlStatics>().ItemsSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapItemsControl::ItemsProperty()
 {
-    return GetActivationFactory<MapItemsControl, IMapItemsControlStatics>().ItemsProperty();
+    return get_activation_factory<MapItemsControl, IMapItemsControlStatics>().ItemsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapItemsControl::ItemTemplateProperty()
 {
-    return GetActivationFactory<MapItemsControl, IMapItemsControlStatics>().ItemTemplateProperty();
+    return get_activation_factory<MapItemsControl, IMapItemsControlStatics>().ItemTemplateProperty();
 }
 
 inline MapPolygon::MapPolygon() :
-    MapPolygon(ActivateInstance<MapPolygon>())
+    MapPolygon(activate_instance<MapPolygon>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MapPolygon::PathProperty()
 {
-    return GetActivationFactory<MapPolygon, IMapPolygonStatics>().PathProperty();
+    return get_activation_factory<MapPolygon, IMapPolygonStatics>().PathProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapPolygon::StrokeThicknessProperty()
 {
-    return GetActivationFactory<MapPolygon, IMapPolygonStatics>().StrokeThicknessProperty();
+    return get_activation_factory<MapPolygon, IMapPolygonStatics>().StrokeThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapPolygon::StrokeDashedProperty()
 {
-    return GetActivationFactory<MapPolygon, IMapPolygonStatics>().StrokeDashedProperty();
+    return get_activation_factory<MapPolygon, IMapPolygonStatics>().StrokeDashedProperty();
 }
 
 inline MapPolyline::MapPolyline() :
-    MapPolyline(ActivateInstance<MapPolyline>())
+    MapPolyline(activate_instance<MapPolyline>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MapPolyline::PathProperty()
 {
-    return GetActivationFactory<MapPolyline, IMapPolylineStatics>().PathProperty();
+    return get_activation_factory<MapPolyline, IMapPolylineStatics>().PathProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapPolyline::StrokeDashedProperty()
 {
-    return GetActivationFactory<MapPolyline, IMapPolylineStatics>().StrokeDashedProperty();
+    return get_activation_factory<MapPolyline, IMapPolylineStatics>().StrokeDashedProperty();
 }
 
 inline MapRightTappedEventArgs::MapRightTappedEventArgs() :
-    MapRightTappedEventArgs(ActivateInstance<MapRightTappedEventArgs>())
+    MapRightTappedEventArgs(activate_instance<MapRightTappedEventArgs>())
 {}
 
 inline MapRouteView::MapRouteView(const Windows::Services::Maps::MapRoute & route)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, outer, inner));
+    impl_move(get_activation_factory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, outer, inner));
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromBoundingBox(bounds);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromBoundingBox(bounds);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds, double headingInDegrees, double pitchInDegrees)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromBoundingBox(bounds, headingInDegrees, pitchInDegrees);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromBoundingBox(bounds, headingInDegrees, pitchInDegrees);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromCamera(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromCamera(camera);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromCamera(camera);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocation(const Windows::Devices::Geolocation::Geopoint & location)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocation(location);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocation(location);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocation(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocation(location, headingInDegrees, pitchInDegrees);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocation(location, headingInDegrees, pitchInDegrees);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocationAndRadius(location, radiusInMeters);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocationAndRadius(location, radiusInMeters);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters, double headingInDegrees, double pitchInDegrees)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocationAndRadius(location, radiusInMeters, headingInDegrees, pitchInDegrees);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocationAndRadius(location, radiusInMeters, headingInDegrees, pitchInDegrees);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocations(locations);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocations(locations);
 }
 
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations, double headingInDegrees, double pitchInDegrees)
 {
-    return GetActivationFactory<MapScene, IMapSceneStatics>().CreateFromLocations(locations, headingInDegrees, pitchInDegrees);
+    return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocations(locations, headingInDegrees, pitchInDegrees);
 }
 
 inline MapTargetCameraChangedEventArgs::MapTargetCameraChangedEventArgs() :
-    MapTargetCameraChangedEventArgs(ActivateInstance<MapTargetCameraChangedEventArgs>())
+    MapTargetCameraChangedEventArgs(activate_instance<MapTargetCameraChangedEventArgs>())
 {}
 
 inline MapTileBitmapRequest::MapTileBitmapRequest() :
-    MapTileBitmapRequest(ActivateInstance<MapTileBitmapRequest>())
+    MapTileBitmapRequest(activate_instance<MapTileBitmapRequest>())
 {}
 
 inline MapTileBitmapRequestDeferral::MapTileBitmapRequestDeferral() :
-    MapTileBitmapRequestDeferral(ActivateInstance<MapTileBitmapRequestDeferral>())
+    MapTileBitmapRequestDeferral(activate_instance<MapTileBitmapRequestDeferral>())
 {}
 
 inline MapTileBitmapRequestedEventArgs::MapTileBitmapRequestedEventArgs() :
-    MapTileBitmapRequestedEventArgs(ActivateInstance<MapTileBitmapRequestedEventArgs>())
+    MapTileBitmapRequestedEventArgs(activate_instance<MapTileBitmapRequestedEventArgs>())
 {}
 
 inline MapTileDataSource::MapTileDataSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
 inline MapTileSource::MapTileSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstance(outer, inner));
 }
 
 inline MapTileSource::MapTileSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, outer, inner));
+    impl_move(get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, outer, inner));
 }
 
 inline MapTileSource::MapTileSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, outer, inner));
+    impl_move(get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, outer, inner));
 }
 
 inline MapTileSource::MapTileSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, outer, inner));
+    impl_move(get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, outer, inner));
 }
 
 inline MapTileSource::MapTileSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds, int32_t tileSizeInPixels)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, outer, inner));
+    impl_move(get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::DataSourceProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().DataSourceProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().DataSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::LayerProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().LayerProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().LayerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::ZoomLevelRangeProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().ZoomLevelRangeProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().ZoomLevelRangeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::BoundsProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().BoundsProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().BoundsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::AllowOverstretchProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().AllowOverstretchProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().AllowOverstretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::IsFadingEnabledProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().IsFadingEnabledProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().IsFadingEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::IsTransparencyEnabledProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().IsTransparencyEnabledProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().IsTransparencyEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::IsRetryEnabledProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().IsRetryEnabledProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().IsRetryEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::ZIndexProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().ZIndexProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().ZIndexProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::TilePixelSizeProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().TilePixelSizeProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().TilePixelSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty MapTileSource::VisibleProperty()
 {
-    return GetActivationFactory<MapTileSource, IMapTileSourceStatics>().VisibleProperty();
+    return get_activation_factory<MapTileSource, IMapTileSourceStatics>().VisibleProperty();
 }
 
 inline MapTileUriRequest::MapTileUriRequest() :
-    MapTileUriRequest(ActivateInstance<MapTileUriRequest>())
+    MapTileUriRequest(activate_instance<MapTileUriRequest>())
 {}
 
 inline MapTileUriRequestDeferral::MapTileUriRequestDeferral() :
-    MapTileUriRequestDeferral(ActivateInstance<MapTileUriRequestDeferral>())
+    MapTileUriRequestDeferral(activate_instance<MapTileUriRequestDeferral>())
 {}
 
 inline MapTileUriRequestedEventArgs::MapTileUriRequestedEventArgs() :
-    MapTileUriRequestedEventArgs(ActivateInstance<MapTileUriRequestedEventArgs>())
+    MapTileUriRequestedEventArgs(activate_instance<MapTileUriRequestedEventArgs>())
 {}
 
 inline StreetsideExperience::StreetsideExperience(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama) :
-    StreetsideExperience(GetActivationFactory<StreetsideExperience, IStreetsideExperienceFactory>().CreateInstanceWithPanorama(panorama))
+    StreetsideExperience(get_activation_factory<StreetsideExperience, IStreetsideExperienceFactory>().CreateInstanceWithPanorama(panorama))
 {}
 
 inline StreetsideExperience::StreetsideExperience(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama, double headingInDegrees, double pitchInDegrees, double fieldOfViewInDegrees) :
-    StreetsideExperience(GetActivationFactory<StreetsideExperience, IStreetsideExperienceFactory>().CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(panorama, headingInDegrees, pitchInDegrees, fieldOfViewInDegrees))
+    StreetsideExperience(get_activation_factory<StreetsideExperience, IStreetsideExperienceFactory>().CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(panorama, headingInDegrees, pitchInDegrees, fieldOfViewInDegrees))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> StreetsidePanorama::FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location)
 {
-    return GetActivationFactory<StreetsidePanorama, IStreetsidePanoramaStatics>().FindNearbyAsync(location);
+    return get_activation_factory<StreetsidePanorama, IStreetsidePanoramaStatics>().FindNearbyAsync(location);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> StreetsidePanorama::FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters)
 {
-    return GetActivationFactory<StreetsidePanorama, IStreetsidePanoramaStatics>().FindNearbyAsync(location, radiusInMeters);
+    return get_activation_factory<StreetsidePanorama, IStreetsidePanoramaStatics>().FindNearbyAsync(location, radiusInMeters);
 }
 
 }

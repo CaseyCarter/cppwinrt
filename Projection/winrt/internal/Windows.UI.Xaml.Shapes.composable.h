@@ -19,7 +19,7 @@ protected:
 
     PathT()
     {
-        GetActivationFactory<Path, IPathFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Path, IPathFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -33,7 +33,7 @@ protected:
 
     ShapeT()
     {
-        GetActivationFactory<Shape, IShapeFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Shape, IShapeFactory>().CreateInstance(*this, m_inner);
     }
 };
 

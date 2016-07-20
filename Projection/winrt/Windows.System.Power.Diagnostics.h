@@ -140,32 +140,32 @@ template <typename D> void impl_IForegroundEnergyDiagnosticsStatics<D>::ResetTot
 
 inline double BackgroundEnergyDiagnostics::DeviceSpecificConversionFactor()
 {
-    return GetActivationFactory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
+    return get_activation_factory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
 }
 
 inline uint64_t BackgroundEnergyDiagnostics::ComputeTotalEnergyUsage()
 {
-    return GetActivationFactory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
+    return get_activation_factory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
 }
 
 inline void BackgroundEnergyDiagnostics::ResetTotalEnergyUsage()
 {
-    GetActivationFactory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
+    get_activation_factory<BackgroundEnergyDiagnostics, IBackgroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
 }
 
 inline double ForegroundEnergyDiagnostics::DeviceSpecificConversionFactor()
 {
-    return GetActivationFactory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
+    return get_activation_factory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
 }
 
 inline uint64_t ForegroundEnergyDiagnostics::ComputeTotalEnergyUsage()
 {
-    return GetActivationFactory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
+    return get_activation_factory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
 }
 
 inline void ForegroundEnergyDiagnostics::ResetTotalEnergyUsage()
 {
-    GetActivationFactory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
+    get_activation_factory<ForegroundEnergyDiagnostics, IForegroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
 }
 
 }

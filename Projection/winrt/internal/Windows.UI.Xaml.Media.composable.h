@@ -18,7 +18,7 @@ protected:
 
     BrushT()
     {
-        GetActivationFactory<Brush, IBrushFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Brush, IBrushFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,7 +32,7 @@ protected:
 
     CacheModeT()
     {
-        GetActivationFactory<CacheMode, ICacheModeFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CacheMode, ICacheModeFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -46,7 +46,7 @@ protected:
 
     FontFamilyT(hstring_ref familyName)
     {
-        GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, *this, m_inner);
+        get_activation_factory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, *this, m_inner);
     }
 };
 
@@ -60,7 +60,7 @@ protected:
 
     GeneralTransformT()
     {
-        GetActivationFactory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GeneralTransform, IGeneralTransformFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -74,7 +74,7 @@ protected:
 
     GradientBrushT()
     {
-        GetActivationFactory<GradientBrush, IGradientBrushFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<GradientBrush, IGradientBrushFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -88,7 +88,7 @@ protected:
 
     ProjectionT()
     {
-        GetActivationFactory<Projection, IProjectionFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Projection, IProjectionFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -102,7 +102,7 @@ protected:
 
     TileBrushT()
     {
-        GetActivationFactory<TileBrush, ITileBrushFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<TileBrush, ITileBrushFactory>().CreateInstance(*this, m_inner);
     }
 };
 

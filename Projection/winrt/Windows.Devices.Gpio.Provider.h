@@ -357,7 +357,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 }
 
 inline GpioPinProviderValueChangedEventArgs::GpioPinProviderValueChangedEventArgs(Windows::Devices::Gpio::Provider::ProviderGpioPinEdge edge) :
-    GpioPinProviderValueChangedEventArgs(GetActivationFactory<GpioPinProviderValueChangedEventArgs, IGpioPinProviderValueChangedEventArgsFactory>().Create(edge))
+    GpioPinProviderValueChangedEventArgs(get_activation_factory<GpioPinProviderValueChangedEventArgs, IGpioPinProviderValueChangedEventArgsFactory>().Create(edge))
 {}
 
 }

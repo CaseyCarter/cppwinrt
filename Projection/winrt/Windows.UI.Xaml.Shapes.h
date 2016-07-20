@@ -1474,139 +1474,139 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRectangleStati
 }
 
 inline Ellipse::Ellipse() :
-    Ellipse(ActivateInstance<Ellipse>())
+    Ellipse(activate_instance<Ellipse>())
 {}
 
 inline Line::Line() :
-    Line(ActivateInstance<Line>())
+    Line(activate_instance<Line>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Line::X1Property()
 {
-    return GetActivationFactory<Line, ILineStatics>().X1Property();
+    return get_activation_factory<Line, ILineStatics>().X1Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Line::Y1Property()
 {
-    return GetActivationFactory<Line, ILineStatics>().Y1Property();
+    return get_activation_factory<Line, ILineStatics>().Y1Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Line::X2Property()
 {
-    return GetActivationFactory<Line, ILineStatics>().X2Property();
+    return get_activation_factory<Line, ILineStatics>().X2Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Line::Y2Property()
 {
-    return GetActivationFactory<Line, ILineStatics>().Y2Property();
+    return get_activation_factory<Line, ILineStatics>().Y2Property();
 }
 
 inline Path::Path()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Path, IPathFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Path, IPathFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty Path::DataProperty()
 {
-    return GetActivationFactory<Path, IPathStatics>().DataProperty();
+    return get_activation_factory<Path, IPathStatics>().DataProperty();
 }
 
 inline Polygon::Polygon() :
-    Polygon(ActivateInstance<Polygon>())
+    Polygon(activate_instance<Polygon>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Polygon::FillRuleProperty()
 {
-    return GetActivationFactory<Polygon, IPolygonStatics>().FillRuleProperty();
+    return get_activation_factory<Polygon, IPolygonStatics>().FillRuleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Polygon::PointsProperty()
 {
-    return GetActivationFactory<Polygon, IPolygonStatics>().PointsProperty();
+    return get_activation_factory<Polygon, IPolygonStatics>().PointsProperty();
 }
 
 inline Polyline::Polyline() :
-    Polyline(ActivateInstance<Polyline>())
+    Polyline(activate_instance<Polyline>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Polyline::FillRuleProperty()
 {
-    return GetActivationFactory<Polyline, IPolylineStatics>().FillRuleProperty();
+    return get_activation_factory<Polyline, IPolylineStatics>().FillRuleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Polyline::PointsProperty()
 {
-    return GetActivationFactory<Polyline, IPolylineStatics>().PointsProperty();
+    return get_activation_factory<Polyline, IPolylineStatics>().PointsProperty();
 }
 
 inline Rectangle::Rectangle() :
-    Rectangle(ActivateInstance<Rectangle>())
+    Rectangle(activate_instance<Rectangle>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Rectangle::RadiusXProperty()
 {
-    return GetActivationFactory<Rectangle, IRectangleStatics>().RadiusXProperty();
+    return get_activation_factory<Rectangle, IRectangleStatics>().RadiusXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Rectangle::RadiusYProperty()
 {
-    return GetActivationFactory<Rectangle, IRectangleStatics>().RadiusYProperty();
+    return get_activation_factory<Rectangle, IRectangleStatics>().RadiusYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::FillProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().FillProperty();
+    return get_activation_factory<Shape, IShapeStatics>().FillProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeMiterLimitProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeMiterLimitProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeMiterLimitProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeThicknessProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeThicknessProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeStartLineCapProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeStartLineCapProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeStartLineCapProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeEndLineCapProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeEndLineCapProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeEndLineCapProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeLineJoinProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeLineJoinProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeLineJoinProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeDashOffsetProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeDashOffsetProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeDashOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeDashCapProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeDashCapProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeDashCapProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StrokeDashArrayProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StrokeDashArrayProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StrokeDashArrayProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Shape::StretchProperty()
 {
-    return GetActivationFactory<Shape, IShapeStatics>().StretchProperty();
+    return get_activation_factory<Shape, IShapeStatics>().StretchProperty();
 }
 
 }

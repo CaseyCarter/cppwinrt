@@ -4452,59 +4452,59 @@ template <typename D> uint32_t impl_ILimiterEffectDefinition<D>::Loudness() cons
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> AudioGraph::CreateAsync(const Windows::Media::Audio::AudioGraphSettings & settings)
 {
-    return GetActivationFactory<AudioGraph, IAudioGraphStatics>().CreateAsync(settings);
+    return get_activation_factory<AudioGraph, IAudioGraphStatics>().CreateAsync(settings);
 }
 
 inline AudioGraphSettings::AudioGraphSettings(Windows::Media::Render::AudioRenderCategory audioRenderCategory) :
-    AudioGraphSettings(GetActivationFactory<AudioGraphSettings, IAudioGraphSettingsFactory>().Create(audioRenderCategory))
+    AudioGraphSettings(get_activation_factory<AudioGraphSettings, IAudioGraphSettingsFactory>().Create(audioRenderCategory))
 {}
 
 inline AudioNodeEmitter::AudioNodeEmitter() :
-    AudioNodeEmitter(ActivateInstance<AudioNodeEmitter>())
+    AudioNodeEmitter(activate_instance<AudioNodeEmitter>())
 {}
 
 inline AudioNodeEmitter::AudioNodeEmitter(const Windows::Media::Audio::AudioNodeEmitterShape & shape, const Windows::Media::Audio::AudioNodeEmitterDecayModel & decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings) :
-    AudioNodeEmitter(GetActivationFactory<AudioNodeEmitter, IAudioNodeEmitterFactory>().CreateAudioNodeEmitter(shape, decayModel, settings))
+    AudioNodeEmitter(get_activation_factory<AudioNodeEmitter, IAudioNodeEmitterFactory>().CreateAudioNodeEmitter(shape, decayModel, settings))
 {}
 
 inline Windows::Media::Audio::AudioNodeEmitterDecayModel AudioNodeEmitterDecayModel::CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance)
 {
-    return GetActivationFactory<AudioNodeEmitterDecayModel, IAudioNodeEmitterDecayModelStatics>().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance);
+    return get_activation_factory<AudioNodeEmitterDecayModel, IAudioNodeEmitterDecayModelStatics>().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance);
 }
 
 inline Windows::Media::Audio::AudioNodeEmitterDecayModel AudioNodeEmitterDecayModel::CreateCustom(double minGain, double maxGain)
 {
-    return GetActivationFactory<AudioNodeEmitterDecayModel, IAudioNodeEmitterDecayModelStatics>().CreateCustom(minGain, maxGain);
+    return get_activation_factory<AudioNodeEmitterDecayModel, IAudioNodeEmitterDecayModelStatics>().CreateCustom(minGain, maxGain);
 }
 
 inline Windows::Media::Audio::AudioNodeEmitterShape AudioNodeEmitterShape::CreateCone(double innerAngle, double outerAngle, double outerAngleGain)
 {
-    return GetActivationFactory<AudioNodeEmitterShape, IAudioNodeEmitterShapeStatics>().CreateCone(innerAngle, outerAngle, outerAngleGain);
+    return get_activation_factory<AudioNodeEmitterShape, IAudioNodeEmitterShapeStatics>().CreateCone(innerAngle, outerAngle, outerAngleGain);
 }
 
 inline Windows::Media::Audio::AudioNodeEmitterShape AudioNodeEmitterShape::CreateOmnidirectional()
 {
-    return GetActivationFactory<AudioNodeEmitterShape, IAudioNodeEmitterShapeStatics>().CreateOmnidirectional();
+    return get_activation_factory<AudioNodeEmitterShape, IAudioNodeEmitterShapeStatics>().CreateOmnidirectional();
 }
 
 inline AudioNodeListener::AudioNodeListener() :
-    AudioNodeListener(ActivateInstance<AudioNodeListener>())
+    AudioNodeListener(activate_instance<AudioNodeListener>())
 {}
 
 inline EchoEffectDefinition::EchoEffectDefinition(const Windows::Media::Audio::AudioGraph & audioGraph) :
-    EchoEffectDefinition(GetActivationFactory<EchoEffectDefinition, IEchoEffectDefinitionFactory>().Create(audioGraph))
+    EchoEffectDefinition(get_activation_factory<EchoEffectDefinition, IEchoEffectDefinitionFactory>().Create(audioGraph))
 {}
 
 inline EqualizerEffectDefinition::EqualizerEffectDefinition(const Windows::Media::Audio::AudioGraph & audioGraph) :
-    EqualizerEffectDefinition(GetActivationFactory<EqualizerEffectDefinition, IEqualizerEffectDefinitionFactory>().Create(audioGraph))
+    EqualizerEffectDefinition(get_activation_factory<EqualizerEffectDefinition, IEqualizerEffectDefinitionFactory>().Create(audioGraph))
 {}
 
 inline LimiterEffectDefinition::LimiterEffectDefinition(const Windows::Media::Audio::AudioGraph & audioGraph) :
-    LimiterEffectDefinition(GetActivationFactory<LimiterEffectDefinition, ILimiterEffectDefinitionFactory>().Create(audioGraph))
+    LimiterEffectDefinition(get_activation_factory<LimiterEffectDefinition, ILimiterEffectDefinitionFactory>().Create(audioGraph))
 {}
 
 inline ReverbEffectDefinition::ReverbEffectDefinition(const Windows::Media::Audio::AudioGraph & audioGraph) :
-    ReverbEffectDefinition(GetActivationFactory<ReverbEffectDefinition, IReverbEffectDefinitionFactory>().Create(audioGraph))
+    ReverbEffectDefinition(get_activation_factory<ReverbEffectDefinition, IReverbEffectDefinitionFactory>().Create(audioGraph))
 {}
 
 }

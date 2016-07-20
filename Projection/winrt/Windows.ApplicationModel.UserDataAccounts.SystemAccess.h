@@ -1830,32 +1830,32 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 }
 
 inline DeviceAccountConfiguration::DeviceAccountConfiguration() :
-    DeviceAccountConfiguration(ActivateInstance<DeviceAccountConfiguration>())
+    DeviceAccountConfiguration(activate_instance<DeviceAccountConfiguration>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> UserDataAccountSystemAccessManager::AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts)
 {
-    return GetActivationFactory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics>().AddAndShowDeviceAccountsAsync(accounts);
+    return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics>().AddAndShowDeviceAccountsAsync(accounts);
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId)
 {
-    return GetActivationFactory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().SuppressLocalAccountWithAccountAsync(userDataAccountId);
+    return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().SuppressLocalAccountWithAccountAsync(userDataAccountId);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserDataAccountSystemAccessManager::CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account)
 {
-    return GetActivationFactory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().CreateDeviceAccountAsync(account);
+    return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().CreateDeviceAccountAsync(account);
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::DeleteDeviceAccountAsync(hstring_ref accountId)
 {
-    return GetActivationFactory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().DeleteDeviceAccountAsync(accountId);
+    return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().DeleteDeviceAccountAsync(accountId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> UserDataAccountSystemAccessManager::GetDeviceAccountConfigurationAsync(hstring_ref accountId)
 {
-    return GetActivationFactory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().GetDeviceAccountConfigurationAsync(accountId);
+    return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().GetDeviceAccountConfigurationAsync(accountId);
 }
 
 }

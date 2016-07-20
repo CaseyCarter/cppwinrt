@@ -807,22 +807,22 @@ template <typename D> void impl_ISerialDevice<D>::PinChanged(event_token token) 
 
 inline hstring SerialDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector();
 }
 
 inline hstring SerialDevice::GetDeviceSelector(hstring_ref portName)
 {
-    return GetActivationFactory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector(portName);
+    return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector(portName);
 }
 
 inline hstring SerialDevice::GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId)
 {
-    return GetActivationFactory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelectorFromUsbVidPid(vendorId, productId);
+    return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelectorFromUsbVidPid(vendorId, productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> SerialDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<SerialDevice, ISerialDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<SerialDevice, ISerialDeviceStatics>().FromIdAsync(deviceId);
 }
 
 }

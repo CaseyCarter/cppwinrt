@@ -2628,49 +2628,49 @@ template <typename D> void impl_ISmsMessageRegistration<D>::MessageReceived(even
 }
 
 inline SmsAppMessage::SmsAppMessage() :
-    SmsAppMessage(ActivateInstance<SmsAppMessage>())
+    SmsAppMessage(activate_instance<SmsAppMessage>())
 {}
 
 inline hstring SmsDevice2::GetDeviceSelector()
 {
-    return GetActivationFactory<SmsDevice2, ISmsDevice2Statics>().GetDeviceSelector();
+    return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().GetDeviceSelector();
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromId(hstring_ref deviceId)
 {
-    return GetActivationFactory<SmsDevice2, ISmsDevice2Statics>().FromId(deviceId);
+    return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().FromId(deviceId);
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::GetDefault()
 {
-    return GetActivationFactory<SmsDevice2, ISmsDevice2Statics>().GetDefault();
+    return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().GetDefault();
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromParentId(hstring_ref parentDeviceId)
 {
-    return GetActivationFactory<SmsDevice2, ISmsDevice2Statics>().FromParentId(parentDeviceId);
+    return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().FromParentId(parentDeviceId);
 }
 
 inline SmsFilterRule::SmsFilterRule(Windows::Devices::Sms::SmsMessageType messageType) :
-    SmsFilterRule(GetActivationFactory<SmsFilterRule, ISmsFilterRuleFactory>().CreateFilterRule(messageType))
+    SmsFilterRule(get_activation_factory<SmsFilterRule, ISmsFilterRuleFactory>().CreateFilterRule(messageType))
 {}
 
 inline SmsFilterRules::SmsFilterRules(Windows::Devices::Sms::SmsFilterActionType actionType) :
-    SmsFilterRules(GetActivationFactory<SmsFilterRules, ISmsFilterRulesFactory>().CreateFilterRules(actionType))
+    SmsFilterRules(get_activation_factory<SmsFilterRules, ISmsFilterRulesFactory>().CreateFilterRules(actionType))
 {}
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> SmsMessageRegistration::AllRegistrations()
 {
-    return GetActivationFactory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().AllRegistrations();
+    return get_activation_factory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().AllRegistrations();
 }
 
 inline Windows::Devices::Sms::SmsMessageRegistration SmsMessageRegistration::Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules)
 {
-    return GetActivationFactory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().Register(id, filterRules);
+    return get_activation_factory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().Register(id, filterRules);
 }
 
 inline SmsTextMessage2::SmsTextMessage2() :
-    SmsTextMessage2(ActivateInstance<SmsTextMessage2>())
+    SmsTextMessage2(activate_instance<SmsTextMessage2>())
 {}
 
 }

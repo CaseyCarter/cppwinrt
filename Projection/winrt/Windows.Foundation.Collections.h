@@ -19,15 +19,15 @@ struct produce<D, Windows::Foundation::Collections::IPropertySet> : produce_base
 namespace Windows::Foundation::Collections {
 
 inline PropertySet::PropertySet() :
-    PropertySet(ActivateInstance<PropertySet>())
+    PropertySet(activate_instance<PropertySet>())
 {}
 
 inline StringMap::StringMap() :
-    StringMap(ActivateInstance<StringMap>())
+    StringMap(activate_instance<StringMap>())
 {}
 
 inline ValueSet::ValueSet() :
-    ValueSet(ActivateInstance<ValueSet>())
+    ValueSet(activate_instance<ValueSet>())
 {}
 
 }

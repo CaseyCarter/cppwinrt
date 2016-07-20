@@ -1492,17 +1492,17 @@ template <typename D> double impl_IDepthMediaFrameFormat<D>::DepthScaleInMeters(
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceGroup>> MediaFrameSourceGroup::FindAllAsync()
 {
-    return GetActivationFactory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FindAllAsync();
+    return get_activation_factory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> MediaFrameSourceGroup::FromIdAsync(hstring_ref id)
 {
-    return GetActivationFactory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FromIdAsync(id);
+    return get_activation_factory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FromIdAsync(id);
 }
 
 inline hstring MediaFrameSourceGroup::GetDeviceSelector()
 {
-    return GetActivationFactory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().GetDeviceSelector();
+    return get_activation_factory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().GetDeviceSelector();
 }
 
 }

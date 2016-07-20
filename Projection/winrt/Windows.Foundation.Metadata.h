@@ -220,52 +220,52 @@ template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(
 
 inline bool ApiInformation::IsTypePresent(hstring_ref typeName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsTypePresent(typeName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsTypePresent(typeName);
 }
 
 inline bool ApiInformation::IsMethodPresent(hstring_ref typeName, hstring_ref methodName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName);
 }
 
 inline bool ApiInformation::IsMethodPresent(hstring_ref typeName, hstring_ref methodName, uint32_t inputParameterCount)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName, inputParameterCount);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName, inputParameterCount);
 }
 
 inline bool ApiInformation::IsEventPresent(hstring_ref typeName, hstring_ref eventName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsEventPresent(typeName, eventName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsEventPresent(typeName, eventName);
 }
 
 inline bool ApiInformation::IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsPropertyPresent(typeName, propertyName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsPropertyPresent(typeName, propertyName);
 }
 
 inline bool ApiInformation::IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsReadOnlyPropertyPresent(typeName, propertyName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsReadOnlyPropertyPresent(typeName, propertyName);
 }
 
 inline bool ApiInformation::IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsWriteablePropertyPresent(typeName, propertyName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsWriteablePropertyPresent(typeName, propertyName);
 }
 
 inline bool ApiInformation::IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsEnumNamedValuePresent(enumTypeName, valueName);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsEnumNamedValuePresent(enumTypeName, valueName);
 }
 
 inline bool ApiInformation::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion);
 }
 
 inline bool ApiInformation::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion, uint16_t minorVersion)
 {
-    return GetActivationFactory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion, minorVersion);
+    return get_activation_factory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion, minorVersion);
 }
 
 }

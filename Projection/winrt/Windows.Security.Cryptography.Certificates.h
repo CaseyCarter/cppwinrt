@@ -4008,217 +4008,217 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
 }
 
 inline Certificate::Certificate(const Windows::Storage::Streams::IBuffer & certBlob) :
-    Certificate(GetActivationFactory<Certificate, ICertificateFactory>().CreateCertificate(certBlob))
+    Certificate(get_activation_factory<Certificate, ICertificateFactory>().CreateCertificate(certBlob))
 {}
 
 inline Windows::Foundation::IAsyncOperation<hstring> CertificateEnrollmentManager::CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request)
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().CreateRequestAsync(request);
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().CreateRequestAsync(request);
 }
 
 inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption)
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().InstallCertificateAsync(certificate, installOption);
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().InstallCertificateAsync(certificate, installOption);
 }
 
 inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName)
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName);
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName);
 }
 
 inline Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager CertificateEnrollmentManager::UserCertificateEnrollmentManager()
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().UserCertificateEnrollmentManager();
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().UserCertificateEnrollmentManager();
 }
 
 inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider)
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider);
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider);
 }
 
 inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters)
 {
-    return GetActivationFactory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics3>().ImportPfxDataAsync(pfxData, password, pfxImportParameters);
+    return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics3>().ImportPfxDataAsync(pfxData, password, pfxImportParameters);
 }
 
 inline CertificateKeyUsages::CertificateKeyUsages() :
-    CertificateKeyUsages(ActivateInstance<CertificateKeyUsages>())
+    CertificateKeyUsages(activate_instance<CertificateKeyUsages>())
 {}
 
 inline CertificateQuery::CertificateQuery() :
-    CertificateQuery(ActivateInstance<CertificateQuery>())
+    CertificateQuery(activate_instance<CertificateQuery>())
 {}
 
 inline CertificateRequestProperties::CertificateRequestProperties() :
-    CertificateRequestProperties(ActivateInstance<CertificateRequestProperties>())
+    CertificateRequestProperties(activate_instance<CertificateRequestProperties>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> CertificateStores::FindAllAsync()
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics>().FindAllAsync();
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> CertificateStores::FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query)
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics>().FindAllAsync(query);
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics>().FindAllAsync(query);
 }
 
 inline Windows::Security::Cryptography::Certificates::CertificateStore CertificateStores::TrustedRootCertificationAuthorities()
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics>().TrustedRootCertificationAuthorities();
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics>().TrustedRootCertificationAuthorities();
 }
 
 inline Windows::Security::Cryptography::Certificates::CertificateStore CertificateStores::IntermediateCertificationAuthorities()
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics>().IntermediateCertificationAuthorities();
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics>().IntermediateCertificationAuthorities();
 }
 
 inline Windows::Security::Cryptography::Certificates::CertificateStore CertificateStores::GetStoreByName(hstring_ref storeName)
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics>().GetStoreByName(storeName);
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics>().GetStoreByName(storeName);
 }
 
 inline Windows::Security::Cryptography::Certificates::UserCertificateStore CertificateStores::GetUserStoreByName(hstring_ref storeName)
 {
-    return GetActivationFactory<CertificateStores, ICertificateStoresStatics2>().GetUserStoreByName(storeName);
+    return get_activation_factory<CertificateStores, ICertificateStoresStatics2>().GetUserStoreByName(storeName);
 }
 
 inline ChainBuildingParameters::ChainBuildingParameters() :
-    ChainBuildingParameters(ActivateInstance<ChainBuildingParameters>())
+    ChainBuildingParameters(activate_instance<ChainBuildingParameters>())
 {}
 
 inline ChainValidationParameters::ChainValidationParameters() :
-    ChainValidationParameters(ActivateInstance<ChainValidationParameters>())
+    ChainValidationParameters(activate_instance<ChainValidationParameters>())
 {}
 
 inline CmsAttachedSignature::CmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) :
-    CmsAttachedSignature(GetActivationFactory<CmsAttachedSignature, ICmsAttachedSignatureFactory>().CreateCmsAttachedSignature(inputBlob))
+    CmsAttachedSignature(get_activation_factory<CmsAttachedSignature, ICmsAttachedSignatureFactory>().CreateCmsAttachedSignature(inputBlob))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsAttachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates)
 {
-    return GetActivationFactory<CmsAttachedSignature, ICmsAttachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
+    return get_activation_factory<CmsAttachedSignature, ICmsAttachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
 }
 
 inline CmsDetachedSignature::CmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) :
-    CmsDetachedSignature(GetActivationFactory<CmsDetachedSignature, ICmsDetachedSignatureFactory>().CreateCmsDetachedSignature(inputBlob))
+    CmsDetachedSignature(get_activation_factory<CmsDetachedSignature, ICmsDetachedSignatureFactory>().CreateCmsDetachedSignature(inputBlob))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsDetachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates)
 {
-    return GetActivationFactory<CmsDetachedSignature, ICmsDetachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
+    return get_activation_factory<CmsDetachedSignature, ICmsDetachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
 }
 
 inline CmsSignerInfo::CmsSignerInfo() :
-    CmsSignerInfo(ActivateInstance<CmsSignerInfo>())
+    CmsSignerInfo(activate_instance<CmsSignerInfo>())
 {}
 
 inline hstring KeyAlgorithmNames::Rsa()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Rsa();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Rsa();
 }
 
 inline hstring KeyAlgorithmNames::Dsa()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Dsa();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Dsa();
 }
 
 inline hstring KeyAlgorithmNames::Ecdh256()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh256();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh256();
 }
 
 inline hstring KeyAlgorithmNames::Ecdh384()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh384();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh384();
 }
 
 inline hstring KeyAlgorithmNames::Ecdh521()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh521();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdh521();
 }
 
 inline hstring KeyAlgorithmNames::Ecdsa256()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa256();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa256();
 }
 
 inline hstring KeyAlgorithmNames::Ecdsa384()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa384();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa384();
 }
 
 inline hstring KeyAlgorithmNames::Ecdsa521()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa521();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics>().Ecdsa521();
 }
 
 inline hstring KeyAlgorithmNames::Ecdsa()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics2>().Ecdsa();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics2>().Ecdsa();
 }
 
 inline hstring KeyAlgorithmNames::Ecdh()
 {
-    return GetActivationFactory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics2>().Ecdh();
+    return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics2>().Ecdh();
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_ref credential)
 {
-    return GetActivationFactory<KeyAttestationHelper, IKeyAttestationHelperStatics>().DecryptTpmAttestationCredentialAsync(credential);
+    return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics>().DecryptTpmAttestationCredentialAsync(credential);
 }
 
 inline hstring KeyAttestationHelper::GetTpmAttestationCredentialId(hstring_ref credential)
 {
-    return GetActivationFactory<KeyAttestationHelper, IKeyAttestationHelperStatics>().GetTpmAttestationCredentialId(credential);
+    return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics>().GetTpmAttestationCredentialId(credential);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName)
 {
-    return GetActivationFactory<KeyAttestationHelper, IKeyAttestationHelperStatics2>().DecryptTpmAttestationCredentialAsync(credential, containerName);
+    return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics2>().DecryptTpmAttestationCredentialAsync(credential, containerName);
 }
 
 inline hstring KeyStorageProviderNames::SoftwareKeyStorageProvider()
 {
-    return GetActivationFactory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().SoftwareKeyStorageProvider();
+    return get_activation_factory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().SoftwareKeyStorageProvider();
 }
 
 inline hstring KeyStorageProviderNames::SmartcardKeyStorageProvider()
 {
-    return GetActivationFactory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().SmartcardKeyStorageProvider();
+    return get_activation_factory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().SmartcardKeyStorageProvider();
 }
 
 inline hstring KeyStorageProviderNames::PlatformKeyStorageProvider()
 {
-    return GetActivationFactory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().PlatformKeyStorageProvider();
+    return get_activation_factory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics>().PlatformKeyStorageProvider();
 }
 
 inline hstring KeyStorageProviderNames::PassportKeyStorageProvider()
 {
-    return GetActivationFactory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics2>().PassportKeyStorageProvider();
+    return get_activation_factory<KeyStorageProviderNames, IKeyStorageProviderNamesStatics2>().PassportKeyStorageProvider();
 }
 
 inline PfxImportParameters::PfxImportParameters() :
-    PfxImportParameters(ActivateInstance<PfxImportParameters>())
+    PfxImportParameters(activate_instance<PfxImportParameters>())
 {}
 
 inline hstring StandardCertificateStoreNames::Personal()
 {
-    return GetActivationFactory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().Personal();
+    return get_activation_factory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().Personal();
 }
 
 inline hstring StandardCertificateStoreNames::TrustedRootCertificationAuthorities()
 {
-    return GetActivationFactory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().TrustedRootCertificationAuthorities();
+    return get_activation_factory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().TrustedRootCertificationAuthorities();
 }
 
 inline hstring StandardCertificateStoreNames::IntermediateCertificationAuthorities()
 {
-    return GetActivationFactory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().IntermediateCertificationAuthorities();
+    return get_activation_factory<StandardCertificateStoreNames, IStandardCertificateStoreNamesStatics>().IntermediateCertificationAuthorities();
 }
 
 inline SubjectAlternativeNameInfo::SubjectAlternativeNameInfo() :
-    SubjectAlternativeNameInfo(ActivateInstance<SubjectAlternativeNameInfo>())
+    SubjectAlternativeNameInfo(activate_instance<SubjectAlternativeNameInfo>())
 {}
 
 }

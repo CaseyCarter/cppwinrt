@@ -479,11 +479,11 @@ template <typename D> Windows::ApplicationModel::Search::SearchSuggestionsReques
 }
 
 inline LocalContentSuggestionSettings::LocalContentSuggestionSettings() :
-    LocalContentSuggestionSettings(ActivateInstance<LocalContentSuggestionSettings>())
+    LocalContentSuggestionSettings(activate_instance<LocalContentSuggestionSettings>())
 {}
 
 inline SearchQueryLinguisticDetails::SearchQueryLinguisticDetails(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) :
-    SearchQueryLinguisticDetails(GetActivationFactory<SearchQueryLinguisticDetails, ISearchQueryLinguisticDetailsFactory>().CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength))
+    SearchQueryLinguisticDetails(get_activation_factory<SearchQueryLinguisticDetails, ISearchQueryLinguisticDetailsFactory>().CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength))
 {}
 
 }

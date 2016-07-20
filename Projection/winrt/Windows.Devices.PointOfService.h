@@ -9436,582 +9436,582 @@ template <typename D> void impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(ev
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::GetDefaultAsync()
 {
-    return GetActivationFactory<BarcodeScanner, IBarcodeScannerStatics>().GetDefaultAsync();
+    return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().GetDefaultAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<BarcodeScanner, IBarcodeScannerStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring BarcodeScanner::GetDeviceSelector()
 {
-    return GetActivationFactory<BarcodeScanner, IBarcodeScannerStatics>().GetDeviceSelector();
+    return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().GetDeviceSelector();
 }
 
 inline uint32_t BarcodeSymbologies::Unknown()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Unknown();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Unknown();
 }
 
 inline uint32_t BarcodeSymbologies::Ean8()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8();
 }
 
 inline uint32_t BarcodeSymbologies::Ean8Add2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8Add2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8Add2();
 }
 
 inline uint32_t BarcodeSymbologies::Ean8Add5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8Add5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean8Add5();
 }
 
 inline uint32_t BarcodeSymbologies::Eanv()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Eanv();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Eanv();
 }
 
 inline uint32_t BarcodeSymbologies::EanvAdd2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().EanvAdd2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().EanvAdd2();
 }
 
 inline uint32_t BarcodeSymbologies::EanvAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().EanvAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().EanvAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::Ean13()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13();
 }
 
 inline uint32_t BarcodeSymbologies::Ean13Add2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13Add2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13Add2();
 }
 
 inline uint32_t BarcodeSymbologies::Ean13Add5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13Add5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean13Add5();
 }
 
 inline uint32_t BarcodeSymbologies::Isbn()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Isbn();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Isbn();
 }
 
 inline uint32_t BarcodeSymbologies::IsbnAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsbnAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsbnAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::Ismn()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ismn();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ismn();
 }
 
 inline uint32_t BarcodeSymbologies::IsmnAdd2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsmnAdd2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsmnAdd2();
 }
 
 inline uint32_t BarcodeSymbologies::IsmnAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsmnAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IsmnAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::Issn()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Issn();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Issn();
 }
 
 inline uint32_t BarcodeSymbologies::IssnAdd2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IssnAdd2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IssnAdd2();
 }
 
 inline uint32_t BarcodeSymbologies::IssnAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IssnAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().IssnAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::Ean99()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99();
 }
 
 inline uint32_t BarcodeSymbologies::Ean99Add2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99Add2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99Add2();
 }
 
 inline uint32_t BarcodeSymbologies::Ean99Add5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99Add5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ean99Add5();
 }
 
 inline uint32_t BarcodeSymbologies::Upca()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Upca();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Upca();
 }
 
 inline uint32_t BarcodeSymbologies::UpcaAdd2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcaAdd2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcaAdd2();
 }
 
 inline uint32_t BarcodeSymbologies::UpcaAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcaAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcaAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::Upce()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Upce();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Upce();
 }
 
 inline uint32_t BarcodeSymbologies::UpceAdd2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpceAdd2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpceAdd2();
 }
 
 inline uint32_t BarcodeSymbologies::UpceAdd5()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpceAdd5();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpceAdd5();
 }
 
 inline uint32_t BarcodeSymbologies::UpcCoupon()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcCoupon();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UpcCoupon();
 }
 
 inline uint32_t BarcodeSymbologies::TfStd()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfStd();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfStd();
 }
 
 inline uint32_t BarcodeSymbologies::TfDis()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfDis();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfDis();
 }
 
 inline uint32_t BarcodeSymbologies::TfInt()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfInt();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfInt();
 }
 
 inline uint32_t BarcodeSymbologies::TfInd()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfInd();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfInd();
 }
 
 inline uint32_t BarcodeSymbologies::TfMat()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfMat();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfMat();
 }
 
 inline uint32_t BarcodeSymbologies::TfIata()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfIata();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().TfIata();
 }
 
 inline uint32_t BarcodeSymbologies::Gs1DatabarType1()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType1();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType1();
 }
 
 inline uint32_t BarcodeSymbologies::Gs1DatabarType2()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType2();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType2();
 }
 
 inline uint32_t BarcodeSymbologies::Gs1DatabarType3()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType3();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1DatabarType3();
 }
 
 inline uint32_t BarcodeSymbologies::Code39()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code39();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code39();
 }
 
 inline uint32_t BarcodeSymbologies::Code39Ex()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code39Ex();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code39Ex();
 }
 
 inline uint32_t BarcodeSymbologies::Trioptic39()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Trioptic39();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Trioptic39();
 }
 
 inline uint32_t BarcodeSymbologies::Code32()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code32();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code32();
 }
 
 inline uint32_t BarcodeSymbologies::Pzn()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Pzn();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Pzn();
 }
 
 inline uint32_t BarcodeSymbologies::Code93()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code93();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code93();
 }
 
 inline uint32_t BarcodeSymbologies::Code93Ex()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code93Ex();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code93Ex();
 }
 
 inline uint32_t BarcodeSymbologies::Code128()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code128();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code128();
 }
 
 inline uint32_t BarcodeSymbologies::Gs1128()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1128();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1128();
 }
 
 inline uint32_t BarcodeSymbologies::Gs1128Coupon()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1128Coupon();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Gs1128Coupon();
 }
 
 inline uint32_t BarcodeSymbologies::UccEan128()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UccEan128();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UccEan128();
 }
 
 inline uint32_t BarcodeSymbologies::Sisac()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Sisac();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Sisac();
 }
 
 inline uint32_t BarcodeSymbologies::Isbt()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Isbt();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Isbt();
 }
 
 inline uint32_t BarcodeSymbologies::Codabar()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Codabar();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Codabar();
 }
 
 inline uint32_t BarcodeSymbologies::Code11()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code11();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code11();
 }
 
 inline uint32_t BarcodeSymbologies::Msi()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Msi();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Msi();
 }
 
 inline uint32_t BarcodeSymbologies::Plessey()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Plessey();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Plessey();
 }
 
 inline uint32_t BarcodeSymbologies::Telepen()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Telepen();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Telepen();
 }
 
 inline uint32_t BarcodeSymbologies::Code16k()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code16k();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code16k();
 }
 
 inline uint32_t BarcodeSymbologies::CodablockA()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CodablockA();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CodablockA();
 }
 
 inline uint32_t BarcodeSymbologies::CodablockF()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CodablockF();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CodablockF();
 }
 
 inline uint32_t BarcodeSymbologies::Codablock128()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Codablock128();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Codablock128();
 }
 
 inline uint32_t BarcodeSymbologies::Code49()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code49();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Code49();
 }
 
 inline uint32_t BarcodeSymbologies::Aztec()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Aztec();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Aztec();
 }
 
 inline uint32_t BarcodeSymbologies::DataCode()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DataCode();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DataCode();
 }
 
 inline uint32_t BarcodeSymbologies::DataMatrix()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DataMatrix();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DataMatrix();
 }
 
 inline uint32_t BarcodeSymbologies::HanXin()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().HanXin();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().HanXin();
 }
 
 inline uint32_t BarcodeSymbologies::Maxicode()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Maxicode();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Maxicode();
 }
 
 inline uint32_t BarcodeSymbologies::MicroPdf417()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MicroPdf417();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MicroPdf417();
 }
 
 inline uint32_t BarcodeSymbologies::MicroQr()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MicroQr();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MicroQr();
 }
 
 inline uint32_t BarcodeSymbologies::Pdf417()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Pdf417();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Pdf417();
 }
 
 inline uint32_t BarcodeSymbologies::Qr()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Qr();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Qr();
 }
 
 inline uint32_t BarcodeSymbologies::MsTag()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MsTag();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().MsTag();
 }
 
 inline uint32_t BarcodeSymbologies::Ccab()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ccab();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ccab();
 }
 
 inline uint32_t BarcodeSymbologies::Ccc()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ccc();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Ccc();
 }
 
 inline uint32_t BarcodeSymbologies::Tlc39()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Tlc39();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Tlc39();
 }
 
 inline uint32_t BarcodeSymbologies::AusPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().AusPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().AusPost();
 }
 
 inline uint32_t BarcodeSymbologies::CanPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CanPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().CanPost();
 }
 
 inline uint32_t BarcodeSymbologies::ChinaPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ChinaPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ChinaPost();
 }
 
 inline uint32_t BarcodeSymbologies::DutchKix()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DutchKix();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().DutchKix();
 }
 
 inline uint32_t BarcodeSymbologies::InfoMail()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().InfoMail();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().InfoMail();
 }
 
 inline uint32_t BarcodeSymbologies::ItalianPost25()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ItalianPost25();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ItalianPost25();
 }
 
 inline uint32_t BarcodeSymbologies::ItalianPost39()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ItalianPost39();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ItalianPost39();
 }
 
 inline uint32_t BarcodeSymbologies::JapanPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().JapanPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().JapanPost();
 }
 
 inline uint32_t BarcodeSymbologies::KoreanPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().KoreanPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().KoreanPost();
 }
 
 inline uint32_t BarcodeSymbologies::SwedenPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().SwedenPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().SwedenPost();
 }
 
 inline uint32_t BarcodeSymbologies::UkPost()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UkPost();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UkPost();
 }
 
 inline uint32_t BarcodeSymbologies::UsIntelligent()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsIntelligent();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsIntelligent();
 }
 
 inline uint32_t BarcodeSymbologies::UsIntelligentPkg()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsIntelligentPkg();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsIntelligentPkg();
 }
 
 inline uint32_t BarcodeSymbologies::UsPlanet()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsPlanet();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsPlanet();
 }
 
 inline uint32_t BarcodeSymbologies::UsPostNet()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsPostNet();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().UsPostNet();
 }
 
 inline uint32_t BarcodeSymbologies::Us4StateFics()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Us4StateFics();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Us4StateFics();
 }
 
 inline uint32_t BarcodeSymbologies::OcrA()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().OcrA();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().OcrA();
 }
 
 inline uint32_t BarcodeSymbologies::OcrB()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().OcrB();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().OcrB();
 }
 
 inline uint32_t BarcodeSymbologies::Micr()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Micr();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().Micr();
 }
 
 inline uint32_t BarcodeSymbologies::ExtendedBase()
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ExtendedBase();
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().ExtendedBase();
 }
 
 inline hstring BarcodeSymbologies::GetName(uint32_t scanDataType)
 {
-    return GetActivationFactory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().GetName(scanDataType);
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().GetName(scanDataType);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> CashDrawer::GetDefaultAsync()
 {
-    return GetActivationFactory<CashDrawer, ICashDrawerStatics>().GetDefaultAsync();
+    return get_activation_factory<CashDrawer, ICashDrawerStatics>().GetDefaultAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> CashDrawer::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<CashDrawer, ICashDrawerStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<CashDrawer, ICashDrawerStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring CashDrawer::GetDeviceSelector()
 {
-    return GetActivationFactory<CashDrawer, ICashDrawerStatics>().GetDeviceSelector();
+    return get_activation_factory<CashDrawer, ICashDrawerStatics>().GetDeviceSelector();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> MagneticStripeReader::GetDefaultAsync()
 {
-    return GetActivationFactory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDefaultAsync();
+    return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDefaultAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> MagneticStripeReader::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<MagneticStripeReader, IMagneticStripeReaderStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring MagneticStripeReader::GetDeviceSelector()
 {
-    return GetActivationFactory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDeviceSelector();
+    return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDeviceSelector();
 }
 
 inline uint32_t MagneticStripeReaderCardTypes::Unknown()
 {
-    return GetActivationFactory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Unknown();
+    return get_activation_factory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Unknown();
 }
 
 inline uint32_t MagneticStripeReaderCardTypes::Bank()
 {
-    return GetActivationFactory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Bank();
+    return get_activation_factory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Bank();
 }
 
 inline uint32_t MagneticStripeReaderCardTypes::Aamva()
 {
-    return GetActivationFactory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Aamva();
+    return get_activation_factory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().Aamva();
 }
 
 inline uint32_t MagneticStripeReaderCardTypes::ExtendedBase()
 {
-    return GetActivationFactory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().ExtendedBase();
+    return get_activation_factory<MagneticStripeReaderCardTypes, IMagneticStripeReaderCardTypesStatics>().ExtendedBase();
 }
 
 inline uint32_t MagneticStripeReaderEncryptionAlgorithms::None()
 {
-    return GetActivationFactory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().None();
+    return get_activation_factory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().None();
 }
 
 inline uint32_t MagneticStripeReaderEncryptionAlgorithms::TripleDesDukpt()
 {
-    return GetActivationFactory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().TripleDesDukpt();
+    return get_activation_factory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().TripleDesDukpt();
 }
 
 inline uint32_t MagneticStripeReaderEncryptionAlgorithms::ExtendedBase()
 {
-    return GetActivationFactory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().ExtendedBase();
+    return get_activation_factory<MagneticStripeReaderEncryptionAlgorithms, IMagneticStripeReaderEncryptionAlgorithmsStatics>().ExtendedBase();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> PosPrinter::GetDefaultAsync()
 {
-    return GetActivationFactory<PosPrinter, IPosPrinterStatics>().GetDefaultAsync();
+    return get_activation_factory<PosPrinter, IPosPrinterStatics>().GetDefaultAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> PosPrinter::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<PosPrinter, IPosPrinterStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<PosPrinter, IPosPrinterStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring PosPrinter::GetDeviceSelector()
 {
-    return GetActivationFactory<PosPrinter, IPosPrinterStatics>().GetDeviceSelector();
+    return get_activation_factory<PosPrinter, IPosPrinterStatics>().GetDeviceSelector();
 }
 
 inline uint32_t PosPrinterCharacterSetIds::Utf16LE()
 {
-    return GetActivationFactory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Utf16LE();
+    return get_activation_factory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Utf16LE();
 }
 
 inline uint32_t PosPrinterCharacterSetIds::Ascii()
 {
-    return GetActivationFactory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Ascii();
+    return get_activation_factory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Ascii();
 }
 
 inline uint32_t PosPrinterCharacterSetIds::Ansi()
 {
-    return GetActivationFactory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Ansi();
+    return get_activation_factory<PosPrinterCharacterSetIds, IPosPrinterCharacterSetIdsStatics>().Ansi();
 }
 
 }

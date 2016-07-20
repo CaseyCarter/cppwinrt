@@ -480,30 +480,30 @@ template <typename D> Windows::Devices::Input::MouseDevice impl_IMouseDeviceStat
 }
 
 inline KeyboardCapabilities::KeyboardCapabilities() :
-    KeyboardCapabilities(ActivateInstance<KeyboardCapabilities>())
+    KeyboardCapabilities(activate_instance<KeyboardCapabilities>())
 {}
 
 inline MouseCapabilities::MouseCapabilities() :
-    MouseCapabilities(ActivateInstance<MouseCapabilities>())
+    MouseCapabilities(activate_instance<MouseCapabilities>())
 {}
 
 inline Windows::Devices::Input::MouseDevice MouseDevice::GetForCurrentView()
 {
-    return GetActivationFactory<MouseDevice, IMouseDeviceStatics>().GetForCurrentView();
+    return get_activation_factory<MouseDevice, IMouseDeviceStatics>().GetForCurrentView();
 }
 
 inline Windows::Devices::Input::PointerDevice PointerDevice::GetPointerDevice(uint32_t pointerId)
 {
-    return GetActivationFactory<PointerDevice, IPointerDeviceStatics>().GetPointerDevice(pointerId);
+    return get_activation_factory<PointerDevice, IPointerDeviceStatics>().GetPointerDevice(pointerId);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> PointerDevice::GetPointerDevices()
 {
-    return GetActivationFactory<PointerDevice, IPointerDeviceStatics>().GetPointerDevices();
+    return get_activation_factory<PointerDevice, IPointerDeviceStatics>().GetPointerDevices();
 }
 
 inline TouchCapabilities::TouchCapabilities() :
-    TouchCapabilities(ActivateInstance<TouchCapabilities>())
+    TouchCapabilities(activate_instance<TouchCapabilities>())
 {}
 
 }

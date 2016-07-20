@@ -2494,96 +2494,96 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 
 inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromId(hstring_ref deviceId)
 {
-    return GetActivationFactory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromId(deviceId);
+    return get_activation_factory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromId(deviceId);
 }
 
 inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromDeviceClassId(GUID deviceClassId)
 {
-    return GetActivationFactory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromDeviceClassId(deviceClassId);
+    return get_activation_factory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromDeviceClassId(deviceClassId);
 }
 
 inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass)
 {
-    return GetActivationFactory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromDeviceClass(deviceClass);
+    return get_activation_factory<DeviceAccessInformation, IDeviceAccessInformationStatics>().CreateFromDeviceClass(deviceClass);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId, additionalProperties);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId, additionalProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync()
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync();
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(deviceClass);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(deviceClass);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_ref aqsFilter)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter, additionalProperties);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter, additionalProperties);
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher()
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher();
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher();
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(deviceClass);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(deviceClass);
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_ref aqsFilter)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter);
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter, additionalProperties);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter, additionalProperties);
 }
 
 inline hstring DeviceInformation::GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics2>().GetAqsFilterFromDeviceClass(deviceClass);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().GetAqsFilterFromDeviceClass(deviceClass);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics2>().CreateFromIdAsync(deviceId, additionalProperties, kind);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().CreateFromIdAsync(deviceId, additionalProperties, kind);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics2>().FindAllAsync(aqsFilter, additionalProperties, kind);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().FindAllAsync(aqsFilter, additionalProperties, kind);
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
-    return GetActivationFactory<DeviceInformation, IDeviceInformationStatics2>().CreateWatcher(aqsFilter, additionalProperties, kind);
+    return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().CreateWatcher(aqsFilter, additionalProperties, kind);
 }
 
 inline bool DeviceInformationPairing::TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported)
 {
-    return GetActivationFactory<DeviceInformationPairing, IDeviceInformationPairingStatics>().TryRegisterForAllInboundPairingRequests(pairingKindsSupported);
+    return get_activation_factory<DeviceInformationPairing, IDeviceInformationPairingStatics>().TryRegisterForAllInboundPairingRequests(pairingKindsSupported);
 }
 
 inline DevicePicker::DevicePicker() :
-    DevicePicker(ActivateInstance<DevicePicker>())
+    DevicePicker(activate_instance<DevicePicker>())
 {}
 
 }

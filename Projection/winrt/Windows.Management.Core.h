@@ -45,7 +45,7 @@ template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataMan
 
 inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackageFamily(hstring_ref packageFamilyName)
 {
-    return GetActivationFactory<ApplicationDataManager, IApplicationDataManagerStatics>().CreateForPackageFamily(packageFamilyName);
+    return get_activation_factory<ApplicationDataManager, IApplicationDataManagerStatics>().CreateForPackageFamily(packageFamilyName);
 }
 
 }

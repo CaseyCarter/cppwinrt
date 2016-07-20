@@ -2,5 +2,5 @@
 inline %::%(%)
 {
     Windows::IInspectable %, %;
-    impl_move(GetActivationFactory<%, %>().%(%));
+    impl_move(get_activation_factory<%, %>().%(%));
 }

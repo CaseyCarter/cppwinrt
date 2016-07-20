@@ -3071,25 +3071,25 @@ template <typename D> void impl_IStorePackageLicense<D>::ReleaseLicense() const
 
 inline Windows::Services::Store::StoreContext StoreContext::GetDefault()
 {
-    return GetActivationFactory<StoreContext, IStoreContextStatics>().GetDefault();
+    return get_activation_factory<StoreContext, IStoreContextStatics>().GetDefault();
 }
 
 inline Windows::Services::Store::StoreContext StoreContext::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<StoreContext, IStoreContextStatics>().GetForUser(user);
+    return get_activation_factory<StoreContext, IStoreContextStatics>().GetForUser(user);
 }
 
 inline StorePurchaseProperties::StorePurchaseProperties() :
-    StorePurchaseProperties(ActivateInstance<StorePurchaseProperties>())
+    StorePurchaseProperties(activate_instance<StorePurchaseProperties>())
 {}
 
 inline StorePurchaseProperties::StorePurchaseProperties(hstring_ref name) :
-    StorePurchaseProperties(GetActivationFactory<StorePurchaseProperties, IStorePurchasePropertiesFactory>().Create(name))
+    StorePurchaseProperties(get_activation_factory<StorePurchaseProperties, IStorePurchasePropertiesFactory>().Create(name))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> StoreRequestHelper::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson)
 {
-    return GetActivationFactory<StoreRequestHelper, IStoreRequestHelperStatics>().SendRequestAsync(context, requestKind, parametersAsJson);
+    return get_activation_factory<StoreRequestHelper, IStoreRequestHelperStatics>().SendRequestAsync(context, requestKind, parametersAsJson);
 }
 
 }

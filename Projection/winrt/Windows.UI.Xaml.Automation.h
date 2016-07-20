@@ -4017,899 +4017,899 @@ template <typename D> Windows::UI::Xaml::Automation::AutomationAnnotation impl_I
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AnnotationPatternIdentifiers::AnnotationTypeIdProperty()
 {
-    return GetActivationFactory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AnnotationTypeIdProperty();
+    return get_activation_factory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AnnotationTypeIdProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AnnotationPatternIdentifiers::AnnotationTypeNameProperty()
 {
-    return GetActivationFactory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AnnotationTypeNameProperty();
+    return get_activation_factory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AnnotationTypeNameProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AnnotationPatternIdentifiers::AuthorProperty()
 {
-    return GetActivationFactory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AuthorProperty();
+    return get_activation_factory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().AuthorProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AnnotationPatternIdentifiers::DateTimeProperty()
 {
-    return GetActivationFactory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().DateTimeProperty();
+    return get_activation_factory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().DateTimeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AnnotationPatternIdentifiers::TargetProperty()
 {
-    return GetActivationFactory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().TargetProperty();
+    return get_activation_factory<AnnotationPatternIdentifiers, IAnnotationPatternIdentifiersStatics>().TargetProperty();
 }
 
 inline AutomationAnnotation::AutomationAnnotation() :
-    AutomationAnnotation(ActivateInstance<AutomationAnnotation>())
+    AutomationAnnotation(activate_instance<AutomationAnnotation>())
 {}
 
 inline AutomationAnnotation::AutomationAnnotation(Windows::UI::Xaml::Automation::AnnotationType type) :
-    AutomationAnnotation(GetActivationFactory<AutomationAnnotation, IAutomationAnnotationFactory>().CreateInstance(type))
+    AutomationAnnotation(get_activation_factory<AutomationAnnotation, IAutomationAnnotationFactory>().CreateInstance(type))
 {}
 
 inline AutomationAnnotation::AutomationAnnotation(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::UIElement & element) :
-    AutomationAnnotation(GetActivationFactory<AutomationAnnotation, IAutomationAnnotationFactory>().CreateWithElementParameter(type, element))
+    AutomationAnnotation(get_activation_factory<AutomationAnnotation, IAutomationAnnotationFactory>().CreateWithElementParameter(type, element))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty AutomationAnnotation::TypeProperty()
 {
-    return GetActivationFactory<AutomationAnnotation, IAutomationAnnotationStatics>().TypeProperty();
+    return get_activation_factory<AutomationAnnotation, IAutomationAnnotationStatics>().TypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationAnnotation::ElementProperty()
 {
-    return GetActivationFactory<AutomationAnnotation, IAutomationAnnotationStatics>().ElementProperty();
+    return get_activation_factory<AutomationAnnotation, IAutomationAnnotationStatics>().ElementProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::AcceleratorKeyProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AcceleratorKeyProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AcceleratorKeyProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::AccessKeyProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AccessKeyProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AccessKeyProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::AutomationIdProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AutomationIdProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().AutomationIdProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::BoundingRectangleProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().BoundingRectangleProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().BoundingRectangleProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ClassNameProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ClassNameProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ClassNameProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ClickablePointProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ClickablePointProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ClickablePointProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ControlTypeProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ControlTypeProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ControlTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::HasKeyboardFocusProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().HasKeyboardFocusProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().HasKeyboardFocusProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::HelpTextProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().HelpTextProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().HelpTextProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsContentElementProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsContentElementProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsContentElementProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsControlElementProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsControlElementProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsControlElementProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsEnabledProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsEnabledProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsEnabledProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsKeyboardFocusableProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsKeyboardFocusableProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsKeyboardFocusableProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsOffscreenProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsOffscreenProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsOffscreenProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsPasswordProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsPasswordProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsPasswordProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsRequiredForFormProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsRequiredForFormProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().IsRequiredForFormProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ItemStatusProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ItemStatusProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ItemStatusProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ItemTypeProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ItemTypeProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().ItemTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LabeledByProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LabeledByProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LabeledByProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LocalizedControlTypeProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LocalizedControlTypeProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LocalizedControlTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::NameProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().NameProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().NameProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::OrientationProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().OrientationProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().OrientationProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LiveSettingProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LiveSettingProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics>().LiveSettingProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::ControlledPeersProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics2>().ControlledPeersProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics2>().ControlledPeersProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::PositionInSetProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().PositionInSetProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().PositionInSetProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::SizeOfSetProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().SizeOfSetProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().SizeOfSetProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LevelProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().LevelProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().LevelProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::AnnotationsProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().AnnotationsProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics3>().AnnotationsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LandmarkTypeProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics4>().LandmarkTypeProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics4>().LandmarkTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::LocalizedLandmarkTypeProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics4>().LocalizedLandmarkTypeProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics4>().LocalizedLandmarkTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsPeripheralProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().IsPeripheralProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().IsPeripheralProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::IsDataValidForFormProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().IsDataValidForFormProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().IsDataValidForFormProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::FullDescriptionProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FullDescriptionProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FullDescriptionProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::DescribedByProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().DescribedByProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().DescribedByProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::FlowsToProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FlowsToProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FlowsToProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::FlowsFromProperty()
 {
-    return GetActivationFactory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FlowsFromProperty();
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FlowsFromProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AcceleratorKeyProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().AcceleratorKeyProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().AcceleratorKeyProperty();
 }
 
 inline hstring AutomationProperties::GetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetAcceleratorKey(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAcceleratorKey(element);
 }
 
 inline void AutomationProperties::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetAcceleratorKey(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAcceleratorKey(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AccessKeyProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().AccessKeyProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().AccessKeyProperty();
 }
 
 inline hstring AutomationProperties::GetAccessKey(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetAccessKey(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAccessKey(element);
 }
 
 inline void AutomationProperties::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetAccessKey(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAccessKey(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AutomationIdProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().AutomationIdProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().AutomationIdProperty();
 }
 
 inline hstring AutomationProperties::GetAutomationId(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetAutomationId(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAutomationId(element);
 }
 
 inline void AutomationProperties::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetAutomationId(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAutomationId(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::HelpTextProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().HelpTextProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().HelpTextProperty();
 }
 
 inline hstring AutomationProperties::GetHelpText(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetHelpText(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetHelpText(element);
 }
 
 inline void AutomationProperties::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetHelpText(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetHelpText(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::IsRequiredForFormProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().IsRequiredForFormProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().IsRequiredForFormProperty();
 }
 
 inline bool AutomationProperties::GetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetIsRequiredForForm(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetIsRequiredForForm(element);
 }
 
 inline void AutomationProperties::SetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetIsRequiredForForm(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetIsRequiredForForm(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::ItemStatusProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().ItemStatusProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().ItemStatusProperty();
 }
 
 inline hstring AutomationProperties::GetItemStatus(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetItemStatus(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetItemStatus(element);
 }
 
 inline void AutomationProperties::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetItemStatus(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetItemStatus(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::ItemTypeProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().ItemTypeProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().ItemTypeProperty();
 }
 
 inline hstring AutomationProperties::GetItemType(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetItemType(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetItemType(element);
 }
 
 inline void AutomationProperties::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetItemType(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetItemType(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LabeledByProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().LabeledByProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().LabeledByProperty();
 }
 
 inline Windows::UI::Xaml::UIElement AutomationProperties::GetLabeledBy(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetLabeledBy(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetLabeledBy(element);
 }
 
 inline void AutomationProperties::SetLabeledBy(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetLabeledBy(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetLabeledBy(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::NameProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().NameProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().NameProperty();
 }
 
 inline hstring AutomationProperties::GetName(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetName(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetName(element);
 }
 
 inline void AutomationProperties::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetName(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetName(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LiveSettingProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().LiveSettingProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().LiveSettingProperty();
 }
 
 inline Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting AutomationProperties::GetLiveSetting(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().GetLiveSetting(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetLiveSetting(element);
 }
 
 inline void AutomationProperties::SetLiveSetting(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics>().SetLiveSetting(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetLiveSetting(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AccessibilityViewProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics2>().AccessibilityViewProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics2>().AccessibilityViewProperty();
 }
 
 inline Windows::UI::Xaml::Automation::Peers::AccessibilityView AutomationProperties::GetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics2>().GetAccessibilityView(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics2>().GetAccessibilityView(element);
 }
 
 inline void AutomationProperties::SetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics2>().SetAccessibilityView(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics2>().SetAccessibilityView(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::ControlledPeersProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics2>().ControlledPeersProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics2>().ControlledPeersProperty();
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement> AutomationProperties::GetControlledPeers(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics2>().GetControlledPeers(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics2>().GetControlledPeers(element);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::PositionInSetProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().PositionInSetProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().PositionInSetProperty();
 }
 
 inline int32_t AutomationProperties::GetPositionInSet(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().GetPositionInSet(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().GetPositionInSet(element);
 }
 
 inline void AutomationProperties::SetPositionInSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().SetPositionInSet(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().SetPositionInSet(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::SizeOfSetProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().SizeOfSetProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().SizeOfSetProperty();
 }
 
 inline int32_t AutomationProperties::GetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().GetSizeOfSet(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().GetSizeOfSet(element);
 }
 
 inline void AutomationProperties::SetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().SetSizeOfSet(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().SetSizeOfSet(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LevelProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().LevelProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().LevelProperty();
 }
 
 inline int32_t AutomationProperties::GetLevel(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().GetLevel(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().GetLevel(element);
 }
 
 inline void AutomationProperties::SetLevel(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().SetLevel(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().SetLevel(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AnnotationsProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().AnnotationsProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().AnnotationsProperty();
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> AutomationProperties::GetAnnotations(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics3>().GetAnnotations(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics3>().GetAnnotations(element);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LandmarkTypeProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().LandmarkTypeProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().LandmarkTypeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType AutomationProperties::GetLandmarkType(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().GetLandmarkType(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().GetLandmarkType(element);
 }
 
 inline void AutomationProperties::SetLandmarkType(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().SetLandmarkType(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().SetLandmarkType(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LocalizedLandmarkTypeProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().LocalizedLandmarkTypeProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().LocalizedLandmarkTypeProperty();
 }
 
 inline hstring AutomationProperties::GetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().GetLocalizedLandmarkType(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().GetLocalizedLandmarkType(element);
 }
 
 inline void AutomationProperties::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics4>().SetLocalizedLandmarkType(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().SetLocalizedLandmarkType(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::IsPeripheralProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().IsPeripheralProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().IsPeripheralProperty();
 }
 
 inline bool AutomationProperties::GetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetIsPeripheral(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetIsPeripheral(element);
 }
 
 inline void AutomationProperties::SetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().SetIsPeripheral(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetIsPeripheral(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::IsDataValidForFormProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().IsDataValidForFormProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().IsDataValidForFormProperty();
 }
 
 inline bool AutomationProperties::GetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetIsDataValidForForm(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetIsDataValidForForm(element);
 }
 
 inline void AutomationProperties::SetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().SetIsDataValidForForm(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetIsDataValidForForm(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::FullDescriptionProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().FullDescriptionProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().FullDescriptionProperty();
 }
 
 inline hstring AutomationProperties::GetFullDescription(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetFullDescription(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetFullDescription(element);
 }
 
 inline void AutomationProperties::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().SetFullDescription(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetFullDescription(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::LocalizedControlTypeProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().LocalizedControlTypeProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().LocalizedControlTypeProperty();
 }
 
 inline hstring AutomationProperties::GetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetLocalizedControlType(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetLocalizedControlType(element);
 }
 
 inline void AutomationProperties::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
 {
-    GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().SetLocalizedControlType(element, value);
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetLocalizedControlType(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::DescribedByProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().DescribedByProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().DescribedByProperty();
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> AutomationProperties::GetDescribedBy(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetDescribedBy(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetDescribedBy(element);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::FlowsToProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().FlowsToProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().FlowsToProperty();
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> AutomationProperties::GetFlowsTo(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetFlowsTo(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetFlowsTo(element);
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::FlowsFromProperty()
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().FlowsFromProperty();
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().FlowsFromProperty();
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> AutomationProperties::GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<AutomationProperties, IAutomationPropertiesStatics5>().GetFlowsFrom(element);
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetFlowsFrom(element);
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DockPatternIdentifiers::DockPositionProperty()
 {
-    return GetActivationFactory<DockPatternIdentifiers, IDockPatternIdentifiersStatics>().DockPositionProperty();
+    return get_activation_factory<DockPatternIdentifiers, IDockPatternIdentifiersStatics>().DockPositionProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DragPatternIdentifiers::DropEffectProperty()
 {
-    return GetActivationFactory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().DropEffectProperty();
+    return get_activation_factory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().DropEffectProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DragPatternIdentifiers::DropEffectsProperty()
 {
-    return GetActivationFactory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().DropEffectsProperty();
+    return get_activation_factory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().DropEffectsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DragPatternIdentifiers::GrabbedItemsProperty()
 {
-    return GetActivationFactory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().GrabbedItemsProperty();
+    return get_activation_factory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().GrabbedItemsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DragPatternIdentifiers::IsGrabbedProperty()
 {
-    return GetActivationFactory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().IsGrabbedProperty();
+    return get_activation_factory<DragPatternIdentifiers, IDragPatternIdentifiersStatics>().IsGrabbedProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DropTargetPatternIdentifiers::DropTargetEffectProperty()
 {
-    return GetActivationFactory<DropTargetPatternIdentifiers, IDropTargetPatternIdentifiersStatics>().DropTargetEffectProperty();
+    return get_activation_factory<DropTargetPatternIdentifiers, IDropTargetPatternIdentifiersStatics>().DropTargetEffectProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DropTargetPatternIdentifiers::DropTargetEffectsProperty()
 {
-    return GetActivationFactory<DropTargetPatternIdentifiers, IDropTargetPatternIdentifiersStatics>().DropTargetEffectsProperty();
+    return get_activation_factory<DropTargetPatternIdentifiers, IDropTargetPatternIdentifiersStatics>().DropTargetEffectsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ExpandCollapsePatternIdentifiers::ExpandCollapseStateProperty()
 {
-    return GetActivationFactory<ExpandCollapsePatternIdentifiers, IExpandCollapsePatternIdentifiersStatics>().ExpandCollapseStateProperty();
+    return get_activation_factory<ExpandCollapsePatternIdentifiers, IExpandCollapsePatternIdentifiersStatics>().ExpandCollapseStateProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridItemPatternIdentifiers::ColumnProperty()
 {
-    return GetActivationFactory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ColumnProperty();
+    return get_activation_factory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ColumnProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridItemPatternIdentifiers::ColumnSpanProperty()
 {
-    return GetActivationFactory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ColumnSpanProperty();
+    return get_activation_factory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ColumnSpanProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridItemPatternIdentifiers::ContainingGridProperty()
 {
-    return GetActivationFactory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ContainingGridProperty();
+    return get_activation_factory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().ContainingGridProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridItemPatternIdentifiers::RowProperty()
 {
-    return GetActivationFactory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().RowProperty();
+    return get_activation_factory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().RowProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridItemPatternIdentifiers::RowSpanProperty()
 {
-    return GetActivationFactory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().RowSpanProperty();
+    return get_activation_factory<GridItemPatternIdentifiers, IGridItemPatternIdentifiersStatics>().RowSpanProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridPatternIdentifiers::ColumnCountProperty()
 {
-    return GetActivationFactory<GridPatternIdentifiers, IGridPatternIdentifiersStatics>().ColumnCountProperty();
+    return get_activation_factory<GridPatternIdentifiers, IGridPatternIdentifiersStatics>().ColumnCountProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty GridPatternIdentifiers::RowCountProperty()
 {
-    return GetActivationFactory<GridPatternIdentifiers, IGridPatternIdentifiersStatics>().RowCountProperty();
+    return get_activation_factory<GridPatternIdentifiers, IGridPatternIdentifiersStatics>().RowCountProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty MultipleViewPatternIdentifiers::CurrentViewProperty()
 {
-    return GetActivationFactory<MultipleViewPatternIdentifiers, IMultipleViewPatternIdentifiersStatics>().CurrentViewProperty();
+    return get_activation_factory<MultipleViewPatternIdentifiers, IMultipleViewPatternIdentifiersStatics>().CurrentViewProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty MultipleViewPatternIdentifiers::SupportedViewsProperty()
 {
-    return GetActivationFactory<MultipleViewPatternIdentifiers, IMultipleViewPatternIdentifiersStatics>().SupportedViewsProperty();
+    return get_activation_factory<MultipleViewPatternIdentifiers, IMultipleViewPatternIdentifiersStatics>().SupportedViewsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::IsReadOnlyProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().IsReadOnlyProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().IsReadOnlyProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::LargeChangeProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().LargeChangeProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().LargeChangeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::MaximumProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().MaximumProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().MaximumProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::MinimumProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().MinimumProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().MinimumProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::SmallChangeProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().SmallChangeProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().SmallChangeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty RangeValuePatternIdentifiers::ValueProperty()
 {
-    return GetActivationFactory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().ValueProperty();
+    return get_activation_factory<RangeValuePatternIdentifiers, IRangeValuePatternIdentifiersStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::HorizontallyScrollableProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontallyScrollableProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontallyScrollableProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::HorizontalScrollPercentProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontalScrollPercentProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontalScrollPercentProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::HorizontalViewSizeProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontalViewSizeProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().HorizontalViewSizeProperty();
 }
 
 inline double ScrollPatternIdentifiers::NoScroll()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().NoScroll();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().NoScroll();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::VerticallyScrollableProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticallyScrollableProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticallyScrollableProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::VerticalScrollPercentProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticalScrollPercentProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticalScrollPercentProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ScrollPatternIdentifiers::VerticalViewSizeProperty()
 {
-    return GetActivationFactory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticalViewSizeProperty();
+    return get_activation_factory<ScrollPatternIdentifiers, IScrollPatternIdentifiersStatics>().VerticalViewSizeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SelectionItemPatternIdentifiers::IsSelectedProperty()
 {
-    return GetActivationFactory<SelectionItemPatternIdentifiers, ISelectionItemPatternIdentifiersStatics>().IsSelectedProperty();
+    return get_activation_factory<SelectionItemPatternIdentifiers, ISelectionItemPatternIdentifiersStatics>().IsSelectedProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SelectionItemPatternIdentifiers::SelectionContainerProperty()
 {
-    return GetActivationFactory<SelectionItemPatternIdentifiers, ISelectionItemPatternIdentifiersStatics>().SelectionContainerProperty();
+    return get_activation_factory<SelectionItemPatternIdentifiers, ISelectionItemPatternIdentifiersStatics>().SelectionContainerProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SelectionPatternIdentifiers::CanSelectMultipleProperty()
 {
-    return GetActivationFactory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().CanSelectMultipleProperty();
+    return get_activation_factory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().CanSelectMultipleProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SelectionPatternIdentifiers::IsSelectionRequiredProperty()
 {
-    return GetActivationFactory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().IsSelectionRequiredProperty();
+    return get_activation_factory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().IsSelectionRequiredProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SelectionPatternIdentifiers::SelectionProperty()
 {
-    return GetActivationFactory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().SelectionProperty();
+    return get_activation_factory<SelectionPatternIdentifiers, ISelectionPatternIdentifiersStatics>().SelectionProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty SpreadsheetItemPatternIdentifiers::FormulaProperty()
 {
-    return GetActivationFactory<SpreadsheetItemPatternIdentifiers, ISpreadsheetItemPatternIdentifiersStatics>().FormulaProperty();
+    return get_activation_factory<SpreadsheetItemPatternIdentifiers, ISpreadsheetItemPatternIdentifiersStatics>().FormulaProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::ExtendedPropertiesProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().ExtendedPropertiesProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().ExtendedPropertiesProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::FillColorProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillColorProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillColorProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::FillPatternColorProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillPatternColorProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillPatternColorProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::FillPatternStyleProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillPatternStyleProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().FillPatternStyleProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::ShapeProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().ShapeProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().ShapeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::StyleIdProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().StyleIdProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().StyleIdProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty StylesPatternIdentifiers::StyleNameProperty()
 {
-    return GetActivationFactory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().StyleNameProperty();
+    return get_activation_factory<StylesPatternIdentifiers, IStylesPatternIdentifiersStatics>().StyleNameProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TableItemPatternIdentifiers::ColumnHeaderItemsProperty()
 {
-    return GetActivationFactory<TableItemPatternIdentifiers, ITableItemPatternIdentifiersStatics>().ColumnHeaderItemsProperty();
+    return get_activation_factory<TableItemPatternIdentifiers, ITableItemPatternIdentifiersStatics>().ColumnHeaderItemsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TableItemPatternIdentifiers::RowHeaderItemsProperty()
 {
-    return GetActivationFactory<TableItemPatternIdentifiers, ITableItemPatternIdentifiersStatics>().RowHeaderItemsProperty();
+    return get_activation_factory<TableItemPatternIdentifiers, ITableItemPatternIdentifiersStatics>().RowHeaderItemsProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TablePatternIdentifiers::ColumnHeadersProperty()
 {
-    return GetActivationFactory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().ColumnHeadersProperty();
+    return get_activation_factory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().ColumnHeadersProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TablePatternIdentifiers::RowHeadersProperty()
 {
-    return GetActivationFactory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().RowHeadersProperty();
+    return get_activation_factory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().RowHeadersProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TablePatternIdentifiers::RowOrColumnMajorProperty()
 {
-    return GetActivationFactory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().RowOrColumnMajorProperty();
+    return get_activation_factory<TablePatternIdentifiers, ITablePatternIdentifiersStatics>().RowOrColumnMajorProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TogglePatternIdentifiers::ToggleStateProperty()
 {
-    return GetActivationFactory<TogglePatternIdentifiers, ITogglePatternIdentifiersStatics>().ToggleStateProperty();
+    return get_activation_factory<TogglePatternIdentifiers, ITogglePatternIdentifiersStatics>().ToggleStateProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPattern2Identifiers::CanZoomProperty()
 {
-    return GetActivationFactory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().CanZoomProperty();
+    return get_activation_factory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().CanZoomProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPattern2Identifiers::ZoomLevelProperty()
 {
-    return GetActivationFactory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().ZoomLevelProperty();
+    return get_activation_factory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().ZoomLevelProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPattern2Identifiers::MaxZoomProperty()
 {
-    return GetActivationFactory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().MaxZoomProperty();
+    return get_activation_factory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().MaxZoomProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPattern2Identifiers::MinZoomProperty()
 {
-    return GetActivationFactory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().MinZoomProperty();
+    return get_activation_factory<TransformPattern2Identifiers, ITransformPattern2IdentifiersStatics>().MinZoomProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPatternIdentifiers::CanMoveProperty()
 {
-    return GetActivationFactory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanMoveProperty();
+    return get_activation_factory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanMoveProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPatternIdentifiers::CanResizeProperty()
 {
-    return GetActivationFactory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanResizeProperty();
+    return get_activation_factory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanResizeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty TransformPatternIdentifiers::CanRotateProperty()
 {
-    return GetActivationFactory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanRotateProperty();
+    return get_activation_factory<TransformPatternIdentifiers, ITransformPatternIdentifiersStatics>().CanRotateProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ValuePatternIdentifiers::IsReadOnlyProperty()
 {
-    return GetActivationFactory<ValuePatternIdentifiers, IValuePatternIdentifiersStatics>().IsReadOnlyProperty();
+    return get_activation_factory<ValuePatternIdentifiers, IValuePatternIdentifiersStatics>().IsReadOnlyProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty ValuePatternIdentifiers::ValueProperty()
 {
-    return GetActivationFactory<ValuePatternIdentifiers, IValuePatternIdentifiersStatics>().ValueProperty();
+    return get_activation_factory<ValuePatternIdentifiers, IValuePatternIdentifiersStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::CanMaximizeProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().CanMaximizeProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().CanMaximizeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::CanMinimizeProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().CanMinimizeProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().CanMinimizeProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::IsModalProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().IsModalProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().IsModalProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::IsTopmostProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().IsTopmostProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().IsTopmostProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::WindowInteractionStateProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().WindowInteractionStateProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().WindowInteractionStateProperty();
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifiers::WindowVisualStateProperty()
 {
-    return GetActivationFactory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().WindowVisualStateProperty();
+    return get_activation_factory<WindowPatternIdentifiers, IWindowPatternIdentifiersStatics>().WindowVisualStateProperty();
 }
 
 }

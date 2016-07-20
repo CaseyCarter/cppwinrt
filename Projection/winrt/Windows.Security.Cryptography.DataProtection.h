@@ -130,11 +130,11 @@ template <typename D> Windows::Security::Cryptography::DataProtection::DataProte
 }
 
 inline DataProtectionProvider::DataProtectionProvider() :
-    DataProtectionProvider(ActivateInstance<DataProtectionProvider>())
+    DataProtectionProvider(activate_instance<DataProtectionProvider>())
 {}
 
 inline DataProtectionProvider::DataProtectionProvider(hstring_ref protectionDescriptor) :
-    DataProtectionProvider(GetActivationFactory<DataProtectionProvider, IDataProtectionProviderFactory>().CreateOverloadExplicit(protectionDescriptor))
+    DataProtectionProvider(get_activation_factory<DataProtectionProvider, IDataProtectionProviderFactory>().CreateOverloadExplicit(protectionDescriptor))
 {}
 
 }

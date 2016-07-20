@@ -728,7 +728,7 @@ template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPacka
 
 inline Windows::ApplicationModel::AppExtensions::AppExtensionCatalog AppExtensionCatalog::Open(hstring_ref appExtensionName)
 {
-    return GetActivationFactory<AppExtensionCatalog, IAppExtensionCatalogStatics>().Open(appExtensionName);
+    return get_activation_factory<AppExtensionCatalog, IAppExtensionCatalogStatics>().Open(appExtensionName);
 }
 
 }

@@ -413,32 +413,32 @@ template <typename D> Windows::Foundation::IAsyncAction impl_ISocialInfoProvider
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> SocialInfoProviderManager::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId)
 {
-    return GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId);
+    return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> SocialInfoProviderManager::CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId)
 {
-    return GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateDashboardItemUpdaterAsync(ownerRemoteId);
+    return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateDashboardItemUpdaterAsync(ownerRemoteId);
 }
 
 inline void SocialInfoProviderManager::UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount)
 {
-    GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().UpdateBadgeCountValue(itemRemoteId, newCount);
+    get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().UpdateBadgeCountValue(itemRemoteId, newCount);
 }
 
 inline void SocialInfoProviderManager::ReportNewContentAvailable(hstring_ref contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind)
 {
-    GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().ReportNewContentAvailable(contactRemoteId, kind);
+    get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().ReportNewContentAvailable(contactRemoteId, kind);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> SocialInfoProviderManager::ProvisionAsync()
 {
-    return GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().ProvisionAsync();
+    return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().ProvisionAsync();
 }
 
 inline Windows::Foundation::IAsyncAction SocialInfoProviderManager::DeprovisionAsync()
 {
-    return GetActivationFactory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().DeprovisionAsync();
+    return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().DeprovisionAsync();
 }
 
 }

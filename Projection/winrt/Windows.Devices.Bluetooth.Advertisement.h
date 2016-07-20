@@ -1759,161 +1759,161 @@ template <typename D> void impl_IBluetoothLEAdvertisementPublisher<D>::StatusCha
 }
 
 inline BluetoothLEAdvertisement::BluetoothLEAdvertisement() :
-    BluetoothLEAdvertisement(ActivateInstance<BluetoothLEAdvertisement>())
+    BluetoothLEAdvertisement(activate_instance<BluetoothLEAdvertisement>())
 {}
 
 inline BluetoothLEAdvertisementBytePattern::BluetoothLEAdvertisementBytePattern() :
-    BluetoothLEAdvertisementBytePattern(ActivateInstance<BluetoothLEAdvertisementBytePattern>())
+    BluetoothLEAdvertisementBytePattern(activate_instance<BluetoothLEAdvertisementBytePattern>())
 {}
 
 inline BluetoothLEAdvertisementBytePattern::BluetoothLEAdvertisementBytePattern(uint8_t dataType, int16_t offset, const Windows::Storage::Streams::IBuffer & data) :
-    BluetoothLEAdvertisementBytePattern(GetActivationFactory<BluetoothLEAdvertisementBytePattern, IBluetoothLEAdvertisementBytePatternFactory>().Create(dataType, offset, data))
+    BluetoothLEAdvertisementBytePattern(get_activation_factory<BluetoothLEAdvertisementBytePattern, IBluetoothLEAdvertisementBytePatternFactory>().Create(dataType, offset, data))
 {}
 
 inline BluetoothLEAdvertisementDataSection::BluetoothLEAdvertisementDataSection() :
-    BluetoothLEAdvertisementDataSection(ActivateInstance<BluetoothLEAdvertisementDataSection>())
+    BluetoothLEAdvertisementDataSection(activate_instance<BluetoothLEAdvertisementDataSection>())
 {}
 
 inline BluetoothLEAdvertisementDataSection::BluetoothLEAdvertisementDataSection(uint8_t dataType, const Windows::Storage::Streams::IBuffer & data) :
-    BluetoothLEAdvertisementDataSection(GetActivationFactory<BluetoothLEAdvertisementDataSection, IBluetoothLEAdvertisementDataSectionFactory>().Create(dataType, data))
+    BluetoothLEAdvertisementDataSection(get_activation_factory<BluetoothLEAdvertisementDataSection, IBluetoothLEAdvertisementDataSectionFactory>().Create(dataType, data))
 {}
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::Flags()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().Flags();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().Flags();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::IncompleteService16BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService16BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService16BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::CompleteService16BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService16BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService16BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::IncompleteService32BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService32BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService32BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::CompleteService32BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService32BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService32BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::IncompleteService128BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService128BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().IncompleteService128BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::CompleteService128BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService128BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteService128BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ShortenedLocalName()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ShortenedLocalName();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ShortenedLocalName();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::CompleteLocalName()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteLocalName();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().CompleteLocalName();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::TxPowerLevel()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().TxPowerLevel();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().TxPowerLevel();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::SlaveConnectionIntervalRange()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().SlaveConnectionIntervalRange();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().SlaveConnectionIntervalRange();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceSolicitation16BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation16BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation16BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceSolicitation32BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation32BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation32BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceSolicitation128BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation128BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceSolicitation128BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceData16BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData16BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData16BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceData32BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData32BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData32BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ServiceData128BitUuids()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData128BitUuids();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ServiceData128BitUuids();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::PublicTargetAddress()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().PublicTargetAddress();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().PublicTargetAddress();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::RandomTargetAddress()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().RandomTargetAddress();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().RandomTargetAddress();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::Appearance()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().Appearance();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().Appearance();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::AdvertisingInterval()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().AdvertisingInterval();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().AdvertisingInterval();
 }
 
 inline uint8_t BluetoothLEAdvertisementDataTypes::ManufacturerSpecificData()
 {
-    return GetActivationFactory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ManufacturerSpecificData();
+    return get_activation_factory<BluetoothLEAdvertisementDataTypes, IBluetoothLEAdvertisementDataTypesStatics>().ManufacturerSpecificData();
 }
 
 inline BluetoothLEAdvertisementFilter::BluetoothLEAdvertisementFilter() :
-    BluetoothLEAdvertisementFilter(ActivateInstance<BluetoothLEAdvertisementFilter>())
+    BluetoothLEAdvertisementFilter(activate_instance<BluetoothLEAdvertisementFilter>())
 {}
 
 inline BluetoothLEAdvertisementPublisher::BluetoothLEAdvertisementPublisher() :
-    BluetoothLEAdvertisementPublisher(ActivateInstance<BluetoothLEAdvertisementPublisher>())
+    BluetoothLEAdvertisementPublisher(activate_instance<BluetoothLEAdvertisementPublisher>())
 {}
 
 inline BluetoothLEAdvertisementPublisher::BluetoothLEAdvertisementPublisher(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & advertisement) :
-    BluetoothLEAdvertisementPublisher(GetActivationFactory<BluetoothLEAdvertisementPublisher, IBluetoothLEAdvertisementPublisherFactory>().Create(advertisement))
+    BluetoothLEAdvertisementPublisher(get_activation_factory<BluetoothLEAdvertisementPublisher, IBluetoothLEAdvertisementPublisherFactory>().Create(advertisement))
 {}
 
 inline BluetoothLEAdvertisementWatcher::BluetoothLEAdvertisementWatcher() :
-    BluetoothLEAdvertisementWatcher(ActivateInstance<BluetoothLEAdvertisementWatcher>())
+    BluetoothLEAdvertisementWatcher(activate_instance<BluetoothLEAdvertisementWatcher>())
 {}
 
 inline BluetoothLEAdvertisementWatcher::BluetoothLEAdvertisementWatcher(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & advertisementFilter) :
-    BluetoothLEAdvertisementWatcher(GetActivationFactory<BluetoothLEAdvertisementWatcher, IBluetoothLEAdvertisementWatcherFactory>().Create(advertisementFilter))
+    BluetoothLEAdvertisementWatcher(get_activation_factory<BluetoothLEAdvertisementWatcher, IBluetoothLEAdvertisementWatcherFactory>().Create(advertisementFilter))
 {}
 
 inline BluetoothLEManufacturerData::BluetoothLEManufacturerData() :
-    BluetoothLEManufacturerData(ActivateInstance<BluetoothLEManufacturerData>())
+    BluetoothLEManufacturerData(activate_instance<BluetoothLEManufacturerData>())
 {}
 
 inline BluetoothLEManufacturerData::BluetoothLEManufacturerData(uint16_t companyId, const Windows::Storage::Streams::IBuffer & data) :
-    BluetoothLEManufacturerData(GetActivationFactory<BluetoothLEManufacturerData, IBluetoothLEManufacturerDataFactory>().Create(companyId, data))
+    BluetoothLEManufacturerData(get_activation_factory<BluetoothLEManufacturerData, IBluetoothLEManufacturerDataFactory>().Create(companyId, data))
 {}
 
 }

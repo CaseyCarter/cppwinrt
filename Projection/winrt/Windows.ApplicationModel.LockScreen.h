@@ -542,7 +542,7 @@ template <typename D> Windows::ApplicationModel::LockScreen::LockApplicationHost
 
 inline Windows::ApplicationModel::LockScreen::LockApplicationHost LockApplicationHost::GetForCurrentView()
 {
-    return GetActivationFactory<LockApplicationHost, ILockApplicationHostStatics>().GetForCurrentView();
+    return get_activation_factory<LockApplicationHost, ILockApplicationHostStatics>().GetForCurrentView();
 }
 
 }

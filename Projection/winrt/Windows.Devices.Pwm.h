@@ -350,12 +350,12 @@ template <typename D> bool impl_IPwmPin<D>::IsStarted() const
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> PwmController::GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider)
 {
-    return GetActivationFactory<PwmController, IPwmControllerStatics>().GetControllersAsync(provider);
+    return get_activation_factory<PwmController, IPwmControllerStatics>().GetControllersAsync(provider);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> PwmController::GetDefaultAsync()
 {
-    return GetActivationFactory<PwmController, IPwmControllerStatics2>().GetDefaultAsync();
+    return get_activation_factory<PwmController, IPwmControllerStatics2>().GetDefaultAsync();
 }
 
 }

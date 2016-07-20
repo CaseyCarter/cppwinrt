@@ -2051,34 +2051,34 @@ template <typename D> Windows::System::User impl_IPhoneCallHistoryManagerForUser
 }
 
 inline PhoneCallHistoryEntry::PhoneCallHistoryEntry() :
-    PhoneCallHistoryEntry(ActivateInstance<PhoneCallHistoryEntry>())
+    PhoneCallHistoryEntry(activate_instance<PhoneCallHistoryEntry>())
 {}
 
 inline PhoneCallHistoryEntryAddress::PhoneCallHistoryEntryAddress() :
-    PhoneCallHistoryEntryAddress(ActivateInstance<PhoneCallHistoryEntryAddress>())
+    PhoneCallHistoryEntryAddress(activate_instance<PhoneCallHistoryEntryAddress>())
 {}
 
 inline PhoneCallHistoryEntryAddress::PhoneCallHistoryEntryAddress(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) :
-    PhoneCallHistoryEntryAddress(GetActivationFactory<PhoneCallHistoryEntryAddress, IPhoneCallHistoryEntryAddressFactory>().Create(rawAddress, rawAddressKind))
+    PhoneCallHistoryEntryAddress(get_activation_factory<PhoneCallHistoryEntryAddress, IPhoneCallHistoryEntryAddressFactory>().Create(rawAddress, rawAddressKind))
 {}
 
 inline PhoneCallHistoryEntryQueryOptions::PhoneCallHistoryEntryQueryOptions() :
-    PhoneCallHistoryEntryQueryOptions(ActivateInstance<PhoneCallHistoryEntryQueryOptions>())
+    PhoneCallHistoryEntryQueryOptions(activate_instance<PhoneCallHistoryEntryQueryOptions>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> PhoneCallHistoryManager::RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType)
 {
-    return GetActivationFactory<PhoneCallHistoryManager, IPhoneCallHistoryManagerStatics>().RequestStoreAsync(accessType);
+    return get_activation_factory<PhoneCallHistoryManager, IPhoneCallHistoryManagerStatics>().RequestStoreAsync(accessType);
 }
 
 inline Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser PhoneCallHistoryManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<PhoneCallHistoryManager, IPhoneCallHistoryManagerStatics2>().GetForUser(user);
+    return get_activation_factory<PhoneCallHistoryManager, IPhoneCallHistoryManagerStatics2>().GetForUser(user);
 }
 
 inline Windows::ApplicationModel::Calls::VoipCallCoordinator VoipCallCoordinator::GetDefault()
 {
-    return GetActivationFactory<VoipCallCoordinator, IVoipCallCoordinatorStatics>().GetDefault();
+    return get_activation_factory<VoipCallCoordinator, IVoipCallCoordinatorStatics>().GetDefault();
 }
 
 }

@@ -12359,843 +12359,843 @@ template <typename D> bool impl_ISizeHelperStatics<D>::Equals(const Windows::Fou
 inline AdaptiveTrigger::AdaptiveTrigger()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<AdaptiveTrigger, IAdaptiveTriggerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty AdaptiveTrigger::MinWindowWidthProperty()
 {
-    return GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerStatics>().MinWindowWidthProperty();
+    return get_activation_factory<AdaptiveTrigger, IAdaptiveTriggerStatics>().MinWindowWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AdaptiveTrigger::MinWindowHeightProperty()
 {
-    return GetActivationFactory<AdaptiveTrigger, IAdaptiveTriggerStatics>().MinWindowHeightProperty();
+    return get_activation_factory<AdaptiveTrigger, IAdaptiveTriggerStatics>().MinWindowHeightProperty();
 }
 
 inline Application::Application()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Application, IApplicationFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Application, IApplicationFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::Application Application::Current()
 {
-    return GetActivationFactory<Application, IApplicationStatics>().Current();
+    return get_activation_factory<Application, IApplicationStatics>().Current();
 }
 
 inline void Application::Start(const Windows::UI::Xaml::ApplicationInitializationCallback & callback)
 {
-    GetActivationFactory<Application, IApplicationStatics>().Start(callback);
+    get_activation_factory<Application, IApplicationStatics>().Start(callback);
 }
 
 inline void Application::LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator)
 {
-    GetActivationFactory<Application, IApplicationStatics>().LoadComponent(component, resourceLocator);
+    get_activation_factory<Application, IApplicationStatics>().LoadComponent(component, resourceLocator);
 }
 
 inline void Application::LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator, Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation componentResourceLocation)
 {
-    GetActivationFactory<Application, IApplicationStatics>().LoadComponent(component, resourceLocator, componentResourceLocation);
+    get_activation_factory<Application, IApplicationStatics>().LoadComponent(component, resourceLocator, componentResourceLocation);
 }
 
 inline Windows::UI::Xaml::CornerRadius CornerRadiusHelper::FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft)
 {
-    return GetActivationFactory<CornerRadiusHelper, ICornerRadiusHelperStatics>().FromRadii(topLeft, topRight, bottomRight, bottomLeft);
+    return get_activation_factory<CornerRadiusHelper, ICornerRadiusHelperStatics>().FromRadii(topLeft, topRight, bottomRight, bottomLeft);
 }
 
 inline Windows::UI::Xaml::CornerRadius CornerRadiusHelper::FromUniformRadius(double uniformRadius)
 {
-    return GetActivationFactory<CornerRadiusHelper, ICornerRadiusHelperStatics>().FromUniformRadius(uniformRadius);
+    return get_activation_factory<CornerRadiusHelper, ICornerRadiusHelperStatics>().FromUniformRadius(uniformRadius);
 }
 
 inline DataTemplate::DataTemplate()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DataTemplate, IDataTemplateFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DataTemplate, IDataTemplateFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty DataTemplate::ExtensionInstanceProperty()
 {
-    return GetActivationFactory<DataTemplate, IDataTemplateStatics2>().ExtensionInstanceProperty();
+    return get_activation_factory<DataTemplate, IDataTemplateStatics2>().ExtensionInstanceProperty();
 }
 
 inline Windows::UI::Xaml::IDataTemplateExtension DataTemplate::GetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element)
 {
-    return GetActivationFactory<DataTemplate, IDataTemplateStatics2>().GetExtensionInstance(element);
+    return get_activation_factory<DataTemplate, IDataTemplateStatics2>().GetExtensionInstance(element);
 }
 
 inline void DataTemplate::SetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element, const Windows::UI::Xaml::IDataTemplateExtension & value)
 {
-    GetActivationFactory<DataTemplate, IDataTemplateStatics2>().SetExtensionInstance(element, value);
+    get_activation_factory<DataTemplate, IDataTemplateStatics2>().SetExtensionInstance(element, value);
 }
 
 inline DataTemplateKey::DataTemplateKey()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstance(outer, inner));
 }
 
 inline DataTemplateKey::DataTemplateKey(const Windows::IInspectable & dataType)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, outer, inner));
+    impl_move(get_activation_factory<DataTemplateKey, IDataTemplateKeyFactory>().CreateInstanceWithType(dataType, outer, inner));
 }
 
 inline DependencyObjectCollection::DependencyObjectCollection()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DependencyObjectCollection, IDependencyObjectCollectionFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::IInspectable DependencyProperty::UnsetValue()
 {
-    return GetActivationFactory<DependencyProperty, IDependencyPropertyStatics>().UnsetValue();
+    return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().UnsetValue();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DependencyProperty::Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata)
 {
-    return GetActivationFactory<DependencyProperty, IDependencyPropertyStatics>().Register(name, propertyType, ownerType, typeMetadata);
+    return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().Register(name, propertyType, ownerType, typeMetadata);
 }
 
 inline Windows::UI::Xaml::DependencyProperty DependencyProperty::RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata)
 {
-    return GetActivationFactory<DependencyProperty, IDependencyPropertyStatics>().RegisterAttached(name, propertyType, ownerType, defaultMetadata);
+    return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().RegisterAttached(name, propertyType, ownerType, defaultMetadata);
 }
 
 inline DispatcherTimer::DispatcherTimer()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<DispatcherTimer, IDispatcherTimerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::Duration DurationHelper::Automatic()
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Automatic();
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Automatic();
 }
 
 inline Windows::UI::Xaml::Duration DurationHelper::Forever()
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Forever();
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Forever();
 }
 
 inline int32_t DurationHelper::Compare(const Windows::UI::Xaml::Duration & duration1, const Windows::UI::Xaml::Duration & duration2)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Compare(duration1, duration2);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Compare(duration1, duration2);
 }
 
 inline Windows::UI::Xaml::Duration DurationHelper::FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().FromTimeSpan(timeSpan);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().FromTimeSpan(timeSpan);
 }
 
 inline bool DurationHelper::GetHasTimeSpan(const Windows::UI::Xaml::Duration & target)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().GetHasTimeSpan(target);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().GetHasTimeSpan(target);
 }
 
 inline Windows::UI::Xaml::Duration DurationHelper::Add(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Add(target, duration);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Add(target, duration);
 }
 
 inline bool DurationHelper::Equals(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & value)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Equals(target, value);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Equals(target, value);
 }
 
 inline Windows::UI::Xaml::Duration DurationHelper::Subtract(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration)
 {
-    return GetActivationFactory<DurationHelper, IDurationHelperStatics>().Subtract(target, duration);
+    return get_activation_factory<DurationHelper, IDurationHelperStatics>().Subtract(target, duration);
 }
 
 inline double ElementSoundPlayer::Volume()
 {
-    return GetActivationFactory<ElementSoundPlayer, IElementSoundPlayerStatics>().Volume();
+    return get_activation_factory<ElementSoundPlayer, IElementSoundPlayerStatics>().Volume();
 }
 
 inline void ElementSoundPlayer::Volume(double value)
 {
-    GetActivationFactory<ElementSoundPlayer, IElementSoundPlayerStatics>().Volume(value);
+    get_activation_factory<ElementSoundPlayer, IElementSoundPlayerStatics>().Volume(value);
 }
 
 inline Windows::UI::Xaml::ElementSoundPlayerState ElementSoundPlayer::State()
 {
-    return GetActivationFactory<ElementSoundPlayer, IElementSoundPlayerStatics>().State();
+    return get_activation_factory<ElementSoundPlayer, IElementSoundPlayerStatics>().State();
 }
 
 inline void ElementSoundPlayer::State(Windows::UI::Xaml::ElementSoundPlayerState value)
 {
-    GetActivationFactory<ElementSoundPlayer, IElementSoundPlayerStatics>().State(value);
+    get_activation_factory<ElementSoundPlayer, IElementSoundPlayerStatics>().State(value);
 }
 
 inline void ElementSoundPlayer::Play(Windows::UI::Xaml::ElementSoundKind sound)
 {
-    GetActivationFactory<ElementSoundPlayer, IElementSoundPlayerStatics>().Play(sound);
+    get_activation_factory<ElementSoundPlayer, IElementSoundPlayerStatics>().Play(sound);
 }
 
 inline EventTrigger::EventTrigger() :
-    EventTrigger(ActivateInstance<EventTrigger>())
+    EventTrigger(activate_instance<EventTrigger>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::TagProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().TagProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().TagProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::LanguageProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().LanguageProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().LanguageProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::ActualWidthProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().ActualWidthProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().ActualWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::ActualHeightProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().ActualHeightProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().ActualHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::WidthProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().WidthProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().WidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::HeightProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().HeightProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().HeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::MinWidthProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().MinWidthProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().MinWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::MaxWidthProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().MaxWidthProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().MaxWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::MinHeightProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().MinHeightProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().MinHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::MaxHeightProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().MaxHeightProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().MaxHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::HorizontalAlignmentProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().HorizontalAlignmentProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().HorizontalAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::VerticalAlignmentProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().VerticalAlignmentProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().VerticalAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::MarginProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().MarginProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().MarginProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::NameProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().NameProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().NameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::DataContextProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().DataContextProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().DataContextProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::StyleProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().StyleProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().StyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FlowDirectionProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics>().FlowDirectionProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics>().FlowDirectionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::RequestedThemeProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics2>().RequestedThemeProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics2>().RequestedThemeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::AllowFocusOnInteractionProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().AllowFocusOnInteractionProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().AllowFocusOnInteractionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualMarginProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualMarginProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualMarginProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualSecondaryThicknessProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualSecondaryThicknessProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualSecondaryThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualPrimaryThicknessProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualPrimaryThicknessProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualPrimaryThicknessProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualSecondaryBrushProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualSecondaryBrushProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualSecondaryBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualPrimaryBrushProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualPrimaryBrushProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().FocusVisualPrimaryBrushProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::AllowFocusWhenDisabledProperty()
 {
-    return GetActivationFactory<FrameworkElement, IFrameworkElementStatics4>().AllowFocusWhenDisabledProperty();
+    return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().AllowFocusWhenDisabledProperty();
 }
 
 inline FrameworkView::FrameworkView() :
-    FrameworkView(ActivateInstance<FrameworkView>())
+    FrameworkView(activate_instance<FrameworkView>())
 {}
 
 inline FrameworkViewSource::FrameworkViewSource() :
-    FrameworkViewSource(ActivateInstance<FrameworkViewSource>())
+    FrameworkViewSource(activate_instance<FrameworkViewSource>())
 {}
 
 inline Windows::UI::Xaml::GridLength GridLengthHelper::Auto()
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().Auto();
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().Auto();
 }
 
 inline Windows::UI::Xaml::GridLength GridLengthHelper::FromPixels(double pixels)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().FromPixels(pixels);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().FromPixels(pixels);
 }
 
 inline Windows::UI::Xaml::GridLength GridLengthHelper::FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().FromValueAndType(value, type);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().FromValueAndType(value, type);
 }
 
 inline bool GridLengthHelper::GetIsAbsolute(const Windows::UI::Xaml::GridLength & target)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().GetIsAbsolute(target);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().GetIsAbsolute(target);
 }
 
 inline bool GridLengthHelper::GetIsAuto(const Windows::UI::Xaml::GridLength & target)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().GetIsAuto(target);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().GetIsAuto(target);
 }
 
 inline bool GridLengthHelper::GetIsStar(const Windows::UI::Xaml::GridLength & target)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().GetIsStar(target);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().GetIsStar(target);
 }
 
 inline bool GridLengthHelper::Equals(const Windows::UI::Xaml::GridLength & target, const Windows::UI::Xaml::GridLength & value)
 {
-    return GetActivationFactory<GridLengthHelper, IGridLengthHelperStatics>().Equals(target, value);
+    return get_activation_factory<GridLengthHelper, IGridLengthHelperStatics>().Equals(target, value);
 }
 
 inline Windows::Foundation::Point PointHelper::FromCoordinates(float x, float y)
 {
-    return GetActivationFactory<PointHelper, IPointHelperStatics>().FromCoordinates(x, y);
+    return get_activation_factory<PointHelper, IPointHelperStatics>().FromCoordinates(x, y);
 }
 
 inline PropertyMetadata::PropertyMetadata(const Windows::IInspectable & defaultValue)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, outer, inner));
+    impl_move(get_activation_factory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValue(defaultValue, outer, inner));
 }
 
 inline PropertyMetadata::PropertyMetadata(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, outer, inner));
+    impl_move(get_activation_factory<PropertyMetadata, IPropertyMetadataFactory>().CreateInstanceWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, outer, inner));
 }
 
 inline Windows::UI::Xaml::PropertyMetadata PropertyMetadata::Create(const Windows::IInspectable & defaultValue)
 {
-    return GetActivationFactory<PropertyMetadata, IPropertyMetadataStatics>().Create(defaultValue);
+    return get_activation_factory<PropertyMetadata, IPropertyMetadataStatics>().Create(defaultValue);
 }
 
 inline Windows::UI::Xaml::PropertyMetadata PropertyMetadata::Create(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback)
 {
-    return GetActivationFactory<PropertyMetadata, IPropertyMetadataStatics>().Create(defaultValue, propertyChangedCallback);
+    return get_activation_factory<PropertyMetadata, IPropertyMetadataStatics>().Create(defaultValue, propertyChangedCallback);
 }
 
 inline Windows::UI::Xaml::PropertyMetadata PropertyMetadata::Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback)
 {
-    return GetActivationFactory<PropertyMetadata, IPropertyMetadataStatics>().Create(createDefaultValueCallback);
+    return get_activation_factory<PropertyMetadata, IPropertyMetadataStatics>().Create(createDefaultValueCallback);
 }
 
 inline Windows::UI::Xaml::PropertyMetadata PropertyMetadata::Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback)
 {
-    return GetActivationFactory<PropertyMetadata, IPropertyMetadataStatics>().Create(createDefaultValueCallback, propertyChangedCallback);
+    return get_activation_factory<PropertyMetadata, IPropertyMetadataStatics>().Create(createDefaultValueCallback, propertyChangedCallback);
 }
 
 inline PropertyPath::PropertyPath(hstring_ref path) :
-    PropertyPath(GetActivationFactory<PropertyPath, IPropertyPathFactory>().CreateInstance(path))
+    PropertyPath(get_activation_factory<PropertyPath, IPropertyPathFactory>().CreateInstance(path))
 {}
 
 inline Windows::Foundation::Rect RectHelper::Empty()
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Empty();
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Empty();
 }
 
 inline Windows::Foundation::Rect RectHelper::FromCoordinatesAndDimensions(float x, float y, float width, float height)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().FromCoordinatesAndDimensions(x, y, width, height);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().FromCoordinatesAndDimensions(x, y, width, height);
 }
 
 inline Windows::Foundation::Rect RectHelper::FromPoints(const Windows::Foundation::Point & point1, const Windows::Foundation::Point & point2)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().FromPoints(point1, point2);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().FromPoints(point1, point2);
 }
 
 inline Windows::Foundation::Rect RectHelper::FromLocationAndSize(const Windows::Foundation::Point & location, const Windows::Foundation::Size & size)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().FromLocationAndSize(location, size);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().FromLocationAndSize(location, size);
 }
 
 inline bool RectHelper::GetIsEmpty(const Windows::Foundation::Rect & target)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().GetIsEmpty(target);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().GetIsEmpty(target);
 }
 
 inline float RectHelper::GetBottom(const Windows::Foundation::Rect & target)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().GetBottom(target);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().GetBottom(target);
 }
 
 inline float RectHelper::GetLeft(const Windows::Foundation::Rect & target)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().GetLeft(target);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().GetLeft(target);
 }
 
 inline float RectHelper::GetRight(const Windows::Foundation::Rect & target)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().GetRight(target);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().GetRight(target);
 }
 
 inline float RectHelper::GetTop(const Windows::Foundation::Rect & target)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().GetTop(target);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().GetTop(target);
 }
 
 inline bool RectHelper::Contains(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Contains(target, point);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Contains(target, point);
 }
 
 inline bool RectHelper::Equals(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & value)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Equals(target, value);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Equals(target, value);
 }
 
 inline Windows::Foundation::Rect RectHelper::Intersect(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Intersect(target, rect);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Intersect(target, rect);
 }
 
 inline Windows::Foundation::Rect RectHelper::Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Union(target, point);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Union(target, point);
 }
 
 inline Windows::Foundation::Rect RectHelper::Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect)
 {
-    return GetActivationFactory<RectHelper, IRectHelperStatics>().Union(target, rect);
+    return get_activation_factory<RectHelper, IRectHelperStatics>().Union(target, rect);
 }
 
 inline ResourceDictionary::ResourceDictionary()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<ResourceDictionary, IResourceDictionaryFactory>().CreateInstance(outer, inner));
 }
 
 inline RoutedEventArgs::RoutedEventArgs()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<RoutedEventArgs, IRoutedEventArgsFactory>().CreateInstance(outer, inner));
 }
 
 inline Setter::Setter() :
-    Setter(ActivateInstance<Setter>())
+    Setter(activate_instance<Setter>())
 {}
 
 inline Setter::Setter(const Windows::UI::Xaml::DependencyProperty & targetProperty, const Windows::IInspectable & value) :
-    Setter(GetActivationFactory<Setter, ISetterFactory>().CreateInstance(targetProperty, value))
+    Setter(get_activation_factory<Setter, ISetterFactory>().CreateInstance(targetProperty, value))
 {}
 
 inline SetterBaseCollection::SetterBaseCollection() :
-    SetterBaseCollection(ActivateInstance<SetterBaseCollection>())
+    SetterBaseCollection(activate_instance<SetterBaseCollection>())
 {}
 
 inline Windows::Foundation::Size SizeHelper::Empty()
 {
-    return GetActivationFactory<SizeHelper, ISizeHelperStatics>().Empty();
+    return get_activation_factory<SizeHelper, ISizeHelperStatics>().Empty();
 }
 
 inline Windows::Foundation::Size SizeHelper::FromDimensions(float width, float height)
 {
-    return GetActivationFactory<SizeHelper, ISizeHelperStatics>().FromDimensions(width, height);
+    return get_activation_factory<SizeHelper, ISizeHelperStatics>().FromDimensions(width, height);
 }
 
 inline bool SizeHelper::GetIsEmpty(const Windows::Foundation::Size & target)
 {
-    return GetActivationFactory<SizeHelper, ISizeHelperStatics>().GetIsEmpty(target);
+    return get_activation_factory<SizeHelper, ISizeHelperStatics>().GetIsEmpty(target);
 }
 
 inline bool SizeHelper::Equals(const Windows::Foundation::Size & target, const Windows::Foundation::Size & value)
 {
-    return GetActivationFactory<SizeHelper, ISizeHelperStatics>().Equals(target, value);
+    return get_activation_factory<SizeHelper, ISizeHelperStatics>().Equals(target, value);
 }
 
 inline StateTrigger::StateTrigger() :
-    StateTrigger(ActivateInstance<StateTrigger>())
+    StateTrigger(activate_instance<StateTrigger>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty StateTrigger::IsActiveProperty()
 {
-    return GetActivationFactory<StateTrigger, IStateTriggerStatics>().IsActiveProperty();
+    return get_activation_factory<StateTrigger, IStateTriggerStatics>().IsActiveProperty();
 }
 
 inline Style::Style() :
-    Style(ActivateInstance<Style>())
+    Style(activate_instance<Style>())
 {}
 
 inline Style::Style(const Windows::UI::Xaml::Interop::TypeName & targetType) :
-    Style(GetActivationFactory<Style, IStyleFactory>().CreateInstance(targetType))
+    Style(get_activation_factory<Style, IStyleFactory>().CreateInstance(targetType))
 {}
 
 inline TargetPropertyPath::TargetPropertyPath() :
-    TargetPropertyPath(ActivateInstance<TargetPropertyPath>())
+    TargetPropertyPath(activate_instance<TargetPropertyPath>())
 {}
 
 inline TargetPropertyPath::TargetPropertyPath(const Windows::UI::Xaml::DependencyProperty & targetProperty) :
-    TargetPropertyPath(GetActivationFactory<TargetPropertyPath, ITargetPropertyPathFactory>().CreateInstance(targetProperty))
+    TargetPropertyPath(get_activation_factory<TargetPropertyPath, ITargetPropertyPathFactory>().CreateInstance(targetProperty))
 {}
 
 inline Windows::UI::Xaml::Thickness ThicknessHelper::FromLengths(double left, double top, double right, double bottom)
 {
-    return GetActivationFactory<ThicknessHelper, IThicknessHelperStatics>().FromLengths(left, top, right, bottom);
+    return get_activation_factory<ThicknessHelper, IThicknessHelperStatics>().FromLengths(left, top, right, bottom);
 }
 
 inline Windows::UI::Xaml::Thickness ThicknessHelper::FromUniformLength(double uniformLength)
 {
-    return GetActivationFactory<ThicknessHelper, IThicknessHelperStatics>().FromUniformLength(uniformLength);
+    return get_activation_factory<ThicknessHelper, IThicknessHelperStatics>().FromUniformLength(uniformLength);
 }
 
 inline TriggerActionCollection::TriggerActionCollection() :
-    TriggerActionCollection(ActivateInstance<TriggerActionCollection>())
+    TriggerActionCollection(activate_instance<TriggerActionCollection>())
 {}
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::KeyDownEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().KeyDownEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().KeyDownEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::KeyUpEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().KeyUpEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().KeyUpEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerEnteredEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerEnteredEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerEnteredEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerPressedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerPressedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerPressedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerMovedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerMovedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerMovedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerReleasedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerReleasedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerReleasedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerExitedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerExitedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerExitedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerCaptureLostEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerCaptureLostEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerCaptureLostEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerCanceledEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerCanceledEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerCanceledEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::PointerWheelChangedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerWheelChangedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerWheelChangedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::TappedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().TappedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().TappedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::DoubleTappedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().DoubleTappedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().DoubleTappedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::HoldingEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().HoldingEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().HoldingEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::RightTappedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().RightTappedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().RightTappedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::ManipulationStartingEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationStartingEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationStartingEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::ManipulationInertiaStartingEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationInertiaStartingEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationInertiaStartingEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::ManipulationStartedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationStartedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationStartedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::ManipulationDeltaEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationDeltaEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationDeltaEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::ManipulationCompletedEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationCompletedEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationCompletedEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::DragEnterEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().DragEnterEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().DragEnterEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::DragLeaveEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().DragLeaveEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().DragLeaveEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::DragOverEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().DragOverEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().DragOverEvent();
 }
 
 inline Windows::UI::Xaml::RoutedEvent UIElement::DropEvent()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().DropEvent();
+    return get_activation_factory<UIElement, IUIElementStatics>().DropEvent();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::AllowDropProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().AllowDropProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().AllowDropProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::OpacityProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().OpacityProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().OpacityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::ClipProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ClipProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().ClipProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::RenderTransformProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().RenderTransformProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().RenderTransformProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::ProjectionProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ProjectionProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().ProjectionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::RenderTransformOriginProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().RenderTransformOriginProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().RenderTransformOriginProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsHitTestVisibleProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().IsHitTestVisibleProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().IsHitTestVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::VisibilityProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().VisibilityProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().VisibilityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::UseLayoutRoundingProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().UseLayoutRoundingProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().UseLayoutRoundingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::TransitionsProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().TransitionsProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().TransitionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::CacheModeProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().CacheModeProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().CacheModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsTapEnabledProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().IsTapEnabledProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().IsTapEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsDoubleTapEnabledProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().IsDoubleTapEnabledProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().IsDoubleTapEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsRightTapEnabledProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().IsRightTapEnabledProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().IsRightTapEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsHoldingEnabledProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().IsHoldingEnabledProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().IsHoldingEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::ManipulationModeProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().ManipulationModeProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().ManipulationModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::PointerCapturesProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics>().PointerCapturesProperty();
+    return get_activation_factory<UIElement, IUIElementStatics>().PointerCapturesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::CompositeModeProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics2>().CompositeModeProperty();
+    return get_activation_factory<UIElement, IUIElementStatics2>().CompositeModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::Transform3DProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics3>().Transform3DProperty();
+    return get_activation_factory<UIElement, IUIElementStatics3>().Transform3DProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::CanDragProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics3>().CanDragProperty();
+    return get_activation_factory<UIElement, IUIElementStatics3>().CanDragProperty();
 }
 
 inline bool UIElement::TryStartDirectManipulation(const Windows::UI::Xaml::Input::Pointer & value)
 {
-    return GetActivationFactory<UIElement, IUIElementStatics3>().TryStartDirectManipulation(value);
+    return get_activation_factory<UIElement, IUIElementStatics3>().TryStartDirectManipulation(value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::ContextFlyoutProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics4>().ContextFlyoutProperty();
+    return get_activation_factory<UIElement, IUIElementStatics4>().ContextFlyoutProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::ExitDisplayModeOnAccessKeyInvokedProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics4>().ExitDisplayModeOnAccessKeyInvokedProperty();
+    return get_activation_factory<UIElement, IUIElementStatics4>().ExitDisplayModeOnAccessKeyInvokedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::IsAccessKeyScopeProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics4>().IsAccessKeyScopeProperty();
+    return get_activation_factory<UIElement, IUIElementStatics4>().IsAccessKeyScopeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::AccessKeyScopeOwnerProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics4>().AccessKeyScopeOwnerProperty();
+    return get_activation_factory<UIElement, IUIElementStatics4>().AccessKeyScopeOwnerProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty UIElement::AccessKeyProperty()
 {
-    return GetActivationFactory<UIElement, IUIElementStatics4>().AccessKeyProperty();
+    return get_activation_factory<UIElement, IUIElementStatics4>().AccessKeyProperty();
 }
 
 inline VisualState::VisualState() :
-    VisualState(ActivateInstance<VisualState>())
+    VisualState(activate_instance<VisualState>())
 {}
 
 inline VisualStateChangedEventArgs::VisualStateChangedEventArgs() :
-    VisualStateChangedEventArgs(ActivateInstance<VisualStateChangedEventArgs>())
+    VisualStateChangedEventArgs(activate_instance<VisualStateChangedEventArgs>())
 {}
 
 inline VisualStateGroup::VisualStateGroup() :
-    VisualStateGroup(ActivateInstance<VisualStateGroup>())
+    VisualStateGroup(activate_instance<VisualStateGroup>())
 {}
 
 inline VisualStateManager::VisualStateManager()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<VisualStateManager, IVisualStateManagerFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> VisualStateManager::GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj)
 {
-    return GetActivationFactory<VisualStateManager, IVisualStateManagerStatics>().GetVisualStateGroups(obj);
+    return get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().GetVisualStateGroups(obj);
 }
 
 inline Windows::UI::Xaml::DependencyProperty VisualStateManager::CustomVisualStateManagerProperty()
 {
-    return GetActivationFactory<VisualStateManager, IVisualStateManagerStatics>().CustomVisualStateManagerProperty();
+    return get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().CustomVisualStateManagerProperty();
 }
 
 inline Windows::UI::Xaml::VisualStateManager VisualStateManager::GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj)
 {
-    return GetActivationFactory<VisualStateManager, IVisualStateManagerStatics>().GetCustomVisualStateManager(obj);
+    return get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().GetCustomVisualStateManager(obj);
 }
 
 inline void VisualStateManager::SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value)
 {
-    GetActivationFactory<VisualStateManager, IVisualStateManagerStatics>().SetCustomVisualStateManager(obj, value);
+    get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().SetCustomVisualStateManager(obj, value);
 }
 
 inline bool VisualStateManager::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions)
 {
-    return GetActivationFactory<VisualStateManager, IVisualStateManagerStatics>().GoToState(control, stateName, useTransitions);
+    return get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().GoToState(control, stateName, useTransitions);
 }
 
 inline VisualTransition::VisualTransition()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<VisualTransition, IVisualTransitionFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<VisualTransition, IVisualTransitionFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::Window Window::Current()
 {
-    return GetActivationFactory<Window, IWindowStatics>().Current();
+    return get_activation_factory<Window, IWindowStatics>().Current();
 }
 
 }

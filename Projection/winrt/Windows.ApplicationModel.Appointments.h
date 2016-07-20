@@ -4944,223 +4944,223 @@ template <typename D> bool impl_IAppointmentException<D>::IsDeleted() const
 }
 
 inline Appointment::Appointment() :
-    Appointment(ActivateInstance<Appointment>())
+    Appointment(activate_instance<Appointment>())
 {}
 
 inline AppointmentInvitee::AppointmentInvitee() :
-    AppointmentInvitee(ActivateInstance<AppointmentInvitee>())
+    AppointmentInvitee(activate_instance<AppointmentInvitee>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowAddAppointmentAsync(appointment, selection);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowAddAppointmentAsync(appointment, selection);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowAddAppointmentAsync(appointment, selection, preferredPlacement);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowAddAppointmentAsync(appointment, selection, preferredPlacement);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement, instanceStartDate);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement, instanceStartDate);
 }
 
 inline Windows::Foundation::IAsyncAction AppointmentManager::ShowTimeFrameAsync(const Windows::Foundation::DateTime & timeToShow, const Windows::Foundation::TimeSpan & duration)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics>().ShowTimeFrameAsync(timeToShow, duration);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowTimeFrameAsync(timeToShow, duration);
 }
 
 inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_ref appointmentId)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId);
 }
 
 inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId, instanceStartDate);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId, instanceStartDate);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowEditNewAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics2>().ShowEditNewAppointmentAsync(appointment);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().ShowEditNewAppointmentAsync(appointment);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentStore> AppointmentManager::RequestStoreAsync(Windows::ApplicationModel::Appointments::AppointmentStoreAccessType options)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics2>().RequestStoreAsync(options);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().RequestStoreAsync(options);
 }
 
 inline Windows::ApplicationModel::Appointments::AppointmentManagerForUser AppointmentManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<AppointmentManager, IAppointmentManagerStatics3>().GetForUser(user);
+    return get_activation_factory<AppointmentManager, IAppointmentManagerStatics3>().GetForUser(user);
 }
 
 inline AppointmentOrganizer::AppointmentOrganizer() :
-    AppointmentOrganizer(ActivateInstance<AppointmentOrganizer>())
+    AppointmentOrganizer(activate_instance<AppointmentOrganizer>())
 {}
 
 inline hstring AppointmentProperties::Subject()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Subject();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Subject();
 }
 
 inline hstring AppointmentProperties::Location()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Location();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Location();
 }
 
 inline hstring AppointmentProperties::StartTime()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().StartTime();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().StartTime();
 }
 
 inline hstring AppointmentProperties::Duration()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Duration();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Duration();
 }
 
 inline hstring AppointmentProperties::Reminder()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Reminder();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Reminder();
 }
 
 inline hstring AppointmentProperties::BusyStatus()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().BusyStatus();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().BusyStatus();
 }
 
 inline hstring AppointmentProperties::Sensitivity()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Sensitivity();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Sensitivity();
 }
 
 inline hstring AppointmentProperties::OriginalStartTime()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().OriginalStartTime();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().OriginalStartTime();
 }
 
 inline hstring AppointmentProperties::IsResponseRequested()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().IsResponseRequested();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().IsResponseRequested();
 }
 
 inline hstring AppointmentProperties::AllowNewTimeProposal()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().AllowNewTimeProposal();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().AllowNewTimeProposal();
 }
 
 inline hstring AppointmentProperties::AllDay()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().AllDay();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().AllDay();
 }
 
 inline hstring AppointmentProperties::Details()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Details();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Details();
 }
 
 inline hstring AppointmentProperties::OnlineMeetingLink()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().OnlineMeetingLink();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().OnlineMeetingLink();
 }
 
 inline hstring AppointmentProperties::ReplyTime()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().ReplyTime();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().ReplyTime();
 }
 
 inline hstring AppointmentProperties::Organizer()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Organizer();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Organizer();
 }
 
 inline hstring AppointmentProperties::UserResponse()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().UserResponse();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().UserResponse();
 }
 
 inline hstring AppointmentProperties::HasInvitees()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().HasInvitees();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().HasInvitees();
 }
 
 inline hstring AppointmentProperties::IsCanceledMeeting()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().IsCanceledMeeting();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().IsCanceledMeeting();
 }
 
 inline hstring AppointmentProperties::IsOrganizedByUser()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().IsOrganizedByUser();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().IsOrganizedByUser();
 }
 
 inline hstring AppointmentProperties::Recurrence()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Recurrence();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Recurrence();
 }
 
 inline hstring AppointmentProperties::Uri()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Uri();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Uri();
 }
 
 inline hstring AppointmentProperties::Invitees()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().Invitees();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().Invitees();
 }
 
 inline Windows::Foundation::Collections::IVector<hstring> AppointmentProperties::DefaultProperties()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics>().DefaultProperties();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics>().DefaultProperties();
 }
 
 inline hstring AppointmentProperties::ChangeNumber()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics2>().ChangeNumber();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics2>().ChangeNumber();
 }
 
 inline hstring AppointmentProperties::RemoteChangeNumber()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics2>().RemoteChangeNumber();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics2>().RemoteChangeNumber();
 }
 
 inline hstring AppointmentProperties::DetailsKind()
 {
-    return GetActivationFactory<AppointmentProperties, IAppointmentPropertiesStatics2>().DetailsKind();
+    return get_activation_factory<AppointmentProperties, IAppointmentPropertiesStatics2>().DetailsKind();
 }
 
 inline AppointmentRecurrence::AppointmentRecurrence() :
-    AppointmentRecurrence(ActivateInstance<AppointmentRecurrence>())
+    AppointmentRecurrence(activate_instance<AppointmentRecurrence>())
 {}
 
 inline FindAppointmentsOptions::FindAppointmentsOptions() :
-    FindAppointmentsOptions(ActivateInstance<FindAppointmentsOptions>())
+    FindAppointmentsOptions(activate_instance<FindAppointmentsOptions>())
 {}
 
 }

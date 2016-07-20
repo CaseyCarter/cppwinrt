@@ -3198,103 +3198,103 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IPrinting3D3MFPacka
 
 inline Windows::Graphics::Printing3D::Print3DManager Print3DManager::GetForCurrentView()
 {
-    return GetActivationFactory<Print3DManager, IPrint3DManagerStatics>().GetForCurrentView();
+    return get_activation_factory<Print3DManager, IPrint3DManagerStatics>().GetForCurrentView();
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> Print3DManager::ShowPrintUIAsync()
 {
-    return GetActivationFactory<Print3DManager, IPrint3DManagerStatics>().ShowPrintUIAsync();
+    return get_activation_factory<Print3DManager, IPrint3DManagerStatics>().ShowPrintUIAsync();
 }
 
 inline Printing3D3MFPackage::Printing3D3MFPackage() :
-    Printing3D3MFPackage(ActivateInstance<Printing3D3MFPackage>())
+    Printing3D3MFPackage(activate_instance<Printing3D3MFPackage>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3D3MFPackage> Printing3D3MFPackage::LoadAsync(const Windows::Storage::Streams::IRandomAccessStream & value)
 {
-    return GetActivationFactory<Printing3D3MFPackage, IPrinting3D3MFPackageStatics>().LoadAsync(value);
+    return get_activation_factory<Printing3D3MFPackage, IPrinting3D3MFPackageStatics>().LoadAsync(value);
 }
 
 inline Printing3DBaseMaterial::Printing3DBaseMaterial() :
-    Printing3DBaseMaterial(ActivateInstance<Printing3DBaseMaterial>())
+    Printing3DBaseMaterial(activate_instance<Printing3DBaseMaterial>())
 {}
 
 inline hstring Printing3DBaseMaterial::Abs()
 {
-    return GetActivationFactory<Printing3DBaseMaterial, IPrinting3DBaseMaterialStatics>().Abs();
+    return get_activation_factory<Printing3DBaseMaterial, IPrinting3DBaseMaterialStatics>().Abs();
 }
 
 inline hstring Printing3DBaseMaterial::Pla()
 {
-    return GetActivationFactory<Printing3DBaseMaterial, IPrinting3DBaseMaterialStatics>().Pla();
+    return get_activation_factory<Printing3DBaseMaterial, IPrinting3DBaseMaterialStatics>().Pla();
 }
 
 inline Printing3DBaseMaterialGroup::Printing3DBaseMaterialGroup(uint32_t MaterialGroupId) :
-    Printing3DBaseMaterialGroup(GetActivationFactory<Printing3DBaseMaterialGroup, IPrinting3DBaseMaterialGroupFactory>().Create(MaterialGroupId))
+    Printing3DBaseMaterialGroup(get_activation_factory<Printing3DBaseMaterialGroup, IPrinting3DBaseMaterialGroupFactory>().Create(MaterialGroupId))
 {}
 
 inline Printing3DColorMaterial::Printing3DColorMaterial() :
-    Printing3DColorMaterial(ActivateInstance<Printing3DColorMaterial>())
+    Printing3DColorMaterial(activate_instance<Printing3DColorMaterial>())
 {}
 
 inline Printing3DColorMaterialGroup::Printing3DColorMaterialGroup(uint32_t MaterialGroupId) :
-    Printing3DColorMaterialGroup(GetActivationFactory<Printing3DColorMaterialGroup, IPrinting3DColorMaterialGroupFactory>().Create(MaterialGroupId))
+    Printing3DColorMaterialGroup(get_activation_factory<Printing3DColorMaterialGroup, IPrinting3DColorMaterialGroupFactory>().Create(MaterialGroupId))
 {}
 
 inline Printing3DComponent::Printing3DComponent() :
-    Printing3DComponent(ActivateInstance<Printing3DComponent>())
+    Printing3DComponent(activate_instance<Printing3DComponent>())
 {}
 
 inline Printing3DComponentWithMatrix::Printing3DComponentWithMatrix() :
-    Printing3DComponentWithMatrix(ActivateInstance<Printing3DComponentWithMatrix>())
+    Printing3DComponentWithMatrix(activate_instance<Printing3DComponentWithMatrix>())
 {}
 
 inline Printing3DCompositeMaterial::Printing3DCompositeMaterial() :
-    Printing3DCompositeMaterial(ActivateInstance<Printing3DCompositeMaterial>())
+    Printing3DCompositeMaterial(activate_instance<Printing3DCompositeMaterial>())
 {}
 
 inline Printing3DCompositeMaterialGroup::Printing3DCompositeMaterialGroup(uint32_t MaterialGroupId) :
-    Printing3DCompositeMaterialGroup(GetActivationFactory<Printing3DCompositeMaterialGroup, IPrinting3DCompositeMaterialGroupFactory>().Create(MaterialGroupId))
+    Printing3DCompositeMaterialGroup(get_activation_factory<Printing3DCompositeMaterialGroup, IPrinting3DCompositeMaterialGroupFactory>().Create(MaterialGroupId))
 {}
 
 inline Printing3DFaceReductionOptions::Printing3DFaceReductionOptions() :
-    Printing3DFaceReductionOptions(ActivateInstance<Printing3DFaceReductionOptions>())
+    Printing3DFaceReductionOptions(activate_instance<Printing3DFaceReductionOptions>())
 {}
 
 inline Printing3DMaterial::Printing3DMaterial() :
-    Printing3DMaterial(ActivateInstance<Printing3DMaterial>())
+    Printing3DMaterial(activate_instance<Printing3DMaterial>())
 {}
 
 inline Printing3DMesh::Printing3DMesh() :
-    Printing3DMesh(ActivateInstance<Printing3DMesh>())
+    Printing3DMesh(activate_instance<Printing3DMesh>())
 {}
 
 inline Printing3DModel::Printing3DModel() :
-    Printing3DModel(ActivateInstance<Printing3DModel>())
+    Printing3DModel(activate_instance<Printing3DModel>())
 {}
 
 inline Printing3DModelTexture::Printing3DModelTexture() :
-    Printing3DModelTexture(ActivateInstance<Printing3DModelTexture>())
+    Printing3DModelTexture(activate_instance<Printing3DModelTexture>())
 {}
 
 inline Printing3DMultiplePropertyMaterial::Printing3DMultiplePropertyMaterial() :
-    Printing3DMultiplePropertyMaterial(ActivateInstance<Printing3DMultiplePropertyMaterial>())
+    Printing3DMultiplePropertyMaterial(activate_instance<Printing3DMultiplePropertyMaterial>())
 {}
 
 inline Printing3DMultiplePropertyMaterialGroup::Printing3DMultiplePropertyMaterialGroup(uint32_t MaterialGroupId) :
-    Printing3DMultiplePropertyMaterialGroup(GetActivationFactory<Printing3DMultiplePropertyMaterialGroup, IPrinting3DMultiplePropertyMaterialGroupFactory>().Create(MaterialGroupId))
+    Printing3DMultiplePropertyMaterialGroup(get_activation_factory<Printing3DMultiplePropertyMaterialGroup, IPrinting3DMultiplePropertyMaterialGroupFactory>().Create(MaterialGroupId))
 {}
 
 inline Printing3DTexture2CoordMaterial::Printing3DTexture2CoordMaterial() :
-    Printing3DTexture2CoordMaterial(ActivateInstance<Printing3DTexture2CoordMaterial>())
+    Printing3DTexture2CoordMaterial(activate_instance<Printing3DTexture2CoordMaterial>())
 {}
 
 inline Printing3DTexture2CoordMaterialGroup::Printing3DTexture2CoordMaterialGroup(uint32_t MaterialGroupId) :
-    Printing3DTexture2CoordMaterialGroup(GetActivationFactory<Printing3DTexture2CoordMaterialGroup, IPrinting3DTexture2CoordMaterialGroupFactory>().Create(MaterialGroupId))
+    Printing3DTexture2CoordMaterialGroup(get_activation_factory<Printing3DTexture2CoordMaterialGroup, IPrinting3DTexture2CoordMaterialGroupFactory>().Create(MaterialGroupId))
 {}
 
 inline Printing3DTextureResource::Printing3DTextureResource() :
-    Printing3DTextureResource(ActivateInstance<Printing3DTextureResource>())
+    Printing3DTextureResource(activate_instance<Printing3DTextureResource>())
 {}
 
 }

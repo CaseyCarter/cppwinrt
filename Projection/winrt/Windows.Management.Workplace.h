@@ -123,27 +123,27 @@ template <typename D> Windows::Management::Workplace::MessagingSyncPolicy impl_I
 
 inline bool MdmPolicy::IsBrowserAllowed()
 {
-    return GetActivationFactory<MdmPolicy, IMdmAllowPolicyStatics>().IsBrowserAllowed();
+    return get_activation_factory<MdmPolicy, IMdmAllowPolicyStatics>().IsBrowserAllowed();
 }
 
 inline bool MdmPolicy::IsCameraAllowed()
 {
-    return GetActivationFactory<MdmPolicy, IMdmAllowPolicyStatics>().IsCameraAllowed();
+    return get_activation_factory<MdmPolicy, IMdmAllowPolicyStatics>().IsCameraAllowed();
 }
 
 inline bool MdmPolicy::IsMicrosoftAccountAllowed()
 {
-    return GetActivationFactory<MdmPolicy, IMdmAllowPolicyStatics>().IsMicrosoftAccountAllowed();
+    return get_activation_factory<MdmPolicy, IMdmAllowPolicyStatics>().IsMicrosoftAccountAllowed();
 }
 
 inline bool MdmPolicy::IsStoreAllowed()
 {
-    return GetActivationFactory<MdmPolicy, IMdmAllowPolicyStatics>().IsStoreAllowed();
+    return get_activation_factory<MdmPolicy, IMdmAllowPolicyStatics>().IsStoreAllowed();
 }
 
 inline Windows::Management::Workplace::MessagingSyncPolicy MdmPolicy::GetMessagingSyncPolicy()
 {
-    return GetActivationFactory<MdmPolicy, IMdmPolicyStatics2>().GetMessagingSyncPolicy();
+    return get_activation_factory<MdmPolicy, IMdmPolicyStatics2>().GetMessagingSyncPolicy();
 }
 
 }

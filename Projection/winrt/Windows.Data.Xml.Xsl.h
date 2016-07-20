@@ -90,7 +90,7 @@ template <typename D> Windows::Data::Xml::Xsl::XsltProcessor impl_IXsltProcessor
 }
 
 inline XsltProcessor::XsltProcessor(const Windows::Data::Xml::Dom::XmlDocument & document) :
-    XsltProcessor(GetActivationFactory<XsltProcessor, IXsltProcessorFactory>().CreateInstance(document))
+    XsltProcessor(get_activation_factory<XsltProcessor, IXsltProcessorFactory>().CreateInstance(document))
 {}
 
 }

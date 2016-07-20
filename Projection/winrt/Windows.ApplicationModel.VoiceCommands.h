@@ -1161,51 +1161,51 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Applica
 }
 
 inline VoiceCommandContentTile::VoiceCommandContentTile() :
-    VoiceCommandContentTile(ActivateInstance<VoiceCommandContentTile>())
+    VoiceCommandContentTile(activate_instance<VoiceCommandContentTile>())
 {}
 
 inline Windows::Foundation::IAsyncAction VoiceCommandDefinitionManager::InstallCommandDefinitionsFromStorageFileAsync(const Windows::Storage::StorageFile & file)
 {
-    return GetActivationFactory<VoiceCommandDefinitionManager, IVoiceCommandDefinitionManagerStatics>().InstallCommandDefinitionsFromStorageFileAsync(file);
+    return get_activation_factory<VoiceCommandDefinitionManager, IVoiceCommandDefinitionManagerStatics>().InstallCommandDefinitionsFromStorageFileAsync(file);
 }
 
 inline Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> VoiceCommandDefinitionManager::InstalledCommandDefinitions()
 {
-    return GetActivationFactory<VoiceCommandDefinitionManager, IVoiceCommandDefinitionManagerStatics>().InstalledCommandDefinitions();
+    return get_activation_factory<VoiceCommandDefinitionManager, IVoiceCommandDefinitionManagerStatics>().InstalledCommandDefinitions();
 }
 
 inline uint32_t VoiceCommandResponse::MaxSupportedVoiceCommandContentTiles()
 {
-    return GetActivationFactory<VoiceCommandResponse, IVoiceCommandResponseStatics>().MaxSupportedVoiceCommandContentTiles();
+    return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().MaxSupportedVoiceCommandContentTiles();
 }
 
 inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & userMessage)
 {
-    return GetActivationFactory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(userMessage);
+    return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(userMessage);
 }
 
 inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles)
 {
-    return GetActivationFactory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(message, contentTiles);
+    return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(message, contentTiles);
 }
 
 inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage)
 {
-    return GetActivationFactory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage);
+    return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage);
 }
 
 inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles)
 {
-    return GetActivationFactory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage, contentTiles);
+    return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage, contentTiles);
 }
 
 inline Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection VoiceCommandServiceConnection::FromAppServiceTriggerDetails(const Windows::ApplicationModel::AppService::AppServiceTriggerDetails & triggerDetails)
 {
-    return GetActivationFactory<VoiceCommandServiceConnection, IVoiceCommandServiceConnectionStatics>().FromAppServiceTriggerDetails(triggerDetails);
+    return get_activation_factory<VoiceCommandServiceConnection, IVoiceCommandServiceConnectionStatics>().FromAppServiceTriggerDetails(triggerDetails);
 }
 
 inline VoiceCommandUserMessage::VoiceCommandUserMessage() :
-    VoiceCommandUserMessage(ActivateInstance<VoiceCommandUserMessage>())
+    VoiceCommandUserMessage(activate_instance<VoiceCommandUserMessage>())
 {}
 
 }

@@ -4008,97 +4008,97 @@ template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>:
 
 inline Windows::UI::Text::FontWeight FontWeights::Black()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Black();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Black();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Bold()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Bold();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Bold();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraBlack()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().ExtraBlack();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().ExtraBlack();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraBold()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().ExtraBold();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().ExtraBold();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraLight()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().ExtraLight();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().ExtraLight();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Light()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Light();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Light();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Medium()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Medium();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Medium();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Normal()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Normal();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Normal();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::SemiBold()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().SemiBold();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().SemiBold();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::SemiLight()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().SemiLight();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().SemiLight();
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Thin()
 {
-    return GetActivationFactory<FontWeights, IFontWeightsStatics>().Thin();
+    return get_activation_factory<FontWeights, IFontWeightsStatics>().Thin();
 }
 
 inline Windows::UI::Color TextConstants::AutoColor()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().AutoColor();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().AutoColor();
 }
 
 inline int32_t TextConstants::MinUnitCount()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().MinUnitCount();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().MinUnitCount();
 }
 
 inline int32_t TextConstants::MaxUnitCount()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().MaxUnitCount();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().MaxUnitCount();
 }
 
 inline Windows::UI::Color TextConstants::UndefinedColor()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().UndefinedColor();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().UndefinedColor();
 }
 
 inline float TextConstants::UndefinedFloatValue()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().UndefinedFloatValue();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().UndefinedFloatValue();
 }
 
 inline int32_t TextConstants::UndefinedInt32Value()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().UndefinedInt32Value();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().UndefinedInt32Value();
 }
 
 inline Windows::UI::Text::FontStretch TextConstants::UndefinedFontStretch()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().UndefinedFontStretch();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().UndefinedFontStretch();
 }
 
 inline Windows::UI::Text::FontStyle TextConstants::UndefinedFontStyle()
 {
-    return GetActivationFactory<TextConstants, ITextConstantsStatics>().UndefinedFontStyle();
+    return get_activation_factory<TextConstants, ITextConstantsStatics>().UndefinedFontStyle();
 }
 
 }

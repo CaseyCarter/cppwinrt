@@ -23,3 +23,5 @@
 #include <unordered_map>
 #include <memory>
 #include <future>
+#include <array>
+#include <forward_list>

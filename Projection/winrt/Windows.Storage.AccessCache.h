@@ -505,12 +505,12 @@ template <typename D> Windows::Storage::AccessCache::StorageItemMostRecentlyUsed
 
 inline Windows::Storage::AccessCache::StorageItemAccessList StorageApplicationPermissions::FutureAccessList()
 {
-    return GetActivationFactory<StorageApplicationPermissions, IStorageApplicationPermissionsStatics>().FutureAccessList();
+    return get_activation_factory<StorageApplicationPermissions, IStorageApplicationPermissionsStatics>().FutureAccessList();
 }
 
 inline Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList StorageApplicationPermissions::MostRecentlyUsedList()
 {
-    return GetActivationFactory<StorageApplicationPermissions, IStorageApplicationPermissionsStatics>().MostRecentlyUsedList();
+    return get_activation_factory<StorageApplicationPermissions, IStorageApplicationPermissionsStatics>().MostRecentlyUsedList();
 }
 
 }

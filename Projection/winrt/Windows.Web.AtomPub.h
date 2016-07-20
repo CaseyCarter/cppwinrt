@@ -437,11 +437,11 @@ template <typename D> Windows::Web::AtomPub::AtomPubClient impl_IAtomPubClientFa
 }
 
 inline AtomPubClient::AtomPubClient() :
-    AtomPubClient(ActivateInstance<AtomPubClient>())
+    AtomPubClient(activate_instance<AtomPubClient>())
 {}
 
 inline AtomPubClient::AtomPubClient(const Windows::Security::Credentials::PasswordCredential & serverCredential) :
-    AtomPubClient(GetActivationFactory<AtomPubClient, IAtomPubClientFactory>().CreateAtomPubClientWithCredentials(serverCredential))
+    AtomPubClient(get_activation_factory<AtomPubClient, IAtomPubClientFactory>().CreateAtomPubClientWithCredentials(serverCredential))
 {}
 
 }

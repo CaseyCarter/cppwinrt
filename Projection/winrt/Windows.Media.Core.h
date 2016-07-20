@@ -6779,147 +6779,147 @@ template <typename D> hstring impl_ITimedMetadataTrack2<D>::Name() const
 }
 
 inline AudioStreamDescriptor::AudioStreamDescriptor(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) :
-    AudioStreamDescriptor(GetActivationFactory<AudioStreamDescriptor, IAudioStreamDescriptorFactory>().Create(encodingProperties))
+    AudioStreamDescriptor(get_activation_factory<AudioStreamDescriptor, IAudioStreamDescriptorFactory>().Create(encodingProperties))
 {}
 
 inline DataCue::DataCue() :
-    DataCue(ActivateInstance<DataCue>())
+    DataCue(activate_instance<DataCue>())
 {}
 
 inline FaceDetectionEffectDefinition::FaceDetectionEffectDefinition() :
-    FaceDetectionEffectDefinition(ActivateInstance<FaceDetectionEffectDefinition>())
+    FaceDetectionEffectDefinition(activate_instance<FaceDetectionEffectDefinition>())
 {}
 
 inline MediaBinder::MediaBinder() :
-    MediaBinder(ActivateInstance<MediaBinder>())
+    MediaBinder(activate_instance<MediaBinder>())
 {}
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromAdaptiveMediaSource(const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource & mediaSource)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromAdaptiveMediaSource(mediaSource);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromAdaptiveMediaSource(mediaSource);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromMediaStreamSource(const Windows::Media::Core::MediaStreamSource & mediaSource)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromMediaStreamSource(mediaSource);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromMediaStreamSource(mediaSource);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromMseStreamSource(const Windows::Media::Core::MseStreamSource & mediaSource)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromMseStreamSource(mediaSource);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromMseStreamSource(mediaSource);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromIMediaSource(const Windows::Media::Core::IMediaSource & mediaSource)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromIMediaSource(mediaSource);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromIMediaSource(mediaSource);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromStorageFile(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromStorageFile(file);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStorageFile(file);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromStream(stream, contentType);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStream(stream, contentType);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromStreamReference(stream, contentType);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStreamReference(stream, contentType);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromUri(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics>().CreateFromUri(uri);
+    return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromUri(uri);
 }
 
 inline Windows::Media::Core::MediaSource MediaSource::CreateFromMediaBinder(const Windows::Media::Core::MediaBinder & binder)
 {
-    return GetActivationFactory<MediaSource, IMediaSourceStatics2>().CreateFromMediaBinder(binder);
+    return get_activation_factory<MediaSource, IMediaSourceStatics2>().CreateFromMediaBinder(binder);
 }
 
 inline Windows::Media::Core::MediaStreamSample MediaStreamSample::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer, const Windows::Foundation::TimeSpan & timestamp)
 {
-    return GetActivationFactory<MediaStreamSample, IMediaStreamSampleStatics>().CreateFromBuffer(buffer, timestamp);
+    return get_activation_factory<MediaStreamSample, IMediaStreamSampleStatics>().CreateFromBuffer(buffer, timestamp);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Core::MediaStreamSample> MediaStreamSample::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, uint32_t count, const Windows::Foundation::TimeSpan & timestamp)
 {
-    return GetActivationFactory<MediaStreamSample, IMediaStreamSampleStatics>().CreateFromStreamAsync(stream, count, timestamp);
+    return get_activation_factory<MediaStreamSample, IMediaStreamSampleStatics>().CreateFromStreamAsync(stream, count, timestamp);
 }
 
 inline MediaStreamSource::MediaStreamSource(const Windows::Media::Core::IMediaStreamDescriptor & descriptor) :
-    MediaStreamSource(GetActivationFactory<MediaStreamSource, IMediaStreamSourceFactory>().CreateFromDescriptor(descriptor))
+    MediaStreamSource(get_activation_factory<MediaStreamSource, IMediaStreamSourceFactory>().CreateFromDescriptor(descriptor))
 {}
 
 inline MediaStreamSource::MediaStreamSource(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, const Windows::Media::Core::IMediaStreamDescriptor & descriptor2) :
-    MediaStreamSource(GetActivationFactory<MediaStreamSource, IMediaStreamSourceFactory>().CreateFromDescriptors(descriptor, descriptor2))
+    MediaStreamSource(get_activation_factory<MediaStreamSource, IMediaStreamSourceFactory>().CreateFromDescriptors(descriptor, descriptor2))
 {}
 
 inline MseStreamSource::MseStreamSource() :
-    MseStreamSource(ActivateInstance<MseStreamSource>())
+    MseStreamSource(activate_instance<MseStreamSource>())
 {}
 
 inline bool MseStreamSource::IsContentTypeSupported(hstring_ref contentType)
 {
-    return GetActivationFactory<MseStreamSource, IMseStreamSourceStatics>().IsContentTypeSupported(contentType);
+    return get_activation_factory<MseStreamSource, IMseStreamSourceStatics>().IsContentTypeSupported(contentType);
 }
 
 inline SceneAnalysisEffectDefinition::SceneAnalysisEffectDefinition() :
-    SceneAnalysisEffectDefinition(ActivateInstance<SceneAnalysisEffectDefinition>())
+    SceneAnalysisEffectDefinition(activate_instance<SceneAnalysisEffectDefinition>())
 {}
 
 inline TimedMetadataTrack::TimedMetadataTrack(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) :
-    TimedMetadataTrack(GetActivationFactory<TimedMetadataTrack, ITimedMetadataTrackFactory>().Create(id, language, kind))
+    TimedMetadataTrack(get_activation_factory<TimedMetadataTrack, ITimedMetadataTrackFactory>().Create(id, language, kind))
 {}
 
 inline TimedTextCue::TimedTextCue() :
-    TimedTextCue(ActivateInstance<TimedTextCue>())
+    TimedTextCue(activate_instance<TimedTextCue>())
 {}
 
 inline TimedTextLine::TimedTextLine() :
-    TimedTextLine(ActivateInstance<TimedTextLine>())
+    TimedTextLine(activate_instance<TimedTextLine>())
 {}
 
 inline TimedTextRegion::TimedTextRegion() :
-    TimedTextRegion(ActivateInstance<TimedTextRegion>())
+    TimedTextRegion(activate_instance<TimedTextRegion>())
 {}
 
 inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<TimedTextSource, ITimedTextSourceStatics>().CreateFromStream(stream);
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromStream(stream);
 }
 
 inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri);
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri);
 }
 
 inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage)
 {
-    return GetActivationFactory<TimedTextSource, ITimedTextSourceStatics>().CreateFromStream(stream, defaultLanguage);
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromStream(stream, defaultLanguage);
 }
 
 inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_ref defaultLanguage)
 {
-    return GetActivationFactory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri, defaultLanguage);
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri, defaultLanguage);
 }
 
 inline TimedTextStyle::TimedTextStyle() :
-    TimedTextStyle(ActivateInstance<TimedTextStyle>())
+    TimedTextStyle(activate_instance<TimedTextStyle>())
 {}
 
 inline TimedTextSubformat::TimedTextSubformat() :
-    TimedTextSubformat(ActivateInstance<TimedTextSubformat>())
+    TimedTextSubformat(activate_instance<TimedTextSubformat>())
 {}
 
 inline VideoStabilizationEffectDefinition::VideoStabilizationEffectDefinition() :
-    VideoStabilizationEffectDefinition(ActivateInstance<VideoStabilizationEffectDefinition>())
+    VideoStabilizationEffectDefinition(activate_instance<VideoStabilizationEffectDefinition>())
 {}
 
 inline VideoStreamDescriptor::VideoStreamDescriptor(const Windows::Media::MediaProperties::VideoEncodingProperties & encodingProperties) :
-    VideoStreamDescriptor(GetActivationFactory<VideoStreamDescriptor, IVideoStreamDescriptorFactory>().Create(encodingProperties))
+    VideoStreamDescriptor(get_activation_factory<VideoStreamDescriptor, IVideoStreamDescriptorFactory>().Create(encodingProperties))
 {}
 
 }

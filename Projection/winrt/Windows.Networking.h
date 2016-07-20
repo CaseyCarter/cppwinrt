@@ -378,16 +378,16 @@ template <typename D> Windows::Networking::EndpointPair impl_IEndpointPairFactor
 }
 
 inline EndpointPair::EndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) :
-    EndpointPair(GetActivationFactory<EndpointPair, IEndpointPairFactory>().CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName))
+    EndpointPair(get_activation_factory<EndpointPair, IEndpointPairFactory>().CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName))
 {}
 
 inline HostName::HostName(hstring_ref hostName) :
-    HostName(GetActivationFactory<HostName, IHostNameFactory>().CreateHostName(hostName))
+    HostName(get_activation_factory<HostName, IHostNameFactory>().CreateHostName(hostName))
 {}
 
 inline int32_t HostName::Compare(hstring_ref value1, hstring_ref value2)
 {
-    return GetActivationFactory<HostName, IHostNameStatics>().Compare(value1, value2);
+    return get_activation_factory<HostName, IHostNameStatics>().Compare(value1, value2);
 }
 
 }

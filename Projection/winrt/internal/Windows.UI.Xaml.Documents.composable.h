@@ -18,7 +18,7 @@ protected:
 
     BlockT()
     {
-        GetActivationFactory<Block, IBlockFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Block, IBlockFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,7 +32,7 @@ protected:
 
     InlineT()
     {
-        GetActivationFactory<Inline, IInlineFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Inline, IInlineFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -46,7 +46,7 @@ protected:
 
     SpanT()
     {
-        GetActivationFactory<Span, ISpanFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Span, ISpanFactory>().CreateInstance(*this, m_inner);
     }
 };
 

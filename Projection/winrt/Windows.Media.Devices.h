@@ -4878,76 +4878,76 @@ template <typename D> void impl_IPhotoConfirmationControl<D>::PixelFormat(Window
 }
 
 inline AdvancedPhotoCaptureSettings::AdvancedPhotoCaptureSettings() :
-    AdvancedPhotoCaptureSettings(ActivateInstance<AdvancedPhotoCaptureSettings>())
+    AdvancedPhotoCaptureSettings(activate_instance<AdvancedPhotoCaptureSettings>())
 {}
 
 inline FocusSettings::FocusSettings() :
-    FocusSettings(ActivateInstance<FocusSettings>())
+    FocusSettings(activate_instance<FocusSettings>())
 {}
 
 inline hstring MediaDevice::GetAudioCaptureSelector()
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().GetAudioCaptureSelector();
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetAudioCaptureSelector();
 }
 
 inline hstring MediaDevice::GetAudioRenderSelector()
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().GetAudioRenderSelector();
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetAudioRenderSelector();
 }
 
 inline hstring MediaDevice::GetVideoCaptureSelector()
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().GetVideoCaptureSelector();
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetVideoCaptureSelector();
 }
 
 inline hstring MediaDevice::GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role)
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().GetDefaultAudioCaptureId(role);
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetDefaultAudioCaptureId(role);
 }
 
 inline hstring MediaDevice::GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role)
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().GetDefaultAudioRenderId(role);
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetDefaultAudioRenderId(role);
 }
 
 inline event_token MediaDevice::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(handler);
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(handler);
 }
 
 inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<MediaDevice, IMediaDeviceStatics>();
+    auto factory = get_activation_factory<MediaDevice, IMediaDeviceStatics>();
     return { factory, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioCaptureDeviceChanged, factory.DefaultAudioCaptureDeviceChanged(handler) };
 }
 
 inline void MediaDevice::DefaultAudioCaptureDeviceChanged(event_token cookie)
 {
-    GetActivationFactory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(cookie);
+    get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(cookie);
 }
 
 inline event_token MediaDevice::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
 {
-    return GetActivationFactory<MediaDevice, IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(handler);
+    return get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(handler);
 }
 
 inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<MediaDevice, IMediaDeviceStatics>();
+    auto factory = get_activation_factory<MediaDevice, IMediaDeviceStatics>();
     return { factory, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioRenderDeviceChanged, factory.DefaultAudioRenderDeviceChanged(handler) };
 }
 
 inline void MediaDevice::DefaultAudioRenderDeviceChanged(event_token cookie)
 {
-    GetActivationFactory<MediaDevice, IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(cookie);
+    get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(cookie);
 }
 
 inline RegionOfInterest::RegionOfInterest() :
-    RegionOfInterest(ActivateInstance<RegionOfInterest>())
+    RegionOfInterest(activate_instance<RegionOfInterest>())
 {}
 
 inline ZoomSettings::ZoomSettings() :
-    ZoomSettings(ActivateInstance<ZoomSettings>())
+    ZoomSettings(activate_instance<ZoomSettings>())
 {}
 
 }

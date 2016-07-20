@@ -4524,437 +4524,437 @@ template <typename D> Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer 
 inline AppBarAutomationPeer::AppBarAutomationPeer(const Windows::UI::Xaml::Controls::AppBar & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<AppBarAutomationPeer, IAppBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline AppBarButtonAutomationPeer::AppBarButtonAutomationPeer(const Windows::UI::Xaml::Controls::AppBarButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<AppBarButtonAutomationPeer, IAppBarButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline AppBarToggleButtonAutomationPeer::AppBarToggleButtonAutomationPeer(const Windows::UI::Xaml::Controls::AppBarToggleButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<AppBarToggleButtonAutomationPeer, IAppBarToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline AutoSuggestBoxAutomationPeer::AutoSuggestBoxAutomationPeer(const Windows::UI::Xaml::Controls::AutoSuggestBox & owner) :
-    AutoSuggestBoxAutomationPeer(GetActivationFactory<AutoSuggestBoxAutomationPeer, IAutoSuggestBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner))
+    AutoSuggestBoxAutomationPeer(get_activation_factory<AutoSuggestBoxAutomationPeer, IAutoSuggestBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner))
 {}
 
 inline bool AutomationPeer::ListenerExists(Windows::UI::Xaml::Automation::Peers::AutomationEvents eventId)
 {
-    return GetActivationFactory<AutomationPeer, IAutomationPeerStatics>().ListenerExists(eventId);
+    return get_activation_factory<AutomationPeer, IAutomationPeerStatics>().ListenerExists(eventId);
 }
 
 inline Windows::UI::Xaml::Automation::Peers::RawElementProviderRuntimeId AutomationPeer::GenerateRawElementProviderRuntimeId()
 {
-    return GetActivationFactory<AutomationPeer, IAutomationPeerStatics3>().GenerateRawElementProviderRuntimeId();
+    return get_activation_factory<AutomationPeer, IAutomationPeerStatics3>().GenerateRawElementProviderRuntimeId();
 }
 
 inline AutomationPeerAnnotation::AutomationPeerAnnotation() :
-    AutomationPeerAnnotation(ActivateInstance<AutomationPeerAnnotation>())
+    AutomationPeerAnnotation(activate_instance<AutomationPeerAnnotation>())
 {}
 
 inline AutomationPeerAnnotation::AutomationPeerAnnotation(Windows::UI::Xaml::Automation::AnnotationType type) :
-    AutomationPeerAnnotation(GetActivationFactory<AutomationPeerAnnotation, IAutomationPeerAnnotationFactory>().CreateInstance(type))
+    AutomationPeerAnnotation(get_activation_factory<AutomationPeerAnnotation, IAutomationPeerAnnotationFactory>().CreateInstance(type))
 {}
 
 inline AutomationPeerAnnotation::AutomationPeerAnnotation(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::Automation::Peers::AutomationPeer & peer) :
-    AutomationPeerAnnotation(GetActivationFactory<AutomationPeerAnnotation, IAutomationPeerAnnotationFactory>().CreateWithPeerParameter(type, peer))
+    AutomationPeerAnnotation(get_activation_factory<AutomationPeerAnnotation, IAutomationPeerAnnotationFactory>().CreateWithPeerParameter(type, peer))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty AutomationPeerAnnotation::TypeProperty()
 {
-    return GetActivationFactory<AutomationPeerAnnotation, IAutomationPeerAnnotationStatics>().TypeProperty();
+    return get_activation_factory<AutomationPeerAnnotation, IAutomationPeerAnnotationStatics>().TypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty AutomationPeerAnnotation::PeerProperty()
 {
-    return GetActivationFactory<AutomationPeerAnnotation, IAutomationPeerAnnotationStatics>().PeerProperty();
+    return get_activation_factory<AutomationPeerAnnotation, IAutomationPeerAnnotationStatics>().PeerProperty();
 }
 
 inline ButtonAutomationPeer::ButtonAutomationPeer(const Windows::UI::Xaml::Controls::Button & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ButtonAutomationPeer, IButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline CaptureElementAutomationPeer::CaptureElementAutomationPeer(const Windows::UI::Xaml::Controls::CaptureElement & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<CaptureElementAutomationPeer, ICaptureElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline CheckBoxAutomationPeer::CheckBoxAutomationPeer(const Windows::UI::Xaml::Controls::CheckBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<CheckBoxAutomationPeer, ICheckBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ComboBoxAutomationPeer::ComboBoxAutomationPeer(const Windows::UI::Xaml::Controls::ComboBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ComboBoxAutomationPeer, IComboBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ComboBoxItemAutomationPeer::ComboBoxItemAutomationPeer(const Windows::UI::Xaml::Controls::ComboBoxItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ComboBoxItemAutomationPeer, IComboBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ComboBoxItemDataAutomationPeer::ComboBoxItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<ComboBoxItemDataAutomationPeer, IComboBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline DatePickerAutomationPeer::DatePickerAutomationPeer(const Windows::UI::Xaml::Controls::DatePicker & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<DatePickerAutomationPeer, IDatePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline FlipViewAutomationPeer::FlipViewAutomationPeer(const Windows::UI::Xaml::Controls::FlipView & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<FlipViewAutomationPeer, IFlipViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline FlipViewItemAutomationPeer::FlipViewItemAutomationPeer(const Windows::UI::Xaml::Controls::FlipViewItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<FlipViewItemAutomationPeer, IFlipViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline FlipViewItemDataAutomationPeer::FlipViewItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<FlipViewItemDataAutomationPeer, IFlipViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline FlyoutPresenterAutomationPeer::FlyoutPresenterAutomationPeer(const Windows::UI::Xaml::Controls::FlyoutPresenter & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<FlyoutPresenterAutomationPeer, IFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline FrameworkElementAutomationPeer::FrameworkElementAutomationPeer(const Windows::UI::Xaml::FrameworkElement & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline Windows::UI::Xaml::Automation::Peers::AutomationPeer FrameworkElementAutomationPeer::FromElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerStatics>().FromElement(element);
+    return get_activation_factory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerStatics>().FromElement(element);
 }
 
 inline Windows::UI::Xaml::Automation::Peers::AutomationPeer FrameworkElementAutomationPeer::CreatePeerForElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerStatics>().CreatePeerForElement(element);
+    return get_activation_factory<FrameworkElementAutomationPeer, IFrameworkElementAutomationPeerStatics>().CreatePeerForElement(element);
 }
 
 inline GridViewAutomationPeer::GridViewAutomationPeer(const Windows::UI::Xaml::Controls::GridView & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<GridViewAutomationPeer, IGridViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline GridViewHeaderItemAutomationPeer::GridViewHeaderItemAutomationPeer(const Windows::UI::Xaml::Controls::GridViewHeaderItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<GridViewHeaderItemAutomationPeer, IGridViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline GridViewItemAutomationPeer::GridViewItemAutomationPeer(const Windows::UI::Xaml::Controls::GridViewItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<GridViewItemAutomationPeer, IGridViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline GridViewItemDataAutomationPeer::GridViewItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<GridViewItemDataAutomationPeer, IGridViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline GroupItemAutomationPeer::GroupItemAutomationPeer(const Windows::UI::Xaml::Controls::GroupItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<GroupItemAutomationPeer, IGroupItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline HubAutomationPeer::HubAutomationPeer(const Windows::UI::Xaml::Controls::Hub & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<HubAutomationPeer, IHubAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline HubSectionAutomationPeer::HubSectionAutomationPeer(const Windows::UI::Xaml::Controls::HubSection & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<HubSectionAutomationPeer, IHubSectionAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline HyperlinkButtonAutomationPeer::HyperlinkButtonAutomationPeer(const Windows::UI::Xaml::Controls::HyperlinkButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<HyperlinkButtonAutomationPeer, IHyperlinkButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ImageAutomationPeer::ImageAutomationPeer(const Windows::UI::Xaml::Controls::Image & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ImageAutomationPeer, IImageAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ItemAutomationPeer::ItemAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<ItemAutomationPeer, IItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline ItemsControlAutomationPeer::ItemsControlAutomationPeer(const Windows::UI::Xaml::Controls::ItemsControl & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ItemsControlAutomationPeer, IItemsControlAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListBoxAutomationPeer::ListBoxAutomationPeer(const Windows::UI::Xaml::Controls::ListBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListBoxAutomationPeer, IListBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListBoxItemAutomationPeer::ListBoxItemAutomationPeer(const Windows::UI::Xaml::Controls::ListBoxItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListBoxItemAutomationPeer, IListBoxItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListBoxItemDataAutomationPeer::ListBoxItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<ListBoxItemDataAutomationPeer, IListBoxItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline ListViewAutomationPeer::ListViewAutomationPeer(const Windows::UI::Xaml::Controls::ListView & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListViewAutomationPeer, IListViewAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListViewBaseAutomationPeer::ListViewBaseAutomationPeer(const Windows::UI::Xaml::Controls::ListViewBase & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListViewBaseAutomationPeer, IListViewBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListViewHeaderItemAutomationPeer::ListViewHeaderItemAutomationPeer(const Windows::UI::Xaml::Controls::ListViewHeaderItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListViewHeaderItemAutomationPeer, IListViewHeaderItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListViewItemAutomationPeer::ListViewItemAutomationPeer(const Windows::UI::Xaml::Controls::ListViewItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ListViewItemAutomationPeer, IListViewItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ListViewItemDataAutomationPeer::ListViewItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<ListViewItemDataAutomationPeer, IListViewItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline MediaElementAutomationPeer::MediaElementAutomationPeer(const Windows::UI::Xaml::Controls::MediaElement & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<MediaElementAutomationPeer, IMediaElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline MediaPlayerElementAutomationPeer::MediaPlayerElementAutomationPeer(const Windows::UI::Xaml::Controls::MediaPlayerElement & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaPlayerElementAutomationPeer, IMediaPlayerElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<MediaPlayerElementAutomationPeer, IMediaPlayerElementAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline MediaTransportControlsAutomationPeer::MediaTransportControlsAutomationPeer(const Windows::UI::Xaml::Controls::MediaTransportControls & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<MediaTransportControlsAutomationPeer, IMediaTransportControlsAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline MenuFlyoutItemAutomationPeer::MenuFlyoutItemAutomationPeer(const Windows::UI::Xaml::Controls::MenuFlyoutItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<MenuFlyoutItemAutomationPeer, IMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline MenuFlyoutPresenterAutomationPeer::MenuFlyoutPresenterAutomationPeer(const Windows::UI::Xaml::Controls::MenuFlyoutPresenter & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<MenuFlyoutPresenterAutomationPeer, IMenuFlyoutPresenterAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline PasswordBoxAutomationPeer::PasswordBoxAutomationPeer(const Windows::UI::Xaml::Controls::PasswordBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<PasswordBoxAutomationPeer, IPasswordBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline PivotAutomationPeer::PivotAutomationPeer(const Windows::UI::Xaml::Controls::Pivot & owner) :
-    PivotAutomationPeer(GetActivationFactory<PivotAutomationPeer, IPivotAutomationPeerFactory>().CreateInstanceWithOwner(owner))
+    PivotAutomationPeer(get_activation_factory<PivotAutomationPeer, IPivotAutomationPeerFactory>().CreateInstanceWithOwner(owner))
 {}
 
 inline PivotItemAutomationPeer::PivotItemAutomationPeer(const Windows::UI::Xaml::Controls::PivotItem & owner) :
-    PivotItemAutomationPeer(GetActivationFactory<PivotItemAutomationPeer, IPivotItemAutomationPeerFactory>().CreateInstanceWithOwner(owner))
+    PivotItemAutomationPeer(get_activation_factory<PivotItemAutomationPeer, IPivotItemAutomationPeerFactory>().CreateInstanceWithOwner(owner))
 {}
 
 inline PivotItemDataAutomationPeer::PivotItemDataAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer & parent) :
-    PivotItemDataAutomationPeer(GetActivationFactory<PivotItemDataAutomationPeer, IPivotItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent))
+    PivotItemDataAutomationPeer(get_activation_factory<PivotItemDataAutomationPeer, IPivotItemDataAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent))
 {}
 
 inline ProgressBarAutomationPeer::ProgressBarAutomationPeer(const Windows::UI::Xaml::Controls::ProgressBar & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ProgressBarAutomationPeer, IProgressBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ProgressRingAutomationPeer::ProgressRingAutomationPeer(const Windows::UI::Xaml::Controls::ProgressRing & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ProgressRingAutomationPeer, IProgressRingAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RadioButtonAutomationPeer::RadioButtonAutomationPeer(const Windows::UI::Xaml::Controls::RadioButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RadioButtonAutomationPeer, IRadioButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RangeBaseAutomationPeer::RangeBaseAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::RangeBase & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RangeBaseAutomationPeer, IRangeBaseAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RepeatButtonAutomationPeer::RepeatButtonAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::RepeatButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RepeatButtonAutomationPeer, IRepeatButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RichEditBoxAutomationPeer::RichEditBoxAutomationPeer(const Windows::UI::Xaml::Controls::RichEditBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RichEditBoxAutomationPeer, IRichEditBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RichTextBlockAutomationPeer::RichTextBlockAutomationPeer(const Windows::UI::Xaml::Controls::RichTextBlock & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RichTextBlockAutomationPeer, IRichTextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline RichTextBlockOverflowAutomationPeer::RichTextBlockOverflowAutomationPeer(const Windows::UI::Xaml::Controls::RichTextBlockOverflow & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<RichTextBlockOverflowAutomationPeer, IRichTextBlockOverflowAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ScrollBarAutomationPeer::ScrollBarAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::ScrollBar & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ScrollBarAutomationPeer, IScrollBarAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ScrollViewerAutomationPeer::ScrollViewerAutomationPeer(const Windows::UI::Xaml::Controls::ScrollViewer & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ScrollViewerAutomationPeer, IScrollViewerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline SearchBoxAutomationPeer::SearchBoxAutomationPeer(const Windows::UI::Xaml::Controls::SearchBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<SearchBoxAutomationPeer, ISearchBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline SelectorAutomationPeer::SelectorAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::Selector & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<SelectorAutomationPeer, ISelectorAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline SelectorItemAutomationPeer::SelectorItemAutomationPeer(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer & parent)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
+    impl_move(get_activation_factory<SelectorItemAutomationPeer, ISelectorItemAutomationPeerFactory>().CreateInstanceWithParentAndItem(item, parent, outer, inner));
 }
 
 inline SemanticZoomAutomationPeer::SemanticZoomAutomationPeer(const Windows::UI::Xaml::Controls::SemanticZoom & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<SemanticZoomAutomationPeer, ISemanticZoomAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline SettingsFlyoutAutomationPeer::SettingsFlyoutAutomationPeer(const Windows::UI::Xaml::Controls::SettingsFlyout & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<SettingsFlyoutAutomationPeer, ISettingsFlyoutAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline SliderAutomationPeer::SliderAutomationPeer(const Windows::UI::Xaml::Controls::Slider & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<SliderAutomationPeer, ISliderAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline TextBlockAutomationPeer::TextBlockAutomationPeer(const Windows::UI::Xaml::Controls::TextBlock & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<TextBlockAutomationPeer, ITextBlockAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline TextBoxAutomationPeer::TextBoxAutomationPeer(const Windows::UI::Xaml::Controls::TextBox & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<TextBoxAutomationPeer, ITextBoxAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ThumbAutomationPeer::ThumbAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::Thumb & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ThumbAutomationPeer, IThumbAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline TimePickerAutomationPeer::TimePickerAutomationPeer(const Windows::UI::Xaml::Controls::TimePicker & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<TimePickerAutomationPeer, ITimePickerAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(const Windows::UI::Xaml::Controls::Primitives::ToggleButton & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ToggleButtonAutomationPeer, IToggleButtonAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ToggleMenuFlyoutItemAutomationPeer::ToggleMenuFlyoutItemAutomationPeer(const Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ToggleMenuFlyoutItemAutomationPeer, IToggleMenuFlyoutItemAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 inline ToggleSwitchAutomationPeer::ToggleSwitchAutomationPeer(const Windows::UI::Xaml::Controls::ToggleSwitch & owner)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
+    impl_move(get_activation_factory<ToggleSwitchAutomationPeer, IToggleSwitchAutomationPeerFactory>().CreateInstanceWithOwner(owner, outer, inner));
 }
 
 }

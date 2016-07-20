@@ -6561,719 +6561,719 @@ template <typename D> Windows::UI::Xaml::Media::LinearGradientBrush impl_ILinear
 }
 
 inline ArcSegment::ArcSegment() :
-    ArcSegment(ActivateInstance<ArcSegment>())
+    ArcSegment(activate_instance<ArcSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::PointProperty()
 {
-    return GetActivationFactory<ArcSegment, IArcSegmentStatics>().PointProperty();
+    return get_activation_factory<ArcSegment, IArcSegmentStatics>().PointProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::SizeProperty()
 {
-    return GetActivationFactory<ArcSegment, IArcSegmentStatics>().SizeProperty();
+    return get_activation_factory<ArcSegment, IArcSegmentStatics>().SizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::RotationAngleProperty()
 {
-    return GetActivationFactory<ArcSegment, IArcSegmentStatics>().RotationAngleProperty();
+    return get_activation_factory<ArcSegment, IArcSegmentStatics>().RotationAngleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::IsLargeArcProperty()
 {
-    return GetActivationFactory<ArcSegment, IArcSegmentStatics>().IsLargeArcProperty();
+    return get_activation_factory<ArcSegment, IArcSegmentStatics>().IsLargeArcProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::SweepDirectionProperty()
 {
-    return GetActivationFactory<ArcSegment, IArcSegmentStatics>().SweepDirectionProperty();
+    return get_activation_factory<ArcSegment, IArcSegmentStatics>().SweepDirectionProperty();
 }
 
 inline BezierSegment::BezierSegment() :
-    BezierSegment(ActivateInstance<BezierSegment>())
+    BezierSegment(activate_instance<BezierSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point1Property()
 {
-    return GetActivationFactory<BezierSegment, IBezierSegmentStatics>().Point1Property();
+    return get_activation_factory<BezierSegment, IBezierSegmentStatics>().Point1Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point2Property()
 {
-    return GetActivationFactory<BezierSegment, IBezierSegmentStatics>().Point2Property();
+    return get_activation_factory<BezierSegment, IBezierSegmentStatics>().Point2Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point3Property()
 {
-    return GetActivationFactory<BezierSegment, IBezierSegmentStatics>().Point3Property();
+    return get_activation_factory<BezierSegment, IBezierSegmentStatics>().Point3Property();
 }
 
 inline BitmapCache::BitmapCache() :
-    BitmapCache(ActivateInstance<BitmapCache>())
+    BitmapCache(activate_instance<BitmapCache>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Brush::OpacityProperty()
 {
-    return GetActivationFactory<Brush, IBrushStatics>().OpacityProperty();
+    return get_activation_factory<Brush, IBrushStatics>().OpacityProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Brush::TransformProperty()
 {
-    return GetActivationFactory<Brush, IBrushStatics>().TransformProperty();
+    return get_activation_factory<Brush, IBrushStatics>().TransformProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Brush::RelativeTransformProperty()
 {
-    return GetActivationFactory<Brush, IBrushStatics>().RelativeTransformProperty();
+    return get_activation_factory<Brush, IBrushStatics>().RelativeTransformProperty();
 }
 
 inline BrushCollection::BrushCollection() :
-    BrushCollection(ActivateInstance<BrushCollection>())
+    BrushCollection(activate_instance<BrushCollection>())
 {}
 
 inline CompositeTransform::CompositeTransform() :
-    CompositeTransform(ActivateInstance<CompositeTransform>())
+    CompositeTransform(activate_instance<CompositeTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::CenterXProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().CenterXProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().CenterXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::CenterYProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().CenterYProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().CenterYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::ScaleXProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().ScaleXProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().ScaleXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::ScaleYProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().ScaleYProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().ScaleYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::SkewXProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().SkewXProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().SkewXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::SkewYProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().SkewYProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().SkewYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::RotationProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().RotationProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().RotationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::TranslateXProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().TranslateXProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().TranslateXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::TranslateYProperty()
 {
-    return GetActivationFactory<CompositeTransform, ICompositeTransformStatics>().TranslateYProperty();
+    return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().TranslateYProperty();
 }
 
 inline event_token CompositionTarget::Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
 {
-    return GetActivationFactory<CompositionTarget, ICompositionTargetStatics>().Rendering(value);
+    return get_activation_factory<CompositionTarget, ICompositionTargetStatics>().Rendering(value);
 }
 
 inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
 {
-    auto factory = GetActivationFactory<CompositionTarget, ICompositionTargetStatics>();
+    auto factory = get_activation_factory<CompositionTarget, ICompositionTargetStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_Rendering, factory.Rendering(value) };
 }
 
 inline void CompositionTarget::Rendering(event_token token)
 {
-    GetActivationFactory<CompositionTarget, ICompositionTargetStatics>().Rendering(token);
+    get_activation_factory<CompositionTarget, ICompositionTargetStatics>().Rendering(token);
 }
 
 inline event_token CompositionTarget::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
 {
-    return GetActivationFactory<CompositionTarget, ICompositionTargetStatics>().SurfaceContentsLost(value);
+    return get_activation_factory<CompositionTarget, ICompositionTargetStatics>().SurfaceContentsLost(value);
 }
 
 inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
 {
-    auto factory = GetActivationFactory<CompositionTarget, ICompositionTargetStatics>();
+    auto factory = get_activation_factory<CompositionTarget, ICompositionTargetStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_SurfaceContentsLost, factory.SurfaceContentsLost(value) };
 }
 
 inline void CompositionTarget::SurfaceContentsLost(event_token token)
 {
-    GetActivationFactory<CompositionTarget, ICompositionTargetStatics>().SurfaceContentsLost(token);
+    get_activation_factory<CompositionTarget, ICompositionTargetStatics>().SurfaceContentsLost(token);
 }
 
 inline DoubleCollection::DoubleCollection() :
-    DoubleCollection(ActivateInstance<DoubleCollection>())
+    DoubleCollection(activate_instance<DoubleCollection>())
 {}
 
 inline EllipseGeometry::EllipseGeometry() :
-    EllipseGeometry(ActivateInstance<EllipseGeometry>())
+    EllipseGeometry(activate_instance<EllipseGeometry>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::CenterProperty()
 {
-    return GetActivationFactory<EllipseGeometry, IEllipseGeometryStatics>().CenterProperty();
+    return get_activation_factory<EllipseGeometry, IEllipseGeometryStatics>().CenterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusXProperty()
 {
-    return GetActivationFactory<EllipseGeometry, IEllipseGeometryStatics>().RadiusXProperty();
+    return get_activation_factory<EllipseGeometry, IEllipseGeometryStatics>().RadiusXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusYProperty()
 {
-    return GetActivationFactory<EllipseGeometry, IEllipseGeometryStatics>().RadiusYProperty();
+    return get_activation_factory<EllipseGeometry, IEllipseGeometryStatics>().RadiusYProperty();
 }
 
 inline FontFamily::FontFamily(hstring_ref familyName)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, outer, inner));
+    impl_move(get_activation_factory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, outer, inner));
 }
 
 inline Windows::UI::Xaml::Media::FontFamily FontFamily::XamlAutoFontFamily()
 {
-    return GetActivationFactory<FontFamily, IFontFamilyStatics2>().XamlAutoFontFamily();
+    return get_activation_factory<FontFamily, IFontFamilyStatics2>().XamlAutoFontFamily();
 }
 
 inline Windows::UI::Xaml::Media::Geometry Geometry::Empty()
 {
-    return GetActivationFactory<Geometry, IGeometryStatics>().Empty();
+    return get_activation_factory<Geometry, IGeometryStatics>().Empty();
 }
 
 inline double Geometry::StandardFlatteningTolerance()
 {
-    return GetActivationFactory<Geometry, IGeometryStatics>().StandardFlatteningTolerance();
+    return get_activation_factory<Geometry, IGeometryStatics>().StandardFlatteningTolerance();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Geometry::TransformProperty()
 {
-    return GetActivationFactory<Geometry, IGeometryStatics>().TransformProperty();
+    return get_activation_factory<Geometry, IGeometryStatics>().TransformProperty();
 }
 
 inline GeometryCollection::GeometryCollection() :
-    GeometryCollection(ActivateInstance<GeometryCollection>())
+    GeometryCollection(activate_instance<GeometryCollection>())
 {}
 
 inline GeometryGroup::GeometryGroup() :
-    GeometryGroup(ActivateInstance<GeometryGroup>())
+    GeometryGroup(activate_instance<GeometryGroup>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty GeometryGroup::FillRuleProperty()
 {
-    return GetActivationFactory<GeometryGroup, IGeometryGroupStatics>().FillRuleProperty();
+    return get_activation_factory<GeometryGroup, IGeometryGroupStatics>().FillRuleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GeometryGroup::ChildrenProperty()
 {
-    return GetActivationFactory<GeometryGroup, IGeometryGroupStatics>().ChildrenProperty();
+    return get_activation_factory<GeometryGroup, IGeometryGroupStatics>().ChildrenProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::SpreadMethodProperty()
 {
-    return GetActivationFactory<GradientBrush, IGradientBrushStatics>().SpreadMethodProperty();
+    return get_activation_factory<GradientBrush, IGradientBrushStatics>().SpreadMethodProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::MappingModeProperty()
 {
-    return GetActivationFactory<GradientBrush, IGradientBrushStatics>().MappingModeProperty();
+    return get_activation_factory<GradientBrush, IGradientBrushStatics>().MappingModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::ColorInterpolationModeProperty()
 {
-    return GetActivationFactory<GradientBrush, IGradientBrushStatics>().ColorInterpolationModeProperty();
+    return get_activation_factory<GradientBrush, IGradientBrushStatics>().ColorInterpolationModeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::GradientStopsProperty()
 {
-    return GetActivationFactory<GradientBrush, IGradientBrushStatics>().GradientStopsProperty();
+    return get_activation_factory<GradientBrush, IGradientBrushStatics>().GradientStopsProperty();
 }
 
 inline GradientStop::GradientStop() :
-    GradientStop(ActivateInstance<GradientStop>())
+    GradientStop(activate_instance<GradientStop>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty GradientStop::ColorProperty()
 {
-    return GetActivationFactory<GradientStop, IGradientStopStatics>().ColorProperty();
+    return get_activation_factory<GradientStop, IGradientStopStatics>().ColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientStop::OffsetProperty()
 {
-    return GetActivationFactory<GradientStop, IGradientStopStatics>().OffsetProperty();
+    return get_activation_factory<GradientStop, IGradientStopStatics>().OffsetProperty();
 }
 
 inline GradientStopCollection::GradientStopCollection() :
-    GradientStopCollection(ActivateInstance<GradientStopCollection>())
+    GradientStopCollection(activate_instance<GradientStopCollection>())
 {}
 
 inline ImageBrush::ImageBrush() :
-    ImageBrush(ActivateInstance<ImageBrush>())
+    ImageBrush(activate_instance<ImageBrush>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ImageBrush::ImageSourceProperty()
 {
-    return GetActivationFactory<ImageBrush, IImageBrushStatics>().ImageSourceProperty();
+    return get_activation_factory<ImageBrush, IImageBrushStatics>().ImageSourceProperty();
 }
 
 inline LineGeometry::LineGeometry() :
-    LineGeometry(ActivateInstance<LineGeometry>())
+    LineGeometry(activate_instance<LineGeometry>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LineGeometry::StartPointProperty()
 {
-    return GetActivationFactory<LineGeometry, ILineGeometryStatics>().StartPointProperty();
+    return get_activation_factory<LineGeometry, ILineGeometryStatics>().StartPointProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty LineGeometry::EndPointProperty()
 {
-    return GetActivationFactory<LineGeometry, ILineGeometryStatics>().EndPointProperty();
+    return get_activation_factory<LineGeometry, ILineGeometryStatics>().EndPointProperty();
 }
 
 inline LineSegment::LineSegment() :
-    LineSegment(ActivateInstance<LineSegment>())
+    LineSegment(activate_instance<LineSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LineSegment::PointProperty()
 {
-    return GetActivationFactory<LineSegment, ILineSegmentStatics>().PointProperty();
+    return get_activation_factory<LineSegment, ILineSegmentStatics>().PointProperty();
 }
 
 inline LinearGradientBrush::LinearGradientBrush() :
-    LinearGradientBrush(ActivateInstance<LinearGradientBrush>())
+    LinearGradientBrush(activate_instance<LinearGradientBrush>())
 {}
 
 inline LinearGradientBrush::LinearGradientBrush(const Windows::UI::Xaml::Media::GradientStopCollection & gradientStopCollection, double angle) :
-    LinearGradientBrush(GetActivationFactory<LinearGradientBrush, ILinearGradientBrushFactory>().CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle))
+    LinearGradientBrush(get_activation_factory<LinearGradientBrush, ILinearGradientBrushFactory>().CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::StartPointProperty()
 {
-    return GetActivationFactory<LinearGradientBrush, ILinearGradientBrushStatics>().StartPointProperty();
+    return get_activation_factory<LinearGradientBrush, ILinearGradientBrushStatics>().StartPointProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::EndPointProperty()
 {
-    return GetActivationFactory<LinearGradientBrush, ILinearGradientBrushStatics>().EndPointProperty();
+    return get_activation_factory<LinearGradientBrush, ILinearGradientBrushStatics>().EndPointProperty();
 }
 
 inline Matrix3DProjection::Matrix3DProjection() :
-    Matrix3DProjection(ActivateInstance<Matrix3DProjection>())
+    Matrix3DProjection(activate_instance<Matrix3DProjection>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Matrix3DProjection::ProjectionMatrixProperty()
 {
-    return GetActivationFactory<Matrix3DProjection, IMatrix3DProjectionStatics>().ProjectionMatrixProperty();
+    return get_activation_factory<Matrix3DProjection, IMatrix3DProjectionStatics>().ProjectionMatrixProperty();
 }
 
 inline Windows::UI::Xaml::Media::Matrix MatrixHelper::Identity()
 {
-    return GetActivationFactory<MatrixHelper, IMatrixHelperStatics>().Identity();
+    return get_activation_factory<MatrixHelper, IMatrixHelperStatics>().Identity();
 }
 
 inline Windows::UI::Xaml::Media::Matrix MatrixHelper::FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY)
 {
-    return GetActivationFactory<MatrixHelper, IMatrixHelperStatics>().FromElements(m11, m12, m21, m22, offsetX, offsetY);
+    return get_activation_factory<MatrixHelper, IMatrixHelperStatics>().FromElements(m11, m12, m21, m22, offsetX, offsetY);
 }
 
 inline bool MatrixHelper::GetIsIdentity(const Windows::UI::Xaml::Media::Matrix & target)
 {
-    return GetActivationFactory<MatrixHelper, IMatrixHelperStatics>().GetIsIdentity(target);
+    return get_activation_factory<MatrixHelper, IMatrixHelperStatics>().GetIsIdentity(target);
 }
 
 inline Windows::Foundation::Point MatrixHelper::Transform(const Windows::UI::Xaml::Media::Matrix & target, const Windows::Foundation::Point & point)
 {
-    return GetActivationFactory<MatrixHelper, IMatrixHelperStatics>().Transform(target, point);
+    return get_activation_factory<MatrixHelper, IMatrixHelperStatics>().Transform(target, point);
 }
 
 inline MatrixTransform::MatrixTransform() :
-    MatrixTransform(ActivateInstance<MatrixTransform>())
+    MatrixTransform(activate_instance<MatrixTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MatrixTransform::MatrixProperty()
 {
-    return GetActivationFactory<MatrixTransform, IMatrixTransformStatics>().MatrixProperty();
+    return get_activation_factory<MatrixTransform, IMatrixTransformStatics>().MatrixProperty();
 }
 
 inline PartialMediaFailureDetectedEventArgs::PartialMediaFailureDetectedEventArgs() :
-    PartialMediaFailureDetectedEventArgs(ActivateInstance<PartialMediaFailureDetectedEventArgs>())
+    PartialMediaFailureDetectedEventArgs(activate_instance<PartialMediaFailureDetectedEventArgs>())
 {}
 
 inline PathFigure::PathFigure() :
-    PathFigure(ActivateInstance<PathFigure>())
+    PathFigure(activate_instance<PathFigure>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::SegmentsProperty()
 {
-    return GetActivationFactory<PathFigure, IPathFigureStatics>().SegmentsProperty();
+    return get_activation_factory<PathFigure, IPathFigureStatics>().SegmentsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::StartPointProperty()
 {
-    return GetActivationFactory<PathFigure, IPathFigureStatics>().StartPointProperty();
+    return get_activation_factory<PathFigure, IPathFigureStatics>().StartPointProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::IsClosedProperty()
 {
-    return GetActivationFactory<PathFigure, IPathFigureStatics>().IsClosedProperty();
+    return get_activation_factory<PathFigure, IPathFigureStatics>().IsClosedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::IsFilledProperty()
 {
-    return GetActivationFactory<PathFigure, IPathFigureStatics>().IsFilledProperty();
+    return get_activation_factory<PathFigure, IPathFigureStatics>().IsFilledProperty();
 }
 
 inline PathFigureCollection::PathFigureCollection() :
-    PathFigureCollection(ActivateInstance<PathFigureCollection>())
+    PathFigureCollection(activate_instance<PathFigureCollection>())
 {}
 
 inline PathGeometry::PathGeometry() :
-    PathGeometry(ActivateInstance<PathGeometry>())
+    PathGeometry(activate_instance<PathGeometry>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PathGeometry::FillRuleProperty()
 {
-    return GetActivationFactory<PathGeometry, IPathGeometryStatics>().FillRuleProperty();
+    return get_activation_factory<PathGeometry, IPathGeometryStatics>().FillRuleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathGeometry::FiguresProperty()
 {
-    return GetActivationFactory<PathGeometry, IPathGeometryStatics>().FiguresProperty();
+    return get_activation_factory<PathGeometry, IPathGeometryStatics>().FiguresProperty();
 }
 
 inline PathSegmentCollection::PathSegmentCollection() :
-    PathSegmentCollection(ActivateInstance<PathSegmentCollection>())
+    PathSegmentCollection(activate_instance<PathSegmentCollection>())
 {}
 
 inline PlaneProjection::PlaneProjection() :
-    PlaneProjection(ActivateInstance<PlaneProjection>())
+    PlaneProjection(activate_instance<PlaneProjection>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetXProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetXProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetYProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetYProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetZProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetZProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().LocalOffsetZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationXProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().RotationXProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().RotationXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationYProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().RotationYProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().RotationYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationZProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().RotationZProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().RotationZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationXProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationXProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationYProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationYProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationZProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationZProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().CenterOfRotationZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetXProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetXProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetYProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetYProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetZProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetZProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().GlobalOffsetZProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::ProjectionMatrixProperty()
 {
-    return GetActivationFactory<PlaneProjection, IPlaneProjectionStatics>().ProjectionMatrixProperty();
+    return get_activation_factory<PlaneProjection, IPlaneProjectionStatics>().ProjectionMatrixProperty();
 }
 
 inline PointCollection::PointCollection() :
-    PointCollection(ActivateInstance<PointCollection>())
+    PointCollection(activate_instance<PointCollection>())
 {}
 
 inline PolyBezierSegment::PolyBezierSegment() :
-    PolyBezierSegment(ActivateInstance<PolyBezierSegment>())
+    PolyBezierSegment(activate_instance<PolyBezierSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyBezierSegment::PointsProperty()
 {
-    return GetActivationFactory<PolyBezierSegment, IPolyBezierSegmentStatics>().PointsProperty();
+    return get_activation_factory<PolyBezierSegment, IPolyBezierSegmentStatics>().PointsProperty();
 }
 
 inline PolyLineSegment::PolyLineSegment() :
-    PolyLineSegment(ActivateInstance<PolyLineSegment>())
+    PolyLineSegment(activate_instance<PolyLineSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyLineSegment::PointsProperty()
 {
-    return GetActivationFactory<PolyLineSegment, IPolyLineSegmentStatics>().PointsProperty();
+    return get_activation_factory<PolyLineSegment, IPolyLineSegmentStatics>().PointsProperty();
 }
 
 inline PolyQuadraticBezierSegment::PolyQuadraticBezierSegment() :
-    PolyQuadraticBezierSegment(ActivateInstance<PolyQuadraticBezierSegment>())
+    PolyQuadraticBezierSegment(activate_instance<PolyQuadraticBezierSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyQuadraticBezierSegment::PointsProperty()
 {
-    return GetActivationFactory<PolyQuadraticBezierSegment, IPolyQuadraticBezierSegmentStatics>().PointsProperty();
+    return get_activation_factory<PolyQuadraticBezierSegment, IPolyQuadraticBezierSegmentStatics>().PointsProperty();
 }
 
 inline QuadraticBezierSegment::QuadraticBezierSegment() :
-    QuadraticBezierSegment(ActivateInstance<QuadraticBezierSegment>())
+    QuadraticBezierSegment(activate_instance<QuadraticBezierSegment>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty QuadraticBezierSegment::Point1Property()
 {
-    return GetActivationFactory<QuadraticBezierSegment, IQuadraticBezierSegmentStatics>().Point1Property();
+    return get_activation_factory<QuadraticBezierSegment, IQuadraticBezierSegmentStatics>().Point1Property();
 }
 
 inline Windows::UI::Xaml::DependencyProperty QuadraticBezierSegment::Point2Property()
 {
-    return GetActivationFactory<QuadraticBezierSegment, IQuadraticBezierSegmentStatics>().Point2Property();
+    return get_activation_factory<QuadraticBezierSegment, IQuadraticBezierSegmentStatics>().Point2Property();
 }
 
 inline RateChangedRoutedEventArgs::RateChangedRoutedEventArgs() :
-    RateChangedRoutedEventArgs(ActivateInstance<RateChangedRoutedEventArgs>())
+    RateChangedRoutedEventArgs(activate_instance<RateChangedRoutedEventArgs>())
 {}
 
 inline RectangleGeometry::RectangleGeometry() :
-    RectangleGeometry(ActivateInstance<RectangleGeometry>())
+    RectangleGeometry(activate_instance<RectangleGeometry>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RectangleGeometry::RectProperty()
 {
-    return GetActivationFactory<RectangleGeometry, IRectangleGeometryStatics>().RectProperty();
+    return get_activation_factory<RectangleGeometry, IRectangleGeometryStatics>().RectProperty();
 }
 
 inline RotateTransform::RotateTransform() :
-    RotateTransform(ActivateInstance<RotateTransform>())
+    RotateTransform(activate_instance<RotateTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::CenterXProperty()
 {
-    return GetActivationFactory<RotateTransform, IRotateTransformStatics>().CenterXProperty();
+    return get_activation_factory<RotateTransform, IRotateTransformStatics>().CenterXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::CenterYProperty()
 {
-    return GetActivationFactory<RotateTransform, IRotateTransformStatics>().CenterYProperty();
+    return get_activation_factory<RotateTransform, IRotateTransformStatics>().CenterYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::AngleProperty()
 {
-    return GetActivationFactory<RotateTransform, IRotateTransformStatics>().AngleProperty();
+    return get_activation_factory<RotateTransform, IRotateTransformStatics>().AngleProperty();
 }
 
 inline ScaleTransform::ScaleTransform() :
-    ScaleTransform(ActivateInstance<ScaleTransform>())
+    ScaleTransform(activate_instance<ScaleTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::CenterXProperty()
 {
-    return GetActivationFactory<ScaleTransform, IScaleTransformStatics>().CenterXProperty();
+    return get_activation_factory<ScaleTransform, IScaleTransformStatics>().CenterXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::CenterYProperty()
 {
-    return GetActivationFactory<ScaleTransform, IScaleTransformStatics>().CenterYProperty();
+    return get_activation_factory<ScaleTransform, IScaleTransformStatics>().CenterYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::ScaleXProperty()
 {
-    return GetActivationFactory<ScaleTransform, IScaleTransformStatics>().ScaleXProperty();
+    return get_activation_factory<ScaleTransform, IScaleTransformStatics>().ScaleXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::ScaleYProperty()
 {
-    return GetActivationFactory<ScaleTransform, IScaleTransformStatics>().ScaleYProperty();
+    return get_activation_factory<ScaleTransform, IScaleTransformStatics>().ScaleYProperty();
 }
 
 inline SkewTransform::SkewTransform() :
-    SkewTransform(ActivateInstance<SkewTransform>())
+    SkewTransform(activate_instance<SkewTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::CenterXProperty()
 {
-    return GetActivationFactory<SkewTransform, ISkewTransformStatics>().CenterXProperty();
+    return get_activation_factory<SkewTransform, ISkewTransformStatics>().CenterXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::CenterYProperty()
 {
-    return GetActivationFactory<SkewTransform, ISkewTransformStatics>().CenterYProperty();
+    return get_activation_factory<SkewTransform, ISkewTransformStatics>().CenterYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::AngleXProperty()
 {
-    return GetActivationFactory<SkewTransform, ISkewTransformStatics>().AngleXProperty();
+    return get_activation_factory<SkewTransform, ISkewTransformStatics>().AngleXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::AngleYProperty()
 {
-    return GetActivationFactory<SkewTransform, ISkewTransformStatics>().AngleYProperty();
+    return get_activation_factory<SkewTransform, ISkewTransformStatics>().AngleYProperty();
 }
 
 inline SolidColorBrush::SolidColorBrush() :
-    SolidColorBrush(ActivateInstance<SolidColorBrush>())
+    SolidColorBrush(activate_instance<SolidColorBrush>())
 {}
 
 inline SolidColorBrush::SolidColorBrush(const Windows::UI::Color & color) :
-    SolidColorBrush(GetActivationFactory<SolidColorBrush, ISolidColorBrushFactory>().CreateInstanceWithColor(color))
+    SolidColorBrush(get_activation_factory<SolidColorBrush, ISolidColorBrushFactory>().CreateInstanceWithColor(color))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SolidColorBrush::ColorProperty()
 {
-    return GetActivationFactory<SolidColorBrush, ISolidColorBrushStatics>().ColorProperty();
+    return get_activation_factory<SolidColorBrush, ISolidColorBrushStatics>().ColorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::AlignmentXProperty()
 {
-    return GetActivationFactory<TileBrush, ITileBrushStatics>().AlignmentXProperty();
+    return get_activation_factory<TileBrush, ITileBrushStatics>().AlignmentXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::AlignmentYProperty()
 {
-    return GetActivationFactory<TileBrush, ITileBrushStatics>().AlignmentYProperty();
+    return get_activation_factory<TileBrush, ITileBrushStatics>().AlignmentYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::StretchProperty()
 {
-    return GetActivationFactory<TileBrush, ITileBrushStatics>().StretchProperty();
+    return get_activation_factory<TileBrush, ITileBrushStatics>().StretchProperty();
 }
 
 inline TimelineMarker::TimelineMarker() :
-    TimelineMarker(ActivateInstance<TimelineMarker>())
+    TimelineMarker(activate_instance<TimelineMarker>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TimeProperty()
 {
-    return GetActivationFactory<TimelineMarker, ITimelineMarkerStatics>().TimeProperty();
+    return get_activation_factory<TimelineMarker, ITimelineMarkerStatics>().TimeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TypeProperty()
 {
-    return GetActivationFactory<TimelineMarker, ITimelineMarkerStatics>().TypeProperty();
+    return get_activation_factory<TimelineMarker, ITimelineMarkerStatics>().TypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TextProperty()
 {
-    return GetActivationFactory<TimelineMarker, ITimelineMarkerStatics>().TextProperty();
+    return get_activation_factory<TimelineMarker, ITimelineMarkerStatics>().TextProperty();
 }
 
 inline TimelineMarkerCollection::TimelineMarkerCollection() :
-    TimelineMarkerCollection(ActivateInstance<TimelineMarkerCollection>())
+    TimelineMarkerCollection(activate_instance<TimelineMarkerCollection>())
 {}
 
 inline TimelineMarkerRoutedEventArgs::TimelineMarkerRoutedEventArgs() :
-    TimelineMarkerRoutedEventArgs(ActivateInstance<TimelineMarkerRoutedEventArgs>())
+    TimelineMarkerRoutedEventArgs(activate_instance<TimelineMarkerRoutedEventArgs>())
 {}
 
 inline TransformCollection::TransformCollection() :
-    TransformCollection(ActivateInstance<TransformCollection>())
+    TransformCollection(activate_instance<TransformCollection>())
 {}
 
 inline TransformGroup::TransformGroup() :
-    TransformGroup(ActivateInstance<TransformGroup>())
+    TransformGroup(activate_instance<TransformGroup>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TransformGroup::ChildrenProperty()
 {
-    return GetActivationFactory<TransformGroup, ITransformGroupStatics>().ChildrenProperty();
+    return get_activation_factory<TransformGroup, ITransformGroupStatics>().ChildrenProperty();
 }
 
 inline TranslateTransform::TranslateTransform() :
-    TranslateTransform(ActivateInstance<TranslateTransform>())
+    TranslateTransform(activate_instance<TranslateTransform>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TranslateTransform::XProperty()
 {
-    return GetActivationFactory<TranslateTransform, ITranslateTransformStatics>().XProperty();
+    return get_activation_factory<TranslateTransform, ITranslateTransformStatics>().XProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TranslateTransform::YProperty()
 {
-    return GetActivationFactory<TranslateTransform, ITranslateTransformStatics>().YProperty();
+    return get_activation_factory<TranslateTransform, ITranslateTransformStatics>().YProperty();
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree);
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(const Windows::Foundation::Rect & intersectingRect, const Windows::UI::Xaml::UIElement & subtree)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree);
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree, bool includeAllElements)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree, includeAllElements);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree, includeAllElements);
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(const Windows::Foundation::Rect & intersectingRect, const Windows::UI::Xaml::UIElement & subtree, bool includeAllElements)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree, includeAllElements);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree, includeAllElements);
 }
 
 inline Windows::UI::Xaml::DependencyObject VisualTreeHelper::GetChild(const Windows::UI::Xaml::DependencyObject & reference, int32_t childIndex)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().GetChild(reference, childIndex);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().GetChild(reference, childIndex);
 }
 
 inline int32_t VisualTreeHelper::GetChildrenCount(const Windows::UI::Xaml::DependencyObject & reference)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().GetChildrenCount(reference);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().GetChildrenCount(reference);
 }
 
 inline Windows::UI::Xaml::DependencyObject VisualTreeHelper::GetParent(const Windows::UI::Xaml::DependencyObject & reference)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().GetParent(reference);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().GetParent(reference);
 }
 
 inline void VisualTreeHelper::DisconnectChildrenRecursive(const Windows::UI::Xaml::UIElement & element)
 {
-    GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics>().DisconnectChildrenRecursive(element);
+    get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics>().DisconnectChildrenRecursive(element);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> VisualTreeHelper::GetOpenPopups(const Windows::UI::Xaml::Window & window)
 {
-    return GetActivationFactory<VisualTreeHelper, IVisualTreeHelperStatics2>().GetOpenPopups(window);
+    return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics2>().GetOpenPopups(window);
 }
 
 }

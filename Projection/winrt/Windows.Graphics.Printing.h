@@ -1838,91 +1838,91 @@ template <typename D> void impl_IPrintManager<D>::PrintTaskRequested(event_token
 
 inline Windows::Graphics::Printing::PrintManager PrintManager::GetForCurrentView()
 {
-    return GetActivationFactory<PrintManager, IPrintManagerStatic>().GetForCurrentView();
+    return get_activation_factory<PrintManager, IPrintManagerStatic>().GetForCurrentView();
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> PrintManager::ShowPrintUIAsync()
 {
-    return GetActivationFactory<PrintManager, IPrintManagerStatic>().ShowPrintUIAsync();
+    return get_activation_factory<PrintManager, IPrintManagerStatic>().ShowPrintUIAsync();
 }
 
 inline bool PrintManager::IsSupported()
 {
-    return GetActivationFactory<PrintManager, IPrintManagerStatic2>().IsSupported();
+    return get_activation_factory<PrintManager, IPrintManagerStatic2>().IsSupported();
 }
 
 inline PrintPageInfo::PrintPageInfo() :
-    PrintPageInfo(ActivateInstance<PrintPageInfo>())
+    PrintPageInfo(activate_instance<PrintPageInfo>())
 {}
 
 inline hstring StandardPrintTaskOptions::MediaSize()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().MediaSize();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().MediaSize();
 }
 
 inline hstring StandardPrintTaskOptions::MediaType()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().MediaType();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().MediaType();
 }
 
 inline hstring StandardPrintTaskOptions::Orientation()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Orientation();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Orientation();
 }
 
 inline hstring StandardPrintTaskOptions::PrintQuality()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().PrintQuality();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().PrintQuality();
 }
 
 inline hstring StandardPrintTaskOptions::ColorMode()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().ColorMode();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().ColorMode();
 }
 
 inline hstring StandardPrintTaskOptions::Duplex()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Duplex();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Duplex();
 }
 
 inline hstring StandardPrintTaskOptions::Collation()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Collation();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Collation();
 }
 
 inline hstring StandardPrintTaskOptions::Staple()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Staple();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Staple();
 }
 
 inline hstring StandardPrintTaskOptions::HolePunch()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().HolePunch();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().HolePunch();
 }
 
 inline hstring StandardPrintTaskOptions::Binding()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Binding();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Binding();
 }
 
 inline hstring StandardPrintTaskOptions::Copies()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Copies();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().Copies();
 }
 
 inline hstring StandardPrintTaskOptions::NUp()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().NUp();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().NUp();
 }
 
 inline hstring StandardPrintTaskOptions::InputBin()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().InputBin();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic>().InputBin();
 }
 
 inline hstring StandardPrintTaskOptions::Bordering()
 {
-    return GetActivationFactory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic2>().Bordering();
+    return get_activation_factory<StandardPrintTaskOptions, IStandardPrintTaskOptionsStatic2>().Bordering();
 }
 
 }

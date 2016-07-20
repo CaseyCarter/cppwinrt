@@ -491,15 +491,15 @@ template <typename D> hstring impl_IOnlineIdAuthenticator<D>::AuthenticatedSafeC
 }
 
 inline OnlineIdAuthenticator::OnlineIdAuthenticator() :
-    OnlineIdAuthenticator(ActivateInstance<OnlineIdAuthenticator>())
+    OnlineIdAuthenticator(activate_instance<OnlineIdAuthenticator>())
 {}
 
 inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) :
-    OnlineIdServiceTicketRequest(GetActivationFactory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequest(service, policy))
+    OnlineIdServiceTicketRequest(get_activation_factory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequest(service, policy))
 {}
 
 inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_ref service) :
-    OnlineIdServiceTicketRequest(GetActivationFactory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequestAdvanced(service))
+    OnlineIdServiceTicketRequest(get_activation_factory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequestAdvanced(service))
 {}
 
 }

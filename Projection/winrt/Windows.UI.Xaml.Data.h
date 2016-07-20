@@ -2116,72 +2116,72 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICollectionView
 inline Binding::Binding()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Binding, IBindingFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Binding, IBindingFactory>().CreateInstance(outer, inner));
 }
 
 inline BindingBase::BindingBase()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<BindingBase, IBindingBaseFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<BindingBase, IBindingBaseFactory>().CreateInstance(outer, inner));
 }
 
 inline void BindingOperations::SetBinding(const Windows::UI::Xaml::DependencyObject & target, const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding)
 {
-    GetActivationFactory<BindingOperations, IBindingOperationsStatics>().SetBinding(target, dp, binding);
+    get_activation_factory<BindingOperations, IBindingOperationsStatics>().SetBinding(target, dp, binding);
 }
 
 inline CollectionViewSource::CollectionViewSource() :
-    CollectionViewSource(ActivateInstance<CollectionViewSource>())
+    CollectionViewSource(activate_instance<CollectionViewSource>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CollectionViewSource::SourceProperty()
 {
-    return GetActivationFactory<CollectionViewSource, ICollectionViewSourceStatics>().SourceProperty();
+    return get_activation_factory<CollectionViewSource, ICollectionViewSourceStatics>().SourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CollectionViewSource::ViewProperty()
 {
-    return GetActivationFactory<CollectionViewSource, ICollectionViewSourceStatics>().ViewProperty();
+    return get_activation_factory<CollectionViewSource, ICollectionViewSourceStatics>().ViewProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CollectionViewSource::IsSourceGroupedProperty()
 {
-    return GetActivationFactory<CollectionViewSource, ICollectionViewSourceStatics>().IsSourceGroupedProperty();
+    return get_activation_factory<CollectionViewSource, ICollectionViewSourceStatics>().IsSourceGroupedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CollectionViewSource::ItemsPathProperty()
 {
-    return GetActivationFactory<CollectionViewSource, ICollectionViewSourceStatics>().ItemsPathProperty();
+    return get_activation_factory<CollectionViewSource, ICollectionViewSourceStatics>().ItemsPathProperty();
 }
 
 inline CurrentChangingEventArgs::CurrentChangingEventArgs()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateInstance(outer, inner));
 }
 
 inline CurrentChangingEventArgs::CurrentChangingEventArgs(bool isCancelable)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, outer, inner));
+    impl_move(get_activation_factory<CurrentChangingEventArgs, ICurrentChangingEventArgsFactory>().CreateWithCancelableParameter(isCancelable, outer, inner));
 }
 
 inline ItemIndexRange::ItemIndexRange(int32_t firstIndex, uint32_t length)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, outer, inner));
+    impl_move(get_activation_factory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, outer, inner));
 }
 
 inline PropertyChangedEventArgs::PropertyChangedEventArgs(hstring_ref name)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, outer, inner));
+    impl_move(get_activation_factory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, outer, inner));
 }
 
 inline RelativeSource::RelativeSource()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<RelativeSource, IRelativeSourceFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<RelativeSource, IRelativeSourceFactory>().CreateInstance(outer, inner));
 }
 
 }

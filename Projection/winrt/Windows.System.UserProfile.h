@@ -367,57 +367,57 @@ template <typename D> Windows::System::UserProfile::FirstSignInSettings impl_IFi
 
 inline hstring AdvertisingManager::AdvertisingId()
 {
-    return GetActivationFactory<AdvertisingManager, IAdvertisingManagerStatics>().AdvertisingId();
+    return get_activation_factory<AdvertisingManager, IAdvertisingManagerStatics>().AdvertisingId();
 }
 
 inline Windows::System::UserProfile::AdvertisingManagerForUser AdvertisingManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<AdvertisingManager, IAdvertisingManagerStatics2>().GetForUser(user);
+    return get_activation_factory<AdvertisingManager, IAdvertisingManagerStatics2>().GetForUser(user);
 }
 
 inline Windows::System::UserProfile::FirstSignInSettings FirstSignInSettings::GetDefault()
 {
-    return GetActivationFactory<FirstSignInSettings, IFirstSignInSettingsStatics>().GetDefault();
+    return get_activation_factory<FirstSignInSettings, IFirstSignInSettingsStatics>().GetDefault();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Calendars()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Calendars();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Calendars();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Clocks()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Clocks();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Clocks();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Currencies()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Currencies();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Currencies();
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Languages()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Languages();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().Languages();
 }
 
 inline hstring GlobalizationPreferences::HomeGeographicRegion()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().HomeGeographicRegion();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().HomeGeographicRegion();
 }
 
 inline Windows::Globalization::DayOfWeek GlobalizationPreferences::WeekStartsOn()
 {
-    return GetActivationFactory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().WeekStartsOn();
+    return get_activation_factory<GlobalizationPreferences, IGlobalizationPreferencesStatics>().WeekStartsOn();
 }
 
 inline Windows::System::UserProfile::UserProfilePersonalizationSettings UserProfilePersonalizationSettings::Current()
 {
-    return GetActivationFactory<UserProfilePersonalizationSettings, IUserProfilePersonalizationSettingsStatics>().Current();
+    return get_activation_factory<UserProfilePersonalizationSettings, IUserProfilePersonalizationSettingsStatics>().Current();
 }
 
 inline bool UserProfilePersonalizationSettings::IsSupported()
 {
-    return GetActivationFactory<UserProfilePersonalizationSettings, IUserProfilePersonalizationSettingsStatics>().IsSupported();
+    return get_activation_factory<UserProfilePersonalizationSettings, IUserProfilePersonalizationSettingsStatics>().IsSupported();
 }
 
 }

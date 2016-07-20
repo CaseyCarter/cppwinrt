@@ -4995,92 +4995,92 @@ template <typename D> hstring impl_IRcsEndUserMessageAvailableTriggerDetails<D>:
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> ChatCapabilitiesManager::GetCachedCapabilitiesAsync(hstring_ref address)
 {
-    return GetActivationFactory<ChatCapabilitiesManager, IChatCapabilitiesManagerStatics>().GetCachedCapabilitiesAsync(address);
+    return get_activation_factory<ChatCapabilitiesManager, IChatCapabilitiesManagerStatics>().GetCachedCapabilitiesAsync(address);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> ChatCapabilitiesManager::GetCapabilitiesFromNetworkAsync(hstring_ref address)
 {
-    return GetActivationFactory<ChatCapabilitiesManager, IChatCapabilitiesManagerStatics>().GetCapabilitiesFromNetworkAsync(address);
+    return get_activation_factory<ChatCapabilitiesManager, IChatCapabilitiesManagerStatics>().GetCapabilitiesFromNetworkAsync(address);
 }
 
 inline ChatConversationThreadingInfo::ChatConversationThreadingInfo() :
-    ChatConversationThreadingInfo(ActivateInstance<ChatConversationThreadingInfo>())
+    ChatConversationThreadingInfo(activate_instance<ChatConversationThreadingInfo>())
 {}
 
 inline ChatMessage::ChatMessage() :
-    ChatMessage(ActivateInstance<ChatMessage>())
+    ChatMessage(activate_instance<ChatMessage>())
 {}
 
 inline ChatMessageAttachment::ChatMessageAttachment(hstring_ref mimeType, const Windows::Storage::Streams::IRandomAccessStreamReference & dataStreamReference) :
-    ChatMessageAttachment(GetActivationFactory<ChatMessageAttachment, IChatMessageAttachmentFactory>().CreateChatMessageAttachment(mimeType, dataStreamReference))
+    ChatMessageAttachment(get_activation_factory<ChatMessageAttachment, IChatMessageAttachmentFactory>().CreateChatMessageAttachment(mimeType, dataStreamReference))
 {}
 
 inline Windows::Foundation::IAsyncAction ChatMessageBlocking::MarkMessageAsBlockedAsync(hstring_ref localChatMessageId, bool blocked)
 {
-    return GetActivationFactory<ChatMessageBlocking, IChatMessageBlockingStatic>().MarkMessageAsBlockedAsync(localChatMessageId, blocked);
+    return get_activation_factory<ChatMessageBlocking, IChatMessageBlockingStatic>().MarkMessageAsBlockedAsync(localChatMessageId, blocked);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> ChatMessageManager::RegisterTransportAsync()
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManager2Statics>().RegisterTransportAsync();
+    return get_activation_factory<ChatMessageManager, IChatMessageManager2Statics>().RegisterTransportAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageTransport> ChatMessageManager::GetTransportAsync(hstring_ref transportId)
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManager2Statics>().GetTransportAsync(transportId);
+    return get_activation_factory<ChatMessageManager, IChatMessageManager2Statics>().GetTransportAsync(transportId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessageTransport>> ChatMessageManager::GetTransportsAsync()
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManagerStatic>().GetTransportsAsync();
+    return get_activation_factory<ChatMessageManager, IChatMessageManagerStatic>().GetTransportsAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageStore> ChatMessageManager::RequestStoreAsync()
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManagerStatic>().RequestStoreAsync();
+    return get_activation_factory<ChatMessageManager, IChatMessageManagerStatic>().RequestStoreAsync();
 }
 
 inline Windows::Foundation::IAsyncAction ChatMessageManager::ShowComposeSmsMessageAsync(const Windows::ApplicationModel::Chat::ChatMessage & message)
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManagerStatic>().ShowComposeSmsMessageAsync(message);
+    return get_activation_factory<ChatMessageManager, IChatMessageManagerStatic>().ShowComposeSmsMessageAsync(message);
 }
 
 inline void ChatMessageManager::ShowSmsSettings()
 {
-    GetActivationFactory<ChatMessageManager, IChatMessageManagerStatic>().ShowSmsSettings();
+    get_activation_factory<ChatMessageManager, IChatMessageManagerStatic>().ShowSmsSettings();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatSyncManager> ChatMessageManager::RequestSyncManagerAsync()
 {
-    return GetActivationFactory<ChatMessageManager, IChatMessageManagerStatics3>().RequestSyncManagerAsync();
+    return get_activation_factory<ChatMessageManager, IChatMessageManagerStatics3>().RequestSyncManagerAsync();
 }
 
 inline ChatQueryOptions::ChatQueryOptions() :
-    ChatQueryOptions(ActivateInstance<ChatQueryOptions>())
+    ChatQueryOptions(activate_instance<ChatQueryOptions>())
 {}
 
 inline ChatRecipientDeliveryInfo::ChatRecipientDeliveryInfo() :
-    ChatRecipientDeliveryInfo(ActivateInstance<ChatRecipientDeliveryInfo>())
+    ChatRecipientDeliveryInfo(activate_instance<ChatRecipientDeliveryInfo>())
 {}
 
 inline Windows::ApplicationModel::Chat::RcsEndUserMessageManager RcsManager::GetEndUserMessageManager()
 {
-    return GetActivationFactory<RcsManager, IRcsManagerStatics>().GetEndUserMessageManager();
+    return get_activation_factory<RcsManager, IRcsManagerStatics>().GetEndUserMessageManager();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsTransport>> RcsManager::GetTransportsAsync()
 {
-    return GetActivationFactory<RcsManager, IRcsManagerStatics>().GetTransportsAsync();
+    return get_activation_factory<RcsManager, IRcsManagerStatics>().GetTransportsAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::RcsTransport> RcsManager::GetTransportAsync(hstring_ref transportId)
 {
-    return GetActivationFactory<RcsManager, IRcsManagerStatics>().GetTransportAsync(transportId);
+    return get_activation_factory<RcsManager, IRcsManagerStatics>().GetTransportAsync(transportId);
 }
 
 inline Windows::Foundation::IAsyncAction RcsManager::LeaveConversationAsync(const Windows::ApplicationModel::Chat::ChatConversation & conversation)
 {
-    return GetActivationFactory<RcsManager, IRcsManagerStatics>().LeaveConversationAsync(conversation);
+    return get_activation_factory<RcsManager, IRcsManagerStatics>().LeaveConversationAsync(conversation);
 }
 
 }

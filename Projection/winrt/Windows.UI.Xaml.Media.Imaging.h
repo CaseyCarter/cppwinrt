@@ -1291,103 +1291,103 @@ template <typename D> Windows::Foundation::IAsyncAction impl_ISoftwareBitmapSour
 }
 
 inline BitmapImage::BitmapImage() :
-    BitmapImage(ActivateInstance<BitmapImage>())
+    BitmapImage(activate_instance<BitmapImage>())
 {}
 
 inline BitmapImage::BitmapImage(const Windows::Foundation::Uri & uriSource) :
-    BitmapImage(GetActivationFactory<BitmapImage, IBitmapImageFactory>().CreateInstanceWithUriSource(uriSource))
+    BitmapImage(get_activation_factory<BitmapImage, IBitmapImageFactory>().CreateInstanceWithUriSource(uriSource))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::CreateOptionsProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics>().CreateOptionsProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics>().CreateOptionsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::UriSourceProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics>().UriSourceProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics>().UriSourceProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::DecodePixelWidthProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics>().DecodePixelWidthProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics>().DecodePixelWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::DecodePixelHeightProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics>().DecodePixelHeightProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics>().DecodePixelHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::DecodePixelTypeProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics2>().DecodePixelTypeProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics2>().DecodePixelTypeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::IsAnimatedBitmapProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics3>().IsAnimatedBitmapProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics3>().IsAnimatedBitmapProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::IsPlayingProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics3>().IsPlayingProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics3>().IsPlayingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapImage::AutoPlayProperty()
 {
-    return GetActivationFactory<BitmapImage, IBitmapImageStatics3>().AutoPlayProperty();
+    return get_activation_factory<BitmapImage, IBitmapImageStatics3>().AutoPlayProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapSource::PixelWidthProperty()
 {
-    return GetActivationFactory<BitmapSource, IBitmapSourceStatics>().PixelWidthProperty();
+    return get_activation_factory<BitmapSource, IBitmapSourceStatics>().PixelWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BitmapSource::PixelHeightProperty()
 {
-    return GetActivationFactory<BitmapSource, IBitmapSourceStatics>().PixelHeightProperty();
+    return get_activation_factory<BitmapSource, IBitmapSourceStatics>().PixelHeightProperty();
 }
 
 inline RenderTargetBitmap::RenderTargetBitmap() :
-    RenderTargetBitmap(ActivateInstance<RenderTargetBitmap>())
+    RenderTargetBitmap(activate_instance<RenderTargetBitmap>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RenderTargetBitmap::PixelWidthProperty()
 {
-    return GetActivationFactory<RenderTargetBitmap, IRenderTargetBitmapStatics>().PixelWidthProperty();
+    return get_activation_factory<RenderTargetBitmap, IRenderTargetBitmapStatics>().PixelWidthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RenderTargetBitmap::PixelHeightProperty()
 {
-    return GetActivationFactory<RenderTargetBitmap, IRenderTargetBitmapStatics>().PixelHeightProperty();
+    return get_activation_factory<RenderTargetBitmap, IRenderTargetBitmapStatics>().PixelHeightProperty();
 }
 
 inline SoftwareBitmapSource::SoftwareBitmapSource() :
-    SoftwareBitmapSource(ActivateInstance<SoftwareBitmapSource>())
+    SoftwareBitmapSource(activate_instance<SoftwareBitmapSource>())
 {}
 
 inline SurfaceImageSource::SurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, outer, inner));
+    impl_move(get_activation_factory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, outer, inner));
 }
 
 inline SurfaceImageSource::SurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque)
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, outer, inner));
+    impl_move(get_activation_factory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, outer, inner));
 }
 
 inline VirtualSurfaceImageSource::VirtualSurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight) :
-    VirtualSurfaceImageSource(GetActivationFactory<VirtualSurfaceImageSource, IVirtualSurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight))
+    VirtualSurfaceImageSource(get_activation_factory<VirtualSurfaceImageSource, IVirtualSurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight))
 {}
 
 inline VirtualSurfaceImageSource::VirtualSurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque) :
-    VirtualSurfaceImageSource(GetActivationFactory<VirtualSurfaceImageSource, IVirtualSurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque))
+    VirtualSurfaceImageSource(get_activation_factory<VirtualSurfaceImageSource, IVirtualSurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque))
 {}
 
 inline WriteableBitmap::WriteableBitmap(int32_t pixelWidth, int32_t pixelHeight) :
-    WriteableBitmap(GetActivationFactory<WriteableBitmap, IWriteableBitmapFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight))
+    WriteableBitmap(get_activation_factory<WriteableBitmap, IWriteableBitmapFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight))
 {}
 
 }

@@ -3434,191 +3434,191 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynMessageInfo impl_IAllJoy
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort)
 {
-    return GetActivationFactory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort);
+    return get_activation_factory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language)
 {
-    return GetActivationFactory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language);
+    return get_activation_factory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language);
 }
 
 inline AllJoynAcceptSessionJoinerEventArgs::AllJoynAcceptSessionJoinerEventArgs(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) :
-    AllJoynAcceptSessionJoinerEventArgs(GetActivationFactory<AllJoynAcceptSessionJoinerEventArgs, IAllJoynAcceptSessionJoinerEventArgsFactory>().Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner))
+    AllJoynAcceptSessionJoinerEventArgs(get_activation_factory<AllJoynAcceptSessionJoinerEventArgs, IAllJoynAcceptSessionJoinerEventArgsFactory>().Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner))
 {}
 
 inline AllJoynBusAttachment::AllJoynBusAttachment() :
-    AllJoynBusAttachment(ActivateInstance<AllJoynBusAttachment>())
+    AllJoynBusAttachment(activate_instance<AllJoynBusAttachment>())
 {}
 
 inline AllJoynBusAttachment::AllJoynBusAttachment(hstring_ref connectionSpecification) :
-    AllJoynBusAttachment(GetActivationFactory<AllJoynBusAttachment, IAllJoynBusAttachmentFactory>().Create(connectionSpecification))
+    AllJoynBusAttachment(get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentFactory>().Create(connectionSpecification))
 {}
 
 inline Windows::Devices::AllJoyn::AllJoynBusAttachment AllJoynBusAttachment::GetDefault()
 {
-    return GetActivationFactory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetDefault();
+    return get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetDefault();
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher AllJoynBusAttachment::GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces)
 {
-    return GetActivationFactory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetWatcher(requiredInterfaces);
+    return get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetWatcher(requiredInterfaces);
 }
 
 inline AllJoynBusObject::AllJoynBusObject() :
-    AllJoynBusObject(ActivateInstance<AllJoynBusObject>())
+    AllJoynBusObject(activate_instance<AllJoynBusObject>())
 {}
 
 inline AllJoynBusObject::AllJoynBusObject(hstring_ref objectPath) :
-    AllJoynBusObject(GetActivationFactory<AllJoynBusObject, IAllJoynBusObjectFactory>().Create(objectPath))
+    AllJoynBusObject(get_activation_factory<AllJoynBusObject, IAllJoynBusObjectFactory>().Create(objectPath))
 {}
 
 inline AllJoynBusObject::AllJoynBusObject(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) :
-    AllJoynBusObject(GetActivationFactory<AllJoynBusObject, IAllJoynBusObjectFactory>().CreateWithBusAttachment(objectPath, busAttachment))
+    AllJoynBusObject(get_activation_factory<AllJoynBusObject, IAllJoynBusObjectFactory>().CreateWithBusAttachment(objectPath, busAttachment))
 {}
 
 inline AllJoynBusObjectStoppedEventArgs::AllJoynBusObjectStoppedEventArgs(int32_t status) :
-    AllJoynBusObjectStoppedEventArgs(GetActivationFactory<AllJoynBusObjectStoppedEventArgs, IAllJoynBusObjectStoppedEventArgsFactory>().Create(status))
+    AllJoynBusObjectStoppedEventArgs(get_activation_factory<AllJoynBusObjectStoppedEventArgs, IAllJoynBusObjectStoppedEventArgsFactory>().Create(status))
 {}
 
 inline AllJoynMessageInfo::AllJoynMessageInfo(hstring_ref senderUniqueName) :
-    AllJoynMessageInfo(GetActivationFactory<AllJoynMessageInfo, IAllJoynMessageInfoFactory>().Create(senderUniqueName))
+    AllJoynMessageInfo(get_activation_factory<AllJoynMessageInfo, IAllJoynMessageInfoFactory>().Create(senderUniqueName))
 {}
 
 inline AllJoynProducerStoppedEventArgs::AllJoynProducerStoppedEventArgs(int32_t status) :
-    AllJoynProducerStoppedEventArgs(GetActivationFactory<AllJoynProducerStoppedEventArgs, IAllJoynProducerStoppedEventArgsFactory>().Create(status))
+    AllJoynProducerStoppedEventArgs(get_activation_factory<AllJoynProducerStoppedEventArgs, IAllJoynProducerStoppedEventArgsFactory>().Create(status))
 {}
 
 inline AllJoynServiceInfo::AllJoynServiceInfo(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) :
-    AllJoynServiceInfo(GetActivationFactory<AllJoynServiceInfo, IAllJoynServiceInfoFactory>().Create(uniqueName, objectPath, sessionPort))
+    AllJoynServiceInfo(get_activation_factory<AllJoynServiceInfo, IAllJoynServiceInfoFactory>().Create(uniqueName, objectPath, sessionPort))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> AllJoynServiceInfo::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<AllJoynServiceInfo, IAllJoynServiceInfoStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<AllJoynServiceInfo, IAllJoynServiceInfoStatics>().FromIdAsync(deviceId);
 }
 
 inline AllJoynServiceInfoRemovedEventArgs::AllJoynServiceInfoRemovedEventArgs(hstring_ref uniqueName) :
-    AllJoynServiceInfoRemovedEventArgs(GetActivationFactory<AllJoynServiceInfoRemovedEventArgs, IAllJoynServiceInfoRemovedEventArgsFactory>().Create(uniqueName))
+    AllJoynServiceInfoRemovedEventArgs(get_activation_factory<AllJoynServiceInfoRemovedEventArgs, IAllJoynServiceInfoRemovedEventArgsFactory>().Create(uniqueName))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> AllJoynSession::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo)
 {
-    return GetActivationFactory<AllJoynSession, IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo);
+    return get_activation_factory<AllJoynSession, IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> AllJoynSession::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment)
 {
-    return GetActivationFactory<AllJoynSession, IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo, busAttachment);
+    return get_activation_factory<AllJoynSession, IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo, busAttachment);
 }
 
 inline AllJoynSessionJoinedEventArgs::AllJoynSessionJoinedEventArgs(const Windows::Devices::AllJoyn::AllJoynSession & session) :
-    AllJoynSessionJoinedEventArgs(GetActivationFactory<AllJoynSessionJoinedEventArgs, IAllJoynSessionJoinedEventArgsFactory>().Create(session))
+    AllJoynSessionJoinedEventArgs(get_activation_factory<AllJoynSessionJoinedEventArgs, IAllJoynSessionJoinedEventArgsFactory>().Create(session))
 {}
 
 inline AllJoynSessionLostEventArgs::AllJoynSessionLostEventArgs(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason) :
-    AllJoynSessionLostEventArgs(GetActivationFactory<AllJoynSessionLostEventArgs, IAllJoynSessionLostEventArgsFactory>().Create(reason))
+    AllJoynSessionLostEventArgs(get_activation_factory<AllJoynSessionLostEventArgs, IAllJoynSessionLostEventArgsFactory>().Create(reason))
 {}
 
 inline AllJoynSessionMemberAddedEventArgs::AllJoynSessionMemberAddedEventArgs(hstring_ref uniqueName) :
-    AllJoynSessionMemberAddedEventArgs(GetActivationFactory<AllJoynSessionMemberAddedEventArgs, IAllJoynSessionMemberAddedEventArgsFactory>().Create(uniqueName))
+    AllJoynSessionMemberAddedEventArgs(get_activation_factory<AllJoynSessionMemberAddedEventArgs, IAllJoynSessionMemberAddedEventArgsFactory>().Create(uniqueName))
 {}
 
 inline AllJoynSessionMemberRemovedEventArgs::AllJoynSessionMemberRemovedEventArgs(hstring_ref uniqueName) :
-    AllJoynSessionMemberRemovedEventArgs(GetActivationFactory<AllJoynSessionMemberRemovedEventArgs, IAllJoynSessionMemberRemovedEventArgsFactory>().Create(uniqueName))
+    AllJoynSessionMemberRemovedEventArgs(get_activation_factory<AllJoynSessionMemberRemovedEventArgs, IAllJoynSessionMemberRemovedEventArgsFactory>().Create(uniqueName))
 {}
 
 inline int32_t AllJoynStatus::Ok()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().Ok();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().Ok();
 }
 
 inline int32_t AllJoynStatus::Fail()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().Fail();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().Fail();
 }
 
 inline int32_t AllJoynStatus::OperationTimedOut()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().OperationTimedOut();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().OperationTimedOut();
 }
 
 inline int32_t AllJoynStatus::OtherEndClosed()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().OtherEndClosed();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().OtherEndClosed();
 }
 
 inline int32_t AllJoynStatus::ConnectionRefused()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().ConnectionRefused();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().ConnectionRefused();
 }
 
 inline int32_t AllJoynStatus::AuthenticationFailed()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().AuthenticationFailed();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().AuthenticationFailed();
 }
 
 inline int32_t AllJoynStatus::AuthenticationRejectedByUser()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().AuthenticationRejectedByUser();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().AuthenticationRejectedByUser();
 }
 
 inline int32_t AllJoynStatus::SslConnectFailed()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().SslConnectFailed();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().SslConnectFailed();
 }
 
 inline int32_t AllJoynStatus::SslIdentityVerificationFailed()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().SslIdentityVerificationFailed();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().SslIdentityVerificationFailed();
 }
 
 inline int32_t AllJoynStatus::InsufficientSecurity()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InsufficientSecurity();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InsufficientSecurity();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument1()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument1();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument1();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument2()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument2();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument2();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument3()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument3();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument3();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument4()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument4();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument4();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument5()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument5();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument5();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument6()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument6();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument6();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument7()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument7();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument7();
 }
 
 inline int32_t AllJoynStatus::InvalidArgument8()
 {
-    return GetActivationFactory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument8();
+    return get_activation_factory<AllJoynStatus, IAllJoynStatusStatics>().InvalidArgument8();
 }
 
 inline AllJoynWatcherStoppedEventArgs::AllJoynWatcherStoppedEventArgs(int32_t status) :
-    AllJoynWatcherStoppedEventArgs(GetActivationFactory<AllJoynWatcherStoppedEventArgs, IAllJoynWatcherStoppedEventArgsFactory>().Create(status))
+    AllJoynWatcherStoppedEventArgs(get_activation_factory<AllJoynWatcherStoppedEventArgs, IAllJoynWatcherStoppedEventArgsFactory>().Create(status))
 {}
 
 }

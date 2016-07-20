@@ -2098,105 +2098,105 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Net
 }
 
 inline BackgroundDownloader::BackgroundDownloader() :
-    BackgroundDownloader(ActivateInstance<BackgroundDownloader>())
+    BackgroundDownloader(activate_instance<BackgroundDownloader>())
 {}
 
 inline BackgroundDownloader::BackgroundDownloader(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) :
-    BackgroundDownloader(GetActivationFactory<BackgroundDownloader, IBackgroundDownloaderFactory>().CreateWithCompletionGroup(completionGroup))
+    BackgroundDownloader(get_activation_factory<BackgroundDownloader, IBackgroundDownloaderFactory>().CreateWithCompletionGroup(completionGroup))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync()
 {
-    return GetActivationFactory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync();
+    return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync(hstring_ref group)
 {
-    return GetActivationFactory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync(group);
+    return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync(group);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group)
 {
-    return GetActivationFactory<BackgroundDownloader, IBackgroundDownloaderStaticMethods2>().GetCurrentDownloadsForTransferGroupAsync(group);
+    return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods2>().GetCurrentDownloadsForTransferGroupAsync(group);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundDownloader::RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations)
 {
-    return GetActivationFactory<BackgroundDownloader, IBackgroundDownloaderUserConsent>().RequestUnconstrainedDownloadsAsync(operations);
+    return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderUserConsent>().RequestUnconstrainedDownloadsAsync(operations);
 }
 
 inline BackgroundTransferCompletionGroup::BackgroundTransferCompletionGroup() :
-    BackgroundTransferCompletionGroup(ActivateInstance<BackgroundTransferCompletionGroup>())
+    BackgroundTransferCompletionGroup(activate_instance<BackgroundTransferCompletionGroup>())
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart() :
-    BackgroundTransferContentPart(ActivateInstance<BackgroundTransferContentPart>())
+    BackgroundTransferContentPart(activate_instance<BackgroundTransferContentPart>())
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_ref name) :
-    BackgroundTransferContentPart(GetActivationFactory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithName(name))
+    BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithName(name))
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_ref name, hstring_ref fileName) :
-    BackgroundTransferContentPart(GetActivationFactory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithNameAndFileName(name, fileName))
+    BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithNameAndFileName(name, fileName))
 {}
 
 inline Windows::Web::WebErrorStatus BackgroundTransferError::GetStatus(int32_t hresult)
 {
-    return GetActivationFactory<BackgroundTransferError, IBackgroundTransferErrorStaticMethods>().GetStatus(hresult);
+    return get_activation_factory<BackgroundTransferError, IBackgroundTransferErrorStaticMethods>().GetStatus(hresult);
 }
 
 inline Windows::Networking::BackgroundTransfer::BackgroundTransferGroup BackgroundTransferGroup::CreateGroup(hstring_ref name)
 {
-    return GetActivationFactory<BackgroundTransferGroup, IBackgroundTransferGroupStatics>().CreateGroup(name);
+    return get_activation_factory<BackgroundTransferGroup, IBackgroundTransferGroupStatics>().CreateGroup(name);
 }
 
 inline BackgroundUploader::BackgroundUploader() :
-    BackgroundUploader(ActivateInstance<BackgroundUploader>())
+    BackgroundUploader(activate_instance<BackgroundUploader>())
 {}
 
 inline BackgroundUploader::BackgroundUploader(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) :
-    BackgroundUploader(GetActivationFactory<BackgroundUploader, IBackgroundUploaderFactory>().CreateWithCompletionGroup(completionGroup))
+    BackgroundUploader(get_activation_factory<BackgroundUploader, IBackgroundUploaderFactory>().CreateWithCompletionGroup(completionGroup))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync()
 {
-    return GetActivationFactory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync();
+    return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync(hstring_ref group)
 {
-    return GetActivationFactory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync(group);
+    return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync(group);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group)
 {
-    return GetActivationFactory<BackgroundUploader, IBackgroundUploaderStaticMethods2>().GetCurrentUploadsForTransferGroupAsync(group);
+    return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods2>().GetCurrentUploadsForTransferGroupAsync(group);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundUploader::RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations)
 {
-    return GetActivationFactory<BackgroundUploader, IBackgroundUploaderUserConsent>().RequestUnconstrainedUploadsAsync(operations);
+    return get_activation_factory<BackgroundUploader, IBackgroundUploaderUserConsent>().RequestUnconstrainedUploadsAsync(operations);
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ContentPrefetcher::ContentUris()
 {
-    return GetActivationFactory<ContentPrefetcher, IContentPrefetcher>().ContentUris();
+    return get_activation_factory<ContentPrefetcher, IContentPrefetcher>().ContentUris();
 }
 
 inline void ContentPrefetcher::IndirectContentUri(const Windows::Foundation::Uri & value)
 {
-    GetActivationFactory<ContentPrefetcher, IContentPrefetcher>().IndirectContentUri(value);
+    get_activation_factory<ContentPrefetcher, IContentPrefetcher>().IndirectContentUri(value);
 }
 
 inline Windows::Foundation::Uri ContentPrefetcher::IndirectContentUri()
 {
-    return GetActivationFactory<ContentPrefetcher, IContentPrefetcher>().IndirectContentUri();
+    return get_activation_factory<ContentPrefetcher, IContentPrefetcher>().IndirectContentUri();
 }
 
 inline Windows::Foundation::IReference<Windows::Foundation::DateTime> ContentPrefetcher::LastSuccessfulPrefetchTime()
 {
-    return GetActivationFactory<ContentPrefetcher, IContentPrefetcherTime>().LastSuccessfulPrefetchTime();
+    return get_activation_factory<ContentPrefetcher, IContentPrefetcherTime>().LastSuccessfulPrefetchTime();
 }
 
 }

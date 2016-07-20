@@ -2482,122 +2482,122 @@ template <typename D> void impl_ISharedStorageAccessManagerStatics<D>::RemoveFil
 
 inline Windows::ApplicationModel::DataTransfer::DataPackageView Clipboard::GetContent()
 {
-    return GetActivationFactory<Clipboard, IClipboardStatics>().GetContent();
+    return get_activation_factory<Clipboard, IClipboardStatics>().GetContent();
 }
 
 inline void Clipboard::SetContent(const Windows::ApplicationModel::DataTransfer::DataPackage & content)
 {
-    GetActivationFactory<Clipboard, IClipboardStatics>().SetContent(content);
+    get_activation_factory<Clipboard, IClipboardStatics>().SetContent(content);
 }
 
 inline void Clipboard::Flush()
 {
-    GetActivationFactory<Clipboard, IClipboardStatics>().Flush();
+    get_activation_factory<Clipboard, IClipboardStatics>().Flush();
 }
 
 inline void Clipboard::Clear()
 {
-    GetActivationFactory<Clipboard, IClipboardStatics>().Clear();
+    get_activation_factory<Clipboard, IClipboardStatics>().Clear();
 }
 
 inline event_token Clipboard::ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
 {
-    return GetActivationFactory<Clipboard, IClipboardStatics>().ContentChanged(changeHandler);
+    return get_activation_factory<Clipboard, IClipboardStatics>().ContentChanged(changeHandler);
 }
 
 inline factory_event_revoker<IClipboardStatics> Clipboard::ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
 {
-    auto factory = GetActivationFactory<Clipboard, IClipboardStatics>();
+    auto factory = get_activation_factory<Clipboard, IClipboardStatics>();
     return { factory, &ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics::remove_ContentChanged, factory.ContentChanged(changeHandler) };
 }
 
 inline void Clipboard::ContentChanged(event_token token)
 {
-    GetActivationFactory<Clipboard, IClipboardStatics>().ContentChanged(token);
+    get_activation_factory<Clipboard, IClipboardStatics>().ContentChanged(token);
 }
 
 inline DataPackage::DataPackage() :
-    DataPackage(ActivateInstance<DataPackage>())
+    DataPackage(activate_instance<DataPackage>())
 {}
 
 inline void DataTransferManager::ShowShareUI()
 {
-    GetActivationFactory<DataTransferManager, IDataTransferManagerStatics>().ShowShareUI();
+    get_activation_factory<DataTransferManager, IDataTransferManagerStatics>().ShowShareUI();
 }
 
 inline Windows::ApplicationModel::DataTransfer::DataTransferManager DataTransferManager::GetForCurrentView()
 {
-    return GetActivationFactory<DataTransferManager, IDataTransferManagerStatics>().GetForCurrentView();
+    return get_activation_factory<DataTransferManager, IDataTransferManagerStatics>().GetForCurrentView();
 }
 
 inline bool DataTransferManager::IsSupported()
 {
-    return GetActivationFactory<DataTransferManager, IDataTransferManagerStatics2>().IsSupported();
+    return get_activation_factory<DataTransferManager, IDataTransferManagerStatics2>().IsSupported();
 }
 
 inline hstring HtmlFormatHelper::GetStaticFragment(hstring_ref htmlFormat)
 {
-    return GetActivationFactory<HtmlFormatHelper, IHtmlFormatHelperStatics>().GetStaticFragment(htmlFormat);
+    return get_activation_factory<HtmlFormatHelper, IHtmlFormatHelperStatics>().GetStaticFragment(htmlFormat);
 }
 
 inline hstring HtmlFormatHelper::CreateHtmlFormat(hstring_ref htmlFragment)
 {
-    return GetActivationFactory<HtmlFormatHelper, IHtmlFormatHelperStatics>().CreateHtmlFormat(htmlFragment);
+    return get_activation_factory<HtmlFormatHelper, IHtmlFormatHelperStatics>().CreateHtmlFormat(htmlFragment);
 }
 
 inline hstring SharedStorageAccessManager::AddFile(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().AddFile(file);
+    return get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().AddFile(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SharedStorageAccessManager::RedeemTokenForFileAsync(hstring_ref token)
 {
-    return GetActivationFactory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RedeemTokenForFileAsync(token);
+    return get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RedeemTokenForFileAsync(token);
 }
 
 inline void SharedStorageAccessManager::RemoveFile(hstring_ref token)
 {
-    GetActivationFactory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RemoveFile(token);
+    get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RemoveFile(token);
 }
 
 inline hstring StandardDataFormats::Text()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().Text();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().Text();
 }
 
 inline hstring StandardDataFormats::Uri()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().Uri();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().Uri();
 }
 
 inline hstring StandardDataFormats::Html()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().Html();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().Html();
 }
 
 inline hstring StandardDataFormats::Rtf()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().Rtf();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().Rtf();
 }
 
 inline hstring StandardDataFormats::Bitmap()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().Bitmap();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().Bitmap();
 }
 
 inline hstring StandardDataFormats::StorageItems()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics>().StorageItems();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics>().StorageItems();
 }
 
 inline hstring StandardDataFormats::WebLink()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics2>().WebLink();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics2>().WebLink();
 }
 
 inline hstring StandardDataFormats::ApplicationLink()
 {
-    return GetActivationFactory<StandardDataFormats, IStandardDataFormatsStatics2>().ApplicationLink();
+    return get_activation_factory<StandardDataFormats, IStandardDataFormatsStatics2>().ApplicationLink();
 }
 
 }

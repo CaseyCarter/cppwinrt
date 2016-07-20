@@ -1726,68 +1726,68 @@ template <typename D> bool impl_IRandomAccessStream<D>::CanWrite() const
 }
 
 inline Buffer::Buffer(uint32_t capacity) :
-    Buffer(GetActivationFactory<Buffer, IBufferFactory>().Create(capacity))
+    Buffer(get_activation_factory<Buffer, IBufferFactory>().Create(capacity))
 {}
 
 inline Windows::Storage::Streams::Buffer Buffer::CreateCopyFromMemoryBuffer(const Windows::Foundation::IMemoryBuffer & input)
 {
-    return GetActivationFactory<Buffer, IBufferStatics>().CreateCopyFromMemoryBuffer(input);
+    return get_activation_factory<Buffer, IBufferStatics>().CreateCopyFromMemoryBuffer(input);
 }
 
 inline Windows::Foundation::MemoryBuffer Buffer::CreateMemoryBufferOverIBuffer(const Windows::Storage::Streams::IBuffer & input)
 {
-    return GetActivationFactory<Buffer, IBufferStatics>().CreateMemoryBufferOverIBuffer(input);
+    return get_activation_factory<Buffer, IBufferStatics>().CreateMemoryBufferOverIBuffer(input);
 }
 
 inline DataReader::DataReader(const Windows::Storage::Streams::IInputStream & inputStream) :
-    DataReader(GetActivationFactory<DataReader, IDataReaderFactory>().CreateDataReader(inputStream))
+    DataReader(get_activation_factory<DataReader, IDataReaderFactory>().CreateDataReader(inputStream))
 {}
 
 inline Windows::Storage::Streams::DataReader DataReader::FromBuffer(const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<DataReader, IDataReaderStatics>().FromBuffer(buffer);
+    return get_activation_factory<DataReader, IDataReaderStatics>().FromBuffer(buffer);
 }
 
 inline DataWriter::DataWriter() :
-    DataWriter(ActivateInstance<DataWriter>())
+    DataWriter(activate_instance<DataWriter>())
 {}
 
 inline DataWriter::DataWriter(const Windows::Storage::Streams::IOutputStream & outputStream) :
-    DataWriter(GetActivationFactory<DataWriter, IDataWriterFactory>().CreateDataWriter(outputStream))
+    DataWriter(get_activation_factory<DataWriter, IDataWriterFactory>().CreateDataWriter(outputStream))
 {}
 
 inline InMemoryRandomAccessStream::InMemoryRandomAccessStream() :
-    InMemoryRandomAccessStream(ActivateInstance<InMemoryRandomAccessStream>())
+    InMemoryRandomAccessStream(activate_instance<InMemoryRandomAccessStream>())
 {}
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination)
 {
-    return GetActivationFactory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAsync(source, destination);
+    return get_activation_factory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAsync(source, destination);
 }
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy)
 {
-    return GetActivationFactory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAsync(source, destination, bytesToCopy);
+    return get_activation_factory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAsync(source, destination, bytesToCopy);
 }
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination)
 {
-    return GetActivationFactory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAndCloseAsync(source, destination);
+    return get_activation_factory<RandomAccessStream, IRandomAccessStreamStatics>().CopyAndCloseAsync(source, destination);
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromFile(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromFile(file);
+    return get_activation_factory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromFile(file);
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromUri(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromUri(uri);
+    return get_activation_factory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromUri(uri);
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromStream(stream);
+    return get_activation_factory<RandomAccessStreamReference, IRandomAccessStreamReferenceStatics>().CreateFromStream(stream);
 }
 
 }

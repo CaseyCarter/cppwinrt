@@ -7,8 +7,19 @@
 #include <restrictederrorinfo.h>
 #include <winstring.h>
 
+#include <algorithm>
+#include <array>
 #include <atomic>
 #include <chrono>
+#include <cstddef>
+#include <iterator>
+#include <memory>
+#include <new>
+#include <string>
+#include <stdexcept>
+#include <tuple>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
 extern "C"

@@ -598,35 +598,35 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::UI::Popups::
 }
 
 inline MessageDialog::MessageDialog(hstring_ref content) :
-    MessageDialog(GetActivationFactory<MessageDialog, IMessageDialogFactory>().Create(content))
+    MessageDialog(get_activation_factory<MessageDialog, IMessageDialogFactory>().Create(content))
 {}
 
 inline MessageDialog::MessageDialog(hstring_ref content, hstring_ref title) :
-    MessageDialog(GetActivationFactory<MessageDialog, IMessageDialogFactory>().CreateWithTitle(content, title))
+    MessageDialog(get_activation_factory<MessageDialog, IMessageDialogFactory>().CreateWithTitle(content, title))
 {}
 
 inline PopupMenu::PopupMenu() :
-    PopupMenu(ActivateInstance<PopupMenu>())
+    PopupMenu(activate_instance<PopupMenu>())
 {}
 
 inline UICommand::UICommand() :
-    UICommand(ActivateInstance<UICommand>())
+    UICommand(activate_instance<UICommand>())
 {}
 
 inline UICommand::UICommand(hstring_ref label) :
-    UICommand(GetActivationFactory<UICommand, IUICommandFactory>().Create(label))
+    UICommand(get_activation_factory<UICommand, IUICommandFactory>().Create(label))
 {}
 
 inline UICommand::UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) :
-    UICommand(GetActivationFactory<UICommand, IUICommandFactory>().CreateWithHandler(label, action))
+    UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandler(label, action))
 {}
 
 inline UICommand::UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) :
-    UICommand(GetActivationFactory<UICommand, IUICommandFactory>().CreateWithHandlerAndId(label, action, commandId))
+    UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandlerAndId(label, action, commandId))
 {}
 
 inline UICommandSeparator::UICommandSeparator() :
-    UICommandSeparator(ActivateInstance<UICommandSeparator>())
+    UICommandSeparator(activate_instance<UICommandSeparator>())
 {}
 
 }

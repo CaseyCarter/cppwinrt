@@ -1,5 +1,5 @@
 
     %T(%)
     {
-        GetActivationFactory<%, %>().%(%*this, m_inner);
+        get_activation_factory<%, %>().%(%*this, m_inner);
     }

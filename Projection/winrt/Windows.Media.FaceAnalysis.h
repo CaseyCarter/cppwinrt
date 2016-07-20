@@ -439,42 +439,42 @@ template <typename D> bool impl_IFaceTrackerStatics<D>::IsSupported() const
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> FaceDetector::CreateAsync()
 {
-    return GetActivationFactory<FaceDetector, IFaceDetectorStatics>().CreateAsync();
+    return get_activation_factory<FaceDetector, IFaceDetectorStatics>().CreateAsync();
 }
 
 inline Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> FaceDetector::GetSupportedBitmapPixelFormats()
 {
-    return GetActivationFactory<FaceDetector, IFaceDetectorStatics>().GetSupportedBitmapPixelFormats();
+    return get_activation_factory<FaceDetector, IFaceDetectorStatics>().GetSupportedBitmapPixelFormats();
 }
 
 inline bool FaceDetector::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat)
 {
-    return GetActivationFactory<FaceDetector, IFaceDetectorStatics>().IsBitmapPixelFormatSupported(bitmapPixelFormat);
+    return get_activation_factory<FaceDetector, IFaceDetectorStatics>().IsBitmapPixelFormatSupported(bitmapPixelFormat);
 }
 
 inline bool FaceDetector::IsSupported()
 {
-    return GetActivationFactory<FaceDetector, IFaceDetectorStatics>().IsSupported();
+    return get_activation_factory<FaceDetector, IFaceDetectorStatics>().IsSupported();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> FaceTracker::CreateAsync()
 {
-    return GetActivationFactory<FaceTracker, IFaceTrackerStatics>().CreateAsync();
+    return get_activation_factory<FaceTracker, IFaceTrackerStatics>().CreateAsync();
 }
 
 inline Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> FaceTracker::GetSupportedBitmapPixelFormats()
 {
-    return GetActivationFactory<FaceTracker, IFaceTrackerStatics>().GetSupportedBitmapPixelFormats();
+    return get_activation_factory<FaceTracker, IFaceTrackerStatics>().GetSupportedBitmapPixelFormats();
 }
 
 inline bool FaceTracker::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat)
 {
-    return GetActivationFactory<FaceTracker, IFaceTrackerStatics>().IsBitmapPixelFormatSupported(bitmapPixelFormat);
+    return get_activation_factory<FaceTracker, IFaceTrackerStatics>().IsBitmapPixelFormatSupported(bitmapPixelFormat);
 }
 
 inline bool FaceTracker::IsSupported()
 {
-    return GetActivationFactory<FaceTracker, IFaceTrackerStatics>().IsSupported();
+    return get_activation_factory<FaceTracker, IFaceTrackerStatics>().IsSupported();
 }
 
 }

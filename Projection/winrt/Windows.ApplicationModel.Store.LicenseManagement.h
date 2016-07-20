@@ -254,12 +254,12 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 
 inline Windows::Foundation::IAsyncAction LicenseManager::AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license)
 {
-    return GetActivationFactory<LicenseManager, ILicenseManagerStatics>().AddLicenseAsync(license);
+    return get_activation_factory<LicenseManager, ILicenseManagerStatics>().AddLicenseAsync(license);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> LicenseManager::GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds)
 {
-    return GetActivationFactory<LicenseManager, ILicenseManagerStatics>().GetSatisfactionInfosAsync(contentIds, keyIds);
+    return get_activation_factory<LicenseManager, ILicenseManagerStatics>().GetSatisfactionInfosAsync(contentIds, keyIds);
 }
 
 }

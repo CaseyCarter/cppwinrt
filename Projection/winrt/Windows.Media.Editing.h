@@ -1533,57 +1533,57 @@ template <typename D> Windows::Media::Effects::IVideoCompositorDefinition impl_I
 
 inline Windows::Media::Editing::BackgroundAudioTrack BackgroundAudioTrack::CreateFromEmbeddedAudioTrack(const Windows::Media::Editing::EmbeddedAudioTrack & embeddedAudioTrack)
 {
-    return GetActivationFactory<BackgroundAudioTrack, IBackgroundAudioTrackStatics>().CreateFromEmbeddedAudioTrack(embeddedAudioTrack);
+    return get_activation_factory<BackgroundAudioTrack, IBackgroundAudioTrackStatics>().CreateFromEmbeddedAudioTrack(embeddedAudioTrack);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> BackgroundAudioTrack::CreateFromFileAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<BackgroundAudioTrack, IBackgroundAudioTrackStatics>().CreateFromFileAsync(file);
+    return get_activation_factory<BackgroundAudioTrack, IBackgroundAudioTrackStatics>().CreateFromFileAsync(file);
 }
 
 inline Windows::Media::Editing::MediaClip MediaClip::CreateFromColor(const Windows::UI::Color & color, const Windows::Foundation::TimeSpan & originalDuration)
 {
-    return GetActivationFactory<MediaClip, IMediaClipStatics>().CreateFromColor(color, originalDuration);
+    return get_activation_factory<MediaClip, IMediaClipStatics>().CreateFromColor(color, originalDuration);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> MediaClip::CreateFromFileAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<MediaClip, IMediaClipStatics>().CreateFromFileAsync(file);
+    return get_activation_factory<MediaClip, IMediaClipStatics>().CreateFromFileAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> MediaClip::CreateFromImageFileAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::TimeSpan & originalDuration)
 {
-    return GetActivationFactory<MediaClip, IMediaClipStatics>().CreateFromImageFileAsync(file, originalDuration);
+    return get_activation_factory<MediaClip, IMediaClipStatics>().CreateFromImageFileAsync(file, originalDuration);
 }
 
 inline Windows::Media::Editing::MediaClip MediaClip::CreateFromSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, const Windows::Foundation::TimeSpan & originalDuration)
 {
-    return GetActivationFactory<MediaClip, IMediaClipStatics2>().CreateFromSurface(surface, originalDuration);
+    return get_activation_factory<MediaClip, IMediaClipStatics2>().CreateFromSurface(surface, originalDuration);
 }
 
 inline MediaComposition::MediaComposition() :
-    MediaComposition(ActivateInstance<MediaComposition>())
+    MediaComposition(activate_instance<MediaComposition>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> MediaComposition::LoadAsync(const Windows::Storage::StorageFile & file)
 {
-    return GetActivationFactory<MediaComposition, IMediaCompositionStatics>().LoadAsync(file);
+    return get_activation_factory<MediaComposition, IMediaCompositionStatics>().LoadAsync(file);
 }
 
 inline MediaOverlay::MediaOverlay(const Windows::Media::Editing::MediaClip & clip) :
-    MediaOverlay(GetActivationFactory<MediaOverlay, IMediaOverlayFactory>().Create(clip))
+    MediaOverlay(get_activation_factory<MediaOverlay, IMediaOverlayFactory>().Create(clip))
 {}
 
 inline MediaOverlay::MediaOverlay(const Windows::Media::Editing::MediaClip & clip, const Windows::Foundation::Rect & position, double opacity) :
-    MediaOverlay(GetActivationFactory<MediaOverlay, IMediaOverlayFactory>().CreateWithPositionAndOpacity(clip, position, opacity))
+    MediaOverlay(get_activation_factory<MediaOverlay, IMediaOverlayFactory>().CreateWithPositionAndOpacity(clip, position, opacity))
 {}
 
 inline MediaOverlayLayer::MediaOverlayLayer() :
-    MediaOverlayLayer(ActivateInstance<MediaOverlayLayer>())
+    MediaOverlayLayer(activate_instance<MediaOverlayLayer>())
 {}
 
 inline MediaOverlayLayer::MediaOverlayLayer(const Windows::Media::Effects::IVideoCompositorDefinition & compositorDefinition) :
-    MediaOverlayLayer(GetActivationFactory<MediaOverlayLayer, IMediaOverlayLayerFactory>().CreateWithCompositorDefinition(compositorDefinition))
+    MediaOverlayLayer(get_activation_factory<MediaOverlayLayer, IMediaOverlayLayerFactory>().CreateWithCompositorDefinition(compositorDefinition))
 {}
 
 }

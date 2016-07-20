@@ -1538,149 +1538,149 @@ template <typename D> Windows::Networking::Proximity::PeerWatcher impl_IPeerFind
 
 inline bool PeerFinder::AllowBluetooth()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowBluetooth();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowBluetooth();
 }
 
 inline void PeerFinder::AllowBluetooth(bool value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowBluetooth(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowBluetooth(value);
 }
 
 inline bool PeerFinder::AllowInfrastructure()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowInfrastructure();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowInfrastructure();
 }
 
 inline void PeerFinder::AllowInfrastructure(bool value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowInfrastructure(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowInfrastructure(value);
 }
 
 inline bool PeerFinder::AllowWiFiDirect()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowWiFiDirect();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowWiFiDirect();
 }
 
 inline void PeerFinder::AllowWiFiDirect(bool value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().AllowWiFiDirect(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().AllowWiFiDirect(value);
 }
 
 inline hstring PeerFinder::DisplayName()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().DisplayName();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().DisplayName();
 }
 
 inline void PeerFinder::DisplayName(hstring_ref value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().DisplayName(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().DisplayName(value);
 }
 
 inline Windows::Networking::Proximity::PeerDiscoveryTypes PeerFinder::SupportedDiscoveryTypes()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().SupportedDiscoveryTypes();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().SupportedDiscoveryTypes();
 }
 
 inline Windows::Foundation::Collections::IMap<hstring, hstring> PeerFinder::AlternateIdentities()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().AlternateIdentities();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().AlternateIdentities();
 }
 
 inline void PeerFinder::Start()
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().Start();
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().Start();
 }
 
 inline void PeerFinder::Start(hstring_ref peerMessage)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().Start(peerMessage);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().Start(peerMessage);
 }
 
 inline void PeerFinder::Stop()
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().Stop();
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().Stop();
 }
 
 inline event_token PeerFinder::TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(handler);
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(handler);
 }
 
 inline factory_event_revoker<IPeerFinderStatics> PeerFinder::TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<PeerFinder, IPeerFinderStatics>();
+    auto factory = get_activation_factory<PeerFinder, IPeerFinderStatics>();
     return { factory, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_TriggeredConnectionStateChanged, factory.TriggeredConnectionStateChanged(handler) };
 }
 
 inline void PeerFinder::TriggeredConnectionStateChanged(event_token cookie)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(cookie);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(cookie);
 }
 
 inline event_token PeerFinder::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().ConnectionRequested(handler);
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().ConnectionRequested(handler);
 }
 
 inline factory_event_revoker<IPeerFinderStatics> PeerFinder::ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<PeerFinder, IPeerFinderStatics>();
+    auto factory = get_activation_factory<PeerFinder, IPeerFinderStatics>();
     return { factory, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_ConnectionRequested, factory.ConnectionRequested(handler) };
 }
 
 inline void PeerFinder::ConnectionRequested(event_token cookie)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics>().ConnectionRequested(cookie);
+    get_activation_factory<PeerFinder, IPeerFinderStatics>().ConnectionRequested(cookie);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Proximity::PeerInformation>> PeerFinder::FindAllPeersAsync()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().FindAllPeersAsync();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().FindAllPeersAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::Sockets::StreamSocket> PeerFinder::ConnectAsync(const Windows::Networking::Proximity::PeerInformation & peerInformation)
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics>().ConnectAsync(peerInformation);
+    return get_activation_factory<PeerFinder, IPeerFinderStatics>().ConnectAsync(peerInformation);
 }
 
 inline Windows::Networking::Proximity::PeerRole PeerFinder::Role()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics2>().Role();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics2>().Role();
 }
 
 inline void PeerFinder::Role(Windows::Networking::Proximity::PeerRole value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics2>().Role(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics2>().Role(value);
 }
 
 inline Windows::Storage::Streams::IBuffer PeerFinder::DiscoveryData()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics2>().DiscoveryData();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics2>().DiscoveryData();
 }
 
 inline void PeerFinder::DiscoveryData(const Windows::Storage::Streams::IBuffer & value)
 {
-    GetActivationFactory<PeerFinder, IPeerFinderStatics2>().DiscoveryData(value);
+    get_activation_factory<PeerFinder, IPeerFinderStatics2>().DiscoveryData(value);
 }
 
 inline Windows::Networking::Proximity::PeerWatcher PeerFinder::CreateWatcher()
 {
-    return GetActivationFactory<PeerFinder, IPeerFinderStatics2>().CreateWatcher();
+    return get_activation_factory<PeerFinder, IPeerFinderStatics2>().CreateWatcher();
 }
 
 inline hstring ProximityDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<ProximityDevice, IProximityDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<ProximityDevice, IProximityDeviceStatics>().GetDeviceSelector();
 }
 
 inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::GetDefault()
 {
-    return GetActivationFactory<ProximityDevice, IProximityDeviceStatics>().GetDefault();
+    return get_activation_factory<ProximityDevice, IProximityDeviceStatics>().GetDefault();
 }
 
 inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::FromId(hstring_ref deviceId)
 {
-    return GetActivationFactory<ProximityDevice, IProximityDeviceStatics>().FromId(deviceId);
+    return get_activation_factory<ProximityDevice, IProximityDeviceStatics>().FromId(deviceId);
 }
 
 }

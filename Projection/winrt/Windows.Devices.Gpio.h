@@ -421,17 +421,17 @@ template <typename D> Windows::Devices::Gpio::GpioPinValue impl_IGpioPin<D>::Rea
 
 inline Windows::Devices::Gpio::GpioController GpioController::GetDefault()
 {
-    return GetActivationFactory<GpioController, IGpioControllerStatics>().GetDefault();
+    return get_activation_factory<GpioController, IGpioControllerStatics>().GetDefault();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> GpioController::GetControllersAsync(const Windows::Devices::Gpio::Provider::IGpioProvider & provider)
 {
-    return GetActivationFactory<GpioController, IGpioControllerStatics2>().GetControllersAsync(provider);
+    return get_activation_factory<GpioController, IGpioControllerStatics2>().GetControllersAsync(provider);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> GpioController::GetDefaultAsync()
 {
-    return GetActivationFactory<GpioController, IGpioControllerStatics2>().GetDefaultAsync();
+    return get_activation_factory<GpioController, IGpioControllerStatics2>().GetDefaultAsync();
 }
 
 }

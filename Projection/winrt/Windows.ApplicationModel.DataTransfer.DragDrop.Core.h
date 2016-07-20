@@ -720,11 +720,11 @@ template <typename D> void impl_ICoreDropOperationTargetRequestedEventArgs<D>::S
 
 inline Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager CoreDragDropManager::GetForCurrentView()
 {
-    return GetActivationFactory<CoreDragDropManager, ICoreDragDropManagerStatics>().GetForCurrentView();
+    return get_activation_factory<CoreDragDropManager, ICoreDragDropManagerStatics>().GetForCurrentView();
 }
 
 inline CoreDragOperation::CoreDragOperation() :
-    CoreDragOperation(ActivateInstance<CoreDragOperation>())
+    CoreDragOperation(activate_instance<CoreDragOperation>())
 {}
 
 }

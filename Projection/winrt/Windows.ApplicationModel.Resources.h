@@ -204,36 +204,36 @@ template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_
 }
 
 inline ResourceLoader::ResourceLoader() :
-    ResourceLoader(ActivateInstance<ResourceLoader>())
+    ResourceLoader(activate_instance<ResourceLoader>())
 {}
 
 inline ResourceLoader::ResourceLoader(hstring_ref name) :
-    ResourceLoader(GetActivationFactory<ResourceLoader, IResourceLoaderFactory>().CreateResourceLoaderByName(name))
+    ResourceLoader(get_activation_factory<ResourceLoader, IResourceLoaderFactory>().CreateResourceLoaderByName(name))
 {}
 
 inline hstring ResourceLoader::GetStringForReference(const Windows::Foundation::Uri & uri)
 {
-    return GetActivationFactory<ResourceLoader, IResourceLoaderStatics>().GetStringForReference(uri);
+    return get_activation_factory<ResourceLoader, IResourceLoaderStatics>().GetStringForReference(uri);
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView()
 {
-    return GetActivationFactory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView();
+    return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView();
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView(hstring_ref name)
 {
-    return GetActivationFactory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView(name);
+    return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView(name);
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse()
 {
-    return GetActivationFactory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse();
+    return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse();
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse(hstring_ref name)
 {
-    return GetActivationFactory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse(name);
+    return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse(name);
 }
 
 }

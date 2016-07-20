@@ -6739,100 +6739,100 @@ template <typename D> Windows::Media::Playback::TimedMetadataTrackPresentationMo
 
 inline Windows::Media::Playback::MediaPlayer BackgroundMediaPlayer::Current()
 {
-    return GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().Current();
+    return get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().Current();
 }
 
 inline event_token BackgroundMediaPlayer::MessageReceivedFromBackground(const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value)
 {
-    return GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromBackground(value);
+    return get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromBackground(value);
 }
 
 inline factory_event_revoker<IBackgroundMediaPlayerStatics> BackgroundMediaPlayer::MessageReceivedFromBackground(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value)
 {
-    auto factory = GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>();
+    auto factory = get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>();
     return { factory, &ABI::Windows::Media::Playback::IBackgroundMediaPlayerStatics::remove_MessageReceivedFromBackground, factory.MessageReceivedFromBackground(value) };
 }
 
 inline void BackgroundMediaPlayer::MessageReceivedFromBackground(event_token token)
 {
-    GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromBackground(token);
+    get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromBackground(token);
 }
 
 inline event_token BackgroundMediaPlayer::MessageReceivedFromForeground(const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value)
 {
-    return GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromForeground(value);
+    return get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromForeground(value);
 }
 
 inline factory_event_revoker<IBackgroundMediaPlayerStatics> BackgroundMediaPlayer::MessageReceivedFromForeground(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value)
 {
-    auto factory = GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>();
+    auto factory = get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>();
     return { factory, &ABI::Windows::Media::Playback::IBackgroundMediaPlayerStatics::remove_MessageReceivedFromForeground, factory.MessageReceivedFromForeground(value) };
 }
 
 inline void BackgroundMediaPlayer::MessageReceivedFromForeground(event_token token)
 {
-    GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromForeground(token);
+    get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().MessageReceivedFromForeground(token);
 }
 
 inline void BackgroundMediaPlayer::SendMessageToBackground(const Windows::Foundation::Collections::ValueSet & value)
 {
-    GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().SendMessageToBackground(value);
+    get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().SendMessageToBackground(value);
 }
 
 inline void BackgroundMediaPlayer::SendMessageToForeground(const Windows::Foundation::Collections::ValueSet & value)
 {
-    GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().SendMessageToForeground(value);
+    get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().SendMessageToForeground(value);
 }
 
 inline bool BackgroundMediaPlayer::IsMediaPlaying()
 {
-    return GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().IsMediaPlaying();
+    return get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().IsMediaPlaying();
 }
 
 inline void BackgroundMediaPlayer::Shutdown()
 {
-    GetActivationFactory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().Shutdown();
+    get_activation_factory<BackgroundMediaPlayer, IBackgroundMediaPlayerStatics>().Shutdown();
 }
 
 inline MediaBreak::MediaBreak(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod) :
-    MediaBreak(GetActivationFactory<MediaBreak, IMediaBreakFactory>().Create(insertionMethod))
+    MediaBreak(get_activation_factory<MediaBreak, IMediaBreakFactory>().Create(insertionMethod))
 {}
 
 inline MediaBreak::MediaBreak(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod, const Windows::Foundation::TimeSpan & presentationPosition) :
-    MediaBreak(GetActivationFactory<MediaBreak, IMediaBreakFactory>().CreateWithPresentationPosition(insertionMethod, presentationPosition))
+    MediaBreak(get_activation_factory<MediaBreak, IMediaBreakFactory>().CreateWithPresentationPosition(insertionMethod, presentationPosition))
 {}
 
 inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source) :
-    MediaPlaybackItem(GetActivationFactory<MediaPlaybackItem, IMediaPlaybackItemFactory>().Create(source))
+    MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory>().Create(source))
 {}
 
 inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime) :
-    MediaPlaybackItem(GetActivationFactory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTime(source, startTime))
+    MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTime(source, startTime))
 {}
 
 inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime, const Windows::Foundation::TimeSpan & durationLimit) :
-    MediaPlaybackItem(GetActivationFactory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTimeAndDurationLimit(source, startTime, durationLimit))
+    MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTimeAndDurationLimit(source, startTime, durationLimit))
 {}
 
 inline Windows::Media::Playback::MediaPlaybackItem MediaPlaybackItem::FindFromMediaSource(const Windows::Media::Core::MediaSource & source)
 {
-    return GetActivationFactory<MediaPlaybackItem, IMediaPlaybackItemStatics>().FindFromMediaSource(source);
+    return get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemStatics>().FindFromMediaSource(source);
 }
 
 inline MediaPlaybackList::MediaPlaybackList() :
-    MediaPlaybackList(ActivateInstance<MediaPlaybackList>())
+    MediaPlaybackList(activate_instance<MediaPlaybackList>())
 {}
 
 inline MediaPlayer::MediaPlayer() :
-    MediaPlayer(ActivateInstance<MediaPlayer>())
+    MediaPlayer(activate_instance<MediaPlayer>())
 {}
 
 inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value) :
-    PlaybackMediaMarker(GetActivationFactory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().CreateFromTime(value))
+    PlaybackMediaMarker(get_activation_factory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().CreateFromTime(value))
 {}
 
 inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) :
-    PlaybackMediaMarker(GetActivationFactory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().Create(value, mediaMarketType, text))
+    PlaybackMediaMarker(get_activation_factory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().Create(value, mediaMarketType, text))
 {}
 
 }

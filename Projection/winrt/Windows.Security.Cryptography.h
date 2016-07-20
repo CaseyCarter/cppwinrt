@@ -248,57 +248,57 @@ template <typename D> hstring impl_ICryptographicBufferStatics<D>::ConvertBinary
 
 inline bool CryptographicBuffer::Compare(const Windows::Storage::Streams::IBuffer & object1, const Windows::Storage::Streams::IBuffer & object2)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().Compare(object1, object2);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().Compare(object1, object2);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::GenerateRandom(uint32_t length)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().GenerateRandom(length);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().GenerateRandom(length);
 }
 
 inline uint32_t CryptographicBuffer::GenerateRandomNumber()
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().GenerateRandomNumber();
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().GenerateRandomNumber();
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::CreateFromByteArray(array_ref<const uint8_t> value)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().CreateFromByteArray(value);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().CreateFromByteArray(value);
 }
 
 inline void CryptographicBuffer::CopyToByteArray(const Windows::Storage::Streams::IBuffer & buffer, com_array<uint8_t> & value)
 {
-    GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().CopyToByteArray(buffer, value);
+    get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().CopyToByteArray(buffer, value);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromHexString(hstring_ref value)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromHexString(value);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromHexString(value);
 }
 
 inline hstring CryptographicBuffer::EncodeToHexString(const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToHexString(buffer);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToHexString(buffer);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromBase64String(hstring_ref value)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromBase64String(value);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromBase64String(value);
 }
 
 inline hstring CryptographicBuffer::EncodeToBase64String(const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToBase64String(buffer);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToBase64String(buffer);
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::ConvertStringToBinary(hstring_ref value, Windows::Security::Cryptography::BinaryStringEncoding encoding)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().ConvertStringToBinary(value, encoding);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().ConvertStringToBinary(value, encoding);
 }
 
 inline hstring CryptographicBuffer::ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, const Windows::Storage::Streams::IBuffer & buffer)
 {
-    return GetActivationFactory<CryptographicBuffer, ICryptographicBufferStatics>().ConvertBinaryToString(encoding, buffer);
+    return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().ConvertBinaryToString(encoding, buffer);
 }
 
 }

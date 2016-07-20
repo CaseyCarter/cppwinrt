@@ -1678,100 +1678,100 @@ template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFa
 }
 
 inline GeoboundingBox::GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner) :
-    GeoboundingBox(GetActivationFactory<GeoboundingBox, IGeoboundingBoxFactory>().Create(northwestCorner, southeastCorner))
+    GeoboundingBox(get_activation_factory<GeoboundingBox, IGeoboundingBoxFactory>().Create(northwestCorner, southeastCorner))
 {}
 
 inline GeoboundingBox::GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
-    GeoboundingBox(GetActivationFactory<GeoboundingBox, IGeoboundingBoxFactory>().CreateWithAltitudeReference(northwestCorner, southeastCorner, altitudeReferenceSystem))
+    GeoboundingBox(get_activation_factory<GeoboundingBox, IGeoboundingBoxFactory>().CreateWithAltitudeReference(northwestCorner, southeastCorner, altitudeReferenceSystem))
 {}
 
 inline GeoboundingBox::GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
-    GeoboundingBox(GetActivationFactory<GeoboundingBox, IGeoboundingBoxFactory>().CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId))
+    GeoboundingBox(get_activation_factory<GeoboundingBox, IGeoboundingBoxFactory>().CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId))
 {}
 
 inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions)
 {
-    return GetActivationFactory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions);
+    return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions);
 }
 
 inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem)
 {
-    return GetActivationFactory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem);
+    return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem);
 }
 
 inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId)
 {
-    return GetActivationFactory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem, spatialReferenceId);
+    return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem, spatialReferenceId);
 }
 
 inline Geocircle::Geocircle(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius) :
-    Geocircle(GetActivationFactory<Geocircle, IGeocircleFactory>().Create(position, radius))
+    Geocircle(get_activation_factory<Geocircle, IGeocircleFactory>().Create(position, radius))
 {}
 
 inline Geocircle::Geocircle(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
-    Geocircle(GetActivationFactory<Geocircle, IGeocircleFactory>().CreateWithAltitudeReferenceSystem(position, radius, altitudeReferenceSystem))
+    Geocircle(get_activation_factory<Geocircle, IGeocircleFactory>().CreateWithAltitudeReferenceSystem(position, radius, altitudeReferenceSystem))
 {}
 
 inline Geocircle::Geocircle(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
-    Geocircle(GetActivationFactory<Geocircle, IGeocircleFactory>().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, radius, altitudeReferenceSystem, spatialReferenceId))
+    Geocircle(get_activation_factory<Geocircle, IGeocircleFactory>().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, radius, altitudeReferenceSystem, spatialReferenceId))
 {}
 
 inline Geolocator::Geolocator() :
-    Geolocator(ActivateInstance<Geolocator>())
+    Geolocator(activate_instance<Geolocator>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> Geolocator::RequestAccessAsync()
 {
-    return GetActivationFactory<Geolocator, IGeolocatorStatics>().RequestAccessAsync();
+    return get_activation_factory<Geolocator, IGeolocatorStatics>().RequestAccessAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> Geolocator::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime)
 {
-    return GetActivationFactory<Geolocator, IGeolocatorStatics>().GetGeopositionHistoryAsync(startTime);
+    return get_activation_factory<Geolocator, IGeolocatorStatics>().GetGeopositionHistoryAsync(startTime);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> Geolocator::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration)
 {
-    return GetActivationFactory<Geolocator, IGeolocatorStatics>().GetGeopositionHistoryAsync(startTime, duration);
+    return get_activation_factory<Geolocator, IGeolocatorStatics>().GetGeopositionHistoryAsync(startTime, duration);
 }
 
 inline bool Geolocator::IsDefaultGeopositionRecommended()
 {
-    return GetActivationFactory<Geolocator, IGeolocatorStatics2>().IsDefaultGeopositionRecommended();
+    return get_activation_factory<Geolocator, IGeolocatorStatics2>().IsDefaultGeopositionRecommended();
 }
 
 inline void Geolocator::DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value)
 {
-    GetActivationFactory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition(value);
+    get_activation_factory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition(value);
 }
 
 inline Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> Geolocator::DefaultGeoposition()
 {
-    return GetActivationFactory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition();
+    return get_activation_factory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition();
 }
 
 inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) :
-    Geopath(GetActivationFactory<Geopath, IGeopathFactory>().Create(positions))
+    Geopath(get_activation_factory<Geopath, IGeopathFactory>().Create(positions))
 {}
 
 inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
-    Geopath(GetActivationFactory<Geopath, IGeopathFactory>().CreateWithAltitudeReference(positions, altitudeReferenceSystem))
+    Geopath(get_activation_factory<Geopath, IGeopathFactory>().CreateWithAltitudeReference(positions, altitudeReferenceSystem))
 {}
 
 inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
-    Geopath(GetActivationFactory<Geopath, IGeopathFactory>().CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId))
+    Geopath(get_activation_factory<Geopath, IGeopathFactory>().CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId))
 {}
 
 inline Geopoint::Geopoint(const Windows::Devices::Geolocation::BasicGeoposition & position) :
-    Geopoint(GetActivationFactory<Geopoint, IGeopointFactory>().Create(position))
+    Geopoint(get_activation_factory<Geopoint, IGeopointFactory>().Create(position))
 {}
 
 inline Geopoint::Geopoint(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
-    Geopoint(GetActivationFactory<Geopoint, IGeopointFactory>().CreateWithAltitudeReferenceSystem(position, altitudeReferenceSystem))
+    Geopoint(get_activation_factory<Geopoint, IGeopointFactory>().CreateWithAltitudeReferenceSystem(position, altitudeReferenceSystem))
 {}
 
 inline Geopoint::Geopoint(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
-    Geopoint(GetActivationFactory<Geopoint, IGeopointFactory>().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, altitudeReferenceSystem, spatialReferenceId))
+    Geopoint(get_activation_factory<Geopoint, IGeopointFactory>().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, altitudeReferenceSystem, spatialReferenceId))
 {}
 
 }

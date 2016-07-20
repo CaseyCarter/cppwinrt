@@ -112,7 +112,7 @@ inline void Uninitialize() noexcept
 }
 
 template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
-Interface GetActivationFactory()
+Interface get_activation_factory()
 {
     static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
 
@@ -125,7 +125,7 @@ Interface GetActivationFactory()
 }
 
 template <typename Class, typename Instance = Class>
-Instance ActivateInstance()
+Instance activate_instance()
 {
-    return GetActivationFactory<Class>().ActivateInstance().template as<Instance>();
+    return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
 }

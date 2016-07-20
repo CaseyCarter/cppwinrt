@@ -468,7 +468,7 @@ template <typename D> void impl_ICachedFileUpdaterStatics<D>::SetUpdateInformati
 
 inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options)
 {
-    GetActivationFactory<CachedFileUpdater, ICachedFileUpdaterStatics>().SetUpdateInformation(file, contentId, readMode, writeMode, options);
+    get_activation_factory<CachedFileUpdater, ICachedFileUpdaterStatics>().SetUpdateInformation(file, contentId, readMode, writeMode, options);
 }
 
 }

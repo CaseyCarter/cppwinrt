@@ -1838,17 +1838,17 @@ template <typename D> void impl_IHidDevice<D>::InputReportReceived(event_token t
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId)
 {
-    return GetActivationFactory<HidDevice, IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId);
+    return get_activation_factory<HidDevice, IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId);
 }
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId)
 {
-    return GetActivationFactory<HidDevice, IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId, vendorId, productId);
+    return get_activation_factory<HidDevice, IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId, vendorId, productId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> HidDevice::FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode)
 {
-    return GetActivationFactory<HidDevice, IHidDeviceStatics>().FromIdAsync(deviceId, accessMode);
+    return get_activation_factory<HidDevice, IHidDeviceStatics>().FromIdAsync(deviceId, accessMode);
 }
 
 }

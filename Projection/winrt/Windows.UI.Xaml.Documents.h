@@ -5305,864 +5305,864 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStati
 
 inline Windows::UI::Xaml::DependencyProperty Block::TextAlignmentProperty()
 {
-    return GetActivationFactory<Block, IBlockStatics>().TextAlignmentProperty();
+    return get_activation_factory<Block, IBlockStatics>().TextAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Block::LineHeightProperty()
 {
-    return GetActivationFactory<Block, IBlockStatics>().LineHeightProperty();
+    return get_activation_factory<Block, IBlockStatics>().LineHeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Block::LineStackingStrategyProperty()
 {
-    return GetActivationFactory<Block, IBlockStatics>().LineStackingStrategyProperty();
+    return get_activation_factory<Block, IBlockStatics>().LineStackingStrategyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Block::MarginProperty()
 {
-    return GetActivationFactory<Block, IBlockStatics>().MarginProperty();
+    return get_activation_factory<Block, IBlockStatics>().MarginProperty();
 }
 
 inline Bold::Bold() :
-    Bold(ActivateInstance<Bold>())
+    Bold(activate_instance<Bold>())
 {}
 
 inline Glyphs::Glyphs() :
-    Glyphs(ActivateInstance<Glyphs>())
+    Glyphs(activate_instance<Glyphs>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::UnicodeStringProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().UnicodeStringProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().UnicodeStringProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::IndicesProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().IndicesProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().IndicesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::FontUriProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().FontUriProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().FontUriProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::StyleSimulationsProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().StyleSimulationsProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().StyleSimulationsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::FontRenderingEmSizeProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().FontRenderingEmSizeProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().FontRenderingEmSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::OriginXProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().OriginXProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().OriginXProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::OriginYProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().OriginYProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().OriginYProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::FillProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics>().FillProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics>().FillProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::IsColorFontEnabledProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics2>().IsColorFontEnabledProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics2>().IsColorFontEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Glyphs::ColorFontPaletteIndexProperty()
 {
-    return GetActivationFactory<Glyphs, IGlyphsStatics2>().ColorFontPaletteIndexProperty();
+    return get_activation_factory<Glyphs, IGlyphsStatics2>().ColorFontPaletteIndexProperty();
 }
 
 inline Hyperlink::Hyperlink() :
-    Hyperlink(ActivateInstance<Hyperlink>())
+    Hyperlink(activate_instance<Hyperlink>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::NavigateUriProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics>().NavigateUriProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics>().NavigateUriProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::UnderlineStyleProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics2>().UnderlineStyleProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics2>().UnderlineStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusLeftProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics3>().XYFocusLeftProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics3>().XYFocusLeftProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusRightProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics3>().XYFocusRightProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics3>().XYFocusRightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusUpProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics3>().XYFocusUpProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics3>().XYFocusUpProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusDownProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics3>().XYFocusDownProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics3>().XYFocusDownProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Hyperlink::ElementSoundModeProperty()
 {
-    return GetActivationFactory<Hyperlink, IHyperlinkStatics3>().ElementSoundModeProperty();
+    return get_activation_factory<Hyperlink, IHyperlinkStatics3>().ElementSoundModeProperty();
 }
 
 inline InlineUIContainer::InlineUIContainer() :
-    InlineUIContainer(ActivateInstance<InlineUIContainer>())
+    InlineUIContainer(activate_instance<InlineUIContainer>())
 {}
 
 inline Italic::Italic() :
-    Italic(ActivateInstance<Italic>())
+    Italic(activate_instance<Italic>())
 {}
 
 inline LineBreak::LineBreak() :
-    LineBreak(ActivateInstance<LineBreak>())
+    LineBreak(activate_instance<LineBreak>())
 {}
 
 inline Paragraph::Paragraph() :
-    Paragraph(ActivateInstance<Paragraph>())
+    Paragraph(activate_instance<Paragraph>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Paragraph::TextIndentProperty()
 {
-    return GetActivationFactory<Paragraph, IParagraphStatics>().TextIndentProperty();
+    return get_activation_factory<Paragraph, IParagraphStatics>().TextIndentProperty();
 }
 
 inline Run::Run() :
-    Run(ActivateInstance<Run>())
+    Run(activate_instance<Run>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Run::FlowDirectionProperty()
 {
-    return GetActivationFactory<Run, IRunStatics>().FlowDirectionProperty();
+    return get_activation_factory<Run, IRunStatics>().FlowDirectionProperty();
 }
 
 inline Span::Span()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<Span, ISpanFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<Span, ISpanFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::FontSizeProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().FontSizeProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().FontSizeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::FontFamilyProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().FontFamilyProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().FontFamilyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::FontWeightProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().FontWeightProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().FontWeightProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::FontStyleProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().FontStyleProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().FontStyleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::FontStretchProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().FontStretchProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().FontStretchProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::CharacterSpacingProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().CharacterSpacingProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().CharacterSpacingProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::ForegroundProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().ForegroundProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().ForegroundProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::LanguageProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics>().LanguageProperty();
+    return get_activation_factory<TextElement, ITextElementStatics>().LanguageProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::IsTextScaleFactorEnabledProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics2>().IsTextScaleFactorEnabledProperty();
+    return get_activation_factory<TextElement, ITextElementStatics2>().IsTextScaleFactorEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::AllowFocusOnInteractionProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics3>().AllowFocusOnInteractionProperty();
+    return get_activation_factory<TextElement, ITextElementStatics3>().AllowFocusOnInteractionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::AccessKeyProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics3>().AccessKeyProperty();
+    return get_activation_factory<TextElement, ITextElementStatics3>().AccessKeyProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty TextElement::ExitDisplayModeOnAccessKeyInvokedProperty()
 {
-    return GetActivationFactory<TextElement, ITextElementStatics3>().ExitDisplayModeOnAccessKeyInvokedProperty();
+    return get_activation_factory<TextElement, ITextElementStatics3>().ExitDisplayModeOnAccessKeyInvokedProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::AnnotationAlternatesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().AnnotationAlternatesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().AnnotationAlternatesProperty();
 }
 
 inline int32_t Typography::GetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetAnnotationAlternates(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetAnnotationAlternates(element);
 }
 
 inline void Typography::SetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetAnnotationAlternates(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetAnnotationAlternates(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::EastAsianExpertFormsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().EastAsianExpertFormsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().EastAsianExpertFormsProperty();
 }
 
 inline bool Typography::GetEastAsianExpertForms(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetEastAsianExpertForms(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetEastAsianExpertForms(element);
 }
 
 inline void Typography::SetEastAsianExpertForms(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetEastAsianExpertForms(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetEastAsianExpertForms(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::EastAsianLanguageProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().EastAsianLanguageProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().EastAsianLanguageProperty();
 }
 
 inline Windows::UI::Xaml::FontEastAsianLanguage Typography::GetEastAsianLanguage(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetEastAsianLanguage(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetEastAsianLanguage(element);
 }
 
 inline void Typography::SetEastAsianLanguage(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontEastAsianLanguage value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetEastAsianLanguage(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetEastAsianLanguage(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::EastAsianWidthsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().EastAsianWidthsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().EastAsianWidthsProperty();
 }
 
 inline Windows::UI::Xaml::FontEastAsianWidths Typography::GetEastAsianWidths(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetEastAsianWidths(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetEastAsianWidths(element);
 }
 
 inline void Typography::SetEastAsianWidths(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontEastAsianWidths value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetEastAsianWidths(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetEastAsianWidths(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StandardLigaturesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StandardLigaturesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().StandardLigaturesProperty();
 }
 
 inline bool Typography::GetStandardLigatures(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStandardLigatures(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStandardLigatures(element);
 }
 
 inline void Typography::SetStandardLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStandardLigatures(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStandardLigatures(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::ContextualLigaturesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().ContextualLigaturesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().ContextualLigaturesProperty();
 }
 
 inline bool Typography::GetContextualLigatures(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetContextualLigatures(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetContextualLigatures(element);
 }
 
 inline void Typography::SetContextualLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetContextualLigatures(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetContextualLigatures(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::DiscretionaryLigaturesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().DiscretionaryLigaturesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().DiscretionaryLigaturesProperty();
 }
 
 inline bool Typography::GetDiscretionaryLigatures(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetDiscretionaryLigatures(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetDiscretionaryLigatures(element);
 }
 
 inline void Typography::SetDiscretionaryLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetDiscretionaryLigatures(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetDiscretionaryLigatures(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::HistoricalLigaturesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().HistoricalLigaturesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().HistoricalLigaturesProperty();
 }
 
 inline bool Typography::GetHistoricalLigatures(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetHistoricalLigatures(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetHistoricalLigatures(element);
 }
 
 inline void Typography::SetHistoricalLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetHistoricalLigatures(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetHistoricalLigatures(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StandardSwashesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StandardSwashesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().StandardSwashesProperty();
 }
 
 inline int32_t Typography::GetStandardSwashes(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStandardSwashes(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStandardSwashes(element);
 }
 
 inline void Typography::SetStandardSwashes(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStandardSwashes(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStandardSwashes(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::ContextualSwashesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().ContextualSwashesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().ContextualSwashesProperty();
 }
 
 inline int32_t Typography::GetContextualSwashes(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetContextualSwashes(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetContextualSwashes(element);
 }
 
 inline void Typography::SetContextualSwashes(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetContextualSwashes(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetContextualSwashes(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::ContextualAlternatesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().ContextualAlternatesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().ContextualAlternatesProperty();
 }
 
 inline bool Typography::GetContextualAlternates(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetContextualAlternates(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetContextualAlternates(element);
 }
 
 inline void Typography::SetContextualAlternates(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetContextualAlternates(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetContextualAlternates(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticAlternatesProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticAlternatesProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticAlternatesProperty();
 }
 
 inline int32_t Typography::GetStylisticAlternates(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticAlternates(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticAlternates(element);
 }
 
 inline void Typography::SetStylisticAlternates(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticAlternates(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticAlternates(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet1Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet1Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet1Property();
 }
 
 inline bool Typography::GetStylisticSet1(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet1(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet1(element);
 }
 
 inline void Typography::SetStylisticSet1(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet1(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet1(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet2Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet2Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet2Property();
 }
 
 inline bool Typography::GetStylisticSet2(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet2(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet2(element);
 }
 
 inline void Typography::SetStylisticSet2(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet2(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet2(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet3Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet3Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet3Property();
 }
 
 inline bool Typography::GetStylisticSet3(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet3(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet3(element);
 }
 
 inline void Typography::SetStylisticSet3(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet3(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet3(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet4Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet4Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet4Property();
 }
 
 inline bool Typography::GetStylisticSet4(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet4(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet4(element);
 }
 
 inline void Typography::SetStylisticSet4(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet4(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet4(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet5Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet5Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet5Property();
 }
 
 inline bool Typography::GetStylisticSet5(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet5(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet5(element);
 }
 
 inline void Typography::SetStylisticSet5(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet5(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet5(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet6Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet6Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet6Property();
 }
 
 inline bool Typography::GetStylisticSet6(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet6(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet6(element);
 }
 
 inline void Typography::SetStylisticSet6(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet6(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet6(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet7Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet7Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet7Property();
 }
 
 inline bool Typography::GetStylisticSet7(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet7(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet7(element);
 }
 
 inline void Typography::SetStylisticSet7(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet7(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet7(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet8Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet8Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet8Property();
 }
 
 inline bool Typography::GetStylisticSet8(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet8(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet8(element);
 }
 
 inline void Typography::SetStylisticSet8(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet8(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet8(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet9Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet9Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet9Property();
 }
 
 inline bool Typography::GetStylisticSet9(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet9(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet9(element);
 }
 
 inline void Typography::SetStylisticSet9(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet9(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet9(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet10Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet10Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet10Property();
 }
 
 inline bool Typography::GetStylisticSet10(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet10(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet10(element);
 }
 
 inline void Typography::SetStylisticSet10(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet10(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet10(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet11Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet11Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet11Property();
 }
 
 inline bool Typography::GetStylisticSet11(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet11(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet11(element);
 }
 
 inline void Typography::SetStylisticSet11(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet11(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet11(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet12Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet12Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet12Property();
 }
 
 inline bool Typography::GetStylisticSet12(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet12(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet12(element);
 }
 
 inline void Typography::SetStylisticSet12(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet12(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet12(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet13Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet13Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet13Property();
 }
 
 inline bool Typography::GetStylisticSet13(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet13(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet13(element);
 }
 
 inline void Typography::SetStylisticSet13(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet13(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet13(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet14Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet14Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet14Property();
 }
 
 inline bool Typography::GetStylisticSet14(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet14(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet14(element);
 }
 
 inline void Typography::SetStylisticSet14(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet14(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet14(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet15Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet15Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet15Property();
 }
 
 inline bool Typography::GetStylisticSet15(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet15(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet15(element);
 }
 
 inline void Typography::SetStylisticSet15(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet15(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet15(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet16Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet16Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet16Property();
 }
 
 inline bool Typography::GetStylisticSet16(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet16(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet16(element);
 }
 
 inline void Typography::SetStylisticSet16(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet16(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet16(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet17Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet17Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet17Property();
 }
 
 inline bool Typography::GetStylisticSet17(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet17(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet17(element);
 }
 
 inline void Typography::SetStylisticSet17(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet17(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet17(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet18Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet18Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet18Property();
 }
 
 inline bool Typography::GetStylisticSet18(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet18(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet18(element);
 }
 
 inline void Typography::SetStylisticSet18(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet18(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet18(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet19Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet19Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet19Property();
 }
 
 inline bool Typography::GetStylisticSet19(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet19(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet19(element);
 }
 
 inline void Typography::SetStylisticSet19(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet19(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet19(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::StylisticSet20Property()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().StylisticSet20Property();
+    return get_activation_factory<Typography, ITypographyStatics>().StylisticSet20Property();
 }
 
 inline bool Typography::GetStylisticSet20(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetStylisticSet20(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetStylisticSet20(element);
 }
 
 inline void Typography::SetStylisticSet20(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetStylisticSet20(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetStylisticSet20(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::CapitalsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().CapitalsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().CapitalsProperty();
 }
 
 inline Windows::UI::Xaml::FontCapitals Typography::GetCapitals(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetCapitals(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetCapitals(element);
 }
 
 inline void Typography::SetCapitals(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontCapitals value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetCapitals(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetCapitals(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::CapitalSpacingProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().CapitalSpacingProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().CapitalSpacingProperty();
 }
 
 inline bool Typography::GetCapitalSpacing(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetCapitalSpacing(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetCapitalSpacing(element);
 }
 
 inline void Typography::SetCapitalSpacing(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetCapitalSpacing(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetCapitalSpacing(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::KerningProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().KerningProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().KerningProperty();
 }
 
 inline bool Typography::GetKerning(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetKerning(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetKerning(element);
 }
 
 inline void Typography::SetKerning(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetKerning(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetKerning(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::CaseSensitiveFormsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().CaseSensitiveFormsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().CaseSensitiveFormsProperty();
 }
 
 inline bool Typography::GetCaseSensitiveForms(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetCaseSensitiveForms(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetCaseSensitiveForms(element);
 }
 
 inline void Typography::SetCaseSensitiveForms(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetCaseSensitiveForms(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetCaseSensitiveForms(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::HistoricalFormsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().HistoricalFormsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().HistoricalFormsProperty();
 }
 
 inline bool Typography::GetHistoricalForms(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetHistoricalForms(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetHistoricalForms(element);
 }
 
 inline void Typography::SetHistoricalForms(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetHistoricalForms(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetHistoricalForms(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::FractionProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().FractionProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().FractionProperty();
 }
 
 inline Windows::UI::Xaml::FontFraction Typography::GetFraction(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetFraction(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetFraction(element);
 }
 
 inline void Typography::SetFraction(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontFraction value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetFraction(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetFraction(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::NumeralStyleProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().NumeralStyleProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().NumeralStyleProperty();
 }
 
 inline Windows::UI::Xaml::FontNumeralStyle Typography::GetNumeralStyle(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetNumeralStyle(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetNumeralStyle(element);
 }
 
 inline void Typography::SetNumeralStyle(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontNumeralStyle value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetNumeralStyle(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetNumeralStyle(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::NumeralAlignmentProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().NumeralAlignmentProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().NumeralAlignmentProperty();
 }
 
 inline Windows::UI::Xaml::FontNumeralAlignment Typography::GetNumeralAlignment(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetNumeralAlignment(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetNumeralAlignment(element);
 }
 
 inline void Typography::SetNumeralAlignment(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontNumeralAlignment value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetNumeralAlignment(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetNumeralAlignment(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::SlashedZeroProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().SlashedZeroProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().SlashedZeroProperty();
 }
 
 inline bool Typography::GetSlashedZero(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetSlashedZero(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetSlashedZero(element);
 }
 
 inline void Typography::SetSlashedZero(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetSlashedZero(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetSlashedZero(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::MathematicalGreekProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().MathematicalGreekProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().MathematicalGreekProperty();
 }
 
 inline bool Typography::GetMathematicalGreek(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetMathematicalGreek(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetMathematicalGreek(element);
 }
 
 inline void Typography::SetMathematicalGreek(const Windows::UI::Xaml::DependencyObject & element, bool value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetMathematicalGreek(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetMathematicalGreek(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::VariantsProperty()
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().VariantsProperty();
+    return get_activation_factory<Typography, ITypographyStatics>().VariantsProperty();
 }
 
 inline Windows::UI::Xaml::FontVariants Typography::GetVariants(const Windows::UI::Xaml::DependencyObject & element)
 {
-    return GetActivationFactory<Typography, ITypographyStatics>().GetVariants(element);
+    return get_activation_factory<Typography, ITypographyStatics>().GetVariants(element);
 }
 
 inline void Typography::SetVariants(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontVariants value)
 {
-    GetActivationFactory<Typography, ITypographyStatics>().SetVariants(element, value);
+    get_activation_factory<Typography, ITypographyStatics>().SetVariants(element, value);
 }
 
 inline Underline::Underline() :
-    Underline(ActivateInstance<Underline>())
+    Underline(activate_instance<Underline>())
 {}
 
 }

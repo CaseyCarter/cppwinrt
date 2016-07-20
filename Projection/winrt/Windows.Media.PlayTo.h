@@ -1970,16 +1970,16 @@ template <typename D> void impl_IPlayToManagerStatics<D>::ShowPlayToUI() const
 
 inline Windows::Media::PlayTo::PlayToManager PlayToManager::GetForCurrentView()
 {
-    return GetActivationFactory<PlayToManager, IPlayToManagerStatics>().GetForCurrentView();
+    return get_activation_factory<PlayToManager, IPlayToManagerStatics>().GetForCurrentView();
 }
 
 inline void PlayToManager::ShowPlayToUI()
 {
-    GetActivationFactory<PlayToManager, IPlayToManagerStatics>().ShowPlayToUI();
+    get_activation_factory<PlayToManager, IPlayToManagerStatics>().ShowPlayToUI();
 }
 
 inline PlayToReceiver::PlayToReceiver() :
-    PlayToReceiver(ActivateInstance<PlayToReceiver>())
+    PlayToReceiver(activate_instance<PlayToReceiver>())
 {}
 
 }

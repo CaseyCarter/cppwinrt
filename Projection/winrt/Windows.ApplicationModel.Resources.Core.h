@@ -995,52 +995,52 @@ template <typename D> Windows::ApplicationModel::Resources::Core::ResourceMap im
 }
 
 inline ResourceContext::ResourceContext() :
-    ResourceContext(ActivateInstance<ResourceContext>())
+    ResourceContext(activate_instance<ResourceContext>())
 {}
 
 inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceContext::CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result)
 {
-    return GetActivationFactory<ResourceContext, IResourceContextStatics>().CreateMatchingContext(result);
+    return get_activation_factory<ResourceContext, IResourceContextStatics>().CreateMatchingContext(result);
 }
 
 inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceContext::GetForCurrentView()
 {
-    return GetActivationFactory<ResourceContext, IResourceContextStatics2>().GetForCurrentView();
+    return get_activation_factory<ResourceContext, IResourceContextStatics2>().GetForCurrentView();
 }
 
 inline void ResourceContext::SetGlobalQualifierValue(hstring_ref key, hstring_ref value)
 {
-    GetActivationFactory<ResourceContext, IResourceContextStatics2>().SetGlobalQualifierValue(key, value);
+    get_activation_factory<ResourceContext, IResourceContextStatics2>().SetGlobalQualifierValue(key, value);
 }
 
 inline void ResourceContext::ResetGlobalQualifierValues()
 {
-    GetActivationFactory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues();
+    get_activation_factory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues();
 }
 
 inline void ResourceContext::ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames)
 {
-    GetActivationFactory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues(qualifierNames);
+    get_activation_factory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues(qualifierNames);
 }
 
 inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceContext::GetForViewIndependentUse()
 {
-    return GetActivationFactory<ResourceContext, IResourceContextStatics2>().GetForViewIndependentUse();
+    return get_activation_factory<ResourceContext, IResourceContextStatics2>().GetForViewIndependentUse();
 }
 
 inline void ResourceContext::SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence)
 {
-    GetActivationFactory<ResourceContext, IResourceContextStatics3>().SetGlobalQualifierValue(key, value, persistence);
+    get_activation_factory<ResourceContext, IResourceContextStatics3>().SetGlobalQualifierValue(key, value, persistence);
 }
 
 inline Windows::ApplicationModel::Resources::Core::ResourceManager ResourceManager::Current()
 {
-    return GetActivationFactory<ResourceManager, IResourceManagerStatics>().Current();
+    return get_activation_factory<ResourceManager, IResourceManagerStatics>().Current();
 }
 
 inline bool ResourceManager::IsResourceReference(hstring_ref resourceReference)
 {
-    return GetActivationFactory<ResourceManager, IResourceManagerStatics>().IsResourceReference(resourceReference);
+    return get_activation_factory<ResourceManager, IResourceManagerStatics>().IsResourceReference(resourceReference);
 }
 
 }

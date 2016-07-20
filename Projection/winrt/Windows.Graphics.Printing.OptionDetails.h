@@ -649,7 +649,7 @@ template <typename D> Windows::Graphics::Printing::OptionDetails::PrintTaskOptio
 
 inline Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails PrintTaskOptionDetails::GetFromPrintTaskOptions(const Windows::Graphics::Printing::PrintTaskOptions & printTaskOptions)
 {
-    return GetActivationFactory<PrintTaskOptionDetails, IPrintTaskOptionDetailsStatic>().GetFromPrintTaskOptions(printTaskOptions);
+    return get_activation_factory<PrintTaskOptionDetails, IPrintTaskOptionDetailsStatic>().GetFromPrintTaskOptions(printTaskOptions);
 }
 
 }

@@ -1454,21 +1454,21 @@ template <typename D> void impl_IWiFiDirectServiceSession<D>::RemotePortAdded(ev
 
 inline hstring WiFiDirectService::GetSelector(hstring_ref serviceName)
 {
-    return GetActivationFactory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName);
+    return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName);
 }
 
 inline hstring WiFiDirectService::GetSelector(hstring_ref serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter)
 {
-    return GetActivationFactory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName, serviceInfoFilter);
+    return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName, serviceInfoFilter);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> WiFiDirectService::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<WiFiDirectService, IWiFiDirectServiceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().FromIdAsync(deviceId);
 }
 
 inline WiFiDirectServiceAdvertiser::WiFiDirectServiceAdvertiser(hstring_ref serviceName) :
-    WiFiDirectServiceAdvertiser(GetActivationFactory<WiFiDirectServiceAdvertiser, IWiFiDirectServiceAdvertiserFactory>().CreateWiFiDirectServiceAdvertiser(serviceName))
+    WiFiDirectServiceAdvertiser(get_activation_factory<WiFiDirectServiceAdvertiser, IWiFiDirectServiceAdvertiserFactory>().CreateWiFiDirectServiceAdvertiser(serviceName))
 {}
 
 }

@@ -2006,62 +2006,62 @@ template <typename D> void impl_IVisualElementsRequestDeferral<D>::Complete() co
 
 inline Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> JumpList::LoadCurrentAsync()
 {
-    return GetActivationFactory<JumpList, IJumpListStatics>().LoadCurrentAsync();
+    return get_activation_factory<JumpList, IJumpListStatics>().LoadCurrentAsync();
 }
 
 inline bool JumpList::IsSupported()
 {
-    return GetActivationFactory<JumpList, IJumpListStatics>().IsSupported();
+    return get_activation_factory<JumpList, IJumpListStatics>().IsSupported();
 }
 
 inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateWithArguments(hstring_ref arguments, hstring_ref displayName)
 {
-    return GetActivationFactory<JumpListItem, IJumpListItemStatics>().CreateWithArguments(arguments, displayName);
+    return get_activation_factory<JumpListItem, IJumpListItemStatics>().CreateWithArguments(arguments, displayName);
 }
 
 inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateSeparator()
 {
-    return GetActivationFactory<JumpListItem, IJumpListItemStatics>().CreateSeparator();
+    return get_activation_factory<JumpListItem, IJumpListItemStatics>().CreateSeparator();
 }
 
 inline SecondaryTile::SecondaryTile() :
-    SecondaryTile(ActivateInstance<SecondaryTile>())
+    SecondaryTile(activate_instance<SecondaryTile>())
 {}
 
 inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) :
-    SecondaryTile(GetActivationFactory<SecondaryTile, ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
+    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
 {}
 
 inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) :
-    SecondaryTile(GetActivationFactory<SecondaryTile, ISecondaryTileFactory>().CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference))
+    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference))
 {}
 
 inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) :
-    SecondaryTile(GetActivationFactory<SecondaryTile, ISecondaryTileFactory>().CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference))
+    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference))
 {}
 
 inline SecondaryTile::SecondaryTile(hstring_ref tileId) :
-    SecondaryTile(GetActivationFactory<SecondaryTile, ISecondaryTileFactory>().CreateWithId(tileId))
+    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateWithId(tileId))
 {}
 
 inline bool SecondaryTile::Exists(hstring_ref tileId)
 {
-    return GetActivationFactory<SecondaryTile, ISecondaryTileStatics>().Exists(tileId);
+    return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().Exists(tileId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync()
 {
-    return GetActivationFactory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync();
+    return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync(hstring_ref applicationId)
 {
-    return GetActivationFactory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync(applicationId);
+    return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync(applicationId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllForPackageAsync()
 {
-    return GetActivationFactory<SecondaryTile, ISecondaryTileStatics>().FindAllForPackageAsync();
+    return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllForPackageAsync();
 }
 
 }

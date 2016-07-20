@@ -18,7 +18,7 @@ protected:
 
     BitmapSourceT()
     {
-        GetActivationFactory<BitmapSource, IBitmapSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<BitmapSource, IBitmapSourceFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,12 +32,12 @@ protected:
 
     SurfaceImageSourceT(int32_t pixelWidth, int32_t pixelHeight)
     {
-        GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, *this, m_inner);
+        get_activation_factory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensions(pixelWidth, pixelHeight, *this, m_inner);
     }
 
     SurfaceImageSourceT(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque)
     {
-        GetActivationFactory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, *this, m_inner);
+        get_activation_factory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, *this, m_inner);
     }
 };
 
@@ -51,7 +51,7 @@ protected:
 
     XamlRenderingBackgroundTaskT()
     {
-        GetActivationFactory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<XamlRenderingBackgroundTask, IXamlRenderingBackgroundTaskFactory>().CreateInstance(*this, m_inner);
     }
 };
 

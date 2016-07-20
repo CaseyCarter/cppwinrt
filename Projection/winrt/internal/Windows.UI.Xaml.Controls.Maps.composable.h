@@ -18,7 +18,7 @@ protected:
 
     CustomMapTileDataSourceT()
     {
-        GetActivationFactory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CustomMapTileDataSource, ICustomMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -32,12 +32,12 @@ protected:
 
     HttpMapTileDataSourceT()
     {
-        GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
     }
 
     HttpMapTileDataSourceT(hstring_ref uriFormatString)
     {
-        GetActivationFactory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
+        get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
     }
 };
 
@@ -51,12 +51,12 @@ protected:
 
     LocalMapTileDataSourceT()
     {
-        GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
     }
 
     LocalMapTileDataSourceT(hstring_ref uriFormatString)
     {
-        GetActivationFactory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
+        get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, m_inner);
     }
 };
 
@@ -70,7 +70,7 @@ protected:
 
     MapCustomExperienceT()
     {
-        GetActivationFactory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MapCustomExperience, IMapCustomExperienceFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -84,7 +84,7 @@ protected:
 
     MapElementT()
     {
-        GetActivationFactory<MapElement, IMapElementFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MapElement, IMapElementFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -98,7 +98,7 @@ protected:
 
     MapRouteViewT(const Windows::Services::Maps::MapRoute & route)
     {
-        GetActivationFactory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, *this, m_inner);
+        get_activation_factory<MapRouteView, IMapRouteViewFactory>().CreateInstanceWithMapRoute(route, *this, m_inner);
     }
 };
 
@@ -112,7 +112,7 @@ protected:
 
     MapTileDataSourceT()
     {
-        GetActivationFactory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MapTileDataSource, IMapTileDataSourceFactory>().CreateInstance(*this, m_inner);
     }
 };
 
@@ -126,27 +126,27 @@ protected:
 
     MapTileSourceT()
     {
-        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstance(*this, m_inner);
     }
 
     MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource)
     {
-        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, *this, m_inner);
+        get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSource(dataSource, *this, m_inner);
     }
 
     MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange)
     {
-        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, *this, m_inner);
+        get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceAndZoomRange(dataSource, zoomLevelRange, *this, m_inner);
     }
 
     MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds)
     {
-        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, *this, m_inner);
+        get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeAndBounds(dataSource, zoomLevelRange, bounds, *this, m_inner);
     }
 
     MapTileSourceT(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds, int32_t tileSizeInPixels)
     {
-        GetActivationFactory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, *this, m_inner);
+        get_activation_factory<MapTileSource, IMapTileSourceFactory>().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(dataSource, zoomLevelRange, bounds, tileSizeInPixels, *this, m_inner);
     }
 };
 

@@ -739,27 +739,27 @@ template <typename D> Windows::Foundation::Deferral impl_IUserDataAccountStoreCh
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> UserDataAccountManager::RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType)
 {
-    return GetActivationFactory<UserDataAccountManager, IUserDataAccountManagerStatics>().RequestStoreAsync(storeAccessType);
+    return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().RequestStoreAsync(storeAccessType);
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserDataAccountManager::ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds)
 {
-    return GetActivationFactory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAddAccountAsync(contentKinds);
+    return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAddAccountAsync(contentKinds);
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountSettingsAsync(hstring_ref id)
 {
-    return GetActivationFactory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountSettingsAsync(id);
+    return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountSettingsAsync(id);
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountErrorResolverAsync(hstring_ref id)
 {
-    return GetActivationFactory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountErrorResolverAsync(id);
+    return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountErrorResolverAsync(id);
 }
 
 inline Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser UserDataAccountManager::GetForUser(const Windows::System::User & user)
 {
-    return GetActivationFactory<UserDataAccountManager, IUserDataAccountManagerStatics2>().GetForUser(user);
+    return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics2>().GetForUser(user);
 }
 
 }

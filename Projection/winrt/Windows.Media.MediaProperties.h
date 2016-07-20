@@ -2490,412 +2490,412 @@ template <typename D> Windows::Media::MediaProperties::ContainerEncodingProperti
 }
 
 inline AudioEncodingProperties::AudioEncodingProperties() :
-    AudioEncodingProperties(ActivateInstance<AudioEncodingProperties>())
+    AudioEncodingProperties(activate_instance<AudioEncodingProperties>())
 {}
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return GetActivationFactory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateAac(sampleRate, channelCount, bitrate);
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateAac(sampleRate, channelCount, bitrate);
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return GetActivationFactory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateAacAdts(sampleRate, channelCount, bitrate);
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateAacAdts(sampleRate, channelCount, bitrate);
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return GetActivationFactory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateMp3(sampleRate, channelCount, bitrate);
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateMp3(sampleRate, channelCount, bitrate);
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
 {
-    return GetActivationFactory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreatePcm(sampleRate, channelCount, bitsPerSample);
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreatePcm(sampleRate, channelCount, bitsPerSample);
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return GetActivationFactory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateWma(sampleRate, channelCount, bitrate);
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateWma(sampleRate, channelCount, bitrate);
 }
 
 inline ContainerEncodingProperties::ContainerEncodingProperties() :
-    ContainerEncodingProperties(ActivateInstance<ContainerEncodingProperties>())
+    ContainerEncodingProperties(activate_instance<ContainerEncodingProperties>())
 {}
 
 inline int32_t H264ProfileIds::ConstrainedBaseline()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().ConstrainedBaseline();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().ConstrainedBaseline();
 }
 
 inline int32_t H264ProfileIds::Baseline()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().Baseline();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().Baseline();
 }
 
 inline int32_t H264ProfileIds::Extended()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().Extended();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().Extended();
 }
 
 inline int32_t H264ProfileIds::Main()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().Main();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().Main();
 }
 
 inline int32_t H264ProfileIds::High()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().High();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().High();
 }
 
 inline int32_t H264ProfileIds::High10()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().High10();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().High10();
 }
 
 inline int32_t H264ProfileIds::High422()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().High422();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().High422();
 }
 
 inline int32_t H264ProfileIds::High444()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().High444();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().High444();
 }
 
 inline int32_t H264ProfileIds::StereoHigh()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().StereoHigh();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().StereoHigh();
 }
 
 inline int32_t H264ProfileIds::MultiviewHigh()
 {
-    return GetActivationFactory<H264ProfileIds, IH264ProfileIdsStatics>().MultiviewHigh();
+    return get_activation_factory<H264ProfileIds, IH264ProfileIdsStatics>().MultiviewHigh();
 }
 
 inline ImageEncodingProperties::ImageEncodingProperties() :
-    ImageEncodingProperties(ActivateInstance<ImageEncodingProperties>())
+    ImageEncodingProperties(activate_instance<ImageEncodingProperties>())
 {}
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateJpeg()
 {
-    return GetActivationFactory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreateJpeg();
+    return get_activation_factory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreateJpeg();
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreatePng()
 {
-    return GetActivationFactory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreatePng();
+    return get_activation_factory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreatePng();
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateJpegXR()
 {
-    return GetActivationFactory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreateJpegXR();
+    return get_activation_factory<ImageEncodingProperties, IImageEncodingPropertiesStatics>().CreateJpegXR();
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat format)
 {
-    return GetActivationFactory<ImageEncodingProperties, IImageEncodingPropertiesStatics2>().CreateUncompressed(format);
+    return get_activation_factory<ImageEncodingProperties, IImageEncodingPropertiesStatics2>().CreateUncompressed(format);
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateBmp()
 {
-    return GetActivationFactory<ImageEncodingProperties, IImageEncodingPropertiesStatics2>().CreateBmp();
+    return get_activation_factory<ImageEncodingProperties, IImageEncodingPropertiesStatics2>().CreateBmp();
 }
 
 inline MediaEncodingProfile::MediaEncodingProfile() :
-    MediaEncodingProfile(ActivateInstance<MediaEncodingProfile>())
+    MediaEncodingProfile(activate_instance<MediaEncodingProfile>())
 {}
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateM4a(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateM4a(quality);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateMp3(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateMp3(quality);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateWma(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateWma(quality);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateMp4(Windows::Media::MediaProperties::VideoEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateMp4(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateMp4(quality);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWmv(Windows::Media::MediaProperties::VideoEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateWmv(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateWmv(quality);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> MediaEncodingProfile::CreateFromFileAsync(const Windows::Storage::IStorageFile & file)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateFromFileAsync(file);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateFromFileAsync(file);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> MediaEncodingProfile::CreateFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & stream)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateFromStreamAsync(stream);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics>().CreateFromStreamAsync(stream);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics2>().CreateWav(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics2>().CreateWav(quality);
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality)
 {
-    return GetActivationFactory<MediaEncodingProfile, IMediaEncodingProfileStatics2>().CreateAvi(quality);
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics2>().CreateAvi(quality);
 }
 
 inline hstring MediaEncodingSubtypes::Aac()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Aac();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Aac();
 }
 
 inline hstring MediaEncodingSubtypes::AacAdts()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AacAdts();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AacAdts();
 }
 
 inline hstring MediaEncodingSubtypes::Ac3()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Ac3();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Ac3();
 }
 
 inline hstring MediaEncodingSubtypes::AmrNb()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AmrNb();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AmrNb();
 }
 
 inline hstring MediaEncodingSubtypes::AmrWb()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AmrWb();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().AmrWb();
 }
 
 inline hstring MediaEncodingSubtypes::Argb32()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Argb32();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Argb32();
 }
 
 inline hstring MediaEncodingSubtypes::Asf()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Asf();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Asf();
 }
 
 inline hstring MediaEncodingSubtypes::Avi()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Avi();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Avi();
 }
 
 inline hstring MediaEncodingSubtypes::Bgra8()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Bgra8();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Bgra8();
 }
 
 inline hstring MediaEncodingSubtypes::Bmp()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Bmp();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Bmp();
 }
 
 inline hstring MediaEncodingSubtypes::Eac3()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Eac3();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Eac3();
 }
 
 inline hstring MediaEncodingSubtypes::Float()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Float();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Float();
 }
 
 inline hstring MediaEncodingSubtypes::Gif()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Gif();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Gif();
 }
 
 inline hstring MediaEncodingSubtypes::H263()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H263();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H263();
 }
 
 inline hstring MediaEncodingSubtypes::H264()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H264();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H264();
 }
 
 inline hstring MediaEncodingSubtypes::H264Es()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H264Es();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().H264Es();
 }
 
 inline hstring MediaEncodingSubtypes::Hevc()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Hevc();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Hevc();
 }
 
 inline hstring MediaEncodingSubtypes::HevcEs()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().HevcEs();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().HevcEs();
 }
 
 inline hstring MediaEncodingSubtypes::Iyuv()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Iyuv();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Iyuv();
 }
 
 inline hstring MediaEncodingSubtypes::Jpeg()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Jpeg();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Jpeg();
 }
 
 inline hstring MediaEncodingSubtypes::JpegXr()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().JpegXr();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().JpegXr();
 }
 
 inline hstring MediaEncodingSubtypes::Mjpg()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mjpg();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mjpg();
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg();
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg1()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg1();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg1();
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg2()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg2();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg2();
 }
 
 inline hstring MediaEncodingSubtypes::Mp3()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mp3();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mp3();
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg4()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg4();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Mpeg4();
 }
 
 inline hstring MediaEncodingSubtypes::Nv12()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Nv12();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Nv12();
 }
 
 inline hstring MediaEncodingSubtypes::Pcm()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Pcm();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Pcm();
 }
 
 inline hstring MediaEncodingSubtypes::Png()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Png();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Png();
 }
 
 inline hstring MediaEncodingSubtypes::Rgb24()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Rgb24();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Rgb24();
 }
 
 inline hstring MediaEncodingSubtypes::Rgb32()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Rgb32();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Rgb32();
 }
 
 inline hstring MediaEncodingSubtypes::Tiff()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Tiff();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Tiff();
 }
 
 inline hstring MediaEncodingSubtypes::Wave()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wave();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wave();
 }
 
 inline hstring MediaEncodingSubtypes::Wma8()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wma8();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wma8();
 }
 
 inline hstring MediaEncodingSubtypes::Wma9()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wma9();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wma9();
 }
 
 inline hstring MediaEncodingSubtypes::Wmv3()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wmv3();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wmv3();
 }
 
 inline hstring MediaEncodingSubtypes::Wvc1()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wvc1();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Wvc1();
 }
 
 inline hstring MediaEncodingSubtypes::Yuy2()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Yuy2();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Yuy2();
 }
 
 inline hstring MediaEncodingSubtypes::Yv12()
 {
-    return GetActivationFactory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Yv12();
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Yv12();
 }
 
 inline MediaPropertySet::MediaPropertySet() :
-    MediaPropertySet(ActivateInstance<MediaPropertySet>())
+    MediaPropertySet(activate_instance<MediaPropertySet>())
 {}
 
 inline int32_t Mpeg2ProfileIds::Simple()
 {
-    return GetActivationFactory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().Simple();
+    return get_activation_factory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().Simple();
 }
 
 inline int32_t Mpeg2ProfileIds::Main()
 {
-    return GetActivationFactory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().Main();
+    return get_activation_factory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().Main();
 }
 
 inline int32_t Mpeg2ProfileIds::SignalNoiseRatioScalable()
 {
-    return GetActivationFactory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().SignalNoiseRatioScalable();
+    return get_activation_factory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().SignalNoiseRatioScalable();
 }
 
 inline int32_t Mpeg2ProfileIds::SpatiallyScalable()
 {
-    return GetActivationFactory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().SpatiallyScalable();
+    return get_activation_factory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().SpatiallyScalable();
 }
 
 inline int32_t Mpeg2ProfileIds::High()
 {
-    return GetActivationFactory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().High();
+    return get_activation_factory<Mpeg2ProfileIds, IMpeg2ProfileIdsStatics>().High();
 }
 
 inline VideoEncodingProperties::VideoEncodingProperties() :
-    VideoEncodingProperties(ActivateInstance<VideoEncodingProperties>())
+    VideoEncodingProperties(activate_instance<VideoEncodingProperties>())
 {}
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateH264()
 {
-    return GetActivationFactory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateH264();
+    return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateH264();
 }
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateMpeg2()
 {
-    return GetActivationFactory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateMpeg2();
+    return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateMpeg2();
 }
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height)
 {
-    return GetActivationFactory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateUncompressed(subtype, width, height);
+    return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateUncompressed(subtype, width, height);
 }
 
 }

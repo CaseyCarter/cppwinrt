@@ -959,20 +959,20 @@ template <typename D> void impl_IFolderPicker2<D>::PickFolderAndContinue() const
 }
 
 inline FileOpenPicker::FileOpenPicker() :
-    FileOpenPicker(ActivateInstance<FileOpenPicker>())
+    FileOpenPicker(activate_instance<FileOpenPicker>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> FileOpenPicker::ResumePickSingleFileAsync()
 {
-    return GetActivationFactory<FileOpenPicker, IFileOpenPickerStatics>().ResumePickSingleFileAsync();
+    return get_activation_factory<FileOpenPicker, IFileOpenPickerStatics>().ResumePickSingleFileAsync();
 }
 
 inline FileSavePicker::FileSavePicker() :
-    FileSavePicker(ActivateInstance<FileSavePicker>())
+    FileSavePicker(activate_instance<FileSavePicker>())
 {}
 
 inline FolderPicker::FolderPicker() :
-    FolderPicker(ActivateInstance<FolderPicker>())
+    FolderPicker(activate_instance<FolderPicker>())
 {}
 
 }

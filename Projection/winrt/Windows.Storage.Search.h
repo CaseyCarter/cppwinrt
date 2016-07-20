@@ -1824,32 +1824,32 @@ template <typename D> Windows::Storage::Search::StorageItemQueryResult impl_ISto
 
 inline Windows::Storage::Search::ContentIndexer ContentIndexer::GetIndexer(hstring_ref indexName)
 {
-    return GetActivationFactory<ContentIndexer, IContentIndexerStatics>().GetIndexer(indexName);
+    return get_activation_factory<ContentIndexer, IContentIndexerStatics>().GetIndexer(indexName);
 }
 
 inline Windows::Storage::Search::ContentIndexer ContentIndexer::GetIndexer()
 {
-    return GetActivationFactory<ContentIndexer, IContentIndexerStatics>().GetIndexer();
+    return get_activation_factory<ContentIndexer, IContentIndexerStatics>().GetIndexer();
 }
 
 inline IndexableContent::IndexableContent() :
-    IndexableContent(ActivateInstance<IndexableContent>())
+    IndexableContent(activate_instance<IndexableContent>())
 {}
 
 inline QueryOptions::QueryOptions() :
-    QueryOptions(ActivateInstance<QueryOptions>())
+    QueryOptions(activate_instance<QueryOptions>())
 {}
 
 inline QueryOptions::QueryOptions(Windows::Storage::Search::CommonFileQuery query, const Windows::Foundation::Collections::IIterable<hstring> & fileTypeFilter) :
-    QueryOptions(GetActivationFactory<QueryOptions, IQueryOptionsFactory>().CreateCommonFileQuery(query, fileTypeFilter))
+    QueryOptions(get_activation_factory<QueryOptions, IQueryOptionsFactory>().CreateCommonFileQuery(query, fileTypeFilter))
 {}
 
 inline QueryOptions::QueryOptions(Windows::Storage::Search::CommonFolderQuery query) :
-    QueryOptions(GetActivationFactory<QueryOptions, IQueryOptionsFactory>().CreateCommonFolderQuery(query))
+    QueryOptions(get_activation_factory<QueryOptions, IQueryOptionsFactory>().CreateCommonFolderQuery(query))
 {}
 
 inline ValueAndLanguage::ValueAndLanguage() :
-    ValueAndLanguage(ActivateInstance<ValueAndLanguage>())
+    ValueAndLanguage(activate_instance<ValueAndLanguage>())
 {}
 
 }

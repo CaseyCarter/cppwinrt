@@ -462,26 +462,26 @@ template <typename D> Windows::UI::Xaml::Printing::PrintDocument impl_IPrintDocu
 }
 
 inline AddPagesEventArgs::AddPagesEventArgs() :
-    AddPagesEventArgs(ActivateInstance<AddPagesEventArgs>())
+    AddPagesEventArgs(activate_instance<AddPagesEventArgs>())
 {}
 
 inline GetPreviewPageEventArgs::GetPreviewPageEventArgs() :
-    GetPreviewPageEventArgs(ActivateInstance<GetPreviewPageEventArgs>())
+    GetPreviewPageEventArgs(activate_instance<GetPreviewPageEventArgs>())
 {}
 
 inline PaginateEventArgs::PaginateEventArgs() :
-    PaginateEventArgs(ActivateInstance<PaginateEventArgs>())
+    PaginateEventArgs(activate_instance<PaginateEventArgs>())
 {}
 
 inline PrintDocument::PrintDocument()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<PrintDocument, IPrintDocumentFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<PrintDocument, IPrintDocumentFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::DependencyProperty PrintDocument::DocumentSourceProperty()
 {
-    return GetActivationFactory<PrintDocument, IPrintDocumentStatics>().DocumentSourceProperty();
+    return get_activation_factory<PrintDocument, IPrintDocumentStatics>().DocumentSourceProperty();
 }
 
 }

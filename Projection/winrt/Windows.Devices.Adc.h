@@ -296,12 +296,12 @@ template <typename D> double impl_IAdcChannel<D>::ReadRatio() const
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> AdcController::GetControllersAsync(const Windows::Devices::Adc::Provider::IAdcProvider & provider)
 {
-    return GetActivationFactory<AdcController, IAdcControllerStatics>().GetControllersAsync(provider);
+    return get_activation_factory<AdcController, IAdcControllerStatics>().GetControllersAsync(provider);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> AdcController::GetDefaultAsync()
 {
-    return GetActivationFactory<AdcController, IAdcControllerStatics2>().GetDefaultAsync();
+    return get_activation_factory<AdcController, IAdcControllerStatics2>().GetDefaultAsync();
 }
 
 }

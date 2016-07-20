@@ -2787,118 +2787,118 @@ template <typename D> Windows::Devices::Usb::UsbConfiguration impl_IUsbDevice<D>
 
 inline bool UsbConfigurationDescriptor::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor & parsed)
 {
-    return GetActivationFactory<UsbConfigurationDescriptor, IUsbConfigurationDescriptorStatics>().TryParse(descriptor, parsed);
+    return get_activation_factory<UsbConfigurationDescriptor, IUsbConfigurationDescriptorStatics>().TryParse(descriptor, parsed);
 }
 
 inline Windows::Devices::Usb::UsbConfigurationDescriptor UsbConfigurationDescriptor::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor)
 {
-    return GetActivationFactory<UsbConfigurationDescriptor, IUsbConfigurationDescriptorStatics>().Parse(descriptor);
+    return get_activation_factory<UsbConfigurationDescriptor, IUsbConfigurationDescriptorStatics>().Parse(descriptor);
 }
 
 inline UsbControlRequestType::UsbControlRequestType() :
-    UsbControlRequestType(ActivateInstance<UsbControlRequestType>())
+    UsbControlRequestType(activate_instance<UsbControlRequestType>())
 {}
 
 inline hstring UsbDevice::GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass)
 {
-    return GetActivationFactory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass);
+    return get_activation_factory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass);
 }
 
 inline hstring UsbDevice::GetDeviceSelector(GUID winUsbInterfaceClass)
 {
-    return GetActivationFactory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(winUsbInterfaceClass);
+    return get_activation_factory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(winUsbInterfaceClass);
 }
 
 inline hstring UsbDevice::GetDeviceSelector(uint32_t vendorId, uint32_t productId)
 {
-    return GetActivationFactory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId);
+    return get_activation_factory<UsbDevice, IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId);
 }
 
 inline hstring UsbDevice::GetDeviceClassSelector(const Windows::Devices::Usb::UsbDeviceClass & usbClass)
 {
-    return GetActivationFactory<UsbDevice, IUsbDeviceStatics>().GetDeviceClassSelector(usbClass);
+    return get_activation_factory<UsbDevice, IUsbDeviceStatics>().GetDeviceClassSelector(usbClass);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> UsbDevice::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<UsbDevice, IUsbDeviceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<UsbDevice, IUsbDeviceStatics>().FromIdAsync(deviceId);
 }
 
 inline UsbDeviceClass::UsbDeviceClass() :
-    UsbDeviceClass(ActivateInstance<UsbDeviceClass>())
+    UsbDeviceClass(activate_instance<UsbDeviceClass>())
 {}
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::CdcControl()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().CdcControl();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().CdcControl();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Physical()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Physical();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Physical();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::PersonalHealthcare()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().PersonalHealthcare();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().PersonalHealthcare();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::ActiveSync()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().ActiveSync();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().ActiveSync();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::PalmSync()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().PalmSync();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().PalmSync();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::DeviceFirmwareUpdate()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().DeviceFirmwareUpdate();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().DeviceFirmwareUpdate();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Irda()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Irda();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Irda();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Measurement()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Measurement();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().Measurement();
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::VendorSpecific()
 {
-    return GetActivationFactory<UsbDeviceClasses, IUsbDeviceClassesStatics>().VendorSpecific();
+    return get_activation_factory<UsbDeviceClasses, IUsbDeviceClassesStatics>().VendorSpecific();
 }
 
 inline bool UsbEndpointDescriptor::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbEndpointDescriptor & parsed)
 {
-    return GetActivationFactory<UsbEndpointDescriptor, IUsbEndpointDescriptorStatics>().TryParse(descriptor, parsed);
+    return get_activation_factory<UsbEndpointDescriptor, IUsbEndpointDescriptorStatics>().TryParse(descriptor, parsed);
 }
 
 inline Windows::Devices::Usb::UsbEndpointDescriptor UsbEndpointDescriptor::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor)
 {
-    return GetActivationFactory<UsbEndpointDescriptor, IUsbEndpointDescriptorStatics>().Parse(descriptor);
+    return get_activation_factory<UsbEndpointDescriptor, IUsbEndpointDescriptorStatics>().Parse(descriptor);
 }
 
 inline bool UsbInterfaceDescriptor::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor & parsed)
 {
-    return GetActivationFactory<UsbInterfaceDescriptor, IUsbInterfaceDescriptorStatics>().TryParse(descriptor, parsed);
+    return get_activation_factory<UsbInterfaceDescriptor, IUsbInterfaceDescriptorStatics>().TryParse(descriptor, parsed);
 }
 
 inline Windows::Devices::Usb::UsbInterfaceDescriptor UsbInterfaceDescriptor::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor)
 {
-    return GetActivationFactory<UsbInterfaceDescriptor, IUsbInterfaceDescriptorStatics>().Parse(descriptor);
+    return get_activation_factory<UsbInterfaceDescriptor, IUsbInterfaceDescriptorStatics>().Parse(descriptor);
 }
 
 inline UsbSetupPacket::UsbSetupPacket() :
-    UsbSetupPacket(ActivateInstance<UsbSetupPacket>())
+    UsbSetupPacket(activate_instance<UsbSetupPacket>())
 {}
 
 inline UsbSetupPacket::UsbSetupPacket(const Windows::Storage::Streams::IBuffer & eightByteBuffer) :
-    UsbSetupPacket(GetActivationFactory<UsbSetupPacket, IUsbSetupPacketFactory>().CreateWithEightByteBuffer(eightByteBuffer))
+    UsbSetupPacket(get_activation_factory<UsbSetupPacket, IUsbSetupPacketFactory>().CreateWithEightByteBuffer(eightByteBuffer))
 {}
 
 }

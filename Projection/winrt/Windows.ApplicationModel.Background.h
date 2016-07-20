@@ -2660,226 +2660,226 @@ template <typename D> Windows::ApplicationModel::Background::UserNotificationCha
 }
 
 inline ActivitySensorTrigger::ActivitySensorTrigger(uint32_t reportIntervalInMilliseconds) :
-    ActivitySensorTrigger(GetActivationFactory<ActivitySensorTrigger, IActivitySensorTriggerFactory>().Create(reportIntervalInMilliseconds))
+    ActivitySensorTrigger(get_activation_factory<ActivitySensorTrigger, IActivitySensorTriggerFactory>().Create(reportIntervalInMilliseconds))
 {}
 
 inline ApplicationTrigger::ApplicationTrigger() :
-    ApplicationTrigger(ActivateInstance<ApplicationTrigger>())
+    ApplicationTrigger(activate_instance<ApplicationTrigger>())
 {}
 
 inline AppointmentStoreNotificationTrigger::AppointmentStoreNotificationTrigger() :
-    AppointmentStoreNotificationTrigger(ActivateInstance<AppointmentStoreNotificationTrigger>())
+    AppointmentStoreNotificationTrigger(activate_instance<AppointmentStoreNotificationTrigger>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync()
 {
-    return GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync();
+    return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync(hstring_ref applicationId)
 {
-    return GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync(applicationId);
+    return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync(applicationId);
 }
 
 inline void BackgroundExecutionManager::RemoveAccess()
 {
-    GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess();
+    get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess();
 }
 
 inline void BackgroundExecutionManager::RemoveAccess(hstring_ref applicationId)
 {
-    GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess(applicationId);
+    get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess(applicationId);
 }
 
 inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus()
 {
-    return GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus();
+    return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus();
 }
 
 inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus(hstring_ref applicationId)
 {
-    return GetActivationFactory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus(applicationId);
+    return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus(applicationId);
 }
 
 inline BackgroundTaskBuilder::BackgroundTaskBuilder() :
-    BackgroundTaskBuilder(ActivateInstance<BackgroundTaskBuilder>())
+    BackgroundTaskBuilder(activate_instance<BackgroundTaskBuilder>())
 {}
 
 inline Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> BackgroundTaskRegistration::AllTasks()
 {
-    return GetActivationFactory<BackgroundTaskRegistration, IBackgroundTaskRegistrationStatics>().AllTasks();
+    return get_activation_factory<BackgroundTaskRegistration, IBackgroundTaskRegistrationStatics>().AllTasks();
 }
 
 inline Windows::ApplicationModel::Background::BackgroundWorkCostValue BackgroundWorkCost::CurrentBackgroundWorkCost()
 {
-    return GetActivationFactory<BackgroundWorkCost, IBackgroundWorkCostStatics>().CurrentBackgroundWorkCost();
+    return get_activation_factory<BackgroundWorkCost, IBackgroundWorkCostStatics>().CurrentBackgroundWorkCost();
 }
 
 inline BluetoothLEAdvertisementPublisherTrigger::BluetoothLEAdvertisementPublisherTrigger() :
-    BluetoothLEAdvertisementPublisherTrigger(ActivateInstance<BluetoothLEAdvertisementPublisherTrigger>())
+    BluetoothLEAdvertisementPublisherTrigger(activate_instance<BluetoothLEAdvertisementPublisherTrigger>())
 {}
 
 inline BluetoothLEAdvertisementWatcherTrigger::BluetoothLEAdvertisementWatcherTrigger() :
-    BluetoothLEAdvertisementWatcherTrigger(ActivateInstance<BluetoothLEAdvertisementWatcherTrigger>())
+    BluetoothLEAdvertisementWatcherTrigger(activate_instance<BluetoothLEAdvertisementWatcherTrigger>())
 {}
 
 inline CachedFileUpdaterTrigger::CachedFileUpdaterTrigger() :
-    CachedFileUpdaterTrigger(ActivateInstance<CachedFileUpdaterTrigger>())
+    CachedFileUpdaterTrigger(activate_instance<CachedFileUpdaterTrigger>())
 {}
 
 inline ChatMessageNotificationTrigger::ChatMessageNotificationTrigger() :
-    ChatMessageNotificationTrigger(ActivateInstance<ChatMessageNotificationTrigger>())
+    ChatMessageNotificationTrigger(activate_instance<ChatMessageNotificationTrigger>())
 {}
 
 inline ChatMessageReceivedNotificationTrigger::ChatMessageReceivedNotificationTrigger() :
-    ChatMessageReceivedNotificationTrigger(ActivateInstance<ChatMessageReceivedNotificationTrigger>())
+    ChatMessageReceivedNotificationTrigger(activate_instance<ChatMessageReceivedNotificationTrigger>())
 {}
 
 inline ContactStoreNotificationTrigger::ContactStoreNotificationTrigger() :
-    ContactStoreNotificationTrigger(ActivateInstance<ContactStoreNotificationTrigger>())
+    ContactStoreNotificationTrigger(activate_instance<ContactStoreNotificationTrigger>())
 {}
 
 inline ContentPrefetchTrigger::ContentPrefetchTrigger() :
-    ContentPrefetchTrigger(ActivateInstance<ContentPrefetchTrigger>())
+    ContentPrefetchTrigger(activate_instance<ContentPrefetchTrigger>())
 {}
 
 inline ContentPrefetchTrigger::ContentPrefetchTrigger(const Windows::Foundation::TimeSpan & waitInterval) :
-    ContentPrefetchTrigger(GetActivationFactory<ContentPrefetchTrigger, IContentPrefetchTriggerFactory>().Create(waitInterval))
+    ContentPrefetchTrigger(get_activation_factory<ContentPrefetchTrigger, IContentPrefetchTriggerFactory>().Create(waitInterval))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> DeviceConnectionChangeTrigger::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<DeviceConnectionChangeTrigger, IDeviceConnectionChangeTriggerStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<DeviceConnectionChangeTrigger, IDeviceConnectionChangeTriggerStatics>().FromIdAsync(deviceId);
 }
 
 inline DeviceManufacturerNotificationTrigger::DeviceManufacturerNotificationTrigger(hstring_ref triggerQualifier, bool oneShot) :
-    DeviceManufacturerNotificationTrigger(GetActivationFactory<DeviceManufacturerNotificationTrigger, IDeviceManufacturerNotificationTriggerFactory>().Create(triggerQualifier, oneShot))
+    DeviceManufacturerNotificationTrigger(get_activation_factory<DeviceManufacturerNotificationTrigger, IDeviceManufacturerNotificationTriggerFactory>().Create(triggerQualifier, oneShot))
 {}
 
 inline DeviceServicingTrigger::DeviceServicingTrigger() :
-    DeviceServicingTrigger(ActivateInstance<DeviceServicingTrigger>())
+    DeviceServicingTrigger(activate_instance<DeviceServicingTrigger>())
 {}
 
 inline DeviceUseTrigger::DeviceUseTrigger() :
-    DeviceUseTrigger(ActivateInstance<DeviceUseTrigger>())
+    DeviceUseTrigger(activate_instance<DeviceUseTrigger>())
 {}
 
 inline EmailStoreNotificationTrigger::EmailStoreNotificationTrigger() :
-    EmailStoreNotificationTrigger(ActivateInstance<EmailStoreNotificationTrigger>())
+    EmailStoreNotificationTrigger(activate_instance<EmailStoreNotificationTrigger>())
 {}
 
 inline GattCharacteristicNotificationTrigger::GattCharacteristicNotificationTrigger(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) :
-    GattCharacteristicNotificationTrigger(GetActivationFactory<GattCharacteristicNotificationTrigger, IGattCharacteristicNotificationTriggerFactory>().Create(characteristic))
+    GattCharacteristicNotificationTrigger(get_activation_factory<GattCharacteristicNotificationTrigger, IGattCharacteristicNotificationTriggerFactory>().Create(characteristic))
 {}
 
 inline LocationTrigger::LocationTrigger(Windows::ApplicationModel::Background::LocationTriggerType triggerType) :
-    LocationTrigger(GetActivationFactory<LocationTrigger, ILocationTriggerFactory>().Create(triggerType))
+    LocationTrigger(get_activation_factory<LocationTrigger, ILocationTriggerFactory>().Create(triggerType))
 {}
 
 inline MaintenanceTrigger::MaintenanceTrigger(uint32_t freshnessTime, bool oneShot) :
-    MaintenanceTrigger(GetActivationFactory<MaintenanceTrigger, IMaintenanceTriggerFactory>().Create(freshnessTime, oneShot))
+    MaintenanceTrigger(get_activation_factory<MaintenanceTrigger, IMaintenanceTriggerFactory>().Create(freshnessTime, oneShot))
 {}
 
 inline MediaProcessingTrigger::MediaProcessingTrigger() :
-    MediaProcessingTrigger(ActivateInstance<MediaProcessingTrigger>())
+    MediaProcessingTrigger(activate_instance<MediaProcessingTrigger>())
 {}
 
 inline MobileBroadbandDeviceServiceNotificationTrigger::MobileBroadbandDeviceServiceNotificationTrigger() :
-    MobileBroadbandDeviceServiceNotificationTrigger(ActivateInstance<MobileBroadbandDeviceServiceNotificationTrigger>())
+    MobileBroadbandDeviceServiceNotificationTrigger(activate_instance<MobileBroadbandDeviceServiceNotificationTrigger>())
 {}
 
 inline MobileBroadbandPinLockStateChangeTrigger::MobileBroadbandPinLockStateChangeTrigger() :
-    MobileBroadbandPinLockStateChangeTrigger(ActivateInstance<MobileBroadbandPinLockStateChangeTrigger>())
+    MobileBroadbandPinLockStateChangeTrigger(activate_instance<MobileBroadbandPinLockStateChangeTrigger>())
 {}
 
 inline MobileBroadbandRadioStateChangeTrigger::MobileBroadbandRadioStateChangeTrigger() :
-    MobileBroadbandRadioStateChangeTrigger(ActivateInstance<MobileBroadbandRadioStateChangeTrigger>())
+    MobileBroadbandRadioStateChangeTrigger(activate_instance<MobileBroadbandRadioStateChangeTrigger>())
 {}
 
 inline MobileBroadbandRegistrationStateChangeTrigger::MobileBroadbandRegistrationStateChangeTrigger() :
-    MobileBroadbandRegistrationStateChangeTrigger(ActivateInstance<MobileBroadbandRegistrationStateChangeTrigger>())
+    MobileBroadbandRegistrationStateChangeTrigger(activate_instance<MobileBroadbandRegistrationStateChangeTrigger>())
 {}
 
 inline NetworkOperatorHotspotAuthenticationTrigger::NetworkOperatorHotspotAuthenticationTrigger() :
-    NetworkOperatorHotspotAuthenticationTrigger(ActivateInstance<NetworkOperatorHotspotAuthenticationTrigger>())
+    NetworkOperatorHotspotAuthenticationTrigger(activate_instance<NetworkOperatorHotspotAuthenticationTrigger>())
 {}
 
 inline NetworkOperatorNotificationTrigger::NetworkOperatorNotificationTrigger(hstring_ref networkAccountId) :
-    NetworkOperatorNotificationTrigger(GetActivationFactory<NetworkOperatorNotificationTrigger, INetworkOperatorNotificationTriggerFactory>().Create(networkAccountId))
+    NetworkOperatorNotificationTrigger(get_activation_factory<NetworkOperatorNotificationTrigger, INetworkOperatorNotificationTriggerFactory>().Create(networkAccountId))
 {}
 
 inline PushNotificationTrigger::PushNotificationTrigger() :
-    PushNotificationTrigger(ActivateInstance<PushNotificationTrigger>())
+    PushNotificationTrigger(activate_instance<PushNotificationTrigger>())
 {}
 
 inline PushNotificationTrigger::PushNotificationTrigger(hstring_ref applicationId) :
-    PushNotificationTrigger(GetActivationFactory<PushNotificationTrigger, IPushNotificationTriggerFactory>().Create(applicationId))
+    PushNotificationTrigger(get_activation_factory<PushNotificationTrigger, IPushNotificationTriggerFactory>().Create(applicationId))
 {}
 
 inline RcsEndUserMessageAvailableTrigger::RcsEndUserMessageAvailableTrigger() :
-    RcsEndUserMessageAvailableTrigger(ActivateInstance<RcsEndUserMessageAvailableTrigger>())
+    RcsEndUserMessageAvailableTrigger(activate_instance<RcsEndUserMessageAvailableTrigger>())
 {}
 
 inline RfcommConnectionTrigger::RfcommConnectionTrigger() :
-    RfcommConnectionTrigger(ActivateInstance<RfcommConnectionTrigger>())
+    RfcommConnectionTrigger(activate_instance<RfcommConnectionTrigger>())
 {}
 
 inline SecondaryAuthenticationFactorAuthenticationTrigger::SecondaryAuthenticationFactorAuthenticationTrigger() :
-    SecondaryAuthenticationFactorAuthenticationTrigger(ActivateInstance<SecondaryAuthenticationFactorAuthenticationTrigger>())
+    SecondaryAuthenticationFactorAuthenticationTrigger(activate_instance<SecondaryAuthenticationFactorAuthenticationTrigger>())
 {}
 
 inline SensorDataThresholdTrigger::SensorDataThresholdTrigger(const Windows::Devices::Sensors::ISensorDataThreshold & threshold) :
-    SensorDataThresholdTrigger(GetActivationFactory<SensorDataThresholdTrigger, ISensorDataThresholdTriggerFactory>().Create(threshold))
+    SensorDataThresholdTrigger(get_activation_factory<SensorDataThresholdTrigger, ISensorDataThresholdTriggerFactory>().Create(threshold))
 {}
 
 inline SmsMessageReceivedTrigger::SmsMessageReceivedTrigger(const Windows::Devices::Sms::SmsFilterRules & filterRules) :
-    SmsMessageReceivedTrigger(GetActivationFactory<SmsMessageReceivedTrigger, ISmsMessageReceivedTriggerFactory>().Create(filterRules))
+    SmsMessageReceivedTrigger(get_activation_factory<SmsMessageReceivedTrigger, ISmsMessageReceivedTriggerFactory>().Create(filterRules))
 {}
 
 inline SocketActivityTrigger::SocketActivityTrigger() :
-    SocketActivityTrigger(ActivateInstance<SocketActivityTrigger>())
+    SocketActivityTrigger(activate_instance<SocketActivityTrigger>())
 {}
 
 inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::Create(const Windows::Storage::StorageLibrary & storageLibrary)
 {
-    return GetActivationFactory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().Create(storageLibrary);
+    return get_activation_factory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().Create(storageLibrary);
 }
 
 inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries)
 {
-    return GetActivationFactory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().CreateFromLibraries(storageLibraries);
+    return get_activation_factory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().CreateFromLibraries(storageLibraries);
 }
 
 inline SystemCondition::SystemCondition(Windows::ApplicationModel::Background::SystemConditionType conditionType) :
-    SystemCondition(GetActivationFactory<SystemCondition, ISystemConditionFactory>().Create(conditionType))
+    SystemCondition(get_activation_factory<SystemCondition, ISystemConditionFactory>().Create(conditionType))
 {}
 
 inline SystemTrigger::SystemTrigger(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) :
-    SystemTrigger(GetActivationFactory<SystemTrigger, ISystemTriggerFactory>().Create(triggerType, oneShot))
+    SystemTrigger(get_activation_factory<SystemTrigger, ISystemTriggerFactory>().Create(triggerType, oneShot))
 {}
 
 inline TimeTrigger::TimeTrigger(uint32_t freshnessTime, bool oneShot) :
-    TimeTrigger(GetActivationFactory<TimeTrigger, ITimeTriggerFactory>().Create(freshnessTime, oneShot))
+    TimeTrigger(get_activation_factory<TimeTrigger, ITimeTriggerFactory>().Create(freshnessTime, oneShot))
 {}
 
 inline ToastNotificationActionTrigger::ToastNotificationActionTrigger() :
-    ToastNotificationActionTrigger(ActivateInstance<ToastNotificationActionTrigger>())
+    ToastNotificationActionTrigger(activate_instance<ToastNotificationActionTrigger>())
 {}
 
 inline ToastNotificationActionTrigger::ToastNotificationActionTrigger(hstring_ref applicationId) :
-    ToastNotificationActionTrigger(GetActivationFactory<ToastNotificationActionTrigger, IToastNotificationActionTriggerFactory>().Create(applicationId))
+    ToastNotificationActionTrigger(get_activation_factory<ToastNotificationActionTrigger, IToastNotificationActionTriggerFactory>().Create(applicationId))
 {}
 
 inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger() :
-    ToastNotificationHistoryChangedTrigger(ActivateInstance<ToastNotificationHistoryChangedTrigger>())
+    ToastNotificationHistoryChangedTrigger(activate_instance<ToastNotificationHistoryChangedTrigger>())
 {}
 
 inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger(hstring_ref applicationId) :
-    ToastNotificationHistoryChangedTrigger(GetActivationFactory<ToastNotificationHistoryChangedTrigger, IToastNotificationHistoryChangedTriggerFactory>().Create(applicationId))
+    ToastNotificationHistoryChangedTrigger(get_activation_factory<ToastNotificationHistoryChangedTrigger, IToastNotificationHistoryChangedTriggerFactory>().Create(applicationId))
 {}
 
 inline UserNotificationChangedTrigger::UserNotificationChangedTrigger(Windows::UI::Notifications::NotificationKinds notificationKinds) :
-    UserNotificationChangedTrigger(GetActivationFactory<UserNotificationChangedTrigger, IUserNotificationChangedTriggerFactory>().Create(notificationKinds))
+    UserNotificationChangedTrigger(get_activation_factory<UserNotificationChangedTrigger, IUserNotificationChangedTriggerFactory>().Create(notificationKinds))
 {}
 
 }

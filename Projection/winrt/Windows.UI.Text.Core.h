@@ -1897,12 +1897,12 @@ template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextCompo
 
 inline wchar_t CoreTextServicesConstants::HiddenCharacter()
 {
-    return GetActivationFactory<CoreTextServicesConstants, ICoreTextServicesStatics>().HiddenCharacter();
+    return get_activation_factory<CoreTextServicesConstants, ICoreTextServicesStatics>().HiddenCharacter();
 }
 
 inline Windows::UI::Text::Core::CoreTextServicesManager CoreTextServicesManager::GetForCurrentView()
 {
-    return GetActivationFactory<CoreTextServicesManager, ICoreTextServicesManagerStatics>().GetForCurrentView();
+    return get_activation_factory<CoreTextServicesManager, ICoreTextServicesManagerStatics>().GetForCurrentView();
 }
 
 }

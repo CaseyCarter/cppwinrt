@@ -55,7 +55,7 @@ template <typename D> void impl_IDisplayRequest<D>::RequestRelease() const
 }
 
 inline DisplayRequest::DisplayRequest() :
-    DisplayRequest(ActivateInstance<DisplayRequest>())
+    DisplayRequest(activate_instance<DisplayRequest>())
 {}
 
 }

@@ -117,17 +117,17 @@ template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader imp
 inline CustomXamlResourceLoader::CustomXamlResourceLoader()
 {
     Windows::IInspectable outer, inner;
-    impl_move(GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(outer, inner));
+    impl_move(get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(outer, inner));
 }
 
 inline Windows::UI::Xaml::Resources::CustomXamlResourceLoader CustomXamlResourceLoader::Current()
 {
-    return GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderStatics>().Current();
+    return get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderStatics>().Current();
 }
 
 inline void CustomXamlResourceLoader::Current(const Windows::UI::Xaml::Resources::CustomXamlResourceLoader & value)
 {
-    GetActivationFactory<CustomXamlResourceLoader, ICustomXamlResourceLoaderStatics>().Current(value);
+    get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderStatics>().Current(value);
 }
 
 }

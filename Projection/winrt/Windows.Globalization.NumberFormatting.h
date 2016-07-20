@@ -1263,51 +1263,51 @@ template <typename D> hstring impl_INumeralSystemTranslator<D>::TranslateNumeral
 }
 
 inline CurrencyFormatter::CurrencyFormatter(hstring_ref currencyCode) :
-    CurrencyFormatter(GetActivationFactory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCode(currencyCode))
+    CurrencyFormatter(get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCode(currencyCode))
 {}
 
 inline CurrencyFormatter::CurrencyFormatter(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
-    CurrencyFormatter(GetActivationFactory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion))
+    CurrencyFormatter(get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion))
 {}
 
 inline DecimalFormatter::DecimalFormatter() :
-    DecimalFormatter(ActivateInstance<DecimalFormatter>())
+    DecimalFormatter(activate_instance<DecimalFormatter>())
 {}
 
 inline DecimalFormatter::DecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
-    DecimalFormatter(GetActivationFactory<DecimalFormatter, IDecimalFormatterFactory>().CreateDecimalFormatter(languages, geographicRegion))
+    DecimalFormatter(get_activation_factory<DecimalFormatter, IDecimalFormatterFactory>().CreateDecimalFormatter(languages, geographicRegion))
 {}
 
 inline IncrementNumberRounder::IncrementNumberRounder() :
-    IncrementNumberRounder(ActivateInstance<IncrementNumberRounder>())
+    IncrementNumberRounder(activate_instance<IncrementNumberRounder>())
 {}
 
 inline NumeralSystemTranslator::NumeralSystemTranslator() :
-    NumeralSystemTranslator(ActivateInstance<NumeralSystemTranslator>())
+    NumeralSystemTranslator(activate_instance<NumeralSystemTranslator>())
 {}
 
 inline NumeralSystemTranslator::NumeralSystemTranslator(const Windows::Foundation::Collections::IIterable<hstring> & languages) :
-    NumeralSystemTranslator(GetActivationFactory<NumeralSystemTranslator, INumeralSystemTranslatorFactory>().Create(languages))
+    NumeralSystemTranslator(get_activation_factory<NumeralSystemTranslator, INumeralSystemTranslatorFactory>().Create(languages))
 {}
 
 inline PercentFormatter::PercentFormatter() :
-    PercentFormatter(ActivateInstance<PercentFormatter>())
+    PercentFormatter(activate_instance<PercentFormatter>())
 {}
 
 inline PercentFormatter::PercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
-    PercentFormatter(GetActivationFactory<PercentFormatter, IPercentFormatterFactory>().CreatePercentFormatter(languages, geographicRegion))
+    PercentFormatter(get_activation_factory<PercentFormatter, IPercentFormatterFactory>().CreatePercentFormatter(languages, geographicRegion))
 {}
 
 inline PermilleFormatter::PermilleFormatter() :
-    PermilleFormatter(ActivateInstance<PermilleFormatter>())
+    PermilleFormatter(activate_instance<PermilleFormatter>())
 {}
 
 inline PermilleFormatter::PermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
-    PermilleFormatter(GetActivationFactory<PermilleFormatter, IPermilleFormatterFactory>().CreatePermilleFormatter(languages, geographicRegion))
+    PermilleFormatter(get_activation_factory<PermilleFormatter, IPermilleFormatterFactory>().CreatePermilleFormatter(languages, geographicRegion))
 {}
 
 inline SignificantDigitsNumberRounder::SignificantDigitsNumberRounder() :
-    SignificantDigitsNumberRounder(ActivateInstance<SignificantDigitsNumberRounder>())
+    SignificantDigitsNumberRounder(activate_instance<SignificantDigitsNumberRounder>())
 {}
 
 }

@@ -518,19 +518,19 @@ template <typename D> Windows::IInspectable impl_IFileInformationFactory<D>::Get
 }
 
 inline FileInformationFactory::FileInformationFactory(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode) :
-    FileInformationFactory(GetActivationFactory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithMode(queryResult, mode))
+    FileInformationFactory(get_activation_factory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithMode(queryResult, mode))
 {}
 
 inline FileInformationFactory::FileInformationFactory(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize) :
-    FileInformationFactory(GetActivationFactory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSize(queryResult, mode, requestedThumbnailSize))
+    FileInformationFactory(get_activation_factory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSize(queryResult, mode, requestedThumbnailSize))
 {}
 
 inline FileInformationFactory::FileInformationFactory(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions) :
-    FileInformationFactory(GetActivationFactory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSizeAndOptions(queryResult, mode, requestedThumbnailSize, thumbnailOptions))
+    FileInformationFactory(get_activation_factory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSizeAndOptions(queryResult, mode, requestedThumbnailSize, thumbnailOptions))
 {}
 
 inline FileInformationFactory::FileInformationFactory(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, bool delayLoad) :
-    FileInformationFactory(GetActivationFactory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSizeAndOptionsAndFlags(queryResult, mode, requestedThumbnailSize, thumbnailOptions, delayLoad))
+    FileInformationFactory(get_activation_factory<FileInformationFactory, IFileInformationFactoryFactory>().CreateWithModeAndSizeAndOptionsAndFlags(queryResult, mode, requestedThumbnailSize, thumbnailOptions, delayLoad))
 {}
 
 }

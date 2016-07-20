@@ -1169,62 +1169,62 @@ template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_I
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem)
 {
-    return GetActivationFactory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem);
+    return get_activation_factory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem);
 }
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position)
 {
-    return GetActivationFactory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position);
+    return get_activation_factory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position);
 }
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation)
 {
-    return GetActivationFactory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position, orientation);
+    return get_activation_factory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position, orientation);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> SpatialAnchorManager::RequestStoreAsync()
 {
-    return GetActivationFactory<SpatialAnchorManager, ISpatialAnchorManagerStatics>().RequestStoreAsync();
+    return get_activation_factory<SpatialAnchorManager, ISpatialAnchorManagerStatics>().RequestStoreAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> SpatialAnchorTransferManager::TryImportAnchorsAsync(const Windows::Storage::Streams::IInputStream & stream)
 {
-    return GetActivationFactory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryImportAnchorsAsync(stream);
+    return get_activation_factory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryImportAnchorsAsync(stream);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> SpatialAnchorTransferManager::TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream)
 {
-    return GetActivationFactory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryExportAnchorsAsync(anchors, stream);
+    return get_activation_factory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryExportAnchorsAsync(anchors, stream);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialAnchorTransferManager::RequestAccessAsync()
 {
-    return GetActivationFactory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().RequestAccessAsync();
+    return get_activation_factory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().RequestAccessAsync();
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingBox & box)
 {
-    return GetActivationFactory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromBox(coordinateSystem, box);
+    return get_activation_factory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromBox(coordinateSystem, box);
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromOrientedBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingOrientedBox & box)
 {
-    return GetActivationFactory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromOrientedBox(coordinateSystem, box);
+    return get_activation_factory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromOrientedBox(coordinateSystem, box);
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromSphere(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingSphere & sphere)
 {
-    return GetActivationFactory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromSphere(coordinateSystem, sphere);
+    return get_activation_factory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromSphere(coordinateSystem, sphere);
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingFrustum & frustum)
 {
-    return GetActivationFactory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromFrustum(coordinateSystem, frustum);
+    return get_activation_factory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromFrustum(coordinateSystem, frustum);
 }
 
 inline Windows::Perception::Spatial::SpatialLocator SpatialLocator::GetDefault()
 {
-    return GetActivationFactory<SpatialLocator, ISpatialLocatorStatics>().GetDefault();
+    return get_activation_factory<SpatialLocator, ISpatialLocatorStatics>().GetDefault();
 }
 
 }

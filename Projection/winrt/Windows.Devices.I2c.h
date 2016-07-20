@@ -458,32 +458,32 @@ template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D
 }
 
 inline I2cConnectionSettings::I2cConnectionSettings(int32_t slaveAddress) :
-    I2cConnectionSettings(GetActivationFactory<I2cConnectionSettings, II2cConnectionSettingsFactory>().Create(slaveAddress))
+    I2cConnectionSettings(get_activation_factory<I2cConnectionSettings, II2cConnectionSettingsFactory>().Create(slaveAddress))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::I2cController>> I2cController::GetControllersAsync(const Windows::Devices::I2c::Provider::II2cProvider & provider)
 {
-    return GetActivationFactory<I2cController, II2cControllerStatics>().GetControllersAsync(provider);
+    return get_activation_factory<I2cController, II2cControllerStatics>().GetControllersAsync(provider);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cController> I2cController::GetDefaultAsync()
 {
-    return GetActivationFactory<I2cController, II2cControllerStatics>().GetDefaultAsync();
+    return get_activation_factory<I2cController, II2cControllerStatics>().GetDefaultAsync();
 }
 
 inline hstring I2cDevice::GetDeviceSelector()
 {
-    return GetActivationFactory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector();
+    return get_activation_factory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector();
 }
 
 inline hstring I2cDevice::GetDeviceSelector(hstring_ref friendlyName)
 {
-    return GetActivationFactory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector(friendlyName);
+    return get_activation_factory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector(friendlyName);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> I2cDevice::FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings)
 {
-    return GetActivationFactory<I2cDevice, II2cDeviceStatics>().FromIdAsync(deviceId, settings);
+    return get_activation_factory<I2cDevice, II2cDeviceStatics>().FromIdAsync(deviceId, settings);
 }
 
 }

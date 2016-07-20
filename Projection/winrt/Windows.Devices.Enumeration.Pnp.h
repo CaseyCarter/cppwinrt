@@ -554,27 +554,27 @@ template <typename D> void impl_IPnpObject<D>::Update(const Windows::Devices::En
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObject> PnpObject::CreateFromIdAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, hstring_ref id, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties)
 {
-    return GetActivationFactory<PnpObject, IPnpObjectStatics>().CreateFromIdAsync(type, id, requestedProperties);
+    return get_activation_factory<PnpObject, IPnpObjectStatics>().CreateFromIdAsync(type, id, requestedProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> PnpObject::FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties)
 {
-    return GetActivationFactory<PnpObject, IPnpObjectStatics>().FindAllAsync(type, requestedProperties);
+    return get_activation_factory<PnpObject, IPnpObjectStatics>().FindAllAsync(type, requestedProperties);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> PnpObject::FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_ref aqsFilter)
 {
-    return GetActivationFactory<PnpObject, IPnpObjectStatics>().FindAllAsync(type, requestedProperties, aqsFilter);
+    return get_activation_factory<PnpObject, IPnpObjectStatics>().FindAllAsync(type, requestedProperties, aqsFilter);
 }
 
 inline Windows::Devices::Enumeration::Pnp::PnpObjectWatcher PnpObject::CreateWatcher(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties)
 {
-    return GetActivationFactory<PnpObject, IPnpObjectStatics>().CreateWatcher(type, requestedProperties);
+    return get_activation_factory<PnpObject, IPnpObjectStatics>().CreateWatcher(type, requestedProperties);
 }
 
 inline Windows::Devices::Enumeration::Pnp::PnpObjectWatcher PnpObject::CreateWatcher(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_ref aqsFilter)
 {
-    return GetActivationFactory<PnpObject, IPnpObjectStatics>().CreateWatcher(type, requestedProperties, aqsFilter);
+    return get_activation_factory<PnpObject, IPnpObjectStatics>().CreateWatcher(type, requestedProperties, aqsFilter);
 }
 
 }

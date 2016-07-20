@@ -584,12 +584,12 @@ template <typename D> Windows::UI::Xaml::Navigation::PageStackEntry impl_IPageSt
 }
 
 inline PageStackEntry::PageStackEntry(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) :
-    PageStackEntry(GetActivationFactory<PageStackEntry, IPageStackEntryFactory>().CreateInstance(sourcePageType, parameter, navigationTransitionInfo))
+    PageStackEntry(get_activation_factory<PageStackEntry, IPageStackEntryFactory>().CreateInstance(sourcePageType, parameter, navigationTransitionInfo))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PageStackEntry::SourcePageTypeProperty()
 {
-    return GetActivationFactory<PageStackEntry, IPageStackEntryStatics>().SourcePageTypeProperty();
+    return get_activation_factory<PageStackEntry, IPageStackEntryStatics>().SourcePageTypeProperty();
 }
 
 }

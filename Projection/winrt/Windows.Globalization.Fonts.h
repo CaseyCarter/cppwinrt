@@ -381,7 +381,7 @@ template <typename D> double impl_ILanguageFont<D>::ScaleFactor() const
 }
 
 inline LanguageFontGroup::LanguageFontGroup(hstring_ref languageTag) :
-    LanguageFontGroup(GetActivationFactory<LanguageFontGroup, ILanguageFontGroupFactory>().CreateLanguageFontGroup(languageTag))
+    LanguageFontGroup(get_activation_factory<LanguageFontGroup, ILanguageFontGroupFactory>().CreateLanguageFontGroup(languageTag))
 {}
 
 }

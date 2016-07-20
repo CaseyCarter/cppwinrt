@@ -602,11 +602,11 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
 }
 
 inline DnssdRegistrationResult::DnssdRegistrationResult() :
-    DnssdRegistrationResult(ActivateInstance<DnssdRegistrationResult>())
+    DnssdRegistrationResult(activate_instance<DnssdRegistrationResult>())
 {}
 
 inline DnssdServiceInstance::DnssdServiceInstance(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) :
-    DnssdServiceInstance(GetActivationFactory<DnssdServiceInstance, IDnssdServiceInstanceFactory>().Create(dnssdServiceInstanceName, hostName, port))
+    DnssdServiceInstance(get_activation_factory<DnssdServiceInstance, IDnssdServiceInstanceFactory>().Create(dnssdServiceInstanceName, hostName, port))
 {}
 
 }

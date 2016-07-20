@@ -443,15 +443,15 @@ template <typename D> Windows::Media::ContentRestrictions::RatedContentRestricti
 }
 
 inline RatedContentDescription::RatedContentDescription(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) :
-    RatedContentDescription(GetActivationFactory<RatedContentDescription, IRatedContentDescriptionFactory>().Create(id, title, category))
+    RatedContentDescription(get_activation_factory<RatedContentDescription, IRatedContentDescriptionFactory>().Create(id, title, category))
 {}
 
 inline RatedContentRestrictions::RatedContentRestrictions() :
-    RatedContentRestrictions(ActivateInstance<RatedContentRestrictions>())
+    RatedContentRestrictions(activate_instance<RatedContentRestrictions>())
 {}
 
 inline RatedContentRestrictions::RatedContentRestrictions(uint32_t maxAgeRating) :
-    RatedContentRestrictions(GetActivationFactory<RatedContentRestrictions, IRatedContentRestrictionsFactory>().CreateWithMaxAgeRating(maxAgeRating))
+    RatedContentRestrictions(get_activation_factory<RatedContentRestrictions, IRatedContentRestrictionsFactory>().CreateWithMaxAgeRating(maxAgeRating))
 {}
 
 }

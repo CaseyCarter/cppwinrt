@@ -39,6 +39,8 @@ struct hresult_error
     struct from_abi_t {};
     static constexpr from_abi_t from_abi {};
 
+    hresult_error() noexcept = default;
+
     explicit hresult_error(const HRESULT code) noexcept :
         m_code(code)
     {

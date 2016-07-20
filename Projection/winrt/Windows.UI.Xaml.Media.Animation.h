@@ -8728,1012 +8728,1012 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_INavigationThem
 }
 
 inline AddDeleteThemeTransition::AddDeleteThemeTransition() :
-    AddDeleteThemeTransition(ActivateInstance<AddDeleteThemeTransition>())
+    AddDeleteThemeTransition(activate_instance<AddDeleteThemeTransition>())
 {}
 
 inline BackEase::BackEase() :
-    BackEase(ActivateInstance<BackEase>())
+    BackEase(activate_instance<BackEase>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BackEase::AmplitudeProperty()
 {
-    return GetActivationFactory<BackEase, IBackEaseStatics>().AmplitudeProperty();
+    return get_activation_factory<BackEase, IBackEaseStatics>().AmplitudeProperty();
 }
 
 inline BeginStoryboard::BeginStoryboard() :
-    BeginStoryboard(ActivateInstance<BeginStoryboard>())
+    BeginStoryboard(activate_instance<BeginStoryboard>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BeginStoryboard::StoryboardProperty()
 {
-    return GetActivationFactory<BeginStoryboard, IBeginStoryboardStatics>().StoryboardProperty();
+    return get_activation_factory<BeginStoryboard, IBeginStoryboardStatics>().StoryboardProperty();
 }
 
 inline BounceEase::BounceEase() :
-    BounceEase(ActivateInstance<BounceEase>())
+    BounceEase(activate_instance<BounceEase>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BounceEase::BouncesProperty()
 {
-    return GetActivationFactory<BounceEase, IBounceEaseStatics>().BouncesProperty();
+    return get_activation_factory<BounceEase, IBounceEaseStatics>().BouncesProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty BounceEase::BouncinessProperty()
 {
-    return GetActivationFactory<BounceEase, IBounceEaseStatics>().BouncinessProperty();
+    return get_activation_factory<BounceEase, IBounceEaseStatics>().BouncinessProperty();
 }
 
 inline CircleEase::CircleEase() :
-    CircleEase(ActivateInstance<CircleEase>())
+    CircleEase(activate_instance<CircleEase>())
 {}
 
 inline ColorAnimation::ColorAnimation() :
-    ColorAnimation(ActivateInstance<ColorAnimation>())
+    ColorAnimation(activate_instance<ColorAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimation::FromProperty()
 {
-    return GetActivationFactory<ColorAnimation, IColorAnimationStatics>().FromProperty();
+    return get_activation_factory<ColorAnimation, IColorAnimationStatics>().FromProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimation::ToProperty()
 {
-    return GetActivationFactory<ColorAnimation, IColorAnimationStatics>().ToProperty();
+    return get_activation_factory<ColorAnimation, IColorAnimationStatics>().ToProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimation::ByProperty()
 {
-    return GetActivationFactory<ColorAnimation, IColorAnimationStatics>().ByProperty();
+    return get_activation_factory<ColorAnimation, IColorAnimationStatics>().ByProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimation::EasingFunctionProperty()
 {
-    return GetActivationFactory<ColorAnimation, IColorAnimationStatics>().EasingFunctionProperty();
+    return get_activation_factory<ColorAnimation, IColorAnimationStatics>().EasingFunctionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimation::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<ColorAnimation, IColorAnimationStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<ColorAnimation, IColorAnimationStatics>().EnableDependentAnimationProperty();
 }
 
 inline ColorAnimationUsingKeyFrames::ColorAnimationUsingKeyFrames() :
-    ColorAnimationUsingKeyFrames(ActivateInstance<ColorAnimationUsingKeyFrames>())
+    ColorAnimationUsingKeyFrames(activate_instance<ColorAnimationUsingKeyFrames>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ColorAnimationUsingKeyFrames::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<ColorAnimationUsingKeyFrames, IColorAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<ColorAnimationUsingKeyFrames, IColorAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorKeyFrame::ValueProperty()
 {
-    return GetActivationFactory<ColorKeyFrame, IColorKeyFrameStatics>().ValueProperty();
+    return get_activation_factory<ColorKeyFrame, IColorKeyFrameStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ColorKeyFrame::KeyTimeProperty()
 {
-    return GetActivationFactory<ColorKeyFrame, IColorKeyFrameStatics>().KeyTimeProperty();
+    return get_activation_factory<ColorKeyFrame, IColorKeyFrameStatics>().KeyTimeProperty();
 }
 
 inline ColorKeyFrameCollection::ColorKeyFrameCollection() :
-    ColorKeyFrameCollection(ActivateInstance<ColorKeyFrameCollection>())
+    ColorKeyFrameCollection(activate_instance<ColorKeyFrameCollection>())
 {}
 
 inline CommonNavigationTransitionInfo::CommonNavigationTransitionInfo() :
-    CommonNavigationTransitionInfo(ActivateInstance<CommonNavigationTransitionInfo>())
+    CommonNavigationTransitionInfo(activate_instance<CommonNavigationTransitionInfo>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CommonNavigationTransitionInfo::IsStaggeringEnabledProperty()
 {
-    return GetActivationFactory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().IsStaggeringEnabledProperty();
+    return get_activation_factory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().IsStaggeringEnabledProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty CommonNavigationTransitionInfo::IsStaggerElementProperty()
 {
-    return GetActivationFactory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().IsStaggerElementProperty();
+    return get_activation_factory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().IsStaggerElementProperty();
 }
 
 inline bool CommonNavigationTransitionInfo::GetIsStaggerElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().GetIsStaggerElement(element);
+    return get_activation_factory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().GetIsStaggerElement(element);
 }
 
 inline void CommonNavigationTransitionInfo::SetIsStaggerElement(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().SetIsStaggerElement(element, value);
+    get_activation_factory<CommonNavigationTransitionInfo, ICommonNavigationTransitionInfoStatics>().SetIsStaggerElement(element, value);
 }
 
 inline Windows::UI::Xaml::Media::Animation::ConnectedAnimationService ConnectedAnimationService::GetForCurrentView()
 {
-    return GetActivationFactory<ConnectedAnimationService, IConnectedAnimationServiceStatics>().GetForCurrentView();
+    return get_activation_factory<ConnectedAnimationService, IConnectedAnimationServiceStatics>().GetForCurrentView();
 }
 
 inline ContentThemeTransition::ContentThemeTransition() :
-    ContentThemeTransition(ActivateInstance<ContentThemeTransition>())
+    ContentThemeTransition(activate_instance<ContentThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ContentThemeTransition::HorizontalOffsetProperty()
 {
-    return GetActivationFactory<ContentThemeTransition, IContentThemeTransitionStatics>().HorizontalOffsetProperty();
+    return get_activation_factory<ContentThemeTransition, IContentThemeTransitionStatics>().HorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContentThemeTransition::VerticalOffsetProperty()
 {
-    return GetActivationFactory<ContentThemeTransition, IContentThemeTransitionStatics>().VerticalOffsetProperty();
+    return get_activation_factory<ContentThemeTransition, IContentThemeTransitionStatics>().VerticalOffsetProperty();
 }
 
 inline ContinuumNavigationTransitionInfo::ContinuumNavigationTransitionInfo() :
-    ContinuumNavigationTransitionInfo(ActivateInstance<ContinuumNavigationTransitionInfo>())
+    ContinuumNavigationTransitionInfo(activate_instance<ContinuumNavigationTransitionInfo>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ContinuumNavigationTransitionInfo::ExitElementProperty()
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().ExitElementProperty();
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().ExitElementProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContinuumNavigationTransitionInfo::IsEntranceElementProperty()
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().IsEntranceElementProperty();
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().IsEntranceElementProperty();
 }
 
 inline bool ContinuumNavigationTransitionInfo::GetIsEntranceElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetIsEntranceElement(element);
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetIsEntranceElement(element);
 }
 
 inline void ContinuumNavigationTransitionInfo::SetIsEntranceElement(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetIsEntranceElement(element, value);
+    get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetIsEntranceElement(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContinuumNavigationTransitionInfo::IsExitElementProperty()
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().IsExitElementProperty();
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().IsExitElementProperty();
 }
 
 inline bool ContinuumNavigationTransitionInfo::GetIsExitElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetIsExitElement(element);
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetIsExitElement(element);
 }
 
 inline void ContinuumNavigationTransitionInfo::SetIsExitElement(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetIsExitElement(element, value);
+    get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetIsExitElement(element, value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty ContinuumNavigationTransitionInfo::ExitElementContainerProperty()
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().ExitElementContainerProperty();
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().ExitElementContainerProperty();
 }
 
 inline bool ContinuumNavigationTransitionInfo::GetExitElementContainer(const Windows::UI::Xaml::Controls::ListViewBase & element)
 {
-    return GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetExitElementContainer(element);
+    return get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().GetExitElementContainer(element);
 }
 
 inline void ContinuumNavigationTransitionInfo::SetExitElementContainer(const Windows::UI::Xaml::Controls::ListViewBase & element, bool value)
 {
-    GetActivationFactory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetExitElementContainer(element, value);
+    get_activation_factory<ContinuumNavigationTransitionInfo, IContinuumNavigationTransitionInfoStatics>().SetExitElementContainer(element, value);
 }
 
 inline CubicEase::CubicEase() :
-    CubicEase(ActivateInstance<CubicEase>())
+    CubicEase(activate_instance<CubicEase>())
 {}
 
 inline DiscreteColorKeyFrame::DiscreteColorKeyFrame() :
-    DiscreteColorKeyFrame(ActivateInstance<DiscreteColorKeyFrame>())
+    DiscreteColorKeyFrame(activate_instance<DiscreteColorKeyFrame>())
 {}
 
 inline DiscreteDoubleKeyFrame::DiscreteDoubleKeyFrame() :
-    DiscreteDoubleKeyFrame(ActivateInstance<DiscreteDoubleKeyFrame>())
+    DiscreteDoubleKeyFrame(activate_instance<DiscreteDoubleKeyFrame>())
 {}
 
 inline DiscreteObjectKeyFrame::DiscreteObjectKeyFrame() :
-    DiscreteObjectKeyFrame(ActivateInstance<DiscreteObjectKeyFrame>())
+    DiscreteObjectKeyFrame(activate_instance<DiscreteObjectKeyFrame>())
 {}
 
 inline DiscretePointKeyFrame::DiscretePointKeyFrame() :
-    DiscretePointKeyFrame(ActivateInstance<DiscretePointKeyFrame>())
+    DiscretePointKeyFrame(activate_instance<DiscretePointKeyFrame>())
 {}
 
 inline DoubleAnimation::DoubleAnimation() :
-    DoubleAnimation(ActivateInstance<DoubleAnimation>())
+    DoubleAnimation(activate_instance<DoubleAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimation::FromProperty()
 {
-    return GetActivationFactory<DoubleAnimation, IDoubleAnimationStatics>().FromProperty();
+    return get_activation_factory<DoubleAnimation, IDoubleAnimationStatics>().FromProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimation::ToProperty()
 {
-    return GetActivationFactory<DoubleAnimation, IDoubleAnimationStatics>().ToProperty();
+    return get_activation_factory<DoubleAnimation, IDoubleAnimationStatics>().ToProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimation::ByProperty()
 {
-    return GetActivationFactory<DoubleAnimation, IDoubleAnimationStatics>().ByProperty();
+    return get_activation_factory<DoubleAnimation, IDoubleAnimationStatics>().ByProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimation::EasingFunctionProperty()
 {
-    return GetActivationFactory<DoubleAnimation, IDoubleAnimationStatics>().EasingFunctionProperty();
+    return get_activation_factory<DoubleAnimation, IDoubleAnimationStatics>().EasingFunctionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimation::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<DoubleAnimation, IDoubleAnimationStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<DoubleAnimation, IDoubleAnimationStatics>().EnableDependentAnimationProperty();
 }
 
 inline DoubleAnimationUsingKeyFrames::DoubleAnimationUsingKeyFrames() :
-    DoubleAnimationUsingKeyFrames(ActivateInstance<DoubleAnimationUsingKeyFrames>())
+    DoubleAnimationUsingKeyFrames(activate_instance<DoubleAnimationUsingKeyFrames>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DoubleAnimationUsingKeyFrames::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<DoubleAnimationUsingKeyFrames, IDoubleAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<DoubleAnimationUsingKeyFrames, IDoubleAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleKeyFrame::ValueProperty()
 {
-    return GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameStatics>().ValueProperty();
+    return get_activation_factory<DoubleKeyFrame, IDoubleKeyFrameStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DoubleKeyFrame::KeyTimeProperty()
 {
-    return GetActivationFactory<DoubleKeyFrame, IDoubleKeyFrameStatics>().KeyTimeProperty();
+    return get_activation_factory<DoubleKeyFrame, IDoubleKeyFrameStatics>().KeyTimeProperty();
 }
 
 inline DoubleKeyFrameCollection::DoubleKeyFrameCollection() :
-    DoubleKeyFrameCollection(ActivateInstance<DoubleKeyFrameCollection>())
+    DoubleKeyFrameCollection(activate_instance<DoubleKeyFrameCollection>())
 {}
 
 inline DragItemThemeAnimation::DragItemThemeAnimation() :
-    DragItemThemeAnimation(ActivateInstance<DragItemThemeAnimation>())
+    DragItemThemeAnimation(activate_instance<DragItemThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DragItemThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<DragItemThemeAnimation, IDragItemThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<DragItemThemeAnimation, IDragItemThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline DragOverThemeAnimation::DragOverThemeAnimation() :
-    DragOverThemeAnimation(ActivateInstance<DragOverThemeAnimation>())
+    DragOverThemeAnimation(activate_instance<DragOverThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DragOverThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DragOverThemeAnimation::ToOffsetProperty()
 {
-    return GetActivationFactory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().ToOffsetProperty();
+    return get_activation_factory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().ToOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DragOverThemeAnimation::DirectionProperty()
 {
-    return GetActivationFactory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().DirectionProperty();
+    return get_activation_factory<DragOverThemeAnimation, IDragOverThemeAnimationStatics>().DirectionProperty();
 }
 
 inline DrillInNavigationTransitionInfo::DrillInNavigationTransitionInfo() :
-    DrillInNavigationTransitionInfo(ActivateInstance<DrillInNavigationTransitionInfo>())
+    DrillInNavigationTransitionInfo(activate_instance<DrillInNavigationTransitionInfo>())
 {}
 
 inline DrillInThemeAnimation::DrillInThemeAnimation() :
-    DrillInThemeAnimation(ActivateInstance<DrillInThemeAnimation>())
+    DrillInThemeAnimation(activate_instance<DrillInThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DrillInThemeAnimation::EntranceTargetNameProperty()
 {
-    return GetActivationFactory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().EntranceTargetNameProperty();
+    return get_activation_factory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().EntranceTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillInThemeAnimation::EntranceTargetProperty()
 {
-    return GetActivationFactory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().EntranceTargetProperty();
+    return get_activation_factory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().EntranceTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillInThemeAnimation::ExitTargetNameProperty()
 {
-    return GetActivationFactory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().ExitTargetNameProperty();
+    return get_activation_factory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().ExitTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillInThemeAnimation::ExitTargetProperty()
 {
-    return GetActivationFactory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().ExitTargetProperty();
+    return get_activation_factory<DrillInThemeAnimation, IDrillInThemeAnimationStatics>().ExitTargetProperty();
 }
 
 inline DrillOutThemeAnimation::DrillOutThemeAnimation() :
-    DrillOutThemeAnimation(ActivateInstance<DrillOutThemeAnimation>())
+    DrillOutThemeAnimation(activate_instance<DrillOutThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DrillOutThemeAnimation::EntranceTargetNameProperty()
 {
-    return GetActivationFactory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().EntranceTargetNameProperty();
+    return get_activation_factory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().EntranceTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillOutThemeAnimation::EntranceTargetProperty()
 {
-    return GetActivationFactory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().EntranceTargetProperty();
+    return get_activation_factory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().EntranceTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillOutThemeAnimation::ExitTargetNameProperty()
 {
-    return GetActivationFactory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().ExitTargetNameProperty();
+    return get_activation_factory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().ExitTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty DrillOutThemeAnimation::ExitTargetProperty()
 {
-    return GetActivationFactory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().ExitTargetProperty();
+    return get_activation_factory<DrillOutThemeAnimation, IDrillOutThemeAnimationStatics>().ExitTargetProperty();
 }
 
 inline DropTargetItemThemeAnimation::DropTargetItemThemeAnimation() :
-    DropTargetItemThemeAnimation(ActivateInstance<DropTargetItemThemeAnimation>())
+    DropTargetItemThemeAnimation(activate_instance<DropTargetItemThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty DropTargetItemThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<DropTargetItemThemeAnimation, IDropTargetItemThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<DropTargetItemThemeAnimation, IDropTargetItemThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline EasingColorKeyFrame::EasingColorKeyFrame() :
-    EasingColorKeyFrame(ActivateInstance<EasingColorKeyFrame>())
+    EasingColorKeyFrame(activate_instance<EasingColorKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EasingColorKeyFrame::EasingFunctionProperty()
 {
-    return GetActivationFactory<EasingColorKeyFrame, IEasingColorKeyFrameStatics>().EasingFunctionProperty();
+    return get_activation_factory<EasingColorKeyFrame, IEasingColorKeyFrameStatics>().EasingFunctionProperty();
 }
 
 inline EasingDoubleKeyFrame::EasingDoubleKeyFrame() :
-    EasingDoubleKeyFrame(ActivateInstance<EasingDoubleKeyFrame>())
+    EasingDoubleKeyFrame(activate_instance<EasingDoubleKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EasingDoubleKeyFrame::EasingFunctionProperty()
 {
-    return GetActivationFactory<EasingDoubleKeyFrame, IEasingDoubleKeyFrameStatics>().EasingFunctionProperty();
+    return get_activation_factory<EasingDoubleKeyFrame, IEasingDoubleKeyFrameStatics>().EasingFunctionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty EasingFunctionBase::EasingModeProperty()
 {
-    return GetActivationFactory<EasingFunctionBase, IEasingFunctionBaseStatics>().EasingModeProperty();
+    return get_activation_factory<EasingFunctionBase, IEasingFunctionBaseStatics>().EasingModeProperty();
 }
 
 inline EasingPointKeyFrame::EasingPointKeyFrame() :
-    EasingPointKeyFrame(ActivateInstance<EasingPointKeyFrame>())
+    EasingPointKeyFrame(activate_instance<EasingPointKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EasingPointKeyFrame::EasingFunctionProperty()
 {
-    return GetActivationFactory<EasingPointKeyFrame, IEasingPointKeyFrameStatics>().EasingFunctionProperty();
+    return get_activation_factory<EasingPointKeyFrame, IEasingPointKeyFrameStatics>().EasingFunctionProperty();
 }
 
 inline EdgeUIThemeTransition::EdgeUIThemeTransition() :
-    EdgeUIThemeTransition(ActivateInstance<EdgeUIThemeTransition>())
+    EdgeUIThemeTransition(activate_instance<EdgeUIThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EdgeUIThemeTransition::EdgeProperty()
 {
-    return GetActivationFactory<EdgeUIThemeTransition, IEdgeUIThemeTransitionStatics>().EdgeProperty();
+    return get_activation_factory<EdgeUIThemeTransition, IEdgeUIThemeTransitionStatics>().EdgeProperty();
 }
 
 inline ElasticEase::ElasticEase() :
-    ElasticEase(ActivateInstance<ElasticEase>())
+    ElasticEase(activate_instance<ElasticEase>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ElasticEase::OscillationsProperty()
 {
-    return GetActivationFactory<ElasticEase, IElasticEaseStatics>().OscillationsProperty();
+    return get_activation_factory<ElasticEase, IElasticEaseStatics>().OscillationsProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ElasticEase::SpringinessProperty()
 {
-    return GetActivationFactory<ElasticEase, IElasticEaseStatics>().SpringinessProperty();
+    return get_activation_factory<ElasticEase, IElasticEaseStatics>().SpringinessProperty();
 }
 
 inline EntranceNavigationTransitionInfo::EntranceNavigationTransitionInfo() :
-    EntranceNavigationTransitionInfo(ActivateInstance<EntranceNavigationTransitionInfo>())
+    EntranceNavigationTransitionInfo(activate_instance<EntranceNavigationTransitionInfo>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EntranceNavigationTransitionInfo::IsTargetElementProperty()
 {
-    return GetActivationFactory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().IsTargetElementProperty();
+    return get_activation_factory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().IsTargetElementProperty();
 }
 
 inline bool EntranceNavigationTransitionInfo::GetIsTargetElement(const Windows::UI::Xaml::UIElement & element)
 {
-    return GetActivationFactory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().GetIsTargetElement(element);
+    return get_activation_factory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().GetIsTargetElement(element);
 }
 
 inline void EntranceNavigationTransitionInfo::SetIsTargetElement(const Windows::UI::Xaml::UIElement & element, bool value)
 {
-    GetActivationFactory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().SetIsTargetElement(element, value);
+    get_activation_factory<EntranceNavigationTransitionInfo, IEntranceNavigationTransitionInfoStatics>().SetIsTargetElement(element, value);
 }
 
 inline EntranceThemeTransition::EntranceThemeTransition() :
-    EntranceThemeTransition(ActivateInstance<EntranceThemeTransition>())
+    EntranceThemeTransition(activate_instance<EntranceThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EntranceThemeTransition::FromHorizontalOffsetProperty()
 {
-    return GetActivationFactory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().FromHorizontalOffsetProperty();
+    return get_activation_factory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().FromHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty EntranceThemeTransition::FromVerticalOffsetProperty()
 {
-    return GetActivationFactory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().FromVerticalOffsetProperty();
+    return get_activation_factory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().FromVerticalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty EntranceThemeTransition::IsStaggeringEnabledProperty()
 {
-    return GetActivationFactory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().IsStaggeringEnabledProperty();
+    return get_activation_factory<EntranceThemeTransition, IEntranceThemeTransitionStatics>().IsStaggeringEnabledProperty();
 }
 
 inline ExponentialEase::ExponentialEase() :
-    ExponentialEase(ActivateInstance<ExponentialEase>())
+    ExponentialEase(activate_instance<ExponentialEase>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ExponentialEase::ExponentProperty()
 {
-    return GetActivationFactory<ExponentialEase, IExponentialEaseStatics>().ExponentProperty();
+    return get_activation_factory<ExponentialEase, IExponentialEaseStatics>().ExponentProperty();
 }
 
 inline FadeInThemeAnimation::FadeInThemeAnimation() :
-    FadeInThemeAnimation(ActivateInstance<FadeInThemeAnimation>())
+    FadeInThemeAnimation(activate_instance<FadeInThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty FadeInThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<FadeInThemeAnimation, IFadeInThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<FadeInThemeAnimation, IFadeInThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline FadeOutThemeAnimation::FadeOutThemeAnimation() :
-    FadeOutThemeAnimation(ActivateInstance<FadeOutThemeAnimation>())
+    FadeOutThemeAnimation(activate_instance<FadeOutThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty FadeOutThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<FadeOutThemeAnimation, IFadeOutThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<FadeOutThemeAnimation, IFadeOutThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline KeySpline::KeySpline() :
-    KeySpline(ActivateInstance<KeySpline>())
+    KeySpline(activate_instance<KeySpline>())
 {}
 
 inline Windows::UI::Xaml::Media::Animation::KeyTime KeyTimeHelper::FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan)
 {
-    return GetActivationFactory<KeyTimeHelper, IKeyTimeHelperStatics>().FromTimeSpan(timeSpan);
+    return get_activation_factory<KeyTimeHelper, IKeyTimeHelperStatics>().FromTimeSpan(timeSpan);
 }
 
 inline LinearColorKeyFrame::LinearColorKeyFrame() :
-    LinearColorKeyFrame(ActivateInstance<LinearColorKeyFrame>())
+    LinearColorKeyFrame(activate_instance<LinearColorKeyFrame>())
 {}
 
 inline LinearDoubleKeyFrame::LinearDoubleKeyFrame() :
-    LinearDoubleKeyFrame(ActivateInstance<LinearDoubleKeyFrame>())
+    LinearDoubleKeyFrame(activate_instance<LinearDoubleKeyFrame>())
 {}
 
 inline LinearPointKeyFrame::LinearPointKeyFrame() :
-    LinearPointKeyFrame(ActivateInstance<LinearPointKeyFrame>())
+    LinearPointKeyFrame(activate_instance<LinearPointKeyFrame>())
 {}
 
 inline NavigationThemeTransition::NavigationThemeTransition() :
-    NavigationThemeTransition(ActivateInstance<NavigationThemeTransition>())
+    NavigationThemeTransition(activate_instance<NavigationThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty NavigationThemeTransition::DefaultNavigationTransitionInfoProperty()
 {
-    return GetActivationFactory<NavigationThemeTransition, INavigationThemeTransitionStatics>().DefaultNavigationTransitionInfoProperty();
+    return get_activation_factory<NavigationThemeTransition, INavigationThemeTransitionStatics>().DefaultNavigationTransitionInfoProperty();
 }
 
 inline ObjectAnimationUsingKeyFrames::ObjectAnimationUsingKeyFrames() :
-    ObjectAnimationUsingKeyFrames(ActivateInstance<ObjectAnimationUsingKeyFrames>())
+    ObjectAnimationUsingKeyFrames(activate_instance<ObjectAnimationUsingKeyFrames>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ObjectAnimationUsingKeyFrames::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<ObjectAnimationUsingKeyFrames, IObjectAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<ObjectAnimationUsingKeyFrames, IObjectAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ObjectKeyFrame::ValueProperty()
 {
-    return GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameStatics>().ValueProperty();
+    return get_activation_factory<ObjectKeyFrame, IObjectKeyFrameStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty ObjectKeyFrame::KeyTimeProperty()
 {
-    return GetActivationFactory<ObjectKeyFrame, IObjectKeyFrameStatics>().KeyTimeProperty();
+    return get_activation_factory<ObjectKeyFrame, IObjectKeyFrameStatics>().KeyTimeProperty();
 }
 
 inline ObjectKeyFrameCollection::ObjectKeyFrameCollection() :
-    ObjectKeyFrameCollection(ActivateInstance<ObjectKeyFrameCollection>())
+    ObjectKeyFrameCollection(activate_instance<ObjectKeyFrameCollection>())
 {}
 
 inline PaneThemeTransition::PaneThemeTransition() :
-    PaneThemeTransition(ActivateInstance<PaneThemeTransition>())
+    PaneThemeTransition(activate_instance<PaneThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PaneThemeTransition::EdgeProperty()
 {
-    return GetActivationFactory<PaneThemeTransition, IPaneThemeTransitionStatics>().EdgeProperty();
+    return get_activation_factory<PaneThemeTransition, IPaneThemeTransitionStatics>().EdgeProperty();
 }
 
 inline PointAnimation::PointAnimation() :
-    PointAnimation(ActivateInstance<PointAnimation>())
+    PointAnimation(activate_instance<PointAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimation::FromProperty()
 {
-    return GetActivationFactory<PointAnimation, IPointAnimationStatics>().FromProperty();
+    return get_activation_factory<PointAnimation, IPointAnimationStatics>().FromProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimation::ToProperty()
 {
-    return GetActivationFactory<PointAnimation, IPointAnimationStatics>().ToProperty();
+    return get_activation_factory<PointAnimation, IPointAnimationStatics>().ToProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimation::ByProperty()
 {
-    return GetActivationFactory<PointAnimation, IPointAnimationStatics>().ByProperty();
+    return get_activation_factory<PointAnimation, IPointAnimationStatics>().ByProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimation::EasingFunctionProperty()
 {
-    return GetActivationFactory<PointAnimation, IPointAnimationStatics>().EasingFunctionProperty();
+    return get_activation_factory<PointAnimation, IPointAnimationStatics>().EasingFunctionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimation::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<PointAnimation, IPointAnimationStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<PointAnimation, IPointAnimationStatics>().EnableDependentAnimationProperty();
 }
 
 inline PointAnimationUsingKeyFrames::PointAnimationUsingKeyFrames() :
-    PointAnimationUsingKeyFrames(ActivateInstance<PointAnimationUsingKeyFrames>())
+    PointAnimationUsingKeyFrames(activate_instance<PointAnimationUsingKeyFrames>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PointAnimationUsingKeyFrames::EnableDependentAnimationProperty()
 {
-    return GetActivationFactory<PointAnimationUsingKeyFrames, IPointAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
+    return get_activation_factory<PointAnimationUsingKeyFrames, IPointAnimationUsingKeyFramesStatics>().EnableDependentAnimationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointKeyFrame::ValueProperty()
 {
-    return GetActivationFactory<PointKeyFrame, IPointKeyFrameStatics>().ValueProperty();
+    return get_activation_factory<PointKeyFrame, IPointKeyFrameStatics>().ValueProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PointKeyFrame::KeyTimeProperty()
 {
-    return GetActivationFactory<PointKeyFrame, IPointKeyFrameStatics>().KeyTimeProperty();
+    return get_activation_factory<PointKeyFrame, IPointKeyFrameStatics>().KeyTimeProperty();
 }
 
 inline PointKeyFrameCollection::PointKeyFrameCollection() :
-    PointKeyFrameCollection(ActivateInstance<PointKeyFrameCollection>())
+    PointKeyFrameCollection(activate_instance<PointKeyFrameCollection>())
 {}
 
 inline PointerDownThemeAnimation::PointerDownThemeAnimation() :
-    PointerDownThemeAnimation(ActivateInstance<PointerDownThemeAnimation>())
+    PointerDownThemeAnimation(activate_instance<PointerDownThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PointerDownThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<PointerDownThemeAnimation, IPointerDownThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<PointerDownThemeAnimation, IPointerDownThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline PointerUpThemeAnimation::PointerUpThemeAnimation() :
-    PointerUpThemeAnimation(ActivateInstance<PointerUpThemeAnimation>())
+    PointerUpThemeAnimation(activate_instance<PointerUpThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PointerUpThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<PointerUpThemeAnimation, IPointerUpThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<PointerUpThemeAnimation, IPointerUpThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline PopInThemeAnimation::PopInThemeAnimation() :
-    PopInThemeAnimation(ActivateInstance<PopInThemeAnimation>())
+    PopInThemeAnimation(activate_instance<PopInThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PopInThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<PopInThemeAnimation, IPopInThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<PopInThemeAnimation, IPopInThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PopInThemeAnimation::FromHorizontalOffsetProperty()
 {
-    return GetActivationFactory<PopInThemeAnimation, IPopInThemeAnimationStatics>().FromHorizontalOffsetProperty();
+    return get_activation_factory<PopInThemeAnimation, IPopInThemeAnimationStatics>().FromHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PopInThemeAnimation::FromVerticalOffsetProperty()
 {
-    return GetActivationFactory<PopInThemeAnimation, IPopInThemeAnimationStatics>().FromVerticalOffsetProperty();
+    return get_activation_factory<PopInThemeAnimation, IPopInThemeAnimationStatics>().FromVerticalOffsetProperty();
 }
 
 inline PopOutThemeAnimation::PopOutThemeAnimation() :
-    PopOutThemeAnimation(ActivateInstance<PopOutThemeAnimation>())
+    PopOutThemeAnimation(activate_instance<PopOutThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PopOutThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<PopOutThemeAnimation, IPopOutThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<PopOutThemeAnimation, IPopOutThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline PopupThemeTransition::PopupThemeTransition() :
-    PopupThemeTransition(ActivateInstance<PopupThemeTransition>())
+    PopupThemeTransition(activate_instance<PopupThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PopupThemeTransition::FromHorizontalOffsetProperty()
 {
-    return GetActivationFactory<PopupThemeTransition, IPopupThemeTransitionStatics>().FromHorizontalOffsetProperty();
+    return get_activation_factory<PopupThemeTransition, IPopupThemeTransitionStatics>().FromHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty PopupThemeTransition::FromVerticalOffsetProperty()
 {
-    return GetActivationFactory<PopupThemeTransition, IPopupThemeTransitionStatics>().FromVerticalOffsetProperty();
+    return get_activation_factory<PopupThemeTransition, IPopupThemeTransitionStatics>().FromVerticalOffsetProperty();
 }
 
 inline PowerEase::PowerEase() :
-    PowerEase(ActivateInstance<PowerEase>())
+    PowerEase(activate_instance<PowerEase>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PowerEase::PowerProperty()
 {
-    return GetActivationFactory<PowerEase, IPowerEaseStatics>().PowerProperty();
+    return get_activation_factory<PowerEase, IPowerEaseStatics>().PowerProperty();
 }
 
 inline QuadraticEase::QuadraticEase() :
-    QuadraticEase(ActivateInstance<QuadraticEase>())
+    QuadraticEase(activate_instance<QuadraticEase>())
 {}
 
 inline QuarticEase::QuarticEase() :
-    QuarticEase(ActivateInstance<QuarticEase>())
+    QuarticEase(activate_instance<QuarticEase>())
 {}
 
 inline QuinticEase::QuinticEase() :
-    QuinticEase(ActivateInstance<QuinticEase>())
+    QuinticEase(activate_instance<QuinticEase>())
 {}
 
 inline ReorderThemeTransition::ReorderThemeTransition() :
-    ReorderThemeTransition(ActivateInstance<ReorderThemeTransition>())
+    ReorderThemeTransition(activate_instance<ReorderThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::Media::Animation::RepeatBehavior RepeatBehaviorHelper::Forever()
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().Forever();
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().Forever();
 }
 
 inline Windows::UI::Xaml::Media::Animation::RepeatBehavior RepeatBehaviorHelper::FromCount(double count)
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().FromCount(count);
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().FromCount(count);
 }
 
 inline Windows::UI::Xaml::Media::Animation::RepeatBehavior RepeatBehaviorHelper::FromDuration(const Windows::Foundation::TimeSpan & duration)
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().FromDuration(duration);
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().FromDuration(duration);
 }
 
 inline bool RepeatBehaviorHelper::GetHasCount(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target)
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().GetHasCount(target);
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().GetHasCount(target);
 }
 
 inline bool RepeatBehaviorHelper::GetHasDuration(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target)
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().GetHasDuration(target);
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().GetHasDuration(target);
 }
 
 inline bool RepeatBehaviorHelper::Equals(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target, const Windows::UI::Xaml::Media::Animation::RepeatBehavior & value)
 {
-    return GetActivationFactory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().Equals(target, value);
+    return get_activation_factory<RepeatBehaviorHelper, IRepeatBehaviorHelperStatics>().Equals(target, value);
 }
 
 inline RepositionThemeAnimation::RepositionThemeAnimation() :
-    RepositionThemeAnimation(ActivateInstance<RepositionThemeAnimation>())
+    RepositionThemeAnimation(activate_instance<RepositionThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RepositionThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RepositionThemeAnimation::FromHorizontalOffsetProperty()
 {
-    return GetActivationFactory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().FromHorizontalOffsetProperty();
+    return get_activation_factory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().FromHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty RepositionThemeAnimation::FromVerticalOffsetProperty()
 {
-    return GetActivationFactory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().FromVerticalOffsetProperty();
+    return get_activation_factory<RepositionThemeAnimation, IRepositionThemeAnimationStatics>().FromVerticalOffsetProperty();
 }
 
 inline RepositionThemeTransition::RepositionThemeTransition() :
-    RepositionThemeTransition(ActivateInstance<RepositionThemeTransition>())
+    RepositionThemeTransition(activate_instance<RepositionThemeTransition>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RepositionThemeTransition::IsStaggeringEnabledProperty()
 {
-    return GetActivationFactory<RepositionThemeTransition, IRepositionThemeTransitionStatics2>().IsStaggeringEnabledProperty();
+    return get_activation_factory<RepositionThemeTransition, IRepositionThemeTransitionStatics2>().IsStaggeringEnabledProperty();
 }
 
 inline SineEase::SineEase() :
-    SineEase(ActivateInstance<SineEase>())
+    SineEase(activate_instance<SineEase>())
 {}
 
 inline SlideNavigationTransitionInfo::SlideNavigationTransitionInfo() :
-    SlideNavigationTransitionInfo(ActivateInstance<SlideNavigationTransitionInfo>())
+    SlideNavigationTransitionInfo(activate_instance<SlideNavigationTransitionInfo>())
 {}
 
 inline SplineColorKeyFrame::SplineColorKeyFrame() :
-    SplineColorKeyFrame(ActivateInstance<SplineColorKeyFrame>())
+    SplineColorKeyFrame(activate_instance<SplineColorKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SplineColorKeyFrame::KeySplineProperty()
 {
-    return GetActivationFactory<SplineColorKeyFrame, ISplineColorKeyFrameStatics>().KeySplineProperty();
+    return get_activation_factory<SplineColorKeyFrame, ISplineColorKeyFrameStatics>().KeySplineProperty();
 }
 
 inline SplineDoubleKeyFrame::SplineDoubleKeyFrame() :
-    SplineDoubleKeyFrame(ActivateInstance<SplineDoubleKeyFrame>())
+    SplineDoubleKeyFrame(activate_instance<SplineDoubleKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SplineDoubleKeyFrame::KeySplineProperty()
 {
-    return GetActivationFactory<SplineDoubleKeyFrame, ISplineDoubleKeyFrameStatics>().KeySplineProperty();
+    return get_activation_factory<SplineDoubleKeyFrame, ISplineDoubleKeyFrameStatics>().KeySplineProperty();
 }
 
 inline SplinePointKeyFrame::SplinePointKeyFrame() :
-    SplinePointKeyFrame(ActivateInstance<SplinePointKeyFrame>())
+    SplinePointKeyFrame(activate_instance<SplinePointKeyFrame>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SplinePointKeyFrame::KeySplineProperty()
 {
-    return GetActivationFactory<SplinePointKeyFrame, ISplinePointKeyFrameStatics>().KeySplineProperty();
+    return get_activation_factory<SplinePointKeyFrame, ISplinePointKeyFrameStatics>().KeySplineProperty();
 }
 
 inline SplitCloseThemeAnimation::SplitCloseThemeAnimation() :
-    SplitCloseThemeAnimation(ActivateInstance<SplitCloseThemeAnimation>())
+    SplitCloseThemeAnimation(activate_instance<SplitCloseThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::OpenedTargetNameProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedTargetNameProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::OpenedTargetProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedTargetProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ClosedTargetNameProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedTargetNameProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ClosedTargetProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedTargetProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ContentTargetNameProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTargetNameProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ContentTargetProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTargetProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::OpenedLengthProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedLengthProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OpenedLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ClosedLengthProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedLengthProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ClosedLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::OffsetFromCenterProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OffsetFromCenterProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().OffsetFromCenterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ContentTranslationDirectionProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTranslationDirectionProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTranslationDirectionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitCloseThemeAnimation::ContentTranslationOffsetProperty()
 {
-    return GetActivationFactory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTranslationOffsetProperty();
+    return get_activation_factory<SplitCloseThemeAnimation, ISplitCloseThemeAnimationStatics>().ContentTranslationOffsetProperty();
 }
 
 inline SplitOpenThemeAnimation::SplitOpenThemeAnimation() :
-    SplitOpenThemeAnimation(ActivateInstance<SplitOpenThemeAnimation>())
+    SplitOpenThemeAnimation(activate_instance<SplitOpenThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::OpenedTargetNameProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedTargetNameProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::OpenedTargetProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedTargetProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ClosedTargetNameProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedTargetNameProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ClosedTargetProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedTargetProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ContentTargetNameProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTargetNameProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ContentTargetProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTargetProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTargetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::OpenedLengthProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedLengthProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OpenedLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ClosedLengthProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedLengthProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ClosedLengthProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::OffsetFromCenterProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OffsetFromCenterProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().OffsetFromCenterProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ContentTranslationDirectionProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTranslationDirectionProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTranslationDirectionProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SplitOpenThemeAnimation::ContentTranslationOffsetProperty()
 {
-    return GetActivationFactory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTranslationOffsetProperty();
+    return get_activation_factory<SplitOpenThemeAnimation, ISplitOpenThemeAnimationStatics>().ContentTranslationOffsetProperty();
 }
 
 inline Storyboard::Storyboard() :
-    Storyboard(ActivateInstance<Storyboard>())
+    Storyboard(activate_instance<Storyboard>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Storyboard::TargetPropertyProperty()
 {
-    return GetActivationFactory<Storyboard, IStoryboardStatics>().TargetPropertyProperty();
+    return get_activation_factory<Storyboard, IStoryboardStatics>().TargetPropertyProperty();
 }
 
 inline hstring Storyboard::GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element)
 {
-    return GetActivationFactory<Storyboard, IStoryboardStatics>().GetTargetProperty(element);
+    return get_activation_factory<Storyboard, IStoryboardStatics>().GetTargetProperty(element);
 }
 
 inline void Storyboard::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path)
 {
-    GetActivationFactory<Storyboard, IStoryboardStatics>().SetTargetProperty(element, path);
+    get_activation_factory<Storyboard, IStoryboardStatics>().SetTargetProperty(element, path);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Storyboard::TargetNameProperty()
 {
-    return GetActivationFactory<Storyboard, IStoryboardStatics>().TargetNameProperty();
+    return get_activation_factory<Storyboard, IStoryboardStatics>().TargetNameProperty();
 }
 
 inline hstring Storyboard::GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element)
 {
-    return GetActivationFactory<Storyboard, IStoryboardStatics>().GetTargetName(element);
+    return get_activation_factory<Storyboard, IStoryboardStatics>().GetTargetName(element);
 }
 
 inline void Storyboard::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name)
 {
-    GetActivationFactory<Storyboard, IStoryboardStatics>().SetTargetName(element, name);
+    get_activation_factory<Storyboard, IStoryboardStatics>().SetTargetName(element, name);
 }
 
 inline void Storyboard::SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target)
 {
-    GetActivationFactory<Storyboard, IStoryboardStatics>().SetTarget(timeline, target);
+    get_activation_factory<Storyboard, IStoryboardStatics>().SetTarget(timeline, target);
 }
 
 inline SuppressNavigationTransitionInfo::SuppressNavigationTransitionInfo() :
-    SuppressNavigationTransitionInfo(ActivateInstance<SuppressNavigationTransitionInfo>())
+    SuppressNavigationTransitionInfo(activate_instance<SuppressNavigationTransitionInfo>())
 {}
 
 inline SwipeBackThemeAnimation::SwipeBackThemeAnimation() :
-    SwipeBackThemeAnimation(ActivateInstance<SwipeBackThemeAnimation>())
+    SwipeBackThemeAnimation(activate_instance<SwipeBackThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SwipeBackThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwipeBackThemeAnimation::FromHorizontalOffsetProperty()
 {
-    return GetActivationFactory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().FromHorizontalOffsetProperty();
+    return get_activation_factory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().FromHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwipeBackThemeAnimation::FromVerticalOffsetProperty()
 {
-    return GetActivationFactory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().FromVerticalOffsetProperty();
+    return get_activation_factory<SwipeBackThemeAnimation, ISwipeBackThemeAnimationStatics>().FromVerticalOffsetProperty();
 }
 
 inline SwipeHintThemeAnimation::SwipeHintThemeAnimation() :
-    SwipeHintThemeAnimation(ActivateInstance<SwipeHintThemeAnimation>())
+    SwipeHintThemeAnimation(activate_instance<SwipeHintThemeAnimation>())
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SwipeHintThemeAnimation::TargetNameProperty()
 {
-    return GetActivationFactory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().TargetNameProperty();
+    return get_activation_factory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().TargetNameProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwipeHintThemeAnimation::ToHorizontalOffsetProperty()
 {
-    return GetActivationFactory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().ToHorizontalOffsetProperty();
+    return get_activation_factory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().ToHorizontalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty SwipeHintThemeAnimation::ToVerticalOffsetProperty()
 {
-    return GetActivationFactory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().ToVerticalOffsetProperty();
+    return get_activation_factory<SwipeHintThemeAnimation, ISwipeHintThemeAnimationStatics>().ToVerticalOffsetProperty();
 }
 
 inline bool Timeline::AllowDependentAnimations()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().AllowDependentAnimations();
+    return get_activation_factory<Timeline, ITimelineStatics>().AllowDependentAnimations();
 }
 
 inline void Timeline::AllowDependentAnimations(bool value)
 {
-    GetActivationFactory<Timeline, ITimelineStatics>().AllowDependentAnimations(value);
+    get_activation_factory<Timeline, ITimelineStatics>().AllowDependentAnimations(value);
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::AutoReverseProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().AutoReverseProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().AutoReverseProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::BeginTimeProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().BeginTimeProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().BeginTimeProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::DurationProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().DurationProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().DurationProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::SpeedRatioProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().SpeedRatioProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().SpeedRatioProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::FillBehaviorProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().FillBehaviorProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().FillBehaviorProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Timeline::RepeatBehaviorProperty()
 {
-    return GetActivationFactory<Timeline, ITimelineStatics>().RepeatBehaviorProperty();
+    return get_activation_factory<Timeline, ITimelineStatics>().RepeatBehaviorProperty();
 }
 
 inline TimelineCollection::TimelineCollection() :
-    TimelineCollection(ActivateInstance<TimelineCollection>())
+    TimelineCollection(activate_instance<TimelineCollection>())
 {}
 
 inline TransitionCollection::TransitionCollection() :
-    TransitionCollection(ActivateInstance<TransitionCollection>())
+    TransitionCollection(activate_instance<TransitionCollection>())
 {}
 
 }

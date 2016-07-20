@@ -282,17 +282,17 @@ template <typename D> Windows::Media::SpeechSynthesis::VoiceInformation impl_ISp
 }
 
 inline SpeechSynthesizer::SpeechSynthesizer() :
-    SpeechSynthesizer(ActivateInstance<SpeechSynthesizer>())
+    SpeechSynthesizer(activate_instance<SpeechSynthesizer>())
 {}
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> SpeechSynthesizer::AllVoices()
 {
-    return GetActivationFactory<SpeechSynthesizer, IInstalledVoicesStatic>().AllVoices();
+    return get_activation_factory<SpeechSynthesizer, IInstalledVoicesStatic>().AllVoices();
 }
 
 inline Windows::Media::SpeechSynthesis::VoiceInformation SpeechSynthesizer::DefaultVoice()
 {
-    return GetActivationFactory<SpeechSynthesizer, IInstalledVoicesStatic>().DefaultVoice();
+    return get_activation_factory<SpeechSynthesizer, IInstalledVoicesStatic>().DefaultVoice();
 }
 
 }

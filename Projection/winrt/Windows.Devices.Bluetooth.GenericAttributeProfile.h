@@ -3924,721 +3924,721 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 
 inline GUID GattCharacteristic::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return GetActivationFactory<GattCharacteristic, IGattCharacteristicStatics>().ConvertShortIdToUuid(shortId);
+    return get_activation_factory<GattCharacteristic, IGattCharacteristicStatics>().ConvertShortIdToUuid(shortId);
 }
 
 inline GUID GattCharacteristicUuids::BatteryLevel()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BatteryLevel();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BatteryLevel();
 }
 
 inline GUID GattCharacteristicUuids::BloodPressureFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BloodPressureFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BloodPressureFeature();
 }
 
 inline GUID GattCharacteristicUuids::BloodPressureMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BloodPressureMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BloodPressureMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::BodySensorLocation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BodySensorLocation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().BodySensorLocation();
 }
 
 inline GUID GattCharacteristicUuids::CscFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().CscFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().CscFeature();
 }
 
 inline GUID GattCharacteristicUuids::CscMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().CscMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().CscMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::GlucoseFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseFeature();
 }
 
 inline GUID GattCharacteristicUuids::GlucoseMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::GlucoseMeasurementContext()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseMeasurementContext();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().GlucoseMeasurementContext();
 }
 
 inline GUID GattCharacteristicUuids::HeartRateControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().HeartRateControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().HeartRateControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::HeartRateMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().HeartRateMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().HeartRateMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::IntermediateCuffPressure()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().IntermediateCuffPressure();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().IntermediateCuffPressure();
 }
 
 inline GUID GattCharacteristicUuids::IntermediateTemperature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().IntermediateTemperature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().IntermediateTemperature();
 }
 
 inline GUID GattCharacteristicUuids::MeasurementInterval()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().MeasurementInterval();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().MeasurementInterval();
 }
 
 inline GUID GattCharacteristicUuids::RecordAccessControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RecordAccessControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RecordAccessControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::RscFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RscFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RscFeature();
 }
 
 inline GUID GattCharacteristicUuids::RscMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RscMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().RscMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::SCControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().SCControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().SCControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::SensorLocation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().SensorLocation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().SensorLocation();
 }
 
 inline GUID GattCharacteristicUuids::TemperatureMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().TemperatureMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().TemperatureMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::TemperatureType()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().TemperatureType();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics>().TemperatureType();
 }
 
 inline GUID GattCharacteristicUuids::AlertCategoryId()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertCategoryId();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertCategoryId();
 }
 
 inline GUID GattCharacteristicUuids::AlertCategoryIdBitMask()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertCategoryIdBitMask();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertCategoryIdBitMask();
 }
 
 inline GUID GattCharacteristicUuids::AlertLevel()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertLevel();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertLevel();
 }
 
 inline GUID GattCharacteristicUuids::AlertNotificationControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertNotificationControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertNotificationControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::AlertStatus()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertStatus();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().AlertStatus();
 }
 
 inline GUID GattCharacteristicUuids::GapAppearance()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapAppearance();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapAppearance();
 }
 
 inline GUID GattCharacteristicUuids::BootKeyboardInputReport()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootKeyboardInputReport();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootKeyboardInputReport();
 }
 
 inline GUID GattCharacteristicUuids::BootKeyboardOutputReport()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootKeyboardOutputReport();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootKeyboardOutputReport();
 }
 
 inline GUID GattCharacteristicUuids::BootMouseInputReport()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootMouseInputReport();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().BootMouseInputReport();
 }
 
 inline GUID GattCharacteristicUuids::CurrentTime()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CurrentTime();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CurrentTime();
 }
 
 inline GUID GattCharacteristicUuids::CyclingPowerControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::CyclingPowerFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerFeature();
 }
 
 inline GUID GattCharacteristicUuids::CyclingPowerMeasurement()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerMeasurement();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerMeasurement();
 }
 
 inline GUID GattCharacteristicUuids::CyclingPowerVector()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerVector();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().CyclingPowerVector();
 }
 
 inline GUID GattCharacteristicUuids::DateTime()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DateTime();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DateTime();
 }
 
 inline GUID GattCharacteristicUuids::DayDateTime()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DayDateTime();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DayDateTime();
 }
 
 inline GUID GattCharacteristicUuids::DayOfWeek()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DayOfWeek();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DayOfWeek();
 }
 
 inline GUID GattCharacteristicUuids::GapDeviceName()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapDeviceName();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapDeviceName();
 }
 
 inline GUID GattCharacteristicUuids::DstOffset()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DstOffset();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().DstOffset();
 }
 
 inline GUID GattCharacteristicUuids::ExactTime256()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ExactTime256();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ExactTime256();
 }
 
 inline GUID GattCharacteristicUuids::FirmwareRevisionString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().FirmwareRevisionString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().FirmwareRevisionString();
 }
 
 inline GUID GattCharacteristicUuids::HardwareRevisionString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HardwareRevisionString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HardwareRevisionString();
 }
 
 inline GUID GattCharacteristicUuids::HidControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HidControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HidControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::HidInformation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HidInformation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().HidInformation();
 }
 
 inline GUID GattCharacteristicUuids::Ieee1107320601RegulatoryCertificationDataList()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Ieee1107320601RegulatoryCertificationDataList();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Ieee1107320601RegulatoryCertificationDataList();
 }
 
 inline GUID GattCharacteristicUuids::LnControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LnControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LnControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::LnFeature()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LnFeature();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LnFeature();
 }
 
 inline GUID GattCharacteristicUuids::LocalTimeInformation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LocalTimeInformation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LocalTimeInformation();
 }
 
 inline GUID GattCharacteristicUuids::LocationAndSpeed()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LocationAndSpeed();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().LocationAndSpeed();
 }
 
 inline GUID GattCharacteristicUuids::ManufacturerNameString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ManufacturerNameString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ManufacturerNameString();
 }
 
 inline GUID GattCharacteristicUuids::ModelNumberString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ModelNumberString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ModelNumberString();
 }
 
 inline GUID GattCharacteristicUuids::Navigation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Navigation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Navigation();
 }
 
 inline GUID GattCharacteristicUuids::NewAlert()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().NewAlert();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().NewAlert();
 }
 
 inline GUID GattCharacteristicUuids::GapPeripheralPreferredConnectionParameters()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapPeripheralPreferredConnectionParameters();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapPeripheralPreferredConnectionParameters();
 }
 
 inline GUID GattCharacteristicUuids::GapPeripheralPrivacyFlag()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapPeripheralPrivacyFlag();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapPeripheralPrivacyFlag();
 }
 
 inline GUID GattCharacteristicUuids::PnpId()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().PnpId();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().PnpId();
 }
 
 inline GUID GattCharacteristicUuids::PositionQuality()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().PositionQuality();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().PositionQuality();
 }
 
 inline GUID GattCharacteristicUuids::ProtocolMode()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ProtocolMode();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ProtocolMode();
 }
 
 inline GUID GattCharacteristicUuids::GapReconnectionAddress()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapReconnectionAddress();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GapReconnectionAddress();
 }
 
 inline GUID GattCharacteristicUuids::ReferenceTimeInformation()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ReferenceTimeInformation();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ReferenceTimeInformation();
 }
 
 inline GUID GattCharacteristicUuids::Report()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Report();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().Report();
 }
 
 inline GUID GattCharacteristicUuids::ReportMap()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ReportMap();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ReportMap();
 }
 
 inline GUID GattCharacteristicUuids::RingerControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().RingerControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().RingerControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::RingerSetting()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().RingerSetting();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().RingerSetting();
 }
 
 inline GUID GattCharacteristicUuids::ScanIntervalWindow()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ScanIntervalWindow();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ScanIntervalWindow();
 }
 
 inline GUID GattCharacteristicUuids::ScanRefresh()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ScanRefresh();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().ScanRefresh();
 }
 
 inline GUID GattCharacteristicUuids::SerialNumberString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SerialNumberString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SerialNumberString();
 }
 
 inline GUID GattCharacteristicUuids::GattServiceChanged()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GattServiceChanged();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().GattServiceChanged();
 }
 
 inline GUID GattCharacteristicUuids::SoftwareRevisionString()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SoftwareRevisionString();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SoftwareRevisionString();
 }
 
 inline GUID GattCharacteristicUuids::SupportedNewAlertCategory()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SupportedNewAlertCategory();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SupportedNewAlertCategory();
 }
 
 inline GUID GattCharacteristicUuids::SupportUnreadAlertCategory()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SupportUnreadAlertCategory();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SupportUnreadAlertCategory();
 }
 
 inline GUID GattCharacteristicUuids::SystemId()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SystemId();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().SystemId();
 }
 
 inline GUID GattCharacteristicUuids::TimeAccuracy()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeAccuracy();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeAccuracy();
 }
 
 inline GUID GattCharacteristicUuids::TimeSource()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeSource();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeSource();
 }
 
 inline GUID GattCharacteristicUuids::TimeUpdateControlPoint()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeUpdateControlPoint();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeUpdateControlPoint();
 }
 
 inline GUID GattCharacteristicUuids::TimeUpdateState()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeUpdateState();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeUpdateState();
 }
 
 inline GUID GattCharacteristicUuids::TimeWithDst()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeWithDst();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeWithDst();
 }
 
 inline GUID GattCharacteristicUuids::TimeZone()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeZone();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TimeZone();
 }
 
 inline GUID GattCharacteristicUuids::TxPowerLevel()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TxPowerLevel();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().TxPowerLevel();
 }
 
 inline GUID GattCharacteristicUuids::UnreadAlertStatus()
 {
-    return GetActivationFactory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().UnreadAlertStatus();
+    return get_activation_factory<GattCharacteristicUuids, IGattCharacteristicUuidsStatics2>().UnreadAlertStatus();
 }
 
 inline GUID GattDescriptor::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return GetActivationFactory<GattDescriptor, IGattDescriptorStatics>().ConvertShortIdToUuid(shortId);
+    return get_activation_factory<GattDescriptor, IGattDescriptorStatics>().ConvertShortIdToUuid(shortId);
 }
 
 inline GUID GattDescriptorUuids::CharacteristicAggregateFormat()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicAggregateFormat();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicAggregateFormat();
 }
 
 inline GUID GattDescriptorUuids::CharacteristicExtendedProperties()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicExtendedProperties();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicExtendedProperties();
 }
 
 inline GUID GattDescriptorUuids::CharacteristicPresentationFormat()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicPresentationFormat();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicPresentationFormat();
 }
 
 inline GUID GattDescriptorUuids::CharacteristicUserDescription()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicUserDescription();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().CharacteristicUserDescription();
 }
 
 inline GUID GattDescriptorUuids::ClientCharacteristicConfiguration()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().ClientCharacteristicConfiguration();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().ClientCharacteristicConfiguration();
 }
 
 inline GUID GattDescriptorUuids::ServerCharacteristicConfiguration()
 {
-    return GetActivationFactory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().ServerCharacteristicConfiguration();
+    return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().ServerCharacteristicConfiguration();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattDeviceService::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<GattDeviceService, IGattDeviceServiceStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<GattDeviceService, IGattDeviceServiceStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring GattDeviceService::GetDeviceSelectorFromUuid(GUID serviceUuid)
 {
-    return GetActivationFactory<GattDeviceService, IGattDeviceServiceStatics>().GetDeviceSelectorFromUuid(serviceUuid);
+    return get_activation_factory<GattDeviceService, IGattDeviceServiceStatics>().GetDeviceSelectorFromUuid(serviceUuid);
 }
 
 inline hstring GattDeviceService::GetDeviceSelectorFromShortId(uint16_t serviceShortId)
 {
-    return GetActivationFactory<GattDeviceService, IGattDeviceServiceStatics>().GetDeviceSelectorFromShortId(serviceShortId);
+    return get_activation_factory<GattDeviceService, IGattDeviceServiceStatics>().GetDeviceSelectorFromShortId(serviceShortId);
 }
 
 inline GUID GattDeviceService::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return GetActivationFactory<GattDeviceService, IGattDeviceServiceStatics>().ConvertShortIdToUuid(shortId);
+    return get_activation_factory<GattDeviceService, IGattDeviceServiceStatics>().ConvertShortIdToUuid(shortId);
 }
 
 inline uint8_t GattPresentationFormat::BluetoothSigAssignedNumbers()
 {
-    return GetActivationFactory<GattPresentationFormat, IGattPresentationFormatStatics>().BluetoothSigAssignedNumbers();
+    return get_activation_factory<GattPresentationFormat, IGattPresentationFormatStatics>().BluetoothSigAssignedNumbers();
 }
 
 inline uint8_t GattPresentationFormatTypes::Boolean()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Boolean();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Boolean();
 }
 
 inline uint8_t GattPresentationFormatTypes::Bit2()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Bit2();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Bit2();
 }
 
 inline uint8_t GattPresentationFormatTypes::Nibble()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Nibble();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Nibble();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt8()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt8();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt8();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt12()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt12();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt12();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt16()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt16();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt16();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt24()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt24();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt24();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt32()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt32();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt32();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt48()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt48();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt48();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt64()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt64();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt64();
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt128()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt128();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().UInt128();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt8()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt8();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt8();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt12()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt12();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt12();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt16()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt16();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt16();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt24()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt24();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt24();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt32()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt32();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt32();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt48()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt48();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt48();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt64()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt64();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt64();
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt128()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt128();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SInt128();
 }
 
 inline uint8_t GattPresentationFormatTypes::Float32()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float32();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float32();
 }
 
 inline uint8_t GattPresentationFormatTypes::Float64()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float64();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float64();
 }
 
 inline uint8_t GattPresentationFormatTypes::SFloat()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SFloat();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().SFloat();
 }
 
 inline uint8_t GattPresentationFormatTypes::Float()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Float();
 }
 
 inline uint8_t GattPresentationFormatTypes::DUInt16()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().DUInt16();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().DUInt16();
 }
 
 inline uint8_t GattPresentationFormatTypes::Utf8()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Utf8();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Utf8();
 }
 
 inline uint8_t GattPresentationFormatTypes::Utf16()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Utf16();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Utf16();
 }
 
 inline uint8_t GattPresentationFormatTypes::Struct()
 {
-    return GetActivationFactory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Struct();
+    return get_activation_factory<GattPresentationFormatTypes, IGattPresentationFormatTypesStatics>().Struct();
 }
 
 inline GattReliableWriteTransaction::GattReliableWriteTransaction() :
-    GattReliableWriteTransaction(ActivateInstance<GattReliableWriteTransaction>())
+    GattReliableWriteTransaction(activate_instance<GattReliableWriteTransaction>())
 {}
 
 inline GUID GattServiceUuids::Battery()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().Battery();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().Battery();
 }
 
 inline GUID GattServiceUuids::BloodPressure()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().BloodPressure();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().BloodPressure();
 }
 
 inline GUID GattServiceUuids::CyclingSpeedAndCadence()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().CyclingSpeedAndCadence();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().CyclingSpeedAndCadence();
 }
 
 inline GUID GattServiceUuids::GenericAccess()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().GenericAccess();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().GenericAccess();
 }
 
 inline GUID GattServiceUuids::GenericAttribute()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().GenericAttribute();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().GenericAttribute();
 }
 
 inline GUID GattServiceUuids::Glucose()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().Glucose();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().Glucose();
 }
 
 inline GUID GattServiceUuids::HealthThermometer()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().HealthThermometer();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().HealthThermometer();
 }
 
 inline GUID GattServiceUuids::HeartRate()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().HeartRate();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().HeartRate();
 }
 
 inline GUID GattServiceUuids::RunningSpeedAndCadence()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics>().RunningSpeedAndCadence();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics>().RunningSpeedAndCadence();
 }
 
 inline GUID GattServiceUuids::AlertNotification()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().AlertNotification();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().AlertNotification();
 }
 
 inline GUID GattServiceUuids::CurrentTime()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().CurrentTime();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().CurrentTime();
 }
 
 inline GUID GattServiceUuids::CyclingPower()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().CyclingPower();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().CyclingPower();
 }
 
 inline GUID GattServiceUuids::DeviceInformation()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().DeviceInformation();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().DeviceInformation();
 }
 
 inline GUID GattServiceUuids::HumanInterfaceDevice()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().HumanInterfaceDevice();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().HumanInterfaceDevice();
 }
 
 inline GUID GattServiceUuids::ImmediateAlert()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().ImmediateAlert();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().ImmediateAlert();
 }
 
 inline GUID GattServiceUuids::LinkLoss()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().LinkLoss();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().LinkLoss();
 }
 
 inline GUID GattServiceUuids::LocationAndNavigation()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().LocationAndNavigation();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().LocationAndNavigation();
 }
 
 inline GUID GattServiceUuids::NextDstChange()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().NextDstChange();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().NextDstChange();
 }
 
 inline GUID GattServiceUuids::PhoneAlertStatus()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().PhoneAlertStatus();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().PhoneAlertStatus();
 }
 
 inline GUID GattServiceUuids::ReferenceTimeUpdate()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().ReferenceTimeUpdate();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().ReferenceTimeUpdate();
 }
 
 inline GUID GattServiceUuids::ScanParameters()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().ScanParameters();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().ScanParameters();
 }
 
 inline GUID GattServiceUuids::TxPower()
 {
-    return GetActivationFactory<GattServiceUuids, IGattServiceUuidsStatics2>().TxPower();
+    return get_activation_factory<GattServiceUuids, IGattServiceUuidsStatics2>().TxPower();
 }
 
 }

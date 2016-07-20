@@ -4441,39 +4441,39 @@ template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties i
 
 inline Windows::Media::Capture::AppCapture AppCapture::GetForCurrentView()
 {
-    return GetActivationFactory<AppCapture, IAppCaptureStatics>().GetForCurrentView();
+    return get_activation_factory<AppCapture, IAppCaptureStatics>().GetForCurrentView();
 }
 
 inline CameraCaptureUI::CameraCaptureUI() :
-    CameraCaptureUI(ActivateInstance<CameraCaptureUI>())
+    CameraCaptureUI(activate_instance<CameraCaptureUI>())
 {}
 
 inline MediaCapture::MediaCapture() :
-    MediaCapture(ActivateInstance<MediaCapture>())
+    MediaCapture(activate_instance<MediaCapture>())
 {}
 
 inline bool MediaCapture::IsVideoProfileSupported(hstring_ref videoDeviceId)
 {
-    return GetActivationFactory<MediaCapture, IMediaCaptureStatics>().IsVideoProfileSupported(videoDeviceId);
+    return get_activation_factory<MediaCapture, IMediaCaptureStatics>().IsVideoProfileSupported(videoDeviceId);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindAllVideoProfiles(hstring_ref videoDeviceId)
 {
-    return GetActivationFactory<MediaCapture, IMediaCaptureStatics>().FindAllVideoProfiles(videoDeviceId);
+    return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindAllVideoProfiles(videoDeviceId);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindConcurrentProfiles(hstring_ref videoDeviceId)
 {
-    return GetActivationFactory<MediaCapture, IMediaCaptureStatics>().FindConcurrentProfiles(videoDeviceId);
+    return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindConcurrentProfiles(videoDeviceId);
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindKnownVideoProfiles(hstring_ref videoDeviceId, Windows::Media::Capture::KnownVideoProfile name)
 {
-    return GetActivationFactory<MediaCapture, IMediaCaptureStatics>().FindKnownVideoProfiles(videoDeviceId, name);
+    return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindKnownVideoProfiles(videoDeviceId, name);
 }
 
 inline MediaCaptureInitializationSettings::MediaCaptureInitializationSettings() :
-    MediaCaptureInitializationSettings(ActivateInstance<MediaCaptureInitializationSettings>())
+    MediaCaptureInitializationSettings(activate_instance<MediaCaptureInitializationSettings>())
 {}
 
 }

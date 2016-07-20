@@ -2725,196 +2725,196 @@ template <typename D> bool impl_IApplicationViewScalingStatics<D>::TrySetDisable
 }
 
 inline AccessibilitySettings::AccessibilitySettings() :
-    AccessibilitySettings(ActivateInstance<AccessibilitySettings>())
+    AccessibilitySettings(activate_instance<AccessibilitySettings>())
 {}
 
 inline bool ApplicationView::TryUnsnapToFullscreen()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewFullscreenStatics>().TryUnsnapToFullscreen();
+    return get_activation_factory<ApplicationView, IApplicationViewFullscreenStatics>().TryUnsnapToFullscreen();
 }
 
 inline int32_t ApplicationView::GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window)
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewInteropStatics>().GetApplicationViewIdForWindow(window);
+    return get_activation_factory<ApplicationView, IApplicationViewInteropStatics>().GetApplicationViewIdForWindow(window);
 }
 
 inline Windows::UI::ViewManagement::ApplicationViewState ApplicationView::Value()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics>().Value();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics>().Value();
 }
 
 inline bool ApplicationView::TryUnsnap()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics>().TryUnsnap();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics>().TryUnsnap();
 }
 
 inline Windows::UI::ViewManagement::ApplicationView ApplicationView::GetForCurrentView()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics2>().GetForCurrentView();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics2>().GetForCurrentView();
 }
 
 inline bool ApplicationView::TerminateAppOnFinalViewClose()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics2>().TerminateAppOnFinalViewClose();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics2>().TerminateAppOnFinalViewClose();
 }
 
 inline void ApplicationView::TerminateAppOnFinalViewClose(bool value)
 {
-    GetActivationFactory<ApplicationView, IApplicationViewStatics2>().TerminateAppOnFinalViewClose(value);
+    get_activation_factory<ApplicationView, IApplicationViewStatics2>().TerminateAppOnFinalViewClose(value);
 }
 
 inline Windows::UI::ViewManagement::ApplicationViewWindowingMode ApplicationView::PreferredLaunchWindowingMode()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchWindowingMode();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchWindowingMode();
 }
 
 inline void ApplicationView::PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value)
 {
-    GetActivationFactory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchWindowingMode(value);
+    get_activation_factory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchWindowingMode(value);
 }
 
 inline Windows::Foundation::Size ApplicationView::PreferredLaunchViewSize()
 {
-    return GetActivationFactory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchViewSize();
+    return get_activation_factory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchViewSize();
 }
 
 inline void ApplicationView::PreferredLaunchViewSize(const Windows::Foundation::Size & value)
 {
-    GetActivationFactory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchViewSize(value);
+    get_activation_factory<ApplicationView, IApplicationViewStatics3>().PreferredLaunchViewSize(value);
 }
 
 inline bool ApplicationViewScaling::DisableLayoutScaling()
 {
-    return GetActivationFactory<ApplicationViewScaling, IApplicationViewScalingStatics>().DisableLayoutScaling();
+    return get_activation_factory<ApplicationViewScaling, IApplicationViewScalingStatics>().DisableLayoutScaling();
 }
 
 inline bool ApplicationViewScaling::TrySetDisableLayoutScaling(bool disableLayoutScaling)
 {
-    return GetActivationFactory<ApplicationViewScaling, IApplicationViewScalingStatics>().TrySetDisableLayoutScaling(disableLayoutScaling);
+    return get_activation_factory<ApplicationViewScaling, IApplicationViewScalingStatics>().TrySetDisableLayoutScaling(disableLayoutScaling);
 }
 
 inline void ApplicationViewSwitcher::DisableShowingMainViewOnActivation()
 {
-    GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().DisableShowingMainViewOnActivation();
+    get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().DisableShowingMainViewOnActivation();
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference anchorSizePreference)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference);
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t viewId)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(viewId);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(viewId);
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t toViewId, int32_t fromViewId)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId);
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId, options);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId, options);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options)
 {
-    return GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options);
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics>().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options);
 }
 
 inline void ApplicationViewSwitcher::DisableSystemViewActivationPolicy()
 {
-    GetActivationFactory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics2>().DisableSystemViewActivationPolicy();
+    get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics2>().DisableSystemViewActivationPolicy();
 }
 
 inline ApplicationViewTransferContext::ApplicationViewTransferContext() :
-    ApplicationViewTransferContext(ActivateInstance<ApplicationViewTransferContext>())
+    ApplicationViewTransferContext(activate_instance<ApplicationViewTransferContext>())
 {}
 
 inline hstring ApplicationViewTransferContext::DataPackageFormatId()
 {
-    return GetActivationFactory<ApplicationViewTransferContext, IApplicationViewTransferContextStatics>().DataPackageFormatId();
+    return get_activation_factory<ApplicationViewTransferContext, IApplicationViewTransferContextStatics>().DataPackageFormatId();
 }
 
 inline Windows::UI::ViewManagement::InputPane InputPane::GetForCurrentView()
 {
-    return GetActivationFactory<InputPane, IInputPaneStatics>().GetForCurrentView();
+    return get_activation_factory<InputPane, IInputPaneStatics>().GetForCurrentView();
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().StartProjectingAsync(projectionViewId, anchorViewId);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().StartProjectingAsync(projectionViewId, anchorViewId);
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId);
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().StopProjectingAsync(projectionViewId, anchorViewId);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().StopProjectingAsync(projectionViewId, anchorViewId);
 }
 
 inline bool ProjectionManager::ProjectionDisplayAvailable()
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailable();
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailable();
 }
 
 inline event_token ProjectionManager::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(handler);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(handler);
 }
 
 inline factory_event_revoker<IProjectionManagerStatics> ProjectionManager::ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<ProjectionManager, IProjectionManagerStatics>();
+    auto factory = get_activation_factory<ProjectionManager, IProjectionManagerStatics>();
     return { factory, &ABI::Windows::UI::ViewManagement::IProjectionManagerStatics::remove_ProjectionDisplayAvailableChanged, factory.ProjectionDisplayAvailableChanged(handler) };
 }
 
 inline void ProjectionManager::ProjectionDisplayAvailableChanged(event_token token)
 {
-    GetActivationFactory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(token);
+    get_activation_factory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(token);
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Devices::Enumeration::DeviceInformation & displayDeviceInfo)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics2>().StartProjectingAsync(projectionViewId, anchorViewId, displayDeviceInfo);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics2>().StartProjectingAsync(projectionViewId, anchorViewId, displayDeviceInfo);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ProjectionManager::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection);
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ProjectionManager::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement prefferedPlacement)
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection, prefferedPlacement);
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection, prefferedPlacement);
 }
 
 inline hstring ProjectionManager::GetDeviceSelector()
 {
-    return GetActivationFactory<ProjectionManager, IProjectionManagerStatics2>().GetDeviceSelector();
+    return get_activation_factory<ProjectionManager, IProjectionManagerStatics2>().GetDeviceSelector();
 }
 
 inline UISettings::UISettings() :
-    UISettings(ActivateInstance<UISettings>())
+    UISettings(activate_instance<UISettings>())
 {}
 
 inline Windows::UI::ViewManagement::UIViewSettings UIViewSettings::GetForCurrentView()
 {
-    return GetActivationFactory<UIViewSettings, IUIViewSettingsStatics>().GetForCurrentView();
+    return get_activation_factory<UIViewSettings, IUIViewSettingsStatics>().GetForCurrentView();
 }
 
 }

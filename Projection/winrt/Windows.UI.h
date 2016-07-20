@@ -2871,712 +2871,712 @@ template <typename D> Windows::UI::Color impl_IColorsStatics<D>::YellowGreen() c
 
 inline Windows::UI::Color ColorHelper::FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b)
 {
-    return GetActivationFactory<ColorHelper, IColorHelperStatics>().FromArgb(a, r, g, b);
+    return get_activation_factory<ColorHelper, IColorHelperStatics>().FromArgb(a, r, g, b);
 }
 
 inline Windows::UI::Color Colors::AliceBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().AliceBlue();
+    return get_activation_factory<Colors, IColorsStatics>().AliceBlue();
 }
 
 inline Windows::UI::Color Colors::AntiqueWhite()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().AntiqueWhite();
+    return get_activation_factory<Colors, IColorsStatics>().AntiqueWhite();
 }
 
 inline Windows::UI::Color Colors::Aqua()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Aqua();
+    return get_activation_factory<Colors, IColorsStatics>().Aqua();
 }
 
 inline Windows::UI::Color Colors::Aquamarine()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Aquamarine();
+    return get_activation_factory<Colors, IColorsStatics>().Aquamarine();
 }
 
 inline Windows::UI::Color Colors::Azure()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Azure();
+    return get_activation_factory<Colors, IColorsStatics>().Azure();
 }
 
 inline Windows::UI::Color Colors::Beige()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Beige();
+    return get_activation_factory<Colors, IColorsStatics>().Beige();
 }
 
 inline Windows::UI::Color Colors::Bisque()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Bisque();
+    return get_activation_factory<Colors, IColorsStatics>().Bisque();
 }
 
 inline Windows::UI::Color Colors::Black()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Black();
+    return get_activation_factory<Colors, IColorsStatics>().Black();
 }
 
 inline Windows::UI::Color Colors::BlanchedAlmond()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().BlanchedAlmond();
+    return get_activation_factory<Colors, IColorsStatics>().BlanchedAlmond();
 }
 
 inline Windows::UI::Color Colors::Blue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Blue();
+    return get_activation_factory<Colors, IColorsStatics>().Blue();
 }
 
 inline Windows::UI::Color Colors::BlueViolet()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().BlueViolet();
+    return get_activation_factory<Colors, IColorsStatics>().BlueViolet();
 }
 
 inline Windows::UI::Color Colors::Brown()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Brown();
+    return get_activation_factory<Colors, IColorsStatics>().Brown();
 }
 
 inline Windows::UI::Color Colors::BurlyWood()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().BurlyWood();
+    return get_activation_factory<Colors, IColorsStatics>().BurlyWood();
 }
 
 inline Windows::UI::Color Colors::CadetBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().CadetBlue();
+    return get_activation_factory<Colors, IColorsStatics>().CadetBlue();
 }
 
 inline Windows::UI::Color Colors::Chartreuse()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Chartreuse();
+    return get_activation_factory<Colors, IColorsStatics>().Chartreuse();
 }
 
 inline Windows::UI::Color Colors::Chocolate()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Chocolate();
+    return get_activation_factory<Colors, IColorsStatics>().Chocolate();
 }
 
 inline Windows::UI::Color Colors::Coral()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Coral();
+    return get_activation_factory<Colors, IColorsStatics>().Coral();
 }
 
 inline Windows::UI::Color Colors::CornflowerBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().CornflowerBlue();
+    return get_activation_factory<Colors, IColorsStatics>().CornflowerBlue();
 }
 
 inline Windows::UI::Color Colors::Cornsilk()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Cornsilk();
+    return get_activation_factory<Colors, IColorsStatics>().Cornsilk();
 }
 
 inline Windows::UI::Color Colors::Crimson()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Crimson();
+    return get_activation_factory<Colors, IColorsStatics>().Crimson();
 }
 
 inline Windows::UI::Color Colors::Cyan()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Cyan();
+    return get_activation_factory<Colors, IColorsStatics>().Cyan();
 }
 
 inline Windows::UI::Color Colors::DarkBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkBlue();
+    return get_activation_factory<Colors, IColorsStatics>().DarkBlue();
 }
 
 inline Windows::UI::Color Colors::DarkCyan()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkCyan();
+    return get_activation_factory<Colors, IColorsStatics>().DarkCyan();
 }
 
 inline Windows::UI::Color Colors::DarkGoldenrod()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkGoldenrod();
+    return get_activation_factory<Colors, IColorsStatics>().DarkGoldenrod();
 }
 
 inline Windows::UI::Color Colors::DarkGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkGray();
+    return get_activation_factory<Colors, IColorsStatics>().DarkGray();
 }
 
 inline Windows::UI::Color Colors::DarkGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkGreen();
+    return get_activation_factory<Colors, IColorsStatics>().DarkGreen();
 }
 
 inline Windows::UI::Color Colors::DarkKhaki()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkKhaki();
+    return get_activation_factory<Colors, IColorsStatics>().DarkKhaki();
 }
 
 inline Windows::UI::Color Colors::DarkMagenta()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkMagenta();
+    return get_activation_factory<Colors, IColorsStatics>().DarkMagenta();
 }
 
 inline Windows::UI::Color Colors::DarkOliveGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkOliveGreen();
+    return get_activation_factory<Colors, IColorsStatics>().DarkOliveGreen();
 }
 
 inline Windows::UI::Color Colors::DarkOrange()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkOrange();
+    return get_activation_factory<Colors, IColorsStatics>().DarkOrange();
 }
 
 inline Windows::UI::Color Colors::DarkOrchid()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkOrchid();
+    return get_activation_factory<Colors, IColorsStatics>().DarkOrchid();
 }
 
 inline Windows::UI::Color Colors::DarkRed()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkRed();
+    return get_activation_factory<Colors, IColorsStatics>().DarkRed();
 }
 
 inline Windows::UI::Color Colors::DarkSalmon()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkSalmon();
+    return get_activation_factory<Colors, IColorsStatics>().DarkSalmon();
 }
 
 inline Windows::UI::Color Colors::DarkSeaGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkSeaGreen();
+    return get_activation_factory<Colors, IColorsStatics>().DarkSeaGreen();
 }
 
 inline Windows::UI::Color Colors::DarkSlateBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkSlateBlue();
+    return get_activation_factory<Colors, IColorsStatics>().DarkSlateBlue();
 }
 
 inline Windows::UI::Color Colors::DarkSlateGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkSlateGray();
+    return get_activation_factory<Colors, IColorsStatics>().DarkSlateGray();
 }
 
 inline Windows::UI::Color Colors::DarkTurquoise()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkTurquoise();
+    return get_activation_factory<Colors, IColorsStatics>().DarkTurquoise();
 }
 
 inline Windows::UI::Color Colors::DarkViolet()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DarkViolet();
+    return get_activation_factory<Colors, IColorsStatics>().DarkViolet();
 }
 
 inline Windows::UI::Color Colors::DeepPink()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DeepPink();
+    return get_activation_factory<Colors, IColorsStatics>().DeepPink();
 }
 
 inline Windows::UI::Color Colors::DeepSkyBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DeepSkyBlue();
+    return get_activation_factory<Colors, IColorsStatics>().DeepSkyBlue();
 }
 
 inline Windows::UI::Color Colors::DimGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DimGray();
+    return get_activation_factory<Colors, IColorsStatics>().DimGray();
 }
 
 inline Windows::UI::Color Colors::DodgerBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().DodgerBlue();
+    return get_activation_factory<Colors, IColorsStatics>().DodgerBlue();
 }
 
 inline Windows::UI::Color Colors::Firebrick()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Firebrick();
+    return get_activation_factory<Colors, IColorsStatics>().Firebrick();
 }
 
 inline Windows::UI::Color Colors::FloralWhite()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().FloralWhite();
+    return get_activation_factory<Colors, IColorsStatics>().FloralWhite();
 }
 
 inline Windows::UI::Color Colors::ForestGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().ForestGreen();
+    return get_activation_factory<Colors, IColorsStatics>().ForestGreen();
 }
 
 inline Windows::UI::Color Colors::Fuchsia()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Fuchsia();
+    return get_activation_factory<Colors, IColorsStatics>().Fuchsia();
 }
 
 inline Windows::UI::Color Colors::Gainsboro()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Gainsboro();
+    return get_activation_factory<Colors, IColorsStatics>().Gainsboro();
 }
 
 inline Windows::UI::Color Colors::GhostWhite()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().GhostWhite();
+    return get_activation_factory<Colors, IColorsStatics>().GhostWhite();
 }
 
 inline Windows::UI::Color Colors::Gold()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Gold();
+    return get_activation_factory<Colors, IColorsStatics>().Gold();
 }
 
 inline Windows::UI::Color Colors::Goldenrod()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Goldenrod();
+    return get_activation_factory<Colors, IColorsStatics>().Goldenrod();
 }
 
 inline Windows::UI::Color Colors::Gray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Gray();
+    return get_activation_factory<Colors, IColorsStatics>().Gray();
 }
 
 inline Windows::UI::Color Colors::Green()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Green();
+    return get_activation_factory<Colors, IColorsStatics>().Green();
 }
 
 inline Windows::UI::Color Colors::GreenYellow()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().GreenYellow();
+    return get_activation_factory<Colors, IColorsStatics>().GreenYellow();
 }
 
 inline Windows::UI::Color Colors::Honeydew()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Honeydew();
+    return get_activation_factory<Colors, IColorsStatics>().Honeydew();
 }
 
 inline Windows::UI::Color Colors::HotPink()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().HotPink();
+    return get_activation_factory<Colors, IColorsStatics>().HotPink();
 }
 
 inline Windows::UI::Color Colors::IndianRed()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().IndianRed();
+    return get_activation_factory<Colors, IColorsStatics>().IndianRed();
 }
 
 inline Windows::UI::Color Colors::Indigo()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Indigo();
+    return get_activation_factory<Colors, IColorsStatics>().Indigo();
 }
 
 inline Windows::UI::Color Colors::Ivory()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Ivory();
+    return get_activation_factory<Colors, IColorsStatics>().Ivory();
 }
 
 inline Windows::UI::Color Colors::Khaki()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Khaki();
+    return get_activation_factory<Colors, IColorsStatics>().Khaki();
 }
 
 inline Windows::UI::Color Colors::Lavender()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Lavender();
+    return get_activation_factory<Colors, IColorsStatics>().Lavender();
 }
 
 inline Windows::UI::Color Colors::LavenderBlush()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LavenderBlush();
+    return get_activation_factory<Colors, IColorsStatics>().LavenderBlush();
 }
 
 inline Windows::UI::Color Colors::LawnGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LawnGreen();
+    return get_activation_factory<Colors, IColorsStatics>().LawnGreen();
 }
 
 inline Windows::UI::Color Colors::LemonChiffon()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LemonChiffon();
+    return get_activation_factory<Colors, IColorsStatics>().LemonChiffon();
 }
 
 inline Windows::UI::Color Colors::LightBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightBlue();
+    return get_activation_factory<Colors, IColorsStatics>().LightBlue();
 }
 
 inline Windows::UI::Color Colors::LightCoral()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightCoral();
+    return get_activation_factory<Colors, IColorsStatics>().LightCoral();
 }
 
 inline Windows::UI::Color Colors::LightCyan()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightCyan();
+    return get_activation_factory<Colors, IColorsStatics>().LightCyan();
 }
 
 inline Windows::UI::Color Colors::LightGoldenrodYellow()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightGoldenrodYellow();
+    return get_activation_factory<Colors, IColorsStatics>().LightGoldenrodYellow();
 }
 
 inline Windows::UI::Color Colors::LightGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightGreen();
+    return get_activation_factory<Colors, IColorsStatics>().LightGreen();
 }
 
 inline Windows::UI::Color Colors::LightGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightGray();
+    return get_activation_factory<Colors, IColorsStatics>().LightGray();
 }
 
 inline Windows::UI::Color Colors::LightPink()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightPink();
+    return get_activation_factory<Colors, IColorsStatics>().LightPink();
 }
 
 inline Windows::UI::Color Colors::LightSalmon()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightSalmon();
+    return get_activation_factory<Colors, IColorsStatics>().LightSalmon();
 }
 
 inline Windows::UI::Color Colors::LightSeaGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightSeaGreen();
+    return get_activation_factory<Colors, IColorsStatics>().LightSeaGreen();
 }
 
 inline Windows::UI::Color Colors::LightSkyBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightSkyBlue();
+    return get_activation_factory<Colors, IColorsStatics>().LightSkyBlue();
 }
 
 inline Windows::UI::Color Colors::LightSlateGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightSlateGray();
+    return get_activation_factory<Colors, IColorsStatics>().LightSlateGray();
 }
 
 inline Windows::UI::Color Colors::LightSteelBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightSteelBlue();
+    return get_activation_factory<Colors, IColorsStatics>().LightSteelBlue();
 }
 
 inline Windows::UI::Color Colors::LightYellow()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LightYellow();
+    return get_activation_factory<Colors, IColorsStatics>().LightYellow();
 }
 
 inline Windows::UI::Color Colors::Lime()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Lime();
+    return get_activation_factory<Colors, IColorsStatics>().Lime();
 }
 
 inline Windows::UI::Color Colors::LimeGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().LimeGreen();
+    return get_activation_factory<Colors, IColorsStatics>().LimeGreen();
 }
 
 inline Windows::UI::Color Colors::Linen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Linen();
+    return get_activation_factory<Colors, IColorsStatics>().Linen();
 }
 
 inline Windows::UI::Color Colors::Magenta()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Magenta();
+    return get_activation_factory<Colors, IColorsStatics>().Magenta();
 }
 
 inline Windows::UI::Color Colors::Maroon()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Maroon();
+    return get_activation_factory<Colors, IColorsStatics>().Maroon();
 }
 
 inline Windows::UI::Color Colors::MediumAquamarine()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumAquamarine();
+    return get_activation_factory<Colors, IColorsStatics>().MediumAquamarine();
 }
 
 inline Windows::UI::Color Colors::MediumBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumBlue();
+    return get_activation_factory<Colors, IColorsStatics>().MediumBlue();
 }
 
 inline Windows::UI::Color Colors::MediumOrchid()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumOrchid();
+    return get_activation_factory<Colors, IColorsStatics>().MediumOrchid();
 }
 
 inline Windows::UI::Color Colors::MediumPurple()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumPurple();
+    return get_activation_factory<Colors, IColorsStatics>().MediumPurple();
 }
 
 inline Windows::UI::Color Colors::MediumSeaGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumSeaGreen();
+    return get_activation_factory<Colors, IColorsStatics>().MediumSeaGreen();
 }
 
 inline Windows::UI::Color Colors::MediumSlateBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumSlateBlue();
+    return get_activation_factory<Colors, IColorsStatics>().MediumSlateBlue();
 }
 
 inline Windows::UI::Color Colors::MediumSpringGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumSpringGreen();
+    return get_activation_factory<Colors, IColorsStatics>().MediumSpringGreen();
 }
 
 inline Windows::UI::Color Colors::MediumTurquoise()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumTurquoise();
+    return get_activation_factory<Colors, IColorsStatics>().MediumTurquoise();
 }
 
 inline Windows::UI::Color Colors::MediumVioletRed()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MediumVioletRed();
+    return get_activation_factory<Colors, IColorsStatics>().MediumVioletRed();
 }
 
 inline Windows::UI::Color Colors::MidnightBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MidnightBlue();
+    return get_activation_factory<Colors, IColorsStatics>().MidnightBlue();
 }
 
 inline Windows::UI::Color Colors::MintCream()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MintCream();
+    return get_activation_factory<Colors, IColorsStatics>().MintCream();
 }
 
 inline Windows::UI::Color Colors::MistyRose()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().MistyRose();
+    return get_activation_factory<Colors, IColorsStatics>().MistyRose();
 }
 
 inline Windows::UI::Color Colors::Moccasin()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Moccasin();
+    return get_activation_factory<Colors, IColorsStatics>().Moccasin();
 }
 
 inline Windows::UI::Color Colors::NavajoWhite()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().NavajoWhite();
+    return get_activation_factory<Colors, IColorsStatics>().NavajoWhite();
 }
 
 inline Windows::UI::Color Colors::Navy()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Navy();
+    return get_activation_factory<Colors, IColorsStatics>().Navy();
 }
 
 inline Windows::UI::Color Colors::OldLace()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().OldLace();
+    return get_activation_factory<Colors, IColorsStatics>().OldLace();
 }
 
 inline Windows::UI::Color Colors::Olive()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Olive();
+    return get_activation_factory<Colors, IColorsStatics>().Olive();
 }
 
 inline Windows::UI::Color Colors::OliveDrab()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().OliveDrab();
+    return get_activation_factory<Colors, IColorsStatics>().OliveDrab();
 }
 
 inline Windows::UI::Color Colors::Orange()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Orange();
+    return get_activation_factory<Colors, IColorsStatics>().Orange();
 }
 
 inline Windows::UI::Color Colors::OrangeRed()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().OrangeRed();
+    return get_activation_factory<Colors, IColorsStatics>().OrangeRed();
 }
 
 inline Windows::UI::Color Colors::Orchid()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Orchid();
+    return get_activation_factory<Colors, IColorsStatics>().Orchid();
 }
 
 inline Windows::UI::Color Colors::PaleGoldenrod()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PaleGoldenrod();
+    return get_activation_factory<Colors, IColorsStatics>().PaleGoldenrod();
 }
 
 inline Windows::UI::Color Colors::PaleGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PaleGreen();
+    return get_activation_factory<Colors, IColorsStatics>().PaleGreen();
 }
 
 inline Windows::UI::Color Colors::PaleTurquoise()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PaleTurquoise();
+    return get_activation_factory<Colors, IColorsStatics>().PaleTurquoise();
 }
 
 inline Windows::UI::Color Colors::PaleVioletRed()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PaleVioletRed();
+    return get_activation_factory<Colors, IColorsStatics>().PaleVioletRed();
 }
 
 inline Windows::UI::Color Colors::PapayaWhip()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PapayaWhip();
+    return get_activation_factory<Colors, IColorsStatics>().PapayaWhip();
 }
 
 inline Windows::UI::Color Colors::PeachPuff()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PeachPuff();
+    return get_activation_factory<Colors, IColorsStatics>().PeachPuff();
 }
 
 inline Windows::UI::Color Colors::Peru()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Peru();
+    return get_activation_factory<Colors, IColorsStatics>().Peru();
 }
 
 inline Windows::UI::Color Colors::Pink()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Pink();
+    return get_activation_factory<Colors, IColorsStatics>().Pink();
 }
 
 inline Windows::UI::Color Colors::Plum()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Plum();
+    return get_activation_factory<Colors, IColorsStatics>().Plum();
 }
 
 inline Windows::UI::Color Colors::PowderBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().PowderBlue();
+    return get_activation_factory<Colors, IColorsStatics>().PowderBlue();
 }
 
 inline Windows::UI::Color Colors::Purple()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Purple();
+    return get_activation_factory<Colors, IColorsStatics>().Purple();
 }
 
 inline Windows::UI::Color Colors::Red()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Red();
+    return get_activation_factory<Colors, IColorsStatics>().Red();
 }
 
 inline Windows::UI::Color Colors::RosyBrown()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().RosyBrown();
+    return get_activation_factory<Colors, IColorsStatics>().RosyBrown();
 }
 
 inline Windows::UI::Color Colors::RoyalBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().RoyalBlue();
+    return get_activation_factory<Colors, IColorsStatics>().RoyalBlue();
 }
 
 inline Windows::UI::Color Colors::SaddleBrown()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SaddleBrown();
+    return get_activation_factory<Colors, IColorsStatics>().SaddleBrown();
 }
 
 inline Windows::UI::Color Colors::Salmon()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Salmon();
+    return get_activation_factory<Colors, IColorsStatics>().Salmon();
 }
 
 inline Windows::UI::Color Colors::SandyBrown()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SandyBrown();
+    return get_activation_factory<Colors, IColorsStatics>().SandyBrown();
 }
 
 inline Windows::UI::Color Colors::SeaGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SeaGreen();
+    return get_activation_factory<Colors, IColorsStatics>().SeaGreen();
 }
 
 inline Windows::UI::Color Colors::SeaShell()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SeaShell();
+    return get_activation_factory<Colors, IColorsStatics>().SeaShell();
 }
 
 inline Windows::UI::Color Colors::Sienna()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Sienna();
+    return get_activation_factory<Colors, IColorsStatics>().Sienna();
 }
 
 inline Windows::UI::Color Colors::Silver()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Silver();
+    return get_activation_factory<Colors, IColorsStatics>().Silver();
 }
 
 inline Windows::UI::Color Colors::SkyBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SkyBlue();
+    return get_activation_factory<Colors, IColorsStatics>().SkyBlue();
 }
 
 inline Windows::UI::Color Colors::SlateBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SlateBlue();
+    return get_activation_factory<Colors, IColorsStatics>().SlateBlue();
 }
 
 inline Windows::UI::Color Colors::SlateGray()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SlateGray();
+    return get_activation_factory<Colors, IColorsStatics>().SlateGray();
 }
 
 inline Windows::UI::Color Colors::Snow()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Snow();
+    return get_activation_factory<Colors, IColorsStatics>().Snow();
 }
 
 inline Windows::UI::Color Colors::SpringGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SpringGreen();
+    return get_activation_factory<Colors, IColorsStatics>().SpringGreen();
 }
 
 inline Windows::UI::Color Colors::SteelBlue()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().SteelBlue();
+    return get_activation_factory<Colors, IColorsStatics>().SteelBlue();
 }
 
 inline Windows::UI::Color Colors::Tan()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Tan();
+    return get_activation_factory<Colors, IColorsStatics>().Tan();
 }
 
 inline Windows::UI::Color Colors::Teal()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Teal();
+    return get_activation_factory<Colors, IColorsStatics>().Teal();
 }
 
 inline Windows::UI::Color Colors::Thistle()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Thistle();
+    return get_activation_factory<Colors, IColorsStatics>().Thistle();
 }
 
 inline Windows::UI::Color Colors::Tomato()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Tomato();
+    return get_activation_factory<Colors, IColorsStatics>().Tomato();
 }
 
 inline Windows::UI::Color Colors::Transparent()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Transparent();
+    return get_activation_factory<Colors, IColorsStatics>().Transparent();
 }
 
 inline Windows::UI::Color Colors::Turquoise()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Turquoise();
+    return get_activation_factory<Colors, IColorsStatics>().Turquoise();
 }
 
 inline Windows::UI::Color Colors::Violet()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Violet();
+    return get_activation_factory<Colors, IColorsStatics>().Violet();
 }
 
 inline Windows::UI::Color Colors::Wheat()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Wheat();
+    return get_activation_factory<Colors, IColorsStatics>().Wheat();
 }
 
 inline Windows::UI::Color Colors::White()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().White();
+    return get_activation_factory<Colors, IColorsStatics>().White();
 }
 
 inline Windows::UI::Color Colors::WhiteSmoke()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().WhiteSmoke();
+    return get_activation_factory<Colors, IColorsStatics>().WhiteSmoke();
 }
 
 inline Windows::UI::Color Colors::Yellow()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().Yellow();
+    return get_activation_factory<Colors, IColorsStatics>().Yellow();
 }
 
 inline Windows::UI::Color Colors::YellowGreen()
 {
-    return GetActivationFactory<Colors, IColorsStatics>().YellowGreen();
+    return get_activation_factory<Colors, IColorsStatics>().YellowGreen();
 }
 
 }

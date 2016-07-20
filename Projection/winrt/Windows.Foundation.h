@@ -2474,228 +2474,228 @@ template <typename D> Windows::Foundation::MemoryBuffer impl_IMemoryBufferFactor
 }
 
 inline Deferral::Deferral(const Windows::Foundation::DeferralCompletedHandler & handler) :
-    Deferral(GetActivationFactory<Deferral, IDeferralFactory>().Create(handler))
+    Deferral(get_activation_factory<Deferral, IDeferralFactory>().Create(handler))
 {}
 
 inline MemoryBuffer::MemoryBuffer(uint32_t capacity) :
-    MemoryBuffer(GetActivationFactory<MemoryBuffer, IMemoryBufferFactory>().Create(capacity))
+    MemoryBuffer(get_activation_factory<MemoryBuffer, IMemoryBufferFactory>().Create(capacity))
 {}
 
 inline Windows::IInspectable PropertyValue::CreateEmpty()
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateEmpty();
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateEmpty();
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt8(uint8_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt8(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt16(int16_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt16(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt16(uint16_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt16(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt32(int32_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt32(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt32(uint32_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt32(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt64(int64_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt64(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt64(uint64_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt64(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateSingle(float value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateSingle(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingle(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateDouble(double value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateDouble(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDouble(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateChar16(wchar_t value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateChar16(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateBoolean(bool value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateString(hstring_ref value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateString(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateString(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInspectable(const Windows::IInspectable & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInspectable(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectable(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateGuid(GUID value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateGuid(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuid(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateDateTime(const Windows::Foundation::DateTime & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateDateTime(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTime(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateTimeSpan(const Windows::Foundation::TimeSpan & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateTimeSpan(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpan(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreatePoint(const Windows::Foundation::Point & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreatePoint(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePoint(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateSize(const Windows::Foundation::Size & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateSize(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSize(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateRect(const Windows::Foundation::Rect & value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateRect(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRect(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt8Array(array_ref<const uint8_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt8Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt16Array(array_ref<const int16_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt16Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt16Array(array_ref<const uint16_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt16Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt32Array(array_ref<const int32_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt32Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt32Array(array_ref<const uint32_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt32Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInt64Array(array_ref<const int64_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInt64Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateUInt64Array(array_ref<const uint64_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateUInt64Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateSingleArray(array_ref<const float> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateSingleArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingleArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateDoubleArray(array_ref<const double> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateDoubleArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDoubleArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateChar16Array(array_ref<const wchar_t> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateChar16Array(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16Array(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateBooleanArray(array_ref<const bool> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateBooleanArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBooleanArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateStringArray(array_ref<const hstring> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateStringArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateStringArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateInspectableArray(array_ref<const Windows::IInspectable> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateInspectableArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectableArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateGuidArray(array_ref<const GUID> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateGuidArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuidArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateDateTimeArray(array_ref<const Windows::Foundation::DateTime> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateDateTimeArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTimeArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateTimeSpanArray(array_ref<const Windows::Foundation::TimeSpan> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateTimeSpanArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpanArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreatePointArray(array_ref<const Windows::Foundation::Point> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreatePointArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePointArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateSizeArray(array_ref<const Windows::Foundation::Size> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateSizeArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSizeArray(value);
 }
 
 inline Windows::IInspectable PropertyValue::CreateRectArray(array_ref<const Windows::Foundation::Rect> value)
 {
-    return GetActivationFactory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
+    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
 }
 
 inline Uri::Uri(hstring_ref uri) :
-    Uri(GetActivationFactory<Uri, IUriRuntimeClassFactory>().CreateUri(uri))
+    Uri(get_activation_factory<Uri, IUriRuntimeClassFactory>().CreateUri(uri))
 {}
 
 inline Uri::Uri(hstring_ref baseUri, hstring_ref relativeUri) :
-    Uri(GetActivationFactory<Uri, IUriRuntimeClassFactory>().CreateWithRelativeUri(baseUri, relativeUri))
+    Uri(get_activation_factory<Uri, IUriRuntimeClassFactory>().CreateWithRelativeUri(baseUri, relativeUri))
 {}
 
 inline hstring Uri::UnescapeComponent(hstring_ref toUnescape)
 {
-    return GetActivationFactory<Uri, IUriEscapeStatics>().UnescapeComponent(toUnescape);
+    return get_activation_factory<Uri, IUriEscapeStatics>().UnescapeComponent(toUnescape);
 }
 
 inline hstring Uri::EscapeComponent(hstring_ref toEscape)
 {
-    return GetActivationFactory<Uri, IUriEscapeStatics>().EscapeComponent(toEscape);
+    return get_activation_factory<Uri, IUriEscapeStatics>().EscapeComponent(toEscape);
 }
 
 inline WwwFormUrlDecoder::WwwFormUrlDecoder(hstring_ref query) :
-    WwwFormUrlDecoder(GetActivationFactory<WwwFormUrlDecoder, IWwwFormUrlDecoderRuntimeClassFactory>().CreateWwwFormUrlDecoder(query))
+    WwwFormUrlDecoder(get_activation_factory<WwwFormUrlDecoder, IWwwFormUrlDecoderRuntimeClassFactory>().CreateWwwFormUrlDecoder(query))
 {}
 
 }

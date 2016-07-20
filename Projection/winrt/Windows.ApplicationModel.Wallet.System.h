@@ -199,7 +199,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> WalletManagerSystem::RequestStoreAsync()
 {
-    return GetActivationFactory<WalletManagerSystem, IWalletManagerSystemStatics>().RequestStoreAsync();
+    return get_activation_factory<WalletManagerSystem, IWalletManagerSystemStatics>().RequestStoreAsync();
 }
 
 }

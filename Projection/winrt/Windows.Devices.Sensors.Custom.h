@@ -281,12 +281,12 @@ template <typename D> Windows::Devices::Sensors::Custom::CustomSensorReading imp
 
 inline hstring CustomSensor::GetDeviceSelector(GUID interfaceId)
 {
-    return GetActivationFactory<CustomSensor, ICustomSensorStatics>().GetDeviceSelector(interfaceId);
+    return get_activation_factory<CustomSensor, ICustomSensorStatics>().GetDeviceSelector(interfaceId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> CustomSensor::FromIdAsync(hstring_ref sensorId)
 {
-    return GetActivationFactory<CustomSensor, ICustomSensorStatics>().FromIdAsync(sensorId);
+    return get_activation_factory<CustomSensor, ICustomSensorStatics>().FromIdAsync(sensorId);
 }
 
 }

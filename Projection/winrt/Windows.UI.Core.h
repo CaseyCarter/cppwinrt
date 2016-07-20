@@ -3588,22 +3588,22 @@ template <typename D> void impl_IBackRequestedEventArgs<D>::Handled(bool value) 
 }
 
 inline CoreCursor::CoreCursor(Windows::UI::Core::CoreCursorType type, uint32_t id) :
-    CoreCursor(GetActivationFactory<CoreCursor, ICoreCursorFactory>().CreateCursor(type, id))
+    CoreCursor(get_activation_factory<CoreCursor, ICoreCursorFactory>().CreateCursor(type, id))
 {}
 
 inline Windows::UI::Core::CoreWindow CoreWindow::GetForCurrentThread()
 {
-    return GetActivationFactory<CoreWindow, ICoreWindowStatic>().GetForCurrentThread();
+    return get_activation_factory<CoreWindow, ICoreWindowStatic>().GetForCurrentThread();
 }
 
 inline Windows::UI::Core::CoreWindowResizeManager CoreWindowResizeManager::GetForCurrentView()
 {
-    return GetActivationFactory<CoreWindowResizeManager, ICoreWindowResizeManagerStatics>().GetForCurrentView();
+    return get_activation_factory<CoreWindowResizeManager, ICoreWindowResizeManagerStatics>().GetForCurrentView();
 }
 
 inline Windows::UI::Core::SystemNavigationManager SystemNavigationManager::GetForCurrentView()
 {
-    return GetActivationFactory<SystemNavigationManager, ISystemNavigationManagerStatics>().GetForCurrentView();
+    return get_activation_factory<SystemNavigationManager, ISystemNavigationManagerStatics>().GetForCurrentView();
 }
 
 }

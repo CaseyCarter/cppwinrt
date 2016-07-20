@@ -1769,50 +1769,50 @@ template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionResult
 }
 
 inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConstraint(const Windows::Storage::StorageFile & file) :
-    SpeechRecognitionGrammarFileConstraint(GetActivationFactory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().Create(file))
+    SpeechRecognitionGrammarFileConstraint(get_activation_factory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().Create(file))
 {}
 
 inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConstraint(const Windows::Storage::StorageFile & file, hstring_ref tag) :
-    SpeechRecognitionGrammarFileConstraint(GetActivationFactory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().CreateWithTag(file, tag))
+    SpeechRecognitionGrammarFileConstraint(get_activation_factory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().CreateWithTag(file, tag))
 {}
 
 inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands) :
-    SpeechRecognitionListConstraint(GetActivationFactory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().Create(commands))
+    SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().Create(commands))
 {}
 
 inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) :
-    SpeechRecognitionListConstraint(GetActivationFactory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().CreateWithTag(commands, tag))
+    SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().CreateWithTag(commands, tag))
 {}
 
 inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) :
-    SpeechRecognitionTopicConstraint(GetActivationFactory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().Create(scenario, topicHint))
+    SpeechRecognitionTopicConstraint(get_activation_factory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().Create(scenario, topicHint))
 {}
 
 inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) :
-    SpeechRecognitionTopicConstraint(GetActivationFactory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().CreateWithTag(scenario, topicHint, tag))
+    SpeechRecognitionTopicConstraint(get_activation_factory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().CreateWithTag(scenario, topicHint, tag))
 {}
 
 inline SpeechRecognizer::SpeechRecognizer() :
-    SpeechRecognizer(ActivateInstance<SpeechRecognizer>())
+    SpeechRecognizer(activate_instance<SpeechRecognizer>())
 {}
 
 inline SpeechRecognizer::SpeechRecognizer(const Windows::Globalization::Language & language) :
-    SpeechRecognizer(GetActivationFactory<SpeechRecognizer, ISpeechRecognizerFactory>().Create(language))
+    SpeechRecognizer(get_activation_factory<SpeechRecognizer, ISpeechRecognizerFactory>().Create(language))
 {}
 
 inline Windows::Globalization::Language SpeechRecognizer::SystemSpeechLanguage()
 {
-    return GetActivationFactory<SpeechRecognizer, ISpeechRecognizerStatics>().SystemSpeechLanguage();
+    return get_activation_factory<SpeechRecognizer, ISpeechRecognizerStatics>().SystemSpeechLanguage();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SpeechRecognizer::SupportedTopicLanguages()
 {
-    return GetActivationFactory<SpeechRecognizer, ISpeechRecognizerStatics>().SupportedTopicLanguages();
+    return get_activation_factory<SpeechRecognizer, ISpeechRecognizerStatics>().SupportedTopicLanguages();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SpeechRecognizer::SupportedGrammarLanguages()
 {
-    return GetActivationFactory<SpeechRecognizer, ISpeechRecognizerStatics>().SupportedGrammarLanguages();
+    return get_activation_factory<SpeechRecognizer, ISpeechRecognizerStatics>().SupportedGrammarLanguages();
 }
 
 }

@@ -1,5 +1,5 @@
 
 inline % %::%(%)
 {
-    %GetActivationFactory<%, %>().%(%);
+    %get_activation_factory<%, %>().%(%);
 }

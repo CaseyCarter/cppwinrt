@@ -1499,7 +1499,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<uint64_t> impl_IPacka
 }
 
 inline PackageManager::PackageManager() :
-    PackageManager(ActivateInstance<PackageManager>())
+    PackageManager(activate_instance<PackageManager>())
 {}
 
 }

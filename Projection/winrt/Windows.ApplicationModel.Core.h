@@ -1315,184 +1315,184 @@ template <typename D> void impl_IUnhandledError<D>::Propagate() const
 
 inline hstring CoreApplication::Id()
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication>().Id();
+    return get_activation_factory<CoreApplication, ICoreApplication>().Id();
 }
 
 inline event_token CoreApplication::Suspending(const Windows::Foundation::EventHandler<Windows::ApplicationModel::SuspendingEventArgs> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication>().Suspending(handler);
+    return get_activation_factory<CoreApplication, ICoreApplication>().Suspending(handler);
 }
 
 inline factory_event_revoker<ICoreApplication> CoreApplication::Suspending(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::SuspendingEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplication>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplication>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication::remove_Suspending, factory.Suspending(handler) };
 }
 
 inline void CoreApplication::Suspending(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication>().Suspending(token);
+    get_activation_factory<CoreApplication, ICoreApplication>().Suspending(token);
 }
 
 inline event_token CoreApplication::Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication>().Resuming(handler);
+    return get_activation_factory<CoreApplication, ICoreApplication>().Resuming(handler);
 }
 
 inline factory_event_revoker<ICoreApplication> CoreApplication::Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplication>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplication>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication::remove_Resuming, factory.Resuming(handler) };
 }
 
 inline void CoreApplication::Resuming(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication>().Resuming(token);
+    get_activation_factory<CoreApplication, ICoreApplication>().Resuming(token);
 }
 
 inline Windows::Foundation::Collections::IPropertySet CoreApplication::Properties()
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication>().Properties();
+    return get_activation_factory<CoreApplication, ICoreApplication>().Properties();
 }
 
 inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::GetCurrentView()
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication>().GetCurrentView();
+    return get_activation_factory<CoreApplication, ICoreApplication>().GetCurrentView();
 }
 
 inline void CoreApplication::Run(const Windows::ApplicationModel::Core::IFrameworkViewSource & viewSource)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication>().Run(viewSource);
+    get_activation_factory<CoreApplication, ICoreApplication>().Run(viewSource);
 }
 
 inline void CoreApplication::RunWithActivationFactories(const Windows::Foundation::IGetActivationFactory & activationFactoryCallback)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication>().RunWithActivationFactories(activationFactoryCallback);
+    get_activation_factory<CoreApplication, ICoreApplication>().RunWithActivationFactories(activationFactoryCallback);
 }
 
 inline event_token CoreApplication::BackgroundActivated(const Windows::Foundation::EventHandler<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication2>().BackgroundActivated(handler);
+    return get_activation_factory<CoreApplication, ICoreApplication2>().BackgroundActivated(handler);
 }
 
 inline factory_event_revoker<ICoreApplication2> CoreApplication::BackgroundActivated(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplication2>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplication2>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication2::remove_BackgroundActivated, factory.BackgroundActivated(handler) };
 }
 
 inline void CoreApplication::BackgroundActivated(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication2>().BackgroundActivated(token);
+    get_activation_factory<CoreApplication, ICoreApplication2>().BackgroundActivated(token);
 }
 
 inline event_token CoreApplication::LeavingBackground(const Windows::Foundation::EventHandler<Windows::ApplicationModel::LeavingBackgroundEventArgs> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication2>().LeavingBackground(handler);
+    return get_activation_factory<CoreApplication, ICoreApplication2>().LeavingBackground(handler);
 }
 
 inline factory_event_revoker<ICoreApplication2> CoreApplication::LeavingBackground(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::LeavingBackgroundEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplication2>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplication2>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication2::remove_LeavingBackground, factory.LeavingBackground(handler) };
 }
 
 inline void CoreApplication::LeavingBackground(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication2>().LeavingBackground(token);
+    get_activation_factory<CoreApplication, ICoreApplication2>().LeavingBackground(token);
 }
 
 inline event_token CoreApplication::EnteredBackground(const Windows::Foundation::EventHandler<Windows::ApplicationModel::EnteredBackgroundEventArgs> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplication2>().EnteredBackground(handler);
+    return get_activation_factory<CoreApplication, ICoreApplication2>().EnteredBackground(handler);
 }
 
 inline factory_event_revoker<ICoreApplication2> CoreApplication::EnteredBackground(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::EnteredBackgroundEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplication2>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplication2>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication2::remove_EnteredBackground, factory.EnteredBackground(handler) };
 }
 
 inline void CoreApplication::EnteredBackground(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication2>().EnteredBackground(token);
+    get_activation_factory<CoreApplication, ICoreApplication2>().EnteredBackground(token);
 }
 
 inline void CoreApplication::EnablePrelaunch(bool value)
 {
-    GetActivationFactory<CoreApplication, ICoreApplication2>().EnablePrelaunch(value);
+    get_activation_factory<CoreApplication, ICoreApplication2>().EnablePrelaunch(value);
 }
 
 inline void CoreApplication::Exit()
 {
-    GetActivationFactory<CoreApplication, ICoreApplicationExit>().Exit();
+    get_activation_factory<CoreApplication, ICoreApplicationExit>().Exit();
 }
 
 inline event_token CoreApplication::Exiting(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplicationExit>().Exiting(handler);
+    return get_activation_factory<CoreApplication, ICoreApplicationExit>().Exiting(handler);
 }
 
 inline factory_event_revoker<ICoreApplicationExit> CoreApplication::Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplicationExit>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplicationExit>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplicationExit::remove_Exiting, factory.Exiting(handler) };
 }
 
 inline void CoreApplication::Exiting(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplicationExit>().Exiting(token);
+    get_activation_factory<CoreApplication, ICoreApplicationExit>().Exiting(token);
 }
 
 inline event_token CoreApplication::UnhandledErrorDetected(const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> & handler)
 {
-    return GetActivationFactory<CoreApplication, ICoreApplicationUnhandledError>().UnhandledErrorDetected(handler);
+    return get_activation_factory<CoreApplication, ICoreApplicationUnhandledError>().UnhandledErrorDetected(handler);
 }
 
 inline factory_event_revoker<ICoreApplicationUnhandledError> CoreApplication::UnhandledErrorDetected(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> & handler)
 {
-    auto factory = GetActivationFactory<CoreApplication, ICoreApplicationUnhandledError>();
+    auto factory = get_activation_factory<CoreApplication, ICoreApplicationUnhandledError>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplicationUnhandledError::remove_UnhandledErrorDetected, factory.UnhandledErrorDetected(handler) };
 }
 
 inline void CoreApplication::UnhandledErrorDetected(event_token token)
 {
-    GetActivationFactory<CoreApplication, ICoreApplicationUnhandledError>().UnhandledErrorDetected(token);
+    get_activation_factory<CoreApplication, ICoreApplicationUnhandledError>().UnhandledErrorDetected(token);
 }
 
 inline void CoreApplication::IncrementApplicationUseCount()
 {
-    GetActivationFactory<CoreApplication, ICoreApplicationUseCount>().IncrementApplicationUseCount();
+    get_activation_factory<CoreApplication, ICoreApplicationUseCount>().IncrementApplicationUseCount();
 }
 
 inline void CoreApplication::DecrementApplicationUseCount()
 {
-    GetActivationFactory<CoreApplication, ICoreApplicationUseCount>().DecrementApplicationUseCount();
+    get_activation_factory<CoreApplication, ICoreApplicationUseCount>().DecrementApplicationUseCount();
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> CoreApplication::Views()
 {
-    return GetActivationFactory<CoreApplication, ICoreImmersiveApplication>().Views();
+    return get_activation_factory<CoreApplication, ICoreImmersiveApplication>().Views();
 }
 
 inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint)
 {
-    return GetActivationFactory<CoreApplication, ICoreImmersiveApplication>().CreateNewView(runtimeType, entryPoint);
+    return get_activation_factory<CoreApplication, ICoreImmersiveApplication>().CreateNewView(runtimeType, entryPoint);
 }
 
 inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::MainView()
 {
-    return GetActivationFactory<CoreApplication, ICoreImmersiveApplication>().MainView();
+    return get_activation_factory<CoreApplication, ICoreImmersiveApplication>().MainView();
 }
 
 inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::CreateNewView()
 {
-    return GetActivationFactory<CoreApplication, ICoreImmersiveApplication2>().CreateNewView();
+    return get_activation_factory<CoreApplication, ICoreImmersiveApplication2>().CreateNewView();
 }
 
 inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::CreateNewView(const Windows::ApplicationModel::Core::IFrameworkViewSource & viewSource)
 {
-    return GetActivationFactory<CoreApplication, ICoreImmersiveApplication3>().CreateNewView(viewSource);
+    return get_activation_factory<CoreApplication, ICoreImmersiveApplication3>().CreateNewView(viewSource);
 }
 
 }

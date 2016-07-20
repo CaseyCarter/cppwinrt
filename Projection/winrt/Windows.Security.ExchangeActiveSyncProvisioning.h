@@ -189,7 +189,7 @@ template <typename D> hstring impl_IEasClientDeviceInformation2<D>::SystemFirmwa
 }
 
 inline EasClientDeviceInformation::EasClientDeviceInformation() :
-    EasClientDeviceInformation(ActivateInstance<EasClientDeviceInformation>())
+    EasClientDeviceInformation(activate_instance<EasClientDeviceInformation>())
 {}
 
 }

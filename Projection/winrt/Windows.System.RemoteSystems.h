@@ -769,63 +769,63 @@ template <typename D> Windows::System::RemoteSystems::RemoteSystemStatusType imp
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> RemoteSystem::FindByHostNameAsync(const Windows::Networking::HostName & hostName)
 {
-    return GetActivationFactory<RemoteSystem, IRemoteSystemStatics>().FindByHostNameAsync(hostName);
+    return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().FindByHostNameAsync(hostName);
 }
 
 inline Windows::System::RemoteSystems::RemoteSystemWatcher RemoteSystem::CreateWatcher()
 {
-    return GetActivationFactory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher();
+    return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher();
 }
 
 inline Windows::System::RemoteSystems::RemoteSystemWatcher RemoteSystem::CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters)
 {
-    return GetActivationFactory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher(filters);
+    return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher(filters);
 }
 
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteSystems::RemoteSystemAccessStatus> RemoteSystem::RequestAccessAsync()
 {
-    return GetActivationFactory<RemoteSystem, IRemoteSystemStatics>().RequestAccessAsync();
+    return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().RequestAccessAsync();
 }
 
 inline RemoteSystemConnectionRequest::RemoteSystemConnectionRequest(const Windows::System::RemoteSystems::RemoteSystem & remoteSystem) :
-    RemoteSystemConnectionRequest(GetActivationFactory<RemoteSystemConnectionRequest, IRemoteSystemConnectionRequestFactory>().Create(remoteSystem))
+    RemoteSystemConnectionRequest(get_activation_factory<RemoteSystemConnectionRequest, IRemoteSystemConnectionRequestFactory>().Create(remoteSystem))
 {}
 
 inline RemoteSystemDiscoveryTypeFilter::RemoteSystemDiscoveryTypeFilter(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType) :
-    RemoteSystemDiscoveryTypeFilter(GetActivationFactory<RemoteSystemDiscoveryTypeFilter, IRemoteSystemDiscoveryTypeFilterFactory>().Create(discoveryType))
+    RemoteSystemDiscoveryTypeFilter(get_activation_factory<RemoteSystemDiscoveryTypeFilter, IRemoteSystemDiscoveryTypeFilterFactory>().Create(discoveryType))
 {}
 
 inline RemoteSystemKindFilter::RemoteSystemKindFilter(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) :
-    RemoteSystemKindFilter(GetActivationFactory<RemoteSystemKindFilter, IRemoteSystemKindFilterFactory>().Create(remoteSystemKinds))
+    RemoteSystemKindFilter(get_activation_factory<RemoteSystemKindFilter, IRemoteSystemKindFilterFactory>().Create(remoteSystemKinds))
 {}
 
 inline hstring RemoteSystemKinds::Phone()
 {
-    return GetActivationFactory<RemoteSystemKinds, IRemoteSystemKindStatics>().Phone();
+    return get_activation_factory<RemoteSystemKinds, IRemoteSystemKindStatics>().Phone();
 }
 
 inline hstring RemoteSystemKinds::Hub()
 {
-    return GetActivationFactory<RemoteSystemKinds, IRemoteSystemKindStatics>().Hub();
+    return get_activation_factory<RemoteSystemKinds, IRemoteSystemKindStatics>().Hub();
 }
 
 inline hstring RemoteSystemKinds::Holographic()
 {
-    return GetActivationFactory<RemoteSystemKinds, IRemoteSystemKindStatics>().Holographic();
+    return get_activation_factory<RemoteSystemKinds, IRemoteSystemKindStatics>().Holographic();
 }
 
 inline hstring RemoteSystemKinds::Desktop()
 {
-    return GetActivationFactory<RemoteSystemKinds, IRemoteSystemKindStatics>().Desktop();
+    return get_activation_factory<RemoteSystemKinds, IRemoteSystemKindStatics>().Desktop();
 }
 
 inline hstring RemoteSystemKinds::Xbox()
 {
-    return GetActivationFactory<RemoteSystemKinds, IRemoteSystemKindStatics>().Xbox();
+    return get_activation_factory<RemoteSystemKinds, IRemoteSystemKindStatics>().Xbox();
 }
 
 inline RemoteSystemStatusTypeFilter::RemoteSystemStatusTypeFilter(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType) :
-    RemoteSystemStatusTypeFilter(GetActivationFactory<RemoteSystemStatusTypeFilter, IRemoteSystemStatusTypeFilterFactory>().Create(remoteSystemStatusType))
+    RemoteSystemStatusTypeFilter(get_activation_factory<RemoteSystemStatusTypeFilter, IRemoteSystemStatusTypeFilterFactory>().Create(remoteSystemStatusType))
 {}
 
 }

@@ -1213,110 +1213,110 @@ template <typename D> void impl_IMidiSynthesizer<D>::Volume(double value) const
 }
 
 inline MidiActiveSensingMessage::MidiActiveSensingMessage() :
-    MidiActiveSensingMessage(ActivateInstance<MidiActiveSensingMessage>())
+    MidiActiveSensingMessage(activate_instance<MidiActiveSensingMessage>())
 {}
 
 inline MidiChannelPressureMessage::MidiChannelPressureMessage(uint8_t channel, uint8_t pressure) :
-    MidiChannelPressureMessage(GetActivationFactory<MidiChannelPressureMessage, IMidiChannelPressureMessageFactory>().CreateMidiChannelPressureMessage(channel, pressure))
+    MidiChannelPressureMessage(get_activation_factory<MidiChannelPressureMessage, IMidiChannelPressureMessageFactory>().CreateMidiChannelPressureMessage(channel, pressure))
 {}
 
 inline MidiContinueMessage::MidiContinueMessage() :
-    MidiContinueMessage(ActivateInstance<MidiContinueMessage>())
+    MidiContinueMessage(activate_instance<MidiContinueMessage>())
 {}
 
 inline MidiControlChangeMessage::MidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue) :
-    MidiControlChangeMessage(GetActivationFactory<MidiControlChangeMessage, IMidiControlChangeMessageFactory>().CreateMidiControlChangeMessage(channel, controller, controlValue))
+    MidiControlChangeMessage(get_activation_factory<MidiControlChangeMessage, IMidiControlChangeMessageFactory>().CreateMidiControlChangeMessage(channel, controller, controlValue))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> MidiInPort::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<MidiInPort, IMidiInPortStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<MidiInPort, IMidiInPortStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring MidiInPort::GetDeviceSelector()
 {
-    return GetActivationFactory<MidiInPort, IMidiInPortStatics>().GetDeviceSelector();
+    return get_activation_factory<MidiInPort, IMidiInPortStatics>().GetDeviceSelector();
 }
 
 inline MidiNoteOffMessage::MidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity) :
-    MidiNoteOffMessage(GetActivationFactory<MidiNoteOffMessage, IMidiNoteOffMessageFactory>().CreateMidiNoteOffMessage(channel, note, velocity))
+    MidiNoteOffMessage(get_activation_factory<MidiNoteOffMessage, IMidiNoteOffMessageFactory>().CreateMidiNoteOffMessage(channel, note, velocity))
 {}
 
 inline MidiNoteOnMessage::MidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity) :
-    MidiNoteOnMessage(GetActivationFactory<MidiNoteOnMessage, IMidiNoteOnMessageFactory>().CreateMidiNoteOnMessage(channel, note, velocity))
+    MidiNoteOnMessage(get_activation_factory<MidiNoteOnMessage, IMidiNoteOnMessageFactory>().CreateMidiNoteOnMessage(channel, note, velocity))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> MidiOutPort::FromIdAsync(hstring_ref deviceId)
 {
-    return GetActivationFactory<MidiOutPort, IMidiOutPortStatics>().FromIdAsync(deviceId);
+    return get_activation_factory<MidiOutPort, IMidiOutPortStatics>().FromIdAsync(deviceId);
 }
 
 inline hstring MidiOutPort::GetDeviceSelector()
 {
-    return GetActivationFactory<MidiOutPort, IMidiOutPortStatics>().GetDeviceSelector();
+    return get_activation_factory<MidiOutPort, IMidiOutPortStatics>().GetDeviceSelector();
 }
 
 inline MidiPitchBendChangeMessage::MidiPitchBendChangeMessage(uint8_t channel, uint16_t bend) :
-    MidiPitchBendChangeMessage(GetActivationFactory<MidiPitchBendChangeMessage, IMidiPitchBendChangeMessageFactory>().CreateMidiPitchBendChangeMessage(channel, bend))
+    MidiPitchBendChangeMessage(get_activation_factory<MidiPitchBendChangeMessage, IMidiPitchBendChangeMessageFactory>().CreateMidiPitchBendChangeMessage(channel, bend))
 {}
 
 inline MidiPolyphonicKeyPressureMessage::MidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure) :
-    MidiPolyphonicKeyPressureMessage(GetActivationFactory<MidiPolyphonicKeyPressureMessage, IMidiPolyphonicKeyPressureMessageFactory>().CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure))
+    MidiPolyphonicKeyPressureMessage(get_activation_factory<MidiPolyphonicKeyPressureMessage, IMidiPolyphonicKeyPressureMessageFactory>().CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure))
 {}
 
 inline MidiProgramChangeMessage::MidiProgramChangeMessage(uint8_t channel, uint8_t program) :
-    MidiProgramChangeMessage(GetActivationFactory<MidiProgramChangeMessage, IMidiProgramChangeMessageFactory>().CreateMidiProgramChangeMessage(channel, program))
+    MidiProgramChangeMessage(get_activation_factory<MidiProgramChangeMessage, IMidiProgramChangeMessageFactory>().CreateMidiProgramChangeMessage(channel, program))
 {}
 
 inline MidiSongPositionPointerMessage::MidiSongPositionPointerMessage(uint16_t beats) :
-    MidiSongPositionPointerMessage(GetActivationFactory<MidiSongPositionPointerMessage, IMidiSongPositionPointerMessageFactory>().CreateMidiSongPositionPointerMessage(beats))
+    MidiSongPositionPointerMessage(get_activation_factory<MidiSongPositionPointerMessage, IMidiSongPositionPointerMessageFactory>().CreateMidiSongPositionPointerMessage(beats))
 {}
 
 inline MidiSongSelectMessage::MidiSongSelectMessage(uint8_t song) :
-    MidiSongSelectMessage(GetActivationFactory<MidiSongSelectMessage, IMidiSongSelectMessageFactory>().CreateMidiSongSelectMessage(song))
+    MidiSongSelectMessage(get_activation_factory<MidiSongSelectMessage, IMidiSongSelectMessageFactory>().CreateMidiSongSelectMessage(song))
 {}
 
 inline MidiStartMessage::MidiStartMessage() :
-    MidiStartMessage(ActivateInstance<MidiStartMessage>())
+    MidiStartMessage(activate_instance<MidiStartMessage>())
 {}
 
 inline MidiStopMessage::MidiStopMessage() :
-    MidiStopMessage(ActivateInstance<MidiStopMessage>())
+    MidiStopMessage(activate_instance<MidiStopMessage>())
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> MidiSynthesizer::CreateAsync()
 {
-    return GetActivationFactory<MidiSynthesizer, IMidiSynthesizerStatics>().CreateAsync();
+    return get_activation_factory<MidiSynthesizer, IMidiSynthesizerStatics>().CreateAsync();
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> MidiSynthesizer::CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice)
 {
-    return GetActivationFactory<MidiSynthesizer, IMidiSynthesizerStatics>().CreateAsync(audioDevice);
+    return get_activation_factory<MidiSynthesizer, IMidiSynthesizerStatics>().CreateAsync(audioDevice);
 }
 
 inline bool MidiSynthesizer::IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice)
 {
-    return GetActivationFactory<MidiSynthesizer, IMidiSynthesizerStatics>().IsSynthesizer(midiDevice);
+    return get_activation_factory<MidiSynthesizer, IMidiSynthesizerStatics>().IsSynthesizer(midiDevice);
 }
 
 inline MidiSystemExclusiveMessage::MidiSystemExclusiveMessage(const Windows::Storage::Streams::IBuffer & rawData) :
-    MidiSystemExclusiveMessage(GetActivationFactory<MidiSystemExclusiveMessage, IMidiSystemExclusiveMessageFactory>().CreateMidiSystemExclusiveMessage(rawData))
+    MidiSystemExclusiveMessage(get_activation_factory<MidiSystemExclusiveMessage, IMidiSystemExclusiveMessageFactory>().CreateMidiSystemExclusiveMessage(rawData))
 {}
 
 inline MidiSystemResetMessage::MidiSystemResetMessage() :
-    MidiSystemResetMessage(ActivateInstance<MidiSystemResetMessage>())
+    MidiSystemResetMessage(activate_instance<MidiSystemResetMessage>())
 {}
 
 inline MidiTimeCodeMessage::MidiTimeCodeMessage(uint8_t frameType, uint8_t values) :
-    MidiTimeCodeMessage(GetActivationFactory<MidiTimeCodeMessage, IMidiTimeCodeMessageFactory>().CreateMidiTimeCodeMessage(frameType, values))
+    MidiTimeCodeMessage(get_activation_factory<MidiTimeCodeMessage, IMidiTimeCodeMessageFactory>().CreateMidiTimeCodeMessage(frameType, values))
 {}
 
 inline MidiTimingClockMessage::MidiTimingClockMessage() :
-    MidiTimingClockMessage(ActivateInstance<MidiTimingClockMessage>())
+    MidiTimingClockMessage(activate_instance<MidiTimingClockMessage>())
 {}
 
 inline MidiTuneRequestMessage::MidiTuneRequestMessage() :
-    MidiTuneRequestMessage(ActivateInstance<MidiTuneRequestMessage>())
+    MidiTuneRequestMessage(activate_instance<MidiTuneRequestMessage>())
 {}
 
 }

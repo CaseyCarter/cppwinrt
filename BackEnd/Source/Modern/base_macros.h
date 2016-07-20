@@ -39,19 +39,8 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 #define WINRT_64
 #endif
 
-#if defined(__clang__)
-
-#define WINRT_IGNORE_MISSING_OVERRIDE_BEGIN \
-    _Pragma("clang diagnostic push") \
-    _Pragma("clang diagnostic ignored \"-Winconsistent-missing-override\"")
-#define WINRT_IGNORE_MISSING_OVERRIDE_END \
-    _Pragma("clang diagnostic pop")
-
-#else
-
-#define WINRT_IGNORE_MISSING_OVERRIDE_BEGIN
-#define WINRT_IGNORE_MISSING_OVERRIDE_END
-
+#if defined(_MSC_VER) && _ITERATOR_DEBUG_LEVEL != 0
+#define WINRT_CHECKED_ITERATORS
 #endif
 
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER

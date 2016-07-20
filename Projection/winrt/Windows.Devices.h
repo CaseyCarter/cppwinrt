@@ -200,17 +200,17 @@ template <typename D> void impl_ILowLevelDevicesControllerStatics<D>::DefaultPro
 }
 
 inline LowLevelDevicesAggregateProvider::LowLevelDevicesAggregateProvider(const Windows::Devices::Adc::Provider::IAdcControllerProvider & adc, const Windows::Devices::Pwm::Provider::IPwmControllerProvider & pwm, const Windows::Devices::Gpio::Provider::IGpioControllerProvider & gpio, const Windows::Devices::I2c::Provider::II2cControllerProvider & i2c, const Windows::Devices::Spi::Provider::ISpiControllerProvider & spi) :
-    LowLevelDevicesAggregateProvider(GetActivationFactory<LowLevelDevicesAggregateProvider, ILowLevelDevicesAggregateProviderFactory>().Create(adc, pwm, gpio, i2c, spi))
+    LowLevelDevicesAggregateProvider(get_activation_factory<LowLevelDevicesAggregateProvider, ILowLevelDevicesAggregateProviderFactory>().Create(adc, pwm, gpio, i2c, spi))
 {}
 
 inline Windows::Devices::ILowLevelDevicesAggregateProvider LowLevelDevicesController::DefaultProvider()
 {
-    return GetActivationFactory<LowLevelDevicesController, ILowLevelDevicesControllerStatics>().DefaultProvider();
+    return get_activation_factory<LowLevelDevicesController, ILowLevelDevicesControllerStatics>().DefaultProvider();
 }
 
 inline void LowLevelDevicesController::DefaultProvider(const Windows::Devices::ILowLevelDevicesAggregateProvider & value)
 {
-    GetActivationFactory<LowLevelDevicesController, ILowLevelDevicesControllerStatics>().DefaultProvider(value);
+    get_activation_factory<LowLevelDevicesController, ILowLevelDevicesControllerStatics>().DefaultProvider(value);
 }
 
 }

@@ -593,11 +593,11 @@ template <typename D> void impl_IAppServiceConnection<D>::ServiceClosed(event_to
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(hstring_ref appServiceName)
 {
-    return GetActivationFactory<AppServiceCatalog, IAppServiceCatalogStatics>().FindAppServiceProvidersAsync(appServiceName);
+    return get_activation_factory<AppServiceCatalog, IAppServiceCatalogStatics>().FindAppServiceProvidersAsync(appServiceName);
 }
 
 inline AppServiceConnection::AppServiceConnection() :
-    AppServiceConnection(ActivateInstance<AppServiceConnection>())
+    AppServiceConnection(activate_instance<AppServiceConnection>())
 {}
 
 }

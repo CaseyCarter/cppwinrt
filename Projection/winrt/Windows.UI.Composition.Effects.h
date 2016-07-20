@@ -212,7 +212,7 @@ template <typename D> void impl_ISceneLightingEffect<D>::SpecularShine(float val
 }
 
 inline SceneLightingEffect::SceneLightingEffect() :
-    SceneLightingEffect(ActivateInstance<SceneLightingEffect>())
+    SceneLightingEffect(activate_instance<SceneLightingEffect>())
 {}
 
 }

@@ -437,7 +437,7 @@ template <typename D> Windows::Foundation::IAsyncActionWithProgress<double> impl
 }
 
 inline MediaTranscoder::MediaTranscoder() :
-    MediaTranscoder(ActivateInstance<MediaTranscoder>())
+    MediaTranscoder(activate_instance<MediaTranscoder>())
 {}
 
 }

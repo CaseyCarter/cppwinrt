@@ -1679,7 +1679,7 @@ template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::MapPoints(a
 }
 
 inline FrameController::FrameController() :
-    FrameController(ActivateInstance<FrameController>())
+    FrameController(activate_instance<FrameController>())
 {}
 
 }

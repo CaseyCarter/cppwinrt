@@ -1896,118 +1896,118 @@ template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Wind
 }
 
 inline HttpBufferContent::HttpBufferContent(const Windows::Storage::Streams::IBuffer & content) :
-    HttpBufferContent(GetActivationFactory<HttpBufferContent, IHttpBufferContentFactory>().CreateFromBuffer(content))
+    HttpBufferContent(get_activation_factory<HttpBufferContent, IHttpBufferContentFactory>().CreateFromBuffer(content))
 {}
 
 inline HttpBufferContent::HttpBufferContent(const Windows::Storage::Streams::IBuffer & content, uint32_t offset, uint32_t count) :
-    HttpBufferContent(GetActivationFactory<HttpBufferContent, IHttpBufferContentFactory>().CreateFromBufferWithOffset(content, offset, count))
+    HttpBufferContent(get_activation_factory<HttpBufferContent, IHttpBufferContentFactory>().CreateFromBufferWithOffset(content, offset, count))
 {}
 
 inline HttpClient::HttpClient() :
-    HttpClient(ActivateInstance<HttpClient>())
+    HttpClient(activate_instance<HttpClient>())
 {}
 
 inline HttpClient::HttpClient(const Windows::Web::Http::Filters::IHttpFilter & filter) :
-    HttpClient(GetActivationFactory<HttpClient, IHttpClientFactory>().Create(filter))
+    HttpClient(get_activation_factory<HttpClient, IHttpClientFactory>().Create(filter))
 {}
 
 inline HttpCookie::HttpCookie(hstring_ref name, hstring_ref domain, hstring_ref path) :
-    HttpCookie(GetActivationFactory<HttpCookie, IHttpCookieFactory>().Create(name, domain, path))
+    HttpCookie(get_activation_factory<HttpCookie, IHttpCookieFactory>().Create(name, domain, path))
 {}
 
 inline HttpFormUrlEncodedContent::HttpFormUrlEncodedContent(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) :
-    HttpFormUrlEncodedContent(GetActivationFactory<HttpFormUrlEncodedContent, IHttpFormUrlEncodedContentFactory>().Create(content))
+    HttpFormUrlEncodedContent(get_activation_factory<HttpFormUrlEncodedContent, IHttpFormUrlEncodedContentFactory>().Create(content))
 {}
 
 inline HttpMethod::HttpMethod(hstring_ref method) :
-    HttpMethod(GetActivationFactory<HttpMethod, IHttpMethodFactory>().Create(method))
+    HttpMethod(get_activation_factory<HttpMethod, IHttpMethodFactory>().Create(method))
 {}
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Delete()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Delete();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Delete();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Get()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Get();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Get();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Head()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Head();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Head();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Options()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Options();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Options();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Patch()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Patch();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Patch();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Post()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Post();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Post();
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Put()
 {
-    return GetActivationFactory<HttpMethod, IHttpMethodStatics>().Put();
+    return get_activation_factory<HttpMethod, IHttpMethodStatics>().Put();
 }
 
 inline HttpMultipartContent::HttpMultipartContent() :
-    HttpMultipartContent(ActivateInstance<HttpMultipartContent>())
+    HttpMultipartContent(activate_instance<HttpMultipartContent>())
 {}
 
 inline HttpMultipartContent::HttpMultipartContent(hstring_ref subtype) :
-    HttpMultipartContent(GetActivationFactory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtype(subtype))
+    HttpMultipartContent(get_activation_factory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtype(subtype))
 {}
 
 inline HttpMultipartContent::HttpMultipartContent(hstring_ref subtype, hstring_ref boundary) :
-    HttpMultipartContent(GetActivationFactory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtypeAndBoundary(subtype, boundary))
+    HttpMultipartContent(get_activation_factory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtypeAndBoundary(subtype, boundary))
 {}
 
 inline HttpMultipartFormDataContent::HttpMultipartFormDataContent() :
-    HttpMultipartFormDataContent(ActivateInstance<HttpMultipartFormDataContent>())
+    HttpMultipartFormDataContent(activate_instance<HttpMultipartFormDataContent>())
 {}
 
 inline HttpMultipartFormDataContent::HttpMultipartFormDataContent(hstring_ref boundary) :
-    HttpMultipartFormDataContent(GetActivationFactory<HttpMultipartFormDataContent, IHttpMultipartFormDataContentFactory>().CreateWithBoundary(boundary))
+    HttpMultipartFormDataContent(get_activation_factory<HttpMultipartFormDataContent, IHttpMultipartFormDataContentFactory>().CreateWithBoundary(boundary))
 {}
 
 inline HttpRequestMessage::HttpRequestMessage() :
-    HttpRequestMessage(ActivateInstance<HttpRequestMessage>())
+    HttpRequestMessage(activate_instance<HttpRequestMessage>())
 {}
 
 inline HttpRequestMessage::HttpRequestMessage(const Windows::Web::Http::HttpMethod & method, const Windows::Foundation::Uri & uri) :
-    HttpRequestMessage(GetActivationFactory<HttpRequestMessage, IHttpRequestMessageFactory>().Create(method, uri))
+    HttpRequestMessage(get_activation_factory<HttpRequestMessage, IHttpRequestMessageFactory>().Create(method, uri))
 {}
 
 inline HttpResponseMessage::HttpResponseMessage() :
-    HttpResponseMessage(ActivateInstance<HttpResponseMessage>())
+    HttpResponseMessage(activate_instance<HttpResponseMessage>())
 {}
 
 inline HttpResponseMessage::HttpResponseMessage(Windows::Web::Http::HttpStatusCode statusCode) :
-    HttpResponseMessage(GetActivationFactory<HttpResponseMessage, IHttpResponseMessageFactory>().Create(statusCode))
+    HttpResponseMessage(get_activation_factory<HttpResponseMessage, IHttpResponseMessageFactory>().Create(statusCode))
 {}
 
 inline HttpStreamContent::HttpStreamContent(const Windows::Storage::Streams::IInputStream & content) :
-    HttpStreamContent(GetActivationFactory<HttpStreamContent, IHttpStreamContentFactory>().CreateFromInputStream(content))
+    HttpStreamContent(get_activation_factory<HttpStreamContent, IHttpStreamContentFactory>().CreateFromInputStream(content))
 {}
 
 inline HttpStringContent::HttpStringContent(hstring_ref content) :
-    HttpStringContent(GetActivationFactory<HttpStringContent, IHttpStringContentFactory>().CreateFromString(content))
+    HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromString(content))
 {}
 
 inline HttpStringContent::HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) :
-    HttpStringContent(GetActivationFactory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncoding(content, encoding))
+    HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncoding(content, encoding))
 {}
 
 inline HttpStringContent::HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) :
-    HttpStringContent(GetActivationFactory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType))
+    HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType))
 {}
 
 }

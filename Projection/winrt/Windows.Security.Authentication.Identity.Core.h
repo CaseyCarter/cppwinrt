@@ -600,7 +600,7 @@ template <typename D> Windows::Security::Authentication::Identity::Core::Microso
 
 inline Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager MicrosoftAccountMultiFactorAuthenticationManager::Current()
 {
-    return GetActivationFactory<MicrosoftAccountMultiFactorAuthenticationManager, IMicrosoftAccountMultiFactorAuthenticatorStatics>().Current();
+    return get_activation_factory<MicrosoftAccountMultiFactorAuthenticationManager, IMicrosoftAccountMultiFactorAuthenticatorStatics>().Current();
 }
 
 }

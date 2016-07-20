@@ -1,64 +1,92 @@
 
+namespace impl {
+
+#ifdef WINRT_CHECKED_ITERATORS
+
+template <typename T>
+using array_iterator = stdext::checked_array_iterator<T *>;
+
+template <typename T>
+auto make_array_iterator(T * data, uint32_t size, uint32_t index = 0) noexcept
+{
+    return array_iterator<T>(data, size, index);
+}
+
+#else
+
+template <typename T>
+using array_iterator = T *;
+
+template <typename T>
+auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
+{
+    return data + index;
+}
+
+#endif
+
+}
+
 template <typename T>
 struct array_ref
 {
     using value_type = T;
-    using size_type = std::uint32_t;
+    using size_type = uint32_t;
     using reference = value_type &;
     using const_reference = const value_type &;
     using pointer = value_type *;
     using const_pointer = const value_type *;
-    using iterator = pointer;
-    using const_iterator = const_pointer;
+    using iterator = impl::array_iterator<value_type>;
+    using const_iterator = impl::array_iterator<const value_type>;
     using reverse_iterator = std::reverse_iterator<iterator>;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
     array_ref() noexcept = default;
 
-    array_ref(pointer begin, pointer end) noexcept :
-        m_begin(begin),
-        m_end(end)
+    array_ref(pointer first, pointer last) noexcept :
+        m_data(first),
+        m_size(static_cast<size_type>(last - first))
     {}
 
     array_ref(std::initializer_list<value_type> value) noexcept :
-        array_ref(value.begin(), value.begin() + value.size())
+        array_ref(value.begin(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
     array_ref(C(&value)[N]) noexcept :
-        array_ref(value, value + N)
+        array_ref(value, N)
     {}
 
     template <typename C>
     array_ref(std::vector<C> & value) noexcept :
-        array_ref(value.data(), value.data() + value.size())
+        array_ref(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C>
     array_ref(const std::vector<C> & value) noexcept :
-        array_ref(value.data(), value.data() + value.size())
+        array_ref(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
     array_ref(std::array<C, N> & value) noexcept :
-        array_ref(value.data(), value.data() + value.size())
+        array_ref(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
     array_ref(const std::array<C, N> & value) noexcept :
-        array_ref(value.data(), value.data() + value.size())
+        array_ref(value.data(), static_cast<size_type>(value.size()))
     {}
 
     reference operator[](const size_type pos) noexcept
     {
         WINRT_ASSERT(pos < size());
-        return m_begin[pos];
+        return m_data[pos];
     }
 
     const_reference operator[](const size_type pos) const noexcept
     {
         WINRT_ASSERT(pos < size());
-        return m_begin[pos];
+        return m_data[pos];
     }
 
     reference at(const size_type pos)
@@ -68,7 +96,7 @@ struct array_ref
             throw std::out_of_range("Invalid array subscript");
         }
 
-        return m_begin[pos];
+        return m_data[pos];
     }
 
     const_reference at(const size_type pos) const
@@ -78,71 +106,71 @@ struct array_ref
             throw std::out_of_range("Invalid array subscript");
         }
 
-        return m_begin[pos];
+        return m_data[pos];
     }
 
     reference front() noexcept
     {
-        WINRT_ASSERT(m_begin != m_end);
-        return *m_begin;
+        WINRT_ASSERT(m_size > 0);
+        return *m_data;
     }
 
     const_reference front() const noexcept
     {
-        WINRT_ASSERT(m_begin != m_end);
-        return *m_begin;
+        WINRT_ASSERT(m_size > 0);
+        return *m_data;
     }
 
     reference back() noexcept
     {
-        WINRT_ASSERT(m_begin != m_end);
-        return *(m_end - 1);
+        WINRT_ASSERT(m_size > 0);
+        return m_data[m_size - 1];
     }
 
     const_reference back() const noexcept
     {
-        WINRT_ASSERT(m_begin != m_end);
-        return *(m_end - 1);
+        WINRT_ASSERT(m_size > 0);
+        return m_data[m_size - 1];
     }
 
     pointer data() noexcept
     {
-        return m_begin;
+        return m_data;
     }
 
     const_pointer data() const noexcept
     {
-        return m_begin;
+        return m_data;
     }
 
     iterator begin() noexcept
     {
-        return m_begin;
+        return impl::make_array_iterator(m_data, m_size);
     }
 
     const_iterator begin() const noexcept
     {
-        return m_begin;
+        return impl::make_array_iterator<const value_type>(m_data, m_size);
     }
 
     const_iterator cbegin() const noexcept
     {
-        return m_begin;
+        return impl::make_array_iterator<const value_type>(m_data, m_size);
     }
 
     iterator end() noexcept
     {
-        return m_end;
+        return impl::make_array_iterator(m_data, m_size, m_size);
     }
 
     const_iterator end() const noexcept
     {
-        return m_end;
+        return impl::make_array_iterator<const value_type>(m_data, m_size, m_size);
     }
 
     const_iterator cend() const noexcept
     {
-        return m_end;
+        return impl::make_array_iterator<const value_type>(m_data, m_size, m_size);
     }
 
     reverse_iterator rbegin() noexcept
@@ -177,33 +205,38 @@ struct array_ref
 
     bool empty() const noexcept
     {
-        return m_begin == m_end;
+        return m_size == 0;
     }
 
     size_type size() const noexcept
     {
-        return static_cast<size_type>(m_end - m_begin);
+        return m_size;
     }
 
 protected:
 
-    pointer m_begin = nullptr;
-    pointer m_end = nullptr;
+    array_ref(pointer data, uint32_t size) :
+        m_data(data),
+        m_size(size)
+    {}
+
+    pointer m_data = nullptr;
+    uint32_t m_size = 0;
 };
 
 template <typename T>
 struct com_array : array_ref<T>
 {
-    using value_type = T;
-    using size_type = std::uint32_t;
-    using reference = value_type &;
-    using const_reference = const value_type &;
-    using pointer = value_type *;
-    using const_pointer = const value_type *;
-    using iterator = pointer;
-    using const_iterator = const_pointer;
-    using reverse_iterator = std::reverse_iterator<iterator>;
-    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+    using array_ref<T>::value_type;
+    using array_ref<T>::size_type;
+    using array_ref<T>::reference;
+    using array_ref<T>::const_reference;
+    using array_ref<T>::pointer;
+    using array_ref<T>::const_pointer;
+    using array_ref<T>::iterator;
+    using array_ref<T>::const_iterator;
+    using array_ref<T>::reverse_iterator;
+    using array_ref<T>::const_reverse_iterator;
 
     com_array(const com_array &) = delete;
     com_array & operator=(const com_array &) = delete;
@@ -217,13 +250,13 @@ struct com_array : array_ref<T>
     com_array(const size_type count, const value_type & value)
     {
         alloc(count);
-        std::uninitialized_fill_n(m_begin, count, value);
+        std::uninitialized_fill_n(m_data, count, value);
     }
 
     template <typename InIt> com_array(InIt first, InIt last)
     {
         alloc(static_cast<size_type>(std::distance(first, last)));
-        std::uninitialized_copy(first, last, stdext::make_unchecked_array_iterator(m_begin));
+        std::uninitialized_copy(first, last, begin());
     }
 
     explicit com_array(const std::vector<value_type> & value) :
@@ -245,18 +278,18 @@ struct com_array : array_ref<T>
     {}
 
     com_array(com_array && other) noexcept :
-        array_ref(other.m_begin, other.m_end)
+        array_ref(other.m_data, other.m_size)
     {
-        other.m_begin = nullptr;
-        other.m_end = nullptr;
+        other.m_data = nullptr;
+        other.m_size = 0;
     }
 
     com_array & operator=(com_array && other) noexcept
     {
-        m_begin = other.m_begin;
-        m_end = other.m_end;
-        other.m_begin = nullptr;
-        other.m_end = nullptr;
+        m_data = other.m_data;
+        m_size = other.m_size;
+        other.m_data = nullptr;
+        other.m_size = 0;
         return *this;
     }
 
@@ -267,61 +300,62 @@ struct com_array : array_ref<T>
 
     void clear() noexcept
     {
-        if (m_begin)
+        if (m_data)
         {
             destruct(std::is_trivially_destructible<value_type>());
-            CoTaskMemFree(m_begin);
-            m_begin = nullptr;
+            CoTaskMemFree(m_data);
+            m_data = nullptr;
+            m_size = 0;
         }
     }
 
     friend abi_arg_out<T> * impl_put(com_array & value) noexcept
     {
-        WINRT_ASSERT(!value.m_begin);
-        return reinterpret_cast<abi_arg_out<T> *>(&value.m_begin);
+        WINRT_ASSERT(!value.m_data);
+        return reinterpret_cast<abi_arg_out<T> *>(&value.m_data);
     }
 
     friend auto impl_data(com_array & value) noexcept
     {
-        return value.m_begin;
+        return value.m_data;
     }
 
     friend void impl_put_size(com_array & value, const uint32_t size) noexcept
     {
-        WINRT_ASSERT(value.m_begin || (!value.m_begin && size == 0));
-        value.m_end = value.m_begin + size;
+        WINRT_ASSERT(value.m_data || (!value.m_data && size == 0));
+        value.m_size = size;
     }
 
     friend auto impl_detach(com_array & value) noexcept
     {
         std::pair<uint32_t, abi_arg_in<T> *> result(value.size(), *reinterpret_cast<abi_arg_in<T> **>(&value));
-        value.m_begin = nullptr;
-        value.m_end = nullptr;
+        value.m_data = nullptr;
+        value.m_size = 0;
         return result;
     }
 
     friend void swap(com_array & left, com_array & right) noexcept
     {
-        std::swap(left.m_begin, right.m_begin);
-        std::swap(left.m_end, right.m_end);
+        std::swap(left.m_data, right.m_data);
+        std::swap(left.m_size, right.m_size);
     }
 
 private:
 
-    void alloc(const size_type count)
+    void alloc(const size_type size)
     {
         WINRT_ASSERT(empty());
 
-        if (0 != count)
+        if (0 != size)
         {
-            m_begin = static_cast<value_type *>(CoTaskMemAlloc(count * sizeof(value_type)));
+            m_data = static_cast<value_type *>(CoTaskMemAlloc(size * sizeof(value_type)));
 
-            if (nullptr == m_begin)
+            if (nullptr == m_data)
             {
                 throw std::bad_alloc();
             }
 
-            m_end = m_begin + count;
+            m_size = size;
         }
     }
 

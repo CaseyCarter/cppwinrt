@@ -85,7 +85,7 @@ template <typename D> Windows::Perception::PerceptionTimestamp impl_IPerceptionT
 
 inline Windows::Perception::PerceptionTimestamp PerceptionTimestampHelper::FromHistoricalTargetTime(const Windows::Foundation::DateTime & targetTime)
 {
-    return GetActivationFactory<PerceptionTimestampHelper, IPerceptionTimestampHelperStatics>().FromHistoricalTargetTime(targetTime);
+    return get_activation_factory<PerceptionTimestampHelper, IPerceptionTimestampHelperStatics>().FromHistoricalTargetTime(targetTime);
 }
 
 }

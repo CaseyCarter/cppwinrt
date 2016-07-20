@@ -542,10 +542,10 @@ TEST_CASE("array,begin,end")
         std::vector<int> v{ 1, 2, 3 };
         array_ref<int> a = v;
 
-        int * first = a.begin();
-        int * last = a.end();
+        auto first = a.begin();
+        auto last = a.end();
 
-        for (int * i = first; i != last; ++i)
+        for (auto i = first; i != last; ++i)
         {
             *i *= 10;
         }
@@ -568,10 +568,10 @@ TEST_CASE("array,begin,end")
     {
         com_array<int> a{ 1, 2, 3 };
 
-        int * first = a.begin();
-        int * last = a.end();
+        auto first = a.begin();
+        auto last = a.end();
 
-        for (int * i = first; i != last; ++i)
+        for (auto i = first; i != last; ++i)
         {
             *i *= 10;
         }
@@ -790,22 +790,22 @@ TEST_CASE("array_ref,range")
     {
         int v[] { 1, 2, 3 };
         array_ref<int> a(v, v + _countof(v));
-        REQUIRE(a.begin() == v);
-        REQUIRE(a.end() == v + _countof(v));
+        REQUIRE(a.data() == v);
+        REQUIRE(a.size() == _countof(v));
     }
 
     {
         int v[]{ 1, 2, 3 };
         array_ref<int const> a(v, v + _countof(v));
-        REQUIRE(a.begin() == v);
-        REQUIRE(a.end() == v + _countof(v));
+        REQUIRE(a.data() == v);
+        REQUIRE(a.size() == _countof(v));
     }
 
     {
         int const v[]{ 1, 2, 3 };
         array_ref<int const> a(v, v + _countof(v));
-        REQUIRE(a.begin() == v);
-        REQUIRE(a.end() == v + _countof(v));
+        REQUIRE(a.data() == v);
+        REQUIRE(a.size() == _countof(v));
     }
 }
 
@@ -912,8 +912,9 @@ TEST_CASE("com_array,default")
 {
     com_array<int> a;
     REQUIRE(a.empty());
-    REQUIRE(nullptr == a.begin());
-    REQUIRE(nullptr == a.end());
+    REQUIRE(a.begin() == a.end());
+    REQUIRE(a.size() == 0);
+    REQUIRE(a.empty());
 }
 
 //
