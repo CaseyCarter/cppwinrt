@@ -981,9 +981,6 @@ namespace Microsoft.Wcl.DataStore
 
             -- End of Delete Open Generic Delegates
 
-            DELETE FROM RequiredInterfaces WHERE Requires=(SELECT RowId FROM Interfaces WHERE FullName='Windows::Foundation::IClosable');
-            DELETE FROM ClassInterfaces WHERE Interface=(SELECT RowId FROM Interfaces WHERE FullName='Windows::Foundation::IClosable');
-
             DELETE FROM Fields WHERE StructureId = (SELECT RowId FROM Structures WHERE FullName='Windows::Foundation::EventRegistrationToken');
             DELETE FROM Structures WHERE FullName = 'Windows::Foundation::EventRegistrationToken';
             DELETE FROM Fields WHERE StructureId = (SELECT RowId FROM Structures WHERE FullName='Windows::Foundation::HResult');
