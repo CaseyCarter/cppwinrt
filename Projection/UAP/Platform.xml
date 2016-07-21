@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationPlatform name="UAP" friendlyName="Windows 10 Anniversary Edition Insider Preview" version="10.0.14366.0">
+<ApplicationPlatform name="UAP" friendlyName="Windows 10 Anniversary Edition" version="10.0.14393.0">
    <MinimumVisualStudioVersion>14.0.22213.01</MinimumVisualStudioVersion>
    <ContainedApiContracts>
       <ApiContract name="Windows.ApplicationModel.Calls.CallsVoipContract" version="1.0.0.0" />
