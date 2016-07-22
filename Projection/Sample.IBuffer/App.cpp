@@ -26,8 +26,7 @@ public:
         // Once the image is loaded successfully, then we can dynamically update the WritableBitmap.
         if (m_imageLoaded)
         {
-            IRenderingEventArgs renderingArgs(nullptr);
-            renderingArgs = args.as<IRenderingEventArgs>();
+             auto renderingArgs = args.as<IRenderingEventArgs>();
 
             // Get elapsed time
             TimeSpan timeSpan = renderingArgs.RenderingTime();
