@@ -57,9 +57,9 @@ struct WINRT_EBO LoggingChannel :
     impl::require<LoggingChannel, Windows::Foundation::Diagnostics::ILoggingTarget, Windows::Foundation::Diagnostics::ILoggingChannel2>
 {
     LoggingChannel(std::nullptr_t) noexcept {}
-    LoggingChannel(hstring_ref name);
     LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options);
     LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id);
+    LoggingChannel(hstring_ref name);
 };
 
 struct WINRT_EBO LoggingChannelOptions :

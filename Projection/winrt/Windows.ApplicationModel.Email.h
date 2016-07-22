@@ -7571,12 +7571,12 @@ inline EmailAttachment::EmailAttachment() :
     EmailAttachment(activate_instance<EmailAttachment>())
 {}
 
-inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) :
-    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
-{}
-
 inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
     EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
+{}
+
+inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) :
+    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
 {}
 
 inline EmailIrmInfo::EmailIrmInfo() :

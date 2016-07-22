@@ -206,6 +206,12 @@ struct __declspec(uuid("3676971d-880a-47b8-adf7-1323a9d965be")) __declspec(novta
     virtual HRESULT __stdcall get_IsDopplerDisabled(bool * value) = 0;
 };
 
+struct __declspec(uuid("4ab6eecb-ec29-47f8-818c-b6b660a5aeb1")) __declspec(novtable) IAudioNodeEmitter2 : Windows::IInspectable
+{
+    virtual HRESULT __stdcall get_SpatialAudioModel(winrt::Windows::Media::Audio::SpatialAudioModel * value) = 0;
+    virtual HRESULT __stdcall put_SpatialAudioModel(winrt::Windows::Media::Audio::SpatialAudioModel value) = 0;
+};
+
 struct __declspec(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5")) __declspec(novtable) IAudioNodeEmitterConeProperties : Windows::IInspectable
 {
     virtual HRESULT __stdcall get_InnerAngle(double * value) = 0;
@@ -463,6 +469,7 @@ template <typename T> class impl_IAudioInputNode;
 template <typename T> class impl_IAudioInputNode2;
 template <typename T> class impl_IAudioNode;
 template <typename T> class impl_IAudioNodeEmitter;
+template <typename T> class impl_IAudioNodeEmitter2;
 template <typename T> class impl_IAudioNodeEmitterConeProperties;
 template <typename T> class impl_IAudioNodeEmitterDecayModel;
 template <typename T> class impl_IAudioNodeEmitterDecayModelStatics;
@@ -598,6 +605,12 @@ template <> struct traits<Windows::Media::Audio::IAudioNodeEmitter>
 {
     using abi = ABI::Windows::Media::Audio::IAudioNodeEmitter;
     template <typename D> using consume = Windows::Media::Audio::impl_IAudioNodeEmitter<D>;
+};
+
+template <> struct traits<Windows::Media::Audio::IAudioNodeEmitter2>
+{
+    using abi = ABI::Windows::Media::Audio::IAudioNodeEmitter2;
+    template <typename D> using consume = Windows::Media::Audio::impl_IAudioNodeEmitter2<D>;
 };
 
 template <> struct traits<Windows::Media::Audio::IAudioNodeEmitterConeProperties>

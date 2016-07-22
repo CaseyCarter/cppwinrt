@@ -483,6 +483,17 @@ public:
 };
 
 template <typename D>
+class WINRT_EBO impl_IAudioNodeEmitter2
+{
+    auto shim() const { return impl::shim<D, IAudioNodeEmitter2>(this); }
+
+public:
+
+    Windows::Media::Audio::SpatialAudioModel SpatialAudioModel() const;
+    void SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel value) const;
+};
+
+template <typename D>
 class WINRT_EBO impl_IAudioNodeEmitterConeProperties
 {
     auto shim() const { return impl::shim<D, IAudioNodeEmitterConeProperties>(this); }
@@ -963,6 +974,14 @@ struct IAudioNodeEmitter :
 {
     IAudioNodeEmitter(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IAudioNodeEmitter>(m_ptr); }
+};
+
+struct IAudioNodeEmitter2 :
+    Windows::IInspectable,
+    impl::consume<IAudioNodeEmitter2>
+{
+    IAudioNodeEmitter2(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAudioNodeEmitter2>(m_ptr); }
 };
 
 struct IAudioNodeEmitterConeProperties :

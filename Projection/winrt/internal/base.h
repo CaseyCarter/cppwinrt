@@ -2665,10 +2665,11 @@ template <typename D, typename ... I>
 struct implements : impl::producer<D, impl::uncloak_t<I>> ...
 {
     using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
+    using IInspectable = Windows::IInspectable;
 
-    operator Windows::IInspectable() const noexcept
+    operator IInspectable() const noexcept
     {
-        Windows::IInspectable result;
+        IInspectable result;
         copy_from(result, find_inspectable<I ...>());
         return result;
     }
@@ -2743,7 +2744,7 @@ protected:
         m_references(references)
     {}
 
-    HRESULT abi_GetIids(uint32_t * count, GUID ** array) const noexcept
+    HRESULT __stdcall abi_GetIids(uint32_t * count, GUID ** array) noexcept
     {
         *count = uncloaked_interfaces<I ...>();
 
@@ -2963,7 +2964,7 @@ struct overrides : implements<D, R ...>
         return m_inner.as<Qi>();
     }
 
-    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept
     {
         HRESULT result = implements<D, R ...>::QueryInterface(id, object);
 

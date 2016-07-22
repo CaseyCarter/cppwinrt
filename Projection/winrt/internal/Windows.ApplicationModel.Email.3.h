@@ -15,8 +15,8 @@ struct WINRT_EBO EmailAttachment :
 {
     EmailAttachment(std::nullptr_t) noexcept {}
     EmailAttachment();
-    EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType);
     EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data);
+    EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType);
 };
 
 struct WINRT_EBO EmailConversation :

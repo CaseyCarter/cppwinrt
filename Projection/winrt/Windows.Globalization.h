@@ -7320,16 +7320,16 @@ inline Calendar::Calendar() :
     Calendar(activate_instance<Calendar>())
 {}
 
+inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) :
+    Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
+{}
+
 inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
 {}
 
 inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
-{}
-
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) :
-    Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
 {}
 
 inline hstring CalendarIdentifiers::Gregorian()

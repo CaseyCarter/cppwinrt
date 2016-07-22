@@ -26,6 +26,7 @@ struct IAudioInputNode;
 struct IAudioInputNode2;
 struct IAudioNode;
 struct IAudioNodeEmitter;
+struct IAudioNodeEmitter2;
 struct IAudioNodeEmitterConeProperties;
 struct IAudioNodeEmitterDecayModel;
 struct IAudioNodeEmitterDecayModelStatics;
@@ -103,6 +104,7 @@ struct IAudioInputNode;
 struct IAudioInputNode2;
 struct IAudioNode;
 struct IAudioNodeEmitter;
+struct IAudioNodeEmitter2;
 struct IAudioNodeEmitterConeProperties;
 struct IAudioNodeEmitterDecayModel;
 struct IAudioNodeEmitterDecayModelStatics;
@@ -221,6 +223,12 @@ enum class QuantumSizeSelectionMode
     SystemDefault = 0,
     LowestLatency = 1,
     ClosestToDesired = 2,
+};
+
+enum class SpatialAudioModel
+{
+    ObjectBased = 0,
+    FoldDown = 1,
 };
 
 }

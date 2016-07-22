@@ -1592,6 +1592,36 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Audio::IAudioNodeEmitter2> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitter2>
+{
+    HRESULT __stdcall get_SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel * value) noexcept override
+    {
+        try
+        {
+            *value = detach(shim().SpatialAudioModel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel value) noexcept override
+    {
+        try
+        {
+            shim().SpatialAudioModel(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties>
 {
     HRESULT __stdcall get_InnerAngle(double * value) noexcept override
@@ -4051,6 +4081,18 @@ template <typename D> bool impl_IAudioNodeEmitter<D>::IsDopplerDisabled() const
     bool value {};
     check_hresult(shim()->get_IsDopplerDisabled(&value));
     return value;
+}
+
+template <typename D> Windows::Media::Audio::SpatialAudioModel impl_IAudioNodeEmitter2<D>::SpatialAudioModel() const
+{
+    Windows::Media::Audio::SpatialAudioModel value {};
+    check_hresult(shim()->get_SpatialAudioModel(&value));
+    return value;
+}
+
+template <typename D> void impl_IAudioNodeEmitter2<D>::SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel value) const
+{
+    check_hresult(shim()->put_SpatialAudioModel(value));
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitter impl_IAudioNodeEmitterFactory<D>::CreateAudioNodeEmitter(const Windows::Media::Audio::AudioNodeEmitterShape & shape, const Windows::Media::Audio::AudioNodeEmitterDecayModel & decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings) const

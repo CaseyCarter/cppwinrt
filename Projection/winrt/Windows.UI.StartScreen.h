@@ -2028,10 +2028,6 @@ inline SecondaryTile::SecondaryTile() :
     SecondaryTile(activate_instance<SecondaryTile>())
 {}
 
-inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) :
-    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
-{}
-
 inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference))
 {}
@@ -2042,6 +2038,10 @@ inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, h
 
 inline SecondaryTile::SecondaryTile(hstring_ref tileId) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateWithId(tileId))
+{}
+
+inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) :
+    SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
 {}
 
 inline bool SecondaryTile::Exists(hstring_ref tileId)

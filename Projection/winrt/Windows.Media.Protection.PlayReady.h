@@ -3525,10 +3525,6 @@ inline NDTCPMessenger::NDTCPMessenger(hstring_ref remoteHostName, uint32_t remot
     NDTCPMessenger(get_activation_factory<NDTCPMessenger, INDTCPMessengerFactory>().CreateInstance(remoteHostName, remoteHostPort))
 {}
 
-inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
-{}
-
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
     PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
@@ -3539,6 +3535,10 @@ inline PlayReadyContentHeader::PlayReadyContentHeader(GUID contentKeyId, hstring
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_ref<const uint8_t> headerBytes) :
     PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromPlayReadyHeader(headerBytes))
+{}
+
+inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) :
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
 
 inline Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest PlayReadyContentResolver::ServiceRequest(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader)

@@ -97,7 +97,8 @@ struct WINRT_EBO AudioGraphUnrecoverableErrorOccurredEventArgs :
 };
 
 struct WINRT_EBO AudioNodeEmitter :
-    Windows::Media::Audio::IAudioNodeEmitter
+    Windows::Media::Audio::IAudioNodeEmitter,
+    impl::require<AudioNodeEmitter, Windows::Media::Audio::IAudioNodeEmitter2>
 {
     AudioNodeEmitter(std::nullptr_t) noexcept {}
     AudioNodeEmitter();
