@@ -65,8 +65,8 @@ uint64_t factory_sample()
 uint64_t factory_sample_optimized()
 {
     uint64_t check = 0;
-    auto uriFactory = winrt::GetActivationFactory<winrt::Uri, winrt::IUriRuntimeClassFactory>();
-    auto designModeFactory = winrt::GetActivationFactory<winrt::DesignMode, winrt::IDesignModeStatics>();
+    auto uriFactory = winrt::get_activation_factory<winrt::Uri, winrt::IUriRuntimeClassFactory>();
+    auto designModeFactory = winrt::get_activation_factory<winrt::DesignMode, winrt::IDesignModeStatics>();
 
     for (unsigned i = 0; i != TestPasses; ++i)
     {

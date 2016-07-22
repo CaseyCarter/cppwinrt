@@ -8,7 +8,7 @@ struct overrides : implements<D, R ...>
         return m_inner.as<Qi>();
     }
 
-    HRESULT QueryInterface(const GUID & id, void ** object) const noexcept
+    HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept
     {
         HRESULT result = implements<D, R ...>::QueryInterface(id, object);
 
