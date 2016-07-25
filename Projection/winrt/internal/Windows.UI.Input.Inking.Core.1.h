@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.UI.Input.Inking.Core.0.h"
 #include "Windows.UI.Input.Inking.0.h"
 #include "Windows.UI.Core.1.h"

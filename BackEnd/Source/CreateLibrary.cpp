@@ -65,7 +65,7 @@ static void WriteSupportingHeader(char const * filename, char const (&text)[Coun
 
 static void WriteBaseHeader()
 {
-    OutputFile out("base.h");
+    OutputFile out("..\\base.h");
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Media.ClosedCaptioning.0.h"
 #include "Windows.UI.0.h"
 

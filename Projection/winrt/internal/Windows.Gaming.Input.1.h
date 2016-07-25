@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Gaming.Input.0.h"
 #include "Windows.Gaming.Input.ForceFeedback.0.h"
 #include "Windows.System.0.h"

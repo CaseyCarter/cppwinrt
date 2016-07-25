@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Devices.Bluetooth.Rfcomm.0.h"
 #include "Windows.Devices.Bluetooth.0.h"
 #include "Windows.Devices.Enumeration.0.h"

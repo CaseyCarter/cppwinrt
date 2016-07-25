@@ -1560,7 +1560,7 @@ void WriteRequiredAbiHeadersForInterface(Output & out)
 
 void WriteRequiredForwards(Output & out)
 {
-    Write(out, Strings::WriteInclude, "base.h");
+    Write(out, Strings::WriteInclude, "..\\base.h");
     Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + Settings::ForwardLayerExtension);
 
     GetRequiredForwards([&]

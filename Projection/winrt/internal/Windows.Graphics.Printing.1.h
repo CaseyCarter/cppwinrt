@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Graphics.Printing.0.h"
 #include "Windows.ApplicationModel.DataTransfer.0.h"
 #include "Windows.Foundation.0.h"

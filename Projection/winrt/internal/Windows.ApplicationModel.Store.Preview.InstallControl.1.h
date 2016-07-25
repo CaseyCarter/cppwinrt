@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.ApplicationModel.Store.Preview.InstallControl.0.h"
 #include "Windows.Management.Deployment.0.h"
 #include "Windows.System.0.h"

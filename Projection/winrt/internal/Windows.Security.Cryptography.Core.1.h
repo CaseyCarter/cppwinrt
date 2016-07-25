@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Security.Cryptography.Core.0.h"
 #include "Windows.Security.Cryptography.Certificates.0.h"
 #include "Windows.Storage.Streams.0.h"

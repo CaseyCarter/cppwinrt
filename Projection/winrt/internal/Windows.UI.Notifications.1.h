@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.UI.Notifications.0.h"
 #include "Windows.ApplicationModel.0.h"
 #include "Windows.Data.Xml.Dom.0.h"

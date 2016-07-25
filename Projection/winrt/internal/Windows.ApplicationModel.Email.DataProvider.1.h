@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.ApplicationModel.Email.DataProvider.0.h"
 #include "Windows.ApplicationModel.Email.0.h"
 #include "Windows.Foundation.0.h"

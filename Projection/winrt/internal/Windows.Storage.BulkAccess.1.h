@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.Storage.BulkAccess.0.h"
 #include "Windows.Storage.0.h"
 #include "Windows.Storage.FileProperties.0.h"

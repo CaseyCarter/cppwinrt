@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "base.h"
+#include "..\base.h"
 #include "Windows.UI.Composition.Interactions.0.h"
 #include "Windows.UI.Composition.0.h"
 #include "Windows.UI.Input.0.h"
