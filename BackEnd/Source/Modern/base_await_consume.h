@@ -7,7 +7,7 @@ void impl_suspend(const T & object, F resume)
     com_ptr<IContextCallback> context;
     check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
 
-    object.Completed([resume, context](const auto &, AsyncStatus)
+    object.Completed([resume, context = std::move(context)](const auto &, AsyncStatus)
     {
         ComCallData data = {};
         data.pUserDefined = resume.address();
