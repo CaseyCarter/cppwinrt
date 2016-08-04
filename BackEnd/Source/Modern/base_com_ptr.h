@@ -73,7 +73,7 @@ struct com_ptr
         return static_cast<impl::no_ref<type> *>(m_ptr);
     }
 
-    const T & operator *() const noexcept
+    T & operator *() const noexcept
     {
         return *m_ptr;
     }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "event.h"
-
 namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
 template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IIterable<Windows::Web::Http::HttpProgress> : impl_IIterable<Windows::Web::Http::HttpProgress> {};

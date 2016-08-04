@@ -172,6 +172,7 @@
     <ClCompile Include="delegate_lambda.cpp" />
     <ClCompile Include="empty_collection.cpp" />
     <ClCompile Include="event_consume.cpp" />
+    <ClCompile Include="event_produce.cpp" />
     <ClCompile Include="IInspectable_GetIids.cpp" />
     <ClCompile Include="IInspectable_GetRuntimeClassName.cpp" />
     <ClCompile Include="IInspectable_GetTrustLevel.cpp" />
