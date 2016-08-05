@@ -1,8 +1,31 @@
 ﻿using Microsoft.Wcl.Projection;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Microsoft.Wcl.DataStore
 {
+    class KeyedGenericInterfaceCollection : KeyedCollection<string, GenericInterfaceInfo>
+    {
+        protected override string GetKeyForItem(GenericInterfaceInfo item)
+        {
+            return item.MetadataFullTypeNameInCppForm;
+        }
+
+        public bool TryGetValue(string key, out GenericInterfaceInfo value)
+        {
+            bool success = false;
+            value = null;
+
+            if (this.Contains(key))
+            {
+                value = this[key];
+                success = true;
+            }
+
+            return success;
+        }
+    }
+
     internal interface IDataStore
     {
         void Initialize();
@@ -19,6 +42,6 @@ namespace Microsoft.Wcl.DataStore
         void VerifySemantics();
         void OnParameterizedTypeInstanceParsed(object sender, ParameterizedTypeInstanceParsedEventArgs args);
         IDictionary<string, object> GetRepository();
-        IDictionary<string, GenericInterfaceInfo> GetGenericInterfacesRepository();
+        KeyedGenericInterfaceCollection GetGenericInterfacesRepository();
     }
 }

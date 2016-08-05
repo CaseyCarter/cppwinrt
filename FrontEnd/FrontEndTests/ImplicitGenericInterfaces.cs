@@ -7,8 +7,8 @@ namespace Microsoft.Wtl.Tests
     [TestClass]
     public class ImplicitGenericInterfaces
     {
-        [TestInitialize]
-        public void Initialize()
+        [TestMethod]
+        public void ParseGenericInterfaces1()
         {
             var currentDirectory = Directory.GetCurrentDirectory();
 
@@ -18,17 +18,30 @@ namespace Microsoft.Wtl.Tests
                 Path.Combine(currentDirectory, @"TestData\SDK\Windows.Foundation.FoundationContract.winmd")
             };
 
-            MetadataTestHelper.RunFrontEnd(winmds);
-        }
-
-        [TestMethod]
-        public void ParseGenericInterfaces()
-        {
-            // It is expected that based on the input, specific generic interfaces were generated
-            MetadataTestHelper.VerifyDatabaseByQuery(@"TestData\GenericInterfacesInput",
+            MetadataTestHelper.RunBasicTest(winmds,
+                @"TestData\GenericInterfacesInput",
                 "ImplicitGenericInterfaces1.base",
                 @"TestData\GenericInterfacesInput",
                 "ImplicitGenericInterfaces1.test",
+                "SELECT * FROM GenericInterfaces ORDER BY RowId;");
+        }
+
+        [TestMethod]
+        public void ParseGenericInterfaces2()
+        {
+            var currentDirectory = Directory.GetCurrentDirectory();
+
+            string[] winmds =
+            {
+                Path.Combine(currentDirectory, @"TestData\GenericInterfacesInput\ImplicitGenericInterfaces2.winmd"),
+                Path.Combine(currentDirectory, @"TestData\SDK\Windows.Foundation.FoundationContract.winmd")
+            };
+
+            MetadataTestHelper.RunBasicTest(winmds,
+                @"TestData\GenericInterfacesInput",
+                "ImplicitGenericInterfaces2.base",
+                @"TestData\GenericInterfacesInput",
+                "ImplicitGenericInterfaces2.test",
                 "SELECT * FROM GenericInterfaces ORDER BY RowId;");
         }
     }

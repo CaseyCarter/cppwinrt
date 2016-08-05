@@ -66,7 +66,7 @@ namespace Microsoft.Wcl.DataStore
         /// <remarks>
         /// All keys are in cpp form
         /// </remarks>
-        public IDictionary<string, GenericInterfaceInfo> GenericInterfacesRepository { get; set; }
+        public KeyedGenericInterfaceCollection GenericInterfacesRepository { get; set; }
 
         protected FrontEndConfiguration Configuration { get; set; }
 
@@ -127,7 +127,7 @@ namespace Microsoft.Wcl.DataStore
             this.EnumFieldCommand.Parameters[1].DbType = DbType.Int64;
 
             this.Repository = new Dictionary<string, object>();
-            this.GenericInterfacesRepository = new Dictionary<string, GenericInterfaceInfo>();
+            this.GenericInterfacesRepository = new KeyedGenericInterfaceCollection();
 
             this.Transaction = this.Database.BeginTransaction();
         }
@@ -353,7 +353,7 @@ namespace Microsoft.Wcl.DataStore
             return this.Repository;
         }
 
-        public IDictionary<string, GenericInterfaceInfo> GetGenericInterfacesRepository()
+        public KeyedGenericInterfaceCollection GetGenericInterfacesRepository()
         {
             return this.GenericInterfacesRepository;
         }
@@ -368,7 +368,7 @@ namespace Microsoft.Wcl.DataStore
             // Check for the open types and then check if we already know about it.
             // During parsing, open types use !!# to describe the arguments of a Generic Interface.
             // For example Windows::Foundaton::Collections::IVector<!!0>
-            if (!fullTypeName.Contains("!!") && !this.GenericInterfacesRepository.ContainsKey(fullTypeName))
+            if (!fullTypeName.Contains("!!") && !this.GenericInterfacesRepository.Contains(fullTypeName))
             {
                 var info = new GenericInterfaceInfo();
                 info.FullName = fullTypeName;
@@ -386,7 +386,7 @@ namespace Microsoft.Wcl.DataStore
                 }
 
                 // Insert to database is derefed until uuid are calculated. This avoids insert + update.
-                this.GenericInterfacesRepository.Add(fullTypeName, info);
+                this.GenericInterfacesRepository.Add(info);
             }
         }
 

@@ -18,9 +18,9 @@ namespace Microsoft.Wcl
             {
                 args = new string[] {
                 // For reference, the below 3 are the smallest set that can be used to satisfy the dependencies needed by universal api contract
-                @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
+                //@"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
+                //@"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
+                //@"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
                 // The below is a full set of the SDK as it was in TH2.
                 //@"-winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd",
@@ -53,6 +53,7 @@ namespace Microsoft.Wcl
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd",
+                @"@D:\xbox\Projection.Xbox.txt",
                 @"-db",
                 @"d:\modern\testdatabaseoutput.db" };
 

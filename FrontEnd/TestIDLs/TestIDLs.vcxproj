@@ -165,7 +165,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -216,7 +217,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -260,7 +262,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -304,7 +307,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -351,7 +355,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -398,7 +403,8 @@ copy "$(TargetDir)testmetadatatypevariations.winmd" "$(TargetDir)TestData\Parame
 md "$(TargetDir)TestData\PlatformVersion"
 copy "$(TargetDir)platformversion.winmd" "$(TargetDir)TestData\platformversion\*"
 md "$(TargetDir)TestData\GenericInterfacesInput"
-copy "$(TargetDir)ImplicitGenericInterfaces1.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)ImplicitGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
+copy "$(TargetDir)InnerGenericInterfaces*.winmd" "$(TargetDir)TestData\GenericInterfacesInput\*"
 md "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency1.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
 copy "$(TargetDir)NamespaceToGenericInterfaceDependency2.winmd" "$(TargetDir)TestData\NamespaceToGenericInterfaceDependencyInput\*"
@@ -425,6 +431,8 @@ copy "$(TargetDir)NamespaceToTypeCategoryDependency1.winmd" "$(TargetDir)TestDat
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ImplicitGenericInterfaces1.idl" />
+    <Midl Include="ImplicitGenericInterfaces2.idl" />
+    <Midl Include="InnerGenericInterfaces1.idl" />
     <Midl Include="NamespaceToGenericInterfaceDependency1.idl" />
     <Midl Include="NamespaceToGenericInterfaceDependency2.idl" />
     <Midl Include="NamespaceToTypeCategoryDependency1.idl" />

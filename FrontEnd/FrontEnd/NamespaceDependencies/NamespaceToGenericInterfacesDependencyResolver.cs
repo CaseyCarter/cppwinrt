@@ -9,9 +9,9 @@ namespace Microsoft.Wcl.NamespaceDependencies
     {
         private IDictionary<string, NamespaceDependencyInfo> NamespaceDependenciesTable { get; set; }
 
-        private IDictionary<string, GenericInterfaceInfo> GenericInterfacesRepository { get; set; }
+        private KeyedGenericInterfaceCollection GenericInterfacesRepository { get; set; }
 
-        public NamespaceToGenericInterfaceDependencyResolver(IDictionary<string, NamespaceDependencyInfo> namespaceDependenciesTable, IDictionary<string, GenericInterfaceInfo> genericInterfacesRepository)
+        public NamespaceToGenericInterfaceDependencyResolver(IDictionary<string, NamespaceDependencyInfo> namespaceDependenciesTable, KeyedGenericInterfaceCollection genericInterfacesRepository)
         {
             this.NamespaceDependenciesTable = namespaceDependenciesTable;
             this.GenericInterfacesRepository = genericInterfacesRepository;
