@@ -46,3 +46,7 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
 #endif
+
+#ifndef __IAgileReference_INTERFACE_DEFINED__
+#define WINRT_NO_AGILE_REFERENCE
+#endif

@@ -1,4 +1,8 @@
-#include <winrt\Windows.Foundation.h>
+struct IUnknown;
+
+#pragma comment(lib, "windowsapp") 
+
+#include "winrt\Windows.Foundation.h"
 
 using namespace winrt;
 using namespace Windows::Foundation;

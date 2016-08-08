@@ -37,17 +37,6 @@ static void WriteRootNamespaceEnd(Target & target)
     Write(target, "\r\n}\r\n");
 }
 
-static void WriteWindowsNumerics()
-{
-    // Note: this is in the RS1 SDK - remove this once the RS1 SDK is available.
-
-    OutputFile impl("WindowsNumerics.impl.h");
-    Write(impl, Strings::WindowsNumerics_impl);
-
-    OutputFile inl("WindowsNumerics.inl");
-    Write(inl, Strings::WindowsNumerics);
-}
-
 static void WriteModule()
 {
     OutputFile target("..\\winrt.ixx");
@@ -284,7 +273,6 @@ static void WriteLibrary()
 
     WriteModule();
     WriteBaseHeader();
-    WriteWindowsNumerics();
 
     std::vector<std::string> processedNamespaces;
 

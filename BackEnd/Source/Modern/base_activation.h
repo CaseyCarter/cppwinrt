@@ -44,7 +44,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
     {
         try
         {
-            *instance = detach(shim().ActivateInstance());
+            *instance = detach(this->shim().ActivateInstance());
             return S_OK;
         }
         catch (...)

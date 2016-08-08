@@ -1,6 +1,8 @@
 #pragma once
 
-#include <winrt\Windows.Foundation.h>
-#include <winrt\Windows.Web.Syndication.h>
+#pragma comment(lib, "windowsapp") 
+
+#include "winrt\Windows.Foundation.h"
+#include "winrt\Windows.Web.Syndication.h"
 
 #include <future>

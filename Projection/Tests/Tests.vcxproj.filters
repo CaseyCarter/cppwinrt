@@ -29,11 +29,13 @@
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="implements_references.cpp" />
     <ClCompile Include="make_self.cpp" />
+    <ClCompile Include="range_for.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="produce_IPropertyValue.h" />
     <ClInclude Include="vector.h" />
+    <ClInclude Include="map.h" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,33 @@
 #pragma once
 
+#include "event.h"
+
+namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+
+template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IIterable<Windows::Web::Http::HttpProgress> : impl_IIterable<Windows::Web::Http::HttpProgress> {};
+template <> struct __declspec(uuid("bfea7f78-50c2-5f1d-a6ea-9e978d2699ff")) __declspec(novtable) IIterator<Windows::Web::Http::HttpProgress> : impl_IIterator<Windows::Web::Http::HttpProgress> {};
+template <> struct __declspec(uuid("8d720cdf-3934-5d3f-9a55-40e8063b086a")) __declspec(novtable) IVectorView<Windows::Web::Http::HttpProgress> : impl_IVectorView<Windows::Web::Http::HttpProgress> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905fe")) __declspec(novtable) IVector<Windows::Web::Http::HttpProgress> : impl_IVector<Windows::Web::Http::HttpProgress> {};
+
+template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IIterable<Windows::Data::Json::JsonValue> : impl_IIterable<Windows::Data::Json::JsonValue> {};
+template <> struct __declspec(uuid("bfea7f78-50c2-5f1d-a6ea-9e978d2699ff")) __declspec(novtable) IIterator<Windows::Data::Json::JsonValue> : impl_IIterator<Windows::Data::Json::JsonValue> {};
+template <> struct __declspec(uuid("8d720cdf-3934-5d3f-9a55-40e8063b086a")) __declspec(novtable) IVectorView<Windows::Data::Json::JsonValue> : impl_IVectorView<Windows::Data::Json::JsonValue> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905fe")) __declspec(novtable) IVector<Windows::Data::Json::JsonValue> : impl_IVector<Windows::Data::Json::JsonValue> {};
+
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905ff")) __declspec(novtable) IObservableVector<int32_t> : impl_IObservableVector<int32_t> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905f1")) __declspec(novtable) VectorChangedEventHandler<int32_t> : impl_VectorChangedEventHandler<int32_t> {};
+
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905ff")) __declspec(novtable) IObservableVector<hstring> : impl_IObservableVector<hstring> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905f1")) __declspec(novtable) VectorChangedEventHandler<hstring> : impl_VectorChangedEventHandler<hstring> {};
+
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905ff")) __declspec(novtable) IObservableVector<Windows::Web::Http::HttpProgress> : impl_IObservableVector<Windows::Web::Http::HttpProgress> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905f1")) __declspec(novtable) VectorChangedEventHandler<Windows::Web::Http::HttpProgress> : impl_VectorChangedEventHandler<Windows::Web::Http::HttpProgress> {};
+
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905ff")) __declspec(novtable) IObservableVector<Windows::Data::Json::JsonValue> : impl_IObservableVector<Windows::Data::Json::JsonValue> {};
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905f1")) __declspec(novtable) VectorChangedEventHandler<Windows::Data::Json::JsonValue> : impl_VectorChangedEventHandler<Windows::Data::Json::JsonValue> {};
+
+}}}}}
+
 //
 // What follows is a complete reference implementation of IVector/IVectorView/IIterable/IIterator used for testing
 // both the consumer and producer sides of the projection of these collection interfaces.

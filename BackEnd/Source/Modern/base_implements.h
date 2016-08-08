@@ -22,7 +22,7 @@ template <typename T>
 using uncloak_t = typename uncloak<T>::type;
 
 template <typename I>
-struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
+struct is_cloaked : std::conditional_t<is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
 
 template <typename I>
 struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -92,7 +92,7 @@ abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
 template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
 auto make(Args && ... args)
 {
-    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
+    std::conditional_t<impl::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
     *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
     return instance;
 }
@@ -356,7 +356,7 @@ private:
     template <typename First, typename ... Rest>
     static constexpr bool is_inspectable() noexcept
     {
-        return std::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
+        return impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
     }
 
     template <int = 0>
@@ -368,7 +368,7 @@ private:
     template <typename First, typename ... Rest>
     static constexpr bool is_non_agile() noexcept
     {
-        return std::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
+        return impl::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
     }
 
     template <int = 0>
@@ -378,13 +378,13 @@ private:
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return to_abi<First>(this);
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return find_inspectable<Rest ...>();
     }
@@ -396,13 +396,13 @@ private:
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id, std::enable_if_t<std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<impl::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
         return find_interface<Rest ...>(id);
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id, std::enable_if_t<!std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<!impl::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
         if (id == __uuidof(abi<First>))
         {

@@ -104,7 +104,7 @@ struct com_ptr
     template <typename U>
     auto as() const
     {
-        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
@@ -112,7 +112,7 @@ struct com_ptr
     template <typename U>
     auto try_as() const
     {
-        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }

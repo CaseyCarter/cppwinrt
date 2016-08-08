@@ -8,7 +8,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -21,7 +21,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            shim().GetResults();
+            this->shim().GetResults();
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *id = shim().Id();
+            *id = this->shim().Id();
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *status = shim().Status();
+            *status = this->shim().Status();
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *errorCode = shim().ErrorCode();
+            *errorCode = this->shim().ErrorCode();
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            shim().Cancel();
+            this->shim().Cancel();
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
+            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            *handler = detach(shim().Progress());
+            *handler = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().GetResults();
+            this->shim().GetResults();
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            *results = detach(shim().GetResults());
+            *results = detach(this->shim().GetResults());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
+            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *handler = detach(shim().Progress());
+            *handler = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -291,7 +291,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *results = detach(shim().GetResults());
+            *results = detach(this->shim().GetResults());
             return S_OK;
         }
         catch (...)

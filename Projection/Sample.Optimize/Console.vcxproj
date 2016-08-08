@@ -22,7 +22,7 @@
     <ProjectGuid>{079790FD-97A0-428D-BF8D-83D24C1D6A56}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Console</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -109,7 +109,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /bigobj /await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,7 +136,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /bigobj /await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,7 +162,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /bigobj /await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -190,7 +190,7 @@
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
-      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ZW:nostdlib /FU"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\references\platform.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\2.0.0.0\Windows.Foundation.FoundationContract.winmd" /FU"C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\2.0.0.0\Windows.Foundation.UniversalApiContract.winmd" /bigobj /await /std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

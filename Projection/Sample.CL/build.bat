@@ -1,1 +1,1 @@
-cl main.cpp /I .. /EHsc /std:c++latest
+cl main.cpp /I .. /EHsc /std:c++latest /d1permissive-

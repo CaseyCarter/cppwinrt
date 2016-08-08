@@ -1,4 +1,14 @@
 
+namespace impl {
+
+template <typename Base, typename Derived>
+constexpr bool is_base_of_v = std::is_base_of<Base, Derived>::value;
+
+template<typename T, typename U>
+constexpr bool is_same_v = std::is_same<T, U>::value;
+
+}
+
 namespace ABI {
 
 template <typename T>
@@ -11,10 +21,10 @@ template <typename T>
 using default_interface = typename traits<T>::default_interface;
 
 template <typename T>
-using arg_in = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
+using arg_in = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
 
 template <typename T>
-using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
+using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
 
 }
 
@@ -44,7 +54,7 @@ struct bases_one
 {
     operator I() const noexcept
     {
-        return static_cast<const D *>(this)->as<I>();
+        return static_cast<const D *>(this)->template as<I>();
     }
 };
 

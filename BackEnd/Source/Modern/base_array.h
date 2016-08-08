@@ -227,16 +227,16 @@ protected:
 template <typename T>
 struct com_array : array_ref<T>
 {
-    using array_ref<T>::value_type;
-    using array_ref<T>::size_type;
-    using array_ref<T>::reference;
-    using array_ref<T>::const_reference;
-    using array_ref<T>::pointer;
-    using array_ref<T>::const_pointer;
-    using array_ref<T>::iterator;
-    using array_ref<T>::const_iterator;
-    using array_ref<T>::reverse_iterator;
-    using array_ref<T>::const_reverse_iterator;
+    using typename array_ref<T>::value_type;
+    using typename array_ref<T>::size_type;
+    using typename array_ref<T>::reference;
+    using typename array_ref<T>::const_reference;
+    using typename array_ref<T>::pointer;
+    using typename array_ref<T>::const_pointer;
+    using typename array_ref<T>::iterator;
+    using typename array_ref<T>::const_iterator;
+    using typename array_ref<T>::reverse_iterator;
+    using typename array_ref<T>::const_reverse_iterator;
 
     com_array(const com_array &) = delete;
     com_array & operator=(const com_array &) = delete;
@@ -250,13 +250,13 @@ struct com_array : array_ref<T>
     com_array(const size_type count, const value_type & value)
     {
         alloc(count);
-        std::uninitialized_fill_n(m_data, count, value);
+        std::uninitialized_fill_n(this->m_data, count, value);
     }
 
     template <typename InIt> com_array(InIt first, InIt last)
     {
         alloc(static_cast<size_type>(std::distance(first, last)));
-        std::uninitialized_copy(first, last, begin());
+        std::uninitialized_copy(first, last, this->begin());
     }
 
     explicit com_array(const std::vector<value_type> & value) :
@@ -278,7 +278,7 @@ struct com_array : array_ref<T>
     {}
 
     com_array(com_array && other) noexcept :
-        array_ref(other.m_data, other.m_size)
+        array_ref<T>(other.m_data, other.m_size)
     {
         other.m_data = nullptr;
         other.m_size = 0;
@@ -286,8 +286,8 @@ struct com_array : array_ref<T>
 
     com_array & operator=(com_array && other) noexcept
     {
-        m_data = other.m_data;
-        m_size = other.m_size;
+        this->m_data = other.m_data;
+        this->m_size = other.m_size;
         other.m_data = nullptr;
         other.m_size = 0;
         return *this;
@@ -300,12 +300,12 @@ struct com_array : array_ref<T>
 
     void clear() noexcept
     {
-        if (m_data)
+        if (this->m_data)
         {
             destruct(std::is_trivially_destructible<value_type>());
-            CoTaskMemFree(m_data);
-            m_data = nullptr;
-            m_size = 0;
+            CoTaskMemFree(this->m_data);
+            this->m_data = nullptr;
+            this->m_size = 0;
         }
     }
 
@@ -344,18 +344,18 @@ private:
 
     void alloc(const size_type size)
     {
-        WINRT_ASSERT(empty());
+        WINRT_ASSERT(this->empty());
 
         if (0 != size)
         {
-            m_data = static_cast<value_type *>(CoTaskMemAlloc(size * sizeof(value_type)));
+            this->m_data = static_cast<value_type *>(CoTaskMemAlloc(size * sizeof(value_type)));
 
-            if (nullptr == m_data)
+            if (this->m_data == nullptr)
             {
                 throw std::bad_alloc();
             }
 
-            m_size = size;
+            this->m_size = size;
         }
     }
 

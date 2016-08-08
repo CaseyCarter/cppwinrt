@@ -8,7 +8,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
-            *value = shim().CollectionChange();
+            *value = this->shim().CollectionChange();
             return S_OK;
         }
         catch (...)
@@ -21,7 +21,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
-            *value = shim().Index();
+            *value = this->shim().Index();
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *current = detach(shim().Current());
+            *current = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *hasCurrent = shim().HasCurrent();
+            *hasCurrent = this->shim().HasCurrent();
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *hasCurrent = shim().MoveNext();
+            *hasCurrent = this->shim().MoveNext();
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *actual = shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base
     {
         try
         {
-            *first = detach(shim().First());
+            *first = detach(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
-            *key = detach(shim().Key());
+            *key = detach(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *item = detach(shim().GetAt(index));
+            *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *item = detach(shim().GetAt(index));
+            *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *view = detach(shim().GetView());
+            *view = detach(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().SetAt(index, *reinterpret_cast<const T *>(&item));
+            this->shim().SetAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -273,7 +273,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
+            this->shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().RemoveAt(index);
+            this->shim().RemoveAt(index);
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().Append(*reinterpret_cast<const T *>(&item));
+            this->shim().Append(*reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().RemoveAtEnd();
+            this->shim().RemoveAtEnd();
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -353,7 +353,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
+            this->shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
+            this->shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
             return S_OK;
         }
         catch (...)
@@ -429,7 +429,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *view = detach(shim().GetView());
+            *view = detach(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *replaced = shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
+            *replaced = this->shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const K *>(&key));
+            this->shim().Remove(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
-            *value = shim().CollectionChange();
+            *value = this->shim().CollectionChange();
             return S_OK;
         }
         catch (...)
@@ -539,7 +539,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
-            *value = detach(shim().Key());
+            *value = detach(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
-            *token = shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
+            *token = this->shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
-            shim().MapChanged(token);
+            this->shim().MapChanged(token);
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
-            *token = shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
+            *token = this->shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
-            shim().VectorChanged(token);
+            this->shim().VectorChanged(token);
             return S_OK;
         }
         catch (...)

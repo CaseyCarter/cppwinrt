@@ -1,9 +1,4 @@
 
-#ifndef WINRT_NO_DEFAULT_LIB 
-#pragma comment(lib, "windowsapp") 
-#endif
-
-#include <ctxtcall.h>
 #include <restrictederrorinfo.h>
 #include <winstring.h>
 
@@ -21,6 +16,12 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
+
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
+#define WINRT_CORO
+#include <ctxtcall.h>
+#include <experimental/resumable>
+#endif
 
 extern "C"
 {
@@ -56,7 +57,7 @@ extern "C"
 #define _XM_NO_INTRINSICS_
 #endif
 
-#include "WindowsNumerics.impl.h"
+#include <WindowsNumerics.impl.h>
 
 #ifdef __clang__
 #undef _XM_NO_INTRINSICS_
