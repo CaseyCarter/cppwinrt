@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockApplicationHost> :
     {
         try
         {
-            shim().RequestUnlock();
+            this->shim().RequestUnlock();
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockApplicationHost> :
     {
         try
         {
-            *token = detach(shim().Unlocking(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> *>(&handler)));
+            *token = detach(this->shim().Unlocking(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockApplicationHost> :
     {
         try
         {
-            shim().Unlocking(token);
+            this->shim().Unlocking(token);
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockApplicationHostSta
     {
         try
         {
-            *result = detach(shim().GetForCurrentView());
+            *result = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
     {
         try
         {
-            *value = detach(shim().Logo());
+            *value = detach(this->shim().Logo());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
     {
         try
         {
-            *value = detach(shim().Glyph());
+            *value = detach(this->shim().Glyph());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
     {
         try
         {
-            *value = detach(shim().Number());
+            *value = detach(this->shim().Number());
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
     {
         try
         {
-            *value = detach(shim().AutomationName());
+            *value = detach(this->shim().AutomationName());
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
     {
         try
         {
-            shim().LaunchApp();
+            this->shim().LaunchApp();
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *token = detach(shim().LockScreenImageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().LockScreenImageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            shim().LockScreenImageChanged(token);
+            this->shim().LockScreenImageChanged(token);
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *value = detach(shim().LockScreenImage());
+            *value = detach(this->shim().LockScreenImage());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *token = detach(shim().BadgesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().BadgesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            shim().BadgesChanged(token);
+            this->shim().BadgesChanged(token);
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *value = detach(shim().Badges());
+            *value = detach(this->shim().Badges());
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *token = detach(shim().DetailTextChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DetailTextChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            shim().DetailTextChanged(token);
+            this->shim().DetailTextChanged(token);
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *value = detach(shim().DetailText());
+            *value = detach(this->shim().DetailText());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *token = detach(shim().AlarmIconChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().AlarmIconChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            shim().AlarmIconChanged(token);
+            this->shim().AlarmIconChanged(token);
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
     {
         try
         {
-            *value = detach(shim().AlarmIcon());
+            *value = detach(this->shim().AlarmIcon());
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenUnlockingDef
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenUnlockingEve
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenUnlockingEve
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)

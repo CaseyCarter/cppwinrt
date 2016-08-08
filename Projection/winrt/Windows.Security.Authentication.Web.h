@@ -18,7 +18,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            *asyncInfo = detach(shim().AuthenticateAsync(options, *reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri)));
+            *asyncInfo = detach(this->shim().AuthenticateAsync(options, *reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri)));
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            *asyncInfo = detach(shim().AuthenticateAsync(options, *reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri)));
+            *asyncInfo = detach(this->shim().AuthenticateAsync(options, *reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri)));
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            *callbackUri = detach(shim().GetCurrentApplicationCallbackUri());
+            *callbackUri = detach(this->shim().GetCurrentApplicationCallbackUri());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri));
+            this->shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri));
+            this->shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri));
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&continuationData), options);
+            this->shim().AuthenticateAndContinue(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), *reinterpret_cast<const Windows::Foundation::Uri *>(&callbackUri), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&continuationData), options);
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            *asyncInfo = detach(shim().AuthenticateSilentlyAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri)));
+            *asyncInfo = detach(this->shim().AuthenticateSilentlyAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri)));
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationBrok
     {
         try
         {
-            *asyncInfo = detach(shim().AuthenticateSilentlyAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), options));
+            *asyncInfo = detach(this->shim().AuthenticateSilentlyAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&requestUri), options));
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationResu
     {
         try
         {
-            *value = detach(shim().ResponseData());
+            *value = detach(this->shim().ResponseData());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationResu
     {
         try
         {
-            *value = detach(shim().ResponseStatus());
+            *value = detach(this->shim().ResponseStatus());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Security::Authentication::Web::IWebAuthenticationResu
     {
         try
         {
-            *value = detach(shim().ResponseErrorDetail());
+            *value = detach(this->shim().ResponseErrorDetail());
             return S_OK;
         }
         catch (...)

@@ -23,7 +23,7 @@ struct produce<D, Windows::Storage::FileProperties::IBasicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Storage::FileProperties::IBasicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().DateModified());
+            *value = detach(this->shim().DateModified());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Storage::FileProperties::IBasicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().ItemDate());
+            *value = detach(this->shim().ItemDate());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            *value = detach(shim().Author());
+            *value = detach(this->shim().Author());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            *value = detach(shim().Keywords());
+            *value = detach(this->shim().Keywords());
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Storage::FileProperties::IDocumentProperties> : produ
     {
         try
         {
-            shim().Comment(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Comment(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Storage::FileProperties::IGeotagHelperStatics> : prod
     {
         try
         {
-            *operation = detach(shim().GetGeotagAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *operation = detach(this->shim().GetGeotagAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Storage::FileProperties::IGeotagHelperStatics> : prod
     {
         try
         {
-            *operation = detach(shim().SetGeotagFromGeolocatorAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Devices::Geolocation::Geolocator *>(&geolocator)));
+            *operation = detach(this->shim().SetGeotagFromGeolocatorAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Devices::Geolocation::Geolocator *>(&geolocator)));
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Storage::FileProperties::IGeotagHelperStatics> : prod
     {
         try
         {
-            *operation = detach(shim().SetGeotagAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&geopoint)));
+            *operation = detach(this->shim().SetGeotagAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&geopoint)));
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Rating());
+            *value = detach(this->shim().Rating());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            shim().Rating(value);
+            this->shim().Rating(value);
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Keywords());
+            *value = detach(this->shim().Keywords());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().DateTaken());
+            *value = detach(this->shim().DateTaken());
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            shim().DateTaken(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().DateTaken(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Width());
+            *value = detach(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Height());
+            *value = detach(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Latitude());
+            *value = detach(this->shim().Latitude());
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Longitude());
+            *value = detach(this->shim().Longitude());
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().CameraManufacturer());
+            *value = detach(this->shim().CameraManufacturer());
             return S_OK;
         }
         catch (...)
@@ -359,7 +359,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            shim().CameraManufacturer(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CameraManufacturer(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().CameraModel());
+            *value = detach(this->shim().CameraModel());
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            shim().CameraModel(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CameraModel(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::Storage::FileProperties::IImageProperties> : produce_
     {
         try
         {
-            *value = detach(shim().PeopleNames());
+            *value = detach(this->shim().PeopleNames());
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Album());
+            *value = detach(this->shim().Album());
             return S_OK;
         }
         catch (...)
@@ -444,7 +444,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Album(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Album(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Artist());
+            *value = detach(this->shim().Artist());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Artist(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Artist(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Genre());
+            *value = detach(this->shim().Genre());
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().TrackNumber());
+            *value = detach(this->shim().TrackNumber());
             return S_OK;
         }
         catch (...)
@@ -511,7 +511,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().TrackNumber(value);
+            this->shim().TrackNumber(value);
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -538,7 +538,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -551,7 +551,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Rating());
+            *value = detach(this->shim().Rating());
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Rating(value);
+            this->shim().Rating(value);
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Bitrate());
+            *value = detach(this->shim().Bitrate());
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().AlbumArtist());
+            *value = detach(this->shim().AlbumArtist());
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().AlbumArtist(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AlbumArtist(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -630,7 +630,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Composers());
+            *value = detach(this->shim().Composers());
             return S_OK;
         }
         catch (...)
@@ -644,7 +644,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Conductors());
+            *value = detach(this->shim().Conductors());
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Subtitle());
+            *value = detach(this->shim().Subtitle());
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Subtitle(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Subtitle(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -685,7 +685,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Producers());
+            *value = detach(this->shim().Producers());
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Publisher());
+            *value = detach(this->shim().Publisher());
             return S_OK;
         }
         catch (...)
@@ -713,7 +713,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Publisher(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Publisher(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Writers());
+            *value = detach(this->shim().Writers());
             return S_OK;
         }
         catch (...)
@@ -740,7 +740,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Year());
+            *value = detach(this->shim().Year());
             return S_OK;
         }
         catch (...)
@@ -753,7 +753,7 @@ struct produce<D, Windows::Storage::FileProperties::IMusicProperties> : produce_
     {
         try
         {
-            shim().Year(value);
+            this->shim().Year(value);
             return S_OK;
         }
         catch (...)
@@ -770,7 +770,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemContentPropertie
     {
         try
         {
-            *operation = detach(shim().GetMusicPropertiesAsync());
+            *operation = detach(this->shim().GetMusicPropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemContentPropertie
     {
         try
         {
-            *operation = detach(shim().GetVideoPropertiesAsync());
+            *operation = detach(this->shim().GetVideoPropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -798,7 +798,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemContentPropertie
     {
         try
         {
-            *operation = detach(shim().GetImagePropertiesAsync());
+            *operation = detach(this->shim().GetImagePropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -812,7 +812,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemContentPropertie
     {
         try
         {
-            *operation = detach(shim().GetDocumentPropertiesAsync());
+            *operation = detach(this->shim().GetDocumentPropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemExtraProperties>
     {
         try
         {
-            *operation = detach(shim().RetrievePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
+            *operation = detach(this->shim().RetrievePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
         catch (...)
@@ -844,7 +844,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemExtraProperties>
     {
         try
         {
-            *operation = detach(shim().SavePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> *>(&propertiesToSave)));
+            *operation = detach(this->shim().SavePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> *>(&propertiesToSave)));
             return S_OK;
         }
         catch (...)
@@ -858,7 +858,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemExtraProperties>
     {
         try
         {
-            *operation = detach(shim().SavePropertiesAsync());
+            *operation = detach(this->shim().SavePropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -876,7 +876,7 @@ struct produce<D, Windows::Storage::FileProperties::IThumbnailProperties> : prod
     {
         try
         {
-            *value = detach(shim().OriginalWidth());
+            *value = detach(this->shim().OriginalWidth());
             return S_OK;
         }
         catch (...)
@@ -889,7 +889,7 @@ struct produce<D, Windows::Storage::FileProperties::IThumbnailProperties> : prod
     {
         try
         {
-            *value = detach(shim().OriginalHeight());
+            *value = detach(this->shim().OriginalHeight());
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::Storage::FileProperties::IThumbnailProperties> : prod
     {
         try
         {
-            *value = detach(shim().ReturnedSmallerCachedSize());
+            *value = detach(this->shim().ReturnedSmallerCachedSize());
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::Storage::FileProperties::IThumbnailProperties> : prod
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -932,7 +932,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Rating());
+            *value = detach(this->shim().Rating());
             return S_OK;
         }
         catch (...)
@@ -945,7 +945,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            shim().Rating(value);
+            this->shim().Rating(value);
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Keywords());
+            *value = detach(this->shim().Keywords());
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Width());
+            *value = detach(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Height());
+            *value = detach(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Latitude());
+            *value = detach(this->shim().Latitude());
             return S_OK;
         }
         catch (...)
@@ -1025,7 +1025,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Longitude());
+            *value = detach(this->shim().Longitude());
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1066,7 +1066,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Subtitle());
+            *value = detach(this->shim().Subtitle());
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            shim().Subtitle(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Subtitle(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Producers());
+            *value = detach(this->shim().Producers());
             return S_OK;
         }
         catch (...)
@@ -1107,7 +1107,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Publisher());
+            *value = detach(this->shim().Publisher());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            shim().Publisher(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Publisher(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1134,7 +1134,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Writers());
+            *value = detach(this->shim().Writers());
             return S_OK;
         }
         catch (...)
@@ -1148,7 +1148,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Year());
+            *value = detach(this->shim().Year());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            shim().Year(value);
+            this->shim().Year(value);
             return S_OK;
         }
         catch (...)
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Bitrate());
+            *value = detach(this->shim().Bitrate());
             return S_OK;
         }
         catch (...)
@@ -1187,7 +1187,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Directors());
+            *value = detach(this->shim().Directors());
             return S_OK;
         }
         catch (...)
@@ -1201,7 +1201,7 @@ struct produce<D, Windows::Storage::FileProperties::IVideoProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)

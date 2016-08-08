@@ -22,7 +22,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            shim().IsActive(value);
+            this->shim().IsActive(value);
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
-            *value = detach(shim().ControlDescription());
+            *value = detach(this->shim().ControlDescription());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().ReportId());
+            *value = detach(this->shim().ReportId());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().ReportType());
+            *value = detach(this->shim().ReportType());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().ParentCollections());
+            *value = detach(this->shim().ParentCollections());
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
-            *value = detach(shim().IsAbsolute());
+            *value = detach(this->shim().IsAbsolute());
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().VendorId());
+            *value = detach(this->shim().VendorId());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().ProductId());
+            *value = detach(this->shim().ProductId());
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().Version());
+            *value = detach(this->shim().Version());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetInputReportAsync());
+            *value = detach(this->shim().GetInputReportAsync());
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetInputReportAsync(reportId));
+            *value = detach(this->shim().GetInputReportAsync(reportId));
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetFeatureReportAsync());
+            *value = detach(this->shim().GetFeatureReportAsync());
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetFeatureReportAsync(reportId));
+            *value = detach(this->shim().GetFeatureReportAsync(reportId));
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *outputReport = detach(shim().CreateOutputReport());
+            *outputReport = detach(this->shim().CreateOutputReport());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *outputReport = detach(shim().CreateOutputReport(reportId));
+            *outputReport = detach(this->shim().CreateOutputReport(reportId));
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *featureReport = detach(shim().CreateFeatureReport());
+            *featureReport = detach(this->shim().CreateFeatureReport());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *featureReport = detach(shim().CreateFeatureReport(reportId));
+            *featureReport = detach(this->shim().CreateFeatureReport(reportId));
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *operation = detach(shim().SendOutputReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidOutputReport *>(&outputReport)));
+            *operation = detach(this->shim().SendOutputReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidOutputReport *>(&outputReport)));
             return S_OK;
         }
         catch (...)
@@ -452,7 +452,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *operation = detach(shim().SendFeatureReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidFeatureReport *>(&featureReport)));
+            *operation = detach(this->shim().SendFeatureReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidFeatureReport *>(&featureReport)));
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetBooleanControlDescriptions(reportType, usagePage, usageId));
+            *value = detach(this->shim().GetBooleanControlDescriptions(reportType, usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *value = detach(shim().GetNumericControlDescriptions(reportType, usagePage, usageId));
+            *value = detach(this->shim().GetNumericControlDescriptions(reportType, usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            *token = detach(shim().InputReportReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> *>(&reportHandler)));
+            *token = detach(this->shim().InputReportReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
-            shim().InputReportReceived(token);
+            this->shim().InputReportReceived(token);
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector(usagePage, usageId));
+            *selector = detach(this->shim().GetDeviceSelector(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -538,7 +538,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector(usagePage, usageId, vendorId, productId));
+            *selector = detach(this->shim().GetDeviceSelector(usagePage, usageId, vendorId, productId));
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
-            *hidDevice = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), accessMode));
+            *hidDevice = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), accessMode));
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -610,7 +610,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().GetBooleanControl(usagePage, usageId));
+            *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -624,7 +624,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)
@@ -638,7 +638,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().GetNumericControl(usagePage, usageId));
+            *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
-            *value = detach(shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -683,7 +683,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -697,7 +697,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().ActivatedBooleanControls());
+            *value = detach(this->shim().ActivatedBooleanControls());
             return S_OK;
         }
         catch (...)
@@ -711,7 +711,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().TransitionedBooleanControls());
+            *value = detach(this->shim().TransitionedBooleanControls());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().GetBooleanControl(usagePage, usageId));
+            *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -739,7 +739,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)
@@ -753,7 +753,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().GetNumericControl(usagePage, usageId));
+            *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -767,7 +767,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
-            *value = detach(shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReportReceive
     {
         try
         {
-            *value = detach(shim().Report());
+            *value = detach(this->shim().Report());
             return S_OK;
         }
         catch (...)
@@ -803,7 +803,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -816,7 +816,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().IsGrouped());
+            *value = detach(this->shim().IsGrouped());
             return S_OK;
         }
         catch (...)
@@ -829,7 +829,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -855,7 +855,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -868,7 +868,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -881,7 +881,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().ScaledValue());
+            *value = detach(this->shim().ScaledValue());
             return S_OK;
         }
         catch (...)
@@ -894,7 +894,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            shim().ScaledValue(value);
+            this->shim().ScaledValue(value);
             return S_OK;
         }
         catch (...)
@@ -907,7 +907,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
-            *value = detach(shim().ControlDescription());
+            *value = detach(this->shim().ControlDescription());
             return S_OK;
         }
         catch (...)
@@ -925,7 +925,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -938,7 +938,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().ReportId());
+            *value = detach(this->shim().ReportId());
             return S_OK;
         }
         catch (...)
@@ -951,7 +951,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().ReportType());
+            *value = detach(this->shim().ReportType());
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().ReportSize());
+            *value = detach(this->shim().ReportSize());
             return S_OK;
         }
         catch (...)
@@ -977,7 +977,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().ReportCount());
+            *value = detach(this->shim().ReportCount());
             return S_OK;
         }
         catch (...)
@@ -990,7 +990,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().UsagePage());
+            *value = detach(this->shim().UsagePage());
             return S_OK;
         }
         catch (...)
@@ -1003,7 +1003,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().UsageId());
+            *value = detach(this->shim().UsageId());
             return S_OK;
         }
         catch (...)
@@ -1016,7 +1016,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().LogicalMinimum());
+            *value = detach(this->shim().LogicalMinimum());
             return S_OK;
         }
         catch (...)
@@ -1029,7 +1029,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().LogicalMaximum());
+            *value = detach(this->shim().LogicalMaximum());
             return S_OK;
         }
         catch (...)
@@ -1042,7 +1042,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().PhysicalMinimum());
+            *value = detach(this->shim().PhysicalMinimum());
             return S_OK;
         }
         catch (...)
@@ -1055,7 +1055,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().PhysicalMaximum());
+            *value = detach(this->shim().PhysicalMaximum());
             return S_OK;
         }
         catch (...)
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().UnitExponent());
+            *value = detach(this->shim().UnitExponent());
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().Unit());
+            *value = detach(this->shim().Unit());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().IsAbsolute());
+            *value = detach(this->shim().IsAbsolute());
             return S_OK;
         }
         catch (...)
@@ -1107,7 +1107,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().HasNull());
+            *value = detach(this->shim().HasNull());
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
-            *value = detach(shim().ParentCollections());
+            *value = detach(this->shim().ParentCollections());
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1178,7 +1178,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().GetBooleanControl(usagePage, usageId));
+            *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -1192,7 +1192,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)
@@ -1206,7 +1206,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().GetNumericControl(usagePage, usageId));
+            *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -1220,7 +1220,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
-            *value = detach(shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
+            *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }
         catch (...)

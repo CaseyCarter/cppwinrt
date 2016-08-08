@@ -21,7 +21,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchor> : produce_base<D
     {
         try
         {
-            *value = detach(shim().CoordinateSystem());
+            *value = detach(this->shim().CoordinateSystem());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchor> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RawCoordinateSystem());
+            *value = detach(this->shim().RawCoordinateSystem());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchor> : produce_base<D
     {
         try
         {
-            *cookie = detach(shim().RawCoordinateSystemAdjusted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().RawCoordinateSystemAdjusted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchor> : produce_base<D
     {
         try
         {
-            shim().RawCoordinateSystemAdjusted(cookie);
+            this->shim().RawCoordinateSystemAdjusted(cookie);
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchor2> : produce_base<
     {
         try
         {
-            *value = detach(shim().RemovedByUser());
+            *value = detach(this->shim().RemovedByUser());
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorManagerStatics> : 
     {
         try
         {
-            *value = detach(shim().RequestStoreAsync());
+            *value = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSyste
     {
         try
         {
-            *value = detach(shim().OldRawCoordinateSystemToNewRawCoordinateSystemTransform());
+            *value = detach(this->shim().OldRawCoordinateSystemToNewRawCoordinateSystemTransform());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStatics> : produce
     {
         try
         {
-            *value = detach(shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStatics> : produce
     {
         try
         {
-            *value = detach(shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position)));
+            *value = detach(this->shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position)));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStatics> : produce
     {
         try
         {
-            *value = detach(shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&orientation)));
+            *value = detach(this->shim().TryCreateRelativeTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&orientation)));
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStore> : produce_b
     {
         try
         {
-            *value = detach(shim().GetAllSavedAnchors());
+            *value = detach(this->shim().GetAllSavedAnchors());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStore> : produce_b
     {
         try
         {
-            *succeeded = detach(shim().TrySave(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Perception::Spatial::SpatialAnchor *>(&anchor)));
+            *succeeded = detach(this->shim().TrySave(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Perception::Spatial::SpatialAnchor *>(&anchor)));
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStore> : produce_b
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const hstring *>(&id));
+            this->shim().Remove(*reinterpret_cast<const hstring *>(&id));
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStore> : produce_b
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorTransferManagerSta
     {
         try
         {
-            *operation = detach(shim().TryImportAnchorsAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream)));
+            *operation = detach(this->shim().TryImportAnchorsAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorTransferManagerSta
     {
         try
         {
-            *operation = detach(shim().TryExportAnchorsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> *>(&anchors), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&stream)));
+            *operation = detach(this->shim().TryExportAnchorsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> *>(&anchors), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialAnchorTransferManagerSta
     {
         try
         {
-            *result = detach(shim().RequestAccessAsync());
+            *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics> :
     {
         try
         {
-            *value = detach(shim().FromBox(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingBox *>(&box)));
+            *value = detach(this->shim().FromBox(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingBox *>(&box)));
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics> :
     {
         try
         {
-            *value = detach(shim().FromOrientedBox(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingOrientedBox *>(&box)));
+            *value = detach(this->shim().FromOrientedBox(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingOrientedBox *>(&box)));
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics> :
     {
         try
         {
-            *value = detach(shim().FromSphere(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingSphere *>(&sphere)));
+            *value = detach(this->shim().FromSphere(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingSphere *>(&sphere)));
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics> :
     {
         try
         {
-            *value = detach(shim().FromFrustum(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingFrustum *>(&frustum)));
+            *value = detach(this->shim().FromFrustum(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingFrustum *>(&frustum)));
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialCoordinateSystem> : prod
     {
         try
         {
-            *value = detach(shim().TryGetTransformTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&target)));
+            *value = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().AbsoluteLinearVelocity());
+            *value = detach(this->shim().AbsoluteLinearVelocity());
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().AbsoluteLinearAcceleration());
+            *value = detach(this->shim().AbsoluteLinearAcceleration());
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().AbsoluteAngularVelocity());
+            *value = detach(this->shim().AbsoluteAngularVelocity());
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base
     {
         try
         {
-            *value = detach(shim().AbsoluteAngularAcceleration());
+            *value = detach(this->shim().AbsoluteAngularAcceleration());
             return S_OK;
         }
         catch (...)
@@ -444,7 +444,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().Locatability());
+            *value = detach(this->shim().Locatability());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().LocatabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().LocatabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            shim().LocatabilityChanged(cookie);
+            this->shim().LocatabilityChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().PositionalTrackingDeactivating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PositionalTrackingDeactivating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            shim().PositionalTrackingDeactivating(cookie);
+            this->shim().PositionalTrackingDeactivating(cookie);
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().TryLocateAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryLocateAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateAttachedFrameOfReferenceAtCurrentHeading());
+            *value = detach(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition)));
+            *value = detach(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition)));
             return S_OK;
         }
         catch (...)
@@ -551,7 +551,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation)));
+            *value = detach(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation)));
             return S_OK;
         }
         catch (...)
@@ -565,7 +565,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation), relativeHeadingInRadians));
+            *value = detach(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation), relativeHeadingInRadians));
             return S_OK;
         }
         catch (...)
@@ -579,7 +579,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateStationaryFrameOfReferenceAtCurrentLocation());
+            *value = detach(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition)));
+            *value = detach(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition)));
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation)));
+            *value = detach(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation)));
             return S_OK;
         }
         catch (...)
@@ -621,7 +621,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation), relativeHeadingInRadians));
+            *value = detach(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&relativePosition), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&relativeOrientation), relativeHeadingInRadians));
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            *value = detach(shim().RelativePosition());
+            *value = detach(this->shim().RelativePosition());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            shim().RelativePosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().RelativePosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            *value = detach(shim().RelativeOrientation());
+            *value = detach(this->shim().RelativeOrientation());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            shim().RelativeOrientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().RelativeOrientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            shim().AdjustHeading(headingOffsetInRadians);
+            this->shim().AdjustHeading(headingOffsetInRadians);
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            *value = detach(shim().GetStationaryCoordinateSystemAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
+            *value = detach(this->shim().GetStationaryCoordinateSystemAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfRe
     {
         try
         {
-            *value = detach(shim().TryGetRelativeHeadingAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
+            *value = detach(this->shim().TryGetRelativeHeadingAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
             return S_OK;
         }
         catch (...)
@@ -736,7 +736,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorPositionalTrackin
     {
         try
         {
-            *value = detach(shim().Canceled());
+            *value = detach(this->shim().Canceled());
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorPositionalTrackin
     {
         try
         {
-            shim().Canceled(value);
+            this->shim().Canceled(value);
             return S_OK;
         }
         catch (...)
@@ -766,7 +766,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorStatics> : produc
     {
         try
         {
-            *value = detach(shim().GetDefault());
+            *value = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::Perception::Spatial::ISpatialStationaryFrameOfReferen
     {
         try
         {
-            *value = detach(shim().CoordinateSystem());
+            *value = detach(this->shim().CoordinateSystem());
             return S_OK;
         }
         catch (...)

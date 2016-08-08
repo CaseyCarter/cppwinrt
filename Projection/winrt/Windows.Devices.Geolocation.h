@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Country());
+            *value = detach(this->shim().Country());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
     {
         try
         {
-            *value = detach(shim().City());
+            *value = detach(this->shim().City());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
     {
         try
         {
-            *value = detach(shim().PostalCode());
+            *value = detach(this->shim().PostalCode());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
     {
         try
         {
-            *value = detach(shim().NorthwestCorner());
+            *value = detach(this->shim().NorthwestCorner());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
     {
         try
         {
-            *value = detach(shim().SoutheastCorner());
+            *value = detach(this->shim().SoutheastCorner());
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
     {
         try
         {
-            *value = detach(shim().Center());
+            *value = detach(this->shim().Center());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
     {
         try
         {
-            *value = detach(shim().MinAltitude());
+            *value = detach(this->shim().MinAltitude());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
     {
         try
         {
-            *value = detach(shim().MaxAltitude());
+            *value = detach(this->shim().MaxAltitude());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner)));
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem));
+            *value = detach(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
     {
         try
         {
-            *value = detach(shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
+            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
     {
         try
         {
-            *value = detach(shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem));
+            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem));
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
     {
         try
         {
-            *value = detach(shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem, spatialReferenceId));
+            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircle> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Center());
+            *value = detach(this->shim().Center());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircle> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Radius());
+            *value = detach(this->shim().Radius());
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_ba
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius));
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_ba
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem));
+            *value = detach(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_ba
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem, spatialReferenceId));
+            *value = detach(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Latitude());
+            *value = detach(this->shim().Latitude());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Longitude());
+            *value = detach(this->shim().Longitude());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Altitude());
+            *value = detach(this->shim().Altitude());
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Accuracy());
+            *value = detach(this->shim().Accuracy());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().AltitudeAccuracy());
+            *value = detach(this->shim().AltitudeAccuracy());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Heading());
+            *value = detach(this->shim().Heading());
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Speed());
+            *value = detach(this->shim().Speed());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
     {
         try
         {
-            *ppValue = detach(shim().PositionDilutionOfPrecision());
+            *ppValue = detach(this->shim().PositionDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
     {
         try
         {
-            *ppValue = detach(shim().HorizontalDilutionOfPrecision());
+            *ppValue = detach(this->shim().HorizontalDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
     {
         try
         {
-            *ppValue = detach(shim().VerticalDilutionOfPrecision());
+            *ppValue = detach(this->shim().VerticalDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPoint> : prod
     {
         try
         {
-            *value = detach(shim().Point());
+            *value = detach(this->shim().Point());
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
     {
         try
         {
-            *pValue = detach(shim().PositionSource());
+            *pValue = detach(this->shim().PositionSource());
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
     {
         try
         {
-            *ppValue = detach(shim().SatelliteData());
+            *ppValue = detach(this->shim().SatelliteData());
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionSourc
     {
         try
         {
-            *value = detach(shim().PositionSourceTimestamp());
+            *value = detach(this->shim().PositionSourceTimestamp());
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DesiredAccuracy());
+            *value = detach(this->shim().DesiredAccuracy());
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            shim().DesiredAccuracy(value);
+            this->shim().DesiredAccuracy(value);
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().MovementThreshold());
+            *value = detach(this->shim().MovementThreshold());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            shim().MovementThreshold(value);
+            this->shim().MovementThreshold(value);
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ReportInterval());
+            *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            shim().ReportInterval(value);
+            this->shim().ReportInterval(value);
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().LocationStatus());
+            *value = detach(this->shim().LocationStatus());
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GetGeopositionAsync());
+            *value = detach(this->shim().GetGeopositionAsync());
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GetGeopositionAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maximumAge), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
+            *value = detach(this->shim().GetGeopositionAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maximumAge), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            shim().PositionChanged(token);
+            this->shim().PositionChanged(token);
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
     {
         try
         {
-            shim().StatusChanged(token);
+            this->shim().StatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -729,7 +729,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator2> : produce_base<D,
     {
         try
         {
-            shim().AllowFallbackToConsentlessPositions();
+            this->shim().AllowFallbackToConsentlessPositions();
             return S_OK;
         }
         catch (...)
@@ -746,7 +746,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_b
     {
         try
         {
-            *result = detach(shim().RequestAccessAsync());
+            *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -760,7 +760,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_b
     {
         try
         {
-            *result = detach(shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime)));
+            *result = detach(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime)));
             return S_OK;
         }
         catch (...)
@@ -774,7 +774,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_b
     {
         try
         {
-            *result = detach(shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
+            *result = detach(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
     {
         try
         {
-            *value = detach(shim().IsDefaultGeopositionRecommended());
+            *value = detach(this->shim().IsDefaultGeopositionRecommended());
             return S_OK;
         }
         catch (...)
@@ -805,7 +805,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
     {
         try
         {
-            shim().DefaultGeoposition(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> *>(&value));
+            this->shim().DefaultGeoposition(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
     {
         try
         {
-            *value = detach(shim().DefaultGeoposition());
+            *value = detach(this->shim().DefaultGeoposition());
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy> 
     {
         try
         {
-            *value = detach(shim().DesiredAccuracyInMeters());
+            *value = detach(this->shim().DesiredAccuracyInMeters());
             return S_OK;
         }
         catch (...)
@@ -850,7 +850,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy> 
     {
         try
         {
-            shim().DesiredAccuracyInMeters(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
+            this->shim().DesiredAccuracyInMeters(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopath> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Positions());
+            *value = detach(this->shim().Positions());
             return S_OK;
         }
         catch (...)
@@ -885,7 +885,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem));
+            *value = detach(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -913,7 +913,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -931,7 +931,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopoint> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position)));
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem));
+            *value = detach(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -976,7 +976,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -994,7 +994,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoposition> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Coordinate());
+            *value = detach(this->shim().Coordinate());
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoposition> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().CivicAddress());
+            *value = detach(this->shim().CivicAddress());
             return S_OK;
         }
         catch (...)
@@ -1026,7 +1026,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoposition2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().VenueData());
+            *value = detach(this->shim().VenueData());
             return S_OK;
         }
         catch (...)
@@ -1044,7 +1044,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GeoshapeType());
+            *value = detach(this->shim().GeoshapeType());
             return S_OK;
         }
         catch (...)
@@ -1057,7 +1057,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SpatialReferenceId());
+            *value = detach(this->shim().SpatialReferenceId());
             return S_OK;
         }
         catch (...)
@@ -1070,7 +1070,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().AltitudeReferenceSystem());
+            *value = detach(this->shim().AltitudeReferenceSystem());
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::Devices::Geolocation::IPositionChangedEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::Devices::Geolocation::IStatusChangedEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1122,7 +1122,7 @@ struct produce<D, Windows::Devices::Geolocation::IVenueData> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1136,7 +1136,7 @@ struct produce<D, Windows::Devices::Geolocation::IVenueData> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Level());
+            *value = detach(this->shim().Level());
             return S_OK;
         }
         catch (...)

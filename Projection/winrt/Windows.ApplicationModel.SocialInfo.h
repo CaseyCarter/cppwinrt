@@ -21,7 +21,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().Author());
+            *value = detach(this->shim().Author());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().PrimaryContent());
+            *value = detach(this->shim().PrimaryContent());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().SecondaryContent());
+            *value = detach(this->shim().SecondaryContent());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().Thumbnails());
+            *value = detach(this->shim().Thumbnails());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            *value = detach(shim().SharedItem());
+            *value = detach(this->shim().SharedItem());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
-            shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
+            this->shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            *value = detach(shim().Message());
+            *value = detach(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            shim().Message(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Message(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -229,7 +229,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().Author());
+            *value = detach(this->shim().Author());
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().PrimaryContent());
+            *value = detach(this->shim().PrimaryContent());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().SecondaryContent());
+            *value = detach(this->shim().SecondaryContent());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().Thumbnails());
+            *value = detach(this->shim().Thumbnails());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().SharedItem());
+            *value = detach(this->shim().SharedItem());
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
+            this->shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().BadgeStyle());
+            *value = detach(this->shim().BadgeStyle());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().BadgeStyle(value);
+            this->shim().BadgeStyle(value);
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().BadgeCountValue());
+            *value = detach(this->shim().BadgeCountValue());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().BadgeCountValue(value);
+            this->shim().BadgeCountValue(value);
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().RemoteId());
+            *value = detach(this->shim().RemoteId());
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().ChildItem());
+            *value = detach(this->shim().ChildItem());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().ChildItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedChildItem *>(&value));
+            this->shim().ChildItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedChildItem *>(&value));
             return S_OK;
         }
         catch (...)
@@ -488,7 +488,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            *value = detach(shim().Style());
+            *value = detach(this->shim().Style());
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
-            shim().Style(value);
+            this->shim().Style(value);
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            *value = detach(shim().OriginalSource());
+            *value = detach(this->shim().OriginalSource());
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            shim().OriginalSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().OriginalSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -545,7 +545,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -572,7 +572,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -585,7 +585,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -599,7 +599,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -643,7 +643,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -657,7 +657,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            *value = detach(shim().ImageUri());
+            *value = detach(this->shim().ImageUri());
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            shim().ImageUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ImageUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -697,7 +697,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            *value = detach(shim().BitmapSize());
+            *value = detach(this->shim().BitmapSize());
             return S_OK;
         }
         catch (...)
@@ -710,7 +710,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            shim().BitmapSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
+            this->shim().BitmapSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
         catch (...)
@@ -723,7 +723,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
-            *operation = detach(shim().SetImageAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&image)));
+            *operation = detach(this->shim().SetImageAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&image)));
             return S_OK;
         }
         catch (...)
@@ -741,7 +741,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -755,7 +755,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            *value = detach(shim().UserName());
+            *value = detach(this->shim().UserName());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            shim().UserName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().UserName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -795,7 +795,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            *value = detach(shim().RemoteId());
+            *value = detach(this->shim().RemoteId());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -822,7 +822,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)

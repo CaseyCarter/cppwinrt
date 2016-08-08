@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *value = detach(shim().AppInfo());
+            *value = detach(this->shim().AppInfo());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *operation = detach(shim().GetExtensionPropertiesAsync());
+            *operation = detach(this->shim().GetExtensionPropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
-            *operation = detach(shim().GetPublicFolderAsync());
+            *operation = detach(this->shim().GetPublicFolderAsync());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *operation = detach(shim().FindAllAsync());
+            *operation = detach(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *operation = detach(shim().RequestRemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *operation = detach(this->shim().RequestRemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *token = detach(shim().PackageInstalled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageInstalled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            shim().PackageInstalled(token);
+            this->shim().PackageInstalled(token);
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *token = detach(shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            shim().PackageUpdating(token);
+            this->shim().PackageUpdating(token);
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *token = detach(shim().PackageUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            shim().PackageUpdated(token);
+            this->shim().PackageUpdated(token);
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *token = detach(shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            shim().PackageUninstalling(token);
+            this->shim().PackageUninstalling(token);
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *token = detach(shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            shim().PackageStatusChanged(token);
+            this->shim().PackageStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
-            *value = detach(shim().Open(*reinterpret_cast<const hstring *>(&appExtensionName)));
+            *value = detach(this->shim().Open(*reinterpret_cast<const hstring *>(&appExtensionName)));
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().AppExtensionName());
+            *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *values = detach(shim().Extensions());
+            *values = detach(this->shim().Extensions());
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().AppExtensionName());
+            *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().AppExtensionName());
+            *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().AppExtensionName());
+            *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
         catch (...)
@@ -426,7 +426,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *values = detach(shim().Extensions());
+            *values = detach(this->shim().Extensions());
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().AppExtensionName());
+            *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)

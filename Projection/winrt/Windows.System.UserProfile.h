@@ -23,7 +23,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerForUser> : pr
     {
         try
         {
-            *value = detach(shim().AdvertisingId());
+            *value = detach(this->shim().AdvertisingId());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerForUser> : pr
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -55,7 +55,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics> : pr
     {
         try
         {
-            *value = detach(shim().AdvertisingId());
+            *value = detach(this->shim().AdvertisingId());
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics2> : p
     {
         try
         {
-            *value = detach(shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *value = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::System::UserProfile::IFirstSignInSettingsStatics> : p
     {
         try
         {
-            *result = detach(shim().GetDefault());
+            *result = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().Calendars());
+            *value = detach(this->shim().Calendars());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().Clocks());
+            *value = detach(this->shim().Clocks());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().Currencies());
+            *value = detach(this->shim().Currencies());
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().Languages());
+            *value = detach(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().HomeGeographicRegion());
+            *value = detach(this->shim().HomeGeographicRegion());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
-            *value = detach(shim().WeekStartsOn());
+            *value = detach(this->shim().WeekStartsOn());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
-            *operation = detach(shim().TrySetLockScreenImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
+            *operation = detach(this->shim().TrySetLockScreenImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
-            *operation = detach(shim().TrySetWallpaperImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
+            *operation = detach(this->shim().TrySetWallpaperImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
-            *result = detach(shim().IsSupported());
+            *result = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)

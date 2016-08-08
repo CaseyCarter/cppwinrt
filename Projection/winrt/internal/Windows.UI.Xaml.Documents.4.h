@@ -26,7 +26,7 @@ public:
     {
         try
         {
-            shim().OnDisconnectVisualChildren();
+            this->shim().OnDisconnectVisualChildren();
             return S_OK;
         }
         catch (...)

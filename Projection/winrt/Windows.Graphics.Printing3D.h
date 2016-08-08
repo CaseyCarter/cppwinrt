@@ -41,7 +41,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManager> : produce_base
     {
         try
         {
-            *token = detach(shim().TaskRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> *>(&eventHandler)));
+            *token = detach(this->shim().TaskRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManager> : produce_base
     {
         try
         {
-            shim().TaskRequested(token);
+            this->shim().TaskRequested(token);
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManagerStatics> : produ
     {
         try
         {
-            *result = detach(shim().GetForCurrentView());
+            *result = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManagerStatics> : produ
     {
         try
         {
-            *result = detach(shim().ShowPrintUIAsync());
+            *result = detach(this->shim().ShowPrintUIAsync());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            *eventCookie = detach(shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            shim().Submitting(eventCookie);
+            this->shim().Submitting(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            *eventCookie = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            shim().Completed(eventCookie);
+            this->shim().Completed(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            *eventCookie = detach(shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
-            shim().SourceChanged(eventCookie);
+            this->shim().SourceChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>
     {
         try
         {
-            *value = detach(shim().Completion());
+            *value = detach(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>
     {
         try
         {
-            *value = detach(shim().ExtendedStatus());
+            *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
         catch (...)
@@ -229,7 +229,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskRequest> : produce_
     {
         try
         {
-            *result = detach(shim().CreateTask(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const hstring *>(&printerId), *reinterpret_cast<const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler *>(&handler)));
+            *result = detach(this->shim().CreateTask(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const hstring *>(&printerId), *reinterpret_cast<const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventA
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs
     {
         try
         {
-            shim().SetSource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3D3MFPackage *>(&source));
+            this->shim().SetSource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3D3MFPackage *>(&source));
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *operation = detach(shim().SaveAsync());
+            *operation = detach(this->shim().SaveAsync());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *value = detach(shim().PrintTicket());
+            *value = detach(this->shim().PrintTicket());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            shim().PrintTicket(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
+            this->shim().PrintTicket(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *value = detach(shim().ModelPart());
+            *value = detach(this->shim().ModelPart());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            shim().ModelPart(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
+            this->shim().ModelPart(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *value = detach(shim().Textures());
+            *value = detach(this->shim().Textures());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *operation = detach(shim().LoadModelFromPackageAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
+            *operation = detach(this->shim().LoadModelFromPackageAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
-            *operation = detach(shim().SaveModelToPackageAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModel *>(&value)));
+            *operation = detach(this->shim().SaveModelToPackageAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModel *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics> :
     {
         try
         {
-            *operation = detach(shim().LoadAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
+            *operation = detach(this->shim().LoadAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -486,7 +486,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -500,7 +500,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DColorMaterial *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DColorMaterial *>(&value));
             return S_OK;
         }
         catch (...)
@@ -517,7 +517,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup> :
     {
         try
         {
-            *value = detach(shim().Bases());
+            *value = detach(this->shim().Bases());
             return S_OK;
         }
         catch (...)
@@ -531,7 +531,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup> :
     {
         try
         {
-            *value = detach(shim().MaterialGroupId());
+            *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
         catch (...)
@@ -548,7 +548,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFac
     {
         try
         {
-            *result = detach(shim().Create(MaterialGroupId));
+            *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>
     {
         try
         {
-            *value = detach(shim().Abs());
+            *value = detach(this->shim().Abs());
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>
     {
         try
         {
-            *value = detach(shim().Pla());
+            *value = detach(this->shim().Pla());
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial> : pro
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial> : pro
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial2> : pr
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -641,7 +641,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial2> : pr
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup> 
     {
         try
         {
-            *value = detach(shim().Colors());
+            *value = detach(this->shim().Colors());
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup> 
     {
         try
         {
-            *value = detach(shim().MaterialGroupId());
+            *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
         catch (...)
@@ -689,7 +689,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFa
     {
         try
         {
-            *result = detach(shim().Create(MaterialGroupId));
+            *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().Mesh());
+            *value = detach(this->shim().Mesh());
             return S_OK;
         }
         catch (...)
@@ -721,7 +721,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            shim().Mesh(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMesh *>(&value));
+            this->shim().Mesh(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMesh *>(&value));
             return S_OK;
         }
         catch (...)
@@ -734,7 +734,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().Components());
+            *value = detach(this->shim().Components());
             return S_OK;
         }
         catch (...)
@@ -748,7 +748,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -775,7 +775,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -788,7 +788,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            shim().Type(value);
+            this->shim().Type(value);
             return S_OK;
         }
         catch (...)
@@ -801,7 +801,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            *value = detach(shim().PartNumber());
+            *value = detach(this->shim().PartNumber());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
-            shim().PartNumber(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PartNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -859,7 +859,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
-            *value = detach(shim().Component());
+            *value = detach(this->shim().Component());
             return S_OK;
         }
         catch (...)
@@ -873,7 +873,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
-            shim().Component(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
+            this->shim().Component(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
             return S_OK;
         }
         catch (...)
@@ -886,7 +886,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
-            *value = detach(shim().Matrix());
+            *value = detach(this->shim().Matrix());
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
-            shim().Matrix(*reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
+            this->shim().Matrix(*reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -916,7 +916,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial> :
     {
         try
         {
-            *value = detach(shim().Values());
+            *value = detach(this->shim().Values());
             return S_OK;
         }
         catch (...)
@@ -934,7 +934,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            *value = detach(shim().Composites());
+            *value = detach(this->shim().Composites());
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            *value = detach(shim().MaterialGroupId());
+            *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            *value = detach(shim().MaterialIndices());
+            *value = detach(this->shim().MaterialIndices());
             return S_OK;
         }
         catch (...)
@@ -979,7 +979,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            *value = detach(shim().BaseMaterialGroup());
+            *value = detach(this->shim().BaseMaterialGroup());
             return S_OK;
         }
         catch (...)
@@ -993,7 +993,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            shim().BaseMaterialGroup(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup *>(&value));
+            this->shim().BaseMaterialGroup(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1010,7 +1010,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
-            *result = detach(shim().Create(MaterialGroupId));
+            *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            *value = detach(shim().MaxReductionArea());
+            *value = detach(this->shim().MaxReductionArea());
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            shim().MaxReductionArea(value);
+            this->shim().MaxReductionArea(value);
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            *value = detach(shim().TargetTriangleCount());
+            *value = detach(this->shim().TargetTriangleCount());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            shim().TargetTriangleCount(value);
+            this->shim().TargetTriangleCount(value);
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            *value = detach(shim().MaxEdgeLength());
+            *value = detach(this->shim().MaxEdgeLength());
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
-            shim().MaxEdgeLength(value);
+            this->shim().MaxEdgeLength(value);
             return S_OK;
         }
         catch (...)
@@ -1110,7 +1110,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
-            *value = detach(shim().BaseGroups());
+            *value = detach(this->shim().BaseGroups());
             return S_OK;
         }
         catch (...)
@@ -1124,7 +1124,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
-            *value = detach(shim().ColorGroups());
+            *value = detach(this->shim().ColorGroups());
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
-            *value = detach(shim().Texture2CoordGroups());
+            *value = detach(this->shim().Texture2CoordGroups());
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
-            *value = detach(shim().CompositeGroups());
+            *value = detach(this->shim().CompositeGroups());
             return S_OK;
         }
         catch (...)
@@ -1166,7 +1166,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
-            *value = detach(shim().MultiplePropertyGroups());
+            *value = detach(this->shim().MultiplePropertyGroups());
             return S_OK;
         }
         catch (...)
@@ -1184,7 +1184,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().VertexCount());
+            *value = detach(this->shim().VertexCount());
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().VertexCount(value);
+            this->shim().VertexCount(value);
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().IndexCount());
+            *value = detach(this->shim().IndexCount());
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().IndexCount(value);
+            this->shim().IndexCount(value);
             return S_OK;
         }
         catch (...)
@@ -1236,7 +1236,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().VertexPositionsDescription());
+            *value = detach(this->shim().VertexPositionsDescription());
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().VertexPositionsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
+            this->shim().VertexPositionsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().VertexNormalsDescription());
+            *value = detach(this->shim().VertexNormalsDescription());
             return S_OK;
         }
         catch (...)
@@ -1275,7 +1275,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().VertexNormalsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
+            this->shim().VertexNormalsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1288,7 +1288,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().TriangleIndicesDescription());
+            *value = detach(this->shim().TriangleIndicesDescription());
             return S_OK;
         }
         catch (...)
@@ -1301,7 +1301,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().TriangleIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
+            this->shim().TriangleIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1314,7 +1314,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().TriangleMaterialIndicesDescription());
+            *value = detach(this->shim().TriangleMaterialIndicesDescription());
             return S_OK;
         }
         catch (...)
@@ -1327,7 +1327,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().TriangleMaterialIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
+            this->shim().TriangleMaterialIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1340,7 +1340,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *buffer = detach(shim().GetVertexPositions());
+            *buffer = detach(this->shim().GetVertexPositions());
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().CreateVertexPositions(value);
+            this->shim().CreateVertexPositions(value);
             return S_OK;
         }
         catch (...)
@@ -1367,7 +1367,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *buffer = detach(shim().GetVertexNormals());
+            *buffer = detach(this->shim().GetVertexNormals());
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().CreateVertexNormals(value);
+            this->shim().CreateVertexNormals(value);
             return S_OK;
         }
         catch (...)
@@ -1394,7 +1394,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *buffer = detach(shim().GetTriangleIndices());
+            *buffer = detach(this->shim().GetTriangleIndices());
             return S_OK;
         }
         catch (...)
@@ -1408,7 +1408,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().CreateTriangleIndices(value);
+            this->shim().CreateTriangleIndices(value);
             return S_OK;
         }
         catch (...)
@@ -1421,7 +1421,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *buffer = detach(shim().GetTriangleMaterialIndices());
+            *buffer = detach(this->shim().GetTriangleMaterialIndices());
             return S_OK;
         }
         catch (...)
@@ -1435,7 +1435,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            shim().CreateTriangleMaterialIndices(value);
+            this->shim().CreateTriangleMaterialIndices(value);
             return S_OK;
         }
         catch (...)
@@ -1448,7 +1448,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().BufferDescriptionSet());
+            *value = detach(this->shim().BufferDescriptionSet());
             return S_OK;
         }
         catch (...)
@@ -1462,7 +1462,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *value = detach(shim().BufferSet());
+            *value = detach(this->shim().BufferSet());
             return S_OK;
         }
         catch (...)
@@ -1476,7 +1476,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
-            *operation = detach(shim().VerifyAsync(value));
+            *operation = detach(this->shim().VerifyAsync(value));
             return S_OK;
         }
         catch (...)
@@ -1494,7 +1494,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
-            *value = detach(shim().IsValid());
+            *value = detach(this->shim().IsValid());
             return S_OK;
         }
         catch (...)
@@ -1507,7 +1507,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
-            *value = detach(shim().NonmanifoldTriangles());
+            *value = detach(this->shim().NonmanifoldTriangles());
             return S_OK;
         }
         catch (...)
@@ -1521,7 +1521,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
-            *value = detach(shim().ReversedNormalTriangles());
+            *value = detach(this->shim().ReversedNormalTriangles());
             return S_OK;
         }
         catch (...)
@@ -1539,7 +1539,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Unit());
+            *value = detach(this->shim().Unit());
             return S_OK;
         }
         catch (...)
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            shim().Unit(value);
+            this->shim().Unit(value);
             return S_OK;
         }
         catch (...)
@@ -1565,7 +1565,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Textures());
+            *value = detach(this->shim().Textures());
             return S_OK;
         }
         catch (...)
@@ -1579,7 +1579,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Meshes());
+            *value = detach(this->shim().Meshes());
             return S_OK;
         }
         catch (...)
@@ -1593,7 +1593,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Components());
+            *value = detach(this->shim().Components());
             return S_OK;
         }
         catch (...)
@@ -1607,7 +1607,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Material());
+            *value = detach(this->shim().Material());
             return S_OK;
         }
         catch (...)
@@ -1621,7 +1621,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            shim().Material(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMaterial *>(&value));
+            this->shim().Material(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMaterial *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1634,7 +1634,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Build());
+            *value = detach(this->shim().Build());
             return S_OK;
         }
         catch (...)
@@ -1648,7 +1648,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            shim().Build(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
+            this->shim().Build(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1661,7 +1661,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Version());
+            *value = detach(this->shim().Version());
             return S_OK;
         }
         catch (...)
@@ -1675,7 +1675,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            shim().Version(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Version(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1688,7 +1688,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().RequiredExtensions());
+            *value = detach(this->shim().RequiredExtensions());
             return S_OK;
         }
         catch (...)
@@ -1702,7 +1702,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Metadata());
+            *value = detach(this->shim().Metadata());
             return S_OK;
         }
         catch (...)
@@ -1716,7 +1716,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *operation = detach(shim().RepairAsync());
+            *operation = detach(this->shim().RepairAsync());
             return S_OK;
         }
         catch (...)
@@ -1730,7 +1730,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
-            *value = detach(shim().Clone());
+            *value = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -1748,7 +1748,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().TryPartialRepairAsync());
+            *operation = detach(this->shim().TryPartialRepairAsync());
             return S_OK;
         }
         catch (...)
@@ -1762,7 +1762,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().TryPartialRepairAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWaitTime)));
+            *operation = detach(this->shim().TryPartialRepairAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWaitTime)));
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().TryReduceFacesAsync());
+            *operation = detach(this->shim().TryReduceFacesAsync());
             return S_OK;
         }
         catch (...)
@@ -1790,7 +1790,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions)));
+            *operation = detach(this->shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions)));
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWait)));
+            *operation = detach(this->shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWait)));
             return S_OK;
         }
         catch (...)
@@ -1818,7 +1818,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().RepairWithProgressAsync());
+            *operation = detach(this->shim().RepairWithProgressAsync());
             return S_OK;
         }
         catch (...)
@@ -1836,7 +1836,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            *value = detach(shim().TextureResource());
+            *value = detach(this->shim().TextureResource());
             return S_OK;
         }
         catch (...)
@@ -1850,7 +1850,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            shim().TextureResource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
+            this->shim().TextureResource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1863,7 +1863,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            *value = detach(shim().TileStyleU());
+            *value = detach(this->shim().TileStyleU());
             return S_OK;
         }
         catch (...)
@@ -1876,7 +1876,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            shim().TileStyleU(value);
+            this->shim().TileStyleU(value);
             return S_OK;
         }
         catch (...)
@@ -1889,7 +1889,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            *value = detach(shim().TileStyleV());
+            *value = detach(this->shim().TileStyleV());
             return S_OK;
         }
         catch (...)
@@ -1902,7 +1902,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
-            shim().TileStyleV(value);
+            this->shim().TileStyleV(value);
             return S_OK;
         }
         catch (...)
@@ -1919,7 +1919,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
-            *value = detach(shim().MaterialIndices());
+            *value = detach(this->shim().MaterialIndices());
             return S_OK;
         }
         catch (...)
@@ -1937,7 +1937,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
-            *value = detach(shim().MultipleProperties());
+            *value = detach(this->shim().MultipleProperties());
             return S_OK;
         }
         catch (...)
@@ -1951,7 +1951,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
-            *value = detach(shim().MaterialGroupIndices());
+            *value = detach(this->shim().MaterialGroupIndices());
             return S_OK;
         }
         catch (...)
@@ -1965,7 +1965,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
-            *value = detach(shim().MaterialGroupId());
+            *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
         catch (...)
@@ -1982,7 +1982,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
-            *result = detach(shim().Create(MaterialGroupId));
+            *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
         catch (...)
@@ -2000,7 +2000,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().Texture());
+            *value = detach(this->shim().Texture());
             return S_OK;
         }
         catch (...)
@@ -2014,7 +2014,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
+            this->shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2027,7 +2027,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().U());
+            *value = detach(this->shim().U());
             return S_OK;
         }
         catch (...)
@@ -2040,7 +2040,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            shim().U(value);
+            this->shim().U(value);
             return S_OK;
         }
         catch (...)
@@ -2053,7 +2053,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().V());
+            *value = detach(this->shim().V());
             return S_OK;
         }
         catch (...)
@@ -2066,7 +2066,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            shim().V(value);
+            this->shim().V(value);
             return S_OK;
         }
         catch (...)
@@ -2083,7 +2083,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().Texture2Coords());
+            *value = detach(this->shim().Texture2Coords());
             return S_OK;
         }
         catch (...)
@@ -2097,7 +2097,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().MaterialGroupId());
+            *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
         catch (...)
@@ -2114,7 +2114,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *value = detach(shim().Texture());
+            *value = detach(this->shim().Texture());
             return S_OK;
         }
         catch (...)
@@ -2128,7 +2128,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
+            this->shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2145,7 +2145,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
-            *result = detach(shim().Create(MaterialGroupId));
+            *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
         catch (...)
@@ -2163,7 +2163,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
-            *value = detach(shim().TextureData());
+            *value = detach(this->shim().TextureData());
             return S_OK;
         }
         catch (...)
@@ -2177,7 +2177,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
-            shim().TextureData(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&value));
+            this->shim().TextureData(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2190,7 +2190,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -2204,7 +2204,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)

@@ -18,7 +18,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().FontColor());
+            *value = detach(this->shim().FontColor());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().ComputedFontColor());
+            *value = detach(this->shim().ComputedFontColor());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().FontOpacity());
+            *value = detach(this->shim().FontOpacity());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().FontSize());
+            *value = detach(this->shim().FontSize());
             return S_OK;
         }
         catch (...)
@@ -70,7 +70,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().FontStyle());
+            *value = detach(this->shim().FontStyle());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().FontEffect());
+            *value = detach(this->shim().FontEffect());
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().ComputedBackgroundColor());
+            *value = detach(this->shim().ComputedBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().BackgroundOpacity());
+            *value = detach(this->shim().BackgroundOpacity());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().RegionColor());
+            *value = detach(this->shim().RegionColor());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().ComputedRegionColor());
+            *value = detach(this->shim().ComputedRegionColor());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
-            *value = detach(shim().RegionOpacity());
+            *value = detach(this->shim().RegionOpacity());
             return S_OK;
         }
         catch (...)

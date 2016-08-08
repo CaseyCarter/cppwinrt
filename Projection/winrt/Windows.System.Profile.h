@@ -20,7 +20,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().VersionInfo());
+            *value = detach(this->shim().VersionInfo());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceForm());
+            *value = detach(this->shim().DeviceForm());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceFamily());
+            *value = detach(this->shim().DeviceFamily());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceFamilyVersion());
+            *value = detach(this->shim().DeviceFamilyVersion());
             return S_OK;
         }
         catch (...)
@@ -84,7 +84,7 @@ struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : pr
     {
         try
         {
-            *packageSpecificHardwareToken = detach(shim().GetPackageSpecificToken(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce)));
+            *packageSpecificHardwareToken = detach(this->shim().GetPackageSpecificToken(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce)));
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Signature());
+            *value = detach(this->shim().Signature());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Certificate());
+            *value = detach(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
-            *value = detach(shim().CollectionLevel());
+            *value = detach(this->shim().CollectionLevel());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
-            *token = detach(shim().CollectionLevelChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().CollectionLevelChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
-            shim().CollectionLevelChanged(token);
+            this->shim().CollectionLevelChanged(token);
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
-            *result = detach(shim().CanCollectDiagnostics(level));
+            *result = detach(this->shim().CanCollectDiagnostics(level));
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produc
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
     {
         try
         {
-            *result = detach(shim().GetSystemIdForPublisher());
+            *result = detach(this->shim().GetSystemIdForPublisher());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
     {
         try
         {
-            *result = detach(shim().GetSystemIdForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *result = detach(this->shim().GetSystemIdForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)

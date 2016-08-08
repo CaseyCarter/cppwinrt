@@ -20,7 +20,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
-            *value = detach(shim().GeographicRegion());
+            *value = detach(this->shim().GeographicRegion());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
-            *value = detach(shim().MaxBrowsableAgeRating());
+            *value = detach(this->shim().MaxBrowsableAgeRating());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
-            *value = detach(shim().PreferredAgeRating());
+            *value = detach(this->shim().PreferredAgeRating());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            shim().Id(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            *value = detach(shim().Image());
+            *value = detach(this->shim().Image());
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            shim().Image(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Image(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            *value = detach(shim().Category());
+            *value = detach(this->shim().Category());
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            shim().Category(value);
+            this->shim().Category(value);
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            *value = detach(shim().Ratings());
+            *value = detach(this->shim().Ratings());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
-            shim().Ratings(*reinterpret_cast<const Windows::Foundation::Collections::IVector<hstring> *>(&value));
+            this->shim().Ratings(*reinterpret_cast<const Windows::Foundation::Collections::IVector<hstring> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescriptionF
     {
         try
         {
-            *RatedContentDescription = detach(shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&title), category));
+            *RatedContentDescription = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&title), category));
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            *operation = detach(shim().GetBrowsePolicyAsync());
+            *operation = detach(this->shim().GetBrowsePolicyAsync());
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            *operation = detach(shim().GetRestrictionLevelAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
+            *operation = detach(this->shim().GetRestrictionLevelAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            *operation = detach(shim().RequestContentAccessAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
+            *operation = detach(this->shim().RequestContentAccessAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            *token = detach(shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            shim().RestrictionsChanged(token);
+            this->shim().RestrictionsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
-            *ratedContentRestrictions = detach(shim().CreateWithMaxAgeRating(maxAgeRating));
+            *ratedContentRestrictions = detach(this->shim().CreateWithMaxAgeRating(maxAgeRating));
             return S_OK;
         }
         catch (...)

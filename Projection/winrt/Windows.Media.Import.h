@@ -22,7 +22,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().HasSucceeded());
+            *value = detach(this->shim().HasSucceeded());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().DeletedItems());
+            *value = detach(this->shim().DeletedItems());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().PhotosCount());
+            *value = detach(this->shim().PhotosCount());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().PhotosSizeInBytes());
+            *value = detach(this->shim().PhotosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().VideosCount());
+            *value = detach(this->shim().VideosCount());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().VideosSizeInBytes());
+            *value = detach(this->shim().VideosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().SidecarsCount());
+            *value = detach(this->shim().SidecarsCount());
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().SidecarsSizeInBytes());
+            *value = detach(this->shim().SidecarsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().SiblingsCount());
+            *value = detach(this->shim().SiblingsCount());
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().SiblingsSizeInBytes());
+            *value = detach(this->shim().SiblingsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().TotalCount());
+            *value = detach(this->shim().TotalCount());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSou
     {
         try
         {
-            *value = detach(shim().TotalSizeInBytes());
+            *value = detach(this->shim().TotalSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().HasSucceeded());
+            *value = detach(this->shim().HasSucceeded());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().FoundItems());
+            *value = detach(this->shim().FoundItems());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().PhotosCount());
+            *value = detach(this->shim().PhotosCount());
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().PhotosSizeInBytes());
+            *value = detach(this->shim().PhotosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().VideosCount());
+            *value = detach(this->shim().VideosCount());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().VideosSizeInBytes());
+            *value = detach(this->shim().VideosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SidecarsCount());
+            *value = detach(this->shim().SidecarsCount());
             return S_OK;
         }
         catch (...)
@@ -303,7 +303,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SidecarsSizeInBytes());
+            *value = detach(this->shim().SidecarsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SiblingsCount());
+            *value = detach(this->shim().SiblingsCount());
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SiblingsSizeInBytes());
+            *value = detach(this->shim().SiblingsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().TotalCount());
+            *value = detach(this->shim().TotalCount());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().TotalSizeInBytes());
+            *value = detach(this->shim().TotalSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            shim().SelectAll();
+            this->shim().SelectAll();
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            shim().SelectNone();
+            this->shim().SelectNone();
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *action = detach(shim().SelectNewAsync());
+            *action = detach(this->shim().SelectNewAsync());
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            shim().SetImportMode(value);
+            this->shim().SetImportMode(value);
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().ImportMode());
+            *value = detach(this->shim().ImportMode());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedPhotosCount());
+            *value = detach(this->shim().SelectedPhotosCount());
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedPhotosSizeInBytes());
+            *value = detach(this->shim().SelectedPhotosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedVideosCount());
+            *value = detach(this->shim().SelectedVideosCount());
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedVideosSizeInBytes());
+            *value = detach(this->shim().SelectedVideosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -486,7 +486,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedSidecarsCount());
+            *value = detach(this->shim().SelectedSidecarsCount());
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedSidecarsSizeInBytes());
+            *value = detach(this->shim().SelectedSidecarsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -512,7 +512,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedSiblingsCount());
+            *value = detach(this->shim().SelectedSiblingsCount());
             return S_OK;
         }
         catch (...)
@@ -525,7 +525,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedSiblingsSizeInBytes());
+            *value = detach(this->shim().SelectedSiblingsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -538,7 +538,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedTotalCount());
+            *value = detach(this->shim().SelectedTotalCount());
             return S_OK;
         }
         catch (...)
@@ -551,7 +551,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *value = detach(shim().SelectedTotalSizeInBytes());
+            *value = detach(this->shim().SelectedTotalSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *token = detach(shim().SelectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> *>(&value)));
+            *token = detach(this->shim().SelectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            shim().SelectionChanged(token);
+            this->shim().SelectionChanged(token);
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *operation = detach(shim().ImportItemsAsync());
+            *operation = detach(this->shim().ImportItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -604,7 +604,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            *token = detach(shim().ItemImported(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> *>(&value)));
+            *token = detach(this->shim().ItemImported(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce
     {
         try
         {
-            shim().ItemImported(token);
+            this->shim().ItemImported(token);
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult2> : produc
     {
         try
         {
-            shim().AddItemsInDateRangeToSelection(*reinterpret_cast<const Windows::Foundation::DateTime *>(&rangeStart), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&rangeLength));
+            this->shim().AddItemsInDateRangeToSelection(*reinterpret_cast<const Windows::Foundation::DateTime *>(&rangeStart), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&rangeLength));
             return S_OK;
         }
         catch (...)
@@ -651,7 +651,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().HasSucceeded());
+            *value = detach(this->shim().HasSucceeded());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().ImportedItems());
+            *value = detach(this->shim().ImportedItems());
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().PhotosCount());
+            *value = detach(this->shim().PhotosCount());
             return S_OK;
         }
         catch (...)
@@ -705,7 +705,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().PhotosSizeInBytes());
+            *value = detach(this->shim().PhotosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().VideosCount());
+            *value = detach(this->shim().VideosCount());
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().VideosSizeInBytes());
+            *value = detach(this->shim().VideosSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().SidecarsCount());
+            *value = detach(this->shim().SidecarsCount());
             return S_OK;
         }
         catch (...)
@@ -757,7 +757,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().SidecarsSizeInBytes());
+            *value = detach(this->shim().SidecarsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -770,7 +770,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().SiblingsCount());
+            *value = detach(this->shim().SiblingsCount());
             return S_OK;
         }
         catch (...)
@@ -783,7 +783,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().SiblingsSizeInBytes());
+            *value = detach(this->shim().SiblingsSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -796,7 +796,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().TotalCount());
+            *value = detach(this->shim().TotalCount());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *value = detach(shim().TotalSizeInBytes());
+            *value = detach(this->shim().TotalSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -822,7 +822,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produ
     {
         try
         {
-            *result = detach(shim().DeleteImportedItemsFromSourceAsync());
+            *result = detach(this->shim().DeleteImportedItemsFromSourceAsync());
             return S_OK;
         }
         catch (...)
@@ -840,7 +840,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ItemKey());
+            *value = detach(this->shim().ItemKey());
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ContentType());
+            *value = detach(this->shim().ContentType());
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SizeInBytes());
+            *value = detach(this->shim().SizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -893,7 +893,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Date());
+            *value = detach(this->shim().Date());
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Sibling());
+            *value = detach(this->shim().Sibling());
             return S_OK;
         }
         catch (...)
@@ -920,7 +920,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Sidecars());
+            *value = detach(this->shim().Sidecars());
             return S_OK;
         }
         catch (...)
@@ -934,7 +934,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().VideoSegments());
+            *value = detach(this->shim().VideoSegments());
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().IsSelected());
+            *value = detach(this->shim().IsSelected());
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            shim().IsSelected(value);
+            this->shim().IsSelected(value);
             return S_OK;
         }
         catch (...)
@@ -974,7 +974,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ImportedFileNames());
+            *value = detach(this->shim().ImportedFileNames());
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DeletedFileNames());
+            *value = detach(this->shim().DeletedFileNames());
             return S_OK;
         }
         catch (...)
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportItemImportedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().ImportedItem());
+            *value = detach(this->shim().ImportedItem());
             return S_OK;
         }
         catch (...)
@@ -1038,7 +1038,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportManagerStatics> : produce_
     {
         try
         {
-            *operation = detach(shim().IsSupportedAsync());
+            *operation = detach(this->shim().IsSupportedAsync());
             return S_OK;
         }
         catch (...)
@@ -1052,7 +1052,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportManagerStatics> : produce_
     {
         try
         {
-            *operation = detach(shim().FindAllSourcesAsync());
+            *operation = detach(this->shim().FindAllSourcesAsync());
             return S_OK;
         }
         catch (...)
@@ -1066,7 +1066,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportManagerStatics> : produce_
     {
         try
         {
-            *result = detach(shim().GetPendingOperations());
+            *result = detach(this->shim().GetPendingOperations());
             return S_OK;
         }
         catch (...)
@@ -1084,7 +1084,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<
     {
         try
         {
-            *value = detach(shim().Stage());
+            *value = detach(this->shim().Stage());
             return S_OK;
         }
         catch (...)
@@ -1097,7 +1097,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -1111,7 +1111,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<
     {
         try
         {
-            *operation = detach(shim().ContinueFindingItemsAsync());
+            *operation = detach(this->shim().ContinueFindingItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<
     {
         try
         {
-            *operation = detach(shim().ContinueImportingItemsAsync());
+            *operation = detach(this->shim().ContinueImportingItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<
     {
         try
         {
-            *operation = detach(shim().ContinueDeletingImportedItemsFromSourceAsync());
+            *operation = detach(this->shim().ContinueDeletingImportedItemsFromSourceAsync());
             return S_OK;
         }
         catch (...)
@@ -1157,7 +1157,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSelectionChangedEventArgs>
     {
         try
         {
-            *value = detach(shim().IsSelectionEmpty());
+            *value = detach(this->shim().IsSelectionEmpty());
             return S_OK;
         }
         catch (...)
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -1188,7 +1188,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().SessionId());
+            *value = detach(this->shim().SessionId());
             return S_OK;
         }
         catch (...)
@@ -1201,7 +1201,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            shim().DestinationFolder(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&value));
+            this->shim().DestinationFolder(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1214,7 +1214,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DestinationFolder());
+            *value = detach(this->shim().DestinationFolder());
             return S_OK;
         }
         catch (...)
@@ -1228,7 +1228,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            shim().AppendSessionDateToDestinationFolder(value);
+            this->shim().AppendSessionDateToDestinationFolder(value);
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().AppendSessionDateToDestinationFolder());
+            *value = detach(this->shim().AppendSessionDateToDestinationFolder());
             return S_OK;
         }
         catch (...)
@@ -1254,7 +1254,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            shim().SubfolderCreationMode(value);
+            this->shim().SubfolderCreationMode(value);
             return S_OK;
         }
         catch (...)
@@ -1267,7 +1267,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().SubfolderCreationMode());
+            *value = detach(this->shim().SubfolderCreationMode());
             return S_OK;
         }
         catch (...)
@@ -1280,7 +1280,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            shim().DestinationFileNamePrefix(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DestinationFileNamePrefix(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1293,7 +1293,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DestinationFileNamePrefix());
+            *value = detach(this->shim().DestinationFileNamePrefix());
             return S_OK;
         }
         catch (...)
@@ -1307,7 +1307,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D,
     {
         try
         {
-            *operation = detach(shim().FindItemsAsync(contentTypeFilter, itemSelectionMode));
+            *operation = detach(this->shim().FindItemsAsync(contentTypeFilter, itemSelectionMode));
             return S_OK;
         }
         catch (...)
@@ -1325,7 +1325,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession2> : produce_base<D
     {
         try
         {
-            shim().SubfolderDateFormat(value);
+            this->shim().SubfolderDateFormat(value);
             return S_OK;
         }
         catch (...)
@@ -1338,7 +1338,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().SubfolderDateFormat());
+            *value = detach(this->shim().SubfolderDateFormat());
             return S_OK;
         }
         catch (...)
@@ -1351,7 +1351,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession2> : produce_base<D
     {
         try
         {
-            shim().RememberDeselectedItems(value);
+            this->shim().RememberDeselectedItems(value);
             return S_OK;
         }
         catch (...)
@@ -1364,7 +1364,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSession2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RememberDeselectedItems());
+            *value = detach(this->shim().RememberDeselectedItems());
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSidecar> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1395,7 +1395,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSidecar> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().SizeInBytes());
+            *value = detach(this->shim().SizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -1408,7 +1408,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSidecar> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Date());
+            *value = detach(this->shim().Date());
             return S_OK;
         }
         catch (...)
@@ -1425,7 +1425,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1439,7 +1439,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -1453,7 +1453,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1467,7 +1467,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Manufacturer());
+            *value = detach(this->shim().Manufacturer());
             return S_OK;
         }
         catch (...)
@@ -1481,7 +1481,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Model());
+            *value = detach(this->shim().Model());
             return S_OK;
         }
         catch (...)
@@ -1495,7 +1495,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SerialNumber());
+            *value = detach(this->shim().SerialNumber());
             return S_OK;
         }
         catch (...)
@@ -1509,7 +1509,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ConnectionProtocol());
+            *value = detach(this->shim().ConnectionProtocol());
             return S_OK;
         }
         catch (...)
@@ -1523,7 +1523,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ConnectionTransport());
+            *value = detach(this->shim().ConnectionTransport());
             return S_OK;
         }
         catch (...)
@@ -1536,7 +1536,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -1549,7 +1549,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PowerSource());
+            *value = detach(this->shim().PowerSource());
             return S_OK;
         }
         catch (...)
@@ -1562,7 +1562,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BatteryLevelPercent());
+            *value = detach(this->shim().BatteryLevelPercent());
             return S_OK;
         }
         catch (...)
@@ -1576,7 +1576,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DateTime());
+            *value = detach(this->shim().DateTime());
             return S_OK;
         }
         catch (...)
@@ -1590,7 +1590,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().StorageMedia());
+            *value = detach(this->shim().StorageMedia());
             return S_OK;
         }
         catch (...)
@@ -1604,7 +1604,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsLocked());
+            *value = detach(this->shim().IsLocked());
             return S_OK;
         }
         catch (...)
@@ -1618,7 +1618,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsMassStorage());
+            *value = detach(this->shim().IsMassStorage());
             return S_OK;
         }
         catch (...)
@@ -1631,7 +1631,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -1645,7 +1645,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().CreateImportSession());
+            *result = detach(this->shim().CreateImportSession());
             return S_OK;
         }
         catch (...)
@@ -1663,7 +1663,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSourceStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&sourceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&sourceId)));
             return S_OK;
         }
         catch (...)
@@ -1677,7 +1677,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportSourceStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().FromFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&sourceRootFolder)));
+            *operation = detach(this->shim().FromFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&sourceRootFolder)));
             return S_OK;
         }
         catch (...)
@@ -1695,7 +1695,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1709,7 +1709,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1723,7 +1723,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().SerialNumber());
+            *value = detach(this->shim().SerialNumber());
             return S_OK;
         }
         catch (...)
@@ -1737,7 +1737,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().StorageMediumType());
+            *value = detach(this->shim().StorageMediumType());
             return S_OK;
         }
         catch (...)
@@ -1750,7 +1750,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().SupportedAccessMode());
+            *value = detach(this->shim().SupportedAccessMode());
             return S_OK;
         }
         catch (...)
@@ -1763,7 +1763,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().CapacityInBytes());
+            *value = detach(this->shim().CapacityInBytes());
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            *value = detach(shim().AvailableSpaceInBytes());
+            *value = detach(this->shim().AvailableSpaceInBytes());
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_b
     {
         try
         {
-            shim().Refresh();
+            this->shim().Refresh();
             return S_OK;
         }
         catch (...)
@@ -1806,7 +1806,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_ba
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1820,7 +1820,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_ba
     {
         try
         {
-            *value = detach(shim().SizeInBytes());
+            *value = detach(this->shim().SizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -1833,7 +1833,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_ba
     {
         try
         {
-            *value = detach(shim().Date());
+            *value = detach(this->shim().Date());
             return S_OK;
         }
         catch (...)
@@ -1846,7 +1846,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_ba
     {
         try
         {
-            *value = detach(shim().Sibling());
+            *value = detach(this->shim().Sibling());
             return S_OK;
         }
         catch (...)
@@ -1860,7 +1860,7 @@ struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_ba
     {
         try
         {
-            *value = detach(shim().Sidecars());
+            *value = detach(this->shim().Sidecars());
             return S_OK;
         }
         catch (...)

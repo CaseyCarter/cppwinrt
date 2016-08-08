@@ -23,7 +23,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapBuffer> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetPlaneCount());
+            *value = detach(this->shim().GetPlaneCount());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapBuffer> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetPlaneDescription(index));
+            *value = detach(this->shim().GetPlaneDescription(index));
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
-            *value = detach(shim().CodecId());
+            *value = detach(this->shim().CodecId());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
-            *value = detach(shim().FileExtensions());
+            *value = detach(this->shim().FileExtensions());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
-            *value = detach(shim().MimeTypes());
+            *value = detach(this->shim().MimeTypes());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BitmapContainerProperties());
+            *value = detach(this->shim().BitmapContainerProperties());
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DecoderInformation());
+            *value = detach(this->shim().DecoderInformation());
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FrameCount());
+            *value = detach(this->shim().FrameCount());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().GetPreviewAsync());
+            *asyncInfo = detach(this->shim().GetPreviewAsync());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().GetFrameAsync(frameIndex));
+            *asyncInfo = detach(this->shim().GetFrameAsync(frameIndex));
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().BmpDecoderId());
+            *value = detach(this->shim().BmpDecoderId());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().JpegDecoderId());
+            *value = detach(this->shim().JpegDecoderId());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().PngDecoderId());
+            *value = detach(this->shim().PngDecoderId());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().TiffDecoderId());
+            *value = detach(this->shim().TiffDecoderId());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().GifDecoderId());
+            *value = detach(this->shim().GifDecoderId());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().JpegXRDecoderId());
+            *value = detach(this->shim().JpegXRDecoderId());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().IcoDecoderId());
+            *value = detach(this->shim().IcoDecoderId());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *decoderInformationEnumerator = detach(shim().GetDecoderInformationEnumerator());
+            *decoderInformationEnumerator = detach(this->shim().GetDecoderInformationEnumerator());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            *asyncInfo = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateAsync(decoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            *asyncInfo = detach(this->shim().CreateAsync(decoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().EncoderInformation());
+            *value = detach(this->shim().EncoderInformation());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BitmapProperties());
+            *value = detach(this->shim().BitmapProperties());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BitmapContainerProperties());
+            *value = detach(this->shim().BitmapContainerProperties());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsThumbnailGenerated());
+            *value = detach(this->shim().IsThumbnailGenerated());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            shim().IsThumbnailGenerated(value);
+            this->shim().IsThumbnailGenerated(value);
             return S_OK;
         }
         catch (...)
@@ -390,7 +390,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GeneratedThumbnailWidth());
+            *value = detach(this->shim().GeneratedThumbnailWidth());
             return S_OK;
         }
         catch (...)
@@ -403,7 +403,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            shim().GeneratedThumbnailWidth(value);
+            this->shim().GeneratedThumbnailWidth(value);
             return S_OK;
         }
         catch (...)
@@ -416,7 +416,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GeneratedThumbnailHeight());
+            *value = detach(this->shim().GeneratedThumbnailHeight());
             return S_OK;
         }
         catch (...)
@@ -429,7 +429,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            shim().GeneratedThumbnailHeight(value);
+            this->shim().GeneratedThumbnailHeight(value);
             return S_OK;
         }
         catch (...)
@@ -442,7 +442,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BitmapTransform());
+            *value = detach(this->shim().BitmapTransform());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            shim().SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, array_ref<const uint8_t>(pixels, pixels + __pixelsSize));
+            this->shim().SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, array_ref<const uint8_t>(pixels, pixels + __pixelsSize));
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().GoToNextFrameAsync());
+            *asyncInfo = detach(this->shim().GoToNextFrameAsync());
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().GoToNextFrameAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
+            *asyncInfo = detach(this->shim().GoToNextFrameAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().FlushAsync());
+            *asyncInfo = detach(this->shim().FlushAsync());
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().BmpEncoderId());
+            *value = detach(this->shim().BmpEncoderId());
             return S_OK;
         }
         catch (...)
@@ -528,7 +528,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().JpegEncoderId());
+            *value = detach(this->shim().JpegEncoderId());
             return S_OK;
         }
         catch (...)
@@ -541,7 +541,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().PngEncoderId());
+            *value = detach(this->shim().PngEncoderId());
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().TiffEncoderId());
+            *value = detach(this->shim().TiffEncoderId());
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().GifEncoderId());
+            *value = detach(this->shim().GifEncoderId());
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().JpegXREncoderId());
+            *value = detach(this->shim().JpegXREncoderId());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *encoderInformationEnumerator = detach(shim().GetEncoderInformationEnumerator());
+            *encoderInformationEnumerator = detach(this->shim().GetEncoderInformationEnumerator());
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            *asyncInfo = detach(this->shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -621,7 +621,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
+            *asyncInfo = detach(this->shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
             return S_OK;
         }
         catch (...)
@@ -635,7 +635,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateForTranscodingAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
+            *asyncInfo = detach(this->shim().CreateForTranscodingAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
             return S_OK;
         }
         catch (...)
@@ -649,7 +649,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().CreateForInPlacePropertyEncodingAsync(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
+            *asyncInfo = detach(this->shim().CreateForInPlacePropertyEncodingAsync(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap> 
     {
         try
         {
-            shim().SetSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
+            this->shim().SetSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *asyncInfo = detach(shim().GetThumbnailAsync());
+            *asyncInfo = detach(this->shim().GetThumbnailAsync());
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().BitmapProperties());
+            *value = detach(this->shim().BitmapProperties());
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().BitmapPixelFormat());
+            *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().BitmapAlphaMode());
+            *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
         catch (...)
@@ -738,7 +738,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DpiX());
+            *value = detach(this->shim().DpiX());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DpiY());
+            *value = detach(this->shim().DpiY());
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().PixelWidth());
+            *value = detach(this->shim().PixelWidth());
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().PixelHeight());
+            *value = detach(this->shim().PixelHeight());
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().OrientedPixelWidth());
+            *value = detach(this->shim().OrientedPixelWidth());
             return S_OK;
         }
         catch (...)
@@ -803,7 +803,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().OrientedPixelHeight());
+            *value = detach(this->shim().OrientedPixelHeight());
             return S_OK;
         }
         catch (...)
@@ -816,7 +816,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *asyncInfo = detach(shim().GetPixelDataAsync());
+            *asyncInfo = detach(this->shim().GetPixelDataAsync());
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
-            *asyncInfo = detach(shim().GetPixelDataAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
+            *asyncInfo = detach(this->shim().GetPixelDataAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
             return S_OK;
         }
         catch (...)
@@ -848,7 +848,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
-            *value = detach(shim().GetSoftwareBitmapAsync());
+            *value = detach(this->shim().GetSoftwareBitmapAsync());
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
-            *value = detach(shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode));
+            *value = detach(this->shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode));
             return S_OK;
         }
         catch (...)
@@ -876,7 +876,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
-            *value = detach(shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
+            *value = detach(this->shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
             return S_OK;
         }
         catch (...)
@@ -894,7 +894,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapProperties> : produce_base<
     {
         try
         {
-            *asyncInfo = detach(shim().SetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&propertiesToSet)));
+            *asyncInfo = detach(this->shim().SetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&propertiesToSet)));
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapPropertiesView> : produce_b
     {
         try
         {
-            *asyncInfo = detach(shim().GetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
+            *asyncInfo = detach(this->shim().GetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
         catch (...)
@@ -930,7 +930,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ScaledWidth());
+            *value = detach(this->shim().ScaledWidth());
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().ScaledWidth(value);
+            this->shim().ScaledWidth(value);
             return S_OK;
         }
         catch (...)
@@ -956,7 +956,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ScaledHeight());
+            *value = detach(this->shim().ScaledHeight());
             return S_OK;
         }
         catch (...)
@@ -969,7 +969,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().ScaledHeight(value);
+            this->shim().ScaledHeight(value);
             return S_OK;
         }
         catch (...)
@@ -982,7 +982,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().InterpolationMode());
+            *value = detach(this->shim().InterpolationMode());
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().InterpolationMode(value);
+            this->shim().InterpolationMode(value);
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Flip());
+            *value = detach(this->shim().Flip());
             return S_OK;
         }
         catch (...)
@@ -1021,7 +1021,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().Flip(value);
+            this->shim().Flip(value);
             return S_OK;
         }
         catch (...)
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Rotation());
+            *value = detach(this->shim().Rotation());
             return S_OK;
         }
         catch (...)
@@ -1047,7 +1047,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().Rotation(value);
+            this->shim().Rotation(value);
             return S_OK;
         }
         catch (...)
@@ -1060,7 +1060,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Bounds());
+            *value = detach(this->shim().Bounds());
             return S_OK;
         }
         catch (...)
@@ -1073,7 +1073,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
-            shim().Bounds(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&value));
+            this->shim().Bounds(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1090,7 +1090,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1104,7 +1104,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory> : produc
     {
         try
         {
-            *bitmapTypedValue = detach(shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&value), type));
+            *bitmapTypedValue = detach(this->shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&value), type));
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Graphics::Imaging::IPixelDataProvider> : produce_base
     {
         try
         {
-            std::tie(*__pixelDataSize, *pixelData) = detach(shim().DetachPixelData());
+            std::tie(*__pixelDataSize, *pixelData) = detach(this->shim().DetachPixelData());
             return S_OK;
         }
         catch (...)
@@ -1158,7 +1158,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BitmapPixelFormat());
+            *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
         catch (...)
@@ -1171,7 +1171,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BitmapAlphaMode());
+            *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
         catch (...)
@@ -1184,7 +1184,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PixelWidth());
+            *value = detach(this->shim().PixelWidth());
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PixelHeight());
+            *value = detach(this->shim().PixelHeight());
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsReadOnly());
+            *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            shim().DpiX(value);
+            this->shim().DpiX(value);
             return S_OK;
         }
         catch (...)
@@ -1236,7 +1236,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DpiX());
+            *value = detach(this->shim().DpiX());
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            shim().DpiY(value);
+            this->shim().DpiY(value);
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DpiY());
+            *value = detach(this->shim().DpiY());
             return S_OK;
         }
         catch (...)
@@ -1275,7 +1275,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().LockBuffer(mode));
+            *value = detach(this->shim().LockBuffer(mode));
             return S_OK;
         }
         catch (...)
@@ -1289,7 +1289,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            shim().CopyTo(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
+            this->shim().CopyTo(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
             return S_OK;
         }
         catch (...)
@@ -1302,7 +1302,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            shim().CopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().CopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            shim().CopyToBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().CopyToBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().GetReadOnlyView());
+            *value = detach(this->shim().GetReadOnlyView());
             return S_OK;
         }
         catch (...)
@@ -1346,7 +1346,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory> : produce_
     {
         try
         {
-            *value = detach(shim().Create(format, width, height));
+            *value = detach(this->shim().Create(format, width, height));
             return S_OK;
         }
         catch (...)
@@ -1360,7 +1360,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory> : produce_
     {
         try
         {
-            *value = detach(shim().CreateWithAlpha(format, width, height, alpha));
+            *value = detach(this->shim().CreateWithAlpha(format, width, height, alpha));
             return S_OK;
         }
         catch (...)
@@ -1378,7 +1378,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().Copy(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source)));
+            *value = detach(this->shim().Copy(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source)));
             return S_OK;
         }
         catch (...)
@@ -1392,7 +1392,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format));
+            *value = detach(this->shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format));
             return S_OK;
         }
         catch (...)
@@ -1406,7 +1406,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format, alpha));
+            *value = detach(this->shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format, alpha));
             return S_OK;
         }
         catch (...)
@@ -1420,7 +1420,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height));
+            *value = detach(this->shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height));
             return S_OK;
         }
         catch (...)
@@ -1434,7 +1434,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height, alpha));
+            *value = detach(this->shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height, alpha));
             return S_OK;
         }
         catch (...)
@@ -1448,7 +1448,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface)));
+            *value = detach(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface)));
             return S_OK;
         }
         catch (...)
@@ -1462,7 +1462,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
-            *value = detach(shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), alpha));
+            *value = detach(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), alpha));
             return S_OK;
         }
         catch (...)

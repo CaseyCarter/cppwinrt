@@ -86,7 +86,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
-            *value = detach(shim().SubscribedActivities());
+            *value = detach(this->shim().SubscribedActivities());
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
-            *value = detach(shim().ReportInterval());
+            *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
-            *value = detach(shim().SupportedActivities());
+            *value = detach(this->shim().SupportedActivities());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
-            *value = detach(shim().MinimumReportInterval());
+            *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTriggerF
     {
         try
         {
-            *activityTrigger = detach(shim().Create(reportIntervalInMilliseconds));
+            *activityTrigger = detach(this->shim().Create(reportIntervalInMilliseconds));
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTrigger> : 
     {
         try
         {
-            *result = detach(shim().RequestAsync());
+            *result = detach(this->shim().RequestAsync());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTrigger> : 
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTriggerDeta
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            *operation = detach(shim().RequestAccessAsync());
+            *operation = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            *operation = detach(shim().RequestAccessAsync(*reinterpret_cast<const hstring *>(&applicationId)));
+            *operation = detach(this->shim().RequestAccessAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            shim().RemoveAccess();
+            this->shim().RemoveAccess();
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            shim().RemoveAccess(*reinterpret_cast<const hstring *>(&applicationId));
+            this->shim().RemoveAccess(*reinterpret_cast<const hstring *>(&applicationId));
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            *status = detach(shim().GetAccessStatus());
+            *status = detach(this->shim().GetAccessStatus());
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
-            *status = detach(shim().GetAccessStatus(*reinterpret_cast<const hstring *>(&applicationId)));
+            *status = detach(this->shim().GetAccessStatus(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTask> : prod
     {
         try
         {
-            shim().Run(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTaskInstance *>(&taskInstance));
+            this->shim().Run(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTaskInstance *>(&taskInstance));
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            shim().TaskEntryPoint(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TaskEntryPoint(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            *value = detach(shim().TaskEntryPoint());
+            *value = detach(this->shim().TaskEntryPoint());
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            shim().SetTrigger(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTrigger *>(&trigger));
+            this->shim().SetTrigger(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTrigger *>(&trigger));
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            shim().AddCondition(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundCondition *>(&condition));
+            this->shim().AddCondition(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundCondition *>(&condition));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
-            *task = detach(shim().Register());
+            *task = detach(this->shim().Register());
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2
     {
         try
         {
-            shim().CancelOnConditionLoss(value);
+            this->shim().CancelOnConditionLoss(value);
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2
     {
         try
         {
-            *value = detach(shim().CancelOnConditionLoss());
+            *value = detach(this->shim().CancelOnConditionLoss());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3
     {
         try
         {
-            shim().IsNetworkRequested(value);
+            this->shim().IsNetworkRequested(value);
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3
     {
         try
         {
-            *value = detach(shim().IsNetworkRequested());
+            *value = detach(this->shim().IsNetworkRequested());
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskComplete
     {
         try
         {
-            *value = detach(shim().InstanceId());
+            *value = detach(this->shim().InstanceId());
             return S_OK;
         }
         catch (...)
@@ -492,7 +492,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskComplete
     {
         try
         {
-            shim().CheckResult();
+            this->shim().CheckResult();
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskDeferral
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *value = detach(shim().InstanceId());
+            *value = detach(this->shim().InstanceId());
             return S_OK;
         }
         catch (...)
@@ -539,7 +539,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *task = detach(shim().Task());
+            *task = detach(this->shim().Task());
             return S_OK;
         }
         catch (...)
@@ -553,7 +553,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            shim().Progress(value);
+            this->shim().Progress(value);
             return S_OK;
         }
         catch (...)
@@ -579,7 +579,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *triggerDetails = detach(shim().TriggerDetails());
+            *triggerDetails = detach(this->shim().TriggerDetails());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *cookie = detach(shim().Canceled(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler *>(&cancelHandler)));
+            *cookie = detach(this->shim().Canceled(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler *>(&cancelHandler)));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            shim().Canceled(cookie);
+            this->shim().Canceled(cookie);
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *value = detach(shim().SuspendedCount());
+            *value = detach(this->shim().SuspendedCount());
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -650,7 +650,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *value = detach(shim().GetThrottleCount(counter));
+            *value = detach(this->shim().GetThrottleCount(counter));
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -685,7 +685,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskProgress
     {
         try
         {
-            *value = detach(shim().InstanceId());
+            *value = detach(this->shim().InstanceId());
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskProgress
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -715,7 +715,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *value = detach(shim().TaskId());
+            *value = detach(this->shim().TaskId());
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -742,7 +742,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *cookie = detach(shim().Progress(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler *>(&handler)));
+            *cookie = detach(this->shim().Progress(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -755,7 +755,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            shim().Progress(cookie);
+            this->shim().Progress(cookie);
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *cookie = detach(shim().Completed(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler *>(&handler)));
+            *cookie = detach(this->shim().Completed(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -781,7 +781,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            shim().Completed(cookie);
+            this->shim().Completed(cookie);
             return S_OK;
         }
         catch (...)
@@ -794,7 +794,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            shim().Unregister(cancelTask);
+            this->shim().Unregister(cancelTask);
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *value = detach(shim().Trigger());
+            *value = detach(this->shim().Trigger());
             return S_OK;
         }
         catch (...)
@@ -829,7 +829,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
-            *tasks = detach(shim().AllTasks());
+            *tasks = detach(this->shim().AllTasks());
             return S_OK;
         }
         catch (...)
@@ -851,7 +851,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundWorkCostStat
     {
         try
         {
-            *value = detach(shim().CurrentBackgroundWorkCost());
+            *value = detach(this->shim().CurrentBackgroundWorkCost());
             return S_OK;
         }
         catch (...)
@@ -868,7 +868,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().Advertisement());
+            *value = detach(this->shim().Advertisement());
             return S_OK;
         }
         catch (...)
@@ -886,7 +886,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().MinSamplingInterval());
+            *value = detach(this->shim().MinSamplingInterval());
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().MaxSamplingInterval());
+            *value = detach(this->shim().MaxSamplingInterval());
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().MinOutOfRangeTimeout());
+            *value = detach(this->shim().MinOutOfRangeTimeout());
             return S_OK;
         }
         catch (...)
@@ -925,7 +925,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().MaxOutOfRangeTimeout());
+            *value = detach(this->shim().MaxOutOfRangeTimeout());
             return S_OK;
         }
         catch (...)
@@ -938,7 +938,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().SignalStrengthFilter());
+            *value = detach(this->shim().SignalStrengthFilter());
             return S_OK;
         }
         catch (...)
@@ -952,7 +952,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            shim().SignalStrengthFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter *>(&value));
+            this->shim().SignalStrengthFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter *>(&value));
             return S_OK;
         }
         catch (...)
@@ -965,7 +965,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            *value = detach(shim().AdvertisementFilter());
+            *value = detach(this->shim().AdvertisementFilter());
             return S_OK;
         }
         catch (...)
@@ -979,7 +979,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
-            shim().AdvertisementFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter *>(&value));
+            this->shim().AdvertisementFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
-            *value = detach(shim().UpdateTarget());
+            *value = detach(this->shim().UpdateTarget());
             return S_OK;
         }
         catch (...)
@@ -1013,7 +1013,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
-            *value = detach(shim().UpdateRequest());
+            *value = detach(this->shim().UpdateRequest());
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
-            *value = detach(shim().CanRequestUserInput());
+            *value = detach(this->shim().CanRequestUserInput());
             return S_OK;
         }
         catch (...)
@@ -1056,7 +1056,7 @@ struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger
     {
         try
         {
-            *waitInterval = detach(shim().WaitInterval());
+            *waitInterval = detach(this->shim().WaitInterval());
             return S_OK;
         }
         catch (...)
@@ -1073,7 +1073,7 @@ struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&waitInterval)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&waitInterval)));
             return S_OK;
         }
         catch (...)
@@ -1091,7 +1091,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
-            *value = detach(shim().CanMaintainConnection());
+            *value = detach(this->shim().CanMaintainConnection());
             return S_OK;
         }
         catch (...)
@@ -1118,7 +1118,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
-            *value = detach(shim().MaintainConnection());
+            *value = detach(this->shim().MaintainConnection());
             return S_OK;
         }
         catch (...)
@@ -1131,7 +1131,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
-            shim().MaintainConnection(value);
+            this->shim().MaintainConnection(value);
             return S_OK;
         }
         catch (...)
@@ -1148,7 +1148,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
-            *deviceChangeTrigger = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *deviceChangeTrigger = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1166,7 +1166,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
-            *value = detach(shim().TriggerQualifier());
+            *value = detach(this->shim().TriggerQualifier());
             return S_OK;
         }
         catch (...)
@@ -1180,7 +1180,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
-            *oneShot = detach(shim().OneShot());
+            *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const hstring *>(&triggerQualifier), oneShot));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&triggerQualifier), oneShot));
             return S_OK;
         }
         catch (...)
@@ -1215,7 +1215,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration)));
             return S_OK;
         }
         catch (...)
@@ -1229,7 +1229,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration), *reinterpret_cast<const hstring *>(&arguments)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration), *reinterpret_cast<const hstring *>(&arguments)));
             return S_OK;
         }
         catch (...)
@@ -1247,7 +1247,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceUseTrigger> : pr
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1261,7 +1261,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceUseTrigger> : pr
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const hstring *>(&arguments)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const hstring *>(&arguments)));
             return S_OK;
         }
         catch (...)
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
     {
         try
         {
-            *value = detach(shim().Characteristic());
+            *value = detach(this->shim().Characteristic());
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
     {
         try
         {
-            *gattCharacteristicNotificationTrigger = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>(&characteristic)));
+            *gattCharacteristicNotificationTrigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>(&characteristic)));
             return S_OK;
         }
         catch (...)
@@ -1323,7 +1323,7 @@ struct produce<D, Windows::ApplicationModel::Background::ILocationTrigger> : pro
     {
         try
         {
-            *triggerType = detach(shim().TriggerType());
+            *triggerType = detach(this->shim().TriggerType());
             return S_OK;
         }
         catch (...)
@@ -1340,7 +1340,7 @@ struct produce<D, Windows::ApplicationModel::Background::ILocationTriggerFactory
     {
         try
         {
-            *locationTrigger = detach(shim().Create(triggerType));
+            *locationTrigger = detach(this->shim().Create(triggerType));
             return S_OK;
         }
         catch (...)
@@ -1358,7 +1358,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTrigger> : 
     {
         try
         {
-            *freshnessTime = detach(shim().FreshnessTime());
+            *freshnessTime = detach(this->shim().FreshnessTime());
             return S_OK;
         }
         catch (...)
@@ -1371,7 +1371,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTrigger> : 
     {
         try
         {
-            *oneShot = detach(shim().OneShot());
+            *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
         catch (...)
@@ -1388,7 +1388,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTriggerFact
     {
         try
         {
-            *trigger = detach(shim().Create(freshnessTime, oneShot));
+            *trigger = detach(this->shim().Create(freshnessTime, oneShot));
             return S_OK;
         }
         catch (...)
@@ -1406,7 +1406,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger
     {
         try
         {
-            *result = detach(shim().RequestAsync());
+            *result = detach(this->shim().RequestAsync());
             return S_OK;
         }
         catch (...)
@@ -1420,7 +1420,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger
     {
         try
         {
-            *result = detach(shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
+            *result = detach(this->shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
             return S_OK;
         }
         catch (...)
@@ -1442,7 +1442,7 @@ struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotific
     {
         try
         {
-            *value = detach(shim().NetworkAccountId());
+            *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
         catch (...)
@@ -1460,7 +1460,7 @@ struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotific
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -1478,7 +1478,7 @@ struct produce<D, Windows::ApplicationModel::Background::IPushNotificationTrigge
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -1500,7 +1500,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            *value = detach(shim().InboundConnection());
+            *value = detach(this->shim().InboundConnection());
             return S_OK;
         }
         catch (...)
@@ -1514,7 +1514,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            *value = detach(shim().OutboundConnection());
+            *value = detach(this->shim().OutboundConnection());
             return S_OK;
         }
         catch (...)
@@ -1528,7 +1528,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            *value = detach(shim().AllowMultipleConnections());
+            *value = detach(this->shim().AllowMultipleConnections());
             return S_OK;
         }
         catch (...)
@@ -1541,7 +1541,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            shim().AllowMultipleConnections(value);
+            this->shim().AllowMultipleConnections(value);
             return S_OK;
         }
         catch (...)
@@ -1554,7 +1554,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            *value = detach(shim().ProtectionLevel());
+            *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -1567,7 +1567,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            shim().ProtectionLevel(value);
+            this->shim().ProtectionLevel(value);
             return S_OK;
         }
         catch (...)
@@ -1580,7 +1580,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            *value = detach(shim().RemoteHostName());
+            *value = detach(this->shim().RemoteHostName());
             return S_OK;
         }
         catch (...)
@@ -1594,7 +1594,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
-            shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1619,7 +1619,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISensorDataThresholdTri
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Sensors::ISensorDataThreshold *>(&threshold)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sensors::ISensorDataThreshold *>(&threshold)));
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISmsMessageReceivedTrig
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Sms::SmsFilterRules *>(&filterRules)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sms::SmsFilterRules *>(&filterRules)));
             return S_OK;
         }
         catch (...)
@@ -1655,7 +1655,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISocketActivityTrigger>
     {
         try
         {
-            *value = detach(shim().IsWakeFromLowPowerSupported());
+            *value = detach(this->shim().IsWakeFromLowPowerSupported());
             return S_OK;
         }
         catch (...)
@@ -1676,7 +1676,7 @@ struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentC
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Storage::StorageLibrary *>(&storageLibrary)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Storage::StorageLibrary *>(&storageLibrary)));
             return S_OK;
         }
         catch (...)
@@ -1690,7 +1690,7 @@ struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentC
     {
         try
         {
-            *result = detach(shim().CreateFromLibraries(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> *>(&storageLibraries)));
+            *result = detach(this->shim().CreateFromLibraries(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> *>(&storageLibraries)));
             return S_OK;
         }
         catch (...)
@@ -1708,7 +1708,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemCondition> : pro
     {
         try
         {
-            *conditionType = detach(shim().ConditionType());
+            *conditionType = detach(this->shim().ConditionType());
             return S_OK;
         }
         catch (...)
@@ -1725,7 +1725,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemConditionFactory
     {
         try
         {
-            *condition = detach(shim().Create(conditionType));
+            *condition = detach(this->shim().Create(conditionType));
             return S_OK;
         }
         catch (...)
@@ -1743,7 +1743,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTrigger> : produ
     {
         try
         {
-            *oneShot = detach(shim().OneShot());
+            *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
         catch (...)
@@ -1756,7 +1756,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTrigger> : produ
     {
         try
         {
-            *triggerType = detach(shim().TriggerType());
+            *triggerType = detach(this->shim().TriggerType());
             return S_OK;
         }
         catch (...)
@@ -1773,7 +1773,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTriggerFactory> 
     {
         try
         {
-            *trigger = detach(shim().Create(triggerType, oneShot));
+            *trigger = detach(this->shim().Create(triggerType, oneShot));
             return S_OK;
         }
         catch (...)
@@ -1791,7 +1791,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTrigger> : produce
     {
         try
         {
-            *freshnessTime = detach(shim().FreshnessTime());
+            *freshnessTime = detach(this->shim().FreshnessTime());
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTrigger> : produce
     {
         try
         {
-            *oneShot = detach(shim().OneShot());
+            *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
         catch (...)
@@ -1821,7 +1821,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTriggerFactory> : 
     {
         try
         {
-            *trigger = detach(shim().Create(freshnessTime, oneShot));
+            *trigger = detach(this->shim().Create(freshnessTime, oneShot));
             return S_OK;
         }
         catch (...)
@@ -1839,7 +1839,7 @@ struct produce<D, Windows::ApplicationModel::Background::IToastNotificationActio
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -1857,7 +1857,7 @@ struct produce<D, Windows::ApplicationModel::Background::IToastNotificationHisto
     {
         try
         {
-            *trigger = detach(shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
+            *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -1875,7 +1875,7 @@ struct produce<D, Windows::ApplicationModel::Background::IUserNotificationChange
     {
         try
         {
-            *trigger = detach(shim().Create(notificationKinds));
+            *trigger = detach(this->shim().Create(notificationKinds));
             return S_OK;
         }
         catch (...)

@@ -19,7 +19,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            *value = detach(shim().Locations());
+            *value = detach(this->shim().Locations());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            shim().AqsFilter(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AqsFilter(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            *value = detach(shim().AqsFilter());
+            *value = detach(this->shim().AqsFilter());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSett
     {
         try
         {
-            *value = detach(shim().PropertiesToMatch());
+            *value = detach(this->shim().PropertiesToMatch());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticD
     {
         try
         {
-            *value = detach(shim().QueryTextAlternatives());
+            *value = detach(this->shim().QueryTextAlternatives());
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticD
     {
         try
         {
-            *value = detach(shim().QueryTextCompositionStart());
+            *value = detach(this->shim().QueryTextCompositionStart());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticD
     {
         try
         {
-            *value = detach(shim().QueryTextCompositionLength());
+            *value = detach(this->shim().QueryTextCompositionLength());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetai
     {
         try
         {
-            *value = detach(shim().QueryTextAlternatives());
+            *value = detach(this->shim().QueryTextAlternatives());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetai
     {
         try
         {
-            *value = detach(shim().QueryTextCompositionStart());
+            *value = detach(this->shim().QueryTextCompositionStart());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetai
     {
         try
         {
-            *value = detach(shim().QueryTextCompositionLength());
+            *value = detach(this->shim().QueryTextCompositionLength());
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetai
     {
         try
         {
-            *value = detach(shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength));
+            *value = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength));
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection
     {
         try
         {
-            shim().AppendQuerySuggestion(*reinterpret_cast<const hstring *>(&text));
+            this->shim().AppendQuerySuggestion(*reinterpret_cast<const hstring *>(&text));
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection
     {
         try
         {
-            shim().AppendQuerySuggestions(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&suggestions));
+            this->shim().AppendQuerySuggestions(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&suggestions));
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection
     {
         try
         {
-            shim().AppendResultSuggestion(*reinterpret_cast<const hstring *>(&text), *reinterpret_cast<const hstring *>(&detailText), *reinterpret_cast<const hstring *>(&tag), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&image), *reinterpret_cast<const hstring *>(&imageAlternateText));
+            this->shim().AppendResultSuggestion(*reinterpret_cast<const hstring *>(&text), *reinterpret_cast<const hstring *>(&detailText), *reinterpret_cast<const hstring *>(&tag), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&image), *reinterpret_cast<const hstring *>(&imageAlternateText));
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection
     {
         try
         {
-            shim().AppendSearchSeparator(*reinterpret_cast<const hstring *>(&label));
+            this->shim().AppendSearchSeparator(*reinterpret_cast<const hstring *>(&label));
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequest> 
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequest> 
     {
         try
         {
-            *collection = detach(shim().SearchSuggestionCollection());
+            *collection = detach(this->shim().SearchSuggestionCollection());
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequest> 
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequestDe
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)

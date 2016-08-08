@@ -33,7 +33,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptor> : produce_base<D
     {
         try
         {
-            *encodingProperties = detach(shim().EncodingProperties());
+            *encodingProperties = detach(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptor2> : produce_base<
     {
         try
         {
-            shim().LeadingEncoderPadding(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
+            this->shim().LeadingEncoderPadding(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptor2> : produce_base<
     {
         try
         {
-            *value = detach(shim().LeadingEncoderPadding());
+            *value = detach(this->shim().LeadingEncoderPadding());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptor2> : produce_base<
     {
         try
         {
-            shim().TrailingEncoderPadding(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
+            this->shim().TrailingEncoderPadding(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptor2> : produce_base<
     {
         try
         {
-            *value = detach(shim().TrailingEncoderPadding());
+            *value = detach(this->shim().TrailingEncoderPadding());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Media::Core::IAudioStreamDescriptorFactory> : produce
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            *token = detach(shim().OpenFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::AudioTrack, Windows::Media::Core::AudioTrackOpenFailedEventArgs> *>(&handler)));
+            *token = detach(this->shim().OpenFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::AudioTrack, Windows::Media::Core::AudioTrackOpenFailedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            shim().OpenFailed(token);
+            this->shim().OpenFailed(token);
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GetEncodingProperties());
+            *value = detach(this->shim().GetEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PlaybackItem());
+            *value = detach(this->shim().PlaybackItem());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Media::Core::IAudioTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().SupportInfo());
+            *value = detach(this->shim().SupportInfo());
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::Media::Core::IAudioTrackOpenFailedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::Media::Core::IAudioTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DecoderStatus());
+            *value = detach(this->shim().DecoderStatus());
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::Media::Core::IAudioTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Degradation());
+            *value = detach(this->shim().Degradation());
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::Media::Core::IAudioTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DegradationReason());
+            *value = detach(this->shim().DegradationReason());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Media::Core::IAudioTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().MediaSourceStatus());
+            *value = detach(this->shim().MediaSourceStatus());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Media::Core::IDataCue> : produce_base<D, Windows::Med
     {
         try
         {
-            shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::Media::Core::IDataCue> : produce_base<D, Windows::Med
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectedEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ResultFrame());
+            *value = detach(this->shim().ResultFrame());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            shim().DesiredDetectionInterval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DesiredDetectionInterval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DesiredDetectionInterval());
+            *value = detach(this->shim().DesiredDetectionInterval());
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().FaceDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::FaceDetectionEffect, Windows::Media::Core::FaceDetectedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().FaceDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::FaceDetectionEffect, Windows::Media::Core::FaceDetectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffect> : produce_base<D, 
     {
         try
         {
-            shim().FaceDetected(cookie);
+            this->shim().FaceDetected(cookie);
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffectDefinition> : produc
     {
         try
         {
-            shim().DetectionMode(value);
+            this->shim().DetectionMode(value);
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffectDefinition> : produc
     {
         try
         {
-            *value = detach(shim().DetectionMode());
+            *value = detach(this->shim().DetectionMode());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffectDefinition> : produc
     {
         try
         {
-            shim().SynchronousDetectionEnabled(value);
+            this->shim().SynchronousDetectionEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffectDefinition> : produc
     {
         try
         {
-            *value = detach(shim().SynchronousDetectionEnabled());
+            *value = detach(this->shim().SynchronousDetectionEnabled());
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Media::Core::IFaceDetectionEffectFrame> : produce_bas
     {
         try
         {
-            *value = detach(shim().DetectedFaces());
+            *value = detach(this->shim().DetectedFaces());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::Media::Core::IHighDynamicRangeControl> : produce_base
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -504,7 +504,7 @@ struct produce<D, Windows::Media::Core::IHighDynamicRangeControl> : produce_base
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Media::Core::IHighDynamicRangeOutput> : produce_base<
     {
         try
         {
-            *value = detach(shim().Certainty());
+            *value = detach(this->shim().Certainty());
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ struct produce<D, Windows::Media::Core::IHighDynamicRangeOutput> : produce_base<
     {
         try
         {
-            *value = detach(shim().FrameControllers());
+            *value = detach(this->shim().FrameControllers());
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
     {
         try
         {
-            *token = detach(shim().Binding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> *>(&handler)));
+            *token = detach(this->shim().Binding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -565,7 +565,7 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
     {
         try
         {
-            shim().Binding(token);
+            this->shim().Binding(token);
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Token());
+            *value = detach(this->shim().Token());
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
     {
         try
         {
-            shim().Token(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Token(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -605,7 +605,7 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -623,7 +623,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -636,7 +636,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            shim().Canceled(token);
+            this->shim().Canceled(token);
             return S_OK;
         }
         catch (...)
@@ -649,7 +649,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().MediaBinder());
+            *value = detach(this->shim().MediaBinder());
             return S_OK;
         }
         catch (...)
@@ -663,7 +663,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -677,7 +677,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            shim().SetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri));
+            this->shim().SetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri));
             return S_OK;
         }
         catch (...)
@@ -690,7 +690,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            shim().SetStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&contentType));
+            this->shim().SetStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&contentType));
             return S_OK;
         }
         catch (...)
@@ -703,7 +703,7 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
     {
         try
         {
-            shim().SetStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream), *reinterpret_cast<const hstring *>(&contentType));
+            this->shim().SetStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream), *reinterpret_cast<const hstring *>(&contentType));
             return S_OK;
         }
         catch (...)
@@ -720,7 +720,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            shim().StartTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -733,7 +733,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().StartTime());
+            *value = detach(this->shim().StartTime());
             return S_OK;
         }
         catch (...)
@@ -746,7 +746,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            shim().Id(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::Media::Core::IMediaCue> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -803,7 +803,7 @@ struct produce<D, Windows::Media::Core::IMediaCueEventArgs> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Cue());
+            *value = detach(this->shim().Cue());
             return S_OK;
         }
         catch (...)
@@ -825,7 +825,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *token = detach(shim().OpenOperationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().OpenOperationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            shim().OpenOperationCompleted(token);
+            this->shim().OpenOperationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -851,7 +851,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CustomProperties());
+            *value = detach(this->shim().CustomProperties());
             return S_OK;
         }
         catch (...)
@@ -865,7 +865,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -879,7 +879,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsOpen());
+            *value = detach(this->shim().IsOpen());
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().ExternalTimedTextSources());
+            *value = detach(this->shim().ExternalTimedTextSources());
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::Media::Core::IMediaSource2> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().ExternalTimedMetadataTracks());
+            *value = detach(this->shim().ExternalTimedMetadataTracks());
             return S_OK;
         }
         catch (...)
@@ -924,7 +924,7 @@ struct produce<D, Windows::Media::Core::IMediaSource3> : produce_base<D, Windows
     {
         try
         {
-            *token = detach(shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -937,7 +937,7 @@ struct produce<D, Windows::Media::Core::IMediaSource3> : produce_base<D, Windows
     {
         try
         {
-            shim().StateChanged(token);
+            this->shim().StateChanged(token);
             return S_OK;
         }
         catch (...)
@@ -950,7 +950,7 @@ struct produce<D, Windows::Media::Core::IMediaSource3> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -963,7 +963,7 @@ struct produce<D, Windows::Media::Core::IMediaSource3> : produce_base<D, Windows
     {
         try
         {
-            shim().Reset();
+            this->shim().Reset();
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceError> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -997,7 +997,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceOpenOperationCompletedEventA
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -1015,7 +1015,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStateChangedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().OldState());
+            *value = detach(this->shim().OldState());
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStateChangedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().NewState());
+            *value = detach(this->shim().NewState());
             return S_OK;
         }
         catch (...)
@@ -1045,7 +1045,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromAdaptiveMediaSource(*reinterpret_cast<const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *>(&mediaSource)));
+            *result = detach(this->shim().CreateFromAdaptiveMediaSource(*reinterpret_cast<const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *>(&mediaSource)));
             return S_OK;
         }
         catch (...)
@@ -1059,7 +1059,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromMediaStreamSource(*reinterpret_cast<const Windows::Media::Core::MediaStreamSource *>(&mediaSource)));
+            *result = detach(this->shim().CreateFromMediaStreamSource(*reinterpret_cast<const Windows::Media::Core::MediaStreamSource *>(&mediaSource)));
             return S_OK;
         }
         catch (...)
@@ -1073,7 +1073,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromMseStreamSource(*reinterpret_cast<const Windows::Media::Core::MseStreamSource *>(&mediaSource)));
+            *result = detach(this->shim().CreateFromMseStreamSource(*reinterpret_cast<const Windows::Media::Core::MseStreamSource *>(&mediaSource)));
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromIMediaSource(*reinterpret_cast<const Windows::Media::Core::IMediaSource *>(&mediaSource)));
+            *result = detach(this->shim().CreateFromIMediaSource(*reinterpret_cast<const Windows::Media::Core::IMediaSource *>(&mediaSource)));
             return S_OK;
         }
         catch (...)
@@ -1101,7 +1101,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromStorageFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *result = detach(this->shim().CreateFromStorageFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -1115,7 +1115,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&contentType)));
+            *result = detach(this->shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&contentType)));
             return S_OK;
         }
         catch (...)
@@ -1129,7 +1129,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream), *reinterpret_cast<const hstring *>(&contentType)));
+            *result = detach(this->shim().CreateFromStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream), *reinterpret_cast<const hstring *>(&contentType)));
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *result = detach(this->shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::Media::Core::IMediaSourceStatics2> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().CreateFromMediaBinder(*reinterpret_cast<const Windows::Media::Core::MediaBinder *>(&binder)));
+            *result = detach(this->shim().CreateFromMediaBinder(*reinterpret_cast<const Windows::Media::Core::MediaBinder *>(&binder)));
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
     {
         try
         {
-            *selected = detach(shim().IsSelected());
+            *selected = detach(this->shim().IsSelected());
             return S_OK;
         }
         catch (...)
@@ -1192,7 +1192,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1205,7 +1205,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1219,7 +1219,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
     {
         try
         {
-            shim().Language(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1232,7 +1232,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -1250,7 +1250,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().Processed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Processed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1263,7 +1263,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            shim().Processed(token);
+            this->shim().Processed(token);
             return S_OK;
         }
         catch (...)
@@ -1276,7 +1276,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Buffer());
+            *value = detach(this->shim().Buffer());
             return S_OK;
         }
         catch (...)
@@ -1290,7 +1290,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1303,7 +1303,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ExtendedProperties());
+            *value = detach(this->shim().ExtendedProperties());
             return S_OK;
         }
         catch (...)
@@ -1317,7 +1317,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Protection());
+            *value = detach(this->shim().Protection());
             return S_OK;
         }
         catch (...)
@@ -1331,7 +1331,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            shim().DecodeTimestamp(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DecodeTimestamp(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1344,7 +1344,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DecodeTimestamp());
+            *value = detach(this->shim().DecodeTimestamp());
             return S_OK;
         }
         catch (...)
@@ -1357,7 +1357,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1370,7 +1370,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -1383,7 +1383,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            shim().KeyFrame(value);
+            this->shim().KeyFrame(value);
             return S_OK;
         }
         catch (...)
@@ -1396,7 +1396,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().KeyFrame());
+            *value = detach(this->shim().KeyFrame());
             return S_OK;
         }
         catch (...)
@@ -1409,7 +1409,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            shim().Discontinuous(value);
+            this->shim().Discontinuous(value);
             return S_OK;
         }
         catch (...)
@@ -1422,7 +1422,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Discontinuous());
+            *value = detach(this->shim().Discontinuous());
             return S_OK;
         }
         catch (...)
@@ -1439,7 +1439,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().SetKeyIdentifier(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetKeyIdentifier(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1452,7 +1452,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().GetKeyIdentifier(detach<uint8_t>(__valueSize, value));
+            this->shim().GetKeyIdentifier(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -1467,7 +1467,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().SetInitializationVector(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetInitializationVector(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1480,7 +1480,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().GetInitializationVector(detach<uint8_t>(__valueSize, value));
+            this->shim().GetInitializationVector(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -1495,7 +1495,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().SetSubSampleMapping(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetSubSampleMapping(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1508,7 +1508,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
     {
         try
         {
-            shim().GetSubSampleMapping(detach<uint8_t>(__valueSize, value));
+            this->shim().GetSubSampleMapping(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -1527,7 +1527,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timestamp)));
+            *value = detach(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timestamp)));
             return S_OK;
         }
         catch (...)
@@ -1541,7 +1541,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), count, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timestamp)));
+            *value = detach(this->shim().CreateFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), count, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timestamp)));
             return S_OK;
         }
         catch (...)
@@ -1559,7 +1559,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceClosedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceClosedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1572,7 +1572,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().Closed(token);
+            this->shim().Closed(token);
             return S_OK;
         }
         catch (...)
@@ -1585,7 +1585,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().Starting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceStartingEventArgs> *>(&handler)));
+            *token = detach(this->shim().Starting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceStartingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1598,7 +1598,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().Starting(token);
+            this->shim().Starting(token);
             return S_OK;
         }
         catch (...)
@@ -1611,7 +1611,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().Paused(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Paused(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1624,7 +1624,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().Paused(token);
+            this->shim().Paused(token);
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().SampleRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().SampleRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1650,7 +1650,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().SampleRequested(token);
+            this->shim().SampleRequested(token);
             return S_OK;
         }
         catch (...)
@@ -1663,7 +1663,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().SwitchStreamsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().SwitchStreamsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1676,7 +1676,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().SwitchStreamsRequested(token);
+            this->shim().SwitchStreamsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -1689,7 +1689,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().NotifyError(errorStatus);
+            this->shim().NotifyError(errorStatus);
             return S_OK;
         }
         catch (...)
@@ -1702,7 +1702,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().AddStreamDescriptor(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor));
+            this->shim().AddStreamDescriptor(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor));
             return S_OK;
         }
         catch (...)
@@ -1715,7 +1715,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().MediaProtectionManager(*reinterpret_cast<const Windows::Media::Protection::MediaProtectionManager *>(&value));
+            this->shim().MediaProtectionManager(*reinterpret_cast<const Windows::Media::Protection::MediaProtectionManager *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1728,7 +1728,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MediaProtectionManager());
+            *value = detach(this->shim().MediaProtectionManager());
             return S_OK;
         }
         catch (...)
@@ -1742,7 +1742,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1755,7 +1755,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -1768,7 +1768,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().CanSeek(value);
+            this->shim().CanSeek(value);
             return S_OK;
         }
         catch (...)
@@ -1781,7 +1781,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CanSeek());
+            *value = detach(this->shim().CanSeek());
             return S_OK;
         }
         catch (...)
@@ -1794,7 +1794,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().BufferTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().BufferTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1807,7 +1807,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().BufferTime());
+            *value = detach(this->shim().BufferTime());
             return S_OK;
         }
         catch (...)
@@ -1820,7 +1820,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().SetBufferedRange(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startOffset), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&endOffset));
+            this->shim().SetBufferedRange(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startOffset), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&endOffset));
             return S_OK;
         }
         catch (...)
@@ -1833,7 +1833,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MusicProperties());
+            *value = detach(this->shim().MusicProperties());
             return S_OK;
         }
         catch (...)
@@ -1847,7 +1847,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().VideoProperties());
+            *value = detach(this->shim().VideoProperties());
             return S_OK;
         }
         catch (...)
@@ -1861,7 +1861,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1874,7 +1874,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -1888,7 +1888,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
     {
         try
         {
-            shim().AddProtectionKey(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&streamDescriptor), array_ref<const uint8_t>(keyIdentifier, keyIdentifier + __keyIdentifierSize), array_ref<const uint8_t>(licenseData, licenseData + __licenseDataSize));
+            this->shim().AddProtectionKey(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&streamDescriptor), array_ref<const uint8_t>(keyIdentifier, keyIdentifier + __keyIdentifierSize), array_ref<const uint8_t>(licenseData, licenseData + __licenseDataSize));
             return S_OK;
         }
         catch (...)
@@ -1905,7 +1905,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource2> : produce_base<D, W
     {
         try
         {
-            *token = detach(shim().SampleRendered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> *>(&handler)));
+            *token = detach(this->shim().SampleRendered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1918,7 +1918,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource2> : produce_base<D, W
     {
         try
         {
-            shim().SampleRendered(token);
+            this->shim().SampleRendered(token);
             return S_OK;
         }
         catch (...)
@@ -1935,7 +1935,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceClosedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1953,7 +1953,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceClosedRequest> : produ
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -1970,7 +1970,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceFactory> : produce_bas
     {
         try
         {
-            *result = detach(shim().CreateFromDescriptor(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor)));
+            *result = detach(this->shim().CreateFromDescriptor(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -1984,7 +1984,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceFactory> : produce_bas
     {
         try
         {
-            *result = detach(shim().CreateFromDescriptors(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor), *reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor2)));
+            *result = detach(this->shim().CreateFromDescriptors(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor), *reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor2)));
             return S_OK;
         }
         catch (...)
@@ -2002,7 +2002,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRenderedEventArg
     {
         try
         {
-            *value = detach(shim().SampleLag());
+            *value = detach(this->shim().SampleLag());
             return S_OK;
         }
         catch (...)
@@ -2019,7 +2019,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequest> : produ
     {
         try
         {
-            *value = detach(shim().StreamDescriptor());
+            *value = detach(this->shim().StreamDescriptor());
             return S_OK;
         }
         catch (...)
@@ -2033,7 +2033,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequest> : produ
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -2047,7 +2047,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequest> : produ
     {
         try
         {
-            shim().Sample(*reinterpret_cast<const Windows::Media::Core::MediaStreamSample *>(&value));
+            this->shim().Sample(*reinterpret_cast<const Windows::Media::Core::MediaStreamSample *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2060,7 +2060,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequest> : produ
     {
         try
         {
-            *value = detach(shim().Sample());
+            *value = detach(this->shim().Sample());
             return S_OK;
         }
         catch (...)
@@ -2074,7 +2074,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequest> : produ
     {
         try
         {
-            shim().ReportSampleProgress(progress);
+            this->shim().ReportSampleProgress(progress);
             return S_OK;
         }
         catch (...)
@@ -2091,7 +2091,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequestDeferral>
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -2108,7 +2108,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSampleRequestedEventAr
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -2126,7 +2126,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -2144,7 +2144,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceStartingRequest> : pro
     {
         try
         {
-            *value = detach(shim().StartPosition());
+            *value = detach(this->shim().StartPosition());
             return S_OK;
         }
         catch (...)
@@ -2158,7 +2158,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceStartingRequest> : pro
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -2172,7 +2172,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceStartingRequest> : pro
     {
         try
         {
-            shim().SetActualStartPosition(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&position));
+            this->shim().SetActualStartPosition(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&position));
             return S_OK;
         }
         catch (...)
@@ -2189,7 +2189,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceStartingRequestDeferra
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -2206,7 +2206,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequest> 
     {
         try
         {
-            *value = detach(shim().OldStreamDescriptor());
+            *value = detach(this->shim().OldStreamDescriptor());
             return S_OK;
         }
         catch (...)
@@ -2220,7 +2220,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequest> 
     {
         try
         {
-            *value = detach(shim().NewStreamDescriptor());
+            *value = detach(this->shim().NewStreamDescriptor());
             return S_OK;
         }
         catch (...)
@@ -2234,7 +2234,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequest> 
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -2252,7 +2252,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequestDe
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -2269,7 +2269,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequested
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -2287,7 +2287,7 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -2301,7 +2301,7 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -2315,7 +2315,7 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().TrackKind());
+            *value = detach(this->shim().TrackKind());
             return S_OK;
         }
         catch (...)
@@ -2328,7 +2328,7 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
     {
         try
         {
-            shim().Label(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2341,7 +2341,7 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Label());
+            *value = detach(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -2359,7 +2359,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().UpdateStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().UpdateStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2372,7 +2372,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().UpdateStarting(token);
+            this->shim().UpdateStarting(token);
             return S_OK;
         }
         catch (...)
@@ -2385,7 +2385,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2398,7 +2398,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -2411,7 +2411,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().UpdateEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().UpdateEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2424,7 +2424,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().UpdateEnded(token);
+            this->shim().UpdateEnded(token);
             return S_OK;
         }
         catch (...)
@@ -2437,7 +2437,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2450,7 +2450,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().ErrorOccurred(token);
+            this->shim().ErrorOccurred(token);
             return S_OK;
         }
         catch (...)
@@ -2463,7 +2463,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Aborted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Aborted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2476,7 +2476,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().Aborted(token);
+            this->shim().Aborted(token);
             return S_OK;
         }
         catch (...)
@@ -2489,7 +2489,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -2502,7 +2502,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -2515,7 +2515,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsUpdating());
+            *value = detach(this->shim().IsUpdating());
             return S_OK;
         }
         catch (...)
@@ -2528,7 +2528,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Buffered());
+            *value = detach(this->shim().Buffered());
             return S_OK;
         }
         catch (...)
@@ -2542,7 +2542,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().TimestampOffset());
+            *value = detach(this->shim().TimestampOffset());
             return S_OK;
         }
         catch (...)
@@ -2555,7 +2555,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().TimestampOffset(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().TimestampOffset(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2568,7 +2568,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppendWindowStart());
+            *value = detach(this->shim().AppendWindowStart());
             return S_OK;
         }
         catch (...)
@@ -2581,7 +2581,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().AppendWindowStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().AppendWindowStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2594,7 +2594,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppendWindowEnd());
+            *value = detach(this->shim().AppendWindowEnd());
             return S_OK;
         }
         catch (...)
@@ -2608,7 +2608,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().AppendWindowEnd(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().AppendWindowEnd(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2621,7 +2621,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().AppendBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().AppendBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -2634,7 +2634,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().AppendStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream));
+            this->shim().AppendStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream));
             return S_OK;
         }
         catch (...)
@@ -2647,7 +2647,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().AppendStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), maxSize);
+            this->shim().AppendStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), maxSize);
             return S_OK;
         }
         catch (...)
@@ -2660,7 +2660,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().Abort();
+            this->shim().Abort();
             return S_OK;
         }
         catch (...)
@@ -2673,7 +2673,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&start), *reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&end));
+            this->shim().Remove(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&start), *reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&end));
             return S_OK;
         }
         catch (...)
@@ -2690,7 +2690,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().SourceBufferAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().SourceBufferAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2703,7 +2703,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
     {
         try
         {
-            shim().SourceBufferAdded(token);
+            this->shim().SourceBufferAdded(token);
             return S_OK;
         }
         catch (...)
@@ -2716,7 +2716,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().SourceBufferRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().SourceBufferRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2729,7 +2729,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
     {
         try
         {
-            shim().SourceBufferRemoved(token);
+            this->shim().SourceBufferRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -2742,7 +2742,7 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Buffers());
+            *value = detach(this->shim().Buffers());
             return S_OK;
         }
         catch (...)
@@ -2760,7 +2760,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Opened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2773,7 +2773,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().Opened(token);
+            this->shim().Opened(token);
             return S_OK;
         }
         catch (...)
@@ -2786,7 +2786,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Ended(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Ended(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2799,7 +2799,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().Ended(token);
+            this->shim().Ended(token);
             return S_OK;
         }
         catch (...)
@@ -2812,7 +2812,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2825,7 +2825,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().Closed(token);
+            this->shim().Closed(token);
             return S_OK;
         }
         catch (...)
@@ -2838,7 +2838,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().SourceBuffers());
+            *value = detach(this->shim().SourceBuffers());
             return S_OK;
         }
         catch (...)
@@ -2852,7 +2852,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ActiveSourceBuffers());
+            *value = detach(this->shim().ActiveSourceBuffers());
             return S_OK;
         }
         catch (...)
@@ -2866,7 +2866,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadyState());
+            *value = detach(this->shim().ReadyState());
             return S_OK;
         }
         catch (...)
@@ -2879,7 +2879,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -2893,7 +2893,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2906,7 +2906,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            *buffer = detach(shim().AddSourceBuffer(*reinterpret_cast<const hstring *>(&mimeType)));
+            *buffer = detach(this->shim().AddSourceBuffer(*reinterpret_cast<const hstring *>(&mimeType)));
             return S_OK;
         }
         catch (...)
@@ -2920,7 +2920,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().RemoveSourceBuffer(*reinterpret_cast<const Windows::Media::Core::MseSourceBuffer *>(&buffer));
+            this->shim().RemoveSourceBuffer(*reinterpret_cast<const Windows::Media::Core::MseSourceBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -2933,7 +2933,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
     {
         try
         {
-            shim().EndOfStream(status);
+            this->shim().EndOfStream(status);
             return S_OK;
         }
         catch (...)
@@ -2950,7 +2950,7 @@ struct produce<D, Windows::Media::Core::IMseStreamSourceStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsContentTypeSupported(*reinterpret_cast<const hstring *>(&contentType)));
+            *value = detach(this->shim().IsContentTypeSupported(*reinterpret_cast<const hstring *>(&contentType)));
             return S_OK;
         }
         catch (...)
@@ -2967,7 +2967,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().HighDynamicRangeAnalyzer());
+            *value = detach(this->shim().HighDynamicRangeAnalyzer());
             return S_OK;
         }
         catch (...)
@@ -2981,7 +2981,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffect> : produce_base<D, 
     {
         try
         {
-            shim().DesiredAnalysisInterval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DesiredAnalysisInterval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2994,7 +2994,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DesiredAnalysisInterval());
+            *value = detach(this->shim().DesiredAnalysisInterval());
             return S_OK;
         }
         catch (...)
@@ -3007,7 +3007,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffect> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().SceneAnalyzed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::SceneAnalysisEffect, Windows::Media::Core::SceneAnalyzedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().SceneAnalyzed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::SceneAnalysisEffect, Windows::Media::Core::SceneAnalyzedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3020,7 +3020,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffect> : produce_base<D, 
     {
         try
         {
-            shim().SceneAnalyzed(cookie);
+            this->shim().SceneAnalyzed(cookie);
             return S_OK;
         }
         catch (...)
@@ -3037,7 +3037,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffectFrame> : produce_bas
     {
         try
         {
-            *value = detach(shim().FrameControlValues());
+            *value = detach(this->shim().FrameControlValues());
             return S_OK;
         }
         catch (...)
@@ -3051,7 +3051,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalysisEffectFrame> : produce_bas
     {
         try
         {
-            *value = detach(shim().HighDynamicRange());
+            *value = detach(this->shim().HighDynamicRange());
             return S_OK;
         }
         catch (...)
@@ -3069,7 +3069,7 @@ struct produce<D, Windows::Media::Core::ISceneAnalyzedEventArgs> : produce_base<
     {
         try
         {
-            *value = detach(shim().ResultFrame());
+            *value = detach(this->shim().ResultFrame());
             return S_OK;
         }
         catch (...)
@@ -3087,7 +3087,7 @@ struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_b
     {
         try
         {
-            *token = detach(shim().SelectedIndexChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().SelectedIndexChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3100,7 +3100,7 @@ struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_b
     {
         try
         {
-            shim().SelectedIndexChanged(token);
+            this->shim().SelectedIndexChanged(token);
             return S_OK;
         }
         catch (...)
@@ -3113,7 +3113,7 @@ struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_b
     {
         try
         {
-            shim().SelectedIndex(value);
+            this->shim().SelectedIndex(value);
             return S_OK;
         }
         catch (...)
@@ -3126,7 +3126,7 @@ struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_b
     {
         try
         {
-            *value = detach(shim().SelectedIndex());
+            *value = detach(this->shim().SelectedIndex());
             return S_OK;
         }
         catch (...)
@@ -3143,7 +3143,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *token = detach(shim().CueEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> *>(&handler)));
+            *token = detach(this->shim().CueEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3156,7 +3156,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            shim().CueEntered(token);
+            this->shim().CueEntered(token);
             return S_OK;
         }
         catch (...)
@@ -3169,7 +3169,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *token = detach(shim().CueExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> *>(&handler)));
+            *token = detach(this->shim().CueExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3182,7 +3182,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            shim().CueExited(token);
+            this->shim().CueExited(token);
             return S_OK;
         }
         catch (...)
@@ -3195,7 +3195,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *token = detach(shim().TrackFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::TimedMetadataTrackFailedEventArgs> *>(&handler)));
+            *token = detach(this->shim().TrackFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::TimedMetadataTrackFailedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3208,7 +3208,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            shim().TrackFailed(token);
+            this->shim().TrackFailed(token);
             return S_OK;
         }
         catch (...)
@@ -3221,7 +3221,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Cues());
+            *value = detach(this->shim().Cues());
             return S_OK;
         }
         catch (...)
@@ -3235,7 +3235,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ActiveCues());
+            *value = detach(this->shim().ActiveCues());
             return S_OK;
         }
         catch (...)
@@ -3249,7 +3249,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().TimedMetadataKind());
+            *value = detach(this->shim().TimedMetadataKind());
             return S_OK;
         }
         catch (...)
@@ -3262,7 +3262,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DispatchType());
+            *value = detach(this->shim().DispatchType());
             return S_OK;
         }
         catch (...)
@@ -3276,7 +3276,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            shim().AddCue(*reinterpret_cast<const Windows::Media::Core::IMediaCue *>(&cue));
+            this->shim().AddCue(*reinterpret_cast<const Windows::Media::Core::IMediaCue *>(&cue));
             return S_OK;
         }
         catch (...)
@@ -3289,7 +3289,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, W
     {
         try
         {
-            shim().RemoveCue(*reinterpret_cast<const Windows::Media::Core::IMediaCue *>(&cue));
+            this->shim().RemoveCue(*reinterpret_cast<const Windows::Media::Core::IMediaCue *>(&cue));
             return S_OK;
         }
         catch (...)
@@ -3306,7 +3306,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PlaybackItem());
+            *value = detach(this->shim().PlaybackItem());
             return S_OK;
         }
         catch (...)
@@ -3320,7 +3320,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrack2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -3338,7 +3338,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrackError> : produce_base
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -3351,7 +3351,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrackError> : produce_base
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -3368,7 +3368,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrackFactory> : produce_ba
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&language), kind));
+            *value = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&language), kind));
             return S_OK;
         }
         catch (...)
@@ -3386,7 +3386,7 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrackFailedEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -3404,7 +3404,7 @@ struct produce<D, Windows::Media::Core::ITimedTextCue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CueRegion());
+            *value = detach(this->shim().CueRegion());
             return S_OK;
         }
         catch (...)
@@ -3418,7 +3418,7 @@ struct produce<D, Windows::Media::Core::ITimedTextCue> : produce_base<D, Windows
     {
         try
         {
-            shim().CueRegion(*reinterpret_cast<const Windows::Media::Core::TimedTextRegion *>(&value));
+            this->shim().CueRegion(*reinterpret_cast<const Windows::Media::Core::TimedTextRegion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3431,7 +3431,7 @@ struct produce<D, Windows::Media::Core::ITimedTextCue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CueStyle());
+            *value = detach(this->shim().CueStyle());
             return S_OK;
         }
         catch (...)
@@ -3445,7 +3445,7 @@ struct produce<D, Windows::Media::Core::ITimedTextCue> : produce_base<D, Windows
     {
         try
         {
-            shim().CueStyle(*reinterpret_cast<const Windows::Media::Core::TimedTextStyle *>(&value));
+            this->shim().CueStyle(*reinterpret_cast<const Windows::Media::Core::TimedTextStyle *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3458,7 +3458,7 @@ struct produce<D, Windows::Media::Core::ITimedTextCue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Lines());
+            *value = detach(this->shim().Lines());
             return S_OK;
         }
         catch (...)
@@ -3476,7 +3476,7 @@ struct produce<D, Windows::Media::Core::ITimedTextLine> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -3490,7 +3490,7 @@ struct produce<D, Windows::Media::Core::ITimedTextLine> : produce_base<D, Window
     {
         try
         {
-            shim().Text(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3503,7 +3503,7 @@ struct produce<D, Windows::Media::Core::ITimedTextLine> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Subformats());
+            *value = detach(this->shim().Subformats());
             return S_OK;
         }
         catch (...)
@@ -3521,7 +3521,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -3535,7 +3535,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3548,7 +3548,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -3561,7 +3561,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().Position(*reinterpret_cast<const Windows::Media::Core::TimedTextPoint *>(&value));
+            this->shim().Position(*reinterpret_cast<const Windows::Media::Core::TimedTextPoint *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3574,7 +3574,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Extent());
+            *value = detach(this->shim().Extent());
             return S_OK;
         }
         catch (...)
@@ -3587,7 +3587,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().Extent(*reinterpret_cast<const Windows::Media::Core::TimedTextSize *>(&value));
+            this->shim().Extent(*reinterpret_cast<const Windows::Media::Core::TimedTextSize *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3600,7 +3600,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Background());
+            *value = detach(this->shim().Background());
             return S_OK;
         }
         catch (...)
@@ -3613,7 +3613,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().Background(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Background(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3626,7 +3626,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().WritingMode());
+            *value = detach(this->shim().WritingMode());
             return S_OK;
         }
         catch (...)
@@ -3639,7 +3639,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().WritingMode(value);
+            this->shim().WritingMode(value);
             return S_OK;
         }
         catch (...)
@@ -3652,7 +3652,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().DisplayAlignment());
+            *value = detach(this->shim().DisplayAlignment());
             return S_OK;
         }
         catch (...)
@@ -3665,7 +3665,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().DisplayAlignment(value);
+            this->shim().DisplayAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -3678,7 +3678,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().LineHeight());
+            *value = detach(this->shim().LineHeight());
             return S_OK;
         }
         catch (...)
@@ -3691,7 +3691,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().LineHeight(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
+            this->shim().LineHeight(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3704,7 +3704,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsOverflowClipped());
+            *value = detach(this->shim().IsOverflowClipped());
             return S_OK;
         }
         catch (...)
@@ -3717,7 +3717,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().IsOverflowClipped(value);
+            this->shim().IsOverflowClipped(value);
             return S_OK;
         }
         catch (...)
@@ -3730,7 +3730,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Padding());
+            *value = detach(this->shim().Padding());
             return S_OK;
         }
         catch (...)
@@ -3743,7 +3743,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().Padding(*reinterpret_cast<const Windows::Media::Core::TimedTextPadding *>(&value));
+            this->shim().Padding(*reinterpret_cast<const Windows::Media::Core::TimedTextPadding *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3756,7 +3756,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().TextWrapping());
+            *value = detach(this->shim().TextWrapping());
             return S_OK;
         }
         catch (...)
@@ -3769,7 +3769,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().TextWrapping(value);
+            this->shim().TextWrapping(value);
             return S_OK;
         }
         catch (...)
@@ -3782,7 +3782,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ZIndex());
+            *value = detach(this->shim().ZIndex());
             return S_OK;
         }
         catch (...)
@@ -3795,7 +3795,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().ZIndex(value);
+            this->shim().ZIndex(value);
             return S_OK;
         }
         catch (...)
@@ -3808,7 +3808,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ScrollMode());
+            *value = detach(this->shim().ScrollMode());
             return S_OK;
         }
         catch (...)
@@ -3821,7 +3821,7 @@ struct produce<D, Windows::Media::Core::ITimedTextRegion> : produce_base<D, Wind
     {
         try
         {
-            shim().ScrollMode(value);
+            this->shim().ScrollMode(value);
             return S_OK;
         }
         catch (...)
@@ -3838,7 +3838,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSource> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().Resolved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedTextSource, Windows::Media::Core::TimedTextSourceResolveResultEventArgs> *>(&handler)));
+            *token = detach(this->shim().Resolved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedTextSource, Windows::Media::Core::TimedTextSourceResolveResultEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3851,7 +3851,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSource> : produce_base<D, Wind
     {
         try
         {
-            shim().Resolved(token);
+            this->shim().Resolved(token);
             return S_OK;
         }
         catch (...)
@@ -3868,7 +3868,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceResolveResultEventArgs> 
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -3882,7 +3882,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceResolveResultEventArgs> 
     {
         try
         {
-            *value = detach(shim().Tracks());
+            *value = detach(this->shim().Tracks());
             return S_OK;
         }
         catch (...)
@@ -3900,7 +3900,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            *value = detach(this->shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -3914,7 +3914,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach(this->shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -3928,7 +3928,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&defaultLanguage)));
+            *value = detach(this->shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const hstring *>(&defaultLanguage)));
             return S_OK;
         }
         catch (...)
@@ -3942,7 +3942,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&defaultLanguage)));
+            *value = detach(this->shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&defaultLanguage)));
             return S_OK;
         }
         catch (...)
@@ -3960,7 +3960,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -3974,7 +3974,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3987,7 +3987,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FontFamily());
+            *value = detach(this->shim().FontFamily());
             return S_OK;
         }
         catch (...)
@@ -4001,7 +4001,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().FontFamily(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FontFamily(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4014,7 +4014,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FontSize());
+            *value = detach(this->shim().FontSize());
             return S_OK;
         }
         catch (...)
@@ -4027,7 +4027,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().FontSize(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
+            this->shim().FontSize(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4040,7 +4040,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FontWeight());
+            *value = detach(this->shim().FontWeight());
             return S_OK;
         }
         catch (...)
@@ -4053,7 +4053,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().FontWeight(value);
+            this->shim().FontWeight(value);
             return S_OK;
         }
         catch (...)
@@ -4066,7 +4066,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Foreground());
+            *value = detach(this->shim().Foreground());
             return S_OK;
         }
         catch (...)
@@ -4079,7 +4079,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().Foreground(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Foreground(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4092,7 +4092,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Background());
+            *value = detach(this->shim().Background());
             return S_OK;
         }
         catch (...)
@@ -4105,7 +4105,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().Background(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Background(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4118,7 +4118,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().IsBackgroundAlwaysShown());
+            *value = detach(this->shim().IsBackgroundAlwaysShown());
             return S_OK;
         }
         catch (...)
@@ -4131,7 +4131,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().IsBackgroundAlwaysShown(value);
+            this->shim().IsBackgroundAlwaysShown(value);
             return S_OK;
         }
         catch (...)
@@ -4144,7 +4144,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FlowDirection());
+            *value = detach(this->shim().FlowDirection());
             return S_OK;
         }
         catch (...)
@@ -4157,7 +4157,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().FlowDirection(value);
+            this->shim().FlowDirection(value);
             return S_OK;
         }
         catch (...)
@@ -4170,7 +4170,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().LineAlignment());
+            *value = detach(this->shim().LineAlignment());
             return S_OK;
         }
         catch (...)
@@ -4183,7 +4183,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().LineAlignment(value);
+            this->shim().LineAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -4196,7 +4196,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().OutlineColor());
+            *value = detach(this->shim().OutlineColor());
             return S_OK;
         }
         catch (...)
@@ -4209,7 +4209,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().OutlineColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().OutlineColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4222,7 +4222,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().OutlineThickness());
+            *value = detach(this->shim().OutlineThickness());
             return S_OK;
         }
         catch (...)
@@ -4235,7 +4235,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().OutlineThickness(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
+            this->shim().OutlineThickness(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4248,7 +4248,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().OutlineRadius());
+            *value = detach(this->shim().OutlineRadius());
             return S_OK;
         }
         catch (...)
@@ -4261,7 +4261,7 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
     {
         try
         {
-            shim().OutlineRadius(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
+            this->shim().OutlineRadius(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4278,7 +4278,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().StartIndex());
+            *value = detach(this->shim().StartIndex());
             return S_OK;
         }
         catch (...)
@@ -4291,7 +4291,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            shim().StartIndex(value);
+            this->shim().StartIndex(value);
             return S_OK;
         }
         catch (...)
@@ -4304,7 +4304,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -4317,7 +4317,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            shim().Length(value);
+            this->shim().Length(value);
             return S_OK;
         }
         catch (...)
@@ -4330,7 +4330,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SubformatStyle());
+            *value = detach(this->shim().SubformatStyle());
             return S_OK;
         }
         catch (...)
@@ -4344,7 +4344,7 @@ struct produce<D, Windows::Media::Core::ITimedTextSubformat> : produce_base<D, W
     {
         try
         {
-            shim().SubformatStyle(*reinterpret_cast<const Windows::Media::Core::TimedTextStyle *>(&value));
+            this->shim().SubformatStyle(*reinterpret_cast<const Windows::Media::Core::TimedTextStyle *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4361,7 +4361,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffect> : produce_bas
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -4374,7 +4374,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffect> : produce_bas
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -4387,7 +4387,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffect> : produce_bas
     {
         try
         {
-            *cookie = detach(shim().EnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoStabilizationEffect, Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().EnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoStabilizationEffect, Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -4400,7 +4400,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffect> : produce_bas
     {
         try
         {
-            shim().EnabledChanged(cookie);
+            this->shim().EnabledChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -4413,7 +4413,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffect> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetRecommendedStreamConfiguration(*reinterpret_cast<const Windows::Media::Devices::VideoDeviceController *>(&controller), *reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&desiredProperties)));
+            *value = detach(this->shim().GetRecommendedStreamConfiguration(*reinterpret_cast<const Windows::Media::Devices::VideoDeviceController *>(&controller), *reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&desiredProperties)));
             return S_OK;
         }
         catch (...)
@@ -4431,7 +4431,7 @@ struct produce<D, Windows::Media::Core::IVideoStabilizationEffectEnabledChangedE
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -4448,7 +4448,7 @@ struct produce<D, Windows::Media::Core::IVideoStreamDescriptor> : produce_base<D
     {
         try
         {
-            *encodingProperties = detach(shim().EncodingProperties());
+            *encodingProperties = detach(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -4466,7 +4466,7 @@ struct produce<D, Windows::Media::Core::IVideoStreamDescriptorFactory> : produce
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&encodingProperties)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -4484,7 +4484,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            *token = detach(shim().OpenFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoTrack, Windows::Media::Core::VideoTrackOpenFailedEventArgs> *>(&handler)));
+            *token = detach(this->shim().OpenFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoTrack, Windows::Media::Core::VideoTrackOpenFailedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -4497,7 +4497,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            shim().OpenFailed(token);
+            this->shim().OpenFailed(token);
             return S_OK;
         }
         catch (...)
@@ -4510,7 +4510,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GetEncodingProperties());
+            *value = detach(this->shim().GetEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -4524,7 +4524,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PlaybackItem());
+            *value = detach(this->shim().PlaybackItem());
             return S_OK;
         }
         catch (...)
@@ -4538,7 +4538,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -4552,7 +4552,7 @@ struct produce<D, Windows::Media::Core::IVideoTrack> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().SupportInfo());
+            *value = detach(this->shim().SupportInfo());
             return S_OK;
         }
         catch (...)
@@ -4570,7 +4570,7 @@ struct produce<D, Windows::Media::Core::IVideoTrackOpenFailedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -4587,7 +4587,7 @@ struct produce<D, Windows::Media::Core::IVideoTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DecoderStatus());
+            *value = detach(this->shim().DecoderStatus());
             return S_OK;
         }
         catch (...)
@@ -4600,7 +4600,7 @@ struct produce<D, Windows::Media::Core::IVideoTrackSupportInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().MediaSourceStatus());
+            *value = detach(this->shim().MediaSourceStatus());
             return S_OK;
         }
         catch (...)

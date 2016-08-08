@@ -23,7 +23,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -42,7 +42,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrid
     {
         try
         {
-            *returnValue = detach(shim().GetResource(*reinterpret_cast<const hstring *>(&resourceId), *reinterpret_cast<const hstring *>(&objectType), *reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const hstring *>(&propertyType)));
+            *returnValue = detach(this->shim().GetResource(*reinterpret_cast<const hstring *>(&resourceId), *reinterpret_cast<const hstring *>(&objectType), *reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const hstring *>(&propertyType)));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics
     {
         try
         {
-            shim().Current(*reinterpret_cast<const Windows::UI::Xaml::Resources::CustomXamlResourceLoader *>(&value));
+            this->shim().Current(*reinterpret_cast<const Windows::UI::Xaml::Resources::CustomXamlResourceLoader *>(&value));
             return S_OK;
         }
         catch (...)

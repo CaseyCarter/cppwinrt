@@ -73,7 +73,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
-            *operation = detach(shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler)));
+            *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
-            *operation = detach(shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority));
+            *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority));
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
-            *operation = detach(shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority, options));
+            *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority, options));
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Period());
+            *value = detach(this->shim().Period());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Delay());
+            *value = detach(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
-            shim().Cancel();
+            this->shim().Cancel();
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
-            *timer = detach(shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period)));
+            *timer = detach(this->shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period)));
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
-            *timer = detach(shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay)));
+            *timer = detach(this->shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay)));
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
-            *timer = detach(shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
+            *timer = detach(this->shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
-            *timer = detach(shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
+            *timer = detach(this->shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
             return S_OK;
         }
         catch (...)

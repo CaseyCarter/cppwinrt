@@ -18,7 +18,7 @@ protected:
 
     PrintDocumentT()
     {
-        get_activation_factory<PrintDocument, IPrintDocumentFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PrintDocument, IPrintDocumentFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 

@@ -25,7 +25,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().CreateDownload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile)));
+            *operation = detach(this->shim().CreateDownload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile)));
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().CreateDownload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&requestBodyFile)));
+            *operation = detach(this->shim().CreateDownload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&requestBodyFile)));
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().CreateDownloadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&requestBodyStream)));
+            *operation = detach(this->shim().CreateDownloadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&resultFile), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&requestBodyStream)));
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().TransferGroup());
+            *value = detach(this->shim().TransferGroup());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            shim().TransferGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&value));
+            this->shim().TransferGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&value));
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().SuccessToastNotification());
+            *value = detach(this->shim().SuccessToastNotification());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            shim().SuccessToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
+            this->shim().SuccessToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().FailureToastNotification());
+            *value = detach(this->shim().FailureToastNotification());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            shim().FailureToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
+            this->shim().FailureToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().SuccessTileNotification());
+            *value = detach(this->shim().SuccessTileNotification());
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            shim().SuccessTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
+            this->shim().SuccessTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -179,7 +179,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().FailureTileNotification());
+            *value = detach(this->shim().FailureTileNotification());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            shim().FailureTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
+            this->shim().FailureTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *value = detach(shim().CompletionGroup());
+            *value = detach(this->shim().CompletionGroup());
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *backgroundDownloader = detach(shim().CreateWithCompletionGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup *>(&completionGroup)));
+            *backgroundDownloader = detach(this->shim().CreateWithCompletionGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup *>(&completionGroup)));
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().GetCurrentDownloadsAsync());
+            *operation = detach(this->shim().GetCurrentDownloadsAsync());
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().GetCurrentDownloadsAsync(*reinterpret_cast<const hstring *>(&group)));
+            *operation = detach(this->shim().GetCurrentDownloadsAsync(*reinterpret_cast<const hstring *>(&group)));
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().GetCurrentDownloadsForTransferGroupAsync(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&group)));
+            *operation = detach(this->shim().GetCurrentDownloadsForTransferGroupAsync(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&group)));
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader
     {
         try
         {
-            *operation = detach(shim().RequestUnconstrainedDownloadsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> *>(&operations)));
+            *operation = detach(this->shim().RequestUnconstrainedDownloadsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> *>(&operations)));
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().SetRequestHeader(*reinterpret_cast<const hstring *>(&headerName), *reinterpret_cast<const hstring *>(&headerValue));
+            this->shim().SetRequestHeader(*reinterpret_cast<const hstring *>(&headerName), *reinterpret_cast<const hstring *>(&headerValue));
             return S_OK;
         }
         catch (...)
@@ -327,7 +327,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            *credential = detach(shim().ServerCredential());
+            *credential = detach(this->shim().ServerCredential());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
+            this->shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            *credential = detach(shim().ProxyCredential());
+            *credential = detach(this->shim().ProxyCredential());
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
+            this->shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            *value = detach(shim().Method());
+            *value = detach(this->shim().Method());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().Method(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Method(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            *value = detach(shim().Group());
+            *value = detach(this->shim().Group());
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().Group(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Group(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            *value = detach(shim().CostPolicy());
+            *value = detach(this->shim().CostPolicy());
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBa
     {
         try
         {
-            shim().CostPolicy(value);
+            this->shim().CostPolicy(value);
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().Trigger());
+            *value = detach(this->shim().Trigger());
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -492,7 +492,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            shim().Enable();
+            this->shim().Enable();
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().Downloads());
+            *value = detach(this->shim().Downloads());
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().Uploads());
+            *value = detach(this->shim().Uploads());
             return S_OK;
         }
         catch (...)
@@ -541,7 +541,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            shim().SetHeader(*reinterpret_cast<const hstring *>(&headerName), *reinterpret_cast<const hstring *>(&headerValue));
+            this->shim().SetHeader(*reinterpret_cast<const hstring *>(&headerName), *reinterpret_cast<const hstring *>(&headerValue));
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            shim().SetText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SetText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            shim().SetFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
+            this->shim().SetFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
             return S_OK;
         }
         catch (...)
@@ -584,7 +584,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().CreateWithName(*reinterpret_cast<const hstring *>(&name)));
+            *value = detach(this->shim().CreateWithName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCo
     {
         try
         {
-            *value = detach(shim().CreateWithNameAndFileName(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&fileName)));
+            *value = detach(this->shim().CreateWithNameAndFileName(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&fileName)));
             return S_OK;
         }
         catch (...)
@@ -616,7 +616,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferEr
     {
         try
         {
-            *status = detach(shim().GetStatus(hresult));
+            *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGr
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGr
     {
         try
         {
-            *value = detach(shim().TransferBehavior());
+            *value = detach(this->shim().TransferBehavior());
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGr
     {
         try
         {
-            shim().TransferBehavior(value);
+            this->shim().TransferBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -677,7 +677,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGr
     {
         try
         {
-            *value = detach(shim().CreateGroup(*reinterpret_cast<const hstring *>(&name)));
+            *value = detach(this->shim().CreateGroup(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -695,7 +695,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().Guid());
+            *value = detach(this->shim().Guid());
             return S_OK;
         }
         catch (...)
@@ -708,7 +708,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().RequestedUri());
+            *value = detach(this->shim().RequestedUri());
             return S_OK;
         }
         catch (...)
@@ -722,7 +722,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().Method());
+            *value = detach(this->shim().Method());
             return S_OK;
         }
         catch (...)
@@ -736,7 +736,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().Group());
+            *value = detach(this->shim().Group());
             return S_OK;
         }
         catch (...)
@@ -750,7 +750,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().CostPolicy());
+            *value = detach(this->shim().CostPolicy());
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            shim().CostPolicy(value);
+            this->shim().CostPolicy(value);
             return S_OK;
         }
         catch (...)
@@ -776,7 +776,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().GetResultStreamAt(position));
+            *value = detach(this->shim().GetResultStreamAt(position));
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().GetResponseInformation());
+            *value = detach(this->shim().GetResponseInformation());
             return S_OK;
         }
         catch (...)
@@ -808,7 +808,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            *value = detach(shim().Priority());
+            *value = detach(this->shim().Priority());
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOp
     {
         try
         {
-            shim().Priority(value);
+            this->shim().Priority(value);
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> 
     {
         try
         {
-            *operation = detach(shim().CreateUpload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&sourceFile)));
+            *operation = detach(this->shim().CreateUpload(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&sourceFile)));
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> 
     {
         try
         {
-            *operation = detach(shim().CreateUploadFromStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&sourceStream)));
+            *operation = detach(this->shim().CreateUploadFromStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&sourceStream)));
             return S_OK;
         }
         catch (...)
@@ -866,7 +866,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> 
     {
         try
         {
-            *operation = detach(shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts)));
+            *operation = detach(this->shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts)));
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> 
     {
         try
         {
-            *operation = detach(shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts), *reinterpret_cast<const hstring *>(&subType)));
+            *operation = detach(this->shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts), *reinterpret_cast<const hstring *>(&subType)));
             return S_OK;
         }
         catch (...)
@@ -894,7 +894,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> 
     {
         try
         {
-            *operation = detach(shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts), *reinterpret_cast<const hstring *>(&subType), *reinterpret_cast<const hstring *>(&boundary)));
+            *operation = detach(this->shim().CreateUploadAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> *>(&parts), *reinterpret_cast<const hstring *>(&subType), *reinterpret_cast<const hstring *>(&boundary)));
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            *value = detach(shim().TransferGroup());
+            *value = detach(this->shim().TransferGroup());
             return S_OK;
         }
         catch (...)
@@ -926,7 +926,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            shim().TransferGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&value));
+            this->shim().TransferGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&value));
             return S_OK;
         }
         catch (...)
@@ -939,7 +939,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            *value = detach(shim().SuccessToastNotification());
+            *value = detach(this->shim().SuccessToastNotification());
             return S_OK;
         }
         catch (...)
@@ -953,7 +953,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            shim().SuccessToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
+            this->shim().SuccessToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -966,7 +966,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            *value = detach(shim().FailureToastNotification());
+            *value = detach(this->shim().FailureToastNotification());
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            shim().FailureToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
+            this->shim().FailureToastNotification(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -993,7 +993,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            *value = detach(shim().SuccessTileNotification());
+            *value = detach(this->shim().SuccessTileNotification());
             return S_OK;
         }
         catch (...)
@@ -1007,7 +1007,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            shim().SuccessTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
+            this->shim().SuccessTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            *value = detach(shim().FailureTileNotification());
+            *value = detach(this->shim().FailureTileNotification());
             return S_OK;
         }
         catch (...)
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
     {
         try
         {
-            shim().FailureTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
+            this->shim().FailureTileNotification(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader3>
     {
         try
         {
-            *value = detach(shim().CompletionGroup());
+            *value = detach(this->shim().CompletionGroup());
             return S_OK;
         }
         catch (...)
@@ -1069,7 +1069,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderFa
     {
         try
         {
-            *backgroundUploader = detach(shim().CreateWithCompletionGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup *>(&completionGroup)));
+            *backgroundUploader = detach(this->shim().CreateWithCompletionGroup(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup *>(&completionGroup)));
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderSt
     {
         try
         {
-            *operation = detach(shim().GetCurrentUploadsAsync());
+            *operation = detach(this->shim().GetCurrentUploadsAsync());
             return S_OK;
         }
         catch (...)
@@ -1101,7 +1101,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderSt
     {
         try
         {
-            *operation = detach(shim().GetCurrentUploadsAsync(*reinterpret_cast<const hstring *>(&group)));
+            *operation = detach(this->shim().GetCurrentUploadsAsync(*reinterpret_cast<const hstring *>(&group)));
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderSt
     {
         try
         {
-            *operation = detach(shim().GetCurrentUploadsForTransferGroupAsync(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&group)));
+            *operation = detach(this->shim().GetCurrentUploadsForTransferGroupAsync(*reinterpret_cast<const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup *>(&group)));
             return S_OK;
         }
         catch (...)
@@ -1137,7 +1137,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderUs
     {
         try
         {
-            *operation = detach(shim().RequestUnconstrainedUploadsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> *>(&operations)));
+            *operation = detach(this->shim().RequestUnconstrainedUploadsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> *>(&operations)));
             return S_OK;
         }
         catch (...)
@@ -1155,7 +1155,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcher> :
     {
         try
         {
-            *value = detach(shim().ContentUris());
+            *value = detach(this->shim().ContentUris());
             return S_OK;
         }
         catch (...)
@@ -1169,7 +1169,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcher> :
     {
         try
         {
-            shim().IndirectContentUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().IndirectContentUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcher> :
     {
         try
         {
-            *value = detach(shim().IndirectContentUri());
+            *value = detach(this->shim().IndirectContentUri());
             return S_OK;
         }
         catch (...)
@@ -1200,7 +1200,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcherTim
     {
         try
         {
-            *value = detach(shim().LastSuccessfulPrefetchTime());
+            *value = detach(this->shim().LastSuccessfulPrefetchTime());
             return S_OK;
         }
         catch (...)
@@ -1218,7 +1218,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            *value = detach(shim().ResultFile());
+            *value = detach(this->shim().ResultFile());
             return S_OK;
         }
         catch (...)
@@ -1232,7 +1232,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -1245,7 +1245,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            *operation = detach(shim().StartAsync());
+            *operation = detach(this->shim().StartAsync());
             return S_OK;
         }
         catch (...)
@@ -1259,7 +1259,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            *operation = detach(shim().AttachAsync());
+            *operation = detach(this->shim().AttachAsync());
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            shim().Pause();
+            this->shim().Pause();
             return S_OK;
         }
         catch (...)
@@ -1286,7 +1286,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> :
     {
         try
         {
-            shim().Resume();
+            this->shim().Resume();
             return S_OK;
         }
         catch (...)
@@ -1303,7 +1303,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation2> 
     {
         try
         {
-            *value = detach(shim().TransferGroup());
+            *value = detach(this->shim().TransferGroup());
             return S_OK;
         }
         catch (...)
@@ -1321,7 +1321,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IResponseInformation>
     {
         try
         {
-            *value = detach(shim().IsResumable());
+            *value = detach(this->shim().IsResumable());
             return S_OK;
         }
         catch (...)
@@ -1334,7 +1334,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IResponseInformation>
     {
         try
         {
-            *value = detach(shim().ActualUri());
+            *value = detach(this->shim().ActualUri());
             return S_OK;
         }
         catch (...)
@@ -1348,7 +1348,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IResponseInformation>
     {
         try
         {
-            *value = detach(shim().StatusCode());
+            *value = detach(this->shim().StatusCode());
             return S_OK;
         }
         catch (...)
@@ -1361,7 +1361,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IResponseInformation>
     {
         try
         {
-            *value = detach(shim().Headers());
+            *value = detach(this->shim().Headers());
             return S_OK;
         }
         catch (...)
@@ -1379,7 +1379,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUnconstrainedTransfe
     {
         try
         {
-            *value = detach(shim().IsUnconstrained());
+            *value = detach(this->shim().IsUnconstrained());
             return S_OK;
         }
         catch (...)
@@ -1396,7 +1396,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation> : p
     {
         try
         {
-            *value = detach(shim().SourceFile());
+            *value = detach(this->shim().SourceFile());
             return S_OK;
         }
         catch (...)
@@ -1410,7 +1410,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation> : p
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -1423,7 +1423,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation> : p
     {
         try
         {
-            *operation = detach(shim().StartAsync());
+            *operation = detach(this->shim().StartAsync());
             return S_OK;
         }
         catch (...)
@@ -1437,7 +1437,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation> : p
     {
         try
         {
-            *operation = detach(shim().AttachAsync());
+            *operation = detach(this->shim().AttachAsync());
             return S_OK;
         }
         catch (...)
@@ -1455,7 +1455,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation2> : 
     {
         try
         {
-            *value = detach(shim().TransferGroup());
+            *value = detach(this->shim().TransferGroup());
             return S_OK;
         }
         catch (...)

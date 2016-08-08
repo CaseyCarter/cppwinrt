@@ -18,7 +18,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetObjectAt(index));
+            *returnValue = detach(this->shim().GetObjectAt(index));
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetArrayAt(index));
+            *returnValue = detach(this->shim().GetArrayAt(index));
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetStringAt(index));
+            *returnValue = detach(this->shim().GetStringAt(index));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetNumberAt(index));
+            *returnValue = detach(this->shim().GetNumberAt(index));
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetBooleanAt(index));
+            *returnValue = detach(this->shim().GetBooleanAt(index));
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Wind
     {
         try
         {
-            *jsonArray = detach(shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonArray = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Wind
     {
         try
         {
-            *succeeded = detach(shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Data::Json::IJsonErrorStatics2> : produce_base<D, Win
     {
         try
         {
-            *status = detach(shim().GetJsonStatus(hresult));
+            *status = detach(this->shim().GetJsonStatus(hresult));
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            shim().SetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::IJsonValue *>(&value));
+            this->shim().SetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::IJsonValue *>(&value));
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedString(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
-            *returnValue = detach(shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
     {
         try
         {
-            *jsonObject = detach(shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonObject = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
     {
         try
         {
-            *succeeded = detach(shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonValue *>(&defaultValue)));
+            *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonValue *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonObject *>(&defaultValue)));
+            *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonObject *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&defaultValue)));
+            *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonArray *>(&defaultValue)));
+            *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonArray *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name), defaultValue));
+            *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
         catch (...)
@@ -339,7 +339,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
-            *returnValue = detach(shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name), defaultValue));
+            *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *value = detach(shim().ValueType());
+            *value = detach(this->shim().ValueType());
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().Stringify());
+            *returnValue = detach(this->shim().Stringify());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetString());
+            *returnValue = detach(this->shim().GetString());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetNumber());
+            *returnValue = detach(this->shim().GetNumber());
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetBoolean());
+            *returnValue = detach(this->shim().GetBoolean());
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetArray());
+            *returnValue = detach(this->shim().GetArray());
             return S_OK;
         }
         catch (...)
@@ -437,7 +437,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
-            *returnValue = detach(shim().GetObject());
+            *returnValue = detach(this->shim().GetObject());
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
-            *jsonValue = detach(shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
-            *succeeded = detach(shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
-            *jsonValue = detach(shim().CreateBooleanValue(input));
+            *jsonValue = detach(this->shim().CreateBooleanValue(input));
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
-            *jsonValue = detach(shim().CreateNumberValue(input));
+            *jsonValue = detach(this->shim().CreateNumberValue(input));
             return S_OK;
         }
         catch (...)
@@ -511,7 +511,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
-            *jsonValue = detach(shim().CreateStringValue(*reinterpret_cast<const hstring *>(&input)));
+            *jsonValue = detach(this->shim().CreateStringValue(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics2> : produce_base<D, Win
     {
         try
         {
-            *jsonValue = detach(shim().CreateNullValue());
+            *jsonValue = detach(this->shim().CreateNullValue());
             return S_OK;
         }
         catch (...)

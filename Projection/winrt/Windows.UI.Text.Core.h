@@ -20,7 +20,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
-            *value = detach(shim().CompositionSegments());
+            *value = detach(this->shim().CompositionSegments());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produc
     {
         try
         {
-            *value = detach(shim().PreconversionString());
+            *value = detach(this->shim().PreconversionString());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produc
     {
         try
         {
-            *value = detach(shim().Range());
+            *value = detach(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *value = detach(shim().InputScope());
+            *value = detach(this->shim().InputScope());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().InputScope(value);
+            this->shim().InputScope(value);
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsReadOnly());
+            *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().IsReadOnly(value);
+            this->shim().IsReadOnly(value);
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *value = detach(shim().InputPaneDisplayPolicy());
+            *value = detach(this->shim().InputPaneDisplayPolicy());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().InputPaneDisplayPolicy(value);
+            this->shim().InputPaneDisplayPolicy(value);
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().TextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().TextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().TextRequested(cookie);
+            this->shim().TextRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().SelectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().SelectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -271,7 +271,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().SelectionRequested(cookie);
+            this->shim().SelectionRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().LayoutRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().LayoutRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().LayoutRequested(cookie);
+            this->shim().LayoutRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -310,7 +310,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().TextUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().TextUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().TextUpdating(cookie);
+            this->shim().TextUpdating(cookie);
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().SelectionUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().SelectionUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().SelectionUpdating(cookie);
+            this->shim().SelectionUpdating(cookie);
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().FormatUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().FormatUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().FormatUpdating(cookie);
+            this->shim().FormatUpdating(cookie);
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().CompositionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().CompositionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().CompositionStarted(cookie);
+            this->shim().CompositionStarted(cookie);
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().CompositionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().CompositionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().CompositionCompleted(cookie);
+            this->shim().CompositionCompleted(cookie);
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            *cookie = detach(shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -453,7 +453,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().FocusRemoved(cookie);
+            this->shim().FocusRemoved(cookie);
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().NotifyFocusEnter();
+            this->shim().NotifyFocusEnter();
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().NotifyFocusLeave();
+            this->shim().NotifyFocusLeave();
             return S_OK;
         }
         catch (...)
@@ -492,7 +492,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().NotifyTextChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&modifiedRange), newLength, *reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&newSelection));
+            this->shim().NotifyTextChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&modifiedRange), newLength, *reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&newSelection));
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().NotifySelectionChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&selection));
+            this->shim().NotifySelectionChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&selection));
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
-            shim().NotifyLayoutChanged();
+            this->shim().NotifyLayoutChanged();
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base
     {
         try
         {
-            *cookie = detach(shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -548,7 +548,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base
     {
         try
         {
-            shim().NotifyFocusLeaveCompleted(cookie);
+            this->shim().NotifyFocusLeaveCompleted(cookie);
             return S_OK;
         }
         catch (...)
@@ -565,7 +565,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Range());
+            *value = detach(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().TextColor());
+            *value = detach(this->shim().TextColor());
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().UnderlineColor());
+            *value = detach(this->shim().UnderlineColor());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().UnderlineType());
+            *value = detach(this->shim().UnderlineType());
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            shim().Result(value);
+            this->shim().Result(value);
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
-            *value = detach(shim().TextBounds());
+            *value = detach(this->shim().TextBounds());
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
-            shim().TextBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().TextBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
-            *value = detach(shim().ControlBounds());
+            *value = detach(this->shim().ControlBounds());
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
-            shim().ControlBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().ControlBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -760,7 +760,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
-            *value = detach(shim().Range());
+            *value = detach(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -773,7 +773,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
-            *value = detach(shim().LayoutBounds());
+            *value = detach(this->shim().LayoutBounds());
             return S_OK;
         }
         catch (...)
@@ -787,7 +787,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
-            *value = detach(shim().Selection());
+            *value = detach(this->shim().Selection());
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
-            shim().Selection(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&value));
+            this->shim().Selection(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&value));
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -875,7 +875,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -893,7 +893,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs>
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -911,7 +911,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
-            *value = detach(shim().Selection());
+            *value = detach(this->shim().Selection());
             return S_OK;
         }
         catch (...)
@@ -924,7 +924,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -937,7 +937,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
-            shim().Result(value);
+            this->shim().Result(value);
             return S_OK;
         }
         catch (...)
@@ -950,7 +950,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -963,7 +963,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -981,7 +981,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
-            *value = detach(shim().InputLanguage());
+            *value = detach(this->shim().InputLanguage());
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
-            *cookie = detach(shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
-            shim().InputLanguageChanged(cookie);
+            this->shim().InputLanguageChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1021,7 +1021,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
-            *value = detach(shim().CreateEditContext());
+            *value = detach(this->shim().CreateEditContext());
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManagerStatics> : pr
     {
         try
         {
-            *value = detach(shim().GetForCurrentView());
+            *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -1057,7 +1057,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().HiddenCharacter());
+            *value = detach(this->shim().HiddenCharacter());
             return S_OK;
         }
         catch (...)
@@ -1074,7 +1074,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
-            *value = detach(shim().Range());
+            *value = detach(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1101,7 +1101,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
-            shim().Text(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1114,7 +1114,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1127,7 +1127,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1145,7 +1145,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1163,7 +1163,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().Range());
+            *value = detach(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -1176,7 +1176,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().NewSelection());
+            *value = detach(this->shim().NewSelection());
             return S_OK;
         }
         catch (...)
@@ -1203,7 +1203,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().InputLanguage());
+            *value = detach(this->shim().InputLanguage());
             return S_OK;
         }
         catch (...)
@@ -1217,7 +1217,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -1230,7 +1230,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            shim().Result(value);
+            this->shim().Result(value);
             return S_OK;
         }
         catch (...)
@@ -1243,7 +1243,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1256,7 +1256,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

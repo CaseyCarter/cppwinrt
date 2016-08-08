@@ -36,7 +36,7 @@ public:
     {
         try
         {
-            *value = detach(shim().InverseCore());
+            *value = detach(this->shim().InverseCore());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
+            *returnValue = detach(this->shim().TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
+            *returnValue = detach(this->shim().TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
         catch (...)

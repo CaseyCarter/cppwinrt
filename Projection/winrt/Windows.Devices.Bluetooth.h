@@ -24,7 +24,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice> : produc
     {
         try
         {
-            *value = detach(shim().RawValue());
+            *value = detach(this->shim().RawValue());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice> : produc
     {
         try
         {
-            *value = detach(shim().MajorClass());
+            *value = detach(this->shim().MajorClass());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice> : produc
     {
         try
         {
-            *value = detach(shim().MinorClass());
+            *value = detach(this->shim().MinorClass());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice> : produc
     {
         try
         {
-            *value = detach(shim().ServiceCapabilities());
+            *value = detach(this->shim().ServiceCapabilities());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics> :
     {
         try
         {
-            *classOfDevice = detach(shim().FromRawValue(rawValue));
+            *classOfDevice = detach(this->shim().FromRawValue(rawValue));
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics> :
     {
         try
         {
-            *classOfDevice = detach(shim().FromParts(majorClass, minorClass, serviceCapabilities));
+            *classOfDevice = detach(this->shim().FromParts(majorClass, minorClass, serviceCapabilities));
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().HostName());
+            *value = detach(this->shim().HostName());
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().ClassOfDevice());
+            *value = detach(this->shim().ClassOfDevice());
             return S_OK;
         }
         catch (...)
@@ -168,7 +168,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().SdpRecords());
+            *value = detach(this->shim().SdpRecords());
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().RfcommServices());
+            *value = detach(this->shim().RfcommServices());
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *value = detach(shim().BluetoothAddress());
+            *value = detach(this->shim().BluetoothAddress());
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *token = detach(shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            shim().NameChanged(token);
+            this->shim().NameChanged(token);
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *token = detach(shim().SdpRecordsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().SdpRecordsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            shim().SdpRecordsChanged(token);
+            this->shim().SdpRecordsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            *token = detach(shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
     {
         try
         {
-            shim().ConnectionStatusChanged(token);
+            this->shim().ConnectionStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice2> : produce_base
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *value = detach(shim().DeviceAccessInformation());
+            *value = detach(this->shim().DeviceAccessInformation());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *value = detach(shim().RequestAccessAsync());
+            *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetRfcommServicesAsync());
+            *operation = detach(this->shim().GetRfcommServicesAsync());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetRfcommServicesAsync(cacheMode));
+            *operation = detach(this->shim().GetRfcommServicesAsync(cacheMode));
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetRfcommServicesForIdAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
+            *operation = detach(this->shim().GetRfcommServicesForIdAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
         catch (...)
@@ -392,7 +392,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetRfcommServicesForIdAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId), cacheMode));
+            *operation = detach(this->shim().GetRfcommServicesForIdAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId), cacheMode));
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics> : produc
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics> : produc
     {
         try
         {
-            *operation = detach(shim().FromHostNameAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
+            *operation = detach(this->shim().FromHostNameAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics> : produc
     {
         try
         {
-            *operation = detach(shim().FromBluetoothAddressAsync(address));
+            *operation = detach(this->shim().FromBluetoothAddressAsync(address));
             return S_OK;
         }
         catch (...)
@@ -452,7 +452,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics> : produc
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelector());
+            *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics2> : produ
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromPairingState(pairingState));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromPairingState(pairingState));
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics2> : produ
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromConnectionStatus(connectionStatus));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromConnectionStatus(connectionStatus));
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics2> : produ
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromDeviceName(*reinterpret_cast<const hstring *>(&deviceName)));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromDeviceName(*reinterpret_cast<const hstring *>(&deviceName)));
             return S_OK;
         }
         catch (...)
@@ -512,7 +512,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics2> : produ
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress));
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceStatics2> : produ
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromClassOfDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothClassOfDevice *>(&classOfDevice)));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromClassOfDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothClassOfDevice *>(&classOfDevice)));
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearance> : produce
     {
         try
         {
-            *value = detach(shim().RawValue());
+            *value = detach(this->shim().RawValue());
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearance> : produce
     {
         try
         {
-            *value = detach(shim().Category());
+            *value = detach(this->shim().Category());
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearance> : produce
     {
         try
         {
-            *value = detach(shim().SubCategory());
+            *value = detach(this->shim().SubCategory());
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Uncategorized());
+            *value = detach(this->shim().Uncategorized());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Phone());
+            *value = detach(this->shim().Phone());
             return S_OK;
         }
         catch (...)
@@ -613,7 +613,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Computer());
+            *value = detach(this->shim().Computer());
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Watch());
+            *value = detach(this->shim().Watch());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Clock());
+            *value = detach(this->shim().Clock());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Display());
+            *value = detach(this->shim().Display());
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().RemoteControl());
+            *value = detach(this->shim().RemoteControl());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().EyeGlasses());
+            *value = detach(this->shim().EyeGlasses());
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Tag());
+            *value = detach(this->shim().Tag());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Keyring());
+            *value = detach(this->shim().Keyring());
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().MediaPlayer());
+            *value = detach(this->shim().MediaPlayer());
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().BarcodeScanner());
+            *value = detach(this->shim().BarcodeScanner());
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Thermometer());
+            *value = detach(this->shim().Thermometer());
             return S_OK;
         }
         catch (...)
@@ -756,7 +756,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().HeartRate());
+            *value = detach(this->shim().HeartRate());
             return S_OK;
         }
         catch (...)
@@ -769,7 +769,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().BloodPressure());
+            *value = detach(this->shim().BloodPressure());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().HumanInterfaceDevice());
+            *value = detach(this->shim().HumanInterfaceDevice());
             return S_OK;
         }
         catch (...)
@@ -795,7 +795,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().GlucoseMeter());
+            *value = detach(this->shim().GlucoseMeter());
             return S_OK;
         }
         catch (...)
@@ -808,7 +808,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().RunningWalking());
+            *value = detach(this->shim().RunningWalking());
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().Cycling());
+            *value = detach(this->shim().Cycling());
             return S_OK;
         }
         catch (...)
@@ -834,7 +834,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().PulseOximeter());
+            *value = detach(this->shim().PulseOximeter());
             return S_OK;
         }
         catch (...)
@@ -847,7 +847,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().WeightScale());
+            *value = detach(this->shim().WeightScale());
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesS
     {
         try
         {
-            *value = detach(shim().OutdoorSportActivity());
+            *value = detach(this->shim().OutdoorSportActivity());
             return S_OK;
         }
         catch (...)
@@ -877,7 +877,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics> : 
     {
         try
         {
-            *appearance = detach(shim().FromRawValue(rawValue));
+            *appearance = detach(this->shim().FromRawValue(rawValue));
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics> : 
     {
         try
         {
-            *appearance = detach(shim().FromParts(appearanceCategory, appearanceSubCategory));
+            *appearance = detach(this->shim().FromParts(appearanceCategory, appearanceSubCategory));
             return S_OK;
         }
         catch (...)
@@ -909,7 +909,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().Generic());
+            *value = detach(this->shim().Generic());
             return S_OK;
         }
         catch (...)
@@ -922,7 +922,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().SportsWatch());
+            *value = detach(this->shim().SportsWatch());
             return S_OK;
         }
         catch (...)
@@ -935,7 +935,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().ThermometerEar());
+            *value = detach(this->shim().ThermometerEar());
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().HeartRateBelt());
+            *value = detach(this->shim().HeartRateBelt());
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().BloodPressureArm());
+            *value = detach(this->shim().BloodPressureArm());
             return S_OK;
         }
         catch (...)
@@ -974,7 +974,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().BloodPressureWrist());
+            *value = detach(this->shim().BloodPressureWrist());
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().Keyboard());
+            *value = detach(this->shim().Keyboard());
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().Mouse());
+            *value = detach(this->shim().Mouse());
             return S_OK;
         }
         catch (...)
@@ -1013,7 +1013,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().Joystick());
+            *value = detach(this->shim().Joystick());
             return S_OK;
         }
         catch (...)
@@ -1026,7 +1026,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().Gamepad());
+            *value = detach(this->shim().Gamepad());
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().DigitizerTablet());
+            *value = detach(this->shim().DigitizerTablet());
             return S_OK;
         }
         catch (...)
@@ -1052,7 +1052,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CardReader());
+            *value = detach(this->shim().CardReader());
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().DigitalPen());
+            *value = detach(this->shim().DigitalPen());
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().BarcodeScanner());
+            *value = detach(this->shim().BarcodeScanner());
             return S_OK;
         }
         catch (...)
@@ -1091,7 +1091,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().RunningWalkingInShoe());
+            *value = detach(this->shim().RunningWalkingInShoe());
             return S_OK;
         }
         catch (...)
@@ -1104,7 +1104,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().RunningWalkingOnShoe());
+            *value = detach(this->shim().RunningWalkingOnShoe());
             return S_OK;
         }
         catch (...)
@@ -1117,7 +1117,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().RunningWalkingOnHip());
+            *value = detach(this->shim().RunningWalkingOnHip());
             return S_OK;
         }
         catch (...)
@@ -1130,7 +1130,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CyclingComputer());
+            *value = detach(this->shim().CyclingComputer());
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CyclingSpeedSensor());
+            *value = detach(this->shim().CyclingSpeedSensor());
             return S_OK;
         }
         catch (...)
@@ -1156,7 +1156,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CyclingCadenceSensor());
+            *value = detach(this->shim().CyclingCadenceSensor());
             return S_OK;
         }
         catch (...)
@@ -1169,7 +1169,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CyclingPowerSensor());
+            *value = detach(this->shim().CyclingPowerSensor());
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().CyclingSpeedCadenceSensor());
+            *value = detach(this->shim().CyclingSpeedCadenceSensor());
             return S_OK;
         }
         catch (...)
@@ -1195,7 +1195,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().OximeterFingertip());
+            *value = detach(this->shim().OximeterFingertip());
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().OximeterWristWorn());
+            *value = detach(this->shim().OximeterWristWorn());
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().LocationDisplay());
+            *value = detach(this->shim().LocationDisplay());
             return S_OK;
         }
         catch (...)
@@ -1234,7 +1234,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().LocationNavigationDisplay());
+            *value = detach(this->shim().LocationNavigationDisplay());
             return S_OK;
         }
         catch (...)
@@ -1247,7 +1247,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().LocationPod());
+            *value = detach(this->shim().LocationPod());
             return S_OK;
         }
         catch (...)
@@ -1260,7 +1260,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategori
     {
         try
         {
-            *value = detach(shim().LocationNavigationPod());
+            *value = detach(this->shim().LocationNavigationPod());
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1291,7 +1291,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().GattServices());
+            *value = detach(this->shim().GattServices());
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -1332,7 +1332,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().BluetoothAddress());
+            *value = detach(this->shim().BluetoothAddress());
             return S_OK;
         }
         catch (...)
@@ -1345,7 +1345,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *service = detach(shim().GetGattService(serviceUuid));
+            *service = detach(this->shim().GetGattService(serviceUuid));
             return S_OK;
         }
         catch (...)
@@ -1359,7 +1359,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *token = detach(shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1372,7 +1372,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            shim().NameChanged(token);
+            this->shim().NameChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *token = detach(shim().GattServicesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().GattServicesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1398,7 +1398,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            shim().GattServicesChanged(token);
+            this->shim().GattServicesChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1411,7 +1411,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            *token = detach(shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1424,7 +1424,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
     {
         try
         {
-            shim().ConnectionStatusChanged(token);
+            this->shim().ConnectionStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1441,7 +1441,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice2> : produce_ba
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -1455,7 +1455,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice2> : produce_ba
     {
         try
         {
-            *value = detach(shim().Appearance());
+            *value = detach(this->shim().Appearance());
             return S_OK;
         }
         catch (...)
@@ -1469,7 +1469,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice2> : produce_ba
     {
         try
         {
-            *value = detach(shim().BluetoothAddressType());
+            *value = detach(this->shim().BluetoothAddressType());
             return S_OK;
         }
         catch (...)
@@ -1486,7 +1486,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics> : prod
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1500,7 +1500,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics> : prod
     {
         try
         {
-            *operation = detach(shim().FromBluetoothAddressAsync(bluetoothAddress));
+            *operation = detach(this->shim().FromBluetoothAddressAsync(bluetoothAddress));
             return S_OK;
         }
         catch (...)
@@ -1514,7 +1514,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics> : prod
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelector());
+            *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -1532,7 +1532,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromPairingState(pairingState));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromPairingState(pairingState));
             return S_OK;
         }
         catch (...)
@@ -1546,7 +1546,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromConnectionStatus(connectionStatus));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromConnectionStatus(connectionStatus));
             return S_OK;
         }
         catch (...)
@@ -1560,7 +1560,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromDeviceName(*reinterpret_cast<const hstring *>(&deviceName)));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromDeviceName(*reinterpret_cast<const hstring *>(&deviceName)));
             return S_OK;
         }
         catch (...)
@@ -1574,7 +1574,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress));
             return S_OK;
         }
         catch (...)
@@ -1588,7 +1588,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, bluetoothAddressType));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, bluetoothAddressType));
             return S_OK;
         }
         catch (...)
@@ -1602,7 +1602,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelectorFromAppearance(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothLEAppearance *>(&appearance)));
+            *deviceSelector = detach(this->shim().GetDeviceSelectorFromAppearance(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothLEAppearance *>(&appearance)));
             return S_OK;
         }
         catch (...)
@@ -1616,7 +1616,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2> : pro
     {
         try
         {
-            *operation = detach(shim().FromBluetoothAddressAsync(bluetoothAddress, bluetoothAddressType));
+            *operation = detach(this->shim().FromBluetoothAddressAsync(bluetoothAddress, bluetoothAddressType));
             return S_OK;
         }
         catch (...)
@@ -1634,7 +1634,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            *value = detach(shim().InRangeThresholdInDBm());
+            *value = detach(this->shim().InRangeThresholdInDBm());
             return S_OK;
         }
         catch (...)
@@ -1648,7 +1648,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            shim().InRangeThresholdInDBm(*reinterpret_cast<const Windows::Foundation::IReference<int16_t> *>(&value));
+            this->shim().InRangeThresholdInDBm(*reinterpret_cast<const Windows::Foundation::IReference<int16_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1661,7 +1661,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            *value = detach(shim().OutOfRangeThresholdInDBm());
+            *value = detach(this->shim().OutOfRangeThresholdInDBm());
             return S_OK;
         }
         catch (...)
@@ -1675,7 +1675,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            shim().OutOfRangeThresholdInDBm(*reinterpret_cast<const Windows::Foundation::IReference<int16_t> *>(&value));
+            this->shim().OutOfRangeThresholdInDBm(*reinterpret_cast<const Windows::Foundation::IReference<int16_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1688,7 +1688,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            *value = detach(shim().OutOfRangeTimeout());
+            *value = detach(this->shim().OutOfRangeTimeout());
             return S_OK;
         }
         catch (...)
@@ -1702,7 +1702,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            shim().OutOfRangeTimeout(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().OutOfRangeTimeout(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1715,7 +1715,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            *value = detach(shim().SamplingInterval());
+            *value = detach(this->shim().SamplingInterval());
             return S_OK;
         }
         catch (...)
@@ -1729,7 +1729,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     {
         try
         {
-            shim().SamplingInterval(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().SamplingInterval(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)

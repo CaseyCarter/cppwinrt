@@ -19,7 +19,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            shim().Description(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            *token = detach(shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            shim().Revoked(token);
+            this->shim().Revoked(token);
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            *operation = detach(shim().RequestExtensionAsync());
+            *operation = detach(this->shim().RequestExtensionAsync());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
-            shim().Reason(value);
+            this->shim().Reason(value);
             return S_OK;
         }
         catch (...)

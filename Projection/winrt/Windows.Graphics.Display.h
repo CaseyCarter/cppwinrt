@@ -38,7 +38,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().CurrentOrientation());
+            *value = detach(this->shim().CurrentOrientation());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().NativeOrientation());
+            *value = detach(this->shim().NativeOrientation());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *token = detach(shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            shim().OrientationChanged(token);
+            this->shim().OrientationChanged(token);
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().ResolutionScale());
+            *value = detach(this->shim().ResolutionScale());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().LogicalDpi());
+            *value = detach(this->shim().LogicalDpi());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().RawDpiX());
+            *value = detach(this->shim().RawDpiX());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().RawDpiY());
+            *value = detach(this->shim().RawDpiY());
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *token = detach(shim().DpiChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DpiChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            shim().DpiChanged(token);
+            this->shim().DpiChanged(token);
             return S_OK;
         }
         catch (...)
@@ -168,7 +168,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *value = detach(shim().StereoEnabled());
+            *value = detach(this->shim().StereoEnabled());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *token = detach(shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            shim().StereoEnabledChanged(token);
+            this->shim().StereoEnabledChanged(token);
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *asyncInfo = detach(shim().GetColorProfileAsync());
+            *asyncInfo = detach(this->shim().GetColorProfileAsync());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            *token = detach(shim().ColorProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
-            shim().ColorProfileChanged(token);
+            this->shim().ColorProfileChanged(token);
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation2> : produce_ba
     {
         try
         {
-            *value = detach(shim().RawPixelsPerViewPixel());
+            *value = detach(this->shim().RawPixelsPerViewPixel());
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation3> : produce_ba
     {
         try
         {
-            *value = detach(shim().DiagonalSizeInInches());
+            *value = detach(this->shim().DiagonalSizeInInches());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation4> : produce_ba
     {
         try
         {
-            *value = detach(shim().ScreenWidthInRawPixels());
+            *value = detach(this->shim().ScreenWidthInRawPixels());
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation4> : produce_ba
     {
         try
         {
-            *value = detach(shim().ScreenHeightInRawPixels());
+            *value = detach(this->shim().ScreenHeightInRawPixels());
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
-            *current = detach(shim().GetForCurrentView());
+            *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
-            *value = detach(shim().AutoRotationPreferences());
+            *value = detach(this->shim().AutoRotationPreferences());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
-            shim().AutoRotationPreferences(value);
+            this->shim().AutoRotationPreferences(value);
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
-            *token = detach(shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
-            shim().DisplayContentsInvalidated(token);
+            this->shim().DisplayContentsInvalidated(token);
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().CurrentOrientation());
+            *value = detach(this->shim().CurrentOrientation());
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().NativeOrientation());
+            *value = detach(this->shim().NativeOrientation());
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().AutoRotationPreferences());
+            *value = detach(this->shim().AutoRotationPreferences());
             return S_OK;
         }
         catch (...)
@@ -425,7 +425,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().AutoRotationPreferences(value);
+            this->shim().AutoRotationPreferences(value);
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *token = detach(shim().OrientationChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
+            *token = detach(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -451,7 +451,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().OrientationChanged(token);
+            this->shim().OrientationChanged(token);
             return S_OK;
         }
         catch (...)
@@ -464,7 +464,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().ResolutionScale());
+            *value = detach(this->shim().ResolutionScale());
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().LogicalDpi());
+            *value = detach(this->shim().LogicalDpi());
             return S_OK;
         }
         catch (...)
@@ -490,7 +490,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *token = detach(shim().LogicalDpiChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
+            *token = detach(this->shim().LogicalDpiChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().LogicalDpiChanged(token);
+            this->shim().LogicalDpiChanged(token);
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *value = detach(shim().StereoEnabled());
+            *value = detach(this->shim().StereoEnabled());
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *token = detach(shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
+            *token = detach(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().StereoEnabledChanged(token);
+            this->shim().StereoEnabledChanged(token);
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *asyncInfo = detach(shim().GetColorProfileAsync());
+            *asyncInfo = detach(this->shim().GetColorProfileAsync());
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *token = detach(shim().ColorProfileChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
+            *token = detach(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -582,7 +582,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().ColorProfileChanged(token);
+            this->shim().ColorProfileChanged(token);
             return S_OK;
         }
         catch (...)
@@ -595,7 +595,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            *token = detach(shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
+            *token = detach(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
-            shim().DisplayContentsInvalidated(token);
+            this->shim().DisplayContentsInvalidated(token);
             return S_OK;
         }
         catch (...)

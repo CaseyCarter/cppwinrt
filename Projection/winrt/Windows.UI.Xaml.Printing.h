@@ -75,7 +75,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IAddPagesEventArgs> : produce_bas
     {
         try
         {
-            *value = detach(shim().PrintTaskOptions());
+            *value = detach(this->shim().PrintTaskOptions());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> : produ
     {
         try
         {
-            *value = detach(shim().PageNumber());
+            *value = detach(this->shim().PageNumber());
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
     {
         try
         {
-            *value = detach(shim().PrintTaskOptions());
+            *value = detach(this->shim().PrintTaskOptions());
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
     {
         try
         {
-            *value = detach(shim().CurrentPreviewPageNumber());
+            *value = detach(this->shim().CurrentPreviewPageNumber());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DocumentSource());
+            *value = detach(this->shim().DocumentSource());
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().Paginate(*reinterpret_cast<const Windows::UI::Xaml::Printing::PaginateEventHandler *>(&value)));
+            *token = detach(this->shim().Paginate(*reinterpret_cast<const Windows::UI::Xaml::Printing::PaginateEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -168,7 +168,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().Paginate(token);
+            this->shim().Paginate(token);
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().GetPreviewPage(*reinterpret_cast<const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler *>(&value)));
+            *token = detach(this->shim().GetPreviewPage(*reinterpret_cast<const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().GetPreviewPage(token);
+            this->shim().GetPreviewPage(token);
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().AddPages(*reinterpret_cast<const Windows::UI::Xaml::Printing::AddPagesEventHandler *>(&value)));
+            *token = detach(this->shim().AddPages(*reinterpret_cast<const Windows::UI::Xaml::Printing::AddPagesEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().AddPages(token);
+            this->shim().AddPages(token);
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().AddPage(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
+            this->shim().AddPage(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().AddPagesComplete();
+            this->shim().AddPagesComplete();
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().SetPreviewPageCount(count, type);
+            this->shim().SetPreviewPageCount(count, type);
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().SetPreviewPage(pageNumber, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
+            this->shim().SetPreviewPage(pageNumber, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
-            shim().InvalidatePreview();
+            this->shim().InvalidatePreview();
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory> : produce_
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentStatics> : produce_
     {
         try
         {
-            *value = detach(shim().DocumentSourceProperty());
+            *value = detach(this->shim().DocumentSourceProperty());
             return S_OK;
         }
         catch (...)

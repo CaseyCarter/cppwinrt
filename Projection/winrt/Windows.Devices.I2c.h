@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().SlaveAddress());
+            *value = detach(this->shim().SlaveAddress());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            shim().SlaveAddress(value);
+            this->shim().SlaveAddress(value);
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().BusSpeed());
+            *value = detach(this->shim().BusSpeed());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            shim().BusSpeed(value);
+            this->shim().BusSpeed(value);
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().SharingMode());
+            *value = detach(this->shim().SharingMode());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
-            shim().SharingMode(value);
+            this->shim().SharingMode(value);
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettingsFactory> : produc
     {
         try
         {
-            *value = detach(shim().Create(slaveAddress));
+            *value = detach(this->shim().Create(slaveAddress));
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Devices::I2c::II2cController> : produce_base<D, Windo
     {
         try
         {
-            *device = detach(shim().GetDevice(*reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
+            *device = detach(this->shim().GetDevice(*reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Devices::I2c::II2cControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::I2c::Provider::II2cProvider *>(&provider)));
+            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::I2c::Provider::II2cProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Devices::I2c::II2cControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ConnectionSettings());
+            *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
+            this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().WritePartial(array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
+            *result = detach(this->shim().WritePartial(array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().Read(*buffer);
+            this->shim().Read(*buffer);
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().ReadPartial(*buffer));
+            *result = detach(this->shim().ReadPartial(*buffer));
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().WriteRead(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().WriteRead(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().WriteReadPartial(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
+            *result = detach(this->shim().WriteReadPartial(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
             return S_OK;
         }
         catch (...)

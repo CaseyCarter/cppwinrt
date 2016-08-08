@@ -18,7 +18,7 @@ protected:
 
     ManipulationStartedRoutedEventArgsT()
     {
-        get_activation_factory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 

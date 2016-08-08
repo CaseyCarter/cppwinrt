@@ -66,7 +66,7 @@ public:
     {
         try
         {
-            shim().OnActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::IActivatedEventArgs *>(&args));
+            this->shim().OnActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::IActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ public:
     {
         try
         {
-            shim().OnLaunched(*reinterpret_cast<const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs *>(&args));
+            this->shim().OnLaunched(*reinterpret_cast<const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ public:
     {
         try
         {
-            shim().OnFileActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileActivatedEventArgs *>(&args));
+            this->shim().OnFileActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ public:
     {
         try
         {
-            shim().OnSearchActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::SearchActivatedEventArgs *>(&args));
+            this->shim().OnSearchActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::SearchActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ public:
     {
         try
         {
-            shim().OnShareTargetActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs *>(&args));
+            this->shim().OnShareTargetActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ public:
     {
         try
         {
-            shim().OnFileOpenPickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs *>(&args));
+            this->shim().OnFileOpenPickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ public:
     {
         try
         {
-            shim().OnFileSavePickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs *>(&args));
+            this->shim().OnFileSavePickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ public:
     {
         try
         {
-            shim().OnCachedFileUpdaterActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs *>(&args));
+            this->shim().OnCachedFileUpdaterActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ public:
     {
         try
         {
-            shim().OnWindowCreated(*reinterpret_cast<const Windows::UI::Xaml::WindowCreatedEventArgs *>(&args));
+            this->shim().OnWindowCreated(*reinterpret_cast<const Windows::UI::Xaml::WindowCreatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ public:
     {
         try
         {
-            shim().OnBackgroundActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs *>(&args));
+            this->shim().OnBackgroundActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().MeasureOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&availableSize)));
+            *returnValue = detach(this->shim().MeasureOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&availableSize)));
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().ArrangeOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&finalSize)));
+            *returnValue = detach(this->shim().ArrangeOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&finalSize)));
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ public:
     {
         try
         {
-            shim().OnApplyTemplate();
+            this->shim().OnApplyTemplate();
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GoToElementStateCore(*reinterpret_cast<const hstring *>(&stateName), useTransitions));
+            *returnValue = detach(this->shim().GoToElementStateCore(*reinterpret_cast<const hstring *>(&stateName), useTransitions));
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().OnCreateAutomationPeer());
+            *returnValue = detach(this->shim().OnCreateAutomationPeer());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ public:
     {
         try
         {
-            shim().OnDisconnectVisualChildren();
+            this->shim().OnDisconnectVisualChildren();
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().FindSubElementsForTouchTargeting(*reinterpret_cast<const Windows::Foundation::Point *>(&point), *reinterpret_cast<const Windows::Foundation::Rect *>(&boundingRect)));
+            *returnValue = detach(this->shim().FindSubElementsForTouchTargeting(*reinterpret_cast<const Windows::Foundation::Point *>(&point), *reinterpret_cast<const Windows::Foundation::Rect *>(&boundingRect)));
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GoToStateCore(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control), *reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&templateRoot), *reinterpret_cast<const hstring *>(&stateName), *reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&group), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&state), useTransitions));
+            *returnValue = detach(this->shim().GoToStateCore(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control), *reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&templateRoot), *reinterpret_cast<const hstring *>(&stateName), *reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&group), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&state), useTransitions));
             return S_OK;
         }
         catch (...)

@@ -26,7 +26,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().CreatePresenter());
+            *returnValue = detach(this->shim().CreatePresenter());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ public:
     {
         try
         {
-            shim().OnConfirmed();
+            this->shim().OnConfirmed();
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().ShouldShowConfirmationButtons());
+            *returnValue = detach(this->shim().ShouldShowConfirmationButtons());
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ public:
     {
         try
         {
-            shim().OnMinimumChanged(oldMinimum, newMinimum);
+            this->shim().OnMinimumChanged(oldMinimum, newMinimum);
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ public:
     {
         try
         {
-            shim().OnMaximumChanged(oldMaximum, newMaximum);
+            this->shim().OnMaximumChanged(oldMaximum, newMaximum);
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ public:
     {
         try
         {
-            shim().OnValueChanged(oldValue, newValue);
+            this->shim().OnValueChanged(oldValue, newValue);
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ public:
     {
         try
         {
-            shim().OnToggle();
+            this->shim().OnToggle();
             return S_OK;
         }
         catch (...)

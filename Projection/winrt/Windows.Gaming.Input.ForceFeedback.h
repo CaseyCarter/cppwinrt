@@ -18,7 +18,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffect> 
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffect> 
     {
         try
         {
-            shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&direction), positiveCoefficient, negativeCoefficient, maxPositiveMagnitude, maxNegativeMagnitude, deadZone, bias);
+            this->shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&direction), positiveCoefficient, negativeCoefficient, maxPositiveMagnitude, maxNegativeMagnitude, deadZone, bias);
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFa
     {
         try
         {
-            *value = detach(shim().CreateInstance(effectKind));
+            *value = detach(this->shim().CreateInstance(effectKind));
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IConstantForceEffect> :
     {
         try
         {
-            shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
+            this->shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IConstantForceEffect> :
     {
         try
         {
-            shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
+            this->shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> :
     {
         try
         {
-            *value = detach(shim().Gain());
+            *value = detach(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> :
     {
         try
         {
-            shim().Gain(value);
+            this->shim().Gain(value);
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> :
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> :
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> :
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *value = detach(shim().AreEffectsPaused());
+            *value = detach(this->shim().AreEffectsPaused());
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *value = detach(shim().MasterGain());
+            *value = detach(this->shim().MasterGain());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            shim().MasterGain(value);
+            this->shim().MasterGain(value);
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *value = detach(shim().SupportedAxes());
+            *value = detach(this->shim().SupportedAxes());
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *asyncOperation = detach(shim().LoadEffectAsync(*reinterpret_cast<const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect *>(&effect)));
+            *asyncOperation = detach(this->shim().LoadEffectAsync(*reinterpret_cast<const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect *>(&effect)));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            shim().PauseAllEffects();
+            this->shim().PauseAllEffects();
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            shim().ResumeAllEffects();
+            this->shim().ResumeAllEffects();
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            shim().StopAllEffects();
+            this->shim().StopAllEffects();
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *asyncOperation = detach(shim().TryDisableAsync());
+            *asyncOperation = detach(this->shim().TryDisableAsync());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *asyncOperation = detach(shim().TryEnableAsync());
+            *asyncOperation = detach(this->shim().TryEnableAsync());
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *asyncOperation = detach(shim().TryResetAsync());
+            *asyncOperation = detach(this->shim().TryResetAsync());
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : 
     {
         try
         {
-            *asyncOperation = detach(shim().TryUnloadEffectAsync(*reinterpret_cast<const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect *>(&effect)));
+            *asyncOperation = detach(this->shim().TryUnloadEffectAsync(*reinterpret_cast<const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect *>(&effect)));
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect> :
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect> :
     {
         try
         {
-            shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), frequency, phase, bias, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
+            this->shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), frequency, phase, bias, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect> :
     {
         try
         {
-            shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), frequency, phase, bias, attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
+            this->shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&vector), frequency, phase, bias, attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFac
     {
         try
         {
-            *value = detach(shim().CreateInstance(effectKind));
+            *value = detach(this->shim().CreateInstance(effectKind));
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IRampForceEffect> : pro
     {
         try
         {
-            shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&startVector), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&endVector), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
+            this->shim().SetParameters(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&startVector), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&endVector), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IRampForceEffect> : pro
     {
         try
         {
-            shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&startVector), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&endVector), attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
+            this->shim().SetParametersWithEnvelope(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&startVector), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&endVector), attackGain, sustainGain, releaseGain, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startDelay), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&attackDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&sustainDuration), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&releaseDuration), repeatCount);
             return S_OK;
         }
         catch (...)

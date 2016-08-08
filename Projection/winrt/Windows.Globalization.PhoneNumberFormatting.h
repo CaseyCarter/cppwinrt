@@ -18,7 +18,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().Format(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&number)));
+            *result = detach(this->shim().Format(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().Format(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&number), numberFormat));
+            *result = detach(this->shim().Format(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&number), numberFormat));
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().FormatPartialString(*reinterpret_cast<const hstring *>(&number)));
+            *result = detach(this->shim().FormatPartialString(*reinterpret_cast<const hstring *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().FormatString(*reinterpret_cast<const hstring *>(&number)));
+            *result = detach(this->shim().FormatString(*reinterpret_cast<const hstring *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().FormatStringWithLeftToRightMarkers(*reinterpret_cast<const hstring *>(&number)));
+            *result = detach(this->shim().FormatStringWithLeftToRightMarkers(*reinterpret_cast<const hstring *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            shim().TryCreate(*reinterpret_cast<const hstring *>(&regionCode), *phoneNumber);
+            this->shim().TryCreate(*reinterpret_cast<const hstring *>(&regionCode), *phoneNumber);
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().GetCountryCodeForRegion(*reinterpret_cast<const hstring *>(&regionCode)));
+            *result = detach(this->shim().GetCountryCodeForRegion(*reinterpret_cast<const hstring *>(&regionCode)));
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().GetNationalDirectDialingPrefixForRegion(*reinterpret_cast<const hstring *>(&regionCode), stripNonDigit));
+            *result = detach(this->shim().GetNationalDirectDialingPrefixForRegion(*reinterpret_cast<const hstring *>(&regionCode), stripNonDigit));
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFor
     {
         try
         {
-            *result = detach(shim().WrapWithLeftToRightMarkers(*reinterpret_cast<const hstring *>(&number)));
+            *result = detach(this->shim().WrapWithLeftToRightMarkers(*reinterpret_cast<const hstring *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -151,7 +151,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *value = detach(shim().CountryCode());
+            *value = detach(this->shim().CountryCode());
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *value = detach(shim().PhoneNumber());
+            *value = detach(this->shim().PhoneNumber());
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().GetLengthOfGeographicalAreaCode());
+            *result = detach(this->shim().GetLengthOfGeographicalAreaCode());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().GetNationalSignificantNumber());
+            *result = detach(this->shim().GetNationalSignificantNumber());
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().GetLengthOfNationalDestinationCode());
+            *result = detach(this->shim().GetLengthOfNationalDestinationCode());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().PredictNumberKind());
+            *result = detach(this->shim().PredictNumberKind());
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().GetGeographicRegionCode());
+            *result = detach(this->shim().GetGeographicRegionCode());
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().CheckNumberMatch(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&otherNumber)));
+            *result = detach(this->shim().CheckNumberMatch(*reinterpret_cast<const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo *>(&otherNumber)));
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&number)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&number)));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().TryParse(*reinterpret_cast<const hstring *>(&input), *phoneNumber));
+            *result = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *phoneNumber));
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInf
     {
         try
         {
-            *result = detach(shim().TryParse(*reinterpret_cast<const hstring *>(&input), *reinterpret_cast<const hstring *>(&regionCode), *phoneNumber));
+            *result = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *reinterpret_cast<const hstring *>(&regionCode), *phoneNumber));
             return S_OK;
         }
         catch (...)

@@ -17,7 +17,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            *token = detach(shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            shim().VisibilityChanged(token);
+            this->shim().VisibilityChanged(token);
             return S_OK;
         }
         catch (...)
@@ -43,7 +43,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            *token = detach(shim().IsInputRedirectedChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().IsInputRedirectedChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -56,7 +56,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            shim().IsInputRedirectedChanged(token);
+            this->shim().IsInputRedirectedChanged(token);
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Visible());
+            *value = detach(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsInputRedirected());
+            *value = detach(this->shim().IsInputRedirected());
             return S_OK;
         }
         catch (...)

@@ -40,7 +40,7 @@ struct produce<D, Windows::System::Threading::Core::IPreallocatedWorkItem> : pro
     {
         try
         {
-            *operation = detach(shim().RunAsync());
+            *operation = detach(this->shim().RunAsync());
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::System::Threading::Core::IPreallocatedWorkItemFactory
     {
         try
         {
-            *workItem = detach(shim().CreateWorkItem(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler)));
+            *workItem = detach(this->shim().CreateWorkItem(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::System::Threading::Core::IPreallocatedWorkItemFactory
     {
         try
         {
-            *WorkItem = detach(shim().CreateWorkItemWithPriority(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority));
+            *WorkItem = detach(this->shim().CreateWorkItemWithPriority(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority));
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::System::Threading::Core::IPreallocatedWorkItemFactory
     {
         try
         {
-            *WorkItem = detach(shim().CreateWorkItemWithPriorityAndOptions(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority, options));
+            *WorkItem = detach(this->shim().CreateWorkItemWithPriorityAndOptions(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority, options));
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifier> : produce_b
     {
         try
         {
-            shim().Enable();
+            this->shim().Enable();
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifier> : produce_b
     {
         try
         {
-            shim().Terminate();
+            this->shim().Terminate();
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifierStatics> : pr
     {
         try
         {
-            *signalNotifier = detach(shim().AttachToEvent(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler)));
+            *signalNotifier = detach(this->shim().AttachToEvent(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifierStatics> : pr
     {
         try
         {
-            *signalNotifier = detach(shim().AttachToEvent(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
+            *signalNotifier = detach(this->shim().AttachToEvent(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifierStatics> : pr
     {
         try
         {
-            *signalNotifier = detach(shim().AttachToSemaphore(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler)));
+            *signalNotifier = detach(this->shim().AttachToSemaphore(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifierStatics> : pr
     {
         try
         {
-            *signalNotifier = detach(shim().AttachToSemaphore(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
+            *signalNotifier = detach(this->shim().AttachToSemaphore(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::System::Threading::Core::SignalHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
             return S_OK;
         }
         catch (...)

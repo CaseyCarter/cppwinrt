@@ -24,7 +24,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            *value = detach(shim().InformationElements());
+            *value = detach(this->shim().InformationElements());
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            shim().InformationElements(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> *>(&value));
+            this->shim().InformationElements(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            *value = detach(shim().ListenStateDiscoverability());
+            *value = detach(this->shim().ListenStateDiscoverability());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            shim().ListenStateDiscoverability(value);
+            this->shim().ListenStateDiscoverability(value);
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            *value = detach(shim().IsAutonomousGroupOwnerEnabled());
+            *value = detach(this->shim().IsAutonomousGroupOwnerEnabled());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            shim().IsAutonomousGroupOwnerEnabled(value);
+            this->shim().IsAutonomousGroupOwnerEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
     {
         try
         {
-            *value = detach(shim().LegacySettings());
+            *value = detach(this->shim().LegacySettings());
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2> : pro
     {
         try
         {
-            *value = detach(shim().SupportedConfigurationMethods());
+            *value = detach(this->shim().SupportedConfigurationMethods());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            *value = detach(shim().Advertisement());
+            *value = detach(this->shim().Advertisement());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            *token = detach(shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -179,7 +179,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            shim().StatusChanged(token);
+            this->shim().StatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener> :
     {
         try
         {
-            *token = detach(shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener> :
     {
         try
         {
-            shim().ConnectionRequested(token);
+            this->shim().ConnectionRequested(token);
             return S_OK;
         }
         catch (...)
@@ -282,7 +282,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>
     {
         try
         {
-            *value = detach(shim().GroupOwnerIntent());
+            *value = detach(this->shim().GroupOwnerIntent());
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>
     {
         try
         {
-            shim().GroupOwnerIntent(value);
+            this->shim().GroupOwnerIntent(value);
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2
     {
         try
         {
-            *value = detach(shim().PreferenceOrderedConfigurationMethods());
+            *value = detach(this->shim().PreferenceOrderedConfigurationMethods());
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2
     {
         try
         {
-            *value = detach(shim().PreferredPairingProcedure());
+            *value = detach(this->shim().PreferredPairingProcedure());
             return S_OK;
         }
         catch (...)
@@ -339,7 +339,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2
     {
         try
         {
-            shim().PreferredPairingProcedure(value);
+            this->shim().PreferredPairingProcedure(value);
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersS
     {
         try
         {
-            *result = detach(shim().GetDevicePairingKinds(configurationMethod));
+            *result = detach(this->shim().GetDevicePairingKinds(configurationMethod));
             return S_OK;
         }
         catch (...)
@@ -373,7 +373,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest> : 
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEv
     {
         try
         {
-            *result = detach(shim().GetConnectionRequest());
+            *result = detach(this->shim().GetConnectionRequest());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -436,7 +436,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
     {
         try
         {
-            *token = detach(shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
     {
         try
         {
-            shim().ConnectionStatusChanged(token);
+            this->shim().ConnectionStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetConnectionEndpointPairs());
+            *value = detach(this->shim().GetConnectionEndpointPairs());
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics> : prod
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelector());
+            *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics> : prod
     {
         try
         {
-            *asyncOp = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -512,7 +512,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2> : pro
     {
         try
         {
-            *result = detach(shim().GetDeviceSelector(type));
+            *result = detach(this->shim().GetDeviceSelector(type));
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2> : pro
     {
         try
         {
-            *result = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters *>(&connectionParameters)));
+            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters *>(&connectionParameters)));
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            *value = detach(shim().Oui());
+            *value = detach(this->shim().Oui());
             return S_OK;
         }
         catch (...)
@@ -558,7 +558,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            shim().Oui(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().Oui(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -571,7 +571,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            *value = detach(shim().OuiType());
+            *value = detach(this->shim().OuiType());
             return S_OK;
         }
         catch (...)
@@ -584,7 +584,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            shim().OuiType(value);
+            this->shim().OuiType(value);
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElementSta
     {
         try
         {
-            *result = detach(shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *result = detach(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElementSta
     {
         try
         {
-            *result = detach(shim().CreateFromDeviceInformation(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInformation)));
+            *result = detach(this->shim().CreateFromDeviceInformation(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInformation)));
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            shim().IsEnabled(value);
+            this->shim().IsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            *value = detach(shim().Ssid());
+            *value = detach(this->shim().Ssid());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            shim().Ssid(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Ssid(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -713,7 +713,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            *value = detach(shim().Passphrase());
+            *value = detach(this->shim().Passphrase());
             return S_OK;
         }
         catch (...)
@@ -727,7 +727,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
     {
         try
         {
-            shim().Passphrase(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().Passphrase(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)

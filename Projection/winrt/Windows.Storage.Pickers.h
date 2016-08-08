@@ -21,7 +21,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ViewMode());
+            *value = detach(this->shim().ViewMode());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            shim().ViewMode(value);
+            this->shim().ViewMode(value);
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SettingsIdentifier());
+            *value = detach(this->shim().SettingsIdentifier());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SuggestedStartLocation());
+            *value = detach(this->shim().SuggestedStartLocation());
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            shim().SuggestedStartLocation(value);
+            this->shim().SuggestedStartLocation(value);
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().CommitButtonText());
+            *value = detach(this->shim().CommitButtonText());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FileTypeFilter());
+            *value = detach(this->shim().FileTypeFilter());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *pickSingleFileOperation = detach(shim().PickSingleFileAsync());
+            *pickSingleFileOperation = detach(this->shim().PickSingleFileAsync());
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, 
     {
         try
         {
-            *pickMultipleFilesOperation = detach(shim().PickMultipleFilesAsync());
+            *pickMultipleFilesOperation = detach(this->shim().PickMultipleFilesAsync());
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ContinuationData());
+            *value = detach(this->shim().ContinuationData());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker2> : produce_base<D,
     {
         try
         {
-            shim().PickSingleFileAndContinue();
+            this->shim().PickSingleFileAndContinue();
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPicker2> : produce_base<D,
     {
         try
         {
-            shim().PickMultipleFilesAndContinue();
+            this->shim().PickMultipleFilesAndContinue();
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPickerStatics> : produce_b
     {
         try
         {
-            *pickSingleFileOperation = detach(shim().ResumePickSingleFileAsync());
+            *pickSingleFileOperation = detach(this->shim().ResumePickSingleFileAsync());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Storage::Pickers::IFileOpenPickerWithOperationId> : p
     {
         try
         {
-            *pickSingleFileOperation = detach(shim().PickSingleFileAsync(*reinterpret_cast<const hstring *>(&pickerOperationId)));
+            *pickSingleFileOperation = detach(this->shim().PickSingleFileAsync(*reinterpret_cast<const hstring *>(&pickerOperationId)));
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SettingsIdentifier());
+            *value = detach(this->shim().SettingsIdentifier());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SuggestedStartLocation());
+            *value = detach(this->shim().SuggestedStartLocation());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().SuggestedStartLocation(value);
+            this->shim().SuggestedStartLocation(value);
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().CommitButtonText());
+            *value = detach(this->shim().CommitButtonText());
             return S_OK;
         }
         catch (...)
@@ -320,7 +320,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FileTypeChoices());
+            *value = detach(this->shim().FileTypeChoices());
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DefaultFileExtension());
+            *value = detach(this->shim().DefaultFileExtension());
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().DefaultFileExtension(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DefaultFileExtension(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SuggestedSaveFile());
+            *value = detach(this->shim().SuggestedSaveFile());
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().SuggestedSaveFile(*reinterpret_cast<const Windows::Storage::StorageFile *>(&value));
+            this->shim().SuggestedSaveFile(*reinterpret_cast<const Windows::Storage::StorageFile *>(&value));
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SuggestedFileName());
+            *value = detach(this->shim().SuggestedFileName());
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            shim().SuggestedFileName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SuggestedFileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -428,7 +428,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, 
     {
         try
         {
-            *pickSaveFileOperation = detach(shim().PickSaveFileAsync());
+            *pickSaveFileOperation = detach(this->shim().PickSaveFileAsync());
             return S_OK;
         }
         catch (...)
@@ -446,7 +446,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ContinuationData());
+            *value = detach(this->shim().ContinuationData());
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker2> : produce_base<D,
     {
         try
         {
-            shim().PickSaveFileAndContinue();
+            this->shim().PickSaveFileAndContinue();
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker3> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().EnterpriseId());
+            *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::Storage::Pickers::IFileSavePicker3> : produce_base<D,
     {
         try
         {
-            shim().EnterpriseId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EnterpriseId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -508,7 +508,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ViewMode());
+            *value = detach(this->shim().ViewMode());
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            shim().ViewMode(value);
+            this->shim().ViewMode(value);
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SettingsIdentifier());
+            *value = detach(this->shim().SettingsIdentifier());
             return S_OK;
         }
         catch (...)
@@ -548,7 +548,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SettingsIdentifier(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -561,7 +561,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SuggestedStartLocation());
+            *value = detach(this->shim().SuggestedStartLocation());
             return S_OK;
         }
         catch (...)
@@ -574,7 +574,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            shim().SuggestedStartLocation(value);
+            this->shim().SuggestedStartLocation(value);
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CommitButtonText());
+            *value = detach(this->shim().CommitButtonText());
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().FileTypeFilter());
+            *value = detach(this->shim().FileTypeFilter());
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Wi
     {
         try
         {
-            *pickSingleFolderOperation = detach(shim().PickSingleFolderAsync());
+            *pickSingleFolderOperation = detach(this->shim().PickSingleFolderAsync());
             return S_OK;
         }
         catch (...)
@@ -646,7 +646,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ContinuationData());
+            *value = detach(this->shim().ContinuationData());
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker2> : produce_base<D, W
     {
         try
         {
-            shim().PickFolderAndContinue();
+            this->shim().PickFolderAndContinue();
             return S_OK;
         }
         catch (...)

@@ -17,7 +17,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().TenantId());
+            *value = detach(this->shim().TenantId());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().TenantName());
+            *value = detach(this->shim().TenantName());
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().KeyId());
+            *value = detach(this->shim().KeyId());
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().KeyName());
+            *value = detach(this->shim().KeyName());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().GetRegistrationsAsync());
+            *value = detach(this->shim().GetRegistrationsAsync());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)

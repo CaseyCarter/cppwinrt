@@ -56,7 +56,7 @@ struct produce<D, Windows::Data::Text::IAlternateWordForm> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SourceTextSegment());
+            *value = detach(this->shim().SourceTextSegment());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Data::Text::IAlternateWordForm> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().AlternateText());
+            *value = detach(this->shim().AlternateText());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Data::Text::IAlternateWordForm> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().NormalizationFormat());
+            *value = detach(this->shim().NormalizationFormat());
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordSegment> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordSegment> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().SourceTextSegment());
+            *value = detach(this->shim().SourceTextSegment());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordsSegmenter> : produce_base
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordsSegmenter> : produce_base
     {
         try
         {
-            *result = detach(shim().GetTokenAt(*reinterpret_cast<const hstring *>(&text), startIndex));
+            *result = detach(this->shim().GetTokenAt(*reinterpret_cast<const hstring *>(&text), startIndex));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordsSegmenter> : produce_base
     {
         try
         {
-            *result = detach(shim().GetTokens(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach(this->shim().GetTokens(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordsSegmenter> : produce_base
     {
         try
         {
-            shim().Tokenize(*reinterpret_cast<const hstring *>(&text), startIndex, *reinterpret_cast<const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler *>(&handler));
+            this->shim().Tokenize(*reinterpret_cast<const hstring *>(&text), startIndex, *reinterpret_cast<const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::Data::Text::ISelectableWordsSegmenterFactory> : produ
     {
         try
         {
-            *result = detach(shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&language)));
+            *result = detach(this->shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::Data::Text::ISemanticTextQuery> : produce_base<D, Win
     {
         try
         {
-            *result = detach(shim().Find(*reinterpret_cast<const hstring *>(&content)));
+            *result = detach(this->shim().Find(*reinterpret_cast<const hstring *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::Data::Text::ISemanticTextQuery> : produce_base<D, Win
     {
         try
         {
-            *result = detach(shim().FindInProperty(*reinterpret_cast<const hstring *>(&propertyContent), *reinterpret_cast<const hstring *>(&propertyName)));
+            *result = detach(this->shim().FindInProperty(*reinterpret_cast<const hstring *>(&propertyContent), *reinterpret_cast<const hstring *>(&propertyName)));
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::Data::Text::ISemanticTextQueryFactory> : produce_base
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&aqsFilter)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::Data::Text::ISemanticTextQueryFactory> : produce_base
     {
         try
         {
-            *result = detach(shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const hstring *>(&filterLanguage)));
+            *result = detach(this->shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const hstring *>(&filterLanguage)));
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Data::Text::ITextConversionGenerator> : produce_base<
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Data::Text::ITextConversionGenerator> : produce_base<
     {
         try
         {
-            *value = detach(shim().LanguageAvailableButNotInstalled());
+            *value = detach(this->shim().LanguageAvailableButNotInstalled());
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::Data::Text::ITextConversionGenerator> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input)));
+            *result = detach(this->shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::Data::Text::ITextConversionGenerator> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input), maxCandidates));
+            *result = detach(this->shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input), maxCandidates));
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Data::Text::ITextConversionGeneratorFactory> : produc
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::Data::Text::ITextPhoneme> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DisplayText());
+            *value = detach(this->shim().DisplayText());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::Data::Text::ITextPhoneme> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ReadingText());
+            *value = detach(this->shim().ReadingText());
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::Data::Text::ITextPredictionGenerator> : produce_base<
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Data::Text::ITextPredictionGenerator> : produce_base<
     {
         try
         {
-            *value = detach(shim().LanguageAvailableButNotInstalled());
+            *value = detach(this->shim().LanguageAvailableButNotInstalled());
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::Data::Text::ITextPredictionGenerator> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input)));
+            *result = detach(this->shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Data::Text::ITextPredictionGenerator> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input), maxCandidates));
+            *result = detach(this->shim().GetCandidatesAsync(*reinterpret_cast<const hstring *>(&input), maxCandidates));
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::Data::Text::ITextPredictionGeneratorFactory> : produc
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator> : produc
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator> : produc
     {
         try
         {
-            *value = detach(shim().LanguageAvailableButNotInstalled());
+            *value = detach(this->shim().LanguageAvailableButNotInstalled());
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator> : produc
     {
         try
         {
-            *result = detach(shim().ConvertBackAsync(*reinterpret_cast<const hstring *>(&input)));
+            *result = detach(this->shim().ConvertBackAsync(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator2> : produ
     {
         try
         {
-            *result = detach(shim().GetPhonemesAsync(*reinterpret_cast<const hstring *>(&input)));
+            *result = detach(this->shim().GetPhonemesAsync(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Data::Text::ITextReverseConversionGeneratorFactory> :
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -539,7 +539,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *codepoint = detach(shim().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate));
+            *codepoint = detach(this->shim().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate));
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            shim().GetSurrogatePairFromCodepoint(codepoint, *highSurrogate, *lowSurrogate);
+            this->shim().GetSurrogatePairFromCodepoint(codepoint, *highSurrogate, *lowSurrogate);
             return S_OK;
         }
         catch (...)
@@ -565,7 +565,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsHighSurrogate(codepoint));
+            *value = detach(this->shim().IsHighSurrogate(codepoint));
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsLowSurrogate(codepoint));
+            *value = detach(this->shim().IsLowSurrogate(codepoint));
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsSupplementary(codepoint));
+            *value = detach(this->shim().IsSupplementary(codepoint));
             return S_OK;
         }
         catch (...)
@@ -604,7 +604,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsNoncharacter(codepoint));
+            *value = detach(this->shim().IsNoncharacter(codepoint));
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsWhitespace(codepoint));
+            *value = detach(this->shim().IsWhitespace(codepoint));
             return S_OK;
         }
         catch (...)
@@ -630,7 +630,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsAlphabetic(codepoint));
+            *value = detach(this->shim().IsAlphabetic(codepoint));
             return S_OK;
         }
         catch (...)
@@ -643,7 +643,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsCased(codepoint));
+            *value = detach(this->shim().IsCased(codepoint));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsUppercase(codepoint));
+            *value = detach(this->shim().IsUppercase(codepoint));
             return S_OK;
         }
         catch (...)
@@ -669,7 +669,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsLowercase(codepoint));
+            *value = detach(this->shim().IsLowercase(codepoint));
             return S_OK;
         }
         catch (...)
@@ -682,7 +682,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsIdStart(codepoint));
+            *value = detach(this->shim().IsIdStart(codepoint));
             return S_OK;
         }
         catch (...)
@@ -695,7 +695,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsIdContinue(codepoint));
+            *value = detach(this->shim().IsIdContinue(codepoint));
             return S_OK;
         }
         catch (...)
@@ -708,7 +708,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsGraphemeBase(codepoint));
+            *value = detach(this->shim().IsGraphemeBase(codepoint));
             return S_OK;
         }
         catch (...)
@@ -721,7 +721,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().IsGraphemeExtend(codepoint));
+            *value = detach(this->shim().IsGraphemeExtend(codepoint));
             return S_OK;
         }
         catch (...)
@@ -734,7 +734,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().GetNumericType(codepoint));
+            *value = detach(this->shim().GetNumericType(codepoint));
             return S_OK;
         }
         catch (...)
@@ -747,7 +747,7 @@ struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().GetGeneralCategory(codepoint));
+            *value = detach(this->shim().GetGeneralCategory(codepoint));
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::Data::Text::IWordSegment> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -778,7 +778,7 @@ struct produce<D, Windows::Data::Text::IWordSegment> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().SourceTextSegment());
+            *value = detach(this->shim().SourceTextSegment());
             return S_OK;
         }
         catch (...)
@@ -791,7 +791,7 @@ struct produce<D, Windows::Data::Text::IWordSegment> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().AlternateForms());
+            *value = detach(this->shim().AlternateForms());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::Data::Text::IWordsSegmenter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::Data::Text::IWordsSegmenter> : produce_base<D, Window
     {
         try
         {
-            *result = detach(shim().GetTokenAt(*reinterpret_cast<const hstring *>(&text), startIndex));
+            *result = detach(this->shim().GetTokenAt(*reinterpret_cast<const hstring *>(&text), startIndex));
             return S_OK;
         }
         catch (...)
@@ -837,7 +837,7 @@ struct produce<D, Windows::Data::Text::IWordsSegmenter> : produce_base<D, Window
     {
         try
         {
-            *result = detach(shim().GetTokens(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach(this->shim().GetTokens(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -851,7 +851,7 @@ struct produce<D, Windows::Data::Text::IWordsSegmenter> : produce_base<D, Window
     {
         try
         {
-            shim().Tokenize(*reinterpret_cast<const hstring *>(&text), startIndex, *reinterpret_cast<const Windows::Data::Text::WordSegmentsTokenizingHandler *>(&handler));
+            this->shim().Tokenize(*reinterpret_cast<const hstring *>(&text), startIndex, *reinterpret_cast<const Windows::Data::Text::WordSegmentsTokenizingHandler *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -868,7 +868,7 @@ struct produce<D, Windows::Data::Text::IWordsSegmenterFactory> : produce_base<D,
     {
         try
         {
-            *result = detach(shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&language)));
+            *result = detach(this->shim().CreateWithLanguage(*reinterpret_cast<const hstring *>(&language)));
             return S_OK;
         }
         catch (...)

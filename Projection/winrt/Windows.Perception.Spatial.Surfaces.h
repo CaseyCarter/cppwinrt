@@ -22,7 +22,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> :
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> :
     {
         try
         {
-            *value = detach(shim().UpdateTime());
+            *value = detach(this->shim().UpdateTime());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> :
     {
         try
         {
-            *value = detach(shim().TryGetBounds(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetBounds(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> :
     {
         try
         {
-            *value = detach(shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter));
+            *value = detach(this->shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter));
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> :
     {
         try
         {
-            *value = detach(shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, *reinterpret_cast<const Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions *>(&options)));
+            *value = detach(this->shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, *reinterpret_cast<const Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().SurfaceInfo());
+            *value = detach(this->shim().SurfaceInfo());
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().CoordinateSystem());
+            *value = detach(this->shim().CoordinateSystem());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().TriangleIndices());
+            *value = detach(this->shim().TriangleIndices());
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().VertexPositions());
+            *value = detach(this->shim().VertexPositions());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().VertexPositionScale());
+            *value = detach(this->shim().VertexPositionScale());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> :
     {
         try
         {
-            *value = detach(shim().VertexNormals());
+            *value = detach(this->shim().VertexNormals());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuf
     {
         try
         {
-            *value = detach(shim().Format());
+            *value = detach(this->shim().Format());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuf
     {
         try
         {
-            *value = detach(shim().Stride());
+            *value = detach(this->shim().Stride());
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuf
     {
         try
         {
-            *value = detach(shim().ElementCount());
+            *value = detach(this->shim().ElementCount());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuf
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().VertexPositionFormat());
+            *value = detach(this->shim().VertexPositionFormat());
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            shim().VertexPositionFormat(value);
+            this->shim().VertexPositionFormat(value);
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().TriangleIndexFormat());
+            *value = detach(this->shim().TriangleIndexFormat());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            shim().TriangleIndexFormat(value);
+            this->shim().TriangleIndexFormat(value);
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().VertexNormalFormat());
+            *value = detach(this->shim().VertexNormalFormat());
             return S_OK;
         }
         catch (...)
@@ -303,7 +303,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            shim().VertexNormalFormat(value);
+            this->shim().VertexNormalFormat(value);
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().IncludeVertexNormals());
+            *value = detach(this->shim().IncludeVertexNormals());
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            shim().IncludeVertexNormals(value);
+            this->shim().IncludeVertexNormals(value);
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().SupportedVertexPositionFormats());
+            *value = detach(this->shim().SupportedVertexPositionFormats());
             return S_OK;
         }
         catch (...)
@@ -360,7 +360,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().SupportedTriangleIndexFormats());
+            *value = detach(this->shim().SupportedTriangleIndexFormats());
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOpt
     {
         try
         {
-            *value = detach(shim().SupportedVertexNormalFormats());
+            *value = detach(this->shim().SupportedVertexNormalFormats());
             return S_OK;
         }
         catch (...)
@@ -392,7 +392,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            *value = detach(shim().GetObservedSurfaces());
+            *value = detach(this->shim().GetObservedSurfaces());
             return S_OK;
         }
         catch (...)
@@ -406,7 +406,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            shim().SetBoundingVolume(*reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingVolume *>(&bounds));
+            this->shim().SetBoundingVolume(*reinterpret_cast<const Windows::Perception::Spatial::SpatialBoundingVolume *>(&bounds));
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            shim().SetBoundingVolumes(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> *>(&bounds));
+            this->shim().SetBoundingVolumes(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> *>(&bounds));
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            *token = detach(shim().ObservedSurfacesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ObservedSurfacesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            shim().ObservedSurfacesChanged(token);
+            this->shim().ObservedSurfacesChanged(token);
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     {
         try
         {
-            *result = detach(shim().RequestAccessAsync());
+            *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)

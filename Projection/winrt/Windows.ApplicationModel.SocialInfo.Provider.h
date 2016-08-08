@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *value = detach(shim().OwnerRemoteId());
+            *value = detach(this->shim().OwnerRemoteId());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *operation = detach(shim().CommitAsync());
+            *operation = detach(this->shim().CommitAsync());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            *value = detach(shim().TargetUri());
+            *value = detach(this->shim().TargetUri());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
-            shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
-            *value = detach(shim().OwnerRemoteId());
+            *value = detach(this->shim().OwnerRemoteId());
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
-            *value = detach(shim().Items());
+            *value = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
-            *operation = detach(shim().CommitAsync());
+            *operation = detach(this->shim().CommitAsync());
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            *operation = detach(shim().CreateSocialFeedUpdaterAsync(kind, mode, *reinterpret_cast<const hstring *>(&ownerRemoteId)));
+            *operation = detach(this->shim().CreateSocialFeedUpdaterAsync(kind, mode, *reinterpret_cast<const hstring *>(&ownerRemoteId)));
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            *operation = detach(shim().CreateDashboardItemUpdaterAsync(*reinterpret_cast<const hstring *>(&ownerRemoteId)));
+            *operation = detach(this->shim().CreateDashboardItemUpdaterAsync(*reinterpret_cast<const hstring *>(&ownerRemoteId)));
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            shim().UpdateBadgeCountValue(*reinterpret_cast<const hstring *>(&itemRemoteId), newCount);
+            this->shim().UpdateBadgeCountValue(*reinterpret_cast<const hstring *>(&itemRemoteId), newCount);
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            shim().ReportNewContentAvailable(*reinterpret_cast<const hstring *>(&contactRemoteId), kind);
+            this->shim().ReportNewContentAvailable(*reinterpret_cast<const hstring *>(&contactRemoteId), kind);
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            *operation = detach(shim().ProvisionAsync());
+            *operation = detach(this->shim().ProvisionAsync());
             return S_OK;
         }
         catch (...)
@@ -273,7 +273,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
-            *operation = detach(shim().DeprovisionAsync());
+            *operation = detach(this->shim().DeprovisionAsync());
             return S_OK;
         }
         catch (...)

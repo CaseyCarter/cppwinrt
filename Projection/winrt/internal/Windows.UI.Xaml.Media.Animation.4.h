@@ -31,7 +31,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetNavigationStateCore());
+            *returnValue = detach(this->shim().GetNavigationStateCore());
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ public:
     {
         try
         {
-            shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
+            this->shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
             return S_OK;
         }
         catch (...)

@@ -23,7 +23,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync(startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetItemsAsync(startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync());
+            *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync(startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetFilesAsync(startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync());
+            *operation = detach(this->shim().GetFilesAsync());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync(startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetFoldersAsync(startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync());
+            *operation = detach(this->shim().GetFoldersAsync());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *vector = detach(shim().GetVirtualizedItemsVector());
+            *vector = detach(this->shim().GetVirtualizedItemsVector());
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *vector = detach(shim().GetVirtualizedFilesVector());
+            *vector = detach(this->shim().GetVirtualizedFilesVector());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
     {
         try
         {
-            *vector = detach(shim().GetVirtualizedFoldersVector());
+            *vector = detach(this->shim().GetVirtualizedFoldersVector());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactoryFactory> 
     {
         try
         {
-            *value = detach(shim().CreateWithMode(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode));
+            *value = detach(this->shim().CreateWithMode(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode));
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactoryFactory> 
     {
         try
         {
-            *value = detach(shim().CreateWithModeAndSize(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize));
+            *value = detach(this->shim().CreateWithModeAndSize(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize));
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactoryFactory> 
     {
         try
         {
-            *value = detach(shim().CreateWithModeAndSizeAndOptions(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize, thumbnailOptions));
+            *value = detach(this->shim().CreateWithModeAndSizeAndOptions(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize, thumbnailOptions));
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactoryFactory> 
     {
         try
         {
-            *value = detach(shim().CreateWithModeAndSizeAndOptionsAndFlags(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize, thumbnailOptions, delayLoad));
+            *value = detach(this->shim().CreateWithModeAndSizeAndOptionsAndFlags(*reinterpret_cast<const Windows::Storage::Search::IStorageQueryResultBase *>(&queryResult), mode, requestedThumbnailSize, thumbnailOptions, delayLoad));
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().MusicProperties());
+            *value = detach(this->shim().MusicProperties());
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().VideoProperties());
+            *value = detach(this->shim().VideoProperties());
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().ImageProperties());
+            *value = detach(this->shim().ImageProperties());
             return S_OK;
         }
         catch (...)
@@ -255,7 +255,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().DocumentProperties());
+            *value = detach(this->shim().DocumentProperties());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().BasicProperties());
+            *value = detach(this->shim().BasicProperties());
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *eventCookie = detach(shim().ThumbnailUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
+            *eventCookie = detach(this->shim().ThumbnailUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
         catch (...)
@@ -310,7 +310,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            shim().ThumbnailUpdated(eventCookie);
+            this->shim().ThumbnailUpdated(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            *eventCookie = detach(shim().PropertiesUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
+            *eventCookie = detach(this->shim().PropertiesUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
     {
         try
         {
-            shim().PropertiesUpdated(eventCookie);
+            this->shim().PropertiesUpdated(eventCookie);
             return S_OK;
         }
         catch (...)

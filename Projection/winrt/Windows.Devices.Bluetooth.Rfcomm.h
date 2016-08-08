@@ -24,7 +24,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *value = detach(shim().ConnectionHostName());
+            *value = detach(this->shim().ConnectionHostName());
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *value = detach(shim().ConnectionServiceName());
+            *value = detach(this->shim().ConnectionServiceName());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *value = detach(shim().ServiceId());
+            *value = detach(this->shim().ServiceId());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *value = detach(shim().ProtectionLevel());
+            *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *value = detach(shim().MaxProtectionLevel());
+            *value = detach(this->shim().MaxProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *asyncOp = detach(shim().GetSdpRawAttributesAsync());
+            *asyncOp = detach(this->shim().GetSdpRawAttributesAsync());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
-            *asyncOp = detach(shim().GetSdpRawAttributesAsync(cacheMode));
+            *asyncOp = detach(this->shim().GetSdpRawAttributesAsync(cacheMode));
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2> : 
     {
         try
         {
-            *value = detach(shim().Device());
+            *value = detach(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3> : 
     {
         try
         {
-            *value = detach(shim().DeviceAccessInformation());
+            *value = detach(this->shim().DeviceAccessInformation());
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3> : 
     {
         try
         {
-            *value = detach(shim().RequestAccessAsync());
+            *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *asyncOp = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
+            *selector = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice)));
+            *selector = detach(this->shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice)));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), cacheMode));
+            *selector = detach(this->shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), cacheMode));
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
+            *selector = detach(this->shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId), cacheMode));
+            *selector = detach(this->shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId), cacheMode));
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResu
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResu
     {
         try
         {
-            *services = detach(shim().Services());
+            *services = detach(this->shim().Services());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
-            *value = detach(shim().Uuid());
+            *value = detach(this->shim().Uuid());
             return S_OK;
         }
         catch (...)
@@ -310,7 +310,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
-            *shortId = detach(shim().AsShortId());
+            *shortId = detach(this->shim().AsShortId());
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
-            *id = detach(shim().AsString());
+            *id = detach(this->shim().AsString());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().FromUuid(uuid));
+            *serviceId = detach(this->shim().FromUuid(uuid));
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().FromShortId(shortId));
+            *serviceId = detach(this->shim().FromShortId(shortId));
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().SerialPort());
+            *serviceId = detach(this->shim().SerialPort());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().ObexObjectPush());
+            *serviceId = detach(this->shim().ObexObjectPush());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().ObexFileTransfer());
+            *serviceId = detach(this->shim().ObexFileTransfer());
             return S_OK;
         }
         catch (...)
@@ -411,7 +411,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().PhoneBookAccessPce());
+            *serviceId = detach(this->shim().PhoneBookAccessPce());
             return S_OK;
         }
         catch (...)
@@ -425,7 +425,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().PhoneBookAccessPse());
+            *serviceId = detach(this->shim().PhoneBookAccessPse());
             return S_OK;
         }
         catch (...)
@@ -439,7 +439,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
-            *serviceId = detach(shim().GenericFileTransfer());
+            *serviceId = detach(this->shim().GenericFileTransfer());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
-            *value = detach(shim().ServiceId());
+            *value = detach(this->shim().ServiceId());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
-            *value = detach(shim().SdpRawAttributes());
+            *value = detach(this->shim().SdpRawAttributes());
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
-            shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener));
+            this->shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener));
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
-            shim().StopAdvertising();
+            this->shim().StopAdvertising();
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider2> 
     {
         try
         {
-            shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener), radioDiscoverable);
+            this->shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener), radioDiscoverable);
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProviderSta
     {
         try
         {
-            *asyncOp = detach(shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
+            *asyncOp = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
         catch (...)

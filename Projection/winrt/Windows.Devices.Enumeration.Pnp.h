@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObject> : produce_base
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObject> : produce_base
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObject> : produce_base
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObject> : produce_base
     {
         try
         {
-            shim().Update(*reinterpret_cast<const Windows::Devices::Enumeration::Pnp::PnpObjectUpdate *>(&updateInfo));
+            this->shim().Update(*reinterpret_cast<const Windows::Devices::Enumeration::Pnp::PnpObjectUpdate *>(&updateInfo));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectStatics> : produ
     {
         try
         {
-            *asyncOp = detach(shim().CreateFromIdAsync(type, *reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
+            *asyncOp = detach(this->shim().CreateFromIdAsync(type, *reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectStatics> : produ
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
+            *asyncOp = detach(this->shim().FindAllAsync(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectStatics> : produ
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties), *reinterpret_cast<const hstring *>(&aqsFilter)));
+            *asyncOp = detach(this->shim().FindAllAsync(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties), *reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectStatics> : produ
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
+            *watcher = detach(this->shim().CreateWatcher(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties)));
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectStatics> : produ
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties), *reinterpret_cast<const hstring *>(&aqsFilter)));
+            *watcher = detach(this->shim().CreateWatcher(type, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requestedProperties), *reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate> : produc
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate> : produc
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate> : produc
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *token = detach(shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObject> *>(&handler)));
+            *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObject> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Added(token);
+            this->shim().Added(token);
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *token = detach(shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> *>(&handler)));
+            *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Removed(token);
+            this->shim().Removed(token);
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *token = detach(shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -289,7 +289,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().EnumerationCompleted(token);
+            this->shim().EnumerationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher> : produ
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)

@@ -28,7 +28,7 @@ struct produce<D, Windows::Media::Effects::IAudioCaptureEffectsManager> : produc
     {
         try
         {
-            *token = detach(shim().AudioCaptureEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -41,7 +41,7 @@ struct produce<D, Windows::Media::Effects::IAudioCaptureEffectsManager> : produc
     {
         try
         {
-            shim().AudioCaptureEffectsChanged(token);
+            this->shim().AudioCaptureEffectsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::Media::Effects::IAudioCaptureEffectsManager> : produc
     {
         try
         {
-            *effects = detach(shim().GetAudioCaptureEffects());
+            *effects = detach(this->shim().GetAudioCaptureEffects());
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffect> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().AudioEffectType());
+            *value = detach(this->shim().AudioEffectType());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().ActivatableClassId());
+            *value = detach(this->shim().ActivatableClassId());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectDefinitionFactory> : prod
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectDefinitionFactory> : prod
     {
         try
         {
-            *value = detach(shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
+            *value = detach(this->shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produc
     {
         try
         {
-            *value = detach(shim().CreateAudioRenderEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category));
+            *value = detach(this->shim().CreateAudioRenderEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category));
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produc
     {
         try
         {
-            *value = detach(shim().CreateAudioRenderEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category, mode));
+            *value = detach(this->shim().CreateAudioRenderEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category, mode));
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produc
     {
         try
         {
-            *value = detach(shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category));
+            *value = detach(this->shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category));
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produc
     {
         try
         {
-            *value = detach(shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category, mode));
+            *value = detach(this->shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<const hstring *>(&deviceId), category, mode));
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager> : produce
     {
         try
         {
-            *token = detach(shim().AudioRenderEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().AudioRenderEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager> : produce
     {
         try
         {
-            shim().AudioRenderEffectsChanged(token);
+            this->shim().AudioRenderEffectsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager> : produce
     {
         try
         {
-            *effects = detach(shim().GetAudioRenderEffects());
+            *effects = detach(this->shim().GetAudioRenderEffects());
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager2> : produc
     {
         try
         {
-            *value = detach(shim().EffectsProviderThumbnail());
+            *value = detach(this->shim().EffectsProviderThumbnail());
             return S_OK;
         }
         catch (...)
@@ -271,7 +271,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager2> : produc
     {
         try
         {
-            *value = detach(shim().EffectsProviderSettingsLabel());
+            *value = detach(this->shim().EffectsProviderSettingsLabel());
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager2> : produc
     {
         try
         {
-            shim().ShowSettingsUI();
+            this->shim().ShowSettingsUI();
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().UseInputFrameForOutput());
+            *value = detach(this->shim().UseInputFrameForOutput());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SupportedEncodingProperties());
+            *value = detach(this->shim().SupportedEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties));
+            this->shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties));
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            shim().ProcessFrame(*reinterpret_cast<const Windows::Media::Effects::ProcessAudioFrameContext *>(&context));
+            this->shim().ProcessFrame(*reinterpret_cast<const Windows::Media::Effects::ProcessAudioFrameContext *>(&context));
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            shim().Close(reason);
+            this->shim().Close(reason);
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, 
     {
         try
         {
-            shim().DiscardQueuedFrames();
+            this->shim().DiscardQueuedFrames();
             return S_OK;
         }
         catch (...)
@@ -385,7 +385,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsReadOnly());
+            *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
         catch (...)
@@ -398,7 +398,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SupportedMemoryTypes());
+            *value = detach(this->shim().SupportedMemoryTypes());
             return S_OK;
         }
         catch (...)
@@ -411,7 +411,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().TimeIndependent());
+            *value = detach(this->shim().TimeIndependent());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SupportedEncodingProperties());
+            *value = detach(this->shim().SupportedEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *>(&device));
+            this->shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *>(&device));
             return S_OK;
         }
         catch (...)
@@ -451,7 +451,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            shim().ProcessFrame(*reinterpret_cast<const Windows::Media::Effects::ProcessVideoFrameContext *>(&context));
+            this->shim().ProcessFrame(*reinterpret_cast<const Windows::Media::Effects::ProcessVideoFrameContext *>(&context));
             return S_OK;
         }
         catch (...)
@@ -464,7 +464,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            shim().Close(reason);
+            this->shim().Close(reason);
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, 
     {
         try
         {
-            shim().DiscardQueuedFrames();
+            this->shim().DiscardQueuedFrames();
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::Media::Effects::ICompositeVideoFrameContext> : produc
     {
         try
         {
-            *value = detach(shim().SurfacesToOverlay());
+            *value = detach(this->shim().SurfacesToOverlay());
             return S_OK;
         }
         catch (...)
@@ -508,7 +508,7 @@ struct produce<D, Windows::Media::Effects::ICompositeVideoFrameContext> : produc
     {
         try
         {
-            *value = detach(shim().BackgroundFrame());
+            *value = detach(this->shim().BackgroundFrame());
             return S_OK;
         }
         catch (...)
@@ -522,7 +522,7 @@ struct produce<D, Windows::Media::Effects::ICompositeVideoFrameContext> : produc
     {
         try
         {
-            *value = detach(shim().OutputFrame());
+            *value = detach(this->shim().OutputFrame());
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::Media::Effects::ICompositeVideoFrameContext> : produc
     {
         try
         {
-            *value = detach(shim().GetOverlayForSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surfaceToOverlay)));
+            *value = detach(this->shim().GetOverlayForSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surfaceToOverlay)));
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::Media::Effects::IProcessAudioFrameContext> : produce_
     {
         try
         {
-            *value = detach(shim().InputFrame());
+            *value = detach(this->shim().InputFrame());
             return S_OK;
         }
         catch (...)
@@ -568,7 +568,7 @@ struct produce<D, Windows::Media::Effects::IProcessAudioFrameContext> : produce_
     {
         try
         {
-            *value = detach(shim().OutputFrame());
+            *value = detach(this->shim().OutputFrame());
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::Media::Effects::IProcessVideoFrameContext> : produce_
     {
         try
         {
-            *value = detach(shim().InputFrame());
+            *value = detach(this->shim().InputFrame());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::Media::Effects::IProcessVideoFrameContext> : produce_
     {
         try
         {
-            *value = detach(shim().OutputFrame());
+            *value = detach(this->shim().OutputFrame());
             return S_OK;
         }
         catch (...)
@@ -618,7 +618,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().TimeIndependent());
+            *value = detach(this->shim().TimeIndependent());
             return S_OK;
         }
         catch (...)
@@ -631,7 +631,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, W
     {
         try
         {
-            shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&backgroundProperties), *reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *>(&device));
+            this->shim().SetEncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&backgroundProperties), *reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *>(&device));
             return S_OK;
         }
         catch (...)
@@ -644,7 +644,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, W
     {
         try
         {
-            shim().CompositeFrame(*reinterpret_cast<const Windows::Media::Effects::CompositeVideoFrameContext *>(&context));
+            this->shim().CompositeFrame(*reinterpret_cast<const Windows::Media::Effects::CompositeVideoFrameContext *>(&context));
             return S_OK;
         }
         catch (...)
@@ -657,7 +657,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, W
     {
         try
         {
-            shim().Close(reason);
+            this->shim().Close(reason);
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, W
     {
         try
         {
-            shim().DiscardQueuedFrames();
+            this->shim().DiscardQueuedFrames();
             return S_OK;
         }
         catch (...)
@@ -687,7 +687,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositorDefinition> : produce
     {
         try
         {
-            *value = detach(shim().ActivatableClassId());
+            *value = detach(this->shim().ActivatableClassId());
             return S_OK;
         }
         catch (...)
@@ -701,7 +701,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositorDefinition> : produce
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositorDefinitionFactory> : 
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
             return S_OK;
         }
         catch (...)
@@ -733,7 +733,7 @@ struct produce<D, Windows::Media::Effects::IVideoCompositorDefinitionFactory> : 
     {
         try
         {
-            *value = detach(shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
+            *value = detach(this->shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::Media::Effects::IVideoEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().ActivatableClassId());
+            *value = detach(this->shim().ActivatableClassId());
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::Media::Effects::IVideoEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -783,7 +783,7 @@ struct produce<D, Windows::Media::Effects::IVideoEffectDefinitionFactory> : prod
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&activatableClassId)));
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::Media::Effects::IVideoEffectDefinitionFactory> : prod
     {
         try
         {
-            *value = detach(shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
+            *value = detach(this->shim().CreateWithProperties(*reinterpret_cast<const hstring *>(&activatableClassId), *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&props)));
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().PaddingColor());
+            *value = detach(this->shim().PaddingColor());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().PaddingColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().PaddingColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().OutputSize());
+            *value = detach(this->shim().OutputSize());
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().OutputSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().OutputSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().CropRectangle());
+            *value = detach(this->shim().CropRectangle());
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().CropRectangle(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().CropRectangle(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -893,7 +893,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().Rotation());
+            *value = detach(this->shim().Rotation());
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().Rotation(value);
+            this->shim().Rotation(value);
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().Mirror());
+            *value = detach(this->shim().Mirror());
             return S_OK;
         }
         catch (...)
@@ -932,7 +932,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().Mirror(value);
+            this->shim().Mirror(value);
             return S_OK;
         }
         catch (...)
@@ -945,7 +945,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            shim().ProcessingAlgorithm(value);
+            this->shim().ProcessingAlgorithm(value);
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : pr
     {
         try
         {
-            *value = detach(shim().ProcessingAlgorithm());
+            *value = detach(this->shim().ProcessingAlgorithm());
             return S_OK;
         }
         catch (...)

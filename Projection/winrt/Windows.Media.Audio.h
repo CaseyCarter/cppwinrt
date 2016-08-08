@@ -28,7 +28,7 @@ struct produce<D, Windows::Media::Audio::IAudioDeviceInputNode> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Device());
+            *value = detach(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Media::Audio::IAudioDeviceOutputNode> : produce_base<
     {
         try
         {
-            *value = detach(shim().Device());
+            *value = detach(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().PlaybackSpeedFactor(value);
+            this->shim().PlaybackSpeedFactor(value);
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PlaybackSpeedFactor());
+            *value = detach(this->shim().PlaybackSpeedFactor());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&position));
+            this->shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&position));
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().StartTime());
+            *value = detach(this->shim().StartTime());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().StartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().EndTime());
+            *value = detach(this->shim().EndTime());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().EndTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().EndTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().LoopCount());
+            *value = detach(this->shim().LoopCount());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().LoopCount(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
+            this->shim().LoopCount(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SourceFile());
+            *value = detach(this->shim().SourceFile());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
     {
         try
         {
-            shim().FileCompleted(token);
+            this->shim().FileCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().File());
+            *value = detach(this->shim().File());
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().FileEncodingProfile());
+            *value = detach(this->shim().FileEncodingProfile());
             return S_OK;
         }
         catch (...)
@@ -282,7 +282,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
     {
         try
         {
-            *result = detach(shim().FinalizeAsync());
+            *result = detach(this->shim().FinalizeAsync());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameCompletedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().Frame());
+            *value = detach(this->shim().Frame());
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            shim().PlaybackSpeedFactor(value);
+            this->shim().PlaybackSpeedFactor(value);
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PlaybackSpeedFactor());
+            *value = detach(this->shim().PlaybackSpeedFactor());
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            shim().AddFrame(*reinterpret_cast<const Windows::Media::AudioFrame *>(&frame));
+            this->shim().AddFrame(*reinterpret_cast<const Windows::Media::AudioFrame *>(&frame));
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            shim().DiscardQueuedFrames();
+            this->shim().DiscardQueuedFrames();
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().QueuedSampleCount());
+            *value = detach(this->shim().QueuedSampleCount());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().AudioFrameCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().AudioFrameCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            shim().AudioFrameCompleted(token);
+            this->shim().AudioFrameCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> *>(&handler)));
+            *token = detach(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
     {
         try
         {
-            shim().QuantumStarted(token);
+            this->shim().QuantumStarted(token);
             return S_OK;
         }
         catch (...)
@@ -439,7 +439,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameOutputNode> : produce_base<D
     {
         try
         {
-            *audioFrame = detach(shim().GetFrame());
+            *audioFrame = detach(this->shim().GetFrame());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *frameInputNode = detach(shim().CreateFrameInputNode());
+            *frameInputNode = detach(this->shim().CreateFrameInputNode());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *frameInputNode = detach(shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *frameInputNode = detach(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateDeviceInputNodeAsync(category));
+            *result = detach(this->shim().CreateDeviceInputNodeAsync(category));
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -513,7 +513,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
+            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
             return S_OK;
         }
         catch (...)
@@ -527,7 +527,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *frameOutputNode = detach(shim().CreateFrameOutputNode());
+            *frameOutputNode = detach(this->shim().CreateFrameOutputNode());
             return S_OK;
         }
         catch (...)
@@ -541,7 +541,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *frameOutputNode = detach(shim().CreateFrameOutputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *frameOutputNode = detach(this->shim().CreateFrameOutputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateDeviceOutputNodeAsync());
+            *result = detach(this->shim().CreateDeviceOutputNodeAsync());
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *result = detach(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *result = detach(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&fileEncodingProfile)));
+            *result = detach(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&fileEncodingProfile)));
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *submixNode = detach(shim().CreateSubmixNode());
+            *submixNode = detach(this->shim().CreateSubmixNode());
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *submixNode = detach(shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *submixNode = detach(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().ResetAllNodes();
+            this->shim().ResetAllNodes();
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *token = detach(shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().QuantumStarted(token);
+            this->shim().QuantumStarted(token);
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *token = detach(shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().QuantumProcessed(token);
+            this->shim().QuantumProcessed(token);
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *token = detach(shim().UnrecoverableErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> *>(&handler)));
+            *token = detach(this->shim().UnrecoverableErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            shim().UnrecoverableErrorOccurred(token);
+            this->shim().UnrecoverableErrorOccurred(token);
             return S_OK;
         }
         catch (...)
@@ -756,7 +756,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().CompletedQuantumCount());
+            *value = detach(this->shim().CompletedQuantumCount());
             return S_OK;
         }
         catch (...)
@@ -769,7 +769,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().EncodingProperties());
+            *value = detach(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -783,7 +783,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().LatencyInSamples());
+            *value = detach(this->shim().LatencyInSamples());
             return S_OK;
         }
         catch (...)
@@ -796,7 +796,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().PrimaryRenderDevice());
+            *value = detach(this->shim().PrimaryRenderDevice());
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().RenderDeviceAudioProcessing());
+            *value = detach(this->shim().RenderDeviceAudioProcessing());
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().SamplesPerQuantum());
+            *value = detach(this->shim().SamplesPerQuantum());
             return S_OK;
         }
         catch (...)
@@ -840,7 +840,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
     {
         try
         {
-            *frameInputNode = detach(shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *frameInputNode = detach(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
     {
         try
         {
-            *result = detach(shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -868,7 +868,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
     {
         try
         {
-            *result = detach(shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *result = detach(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -882,7 +882,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
     {
         try
         {
-            *submixNode = detach(shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *submixNode = detach(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -896,7 +896,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
     {
         try
         {
-            *updater = detach(shim().CreateBatchUpdater());
+            *updater = detach(this->shim().CreateBatchUpdater());
             return S_OK;
         }
         catch (...)
@@ -914,7 +914,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Destination());
+            *value = detach(this->shim().Destination());
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D
     {
         try
         {
-            shim().Gain(value);
+            this->shim().Gain(value);
             return S_OK;
         }
         catch (...)
@@ -941,7 +941,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Gain());
+            *value = detach(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().EncodingProperties());
+            *value = detach(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().EncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&value));
+            this->shim().EncodingProperties(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&value));
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PrimaryRenderDevice());
+            *value = detach(this->shim().PrimaryRenderDevice());
             return S_OK;
         }
         catch (...)
@@ -999,7 +999,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().PrimaryRenderDevice(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&value));
+            this->shim().PrimaryRenderDevice(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1012,7 +1012,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().QuantumSizeSelectionMode());
+            *value = detach(this->shim().QuantumSizeSelectionMode());
             return S_OK;
         }
         catch (...)
@@ -1025,7 +1025,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().QuantumSizeSelectionMode(value);
+            this->shim().QuantumSizeSelectionMode(value);
             return S_OK;
         }
         catch (...)
@@ -1038,7 +1038,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DesiredSamplesPerQuantum());
+            *value = detach(this->shim().DesiredSamplesPerQuantum());
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().DesiredSamplesPerQuantum(value);
+            this->shim().DesiredSamplesPerQuantum(value);
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AudioRenderCategory());
+            *value = detach(this->shim().AudioRenderCategory());
             return S_OK;
         }
         catch (...)
@@ -1077,7 +1077,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().AudioRenderCategory(value);
+            this->shim().AudioRenderCategory(value);
             return S_OK;
         }
         catch (...)
@@ -1090,7 +1090,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DesiredRenderDeviceAudioProcessing());
+            *value = detach(this->shim().DesiredRenderDeviceAudioProcessing());
             return S_OK;
         }
         catch (...)
@@ -1103,7 +1103,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
     {
         try
         {
-            shim().DesiredRenderDeviceAudioProcessing(value);
+            this->shim().DesiredRenderDeviceAudioProcessing(value);
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettingsFactory> : produce_b
     {
         try
         {
-            *value = detach(shim().Create(audioRenderCategory));
+            *value = detach(this->shim().Create(audioRenderCategory));
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphStatics> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateAsync(*reinterpret_cast<const Windows::Media::Audio::AudioGraphSettings *>(&settings)));
+            *result = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Media::Audio::AudioGraphSettings *>(&settings)));
             return S_OK;
         }
         catch (...)
@@ -1156,7 +1156,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEv
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -1173,7 +1173,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().OutgoingConnections());
+            *value = detach(this->shim().OutgoingConnections());
             return S_OK;
         }
         catch (...)
@@ -1187,7 +1187,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
     {
         try
         {
-            shim().AddOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination));
+            this->shim().AddOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination));
             return S_OK;
         }
         catch (...)
@@ -1200,7 +1200,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
     {
         try
         {
-            shim().AddOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination), gain);
+            this->shim().AddOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination), gain);
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
     {
         try
         {
-            shim().RemoveOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination));
+            this->shim().RemoveOutgoingConnection(*reinterpret_cast<const Windows::Media::Audio::IAudioNode *>(&destination));
             return S_OK;
         }
         catch (...)
@@ -1230,7 +1230,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Emitter());
+            *value = detach(this->shim().Emitter());
             return S_OK;
         }
         catch (...)
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().EffectDefinitions());
+            *value = detach(this->shim().EffectDefinitions());
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().OutgoingGain(value);
+            this->shim().OutgoingGain(value);
             return S_OK;
         }
         catch (...)
@@ -1275,7 +1275,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().OutgoingGain());
+            *value = detach(this->shim().OutgoingGain());
             return S_OK;
         }
         catch (...)
@@ -1288,7 +1288,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().EncodingProperties());
+            *value = detach(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -1302,7 +1302,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ConsumeInput());
+            *value = detach(this->shim().ConsumeInput());
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().ConsumeInput(value);
+            this->shim().ConsumeInput(value);
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -1341,7 +1341,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().Reset();
+            this->shim().Reset();
             return S_OK;
         }
         catch (...)
@@ -1367,7 +1367,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().DisableEffectsByDefinition(*reinterpret_cast<const Windows::Media::Effects::IAudioEffectDefinition *>(&definition));
+            this->shim().DisableEffectsByDefinition(*reinterpret_cast<const Windows::Media::Effects::IAudioEffectDefinition *>(&definition));
             return S_OK;
         }
         catch (...)
@@ -1380,7 +1380,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().EnableEffectsByDefinition(*reinterpret_cast<const Windows::Media::Effects::IAudioEffectDefinition *>(&definition));
+            this->shim().EnableEffectsByDefinition(*reinterpret_cast<const Windows::Media::Effects::IAudioEffectDefinition *>(&definition));
             return S_OK;
         }
         catch (...)
@@ -1397,7 +1397,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1410,7 +1410,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().Position(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Position(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1423,7 +1423,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -1436,7 +1436,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1449,7 +1449,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Shape());
+            *value = detach(this->shim().Shape());
             return S_OK;
         }
         catch (...)
@@ -1463,7 +1463,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DecayModel());
+            *value = detach(this->shim().DecayModel());
             return S_OK;
         }
         catch (...)
@@ -1477,7 +1477,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Gain());
+            *value = detach(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -1490,7 +1490,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().Gain(value);
+            this->shim().Gain(value);
             return S_OK;
         }
         catch (...)
@@ -1503,7 +1503,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DistanceScale());
+            *value = detach(this->shim().DistanceScale());
             return S_OK;
         }
         catch (...)
@@ -1516,7 +1516,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().DistanceScale(value);
+            this->shim().DistanceScale(value);
             return S_OK;
         }
         catch (...)
@@ -1529,7 +1529,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DopplerScale());
+            *value = detach(this->shim().DopplerScale());
             return S_OK;
         }
         catch (...)
@@ -1542,7 +1542,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().DopplerScale(value);
+            this->shim().DopplerScale(value);
             return S_OK;
         }
         catch (...)
@@ -1555,7 +1555,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DopplerVelocity());
+            *value = detach(this->shim().DopplerVelocity());
             return S_OK;
         }
         catch (...)
@@ -1568,7 +1568,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            shim().DopplerVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().DopplerVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1581,7 +1581,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().IsDopplerDisabled());
+            *value = detach(this->shim().IsDopplerDisabled());
             return S_OK;
         }
         catch (...)
@@ -1598,7 +1598,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SpatialAudioModel());
+            *value = detach(this->shim().SpatialAudioModel());
             return S_OK;
         }
         catch (...)
@@ -1611,7 +1611,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter2> : produce_base<D, W
     {
         try
         {
-            shim().SpatialAudioModel(value);
+            this->shim().SpatialAudioModel(value);
             return S_OK;
         }
         catch (...)
@@ -1628,7 +1628,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
     {
         try
         {
-            *value = detach(shim().InnerAngle());
+            *value = detach(this->shim().InnerAngle());
             return S_OK;
         }
         catch (...)
@@ -1641,7 +1641,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
     {
         try
         {
-            *value = detach(shim().OuterAngle());
+            *value = detach(this->shim().OuterAngle());
             return S_OK;
         }
         catch (...)
@@ -1654,7 +1654,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
     {
         try
         {
-            *value = detach(shim().OuterAngleGain());
+            *value = detach(this->shim().OuterAngleGain());
             return S_OK;
         }
         catch (...)
@@ -1671,7 +1671,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -1684,7 +1684,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
     {
         try
         {
-            *value = detach(shim().MinGain());
+            *value = detach(this->shim().MinGain());
             return S_OK;
         }
         catch (...)
@@ -1697,7 +1697,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
     {
         try
         {
-            *value = detach(shim().MaxGain());
+            *value = detach(this->shim().MaxGain());
             return S_OK;
         }
         catch (...)
@@ -1710,7 +1710,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
     {
         try
         {
-            *value = detach(shim().NaturalProperties());
+            *value = detach(this->shim().NaturalProperties());
             return S_OK;
         }
         catch (...)
@@ -1728,7 +1728,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics> : p
     {
         try
         {
-            *decayModel = detach(shim().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance));
+            *decayModel = detach(this->shim().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance));
             return S_OK;
         }
         catch (...)
@@ -1742,7 +1742,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics> : p
     {
         try
         {
-            *decayModel = detach(shim().CreateCustom(minGain, maxGain));
+            *decayModel = detach(this->shim().CreateCustom(minGain, maxGain));
             return S_OK;
         }
         catch (...)
@@ -1760,7 +1760,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterFactory> : produce_bas
     {
         try
         {
-            *emitter = detach(shim().CreateAudioNodeEmitter(*reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterShape *>(&shape), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterDecayModel *>(&decayModel), settings));
+            *emitter = detach(this->shim().CreateAudioNodeEmitter(*reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterShape *>(&shape), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterDecayModel *>(&decayModel), settings));
             return S_OK;
         }
         catch (...)
@@ -1778,7 +1778,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelPrope
     {
         try
         {
-            *value = detach(shim().UnityGainDistance());
+            *value = detach(this->shim().UnityGainDistance());
             return S_OK;
         }
         catch (...)
@@ -1791,7 +1791,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelPrope
     {
         try
         {
-            *value = detach(shim().CutoffDistance());
+            *value = detach(this->shim().CutoffDistance());
             return S_OK;
         }
         catch (...)
@@ -1808,7 +1808,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShape> : produce_base<
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -1821,7 +1821,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShape> : produce_base<
     {
         try
         {
-            *value = detach(shim().ConeProperties());
+            *value = detach(this->shim().ConeProperties());
             return S_OK;
         }
         catch (...)
@@ -1839,7 +1839,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics> : produc
     {
         try
         {
-            *shape = detach(shim().CreateCone(innerAngle, outerAngle, outerAngleGain));
+            *shape = detach(this->shim().CreateCone(innerAngle, outerAngle, outerAngleGain));
             return S_OK;
         }
         catch (...)
@@ -1853,7 +1853,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics> : produc
     {
         try
         {
-            *shape = detach(shim().CreateOmnidirectional());
+            *shape = detach(this->shim().CreateOmnidirectional());
             return S_OK;
         }
         catch (...)
@@ -1871,7 +1871,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1884,7 +1884,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            shim().Position(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Position(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1897,7 +1897,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -1910,7 +1910,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            shim().Orientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().Orientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1923,7 +1923,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SpeedOfSound());
+            *value = detach(this->shim().SpeedOfSound());
             return S_OK;
         }
         catch (...)
@@ -1936,7 +1936,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            shim().SpeedOfSound(value);
+            this->shim().SpeedOfSound(value);
             return S_OK;
         }
         catch (...)
@@ -1949,7 +1949,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DopplerVelocity());
+            *value = detach(this->shim().DopplerVelocity());
             return S_OK;
         }
         catch (...)
@@ -1962,7 +1962,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
     {
         try
         {
-            shim().DopplerVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().DopplerVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1979,7 +1979,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeWithListener> : produce_base<
     {
         try
         {
-            shim().Listener(*reinterpret_cast<const Windows::Media::Audio::AudioNodeListener *>(&value));
+            this->shim().Listener(*reinterpret_cast<const Windows::Media::Audio::AudioNodeListener *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1992,7 +1992,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeWithListener> : produce_base<
     {
         try
         {
-            *value = detach(shim().Listener());
+            *value = detach(this->shim().Listener());
             return S_OK;
         }
         catch (...)
@@ -2010,7 +2010,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceInputNodeResult> : pr
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2023,7 +2023,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceInputNodeResult> : pr
     {
         try
         {
-            *value = detach(shim().DeviceInputNode());
+            *value = detach(this->shim().DeviceInputNode());
             return S_OK;
         }
         catch (...)
@@ -2041,7 +2041,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult> : p
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2054,7 +2054,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult> : p
     {
         try
         {
-            *value = detach(shim().DeviceOutputNode());
+            *value = detach(this->shim().DeviceOutputNode());
             return S_OK;
         }
         catch (...)
@@ -2072,7 +2072,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileInputNodeResult> : prod
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2085,7 +2085,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileInputNodeResult> : prod
     {
         try
         {
-            *value = detach(shim().FileInputNode());
+            *value = detach(this->shim().FileInputNode());
             return S_OK;
         }
         catch (...)
@@ -2103,7 +2103,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileOutputNodeResult> : pro
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2116,7 +2116,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileOutputNodeResult> : pro
     {
         try
         {
-            *value = detach(shim().FileOutputNode());
+            *value = detach(this->shim().FileOutputNode());
             return S_OK;
         }
         catch (...)
@@ -2134,7 +2134,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioGraphResult> : produce_base
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2147,7 +2147,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioGraphResult> : produce_base
     {
         try
         {
-            *value = detach(shim().Graph());
+            *value = detach(this->shim().Graph());
             return S_OK;
         }
         catch (...)
@@ -2165,7 +2165,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            shim().WetDryMix(value);
+            this->shim().WetDryMix(value);
             return S_OK;
         }
         catch (...)
@@ -2178,7 +2178,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            *value = detach(shim().WetDryMix());
+            *value = detach(this->shim().WetDryMix());
             return S_OK;
         }
         catch (...)
@@ -2191,7 +2191,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            shim().Feedback(value);
+            this->shim().Feedback(value);
             return S_OK;
         }
         catch (...)
@@ -2204,7 +2204,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Feedback());
+            *value = detach(this->shim().Feedback());
             return S_OK;
         }
         catch (...)
@@ -2217,7 +2217,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            shim().Delay(value);
+            this->shim().Delay(value);
             return S_OK;
         }
         catch (...)
@@ -2230,7 +2230,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Delay());
+            *value = detach(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -2247,7 +2247,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinitionFactory> : produce
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2265,7 +2265,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Bandwidth());
+            *value = detach(this->shim().Bandwidth());
             return S_OK;
         }
         catch (...)
@@ -2278,7 +2278,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            shim().Bandwidth(value);
+            this->shim().Bandwidth(value);
             return S_OK;
         }
         catch (...)
@@ -2291,7 +2291,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FrequencyCenter());
+            *value = detach(this->shim().FrequencyCenter());
             return S_OK;
         }
         catch (...)
@@ -2304,7 +2304,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            shim().FrequencyCenter(value);
+            this->shim().FrequencyCenter(value);
             return S_OK;
         }
         catch (...)
@@ -2317,7 +2317,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Gain());
+            *value = detach(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -2330,7 +2330,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
     {
         try
         {
-            shim().Gain(value);
+            this->shim().Gain(value);
             return S_OK;
         }
         catch (...)
@@ -2347,7 +2347,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerEffectDefinition> : produce_b
     {
         try
         {
-            *value = detach(shim().Bands());
+            *value = detach(this->shim().Bands());
             return S_OK;
         }
         catch (...)
@@ -2365,7 +2365,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerEffectDefinitionFactory> : pr
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2383,7 +2383,7 @@ struct produce<D, Windows::Media::Audio::IFrameInputNodeQuantumStartedEventArgs>
     {
         try
         {
-            *value = detach(shim().RequiredSamples());
+            *value = detach(this->shim().RequiredSamples());
             return S_OK;
         }
         catch (...)
@@ -2400,7 +2400,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
     {
         try
         {
-            shim().Release(value);
+            this->shim().Release(value);
             return S_OK;
         }
         catch (...)
@@ -2413,7 +2413,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().Release());
+            *value = detach(this->shim().Release());
             return S_OK;
         }
         catch (...)
@@ -2426,7 +2426,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
     {
         try
         {
-            shim().Loudness(value);
+            this->shim().Loudness(value);
             return S_OK;
         }
         catch (...)
@@ -2439,7 +2439,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
     {
         try
         {
-            *value = detach(shim().Loudness());
+            *value = detach(this->shim().Loudness());
             return S_OK;
         }
         catch (...)
@@ -2456,7 +2456,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinitionFactory> : prod
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2474,7 +2474,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().WetDryMix(value);
+            this->shim().WetDryMix(value);
             return S_OK;
         }
         catch (...)
@@ -2487,7 +2487,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().WetDryMix());
+            *value = detach(this->shim().WetDryMix());
             return S_OK;
         }
         catch (...)
@@ -2500,7 +2500,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().ReflectionsDelay(value);
+            this->shim().ReflectionsDelay(value);
             return S_OK;
         }
         catch (...)
@@ -2513,7 +2513,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().ReflectionsDelay());
+            *value = detach(this->shim().ReflectionsDelay());
             return S_OK;
         }
         catch (...)
@@ -2526,7 +2526,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().ReverbDelay(value);
+            this->shim().ReverbDelay(value);
             return S_OK;
         }
         catch (...)
@@ -2539,7 +2539,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().ReverbDelay());
+            *value = detach(this->shim().ReverbDelay());
             return S_OK;
         }
         catch (...)
@@ -2552,7 +2552,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().RearDelay(value);
+            this->shim().RearDelay(value);
             return S_OK;
         }
         catch (...)
@@ -2565,7 +2565,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().RearDelay());
+            *value = detach(this->shim().RearDelay());
             return S_OK;
         }
         catch (...)
@@ -2578,7 +2578,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().PositionLeft(value);
+            this->shim().PositionLeft(value);
             return S_OK;
         }
         catch (...)
@@ -2591,7 +2591,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().PositionLeft());
+            *value = detach(this->shim().PositionLeft());
             return S_OK;
         }
         catch (...)
@@ -2604,7 +2604,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().PositionRight(value);
+            this->shim().PositionRight(value);
             return S_OK;
         }
         catch (...)
@@ -2617,7 +2617,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().PositionRight());
+            *value = detach(this->shim().PositionRight());
             return S_OK;
         }
         catch (...)
@@ -2630,7 +2630,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().PositionMatrixLeft(value);
+            this->shim().PositionMatrixLeft(value);
             return S_OK;
         }
         catch (...)
@@ -2643,7 +2643,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().PositionMatrixLeft());
+            *value = detach(this->shim().PositionMatrixLeft());
             return S_OK;
         }
         catch (...)
@@ -2656,7 +2656,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().PositionMatrixRight(value);
+            this->shim().PositionMatrixRight(value);
             return S_OK;
         }
         catch (...)
@@ -2669,7 +2669,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().PositionMatrixRight());
+            *value = detach(this->shim().PositionMatrixRight());
             return S_OK;
         }
         catch (...)
@@ -2682,7 +2682,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().EarlyDiffusion(value);
+            this->shim().EarlyDiffusion(value);
             return S_OK;
         }
         catch (...)
@@ -2695,7 +2695,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().EarlyDiffusion());
+            *value = detach(this->shim().EarlyDiffusion());
             return S_OK;
         }
         catch (...)
@@ -2708,7 +2708,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().LateDiffusion(value);
+            this->shim().LateDiffusion(value);
             return S_OK;
         }
         catch (...)
@@ -2721,7 +2721,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().LateDiffusion());
+            *value = detach(this->shim().LateDiffusion());
             return S_OK;
         }
         catch (...)
@@ -2734,7 +2734,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().LowEQGain(value);
+            this->shim().LowEQGain(value);
             return S_OK;
         }
         catch (...)
@@ -2747,7 +2747,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().LowEQGain());
+            *value = detach(this->shim().LowEQGain());
             return S_OK;
         }
         catch (...)
@@ -2760,7 +2760,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().LowEQCutoff(value);
+            this->shim().LowEQCutoff(value);
             return S_OK;
         }
         catch (...)
@@ -2773,7 +2773,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().LowEQCutoff());
+            *value = detach(this->shim().LowEQCutoff());
             return S_OK;
         }
         catch (...)
@@ -2786,7 +2786,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().HighEQGain(value);
+            this->shim().HighEQGain(value);
             return S_OK;
         }
         catch (...)
@@ -2799,7 +2799,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().HighEQGain());
+            *value = detach(this->shim().HighEQGain());
             return S_OK;
         }
         catch (...)
@@ -2812,7 +2812,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().HighEQCutoff(value);
+            this->shim().HighEQCutoff(value);
             return S_OK;
         }
         catch (...)
@@ -2825,7 +2825,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().HighEQCutoff());
+            *value = detach(this->shim().HighEQCutoff());
             return S_OK;
         }
         catch (...)
@@ -2838,7 +2838,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().RoomFilterFreq(value);
+            this->shim().RoomFilterFreq(value);
             return S_OK;
         }
         catch (...)
@@ -2851,7 +2851,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().RoomFilterFreq());
+            *value = detach(this->shim().RoomFilterFreq());
             return S_OK;
         }
         catch (...)
@@ -2864,7 +2864,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().RoomFilterMain(value);
+            this->shim().RoomFilterMain(value);
             return S_OK;
         }
         catch (...)
@@ -2877,7 +2877,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().RoomFilterMain());
+            *value = detach(this->shim().RoomFilterMain());
             return S_OK;
         }
         catch (...)
@@ -2890,7 +2890,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().RoomFilterHF(value);
+            this->shim().RoomFilterHF(value);
             return S_OK;
         }
         catch (...)
@@ -2903,7 +2903,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().RoomFilterHF());
+            *value = detach(this->shim().RoomFilterHF());
             return S_OK;
         }
         catch (...)
@@ -2916,7 +2916,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().ReflectionsGain(value);
+            this->shim().ReflectionsGain(value);
             return S_OK;
         }
         catch (...)
@@ -2929,7 +2929,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().ReflectionsGain());
+            *value = detach(this->shim().ReflectionsGain());
             return S_OK;
         }
         catch (...)
@@ -2942,7 +2942,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().ReverbGain(value);
+            this->shim().ReverbGain(value);
             return S_OK;
         }
         catch (...)
@@ -2955,7 +2955,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().ReverbGain());
+            *value = detach(this->shim().ReverbGain());
             return S_OK;
         }
         catch (...)
@@ -2968,7 +2968,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().DecayTime(value);
+            this->shim().DecayTime(value);
             return S_OK;
         }
         catch (...)
@@ -2981,7 +2981,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().DecayTime());
+            *value = detach(this->shim().DecayTime());
             return S_OK;
         }
         catch (...)
@@ -2994,7 +2994,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().Density(value);
+            this->shim().Density(value);
             return S_OK;
         }
         catch (...)
@@ -3007,7 +3007,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().Density());
+            *value = detach(this->shim().Density());
             return S_OK;
         }
         catch (...)
@@ -3020,7 +3020,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().RoomSize(value);
+            this->shim().RoomSize(value);
             return S_OK;
         }
         catch (...)
@@ -3033,7 +3033,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().RoomSize());
+            *value = detach(this->shim().RoomSize());
             return S_OK;
         }
         catch (...)
@@ -3046,7 +3046,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            shim().DisableLateField(value);
+            this->shim().DisableLateField(value);
             return S_OK;
         }
         catch (...)
@@ -3059,7 +3059,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
     {
         try
         {
-            *value = detach(shim().DisableLateField());
+            *value = detach(this->shim().DisableLateField());
             return S_OK;
         }
         catch (...)
@@ -3076,7 +3076,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinitionFactory> : produ
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)

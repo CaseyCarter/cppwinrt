@@ -19,7 +19,7 @@ struct produce<D, Windows::Management::Deployment::IDeploymentResult> : produce_
     {
         try
         {
-            *value = detach(shim().ErrorText());
+            *value = detach(this->shim().ErrorText());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Management::Deployment::IDeploymentResult> : produce_
     {
         try
         {
-            *value = detach(shim().ActivityId());
+            *value = detach(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Management::Deployment::IDeploymentResult> : produce_
     {
         try
         {
-            *value = detach(shim().ExtendedErrorCode());
+            *value = detach(this->shim().ExtendedErrorCode());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().AddPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
+            *deploymentOperation = detach(this->shim().AddPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().UpdatePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
+            *deploymentOperation = detach(this->shim().UpdatePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().RemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *deploymentOperation = detach(this->shim().RemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris)));
+            *deploymentOperation = detach(this->shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris)));
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().RegisterPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&manifestUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
+            *deploymentOperation = detach(this->shim().RegisterPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&manifestUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages());
+            *packageCollection = detach(this->shim().FindPackages());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId)));
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackages(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *users = detach(shim().FindUsers(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *users = detach(this->shim().FindUsers(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -203,7 +203,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            shim().SetPackageState(*reinterpret_cast<const hstring *>(&packageFullName), packageState);
+            this->shim().SetPackageState(*reinterpret_cast<const hstring *>(&packageFullName), packageState);
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageInformation = detach(shim().FindPackage(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *packageInformation = detach(this->shim().FindPackage(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *deploymentOperation = detach(shim().CleanupPackageForUserAsync(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&userSecurityId)));
+            *deploymentOperation = detach(this->shim().CleanupPackageForUserAsync(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&userSecurityId)));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages(*reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackages(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_ba
     {
         try
         {
-            *packageInformation = detach(shim().FindPackageForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFullName)));
+            *packageInformation = detach(this->shim().FindPackageForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().RemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName), removalOptions));
+            *deploymentOperation = detach(this->shim().RemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName), removalOptions));
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
+            *deploymentOperation = detach(this->shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().RegisterPackageByFullNameAsync(*reinterpret_cast<const hstring *>(&mainPackageFullName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&dependencyPackageFullNames), deploymentOptions));
+            *deploymentOperation = detach(this->shim().RegisterPackageByFullNameAsync(*reinterpret_cast<const hstring *>(&mainPackageFullName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&dependencyPackageFullNames), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(packageTypes));
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -360,7 +360,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(*reinterpret_cast<const hstring *>(&packageFamilyName), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<const hstring *>(&packageFamilyName), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -402,7 +402,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -416,7 +416,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().StageUserDataAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *deploymentOperation = detach(this->shim().StageUserDataAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *packageVolume = detach(shim().AddPackageVolumeAsync(*reinterpret_cast<const hstring *>(&packageStorePath)));
+            *packageVolume = detach(this->shim().AddPackageVolumeAsync(*reinterpret_cast<const hstring *>(&packageStorePath)));
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().AddPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
+            *deploymentOperation = detach(this->shim().AddPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            shim().ClearPackageStatus(*reinterpret_cast<const hstring *>(&packageFullName), status);
+            this->shim().ClearPackageStatus(*reinterpret_cast<const hstring *>(&packageFullName), status);
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().RegisterPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&manifestUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&appDataVolume)));
+            *deploymentOperation = detach(this->shim().RegisterPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&manifestUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&appDataVolume)));
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *volume = detach(shim().FindPackageVolume(*reinterpret_cast<const hstring *>(&volumeName)));
+            *volume = detach(this->shim().FindPackageVolume(*reinterpret_cast<const hstring *>(&volumeName)));
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *volumeCollection = detach(shim().FindPackageVolumes());
+            *volumeCollection = detach(this->shim().FindPackageVolumes());
             return S_OK;
         }
         catch (...)
@@ -517,7 +517,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *volume = detach(shim().GetDefaultPackageVolume());
+            *volume = detach(this->shim().GetDefaultPackageVolume());
             return S_OK;
         }
         catch (...)
@@ -531,7 +531,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().MovePackageToVolumeAsync(*reinterpret_cast<const hstring *>(&packageFullName), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
+            *deploymentOperation = detach(this->shim().MovePackageToVolumeAsync(*reinterpret_cast<const hstring *>(&packageFullName), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
         catch (...)
@@ -545,7 +545,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().RemovePackageVolumeAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&volume)));
+            *deploymentOperation = detach(this->shim().RemovePackageVolumeAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&volume)));
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            shim().SetDefaultPackageVolume(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&volume));
+            this->shim().SetDefaultPackageVolume(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&volume));
             return S_OK;
         }
         catch (...)
@@ -572,7 +572,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            shim().SetPackageStatus(*reinterpret_cast<const hstring *>(&packageFullName), status);
+            this->shim().SetPackageStatus(*reinterpret_cast<const hstring *>(&packageFullName), status);
             return S_OK;
         }
         catch (...)
@@ -585,7 +585,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().SetPackageVolumeOfflineAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&packageVolume)));
+            *deploymentOperation = detach(this->shim().SetPackageVolumeOfflineAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&packageVolume)));
             return S_OK;
         }
         catch (...)
@@ -599,7 +599,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().SetPackageVolumeOnlineAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&packageVolume)));
+            *deploymentOperation = detach(this->shim().SetPackageVolumeOnlineAsync(*reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&packageVolume)));
             return S_OK;
         }
         catch (...)
@@ -613,7 +613,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
+            *deploymentOperation = detach(this->shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_b
     {
         try
         {
-            *deploymentOperation = detach(shim().StageUserDataAsync(*reinterpret_cast<const hstring *>(&packageFullName), deploymentOptions));
+            *deploymentOperation = detach(this->shim().StageUserDataAsync(*reinterpret_cast<const hstring *>(&packageFullName), deploymentOptions));
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::Management::Deployment::IPackageManager4> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetPackageVolumesAsync());
+            *operation = detach(this->shim().GetPackageVolumesAsync());
             return S_OK;
         }
         catch (...)
@@ -663,7 +663,7 @@ struct produce<D, Windows::Management::Deployment::IPackageUserInformation> : pr
     {
         try
         {
-            *value = detach(shim().UserSecurityId());
+            *value = detach(this->shim().UserSecurityId());
             return S_OK;
         }
         catch (...)
@@ -677,7 +677,7 @@ struct produce<D, Windows::Management::Deployment::IPackageUserInformation> : pr
     {
         try
         {
-            *value = detach(shim().InstallState());
+            *value = detach(this->shim().InstallState());
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsOffline());
+            *value = detach(this->shim().IsOffline());
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsSystemVolume());
+            *value = detach(this->shim().IsSystemVolume());
             return S_OK;
         }
         catch (...)
@@ -720,7 +720,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().MountPoint());
+            *value = detach(this->shim().MountPoint());
             return S_OK;
         }
         catch (...)
@@ -734,7 +734,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -748,7 +748,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().PackageStorePath());
+            *value = detach(this->shim().PackageStorePath());
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *value = detach(shim().SupportsHardLinks());
+            *value = detach(this->shim().SupportsHardLinks());
             return S_OK;
         }
         catch (...)
@@ -775,7 +775,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages());
+            *packageCollection = detach(this->shim().FindPackages());
             return S_OK;
         }
         catch (...)
@@ -789,7 +789,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackages(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -803,7 +803,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackages(*reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackages(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -817,7 +817,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(packageTypes));
             return S_OK;
         }
         catch (...)
@@ -831,7 +831,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(packageTypes, *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(packageTypes, *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -845,7 +845,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesWithPackageTypes(packageTypes, *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackagesWithPackageTypes(packageTypes, *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -859,7 +859,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackage(*reinterpret_cast<const hstring *>(&packageFullName)));
+            *packageCollection = detach(this->shim().FindPackage(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -873,7 +873,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId)));
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -901,7 +901,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackagesForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes));
             return S_OK;
         }
         catch (...)
@@ -929,7 +929,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes, *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes, *reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const hstring *>(&packagePublisher)));
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes, *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *packageCollection = detach(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<const hstring *>(&userSecurityId), packageTypes, *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -957,7 +957,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_bas
     {
         try
         {
-            *packageCollection = detach(shim().FindPackageForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFullName)));
+            *packageCollection = detach(this->shim().FindPackageForUser(*reinterpret_cast<const hstring *>(&userSecurityId), *reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume2> : produce_ba
     {
         try
         {
-            *value = detach(shim().IsFullTrustPackageSupported());
+            *value = detach(this->shim().IsFullTrustPackageSupported());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume2> : produce_ba
     {
         try
         {
-            *value = detach(shim().IsAppxInstallSupported());
+            *value = detach(this->shim().IsAppxInstallSupported());
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume2> : produce_ba
     {
         try
         {
-            *operation = detach(shim().GetAvailableSpaceAsync());
+            *operation = detach(this->shim().GetAvailableSpaceAsync());
             return S_OK;
         }
         catch (...)

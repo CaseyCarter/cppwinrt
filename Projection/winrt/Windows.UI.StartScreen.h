@@ -21,7 +21,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Items());
+            *value = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().SystemGroupKind());
+            *value = detach(this->shim().SystemGroupKind());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
-            shim().SystemGroupKind(value);
+            this->shim().SystemGroupKind(value);
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
-            *result = detach(shim().SaveAsync());
+            *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().RemovedByUser());
+            *value = detach(this->shim().RemovedByUser());
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            shim().Description(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().GroupName());
+            *value = detach(this->shim().GroupName());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            shim().GroupName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().GroupName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Logo());
+            *value = detach(this->shim().Logo());
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
-            shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItemStatics> : produce_base
     {
         try
         {
-            *result = detach(shim().CreateWithArguments(*reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const hstring *>(&displayName)));
+            *result = detach(this->shim().CreateWithArguments(*reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItemStatics> : produce_base
     {
         try
         {
-            *result = detach(shim().CreateSeparator());
+            *result = detach(this->shim().CreateSeparator());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListStatics> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().LoadCurrentAsync());
+            *result = detach(this->shim().LoadCurrentAsync());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListStatics> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().IsSupported());
+            *result = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().TileId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TileId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().TileId());
+            *value = detach(this->shim().TileId());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().Arguments(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Arguments(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().ShortName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ShortName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ShortName());
+            *value = detach(this->shim().ShortName());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -402,7 +402,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Logo());
+            *value = detach(this->shim().Logo());
             return S_OK;
         }
         catch (...)
@@ -429,7 +429,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().SmallLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SmallLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -442,7 +442,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SmallLogo());
+            *value = detach(this->shim().SmallLogo());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().WideLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().WideLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().WideLogo());
+            *value = detach(this->shim().WideLogo());
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().LockScreenBadgeLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().LockScreenBadgeLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().LockScreenBadgeLogo());
+            *value = detach(this->shim().LockScreenBadgeLogo());
             return S_OK;
         }
         catch (...)
@@ -510,7 +510,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().LockScreenDisplayBadgeAndTileText(value);
+            this->shim().LockScreenDisplayBadgeAndTileText(value);
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().LockScreenDisplayBadgeAndTileText());
+            *value = detach(this->shim().LockScreenDisplayBadgeAndTileText());
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().TileOptions(value);
+            this->shim().TileOptions(value);
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().TileOptions());
+            *value = detach(this->shim().TileOptions());
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().ForegroundText(value);
+            this->shim().ForegroundText(value);
             return S_OK;
         }
         catch (...)
@@ -575,7 +575,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ForegroundText());
+            *value = detach(this->shim().ForegroundText());
             return S_OK;
         }
         catch (...)
@@ -588,7 +588,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestCreateAsync());
+            *operation = detach(this->shim().RequestCreateAsync());
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestCreateAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
+            *operation = detach(this->shim().RequestCreateAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *operation = detach(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
+            *operation = detach(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestDeleteAsync());
+            *operation = detach(this->shim().RequestDeleteAsync());
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
+            *operation = detach(this->shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *operation = detach(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
+            *operation = detach(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().UpdateAsync());
+            *operation = detach(this->shim().UpdateAsync());
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            shim().PhoneticName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PhoneticName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -757,7 +757,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().PhoneticName());
+            *value = detach(this->shim().PhoneticName());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().VisualElements());
+            *value = detach(this->shim().VisualElements());
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            shim().RoamingEnabled(value);
+            this->shim().RoamingEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -798,7 +798,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().RoamingEnabled());
+            *value = detach(this->shim().RoamingEnabled());
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            *token = detach(shim().VisualElementsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().VisualElementsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -824,7 +824,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
-            shim().VisualElementsRequested(token);
+            this->shim().VisualElementsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference)));
+            *value = detach(this->shim().CreateTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference)));
             return S_OK;
         }
         catch (...)
@@ -855,7 +855,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateWideTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference), *reinterpret_cast<const Windows::Foundation::Uri *>(&wideLogoReference)));
+            *value = detach(this->shim().CreateWideTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference), *reinterpret_cast<const Windows::Foundation::Uri *>(&wideLogoReference)));
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateWithId(*reinterpret_cast<const hstring *>(&tileId)));
+            *value = detach(this->shim().CreateWithId(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory2> : produce_ba
     {
         try
         {
-            *value = detach(shim().CreateMinimalTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const Windows::Foundation::Uri *>(&square150x150Logo), desiredSize));
+            *value = detach(this->shim().CreateMinimalTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const Windows::Foundation::Uri *>(&square150x150Logo), desiredSize));
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
-            *exists = detach(shim().Exists(*reinterpret_cast<const hstring *>(&tileId)));
+            *exists = detach(this->shim().Exists(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
-            *operation = detach(shim().FindAllAsync());
+            *operation = detach(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -932,7 +932,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
-            *operation = detach(shim().FindAllAsync(*reinterpret_cast<const hstring *>(&applicationId)));
+            *operation = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -946,7 +946,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
-            *operation = detach(shim().FindAllForPackageAsync());
+            *operation = detach(this->shim().FindAllForPackageAsync());
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().Square30x30Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square30x30Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -977,7 +977,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().Square30x30Logo());
+            *value = detach(this->shim().Square30x30Logo());
             return S_OK;
         }
         catch (...)
@@ -991,7 +991,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().Square70x70Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square70x70Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1004,7 +1004,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().Square70x70Logo());
+            *value = detach(this->shim().Square70x70Logo());
             return S_OK;
         }
         catch (...)
@@ -1018,7 +1018,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().Square150x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square150x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1031,7 +1031,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().Square150x150Logo());
+            *value = detach(this->shim().Square150x150Logo());
             return S_OK;
         }
         catch (...)
@@ -1045,7 +1045,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().Wide310x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Wide310x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1058,7 +1058,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().Wide310x150Logo());
+            *value = detach(this->shim().Wide310x150Logo());
             return S_OK;
         }
         catch (...)
@@ -1072,7 +1072,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().Square310x310Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square310x310Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1085,7 +1085,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().Square310x310Logo());
+            *value = detach(this->shim().Square310x310Logo());
             return S_OK;
         }
         catch (...)
@@ -1099,7 +1099,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().ForegroundText(value);
+            this->shim().ForegroundText(value);
             return S_OK;
         }
         catch (...)
@@ -1112,7 +1112,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().ForegroundText());
+            *value = detach(this->shim().ForegroundText());
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().ShowNameOnSquare150x150Logo(value);
+            this->shim().ShowNameOnSquare150x150Logo(value);
             return S_OK;
         }
         catch (...)
@@ -1164,7 +1164,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().ShowNameOnSquare150x150Logo());
+            *value = detach(this->shim().ShowNameOnSquare150x150Logo());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().ShowNameOnWide310x150Logo(value);
+            this->shim().ShowNameOnWide310x150Logo(value);
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().ShowNameOnWide310x150Logo());
+            *value = detach(this->shim().ShowNameOnWide310x150Logo());
             return S_OK;
         }
         catch (...)
@@ -1203,7 +1203,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            shim().ShowNameOnSquare310x310Logo(value);
+            this->shim().ShowNameOnSquare310x310Logo(value);
             return S_OK;
         }
         catch (...)
@@ -1216,7 +1216,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
-            *value = detach(shim().ShowNameOnSquare310x310Logo());
+            *value = detach(this->shim().ShowNameOnSquare310x310Logo());
             return S_OK;
         }
         catch (...)
@@ -1233,7 +1233,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2> : pro
     {
         try
         {
-            shim().Square71x71Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square71x71Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1246,7 +1246,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2> : pro
     {
         try
         {
-            *value = detach(shim().Square71x71Logo());
+            *value = detach(this->shim().Square71x71Logo());
             return S_OK;
         }
         catch (...)
@@ -1264,7 +1264,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : pro
     {
         try
         {
-            shim().Square44x44Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Square44x44Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : pro
     {
         try
         {
-            *value = detach(shim().Square44x44Logo());
+            *value = detach(this->shim().Square44x44Logo());
             return S_OK;
         }
         catch (...)
@@ -1295,7 +1295,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
-            *value = detach(shim().VisualElements());
+            *value = detach(this->shim().VisualElements());
             return S_OK;
         }
         catch (...)
@@ -1309,7 +1309,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
-            *value = detach(shim().AlternateVisualElements());
+            *value = detach(this->shim().AlternateVisualElements());
             return S_OK;
         }
         catch (...)
@@ -1323,7 +1323,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -1336,7 +1336,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestDeferral> : pr
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1371,7 +1371,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestedEventArgs> :
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)

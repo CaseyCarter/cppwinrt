@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *uri = detach(shim().Uri());
+            *uri = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *value = detach(shim().Candidates());
+            *value = detach(this->shim().Candidates());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *result = detach(shim().Resolve());
+            *result = detach(this->shim().Resolve());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *result = detach(shim().Resolve(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
+            *result = detach(this->shim().Resolve(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *result = detach(shim().ResolveAll());
+            *result = detach(this->shim().ResolveAll());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
-            *instances = detach(shim().ResolveAll(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
+            *instances = detach(this->shim().ResolveAll(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *value = detach(shim().Qualifiers());
+            *value = detach(this->shim().Qualifiers());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *value = detach(shim().IsMatch());
+            *value = detach(this->shim().IsMatch());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *value = detach(shim().IsMatchAsDefault());
+            *value = detach(this->shim().IsMatchAsDefault());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *value = detach(shim().IsDefault());
+            *value = detach(this->shim().IsDefault());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *result = detach(shim().ValueAsString());
+            *result = detach(this->shim().ValueAsString());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *operation = detach(shim().GetValueAsFileAsync());
+            *operation = detach(this->shim().GetValueAsFileAsync());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *value = detach(shim().GetQualifierValue(*reinterpret_cast<const hstring *>(&qualifierName)));
+            *value = detach(this->shim().GetQualifierValue(*reinterpret_cast<const hstring *>(&qualifierName)));
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
-            *operation = detach(shim().GetValueAsStreamAsync());
+            *operation = detach(this->shim().GetValueAsStreamAsync());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            *value = detach(shim().QualifierValues());
+            *value = detach(this->shim().QualifierValues());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            shim().Reset();
+            this->shim().Reset();
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            shim().Reset(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
+            this->shim().Reset(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            shim().OverrideToMatch(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result));
+            this->shim().OverrideToMatch(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result));
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            *clone = detach(shim().Clone());
+            *clone = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            *value = detach(shim().Languages());
+            *value = detach(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
-            shim().Languages(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&languages));
+            this->shim().Languages(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&languages));
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            *value = detach(shim().CreateMatchingContext(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result)));
+            *value = detach(this->shim().CreateMatchingContext(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result)));
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            *value = detach(shim().GetForCurrentView());
+            *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            shim().ResetGlobalQualifierValues();
+            this->shim().ResetGlobalQualifierValues();
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            shim().ResetGlobalQualifierValues(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
+            this->shim().ResetGlobalQualifierValues(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            *loader = detach(shim().GetForViewIndependentUse());
+            *loader = detach(this->shim().GetForViewIndependentUse());
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
-            shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value), persistence);
+            this->shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value), persistence);
             return S_OK;
         }
         catch (...)
@@ -429,7 +429,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
-            *value = detach(shim().MainResourceMap());
+            *value = detach(this->shim().MainResourceMap());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
-            *maps = detach(shim().AllResourceMaps());
+            *maps = detach(this->shim().AllResourceMaps());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
-            *value = detach(shim().DefaultContext());
+            *value = detach(this->shim().DefaultContext());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
-            shim().LoadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
+            this->shim().LoadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
-            shim().UnloadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
+            this->shim().UnloadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager2>
     {
         try
         {
-            *table = detach(shim().GetAllNamedResourcesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
+            *table = detach(this->shim().GetAllNamedResourcesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager2>
     {
         try
         {
-            *table = detach(shim().GetAllSubtreesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
+            *table = detach(this->shim().GetAllSubtreesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManagerSt
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -547,7 +547,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManagerSt
     {
         try
         {
-            *isReference = detach(shim().IsResourceReference(*reinterpret_cast<const hstring *>(&resourceReference)));
+            *isReference = detach(this->shim().IsResourceReference(*reinterpret_cast<const hstring *>(&resourceReference)));
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
-            *uri = detach(shim().Uri());
+            *uri = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
-            *value = detach(shim().GetValue(*reinterpret_cast<const hstring *>(&resource)));
+            *value = detach(this->shim().GetValue(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
-            *value = detach(shim().GetValue(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&context)));
+            *value = detach(this->shim().GetValue(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&context)));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
-            *map = detach(shim().GetSubtree(*reinterpret_cast<const hstring *>(&reference)));
+            *map = detach(this->shim().GetSubtree(*reinterpret_cast<const hstring *>(&reference)));
             return S_OK;
         }
         catch (...)
@@ -624,7 +624,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
-            *value = detach(shim().QualifierName());
+            *value = detach(this->shim().QualifierName());
             return S_OK;
         }
         catch (...)
@@ -638,7 +638,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
-            *value = detach(shim().QualifierValue());
+            *value = detach(this->shim().QualifierValue());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
-            *value = detach(shim().IsDefault());
+            *value = detach(this->shim().IsDefault());
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
-            *value = detach(shim().IsMatch());
+            *value = detach(this->shim().IsMatch());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
-            *value = detach(shim().Score());
+            *value = detach(this->shim().Score());
             return S_OK;
         }
         catch (...)

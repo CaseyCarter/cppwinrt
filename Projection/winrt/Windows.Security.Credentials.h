@@ -22,7 +22,7 @@ struct produce<D, Windows::Security::Credentials::ICredentialFactory> : produce_
     {
         try
         {
-            *credential = detach(shim().CreatePasswordCredential(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password)));
+            *credential = detach(this->shim().CreatePasswordCredential(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
         catch (...)
@@ -40,7 +40,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().RetrievePublicKey());
+            *value = detach(this->shim().RetrievePublicKey());
             return S_OK;
         }
         catch (...)
@@ -68,7 +68,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().RetrievePublicKey(blobType));
+            *value = detach(this->shim().RetrievePublicKey(blobType));
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().RequestSignAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
+            *value = detach(this->shim().RequestSignAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().GetAttestationAsync());
+            *value = detach(this->shim().GetAttestationAsync());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
-            *value = detach(shim().CertificateChainBuffer());
+            *value = detach(this->shim().CertificateChainBuffer());
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
-            *value = detach(shim().AttestationBuffer());
+            *value = detach(this->shim().AttestationBuffer());
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
-            *value = detach(shim().IsSupportedAsync());
+            *value = detach(this->shim().IsSupportedAsync());
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
-            *operation = detach(shim().RenewAttestationAsync());
+            *operation = detach(this->shim().RenewAttestationAsync());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
-            *value = detach(shim().RequestCreateAsync(*reinterpret_cast<const hstring *>(&name), option));
+            *value = detach(this->shim().RequestCreateAsync(*reinterpret_cast<const hstring *>(&name), option));
             return S_OK;
         }
         catch (...)
@@ -201,7 +201,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
-            *value = detach(shim().OpenAsync(*reinterpret_cast<const hstring *>(&name)));
+            *value = detach(this->shim().OpenAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
-            *operation = detach(shim().DeleteAsync(*reinterpret_cast<const hstring *>(&name)));
+            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialOperationResult>
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialOperationResult>
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult>
     {
         try
         {
-            *value = detach(shim().Credential());
+            *value = detach(this->shim().Credential());
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult>
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            *resource = detach(shim().Resource());
+            *resource = detach(this->shim().Resource());
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            shim().Resource(*reinterpret_cast<const hstring *>(&resource));
+            this->shim().Resource(*reinterpret_cast<const hstring *>(&resource));
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            *userName = detach(shim().UserName());
+            *userName = detach(this->shim().UserName());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            shim().UserName(*reinterpret_cast<const hstring *>(&userName));
+            this->shim().UserName(*reinterpret_cast<const hstring *>(&userName));
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            *password = detach(shim().Password());
+            *password = detach(this->shim().Password());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            shim().Password(*reinterpret_cast<const hstring *>(&password));
+            this->shim().Password(*reinterpret_cast<const hstring *>(&password));
             return S_OK;
         }
         catch (...)
@@ -376,7 +376,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            shim().RetrievePassword();
+            this->shim().RetrievePassword();
             return S_OK;
         }
         catch (...)
@@ -389,7 +389,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
-            *props = detach(shim().Properties());
+            *props = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
+            this->shim().Add(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
+            this->shim().Remove(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            *credential = detach(shim().Retrieve(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName)));
+            *credential = detach(this->shim().Retrieve(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName)));
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            *credentials = detach(shim().FindAllByResource(*reinterpret_cast<const hstring *>(&resource)));
+            *credentials = detach(this->shim().FindAllByResource(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            *credentials = detach(shim().FindAllByUserName(*reinterpret_cast<const hstring *>(&userName)));
+            *credentials = detach(this->shim().FindAllByUserName(*reinterpret_cast<const hstring *>(&userName)));
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
-            *credentials = detach(shim().RetrieveAll());
+            *credentials = detach(this->shim().RetrieveAll());
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().WebAccountProvider());
+            *value = detach(this->shim().WebAccountProvider());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().UserName());
+            *value = detach(this->shim().UserName());
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -538,7 +538,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().GetPictureAsync(desizedSize));
+            *asyncInfo = detach(this->shim().GetPictureAsync(desizedSize));
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().SignOutAsync());
+            *asyncInfo = detach(this->shim().SignOutAsync());
             return S_OK;
         }
         catch (...)
@@ -594,7 +594,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().SignOutAsync(*reinterpret_cast<const hstring *>(&clientId)));
+            *asyncInfo = detach(this->shim().SignOutAsync(*reinterpret_cast<const hstring *>(&clientId)));
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountFactory> : produce_
     {
         try
         {
-            *instance = detach(shim().CreateWebAccount(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&webAccountProvider), *reinterpret_cast<const hstring *>(&userName), state));
+            *instance = detach(this->shim().CreateWebAccount(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&webAccountProvider), *reinterpret_cast<const hstring *>(&userName), state));
             return S_OK;
         }
         catch (...)
@@ -630,7 +630,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -644,7 +644,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
-            *value = detach(shim().IconUri());
+            *value = detach(this->shim().IconUri());
             return S_OK;
         }
         catch (...)
@@ -676,7 +676,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider2> : produc
     {
         try
         {
-            *value = detach(shim().DisplayPurpose());
+            *value = detach(this->shim().DisplayPurpose());
             return S_OK;
         }
         catch (...)
@@ -690,7 +690,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider2> : produc
     {
         try
         {
-            *value = detach(shim().Authority());
+            *value = detach(this->shim().Authority());
             return S_OK;
         }
         catch (...)
@@ -708,7 +708,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider3> : produc
     {
         try
         {
-            *user = detach(shim().User());
+            *user = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProviderFactory> : 
     {
         try
         {
-            *instance = detach(shim().CreateWebAccountProvider(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const Windows::Foundation::Uri *>(&iconUri)));
+            *instance = detach(this->shim().CreateWebAccountProvider(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const Windows::Foundation::Uri *>(&iconUri)));
             return S_OK;
         }
         catch (...)

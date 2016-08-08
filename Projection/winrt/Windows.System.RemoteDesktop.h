@@ -17,7 +17,7 @@ struct produce<D, Windows::System::RemoteDesktop::IInteractiveSessionStatics> : 
     {
         try
         {
-            *value = detach(shim().IsRemote());
+            *value = detach(this->shim().IsRemote());
             return S_OK;
         }
         catch (...)

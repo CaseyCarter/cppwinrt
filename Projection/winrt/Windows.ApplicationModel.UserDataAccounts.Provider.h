@@ -19,7 +19,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().Priority());
+            *value = detach(this->shim().Priority());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().AccountKind());
+            *value = detach(this->shim().AccountKind());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().ContentKinds());
+            *value = detach(this->shim().ContentKinds());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().PartnerAccountInfos());
+            *value = detach(this->shim().PartnerAccountInfos());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            shim().ReportCompleted(*reinterpret_cast<const hstring *>(&userDataAccountId));
+            this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&userDataAccountId));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().UserDataAccountId());
+            *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            shim().ReportCompleted();
+            this->shim().ReportCompleted();
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            *value = detach(shim().UserDataAccountId());
+            *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
-            shim().ReportCompleted();
+            this->shim().ReportCompleted();
             return S_OK;
         }
         catch (...)

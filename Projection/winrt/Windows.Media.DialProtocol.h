@@ -22,7 +22,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialApp> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppName());
+            *value = detach(this->shim().AppName());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialApp> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().RequestLaunchAsync(*reinterpret_cast<const hstring *>(&appArgument)));
+            *value = detach(this->shim().RequestLaunchAsync(*reinterpret_cast<const hstring *>(&appArgument)));
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialApp> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().StopAsync());
+            *value = detach(this->shim().StopAsync());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialApp> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().GetAppStateAsync());
+            *value = detach(this->shim().GetAppStateAsync());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialAppStateDetails> : produce_
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialAppStateDetails> : produce_
     {
         try
         {
-            *value = detach(shim().FullXml());
+            *value = detach(this->shim().FullXml());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevice> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevice> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetDialApp(*reinterpret_cast<const hstring *>(&appName)));
+            *value = detach(this->shim().GetDialApp(*reinterpret_cast<const hstring *>(&appName)));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevice2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevice2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *value = detach(shim().Filter());
+            *value = detach(this->shim().Filter());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *value = detach(shim().Appearance());
+            *value = detach(this->shim().Appearance());
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *token = detach(shim().DialDeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Media::DialProtocol::DialDeviceSelectedEventArgs> *>(&handler)));
+            *token = detach(this->shim().DialDeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Media::DialProtocol::DialDeviceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().DialDeviceSelected(token);
+            this->shim().DialDeviceSelected(token);
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *token = detach(shim().DisconnectButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs> *>(&handler)));
+            *token = detach(this->shim().DisconnectButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().DisconnectButtonClicked(token);
+            this->shim().DisconnectButtonClicked(token);
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *token = detach(shim().DialDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DialDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().DialDevicePickerDismissed(token);
+            this->shim().DialDevicePickerDismissed(token);
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
+            this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement);
+            this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement);
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *operation = detach(shim().PickSingleDialDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *operation = detach(this->shim().PickSingleDialDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            *operation = detach(shim().PickSingleDialDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
+            *operation = detach(this->shim().PickSingleDialDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().Hide();
+            this->shim().Hide();
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
     {
         try
         {
-            shim().SetDisplayStatus(*reinterpret_cast<const Windows::Media::DialProtocol::DialDevice *>(&device), status);
+            this->shim().SetDisplayStatus(*reinterpret_cast<const Windows::Media::DialProtocol::DialDevice *>(&device), status);
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePickerFilter> : produ
     {
         try
         {
-            *value = detach(shim().SupportedAppNames());
+            *value = detach(this->shim().SupportedAppNames());
             return S_OK;
         }
         catch (...)
@@ -385,7 +385,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDeviceSelectedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().SelectedDialDevice());
+            *value = detach(this->shim().SelectedDialDevice());
             return S_OK;
         }
         catch (...)
@@ -403,7 +403,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDeviceStatics> : produce_ba
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&appName)));
+            *selector = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&appName)));
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDeviceStatics> : produce_ba
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&value)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDeviceStatics> : produce_ba
     {
         try
         {
-            *operation = detach(shim().DeviceInfoSupportsDialAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
+            *operation = detach(this->shim().DeviceInfoSupportsDialAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Media::DialProtocol::IDialDisconnectButtonClickedEven
     {
         try
         {
-            *value = detach(shim().Device());
+            *value = detach(this->shim().Device());
             return S_OK;
         }
         catch (...)

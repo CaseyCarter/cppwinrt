@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            shim().Id(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            *value = detach(shim().SupportedDataFormats());
+            *value = detach(this->shim().SupportedDataFormats());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
-            *value = detach(shim().SupportedFileTypes());
+            *value = detach(this->shim().SupportedFileTypes());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            *value = detach(shim().QuickLinkId());
+            *value = detach(this->shim().QuickLinkId());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().RemoveThisQuickLink();
+            this->shim().RemoveThisQuickLink();
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportStarted();
+            this->shim().ReportStarted();
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportDataRetrieved();
+            this->shim().ReportDataRetrieved();
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportSubmittedBackgroundTask();
+            this->shim().ReportSubmittedBackgroundTask();
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportCompleted(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink *>(&quicklink));
+            this->shim().ReportCompleted(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink *>(&quicklink));
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportCompleted();
+            this->shim().ReportCompleted();
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().ReportError(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
-            shim().DismissUI();
+            this->shim().DismissUI();
             return S_OK;
         }
         catch (...)

@@ -17,7 +17,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
-            shim().RequestActive();
+            this->shim().RequestActive();
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
-            shim().RequestRelease();
+            this->shim().RequestRelease();
             return S_OK;
         }
         catch (...)

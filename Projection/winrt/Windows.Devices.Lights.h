@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            shim().IsEnabled(value);
+            this->shim().IsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *value = detach(shim().BrightnessLevel());
+            *value = detach(this->shim().BrightnessLevel());
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            shim().BrightnessLevel(value);
+            this->shim().BrightnessLevel(value);
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *value = detach(shim().IsColorSettable());
+            *value = detach(this->shim().IsColorSettable());
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            *token = detach(shim().AvailabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().AvailabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
-            shim().AvailabilityChanged(token);
+            this->shim().AvailabilityChanged(token);
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Devices::Lights::ILampAvailabilityChangedEventArgs> :
     {
         try
         {
-            *value = detach(shim().IsAvailable());
+            *value = detach(this->shim().IsAvailable());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -186,7 +186,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)

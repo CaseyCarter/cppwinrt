@@ -21,7 +21,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().UserDisplayName());
+            *value = detach(this->shim().UserDisplayName());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            shim().UserDisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().UserDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().OtherAppReadAccess());
+            *value = detach(this->shim().OtherAppReadAccess());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            shim().OtherAppReadAccess(value);
+            this->shim().OtherAppReadAccess(value);
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().Icon());
+            *value = detach(this->shim().Icon());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().DeviceAccountTypeId());
+            *value = detach(this->shim().DeviceAccountTypeId());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().SaveAsync());
+            *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().DeleteAsync());
+            *result = detach(this->shim().DeleteAsync());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().FindAppointmentCalendarsAsync());
+            *result = detach(this->shim().FindAppointmentCalendarsAsync());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().FindEmailMailboxesAsync());
+            *result = detach(this->shim().FindEmailMailboxesAsync());
             return S_OK;
         }
         catch (...)
@@ -186,7 +186,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().FindContactListsAsync());
+            *result = detach(this->shim().FindContactListsAsync());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
-            *result = detach(shim().FindContactAnnotationListsAsync());
+            *result = detach(this->shim().FindContactAnnotationListsAsync());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2
     {
         try
         {
-            *value = detach(shim().EnterpriseId());
+            *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2
     {
         try
         {
-            *value = detach(shim().IsProtectedUnderLock());
+            *value = detach(this->shim().IsProtectedUnderLock());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
-            *value = detach(shim().ExplictReadAccessPackageFamilyNames());
+            *value = detach(this->shim().ExplictReadAccessPackageFamilyNames());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().RequestStoreAsync(storeAccessType));
+            *result = detach(this->shim().RequestStoreAsync(storeAccessType));
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().RequestStoreAsync(storeAccessType));
+            *result = detach(this->shim().RequestStoreAsync(storeAccessType));
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().ShowAddAccountAsync(contentKinds));
+            *result = detach(this->shim().ShowAddAccountAsync(contentKinds));
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().ShowAccountSettingsAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach(this->shim().ShowAccountSettingsAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().ShowAccountErrorResolverAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach(this->shim().ShowAccountErrorResolverAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
-            *result = detach(shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *result = detach(shim().FindAccountsAsync());
+            *result = detach(this->shim().FindAccountsAsync());
             return S_OK;
         }
         catch (...)
@@ -418,7 +418,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *result = detach(shim().GetAccountAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach(this->shim().GetAccountAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *result = detach(shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName)));
+            *result = detach(this->shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName)));
             return S_OK;
         }
         catch (...)
@@ -450,7 +450,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *result = detach(shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName), *reinterpret_cast<const hstring *>(&packageRelativeAppId)));
+            *result = detach(this->shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName), *reinterpret_cast<const hstring *>(&packageRelativeAppId)));
             return S_OK;
         }
         catch (...)
@@ -464,7 +464,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *token = detach(shim().StoreChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().StoreChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            shim().StoreChanged(token);
+            this->shim().StoreChanged(token);
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

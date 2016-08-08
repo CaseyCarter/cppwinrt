@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Controller());
+            *value = detach(this->shim().Controller());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().ReadValue());
+            *result = detach(this->shim().ReadValue());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
-            *result = detach(shim().ReadRatio());
+            *result = detach(this->shim().ReadRatio());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ChannelCount());
+            *value = detach(this->shim().ChannelCount());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ResolutionInBits());
+            *value = detach(this->shim().ResolutionInBits());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MinValue());
+            *value = detach(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MaxValue());
+            *value = detach(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ChannelMode());
+            *value = detach(this->shim().ChannelMode());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            shim().ChannelMode(value);
+            this->shim().ChannelMode(value);
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().IsChannelModeSupported(channelMode));
+            *result = detach(this->shim().IsChannelModeSupported(channelMode));
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().OpenChannel(channelNumber));
+            *result = detach(this->shim().OpenChannel(channelNumber));
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Devices::Adc::IAdcControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcProvider *>(&provider)));
+            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Devices::Adc::IAdcControllerStatics2> : produce_base<
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)

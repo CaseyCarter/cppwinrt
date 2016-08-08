@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().MailboxSyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().MailboxSyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().MailboxSyncRequested(token);
+            this->shim().MailboxSyncRequested(token);
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().DownloadMessageRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().DownloadMessageRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().DownloadMessageRequested(token);
+            this->shim().DownloadMessageRequested(token);
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().DownloadAttachmentRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().DownloadAttachmentRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().DownloadAttachmentRequested(token);
+            this->shim().DownloadAttachmentRequested(token);
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().CreateFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().CreateFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().CreateFolderRequested(token);
+            this->shim().CreateFolderRequested(token);
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().DeleteFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().DeleteFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().DeleteFolderRequested(token);
+            this->shim().DeleteFolderRequested(token);
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().EmptyFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().EmptyFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().EmptyFolderRequested(token);
+            this->shim().EmptyFolderRequested(token);
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().MoveFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().MoveFolderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().MoveFolderRequested(token);
+            this->shim().MoveFolderRequested(token);
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().UpdateMeetingResponseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().UpdateMeetingResponseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().UpdateMeetingResponseRequested(token);
+            this->shim().UpdateMeetingResponseRequested(token);
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().ForwardMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ForwardMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().ForwardMeetingRequested(token);
+            this->shim().ForwardMeetingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().ProposeNewTimeForMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ProposeNewTimeForMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().ProposeNewTimeForMeetingRequested(token);
+            this->shim().ProposeNewTimeForMeetingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().SetAutoReplySettingsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().SetAutoReplySettingsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().SetAutoReplySettingsRequested(token);
+            this->shim().SetAutoReplySettingsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().GetAutoReplySettingsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().GetAutoReplySettingsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -319,7 +319,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().GetAutoReplySettingsRequested(token);
+            this->shim().GetAutoReplySettingsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().ResolveRecipientsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ResolveRecipientsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().ResolveRecipientsRequested(token);
+            this->shim().ResolveRecipientsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().ValidateCertificatesRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ValidateCertificatesRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -371,7 +371,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().ValidateCertificatesRequested(token);
+            this->shim().ValidateCertificatesRequested(token);
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *token = detach(shim().ServerSearchReadBatchRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ServerSearchReadBatchRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().ServerSearchReadBatchRequested(token);
+            this->shim().ServerSearchReadBatchRequested(token);
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailDataProv
     {
         try
         {
-            *value = detach(shim().Connection());
+            *value = detach(this->shim().Connection());
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *value = detach(shim().ParentFolderId());
+            *value = detach(this->shim().ParentFolderId());
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailFolder *>(&folder)));
+            *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailFolder *>(&folder)));
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync(status));
+            *result = detach(this->shim().ReportFailedAsync(status));
             return S_OK;
         }
         catch (...)
@@ -519,7 +519,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxC
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -551,7 +551,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -565,7 +565,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailFolderId());
+            *value = detach(this->shim().EmailFolderId());
             return S_OK;
         }
         catch (...)
@@ -579,7 +579,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync(status));
+            *result = detach(this->shim().ReportFailedAsync(status));
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -643,7 +643,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -657,7 +657,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailMessageId());
+            *value = detach(this->shim().EmailMessageId());
             return S_OK;
         }
         catch (...)
@@ -671,7 +671,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailAttachmentId());
+            *value = detach(this->shim().EmailAttachmentId());
             return S_OK;
         }
         catch (...)
@@ -685,7 +685,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().EmailMessageId());
+            *value = detach(this->shim().EmailMessageId());
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -791,7 +791,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxD
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -855,7 +855,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *value = detach(shim().EmailFolderId());
+            *value = detach(this->shim().EmailFolderId());
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -883,7 +883,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync(status));
+            *result = detach(this->shim().ReportFailedAsync(status));
             return S_OK;
         }
         catch (...)
@@ -901,7 +901,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxE
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -933,7 +933,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -947,7 +947,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().EmailMessageId());
+            *value = detach(this->shim().EmailMessageId());
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().Recipients());
+            *value = detach(this->shim().Recipients());
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -989,7 +989,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().ForwardHeaderType());
+            *value = detach(this->shim().ForwardHeaderType());
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().ForwardHeader());
+            *value = detach(this->shim().ForwardHeader());
             return S_OK;
         }
         catch (...)
@@ -1016,7 +1016,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -1030,7 +1030,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1044,7 +1044,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1062,7 +1062,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1076,7 +1076,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxF
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1108,7 +1108,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *value = detach(shim().RequestedFormat());
+            *value = detach(this->shim().RequestedFormat());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings *>(&autoReplySettings)));
+            *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings *>(&autoReplySettings)));
             return S_OK;
         }
         catch (...)
@@ -1135,7 +1135,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1153,7 +1153,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1167,7 +1167,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxG
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1185,7 +1185,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1199,7 +1199,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().EmailFolderId());
+            *value = detach(this->shim().EmailFolderId());
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().NewParentFolderId());
+            *value = detach(this->shim().NewParentFolderId());
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().NewFolderName());
+            *value = detach(this->shim().NewFolderName());
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1255,7 +1255,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxM
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().EmailMessageId());
+            *value = detach(this->shim().EmailMessageId());
             return S_OK;
         }
         catch (...)
@@ -1333,7 +1333,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().NewStartTime());
+            *value = detach(this->shim().NewStartTime());
             return S_OK;
         }
         catch (...)
@@ -1346,7 +1346,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().NewDuration());
+            *value = detach(this->shim().NewDuration());
             return S_OK;
         }
         catch (...)
@@ -1359,7 +1359,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -1373,7 +1373,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -1387,7 +1387,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1401,7 +1401,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1419,7 +1419,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1433,7 +1433,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxP
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1451,7 +1451,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1465,7 +1465,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *value = detach(shim().Recipients());
+            *value = detach(this->shim().Recipients());
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> *>(&resolutionResults)));
+            *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> *>(&resolutionResults)));
             return S_OK;
         }
         catch (...)
@@ -1493,7 +1493,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1511,7 +1511,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1525,7 +1525,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxR
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1543,7 +1543,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().SessionId());
+            *value = detach(this->shim().SessionId());
             return S_OK;
         }
         catch (...)
@@ -1557,7 +1557,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1571,7 +1571,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().EmailFolderId());
+            *value = detach(this->shim().EmailFolderId());
             return S_OK;
         }
         catch (...)
@@ -1585,7 +1585,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -1599,7 +1599,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().SuggestedBatchSize());
+            *value = detach(this->shim().SuggestedBatchSize());
             return S_OK;
         }
         catch (...)
@@ -1612,7 +1612,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().SaveMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
+            *result = detach(this->shim().SaveMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -1626,7 +1626,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1640,7 +1640,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync(batchStatus));
+            *result = detach(this->shim().ReportFailedAsync(batchStatus));
             return S_OK;
         }
         catch (...)
@@ -1658,7 +1658,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1672,7 +1672,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1690,7 +1690,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1704,7 +1704,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().AutoReplySettings());
+            *value = detach(this->shim().AutoReplySettings());
             return S_OK;
         }
         catch (...)
@@ -1718,7 +1718,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1732,7 +1732,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1750,7 +1750,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1764,7 +1764,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1782,7 +1782,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1796,7 +1796,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1810,7 +1810,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1828,7 +1828,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1842,7 +1842,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxS
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1860,7 +1860,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -1874,7 +1874,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().EmailMessageId());
+            *value = detach(this->shim().EmailMessageId());
             return S_OK;
         }
         catch (...)
@@ -1888,7 +1888,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *response = detach(shim().Response());
+            *response = detach(this->shim().Response());
             return S_OK;
         }
         catch (...)
@@ -1901,7 +1901,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -1915,7 +1915,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -1929,7 +1929,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().SendUpdate());
+            *value = detach(this->shim().SendUpdate());
             return S_OK;
         }
         catch (...)
@@ -1942,7 +1942,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -1956,7 +1956,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -1974,7 +1974,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1988,7 +1988,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxU
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -2006,7 +2006,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *value = detach(shim().EmailMailboxId());
+            *value = detach(this->shim().EmailMailboxId());
             return S_OK;
         }
         catch (...)
@@ -2020,7 +2020,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *value = detach(shim().Certificates());
+            *value = detach(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -2034,7 +2034,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> *>(&validationStatuses)));
+            *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> *>(&validationStatuses)));
             return S_OK;
         }
         catch (...)
@@ -2048,7 +2048,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -2066,7 +2066,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -2080,7 +2080,7 @@ struct produce<D, Windows::ApplicationModel::Email::DataProvider::IEmailMailboxV
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

@@ -21,7 +21,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GetLogo(*reinterpret_cast<const Windows::Foundation::Size *>(&size)));
+            *value = detach(this->shim().GetLogo(*reinterpret_cast<const Windows::Foundation::Size *>(&size)));
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().AppUserModelId());
+            *value = detach(this->shim().AppUserModelId());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().DisplayInfo());
+            *value = detach(this->shim().DisplayInfo());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::ApplicationModel::IDesignModeStatics> : produce_base<
     {
         try
         {
-            *value = detach(shim().DesignModeEnabled());
+            *value = detach(this->shim().DesignModeEnabled());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::ApplicationModel::IEnteredBackgroundEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::ApplicationModel::ILeavingBackgroundEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().InstalledLocation());
+            *value = detach(this->shim().InstalledLocation());
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsFramework());
+            *value = detach(this->shim().IsFramework());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Dependencies());
+            *value = detach(this->shim().Dependencies());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().PublisherDisplayName());
+            *value = detach(this->shim().PublisherDisplayName());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Logo());
+            *value = detach(this->shim().Logo());
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsResourcePackage());
+            *value = detach(this->shim().IsResourcePackage());
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsBundle());
+            *value = detach(this->shim().IsBundle());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsDevelopmentMode());
+            *value = detach(this->shim().IsDevelopmentMode());
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InstalledDate());
+            *value = detach(this->shim().InstalledDate());
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
-            *operation = detach(shim().GetAppListEntriesAsync());
+            *operation = detach(this->shim().GetAppListEntriesAsync());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().SignatureKind());
+            *value = detach(this->shim().SignatureKind());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsOptional());
+            *value = detach(this->shim().IsOptional());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
-            *operation = detach(shim().VerifyContentIntegrityAsync());
+            *operation = detach(this->shim().VerifyContentIntegrityAsync());
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PackageStaging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageStaging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            shim().PackageStaging(token);
+            this->shim().PackageStaging(token);
             return S_OK;
         }
         catch (...)
@@ -453,7 +453,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PackageInstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageInstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            shim().PackageInstalling(token);
+            this->shim().PackageInstalling(token);
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -492,7 +492,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            shim().PackageUpdating(token);
+            this->shim().PackageUpdating(token);
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            shim().PackageUninstalling(token);
+            this->shim().PackageUninstalling(token);
             return S_OK;
         }
         catch (...)
@@ -531,7 +531,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
-            shim().PackageStatusChanged(token);
+            this->shim().PackageStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -561,7 +561,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().OpenForCurrentPackage());
+            *value = detach(this->shim().OpenForCurrentPackage());
             return S_OK;
         }
         catch (...)
@@ -575,7 +575,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_b
     {
         try
         {
-            *value = detach(shim().OpenForCurrentUser());
+            *value = detach(this->shim().OpenForCurrentUser());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Version());
+            *value = detach(this->shim().Version());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Architecture());
+            *value = detach(this->shim().Architecture());
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ResourceId());
+            *value = detach(this->shim().ResourceId());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Publisher());
+            *value = detach(this->shim().Publisher());
             return S_OK;
         }
         catch (...)
@@ -661,7 +661,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PublisherId());
+            *value = detach(this->shim().PublisherId());
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FullName());
+            *value = detach(this->shim().FullName());
             return S_OK;
         }
         catch (...)
@@ -689,7 +689,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FamilyName());
+            *value = detach(this->shim().FamilyName());
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::ApplicationModel::IPackageIdWithMetadata> : produce_b
     {
         try
         {
-            *value = detach(shim().ProductId());
+            *value = detach(this->shim().ProductId());
             return S_OK;
         }
         catch (...)
@@ -721,7 +721,7 @@ struct produce<D, Windows::ApplicationModel::IPackageIdWithMetadata> : produce_b
     {
         try
         {
-            *value = detach(shim().Author());
+            *value = detach(this->shim().Author());
             return S_OK;
         }
         catch (...)
@@ -739,7 +739,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().ActivityId());
+            *value = detach(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -752,7 +752,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -766,7 +766,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().IsComplete());
+            *value = detach(this->shim().IsComplete());
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().ActivityId());
+            *value = detach(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -822,7 +822,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().IsComplete());
+            *value = detach(this->shim().IsComplete());
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -879,7 +879,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -897,7 +897,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().VerifyIsOK());
+            *value = detach(this->shim().VerifyIsOK());
             return S_OK;
         }
         catch (...)
@@ -910,7 +910,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().NotAvailable());
+            *value = detach(this->shim().NotAvailable());
             return S_OK;
         }
         catch (...)
@@ -923,7 +923,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().PackageOffline());
+            *value = detach(this->shim().PackageOffline());
             return S_OK;
         }
         catch (...)
@@ -936,7 +936,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DataOffline());
+            *value = detach(this->shim().DataOffline());
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Disabled());
+            *value = detach(this->shim().Disabled());
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().NeedsRemediation());
+            *value = detach(this->shim().NeedsRemediation());
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().LicenseIssue());
+            *value = detach(this->shim().LicenseIssue());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Modified());
+            *value = detach(this->shim().Modified());
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Tampered());
+            *value = detach(this->shim().Tampered());
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DependencyIssue());
+            *value = detach(this->shim().DependencyIssue());
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Servicing());
+            *value = detach(this->shim().Servicing());
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DeploymentInProgress());
+            *value = detach(this->shim().DeploymentInProgress());
             return S_OK;
         }
         catch (...)
@@ -1057,7 +1057,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatusChangedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -1075,7 +1075,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().ActivityId());
+            *value = detach(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -1088,7 +1088,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -1102,7 +1102,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -1115,7 +1115,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().IsComplete());
+            *value = detach(this->shim().IsComplete());
             return S_OK;
         }
         catch (...)
@@ -1128,7 +1128,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -1145,7 +1145,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().ActivityId());
+            *value = detach(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -1158,7 +1158,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().SourcePackage());
+            *value = detach(this->shim().SourcePackage());
             return S_OK;
         }
         catch (...)
@@ -1172,7 +1172,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().TargetPackage());
+            *value = detach(this->shim().TargetPackage());
             return S_OK;
         }
         catch (...)
@@ -1186,7 +1186,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().Progress());
+            *value = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -1199,7 +1199,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().IsComplete());
+            *value = detach(this->shim().IsComplete());
             return S_OK;
         }
         catch (...)
@@ -1212,7 +1212,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -1229,7 +1229,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
-            *value = detach(shim().InstallDate());
+            *value = detach(this->shim().InstallDate());
             return S_OK;
         }
         catch (...)
@@ -1242,7 +1242,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetThumbnailToken());
+            *value = detach(this->shim().GetThumbnailToken());
             return S_OK;
         }
         catch (...)
@@ -1256,7 +1256,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
-            shim().Launch(*reinterpret_cast<const hstring *>(&parameters));
+            this->shim().Launch(*reinterpret_cast<const hstring *>(&parameters));
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingDeferral> : produce_base
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1290,7 +1290,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingEventArgs> : produce_bas
     {
         try
         {
-            *value = detach(shim().SuspendingOperation());
+            *value = detach(this->shim().SuspendingOperation());
             return S_OK;
         }
         catch (...)
@@ -1308,7 +1308,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingOperation> : produce_bas
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1322,7 +1322,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingOperation> : produce_bas
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)

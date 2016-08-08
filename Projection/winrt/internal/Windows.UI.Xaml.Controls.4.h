@@ -31,7 +31,7 @@ public:
     {
         try
         {
-            shim().OnClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ public:
     {
         try
         {
-            shim().OnOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ public:
     {
         try
         {
-            shim().OnClosing(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnClosing(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ public:
     {
         try
         {
-            shim().OnOpening(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnOpening(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ public:
     {
         try
         {
-            shim().OnDropDownClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnDropDownClosed(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ public:
     {
         try
         {
-            shim().OnDropDownOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnDropDownOpened(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ public:
     {
         try
         {
-            shim().OnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            this->shim().OnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ public:
     {
         try
         {
-            shim().OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
+            this->shim().OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ public:
     {
         try
         {
-            shim().OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
+            this->shim().OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ public:
     {
         try
         {
-            shim().OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
+            this->shim().OnContentTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldContentTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newContentTemplate));
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ public:
     {
         try
         {
-            shim().OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
+            this->shim().OnContentTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldContentTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newContentTemplateSelector));
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ public:
     {
         try
         {
-            shim().OnPointerEntered(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerEntered(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ public:
     {
         try
         {
-            shim().OnPointerPressed(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerPressed(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ public:
     {
         try
         {
-            shim().OnPointerMoved(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerMoved(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ public:
     {
         try
         {
-            shim().OnPointerReleased(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerReleased(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -446,7 +446,7 @@ public:
     {
         try
         {
-            shim().OnPointerExited(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerExited(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ public:
     {
         try
         {
-            shim().OnPointerCaptureLost(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerCaptureLost(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ public:
     {
         try
         {
-            shim().OnPointerCanceled(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerCanceled(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ public:
     {
         try
         {
-            shim().OnPointerWheelChanged(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
+            this->shim().OnPointerWheelChanged(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ public:
     {
         try
         {
-            shim().OnTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::TappedRoutedEventArgs *>(&e));
+            this->shim().OnTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::TappedRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -511,7 +511,7 @@ public:
     {
         try
         {
-            shim().OnDoubleTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs *>(&e));
+            this->shim().OnDoubleTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ public:
     {
         try
         {
-            shim().OnHolding(*reinterpret_cast<const Windows::UI::Xaml::Input::HoldingRoutedEventArgs *>(&e));
+            this->shim().OnHolding(*reinterpret_cast<const Windows::UI::Xaml::Input::HoldingRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ public:
     {
         try
         {
-            shim().OnRightTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs *>(&e));
+            this->shim().OnRightTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -550,7 +550,7 @@ public:
     {
         try
         {
-            shim().OnManipulationStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs *>(&e));
+            this->shim().OnManipulationStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ public:
     {
         try
         {
-            shim().OnManipulationInertiaStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs *>(&e));
+            this->shim().OnManipulationInertiaStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -576,7 +576,7 @@ public:
     {
         try
         {
-            shim().OnManipulationStarted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs *>(&e));
+            this->shim().OnManipulationStarted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -589,7 +589,7 @@ public:
     {
         try
         {
-            shim().OnManipulationDelta(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs *>(&e));
+            this->shim().OnManipulationDelta(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -602,7 +602,7 @@ public:
     {
         try
         {
-            shim().OnManipulationCompleted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs *>(&e));
+            this->shim().OnManipulationCompleted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -615,7 +615,7 @@ public:
     {
         try
         {
-            shim().OnKeyUp(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
+            this->shim().OnKeyUp(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ public:
     {
         try
         {
-            shim().OnKeyDown(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
+            this->shim().OnKeyDown(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyRoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -641,7 +641,7 @@ public:
     {
         try
         {
-            shim().OnGotFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
+            this->shim().OnGotFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ public:
     {
         try
         {
-            shim().OnLostFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
+            this->shim().OnLostFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ public:
     {
         try
         {
-            shim().OnDragEnter(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            this->shim().OnDragEnter(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -680,7 +680,7 @@ public:
     {
         try
         {
-            shim().OnDragLeave(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            this->shim().OnDragLeave(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ public:
     {
         try
         {
-            shim().OnDragOver(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            this->shim().OnDragOver(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ public:
     {
         try
         {
-            shim().OnDrop(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
+            this->shim().OnDrop(*reinterpret_cast<const Windows::UI::Xaml::DragEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -734,7 +734,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            *returnValue = detach(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().SelectGroupStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&group), level));
+            *returnValue = detach(this->shim().SelectGroupStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&group), level));
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().CreateInkDrawingAttributesCore(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush), strokeWidth));
+            *returnValue = detach(this->shim().CreateInkDrawingAttributesCore(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush), strokeWidth));
             return S_OK;
         }
         catch (...)
@@ -895,7 +895,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsItemItsOwnContainerOverride(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach(this->shim().IsItemItsOwnContainerOverride(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -908,7 +908,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetContainerForItemOverride());
+            *returnValue = detach(this->shim().GetContainerForItemOverride());
             return S_OK;
         }
         catch (...)
@@ -922,7 +922,7 @@ public:
     {
         try
         {
-            shim().ClearContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
+            this->shim().ClearContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
             return S_OK;
         }
         catch (...)
@@ -935,7 +935,7 @@ public:
     {
         try
         {
-            shim().PrepareContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
+            this->shim().PrepareContainerForItemOverride(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::IInspectable *>(&item));
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ public:
     {
         try
         {
-            shim().OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&e));
+            this->shim().OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&e));
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ public:
     {
         try
         {
-            shim().OnItemContainerStyleChanged(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&oldItemContainerStyle), *reinterpret_cast<const Windows::UI::Xaml::Style *>(&newItemContainerStyle));
+            this->shim().OnItemContainerStyleChanged(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&oldItemContainerStyle), *reinterpret_cast<const Windows::UI::Xaml::Style *>(&newItemContainerStyle));
             return S_OK;
         }
         catch (...)
@@ -974,7 +974,7 @@ public:
     {
         try
         {
-            shim().OnItemContainerStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&oldItemContainerStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&newItemContainerStyleSelector));
+            this->shim().OnItemContainerStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&oldItemContainerStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::StyleSelector *>(&newItemContainerStyleSelector));
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ public:
     {
         try
         {
-            shim().OnItemTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldItemTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newItemTemplate));
+            this->shim().OnItemTemplateChanged(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&oldItemTemplate), *reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&newItemTemplate));
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ public:
     {
         try
         {
-            shim().OnItemTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldItemTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newItemTemplateSelector));
+            this->shim().OnItemTemplateSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&oldItemTemplateSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::DataTemplateSelector *>(&newItemTemplateSelector));
             return S_OK;
         }
         catch (...)
@@ -1013,7 +1013,7 @@ public:
     {
         try
         {
-            shim().OnGroupStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&oldGroupStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&newGroupStyleSelector));
+            this->shim().OnGroupStyleSelectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&oldGroupStyleSelector), *reinterpret_cast<const Windows::UI::Xaml::Controls::GroupStyleSelector *>(&newGroupStyleSelector));
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ public:
     {
         try
         {
-            shim().OnNavigatedFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
+            this->shim().OnNavigatedFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ public:
     {
         try
         {
-            shim().OnNavigatedTo(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
+            this->shim().OnNavigatedTo(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigationEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -1077,7 +1077,7 @@ public:
     {
         try
         {
-            shim().OnNavigatingFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs *>(&e));
+            this->shim().OnNavigatingFrom(*reinterpret_cast<const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs *>(&e));
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().SelectStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            *returnValue = detach(this->shim().SelectStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
             return S_OK;
         }
         catch (...)
@@ -1149,7 +1149,7 @@ public:
     {
         try
         {
-            shim().OnToggled();
+            this->shim().OnToggled();
             return S_OK;
         }
         catch (...)
@@ -1162,7 +1162,7 @@ public:
     {
         try
         {
-            shim().OnOnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            this->shim().OnOnContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
             return S_OK;
         }
         catch (...)
@@ -1175,7 +1175,7 @@ public:
     {
         try
         {
-            shim().OnOffContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            this->shim().OnOffContentChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
             return S_OK;
         }
         catch (...)
@@ -1188,7 +1188,7 @@ public:
     {
         try
         {
-            shim().OnHeaderChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
+            this->shim().OnHeaderChanged(*reinterpret_cast<const Windows::IInspectable *>(&oldContent), *reinterpret_cast<const Windows::IInspectable *>(&newContent));
             return S_OK;
         }
         catch (...)
@@ -1226,7 +1226,7 @@ public:
     {
         try
         {
-            shim().OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&sender), *reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs *>(&args));
+            this->shim().OnItemsChanged(*reinterpret_cast<const Windows::IInspectable *>(&sender), *reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -1239,7 +1239,7 @@ public:
     {
         try
         {
-            shim().OnClearChildren();
+            this->shim().OnClearChildren();
             return S_OK;
         }
         catch (...)
@@ -1252,7 +1252,7 @@ public:
     {
         try
         {
-            shim().BringIndexIntoView(index);
+            this->shim().BringIndexIntoView(index);
             return S_OK;
         }
         catch (...)
@@ -1280,7 +1280,7 @@ public:
     {
         try
         {
-            shim().OnCleanUpVirtualizedItem(*reinterpret_cast<const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs *>(&e));
+            this->shim().OnCleanUpVirtualizedItem(*reinterpret_cast<const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs *>(&e));
             return S_OK;
         }
         catch (...)

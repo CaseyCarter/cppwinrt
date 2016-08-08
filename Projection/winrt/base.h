@@ -3,11 +3,6 @@
 
 #pragma once
 
-#ifndef WINRT_NO_DEFAULT_LIB 
-#pragma comment(lib, "windowsapp") 
-#endif
-
-#include <ctxtcall.h>
 #include <restrictederrorinfo.h>
 #include <winstring.h>
 
@@ -25,6 +20,12 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
+
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
+#define WINRT_CORO
+#include <ctxtcall.h>
+#include <experimental/resumable>
+#endif
 
 extern "C"
 {
@@ -60,7 +61,7 @@ extern "C"
 #define _XM_NO_INTRINSICS_
 #endif
 
-#include "WindowsNumerics.impl.h"
+#include <WindowsNumerics.impl.h>
 
 #ifdef __clang__
 #undef _XM_NO_INTRINSICS_
@@ -116,6 +117,10 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
+#endif
+
+#ifndef __IAgileReference_INTERFACE_DEFINED__
+#define WINRT_NO_AGILE_REFERENCE
 #endif
 
 
@@ -369,6 +374,16 @@ struct accessors<handle<T>>
 
 }
 
+namespace impl {
+
+template <typename Base, typename Derived>
+constexpr bool is_base_of_v = std::is_base_of<Base, Derived>::value;
+
+template<typename T, typename U>
+constexpr bool is_same_v = std::is_same<T, U>::value;
+
+}
+
 namespace ABI {
 
 template <typename T>
@@ -381,10 +396,10 @@ template <typename T>
 using default_interface = typename traits<T>::default_interface;
 
 template <typename T>
-using arg_in = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
+using arg_in = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
 
 template <typename T>
-using arg_out = std::conditional_t<std::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
+using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
 
 }
 
@@ -414,7 +429,7 @@ struct bases_one
 {
     operator I() const noexcept
     {
-        return static_cast<const D *>(this)->as<I>();
+        return static_cast<const D *>(this)->template as<I>();
     }
 };
 
@@ -554,7 +569,7 @@ struct com_ptr
     template <typename U>
     auto as() const
     {
-        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
@@ -562,7 +577,7 @@ struct com_ptr
     template <typename U>
     auto try_as() const
     {
-        std::conditional_t<std::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
@@ -1872,16 +1887,16 @@ protected:
 template <typename T>
 struct com_array : array_ref<T>
 {
-    using array_ref<T>::value_type;
-    using array_ref<T>::size_type;
-    using array_ref<T>::reference;
-    using array_ref<T>::const_reference;
-    using array_ref<T>::pointer;
-    using array_ref<T>::const_pointer;
-    using array_ref<T>::iterator;
-    using array_ref<T>::const_iterator;
-    using array_ref<T>::reverse_iterator;
-    using array_ref<T>::const_reverse_iterator;
+    using typename array_ref<T>::value_type;
+    using typename array_ref<T>::size_type;
+    using typename array_ref<T>::reference;
+    using typename array_ref<T>::const_reference;
+    using typename array_ref<T>::pointer;
+    using typename array_ref<T>::const_pointer;
+    using typename array_ref<T>::iterator;
+    using typename array_ref<T>::const_iterator;
+    using typename array_ref<T>::reverse_iterator;
+    using typename array_ref<T>::const_reverse_iterator;
 
     com_array(const com_array &) = delete;
     com_array & operator=(const com_array &) = delete;
@@ -1895,13 +1910,13 @@ struct com_array : array_ref<T>
     com_array(const size_type count, const value_type & value)
     {
         alloc(count);
-        std::uninitialized_fill_n(m_data, count, value);
+        std::uninitialized_fill_n(this->m_data, count, value);
     }
 
     template <typename InIt> com_array(InIt first, InIt last)
     {
         alloc(static_cast<size_type>(std::distance(first, last)));
-        std::uninitialized_copy(first, last, begin());
+        std::uninitialized_copy(first, last, this->begin());
     }
 
     explicit com_array(const std::vector<value_type> & value) :
@@ -1923,7 +1938,7 @@ struct com_array : array_ref<T>
     {}
 
     com_array(com_array && other) noexcept :
-        array_ref(other.m_data, other.m_size)
+        array_ref<T>(other.m_data, other.m_size)
     {
         other.m_data = nullptr;
         other.m_size = 0;
@@ -1931,8 +1946,8 @@ struct com_array : array_ref<T>
 
     com_array & operator=(com_array && other) noexcept
     {
-        m_data = other.m_data;
-        m_size = other.m_size;
+        this->m_data = other.m_data;
+        this->m_size = other.m_size;
         other.m_data = nullptr;
         other.m_size = 0;
         return *this;
@@ -1945,12 +1960,12 @@ struct com_array : array_ref<T>
 
     void clear() noexcept
     {
-        if (m_data)
+        if (this->m_data)
         {
             destruct(std::is_trivially_destructible<value_type>());
-            CoTaskMemFree(m_data);
-            m_data = nullptr;
-            m_size = 0;
+            CoTaskMemFree(this->m_data);
+            this->m_data = nullptr;
+            this->m_size = 0;
         }
     }
 
@@ -1989,18 +2004,18 @@ private:
 
     void alloc(const size_type size)
     {
-        WINRT_ASSERT(empty());
+        WINRT_ASSERT(this->empty());
 
         if (0 != size)
         {
-            m_data = static_cast<value_type *>(CoTaskMemAlloc(size * sizeof(value_type)));
+            this->m_data = static_cast<value_type *>(CoTaskMemAlloc(size * sizeof(value_type)));
 
-            if (nullptr == m_data)
+            if (this->m_data == nullptr)
             {
                 throw std::bad_alloc();
             }
 
-            m_size = size;
+            this->m_size = size;
         }
     }
 
@@ -2220,7 +2235,7 @@ struct IUnknown
     template <typename U>
     auto as() const
     {
-        std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
         return temp;
     }
@@ -2228,7 +2243,7 @@ struct IUnknown
     template <typename U>
     auto try_as() const
     {
-        std::conditional_t<std::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
@@ -2492,7 +2507,7 @@ template <typename T>
 using uncloak_t = typename uncloak<T>::type;
 
 template <typename I>
-struct is_cloaked : std::conditional_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
+struct is_cloaked : std::conditional_t<is_base_of_v<ABI::Windows::IInspectable, abi<I>>, std::false_type, std::true_type> {};
 
 template <typename I>
 struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -2562,7 +2577,7 @@ abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
 template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
 auto make(Args && ... args)
 {
-    std::conditional_t<std::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
+    std::conditional_t<impl::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
     *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
     return instance;
 }
@@ -2826,7 +2841,7 @@ private:
     template <typename First, typename ... Rest>
     static constexpr bool is_inspectable() noexcept
     {
-        return std::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
+        return impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>> || is_inspectable<Rest ...>();
     }
 
     template <int = 0>
@@ -2838,7 +2853,7 @@ private:
     template <typename First, typename ... Rest>
     static constexpr bool is_non_agile() noexcept
     {
-        return std::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
+        return impl::is_same_v<non_agile, First> || is_non_agile<Rest ...>();
     }
 
     template <int = 0>
@@ -2848,13 +2863,13 @@ private:
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return to_abi<First>(this);
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!std::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return find_inspectable<Rest ...>();
     }
@@ -2866,13 +2881,13 @@ private:
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id, std::enable_if_t<std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<impl::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
         return find_interface<Rest ...>(id);
     }
 
     template <typename First, typename ... Rest>
-    void * find_interface(const GUID & id, std::enable_if_t<!std::is_same_v<non_agile, First>> * = nullptr) const noexcept
+    void * find_interface(const GUID & id, std::enable_if_t<!impl::is_same_v<non_agile, First>> * = nullptr) const noexcept
     {
         if (id == __uuidof(abi<First>))
         {
@@ -2929,7 +2944,7 @@ struct weak_ref
 
     weak_ref(const T & object)
     {
-        check_hresult(object.as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
+        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
     }
 
     T get() const noexcept
@@ -3128,7 +3143,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
     {
         try
         {
-            *instance = detach(shim().ActivateInstance());
+            *instance = detach(this->shim().ActivateInstance());
             return S_OK;
         }
         catch (...)
@@ -3388,7 +3403,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3978,7 +3993,7 @@ public:
 
     MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
     {
-        return return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
+        return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
     }
 };
 
@@ -4005,7 +4020,7 @@ public:
 
     VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
     {
-        return return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
+        return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
     }
 };
 
@@ -4367,7 +4382,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
-            *value = shim().CollectionChange();
+            *value = this->shim().CollectionChange();
             return S_OK;
         }
         catch (...)
@@ -4380,7 +4395,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
-            *value = shim().Index();
+            *value = this->shim().Index();
             return S_OK;
         }
         catch (...)
@@ -4397,7 +4412,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *current = detach(shim().Current());
+            *current = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -4411,7 +4426,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *hasCurrent = shim().HasCurrent();
+            *hasCurrent = this->shim().HasCurrent();
             return S_OK;
         }
         catch (...)
@@ -4424,7 +4439,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *hasCurrent = shim().MoveNext();
+            *hasCurrent = this->shim().MoveNext();
             return S_OK;
         }
         catch (...)
@@ -4437,7 +4452,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
-            *actual = shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -4456,7 +4471,7 @@ struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base
     {
         try
         {
-            *first = detach(shim().First());
+            *first = detach(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -4474,7 +4489,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
-            *key = detach(shim().Key());
+            *key = detach(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -4488,7 +4503,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -4506,7 +4521,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *item = detach(shim().GetAt(index));
+            *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -4520,7 +4535,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -4533,7 +4548,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
         catch (...)
@@ -4546,7 +4561,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
-            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -4565,7 +4580,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *item = detach(shim().GetAt(index));
+            *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -4579,7 +4594,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -4592,7 +4607,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *view = detach(shim().GetView());
+            *view = detach(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -4606,7 +4621,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *found = shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
         catch (...)
@@ -4619,7 +4634,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().SetAt(index, *reinterpret_cast<const T *>(&item));
+            this->shim().SetAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -4632,7 +4647,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
+            this->shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -4645,7 +4660,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().RemoveAt(index);
+            this->shim().RemoveAt(index);
             return S_OK;
         }
         catch (...)
@@ -4658,7 +4673,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().Append(*reinterpret_cast<const T *>(&item));
+            this->shim().Append(*reinterpret_cast<const T *>(&item));
             return S_OK;
         }
         catch (...)
@@ -4671,7 +4686,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().RemoveAtEnd();
+            this->shim().RemoveAtEnd();
             return S_OK;
         }
         catch (...)
@@ -4684,7 +4699,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -4697,7 +4712,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            *actual = shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
         catch (...)
@@ -4712,7 +4727,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
-            shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
+            this->shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
             return S_OK;
         }
         catch (...)
@@ -4729,7 +4744,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -4743,7 +4758,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -4756,7 +4771,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -4769,7 +4784,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
-            shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
+            this->shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
             return S_OK;
         }
         catch (...)
@@ -4788,7 +4803,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -4802,7 +4817,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *size = shim().Size();
+            *size = this->shim().Size();
             return S_OK;
         }
         catch (...)
@@ -4815,7 +4830,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *found = shim().HasKey(*reinterpret_cast<const K *>(&key));
+            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -4828,7 +4843,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *view = detach(shim().GetView());
+            *view = detach(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -4842,7 +4857,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            *replaced = shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
+            *replaced = this->shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4855,7 +4870,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const K *>(&key));
+            this->shim().Remove(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
         catch (...)
@@ -4868,7 +4883,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -4885,7 +4900,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
-            *value = shim().CollectionChange();
+            *value = this->shim().CollectionChange();
             return S_OK;
         }
         catch (...)
@@ -4898,7 +4913,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
-            *value = detach(shim().Key());
+            *value = detach(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -4916,7 +4931,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
-            *token = shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
+            *token = this->shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -4929,7 +4944,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
-            shim().MapChanged(token);
+            this->shim().MapChanged(token);
             return S_OK;
         }
         catch (...)
@@ -4946,7 +4961,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
-            *token = shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
+            *token = this->shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -4959,7 +4974,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
-            shim().VectorChanged(token);
+            this->shim().VectorChanged(token);
             return S_OK;
         }
         catch (...)
@@ -5733,7 +5748,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -5746,7 +5761,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -5760,7 +5775,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
-            shim().GetResults();
+            this->shim().GetResults();
             return S_OK;
         }
         catch (...)
@@ -5777,7 +5792,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *id = shim().Id();
+            *id = this->shim().Id();
             return S_OK;
         }
         catch (...)
@@ -5790,7 +5805,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *status = shim().Status();
+            *status = this->shim().Status();
             return S_OK;
         }
         catch (...)
@@ -5803,7 +5818,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            *errorCode = shim().ErrorCode();
+            *errorCode = this->shim().ErrorCode();
             return S_OK;
         }
         catch (...)
@@ -5816,7 +5831,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            shim().Cancel();
+            this->shim().Cancel();
             return S_OK;
         }
         catch (...)
@@ -5829,7 +5844,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)
@@ -5846,7 +5861,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
+            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -5859,7 +5874,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            *handler = detach(shim().Progress());
+            *handler = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -5873,7 +5888,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -5886,7 +5901,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -5900,7 +5915,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
-            shim().GetResults();
+            this->shim().GetResults();
             return S_OK;
         }
         catch (...)
@@ -5917,7 +5932,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -5930,7 +5945,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -5944,7 +5959,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
-            *results = detach(shim().GetResults());
+            *results = detach(this->shim().GetResults());
             return S_OK;
         }
         catch (...)
@@ -5962,7 +5977,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
+            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -5975,7 +5990,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *handler = detach(shim().Progress());
+            *handler = detach(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -5989,7 +6004,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
+            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
         catch (...)
@@ -6002,7 +6017,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *handler = detach(shim().Completed());
+            *handler = detach(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -6016,7 +6031,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
-            *results = detach(shim().GetResults());
+            *results = detach(this->shim().GetResults());
             return S_OK;
         }
         catch (...)
@@ -6029,6 +6044,8 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
 
 }
 
+#ifndef WINRT_NO_AGILE_REFERENCE
+
 template <typename T>
 struct agile_ref
 {
@@ -6037,7 +6054,7 @@ struct agile_ref
     agile_ref(const T & object)
     {
 #ifdef WINRT_DEBUG
-        if (object.try_as<IAgileObject>())
+        if (object.template try_as<IAgileObject>())
         {
             WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
         }
@@ -6072,6 +6089,10 @@ agile_ref<T> make_agile(const T & object)
     return object;
 }
 
+#endif
+
+#ifdef WINRT_CORO
+
 namespace Windows::Foundation {
 
 template <typename T, typename F>
@@ -6080,7 +6101,7 @@ void impl_suspend(const T & object, F resume)
     com_ptr<IContextCallback> context;
     check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
 
-    object.Completed([resume, context](const auto &, AsyncStatus)
+    object.Completed([resume, context = std::move(context)](const auto &, AsyncStatus)
     {
         ComCallData data = {};
         data.pUserDefined = resume.address();
@@ -6168,6 +6189,8 @@ inline void await_resume(const IAsyncAction & object)
 }
 
 }
+
+#endif
 
 }
 

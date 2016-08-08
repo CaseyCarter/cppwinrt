@@ -19,7 +19,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *result = detach(shim().RequestAccessAsync());
+            *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *accessStatus = detach(shim().GetAccessStatus());
+            *accessStatus = detach(this->shim().GetAccessStatus());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *token = detach(shim().NotificationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().NotificationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            shim().NotificationChanged(token);
+            this->shim().NotificationChanged(token);
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *result = detach(shim().GetNotificationsAsync(kinds));
+            *result = detach(this->shim().GetNotificationsAsync(kinds));
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *result = detach(shim().GetNotification(notificationId));
+            *result = detach(this->shim().GetNotification(notificationId));
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            shim().ClearNotifications();
+            this->shim().ClearNotifications();
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            shim().RemoveNotification(notificationId);
+            this->shim().RemoveNotification(notificationId);
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
-            *result = detach(shim().Current());
+            *result = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)

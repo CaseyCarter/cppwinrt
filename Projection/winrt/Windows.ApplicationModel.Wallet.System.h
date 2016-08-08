@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync());
+            *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *operation = detach(shim().DeleteAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *operation = detach(shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
+            *operation = detach(this->shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *result = detach(shim().GetAppStatusForItem(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *result = detach(this->shim().GetAppStatusForItem(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *operation = detach(shim().LaunchAppForItemAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach(this->shim().LaunchAppForItemAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            *cookie = detach(shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
-            shim().ItemsChanged(cookie);
+            this->shim().ItemsChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletManagerSyste
     {
         try
         {
-            *operation = detach(shim().RequestStoreAsync());
+            *operation = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }
         catch (...)

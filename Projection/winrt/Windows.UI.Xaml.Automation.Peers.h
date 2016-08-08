@@ -31,7 +31,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeerFac
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBarButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBarButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutom
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBarToggleButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AppBarToggleButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomatio
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AutoSuggestBox *>(&owner)));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::AutoSuggestBox *>(&owner)));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *value = detach(shim().EventsSource());
+            *value = detach(this->shim().EventsSource());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            shim().EventsSource(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&value));
+            this->shim().EventsSource(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetPattern(patternInterface));
+            *returnValue = detach(this->shim().GetPattern(patternInterface));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            shim().RaiseAutomationEvent(eventId);
+            this->shim().RaiseAutomationEvent(eventId);
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            shim().RaisePropertyChangedEvent(*reinterpret_cast<const Windows::UI::Xaml::Automation::AutomationProperty *>(&automationProperty), *reinterpret_cast<const Windows::IInspectable *>(&oldValue), *reinterpret_cast<const Windows::IInspectable *>(&newValue));
+            this->shim().RaisePropertyChangedEvent(*reinterpret_cast<const Windows::UI::Xaml::Automation::AutomationProperty *>(&automationProperty), *reinterpret_cast<const Windows::IInspectable *>(&oldValue), *reinterpret_cast<const Windows::IInspectable *>(&newValue));
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetAcceleratorKey());
+            *returnValue = detach(this->shim().GetAcceleratorKey());
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetAccessKey());
+            *returnValue = detach(this->shim().GetAccessKey());
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationControlType());
+            *returnValue = detach(this->shim().GetAutomationControlType());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationId());
+            *returnValue = detach(this->shim().GetAutomationId());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetBoundingRectangle());
+            *returnValue = detach(this->shim().GetBoundingRectangle());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetChildren());
+            *returnValue = detach(this->shim().GetChildren());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetClassName());
+            *returnValue = detach(this->shim().GetClassName());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetClickablePoint());
+            *returnValue = detach(this->shim().GetClickablePoint());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetHelpText());
+            *returnValue = detach(this->shim().GetHelpText());
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetItemStatus());
+            *returnValue = detach(this->shim().GetItemStatus());
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetItemType());
+            *returnValue = detach(this->shim().GetItemType());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetLabeledBy());
+            *returnValue = detach(this->shim().GetLabeledBy());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedControlType());
+            *returnValue = detach(this->shim().GetLocalizedControlType());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetName());
+            *returnValue = detach(this->shim().GetName());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetOrientation());
+            *returnValue = detach(this->shim().GetOrientation());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().HasKeyboardFocus());
+            *returnValue = detach(this->shim().HasKeyboardFocus());
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsContentElement());
+            *returnValue = detach(this->shim().IsContentElement());
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsControlElement());
+            *returnValue = detach(this->shim().IsControlElement());
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsEnabled());
+            *returnValue = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsKeyboardFocusable());
+            *returnValue = detach(this->shim().IsKeyboardFocusable());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsOffscreen());
+            *returnValue = detach(this->shim().IsOffscreen());
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsPassword());
+            *returnValue = detach(this->shim().IsPassword());
             return S_OK;
         }
         catch (...)
@@ -482,7 +482,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().IsRequiredForForm());
+            *returnValue = detach(this->shim().IsRequiredForForm());
             return S_OK;
         }
         catch (...)
@@ -495,7 +495,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            shim().SetFocus();
+            this->shim().SetFocus();
             return S_OK;
         }
         catch (...)
@@ -508,7 +508,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetParent());
+            *returnValue = detach(this->shim().GetParent());
             return S_OK;
         }
         catch (...)
@@ -522,7 +522,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            shim().InvalidatePeer();
+            this->shim().InvalidatePeer();
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetPeerFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
+            *returnValue = detach(this->shim().GetPeerFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer> : produ
     {
         try
         {
-            *returnValue = detach(shim().GetLiveSetting());
+            *returnValue = detach(this->shim().GetLiveSetting());
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().Navigate(direction));
+            *returnValue = detach(this->shim().Navigate(direction));
             return S_OK;
         }
         catch (...)
@@ -584,7 +584,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetElementFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
+            *returnValue = detach(this->shim().GetElementFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetFocusedElement());
+            *returnValue = detach(this->shim().GetFocusedElement());
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            shim().ShowContextMenu();
+            this->shim().ShowContextMenu();
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetControlledPeers());
+            *returnValue = detach(this->shim().GetControlledPeers());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetAnnotations());
+            *returnValue = detach(this->shim().GetAnnotations());
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            shim().SetParent(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer));
+            this->shim().SetParent(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer));
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            shim().RaiseTextEditTextChangedEvent(automationTextEditChangeType, *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&changedData));
+            this->shim().RaiseTextEditTextChangedEvent(automationTextEditChangeType, *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&changedData));
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetPositionInSet());
+            *returnValue = detach(this->shim().GetPositionInSet());
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetSizeOfSet());
+            *returnValue = detach(this->shim().GetSizeOfSet());
             return S_OK;
         }
         catch (...)
@@ -705,7 +705,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetLevel());
+            *returnValue = detach(this->shim().GetLevel());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer3> : prod
     {
         try
         {
-            shim().RaiseStructureChangedEvent(structureChangeType, *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&child));
+            this->shim().RaiseStructureChangedEvent(structureChangeType, *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&child));
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetLandmarkType());
+            *returnValue = detach(this->shim().GetLandmarkType());
             return S_OK;
         }
         catch (...)
@@ -748,7 +748,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer4> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedLandmarkType());
+            *returnValue = detach(this->shim().GetLocalizedLandmarkType());
             return S_OK;
         }
         catch (...)
@@ -766,7 +766,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5> : prod
     {
         try
         {
-            *returnValue = detach(shim().IsPeripheral());
+            *returnValue = detach(this->shim().IsPeripheral());
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5> : prod
     {
         try
         {
-            *returnValue = detach(shim().IsDataValidForForm());
+            *returnValue = detach(this->shim().IsDataValidForForm());
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5> : prod
     {
         try
         {
-            *returnValue = detach(shim().GetFullDescription());
+            *returnValue = detach(this->shim().GetFullDescription());
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            shim().Type(value);
+            this->shim().Type(value);
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *value = detach(shim().Peer());
+            *value = detach(this->shim().Peer());
             return S_OK;
         }
         catch (...)
@@ -850,7 +850,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            shim().Peer(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&value));
+            this->shim().Peer(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *instance = detach(shim().CreateInstance(type));
+            *instance = detach(this->shim().CreateInstance(type));
             return S_OK;
         }
         catch (...)
@@ -881,7 +881,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *instance = detach(shim().CreateWithPeerParameter(type, *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer)));
+            *instance = detach(this->shim().CreateWithPeerParameter(type, *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer)));
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *value = detach(shim().TypeProperty());
+            *value = detach(this->shim().TypeProperty());
             return S_OK;
         }
         catch (...)
@@ -913,7 +913,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotatio
     {
         try
         {
-            *value = detach(shim().PeerProperty());
+            *value = detach(this->shim().PeerProperty());
             return S_OK;
         }
         catch (...)
@@ -931,7 +931,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerFactory> 
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -950,7 +950,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetPatternCore(patternInterface));
+            *returnValue = detach(this->shim().GetPatternCore(patternInterface));
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetAcceleratorKeyCore());
+            *returnValue = detach(this->shim().GetAcceleratorKeyCore());
             return S_OK;
         }
         catch (...)
@@ -978,7 +978,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetAccessKeyCore());
+            *returnValue = detach(this->shim().GetAccessKeyCore());
             return S_OK;
         }
         catch (...)
@@ -992,7 +992,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationControlTypeCore());
+            *returnValue = detach(this->shim().GetAutomationControlTypeCore());
             return S_OK;
         }
         catch (...)
@@ -1005,7 +1005,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationIdCore());
+            *returnValue = detach(this->shim().GetAutomationIdCore());
             return S_OK;
         }
         catch (...)
@@ -1019,7 +1019,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetBoundingRectangleCore());
+            *returnValue = detach(this->shim().GetBoundingRectangleCore());
             return S_OK;
         }
         catch (...)
@@ -1032,7 +1032,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetChildrenCore());
+            *returnValue = detach(this->shim().GetChildrenCore());
             return S_OK;
         }
         catch (...)
@@ -1046,7 +1046,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetClassNameCore());
+            *returnValue = detach(this->shim().GetClassNameCore());
             return S_OK;
         }
         catch (...)
@@ -1060,7 +1060,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetClickablePointCore());
+            *returnValue = detach(this->shim().GetClickablePointCore());
             return S_OK;
         }
         catch (...)
@@ -1073,7 +1073,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetHelpTextCore());
+            *returnValue = detach(this->shim().GetHelpTextCore());
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetItemStatusCore());
+            *returnValue = detach(this->shim().GetItemStatusCore());
             return S_OK;
         }
         catch (...)
@@ -1101,7 +1101,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetItemTypeCore());
+            *returnValue = detach(this->shim().GetItemTypeCore());
             return S_OK;
         }
         catch (...)
@@ -1115,7 +1115,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLabeledByCore());
+            *returnValue = detach(this->shim().GetLabeledByCore());
             return S_OK;
         }
         catch (...)
@@ -1129,7 +1129,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedControlTypeCore());
+            *returnValue = detach(this->shim().GetLocalizedControlTypeCore());
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetNameCore());
+            *returnValue = detach(this->shim().GetNameCore());
             return S_OK;
         }
         catch (...)
@@ -1157,7 +1157,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetOrientationCore());
+            *returnValue = detach(this->shim().GetOrientationCore());
             return S_OK;
         }
         catch (...)
@@ -1170,7 +1170,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().HasKeyboardFocusCore());
+            *returnValue = detach(this->shim().HasKeyboardFocusCore());
             return S_OK;
         }
         catch (...)
@@ -1183,7 +1183,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsContentElementCore());
+            *returnValue = detach(this->shim().IsContentElementCore());
             return S_OK;
         }
         catch (...)
@@ -1196,7 +1196,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsControlElementCore());
+            *returnValue = detach(this->shim().IsControlElementCore());
             return S_OK;
         }
         catch (...)
@@ -1209,7 +1209,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsEnabledCore());
+            *returnValue = detach(this->shim().IsEnabledCore());
             return S_OK;
         }
         catch (...)
@@ -1222,7 +1222,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsKeyboardFocusableCore());
+            *returnValue = detach(this->shim().IsKeyboardFocusableCore());
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsOffscreenCore());
+            *returnValue = detach(this->shim().IsOffscreenCore());
             return S_OK;
         }
         catch (...)
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsPasswordCore());
+            *returnValue = detach(this->shim().IsPasswordCore());
             return S_OK;
         }
         catch (...)
@@ -1261,7 +1261,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsRequiredForFormCore());
+            *returnValue = detach(this->shim().IsRequiredForFormCore());
             return S_OK;
         }
         catch (...)
@@ -1274,7 +1274,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            shim().SetFocusCore();
+            this->shim().SetFocusCore();
             return S_OK;
         }
         catch (...)
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
+            *returnValue = detach(this->shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
         catch (...)
@@ -1301,7 +1301,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLiveSettingCore());
+            *returnValue = detach(this->shim().GetLiveSettingCore());
             return S_OK;
         }
         catch (...)
@@ -1318,7 +1318,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            shim().ShowContextMenuCore();
+            this->shim().ShowContextMenuCore();
             return S_OK;
         }
         catch (...)
@@ -1331,7 +1331,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetControlledPeersCore());
+            *returnValue = detach(this->shim().GetControlledPeersCore());
             return S_OK;
         }
         catch (...)
@@ -1349,7 +1349,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().NavigateCore(direction));
+            *returnValue = detach(this->shim().NavigateCore(direction));
             return S_OK;
         }
         catch (...)
@@ -1363,7 +1363,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
+            *returnValue = detach(this->shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
         catch (...)
@@ -1377,7 +1377,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetFocusedElementCore());
+            *returnValue = detach(this->shim().GetFocusedElementCore());
             return S_OK;
         }
         catch (...)
@@ -1391,7 +1391,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetAnnotationsCore());
+            *returnValue = detach(this->shim().GetAnnotationsCore());
             return S_OK;
         }
         catch (...)
@@ -1405,7 +1405,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetPositionInSetCore());
+            *returnValue = detach(this->shim().GetPositionInSetCore());
             return S_OK;
         }
         catch (...)
@@ -1418,7 +1418,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetSizeOfSetCore());
+            *returnValue = detach(this->shim().GetSizeOfSetCore());
             return S_OK;
         }
         catch (...)
@@ -1431,7 +1431,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLevelCore());
+            *returnValue = detach(this->shim().GetLevelCore());
             return S_OK;
         }
         catch (...)
@@ -1448,7 +1448,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLandmarkTypeCore());
+            *returnValue = detach(this->shim().GetLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -1461,7 +1461,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedLandmarkTypeCore());
+            *returnValue = detach(this->shim().GetLocalizedLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsPeripheralCore());
+            *returnValue = detach(this->shim().IsPeripheralCore());
             return S_OK;
         }
         catch (...)
@@ -1492,7 +1492,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().IsDataValidForFormCore());
+            *returnValue = detach(this->shim().IsDataValidForFormCore());
             return S_OK;
         }
         catch (...)
@@ -1505,7 +1505,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetFullDescriptionCore());
+            *returnValue = detach(this->shim().GetFullDescriptionCore());
             return S_OK;
         }
         catch (...)
@@ -1519,7 +1519,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetDescribedByCore());
+            *returnValue = detach(this->shim().GetDescribedByCore());
             return S_OK;
         }
         catch (...)
@@ -1533,7 +1533,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetFlowsToCore());
+            *returnValue = detach(this->shim().GetFlowsToCore());
             return S_OK;
         }
         catch (...)
@@ -1547,7 +1547,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
     {
         try
         {
-            *returnValue = detach(shim().GetFlowsFromCore());
+            *returnValue = detach(this->shim().GetFlowsFromCore());
             return S_OK;
         }
         catch (...)
@@ -1565,7 +1565,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected
     {
         try
         {
-            *returnValue = detach(shim().PeerFromProvider(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&provider)));
+            *returnValue = detach(this->shim().PeerFromProvider(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -1579,7 +1579,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected
     {
         try
         {
-            *returnValue = detach(shim().ProviderFromPeer(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer)));
+            *returnValue = detach(this->shim().ProviderFromPeer(*reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::AutomationPeer *>(&peer)));
             return S_OK;
         }
         catch (...)
@@ -1597,7 +1597,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics> 
     {
         try
         {
-            *returnValue = detach(shim().ListenerExists(eventId));
+            *returnValue = detach(this->shim().ListenerExists(eventId));
             return S_OK;
         }
         catch (...)
@@ -1614,7 +1614,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics3>
     {
         try
         {
-            *returnValue = detach(shim().GenerateRawElementProviderRuntimeId());
+            *returnValue = detach(this->shim().GenerateRawElementProviderRuntimeId());
             return S_OK;
         }
         catch (...)
@@ -1635,7 +1635,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeerFac
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Button *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Button *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1658,7 +1658,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPee
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ButtonBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ButtonBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1681,7 +1681,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomatio
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::CaptureElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::CaptureElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1704,7 +1704,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::CheckBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::CheckBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1727,7 +1727,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ComboBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ComboBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1750,7 +1750,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ComboBoxItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ComboBoxItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1773,7 +1773,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomat
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1796,7 +1796,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPee
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::DatePicker *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::DatePicker *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1823,7 +1823,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlipView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlipView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1846,7 +1846,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlipViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlipViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1869,7 +1869,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomat
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1892,7 +1892,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomati
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlyoutPresenter *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::FlyoutPresenter *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1911,7 +1911,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomat
     {
         try
         {
-            *value = detach(shim().Owner());
+            *value = detach(this->shim().Owner());
             return S_OK;
         }
         catch (...)
@@ -1929,7 +1929,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomat
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1948,7 +1948,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomat
     {
         try
         {
-            *returnValue = detach(shim().FromElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *returnValue = detach(this->shim().FromElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1962,7 +1962,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomat
     {
         try
         {
-            *returnValue = detach(shim().CreatePeerForElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *returnValue = detach(this->shim().CreatePeerForElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1984,7 +1984,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2007,7 +2007,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutom
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridViewHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridViewHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2030,7 +2030,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GridViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2053,7 +2053,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomat
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2076,7 +2076,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GroupItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::GroupItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2099,7 +2099,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IHubAutomationPeerFactor
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Hub *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Hub *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2122,7 +2122,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPee
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::HubSection *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::HubSection *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2145,7 +2145,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomati
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::HyperlinkButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::HyperlinkButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2168,7 +2168,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IImageAutomationPeerFact
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Image *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Image *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2191,7 +2191,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> : p
     {
         try
         {
-            *value = detach(shim().Item());
+            *value = detach(this->shim().Item());
             return S_OK;
         }
         catch (...)
@@ -2205,7 +2205,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> : p
     {
         try
         {
-            *value = detach(shim().ItemsControlAutomationPeer());
+            *value = detach(this->shim().ItemsControlAutomationPeer());
             return S_OK;
         }
         catch (...)
@@ -2223,7 +2223,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemAutomationPeerFacto
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2246,7 +2246,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationP
     {
         try
         {
-            *returnValue = detach(shim().CreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach(this->shim().CreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -2264,7 +2264,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ItemsControl *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ItemsControl *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2283,7 +2283,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationP
     {
         try
         {
-            *returnValue = detach(shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -2305,7 +2305,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeerFa
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2328,7 +2328,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPe
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListBoxItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListBoxItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2351,7 +2351,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomati
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2378,7 +2378,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListView *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2401,7 +2401,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2424,7 +2424,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemA
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2447,7 +2447,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutom
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewHeaderItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2470,7 +2470,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2493,7 +2493,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomat
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2532,7 +2532,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2555,7 +2555,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutom
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaPlayerElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaPlayerElement *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2578,7 +2578,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsA
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaTransportControls *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MediaTransportControls *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2601,7 +2601,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomatio
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MenuFlyoutItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MenuFlyoutItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2624,7 +2624,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAuto
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MenuFlyoutPresenter *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::MenuFlyoutPresenter *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2647,7 +2647,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPe
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::PasswordBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::PasswordBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2674,7 +2674,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeerFact
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Pivot *>(&owner)));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Pivot *>(&owner)));
             return S_OK;
         }
         catch (...)
@@ -2696,7 +2696,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::PivotItem *>(&owner)));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::PivotItem *>(&owner)));
             return S_OK;
         }
         catch (...)
@@ -2718,7 +2718,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomation
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer *>(&parent)));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer *>(&parent)));
             return S_OK;
         }
         catch (...)
@@ -2740,7 +2740,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPe
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ProgressBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ProgressBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2763,7 +2763,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ProgressRing *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ProgressRing *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2786,7 +2786,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPe
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RadioButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RadioButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2809,7 +2809,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RangeBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RangeBase *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2832,7 +2832,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RepeatButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RepeatButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2855,7 +2855,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPe
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichEditBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichEditBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2878,7 +2878,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomation
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichTextBlock *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichTextBlock *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2901,7 +2901,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAu
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichTextBlockOverflow *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::RichTextBlockOverflow *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2924,7 +2924,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ScrollBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ScrollBar *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2947,7 +2947,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2970,7 +2970,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SearchBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SearchBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2993,7 +2993,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeerF
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::Selector *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::Selector *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3016,7 +3016,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithParentAndItem(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer *>(&parent), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3039,7 +3039,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SemanticZoom *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SemanticZoom *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3062,7 +3062,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomatio
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SettingsFlyout *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::SettingsFlyout *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3085,7 +3085,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeerFac
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Slider *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Slider *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3108,7 +3108,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TextBlock *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TextBlock *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3131,7 +3131,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeerFa
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TextBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TextBox *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3154,7 +3154,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeerFact
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::Thumb *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::Thumb *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3177,7 +3177,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPee
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TimePicker *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::TimePicker *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3204,7 +3204,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ToggleButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ToggleButton *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3227,7 +3227,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAut
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3250,7 +3250,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationP
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ToggleSwitch *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithOwner(*reinterpret_cast<const Windows::UI::Xaml::Controls::ToggleSwitch *>(&owner), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)

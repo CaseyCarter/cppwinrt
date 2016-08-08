@@ -23,7 +23,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().RetrieveServiceDocumentAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().RetrieveServiceDocumentAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().RetrieveMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().RetrieveMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().RetrieveResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().RetrieveResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().CreateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
+            *operation = detach(this->shim().CreateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().CreateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
+            *operation = detach(this->shim().CreateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().UpdateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
+            *operation = detach(this->shim().UpdateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().UpdateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
+            *operation = detach(this->shim().UpdateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().UpdateResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
+            *operation = detach(this->shim().UpdateResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().DeleteResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().DeleteResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().DeleteResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
+            *operation = detach(this->shim().DeleteResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
-            shim().CancelAsyncOperations();
+            this->shim().CancelAsyncOperations();
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClientFactory> : produce_base<D
     {
         try
         {
-            *atomPubClient = detach(shim().CreateAtomPubClientWithCredentials(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&serverCredential)));
+            *atomPubClient = detach(this->shim().CreateAtomPubClientWithCredentials(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&serverCredential)));
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Categories());
+            *value = detach(this->shim().Categories());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Accepts());
+            *value = detach(this->shim().Accepts());
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Web::AtomPub::IServiceDocument> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Workspaces());
+            *value = detach(this->shim().Workspaces());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Collections());
+            *value = detach(this->shim().Collections());
             return S_OK;
         }
         catch (...)

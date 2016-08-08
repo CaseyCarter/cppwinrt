@@ -22,7 +22,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
-            *value = detach(shim().HighContrast());
+            *value = detach(this->shim().HighContrast());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
-            *value = detach(shim().HighContrastScheme());
+            *value = detach(this->shim().HighContrastScheme());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
-            *cookie = detach(shim().HighContrastChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().HighContrastChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
-            shim().HighContrastChanged(cookie);
+            this->shim().HighContrastChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
-            *operation = detach(shim().ShowAsStandaloneAsync(viewId));
+            *operation = detach(this->shim().ShowAsStandaloneAsync(viewId));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
-            *operation = detach(shim().ShowAsStandaloneAsync(viewId, sizePreference));
+            *operation = detach(this->shim().ShowAsStandaloneAsync(viewId, sizePreference));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
-            *value = detach(shim().IsViewPresentedOnActivationVirtualDesktop(viewId));
+            *value = detach(this->shim().IsViewPresentedOnActivationVirtualDesktop(viewId));
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().AdjacentToLeftDisplayEdge());
+            *value = detach(this->shim().AdjacentToLeftDisplayEdge());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().AdjacentToRightDisplayEdge());
+            *value = detach(this->shim().AdjacentToRightDisplayEdge());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsFullScreen());
+            *value = detach(this->shim().IsFullScreen());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsOnLockScreen());
+            *value = detach(this->shim().IsOnLockScreen());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsScreenCaptureEnabled());
+            *value = detach(this->shim().IsScreenCaptureEnabled());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            shim().IsScreenCaptureEnabled(value);
+            this->shim().IsScreenCaptureEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -242,7 +242,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -255,7 +255,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            *token = detach(shim().Consolidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Consolidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
-            shim().Consolidated(token);
+            this->shim().Consolidated(token);
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            *value = detach(shim().SuppressSystemOverlays());
+            *value = detach(this->shim().SuppressSystemOverlays());
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            shim().SuppressSystemOverlays(value);
+            this->shim().SuppressSystemOverlays(value);
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            *value = detach(shim().VisibleBounds());
+            *value = detach(this->shim().VisibleBounds());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            *token = detach(shim().VisibleBoundsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().VisibleBoundsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            shim().VisibleBoundsChanged(token);
+            this->shim().VisibleBoundsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            *success = detach(shim().SetDesiredBoundsMode(boundsMode));
+            *success = detach(this->shim().SetDesiredBoundsMode(boundsMode));
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
-            *value = detach(shim().DesiredBoundsMode());
+            *value = detach(this->shim().DesiredBoundsMode());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            *value = detach(shim().TitleBar());
+            *value = detach(this->shim().TitleBar());
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            *value = detach(shim().FullScreenSystemOverlayMode());
+            *value = detach(this->shim().FullScreenSystemOverlayMode());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            shim().FullScreenSystemOverlayMode(value);
+            this->shim().FullScreenSystemOverlayMode(value);
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            *value = detach(shim().IsFullScreenMode());
+            *value = detach(this->shim().IsFullScreenMode());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            *success = detach(shim().TryEnterFullScreenMode());
+            *success = detach(this->shim().TryEnterFullScreenMode());
             return S_OK;
         }
         catch (...)
@@ -446,7 +446,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            shim().ExitFullScreenMode();
+            this->shim().ExitFullScreenMode();
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            shim().ShowStandardSystemOverlays();
+            this->shim().ShowStandardSystemOverlays();
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            *success = detach(shim().TryResizeView(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
+            *success = detach(this->shim().TryResizeView(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
-            shim().SetPreferredMinSize(*reinterpret_cast<const Windows::Foundation::Size *>(&minSize));
+            this->shim().SetPreferredMinSize(*reinterpret_cast<const Windows::Foundation::Size *>(&minSize));
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEvent
     {
         try
         {
-            *value = detach(shim().IsUserInitiated());
+            *value = detach(this->shim().IsUserInitiated());
             return S_OK;
         }
         catch (...)
@@ -519,7 +519,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics
     {
         try
         {
-            *success = detach(shim().TryUnsnapToFullscreen());
+            *success = detach(this->shim().TryUnsnapToFullscreen());
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewInteropStatics> :
     {
         try
         {
-            *id = detach(shim().GetApplicationViewIdForWindow(*reinterpret_cast<const Windows::UI::Core::ICoreWindow *>(&window)));
+            *id = detach(this->shim().GetApplicationViewIdForWindow(*reinterpret_cast<const Windows::UI::Core::ICoreWindow *>(&window)));
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics> :
     {
         try
         {
-            *value = detach(shim().DisableLayoutScaling());
+            *value = detach(this->shim().DisableLayoutScaling());
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics> :
     {
         try
         {
-            *success = detach(shim().TrySetDisableLayoutScaling(disableLayoutScaling));
+            *success = detach(this->shim().TrySetDisableLayoutScaling(disableLayoutScaling));
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics> : produc
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics> : produc
     {
         try
         {
-            *success = detach(shim().TryUnsnap());
+            *success = detach(this->shim().TryUnsnap());
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
-            *current = detach(shim().GetForCurrentView());
+            *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -631,7 +631,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
-            *value = detach(shim().TerminateAppOnFinalViewClose());
+            *value = detach(this->shim().TerminateAppOnFinalViewClose());
             return S_OK;
         }
         catch (...)
@@ -644,7 +644,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
-            shim().TerminateAppOnFinalViewClose(value);
+            this->shim().TerminateAppOnFinalViewClose(value);
             return S_OK;
         }
         catch (...)
@@ -661,7 +661,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
-            *value = detach(shim().PreferredLaunchWindowingMode());
+            *value = detach(this->shim().PreferredLaunchWindowingMode());
             return S_OK;
         }
         catch (...)
@@ -674,7 +674,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
-            shim().PreferredLaunchWindowingMode(value);
+            this->shim().PreferredLaunchWindowingMode(value);
             return S_OK;
         }
         catch (...)
@@ -687,7 +687,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
-            *value = detach(shim().PreferredLaunchViewSize());
+            *value = detach(this->shim().PreferredLaunchViewSize());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
-            shim().PreferredLaunchViewSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().PreferredLaunchViewSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            shim().DisableShowingMainViewOnActivation();
+            this->shim().DisableShowingMainViewOnActivation();
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().TryShowAsStandaloneAsync(viewId));
+            *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId));
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().TryShowAsStandaloneAsync(viewId, sizePreference));
+            *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId, sizePreference));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference));
+            *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference));
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().SwitchAsync(viewId));
+            *operation = detach(this->shim().SwitchAsync(viewId));
             return S_OK;
         }
         catch (...)
@@ -786,7 +786,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().SwitchAsync(toViewId, fromViewId));
+            *operation = detach(this->shim().SwitchAsync(toViewId, fromViewId));
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().SwitchAsync(toViewId, fromViewId, options));
+            *operation = detach(this->shim().SwitchAsync(toViewId, fromViewId, options));
             return S_OK;
         }
         catch (...)
@@ -814,7 +814,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
-            *operation = detach(shim().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options));
+            *operation = detach(this->shim().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options));
             return S_OK;
         }
         catch (...)
@@ -832,7 +832,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
     {
         try
         {
-            shim().DisableSystemViewActivationPolicy();
+            this->shim().DisableSystemViewActivationPolicy();
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ForegroundColor());
+            *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -876,7 +876,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -889,7 +889,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -916,7 +916,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonForegroundColor());
+            *value = detach(this->shim().ButtonForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -930,7 +930,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonBackgroundColor());
+            *value = detach(this->shim().ButtonBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -957,7 +957,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonHoverForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonHoverForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -970,7 +970,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonHoverForegroundColor());
+            *value = detach(this->shim().ButtonHoverForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -984,7 +984,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonHoverBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonHoverBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -997,7 +997,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonHoverBackgroundColor());
+            *value = detach(this->shim().ButtonHoverBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonPressedForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonPressedForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1024,7 +1024,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonPressedForegroundColor());
+            *value = detach(this->shim().ButtonPressedForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -1038,7 +1038,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonPressedBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonPressedBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonPressedBackgroundColor());
+            *value = detach(this->shim().ButtonPressedBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().InactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().InactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().InactiveForegroundColor());
+            *value = detach(this->shim().InactiveForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().InactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().InactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().InactiveBackgroundColor());
+            *value = detach(this->shim().InactiveBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonInactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonInactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonInactiveForegroundColor());
+            *value = detach(this->shim().ButtonInactiveForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            shim().ButtonInactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().ButtonInactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1159,7 +1159,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
-            *value = detach(shim().ButtonInactiveBackgroundColor());
+            *value = detach(this->shim().ButtonInactiveBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContext> 
     {
         try
         {
-            *value = detach(shim().ViewId());
+            *value = detach(this->shim().ViewId());
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContext> 
     {
         try
         {
-            shim().ViewId(value);
+            this->shim().ViewId(value);
             return S_OK;
         }
         catch (...)
@@ -1207,7 +1207,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContextSt
     {
         try
         {
-            *value = detach(shim().DataPackageFormatId());
+            *value = detach(this->shim().DataPackageFormatId());
             return S_OK;
         }
         catch (...)
@@ -1225,7 +1225,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().Showing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
+            *token = detach(this->shim().Showing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1238,7 +1238,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
-            shim().Showing(token);
+            this->shim().Showing(token);
             return S_OK;
         }
         catch (...)
@@ -1251,7 +1251,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().Hiding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
+            *token = detach(this->shim().Hiding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1264,7 +1264,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
-            shim().Hiding(token);
+            this->shim().Hiding(token);
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().OccludedRect());
+            *value = detach(this->shim().OccludedRect());
             return S_OK;
         }
         catch (...)
@@ -1294,7 +1294,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane2> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().TryShow());
+            *result = detach(this->shim().TryShow());
             return S_OK;
         }
         catch (...)
@@ -1307,7 +1307,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane2> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().TryHide());
+            *result = detach(this->shim().TryHide());
             return S_OK;
         }
         catch (...)
@@ -1324,7 +1324,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneControl> : produce_base
     {
         try
         {
-            *value = detach(shim().Visible());
+            *value = detach(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -1337,7 +1337,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneControl> : produce_base
     {
         try
         {
-            shim().Visible(value);
+            this->shim().Visible(value);
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneStatics> : produce_base
     {
         try
         {
-            *inputPane = detach(shim().GetForCurrentView());
+            *inputPane = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -1372,7 +1372,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
-            *value = detach(shim().OccludedRect());
+            *value = detach(this->shim().OccludedRect());
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
-            shim().EnsuredFocusedElementInView(value);
+            this->shim().EnsuredFocusedElementInView(value);
             return S_OK;
         }
         catch (...)
@@ -1398,7 +1398,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
-            *value = detach(shim().EnsuredFocusedElementInView());
+            *value = detach(this->shim().EnsuredFocusedElementInView());
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            *operation = detach(shim().StartProjectingAsync(projectionViewId, anchorViewId));
+            *operation = detach(this->shim().StartProjectingAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
         catch (...)
@@ -1429,7 +1429,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            *operation = detach(shim().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId));
+            *operation = detach(this->shim().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
         catch (...)
@@ -1443,7 +1443,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            *operation = detach(shim().StopProjectingAsync(projectionViewId, anchorViewId));
+            *operation = detach(this->shim().StopProjectingAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
         catch (...)
@@ -1457,7 +1457,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            *value = detach(shim().ProjectionDisplayAvailable());
+            *value = detach(this->shim().ProjectionDisplayAvailable());
             return S_OK;
         }
         catch (...)
@@ -1470,7 +1470,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            *token = detach(shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1483,7 +1483,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
-            shim().ProjectionDisplayAvailableChanged(token);
+            this->shim().ProjectionDisplayAvailableChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1500,7 +1500,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
-            *operation = detach(shim().StartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&displayDeviceInfo)));
+            *operation = detach(this->shim().StartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&displayDeviceInfo)));
             return S_OK;
         }
         catch (...)
@@ -1514,7 +1514,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
-            *operation = detach(shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *operation = detach(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -1528,7 +1528,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
-            *operation = detach(shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), prefferedPlacement));
+            *operation = detach(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), prefferedPlacement));
             return S_OK;
         }
         catch (...)
@@ -1542,7 +1542,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector());
+            *selector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -1560,7 +1560,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().HandPreference());
+            *value = detach(this->shim().HandPreference());
             return S_OK;
         }
         catch (...)
@@ -1573,7 +1573,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CursorSize());
+            *value = detach(this->shim().CursorSize());
             return S_OK;
         }
         catch (...)
@@ -1586,7 +1586,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ScrollBarSize());
+            *value = detach(this->shim().ScrollBarSize());
             return S_OK;
         }
         catch (...)
@@ -1599,7 +1599,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ScrollBarArrowSize());
+            *value = detach(this->shim().ScrollBarArrowSize());
             return S_OK;
         }
         catch (...)
@@ -1612,7 +1612,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ScrollBarThumbBoxSize());
+            *value = detach(this->shim().ScrollBarThumbBoxSize());
             return S_OK;
         }
         catch (...)
@@ -1625,7 +1625,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MessageDuration());
+            *value = detach(this->shim().MessageDuration());
             return S_OK;
         }
         catch (...)
@@ -1638,7 +1638,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().AnimationsEnabled());
+            *value = detach(this->shim().AnimationsEnabled());
             return S_OK;
         }
         catch (...)
@@ -1651,7 +1651,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CaretBrowsingEnabled());
+            *value = detach(this->shim().CaretBrowsingEnabled());
             return S_OK;
         }
         catch (...)
@@ -1664,7 +1664,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CaretBlinkRate());
+            *value = detach(this->shim().CaretBlinkRate());
             return S_OK;
         }
         catch (...)
@@ -1677,7 +1677,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CaretWidth());
+            *value = detach(this->shim().CaretWidth());
             return S_OK;
         }
         catch (...)
@@ -1690,7 +1690,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DoubleClickTime());
+            *value = detach(this->shim().DoubleClickTime());
             return S_OK;
         }
         catch (...)
@@ -1703,7 +1703,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MouseHoverTime());
+            *value = detach(this->shim().MouseHoverTime());
             return S_OK;
         }
         catch (...)
@@ -1716,7 +1716,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().UIElementColor(desiredElement));
+            *value = detach(this->shim().UIElementColor(desiredElement));
             return S_OK;
         }
         catch (...)
@@ -1733,7 +1733,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().TextScaleFactor());
+            *value = detach(this->shim().TextScaleFactor());
             return S_OK;
         }
         catch (...)
@@ -1746,7 +1746,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().TextScaleFactorChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().TextScaleFactorChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1759,7 +1759,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
-            shim().TextScaleFactorChanged(cookie);
+            this->shim().TextScaleFactorChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetColorValue(desiredColor));
+            *value = detach(this->shim().GetColorValue(desiredColor));
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().ColorValuesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().ColorValuesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1802,7 +1802,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
-            shim().ColorValuesChanged(cookie);
+            this->shim().ColorValuesChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1819,7 +1819,7 @@ struct produce<D, Windows::UI::ViewManagement::IUIViewSettings> : produce_base<D
     {
         try
         {
-            *value = detach(shim().UserInteractionMode());
+            *value = detach(this->shim().UserInteractionMode());
             return S_OK;
         }
         catch (...)
@@ -1836,7 +1836,7 @@ struct produce<D, Windows::UI::ViewManagement::IUIViewSettingsStatics> : produce
     {
         try
         {
-            *current = detach(shim().GetForCurrentView());
+            *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)

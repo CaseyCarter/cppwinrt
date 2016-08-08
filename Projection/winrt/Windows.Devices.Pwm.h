@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PinCount());
+            *value = detach(this->shim().PinCount());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ActualFrequency());
+            *value = detach(this->shim().ActualFrequency());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SetDesiredFrequency(desiredFrequency));
+            *value = detach(this->shim().SetDesiredFrequency(desiredFrequency));
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MinFrequency());
+            *value = detach(this->shim().MinFrequency());
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MaxFrequency());
+            *value = detach(this->shim().MaxFrequency());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
-            *pin = detach(shim().OpenPin(pinNumber));
+            *pin = detach(this->shim().OpenPin(pinNumber));
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmProvider *>(&provider)));
+            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            *value = detach(shim().Controller());
+            *value = detach(this->shim().Controller());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            *result = detach(shim().GetActiveDutyCyclePercentage());
+            *result = detach(this->shim().GetActiveDutyCyclePercentage());
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            shim().SetActiveDutyCyclePercentage(dutyCyclePercentage);
+            this->shim().SetActiveDutyCyclePercentage(dutyCyclePercentage);
             return S_OK;
         }
         catch (...)
@@ -179,7 +179,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            *value = detach(shim().Polarity());
+            *value = detach(this->shim().Polarity());
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            shim().Polarity(value);
+            this->shim().Polarity(value);
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
-            *value = detach(shim().IsStarted());
+            *value = detach(this->shim().IsStarted());
             return S_OK;
         }
         catch (...)

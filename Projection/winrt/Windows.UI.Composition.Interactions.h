@@ -27,7 +27,7 @@ struct produce<D, Windows::UI::Composition::Interactions::ICompositionInteractio
     {
         try
         {
-            *value = detach(shim().Count());
+            *value = detach(this->shim().Count());
             return S_OK;
         }
         catch (...)
@@ -40,7 +40,7 @@ struct produce<D, Windows::UI::Composition::Interactions::ICompositionInteractio
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::UI::Composition::Interactions::ICompositionInteractionSource *>(&value));
+            this->shim().Add(*reinterpret_cast<const Windows::UI::Composition::Interactions::ICompositionInteractionSource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::UI::Composition::Interactions::ICompositionInteractio
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Interactions::ICompositionInteractionSource *>(&value));
+            this->shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Interactions::ICompositionInteractionSource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::UI::Composition::Interactions::ICompositionInteractio
     {
         try
         {
-            shim().RemoveAll();
+            this->shim().RemoveAll();
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().InteractionSources());
+            *value = detach(this->shim().InteractionSources());
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().IsPositionRoundingSuggested());
+            *value = detach(this->shim().IsPositionRoundingSuggested());
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().MaxPosition());
+            *value = detach(this->shim().MaxPosition());
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().MaxPosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().MaxPosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().MaxScale());
+            *value = detach(this->shim().MaxScale());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().MaxScale(value);
+            this->shim().MaxScale(value);
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().MinPosition());
+            *value = detach(this->shim().MinPosition());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().MinPosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().MinPosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().MinScale());
+            *value = detach(this->shim().MinScale());
             return S_OK;
         }
         catch (...)
@@ -201,7 +201,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().MinScale(value);
+            this->shim().MinScale(value);
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().NaturalRestingPosition());
+            *value = detach(this->shim().NaturalRestingPosition());
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().NaturalRestingScale());
+            *value = detach(this->shim().NaturalRestingScale());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().Owner());
+            *value = detach(this->shim().Owner());
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().PositionInertiaDecayRate());
+            *value = detach(this->shim().PositionInertiaDecayRate());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().PositionInertiaDecayRate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> *>(&value));
+            this->shim().PositionInertiaDecayRate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().PositionVelocityInPixelsPerSecond());
+            *value = detach(this->shim().PositionVelocityInPixelsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().Scale());
+            *value = detach(this->shim().Scale());
             return S_OK;
         }
         catch (...)
@@ -320,7 +320,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().ScaleInertiaDecayRate());
+            *value = detach(this->shim().ScaleInertiaDecayRate());
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().ScaleInertiaDecayRate(*reinterpret_cast<const Windows::Foundation::IReference<float> *>(&value));
+            this->shim().ScaleInertiaDecayRate(*reinterpret_cast<const Windows::Foundation::IReference<float> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *value = detach(shim().ScaleVelocityInPercentPerSecond());
+            *value = detach(this->shim().ScaleVelocityInPercentPerSecond());
             return S_OK;
         }
         catch (...)
@@ -360,7 +360,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold);
+            this->shim().AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold);
             return S_OK;
         }
         catch (...)
@@ -373,7 +373,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold);
+            this->shim().AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold);
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().ConfigurePositionXInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
+            this->shim().ConfigurePositionXInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().ConfigurePositionYInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
+            this->shim().ConfigurePositionYInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            shim().ConfigureScaleInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
+            this->shim().ConfigureScaleInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> *>(&modifiers));
             return S_OK;
         }
         catch (...)
@@ -425,7 +425,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdatePosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value)));
+            *requestId = detach(this->shim().TryUpdatePosition(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdatePositionBy(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&amount)));
+            *requestId = detach(this->shim().TryUpdatePositionBy(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&amount)));
             return S_OK;
         }
         catch (...)
@@ -451,7 +451,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdatePositionWithAnimation(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation)));
+            *requestId = detach(this->shim().TryUpdatePositionWithAnimation(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation)));
             return S_OK;
         }
         catch (...)
@@ -464,7 +464,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdatePositionWithAdditionalVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&velocityInPixelsPerSecond)));
+            *requestId = detach(this->shim().TryUpdatePositionWithAdditionalVelocity(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&velocityInPixelsPerSecond)));
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdateScale(value, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
+            *requestId = detach(this->shim().TryUpdateScale(value, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
             return S_OK;
         }
         catch (...)
@@ -490,7 +490,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdateScaleWithAnimation(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
+            *requestId = detach(this->shim().TryUpdateScaleWithAnimation(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
     {
         try
         {
-            *requestId = detach(shim().TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
+            *requestId = detach(this->shim().TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerCus
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIdl
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().Condition());
+            *value = detach(this->shim().Condition());
             return S_OK;
         }
         catch (...)
@@ -576,7 +576,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            shim().Condition(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            this->shim().Condition(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -589,7 +589,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().Motion());
+            *value = detach(this->shim().Motion());
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            shim().Motion(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            this->shim().Motion(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
             return S_OK;
         }
         catch (...)
@@ -638,7 +638,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().Condition());
+            *value = detach(this->shim().Condition());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            shim().Condition(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            this->shim().Condition(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().RestingValue());
+            *value = detach(this->shim().RestingValue());
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            shim().RestingValue(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            this->shim().RestingValue(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -696,7 +696,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
             return S_OK;
         }
         catch (...)
@@ -714,7 +714,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().ModifiedRestingPosition());
+            *value = detach(this->shim().ModifiedRestingPosition());
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().ModifiedRestingScale());
+            *value = detach(this->shim().ModifiedRestingScale());
             return S_OK;
         }
         catch (...)
@@ -742,7 +742,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().NaturalRestingPosition());
+            *value = detach(this->shim().NaturalRestingPosition());
             return S_OK;
         }
         catch (...)
@@ -755,7 +755,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().NaturalRestingScale());
+            *value = detach(this->shim().NaturalRestingScale());
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().PositionVelocityInPixelsPerSecond());
+            *value = detach(this->shim().PositionVelocityInPixelsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -781,7 +781,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -794,7 +794,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerIne
     {
         try
         {
-            *value = detach(shim().ScaleVelocityInPercentPerSecond());
+            *value = detach(this->shim().ScaleVelocityInPercentPerSecond());
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerInt
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().CustomAnimationStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs *>(&args));
+            this->shim().CustomAnimationStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().IdleStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs *>(&args));
+            this->shim().IdleStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().InertiaStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs *>(&args));
+            this->shim().InertiaStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().InteractingStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs *>(&args));
+            this->shim().InteractingStateEntered(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().RequestIgnored(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs *>(&args));
+            this->shim().RequestIgnored(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -893,7 +893,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerOwn
     {
         try
         {
-            shim().ValuesChanged(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs *>(&args));
+            this->shim().ValuesChanged(*reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTracker *>(&sender), *reinterpret_cast<const Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs *>(&args));
             return S_OK;
         }
         catch (...)
@@ -910,7 +910,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerReq
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -927,7 +927,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerSta
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
             return S_OK;
         }
         catch (...)
@@ -941,7 +941,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerSta
     {
         try
         {
-            *result = detach(shim().CreateWithOwner(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor), *reinterpret_cast<const Windows::UI::Composition::Interactions::IInteractionTrackerOwner *>(&owner)));
+            *result = detach(this->shim().CreateWithOwner(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor), *reinterpret_cast<const Windows::UI::Composition::Interactions::IInteractionTrackerOwner *>(&owner)));
             return S_OK;
         }
         catch (...)
@@ -959,7 +959,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerVal
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerVal
     {
         try
         {
-            *value = detach(shim().RequestId());
+            *value = detach(this->shim().RequestId());
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTrackerVal
     {
         try
         {
-            *value = detach(shim().Scale());
+            *value = detach(this->shim().Scale());
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().IsPositionXRailsEnabled());
+            *value = detach(this->shim().IsPositionXRailsEnabled());
             return S_OK;
         }
         catch (...)
@@ -1015,7 +1015,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().IsPositionXRailsEnabled(value);
+            this->shim().IsPositionXRailsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().IsPositionYRailsEnabled());
+            *value = detach(this->shim().IsPositionYRailsEnabled());
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().IsPositionYRailsEnabled(value);
+            this->shim().IsPositionYRailsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().ManipulationRedirectionMode());
+            *value = detach(this->shim().ManipulationRedirectionMode());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().ManipulationRedirectionMode(value);
+            this->shim().ManipulationRedirectionMode(value);
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().PositionXChainingMode());
+            *value = detach(this->shim().PositionXChainingMode());
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().PositionXChainingMode(value);
+            this->shim().PositionXChainingMode(value);
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().PositionXSourceMode());
+            *value = detach(this->shim().PositionXSourceMode());
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().PositionXSourceMode(value);
+            this->shim().PositionXSourceMode(value);
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().PositionYChainingMode());
+            *value = detach(this->shim().PositionYChainingMode());
             return S_OK;
         }
         catch (...)
@@ -1145,7 +1145,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().PositionYChainingMode(value);
+            this->shim().PositionYChainingMode(value);
             return S_OK;
         }
         catch (...)
@@ -1158,7 +1158,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().PositionYSourceMode());
+            *value = detach(this->shim().PositionYSourceMode());
             return S_OK;
         }
         catch (...)
@@ -1171,7 +1171,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().PositionYSourceMode(value);
+            this->shim().PositionYSourceMode(value);
             return S_OK;
         }
         catch (...)
@@ -1184,7 +1184,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().ScaleChainingMode());
+            *value = detach(this->shim().ScaleChainingMode());
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().ScaleChainingMode(value);
+            this->shim().ScaleChainingMode(value);
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().ScaleSourceMode());
+            *value = detach(this->shim().ScaleSourceMode());
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().ScaleSourceMode(value);
+            this->shim().ScaleSourceMode(value);
             return S_OK;
         }
         catch (...)
@@ -1236,7 +1236,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -1250,7 +1250,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            shim().TryRedirectForManipulation(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
+            this->shim().TryRedirectForManipulation(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
             return S_OK;
         }
         catch (...)
@@ -1267,7 +1267,7 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&source)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&source)));
             return S_OK;
         }
         catch (...)

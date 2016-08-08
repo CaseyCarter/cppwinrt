@@ -19,7 +19,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsage> : produce_base
     {
         try
         {
-            *value = detach(shim().GetReport());
+            *value = detach(this->shim().GetReport());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsageReport> : produc
     {
         try
         {
-            *value = detach(shim().KernelTime());
+            *value = detach(this->shim().KernelTime());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsageReport> : produc
     {
         try
         {
-            *value = detach(shim().UserTime());
+            *value = detach(this->shim().UserTime());
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().ProcessId());
+            *value = detach(this->shim().ProcessId());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().ExecutableFileName());
+            *value = detach(this->shim().ExecutableFileName());
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().Parent());
+            *value = detach(this->shim().Parent());
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().ProcessStartTime());
+            *value = detach(this->shim().ProcessStartTime());
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().DiskUsage());
+            *value = detach(this->shim().DiskUsage());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().MemoryUsage());
+            *value = detach(this->shim().MemoryUsage());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
-            *value = detach(shim().CpuUsage());
+            *value = detach(this->shim().CpuUsage());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfoStatics> :
     {
         try
         {
-            *processes = detach(shim().GetForProcesses());
+            *processes = detach(this->shim().GetForProcesses());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfoStatics> :
     {
         try
         {
-            *processes = detach(shim().GetForCurrentProcess());
+            *processes = detach(this->shim().GetForCurrentProcess());
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsage> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetReport());
+            *value = detach(this->shim().GetReport());
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().ReadOperationCount());
+            *value = detach(this->shim().ReadOperationCount());
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().WriteOperationCount());
+            *value = detach(this->shim().WriteOperationCount());
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().OtherOperationCount());
+            *value = detach(this->shim().OtherOperationCount());
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().BytesReadCount());
+            *value = detach(this->shim().BytesReadCount());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().BytesWrittenCount());
+            *value = detach(this->shim().BytesWrittenCount());
             return S_OK;
         }
         catch (...)
@@ -282,7 +282,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
-            *value = detach(shim().OtherBytesCount());
+            *value = detach(this->shim().OtherBytesCount());
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsage> : produce_b
     {
         try
         {
-            *value = detach(shim().GetReport());
+            *value = detach(this->shim().GetReport());
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().NonPagedPoolSizeInBytes());
+            *value = detach(this->shim().NonPagedPoolSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PageFaultCount());
+            *value = detach(this->shim().PageFaultCount());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PageFileSizeInBytes());
+            *value = detach(this->shim().PageFileSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PagedPoolSizeInBytes());
+            *value = detach(this->shim().PagedPoolSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PeakNonPagedPoolSizeInBytes());
+            *value = detach(this->shim().PeakNonPagedPoolSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PeakPageFileSizeInBytes());
+            *value = detach(this->shim().PeakPageFileSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PeakPagedPoolSizeInBytes());
+            *value = detach(this->shim().PeakPagedPoolSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PeakVirtualMemorySizeInBytes());
+            *value = detach(this->shim().PeakVirtualMemorySizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PeakWorkingSetSizeInBytes());
+            *value = detach(this->shim().PeakWorkingSetSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().PrivatePageCount());
+            *value = detach(this->shim().PrivatePageCount());
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().VirtualMemorySizeInBytes());
+            *value = detach(this->shim().VirtualMemorySizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
-            *value = detach(shim().WorkingSetSizeInBytes());
+            *value = detach(this->shim().WorkingSetSizeInBytes());
             return S_OK;
         }
         catch (...)

@@ -19,7 +19,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().ServiceAuthenticationHmac());
+            *value = detach(this->shim().ServiceAuthenticationHmac());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().SessionNonce());
+            *value = detach(this->shim().SessionNonce());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceNonce());
+            *value = detach(this->shim().DeviceNonce());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceConfigurationData());
+            *value = detach(this->shim().DeviceConfigurationData());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().FinishAuthenticationAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceHmac), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&sessionHmac)));
+            *result = detach(this->shim().FinishAuthenticationAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceHmac), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&sessionHmac)));
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().AbortAuthenticationAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
+            *result = detach(this->shim().AbortAuthenticationAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Authentication());
+            *value = detach(this->shim().Authentication());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().StageInfo());
+            *value = detach(this->shim().StageInfo());
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Stage());
+            *value = detach(this->shim().Stage());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Scenario());
+            *value = detach(this->shim().Scenario());
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().ShowNotificationMessageAsync(*reinterpret_cast<const hstring *>(&deviceName), message));
+            *result = detach(this->shim().ShowNotificationMessageAsync(*reinterpret_cast<const hstring *>(&deviceName), message));
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *operation = detach(shim().StartAuthenticationAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&serviceAuthenticationNonce)));
+            *operation = detach(this->shim().StartAuthenticationAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&serviceAuthenticationNonce)));
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *token = detach(shim().AuthenticationStageChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().AuthenticationStageChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            shim().AuthenticationStageChanged(token);
+            this->shim().AuthenticationStageChanged(token);
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().GetAuthenticationStageInfoAsync());
+            *result = detach(this->shim().GetAuthenticationStageInfoAsync());
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *deviceId = detach(shim().DeviceId());
+            *deviceId = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceFriendlyName());
+            *value = detach(this->shim().DeviceFriendlyName());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceModelNumber());
+            *value = detach(this->shim().DeviceModelNumber());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().DeviceConfigurationData());
+            *value = detach(this->shim().DeviceConfigurationData());
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().FinishRegisteringDeviceAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
+            *result = detach(this->shim().FinishRegisteringDeviceAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().AbortRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
+            *result = detach(this->shim().AbortRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *value = detach(shim().Registration());
+            *value = detach(this->shim().Registration());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *operation = detach(shim().RequestStartRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId), capabilities, *reinterpret_cast<const hstring *>(&deviceFriendlyName), *reinterpret_cast<const hstring *>(&deviceModelNumber), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceKey), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&mutualAuthenticationKey)));
+            *operation = detach(this->shim().RequestStartRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId), capabilities, *reinterpret_cast<const hstring *>(&deviceFriendlyName), *reinterpret_cast<const hstring *>(&deviceModelNumber), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceKey), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&mutualAuthenticationKey)));
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *deviceInfoList = detach(shim().FindAllRegisteredDeviceInfoAsync(queryType));
+            *deviceInfoList = detach(this->shim().FindAllRegisteredDeviceInfoAsync(queryType));
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().UnregisterDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach(this->shim().UnregisterDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -437,7 +437,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
-            *result = detach(shim().UpdateDeviceConfigurationDataAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
+            *result = detach(this->shim().UpdateDeviceConfigurationDataAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
             return S_OK;
         }
         catch (...)

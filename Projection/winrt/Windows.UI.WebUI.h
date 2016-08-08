@@ -130,7 +130,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedDeferral> : produce_base<D, Wind
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedEventArgsDeferral> : produce_bas
     {
         try
         {
-            *value = detach(shim().ActivatedOperation());
+            *value = detach(this->shim().ActivatedOperation());
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedOperation> : produce_base<D, Win
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().Content(value);
+            this->shim().Content(value);
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().LeftMargin());
+            *value = detach(this->shim().LeftMargin());
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().LeftMargin(value);
+            this->shim().LeftMargin(value);
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().TopMargin());
+            *value = detach(this->shim().TopMargin());
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().TopMargin(value);
+            this->shim().TopMargin(value);
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RightMargin());
+            *value = detach(this->shim().RightMargin());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().RightMargin(value);
+            this->shim().RightMargin(value);
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().BottomMargin());
+            *value = detach(this->shim().BottomMargin());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().BottomMargin(value);
+            this->shim().BottomMargin(value);
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().EnableHeaderFooter());
+            *value = detach(this->shim().EnableHeaderFooter());
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().EnableHeaderFooter(value);
+            this->shim().EnableHeaderFooter(value);
             return S_OK;
         }
         catch (...)
@@ -339,7 +339,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ShrinkToFit());
+            *value = detach(this->shim().ShrinkToFit());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().ShrinkToFit(value);
+            this->shim().ShrinkToFit(value);
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *pScalePercent = detach(shim().PercentScale());
+            *pScalePercent = detach(this->shim().PercentScale());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            shim().PercentScale(scalePercent);
+            this->shim().PercentScale(scalePercent);
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *pstrPageRange = detach(shim().PageRange());
+            *pstrPageRange = detach(this->shim().PageRange());
             return S_OK;
         }
         catch (...)
@@ -405,7 +405,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
-            *pfSuccess = detach(shim().TrySetPageRange(*reinterpret_cast<const hstring *>(&strPageRange)));
+            *pfSuccess = detach(this->shim().TrySetPageRange(*reinterpret_cast<const hstring *>(&strPageRange)));
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().Activated(*reinterpret_cast<const Windows::UI::WebUI::ActivatedEventHandler *>(&handler)));
+            *token = detach(this->shim().Activated(*reinterpret_cast<const Windows::UI::WebUI::ActivatedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            shim().Activated(token);
+            this->shim().Activated(token);
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().Suspending(*reinterpret_cast<const Windows::UI::WebUI::SuspendingEventHandler *>(&handler)));
+            *token = detach(this->shim().Suspending(*reinterpret_cast<const Windows::UI::WebUI::SuspendingEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            shim().Suspending(token);
+            this->shim().Suspending(token);
             return S_OK;
         }
         catch (...)
@@ -474,7 +474,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().Resuming(*reinterpret_cast<const Windows::UI::WebUI::ResumingEventHandler *>(&handler)));
+            *token = detach(this->shim().Resuming(*reinterpret_cast<const Windows::UI::WebUI::ResumingEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            shim().Resuming(token);
+            this->shim().Resuming(token);
             return S_OK;
         }
         catch (...)
@@ -500,7 +500,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().Navigated(*reinterpret_cast<const Windows::UI::WebUI::NavigatedEventHandler *>(&handler)));
+            *token = detach(this->shim().Navigated(*reinterpret_cast<const Windows::UI::WebUI::NavigatedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -513,7 +513,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
-            shim().Navigated(token);
+            this->shim().Navigated(token);
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
-            *token = detach(shim().LeavingBackground(*reinterpret_cast<const Windows::UI::WebUI::LeavingBackgroundEventHandler *>(&handler)));
+            *token = detach(this->shim().LeavingBackground(*reinterpret_cast<const Windows::UI::WebUI::LeavingBackgroundEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
-            shim().LeavingBackground(token);
+            this->shim().LeavingBackground(token);
             return S_OK;
         }
         catch (...)
@@ -556,7 +556,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
-            *token = detach(shim().EnteredBackground(*reinterpret_cast<const Windows::UI::WebUI::EnteredBackgroundEventHandler *>(&handler)));
+            *token = detach(this->shim().EnteredBackground(*reinterpret_cast<const Windows::UI::WebUI::EnteredBackgroundEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
-            shim().EnteredBackground(token);
+            this->shim().EnteredBackground(token);
             return S_OK;
         }
         catch (...)
@@ -582,7 +582,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
-            shim().EnablePrelaunch(value);
+            this->shim().EnablePrelaunch(value);
             return S_OK;
         }
         catch (...)
@@ -599,7 +599,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstance> : produce_ba
     {
         try
         {
-            *succeeded = detach(shim().Succeeded());
+            *succeeded = detach(this->shim().Succeeded());
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstance> : produce_ba
     {
         try
         {
-            shim().Succeeded(succeeded);
+            this->shim().Succeeded(succeeded);
             return S_OK;
         }
         catch (...)
@@ -629,7 +629,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstanceStatics> : pro
     {
         try
         {
-            *backgroundTaskInstance = detach(shim().Current());
+            *backgroundTaskInstance = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedDeferral> : produce_base<D,
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -664,7 +664,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().NavigatedOperation());
+            *value = detach(this->shim().NavigatedOperation());
             return S_OK;
         }
         catch (...)
@@ -682,7 +682,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedOperation> : produce_base<D
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

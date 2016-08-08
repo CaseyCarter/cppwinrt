@@ -20,7 +20,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
-            *value = detach(shim().ItemId());
+            *value = detach(this->shim().ItemId());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
-            shim().ItemDisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ItemDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
-            *value = detach(shim().ItemDisplayName());
+            *value = detach(this->shim().ItemDisplayName());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemLi
     {
         try
         {
-            shim().AddItem(*reinterpret_cast<const hstring *>(&itemId), *reinterpret_cast<const hstring *>(&displayName));
+            this->shim().AddItem(*reinterpret_cast<const hstring *>(&itemId), *reinterpret_cast<const hstring *>(&displayName));
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOption
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOption
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
     {
         try
         {
-            shim().MaxCharacters(value);
+            this->shim().MaxCharacters(value);
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
     {
         try
         {
-            *value = detach(shim().MaxCharacters());
+            *value = detach(this->shim().MaxCharacters());
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOpti
     {
         try
         {
-            *value = detach(shim().Items());
+            *value = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
     {
         try
         {
-            *value = detach(shim().MinValue());
+            *value = detach(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
     {
         try
         {
-            *value = detach(shim().MaxValue());
+            *value = detach(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *value = detach(shim().OptionId());
+            *value = detach(this->shim().OptionId());
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *value = detach(shim().OptionType());
+            *value = detach(this->shim().OptionType());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            shim().ErrorText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ErrorText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *value = detach(shim().ErrorText());
+            *value = detach(this->shim().ErrorText());
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            shim().State(value);
+            this->shim().State(value);
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -271,7 +271,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
-            *succeeded = detach(shim().TrySetValue(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *succeeded = detach(this->shim().TrySetValue(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionCh
     {
         try
         {
-            *value = detach(shim().OptionId());
+            *value = detach(this->shim().OptionId());
             return S_OK;
         }
         catch (...)
@@ -320,7 +320,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *itemListOption = detach(shim().CreateItemListOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
+            *itemListOption = detach(this->shim().CreateItemListOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *textOption = detach(shim().CreateTextOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
+            *textOption = detach(this->shim().CreateTextOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *eventCookie = detach(shim().OptionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().OptionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            shim().OptionChanged(eventCookie);
+            this->shim().OptionChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *eventCookie = detach(shim().BeginValidation(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().BeginValidation(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            shim().BeginValidation(eventCookie);
+            this->shim().BeginValidation(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -418,7 +418,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
-            *printTaskOptionDetails = detach(shim().GetFromPrintTaskOptions(*reinterpret_cast<const Windows::Graphics::Printing::PrintTaskOptions *>(&printTaskOptions)));
+            *printTaskOptionDetails = detach(this->shim().GetFromPrintTaskOptions(*reinterpret_cast<const Windows::Graphics::Printing::PrintTaskOptions *>(&printTaskOptions)));
             return S_OK;
         }
         catch (...)
@@ -436,7 +436,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDe
     {
         try
         {
-            *value = detach(shim().MaxCharacters());
+            *value = detach(this->shim().MaxCharacters());
             return S_OK;
         }
         catch (...)

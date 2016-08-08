@@ -21,7 +21,7 @@ struct produce<D, Windows::Services::Store::IStoreAcquireLicenseResult> : produc
     {
         try
         {
-            *value = detach(shim().StorePackageLicense());
+            *value = detach(this->shim().StorePackageLicense());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Services::Store::IStoreAcquireLicenseResult> : produc
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SkuStoreId());
+            *value = detach(this->shim().SkuStoreId());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsTrial());
+            *value = detach(this->shim().IsTrial());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ExpirationDate());
+            *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AddOnLicenses());
+            *value = detach(this->shim().AddOnLicenses());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().TrialTimeRemaining());
+            *value = detach(this->shim().TrialTimeRemaining());
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().IsTrialOwnedByThisUser());
+            *value = detach(this->shim().IsTrialOwnedByThisUser());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Services::Store::IStoreAppLicense> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().TrialUniqueId());
+            *value = detach(this->shim().TrialUniqueId());
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *value = detach(shim().StoreId());
+            *value = detach(this->shim().StoreId());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *value = detach(shim().EndDate());
+            *value = detach(this->shim().EndDate());
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Price());
+            *value = detach(this->shim().Price());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync());
+            *operation = detach(this->shim().RequestPurchaseAsync());
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Services::Store::IStoreAvailability> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
+            *operation = detach(this->shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().IsTrial());
+            *value = detach(this->shim().IsTrial());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().CampaignId());
+            *value = detach(this->shim().CampaignId());
             return S_OK;
         }
         catch (...)
@@ -291,7 +291,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().DeveloperOfferId());
+            *value = detach(this->shim().DeveloperOfferId());
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().AcquiredDate());
+            *value = detach(this->shim().AcquiredDate());
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().StartDate());
+            *value = detach(this->shim().StartDate());
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().EndDate());
+            *value = detach(this->shim().EndDate());
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().TrialTimeRemaining());
+            *value = detach(this->shim().TrialTimeRemaining());
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Services::Store::IStoreCollectionData> : produce_base
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Services::Store::IStoreConsumableResult> : produce_ba
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Services::Store::IStoreConsumableResult> : produce_ba
     {
         try
         {
-            *value = detach(shim().TrackingId());
+            *value = detach(this->shim().TrackingId());
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::Services::Store::IStoreConsumableResult> : produce_ba
     {
         try
         {
-            *value = detach(shim().BalanceRemaining());
+            *value = detach(this->shim().BalanceRemaining());
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::Services::Store::IStoreConsumableResult> : produce_ba
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().OfflineLicensesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().OfflineLicensesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            shim().OfflineLicensesChanged(token);
+            this->shim().OfflineLicensesChanged(token);
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetCustomerPurchaseIdAsync(*reinterpret_cast<const hstring *>(&serviceTicket), *reinterpret_cast<const hstring *>(&publisherUserId)));
+            *operation = detach(this->shim().GetCustomerPurchaseIdAsync(*reinterpret_cast<const hstring *>(&serviceTicket), *reinterpret_cast<const hstring *>(&publisherUserId)));
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetCustomerCollectionsIdAsync(*reinterpret_cast<const hstring *>(&serviceTicket), *reinterpret_cast<const hstring *>(&publisherUserId)));
+            *operation = detach(this->shim().GetCustomerCollectionsIdAsync(*reinterpret_cast<const hstring *>(&serviceTicket), *reinterpret_cast<const hstring *>(&publisherUserId)));
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetAppLicenseAsync());
+            *operation = detach(this->shim().GetAppLicenseAsync());
             return S_OK;
         }
         catch (...)
@@ -513,7 +513,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetStoreProductForCurrentAppAsync());
+            *operation = detach(this->shim().GetStoreProductForCurrentAppAsync());
             return S_OK;
         }
         catch (...)
@@ -527,7 +527,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetStoreProductsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&storeIds)));
+            *operation = detach(this->shim().GetStoreProductsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&storeIds)));
             return S_OK;
         }
         catch (...)
@@ -541,7 +541,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetAssociatedStoreProductsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds)));
+            *operation = detach(this->shim().GetAssociatedStoreProductsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds)));
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetAssociatedStoreProductsWithPagingAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), maxItemsToRetrievePerPage));
+            *operation = detach(this->shim().GetAssociatedStoreProductsWithPagingAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), maxItemsToRetrievePerPage));
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetUserCollectionAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds)));
+            *operation = detach(this->shim().GetUserCollectionAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds)));
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetUserCollectionWithPagingAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), maxItemsToRetrievePerPage));
+            *operation = detach(this->shim().GetUserCollectionWithPagingAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), maxItemsToRetrievePerPage));
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().ReportConsumableFulfillmentAsync(*reinterpret_cast<const hstring *>(&productStoreId), quantity, trackingId));
+            *operation = detach(this->shim().ReportConsumableFulfillmentAsync(*reinterpret_cast<const hstring *>(&productStoreId), quantity, trackingId));
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetConsumableBalanceRemainingAsync(*reinterpret_cast<const hstring *>(&productStoreId)));
+            *operation = detach(this->shim().GetConsumableBalanceRemainingAsync(*reinterpret_cast<const hstring *>(&productStoreId)));
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().AcquireStoreLicenseForOptionalPackageAsync(*reinterpret_cast<const Windows::ApplicationModel::Package *>(&optionalPackage)));
+            *operation = detach(this->shim().AcquireStoreLicenseForOptionalPackageAsync(*reinterpret_cast<const Windows::ApplicationModel::Package *>(&optionalPackage)));
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync(*reinterpret_cast<const hstring *>(&storeId)));
+            *operation = detach(this->shim().RequestPurchaseAsync(*reinterpret_cast<const hstring *>(&storeId)));
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync(*reinterpret_cast<const hstring *>(&storeId), *reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
+            *operation = detach(this->shim().RequestPurchaseAsync(*reinterpret_cast<const hstring *>(&storeId), *reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetAppAndOptionalStorePackageUpdatesAsync());
+            *operation = detach(this->shim().GetAppAndOptionalStorePackageUpdatesAsync());
             return S_OK;
         }
         catch (...)
@@ -681,7 +681,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestDownloadStorePackageUpdatesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> *>(&storePackageUpdates)));
+            *operation = detach(this->shim().RequestDownloadStorePackageUpdatesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> *>(&storePackageUpdates)));
             return S_OK;
         }
         catch (...)
@@ -695,7 +695,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestDownloadAndInstallStorePackageUpdatesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> *>(&storePackageUpdates)));
+            *operation = detach(this->shim().RequestDownloadAndInstallStorePackageUpdatesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> *>(&storePackageUpdates)));
             return S_OK;
         }
         catch (...)
@@ -709,7 +709,7 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestDownloadAndInstallStorePackagesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&storeIds)));
+            *operation = detach(this->shim().RequestDownloadAndInstallStorePackagesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&storeIds)));
             return S_OK;
         }
         catch (...)
@@ -727,7 +727,7 @@ struct produce<D, Windows::Services::Store::IStoreContextStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().GetDefault());
+            *value = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -741,7 +741,7 @@ struct produce<D, Windows::Services::Store::IStoreContextStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *value = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::Services::Store::IStoreImage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -773,7 +773,7 @@ struct produce<D, Windows::Services::Store::IStoreImage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ImagePurposeTag());
+            *value = detach(this->shim().ImagePurposeTag());
             return S_OK;
         }
         catch (...)
@@ -787,7 +787,7 @@ struct produce<D, Windows::Services::Store::IStoreImage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Width());
+            *value = detach(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::Services::Store::IStoreImage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Height());
+            *value = detach(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -813,7 +813,7 @@ struct produce<D, Windows::Services::Store::IStoreImage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Caption());
+            *value = detach(this->shim().Caption());
             return S_OK;
         }
         catch (...)
@@ -831,7 +831,7 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SkuStoreId());
+            *value = detach(this->shim().SkuStoreId());
             return S_OK;
         }
         catch (...)
@@ -845,7 +845,7 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -858,7 +858,7 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ExpirationDate());
+            *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
         catch (...)
@@ -871,7 +871,7 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -885,7 +885,7 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().InAppOfferToken());
+            *value = detach(this->shim().InAppOfferToken());
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base
     {
         try
         {
-            *token = detach(shim().LicenseLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().LicenseLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -916,7 +916,7 @@ struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base
     {
         try
         {
-            shim().LicenseLost(token);
+            this->shim().LicenseLost(token);
             return S_OK;
         }
         catch (...)
@@ -929,7 +929,7 @@ struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base
     {
         try
         {
-            *value = detach(shim().IsValid());
+            *value = detach(this->shim().IsValid());
             return S_OK;
         }
         catch (...)
@@ -956,7 +956,7 @@ struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base
     {
         try
         {
-            shim().ReleaseLicense();
+            this->shim().ReleaseLicense();
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Services::Store::IStorePackageUpdate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Package());
+            *value = detach(this->shim().Package());
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Services::Store::IStorePackageUpdate> : produce_base<
     {
         try
         {
-            *value = detach(shim().Mandatory());
+            *value = detach(this->shim().Mandatory());
             return S_OK;
         }
         catch (...)
@@ -1004,7 +1004,7 @@ struct produce<D, Windows::Services::Store::IStorePackageUpdateResult> : produce
     {
         try
         {
-            *value = detach(shim().OverallState());
+            *value = detach(this->shim().OverallState());
             return S_OK;
         }
         catch (...)
@@ -1017,7 +1017,7 @@ struct produce<D, Windows::Services::Store::IStorePackageUpdateResult> : produce
     {
         try
         {
-            *value = detach(shim().StorePackageUpdateStatuses());
+            *value = detach(this->shim().StorePackageUpdateStatuses());
             return S_OK;
         }
         catch (...)
@@ -1035,7 +1035,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FormattedBasePrice());
+            *value = detach(this->shim().FormattedBasePrice());
             return S_OK;
         }
         catch (...)
@@ -1049,7 +1049,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FormattedPrice());
+            *value = detach(this->shim().FormattedPrice());
             return S_OK;
         }
         catch (...)
@@ -1063,7 +1063,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().IsOnSale());
+            *value = detach(this->shim().IsOnSale());
             return S_OK;
         }
         catch (...)
@@ -1076,7 +1076,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SaleEndDate());
+            *value = detach(this->shim().SaleEndDate());
             return S_OK;
         }
         catch (...)
@@ -1089,7 +1089,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().CurrencyCode());
+            *value = detach(this->shim().CurrencyCode());
             return S_OK;
         }
         catch (...)
@@ -1103,7 +1103,7 @@ struct produce<D, Windows::Services::Store::IStorePrice> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().FormattedRecurrencePrice());
+            *value = detach(this->shim().FormattedRecurrencePrice());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().StoreId());
+            *value = detach(this->shim().StoreId());
             return S_OK;
         }
         catch (...)
@@ -1135,7 +1135,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -1149,7 +1149,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -1163,7 +1163,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ProductKind());
+            *value = detach(this->shim().ProductKind());
             return S_OK;
         }
         catch (...)
@@ -1191,7 +1191,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().HasDigitalDownload());
+            *value = detach(this->shim().HasDigitalDownload());
             return S_OK;
         }
         catch (...)
@@ -1204,7 +1204,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Keywords());
+            *value = detach(this->shim().Keywords());
             return S_OK;
         }
         catch (...)
@@ -1218,7 +1218,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Images());
+            *value = detach(this->shim().Images());
             return S_OK;
         }
         catch (...)
@@ -1232,7 +1232,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Videos());
+            *value = detach(this->shim().Videos());
             return S_OK;
         }
         catch (...)
@@ -1246,7 +1246,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Skus());
+            *value = detach(this->shim().Skus());
             return S_OK;
         }
         catch (...)
@@ -1260,7 +1260,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsInUserCollection());
+            *value = detach(this->shim().IsInUserCollection());
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Price());
+            *value = detach(this->shim().Price());
             return S_OK;
         }
         catch (...)
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -1301,7 +1301,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().LinkUri());
+            *value = detach(this->shim().LinkUri());
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().GetIsAnySkuInstalledAsync());
+            *operation = detach(this->shim().GetIsAnySkuInstalledAsync());
             return S_OK;
         }
         catch (...)
@@ -1329,7 +1329,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync());
+            *operation = detach(this->shim().RequestPurchaseAsync());
             return S_OK;
         }
         catch (...)
@@ -1343,7 +1343,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
+            *operation = detach(this->shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
             return S_OK;
         }
         catch (...)
@@ -1357,7 +1357,7 @@ struct produce<D, Windows::Services::Store::IStoreProduct> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().InAppOfferToken());
+            *value = detach(this->shim().InAppOfferToken());
             return S_OK;
         }
         catch (...)
@@ -1375,7 +1375,7 @@ struct produce<D, Windows::Services::Store::IStoreProductPagedQueryResult> : pro
     {
         try
         {
-            *value = detach(shim().Products());
+            *value = detach(this->shim().Products());
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::Services::Store::IStoreProductPagedQueryResult> : pro
     {
         try
         {
-            *value = detach(shim().HasMoreResults());
+            *value = detach(this->shim().HasMoreResults());
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::Services::Store::IStoreProductPagedQueryResult> : pro
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::Services::Store::IStoreProductPagedQueryResult> : pro
     {
         try
         {
-            *operation = detach(shim().GetNextAsync());
+            *operation = detach(this->shim().GetNextAsync());
             return S_OK;
         }
         catch (...)
@@ -1433,7 +1433,7 @@ struct produce<D, Windows::Services::Store::IStoreProductQueryResult> : produce_
     {
         try
         {
-            *value = detach(shim().Products());
+            *value = detach(this->shim().Products());
             return S_OK;
         }
         catch (...)
@@ -1447,7 +1447,7 @@ struct produce<D, Windows::Services::Store::IStoreProductQueryResult> : produce_
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -1464,7 +1464,7 @@ struct produce<D, Windows::Services::Store::IStoreProductResult> : produce_base<
     {
         try
         {
-            *value = detach(shim().Product());
+            *value = detach(this->shim().Product());
             return S_OK;
         }
         catch (...)
@@ -1478,7 +1478,7 @@ struct produce<D, Windows::Services::Store::IStoreProductResult> : produce_base<
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -1495,7 +1495,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseProperties> : produce_
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1509,7 +1509,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseProperties> : produce_
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1522,7 +1522,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseProperties> : produce_
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -1536,7 +1536,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseProperties> : produce_
     {
         try
         {
-            shim().ExtendedJsonData(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ExtendedJsonData(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1553,7 +1553,7 @@ struct produce<D, Windows::Services::Store::IStorePurchasePropertiesFactory> : p
     {
         try
         {
-            *storePurchaseProperties = detach(shim().Create(*reinterpret_cast<const hstring *>(&name)));
+            *storePurchaseProperties = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1571,7 +1571,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseResult> : produce_base
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1584,7 +1584,7 @@ struct produce<D, Windows::Services::Store::IStorePurchaseResult> : produce_base
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -1601,7 +1601,7 @@ struct produce<D, Windows::Services::Store::IStoreRequestHelperStatics> : produc
     {
         try
         {
-            *operation = detach(shim().SendRequestAsync(*reinterpret_cast<const Windows::Services::Store::StoreContext *>(&context), requestKind, *reinterpret_cast<const hstring *>(&parametersAsJson)));
+            *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Services::Store::StoreContext *>(&context), requestKind, *reinterpret_cast<const hstring *>(&parametersAsJson)));
             return S_OK;
         }
         catch (...)
@@ -1619,7 +1619,7 @@ struct produce<D, Windows::Services::Store::IStoreSendRequestResult> : produce_b
     {
         try
         {
-            *value = detach(shim().Response());
+            *value = detach(this->shim().Response());
             return S_OK;
         }
         catch (...)
@@ -1633,7 +1633,7 @@ struct produce<D, Windows::Services::Store::IStoreSendRequestResult> : produce_b
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -1650,7 +1650,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().StoreId());
+            *value = detach(this->shim().StoreId());
             return S_OK;
         }
         catch (...)
@@ -1664,7 +1664,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -1678,7 +1678,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1706,7 +1706,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsTrial());
+            *value = detach(this->shim().IsTrial());
             return S_OK;
         }
         catch (...)
@@ -1719,7 +1719,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CustomDeveloperData());
+            *value = detach(this->shim().CustomDeveloperData());
             return S_OK;
         }
         catch (...)
@@ -1733,7 +1733,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Images());
+            *value = detach(this->shim().Images());
             return S_OK;
         }
         catch (...)
@@ -1747,7 +1747,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Videos());
+            *value = detach(this->shim().Videos());
             return S_OK;
         }
         catch (...)
@@ -1761,7 +1761,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Availabilities());
+            *value = detach(this->shim().Availabilities());
             return S_OK;
         }
         catch (...)
@@ -1775,7 +1775,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Price());
+            *value = detach(this->shim().Price());
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().ExtendedJsonData());
+            *value = detach(this->shim().ExtendedJsonData());
             return S_OK;
         }
         catch (...)
@@ -1803,7 +1803,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsInUserCollection());
+            *value = detach(this->shim().IsInUserCollection());
             return S_OK;
         }
         catch (...)
@@ -1816,7 +1816,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().BundledSkus());
+            *value = detach(this->shim().BundledSkus());
             return S_OK;
         }
         catch (...)
@@ -1830,7 +1830,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CollectionData());
+            *value = detach(this->shim().CollectionData());
             return S_OK;
         }
         catch (...)
@@ -1844,7 +1844,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *operation = detach(shim().GetIsInstalledAsync());
+            *operation = detach(this->shim().GetIsInstalledAsync());
             return S_OK;
         }
         catch (...)
@@ -1858,7 +1858,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync());
+            *operation = detach(this->shim().RequestPurchaseAsync());
             return S_OK;
         }
         catch (...)
@@ -1872,7 +1872,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *operation = detach(shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
+            *operation = detach(this->shim().RequestPurchaseAsync(*reinterpret_cast<const Windows::Services::Store::StorePurchaseProperties *>(&storePurchaseProperties)));
             return S_OK;
         }
         catch (...)
@@ -1886,7 +1886,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsSubscription());
+            *value = detach(this->shim().IsSubscription());
             return S_OK;
         }
         catch (...)
@@ -1899,7 +1899,7 @@ struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().SubscriptionInfo());
+            *value = detach(this->shim().SubscriptionInfo());
             return S_OK;
         }
         catch (...)
@@ -1917,7 +1917,7 @@ struct produce<D, Windows::Services::Store::IStoreSubscriptionInfo> : produce_ba
     {
         try
         {
-            *value = detach(shim().BillingPeriod());
+            *value = detach(this->shim().BillingPeriod());
             return S_OK;
         }
         catch (...)
@@ -1930,7 +1930,7 @@ struct produce<D, Windows::Services::Store::IStoreSubscriptionInfo> : produce_ba
     {
         try
         {
-            *value = detach(shim().BillingPeriodUnit());
+            *value = detach(this->shim().BillingPeriodUnit());
             return S_OK;
         }
         catch (...)
@@ -1943,7 +1943,7 @@ struct produce<D, Windows::Services::Store::IStoreSubscriptionInfo> : produce_ba
     {
         try
         {
-            *value = detach(shim().HasTrialPeriod());
+            *value = detach(this->shim().HasTrialPeriod());
             return S_OK;
         }
         catch (...)
@@ -1956,7 +1956,7 @@ struct produce<D, Windows::Services::Store::IStoreSubscriptionInfo> : produce_ba
     {
         try
         {
-            *value = detach(shim().TrialPeriod());
+            *value = detach(this->shim().TrialPeriod());
             return S_OK;
         }
         catch (...)
@@ -1969,7 +1969,7 @@ struct produce<D, Windows::Services::Store::IStoreSubscriptionInfo> : produce_ba
     {
         try
         {
-            *value = detach(shim().TrialPeriodUnit());
+            *value = detach(this->shim().TrialPeriodUnit());
             return S_OK;
         }
         catch (...)
@@ -1986,7 +1986,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -2000,7 +2000,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().VideoPurposeTag());
+            *value = detach(this->shim().VideoPurposeTag());
             return S_OK;
         }
         catch (...)
@@ -2014,7 +2014,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Width());
+            *value = detach(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -2027,7 +2027,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Height());
+            *value = detach(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -2040,7 +2040,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Caption());
+            *value = detach(this->shim().Caption());
             return S_OK;
         }
         catch (...)
@@ -2054,7 +2054,7 @@ struct produce<D, Windows::Services::Store::IStoreVideo> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PreviewImage());
+            *value = detach(this->shim().PreviewImage());
             return S_OK;
         }
         catch (...)

@@ -21,7 +21,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountEvent
     {
         try
         {
-            *value = detach(shim().Account());
+            *value = detach(this->shim().Account());
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            *token = detach(shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> *>(&handler)));
+            *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            shim().Removed(token);
+            this->shim().Removed(token);
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            *token = detach(shim().DefaultSignInAccountChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DefaultSignInAccountChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
     {
         try
         {
-            shim().DefaultSignInAccountChanged(token);
+            this->shim().DefaultSignInAccountChanged(token);
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().GetTokenSilentlyAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request)));
+            *asyncInfo = detach(this->shim().GetTokenSilentlyAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().GetTokenSilentlyAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
+            *asyncInfo = detach(this->shim().GetTokenSilentlyAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().RequestTokenAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request)));
+            *asyncInfo = detach(this->shim().RequestTokenAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().RequestTokenAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
+            *asyncInfo = detach(this->shim().RequestTokenAsync(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenRequest *>(&request), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().FindAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&webAccountId)));
+            *asyncInfo = detach(this->shim().FindAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&webAccountId)));
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId)));
+            *asyncInfo = detach(this->shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId)));
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId), *reinterpret_cast<const hstring *>(&authority)));
+            *asyncInfo = detach(this->shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId), *reinterpret_cast<const hstring *>(&authority)));
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *asyncInfo = detach(shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId), *reinterpret_cast<const hstring *>(&authority), *reinterpret_cast<const Windows::System::User *>(&user)));
+            *asyncInfo = detach(this->shim().FindAccountProviderAsync(*reinterpret_cast<const hstring *>(&webAccountProviderId), *reinterpret_cast<const hstring *>(&authority), *reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAuthenticati
     {
         try
         {
-            *result = detach(shim().CreateWebAccountMonitor(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> *>(&webAccounts)));
+            *result = detach(this->shim().CreateWebAccountMonitor(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> *>(&webAccounts)));
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebProviderErro
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebProviderErro
     {
         try
         {
-            *value = detach(shim().ErrorMessage());
+            *value = detach(this->shim().ErrorMessage());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebProviderErro
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebProviderErro
     {
         try
         {
-            *webProviderError = detach(shim().Create(errorCode, *reinterpret_cast<const hstring *>(&errorMessage)));
+            *webProviderError = detach(this->shim().Create(errorCode, *reinterpret_cast<const hstring *>(&errorMessage)));
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().WebAccountProvider());
+            *value = detach(this->shim().WebAccountProvider());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().Scope());
+            *value = detach(this->shim().Scope());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().ClientId());
+            *value = detach(this->shim().ClientId());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().PromptType());
+            *value = detach(this->shim().PromptType());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *requestProperties = detach(shim().Properties());
+            *requestProperties = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *requestProperties = detach(shim().AppProperties());
+            *requestProperties = detach(this->shim().AppProperties());
             return S_OK;
         }
         catch (...)
@@ -413,7 +413,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *webTokenRequest = detach(shim().Create(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope), *reinterpret_cast<const hstring *>(&clientId)));
+            *webTokenRequest = detach(this->shim().Create(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope), *reinterpret_cast<const hstring *>(&clientId)));
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *webTokenRequest = detach(shim().CreateWithPromptType(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope), *reinterpret_cast<const hstring *>(&clientId), promptType));
+            *webTokenRequest = detach(this->shim().CreateWithPromptType(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope), *reinterpret_cast<const hstring *>(&clientId), promptType));
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *webTokenRequest = detach(shim().CreateWithProvider(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider)));
+            *webTokenRequest = detach(this->shim().CreateWithProvider(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *webTokenRequest = detach(shim().CreateWithScope(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope)));
+            *webTokenRequest = detach(this->shim().CreateWithScope(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&provider), *reinterpret_cast<const hstring *>(&scope)));
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().ResponseData());
+            *value = detach(this->shim().ResponseData());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().ResponseStatus());
+            *value = detach(this->shim().ResponseStatus());
             return S_OK;
         }
         catch (...)
@@ -500,7 +500,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *value = detach(shim().ResponseError());
+            *value = detach(this->shim().ResponseError());
             return S_OK;
         }
         catch (...)
@@ -514,7 +514,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
     {
         try
         {
-            *asyncInfo = detach(shim().InvalidateCacheAsync());
+            *asyncInfo = detach(this->shim().InvalidateCacheAsync());
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *value = detach(shim().Token());
+            *value = detach(this->shim().Token());
             return S_OK;
         }
         catch (...)
@@ -546,7 +546,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *value = detach(shim().ProviderError());
+            *value = detach(this->shim().ProviderError());
             return S_OK;
         }
         catch (...)
@@ -560,7 +560,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *value = detach(shim().WebAccount());
+            *value = detach(this->shim().WebAccount());
             return S_OK;
         }
         catch (...)
@@ -574,7 +574,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *webTokenResponse = detach(shim().CreateWithToken(*reinterpret_cast<const hstring *>(&token)));
+            *webTokenResponse = detach(this->shim().CreateWithToken(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *webTokenResponse = detach(shim().CreateWithTokenAndAccount(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
+            *webTokenResponse = detach(this->shim().CreateWithTokenAndAccount(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRespons
     {
         try
         {
-            *webTokenResponse = detach(shim().CreateWithTokenAccountAndError(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebProviderError *>(&error)));
+            *webTokenResponse = detach(this->shim().CreateWithTokenAccountAndError(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebProviderError *>(&error)));
             return S_OK;
         }
         catch (...)

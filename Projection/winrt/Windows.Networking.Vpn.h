@@ -24,7 +24,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
-            shim().Type(value);
+            this->shim().Type(value);
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
-            shim().Value(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().Create(type, *reinterpret_cast<const hstring *>(&value)));
+            *result = detach(this->shim().Create(type, *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().AssociateTransport(*reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
+            this->shim().AssociateTransport(*reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().Start(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&routeScope), *reinterpret_cast<const Windows::Networking::Vpn::VpnNamespaceAssignment *>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
+            this->shim().Start(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&routeScope), *reinterpret_cast<const Windows::Networking::Vpn::VpnNamespaceAssignment *>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *credential = detach(shim().RequestCredentials(credType, isRetry, isSingleSignOnCredential, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *credential = detach(this->shim().RequestCredentials(credType, isRetry, isSingleSignOnCredential, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().RequestVpnPacketBuffer(type, *vpnPacketBuffer);
+            this->shim().RequestVpnPacketBuffer(type, *vpnPacketBuffer);
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().LogDiagnosticMessage(*reinterpret_cast<const hstring *>(&message));
+            this->shim().LogDiagnosticMessage(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
         catch (...)
@@ -179,7 +179,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Configuration());
+            *value = detach(this->shim().Configuration());
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *token = detach(shim().ActivityChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> *>(&handler)));
+            *token = detach(this->shim().ActivityChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().ActivityChange(token);
+            this->shim().ActivityChange(token);
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().PlugInContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().PlugInContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PlugInContext());
+            *value = detach(this->shim().PlugInContext());
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SystemHealth());
+            *value = detach(this->shim().SystemHealth());
             return S_OK;
         }
         catch (...)
@@ -273,7 +273,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().RequestCustomPrompt(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> *>(&customPrompt));
+            this->shim().RequestCustomPrompt(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> *>(&customPrompt));
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().SetErrorMessage(*reinterpret_cast<const hstring *>(&message));
+            this->shim().SetErrorMessage(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
-            shim().SetAllowedSslTlsVersions(*reinterpret_cast<const Windows::IInspectable *>(&tunnelTransport), useTls12);
+            this->shim().SetAllowedSslTlsVersions(*reinterpret_cast<const Windows::IInspectable *>(&tunnelTransport), useTls12);
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            shim().StartWithMainTransport(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport));
+            this->shim().StartWithMainTransport(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            shim().StartExistingTransports(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved);
+            this->shim().StartExistingTransports(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved);
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().ActivityStateChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> *>(&handler)));
+            *token = detach(this->shim().ActivityStateChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            shim().ActivityStateChange(token);
+            this->shim().ActivityStateChange(token);
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *vpnSendPacketBuffer = detach(shim().GetVpnSendPacketBuffer());
+            *vpnSendPacketBuffer = detach(this->shim().GetVpnSendPacketBuffer());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *vpnReceivePacketBuffer = detach(shim().GetVpnReceivePacketBuffer());
+            *vpnReceivePacketBuffer = detach(this->shim().GetVpnReceivePacketBuffer());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *action = detach(shim().RequestCustomPromptAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> *>(&customPromptElement)));
+            *action = detach(this->shim().RequestCustomPromptAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> *>(&customPromptElement)));
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *credential = detach(shim().RequestCredentialsAsync(credType, credOptions, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *credential = detach(shim().RequestCredentialsAsync(credType, credOptions));
+            *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions));
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            *credential = detach(shim().RequestCredentialsAsync(credType));
+            *credential = detach(this->shim().RequestCredentialsAsync(credType));
             return S_OK;
         }
         catch (...)
@@ -452,7 +452,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            shim().TerminateConnection(*reinterpret_cast<const hstring *>(&message));
+            this->shim().TerminateConnection(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
-            shim().StartWithTrafficFilter(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv4List), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv6List), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport), *reinterpret_cast<const Windows::Networking::Vpn::VpnTrafficFilterAssignment *>(&assignedTrafficFilters));
+            this->shim().StartWithTrafficFilter(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv4List), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv6List), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport), *reinterpret_cast<const Windows::Networking::Vpn::VpnTrafficFilterAssignment *>(&assignedTrafficFilters));
             return S_OK;
         }
         catch (...)
@@ -482,7 +482,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
     {
         try
         {
-            *value = detach(shim().ActivityState());
+            *value = detach(this->shim().ActivityState());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
-            *value = detach(shim().ServerServiceName());
+            *value = detach(this->shim().ServerServiceName());
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
-            *value = detach(shim().ServerHostNameList());
+            *value = detach(this->shim().ServerHostNameList());
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
-            *value = detach(shim().CustomField());
+            *value = detach(this->shim().CustomField());
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce
     {
         try
         {
-            *value = detach(shim().ServerUris());
+            *value = detach(this->shim().ServerUris());
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D
     {
         try
         {
-            shim().ProcessEventAsync(*reinterpret_cast<const Windows::IInspectable *>(&thirdPartyPlugIn), *reinterpret_cast<const Windows::IInspectable *>(&event));
+            this->shim().ProcessEventAsync(*reinterpret_cast<const Windows::IInspectable *>(&thirdPartyPlugIn), *reinterpret_cast<const Windows::IInspectable *>(&event));
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().PasskeyCredential());
+            *value = detach(this->shim().PasskeyCredential());
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CertificateCredential());
+            *value = detach(this->shim().CertificateCredential());
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().AdditionalPin());
+            *value = detach(this->shim().AdditionalPin());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().OldPasswordCredential());
+            *value = detach(this->shim().OldPasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -657,7 +657,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
-            shim().InitialCheckState(value);
+            this->shim().InitialCheckState(value);
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
-            *value = detach(shim().InitialCheckState());
+            *value = detach(this->shim().InitialCheckState());
             return S_OK;
         }
         catch (...)
@@ -683,7 +683,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Checked());
+            *value = detach(this->shim().Checked());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
-            shim().OptionsText(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&value));
+            this->shim().OptionsText(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -713,7 +713,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
-            *value = detach(shim().OptionsText());
+            *value = detach(this->shim().OptionsText());
             return S_OK;
         }
         catch (...)
@@ -727,7 +727,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Selected());
+            *value = detach(this->shim().Selected());
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
-            shim().DefaultText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DefaultText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -757,7 +757,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DefaultText());
+            *value = detach(this->shim().DefaultText());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
-            shim().NoEcho(value);
+            this->shim().NoEcho(value);
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().NoEcho());
+            *value = detach(this->shim().NoEcho());
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -819,7 +819,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            shim().Label(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -832,7 +832,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Label());
+            *value = detach(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -846,7 +846,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            shim().Compulsory(value);
+            this->shim().Compulsory(value);
             return S_OK;
         }
         catch (...)
@@ -859,7 +859,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Compulsory());
+            *value = detach(this->shim().Compulsory());
             return S_OK;
         }
         catch (...)
@@ -872,7 +872,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            shim().Bordered(value);
+            this->shim().Bordered(value);
             return S_OK;
         }
         catch (...)
@@ -885,7 +885,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Bordered());
+            *value = detach(this->shim().Bordered());
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
-            shim().InitialValue(value);
+            this->shim().InitialValue(value);
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
-            *value = detach(shim().InitialValue());
+            *value = detach(this->shim().InitialValue());
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -945,7 +945,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            shim().Compulsory(value);
+            this->shim().Compulsory(value);
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            *value = detach(shim().Compulsory());
+            *value = detach(this->shim().Compulsory());
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            shim().Emphasized(value);
+            this->shim().Emphasized(value);
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
-            *value = detach(shim().Emphasized());
+            *value = detach(this->shim().Emphasized());
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -1042,7 +1042,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
     {
         try
         {
-            *value = detach(shim().SelectedIndex());
+            *value = detach(this->shim().SelectedIndex());
             return S_OK;
         }
         catch (...)
@@ -1059,7 +1059,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
     {
         try
         {
-            shim().Text(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1072,7 +1072,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1090,7 +1090,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
-            shim().PlaceholderText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PlaceholderText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1103,7 +1103,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
-            *value = detach(shim().PlaceholderText());
+            *value = detach(this->shim().PlaceholderText());
             return S_OK;
         }
         catch (...)
@@ -1117,7 +1117,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
-            shim().IsTextHidden(value);
+            this->shim().IsTextHidden(value);
             return S_OK;
         }
         catch (...)
@@ -1130,7 +1130,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
-            *value = detach(shim().IsTextHidden());
+            *value = detach(this->shim().IsTextHidden());
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
     {
         try
         {
-            shim().DisplayText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DisplayText());
+            *value = detach(this->shim().DisplayText());
             return S_OK;
         }
         catch (...)
@@ -1192,7 +1192,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
-            *value = detach(shim().DomainNameList());
+            *value = detach(this->shim().DomainNameList());
             return S_OK;
         }
         catch (...)
@@ -1206,7 +1206,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
-            shim().ProxyAutoConfigurationUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ProxyAutoConfigurationUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1219,7 +1219,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
-            *value = detach(shim().ProxyAutoConfigurationUri());
+            *value = detach(this->shim().ProxyAutoConfigurationUri());
             return S_OK;
         }
         catch (...)
@@ -1237,7 +1237,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            shim().DomainName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().DomainName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1250,7 +1250,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DomainName());
+            *value = detach(this->shim().DomainName());
             return S_OK;
         }
         catch (...)
@@ -1264,7 +1264,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            shim().DomainNameType(value);
+            this->shim().DomainNameType(value);
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DomainNameType());
+            *value = detach(this->shim().DomainNameType());
             return S_OK;
         }
         catch (...)
@@ -1290,7 +1290,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DnsServers());
+            *value = detach(this->shim().DnsServers());
             return S_OK;
         }
         catch (...)
@@ -1304,7 +1304,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
-            *value = detach(shim().WebProxyServers());
+            *value = detach(this->shim().WebProxyServers());
             return S_OK;
         }
         catch (...)
@@ -1322,7 +1322,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo2> : produce_base<
     {
         try
         {
-            *value = detach(shim().WebProxyUris());
+            *value = detach(this->shim().WebProxyUris());
             return S_OK;
         }
         catch (...)
@@ -1340,7 +1340,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory> : produce
     {
         try
         {
-            *domainNameInfo = detach(shim().CreateVpnDomainNameInfo(*reinterpret_cast<const hstring *>(&name), nameType, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&proxyServerList)));
+            *domainNameInfo = detach(this->shim().CreateVpnDomainNameInfo(*reinterpret_cast<const hstring *>(&name), nameType, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
         catch (...)
@@ -1358,7 +1358,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceId> : produce_base<D, W
     {
         try
         {
-            shim().GetAddressInfo(detach<uint8_t>(__idSize, id));
+            this->shim().GetAddressInfo(detach<uint8_t>(__idSize, id));
             return S_OK;
         }
         catch (...)
@@ -1377,7 +1377,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_ba
     {
         try
         {
-            *vpnInterfaceId = detach(shim().CreateVpnInterfaceId(array_ref<const uint8_t>(address, address + __addressSize)));
+            *vpnInterfaceId = detach(this->shim().CreateVpnInterfaceId(array_ref<const uint8_t>(address, address + __addressSize)));
             return S_OK;
         }
         catch (...)
@@ -1395,7 +1395,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().AddProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
+            *operation = detach(this->shim().AddProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
         catch (...)
@@ -1409,7 +1409,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().AddProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach(this->shim().AddProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1423,7 +1423,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().UpdateProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
+            *operation = detach(this->shim().UpdateProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
         catch (...)
@@ -1437,7 +1437,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().UpdateProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach(this->shim().UpdateProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1451,7 +1451,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().GetProfilesAsync());
+            *operation = detach(this->shim().GetProfilesAsync());
             return S_OK;
         }
         catch (...)
@@ -1465,7 +1465,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().DeleteProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach(this->shim().DeleteProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().ConnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach(this->shim().ConnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1493,7 +1493,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile), *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
+            *operation = detach(this->shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile), *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
         catch (...)
@@ -1507,7 +1507,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
-            *operation = detach(shim().DisconnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach(this->shim().DisconnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1525,7 +1525,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
-            shim().NamespaceList(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> *>(&value));
+            this->shim().NamespaceList(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1538,7 +1538,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
-            *value = detach(shim().NamespaceList());
+            *value = detach(this->shim().NamespaceList());
             return S_OK;
         }
         catch (...)
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
-            shim().ProxyAutoConfigUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ProxyAutoConfigUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1565,7 +1565,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
-            *value = detach(shim().ProxyAutoConfigUri());
+            *value = detach(this->shim().ProxyAutoConfigUri());
             return S_OK;
         }
         catch (...)
@@ -1583,7 +1583,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            shim().Namespace(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Namespace(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1596,7 +1596,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Namespace());
+            *value = detach(this->shim().Namespace());
             return S_OK;
         }
         catch (...)
@@ -1610,7 +1610,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            shim().DnsServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
+            this->shim().DnsServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1623,7 +1623,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DnsServers());
+            *value = detach(this->shim().DnsServers());
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            shim().WebProxyServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
+            this->shim().WebProxyServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1650,7 +1650,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().WebProxyServers());
+            *value = detach(this->shim().WebProxyServers());
             return S_OK;
         }
         catch (...)
@@ -1668,7 +1668,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory> : produce_
     {
         try
         {
-            *namespaceInfo = detach(shim().CreateVpnNamespaceInfo(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&proxyServerList)));
+            *namespaceInfo = detach(this->shim().CreateVpnNamespaceInfo(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
         catch (...)
@@ -1686,7 +1686,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Servers());
+            *value = detach(this->shim().Servers());
             return S_OK;
         }
         catch (...)
@@ -1700,7 +1700,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RoutingPolicyType());
+            *value = detach(this->shim().RoutingPolicyType());
             return S_OK;
         }
         catch (...)
@@ -1713,7 +1713,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            shim().RoutingPolicyType(value);
+            this->shim().RoutingPolicyType(value);
             return S_OK;
         }
         catch (...)
@@ -1726,7 +1726,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().NativeProtocolType());
+            *value = detach(this->shim().NativeProtocolType());
             return S_OK;
         }
         catch (...)
@@ -1739,7 +1739,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            shim().NativeProtocolType(value);
+            this->shim().NativeProtocolType(value);
             return S_OK;
         }
         catch (...)
@@ -1752,7 +1752,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().UserAuthenticationMethod());
+            *value = detach(this->shim().UserAuthenticationMethod());
             return S_OK;
         }
         catch (...)
@@ -1765,7 +1765,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            shim().UserAuthenticationMethod(value);
+            this->shim().UserAuthenticationMethod(value);
             return S_OK;
         }
         catch (...)
@@ -1778,7 +1778,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().TunnelAuthenticationMethod());
+            *value = detach(this->shim().TunnelAuthenticationMethod());
             return S_OK;
         }
         catch (...)
@@ -1791,7 +1791,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            shim().TunnelAuthenticationMethod(value);
+            this->shim().TunnelAuthenticationMethod(value);
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            *Value = detach(shim().EapConfiguration());
+            *Value = detach(this->shim().EapConfiguration());
             return S_OK;
         }
         catch (...)
@@ -1818,7 +1818,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
-            shim().EapConfiguration(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EapConfiguration(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1835,7 +1835,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RequireVpnClientAppUI());
+            *value = detach(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
         catch (...)
@@ -1848,7 +1848,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
-            shim().RequireVpnClientAppUI(value);
+            this->shim().RequireVpnClientAppUI(value);
             return S_OK;
         }
         catch (...)
@@ -1861,7 +1861,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -1878,7 +1878,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Buffer());
+            *value = detach(this->shim().Buffer());
             return S_OK;
         }
         catch (...)
@@ -1892,7 +1892,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
-            shim().Status(value);
+            this->shim().Status(value);
             return S_OK;
         }
         catch (...)
@@ -1905,7 +1905,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1918,7 +1918,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
-            shim().TransportAffinity(value);
+            this->shim().TransportAffinity(value);
             return S_OK;
         }
         catch (...)
@@ -1931,7 +1931,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().TransportAffinity());
+            *value = detach(this->shim().TransportAffinity());
             return S_OK;
         }
         catch (...)
@@ -1948,7 +1948,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().AppId());
+            *value = detach(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -1966,7 +1966,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferFactory> : produce_b
     {
         try
         {
-            *vpnPacketBuffer = detach(shim().CreateVpnPacketBuffer(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&parentBuffer), offset, length));
+            *vpnPacketBuffer = detach(this->shim().CreateVpnPacketBuffer(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&parentBuffer), offset, length));
             return S_OK;
         }
         catch (...)
@@ -1984,7 +1984,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            shim().Append(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
+            this->shim().Append(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
         catch (...)
@@ -1997,7 +1997,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            shim().AddAtBegin(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
+            this->shim().AddAtBegin(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
         catch (...)
@@ -2010,7 +2010,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            *nextVpnPacketBuffer = detach(shim().RemoveAtEnd());
+            *nextVpnPacketBuffer = detach(this->shim().RemoveAtEnd());
             return S_OK;
         }
         catch (...)
@@ -2024,7 +2024,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            *nextVpnPacketBuffer = detach(shim().RemoveAtBegin());
+            *nextVpnPacketBuffer = detach(this->shim().RemoveAtBegin());
             return S_OK;
         }
         catch (...)
@@ -2038,7 +2038,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -2051,7 +2051,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            shim().Status(value);
+            this->shim().Status(value);
             return S_OK;
         }
         catch (...)
@@ -2064,7 +2064,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2077,7 +2077,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -2094,7 +2094,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
-            shim().AddLeadingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
+            this->shim().AddLeadingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
         catch (...)
@@ -2107,7 +2107,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
-            *nextVpnPacketBuffer = detach(shim().RemoveLeadingPacket());
+            *nextVpnPacketBuffer = detach(this->shim().RemoveLeadingPacket());
             return S_OK;
         }
         catch (...)
@@ -2121,7 +2121,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
-            shim().AddTrailingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
+            this->shim().AddTrailingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
         catch (...)
@@ -2134,7 +2134,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
-            *nextVpnPacketBuffer = detach(shim().RemoveTrailingPacket());
+            *nextVpnPacketBuffer = detach(this->shim().RemoveTrailingPacket());
             return S_OK;
         }
         catch (...)
@@ -2152,7 +2152,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().PasskeyCredential());
+            *value = detach(this->shim().PasskeyCredential());
             return S_OK;
         }
         catch (...)
@@ -2166,7 +2166,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().AdditionalPin());
+            *value = detach(this->shim().AdditionalPin());
             return S_OK;
         }
         catch (...)
@@ -2180,7 +2180,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
-            *value = detach(shim().OldPasswordCredential());
+            *value = detach(this->shim().OldPasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -2198,7 +2198,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
-            shim().Connect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
+            this->shim().Connect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
             return S_OK;
         }
         catch (...)
@@ -2211,7 +2211,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
-            shim().Disconnect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
+            this->shim().Disconnect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
             return S_OK;
         }
         catch (...)
@@ -2224,7 +2224,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
-            shim().GetKeepAlivePayload(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *keepAlivePacket);
+            this->shim().GetKeepAlivePayload(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *keepAlivePacket);
             return S_OK;
         }
         catch (...)
@@ -2238,7 +2238,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
-            shim().Encapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&packets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&encapulatedPackets));
+            this->shim().Encapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&packets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&encapulatedPackets));
             return S_OK;
         }
         catch (...)
@@ -2251,7 +2251,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
-            shim().Decapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&encapBuffer), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&decapsulatedPackets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&controlPacketsToSend));
+            this->shim().Decapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&encapBuffer), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&decapsulatedPackets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&controlPacketsToSend));
             return S_OK;
         }
         catch (...)
@@ -2268,7 +2268,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ServerUris());
+            *value = detach(this->shim().ServerUris());
             return S_OK;
         }
         catch (...)
@@ -2282,7 +2282,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().CustomConfiguration());
+            *value = detach(this->shim().CustomConfiguration());
             return S_OK;
         }
         catch (...)
@@ -2296,7 +2296,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
-            shim().CustomConfiguration(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CustomConfiguration(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2309,7 +2309,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().VpnPluginPackageFamilyName());
+            *value = detach(this->shim().VpnPluginPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -2323,7 +2323,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
-            shim().VpnPluginPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().VpnPluginPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2340,7 +2340,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RequireVpnClientAppUI());
+            *value = detach(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
         catch (...)
@@ -2353,7 +2353,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
-            shim().RequireVpnClientAppUI(value);
+            this->shim().RequireVpnClientAppUI(value);
             return S_OK;
         }
         catch (...)
@@ -2366,7 +2366,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -2383,7 +2383,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ProfileName());
+            *value = detach(this->shim().ProfileName());
             return S_OK;
         }
         catch (...)
@@ -2397,7 +2397,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            shim().ProfileName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ProfileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2410,7 +2410,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().AppTriggers());
+            *value = detach(this->shim().AppTriggers());
             return S_OK;
         }
         catch (...)
@@ -2424,7 +2424,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Routes());
+            *value = detach(this->shim().Routes());
             return S_OK;
         }
         catch (...)
@@ -2438,7 +2438,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DomainNameInfoList());
+            *value = detach(this->shim().DomainNameInfoList());
             return S_OK;
         }
         catch (...)
@@ -2452,7 +2452,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().TrafficFilters());
+            *value = detach(this->shim().TrafficFilters());
             return S_OK;
         }
         catch (...)
@@ -2466,7 +2466,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RememberCredentials());
+            *value = detach(this->shim().RememberCredentials());
             return S_OK;
         }
         catch (...)
@@ -2479,7 +2479,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            shim().RememberCredentials(value);
+            this->shim().RememberCredentials(value);
             return S_OK;
         }
         catch (...)
@@ -2492,7 +2492,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().AlwaysOn());
+            *value = detach(this->shim().AlwaysOn());
             return S_OK;
         }
         catch (...)
@@ -2505,7 +2505,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
-            shim().AlwaysOn(value);
+            this->shim().AlwaysOn(value);
             return S_OK;
         }
         catch (...)
@@ -2522,7 +2522,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
-            shim().Address(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().Address(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2535,7 +2535,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Address());
+            *value = detach(this->shim().Address());
             return S_OK;
         }
         catch (...)
@@ -2549,7 +2549,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
-            shim().PrefixSize(value);
+            this->shim().PrefixSize(value);
             return S_OK;
         }
         catch (...)
@@ -2562,7 +2562,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().PrefixSize());
+            *value = detach(this->shim().PrefixSize());
             return S_OK;
         }
         catch (...)
@@ -2579,7 +2579,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            shim().Ipv4InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
+            this->shim().Ipv4InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2592,7 +2592,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            shim().Ipv6InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
+            this->shim().Ipv6InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2605,7 +2605,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            *value = detach(shim().Ipv4InclusionRoutes());
+            *value = detach(this->shim().Ipv4InclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2619,7 +2619,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            *value = detach(shim().Ipv6InclusionRoutes());
+            *value = detach(this->shim().Ipv6InclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2633,7 +2633,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            shim().Ipv4ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
+            this->shim().Ipv4ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2646,7 +2646,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            shim().Ipv6ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
+            this->shim().Ipv6ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2659,7 +2659,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            *value = detach(shim().Ipv4ExclusionRoutes());
+            *value = detach(this->shim().Ipv4ExclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2673,7 +2673,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            *value = detach(shim().Ipv6ExclusionRoutes());
+            *value = detach(this->shim().Ipv6ExclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2687,7 +2687,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            shim().ExcludeLocalSubnets(value);
+            this->shim().ExcludeLocalSubnets(value);
             return S_OK;
         }
         catch (...)
@@ -2700,7 +2700,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
-            *value = detach(shim().ExcludeLocalSubnets());
+            *value = detach(this->shim().ExcludeLocalSubnets());
             return S_OK;
         }
         catch (...)
@@ -2717,7 +2717,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteFactory> : produce_base<D, 
     {
         try
         {
-            *route = detach(shim().CreateVpnRoute(*reinterpret_cast<const Windows::Networking::HostName *>(&address), prefixSize));
+            *route = detach(this->shim().CreateVpnRoute(*reinterpret_cast<const Windows::Networking::HostName *>(&address), prefixSize));
             return S_OK;
         }
         catch (...)
@@ -2735,7 +2735,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnSystemHealth> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().StatementOfHealth());
+            *value = detach(this->shim().StatementOfHealth());
             return S_OK;
         }
         catch (...)
@@ -2753,7 +2753,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().AppId());
+            *value = detach(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -2767,7 +2767,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            shim().AppId(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&value));
+            this->shim().AppId(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2780,7 +2780,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().AppClaims());
+            *value = detach(this->shim().AppClaims());
             return S_OK;
         }
         catch (...)
@@ -2794,7 +2794,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Protocol());
+            *value = detach(this->shim().Protocol());
             return S_OK;
         }
         catch (...)
@@ -2807,7 +2807,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            shim().Protocol(value);
+            this->shim().Protocol(value);
             return S_OK;
         }
         catch (...)
@@ -2820,7 +2820,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().LocalPortRanges());
+            *value = detach(this->shim().LocalPortRanges());
             return S_OK;
         }
         catch (...)
@@ -2834,7 +2834,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RemotePortRanges());
+            *value = detach(this->shim().RemotePortRanges());
             return S_OK;
         }
         catch (...)
@@ -2848,7 +2848,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().LocalAddressRanges());
+            *value = detach(this->shim().LocalAddressRanges());
             return S_OK;
         }
         catch (...)
@@ -2862,7 +2862,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RemoteAddressRanges());
+            *value = detach(this->shim().RemoteAddressRanges());
             return S_OK;
         }
         catch (...)
@@ -2876,7 +2876,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RoutingPolicyType());
+            *value = detach(this->shim().RoutingPolicyType());
             return S_OK;
         }
         catch (...)
@@ -2889,7 +2889,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
-            shim().RoutingPolicyType(value);
+            this->shim().RoutingPolicyType(value);
             return S_OK;
         }
         catch (...)
@@ -2906,7 +2906,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
-            *value = detach(shim().TrafficFilterList());
+            *value = detach(this->shim().TrafficFilterList());
             return S_OK;
         }
         catch (...)
@@ -2920,7 +2920,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
-            *value = detach(shim().AllowOutbound());
+            *value = detach(this->shim().AllowOutbound());
             return S_OK;
         }
         catch (...)
@@ -2933,7 +2933,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
-            shim().AllowOutbound(value);
+            this->shim().AllowOutbound(value);
             return S_OK;
         }
         catch (...)
@@ -2946,7 +2946,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
-            *value = detach(shim().AllowInbound());
+            *value = detach(this->shim().AllowInbound());
             return S_OK;
         }
         catch (...)
@@ -2959,7 +2959,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
-            shim().AllowInbound(value);
+            this->shim().AllowInbound(value);
             return S_OK;
         }
         catch (...)
@@ -2976,7 +2976,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory> : produce_
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&appId)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&appId)));
             return S_OK;
         }
         catch (...)

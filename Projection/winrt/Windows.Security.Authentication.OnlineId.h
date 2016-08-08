@@ -19,7 +19,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *authenticationOperation = detach(shim().AuthenticateUserAsync(*reinterpret_cast<const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest *>(&request)));
+            *authenticationOperation = detach(this->shim().AuthenticateUserAsync(*reinterpret_cast<const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *authenticationOperation = detach(shim().AuthenticateUserAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> *>(&requests), credentialPromptType));
+            *authenticationOperation = detach(this->shim().AuthenticateUserAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> *>(&requests), credentialPromptType));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *signOutUserOperation = detach(shim().SignOutUserAsync());
+            *signOutUserOperation = detach(this->shim().SignOutUserAsync());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            shim().ApplicationId(value);
+            this->shim().ApplicationId(value);
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *value = detach(shim().ApplicationId());
+            *value = detach(this->shim().ApplicationId());
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *value = detach(shim().CanSignOut());
+            *value = detach(this->shim().CanSignOut());
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdAuthenti
     {
         try
         {
-            *value = detach(shim().AuthenticatedSafeCustomerId());
+            *value = detach(this->shim().AuthenticatedSafeCustomerId());
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *value = detach(shim().Service());
+            *value = detach(this->shim().Service());
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *value = detach(shim().Policy());
+            *value = detach(this->shim().Policy());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *onlineIdServiceTicketRequest = detach(shim().CreateOnlineIdServiceTicketRequest(*reinterpret_cast<const hstring *>(&service), *reinterpret_cast<const hstring *>(&policy)));
+            *onlineIdServiceTicketRequest = detach(this->shim().CreateOnlineIdServiceTicketRequest(*reinterpret_cast<const hstring *>(&service), *reinterpret_cast<const hstring *>(&policy)));
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
     {
         try
         {
-            *onlineIdServiceTicketRequest = detach(shim().CreateOnlineIdServiceTicketRequestAdvanced(*reinterpret_cast<const hstring *>(&service)));
+            *onlineIdServiceTicketRequest = detach(this->shim().CreateOnlineIdServiceTicketRequestAdvanced(*reinterpret_cast<const hstring *>(&service)));
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().Tickets());
+            *value = detach(this->shim().Tickets());
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -255,7 +255,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().SafeCustomerId());
+            *value = detach(this->shim().SafeCustomerId());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().SignInName());
+            *value = detach(this->shim().SignInName());
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().FirstName());
+            *value = detach(this->shim().FirstName());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().LastName());
+            *value = detach(this->shim().LastName());
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().IsBetaAccount());
+            *value = detach(this->shim().IsBetaAccount());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IUserIdentity> : 
     {
         try
         {
-            *value = detach(shim().IsConfirmedPC());
+            *value = detach(this->shim().IsConfirmedPC());
             return S_OK;
         }
         catch (...)

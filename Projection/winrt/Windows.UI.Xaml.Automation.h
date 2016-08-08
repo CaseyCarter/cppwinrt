@@ -24,7 +24,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AnnotationTypeIdProperty());
+            *value = detach(this->shim().AnnotationTypeIdProperty());
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AnnotationTypeNameProperty());
+            *value = detach(this->shim().AnnotationTypeNameProperty());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AuthorProperty());
+            *value = detach(this->shim().AuthorProperty());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().DateTimeProperty());
+            *value = detach(this->shim().DateTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().TargetProperty());
+            *value = detach(this->shim().TargetProperty());
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
-            shim().Type(value);
+            this->shim().Type(value);
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
-            *value = detach(shim().Element());
+            *value = detach(this->shim().Element());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
-            shim().Element(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
+            this->shim().Element(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateInstance(type));
+            *instance = detach(this->shim().CreateInstance(type));
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateWithElementParameter(type, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *instance = detach(this->shim().CreateWithElementParameter(type, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationStatics> :
     {
         try
         {
-            *value = detach(shim().TypeProperty());
+            *value = detach(this->shim().TypeProperty());
             return S_OK;
         }
         catch (...)
@@ -201,7 +201,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationStatics> :
     {
         try
         {
-            *value = detach(shim().ElementProperty());
+            *value = detach(this->shim().ElementProperty());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AcceleratorKeyProperty());
+            *value = detach(this->shim().AcceleratorKeyProperty());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AccessKeyProperty());
+            *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AutomationIdProperty());
+            *value = detach(this->shim().AutomationIdProperty());
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().BoundingRectangleProperty());
+            *value = detach(this->shim().BoundingRectangleProperty());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ClassNameProperty());
+            *value = detach(this->shim().ClassNameProperty());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ClickablePointProperty());
+            *value = detach(this->shim().ClickablePointProperty());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ControlTypeProperty());
+            *value = detach(this->shim().ControlTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().HasKeyboardFocusProperty());
+            *value = detach(this->shim().HasKeyboardFocusProperty());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().HelpTextProperty());
+            *value = detach(this->shim().HelpTextProperty());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsContentElementProperty());
+            *value = detach(this->shim().IsContentElementProperty());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsControlElementProperty());
+            *value = detach(this->shim().IsControlElementProperty());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsEnabledProperty());
+            *value = detach(this->shim().IsEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsKeyboardFocusableProperty());
+            *value = detach(this->shim().IsKeyboardFocusableProperty());
             return S_OK;
         }
         catch (...)
@@ -405,7 +405,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsOffscreenProperty());
+            *value = detach(this->shim().IsOffscreenProperty());
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsPasswordProperty());
+            *value = detach(this->shim().IsPasswordProperty());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsRequiredForFormProperty());
+            *value = detach(this->shim().IsRequiredForFormProperty());
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ItemStatusProperty());
+            *value = detach(this->shim().ItemStatusProperty());
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ItemTypeProperty());
+            *value = detach(this->shim().ItemTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LabeledByProperty());
+            *value = detach(this->shim().LabeledByProperty());
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LocalizedControlTypeProperty());
+            *value = detach(this->shim().LocalizedControlTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().NameProperty());
+            *value = detach(this->shim().NameProperty());
             return S_OK;
         }
         catch (...)
@@ -517,7 +517,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().OrientationProperty());
+            *value = detach(this->shim().OrientationProperty());
             return S_OK;
         }
         catch (...)
@@ -531,7 +531,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LiveSettingProperty());
+            *value = detach(this->shim().LiveSettingProperty());
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ControlledPeersProperty());
+            *value = detach(this->shim().ControlledPeersProperty());
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().PositionInSetProperty());
+            *value = detach(this->shim().PositionInSetProperty());
             return S_OK;
         }
         catch (...)
@@ -581,7 +581,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().SizeOfSetProperty());
+            *value = detach(this->shim().SizeOfSetProperty());
             return S_OK;
         }
         catch (...)
@@ -595,7 +595,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LevelProperty());
+            *value = detach(this->shim().LevelProperty());
             return S_OK;
         }
         catch (...)
@@ -609,7 +609,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().AnnotationsProperty());
+            *value = detach(this->shim().AnnotationsProperty());
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LandmarkTypeProperty());
+            *value = detach(this->shim().LandmarkTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -641,7 +641,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LocalizedLandmarkTypeProperty());
+            *value = detach(this->shim().LocalizedLandmarkTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsPeripheralProperty());
+            *value = detach(this->shim().IsPeripheralProperty());
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsDataValidForFormProperty());
+            *value = detach(this->shim().IsDataValidForFormProperty());
             return S_OK;
         }
         catch (...)
@@ -687,7 +687,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().FullDescriptionProperty());
+            *value = detach(this->shim().FullDescriptionProperty());
             return S_OK;
         }
         catch (...)
@@ -701,7 +701,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().DescribedByProperty());
+            *value = detach(this->shim().DescribedByProperty());
             return S_OK;
         }
         catch (...)
@@ -715,7 +715,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().FlowsToProperty());
+            *value = detach(this->shim().FlowsToProperty());
             return S_OK;
         }
         catch (...)
@@ -729,7 +729,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
-            *value = detach(shim().FlowsFromProperty());
+            *value = detach(this->shim().FlowsFromProperty());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().AcceleratorKeyProperty());
+            *value = detach(this->shim().AcceleratorKeyProperty());
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().AccessKeyProperty());
+            *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
         catch (...)
@@ -806,7 +806,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -820,7 +820,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -833,7 +833,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().AutomationIdProperty());
+            *value = detach(this->shim().AutomationIdProperty());
             return S_OK;
         }
         catch (...)
@@ -847,7 +847,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -861,7 +861,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().HelpTextProperty());
+            *value = detach(this->shim().HelpTextProperty());
             return S_OK;
         }
         catch (...)
@@ -888,7 +888,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().IsRequiredForFormProperty());
+            *value = detach(this->shim().IsRequiredForFormProperty());
             return S_OK;
         }
         catch (...)
@@ -929,7 +929,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -942,7 +942,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -955,7 +955,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().ItemStatusProperty());
+            *value = detach(this->shim().ItemStatusProperty());
             return S_OK;
         }
         catch (...)
@@ -969,7 +969,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -983,7 +983,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -996,7 +996,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().ItemTypeProperty());
+            *value = detach(this->shim().ItemTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -1010,7 +1010,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1024,7 +1024,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().LabeledByProperty());
+            *value = detach(this->shim().LabeledByProperty());
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
+            this->shim().SetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().NameProperty());
+            *value = detach(this->shim().NameProperty());
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().LiveSettingProperty());
+            *value = detach(this->shim().LiveSettingProperty());
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            *value = detach(shim().GetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
-            shim().SetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1163,7 +1163,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
-            *value = detach(shim().AccessibilityViewProperty());
+            *value = detach(this->shim().AccessibilityViewProperty());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
-            *value = detach(shim().GetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
-            shim().SetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1203,7 +1203,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
-            *value = detach(shim().ControlledPeersProperty());
+            *value = detach(this->shim().ControlledPeersProperty());
             return S_OK;
         }
         catch (...)
@@ -1217,7 +1217,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
-            *value = detach(shim().GetControlledPeers(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetControlledPeers(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().PositionInSetProperty());
+            *value = detach(this->shim().PositionInSetProperty());
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().GetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            shim().SetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1275,7 +1275,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().SizeOfSetProperty());
+            *value = detach(this->shim().SizeOfSetProperty());
             return S_OK;
         }
         catch (...)
@@ -1289,7 +1289,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().GetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1302,7 +1302,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            shim().SetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().LevelProperty());
+            *value = detach(this->shim().LevelProperty());
             return S_OK;
         }
         catch (...)
@@ -1329,7 +1329,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().GetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1342,7 +1342,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            shim().SetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1355,7 +1355,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().AnnotationsProperty());
+            *value = detach(this->shim().AnnotationsProperty());
             return S_OK;
         }
         catch (...)
@@ -1369,7 +1369,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
-            *value = detach(shim().GetAnnotations(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetAnnotations(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1387,7 +1387,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            *value = detach(shim().LandmarkTypeProperty());
+            *value = detach(this->shim().LandmarkTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -1401,7 +1401,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            *value = detach(shim().GetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1414,7 +1414,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            shim().SetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1427,7 +1427,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            *value = detach(shim().LocalizedLandmarkTypeProperty());
+            *value = detach(this->shim().LocalizedLandmarkTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -1441,7 +1441,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            *value = detach(shim().GetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1455,7 +1455,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
-            shim().SetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1472,7 +1472,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().IsPeripheralProperty());
+            *value = detach(this->shim().IsPeripheralProperty());
             return S_OK;
         }
         catch (...)
@@ -1486,7 +1486,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1499,7 +1499,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            shim().SetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1512,7 +1512,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().IsDataValidForFormProperty());
+            *value = detach(this->shim().IsDataValidForFormProperty());
             return S_OK;
         }
         catch (...)
@@ -1526,7 +1526,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1539,7 +1539,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            shim().SetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            this->shim().SetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().FullDescriptionProperty());
+            *value = detach(this->shim().FullDescriptionProperty());
             return S_OK;
         }
         catch (...)
@@ -1566,7 +1566,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1580,7 +1580,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            shim().SetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1593,7 +1593,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().LocalizedControlTypeProperty());
+            *value = detach(this->shim().LocalizedControlTypeProperty());
             return S_OK;
         }
         catch (...)
@@ -1607,7 +1607,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1621,7 +1621,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            shim().SetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1634,7 +1634,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().DescribedByProperty());
+            *value = detach(this->shim().DescribedByProperty());
             return S_OK;
         }
         catch (...)
@@ -1648,7 +1648,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetDescribedBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetDescribedBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1662,7 +1662,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().FlowsToProperty());
+            *value = detach(this->shim().FlowsToProperty());
             return S_OK;
         }
         catch (...)
@@ -1676,7 +1676,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetFlowsTo(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetFlowsTo(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1690,7 +1690,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().FlowsFromProperty());
+            *value = detach(this->shim().FlowsFromProperty());
             return S_OK;
         }
         catch (...)
@@ -1704,7 +1704,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
-            *value = detach(shim().GetFlowsFrom(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetFlowsFrom(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1730,7 +1730,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().DockPositionProperty());
+            *value = detach(this->shim().DockPositionProperty());
             return S_OK;
         }
         catch (...)
@@ -1752,7 +1752,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().DropEffectProperty());
+            *value = detach(this->shim().DropEffectProperty());
             return S_OK;
         }
         catch (...)
@@ -1766,7 +1766,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().DropEffectsProperty());
+            *value = detach(this->shim().DropEffectsProperty());
             return S_OK;
         }
         catch (...)
@@ -1780,7 +1780,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().GrabbedItemsProperty());
+            *value = detach(this->shim().GrabbedItemsProperty());
             return S_OK;
         }
         catch (...)
@@ -1794,7 +1794,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().IsGrabbedProperty());
+            *value = detach(this->shim().IsGrabbedProperty());
             return S_OK;
         }
         catch (...)
@@ -1816,7 +1816,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().DropTargetEffectProperty());
+            *value = detach(this->shim().DropTargetEffectProperty());
             return S_OK;
         }
         catch (...)
@@ -1830,7 +1830,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().DropTargetEffectsProperty());
+            *value = detach(this->shim().DropTargetEffectsProperty());
             return S_OK;
         }
         catch (...)
@@ -1852,7 +1852,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifie
     {
         try
         {
-            *value = detach(shim().ExpandCollapseStateProperty());
+            *value = detach(this->shim().ExpandCollapseStateProperty());
             return S_OK;
         }
         catch (...)
@@ -1874,7 +1874,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
-            *value = detach(shim().ColumnProperty());
+            *value = detach(this->shim().ColumnProperty());
             return S_OK;
         }
         catch (...)
@@ -1888,7 +1888,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
-            *value = detach(shim().ColumnSpanProperty());
+            *value = detach(this->shim().ColumnSpanProperty());
             return S_OK;
         }
         catch (...)
@@ -1902,7 +1902,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
-            *value = detach(shim().ContainingGridProperty());
+            *value = detach(this->shim().ContainingGridProperty());
             return S_OK;
         }
         catch (...)
@@ -1916,7 +1916,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
-            *value = detach(shim().RowProperty());
+            *value = detach(this->shim().RowProperty());
             return S_OK;
         }
         catch (...)
@@ -1930,7 +1930,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
-            *value = detach(shim().RowSpanProperty());
+            *value = detach(this->shim().RowSpanProperty());
             return S_OK;
         }
         catch (...)
@@ -1952,7 +1952,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().ColumnCountProperty());
+            *value = detach(this->shim().ColumnCountProperty());
             return S_OK;
         }
         catch (...)
@@ -1966,7 +1966,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>
     {
         try
         {
-            *value = detach(shim().RowCountProperty());
+            *value = detach(this->shim().RowCountProperty());
             return S_OK;
         }
         catch (...)
@@ -1988,7 +1988,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers
     {
         try
         {
-            *value = detach(shim().CurrentViewProperty());
+            *value = detach(this->shim().CurrentViewProperty());
             return S_OK;
         }
         catch (...)
@@ -2002,7 +2002,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers
     {
         try
         {
-            *value = detach(shim().SupportedViewsProperty());
+            *value = detach(this->shim().SupportedViewsProperty());
             return S_OK;
         }
         catch (...)
@@ -2024,7 +2024,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().IsReadOnlyProperty());
+            *value = detach(this->shim().IsReadOnlyProperty());
             return S_OK;
         }
         catch (...)
@@ -2038,7 +2038,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().LargeChangeProperty());
+            *value = detach(this->shim().LargeChangeProperty());
             return S_OK;
         }
         catch (...)
@@ -2052,7 +2052,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().MaximumProperty());
+            *value = detach(this->shim().MaximumProperty());
             return S_OK;
         }
         catch (...)
@@ -2066,7 +2066,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().MinimumProperty());
+            *value = detach(this->shim().MinimumProperty());
             return S_OK;
         }
         catch (...)
@@ -2080,7 +2080,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().SmallChangeProperty());
+            *value = detach(this->shim().SmallChangeProperty());
             return S_OK;
         }
         catch (...)
@@ -2094,7 +2094,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -2116,7 +2116,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().HorizontallyScrollableProperty());
+            *value = detach(this->shim().HorizontallyScrollableProperty());
             return S_OK;
         }
         catch (...)
@@ -2130,7 +2130,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().HorizontalScrollPercentProperty());
+            *value = detach(this->shim().HorizontalScrollPercentProperty());
             return S_OK;
         }
         catch (...)
@@ -2144,7 +2144,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().HorizontalViewSizeProperty());
+            *value = detach(this->shim().HorizontalViewSizeProperty());
             return S_OK;
         }
         catch (...)
@@ -2158,7 +2158,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().NoScroll());
+            *value = detach(this->shim().NoScroll());
             return S_OK;
         }
         catch (...)
@@ -2171,7 +2171,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().VerticallyScrollableProperty());
+            *value = detach(this->shim().VerticallyScrollableProperty());
             return S_OK;
         }
         catch (...)
@@ -2185,7 +2185,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().VerticalScrollPercentProperty());
+            *value = detach(this->shim().VerticalScrollPercentProperty());
             return S_OK;
         }
         catch (...)
@@ -2199,7 +2199,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().VerticalViewSizeProperty());
+            *value = detach(this->shim().VerticalViewSizeProperty());
             return S_OK;
         }
         catch (...)
@@ -2221,7 +2221,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifier
     {
         try
         {
-            *value = detach(shim().IsSelectedProperty());
+            *value = detach(this->shim().IsSelectedProperty());
             return S_OK;
         }
         catch (...)
@@ -2235,7 +2235,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifier
     {
         try
         {
-            *value = detach(shim().SelectionContainerProperty());
+            *value = detach(this->shim().SelectionContainerProperty());
             return S_OK;
         }
         catch (...)
@@ -2257,7 +2257,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().CanSelectMultipleProperty());
+            *value = detach(this->shim().CanSelectMultipleProperty());
             return S_OK;
         }
         catch (...)
@@ -2271,7 +2271,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().IsSelectionRequiredProperty());
+            *value = detach(this->shim().IsSelectionRequiredProperty());
             return S_OK;
         }
         catch (...)
@@ -2285,7 +2285,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().SelectionProperty());
+            *value = detach(this->shim().SelectionProperty());
             return S_OK;
         }
         catch (...)
@@ -2307,7 +2307,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifi
     {
         try
         {
-            *value = detach(shim().FormulaProperty());
+            *value = detach(this->shim().FormulaProperty());
             return S_OK;
         }
         catch (...)
@@ -2329,7 +2329,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().ExtendedPropertiesProperty());
+            *value = detach(this->shim().ExtendedPropertiesProperty());
             return S_OK;
         }
         catch (...)
@@ -2343,7 +2343,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().FillColorProperty());
+            *value = detach(this->shim().FillColorProperty());
             return S_OK;
         }
         catch (...)
@@ -2357,7 +2357,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().FillPatternColorProperty());
+            *value = detach(this->shim().FillPatternColorProperty());
             return S_OK;
         }
         catch (...)
@@ -2371,7 +2371,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().FillPatternStyleProperty());
+            *value = detach(this->shim().FillPatternStyleProperty());
             return S_OK;
         }
         catch (...)
@@ -2385,7 +2385,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().ShapeProperty());
+            *value = detach(this->shim().ShapeProperty());
             return S_OK;
         }
         catch (...)
@@ -2399,7 +2399,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().StyleIdProperty());
+            *value = detach(this->shim().StyleIdProperty());
             return S_OK;
         }
         catch (...)
@@ -2413,7 +2413,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().StyleNameProperty());
+            *value = detach(this->shim().StyleNameProperty());
             return S_OK;
         }
         catch (...)
@@ -2435,7 +2435,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().ColumnHeaderItemsProperty());
+            *value = detach(this->shim().ColumnHeaderItemsProperty());
             return S_OK;
         }
         catch (...)
@@ -2449,7 +2449,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().RowHeaderItemsProperty());
+            *value = detach(this->shim().RowHeaderItemsProperty());
             return S_OK;
         }
         catch (...)
@@ -2471,7 +2471,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
-            *value = detach(shim().ColumnHeadersProperty());
+            *value = detach(this->shim().ColumnHeadersProperty());
             return S_OK;
         }
         catch (...)
@@ -2485,7 +2485,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
-            *value = detach(shim().RowHeadersProperty());
+            *value = detach(this->shim().RowHeadersProperty());
             return S_OK;
         }
         catch (...)
@@ -2499,7 +2499,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
-            *value = detach(shim().RowOrColumnMajorProperty());
+            *value = detach(this->shim().RowOrColumnMajorProperty());
             return S_OK;
         }
         catch (...)
@@ -2521,7 +2521,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().ToggleStateProperty());
+            *value = detach(this->shim().ToggleStateProperty());
             return S_OK;
         }
         catch (...)
@@ -2543,7 +2543,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
-            *value = detach(shim().CanZoomProperty());
+            *value = detach(this->shim().CanZoomProperty());
             return S_OK;
         }
         catch (...)
@@ -2557,7 +2557,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
-            *value = detach(shim().ZoomLevelProperty());
+            *value = detach(this->shim().ZoomLevelProperty());
             return S_OK;
         }
         catch (...)
@@ -2571,7 +2571,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
-            *value = detach(shim().MaxZoomProperty());
+            *value = detach(this->shim().MaxZoomProperty());
             return S_OK;
         }
         catch (...)
@@ -2585,7 +2585,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
-            *value = detach(shim().MinZoomProperty());
+            *value = detach(this->shim().MinZoomProperty());
             return S_OK;
         }
         catch (...)
@@ -2607,7 +2607,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().CanMoveProperty());
+            *value = detach(this->shim().CanMoveProperty());
             return S_OK;
         }
         catch (...)
@@ -2621,7 +2621,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().CanResizeProperty());
+            *value = detach(this->shim().CanResizeProperty());
             return S_OK;
         }
         catch (...)
@@ -2635,7 +2635,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
-            *value = detach(shim().CanRotateProperty());
+            *value = detach(this->shim().CanRotateProperty());
             return S_OK;
         }
         catch (...)
@@ -2657,7 +2657,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics
     {
         try
         {
-            *value = detach(shim().IsReadOnlyProperty());
+            *value = detach(this->shim().IsReadOnlyProperty());
             return S_OK;
         }
         catch (...)
@@ -2671,7 +2671,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -2693,7 +2693,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().CanMaximizeProperty());
+            *value = detach(this->shim().CanMaximizeProperty());
             return S_OK;
         }
         catch (...)
@@ -2707,7 +2707,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().CanMinimizeProperty());
+            *value = detach(this->shim().CanMinimizeProperty());
             return S_OK;
         }
         catch (...)
@@ -2721,7 +2721,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().IsModalProperty());
+            *value = detach(this->shim().IsModalProperty());
             return S_OK;
         }
         catch (...)
@@ -2735,7 +2735,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().IsTopmostProperty());
+            *value = detach(this->shim().IsTopmostProperty());
             return S_OK;
         }
         catch (...)
@@ -2749,7 +2749,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().WindowInteractionStateProperty());
+            *value = detach(this->shim().WindowInteractionStateProperty());
             return S_OK;
         }
         catch (...)
@@ -2763,7 +2763,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
-            *value = detach(shim().WindowVisualStateProperty());
+            *value = detach(this->shim().WindowVisualStateProperty());
             return S_OK;
         }
         catch (...)

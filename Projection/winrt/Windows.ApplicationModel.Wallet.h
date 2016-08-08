@@ -22,7 +22,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletBarcode> : produce_b
     {
         try
         {
-            *value = detach(shim().Symbology());
+            *value = detach(this->shim().Symbology());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletBarcode> : produce_b
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletBarcode> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetImageAsync());
+            *operation = detach(this->shim().GetImageAsync());
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletBarcodeFactory> : pr
     {
         try
         {
-            *barcode = detach(shim().CreateWalletBarcode(symbology, *reinterpret_cast<const hstring *>(&value)));
+            *barcode = detach(this->shim().CreateWalletBarcode(symbology, *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletBarcodeFactory> : pr
     {
         try
         {
-            *barcode = detach(shim().CreateCustomWalletBarcode(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&streamToBarcodeImage)));
+            *barcode = detach(this->shim().CreateCustomWalletBarcode(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&streamToBarcodeImage)));
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().IsAcknowledged());
+            *value = detach(this->shim().IsAcknowledged());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().IsAcknowledged(value);
+            this->shim().IsAcknowledged(value);
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().IssuerDisplayName());
+            *value = detach(this->shim().IssuerDisplayName());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().IssuerDisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().IssuerDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().LastUpdated());
+            *value = detach(this->shim().LastUpdated());
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().LastUpdated(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().LastUpdated(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Barcode());
+            *value = detach(this->shim().Barcode());
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().Barcode(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletBarcode *>(&value));
+            this->shim().Barcode(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletBarcode *>(&value));
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().ExpirationDate());
+            *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().ExpirationDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().ExpirationDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Logo159x159());
+            *value = detach(this->shim().Logo159x159());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().Logo159x159(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Logo159x159(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Logo336x336());
+            *value = detach(this->shim().Logo336x336());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().Logo336x336(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Logo336x336(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Logo99x99());
+            *value = detach(this->shim().Logo99x99());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().Logo99x99(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Logo99x99(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().DisplayMessage());
+            *value = detach(this->shim().DisplayMessage());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().IsDisplayMessageLaunchable());
+            *value = detach(this->shim().IsDisplayMessageLaunchable());
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().IsDisplayMessageLaunchable(value);
+            this->shim().IsDisplayMessageLaunchable(value);
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().LogoText());
+            *value = detach(this->shim().LogoText());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().LogoText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().LogoText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().HeaderColor());
+            *value = detach(this->shim().HeaderColor());
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().HeaderColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().HeaderColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -474,7 +474,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().BodyColor());
+            *value = detach(this->shim().BodyColor());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().BodyColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BodyColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -500,7 +500,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().HeaderFontColor());
+            *value = detach(this->shim().HeaderFontColor());
             return S_OK;
         }
         catch (...)
@@ -513,7 +513,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().HeaderFontColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().HeaderFontColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().BodyFontColor());
+            *value = detach(this->shim().BodyFontColor());
             return S_OK;
         }
         catch (...)
@@ -539,7 +539,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().BodyFontColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BodyFontColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().HeaderBackgroundImage());
+            *value = detach(this->shim().HeaderBackgroundImage());
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().HeaderBackgroundImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().HeaderBackgroundImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -579,7 +579,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().BodyBackgroundImage());
+            *value = detach(this->shim().BodyBackgroundImage());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().BodyBackgroundImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().BodyBackgroundImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().LogoImage());
+            *value = detach(this->shim().LogoImage());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().LogoImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().LogoImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().PromotionalImage());
+            *value = detach(this->shim().PromotionalImage());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().PromotionalImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().PromotionalImage(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().RelevantDate());
+            *value = detach(this->shim().RelevantDate());
             return S_OK;
         }
         catch (...)
@@ -674,7 +674,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().RelevantDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().RelevantDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -687,7 +687,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().RelevantDateDisplayMessage());
+            *value = detach(this->shim().RelevantDateDisplayMessage());
             return S_OK;
         }
         catch (...)
@@ -701,7 +701,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().RelevantDateDisplayMessage(*reinterpret_cast<const hstring *>(&value));
+            this->shim().RelevantDateDisplayMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -714,7 +714,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().TransactionHistory());
+            *value = detach(this->shim().TransactionHistory());
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().RelevantLocations());
+            *value = detach(this->shim().RelevantLocations());
             return S_OK;
         }
         catch (...)
@@ -742,7 +742,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().IsMoreTransactionHistoryLaunchable());
+            *value = detach(this->shim().IsMoreTransactionHistoryLaunchable());
             return S_OK;
         }
         catch (...)
@@ -755,7 +755,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            shim().IsMoreTransactionHistoryLaunchable(value);
+            this->shim().IsMoreTransactionHistoryLaunchable(value);
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().DisplayProperties());
+            *value = detach(this->shim().DisplayProperties());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItem> : produce_base
     {
         try
         {
-            *value = detach(shim().Verbs());
+            *value = detach(this->shim().Verbs());
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -814,7 +814,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -827,7 +827,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            shim().Value(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            *value = detach(shim().AutoDetectLinks());
+            *value = detach(this->shim().AutoDetectLinks());
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            shim().AutoDetectLinks(value);
+            this->shim().AutoDetectLinks(value);
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            *value = detach(shim().DetailViewPosition());
+            *value = detach(this->shim().DetailViewPosition());
             return S_OK;
         }
         catch (...)
@@ -893,7 +893,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            shim().DetailViewPosition(value);
+            this->shim().DetailViewPosition(value);
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            *value = detach(shim().SummaryViewPosition());
+            *value = detach(this->shim().SummaryViewPosition());
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty> 
     {
         try
         {
-            shim().SummaryViewPosition(value);
+            this->shim().SummaryViewPosition(value);
             return S_OK;
         }
         catch (...)
@@ -936,7 +936,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFa
     {
         try
         {
-            *walletItemCustomProperty = detach(shim().CreateWalletItemCustomProperty(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
+            *walletItemCustomProperty = detach(this->shim().CreateWalletItemCustomProperty(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -954,7 +954,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemFactory> : produ
     {
         try
         {
-            *walletItem = detach(shim().CreateWalletItem(kind, *reinterpret_cast<const hstring *>(&displayName)));
+            *walletItem = detach(this->shim().CreateWalletItem(kind, *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().AddAsync(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach(this->shim().AddAsync(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -986,7 +986,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().ClearAsync());
+            *operation = detach(this->shim().ClearAsync());
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().GetWalletItemAsync(*reinterpret_cast<const hstring *>(&id)));
+            *operation = detach(this->shim().GetWalletItemAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync());
+            *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync(kind));
+            *operation = detach(this->shim().GetItemsAsync(kind));
             return S_OK;
         }
         catch (...)
@@ -1042,7 +1042,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
+            *operation = detach(this->shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -1056,7 +1056,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().DeleteAsync(*reinterpret_cast<const hstring *>(&id)));
+            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -1070,7 +1070,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().ShowAsync());
+            *operation = detach(this->shim().ShowAsync());
             return S_OK;
         }
         catch (...)
@@ -1084,7 +1084,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().ShowAsync(*reinterpret_cast<const hstring *>(&id)));
+            *operation = detach(this->shim().ShowAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -1098,7 +1098,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore> : produce
     {
         try
         {
-            *operation = detach(shim().UpdateAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach(this->shim().UpdateAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -1116,7 +1116,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore2> : produc
     {
         try
         {
-            *cookie = detach(shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1129,7 +1129,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletItemStore2> : produc
     {
         try
         {
-            shim().ItemsChanged(cookie);
+            this->shim().ItemsChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletManagerStatics> : pr
     {
         try
         {
-            *operation = detach(shim().RequestStoreAsync());
+            *operation = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }
         catch (...)
@@ -1164,7 +1164,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletRelevantLocation> : 
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletRelevantLocation> : 
     {
         try
         {
-            shim().Position(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&value));
+            this->shim().Position(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletRelevantLocation> : 
     {
         try
         {
-            *value = detach(shim().DisplayMessage());
+            *value = detach(this->shim().DisplayMessage());
             return S_OK;
         }
         catch (...)
@@ -1204,7 +1204,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletRelevantLocation> : 
     {
         try
         {
-            shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().Description(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().DisplayAmount());
+            *value = detach(this->shim().DisplayAmount());
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().DisplayAmount(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayAmount(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1275,7 +1275,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().IgnoreTimeOfDay());
+            *value = detach(this->shim().IgnoreTimeOfDay());
             return S_OK;
         }
         catch (...)
@@ -1288,7 +1288,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().IgnoreTimeOfDay(value);
+            this->shim().IgnoreTimeOfDay(value);
             return S_OK;
         }
         catch (...)
@@ -1301,7 +1301,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().DisplayLocation());
+            *value = detach(this->shim().DisplayLocation());
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().DisplayLocation(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayLocation(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().TransactionDate());
+            *value = detach(this->shim().TransactionDate());
             return S_OK;
         }
         catch (...)
@@ -1342,7 +1342,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().TransactionDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().TransactionDate(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1355,7 +1355,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            *value = detach(shim().IsLaunchable());
+            *value = detach(this->shim().IsLaunchable());
             return S_OK;
         }
         catch (...)
@@ -1368,7 +1368,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletTransaction> : produ
     {
         try
         {
-            shim().IsLaunchable(value);
+            this->shim().IsLaunchable(value);
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletVerb> : produce_base
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1399,7 +1399,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletVerb> : produce_base
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1416,7 +1416,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::IWalletVerbFactory> : produ
     {
         try
         {
-            *WalletVerb = detach(shim().CreateWalletVerb(*reinterpret_cast<const hstring *>(&name)));
+            *WalletVerb = detach(this->shim().CreateWalletVerb(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)

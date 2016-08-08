@@ -21,7 +21,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IInstalledVoicesStatic> : pro
     {
         try
         {
-            *value = detach(shim().AllVoices());
+            *value = detach(this->shim().AllVoices());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IInstalledVoicesStatic> : pro
     {
         try
         {
-            *value = detach(shim().DefaultVoice());
+            *value = detach(this->shim().DefaultVoice());
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesisStream> : pro
     {
         try
         {
-            *value = detach(shim().Markers());
+            *value = detach(this->shim().Markers());
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
-            *operation = detach(shim().SynthesizeTextToStreamAsync(*reinterpret_cast<const hstring *>(&text)));
+            *operation = detach(this->shim().SynthesizeTextToStreamAsync(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
-            *operation = detach(shim().SynthesizeSsmlToStreamAsync(*reinterpret_cast<const hstring *>(&Ssml)));
+            *operation = detach(this->shim().SynthesizeSsmlToStreamAsync(*reinterpret_cast<const hstring *>(&Ssml)));
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
-            shim().Voice(*reinterpret_cast<const Windows::Media::SpeechSynthesis::VoiceInformation *>(&value));
+            this->shim().Voice(*reinterpret_cast<const Windows::Media::SpeechSynthesis::VoiceInformation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
-            *value = detach(shim().Voice());
+            *value = detach(this->shim().Voice());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -186,7 +186,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
-            *value = detach(shim().Gender());
+            *value = detach(this->shim().Gender());
             return S_OK;
         }
         catch (...)

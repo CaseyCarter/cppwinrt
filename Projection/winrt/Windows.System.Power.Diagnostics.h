@@ -17,7 +17,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
-            *value = detach(shim().DeviceSpecificConversionFactor());
+            *value = detach(this->shim().DeviceSpecificConversionFactor());
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
-            *value = detach(shim().ComputeTotalEnergyUsage());
+            *value = detach(this->shim().ComputeTotalEnergyUsage());
             return S_OK;
         }
         catch (...)
@@ -43,7 +43,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
-            shim().ResetTotalEnergyUsage();
+            this->shim().ResetTotalEnergyUsage();
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
-            *value = detach(shim().DeviceSpecificConversionFactor());
+            *value = detach(this->shim().DeviceSpecificConversionFactor());
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
-            *value = detach(shim().ComputeTotalEnergyUsage());
+            *value = detach(this->shim().ComputeTotalEnergyUsage());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
-            shim().ResetTotalEnergyUsage();
+            this->shim().ResetTotalEnergyUsage();
             return S_OK;
         }
         catch (...)

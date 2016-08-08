@@ -18,7 +18,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            *value = detach(shim().KeyOptions());
+            *value = detach(this->shim().KeyOptions());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            shim().KeyOptions(value);
+            this->shim().KeyOptions(value);
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            *value = detach(shim().ScanCode());
+            *value = detach(this->shim().ScanCode());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            shim().ScanCode(value);
+            this->shim().ScanCode(value);
             return S_OK;
         }
         catch (...)
@@ -70,7 +70,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            *value = detach(shim().VirtualKey());
+            *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
-            shim().VirtualKey(value);
+            this->shim().VirtualKey(value);
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            *value = detach(shim().MouseOptions());
+            *value = detach(this->shim().MouseOptions());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            shim().MouseOptions(value);
+            this->shim().MouseOptions(value);
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            *value = detach(shim().MouseData());
+            *value = detach(this->shim().MouseData());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            shim().MouseData(value);
+            this->shim().MouseData(value);
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            *value = detach(shim().DeltaY());
+            *value = detach(this->shim().DeltaY());
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            shim().DeltaY(value);
+            this->shim().DeltaY(value);
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            *value = detach(shim().DeltaX());
+            *value = detach(this->shim().DeltaX());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            shim().DeltaX(value);
+            this->shim().DeltaX(value);
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            *value = detach(shim().TimeOffsetInMilliseconds());
+            *value = detach(this->shim().TimeOffsetInMilliseconds());
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
-            shim().TimeOffsetInMilliseconds(value);
+            this->shim().TimeOffsetInMilliseconds(value);
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().PointerInfo());
+            *value = detach(this->shim().PointerInfo());
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
+            this->shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().PenButtons());
+            *value = detach(this->shim().PenButtons());
             return S_OK;
         }
         catch (...)
@@ -273,7 +273,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().PenButtons(value);
+            this->shim().PenButtons(value);
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().PenParameters());
+            *value = detach(this->shim().PenParameters());
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().PenParameters(value);
+            this->shim().PenParameters(value);
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().Pressure(value);
+            this->shim().Pressure(value);
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().Rotation());
+            *value = detach(this->shim().Rotation());
             return S_OK;
         }
         catch (...)
@@ -351,7 +351,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().Rotation(value);
+            this->shim().Rotation(value);
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().TiltX());
+            *value = detach(this->shim().TiltX());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().TiltX(value);
+            this->shim().TiltX(value);
             return S_OK;
         }
         catch (...)
@@ -390,7 +390,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            *value = detach(shim().TiltY());
+            *value = detach(this->shim().TiltY());
             return S_OK;
         }
         catch (...)
@@ -403,7 +403,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
-            shim().TiltY(value);
+            this->shim().TiltY(value);
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            shim().Contact(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputRectangle *>(&value));
+            this->shim().Contact(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputRectangle *>(&value));
             return S_OK;
         }
         catch (...)
@@ -446,7 +446,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            shim().Orientation(value);
+            this->shim().Orientation(value);
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            *value = detach(shim().PointerInfo());
+            *value = detach(this->shim().PointerInfo());
             return S_OK;
         }
         catch (...)
@@ -485,7 +485,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
+            this->shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -511,7 +511,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            shim().Pressure(value);
+            this->shim().Pressure(value);
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            *value = detach(shim().TouchParameters());
+            *value = detach(this->shim().TouchParameters());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
-            shim().TouchParameters(value);
+            this->shim().TouchParameters(value);
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InjectKeyboardInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> *>(&input));
+            this->shim().InjectKeyboardInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> *>(&input));
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InjectMouseInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> *>(&input));
+            this->shim().InjectMouseInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> *>(&input));
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InitializeTouchInjection(visualMode);
+            this->shim().InitializeTouchInjection(visualMode);
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InjectTouchInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> *>(&input));
+            this->shim().InjectTouchInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> *>(&input));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().UninitializeTouchInjection();
+            this->shim().UninitializeTouchInjection();
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InitializePenInjection(visualMode);
+            this->shim().InitializePenInjection(visualMode);
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InjectPenInput(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo *>(&input));
+            this->shim().InjectPenInput(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo *>(&input));
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().UninitializePenInjection();
+            this->shim().UninitializePenInjection();
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
-            shim().InjectShortcut(shortcut);
+            this->shim().InjectShortcut(shortcut);
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>
     {
         try
         {
-            *instance = detach(shim().TryCreate());
+            *instance = detach(this->shim().TryCreate());
             return S_OK;
         }
         catch (...)

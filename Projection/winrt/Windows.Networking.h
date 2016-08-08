@@ -18,7 +18,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().LocalHostName());
+            *value = detach(this->shim().LocalHostName());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            shim().LocalHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().LocalHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().LocalServiceName());
+            *value = detach(this->shim().LocalServiceName());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            shim().LocalServiceName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().LocalServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().RemoteHostName());
+            *value = detach(this->shim().RemoteHostName());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().RemoteServiceName());
+            *value = detach(this->shim().RemoteServiceName());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
-            shim().RemoteServiceName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().RemoteServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Networking::IEndpointPairFactory> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CreateEndpointPair(*reinterpret_cast<const Windows::Networking::HostName *>(&localHostName), *reinterpret_cast<const hstring *>(&localServiceName), *reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
+            *value = detach(this->shim().CreateEndpointPair(*reinterpret_cast<const Windows::Networking::HostName *>(&localHostName), *reinterpret_cast<const hstring *>(&localServiceName), *reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *value = detach(shim().IPInformation());
+            *value = detach(this->shim().IPInformation());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *value = detach(shim().RawName());
+            *value = detach(this->shim().RawName());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *value = detach(shim().CanonicalName());
+            *value = detach(this->shim().CanonicalName());
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
-            *isEqual = detach(shim().IsEqual(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
+            *isEqual = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::Networking::IHostNameFactory> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().CreateHostName(*reinterpret_cast<const hstring *>(&hostName)));
+            *value = detach(this->shim().CreateHostName(*reinterpret_cast<const hstring *>(&hostName)));
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Networking::IHostNameStatics> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().Compare(*reinterpret_cast<const hstring *>(&value1), *reinterpret_cast<const hstring *>(&value2)));
+            *result = detach(this->shim().Compare(*reinterpret_cast<const hstring *>(&value1), *reinterpret_cast<const hstring *>(&value2)));
             return S_OK;
         }
         catch (...)

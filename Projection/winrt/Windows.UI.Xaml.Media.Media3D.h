@@ -19,7 +19,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().CenterX());
+            *value = detach(this->shim().CenterX());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().CenterX(value);
+            this->shim().CenterX(value);
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().CenterY());
+            *value = detach(this->shim().CenterY());
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().CenterY(value);
+            this->shim().CenterY(value);
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().CenterZ());
+            *value = detach(this->shim().CenterZ());
             return S_OK;
         }
         catch (...)
@@ -84,7 +84,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().CenterZ(value);
+            this->shim().CenterZ(value);
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().RotationX());
+            *value = detach(this->shim().RotationX());
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().RotationX(value);
+            this->shim().RotationX(value);
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().RotationY());
+            *value = detach(this->shim().RotationY());
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().RotationY(value);
+            this->shim().RotationY(value);
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().RotationZ());
+            *value = detach(this->shim().RotationZ());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().RotationZ(value);
+            this->shim().RotationZ(value);
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().ScaleX());
+            *value = detach(this->shim().ScaleX());
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().ScaleX(value);
+            this->shim().ScaleX(value);
             return S_OK;
         }
         catch (...)
@@ -201,7 +201,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().ScaleY());
+            *value = detach(this->shim().ScaleY());
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().ScaleY(value);
+            this->shim().ScaleY(value);
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().ScaleZ());
+            *value = detach(this->shim().ScaleZ());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().ScaleZ(value);
+            this->shim().ScaleZ(value);
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().TranslateX());
+            *value = detach(this->shim().TranslateX());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().TranslateX(value);
+            this->shim().TranslateX(value);
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().TranslateY());
+            *value = detach(this->shim().TranslateY());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().TranslateY(value);
+            this->shim().TranslateY(value);
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            *value = detach(shim().TranslateZ());
+            *value = detach(this->shim().TranslateZ());
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
     {
         try
         {
-            shim().TranslateZ(value);
+            this->shim().TranslateZ(value);
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().CenterXProperty());
+            *value = detach(this->shim().CenterXProperty());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().CenterYProperty());
+            *value = detach(this->shim().CenterYProperty());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().CenterZProperty());
+            *value = detach(this->shim().CenterZProperty());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().RotationXProperty());
+            *value = detach(this->shim().RotationXProperty());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().RotationYProperty());
+            *value = detach(this->shim().RotationYProperty());
             return S_OK;
         }
         catch (...)
@@ -405,7 +405,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().RotationZProperty());
+            *value = detach(this->shim().RotationZProperty());
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().ScaleXProperty());
+            *value = detach(this->shim().ScaleXProperty());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().ScaleYProperty());
+            *value = detach(this->shim().ScaleYProperty());
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().ScaleZProperty());
+            *value = detach(this->shim().ScaleZProperty());
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().TranslateXProperty());
+            *value = detach(this->shim().TranslateXProperty());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().TranslateYProperty());
+            *value = detach(this->shim().TranslateYProperty());
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
     {
         try
         {
-            *value = detach(shim().TranslateZProperty());
+            *value = detach(this->shim().TranslateZProperty());
             return S_OK;
         }
         catch (...)
@@ -511,7 +511,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *value = detach(shim().Identity());
+            *value = detach(this->shim().Identity());
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *returnValue = detach(shim().Multiply(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix1), *reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix2)));
+            *returnValue = detach(this->shim().Multiply(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix1), *reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix2)));
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *returnValue = detach(shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
+            *returnValue = detach(this->shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
             return S_OK;
         }
         catch (...)
@@ -550,7 +550,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *value = detach(shim().GetHasInverse(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *value = detach(this->shim().GetHasInverse(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *value = detach(shim().GetIsIdentity(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *value = detach(this->shim().GetIsIdentity(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -576,7 +576,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
     {
         try
         {
-            *returnValue = detach(shim().Invert(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *returnValue = detach(this->shim().Invert(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            *value = detach(shim().Depth());
+            *value = detach(this->shim().Depth());
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            shim().Depth(value);
+            this->shim().Depth(value);
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            *value = detach(shim().OffsetX());
+            *value = detach(this->shim().OffsetX());
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            shim().OffsetX(value);
+            this->shim().OffsetX(value);
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            *value = detach(shim().OffsetY());
+            *value = detach(this->shim().OffsetY());
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
     {
         try
         {
-            shim().OffsetY(value);
+            this->shim().OffsetY(value);
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
     {
         try
         {
-            *value = detach(shim().DepthProperty());
+            *value = detach(this->shim().DepthProperty());
             return S_OK;
         }
         catch (...)
@@ -689,7 +689,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
     {
         try
         {
-            *value = detach(shim().OffsetXProperty());
+            *value = detach(this->shim().OffsetXProperty());
             return S_OK;
         }
         catch (...)
@@ -703,7 +703,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
     {
         try
         {
-            *value = detach(shim().OffsetYProperty());
+            *value = detach(this->shim().OffsetYProperty());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory> : prod
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
