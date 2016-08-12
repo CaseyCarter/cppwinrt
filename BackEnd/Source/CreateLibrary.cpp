@@ -95,6 +95,14 @@ static void WriteBaseHeader()
     Write(out, Strings::base_std);
 }
 
+static void WritePplHeader()
+{
+    OutputFile out("..\\ppl.h");
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+    Write(out, Strings::base_ppl);
+}
+
 static void GenerateForward()
 {
     Output out;
@@ -267,12 +275,14 @@ static bool GenerateComposables()
 static void WriteLibrary()
 {
     std::string path = Settings::OutPath;
-    Path::Append(path, Settings::PublicPath + Settings::InternalPath);
+    Path::Append(path, Settings::PublicPath);
+    Path::Append(path, Settings::InternalPath);
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
     WriteModule();
     WriteBaseHeader();
+    WritePplHeader();
 
     std::vector<std::string> processedNamespaces;
 

@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.Playback.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Media.Protection.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.Playback.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Media.Protection.3.h"
 #include "Windows.Media.h"
 #include "Windows.Foundation.h"
 

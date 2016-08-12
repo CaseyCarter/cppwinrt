@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.System.Display.3.h"
+#include "internal/Windows.System.Display.3.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {

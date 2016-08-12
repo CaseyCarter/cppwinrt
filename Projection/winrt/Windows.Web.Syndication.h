@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Data.Xml.Dom.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Web.Syndication.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Data.Xml.Dom.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Web.Syndication.3.h"
 #include "Windows.Web.h"
 
 WINRT_EXPORT namespace winrt {

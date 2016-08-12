@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Web.Http.Filters.3.h"
+#include "internal/Windows.Web.Http.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Web.Http.Filters.3.h"
 #include "Windows.Web.Http.h"
 #include "Windows.Foundation.h"
 

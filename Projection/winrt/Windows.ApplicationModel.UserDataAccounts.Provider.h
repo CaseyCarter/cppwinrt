@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.UserDataAccounts.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.UserDataAccounts.Provider.3.h"
+#include "internal/Windows.ApplicationModel.UserDataAccounts.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.UserDataAccounts.Provider.3.h"
 #include "Windows.ApplicationModel.UserDataAccounts.h"
 
 WINRT_EXPORT namespace winrt {

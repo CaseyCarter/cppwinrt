@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Resources.3.h"
+#include "internal/Windows.UI.Xaml.Resources.3.h"
 #include "Windows.UI.Xaml.h"
-#include "internal\Windows.UI.Xaml.Resources.4.h"
-#include "internal\Windows.UI.Xaml.Resources.5.h"
+#include "internal/Windows.UI.Xaml.Resources.4.h"
+#include "internal/Windows.UI.Xaml.Resources.5.h"
 
 WINRT_EXPORT namespace winrt {
 

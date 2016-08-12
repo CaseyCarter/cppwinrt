@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Security.Cryptography.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Security.Cryptography.3.h"
 
 WINRT_EXPORT namespace winrt {
 

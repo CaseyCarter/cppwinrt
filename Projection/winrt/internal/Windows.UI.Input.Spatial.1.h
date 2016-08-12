@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.UI.Input.Spatial.0.h"
 #include "Windows.Perception.0.h"
 #include "Windows.Perception.People.0.h"

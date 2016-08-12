@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Management.Workplace.3.h"
+#include "internal/Windows.Management.Workplace.3.h"
 
 WINRT_EXPORT namespace winrt {
 

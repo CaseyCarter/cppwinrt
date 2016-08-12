@@ -3,18 +3,18 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.3.h"
-#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
-#include "internal\Windows.Media.Editing.3.h"
-#include "internal\Windows.Media.Render.3.h"
-#include "internal\Windows.Media.Capture.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Media.Transcoding.3.h"
-#include "internal\Windows.Media.Effects.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal/Windows.Media.Editing.3.h"
+#include "internal/Windows.Media.Render.3.h"
+#include "internal/Windows.Media.Capture.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Media.Transcoding.3.h"
+#include "internal/Windows.Media.Effects.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.Printing.3.h"
-#include "internal\Windows.Graphics.Printing.OptionDetails.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.Printing.3.h"
+#include "internal/Windows.Graphics.Printing.OptionDetails.3.h"
 #include "Windows.Graphics.Printing.h"
 
 WINRT_EXPORT namespace winrt {

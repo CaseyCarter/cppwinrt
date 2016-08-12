@@ -3,15 +3,15 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.UI.Notifications.3.h"
-#include "internal\Windows.Web.3.h"
-#include "internal\Windows.ApplicationModel.Background.3.h"
-#include "internal\Windows.Networking.BackgroundTransfer.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.UI.Notifications.3.h"
+#include "internal/Windows.Web.3.h"
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.Networking.BackgroundTransfer.3.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {

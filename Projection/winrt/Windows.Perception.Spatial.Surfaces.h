@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.DirectX.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Perception.Spatial.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Perception.Spatial.Surfaces.3.h"
+#include "internal/Windows.Graphics.DirectX.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Perception.Spatial.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Perception.Spatial.Surfaces.3.h"
 #include "Windows.Perception.Spatial.h"
 
 WINRT_EXPORT namespace winrt {

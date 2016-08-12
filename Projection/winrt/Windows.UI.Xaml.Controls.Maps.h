@@ -3,16 +3,16 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Geolocation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Services.Maps.3.h"
-#include "internal\Windows.UI.Xaml.Controls.Maps.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Geolocation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Services.Maps.3.h"
+#include "internal/Windows.UI.Xaml.Controls.Maps.3.h"
 #include "Windows.UI.Xaml.Controls.h"
-#include "internal\Windows.UI.Xaml.Controls.Maps.5.h"
+#include "internal/Windows.UI.Xaml.Controls.Maps.5.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Networking.Connectivity.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Networking.Connectivity.3.h"
 #include "Windows.Networking.h"
 #include "Windows.Foundation.h"
 

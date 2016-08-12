@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Devices.Lights.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Devices.Lights.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 

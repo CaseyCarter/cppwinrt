@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Activation.3.h"
-#include "internal\Windows.ApplicationModel.3.h"
-#include "internal\Windows.UI.WebUI.3.h"
+#include "internal/Windows.ApplicationModel.Activation.3.h"
+#include "internal/Windows.ApplicationModel.3.h"
+#include "internal/Windows.UI.WebUI.3.h"
 #include "Windows.UI.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.ApplicationModel.Activation.h"

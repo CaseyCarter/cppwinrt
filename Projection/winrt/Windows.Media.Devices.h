@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.Capture.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Media.Devices.Core.3.h"
-#include "internal\Windows.Media.Devices.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.Capture.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Media.Devices.Core.3.h"
+#include "internal/Windows.Media.Devices.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

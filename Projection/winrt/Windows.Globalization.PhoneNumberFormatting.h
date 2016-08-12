@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Globalization.PhoneNumberFormatting.3.h"
+#include "internal/Windows.Globalization.PhoneNumberFormatting.3.h"
 #include "Windows.Globalization.h"
 #include "Windows.Foundation.h"
 

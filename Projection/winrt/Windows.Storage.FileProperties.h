@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Geolocation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.FileProperties.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Geolocation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.FileProperties.3.h"
 #include "Windows.Storage.h"
 #include "Windows.Foundation.h"
 #include "Windows.Storage.Streams.h"

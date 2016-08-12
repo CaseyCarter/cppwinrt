@@ -3,16 +3,16 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.ApplicationModel.Background.3.h"
-#include "internal\Windows.Graphics.Imaging.3.h"
-#include "internal\Windows.UI.Xaml.Media.Imaging.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.UI.Xaml.Media.Imaging.3.h"
 #include "Windows.UI.Xaml.Media.h"
 #include "Windows.Foundation.h"
-#include "internal\Windows.UI.Xaml.Media.Imaging.4.h"
-#include "internal\Windows.UI.Xaml.Media.Imaging.5.h"
+#include "internal/Windows.UI.Xaml.Media.Imaging.4.h"
+#include "internal/Windows.UI.Xaml.Media.Imaging.5.h"
 
 WINRT_EXPORT namespace winrt {
 

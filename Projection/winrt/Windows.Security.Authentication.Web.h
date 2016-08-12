@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Authentication.Web.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Authentication.Web.3.h"
 
 WINRT_EXPORT namespace winrt {
 

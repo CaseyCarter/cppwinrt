@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Core.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.UI.ViewManagement.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Core.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.UI.ViewManagement.3.h"
 #include "Windows.UI.h"
 
 WINRT_EXPORT namespace winrt {

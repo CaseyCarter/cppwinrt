@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Pwm.Provider.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Pwm.3.h"
+#include "internal/Windows.Devices.Pwm.Provider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Pwm.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 

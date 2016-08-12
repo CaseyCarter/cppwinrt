@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.DataProvider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.DataProvider.3.h"
 #include "Windows.ApplicationModel.Contacts.h"
 
 WINRT_EXPORT namespace winrt {

@@ -140,7 +140,7 @@
       <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4592</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++latest /d1permissive- </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -175,7 +175,7 @@
       <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4592</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++latest /d1permissive- </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -212,7 +212,7 @@
       <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4592</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++latest /d1permissive- </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -234,7 +234,7 @@
       <AdditionalIncludeDirectories>Source</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4592</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++latest /d1permissive- </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

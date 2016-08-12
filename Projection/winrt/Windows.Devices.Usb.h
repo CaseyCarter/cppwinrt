@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Usb.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Usb.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 

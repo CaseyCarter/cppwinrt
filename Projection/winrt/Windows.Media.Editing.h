@@ -3,15 +3,15 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Media.Core.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
-#include "internal\Windows.Media.Effects.3.h"
-#include "internal\Windows.Media.Editing.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Media.Core.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal/Windows.Media.Effects.3.h"
+#include "internal/Windows.Media.Editing.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

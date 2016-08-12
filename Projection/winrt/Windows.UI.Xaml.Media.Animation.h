@@ -3,18 +3,18 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.3.h"
-#include "internal\Windows.UI.Composition.3.h"
-#include "internal\Windows.UI.Xaml.Controls.3.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.Controls.Primitives.3.h"
+#include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.Xaml.Controls.3.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "Windows.UI.Xaml.Media.h"
 #include "Windows.Foundation.Collections.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.4.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.5.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.4.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.5.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Adc.Provider.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Adc.3.h"
+#include "internal/Windows.Devices.Adc.Provider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Adc.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 

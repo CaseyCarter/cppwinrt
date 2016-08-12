@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Core.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Media.Transcoding.3.h"
+#include "internal/Windows.Media.Core.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Media.Transcoding.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

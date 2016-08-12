@@ -72,6 +72,18 @@ class no_ref : public T
     unsigned long __stdcall Release() noexcept;
 };
 
+template <typename T>
+struct not_specialized_type
+{
+    static constexpr bool value = false;
+};
+
+template <typename T>
+struct not_specialized
+{
+    static_assert(not_specialized_type<T>::value, "This generic interface has not been specialized.");
+};
+
 }
 
 template <typename T>

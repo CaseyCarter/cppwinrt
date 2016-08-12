@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Devices.Printers.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Devices.Printers.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {

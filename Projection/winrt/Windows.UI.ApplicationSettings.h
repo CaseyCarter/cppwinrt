@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.ApplicationSettings.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.ApplicationSettings.3.h"
 #include "Windows.UI.h"
 #include "Windows.UI.Popups.h"
 

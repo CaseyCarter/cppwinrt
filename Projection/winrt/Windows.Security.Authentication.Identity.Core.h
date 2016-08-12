@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Authentication.Identity.Core.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Authentication.Identity.Core.3.h"
 #include "Windows.Security.Authentication.Identity.h"
 
 WINRT_EXPORT namespace winrt {

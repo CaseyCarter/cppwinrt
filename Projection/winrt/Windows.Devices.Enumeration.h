@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.ApplicationModel.Background.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"

@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Pwm.Provider.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Pwm.Provider.3.h"
 #include "Windows.Devices.Pwm.h"
 
 WINRT_EXPORT namespace winrt {

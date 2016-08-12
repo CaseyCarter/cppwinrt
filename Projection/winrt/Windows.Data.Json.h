@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Json.3.h"
+#include "internal/Windows.Data.Json.3.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
 

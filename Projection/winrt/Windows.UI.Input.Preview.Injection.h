@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Input.Preview.Injection.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Input.Preview.Injection.3.h"
 #include "Windows.UI.Input.h"
 
 WINRT_EXPORT namespace winrt {

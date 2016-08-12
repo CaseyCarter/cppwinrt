@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Text.3.h"
-#include "internal\Windows.Globalization.Fonts.3.h"
+#include "internal/Windows.UI.Text.3.h"
+#include "internal/Windows.Globalization.Fonts.3.h"
 #include "Windows.Globalization.h"
 
 WINRT_EXPORT namespace winrt {

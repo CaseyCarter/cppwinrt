@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Perception.Spatial.3.h"
-#include "internal\Windows.Media.Devices.Core.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Perception.Spatial.3.h"
+#include "internal/Windows.Media.Devices.Core.3.h"
 #include "Windows.Media.Devices.h"
 #include "Windows.Foundation.h"
 

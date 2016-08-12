@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Capture.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Media.Capture.Core.3.h"
+#include "internal/Windows.Media.Capture.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Media.Capture.Core.3.h"
 #include "Windows.Media.Capture.h"
 
 WINRT_EXPORT namespace winrt {

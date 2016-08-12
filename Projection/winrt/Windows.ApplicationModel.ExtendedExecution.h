@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.ExtendedExecution.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.ExtendedExecution.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.h"
 

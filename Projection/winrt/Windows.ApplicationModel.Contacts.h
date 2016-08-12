@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.ViewManagement.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.ViewManagement.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.h"
 

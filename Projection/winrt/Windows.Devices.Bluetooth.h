@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
-#include "internal\Windows.Devices.Bluetooth.Rfcomm.3.h"
-#include "internal\Windows.Devices.Bluetooth.GenericAttributeProfile.3.h"
-#include "internal\Windows.Devices.Bluetooth.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.Devices.Bluetooth.Rfcomm.3.h"
+#include "internal/Windows.Devices.Bluetooth.GenericAttributeProfile.3.h"
+#include "internal/Windows.Devices.Bluetooth.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 

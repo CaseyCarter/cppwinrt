@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.Interop.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.Xaml.Data.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.Interop.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.Xaml.Data.3.h"
 #include "Windows.UI.Xaml.h"
-#include "internal\Windows.UI.Xaml.Data.5.h"
+#include "internal/Windows.UI.Xaml.Data.5.h"
 
 WINRT_EXPORT namespace winrt {
 

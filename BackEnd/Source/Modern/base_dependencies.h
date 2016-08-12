@@ -48,21 +48,3 @@ extern "C"
 #pragma comment(linker, "/alternatename:WINRT_RoUninitialize=RoUninitialize")
 #pragma comment(linker, "/alternatename:WINRT_SetRestrictedErrorInfo=SetRestrictedErrorInfo")
 #endif
-
-#define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_END_NAMESPACE_
-
-#ifdef __clang__
-#define _XM_NO_INTRINSICS_
-#endif
-
-#include <WindowsNumerics.impl.h>
-
-#ifdef __clang__
-#undef _XM_NO_INTRINSICS_
-#endif
-
-#undef _WINDOWS_NUMERICS_NAMESPACE_
-#undef _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
-#undef _WINDOWS_NUMERICS_END_NAMESPACE_

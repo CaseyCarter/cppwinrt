@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Adc.Provider.3.h"
-#include "internal\Windows.Devices.Pwm.Provider.3.h"
-#include "internal\Windows.Devices.Gpio.Provider.3.h"
-#include "internal\Windows.Devices.I2c.Provider.3.h"
-#include "internal\Windows.Devices.Spi.Provider.3.h"
-#include "internal\Windows.Devices.3.h"
+#include "internal/Windows.Devices.Adc.Provider.3.h"
+#include "internal/Windows.Devices.Pwm.Provider.3.h"
+#include "internal/Windows.Devices.Gpio.Provider.3.h"
+#include "internal/Windows.Devices.I2c.Provider.3.h"
+#include "internal/Windows.Devices.Spi.Provider.3.h"
+#include "internal/Windows.Devices.3.h"
 
 WINRT_EXPORT namespace winrt {
 

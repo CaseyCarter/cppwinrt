@@ -3,14 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.Storage.Search.3.h"
-#include "internal\Windows.UI.ViewManagement.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.System.RemoteSystems.3.h"
-#include "internal\Windows.System.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.Storage.Search.3.h"
+#include "internal/Windows.UI.ViewManagement.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.System.RemoteSystems.3.h"
+#include "internal/Windows.System.3.h"
 
 WINRT_EXPORT namespace winrt {
 

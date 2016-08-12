@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Globalization.3.h"
-#include "internal\Windows.System.UserProfile.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Globalization.3.h"
+#include "internal/Windows.System.UserProfile.3.h"
 #include "Windows.System.h"
 #include "Windows.Foundation.Collections.h"
 

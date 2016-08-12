@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.I2c.Provider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.I2c.Provider.3.h"
 #include "Windows.Devices.I2c.h"
 
 WINRT_EXPORT namespace winrt {

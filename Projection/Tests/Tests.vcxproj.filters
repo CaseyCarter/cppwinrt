@@ -30,6 +30,7 @@
     <ClCompile Include="implements_references.cpp" />
     <ClCompile Include="make_self.cpp" />
     <ClCompile Include="range_for.cpp" />
+    <ClCompile Include="ppl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.UI.Input.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Core.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.UI.Input.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Core.3.h"
 #include "Windows.UI.h"
 
 WINRT_EXPORT namespace winrt {

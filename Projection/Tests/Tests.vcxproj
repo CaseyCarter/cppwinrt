@@ -192,6 +192,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="hstring.cpp" />
+    <ClCompile Include="ppl.cpp" />
     <ClCompile Include="produce.cpp" />
     <ClCompile Include="produce_async.cpp" />
     <ClCompile Include="produce_map.cpp" />

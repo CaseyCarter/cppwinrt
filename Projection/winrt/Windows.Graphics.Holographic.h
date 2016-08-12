@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
-#include "internal\Windows.UI.Core.3.h"
-#include "internal\Windows.Perception.Spatial.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Perception.3.h"
-#include "internal\Windows.Graphics.Holographic.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal/Windows.UI.Core.3.h"
+#include "internal/Windows.Perception.Spatial.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Perception.3.h"
+#include "internal/Windows.Graphics.Holographic.3.h"
 
 WINRT_EXPORT namespace winrt {
 

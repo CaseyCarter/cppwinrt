@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Syndication.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Web.AtomPub.3.h"
+#include "internal/Windows.Web.Syndication.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Web.AtomPub.3.h"
 #include "Windows.Web.h"
 #include "Windows.Web.Syndication.h"
 

@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Media.ClosedCaptioning.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Media.ClosedCaptioning.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {

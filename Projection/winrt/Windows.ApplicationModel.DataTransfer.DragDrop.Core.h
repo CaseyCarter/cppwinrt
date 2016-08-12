@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.Imaging.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.Core.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.DragDrop.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.DragDrop.Core.3.h"
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.h"
 
 WINRT_EXPORT namespace winrt {

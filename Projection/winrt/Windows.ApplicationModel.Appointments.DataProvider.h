@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.DataProvider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.DataProvider.3.h"
 #include "Windows.ApplicationModel.Appointments.h"
 
 WINRT_EXPORT namespace winrt {

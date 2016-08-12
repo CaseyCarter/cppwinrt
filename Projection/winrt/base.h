@@ -53,24 +53,6 @@ extern "C"
 #pragma comment(linker, "/alternatename:WINRT_SetRestrictedErrorInfo=SetRestrictedErrorInfo")
 #endif
 
-#define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
-#define _WINDOWS_NUMERICS_END_NAMESPACE_
-
-#ifdef __clang__
-#define _XM_NO_INTRINSICS_
-#endif
-
-#include <WindowsNumerics.impl.h>
-
-#ifdef __clang__
-#undef _XM_NO_INTRINSICS_
-#endif
-
-#undef _WINDOWS_NUMERICS_NAMESPACE_
-#undef _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
-#undef _WINDOWS_NUMERICS_END_NAMESPACE_
-
 #ifdef _DEBUG
 
 #include <assert.h>
@@ -121,6 +103,42 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 
 #ifndef __IAgileReference_INTERFACE_DEFINED__
 #define WINRT_NO_AGILE_REFERENCE
+#endif
+
+#if NTDDI_VERSION > NTDDI_WINBLUE
+
+#define WINRT_NUMERICS
+#define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_END_NAMESPACE_
+
+#ifdef __clang__
+#define _XM_NO_INTRINSICS_
+#endif
+
+// If this include fails it means that you're targeting an older platform version. Please use 10.0.14393.0 or later.
+#include <WindowsNumerics.impl.h>
+
+#ifdef __clang__
+#undef _XM_NO_INTRINSICS_
+#endif
+
+#undef _WINDOWS_NUMERICS_NAMESPACE_
+#undef _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
+#undef _WINDOWS_NUMERICS_END_NAMESPACE_
+
+namespace winrt::ABI::Windows::Foundation::Numerics {
+
+using float2 = winrt::Windows::Foundation::Numerics::float2;
+using float3 = winrt::Windows::Foundation::Numerics::float3;
+using float4 = winrt::Windows::Foundation::Numerics::float4;
+using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
+using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
+using plane = winrt::Windows::Foundation::Numerics::plane;
+using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
+
+}
+
 #endif
 
 
@@ -445,6 +463,18 @@ class no_ref : public T
 {
     unsigned long __stdcall AddRef() noexcept;
     unsigned long __stdcall Release() noexcept;
+};
+
+template <typename T>
+struct not_specialized_type
+{
+    static constexpr bool value = false;
+};
+
+template <typename T>
+struct not_specialized
+{
+    static_assert(not_specialized_type<T>::value, "This generic interface has not been specialized.");
 };
 
 }
@@ -3246,6 +3276,9 @@ struct __declspec(novtable) impl_TypedEventHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
 };
 
+template <typename T> struct EventHandler : impl::not_specialized<EventHandler<T>> {};
+template <typename TSender, typename TArgs> struct TypedEventHandler : impl::not_specialized<TypedEventHandler<TSender, TArgs>> {};
+
 }
 
 namespace Windows::Foundation {
@@ -3630,6 +3663,19 @@ struct __declspec(novtable) impl_IObservableVector : IInspectable
     virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, event_token *  token) = 0;
     virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
+
+template <typename K, typename V> struct MapChangedEventHandler : impl::not_specialized<MapChangedEventHandler<K, V>> {};
+template <typename T> struct VectorChangedEventHandler : impl::not_specialized <VectorChangedEventHandler<T>> {};
+template <typename T> struct IIterator : impl::not_specialized <IIterator<T>> {};
+template <typename T> struct IIterable : impl::not_specialized <IIterable<T>> {};
+template <typename K, typename V> struct IKeyValuePair : impl::not_specialized <IKeyValuePair<K, V>> {};
+template <typename T> struct IVectorView : impl::not_specialized <IVectorView<T>> {};
+template <typename T> struct IVector : impl::not_specialized <IVector<T>> {};
+template <typename K, typename V> struct IMapView : impl::not_specialized <IMapView<K, V>> {};
+template <typename K, typename V> struct IMap : impl::not_specialized <IMap<K, V>> {};
+template <typename K> struct IMapChangedEventArgs : impl::not_specialized <IMapChangedEventArgs<K>> {};
+template <typename K, typename V> struct IObservableMap : impl::not_specialized <IObservableMap<K, V>> {};
+template <typename T> struct IObservableVector : impl::not_specialized <IObservableVector<T>> {};
 
 }
 
@@ -4985,7 +5031,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
 };
 
 }
- 
+
 namespace Windows::Foundation {
 
 struct Point
@@ -4999,6 +5045,8 @@ struct Point
         : X(X), Y(Y)
     {}
 
+#ifdef WINRT_NUMERICS
+
     Point(const Numerics::float2 & value) noexcept
         : X(value.x), Y(value.y)
     {}
@@ -5007,6 +5055,8 @@ struct Point
     {
         return { X, Y };
     }
+
+#endif
 };
 
 struct Size
@@ -5020,6 +5070,8 @@ struct Size
         : Width(Width), Height(Height)
     {}
 
+#ifdef WINRT_NUMERICS
+
     Size(const Numerics::float2 & value) noexcept
         : Width(value.x), Height(value.y)
     {}
@@ -5028,6 +5080,8 @@ struct Size
     {
         return { Width, Height };
     }
+
+#endif
 };
 
 using TimeSpan = std::chrono::duration<int64_t, std::ratio<1, 10'000'000>>;
@@ -5039,18 +5093,6 @@ namespace ABI::Windows::Foundation {
 using Point = winrt::Windows::Foundation::Point;
 using Size = winrt::Windows::Foundation::Size;
 using TimeSpan = winrt::Windows::Foundation::TimeSpan;
-
-}
-
-namespace ABI::Windows::Foundation::Numerics {
-
-using float2 = winrt::Windows::Foundation::Numerics::float2;
-using float3 = winrt::Windows::Foundation::Numerics::float3;
-using float4 = winrt::Windows::Foundation::Numerics::float4;
-using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
-using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
-using plane = winrt::Windows::Foundation::Numerics::plane;
-using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
 }
 
@@ -5160,6 +5202,15 @@ struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
     virtual HRESULT __stdcall get_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
     virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
 };
+
+template <typename TProgress> struct AsyncActionProgressHandler : impl::not_specialized<AsyncActionProgressHandler<TProgress>> {};
+template <typename TProgress> struct AsyncActionWithProgressCompletedHandler : impl::not_specialized<AsyncActionWithProgressCompletedHandler<TProgress>> {};
+template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler : impl::not_specialized<AsyncOperationProgressHandler<TResult, TProgress>> {};
+template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler : impl::not_specialized<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> {};
+template <typename TResult> struct AsyncOperationCompletedHandler : impl::not_specialized<AsyncOperationCompletedHandler<TResult>> {};
+template <typename TProgress> struct IAsyncActionWithProgress : impl::not_specialized<IAsyncActionWithProgress<TProgress>> {};
+template <typename TResult> struct IAsyncOperation : impl::not_specialized<IAsyncOperation<TResult>> {};
+template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress : impl::not_specialized<IAsyncOperationWithProgress<TResult, TProgress>> {};
 
 }
 

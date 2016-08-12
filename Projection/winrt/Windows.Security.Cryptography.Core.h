@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Cryptography.Core.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Cryptography.Core.3.h"
 #include "Windows.Security.Cryptography.h"
 
 WINRT_EXPORT namespace winrt {

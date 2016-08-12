@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Security.Credentials.UI.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Security.Credentials.UI.3.h"
 #include "Windows.Security.Credentials.h"
 
 WINRT_EXPORT namespace winrt {
