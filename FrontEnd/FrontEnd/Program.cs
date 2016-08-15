@@ -53,10 +53,10 @@ namespace Microsoft.Wcl
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd",
-                @"@D:\xbox\Projection.Xbox_doesnotexists.txt",
+                //@"@D:\xbox\Projection.Xbox_doesnotexists.txt",
                     //@"-winmd",
-                    //@"-db",
-                    //@"d:\modern\testdatabaseoutput.db"
+                    @"-db",
+                    @"d:\modern\testdatabaseoutput.db"
                 };
 
                 int value = ProcessMain(args);
@@ -91,6 +91,7 @@ namespace Microsoft.Wcl
                 }
                 catch (NotEnoughArgumentsParseException e)
                 {
+                    PrintOutputAfterKnownException(e);
                     return -1;
                 }
                 catch (ArgumentException e)
