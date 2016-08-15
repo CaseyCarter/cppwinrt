@@ -101,7 +101,7 @@ namespace Microsoft.Wcl
                 }
                 catch (Exception e)
                 {
-                    Console.Error.WriteLine("An error ocured during the execution of the program");
+                    Console.Error.WriteLine("An error occurred during the execution of the program");
                     while (e != null)
                     {
                         Console.Error.WriteLine(e.Message);
