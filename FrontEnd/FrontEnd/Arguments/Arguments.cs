@@ -21,6 +21,12 @@ namespace Microsoft.Wcl
         { }
     }
 
+    internal class NotEnoughArgumentsParseException : Exception
+    {
+        public NotEnoughArgumentsParseException() : base(StringExceptionFormats.NotEnoughParameters)
+        { }
+    }
+
     internal class ArgumentsParser
     {
         /// <summary>
