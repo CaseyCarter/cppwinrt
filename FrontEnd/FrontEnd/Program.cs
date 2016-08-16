@@ -18,9 +18,9 @@ namespace Microsoft.Wcl
             {
                 args = new string[] {
                 // For reference, the below 3 are the smallest set that can be used to satisfy the dependencies needed by universal api contract
-                @"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
-                @"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
+                //@"-winmd", @"D:\testmetadata\windows.networking.connectivity.wwancontract.winmd",
+                //@"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
+                //@"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
                 // The below is a full set of the SDK as it was in TH2.
                 //@"-winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd",
@@ -53,8 +53,11 @@ namespace Microsoft.Wcl
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd",
-                @"-db",
-                @"d:\modern\testdatabaseoutput.db" };
+                //@"@D:\xbox\Projection.Xbox_doesnotexists.txt",
+                    //@"-winmd",
+                    @"-db",
+                    @"d:\modern\testdatabaseoutput.db"
+                };
 
                 int value = ProcessMain(args);
                 FrontEndConfiguration.Output.WriteLine("Done");
@@ -67,31 +70,38 @@ namespace Microsoft.Wcl
                 {
                     return ProcessMain(args);
                 }
+                //
+                // First deal with all the known, nonn catastrophic exceptions.
+                // If we don't know about it, then provide extra details.
+                //
                 catch (WinmdFileNotFoundException e)
                 {
-                    // No catastrophic. No need to generate WER report and such
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
+                    PrintOutputAfterKnownException(e);
                     return -1;
                 }
                 catch (ArgumentsParseException e)
                 {
-                    // No catastrophic. No need to generate WER report and such
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
-                    ShowHelp();
-                    Console.WriteLine();
+                    PrintOutputAfterKnownException(e);
                     return -1;
                 }
                 catch (ResponseFileNotFoundException e)
                 {
-                    // No catastrophic. No need to generate WER report and such
-                    Console.WriteLine(e.Message);
+                    PrintOutputAfterKnownException(e);
                     return -1;
+                }
+                catch (NotEnoughArgumentsParseException e)
+                {
+                    PrintOutputAfterKnownException(e);
+                    return -1;
+                }
+                catch (ArgumentException e)
+                {
+                    PrintOutputAfterKnownException(e);
+                    return 1;
                 }
                 catch (Exception e)
                 {
-                    Console.Error.WriteLine("An error ocured during the execution of the program");
+                    Console.Error.WriteLine("An error occurred during the execution of the program");
                     while (e != null)
                     {
                         Console.Error.WriteLine(e.Message);
@@ -105,6 +115,15 @@ namespace Microsoft.Wcl
             }
         }
 
+        static void PrintOutputAfterKnownException(Exception e)
+        {
+            // No catastrophic. No need to generate WER report and such
+            Console.WriteLine(e.Message);
+            Console.WriteLine();
+            ShowHelp();
+            Console.WriteLine();
+        }
+
         static int ProcessMain(string[] args)
         {
             var expandedArgs = ExpandArgs(args);
@@ -116,6 +135,10 @@ namespace Microsoft.Wcl
             if (arguments.ArgumentsDictionary.ContainsKey("?") || arguments.ArgumentsDictionary.Count == 0)
             {
                 ShowHelp();
+            }
+            else if (!arguments.ArgumentsDictionary.ContainsKey("winmd"))
+            {
+                throw new NotEnoughArgumentsParseException();
             }
             else
             {
@@ -134,7 +157,6 @@ namespace Microsoft.Wcl
                 FrontEndConfiguration.Output.WriteLine(StringMessageFormats.TotalTimeToProcessInput, watch.ElapsedMilliseconds);
             }
 
-            // If something went wrong, in the form of an exception, it was re-thrown in the catch section. Therefore, always return 0 here.
             return 0;
         }
 

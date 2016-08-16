@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Xml.Dom.3.h"
-#include "internal\Windows.Data.Xml.Xsl.3.h"
+#include "internal/Windows.Data.Xml.Dom.3.h"
+#include "internal/Windows.Data.Xml.Xsl.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -17,7 +17,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor> : produce_base<D, Win
     {
         try
         {
-            *output = detach(shim().TransformToString(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
+            *output = detach(this->shim().TransformToString(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor2> : produce_base<D, Wi
     {
         try
         {
-            *output = detach(shim().TransformToDocument(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
+            *output = detach(this->shim().TransformToDocument(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessorFactory> : produce_base
     {
         try
         {
-            *xsltProcessor = detach(shim().CreateInstance(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&document)));
+            *xsltProcessor = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&document)));
             return S_OK;
         }
         catch (...)

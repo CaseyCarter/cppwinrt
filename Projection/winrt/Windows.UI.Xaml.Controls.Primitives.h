@@ -3,17 +3,17 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Xaml.Controls.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.Xaml.Media.3.h"
-#include "internal\Windows.UI.Xaml.Input.3.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Xaml.Controls.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.Xaml.Media.3.h"
+#include "internal/Windows.UI.Xaml.Input.3.h"
+#include "internal/Windows.UI.Xaml.Controls.Primitives.3.h"
 #include "Windows.UI.Xaml.Controls.h"
 #include "Windows.UI.Xaml.Data.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.4.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.5.h"
+#include "internal/Windows.UI.Xaml.Controls.Primitives.4.h"
+#include "internal/Windows.UI.Xaml.Controls.Primitives.5.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -132,7 +132,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().ClipRect());
+            *value = detach(this->shim().ClipRect());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().CompactVerticalDelta());
+            *value = detach(this->shim().CompactVerticalDelta());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().CompactRootMargin());
+            *value = detach(this->shim().CompactRootMargin());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().MinimalVerticalDelta());
+            *value = detach(this->shim().MinimalVerticalDelta());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().MinimalRootMargin());
+            *value = detach(this->shim().MinimalRootMargin());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().HiddenVerticalDelta());
+            *value = detach(this->shim().HiddenVerticalDelta());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettin
     {
         try
         {
-            *value = detach(shim().HiddenRootMargin());
+            *value = detach(this->shim().HiddenRootMargin());
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *value = detach(shim().ClickMode());
+            *value = detach(this->shim().ClickMode());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            shim().ClickMode(value);
+            this->shim().ClickMode(value);
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *value = detach(shim().IsPointerOver());
+            *value = detach(this->shim().IsPointerOver());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *value = detach(shim().IsPressed());
+            *value = detach(this->shim().IsPressed());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *value = detach(shim().Command());
+            *value = detach(this->shim().Command());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            shim().Command(*reinterpret_cast<const Windows::UI::Xaml::Input::ICommand *>(&value));
+            this->shim().Command(*reinterpret_cast<const Windows::UI::Xaml::Input::ICommand *>(&value));
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *value = detach(shim().CommandParameter());
+            *value = detach(this->shim().CommandParameter());
             return S_OK;
         }
         catch (...)
@@ -320,7 +320,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            shim().CommandParameter(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().CommandParameter(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            *token = detach(shim().Click(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            *token = detach(this->shim().Click(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBase> : produc
     {
         try
         {
-            shim().Click(token);
+            this->shim().Click(token);
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseStatics> :
     {
         try
         {
-            *value = detach(shim().ClickModeProperty());
+            *value = detach(this->shim().ClickModeProperty());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseStatics> :
     {
         try
         {
-            *value = detach(shim().IsPointerOverProperty());
+            *value = detach(this->shim().IsPointerOverProperty());
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseStatics> :
     {
         try
         {
-            *value = detach(shim().IsPressedProperty());
+            *value = detach(this->shim().IsPressedProperty());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseStatics> :
     {
         try
         {
-            *value = detach(shim().CommandProperty());
+            *value = detach(this->shim().CommandProperty());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IButtonBaseStatics> :
     {
         try
         {
-            *value = detach(shim().CommandParameterProperty());
+            *value = detach(this->shim().CommandParameterProperty());
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().MinViewWidth());
+            *value = detach(this->shim().MinViewWidth());
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().HeaderText());
+            *value = detach(this->shim().HeaderText());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay1());
+            *value = detach(this->shim().WeekDay1());
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay2());
+            *value = detach(this->shim().WeekDay2());
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay3());
+            *value = detach(this->shim().WeekDay3());
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay4());
+            *value = detach(this->shim().WeekDay4());
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay5());
+            *value = detach(this->shim().WeekDay5());
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay6());
+            *value = detach(this->shim().WeekDay6());
             return S_OK;
         }
         catch (...)
@@ -571,7 +571,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().WeekDay7());
+            *value = detach(this->shim().WeekDay7());
             return S_OK;
         }
         catch (...)
@@ -585,7 +585,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().HasMoreContentAfter());
+            *value = detach(this->shim().HasMoreContentAfter());
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().HasMoreContentBefore());
+            *value = detach(this->shim().HasMoreContentBefore());
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().HasMoreViews());
+            *value = detach(this->shim().HasMoreViews());
             return S_OK;
         }
         catch (...)
@@ -624,7 +624,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().ClipRect());
+            *value = detach(this->shim().ClipRect());
             return S_OK;
         }
         catch (...)
@@ -637,7 +637,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().CenterX());
+            *value = detach(this->shim().CenterX());
             return S_OK;
         }
         catch (...)
@@ -650,7 +650,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplate
     {
         try
         {
-            *value = detach(shim().CenterY());
+            *value = detach(this->shim().CenterY());
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().CanVerticallyScroll());
+            *value = detach(this->shim().CanVerticallyScroll());
             return S_OK;
         }
         catch (...)
@@ -680,7 +680,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().CanVerticallyScroll(value);
+            this->shim().CanVerticallyScroll(value);
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().CanHorizontallyScroll());
+            *value = detach(this->shim().CanHorizontallyScroll());
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().CanHorizontallyScroll(value);
+            this->shim().CanHorizontallyScroll(value);
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().ExtentWidth());
+            *value = detach(this->shim().ExtentWidth());
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().ExtentHeight());
+            *value = detach(this->shim().ExtentHeight());
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().ViewportWidth());
+            *value = detach(this->shim().ViewportWidth());
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().ViewportHeight());
+            *value = detach(this->shim().ViewportHeight());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().HorizontalOffset());
+            *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().VerticalOffset());
+            *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *value = detach(shim().ScrollOwner());
+            *value = detach(this->shim().ScrollOwner());
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().ScrollOwner(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().ScrollOwner(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -824,7 +824,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().LineUp();
+            this->shim().LineUp();
             return S_OK;
         }
         catch (...)
@@ -837,7 +837,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().LineDown();
+            this->shim().LineDown();
             return S_OK;
         }
         catch (...)
@@ -850,7 +850,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().LineLeft();
+            this->shim().LineLeft();
             return S_OK;
         }
         catch (...)
@@ -863,7 +863,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().LineRight();
+            this->shim().LineRight();
             return S_OK;
         }
         catch (...)
@@ -876,7 +876,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().PageUp();
+            this->shim().PageUp();
             return S_OK;
         }
         catch (...)
@@ -889,7 +889,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().PageDown();
+            this->shim().PageDown();
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().PageLeft();
+            this->shim().PageLeft();
             return S_OK;
         }
         catch (...)
@@ -915,7 +915,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().PageRight();
+            this->shim().PageRight();
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().MouseWheelUp();
+            this->shim().MouseWheelUp();
             return S_OK;
         }
         catch (...)
@@ -941,7 +941,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().MouseWheelDown();
+            this->shim().MouseWheelDown();
             return S_OK;
         }
         catch (...)
@@ -954,7 +954,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().MouseWheelLeft();
+            this->shim().MouseWheelLeft();
             return S_OK;
         }
         catch (...)
@@ -967,7 +967,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().MouseWheelRight();
+            this->shim().MouseWheelRight();
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().SetHorizontalOffset(offset);
+            this->shim().SetHorizontalOffset(offset);
             return S_OK;
         }
         catch (...)
@@ -993,7 +993,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            shim().SetVerticalOffset(offset);
+            this->shim().SetVerticalOffset(offset);
             return S_OK;
         }
         catch (...)
@@ -1006,7 +1006,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanel> : pro
     {
         try
         {
-            *returnValue = detach(shim().MakeVisible(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&visual), *reinterpret_cast<const Windows::Foundation::Rect *>(&rectangle)));
+            *returnValue = detach(this->shim().MakeVisible(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&visual), *reinterpret_cast<const Windows::Foundation::Rect *>(&rectangle)));
             return S_OK;
         }
         catch (...)
@@ -1023,7 +1023,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICarouselPanelFactory
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1042,7 +1042,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSett
     {
         try
         {
-            *value = detach(shim().DropDownOpenedHeight());
+            *value = detach(this->shim().DropDownOpenedHeight());
             return S_OK;
         }
         catch (...)
@@ -1055,7 +1055,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSett
     {
         try
         {
-            *value = detach(shim().DropDownClosedHeight());
+            *value = detach(this->shim().DropDownClosedHeight());
             return S_OK;
         }
         catch (...)
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSett
     {
         try
         {
-            *value = detach(shim().DropDownOffset());
+            *value = detach(this->shim().DropDownOffset());
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSett
     {
         try
         {
-            *value = detach(shim().SelectedItemDirection());
+            *value = detach(this->shim().SelectedItemDirection());
             return S_OK;
         }
         catch (...)
@@ -1098,7 +1098,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSett
     {
         try
         {
-            *value = detach(shim().DropDownContentMinWidth());
+            *value = detach(this->shim().DropDownContentMinWidth());
             return S_OK;
         }
         catch (...)
@@ -1115,7 +1115,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().ContentHeight());
+            *value = detach(this->shim().ContentHeight());
             return S_OK;
         }
         catch (...)
@@ -1128,7 +1128,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentClipRect());
+            *value = detach(this->shim().OverflowContentClipRect());
             return S_OK;
         }
         catch (...)
@@ -1141,7 +1141,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentMinWidth());
+            *value = detach(this->shim().OverflowContentMinWidth());
             return S_OK;
         }
         catch (...)
@@ -1154,7 +1154,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentMaxHeight());
+            *value = detach(this->shim().OverflowContentMaxHeight());
             return S_OK;
         }
         catch (...)
@@ -1167,7 +1167,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentHorizontalOffset());
+            *value = detach(this->shim().OverflowContentHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -1180,7 +1180,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentHeight());
+            *value = detach(this->shim().OverflowContentHeight());
             return S_OK;
         }
         catch (...)
@@ -1193,7 +1193,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().NegativeOverflowContentHeight());
+            *value = detach(this->shim().NegativeOverflowContentHeight());
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().OverflowContentMaxWidth());
+            *value = detach(this->shim().OverflowContentMaxWidth());
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSe
     {
         try
         {
-            *value = detach(shim().EffectiveOverflowButtonVisibility());
+            *value = detach(this->shim().EffectiveOverflowButtonVisibility());
             return S_OK;
         }
         catch (...)
@@ -1244,7 +1244,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventAr
     {
         try
         {
-            *value = detach(shim().HorizontalChange());
+            *value = detach(this->shim().HorizontalChange());
             return S_OK;
         }
         catch (...)
@@ -1257,7 +1257,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventAr
     {
         try
         {
-            *value = detach(shim().VerticalChange());
+            *value = detach(this->shim().VerticalChange());
             return S_OK;
         }
         catch (...)
@@ -1270,7 +1270,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventAr
     {
         try
         {
-            *value = detach(shim().Canceled());
+            *value = detach(this->shim().Canceled());
             return S_OK;
         }
         catch (...)
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventAr
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(horizontalChange, verticalChange, canceled, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1306,7 +1306,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs> 
     {
         try
         {
-            *value = detach(shim().HorizontalChange());
+            *value = detach(this->shim().HorizontalChange());
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs> 
     {
         try
         {
-            *value = detach(shim().VerticalChange());
+            *value = detach(this->shim().VerticalChange());
             return S_OK;
         }
         catch (...)
@@ -1336,7 +1336,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgsFa
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithHorizontalChangeAndVerticalChange(horizontalChange, verticalChange, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1355,7 +1355,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs
     {
         try
         {
-            *value = detach(shim().HorizontalOffset());
+            *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -1368,7 +1368,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs
     {
         try
         {
-            *value = detach(shim().VerticalOffset());
+            *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs
     {
         try
         {
-            *instance = detach(shim().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstanceWithHorizontalOffsetAndVerticalOffset(horizontalOffset, verticalOffset, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1404,7 +1404,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            *value = detach(shim().Placement());
+            *value = detach(this->shim().Placement());
             return S_OK;
         }
         catch (...)
@@ -1417,7 +1417,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().Placement(value);
+            this->shim().Placement(value);
             return S_OK;
         }
         catch (...)
@@ -1430,7 +1430,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            *token = detach(shim().Opened(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1443,7 +1443,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().Opened(token);
+            this->shim().Opened(token);
             return S_OK;
         }
         catch (...)
@@ -1456,7 +1456,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            *token = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1469,7 +1469,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().Closed(token);
+            this->shim().Closed(token);
             return S_OK;
         }
         catch (...)
@@ -1482,7 +1482,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            *token = detach(shim().Opening(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Opening(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1495,7 +1495,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().Opening(token);
+            this->shim().Opening(token);
             return S_OK;
         }
         catch (...)
@@ -1508,7 +1508,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().ShowAt(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&placementTarget));
+            this->shim().ShowAt(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&placementTarget));
             return S_OK;
         }
         catch (...)
@@ -1521,7 +1521,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase> : produc
     {
         try
         {
-            shim().Hide();
+            this->shim().Hide();
             return S_OK;
         }
         catch (...)
@@ -1538,7 +1538,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *value = detach(shim().Target());
+            *value = detach(this->shim().Target());
             return S_OK;
         }
         catch (...)
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *value = detach(shim().AllowFocusOnInteraction());
+            *value = detach(this->shim().AllowFocusOnInteraction());
             return S_OK;
         }
         catch (...)
@@ -1565,7 +1565,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            shim().AllowFocusOnInteraction(value);
+            this->shim().AllowFocusOnInteraction(value);
             return S_OK;
         }
         catch (...)
@@ -1578,7 +1578,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *value = detach(shim().LightDismissOverlayMode());
+            *value = detach(this->shim().LightDismissOverlayMode());
             return S_OK;
         }
         catch (...)
@@ -1591,7 +1591,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            shim().LightDismissOverlayMode(value);
+            this->shim().LightDismissOverlayMode(value);
             return S_OK;
         }
         catch (...)
@@ -1604,7 +1604,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *value = detach(shim().AllowFocusWhenDisabled());
+            *value = detach(this->shim().AllowFocusWhenDisabled());
             return S_OK;
         }
         catch (...)
@@ -1617,7 +1617,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            shim().AllowFocusWhenDisabled(value);
+            this->shim().AllowFocusWhenDisabled(value);
             return S_OK;
         }
         catch (...)
@@ -1630,7 +1630,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *value = detach(shim().ElementSoundMode());
+            *value = detach(this->shim().ElementSoundMode());
             return S_OK;
         }
         catch (...)
@@ -1643,7 +1643,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            shim().ElementSoundMode(value);
+            this->shim().ElementSoundMode(value);
             return S_OK;
         }
         catch (...)
@@ -1656,7 +1656,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            *token = detach(shim().Closing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Primitives::FlyoutBase, Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs> *>(&value)));
+            *token = detach(this->shim().Closing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Primitives::FlyoutBase, Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1669,7 +1669,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
     {
         try
         {
-            shim().Closing(token);
+            this->shim().Closing(token);
             return S_OK;
         }
         catch (...)
@@ -1686,7 +1686,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEve
     {
         try
         {
-            *value = detach(shim().Cancel());
+            *value = detach(this->shim().Cancel());
             return S_OK;
         }
         catch (...)
@@ -1699,7 +1699,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEve
     {
         try
         {
-            shim().Cancel(value);
+            this->shim().Cancel(value);
             return S_OK;
         }
         catch (...)
@@ -1716,7 +1716,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1735,7 +1735,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseOverrides>
     {
         try
         {
-            *returnValue = detach(shim().CreatePresenter());
+            *returnValue = detach(this->shim().CreatePresenter());
             return S_OK;
         }
         catch (...)
@@ -1753,7 +1753,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics> :
     {
         try
         {
-            *value = detach(shim().PlacementProperty());
+            *value = detach(this->shim().PlacementProperty());
             return S_OK;
         }
         catch (...)
@@ -1767,7 +1767,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics> :
     {
         try
         {
-            *value = detach(shim().AttachedFlyoutProperty());
+            *value = detach(this->shim().AttachedFlyoutProperty());
             return S_OK;
         }
         catch (...)
@@ -1781,7 +1781,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics> :
     {
         try
         {
-            *value = detach(shim().GetAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element)));
+            *value = detach(this->shim().GetAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1795,7 +1795,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics> :
     {
         try
         {
-            shim().SetAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element), *reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::FlyoutBase *>(&value));
+            this->shim().SetAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element), *reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::FlyoutBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1808,7 +1808,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics> :
     {
         try
         {
-            shim().ShowAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&flyoutOwner));
+            this->shim().ShowAttachedFlyout(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&flyoutOwner));
             return S_OK;
         }
         catch (...)
@@ -1825,7 +1825,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2> 
     {
         try
         {
-            *value = detach(shim().AllowFocusOnInteractionProperty());
+            *value = detach(this->shim().AllowFocusOnInteractionProperty());
             return S_OK;
         }
         catch (...)
@@ -1839,7 +1839,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2> 
     {
         try
         {
-            *value = detach(shim().LightDismissOverlayModeProperty());
+            *value = detach(this->shim().LightDismissOverlayModeProperty());
             return S_OK;
         }
         catch (...)
@@ -1853,7 +1853,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2> 
     {
         try
         {
-            *value = detach(shim().AllowFocusWhenDisabledProperty());
+            *value = detach(this->shim().AllowFocusWhenDisabledProperty());
             return S_OK;
         }
         catch (...)
@@ -1867,7 +1867,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2> 
     {
         try
         {
-            *value = detach(shim().ElementSoundModeProperty());
+            *value = detach(this->shim().ElementSoundModeProperty());
             return S_OK;
         }
         catch (...)
@@ -1889,7 +1889,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGeneratorPositionHel
     {
         try
         {
-            *returnValue = detach(shim().FromIndexAndOffset(index, offset));
+            *returnValue = detach(this->shim().FromIndexAndOffset(index, offset));
             return S_OK;
         }
         catch (...)
@@ -1906,7 +1906,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectionCheckMarkVisualEnabled());
+            *value = detach(this->shim().SelectionCheckMarkVisualEnabled());
             return S_OK;
         }
         catch (...)
@@ -1919,7 +1919,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectionCheckMarkVisualEnabled(value);
+            this->shim().SelectionCheckMarkVisualEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1932,7 +1932,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckHintBrush());
+            *value = detach(this->shim().CheckHintBrush());
             return S_OK;
         }
         catch (...)
@@ -1946,7 +1946,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().CheckHintBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckHintBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1959,7 +1959,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckSelectingBrush());
+            *value = detach(this->shim().CheckSelectingBrush());
             return S_OK;
         }
         catch (...)
@@ -1973,7 +1973,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().CheckSelectingBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckSelectingBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1986,7 +1986,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBrush());
+            *value = detach(this->shim().CheckBrush());
             return S_OK;
         }
         catch (...)
@@ -2000,7 +2000,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().CheckBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2013,7 +2013,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragBackground());
+            *value = detach(this->shim().DragBackground());
             return S_OK;
         }
         catch (...)
@@ -2027,7 +2027,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().DragBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().DragBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2040,7 +2040,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragForeground());
+            *value = detach(this->shim().DragForeground());
             return S_OK;
         }
         catch (...)
@@ -2054,7 +2054,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().DragForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().DragForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2067,7 +2067,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusBorderBrush());
+            *value = detach(this->shim().FocusBorderBrush());
             return S_OK;
         }
         catch (...)
@@ -2081,7 +2081,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().FocusBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().FocusBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2094,7 +2094,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PlaceholderBackground());
+            *value = detach(this->shim().PlaceholderBackground());
             return S_OK;
         }
         catch (...)
@@ -2108,7 +2108,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().PlaceholderBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PlaceholderBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2121,7 +2121,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackground());
+            *value = detach(this->shim().PointerOverBackground());
             return S_OK;
         }
         catch (...)
@@ -2135,7 +2135,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().PointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2148,7 +2148,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBackground());
+            *value = detach(this->shim().SelectedBackground());
             return S_OK;
         }
         catch (...)
@@ -2162,7 +2162,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2175,7 +2175,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedForeground());
+            *value = detach(this->shim().SelectedForeground());
             return S_OK;
         }
         catch (...)
@@ -2189,7 +2189,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectedForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2202,7 +2202,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBackground());
+            *value = detach(this->shim().SelectedPointerOverBackground());
             return S_OK;
         }
         catch (...)
@@ -2216,7 +2216,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectedPointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedPointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2229,7 +2229,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBorderBrush());
+            *value = detach(this->shim().SelectedPointerOverBorderBrush());
             return S_OK;
         }
         catch (...)
@@ -2243,7 +2243,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectedPointerOverBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedPointerOverBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2256,7 +2256,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBorderThickness());
+            *value = detach(this->shim().SelectedBorderThickness());
             return S_OK;
         }
         catch (...)
@@ -2269,7 +2269,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().SelectedBorderThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().SelectedBorderThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2282,7 +2282,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DisabledOpacity());
+            *value = detach(this->shim().DisabledOpacity());
             return S_OK;
         }
         catch (...)
@@ -2295,7 +2295,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().DisabledOpacity(value);
+            this->shim().DisabledOpacity(value);
             return S_OK;
         }
         catch (...)
@@ -2308,7 +2308,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragOpacity());
+            *value = detach(this->shim().DragOpacity());
             return S_OK;
         }
         catch (...)
@@ -2321,7 +2321,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().DragOpacity(value);
+            this->shim().DragOpacity(value);
             return S_OK;
         }
         catch (...)
@@ -2334,7 +2334,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().ReorderHintOffset());
+            *value = detach(this->shim().ReorderHintOffset());
             return S_OK;
         }
         catch (...)
@@ -2347,7 +2347,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().ReorderHintOffset(value);
+            this->shim().ReorderHintOffset(value);
             return S_OK;
         }
         catch (...)
@@ -2360,7 +2360,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterHorizontalContentAlignment());
+            *value = detach(this->shim().GridViewItemPresenterHorizontalContentAlignment());
             return S_OK;
         }
         catch (...)
@@ -2373,7 +2373,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().GridViewItemPresenterHorizontalContentAlignment(value);
+            this->shim().GridViewItemPresenterHorizontalContentAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -2386,7 +2386,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterVerticalContentAlignment());
+            *value = detach(this->shim().GridViewItemPresenterVerticalContentAlignment());
             return S_OK;
         }
         catch (...)
@@ -2399,7 +2399,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().GridViewItemPresenterVerticalContentAlignment(value);
+            this->shim().GridViewItemPresenterVerticalContentAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -2412,7 +2412,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterPadding());
+            *value = detach(this->shim().GridViewItemPresenterPadding());
             return S_OK;
         }
         catch (...)
@@ -2425,7 +2425,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().GridViewItemPresenterPadding(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().GridViewItemPresenterPadding(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2438,7 +2438,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundMargin());
+            *value = detach(this->shim().PointerOverBackgroundMargin());
             return S_OK;
         }
         catch (...)
@@ -2451,7 +2451,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().PointerOverBackgroundMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().PointerOverBackgroundMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2464,7 +2464,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().ContentMargin());
+            *value = detach(this->shim().ContentMargin());
             return S_OK;
         }
         catch (...)
@@ -2477,7 +2477,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            shim().ContentMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().ContentMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2494,7 +2494,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2513,7 +2513,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectionCheckMarkVisualEnabledProperty());
+            *value = detach(this->shim().SelectionCheckMarkVisualEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -2527,7 +2527,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckHintBrushProperty());
+            *value = detach(this->shim().CheckHintBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -2541,7 +2541,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckSelectingBrushProperty());
+            *value = detach(this->shim().CheckSelectingBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -2555,7 +2555,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBrushProperty());
+            *value = detach(this->shim().CheckBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -2569,7 +2569,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragBackgroundProperty());
+            *value = detach(this->shim().DragBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2583,7 +2583,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragForegroundProperty());
+            *value = detach(this->shim().DragForegroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2597,7 +2597,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusBorderBrushProperty());
+            *value = detach(this->shim().FocusBorderBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -2611,7 +2611,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PlaceholderBackgroundProperty());
+            *value = detach(this->shim().PlaceholderBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2625,7 +2625,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundProperty());
+            *value = detach(this->shim().PointerOverBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2639,7 +2639,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBackgroundProperty());
+            *value = detach(this->shim().SelectedBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2653,7 +2653,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedForegroundProperty());
+            *value = detach(this->shim().SelectedForegroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2667,7 +2667,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBackgroundProperty());
+            *value = detach(this->shim().SelectedPointerOverBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -2681,7 +2681,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBorderBrushProperty());
+            *value = detach(this->shim().SelectedPointerOverBorderBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -2695,7 +2695,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBorderThicknessProperty());
+            *value = detach(this->shim().SelectedBorderThicknessProperty());
             return S_OK;
         }
         catch (...)
@@ -2709,7 +2709,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DisabledOpacityProperty());
+            *value = detach(this->shim().DisabledOpacityProperty());
             return S_OK;
         }
         catch (...)
@@ -2723,7 +2723,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragOpacityProperty());
+            *value = detach(this->shim().DragOpacityProperty());
             return S_OK;
         }
         catch (...)
@@ -2737,7 +2737,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().ReorderHintOffsetProperty());
+            *value = detach(this->shim().ReorderHintOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -2751,7 +2751,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterHorizontalContentAlignmentProperty());
+            *value = detach(this->shim().GridViewItemPresenterHorizontalContentAlignmentProperty());
             return S_OK;
         }
         catch (...)
@@ -2765,7 +2765,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterVerticalContentAlignmentProperty());
+            *value = detach(this->shim().GridViewItemPresenterVerticalContentAlignmentProperty());
             return S_OK;
         }
         catch (...)
@@ -2779,7 +2779,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().GridViewItemPresenterPaddingProperty());
+            *value = detach(this->shim().GridViewItemPresenterPaddingProperty());
             return S_OK;
         }
         catch (...)
@@ -2793,7 +2793,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundMarginProperty());
+            *value = detach(this->shim().PointerOverBackgroundMarginProperty());
             return S_OK;
         }
         catch (...)
@@ -2807,7 +2807,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresente
     {
         try
         {
-            *value = detach(shim().ContentMarginProperty());
+            *value = detach(this->shim().ContentMarginProperty());
             return S_OK;
         }
         catch (...)
@@ -2825,7 +2825,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IGridViewItemTemplate
     {
         try
         {
-            *value = detach(shim().DragItemsCount());
+            *value = detach(this->shim().DragItemsCount());
             return S_OK;
         }
         catch (...)
@@ -2842,7 +2842,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArg
     {
         try
         {
-            *value = detach(shim().Action());
+            *value = detach(this->shim().Action());
             return S_OK;
         }
         catch (...)
@@ -2855,7 +2855,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArg
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -2868,7 +2868,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArg
     {
         try
         {
-            *value = detach(shim().OldPosition());
+            *value = detach(this->shim().OldPosition());
             return S_OK;
         }
         catch (...)
@@ -2881,7 +2881,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArg
     {
         try
         {
-            *value = detach(shim().ItemCount());
+            *value = detach(this->shim().ItemCount());
             return S_OK;
         }
         catch (...)
@@ -2894,7 +2894,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArg
     {
         try
         {
-            *value = detach(shim().ItemUICount());
+            *value = detach(this->shim().ItemUICount());
             return S_OK;
         }
         catch (...)
@@ -2911,7 +2911,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -2925,7 +2925,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            shim().Enabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Enabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2938,7 +2938,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            *value = detach(shim().Disabled());
+            *value = detach(this->shim().Disabled());
             return S_OK;
         }
         catch (...)
@@ -2952,7 +2952,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            shim().Disabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Disabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2969,7 +2969,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            *value = detach(shim().EnabledProperty());
+            *value = detach(this->shim().EnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -2983,7 +2983,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgrou
     {
         try
         {
-            *value = detach(shim().DisabledProperty());
+            *value = detach(this->shim().DisabledProperty());
             return S_OK;
         }
         catch (...)
@@ -3001,7 +3001,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -3015,7 +3015,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            shim().Enabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Enabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3028,7 +3028,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            *value = detach(shim().Disabled());
+            *value = detach(this->shim().Disabled());
             return S_OK;
         }
         catch (...)
@@ -3042,7 +3042,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            shim().Disabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Disabled(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3059,7 +3059,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            *value = detach(shim().EnabledProperty());
+            *value = detach(this->shim().EnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -3073,7 +3073,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegrou
     {
         try
         {
-            *value = detach(shim().DisabledProperty());
+            *value = detach(this->shim().DisabledProperty());
             return S_OK;
         }
         catch (...)
@@ -3095,7 +3095,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILayoutInformationSta
     {
         try
         {
-            *element = detach(shim().GetLayoutExceptionElement(*reinterpret_cast<const Windows::IInspectable *>(&dispatcher)));
+            *element = detach(this->shim().GetLayoutExceptionElement(*reinterpret_cast<const Windows::IInspectable *>(&dispatcher)));
             return S_OK;
         }
         catch (...)
@@ -3109,7 +3109,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILayoutInformationSta
     {
         try
         {
-            *slot = detach(shim().GetLayoutSlot(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element)));
+            *slot = detach(this->shim().GetLayoutSlot(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -3126,7 +3126,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectionCheckMarkVisualEnabled());
+            *value = detach(this->shim().SelectionCheckMarkVisualEnabled());
             return S_OK;
         }
         catch (...)
@@ -3139,7 +3139,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectionCheckMarkVisualEnabled(value);
+            this->shim().SelectionCheckMarkVisualEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -3152,7 +3152,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckHintBrush());
+            *value = detach(this->shim().CheckHintBrush());
             return S_OK;
         }
         catch (...)
@@ -3166,7 +3166,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().CheckHintBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckHintBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3179,7 +3179,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckSelectingBrush());
+            *value = detach(this->shim().CheckSelectingBrush());
             return S_OK;
         }
         catch (...)
@@ -3193,7 +3193,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().CheckSelectingBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckSelectingBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3206,7 +3206,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBrush());
+            *value = detach(this->shim().CheckBrush());
             return S_OK;
         }
         catch (...)
@@ -3220,7 +3220,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().CheckBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3233,7 +3233,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragBackground());
+            *value = detach(this->shim().DragBackground());
             return S_OK;
         }
         catch (...)
@@ -3247,7 +3247,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().DragBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().DragBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3260,7 +3260,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragForeground());
+            *value = detach(this->shim().DragForeground());
             return S_OK;
         }
         catch (...)
@@ -3274,7 +3274,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().DragForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().DragForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3287,7 +3287,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusBorderBrush());
+            *value = detach(this->shim().FocusBorderBrush());
             return S_OK;
         }
         catch (...)
@@ -3301,7 +3301,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().FocusBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().FocusBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3314,7 +3314,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PlaceholderBackground());
+            *value = detach(this->shim().PlaceholderBackground());
             return S_OK;
         }
         catch (...)
@@ -3328,7 +3328,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().PlaceholderBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PlaceholderBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3341,7 +3341,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackground());
+            *value = detach(this->shim().PointerOverBackground());
             return S_OK;
         }
         catch (...)
@@ -3355,7 +3355,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().PointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3368,7 +3368,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBackground());
+            *value = detach(this->shim().SelectedBackground());
             return S_OK;
         }
         catch (...)
@@ -3382,7 +3382,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3395,7 +3395,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedForeground());
+            *value = detach(this->shim().SelectedForeground());
             return S_OK;
         }
         catch (...)
@@ -3409,7 +3409,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3422,7 +3422,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBackground());
+            *value = detach(this->shim().SelectedPointerOverBackground());
             return S_OK;
         }
         catch (...)
@@ -3436,7 +3436,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedPointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedPointerOverBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3449,7 +3449,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBorderBrush());
+            *value = detach(this->shim().SelectedPointerOverBorderBrush());
             return S_OK;
         }
         catch (...)
@@ -3463,7 +3463,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedPointerOverBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedPointerOverBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3476,7 +3476,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBorderThickness());
+            *value = detach(this->shim().SelectedBorderThickness());
             return S_OK;
         }
         catch (...)
@@ -3489,7 +3489,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedBorderThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().SelectedBorderThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3502,7 +3502,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DisabledOpacity());
+            *value = detach(this->shim().DisabledOpacity());
             return S_OK;
         }
         catch (...)
@@ -3515,7 +3515,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().DisabledOpacity(value);
+            this->shim().DisabledOpacity(value);
             return S_OK;
         }
         catch (...)
@@ -3528,7 +3528,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragOpacity());
+            *value = detach(this->shim().DragOpacity());
             return S_OK;
         }
         catch (...)
@@ -3541,7 +3541,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().DragOpacity(value);
+            this->shim().DragOpacity(value);
             return S_OK;
         }
         catch (...)
@@ -3554,7 +3554,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ReorderHintOffset());
+            *value = detach(this->shim().ReorderHintOffset());
             return S_OK;
         }
         catch (...)
@@ -3567,7 +3567,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().ReorderHintOffset(value);
+            this->shim().ReorderHintOffset(value);
             return S_OK;
         }
         catch (...)
@@ -3580,7 +3580,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterHorizontalContentAlignment());
+            *value = detach(this->shim().ListViewItemPresenterHorizontalContentAlignment());
             return S_OK;
         }
         catch (...)
@@ -3593,7 +3593,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().ListViewItemPresenterHorizontalContentAlignment(value);
+            this->shim().ListViewItemPresenterHorizontalContentAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -3606,7 +3606,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterVerticalContentAlignment());
+            *value = detach(this->shim().ListViewItemPresenterVerticalContentAlignment());
             return S_OK;
         }
         catch (...)
@@ -3619,7 +3619,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().ListViewItemPresenterVerticalContentAlignment(value);
+            this->shim().ListViewItemPresenterVerticalContentAlignment(value);
             return S_OK;
         }
         catch (...)
@@ -3632,7 +3632,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterPadding());
+            *value = detach(this->shim().ListViewItemPresenterPadding());
             return S_OK;
         }
         catch (...)
@@ -3645,7 +3645,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().ListViewItemPresenterPadding(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().ListViewItemPresenterPadding(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3658,7 +3658,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundMargin());
+            *value = detach(this->shim().PointerOverBackgroundMargin());
             return S_OK;
         }
         catch (...)
@@ -3671,7 +3671,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().PointerOverBackgroundMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().PointerOverBackgroundMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3684,7 +3684,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ContentMargin());
+            *value = detach(this->shim().ContentMargin());
             return S_OK;
         }
         catch (...)
@@ -3697,7 +3697,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().ContentMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            this->shim().ContentMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3714,7 +3714,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPressedBackground());
+            *value = detach(this->shim().SelectedPressedBackground());
             return S_OK;
         }
         catch (...)
@@ -3728,7 +3728,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().SelectedPressedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().SelectedPressedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3741,7 +3741,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PressedBackground());
+            *value = detach(this->shim().PressedBackground());
             return S_OK;
         }
         catch (...)
@@ -3755,7 +3755,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().PressedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PressedBackground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3768,7 +3768,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBoxBrush());
+            *value = detach(this->shim().CheckBoxBrush());
             return S_OK;
         }
         catch (...)
@@ -3782,7 +3782,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().CheckBoxBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().CheckBoxBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3795,7 +3795,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusSecondaryBorderBrush());
+            *value = detach(this->shim().FocusSecondaryBorderBrush());
             return S_OK;
         }
         catch (...)
@@ -3809,7 +3809,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().FocusSecondaryBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().FocusSecondaryBorderBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3822,7 +3822,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckMode());
+            *value = detach(this->shim().CheckMode());
             return S_OK;
         }
         catch (...)
@@ -3835,7 +3835,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().CheckMode(value);
+            this->shim().CheckMode(value);
             return S_OK;
         }
         catch (...)
@@ -3848,7 +3848,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverForeground());
+            *value = detach(this->shim().PointerOverForeground());
             return S_OK;
         }
         catch (...)
@@ -3862,7 +3862,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            shim().PointerOverForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().PointerOverForeground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3879,7 +3879,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3898,7 +3898,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectionCheckMarkVisualEnabledProperty());
+            *value = detach(this->shim().SelectionCheckMarkVisualEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -3912,7 +3912,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckHintBrushProperty());
+            *value = detach(this->shim().CheckHintBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -3926,7 +3926,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckSelectingBrushProperty());
+            *value = detach(this->shim().CheckSelectingBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -3940,7 +3940,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBrushProperty());
+            *value = detach(this->shim().CheckBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -3954,7 +3954,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragBackgroundProperty());
+            *value = detach(this->shim().DragBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -3968,7 +3968,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragForegroundProperty());
+            *value = detach(this->shim().DragForegroundProperty());
             return S_OK;
         }
         catch (...)
@@ -3982,7 +3982,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusBorderBrushProperty());
+            *value = detach(this->shim().FocusBorderBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -3996,7 +3996,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PlaceholderBackgroundProperty());
+            *value = detach(this->shim().PlaceholderBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4010,7 +4010,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundProperty());
+            *value = detach(this->shim().PointerOverBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4024,7 +4024,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBackgroundProperty());
+            *value = detach(this->shim().SelectedBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4038,7 +4038,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedForegroundProperty());
+            *value = detach(this->shim().SelectedForegroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4052,7 +4052,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBackgroundProperty());
+            *value = detach(this->shim().SelectedPointerOverBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4066,7 +4066,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPointerOverBorderBrushProperty());
+            *value = detach(this->shim().SelectedPointerOverBorderBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -4080,7 +4080,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedBorderThicknessProperty());
+            *value = detach(this->shim().SelectedBorderThicknessProperty());
             return S_OK;
         }
         catch (...)
@@ -4094,7 +4094,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DisabledOpacityProperty());
+            *value = detach(this->shim().DisabledOpacityProperty());
             return S_OK;
         }
         catch (...)
@@ -4108,7 +4108,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().DragOpacityProperty());
+            *value = detach(this->shim().DragOpacityProperty());
             return S_OK;
         }
         catch (...)
@@ -4122,7 +4122,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ReorderHintOffsetProperty());
+            *value = detach(this->shim().ReorderHintOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -4136,7 +4136,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterHorizontalContentAlignmentProperty());
+            *value = detach(this->shim().ListViewItemPresenterHorizontalContentAlignmentProperty());
             return S_OK;
         }
         catch (...)
@@ -4150,7 +4150,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterVerticalContentAlignmentProperty());
+            *value = detach(this->shim().ListViewItemPresenterVerticalContentAlignmentProperty());
             return S_OK;
         }
         catch (...)
@@ -4164,7 +4164,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ListViewItemPresenterPaddingProperty());
+            *value = detach(this->shim().ListViewItemPresenterPaddingProperty());
             return S_OK;
         }
         catch (...)
@@ -4178,7 +4178,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverBackgroundMarginProperty());
+            *value = detach(this->shim().PointerOverBackgroundMarginProperty());
             return S_OK;
         }
         catch (...)
@@ -4192,7 +4192,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().ContentMarginProperty());
+            *value = detach(this->shim().ContentMarginProperty());
             return S_OK;
         }
         catch (...)
@@ -4210,7 +4210,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().SelectedPressedBackgroundProperty());
+            *value = detach(this->shim().SelectedPressedBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4224,7 +4224,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PressedBackgroundProperty());
+            *value = detach(this->shim().PressedBackgroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4238,7 +4238,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckBoxBrushProperty());
+            *value = detach(this->shim().CheckBoxBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -4252,7 +4252,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().FocusSecondaryBorderBrushProperty());
+            *value = detach(this->shim().FocusSecondaryBorderBrushProperty());
             return S_OK;
         }
         catch (...)
@@ -4266,7 +4266,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().CheckModeProperty());
+            *value = detach(this->shim().CheckModeProperty());
             return S_OK;
         }
         catch (...)
@@ -4280,7 +4280,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemPresente
     {
         try
         {
-            *value = detach(shim().PointerOverForegroundProperty());
+            *value = detach(this->shim().PointerOverForegroundProperty());
             return S_OK;
         }
         catch (...)
@@ -4298,7 +4298,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IListViewItemTemplate
     {
         try
         {
-            *value = detach(shim().DragItemsCount());
+            *value = detach(this->shim().DragItemsCount());
             return S_OK;
         }
         catch (...)
@@ -4315,7 +4315,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().ShouldLoop());
+            *value = detach(this->shim().ShouldLoop());
             return S_OK;
         }
         catch (...)
@@ -4328,7 +4328,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().ShouldLoop(value);
+            this->shim().ShouldLoop(value);
             return S_OK;
         }
         catch (...)
@@ -4341,7 +4341,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().Items());
+            *value = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -4355,7 +4355,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().Items(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::IInspectable> *>(&value));
+            this->shim().Items(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::IInspectable> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4368,7 +4368,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().SelectedIndex());
+            *value = detach(this->shim().SelectedIndex());
             return S_OK;
         }
         catch (...)
@@ -4381,7 +4381,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().SelectedIndex(value);
+            this->shim().SelectedIndex(value);
             return S_OK;
         }
         catch (...)
@@ -4394,7 +4394,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().SelectedItem());
+            *value = detach(this->shim().SelectedItem());
             return S_OK;
         }
         catch (...)
@@ -4408,7 +4408,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().SelectedItem(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SelectedItem(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4421,7 +4421,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().ItemWidth());
+            *value = detach(this->shim().ItemWidth());
             return S_OK;
         }
         catch (...)
@@ -4434,7 +4434,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().ItemWidth(value);
+            this->shim().ItemWidth(value);
             return S_OK;
         }
         catch (...)
@@ -4447,7 +4447,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().ItemHeight());
+            *value = detach(this->shim().ItemHeight());
             return S_OK;
         }
         catch (...)
@@ -4460,7 +4460,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().ItemHeight(value);
+            this->shim().ItemHeight(value);
             return S_OK;
         }
         catch (...)
@@ -4473,7 +4473,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *value = detach(shim().ItemTemplate());
+            *value = detach(this->shim().ItemTemplate());
             return S_OK;
         }
         catch (...)
@@ -4487,7 +4487,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().ItemTemplate(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&value));
+            this->shim().ItemTemplate(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4500,7 +4500,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            *token = detach(shim().SelectionChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::SelectionChangedEventHandler *>(&value)));
+            *token = detach(this->shim().SelectionChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::SelectionChangedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -4513,7 +4513,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelector> : p
     {
         try
         {
-            shim().SelectionChanged(token);
+            this->shim().SelectionChanged(token);
             return S_OK;
         }
         catch (...)
@@ -4538,7 +4538,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().ShouldLoopProperty());
+            *value = detach(this->shim().ShouldLoopProperty());
             return S_OK;
         }
         catch (...)
@@ -4552,7 +4552,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().ItemsProperty());
+            *value = detach(this->shim().ItemsProperty());
             return S_OK;
         }
         catch (...)
@@ -4566,7 +4566,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().SelectedIndexProperty());
+            *value = detach(this->shim().SelectedIndexProperty());
             return S_OK;
         }
         catch (...)
@@ -4580,7 +4580,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().SelectedItemProperty());
+            *value = detach(this->shim().SelectedItemProperty());
             return S_OK;
         }
         catch (...)
@@ -4594,7 +4594,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().ItemWidthProperty());
+            *value = detach(this->shim().ItemWidthProperty());
             return S_OK;
         }
         catch (...)
@@ -4608,7 +4608,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().ItemHeightProperty());
+            *value = detach(this->shim().ItemHeightProperty());
             return S_OK;
         }
         catch (...)
@@ -4622,7 +4622,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorStati
     {
         try
         {
-            *value = detach(shim().ItemTemplateProperty());
+            *value = detach(this->shim().ItemTemplateProperty());
             return S_OK;
         }
         catch (...)
@@ -4640,7 +4640,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutPresenterT
     {
         try
         {
-            *value = detach(shim().FlyoutContentMinWidth());
+            *value = detach(this->shim().FlyoutContentMinWidth());
             return S_OK;
         }
         catch (...)
@@ -4657,7 +4657,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().CanVerticallyScroll());
+            *value = detach(this->shim().CanVerticallyScroll());
             return S_OK;
         }
         catch (...)
@@ -4670,7 +4670,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().CanVerticallyScroll(value);
+            this->shim().CanVerticallyScroll(value);
             return S_OK;
         }
         catch (...)
@@ -4683,7 +4683,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().CanHorizontallyScroll());
+            *value = detach(this->shim().CanHorizontallyScroll());
             return S_OK;
         }
         catch (...)
@@ -4696,7 +4696,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().CanHorizontallyScroll(value);
+            this->shim().CanHorizontallyScroll(value);
             return S_OK;
         }
         catch (...)
@@ -4709,7 +4709,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().ExtentWidth());
+            *value = detach(this->shim().ExtentWidth());
             return S_OK;
         }
         catch (...)
@@ -4722,7 +4722,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().ExtentHeight());
+            *value = detach(this->shim().ExtentHeight());
             return S_OK;
         }
         catch (...)
@@ -4735,7 +4735,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().ViewportWidth());
+            *value = detach(this->shim().ViewportWidth());
             return S_OK;
         }
         catch (...)
@@ -4748,7 +4748,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().ViewportHeight());
+            *value = detach(this->shim().ViewportHeight());
             return S_OK;
         }
         catch (...)
@@ -4761,7 +4761,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().HorizontalOffset());
+            *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -4774,7 +4774,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().VerticalOffset());
+            *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -4787,7 +4787,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *value = detach(shim().ScrollOwner());
+            *value = detach(this->shim().ScrollOwner());
             return S_OK;
         }
         catch (...)
@@ -4801,7 +4801,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().ScrollOwner(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().ScrollOwner(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4814,7 +4814,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().LineUp();
+            this->shim().LineUp();
             return S_OK;
         }
         catch (...)
@@ -4827,7 +4827,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().LineDown();
+            this->shim().LineDown();
             return S_OK;
         }
         catch (...)
@@ -4840,7 +4840,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().LineLeft();
+            this->shim().LineLeft();
             return S_OK;
         }
         catch (...)
@@ -4853,7 +4853,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().LineRight();
+            this->shim().LineRight();
             return S_OK;
         }
         catch (...)
@@ -4866,7 +4866,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().PageUp();
+            this->shim().PageUp();
             return S_OK;
         }
         catch (...)
@@ -4879,7 +4879,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().PageDown();
+            this->shim().PageDown();
             return S_OK;
         }
         catch (...)
@@ -4892,7 +4892,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().PageLeft();
+            this->shim().PageLeft();
             return S_OK;
         }
         catch (...)
@@ -4905,7 +4905,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().PageRight();
+            this->shim().PageRight();
             return S_OK;
         }
         catch (...)
@@ -4918,7 +4918,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().MouseWheelUp();
+            this->shim().MouseWheelUp();
             return S_OK;
         }
         catch (...)
@@ -4931,7 +4931,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().MouseWheelDown();
+            this->shim().MouseWheelDown();
             return S_OK;
         }
         catch (...)
@@ -4944,7 +4944,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().MouseWheelLeft();
+            this->shim().MouseWheelLeft();
             return S_OK;
         }
         catch (...)
@@ -4957,7 +4957,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().MouseWheelRight();
+            this->shim().MouseWheelRight();
             return S_OK;
         }
         catch (...)
@@ -4970,7 +4970,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().SetHorizontalOffset(offset);
+            this->shim().SetHorizontalOffset(offset);
             return S_OK;
         }
         catch (...)
@@ -4983,7 +4983,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            shim().SetVerticalOffset(offset);
+            this->shim().SetVerticalOffset(offset);
             return S_OK;
         }
         catch (...)
@@ -4996,7 +4996,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizing
     {
         try
         {
-            *returnValue = detach(shim().MakeVisible(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&visual), *reinterpret_cast<const Windows::Foundation::Rect *>(&rectangle)));
+            *returnValue = detach(this->shim().MakeVisible(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&visual), *reinterpret_cast<const Windows::Foundation::Rect *>(&rectangle)));
             return S_OK;
         }
         catch (...)
@@ -5021,7 +5021,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseFact
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -5040,7 +5040,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOver
     {
         try
         {
-            shim().OnConfirmed();
+            this->shim().OnConfirmed();
             return S_OK;
         }
         catch (...)
@@ -5053,7 +5053,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseOver
     {
         try
         {
-            *returnValue = detach(shim().ShouldShowConfirmationButtons());
+            *returnValue = detach(this->shim().ShouldShowConfirmationButtons());
             return S_OK;
         }
         catch (...)
@@ -5070,7 +5070,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseStat
     {
         try
         {
-            *value = detach(shim().TitleProperty());
+            *value = detach(this->shim().TitleProperty());
             return S_OK;
         }
         catch (...)
@@ -5084,7 +5084,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseStat
     {
         try
         {
-            *value = detach(shim().GetTitle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetTitle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -5098,7 +5098,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBaseStat
     {
         try
         {
-            shim().SetTitle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetTitle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5119,7 +5119,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItemFacto
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -5146,7 +5146,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().Child());
+            *value = detach(this->shim().Child());
             return S_OK;
         }
         catch (...)
@@ -5160,7 +5160,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().Child(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
+            this->shim().Child(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5173,7 +5173,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsOpen());
+            *value = detach(this->shim().IsOpen());
             return S_OK;
         }
         catch (...)
@@ -5186,7 +5186,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().IsOpen(value);
+            this->shim().IsOpen(value);
             return S_OK;
         }
         catch (...)
@@ -5199,7 +5199,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().HorizontalOffset());
+            *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -5212,7 +5212,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().HorizontalOffset(value);
+            this->shim().HorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5225,7 +5225,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().VerticalOffset());
+            *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -5238,7 +5238,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().VerticalOffset(value);
+            this->shim().VerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5251,7 +5251,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().ChildTransitions());
+            *value = detach(this->shim().ChildTransitions());
             return S_OK;
         }
         catch (...)
@@ -5265,7 +5265,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().ChildTransitions(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::TransitionCollection *>(&value));
+            this->shim().ChildTransitions(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::TransitionCollection *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5278,7 +5278,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsLightDismissEnabled());
+            *value = detach(this->shim().IsLightDismissEnabled());
             return S_OK;
         }
         catch (...)
@@ -5291,7 +5291,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().IsLightDismissEnabled(value);
+            this->shim().IsLightDismissEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -5304,7 +5304,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *token = detach(shim().Opened(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -5317,7 +5317,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().Opened(token);
+            this->shim().Opened(token);
             return S_OK;
         }
         catch (...)
@@ -5330,7 +5330,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            *token = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -5343,7 +5343,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup> : produce_bas
     {
         try
         {
-            shim().Closed(token);
+            this->shim().Closed(token);
             return S_OK;
         }
         catch (...)
@@ -5360,7 +5360,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup2> : produce_ba
     {
         try
         {
-            *value = detach(shim().LightDismissOverlayMode());
+            *value = detach(this->shim().LightDismissOverlayMode());
             return S_OK;
         }
         catch (...)
@@ -5373,7 +5373,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopup2> : produce_ba
     {
         try
         {
-            shim().LightDismissOverlayMode(value);
+            this->shim().LightDismissOverlayMode(value);
             return S_OK;
         }
         catch (...)
@@ -5390,7 +5390,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().ChildProperty());
+            *value = detach(this->shim().ChildProperty());
             return S_OK;
         }
         catch (...)
@@ -5404,7 +5404,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsOpenProperty());
+            *value = detach(this->shim().IsOpenProperty());
             return S_OK;
         }
         catch (...)
@@ -5418,7 +5418,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().HorizontalOffsetProperty());
+            *value = detach(this->shim().HorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5432,7 +5432,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().VerticalOffsetProperty());
+            *value = detach(this->shim().VerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5446,7 +5446,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().ChildTransitionsProperty());
+            *value = detach(this->shim().ChildTransitionsProperty());
             return S_OK;
         }
         catch (...)
@@ -5460,7 +5460,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsLightDismissEnabledProperty());
+            *value = detach(this->shim().IsLightDismissEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -5478,7 +5478,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IPopupStatics2> : pro
     {
         try
         {
-            *value = detach(shim().LightDismissOverlayModeProperty());
+            *value = detach(this->shim().LightDismissOverlayModeProperty());
             return S_OK;
         }
         catch (...)
@@ -5496,7 +5496,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().EllipseDiameter());
+            *value = detach(this->shim().EllipseDiameter());
             return S_OK;
         }
         catch (...)
@@ -5509,7 +5509,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().EllipseOffset());
+            *value = detach(this->shim().EllipseOffset());
             return S_OK;
         }
         catch (...)
@@ -5522,7 +5522,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().EllipseAnimationWellPosition());
+            *value = detach(this->shim().EllipseAnimationWellPosition());
             return S_OK;
         }
         catch (...)
@@ -5535,7 +5535,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().EllipseAnimationEndPosition());
+            *value = detach(this->shim().EllipseAnimationEndPosition());
             return S_OK;
         }
         catch (...)
@@ -5548,7 +5548,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().ContainerAnimationStartPosition());
+            *value = detach(this->shim().ContainerAnimationStartPosition());
             return S_OK;
         }
         catch (...)
@@ -5561,7 +5561,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().ContainerAnimationEndPosition());
+            *value = detach(this->shim().ContainerAnimationEndPosition());
             return S_OK;
         }
         catch (...)
@@ -5574,7 +5574,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateS
     {
         try
         {
-            *value = detach(shim().IndicatorLengthDelta());
+            *value = detach(this->shim().IndicatorLengthDelta());
             return S_OK;
         }
         catch (...)
@@ -5591,7 +5591,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplate
     {
         try
         {
-            *value = detach(shim().EllipseDiameter());
+            *value = detach(this->shim().EllipseDiameter());
             return S_OK;
         }
         catch (...)
@@ -5604,7 +5604,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplate
     {
         try
         {
-            *value = detach(shim().EllipseOffset());
+            *value = detach(this->shim().EllipseOffset());
             return S_OK;
         }
         catch (...)
@@ -5617,7 +5617,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplate
     {
         try
         {
-            *value = detach(shim().MaxSideLength());
+            *value = detach(this->shim().MaxSideLength());
             return S_OK;
         }
         catch (...)
@@ -5634,7 +5634,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *value = detach(shim().Minimum());
+            *value = detach(this->shim().Minimum());
             return S_OK;
         }
         catch (...)
@@ -5647,7 +5647,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().Minimum(value);
+            this->shim().Minimum(value);
             return S_OK;
         }
         catch (...)
@@ -5660,7 +5660,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *value = detach(shim().Maximum());
+            *value = detach(this->shim().Maximum());
             return S_OK;
         }
         catch (...)
@@ -5673,7 +5673,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().Maximum(value);
+            this->shim().Maximum(value);
             return S_OK;
         }
         catch (...)
@@ -5686,7 +5686,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *value = detach(shim().SmallChange());
+            *value = detach(this->shim().SmallChange());
             return S_OK;
         }
         catch (...)
@@ -5699,7 +5699,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().SmallChange(value);
+            this->shim().SmallChange(value);
             return S_OK;
         }
         catch (...)
@@ -5712,7 +5712,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *value = detach(shim().LargeChange());
+            *value = detach(this->shim().LargeChange());
             return S_OK;
         }
         catch (...)
@@ -5725,7 +5725,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().LargeChange(value);
+            this->shim().LargeChange(value);
             return S_OK;
         }
         catch (...)
@@ -5738,7 +5738,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -5751,7 +5751,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -5764,7 +5764,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            *token = detach(shim().ValueChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventHandler *>(&value)));
+            *token = detach(this->shim().ValueChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -5777,7 +5777,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBase> : produce
     {
         try
         {
-            shim().ValueChanged(token);
+            this->shim().ValueChanged(token);
             return S_OK;
         }
         catch (...)
@@ -5794,7 +5794,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseFactory> : 
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -5813,7 +5813,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides> 
     {
         try
         {
-            shim().OnMinimumChanged(oldMinimum, newMinimum);
+            this->shim().OnMinimumChanged(oldMinimum, newMinimum);
             return S_OK;
         }
         catch (...)
@@ -5826,7 +5826,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides> 
     {
         try
         {
-            shim().OnMaximumChanged(oldMaximum, newMaximum);
+            this->shim().OnMaximumChanged(oldMaximum, newMaximum);
             return S_OK;
         }
         catch (...)
@@ -5839,7 +5839,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseOverrides> 
     {
         try
         {
-            shim().OnValueChanged(oldValue, newValue);
+            this->shim().OnValueChanged(oldValue, newValue);
             return S_OK;
         }
         catch (...)
@@ -5856,7 +5856,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics> : 
     {
         try
         {
-            *value = detach(shim().MinimumProperty());
+            *value = detach(this->shim().MinimumProperty());
             return S_OK;
         }
         catch (...)
@@ -5870,7 +5870,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics> : 
     {
         try
         {
-            *value = detach(shim().MaximumProperty());
+            *value = detach(this->shim().MaximumProperty());
             return S_OK;
         }
         catch (...)
@@ -5884,7 +5884,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics> : 
     {
         try
         {
-            *value = detach(shim().SmallChangeProperty());
+            *value = detach(this->shim().SmallChangeProperty());
             return S_OK;
         }
         catch (...)
@@ -5898,7 +5898,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics> : 
     {
         try
         {
-            *value = detach(shim().LargeChangeProperty());
+            *value = detach(this->shim().LargeChangeProperty());
             return S_OK;
         }
         catch (...)
@@ -5912,7 +5912,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseStatics> : 
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -5930,7 +5930,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChange
     {
         try
         {
-            *value = detach(shim().OldValue());
+            *value = detach(this->shim().OldValue());
             return S_OK;
         }
         catch (...)
@@ -5943,7 +5943,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChange
     {
         try
         {
-            *value = detach(shim().NewValue());
+            *value = detach(this->shim().NewValue());
             return S_OK;
         }
         catch (...)
@@ -5960,7 +5960,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButton> : prod
     {
         try
         {
-            *value = detach(shim().Delay());
+            *value = detach(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -5973,7 +5973,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButton> : prod
     {
         try
         {
-            shim().Delay(value);
+            this->shim().Delay(value);
             return S_OK;
         }
         catch (...)
@@ -5986,7 +5986,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButton> : prod
     {
         try
         {
-            *value = detach(shim().Interval());
+            *value = detach(this->shim().Interval());
             return S_OK;
         }
         catch (...)
@@ -5999,7 +5999,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButton> : prod
     {
         try
         {
-            shim().Interval(value);
+            this->shim().Interval(value);
             return S_OK;
         }
         catch (...)
@@ -6016,7 +6016,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButtonStatics>
     {
         try
         {
-            *value = detach(shim().DelayProperty());
+            *value = detach(this->shim().DelayProperty());
             return S_OK;
         }
         catch (...)
@@ -6030,7 +6030,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IRepeatButtonStatics>
     {
         try
         {
-            *value = detach(shim().IntervalProperty());
+            *value = detach(this->shim().IntervalProperty());
             return S_OK;
         }
         catch (...)
@@ -6048,7 +6048,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -6061,7 +6061,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            shim().Orientation(value);
+            this->shim().Orientation(value);
             return S_OK;
         }
         catch (...)
@@ -6074,7 +6074,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            *value = detach(shim().ViewportSize());
+            *value = detach(this->shim().ViewportSize());
             return S_OK;
         }
         catch (...)
@@ -6087,7 +6087,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            shim().ViewportSize(value);
+            this->shim().ViewportSize(value);
             return S_OK;
         }
         catch (...)
@@ -6100,7 +6100,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            *value = detach(shim().IndicatorMode());
+            *value = detach(this->shim().IndicatorMode());
             return S_OK;
         }
         catch (...)
@@ -6113,7 +6113,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            shim().IndicatorMode(value);
+            this->shim().IndicatorMode(value);
             return S_OK;
         }
         catch (...)
@@ -6126,7 +6126,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            *token = detach(shim().Scroll(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ScrollEventHandler *>(&value)));
+            *token = detach(this->shim().Scroll(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::ScrollEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6139,7 +6139,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBar> : produce
     {
         try
         {
-            shim().Scroll(token);
+            this->shim().Scroll(token);
             return S_OK;
         }
         catch (...)
@@ -6156,7 +6156,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBarStatics> : 
     {
         try
         {
-            *value = detach(shim().OrientationProperty());
+            *value = detach(this->shim().OrientationProperty());
             return S_OK;
         }
         catch (...)
@@ -6170,7 +6170,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBarStatics> : 
     {
         try
         {
-            *value = detach(shim().ViewportSizeProperty());
+            *value = detach(this->shim().ViewportSizeProperty());
             return S_OK;
         }
         catch (...)
@@ -6184,7 +6184,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollBarStatics> : 
     {
         try
         {
-            *value = detach(shim().IndicatorModeProperty());
+            *value = detach(this->shim().IndicatorModeProperty());
             return S_OK;
         }
         catch (...)
@@ -6202,7 +6202,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs> : p
     {
         try
         {
-            *value = detach(shim().NewValue());
+            *value = detach(this->shim().NewValue());
             return S_OK;
         }
         catch (...)
@@ -6215,7 +6215,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs> : p
     {
         try
         {
-            *value = detach(shim().ScrollEventType());
+            *value = detach(this->shim().ScrollEventType());
             return S_OK;
         }
         catch (...)
@@ -6232,7 +6232,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *value = detach(shim().AreHorizontalSnapPointsRegular());
+            *value = detach(this->shim().AreHorizontalSnapPointsRegular());
             return S_OK;
         }
         catch (...)
@@ -6245,7 +6245,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *value = detach(shim().AreVerticalSnapPointsRegular());
+            *value = detach(this->shim().AreVerticalSnapPointsRegular());
             return S_OK;
         }
         catch (...)
@@ -6258,7 +6258,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *token = detach(shim().HorizontalSnapPointsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().HorizontalSnapPointsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6271,7 +6271,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            shim().HorizontalSnapPointsChanged(token);
+            this->shim().HorizontalSnapPointsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -6284,7 +6284,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *token = detach(shim().VerticalSnapPointsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().VerticalSnapPointsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6297,7 +6297,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            shim().VerticalSnapPointsChanged(token);
+            this->shim().VerticalSnapPointsChanged(token);
             return S_OK;
         }
         catch (...)
@@ -6310,7 +6310,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *returnValue = detach(shim().GetIrregularSnapPoints(orientation, alignment));
+            *returnValue = detach(this->shim().GetIrregularSnapPoints(orientation, alignment));
             return S_OK;
         }
         catch (...)
@@ -6324,7 +6324,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IScrollSnapPointsInfo
     {
         try
         {
-            *returnValue = detach(shim().GetRegularSnapPoints(orientation, alignment, *offset));
+            *returnValue = detach(this->shim().GetRegularSnapPoints(orientation, alignment, *offset));
             return S_OK;
         }
         catch (...)
@@ -6341,7 +6341,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *value = detach(shim().SelectedIndex());
+            *value = detach(this->shim().SelectedIndex());
             return S_OK;
         }
         catch (...)
@@ -6354,7 +6354,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().SelectedIndex(value);
+            this->shim().SelectedIndex(value);
             return S_OK;
         }
         catch (...)
@@ -6367,7 +6367,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *value = detach(shim().SelectedItem());
+            *value = detach(this->shim().SelectedItem());
             return S_OK;
         }
         catch (...)
@@ -6381,7 +6381,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().SelectedItem(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SelectedItem(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -6394,7 +6394,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *value = detach(shim().SelectedValue());
+            *value = detach(this->shim().SelectedValue());
             return S_OK;
         }
         catch (...)
@@ -6408,7 +6408,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().SelectedValue(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SelectedValue(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -6421,7 +6421,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *value = detach(shim().SelectedValuePath());
+            *value = detach(this->shim().SelectedValuePath());
             return S_OK;
         }
         catch (...)
@@ -6435,7 +6435,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().SelectedValuePath(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SelectedValuePath(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -6448,7 +6448,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *value = detach(shim().IsSynchronizedWithCurrentItem());
+            *value = detach(this->shim().IsSynchronizedWithCurrentItem());
             return S_OK;
         }
         catch (...)
@@ -6462,7 +6462,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().IsSynchronizedWithCurrentItem(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
+            this->shim().IsSynchronizedWithCurrentItem(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -6475,7 +6475,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            *token = detach(shim().SelectionChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::SelectionChangedEventHandler *>(&value)));
+            *token = detach(this->shim().SelectionChanged(*reinterpret_cast<const Windows::UI::Xaml::Controls::SelectionChangedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6488,7 +6488,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelector> : produce_
     {
         try
         {
-            shim().SelectionChanged(token);
+            this->shim().SelectionChanged(token);
             return S_OK;
         }
         catch (...)
@@ -6509,7 +6509,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorItem> : prod
     {
         try
         {
-            *value = detach(shim().IsSelected());
+            *value = detach(this->shim().IsSelected());
             return S_OK;
         }
         catch (...)
@@ -6522,7 +6522,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorItem> : prod
     {
         try
         {
-            shim().IsSelected(value);
+            this->shim().IsSelected(value);
             return S_OK;
         }
         catch (...)
@@ -6539,7 +6539,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorItemFactory>
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -6558,7 +6558,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorItemStatics>
     {
         try
         {
-            *value = detach(shim().IsSelectedProperty());
+            *value = detach(this->shim().IsSelectedProperty());
             return S_OK;
         }
         catch (...)
@@ -6576,7 +6576,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *value = detach(shim().SelectedIndexProperty());
+            *value = detach(this->shim().SelectedIndexProperty());
             return S_OK;
         }
         catch (...)
@@ -6590,7 +6590,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *value = detach(shim().SelectedItemProperty());
+            *value = detach(this->shim().SelectedItemProperty());
             return S_OK;
         }
         catch (...)
@@ -6604,7 +6604,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *value = detach(shim().SelectedValueProperty());
+            *value = detach(this->shim().SelectedValueProperty());
             return S_OK;
         }
         catch (...)
@@ -6618,7 +6618,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *value = detach(shim().SelectedValuePathProperty());
+            *value = detach(this->shim().SelectedValuePathProperty());
             return S_OK;
         }
         catch (...)
@@ -6632,7 +6632,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *value = detach(shim().IsSynchronizedWithCurrentItemProperty());
+            *value = detach(this->shim().IsSynchronizedWithCurrentItemProperty());
             return S_OK;
         }
         catch (...)
@@ -6646,7 +6646,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISelectorStatics> : p
     {
         try
         {
-            *returnValue = detach(shim().GetIsSelectionActive(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *returnValue = detach(this->shim().GetIsSelectionActive(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -6663,7 +6663,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().HeaderBackground());
+            *value = detach(this->shim().HeaderBackground());
             return S_OK;
         }
         catch (...)
@@ -6677,7 +6677,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().HeaderForeground());
+            *value = detach(this->shim().HeaderForeground());
             return S_OK;
         }
         catch (...)
@@ -6691,7 +6691,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().BorderBrush());
+            *value = detach(this->shim().BorderBrush());
             return S_OK;
         }
         catch (...)
@@ -6705,7 +6705,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().BorderThickness());
+            *value = detach(this->shim().BorderThickness());
             return S_OK;
         }
         catch (...)
@@ -6718,7 +6718,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().IconSource());
+            *value = detach(this->shim().IconSource());
             return S_OK;
         }
         catch (...)
@@ -6732,7 +6732,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTempla
     {
         try
         {
-            *value = detach(shim().ContentTransitions());
+            *value = detach(this->shim().ContentTransitions());
             return S_OK;
         }
         catch (...)
@@ -6750,7 +6750,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().OpenPaneLength());
+            *value = detach(this->shim().OpenPaneLength());
             return S_OK;
         }
         catch (...)
@@ -6763,7 +6763,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().NegativeOpenPaneLength());
+            *value = detach(this->shim().NegativeOpenPaneLength());
             return S_OK;
         }
         catch (...)
@@ -6776,7 +6776,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().OpenPaneLengthMinusCompactLength());
+            *value = detach(this->shim().OpenPaneLengthMinusCompactLength());
             return S_OK;
         }
         catch (...)
@@ -6789,7 +6789,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().NegativeOpenPaneLengthMinusCompactLength());
+            *value = detach(this->shim().NegativeOpenPaneLengthMinusCompactLength());
             return S_OK;
         }
         catch (...)
@@ -6802,7 +6802,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().OpenPaneGridLength());
+            *value = detach(this->shim().OpenPaneGridLength());
             return S_OK;
         }
         catch (...)
@@ -6815,7 +6815,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSet
     {
         try
         {
-            *value = detach(shim().CompactPaneGridLength());
+            *value = detach(this->shim().CompactPaneGridLength());
             return S_OK;
         }
         catch (...)
@@ -6832,7 +6832,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsDragging());
+            *value = detach(this->shim().IsDragging());
             return S_OK;
         }
         catch (...)
@@ -6845,7 +6845,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            *token = detach(shim().DragStarted(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragStartedEventHandler *>(&value)));
+            *token = detach(this->shim().DragStarted(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragStartedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6858,7 +6858,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            shim().DragStarted(token);
+            this->shim().DragStarted(token);
             return S_OK;
         }
         catch (...)
@@ -6871,7 +6871,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            *token = detach(shim().DragDelta(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragDeltaEventHandler *>(&value)));
+            *token = detach(this->shim().DragDelta(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragDeltaEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6884,7 +6884,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            shim().DragDelta(token);
+            this->shim().DragDelta(token);
             return S_OK;
         }
         catch (...)
@@ -6897,7 +6897,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            *token = detach(shim().DragCompleted(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragCompletedEventHandler *>(&value)));
+            *token = detach(this->shim().DragCompleted(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::DragCompletedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6910,7 +6910,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            shim().DragCompleted(token);
+            this->shim().DragCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -6923,7 +6923,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumb> : produce_bas
     {
         try
         {
-            shim().CancelDrag();
+            this->shim().CancelDrag();
             return S_OK;
         }
         catch (...)
@@ -6940,7 +6940,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IThumbStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsDraggingProperty());
+            *value = detach(this->shim().IsDraggingProperty());
             return S_OK;
         }
         catch (...)
@@ -6958,7 +6958,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ITickBar> : produce_b
     {
         try
         {
-            *value = detach(shim().Fill());
+            *value = detach(this->shim().Fill());
             return S_OK;
         }
         catch (...)
@@ -6972,7 +6972,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ITickBar> : produce_b
     {
         try
         {
-            shim().Fill(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Fill(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -6989,7 +6989,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::ITickBarStatics> : pr
     {
         try
         {
-            *value = detach(shim().FillProperty());
+            *value = detach(this->shim().FillProperty());
             return S_OK;
         }
         catch (...)
@@ -7007,7 +7007,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            *value = detach(shim().IsChecked());
+            *value = detach(this->shim().IsChecked());
             return S_OK;
         }
         catch (...)
@@ -7021,7 +7021,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            shim().IsChecked(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
+            this->shim().IsChecked(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -7034,7 +7034,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            *value = detach(shim().IsThreeState());
+            *value = detach(this->shim().IsThreeState());
             return S_OK;
         }
         catch (...)
@@ -7047,7 +7047,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            shim().IsThreeState(value);
+            this->shim().IsThreeState(value);
             return S_OK;
         }
         catch (...)
@@ -7060,7 +7060,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            *token = detach(shim().Checked(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            *token = detach(this->shim().Checked(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -7073,7 +7073,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            shim().Checked(token);
+            this->shim().Checked(token);
             return S_OK;
         }
         catch (...)
@@ -7086,7 +7086,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            *token = detach(shim().Unchecked(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            *token = detach(this->shim().Unchecked(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -7099,7 +7099,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            shim().Unchecked(token);
+            this->shim().Unchecked(token);
             return S_OK;
         }
         catch (...)
@@ -7112,7 +7112,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            *token = detach(shim().Indeterminate(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            *token = detach(this->shim().Indeterminate(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -7125,7 +7125,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButton> : prod
     {
         try
         {
-            shim().Indeterminate(token);
+            this->shim().Indeterminate(token);
             return S_OK;
         }
         catch (...)
@@ -7142,7 +7142,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButtonFactory>
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -7161,7 +7161,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButtonOverride
     {
         try
         {
-            shim().OnToggle();
+            this->shim().OnToggle();
             return S_OK;
         }
         catch (...)
@@ -7178,7 +7178,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButtonStatics>
     {
         try
         {
-            *value = detach(shim().IsCheckedProperty());
+            *value = detach(this->shim().IsCheckedProperty());
             return S_OK;
         }
         catch (...)
@@ -7192,7 +7192,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleButtonStatics>
     {
         try
         {
-            *value = detach(shim().IsThreeStateProperty());
+            *value = detach(this->shim().IsThreeStateProperty());
             return S_OK;
         }
         catch (...)
@@ -7210,7 +7210,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().KnobCurrentToOnOffset());
+            *value = detach(this->shim().KnobCurrentToOnOffset());
             return S_OK;
         }
         catch (...)
@@ -7223,7 +7223,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().KnobCurrentToOffOffset());
+            *value = detach(this->shim().KnobCurrentToOffOffset());
             return S_OK;
         }
         catch (...)
@@ -7236,7 +7236,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().KnobOnToOffOffset());
+            *value = detach(this->shim().KnobOnToOffOffset());
             return S_OK;
         }
         catch (...)
@@ -7249,7 +7249,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().KnobOffToOnOffset());
+            *value = detach(this->shim().KnobOffToOnOffset());
             return S_OK;
         }
         catch (...)
@@ -7262,7 +7262,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().CurtainCurrentToOnOffset());
+            *value = detach(this->shim().CurtainCurrentToOnOffset());
             return S_OK;
         }
         catch (...)
@@ -7275,7 +7275,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().CurtainCurrentToOffOffset());
+            *value = detach(this->shim().CurtainCurrentToOffOffset());
             return S_OK;
         }
         catch (...)
@@ -7288,7 +7288,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().CurtainOnToOffOffset());
+            *value = detach(this->shim().CurtainOnToOffOffset());
             return S_OK;
         }
         catch (...)
@@ -7301,7 +7301,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplate
     {
         try
         {
-            *value = detach(shim().CurtainOffToOnOffset());
+            *value = detach(this->shim().CurtainOffToOnOffset());
             return S_OK;
         }
         catch (...)
@@ -7318,7 +7318,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSetti
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -7331,7 +7331,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSetti
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Data.Pdf.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Data.Pdf.3.h"
 #include "Windows.Foundation.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
-            *pdfPage = detach(shim().GetPage(pageIndex));
+            *pdfPage = detach(this->shim().GetPage(pageIndex));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().PageCount());
+            *value = detach(this->shim().PageCount());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().IsPasswordProtected());
+            *value = detach(this->shim().IsPasswordProtected());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&password)));
+            *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream)));
+            *asyncInfo = detach(this->shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream), *reinterpret_cast<const hstring *>(&password)));
+            *asyncInfo = detach(this->shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *asyncInfo = detach(shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream)));
+            *asyncInfo = detach(this->shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream)));
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *asyncInfo = detach(shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream), *reinterpret_cast<const Windows::Data::Pdf::PdfPageRenderOptions *>(&options)));
+            *asyncInfo = detach(this->shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream), *reinterpret_cast<const Windows::Data::Pdf::PdfPageRenderOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *asyncInfo = detach(shim().PreparePageAsync());
+            *asyncInfo = detach(this->shim().PreparePageAsync());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *value = detach(shim().Index());
+            *value = detach(this->shim().Index());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *value = detach(shim().Dimensions());
+            *value = detach(this->shim().Dimensions());
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *value = detach(shim().Rotation());
+            *value = detach(this->shim().Rotation());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
-            *value = detach(shim().PreferredZoom());
+            *value = detach(this->shim().PreferredZoom());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().MediaBox());
+            *value = detach(this->shim().MediaBox());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().CropBox());
+            *value = detach(this->shim().CropBox());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().BleedBox());
+            *value = detach(this->shim().BleedBox());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().TrimBox());
+            *value = detach(this->shim().TrimBox());
             return S_OK;
         }
         catch (...)
@@ -289,7 +289,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ArtBox());
+            *value = detach(this->shim().ArtBox());
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SourceRect());
+            *value = detach(this->shim().SourceRect());
             return S_OK;
         }
         catch (...)
@@ -319,7 +319,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().SourceRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().SourceRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DestinationWidth());
+            *value = detach(this->shim().DestinationWidth());
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().DestinationWidth(value);
+            this->shim().DestinationWidth(value);
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DestinationHeight());
+            *value = detach(this->shim().DestinationHeight());
             return S_OK;
         }
         catch (...)
@@ -371,7 +371,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().DestinationHeight(value);
+            this->shim().DestinationHeight(value);
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().IsIgnoringHighContrast());
+            *value = detach(this->shim().IsIgnoringHighContrast());
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().IsIgnoringHighContrast(value);
+            this->shim().IsIgnoringHighContrast(value);
             return S_OK;
         }
         catch (...)
@@ -436,7 +436,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().BitmapEncoderId());
+            *value = detach(this->shim().BitmapEncoderId());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
-            shim().BitmapEncoderId(value);
+            this->shim().BitmapEncoderId(value);
             return S_OK;
         }
         catch (...)

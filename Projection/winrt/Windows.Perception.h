@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Perception.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Perception.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -17,7 +17,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestamp> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().TargetTime());
+            *value = detach(this->shim().TargetTime());
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestamp> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().PredictionAmount());
+            *value = detach(this->shim().PredictionAmount());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestampHelperStatics> : prod
     {
         try
         {
-            *value = detach(shim().FromHistoricalTargetTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&targetTime)));
+            *value = detach(this->shim().FromHistoricalTargetTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&targetTime)));
             return S_OK;
         }
         catch (...)

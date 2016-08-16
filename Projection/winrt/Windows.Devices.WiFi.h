@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Networking.Connectivity.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.WiFi.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Networking.Connectivity.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.WiFi.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().NetworkAdapter());
+            *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ScanAsync());
+            *value = detach(this->shim().ScanAsync());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().NetworkReport());
+            *value = detach(this->shim().NetworkReport());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *eventCookie = detach(shim().AvailableNetworksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> *>(&args)));
+            *eventCookie = detach(this->shim().AvailableNetworksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> *>(&args)));
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            shim().AvailableNetworksChanged(eventCookie);
+            this->shim().AvailableNetworksChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind));
+            *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind));
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
+            *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential), *reinterpret_cast<const hstring *>(&ssid)));
+            *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential), *reinterpret_cast<const hstring *>(&ssid)));
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
-            shim().Disconnect();
+            this->shim().Disconnect();
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().FindAllAdaptersAsync());
+            *value = detach(this->shim().FindAllAdaptersAsync());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelector());
+            *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
-            *asyncOp = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RequestAccessAsync());
+            *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().Uptime());
+            *value = detach(this->shim().Uptime());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().Ssid());
+            *value = detach(this->shim().Ssid());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().Bssid());
+            *value = detach(this->shim().Bssid());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().ChannelCenterFrequencyInKilohertz());
+            *value = detach(this->shim().ChannelCenterFrequencyInKilohertz());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().NetworkRssiInDecibelMilliwatts());
+            *value = detach(this->shim().NetworkRssiInDecibelMilliwatts());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().SignalBars());
+            *value = detach(this->shim().SignalBars());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().NetworkKind());
+            *value = detach(this->shim().NetworkKind());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().PhyKind());
+            *value = detach(this->shim().PhyKind());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().SecuritySettings());
+            *value = detach(this->shim().SecuritySettings());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().BeaconInterval());
+            *value = detach(this->shim().BeaconInterval());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsWiFiDirect());
+            *value = detach(this->shim().IsWiFiDirect());
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiConnectionResult> : produce_base<
     {
         try
         {
-            *value = detach(shim().ConnectionStatus());
+            *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiNetworkReport> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiNetworkReport> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AvailableNetworks());
+            *value = detach(this->shim().AvailableNetworks());
             return S_OK;
         }
         catch (...)

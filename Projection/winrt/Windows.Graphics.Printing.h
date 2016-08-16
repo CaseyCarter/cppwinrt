@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
-#include "internal\Windows.Graphics.Printing.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.3.h"
+#include "internal/Windows.Graphics.Printing.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -45,7 +45,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintManager> : produce_base<D, 
     {
         try
         {
-            *eventCookie = detach(shim().PrintTaskRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().PrintTaskRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintManager> : produce_base<D, 
     {
         try
         {
-            shim().PrintTaskRequested(eventCookie);
+            this->shim().PrintTaskRequested(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintManagerStatic> : produce_ba
     {
         try
         {
-            *printingManager = detach(shim().GetForCurrentView());
+            *printingManager = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintManagerStatic> : produce_ba
     {
         try
         {
-            *operation = detach(shim().ShowPrintUIAsync());
+            *operation = detach(this->shim().ShowPrintUIAsync());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintManagerStatic2> : produce_b
     {
         try
         {
-            *result = detach(shim().IsSupported());
+            *result = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            shim().MediaSize(value);
+            this->shim().MediaSize(value);
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MediaSize());
+            *value = detach(this->shim().MediaSize());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            shim().PageSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().PageSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PageSize());
+            *value = detach(this->shim().PageSize());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            shim().DpiX(value);
+            this->shim().DpiX(value);
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DpiX());
+            *value = detach(this->shim().DpiX());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            shim().DpiY(value);
+            this->shim().DpiY(value);
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().DpiY());
+            *value = detach(this->shim().DpiY());
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            shim().Orientation(value);
+            this->shim().Orientation(value);
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintPageInfo> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *eventCookie = detach(shim().Previewing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Previewing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            shim().Previewing(eventCookie);
+            this->shim().Previewing(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *eventCookie = detach(shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -339,7 +339,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            shim().Submitting(eventCookie);
+            this->shim().Submitting(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *eventCookie = detach(shim().Progressing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Progressing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            shim().Progressing(eventCookie);
+            this->shim().Progressing(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            *eventCookie = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
     {
         try
         {
-            shim().Completed(eventCookie);
+            this->shim().Completed(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask2> : produce_base<D, Wi
     {
         try
         {
-            shim().IsPreviewEnabled(value);
+            this->shim().IsPreviewEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask2> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().IsPreviewEnabled());
+            *value = detach(this->shim().IsPreviewEnabled());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskCompletedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Completion());
+            *value = detach(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptions> : produce_base
     {
         try
         {
-            shim().Bordering(value);
+            this->shim().Bordering(value);
             return S_OK;
         }
         catch (...)
@@ -468,7 +468,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptions> : produce_base
     {
         try
         {
-            *value = detach(shim().Bordering());
+            *value = detach(this->shim().Bordering());
             return S_OK;
         }
         catch (...)
@@ -481,7 +481,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptions> : produce_base
     {
         try
         {
-            *printTicket = detach(shim().GetPagePrintTicket(*reinterpret_cast<const Windows::Graphics::Printing::PrintPageInfo *>(&printPageInfo)));
+            *printTicket = detach(this->shim().GetPagePrintTicket(*reinterpret_cast<const Windows::Graphics::Printing::PrintPageInfo *>(&printPageInfo)));
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCore> : produce_
     {
         try
         {
-            *description = detach(shim().GetPageDescription(jobPageNumber));
+            *description = detach(this->shim().GetPageDescription(jobPageNumber));
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().MediaSize(value);
+            this->shim().MediaSize(value);
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().MediaSize());
+            *value = detach(this->shim().MediaSize());
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().MediaType(value);
+            this->shim().MediaType(value);
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().MediaType());
+            *value = detach(this->shim().MediaType());
             return S_OK;
         }
         catch (...)
@@ -568,7 +568,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().Orientation(value);
+            this->shim().Orientation(value);
             return S_OK;
         }
         catch (...)
@@ -581,7 +581,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -594,7 +594,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().PrintQuality(value);
+            this->shim().PrintQuality(value);
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().PrintQuality());
+            *value = detach(this->shim().PrintQuality());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().ColorMode(value);
+            this->shim().ColorMode(value);
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().ColorMode());
+            *value = detach(this->shim().ColorMode());
             return S_OK;
         }
         catch (...)
@@ -646,7 +646,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().Duplex(value);
+            this->shim().Duplex(value);
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().Duplex());
+            *value = detach(this->shim().Duplex());
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().Collation(value);
+            this->shim().Collation(value);
             return S_OK;
         }
         catch (...)
@@ -685,7 +685,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().Collation());
+            *value = detach(this->shim().Collation());
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().Staple(value);
+            this->shim().Staple(value);
             return S_OK;
         }
         catch (...)
@@ -711,7 +711,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().Staple());
+            *value = detach(this->shim().Staple());
             return S_OK;
         }
         catch (...)
@@ -724,7 +724,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().HolePunch(value);
+            this->shim().HolePunch(value);
             return S_OK;
         }
         catch (...)
@@ -737,7 +737,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().HolePunch());
+            *value = detach(this->shim().HolePunch());
             return S_OK;
         }
         catch (...)
@@ -750,7 +750,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().Binding(value);
+            this->shim().Binding(value);
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().Binding());
+            *value = detach(this->shim().Binding());
             return S_OK;
         }
         catch (...)
@@ -776,7 +776,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().MinCopies());
+            *value = detach(this->shim().MinCopies());
             return S_OK;
         }
         catch (...)
@@ -789,7 +789,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().MaxCopies());
+            *value = detach(this->shim().MaxCopies());
             return S_OK;
         }
         catch (...)
@@ -802,7 +802,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            shim().NumberOfCopies(value);
+            this->shim().NumberOfCopies(value);
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties> 
     {
         try
         {
-            *value = detach(shim().NumberOfCopies());
+            *value = detach(this->shim().NumberOfCopies());
             return S_OK;
         }
         catch (...)
@@ -832,7 +832,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfigurat
     {
         try
         {
-            *value = detach(shim().DisplayedOptions());
+            *value = detach(this->shim().DisplayedOptions());
             return S_OK;
         }
         catch (...)
@@ -850,7 +850,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskProgressingEventArgs> :
     {
         try
         {
-            *value = detach(shim().DocumentPageCount());
+            *value = detach(this->shim().DocumentPageCount());
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskRequest> : produce_base
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskRequest> : produce_base
     {
         try
         {
-            *task = detach(shim().CreatePrintTask(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler *>(&handler)));
+            *task = detach(this->shim().CreatePrintTask(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -894,7 +894,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskRequest> : produce_base
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskRequestedDeferral> : pr
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -929,7 +929,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskRequestedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -947,7 +947,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs> : 
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -960,7 +960,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs> : 
     {
         try
         {
-            shim().SetSource(*reinterpret_cast<const Windows::Graphics::Printing::IPrintDocumentSource *>(&source));
+            this->shim().SetSource(*reinterpret_cast<const Windows::Graphics::Printing::IPrintDocumentSource *>(&source));
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs> : 
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -991,7 +991,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport> : 
     {
         try
         {
-            shim().IsPrinterTargetEnabled(value);
+            this->shim().IsPrinterTargetEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1021,7 +1021,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport> : 
     {
         try
         {
-            *value = detach(shim().IsPrinterTargetEnabled());
+            *value = detach(this->shim().IsPrinterTargetEnabled());
             return S_OK;
         }
         catch (...)
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport> : 
     {
         try
         {
-            shim().Is3DManufacturingTargetEnabled(value);
+            this->shim().Is3DManufacturingTargetEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1047,7 +1047,7 @@ struct produce<D, Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport> : 
     {
         try
         {
-            *value = detach(shim().Is3DManufacturingTargetEnabled());
+            *value = detach(this->shim().Is3DManufacturingTargetEnabled());
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().MediaSize());
+            *value = detach(this->shim().MediaSize());
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().MediaType());
+            *value = detach(this->shim().MediaType());
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().PrintQuality());
+            *value = detach(this->shim().PrintQuality());
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().ColorMode());
+            *value = detach(this->shim().ColorMode());
             return S_OK;
         }
         catch (...)
@@ -1134,7 +1134,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Duplex());
+            *value = detach(this->shim().Duplex());
             return S_OK;
         }
         catch (...)
@@ -1148,7 +1148,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Collation());
+            *value = detach(this->shim().Collation());
             return S_OK;
         }
         catch (...)
@@ -1162,7 +1162,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Staple());
+            *value = detach(this->shim().Staple());
             return S_OK;
         }
         catch (...)
@@ -1176,7 +1176,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().HolePunch());
+            *value = detach(this->shim().HolePunch());
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Binding());
+            *value = detach(this->shim().Binding());
             return S_OK;
         }
         catch (...)
@@ -1204,7 +1204,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().Copies());
+            *value = detach(this->shim().Copies());
             return S_OK;
         }
         catch (...)
@@ -1218,7 +1218,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().NUp());
+            *value = detach(this->shim().NUp());
             return S_OK;
         }
         catch (...)
@@ -1232,7 +1232,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic> 
     {
         try
         {
-            *value = detach(shim().InputBin());
+            *value = detach(this->shim().InputBin());
             return S_OK;
         }
         catch (...)
@@ -1250,7 +1250,7 @@ struct produce<D, Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>
     {
         try
         {
-            *value = detach(shim().Bordering());
+            *value = detach(this->shim().Bordering());
             return S_OK;
         }
         catch (...)

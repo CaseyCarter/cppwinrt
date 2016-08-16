@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Gpio.Provider.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Gpio.3.h"
+#include "internal/Windows.Devices.Gpio.Provider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Gpio.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 
@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().PinCount());
+            *value = detach(this->shim().PinCount());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Win
     {
         try
         {
-            *pin = detach(shim().OpenPin(pinNumber));
+            *pin = detach(this->shim().OpenPin(pinNumber));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Win
     {
         try
         {
-            *pin = detach(shim().OpenPin(pinNumber, sharingMode));
+            *pin = detach(this->shim().OpenPin(pinNumber, sharingMode));
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Win
     {
         try
         {
-            *succeeded = detach(shim().TryOpenPin(pinNumber, sharingMode, *pin, *openStatus));
+            *succeeded = detach(this->shim().TryOpenPin(pinNumber, sharingMode, *pin, *openStatus));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioControllerStatics> : produce_base
     {
         try
         {
-            *value = detach(shim().GetDefault());
+            *value = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioControllerStatics2> : produce_bas
     {
         try
         {
-            *operation = detach(shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Gpio::Provider::IGpioProvider *>(&provider)));
+            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Gpio::Provider::IGpioProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioControllerStatics2> : produce_bas
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *token = detach(shim().ValueChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ValueChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            shim().ValueChanged(token);
+            this->shim().ValueChanged(token);
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().DebounceTimeout());
+            *value = detach(this->shim().DebounceTimeout());
             return S_OK;
         }
         catch (...)
@@ -168,7 +168,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            shim().DebounceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DebounceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().PinNumber());
+            *value = detach(this->shim().PinNumber());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().SharingMode());
+            *value = detach(this->shim().SharingMode());
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *supported = detach(shim().IsDriveModeSupported(driveMode));
+            *supported = detach(this->shim().IsDriveModeSupported(driveMode));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().GetDriveMode());
+            *value = detach(this->shim().GetDriveMode());
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            shim().SetDriveMode(value);
+            this->shim().SetDriveMode(value);
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            shim().Write(value);
+            this->shim().Write(value);
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().Read());
+            *value = detach(this->shim().Read());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioPinValueChangedEventArgs> : produ
     {
         try
         {
-            *value = detach(shim().Edge());
+            *value = detach(this->shim().Edge());
             return S_OK;
         }
         catch (...)

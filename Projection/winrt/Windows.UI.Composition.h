@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.DirectX.3.h"
-#include "internal\Windows.UI.Core.3.h"
-#include "internal\Windows.Graphics.Effects.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.DirectX.3.h"
+#include "internal/Windows.UI.Core.3.h"
+#include "internal/Windows.Graphics.Effects.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Composition.3.h"
 #include "Windows.UI.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
@@ -26,7 +26,7 @@ struct produce<D, Windows::UI::Composition::IAmbientLight> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::UI::Composition::IAmbientLight> : produce_base<D, Win
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -56,7 +56,7 @@ struct produce<D, Windows::UI::Composition::IColorKeyFrameAnimation> : produce_b
     {
         try
         {
-            *value = detach(shim().InterpolationColorSpace());
+            *value = detach(this->shim().InterpolationColorSpace());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::UI::Composition::IColorKeyFrameAnimation> : produce_b
     {
         try
         {
-            shim().InterpolationColorSpace(value);
+            this->shim().InterpolationColorSpace(value);
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::UI::Composition::IColorKeyFrameAnimation> : produce_b
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::UI::Composition::IColorKeyFrameAnimation> : produce_b
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::UI::Color *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::UI::Color *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().ClearAllParameters();
+            this->shim().ClearAllParameters();
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().ClearParameter(*reinterpret_cast<const hstring *>(&key));
+            this->shim().ClearParameter(*reinterpret_cast<const hstring *>(&key));
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetColorParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().SetColorParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -151,7 +151,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetMatrix3x2Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().SetMatrix3x2Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetMatrix4x4Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
+            this->shim().SetMatrix4x4Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetQuaternionParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().SetQuaternionParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetReferenceParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Composition::CompositionObject *>(&compositionObject));
+            this->shim().SetReferenceParameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Composition::CompositionObject *>(&compositionObject));
             return S_OK;
         }
         catch (...)
@@ -203,7 +203,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetScalarParameter(*reinterpret_cast<const hstring *>(&key), value);
+            this->shim().SetScalarParameter(*reinterpret_cast<const hstring *>(&key), value);
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetVector2Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().SetVector2Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -229,7 +229,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetVector3Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().SetVector3Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -242,7 +242,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_bas
     {
         try
         {
-            shim().SetVector4Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
+            this->shim().SetVector4Parameter(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation2> : produce_ba
     {
         try
         {
-            shim().SetBooleanParameter(*reinterpret_cast<const hstring *>(&key), value);
+            this->shim().SetBooleanParameter(*reinterpret_cast<const hstring *>(&key), value);
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation2> : produce_ba
     {
         try
         {
-            *value = detach(shim().Target());
+            *value = detach(this->shim().Target());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimation2> : produce_ba
     {
         try
         {
-            shim().Target(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Target(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimationGroup> : produc
     {
         try
         {
-            *value = detach(shim().Count());
+            *value = detach(this->shim().Count());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimationGroup> : produc
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&value));
+            this->shim().Add(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimationGroup> : produc
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&value));
+            this->shim().Remove(*reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimationGroup> : produc
     {
         try
         {
-            shim().RemoveAll();
+            this->shim().RemoveAll();
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().AnchorPoint());
+            *value = detach(this->shim().AnchorPoint());
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -413,7 +413,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().CenterPoint());
+            *value = detach(this->shim().CenterPoint());
             return S_OK;
         }
         catch (...)
@@ -426,7 +426,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -439,7 +439,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -452,7 +452,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RotationAngle());
+            *value = detach(this->shim().RotationAngle());
             return S_OK;
         }
         catch (...)
@@ -478,7 +478,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().RotationAngle(value);
+            this->shim().RotationAngle(value);
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RotationAngleInDegrees());
+            *value = detach(this->shim().RotationAngleInDegrees());
             return S_OK;
         }
         catch (...)
@@ -504,7 +504,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().RotationAngleInDegrees(value);
+            this->shim().RotationAngleInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -517,7 +517,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Scale());
+            *value = detach(this->shim().Scale());
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().TransformMatrix());
+            *value = detach(this->shim().TransformMatrix());
             return S_OK;
         }
         catch (...)
@@ -556,7 +556,7 @@ struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D,
     {
         try
         {
-            shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::UI::Composition::ICompositionColorBrush> : produce_ba
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::UI::Composition::ICompositionColorBrush> : produce_ba
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_b
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_b
     {
         try
         {
-            *value = detach(shim().IsEnded());
+            *value = detach(this->shim().IsEnded());
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_b
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -646,7 +646,7 @@ struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_b
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -663,7 +663,7 @@ struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface> : produc
     {
         try
         {
-            *value = detach(shim().AlphaMode());
+            *value = detach(this->shim().AlphaMode());
             return S_OK;
         }
         catch (...)
@@ -676,7 +676,7 @@ struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface> : produc
     {
         try
         {
-            *value = detach(shim().PixelFormat());
+            *value = detach(this->shim().PixelFormat());
             return S_OK;
         }
         catch (...)
@@ -689,7 +689,7 @@ struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface> : produc
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -714,7 +714,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectBrush> : produce_b
     {
         try
         {
-            *result = detach(shim().GetSourceParameter(*reinterpret_cast<const hstring *>(&name)));
+            *result = detach(this->shim().GetSourceParameter(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectBrush> : produce_b
     {
         try
         {
-            shim().SetSourceParameter(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&source));
+            this->shim().SetSourceParameter(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&source));
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectFactory> : produce
     {
         try
         {
-            *result = detach(shim().CreateBrush());
+            *result = detach(this->shim().CreateBrush());
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectFactory> : produce
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectFactory> : produce
     {
         try
         {
-            *value = detach(shim().LoadStatus());
+            *value = detach(this->shim().LoadStatus());
             return S_OK;
         }
         catch (...)
@@ -789,7 +789,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectSourceParameter> :
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -807,7 +807,7 @@ struct produce<D, Windows::UI::Composition::ICompositionEffectSourceParameterFac
     {
         try
         {
-            *instance = detach(shim().Create(*reinterpret_cast<const hstring *>(&name)));
+            *instance = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -825,7 +825,7 @@ struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice> : produc
     {
         try
         {
-            *result = detach(shim().CreateDrawingSurface(*reinterpret_cast<const Windows::Foundation::Size *>(&sizePixels), pixelFormat, alphaMode));
+            *result = detach(this->shim().CreateDrawingSurface(*reinterpret_cast<const Windows::Foundation::Size *>(&sizePixels), pixelFormat, alphaMode));
             return S_OK;
         }
         catch (...)
@@ -839,7 +839,7 @@ struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice> : produc
     {
         try
         {
-            *token = detach(shim().RenderingDeviceReplaced(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> *>(&handler)));
+            *token = detach(this->shim().RenderingDeviceReplaced(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice> : produc
     {
         try
         {
-            shim().RenderingDeviceReplaced(token);
+            this->shim().RenderingDeviceReplaced(token);
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::UI::Composition::ICompositionLight> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Targets());
+            *value = detach(this->shim().Targets());
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::UI::Composition::ICompositionMaskBrush> : produce_bas
     {
         try
         {
-            *value = detach(shim().Mask());
+            *value = detach(this->shim().Mask());
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::UI::Composition::ICompositionMaskBrush> : produce_bas
     {
         try
         {
-            shim().Mask(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            this->shim().Mask(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::UI::Composition::ICompositionMaskBrush> : produce_bas
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -932,7 +932,7 @@ struct produce<D, Windows::UI::Composition::ICompositionMaskBrush> : produce_bas
     {
         try
         {
-            shim().Source(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            this->shim().Source(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().BottomInset());
+            *value = detach(this->shim().BottomInset());
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().BottomInset(value);
+            this->shim().BottomInset(value);
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().BottomInsetScale());
+            *value = detach(this->shim().BottomInsetScale());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().BottomInsetScale(value);
+            this->shim().BottomInsetScale(value);
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().IsCenterHollow());
+            *value = detach(this->shim().IsCenterHollow());
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().IsCenterHollow(value);
+            this->shim().IsCenterHollow(value);
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().LeftInset());
+            *value = detach(this->shim().LeftInset());
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().LeftInset(value);
+            this->shim().LeftInset(value);
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().LeftInsetScale());
+            *value = detach(this->shim().LeftInsetScale());
             return S_OK;
         }
         catch (...)
@@ -1066,7 +1066,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().LeftInsetScale(value);
+            this->shim().LeftInsetScale(value);
             return S_OK;
         }
         catch (...)
@@ -1079,7 +1079,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().RightInset());
+            *value = detach(this->shim().RightInset());
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().RightInset(value);
+            this->shim().RightInset(value);
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().RightInsetScale());
+            *value = detach(this->shim().RightInsetScale());
             return S_OK;
         }
         catch (...)
@@ -1118,7 +1118,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().RightInsetScale(value);
+            this->shim().RightInsetScale(value);
             return S_OK;
         }
         catch (...)
@@ -1131,7 +1131,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -1145,7 +1145,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().Source(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            this->shim().Source(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1158,7 +1158,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().TopInset());
+            *value = detach(this->shim().TopInset());
             return S_OK;
         }
         catch (...)
@@ -1171,7 +1171,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().TopInset(value);
+            this->shim().TopInset(value);
             return S_OK;
         }
         catch (...)
@@ -1184,7 +1184,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            *value = detach(shim().TopInsetScale());
+            *value = detach(this->shim().TopInsetScale());
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().TopInsetScale(value);
+            this->shim().TopInsetScale(value);
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().SetInsets(inset);
+            this->shim().SetInsets(inset);
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().SetInsets(left, top, right, bottom);
+            this->shim().SetInsets(left, top, right, bottom);
             return S_OK;
         }
         catch (...)
@@ -1236,7 +1236,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().SetInsetScales(scale);
+            this->shim().SetInsetScales(scale);
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce
     {
         try
         {
-            shim().SetInsetScales(left, top, right, bottom);
+            this->shim().SetInsetScales(left, top, right, bottom);
             return S_OK;
         }
         catch (...)
@@ -1266,7 +1266,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Compositor());
+            *value = detach(this->shim().Compositor());
             return S_OK;
         }
         catch (...)
@@ -1280,7 +1280,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Dispatcher());
+            *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
         catch (...)
@@ -1294,7 +1294,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -1308,7 +1308,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D
     {
         try
         {
-            shim().StartAnimation(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation));
+            this->shim().StartAnimation(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::UI::Composition::CompositionAnimation *>(&animation));
             return S_OK;
         }
         catch (...)
@@ -1321,7 +1321,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D
     {
         try
         {
-            shim().StopAnimation(*reinterpret_cast<const hstring *>(&propertyName));
+            this->shim().StopAnimation(*reinterpret_cast<const hstring *>(&propertyName));
             return S_OK;
         }
         catch (...)
@@ -1338,7 +1338,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -1352,7 +1352,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            shim().Comment(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Comment(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1365,7 +1365,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            *value = detach(shim().ImplicitAnimations());
+            *value = detach(this->shim().ImplicitAnimations());
             return S_OK;
         }
         catch (...)
@@ -1379,7 +1379,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            shim().ImplicitAnimations(*reinterpret_cast<const Windows::UI::Composition::ImplicitAnimationCollection *>(&value));
+            this->shim().ImplicitAnimations(*reinterpret_cast<const Windows::UI::Composition::ImplicitAnimationCollection *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1392,7 +1392,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            shim().StartAnimationGroup(*reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&value));
+            this->shim().StartAnimationGroup(*reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1405,7 +1405,7 @@ struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<
     {
         try
         {
-            shim().StopAnimationGroup(*reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&value));
+            this->shim().StopAnimationGroup(*reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1426,7 +1426,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertColor(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().InsertColor(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1439,7 +1439,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertMatrix3x2(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().InsertMatrix3x2(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1452,7 +1452,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertMatrix4x4(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
+            this->shim().InsertMatrix4x4(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1465,7 +1465,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertQuaternion(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().InsertQuaternion(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1478,7 +1478,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertScalar(*reinterpret_cast<const hstring *>(&propertyName), value);
+            this->shim().InsertScalar(*reinterpret_cast<const hstring *>(&propertyName), value);
             return S_OK;
         }
         catch (...)
@@ -1491,7 +1491,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertVector2(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().InsertVector2(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1504,7 +1504,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertVector3(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().InsertVector3(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1517,7 +1517,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            shim().InsertVector4(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
+            this->shim().InsertVector4(*reinterpret_cast<const hstring *>(&propertyName), *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1530,7 +1530,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetColor(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetColor(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1543,7 +1543,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetMatrix3x2(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetMatrix3x2(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1556,7 +1556,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetMatrix4x4(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetMatrix4x4(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1569,7 +1569,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetQuaternion(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetQuaternion(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1582,7 +1582,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetScalar(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetScalar(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1595,7 +1595,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetVector2(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetVector2(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1608,7 +1608,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetVector3(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetVector3(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1621,7 +1621,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_b
     {
         try
         {
-            *result = detach(shim().TryGetVector4(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetVector4(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1638,7 +1638,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet2> : produce_
     {
         try
         {
-            shim().InsertBoolean(*reinterpret_cast<const hstring *>(&propertyName), value);
+            this->shim().InsertBoolean(*reinterpret_cast<const hstring *>(&propertyName), value);
             return S_OK;
         }
         catch (...)
@@ -1651,7 +1651,7 @@ struct produce<D, Windows::UI::Composition::ICompositionPropertySet2> : produce_
     {
         try
         {
-            *result = detach(shim().TryGetBoolean(*reinterpret_cast<const hstring *>(&propertyName), *value));
+            *result = detach(this->shim().TryGetBoolean(*reinterpret_cast<const hstring *>(&propertyName), *value));
             return S_OK;
         }
         catch (...)
@@ -1668,7 +1668,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -1681,7 +1681,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            *value = detach(shim().IsEnded());
+            *value = detach(this->shim().IsEnded());
             return S_OK;
         }
         catch (...)
@@ -1694,7 +1694,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            shim().End();
+            this->shim().End();
             return S_OK;
         }
         catch (...)
@@ -1707,7 +1707,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            shim().Resume();
+            this->shim().Resume();
             return S_OK;
         }
         catch (...)
@@ -1720,7 +1720,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            shim().Suspend();
+            this->shim().Suspend();
             return S_OK;
         }
         catch (...)
@@ -1733,7 +1733,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1746,7 +1746,7 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -1775,7 +1775,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            *value = detach(shim().BitmapInterpolationMode());
+            *value = detach(this->shim().BitmapInterpolationMode());
             return S_OK;
         }
         catch (...)
@@ -1788,7 +1788,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            shim().BitmapInterpolationMode(value);
+            this->shim().BitmapInterpolationMode(value);
             return S_OK;
         }
         catch (...)
@@ -1801,7 +1801,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            *value = detach(shim().HorizontalAlignmentRatio());
+            *value = detach(this->shim().HorizontalAlignmentRatio());
             return S_OK;
         }
         catch (...)
@@ -1814,7 +1814,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            shim().HorizontalAlignmentRatio(value);
+            this->shim().HorizontalAlignmentRatio(value);
             return S_OK;
         }
         catch (...)
@@ -1827,7 +1827,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            *value = detach(shim().Stretch());
+            *value = detach(this->shim().Stretch());
             return S_OK;
         }
         catch (...)
@@ -1840,7 +1840,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            shim().Stretch(value);
+            this->shim().Stretch(value);
             return S_OK;
         }
         catch (...)
@@ -1853,7 +1853,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            *value = detach(shim().Surface());
+            *value = detach(this->shim().Surface());
             return S_OK;
         }
         catch (...)
@@ -1867,7 +1867,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            shim().Surface(*reinterpret_cast<const Windows::UI::Composition::ICompositionSurface *>(&value));
+            this->shim().Surface(*reinterpret_cast<const Windows::UI::Composition::ICompositionSurface *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1880,7 +1880,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            *value = detach(shim().VerticalAlignmentRatio());
+            *value = detach(this->shim().VerticalAlignmentRatio());
             return S_OK;
         }
         catch (...)
@@ -1893,7 +1893,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_
     {
         try
         {
-            shim().VerticalAlignmentRatio(value);
+            this->shim().VerticalAlignmentRatio(value);
             return S_OK;
         }
         catch (...)
@@ -1910,7 +1910,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().AnchorPoint());
+            *value = detach(this->shim().AnchorPoint());
             return S_OK;
         }
         catch (...)
@@ -1923,7 +1923,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1936,7 +1936,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().CenterPoint());
+            *value = detach(this->shim().CenterPoint());
             return S_OK;
         }
         catch (...)
@@ -1949,7 +1949,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1962,7 +1962,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -1975,7 +1975,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1988,7 +1988,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().RotationAngle());
+            *value = detach(this->shim().RotationAngle());
             return S_OK;
         }
         catch (...)
@@ -2001,7 +2001,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().RotationAngle(value);
+            this->shim().RotationAngle(value);
             return S_OK;
         }
         catch (...)
@@ -2014,7 +2014,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().RotationAngleInDegrees());
+            *value = detach(this->shim().RotationAngleInDegrees());
             return S_OK;
         }
         catch (...)
@@ -2027,7 +2027,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().RotationAngleInDegrees(value);
+            this->shim().RotationAngleInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -2040,7 +2040,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().Scale());
+            *value = detach(this->shim().Scale());
             return S_OK;
         }
         catch (...)
@@ -2053,7 +2053,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2066,7 +2066,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            *value = detach(shim().TransformMatrix());
+            *value = detach(this->shim().TransformMatrix());
             return S_OK;
         }
         catch (...)
@@ -2079,7 +2079,7 @@ struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce
     {
         try
         {
-            shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2096,7 +2096,7 @@ struct produce<D, Windows::UI::Composition::ICompositionTarget> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Root());
+            *value = detach(this->shim().Root());
             return S_OK;
         }
         catch (...)
@@ -2110,7 +2110,7 @@ struct produce<D, Windows::UI::Composition::ICompositionTarget> : produce_base<D
     {
         try
         {
-            shim().Root(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
+            this->shim().Root(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2127,7 +2127,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateColorKeyFrameAnimation());
+            *result = detach(this->shim().CreateColorKeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2141,7 +2141,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateColorBrush());
+            *result = detach(this->shim().CreateColorBrush());
             return S_OK;
         }
         catch (...)
@@ -2155,7 +2155,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateColorBrush(*reinterpret_cast<const Windows::UI::Color *>(&color)));
+            *result = detach(this->shim().CreateColorBrush(*reinterpret_cast<const Windows::UI::Color *>(&color)));
             return S_OK;
         }
         catch (...)
@@ -2169,7 +2169,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateContainerVisual());
+            *result = detach(this->shim().CreateContainerVisual());
             return S_OK;
         }
         catch (...)
@@ -2183,7 +2183,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateCubicBezierEasingFunction(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&controlPoint1), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&controlPoint2)));
+            *result = detach(this->shim().CreateCubicBezierEasingFunction(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&controlPoint1), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&controlPoint2)));
             return S_OK;
         }
         catch (...)
@@ -2197,7 +2197,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateEffectFactory(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffect *>(&graphicsEffect)));
+            *result = detach(this->shim().CreateEffectFactory(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffect *>(&graphicsEffect)));
             return S_OK;
         }
         catch (...)
@@ -2211,7 +2211,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateEffectFactory(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffect *>(&graphicsEffect), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&animatableProperties)));
+            *result = detach(this->shim().CreateEffectFactory(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffect *>(&graphicsEffect), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&animatableProperties)));
             return S_OK;
         }
         catch (...)
@@ -2225,7 +2225,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateExpressionAnimation());
+            *result = detach(this->shim().CreateExpressionAnimation());
             return S_OK;
         }
         catch (...)
@@ -2239,7 +2239,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateExpressionAnimation(*reinterpret_cast<const hstring *>(&expression)));
+            *result = detach(this->shim().CreateExpressionAnimation(*reinterpret_cast<const hstring *>(&expression)));
             return S_OK;
         }
         catch (...)
@@ -2253,7 +2253,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateInsetClip());
+            *result = detach(this->shim().CreateInsetClip());
             return S_OK;
         }
         catch (...)
@@ -2267,7 +2267,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateInsetClip(leftInset, topInset, rightInset, bottomInset));
+            *result = detach(this->shim().CreateInsetClip(leftInset, topInset, rightInset, bottomInset));
             return S_OK;
         }
         catch (...)
@@ -2281,7 +2281,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateLinearEasingFunction());
+            *result = detach(this->shim().CreateLinearEasingFunction());
             return S_OK;
         }
         catch (...)
@@ -2295,7 +2295,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreatePropertySet());
+            *result = detach(this->shim().CreatePropertySet());
             return S_OK;
         }
         catch (...)
@@ -2309,7 +2309,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateQuaternionKeyFrameAnimation());
+            *result = detach(this->shim().CreateQuaternionKeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2323,7 +2323,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateScalarKeyFrameAnimation());
+            *result = detach(this->shim().CreateScalarKeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2337,7 +2337,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateScopedBatch(batchType));
+            *result = detach(this->shim().CreateScopedBatch(batchType));
             return S_OK;
         }
         catch (...)
@@ -2351,7 +2351,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateSpriteVisual());
+            *result = detach(this->shim().CreateSpriteVisual());
             return S_OK;
         }
         catch (...)
@@ -2365,7 +2365,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateSurfaceBrush());
+            *result = detach(this->shim().CreateSurfaceBrush());
             return S_OK;
         }
         catch (...)
@@ -2379,7 +2379,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateSurfaceBrush(*reinterpret_cast<const Windows::UI::Composition::ICompositionSurface *>(&surface)));
+            *result = detach(this->shim().CreateSurfaceBrush(*reinterpret_cast<const Windows::UI::Composition::ICompositionSurface *>(&surface)));
             return S_OK;
         }
         catch (...)
@@ -2393,7 +2393,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateTargetForCurrentView());
+            *result = detach(this->shim().CreateTargetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2407,7 +2407,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateVector2KeyFrameAnimation());
+            *result = detach(this->shim().CreateVector2KeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2421,7 +2421,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateVector3KeyFrameAnimation());
+            *result = detach(this->shim().CreateVector3KeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2435,7 +2435,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().CreateVector4KeyFrameAnimation());
+            *result = detach(this->shim().CreateVector4KeyFrameAnimation());
             return S_OK;
         }
         catch (...)
@@ -2449,7 +2449,7 @@ struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().GetCommitBatch(batchType));
+            *result = detach(this->shim().GetCommitBatch(batchType));
             return S_OK;
         }
         catch (...)
@@ -2467,7 +2467,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateAmbientLight());
+            *result = detach(this->shim().CreateAmbientLight());
             return S_OK;
         }
         catch (...)
@@ -2481,7 +2481,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateAnimationGroup());
+            *result = detach(this->shim().CreateAnimationGroup());
             return S_OK;
         }
         catch (...)
@@ -2495,7 +2495,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateBackdropBrush());
+            *result = detach(this->shim().CreateBackdropBrush());
             return S_OK;
         }
         catch (...)
@@ -2509,7 +2509,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateDistantLight());
+            *result = detach(this->shim().CreateDistantLight());
             return S_OK;
         }
         catch (...)
@@ -2523,7 +2523,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateDropShadow());
+            *result = detach(this->shim().CreateDropShadow());
             return S_OK;
         }
         catch (...)
@@ -2537,7 +2537,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateImplicitAnimationCollection());
+            *result = detach(this->shim().CreateImplicitAnimationCollection());
             return S_OK;
         }
         catch (...)
@@ -2551,7 +2551,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateLayerVisual());
+            *result = detach(this->shim().CreateLayerVisual());
             return S_OK;
         }
         catch (...)
@@ -2565,7 +2565,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateMaskBrush());
+            *result = detach(this->shim().CreateMaskBrush());
             return S_OK;
         }
         catch (...)
@@ -2579,7 +2579,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateNineGridBrush());
+            *result = detach(this->shim().CreateNineGridBrush());
             return S_OK;
         }
         catch (...)
@@ -2593,7 +2593,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreatePointLight());
+            *result = detach(this->shim().CreatePointLight());
             return S_OK;
         }
         catch (...)
@@ -2607,7 +2607,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateSpotLight());
+            *result = detach(this->shim().CreateSpotLight());
             return S_OK;
         }
         catch (...)
@@ -2621,7 +2621,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateStepEasingFunction());
+            *result = detach(this->shim().CreateStepEasingFunction());
             return S_OK;
         }
         catch (...)
@@ -2635,7 +2635,7 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().CreateStepEasingFunction(stepCount));
+            *result = detach(this->shim().CreateStepEasingFunction(stepCount));
             return S_OK;
         }
         catch (...)
@@ -2653,7 +2653,7 @@ struct produce<D, Windows::UI::Composition::IContainerVisual> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Children());
+            *value = detach(this->shim().Children());
             return S_OK;
         }
         catch (...)
@@ -2675,7 +2675,7 @@ struct produce<D, Windows::UI::Composition::ICubicBezierEasingFunction> : produc
     {
         try
         {
-            *value = detach(shim().ControlPoint1());
+            *value = detach(this->shim().ControlPoint1());
             return S_OK;
         }
         catch (...)
@@ -2688,7 +2688,7 @@ struct produce<D, Windows::UI::Composition::ICubicBezierEasingFunction> : produc
     {
         try
         {
-            *value = detach(shim().ControlPoint2());
+            *value = detach(this->shim().ControlPoint2());
             return S_OK;
         }
         catch (...)
@@ -2705,7 +2705,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -2718,7 +2718,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2731,7 +2731,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().CoordinateSpace());
+            *value = detach(this->shim().CoordinateSpace());
             return S_OK;
         }
         catch (...)
@@ -2745,7 +2745,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
+            this->shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2758,7 +2758,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -2771,7 +2771,7 @@ struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Win
     {
         try
         {
-            shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2788,7 +2788,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().BlurRadius());
+            *value = detach(this->shim().BlurRadius());
             return S_OK;
         }
         catch (...)
@@ -2801,7 +2801,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            shim().BlurRadius(value);
+            this->shim().BlurRadius(value);
             return S_OK;
         }
         catch (...)
@@ -2814,7 +2814,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -2827,7 +2827,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2840,7 +2840,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Mask());
+            *value = detach(this->shim().Mask());
             return S_OK;
         }
         catch (...)
@@ -2854,7 +2854,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            shim().Mask(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            this->shim().Mask(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2867,7 +2867,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -2880,7 +2880,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2893,7 +2893,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Opacity());
+            *value = detach(this->shim().Opacity());
             return S_OK;
         }
         catch (...)
@@ -2906,7 +2906,7 @@ struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windo
     {
         try
         {
-            shim().Opacity(value);
+            this->shim().Opacity(value);
             return S_OK;
         }
         catch (...)
@@ -2923,7 +2923,7 @@ struct produce<D, Windows::UI::Composition::IExpressionAnimation> : produce_base
     {
         try
         {
-            *value = detach(shim().Expression());
+            *value = detach(this->shim().Expression());
             return S_OK;
         }
         catch (...)
@@ -2937,7 +2937,7 @@ struct produce<D, Windows::UI::Composition::IExpressionAnimation> : produce_base
     {
         try
         {
-            shim().Expression(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Expression(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2958,7 +2958,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().BottomInset());
+            *value = detach(this->shim().BottomInset());
             return S_OK;
         }
         catch (...)
@@ -2971,7 +2971,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            shim().BottomInset(value);
+            this->shim().BottomInset(value);
             return S_OK;
         }
         catch (...)
@@ -2984,7 +2984,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().LeftInset());
+            *value = detach(this->shim().LeftInset());
             return S_OK;
         }
         catch (...)
@@ -2997,7 +2997,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            shim().LeftInset(value);
+            this->shim().LeftInset(value);
             return S_OK;
         }
         catch (...)
@@ -3010,7 +3010,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().RightInset());
+            *value = detach(this->shim().RightInset());
             return S_OK;
         }
         catch (...)
@@ -3023,7 +3023,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            shim().RightInset(value);
+            this->shim().RightInset(value);
             return S_OK;
         }
         catch (...)
@@ -3036,7 +3036,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().TopInset());
+            *value = detach(this->shim().TopInset());
             return S_OK;
         }
         catch (...)
@@ -3049,7 +3049,7 @@ struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Window
     {
         try
         {
-            shim().TopInset(value);
+            this->shim().TopInset(value);
             return S_OK;
         }
         catch (...)
@@ -3066,7 +3066,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DelayTime());
+            *value = detach(this->shim().DelayTime());
             return S_OK;
         }
         catch (...)
@@ -3079,7 +3079,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().DelayTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DelayTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3092,7 +3092,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -3105,7 +3105,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3118,7 +3118,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().IterationBehavior());
+            *value = detach(this->shim().IterationBehavior());
             return S_OK;
         }
         catch (...)
@@ -3131,7 +3131,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().IterationBehavior(value);
+            this->shim().IterationBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -3144,7 +3144,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().IterationCount());
+            *value = detach(this->shim().IterationCount());
             return S_OK;
         }
         catch (...)
@@ -3157,7 +3157,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().IterationCount(value);
+            this->shim().IterationCount(value);
             return S_OK;
         }
         catch (...)
@@ -3170,7 +3170,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().KeyFrameCount());
+            *value = detach(this->shim().KeyFrameCount());
             return S_OK;
         }
         catch (...)
@@ -3183,7 +3183,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            *value = detach(shim().StopBehavior());
+            *value = detach(this->shim().StopBehavior());
             return S_OK;
         }
         catch (...)
@@ -3196,7 +3196,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().StopBehavior(value);
+            this->shim().StopBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -3209,7 +3209,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<const hstring *>(&value));
+            this->shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3222,7 +3222,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D
     {
         try
         {
-            shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<const hstring *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<const hstring *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -3239,7 +3239,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation2> : produce_base<
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -3252,7 +3252,7 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation2> : produce_base<
     {
         try
         {
-            shim().Direction(value);
+            this->shim().Direction(value);
             return S_OK;
         }
         catch (...)
@@ -3273,7 +3273,7 @@ struct produce<D, Windows::UI::Composition::ILayerVisual> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Effect());
+            *value = detach(this->shim().Effect());
             return S_OK;
         }
         catch (...)
@@ -3287,7 +3287,7 @@ struct produce<D, Windows::UI::Composition::ILayerVisual> : produce_base<D, Wind
     {
         try
         {
-            shim().Effect(*reinterpret_cast<const Windows::UI::Composition::CompositionEffectBrush *>(&value));
+            this->shim().Effect(*reinterpret_cast<const Windows::UI::Composition::CompositionEffectBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3308,7 +3308,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -3321,7 +3321,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3334,7 +3334,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ConstantAttenuation());
+            *value = detach(this->shim().ConstantAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3347,7 +3347,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().ConstantAttenuation(value);
+            this->shim().ConstantAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3360,7 +3360,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().CoordinateSpace());
+            *value = detach(this->shim().CoordinateSpace());
             return S_OK;
         }
         catch (...)
@@ -3374,7 +3374,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
+            this->shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3387,7 +3387,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().LinearAttenuation());
+            *value = detach(this->shim().LinearAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3400,7 +3400,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().LinearAttenuation(value);
+            this->shim().LinearAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3413,7 +3413,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -3426,7 +3426,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3439,7 +3439,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().QuadraticAttenuation());
+            *value = detach(this->shim().QuadraticAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3452,7 +3452,7 @@ struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windo
     {
         try
         {
-            shim().QuadraticAttenuation(value);
+            this->shim().QuadraticAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3469,7 +3469,7 @@ struct produce<D, Windows::UI::Composition::IQuaternionKeyFrameAnimation> : prod
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3482,7 +3482,7 @@ struct produce<D, Windows::UI::Composition::IQuaternionKeyFrameAnimation> : prod
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -3499,7 +3499,7 @@ struct produce<D, Windows::UI::Composition::IRenderingDeviceReplacedEventArgs> :
     {
         try
         {
-            *value = detach(shim().GraphicsDevice());
+            *value = detach(this->shim().GraphicsDevice());
             return S_OK;
         }
         catch (...)
@@ -3517,7 +3517,7 @@ struct produce<D, Windows::UI::Composition::IScalarKeyFrameAnimation> : produce_
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, value);
+            this->shim().InsertKeyFrame(normalizedProgressKey, value);
             return S_OK;
         }
         catch (...)
@@ -3530,7 +3530,7 @@ struct produce<D, Windows::UI::Composition::IScalarKeyFrameAnimation> : produce_
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, value, *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, value, *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -3547,7 +3547,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ConstantAttenuation());
+            *value = detach(this->shim().ConstantAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3560,7 +3560,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().ConstantAttenuation(value);
+            this->shim().ConstantAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3573,7 +3573,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().CoordinateSpace());
+            *value = detach(this->shim().CoordinateSpace());
             return S_OK;
         }
         catch (...)
@@ -3587,7 +3587,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
+            this->shim().CoordinateSpace(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3600,7 +3600,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -3613,7 +3613,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Direction(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3626,7 +3626,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InnerConeAngle());
+            *value = detach(this->shim().InnerConeAngle());
             return S_OK;
         }
         catch (...)
@@ -3639,7 +3639,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().InnerConeAngle(value);
+            this->shim().InnerConeAngle(value);
             return S_OK;
         }
         catch (...)
@@ -3652,7 +3652,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InnerConeAngleInDegrees());
+            *value = detach(this->shim().InnerConeAngleInDegrees());
             return S_OK;
         }
         catch (...)
@@ -3665,7 +3665,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().InnerConeAngleInDegrees(value);
+            this->shim().InnerConeAngleInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -3678,7 +3678,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InnerConeColor());
+            *value = detach(this->shim().InnerConeColor());
             return S_OK;
         }
         catch (...)
@@ -3691,7 +3691,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().InnerConeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().InnerConeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3704,7 +3704,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().LinearAttenuation());
+            *value = detach(this->shim().LinearAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3717,7 +3717,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().LinearAttenuation(value);
+            this->shim().LinearAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3730,7 +3730,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -3743,7 +3743,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3756,7 +3756,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().OuterConeAngle());
+            *value = detach(this->shim().OuterConeAngle());
             return S_OK;
         }
         catch (...)
@@ -3769,7 +3769,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().OuterConeAngle(value);
+            this->shim().OuterConeAngle(value);
             return S_OK;
         }
         catch (...)
@@ -3782,7 +3782,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().OuterConeAngleInDegrees());
+            *value = detach(this->shim().OuterConeAngleInDegrees());
             return S_OK;
         }
         catch (...)
@@ -3795,7 +3795,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().OuterConeAngleInDegrees(value);
+            this->shim().OuterConeAngleInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -3808,7 +3808,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().OuterConeColor());
+            *value = detach(this->shim().OuterConeColor());
             return S_OK;
         }
         catch (...)
@@ -3821,7 +3821,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().OuterConeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().OuterConeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3834,7 +3834,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().QuadraticAttenuation());
+            *value = detach(this->shim().QuadraticAttenuation());
             return S_OK;
         }
         catch (...)
@@ -3847,7 +3847,7 @@ struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Window
     {
         try
         {
-            shim().QuadraticAttenuation(value);
+            this->shim().QuadraticAttenuation(value);
             return S_OK;
         }
         catch (...)
@@ -3864,7 +3864,7 @@ struct produce<D, Windows::UI::Composition::ISpriteVisual> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Brush());
+            *value = detach(this->shim().Brush());
             return S_OK;
         }
         catch (...)
@@ -3878,7 +3878,7 @@ struct produce<D, Windows::UI::Composition::ISpriteVisual> : produce_base<D, Win
     {
         try
         {
-            shim().Brush(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            this->shim().Brush(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3895,7 +3895,7 @@ struct produce<D, Windows::UI::Composition::ISpriteVisual2> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Shadow());
+            *value = detach(this->shim().Shadow());
             return S_OK;
         }
         catch (...)
@@ -3909,7 +3909,7 @@ struct produce<D, Windows::UI::Composition::ISpriteVisual2> : produce_base<D, Wi
     {
         try
         {
-            shim().Shadow(*reinterpret_cast<const Windows::UI::Composition::CompositionShadow *>(&value));
+            this->shim().Shadow(*reinterpret_cast<const Windows::UI::Composition::CompositionShadow *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3926,7 +3926,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            *value = detach(shim().FinalStep());
+            *value = detach(this->shim().FinalStep());
             return S_OK;
         }
         catch (...)
@@ -3939,7 +3939,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            shim().FinalStep(value);
+            this->shim().FinalStep(value);
             return S_OK;
         }
         catch (...)
@@ -3952,7 +3952,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            *value = detach(shim().InitialStep());
+            *value = detach(this->shim().InitialStep());
             return S_OK;
         }
         catch (...)
@@ -3965,7 +3965,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            shim().InitialStep(value);
+            this->shim().InitialStep(value);
             return S_OK;
         }
         catch (...)
@@ -3978,7 +3978,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsFinalStepSingleFrame());
+            *value = detach(this->shim().IsFinalStepSingleFrame());
             return S_OK;
         }
         catch (...)
@@ -3991,7 +3991,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            shim().IsFinalStepSingleFrame(value);
+            this->shim().IsFinalStepSingleFrame(value);
             return S_OK;
         }
         catch (...)
@@ -4004,7 +4004,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsInitialStepSingleFrame());
+            *value = detach(this->shim().IsInitialStepSingleFrame());
             return S_OK;
         }
         catch (...)
@@ -4017,7 +4017,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            shim().IsInitialStepSingleFrame(value);
+            this->shim().IsInitialStepSingleFrame(value);
             return S_OK;
         }
         catch (...)
@@ -4030,7 +4030,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            *value = detach(shim().StepCount());
+            *value = detach(this->shim().StepCount());
             return S_OK;
         }
         catch (...)
@@ -4043,7 +4043,7 @@ struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<
     {
         try
         {
-            shim().StepCount(value);
+            this->shim().StepCount(value);
             return S_OK;
         }
         catch (...)
@@ -4060,7 +4060,7 @@ struct produce<D, Windows::UI::Composition::IVector2KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4073,7 +4073,7 @@ struct produce<D, Windows::UI::Composition::IVector2KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -4090,7 +4090,7 @@ struct produce<D, Windows::UI::Composition::IVector3KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4103,7 +4103,7 @@ struct produce<D, Windows::UI::Composition::IVector3KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -4120,7 +4120,7 @@ struct produce<D, Windows::UI::Composition::IVector4KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4133,7 +4133,7 @@ struct produce<D, Windows::UI::Composition::IVector4KeyFrameAnimation> : produce
     {
         try
         {
-            shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
+            this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<const Windows::Foundation::Numerics::float4 *>(&value), *reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&easingFunction));
             return S_OK;
         }
         catch (...)
@@ -4150,7 +4150,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().AnchorPoint());
+            *value = detach(this->shim().AnchorPoint());
             return S_OK;
         }
         catch (...)
@@ -4163,7 +4163,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().AnchorPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4176,7 +4176,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().BackfaceVisibility());
+            *value = detach(this->shim().BackfaceVisibility());
             return S_OK;
         }
         catch (...)
@@ -4189,7 +4189,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().BackfaceVisibility(value);
+            this->shim().BackfaceVisibility(value);
             return S_OK;
         }
         catch (...)
@@ -4202,7 +4202,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().BorderMode());
+            *value = detach(this->shim().BorderMode());
             return S_OK;
         }
         catch (...)
@@ -4215,7 +4215,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().BorderMode(value);
+            this->shim().BorderMode(value);
             return S_OK;
         }
         catch (...)
@@ -4228,7 +4228,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().CenterPoint());
+            *value = detach(this->shim().CenterPoint());
             return S_OK;
         }
         catch (...)
@@ -4241,7 +4241,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().CenterPoint(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4254,7 +4254,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Clip());
+            *value = detach(this->shim().Clip());
             return S_OK;
         }
         catch (...)
@@ -4268,7 +4268,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Clip(*reinterpret_cast<const Windows::UI::Composition::CompositionClip *>(&value));
+            this->shim().Clip(*reinterpret_cast<const Windows::UI::Composition::CompositionClip *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4281,7 +4281,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().CompositeMode());
+            *value = detach(this->shim().CompositeMode());
             return S_OK;
         }
         catch (...)
@@ -4294,7 +4294,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().CompositeMode(value);
+            this->shim().CompositeMode(value);
             return S_OK;
         }
         catch (...)
@@ -4307,7 +4307,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().IsVisible());
+            *value = detach(this->shim().IsVisible());
             return S_OK;
         }
         catch (...)
@@ -4320,7 +4320,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().IsVisible(value);
+            this->shim().IsVisible(value);
             return S_OK;
         }
         catch (...)
@@ -4333,7 +4333,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Offset());
+            *value = detach(this->shim().Offset());
             return S_OK;
         }
         catch (...)
@@ -4346,7 +4346,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Offset(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4359,7 +4359,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Opacity());
+            *value = detach(this->shim().Opacity());
             return S_OK;
         }
         catch (...)
@@ -4372,7 +4372,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Opacity(value);
+            this->shim().Opacity(value);
             return S_OK;
         }
         catch (...)
@@ -4385,7 +4385,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -4398,7 +4398,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Orientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            this->shim().Orientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4411,7 +4411,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Parent());
+            *value = detach(this->shim().Parent());
             return S_OK;
         }
         catch (...)
@@ -4425,7 +4425,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().RotationAngle());
+            *value = detach(this->shim().RotationAngle());
             return S_OK;
         }
         catch (...)
@@ -4438,7 +4438,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().RotationAngle(value);
+            this->shim().RotationAngle(value);
             return S_OK;
         }
         catch (...)
@@ -4451,7 +4451,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().RotationAngleInDegrees());
+            *value = detach(this->shim().RotationAngleInDegrees());
             return S_OK;
         }
         catch (...)
@@ -4464,7 +4464,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().RotationAngleInDegrees(value);
+            this->shim().RotationAngleInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -4477,7 +4477,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().RotationAxis());
+            *value = detach(this->shim().RotationAxis());
             return S_OK;
         }
         catch (...)
@@ -4490,7 +4490,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().RotationAxis(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().RotationAxis(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4503,7 +4503,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Scale());
+            *value = detach(this->shim().Scale());
             return S_OK;
         }
         catch (...)
@@ -4516,7 +4516,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            this->shim().Scale(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4529,7 +4529,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -4542,7 +4542,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().Size(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            this->shim().Size(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4555,7 +4555,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().TransformMatrix());
+            *value = detach(this->shim().TransformMatrix());
             return S_OK;
         }
         catch (...)
@@ -4568,7 +4568,7 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
     {
         try
         {
-            shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
+            this->shim().TransformMatrix(*reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4585,7 +4585,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Count());
+            *value = detach(this->shim().Count());
             return S_OK;
         }
         catch (...)
@@ -4598,7 +4598,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().InsertAbove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&sibling));
+            this->shim().InsertAbove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&sibling));
             return S_OK;
         }
         catch (...)
@@ -4611,7 +4611,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().InsertAtBottom(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild));
+            this->shim().InsertAtBottom(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild));
             return S_OK;
         }
         catch (...)
@@ -4624,7 +4624,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().InsertAtTop(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild));
+            this->shim().InsertAtTop(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild));
             return S_OK;
         }
         catch (...)
@@ -4637,7 +4637,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().InsertBelow(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&sibling));
+            this->shim().InsertBelow(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newChild), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&sibling));
             return S_OK;
         }
         catch (...)
@@ -4650,7 +4650,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&child));
+            this->shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&child));
             return S_OK;
         }
         catch (...)
@@ -4663,7 +4663,7 @@ struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D,
     {
         try
         {
-            shim().RemoveAll();
+            this->shim().RemoveAll();
             return S_OK;
         }
         catch (...)
@@ -4684,7 +4684,7 @@ struct produce<D, Windows::UI::Composition::IVisualUnorderedCollection> : produc
     {
         try
         {
-            *value = detach(shim().Count());
+            *value = detach(this->shim().Count());
             return S_OK;
         }
         catch (...)
@@ -4697,7 +4697,7 @@ struct produce<D, Windows::UI::Composition::IVisualUnorderedCollection> : produc
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newVisual));
+            this->shim().Add(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&newVisual));
             return S_OK;
         }
         catch (...)
@@ -4710,7 +4710,7 @@ struct produce<D, Windows::UI::Composition::IVisualUnorderedCollection> : produc
     {
         try
         {
-            shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
+            this->shim().Remove(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
             return S_OK;
         }
         catch (...)
@@ -4723,7 +4723,7 @@ struct produce<D, Windows::UI::Composition::IVisualUnorderedCollection> : produc
     {
         try
         {
-            shim().RemoveAll();
+            this->shim().RemoveAll();
             return S_OK;
         }
         catch (...)

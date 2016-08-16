@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.UI.Xaml.Printing.0.h"
 #include "Windows.Graphics.Printing.0.h"
 #include "Windows.UI.Xaml.0.h"

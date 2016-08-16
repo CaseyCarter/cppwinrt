@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.Capture.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Media.Devices.Core.3.h"
-#include "internal\Windows.Media.Devices.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.Capture.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Media.Devices.Core.3.h"
+#include "internal/Windows.Media.Devices.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {
@@ -22,7 +22,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoCaptureSettings> : prod
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoCaptureSettings> : prod
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base
     {
         try
         {
-            *value = detach(shim().SupportedModes());
+            *value = detach(this->shim().SupportedModes());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base
     {
         try
         {
-            shim().Configure(*reinterpret_cast<const Windows::Media::Devices::AdvancedPhotoCaptureSettings *>(&settings));
+            this->shim().Configure(*reinterpret_cast<const Windows::Media::Devices::AdvancedPhotoCaptureSettings *>(&settings));
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            shim().SetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::IInspectable *>(&propertyValue));
+            this->shim().SetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::IInspectable *>(&propertyValue));
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *propertyValue = detach(shim().GetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId)));
+            *propertyValue = detach(this->shim().GetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId)));
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().LowLagPhotoSequence());
+            *value = detach(this->shim().LowLagPhotoSequence());
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().LowLagPhoto());
+            *value = detach(this->shim().LowLagPhoto());
             return S_OK;
         }
         catch (...)
@@ -168,7 +168,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().SceneModeControl());
+            *value = detach(this->shim().SceneModeControl());
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().TorchControl());
+            *value = detach(this->shim().TorchControl());
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().FlashControl());
+            *value = detach(this->shim().FlashControl());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().WhiteBalanceControl());
+            *value = detach(this->shim().WhiteBalanceControl());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().ExposureControl());
+            *value = detach(this->shim().ExposureControl());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().FocusControl());
+            *value = detach(this->shim().FocusControl());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().ExposureCompensationControl());
+            *value = detach(this->shim().ExposureCompensationControl());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().IsoSpeedControl());
+            *value = detach(this->shim().IsoSpeedControl());
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().RegionsOfInterestControl());
+            *value = detach(this->shim().RegionsOfInterestControl());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().PrimaryUse());
+            *value = detach(this->shim().PrimaryUse());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            shim().PrimaryUse(value);
+            this->shim().PrimaryUse(value);
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().VariablePhotoSequenceController());
+            *value = detach(this->shim().VariablePhotoSequenceController());
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().PhotoConfirmationControl());
+            *value = detach(this->shim().PhotoConfirmationControl());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().ZoomControl());
+            *value = detach(this->shim().ZoomControl());
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().ExposurePriorityVideoControl());
+            *value = detach(this->shim().ExposurePriorityVideoControl());
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().DesiredOptimization());
+            *value = detach(this->shim().DesiredOptimization());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            shim().DesiredOptimization(value);
+            this->shim().DesiredOptimization(value);
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().HdrVideoControl());
+            *value = detach(this->shim().HdrVideoControl());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().OpticalImageStabilizationControl());
+            *value = detach(this->shim().OpticalImageStabilizationControl());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
     {
         try
         {
-            *value = detach(shim().AdvancedPhotoControl());
+            *value = detach(this->shim().AdvancedPhotoControl());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_bas
     {
         try
         {
-            shim().Muted(value);
+            this->shim().Muted(value);
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Muted());
+            *value = detach(this->shim().Muted());
             return S_OK;
         }
         catch (...)
@@ -482,7 +482,7 @@ struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_bas
     {
         try
         {
-            shim().VolumePercent(value);
+            this->shim().VolumePercent(value);
             return S_OK;
         }
         catch (...)
@@ -495,7 +495,7 @@ struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().VolumePercent());
+            *value = detach(this->shim().VolumePercent());
             return S_OK;
         }
         catch (...)
@@ -512,7 +512,7 @@ struct produce<D, Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs> 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -526,7 +526,7 @@ struct produce<D, Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs> 
     {
         try
         {
-            *value = detach(shim().Role());
+            *value = detach(this->shim().Role());
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -556,7 +556,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -582,7 +582,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -595,7 +595,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produ
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(value));
+            *asyncInfo = detach(this->shim().SetValueAsync(value));
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Auto());
+            *value = detach(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *asyncInfo = detach(shim().SetAutoAsync(value));
+            *asyncInfo = detach(this->shim().SetAutoAsync(value));
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -705,7 +705,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, W
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&shutterDuration)));
+            *asyncInfo = detach(this->shim().SetValueAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&shutterDuration)));
             return S_OK;
         }
         catch (...)
@@ -736,7 +736,7 @@ struct produce<D, Windows::Media::Devices::IExposurePriorityVideoControl> : prod
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::Media::Devices::IExposurePriorityVideoControl> : prod
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::Media::Devices::IExposurePriorityVideoControl> : prod
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PowerSupported());
+            *value = detach(this->shim().PowerSupported());
             return S_OK;
         }
         catch (...)
@@ -805,7 +805,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().RedEyeReductionSupported());
+            *value = detach(this->shim().RedEyeReductionSupported());
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -831,7 +831,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -844,7 +844,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Auto());
+            *value = detach(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -857,7 +857,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            shim().Auto(value);
+            this->shim().Auto(value);
             return S_OK;
         }
         catch (...)
@@ -870,7 +870,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().RedEyeReduction());
+            *value = detach(this->shim().RedEyeReduction());
             return S_OK;
         }
         catch (...)
@@ -883,7 +883,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            shim().RedEyeReduction(value);
+            this->shim().RedEyeReduction(value);
             return S_OK;
         }
         catch (...)
@@ -896,7 +896,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PowerPercent());
+            *value = detach(this->shim().PowerPercent());
             return S_OK;
         }
         catch (...)
@@ -909,7 +909,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Wind
     {
         try
         {
-            shim().PowerPercent(value);
+            this->shim().PowerPercent(value);
             return S_OK;
         }
         catch (...)
@@ -926,7 +926,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().AssistantLightSupported());
+            *value = detach(this->shim().AssistantLightSupported());
             return S_OK;
         }
         catch (...)
@@ -939,7 +939,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().AssistantLightEnabled());
+            *value = detach(this->shim().AssistantLightEnabled());
             return S_OK;
         }
         catch (...)
@@ -952,7 +952,7 @@ struct produce<D, Windows::Media::Devices::IFlashControl2> : produce_base<D, Win
     {
         try
         {
-            shim().AssistantLightEnabled(value);
+            this->shim().AssistantLightEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -969,7 +969,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -982,7 +982,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().SupportedPresets());
+            *value = detach(this->shim().SupportedPresets());
             return S_OK;
         }
         catch (...)
@@ -996,7 +996,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Preset());
+            *value = detach(this->shim().Preset());
             return S_OK;
         }
         catch (...)
@@ -1009,7 +1009,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *asyncInfo = detach(shim().SetPresetAsync(preset));
+            *asyncInfo = detach(this->shim().SetPresetAsync(preset));
             return S_OK;
         }
         catch (...)
@@ -1023,7 +1023,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *asyncInfo = detach(shim().SetPresetAsync(preset, completeBeforeFocus));
+            *asyncInfo = detach(this->shim().SetPresetAsync(preset, completeBeforeFocus));
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -1050,7 +1050,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -1063,7 +1063,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -1076,7 +1076,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1089,7 +1089,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(focus));
+            *asyncInfo = detach(this->shim().SetValueAsync(focus));
             return S_OK;
         }
         catch (...)
@@ -1103,7 +1103,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Wind
     {
         try
         {
-            *asyncInfo = detach(shim().FocusAsync());
+            *asyncInfo = detach(this->shim().FocusAsync());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FocusChangedSupported());
+            *value = detach(this->shim().FocusChangedSupported());
             return S_OK;
         }
         catch (...)
@@ -1134,7 +1134,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().WaitForFocusSupported());
+            *value = detach(this->shim().WaitForFocusSupported());
             return S_OK;
         }
         catch (...)
@@ -1147,7 +1147,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SupportedFocusModes());
+            *value = detach(this->shim().SupportedFocusModes());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SupportedFocusDistances());
+            *value = detach(this->shim().SupportedFocusDistances());
             return S_OK;
         }
         catch (...)
@@ -1175,7 +1175,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SupportedFocusRanges());
+            *value = detach(this->shim().SupportedFocusRanges());
             return S_OK;
         }
         catch (...)
@@ -1189,7 +1189,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -1202,7 +1202,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FocusState());
+            *value = detach(this->shim().FocusState());
             return S_OK;
         }
         catch (...)
@@ -1215,7 +1215,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().UnlockAsync());
+            *asyncInfo = detach(this->shim().UnlockAsync());
             return S_OK;
         }
         catch (...)
@@ -1229,7 +1229,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().LockAsync());
+            *asyncInfo = detach(this->shim().LockAsync());
             return S_OK;
         }
         catch (...)
@@ -1243,7 +1243,7 @@ struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Win
     {
         try
         {
-            shim().Configure(*reinterpret_cast<const Windows::Media::Devices::FocusSettings *>(&settings));
+            this->shim().Configure(*reinterpret_cast<const Windows::Media::Devices::FocusSettings *>(&settings));
             return S_OK;
         }
         catch (...)
@@ -1260,7 +1260,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -1286,7 +1286,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().AutoFocusRange());
+            *value = detach(this->shim().AutoFocusRange());
             return S_OK;
         }
         catch (...)
@@ -1299,7 +1299,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().AutoFocusRange(value);
+            this->shim().AutoFocusRange(value);
             return S_OK;
         }
         catch (...)
@@ -1312,7 +1312,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1326,7 +1326,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1339,7 +1339,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Distance());
+            *value = detach(this->shim().Distance());
             return S_OK;
         }
         catch (...)
@@ -1353,7 +1353,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().Distance(*reinterpret_cast<const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> *>(&value));
+            this->shim().Distance(*reinterpret_cast<const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1366,7 +1366,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().WaitForFocus());
+            *value = detach(this->shim().WaitForFocus());
             return S_OK;
         }
         catch (...)
@@ -1379,7 +1379,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().WaitForFocus(value);
+            this->shim().WaitForFocus(value);
             return S_OK;
         }
         catch (...)
@@ -1392,7 +1392,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().DisableDriverFallback());
+            *value = detach(this->shim().DisableDriverFallback());
             return S_OK;
         }
         catch (...)
@@ -1405,7 +1405,7 @@ struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Win
     {
         try
         {
-            shim().DisableDriverFallback(value);
+            this->shim().DisableDriverFallback(value);
             return S_OK;
         }
         catch (...)
@@ -1422,7 +1422,7 @@ struct produce<D, Windows::Media::Devices::IHdrVideoControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -1435,7 +1435,7 @@ struct produce<D, Windows::Media::Devices::IHdrVideoControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SupportedModes());
+            *value = detach(this->shim().SupportedModes());
             return S_OK;
         }
         catch (...)
@@ -1449,7 +1449,7 @@ struct produce<D, Windows::Media::Devices::IHdrVideoControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -1462,7 +1462,7 @@ struct produce<D, Windows::Media::Devices::IHdrVideoControl> : produce_base<D, W
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -1492,7 +1492,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().SupportedPresets());
+            *value = detach(this->shim().SupportedPresets());
             return S_OK;
         }
         catch (...)
@@ -1506,7 +1506,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Preset());
+            *value = detach(this->shim().Preset());
             return S_OK;
         }
         catch (...)
@@ -1519,7 +1519,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl> : produce_base<D, W
     {
         try
         {
-            *asyncInfo = detach(shim().SetPresetAsync(preset));
+            *asyncInfo = detach(this->shim().SetPresetAsync(preset));
             return S_OK;
         }
         catch (...)
@@ -1537,7 +1537,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -1550,7 +1550,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -1563,7 +1563,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -1576,7 +1576,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1589,7 +1589,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(isoSpeed));
+            *asyncInfo = detach(this->shim().SetValueAsync(isoSpeed));
             return S_OK;
         }
         catch (...)
@@ -1603,7 +1603,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Auto());
+            *value = detach(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -1616,7 +1616,7 @@ struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().SetAutoAsync());
+            *asyncInfo = detach(this->shim().SetAutoAsync());
             return S_OK;
         }
         catch (...)
@@ -1634,7 +1634,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
+            *value = detach(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
             return S_OK;
         }
         catch (...)
@@ -1648,7 +1648,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().GetCurrentFrameRate());
+            *value = detach(this->shim().GetCurrentFrameRate());
             return S_OK;
         }
         catch (...)
@@ -1662,7 +1662,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ThumbnailEnabled());
+            *value = detach(this->shim().ThumbnailEnabled());
             return S_OK;
         }
         catch (...)
@@ -1675,7 +1675,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            shim().ThumbnailEnabled(value);
+            this->shim().ThumbnailEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1688,7 +1688,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ThumbnailFormat());
+            *value = detach(this->shim().ThumbnailFormat());
             return S_OK;
         }
         catch (...)
@@ -1701,7 +1701,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            shim().ThumbnailFormat(value);
+            this->shim().ThumbnailFormat(value);
             return S_OK;
         }
         catch (...)
@@ -1714,7 +1714,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DesiredThumbnailSize());
+            *value = detach(this->shim().DesiredThumbnailSize());
             return S_OK;
         }
         catch (...)
@@ -1727,7 +1727,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            shim().DesiredThumbnailSize(value);
+            this->shim().DesiredThumbnailSize(value);
             return S_OK;
         }
         catch (...)
@@ -1740,7 +1740,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().HardwareAcceleratedThumbnailSupported());
+            *value = detach(this->shim().HardwareAcceleratedThumbnailSupported());
             return S_OK;
         }
         catch (...)
@@ -1757,7 +1757,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -1770,7 +1770,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().MaxPastPhotos());
+            *value = detach(this->shim().MaxPastPhotos());
             return S_OK;
         }
         catch (...)
@@ -1783,7 +1783,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().MaxPhotosPerSecond());
+            *value = detach(this->shim().MaxPhotosPerSecond());
             return S_OK;
         }
         catch (...)
@@ -1796,7 +1796,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().PastPhotoLimit());
+            *value = detach(this->shim().PastPhotoLimit());
             return S_OK;
         }
         catch (...)
@@ -1809,7 +1809,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            shim().PastPhotoLimit(value);
+            this->shim().PastPhotoLimit(value);
             return S_OK;
         }
         catch (...)
@@ -1822,7 +1822,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().PhotosPerSecondLimit());
+            *value = detach(this->shim().PhotosPerSecondLimit());
             return S_OK;
         }
         catch (...)
@@ -1835,7 +1835,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            shim().PhotosPerSecondLimit(value);
+            this->shim().PhotosPerSecondLimit(value);
             return S_OK;
         }
         catch (...)
@@ -1848,7 +1848,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
+            *value = detach(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
             return S_OK;
         }
         catch (...)
@@ -1862,7 +1862,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().GetCurrentFrameRate());
+            *value = detach(this->shim().GetCurrentFrameRate());
             return S_OK;
         }
         catch (...)
@@ -1876,7 +1876,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().ThumbnailEnabled());
+            *value = detach(this->shim().ThumbnailEnabled());
             return S_OK;
         }
         catch (...)
@@ -1889,7 +1889,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            shim().ThumbnailEnabled(value);
+            this->shim().ThumbnailEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1902,7 +1902,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().ThumbnailFormat());
+            *value = detach(this->shim().ThumbnailFormat());
             return S_OK;
         }
         catch (...)
@@ -1915,7 +1915,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            shim().ThumbnailFormat(value);
+            this->shim().ThumbnailFormat(value);
             return S_OK;
         }
         catch (...)
@@ -1928,7 +1928,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().DesiredThumbnailSize());
+            *value = detach(this->shim().DesiredThumbnailSize());
             return S_OK;
         }
         catch (...)
@@ -1941,7 +1941,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            shim().DesiredThumbnailSize(value);
+            this->shim().DesiredThumbnailSize(value);
             return S_OK;
         }
         catch (...)
@@ -1954,7 +1954,7 @@ struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produc
     {
         try
         {
-            *value = detach(shim().HardwareAcceleratedThumbnailSupported());
+            *value = detach(this->shim().HardwareAcceleratedThumbnailSupported());
             return S_OK;
         }
         catch (...)
@@ -1971,7 +1971,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Capabilities());
+            *value = detach(this->shim().Capabilities());
             return S_OK;
         }
         catch (...)
@@ -1985,7 +1985,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D
     {
         try
         {
-            *succeeded = detach(shim().TryGetValue(*value));
+            *succeeded = detach(this->shim().TryGetValue(*value));
             return S_OK;
         }
         catch (...)
@@ -1998,7 +1998,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D
     {
         try
         {
-            *succeeded = detach(shim().TrySetValue(value));
+            *succeeded = detach(this->shim().TrySetValue(value));
             return S_OK;
         }
         catch (...)
@@ -2011,7 +2011,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D
     {
         try
         {
-            *succeeded = detach(shim().TryGetAuto(*value));
+            *succeeded = detach(this->shim().TryGetAuto(*value));
             return S_OK;
         }
         catch (...)
@@ -2024,7 +2024,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D
     {
         try
         {
-            *succeeded = detach(shim().TrySetAuto(value));
+            *succeeded = detach(this->shim().TrySetAuto(value));
             return S_OK;
         }
         catch (...)
@@ -2041,7 +2041,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -2054,7 +2054,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -2067,7 +2067,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -2080,7 +2080,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -2093,7 +2093,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().Default());
+            *value = detach(this->shim().Default());
             return S_OK;
         }
         catch (...)
@@ -2106,7 +2106,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : pr
     {
         try
         {
-            *value = detach(shim().AutoModeSupported());
+            *value = detach(this->shim().AutoModeSupported());
             return S_OK;
         }
         catch (...)
@@ -2123,7 +2123,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetAvailableMediaStreamProperties(mediaStreamType));
+            *value = detach(this->shim().GetAvailableMediaStreamProperties(mediaStreamType));
             return S_OK;
         }
         catch (...)
@@ -2137,7 +2137,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetMediaStreamProperties(mediaStreamType));
+            *value = detach(this->shim().GetMediaStreamProperties(mediaStreamType));
             return S_OK;
         }
         catch (...)
@@ -2151,7 +2151,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceController> : produce_bas
     {
         try
         {
-            *asyncInfo = detach(shim().SetMediaStreamPropertiesAsync(mediaStreamType, *reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&mediaEncodingProperties)));
+            *asyncInfo = detach(this->shim().SetMediaStreamPropertiesAsync(mediaStreamType, *reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&mediaEncodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -2169,7 +2169,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *selector = detach(shim().GetAudioCaptureSelector());
+            *selector = detach(this->shim().GetAudioCaptureSelector());
             return S_OK;
         }
         catch (...)
@@ -2183,7 +2183,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *selector = detach(shim().GetAudioRenderSelector());
+            *selector = detach(this->shim().GetAudioRenderSelector());
             return S_OK;
         }
         catch (...)
@@ -2197,7 +2197,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *selector = detach(shim().GetVideoCaptureSelector());
+            *selector = detach(this->shim().GetVideoCaptureSelector());
             return S_OK;
         }
         catch (...)
@@ -2211,7 +2211,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *deviceId = detach(shim().GetDefaultAudioCaptureId(role));
+            *deviceId = detach(this->shim().GetDefaultAudioCaptureId(role));
             return S_OK;
         }
         catch (...)
@@ -2225,7 +2225,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *deviceId = detach(shim().GetDefaultAudioRenderId(role));
+            *deviceId = detach(this->shim().GetDefaultAudioRenderId(role));
             return S_OK;
         }
         catch (...)
@@ -2239,7 +2239,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *cookie = detach(shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2252,7 +2252,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            shim().DefaultAudioCaptureDeviceChanged(cookie);
+            this->shim().DefaultAudioCaptureDeviceChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -2265,7 +2265,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            *cookie = detach(shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2278,7 +2278,7 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
     {
         try
         {
-            shim().DefaultAudioRenderDeviceChanged(cookie);
+            this->shim().DefaultAudioRenderDeviceChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -2295,7 +2295,7 @@ struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : 
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -2308,7 +2308,7 @@ struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : 
     {
         try
         {
-            *value = detach(shim().SupportedModes());
+            *value = detach(this->shim().SupportedModes());
             return S_OK;
         }
         catch (...)
@@ -2322,7 +2322,7 @@ struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : 
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -2335,7 +2335,7 @@ struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : 
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -2352,7 +2352,7 @@ struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_
     {
         try
         {
-            *pbSupported = detach(shim().Supported());
+            *pbSupported = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -2365,7 +2365,7 @@ struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -2378,7 +2378,7 @@ struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -2391,7 +2391,7 @@ struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_
     {
         try
         {
-            *format = detach(shim().PixelFormat());
+            *format = detach(this->shim().PixelFormat());
             return S_OK;
         }
         catch (...)
@@ -2404,7 +2404,7 @@ struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_
     {
         try
         {
-            shim().PixelFormat(format);
+            this->shim().PixelFormat(format);
             return S_OK;
         }
         catch (...)
@@ -2421,7 +2421,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AutoFocusEnabled());
+            *value = detach(this->shim().AutoFocusEnabled());
             return S_OK;
         }
         catch (...)
@@ -2434,7 +2434,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            shim().AutoFocusEnabled(value);
+            this->shim().AutoFocusEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2447,7 +2447,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AutoWhiteBalanceEnabled());
+            *value = detach(this->shim().AutoWhiteBalanceEnabled());
             return S_OK;
         }
         catch (...)
@@ -2460,7 +2460,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            shim().AutoWhiteBalanceEnabled(value);
+            this->shim().AutoWhiteBalanceEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2473,7 +2473,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().AutoExposureEnabled());
+            *value = detach(this->shim().AutoExposureEnabled());
             return S_OK;
         }
         catch (...)
@@ -2486,7 +2486,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            shim().AutoExposureEnabled(value);
+            this->shim().AutoExposureEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2499,7 +2499,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Bounds());
+            *value = detach(this->shim().Bounds());
             return S_OK;
         }
         catch (...)
@@ -2512,7 +2512,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, 
     {
         try
         {
-            shim().Bounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().Bounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2529,7 +2529,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -2542,7 +2542,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            shim().Type(value);
+            this->shim().Type(value);
             return S_OK;
         }
         catch (...)
@@ -2555,7 +2555,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BoundsNormalized());
+            *value = detach(this->shim().BoundsNormalized());
             return S_OK;
         }
         catch (...)
@@ -2568,7 +2568,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            shim().BoundsNormalized(value);
+            this->shim().BoundsNormalized(value);
             return S_OK;
         }
         catch (...)
@@ -2581,7 +2581,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Weight());
+            *value = detach(this->shim().Weight());
             return S_OK;
         }
         catch (...)
@@ -2594,7 +2594,7 @@ struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D,
     {
         try
         {
-            shim().Weight(value);
+            this->shim().Weight(value);
             return S_OK;
         }
         catch (...)
@@ -2611,7 +2611,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *value = detach(shim().MaxRegions());
+            *value = detach(this->shim().MaxRegions());
             return S_OK;
         }
         catch (...)
@@ -2624,7 +2624,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *asyncInfo = detach(shim().SetRegionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> *>(&regions)));
+            *asyncInfo = detach(this->shim().SetRegionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> *>(&regions)));
             return S_OK;
         }
         catch (...)
@@ -2638,7 +2638,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *asyncInfo = detach(shim().SetRegionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> *>(&regions), lockValues));
+            *asyncInfo = detach(this->shim().SetRegionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> *>(&regions), lockValues));
             return S_OK;
         }
         catch (...)
@@ -2652,7 +2652,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *asyncInfo = detach(shim().ClearRegionsAsync());
+            *asyncInfo = detach(this->shim().ClearRegionsAsync());
             return S_OK;
         }
         catch (...)
@@ -2666,7 +2666,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *value = detach(shim().AutoFocusSupported());
+            *value = detach(this->shim().AutoFocusSupported());
             return S_OK;
         }
         catch (...)
@@ -2679,7 +2679,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *value = detach(shim().AutoWhiteBalanceSupported());
+            *value = detach(this->shim().AutoWhiteBalanceSupported());
             return S_OK;
         }
         catch (...)
@@ -2692,7 +2692,7 @@ struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_
     {
         try
         {
-            *value = detach(shim().AutoExposureSupported());
+            *value = detach(this->shim().AutoExposureSupported());
             return S_OK;
         }
         catch (...)
@@ -2709,7 +2709,7 @@ struct produce<D, Windows::Media::Devices::ISceneModeControl> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().SupportedModes());
+            *value = detach(this->shim().SupportedModes());
             return S_OK;
         }
         catch (...)
@@ -2723,7 +2723,7 @@ struct produce<D, Windows::Media::Devices::ISceneModeControl> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -2736,7 +2736,7 @@ struct produce<D, Windows::Media::Devices::ISceneModeControl> : produce_base<D, 
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(sceneMode));
+            *asyncInfo = detach(this->shim().SetValueAsync(sceneMode));
             return S_OK;
         }
         catch (...)
@@ -2754,7 +2754,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -2767,7 +2767,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PowerSupported());
+            *value = detach(this->shim().PowerSupported());
             return S_OK;
         }
         catch (...)
@@ -2780,7 +2780,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Enabled());
+            *value = detach(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -2793,7 +2793,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            shim().Enabled(value);
+            this->shim().Enabled(value);
             return S_OK;
         }
         catch (...)
@@ -2806,7 +2806,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PowerPercent());
+            *value = detach(this->shim().PowerPercent());
             return S_OK;
         }
         catch (...)
@@ -2819,7 +2819,7 @@ struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Wind
     {
         try
         {
-            shim().PowerPercent(value);
+            this->shim().PowerPercent(value);
             return S_OK;
         }
         catch (...)
@@ -2836,7 +2836,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Brightness());
+            *value = detach(this->shim().Brightness());
             return S_OK;
         }
         catch (...)
@@ -2850,7 +2850,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Contrast());
+            *value = detach(this->shim().Contrast());
             return S_OK;
         }
         catch (...)
@@ -2864,7 +2864,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Hue());
+            *value = detach(this->shim().Hue());
             return S_OK;
         }
         catch (...)
@@ -2878,7 +2878,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().WhiteBalance());
+            *value = detach(this->shim().WhiteBalance());
             return S_OK;
         }
         catch (...)
@@ -2892,7 +2892,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().BacklightCompensation());
+            *value = detach(this->shim().BacklightCompensation());
             return S_OK;
         }
         catch (...)
@@ -2906,7 +2906,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Pan());
+            *value = detach(this->shim().Pan());
             return S_OK;
         }
         catch (...)
@@ -2920,7 +2920,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Tilt());
+            *value = detach(this->shim().Tilt());
             return S_OK;
         }
         catch (...)
@@ -2934,7 +2934,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Zoom());
+            *value = detach(this->shim().Zoom());
             return S_OK;
         }
         catch (...)
@@ -2948,7 +2948,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Roll());
+            *value = detach(this->shim().Roll());
             return S_OK;
         }
         catch (...)
@@ -2962,7 +2962,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Exposure());
+            *value = detach(this->shim().Exposure());
             return S_OK;
         }
         catch (...)
@@ -2976,7 +2976,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *value = detach(shim().Focus());
+            *value = detach(this->shim().Focus());
             return S_OK;
         }
         catch (...)
@@ -2990,7 +2990,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *succeeded = detach(shim().TrySetPowerlineFrequency(value));
+            *succeeded = detach(this->shim().TrySetPowerlineFrequency(value));
             return S_OK;
         }
         catch (...)
@@ -3003,7 +3003,7 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
     {
         try
         {
-            *succeeded = detach(shim().TryGetPowerlineFrequency(*value));
+            *succeeded = detach(this->shim().TryGetPowerlineFrequency(*value));
             return S_OK;
         }
         catch (...)
@@ -3020,7 +3020,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -3033,7 +3033,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Preset());
+            *value = detach(this->shim().Preset());
             return S_OK;
         }
         catch (...)
@@ -3046,7 +3046,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *asyncInfo = detach(shim().SetPresetAsync(preset));
+            *asyncInfo = detach(this->shim().SetPresetAsync(preset));
             return S_OK;
         }
         catch (...)
@@ -3060,7 +3060,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -3073,7 +3073,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -3086,7 +3086,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -3099,7 +3099,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3112,7 +3112,7 @@ struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<
     {
         try
         {
-            *asyncInfo = detach(shim().SetValueAsync(temperature));
+            *asyncInfo = detach(this->shim().SetValueAsync(temperature));
             return S_OK;
         }
         catch (...)
@@ -3130,7 +3130,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Supported());
+            *value = detach(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -3143,7 +3143,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Min());
+            *value = detach(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -3156,7 +3156,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Max());
+            *value = detach(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -3169,7 +3169,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Step());
+            *value = detach(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -3182,7 +3182,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3195,7 +3195,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windo
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -3212,7 +3212,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl2> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().SupportedModes());
+            *value = detach(this->shim().SupportedModes());
             return S_OK;
         }
         catch (...)
@@ -3226,7 +3226,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl2> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -3239,7 +3239,7 @@ struct produce<D, Windows::Media::Devices::IZoomControl2> : produce_base<D, Wind
     {
         try
         {
-            shim().Configure(*reinterpret_cast<const Windows::Media::Devices::ZoomSettings *>(&settings));
+            this->shim().Configure(*reinterpret_cast<const Windows::Media::Devices::ZoomSettings *>(&settings));
             return S_OK;
         }
         catch (...)
@@ -3256,7 +3256,7 @@ struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -3269,7 +3269,7 @@ struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Wind
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -3282,7 +3282,7 @@ struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3295,7 +3295,7 @@ struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Wind
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)

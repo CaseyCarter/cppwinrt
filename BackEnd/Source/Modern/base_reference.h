@@ -47,7 +47,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)

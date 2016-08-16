@@ -6,8 +6,8 @@ namespace Modern::Settings {
 Modern::Options Options;
 std::string OutPath;
 std::string DatabasePath;
-const std::string PublicPath = "winrt\\";
-const std::string InternalPath = "internal\\";
+const std::string PublicPath = "winrt/";
+const std::string InternalPath = "internal/";
 const std::string ForwardLayerExtension = ".0.h";
 const std::string AbiLayerExtension = ".1.h";
 const std::string InterfaceLayerExtension = ".2.h";

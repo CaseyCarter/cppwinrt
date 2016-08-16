@@ -1,4 +1,6 @@
 
+#ifndef WINRT_NO_AGILE_REFERENCE
+
 template <typename T>
 struct agile_ref
 {
@@ -7,7 +9,7 @@ struct agile_ref
     agile_ref(const T & object)
     {
 #ifdef WINRT_DEBUG
-        if (object.try_as<IAgileObject>())
+        if (object.template try_as<IAgileObject>())
         {
             WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
         }
@@ -41,3 +43,5 @@ agile_ref<T> make_agile(const T & object)
 {
     return object;
 }
+
+#endif

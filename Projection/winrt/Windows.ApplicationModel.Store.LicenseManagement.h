@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Store.LicenseManagement.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Store.LicenseManagement.3.h"
 #include "Windows.ApplicationModel.Store.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
     {
         try
         {
-            *action = detach(shim().AddLicenseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&license)));
+            *action = detach(this->shim().AddLicenseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&license)));
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
     {
         try
         {
-            *operation = detach(shim().GetSatisfactionInfosAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&keyIds)));
+            *operation = detach(this->shim().GetSatisfactionInfosAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&keyIds)));
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedByDevice());
+            *value = detach(this->shim().SatisfiedByDevice());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedByOpenLicense());
+            *value = detach(this->shim().SatisfiedByOpenLicense());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedByTrial());
+            *value = detach(this->shim().SatisfiedByTrial());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedByPass());
+            *value = detach(this->shim().SatisfiedByPass());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedByInstallMedia());
+            *value = detach(this->shim().SatisfiedByInstallMedia());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().SatisfiedBySignedInUser());
+            *value = detach(this->shim().SatisfiedBySignedInUser());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().IsSatisfied());
+            *value = detach(this->shim().IsSatisfied());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().LicenseSatisfactionInfos());
+            *value = detach(this->shim().LicenseSatisfactionInfos());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
-            *value = detach(shim().ExtendedError());
+            *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)

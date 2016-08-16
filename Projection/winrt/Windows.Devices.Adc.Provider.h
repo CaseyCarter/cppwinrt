@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Adc.Provider.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Adc.Provider.3.h"
 #include "Windows.Devices.Adc.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().ChannelCount());
+            *value = detach(this->shim().ChannelCount());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().ResolutionInBits());
+            *value = detach(this->shim().ResolutionInBits());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().MinValue());
+            *value = detach(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().MaxValue());
+            *value = detach(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -70,7 +70,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().ChannelMode());
+            *value = detach(this->shim().ChannelMode());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            shim().ChannelMode(value);
+            this->shim().ChannelMode(value);
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *result = detach(shim().IsChannelModeSupported(channelMode));
+            *result = detach(this->shim().IsChannelModeSupported(channelMode));
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            shim().AcquireChannel(channel);
+            this->shim().AcquireChannel(channel);
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            shim().ReleaseChannel(channel);
+            this->shim().ReleaseChannel(channel);
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
     {
         try
         {
-            *result = detach(shim().ReadValue(channelNumber));
+            *result = detach(this->shim().ReadValue(channelNumber));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcProvider> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetControllers());
+            *result = detach(this->shim().GetControllers());
             return S_OK;
         }
         catch (...)

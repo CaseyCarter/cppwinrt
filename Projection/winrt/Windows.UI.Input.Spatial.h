@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Perception.Spatial.3.h"
-#include "internal\Windows.Perception.3.h"
-#include "internal\Windows.Perception.People.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Input.Spatial.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Perception.Spatial.3.h"
+#include "internal/Windows.Perception.3.h"
+#include "internal/Windows.Perception.People.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Input.Spatial.3.h"
 #include "Windows.UI.Input.h"
 
 WINRT_EXPORT namespace winrt {
@@ -22,7 +22,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().RecognitionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> *>(&handler)));
+            *token = detach(this->shim().RecognitionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().RecognitionStarted(token);
+            this->shim().RecognitionStarted(token);
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().RecognitionEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> *>(&handler)));
+            *token = detach(this->shim().RecognitionEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().RecognitionEnded(token);
+            this->shim().RecognitionEnded(token);
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().Tapped(token);
+            this->shim().Tapped(token);
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().HoldStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> *>(&handler)));
+            *token = detach(this->shim().HoldStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().HoldStarted(token);
+            this->shim().HoldStarted(token);
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().HoldCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().HoldCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().HoldCompleted(token);
+            this->shim().HoldCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().HoldCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> *>(&handler)));
+            *token = detach(this->shim().HoldCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().HoldCanceled(token);
+            this->shim().HoldCanceled(token);
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().ManipulationStarted(token);
+            this->shim().ManipulationStarted(token);
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().ManipulationUpdated(token);
+            this->shim().ManipulationUpdated(token);
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().ManipulationCompleted(token);
+            this->shim().ManipulationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().ManipulationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> *>(&handler)));
+            *token = detach(this->shim().ManipulationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().ManipulationCanceled(token);
+            this->shim().ManipulationCanceled(token);
             return S_OK;
         }
         catch (...)
@@ -282,7 +282,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().NavigationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> *>(&handler)));
+            *token = detach(this->shim().NavigationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().NavigationStarted(token);
+            this->shim().NavigationStarted(token);
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().NavigationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> *>(&handler)));
+            *token = detach(this->shim().NavigationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().NavigationUpdated(token);
+            this->shim().NavigationUpdated(token);
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().NavigationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().NavigationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().NavigationCompleted(token);
+            this->shim().NavigationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -360,7 +360,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *token = detach(shim().NavigationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> *>(&handler)));
+            *token = detach(this->shim().NavigationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -373,7 +373,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().NavigationCanceled(token);
+            this->shim().NavigationCanceled(token);
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().CaptureInteraction(*reinterpret_cast<const Windows::UI::Input::Spatial::SpatialInteraction *>(&interaction));
+            this->shim().CaptureInteraction(*reinterpret_cast<const Windows::UI::Input::Spatial::SpatialInteraction *>(&interaction));
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            shim().CancelPendingGestures();
+            this->shim().CancelPendingGestures();
             return S_OK;
         }
         catch (...)
@@ -412,7 +412,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *succeeded = detach(shim().TrySetGestureSettings(settings));
+            *succeeded = detach(this->shim().TrySetGestureSettings(settings));
             return S_OK;
         }
         catch (...)
@@ -425,7 +425,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
-            *value = detach(shim().GestureSettings());
+            *value = detach(this->shim().GestureSettings());
             return S_OK;
         }
         catch (...)
@@ -442,7 +442,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>
     {
         try
         {
-            *value = detach(shim().Create(settings));
+            *value = detach(this->shim().Create(settings));
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs> : 
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs> :
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -525,7 +525,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteraction> : produce_ba
     {
         try
         {
-            *value = detach(shim().SourceState());
+            *value = detach(this->shim().SourceState());
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -556,7 +556,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
-            *value = detach(shim().Interaction());
+            *value = detach(this->shim().Interaction());
             return S_OK;
         }
         catch (...)
@@ -588,7 +588,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().SourceDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
+            *token = detach(this->shim().SourceDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().SourceDetected(token);
+            this->shim().SourceDetected(token);
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().SourceLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
+            *token = detach(this->shim().SourceLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().SourceLost(token);
+            this->shim().SourceLost(token);
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().SourceUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
+            *token = detach(this->shim().SourceUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().SourceUpdated(token);
+            this->shim().SourceUpdated(token);
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().SourcePressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
+            *token = detach(this->shim().SourcePressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().SourcePressed(token);
+            this->shim().SourcePressed(token);
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().SourceReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
+            *token = detach(this->shim().SourceReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -705,7 +705,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().SourceReleased(token);
+            this->shim().SourceReleased(token);
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *token = detach(shim().InteractionDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> *>(&handler)));
+            *token = detach(this->shim().InteractionDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            shim().InteractionDetected(token);
+            this->shim().InteractionDetected(token);
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
-            *value = detach(shim().GetDetectedSourcesAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timeStamp)));
+            *value = detach(this->shim().GetDetectedSourcesAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timeStamp)));
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics
     {
         try
         {
-            *value = detach(shim().GetForCurrentView());
+            *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -780,7 +780,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : prod
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -793,7 +793,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : prod
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArg
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
-            *value = detach(shim().Velocity());
+            *value = detach(this->shim().Velocity());
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -878,7 +878,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
-            *value = detach(shim().TryGetSourceLossMitigationDirection(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetSourceLossMitigationDirection(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
-            *value = detach(shim().SourceLossRisk());
+            *value = detach(this->shim().SourceLossRisk());
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
-            *value = detach(shim().TryGetLocation(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetLocation(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -923,7 +923,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -937,7 +937,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -951,7 +951,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
-            *value = detach(shim().IsPressed());
+            *value = detach(this->shim().IsPressed());
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -978,7 +978,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -996,7 +996,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCanceledEvent
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1013,7 +1013,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEven
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1026,7 +1026,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEven
     {
         try
         {
-            *value = detach(shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1044,7 +1044,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationDelta> : prod
     {
         try
         {
-            *value = detach(shim().Translation());
+            *value = detach(this->shim().Translation());
             return S_OK;
         }
         catch (...)
@@ -1061,7 +1061,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventA
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1074,7 +1074,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventA
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventA
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventA
     {
         try
         {
-            *value = detach(shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1123,7 +1123,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventAr
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1140,7 +1140,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventA
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1153,7 +1153,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventA
     {
         try
         {
-            *value = detach(shim().NormalizedOffset());
+            *value = detach(this->shim().NormalizedOffset());
             return S_OK;
         }
         catch (...)
@@ -1170,7 +1170,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1183,7 +1183,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1197,7 +1197,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
-            *value = detach(shim().IsNavigatingX());
+            *value = detach(this->shim().IsNavigatingX());
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
-            *value = detach(shim().IsNavigatingY());
+            *value = detach(this->shim().IsNavigatingY());
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
-            *value = detach(shim().IsNavigatingZ());
+            *value = detach(this->shim().IsNavigatingZ());
             return S_OK;
         }
         catch (...)
@@ -1240,7 +1240,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArg
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1253,7 +1253,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArg
     {
         try
         {
-            *value = detach(shim().NormalizedOffset());
+            *value = detach(this->shim().NormalizedOffset());
             return S_OK;
         }
         catch (...)
@@ -1270,7 +1270,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_ba
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1284,7 +1284,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_ba
     {
         try
         {
-            *value = detach(shim().Head());
+            *value = detach(this->shim().Head());
             return S_OK;
         }
         catch (...)
@@ -1302,7 +1302,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics> : pro
     {
         try
         {
-            *value = detach(shim().TryGetAtTimestamp(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
+            *value = detach(this->shim().TryGetAtTimestamp(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
             return S_OK;
         }
         catch (...)
@@ -1320,7 +1320,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1337,7 +1337,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1350,7 +1350,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1364,7 +1364,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
-            *value = detach(shim().IsGesturePossible(gesture));
+            *value = detach(this->shim().IsGesturePossible(gesture));
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().InteractionSourceKind());
+            *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
         catch (...)
@@ -1394,7 +1394,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -1408,7 +1408,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
-            *value = detach(shim().TapCount());
+            *value = detach(this->shim().TapCount());
             return S_OK;
         }
         catch (...)

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Networking.Connectivity.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Networking.Connectivity.3.h"
 #include "Windows.Networking.h"
 #include "Windows.Foundation.h"
 
@@ -43,7 +43,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
-            *value = detach(shim().BytesSent());
+            *value = detach(this->shim().BytesSent());
             return S_OK;
         }
         catch (...)
@@ -56,7 +56,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
-            *value = detach(shim().BytesReceived());
+            *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
-            *value = detach(shim().AttributionId());
+            *value = detach(this->shim().AttributionId());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
-            *value = detach(shim().AttributionName());
+            *value = detach(this->shim().AttributionName());
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
-            *value = detach(shim().AttributionThumbnail());
+            *value = detach(this->shim().AttributionThumbnail());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().ProviderId());
+            *value = detach(this->shim().ProviderId());
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().ProviderId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ProviderId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().AccessPointName());
+            *value = detach(this->shim().AccessPointName());
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().AccessPointName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AccessPointName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().UserName());
+            *value = detach(this->shim().UserName());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().UserName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().UserName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().Password());
+            *value = detach(this->shim().Password());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().Password(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Password(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().IsCompressionEnabled());
+            *value = detach(this->shim().IsCompressionEnabled());
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().IsCompressionEnabled(value);
+            this->shim().IsCompressionEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            *value = detach(shim().AuthenticationType());
+            *value = detach(this->shim().AuthenticationType());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
-            shim().AuthenticationType(value);
+            this->shim().AuthenticationType(value);
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
-            *value = detach(shim().NetworkCostType());
+            *value = detach(this->shim().NetworkCostType());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
-            *value = detach(shim().Roaming());
+            *value = detach(this->shim().Roaming());
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
-            *value = detach(shim().OverDataLimit());
+            *value = detach(this->shim().OverDataLimit());
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
-            *value = detach(shim().ApproachingDataLimit());
+            *value = detach(this->shim().ApproachingDataLimit());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost2> : produce
     {
         try
         {
-            *value = detach(shim().BackgroundDataUsageRestricted());
+            *value = detach(this->shim().BackgroundDataUsageRestricted());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().ProfileName());
+            *value = detach(this->shim().ProfileName());
             return S_OK;
         }
         catch (...)
@@ -366,7 +366,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetNetworkConnectivityLevel());
+            *value = detach(this->shim().GetNetworkConnectivityLevel());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetNetworkNames());
+            *value = detach(this->shim().GetNetworkNames());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetConnectionCost());
+            *value = detach(this->shim().GetConnectionCost());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetDataPlanStatus());
+            *value = detach(this->shim().GetDataPlanStatus());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().NetworkAdapter());
+            *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime)));
+            *value = detach(this->shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime)));
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime), States));
+            *value = detach(this->shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime), States));
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
-            *value = detach(shim().NetworkSecuritySettings());
+            *value = detach(this->shim().NetworkSecuritySettings());
             return S_OK;
         }
         catch (...)
@@ -481,7 +481,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().IsWwanConnectionProfile());
+            *value = detach(this->shim().IsWwanConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().IsWlanConnectionProfile());
+            *value = detach(this->shim().IsWlanConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().WwanConnectionProfileDetails());
+            *value = detach(this->shim().WwanConnectionProfileDetails());
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().WlanConnectionProfileDetails());
+            *value = detach(this->shim().WlanConnectionProfileDetails());
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().ServiceProviderGuid());
+            *value = detach(this->shim().ServiceProviderGuid());
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().GetSignalBars());
+            *value = detach(this->shim().GetSignalBars());
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().GetDomainConnectivityLevel());
+            *value = detach(this->shim().GetDomainConnectivityLevel());
             return S_OK;
         }
         catch (...)
@@ -576,7 +576,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().GetNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), granularity, *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
+            *value = detach(this->shim().GetNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), granularity, *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
-            *value = detach(shim().GetConnectivityIntervalsAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
+            *value = detach(this->shim().GetConnectivityIntervalsAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile3> : prod
     {
         try
         {
-            *value = detach(shim().GetAttributedNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
+            *value = detach(this->shim().GetAttributedNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            shim().IsConnected(value);
+            this->shim().IsConnected(value);
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            *value = detach(shim().IsConnected());
+            *value = detach(this->shim().IsConnected());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            shim().IsWwanConnectionProfile(value);
+            this->shim().IsWwanConnectionProfile(value);
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            *value = detach(shim().IsWwanConnectionProfile());
+            *value = detach(this->shim().IsWwanConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            shim().IsWlanConnectionProfile(value);
+            this->shim().IsWlanConnectionProfile(value);
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            *value = detach(shim().IsWlanConnectionProfile());
+            *value = detach(this->shim().IsWlanConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            shim().NetworkCostType(value);
+            this->shim().NetworkCostType(value);
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            *value = detach(shim().NetworkCostType());
+            *value = detach(this->shim().NetworkCostType());
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            shim().ServiceProviderGuid(*reinterpret_cast<const Windows::Foundation::IReference<GUID> *>(&value));
+            this->shim().ServiceProviderGuid(*reinterpret_cast<const Windows::Foundation::IReference<GUID> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
-            *value = detach(shim().ServiceProviderGuid());
+            *value = detach(this->shim().ServiceProviderGuid());
             return S_OK;
         }
         catch (...)
@@ -761,7 +761,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            shim().IsRoaming(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
+            this->shim().IsRoaming(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -774,7 +774,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            *value = detach(shim().IsRoaming());
+            *value = detach(this->shim().IsRoaming());
             return S_OK;
         }
         catch (...)
@@ -788,7 +788,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            shim().IsOverDataLimit(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
+            this->shim().IsOverDataLimit(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -801,7 +801,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            *value = detach(shim().IsOverDataLimit());
+            *value = detach(this->shim().IsOverDataLimit());
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            shim().IsBackgroundDataUsageRestricted(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
+            this->shim().IsBackgroundDataUsageRestricted(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            *value = detach(shim().IsBackgroundDataUsageRestricted());
+            *value = detach(this->shim().IsBackgroundDataUsageRestricted());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
-            *value = detach(shim().RawData());
+            *value = detach(this->shim().RawData());
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionSession> : produ
     {
         try
         {
-            *value = detach(shim().ConnectionProfile());
+            *value = detach(this->shim().ConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -878,7 +878,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityInterval> : pr
     {
         try
         {
-            *startTime = detach(shim().StartTime());
+            *startTime = detach(this->shim().StartTime());
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityInterval> : pr
     {
         try
         {
-            *duration = detach(shim().ConnectionDuration());
+            *duration = detach(this->shim().ConnectionDuration());
             return S_OK;
         }
         catch (...)
@@ -908,7 +908,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
-            *operation = detach(shim().AcquireConnectionAsync(*reinterpret_cast<const Windows::Networking::Connectivity::CellularApnContext *>(&cellularApnContext)));
+            *operation = detach(this->shim().AcquireConnectionAsync(*reinterpret_cast<const Windows::Networking::Connectivity::CellularApnContext *>(&cellularApnContext)));
             return S_OK;
         }
         catch (...)
@@ -922,7 +922,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
-            shim().AddHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
+            this->shim().AddHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
             return S_OK;
         }
         catch (...)
@@ -935,7 +935,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
-            shim().RemoveHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
+            this->shim().RemoveHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
             return S_OK;
         }
         catch (...)
@@ -952,7 +952,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().DataPlanUsage());
+            *value = detach(this->shim().DataPlanUsage());
             return S_OK;
         }
         catch (...)
@@ -966,7 +966,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().DataLimitInMegabytes());
+            *value = detach(this->shim().DataLimitInMegabytes());
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().InboundBitsPerSecond());
+            *value = detach(this->shim().InboundBitsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -994,7 +994,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().OutboundBitsPerSecond());
+            *value = detach(this->shim().OutboundBitsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().NextBillingCycle());
+            *value = detach(this->shim().NextBillingCycle());
             return S_OK;
         }
         catch (...)
@@ -1022,7 +1022,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
-            *value = detach(shim().MaxTransferSizeInMegabytes());
+            *value = detach(this->shim().MaxTransferSizeInMegabytes());
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanUsage> : produce_b
     {
         try
         {
-            *value = detach(shim().MegabytesUsed());
+            *value = detach(this->shim().MegabytesUsed());
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanUsage> : produce_b
     {
         try
         {
-            *value = detach(shim().LastSyncTime());
+            *value = detach(this->shim().LastSyncTime());
             return S_OK;
         }
         catch (...)
@@ -1070,7 +1070,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataUsage> : produce_base<
     {
         try
         {
-            *value = detach(shim().BytesSent());
+            *value = detach(this->shim().BytesSent());
             return S_OK;
         }
         catch (...)
@@ -1083,7 +1083,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataUsage> : produce_base<
     {
         try
         {
-            *value = detach(shim().BytesReceived());
+            *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
         catch (...)
@@ -1100,7 +1100,7 @@ struct produce<D, Windows::Networking::Connectivity::IIPInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().NetworkAdapter());
+            *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
         catch (...)
@@ -1114,7 +1114,7 @@ struct produce<D, Windows::Networking::Connectivity::IIPInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().PrefixLength());
+            *value = detach(this->shim().PrefixLength());
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
-            *value = detach(shim().InfrastructureId());
+            *value = detach(this->shim().InfrastructureId());
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
-            *value = detach(shim().PortId());
+            *value = detach(this->shim().PortId());
             return S_OK;
         }
         catch (...)
@@ -1160,7 +1160,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
-            *value = detach(shim().NetworkAdapterId());
+            *value = detach(this->shim().NetworkAdapterId());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifierData> : produ
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifierData> : produ
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().OutboundMaxBitsPerSecond());
+            *value = detach(this->shim().OutboundMaxBitsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().InboundMaxBitsPerSecond());
+            *value = detach(this->shim().InboundMaxBitsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -1234,7 +1234,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().IanaInterfaceType());
+            *value = detach(this->shim().IanaInterfaceType());
             return S_OK;
         }
         catch (...)
@@ -1247,7 +1247,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().NetworkItem());
+            *value = detach(this->shim().NetworkItem());
             return S_OK;
         }
         catch (...)
@@ -1261,7 +1261,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().NetworkAdapterId());
+            *value = detach(this->shim().NetworkAdapterId());
             return S_OK;
         }
         catch (...)
@@ -1274,7 +1274,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
-            *value = detach(shim().GetConnectedProfileAsync());
+            *value = detach(this->shim().GetConnectedProfileAsync());
             return S_OK;
         }
         catch (...)
@@ -1292,7 +1292,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetConnectionProfiles());
+            *value = detach(this->shim().GetConnectionProfiles());
             return S_OK;
         }
         catch (...)
@@ -1306,7 +1306,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetInternetConnectionProfile());
+            *value = detach(this->shim().GetInternetConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -1320,7 +1320,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetLanIdentifiers());
+            *value = detach(this->shim().GetLanIdentifiers());
             return S_OK;
         }
         catch (...)
@@ -1334,7 +1334,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetHostNames());
+            *value = detach(this->shim().GetHostNames());
             return S_OK;
         }
         catch (...)
@@ -1348,7 +1348,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetProxyConfigurationAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach(this->shim().GetProxyConfigurationAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -1362,7 +1362,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *value = detach(shim().GetSortedEndpointPairs(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> *>(&destinationList), sortOptions));
+            *value = detach(this->shim().GetSortedEndpointPairs(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> *>(&destinationList), sortOptions));
             return S_OK;
         }
         catch (...)
@@ -1376,7 +1376,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            *eventCookie = detach(shim().NetworkStatusChanged(*reinterpret_cast<const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler *>(&networkStatusHandler)));
+            *eventCookie = detach(this->shim().NetworkStatusChanged(*reinterpret_cast<const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler *>(&networkStatusHandler)));
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
-            shim().NetworkStatusChanged(eventCookie);
+            this->shim().NetworkStatusChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1406,7 +1406,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics2
     {
         try
         {
-            *value = detach(shim().FindConnectionProfilesAsync(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfileFilter *>(&pProfileFilter)));
+            *value = detach(this->shim().FindConnectionProfilesAsync(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfileFilter *>(&pProfileFilter)));
             return S_OK;
         }
         catch (...)
@@ -1424,7 +1424,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkItem> : produce_bas
     {
         try
         {
-            *value = detach(shim().NetworkId());
+            *value = detach(this->shim().NetworkId());
             return S_OK;
         }
         catch (...)
@@ -1437,7 +1437,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkItem> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetNetworkTypes());
+            *value = detach(this->shim().GetNetworkTypes());
             return S_OK;
         }
         catch (...)
@@ -1454,7 +1454,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkSecuritySettings> :
     {
         try
         {
-            *value = detach(shim().NetworkAuthenticationType());
+            *value = detach(this->shim().NetworkAuthenticationType());
             return S_OK;
         }
         catch (...)
@@ -1467,7 +1467,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkSecuritySettings> :
     {
         try
         {
-            *value = detach(shim().NetworkEncryptionType());
+            *value = detach(this->shim().NetworkEncryptionType());
             return S_OK;
         }
         catch (...)
@@ -1484,7 +1484,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewInternetConnectionProfile());
+            *value = detach(this->shim().HasNewInternetConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -1497,7 +1497,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewConnectionCost());
+            *value = detach(this->shim().HasNewConnectionCost());
             return S_OK;
         }
         catch (...)
@@ -1510,7 +1510,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewNetworkConnectivityLevel());
+            *value = detach(this->shim().HasNewNetworkConnectivityLevel());
             return S_OK;
         }
         catch (...)
@@ -1523,7 +1523,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewDomainConnectivityLevel());
+            *value = detach(this->shim().HasNewDomainConnectivityLevel());
             return S_OK;
         }
         catch (...)
@@ -1536,7 +1536,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewHostNameList());
+            *value = detach(this->shim().HasNewHostNameList());
             return S_OK;
         }
         catch (...)
@@ -1549,7 +1549,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewWwanRegistrationState());
+            *value = detach(this->shim().HasNewWwanRegistrationState());
             return S_OK;
         }
         catch (...)
@@ -1566,7 +1566,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewTetheringOperationalState());
+            *value = detach(this->shim().HasNewTetheringOperationalState());
             return S_OK;
         }
         catch (...)
@@ -1579,7 +1579,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
-            *value = detach(shim().HasNewTetheringClientCount());
+            *value = detach(this->shim().HasNewTetheringClientCount());
             return S_OK;
         }
         catch (...)
@@ -1596,7 +1596,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
-            *value = detach(shim().BytesSent());
+            *value = detach(this->shim().BytesSent());
             return S_OK;
         }
         catch (...)
@@ -1609,7 +1609,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
-            *value = detach(shim().BytesReceived());
+            *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
         catch (...)
@@ -1622,7 +1622,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
-            *duration = detach(shim().ConnectionDuration());
+            *duration = detach(this->shim().ConnectionDuration());
             return S_OK;
         }
         catch (...)
@@ -1639,7 +1639,7 @@ struct produce<D, Windows::Networking::Connectivity::IProxyConfiguration> : prod
     {
         try
         {
-            *value = detach(shim().ProxyUris());
+            *value = detach(this->shim().ProxyUris());
             return S_OK;
         }
         catch (...)
@@ -1653,7 +1653,7 @@ struct produce<D, Windows::Networking::Connectivity::IProxyConfiguration> : prod
     {
         try
         {
-            *value = detach(shim().CanConnectDirectly());
+            *value = detach(this->shim().CanConnectDirectly());
             return S_OK;
         }
         catch (...)
@@ -1670,7 +1670,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
-            *value = detach(shim().ConnectionProfile());
+            *value = detach(this->shim().ConnectionProfile());
             return S_OK;
         }
         catch (...)
@@ -1684,7 +1684,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
-            *value = detach(shim().HostName());
+            *value = detach(this->shim().HostName());
             return S_OK;
         }
         catch (...)
@@ -1698,7 +1698,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
-            *value = detach(shim().HostNameType());
+            *value = detach(this->shim().HostNameType());
             return S_OK;
         }
         catch (...)
@@ -1715,7 +1715,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicyFactory> : prod
     {
         try
         {
-            *routePolicy = detach(shim().CreateRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&connectionProfile), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), type));
+            *routePolicy = detach(this->shim().CreateRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&connectionProfile), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), type));
             return S_OK;
         }
         catch (...)
@@ -1733,7 +1733,7 @@ struct produce<D, Windows::Networking::Connectivity::IWlanConnectionProfileDetai
     {
         try
         {
-            *value = detach(shim().GetConnectedSsid());
+            *value = detach(this->shim().GetConnectedSsid());
             return S_OK;
         }
         catch (...)
@@ -1751,7 +1751,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
-            *value = detach(shim().HomeProviderId());
+            *value = detach(this->shim().HomeProviderId());
             return S_OK;
         }
         catch (...)
@@ -1765,7 +1765,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
-            *value = detach(shim().AccessPointName());
+            *value = detach(this->shim().AccessPointName());
             return S_OK;
         }
         catch (...)
@@ -1779,7 +1779,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
-            *value = detach(shim().GetNetworkRegistrationState());
+            *value = detach(this->shim().GetNetworkRegistrationState());
             return S_OK;
         }
         catch (...)
@@ -1792,7 +1792,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
-            *value = detach(shim().GetCurrentDataClass());
+            *value = detach(this->shim().GetCurrentDataClass());
             return S_OK;
         }
         catch (...)

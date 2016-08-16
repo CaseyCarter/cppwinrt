@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Resources.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Resources.3.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader> : produ
     {
         try
         {
-            *value = detach(shim().GetString(*reinterpret_cast<const hstring *>(&resource)));
+            *value = detach(this->shim().GetString(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader2> : prod
     {
         try
         {
-            *value = detach(shim().GetStringForUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach(this->shim().GetStringForUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory> 
     {
         try
         {
-            *loader = detach(shim().CreateResourceLoaderByName(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach(this->shim().CreateResourceLoaderByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics> 
     {
         try
         {
-            *value = detach(shim().GetStringForReference(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach(this->shim().GetStringForReference(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
-            *loader = detach(shim().GetForCurrentView());
+            *loader = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
-            *loader = detach(shim().GetForCurrentView(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach(this->shim().GetForCurrentView(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
-            *loader = detach(shim().GetForViewIndependentUse());
+            *loader = detach(this->shim().GetForViewIndependentUse());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
-            *loader = detach(shim().GetForViewIndependentUse(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach(this->shim().GetForViewIndependentUse(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)

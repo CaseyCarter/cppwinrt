@@ -3,15 +3,15 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.MediaProperties.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Media.Core.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
-#include "internal\Windows.Media.Effects.3.h"
-#include "internal\Windows.Media.Editing.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Media.Core.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal/Windows.Media.Effects.3.h"
+#include "internal/Windows.Media.Editing.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {
@@ -25,7 +25,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().TrimTimeFromStart());
+            *value = detach(this->shim().TrimTimeFromStart());
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().TrimTimeFromEnd());
+            *value = detach(this->shim().TrimTimeFromEnd());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().OriginalDuration());
+            *value = detach(this->shim().OriginalDuration());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().TrimmedDuration());
+            *value = detach(this->shim().TrimmedDuration());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().UserData());
+            *value = detach(this->shim().UserData());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().Delay());
+            *value = detach(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            shim().Volume(value);
+            this->shim().Volume(value);
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().Volume());
+            *value = detach(this->shim().Volume());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().Clone());
+            *value = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().GetAudioEncodingProperties());
+            *value = detach(this->shim().GetAudioEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
-            *value = detach(shim().AudioEffectDefinitions());
+            *value = detach(this->shim().AudioEffectDefinitions());
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrackStatics> : produ
     {
         try
         {
-            *value = detach(shim().CreateFromEmbeddedAudioTrack(*reinterpret_cast<const Windows::Media::Editing::EmbeddedAudioTrack *>(&embeddedAudioTrack)));
+            *value = detach(this->shim().CreateFromEmbeddedAudioTrack(*reinterpret_cast<const Windows::Media::Editing::EmbeddedAudioTrack *>(&embeddedAudioTrack)));
             return S_OK;
         }
         catch (...)
@@ -229,7 +229,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrackStatics> : produ
     {
         try
         {
-            *operation = detach(shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *operation = detach(this->shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::Media::Editing::IEmbeddedAudioTrack> : produce_base<D
     {
         try
         {
-            *value = detach(shim().GetAudioEncodingProperties());
+            *value = detach(this->shim().GetAudioEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().TrimTimeFromStart());
+            *value = detach(this->shim().TrimTimeFromStart());
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -291,7 +291,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().TrimTimeFromEnd());
+            *value = detach(this->shim().TrimTimeFromEnd());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().OriginalDuration());
+            *value = detach(this->shim().OriginalDuration());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().TrimmedDuration());
+            *value = detach(this->shim().TrimmedDuration());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().UserData());
+            *value = detach(this->shim().UserData());
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *result = detach(shim().Clone());
+            *result = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -371,7 +371,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().StartTimeInComposition());
+            *value = detach(this->shim().StartTimeInComposition());
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().EndTimeInComposition());
+            *value = detach(this->shim().EndTimeInComposition());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().EmbeddedAudioTracks());
+            *value = detach(this->shim().EmbeddedAudioTracks());
             return S_OK;
         }
         catch (...)
@@ -411,7 +411,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().SelectedEmbeddedAudioTrackIndex());
+            *value = detach(this->shim().SelectedEmbeddedAudioTrackIndex());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            shim().SelectedEmbeddedAudioTrackIndex(value);
+            this->shim().SelectedEmbeddedAudioTrackIndex(value);
             return S_OK;
         }
         catch (...)
@@ -437,7 +437,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            shim().Volume(value);
+            this->shim().Volume(value);
             return S_OK;
         }
         catch (...)
@@ -450,7 +450,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Volume());
+            *value = detach(this->shim().Volume());
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetVideoEncodingProperties());
+            *value = detach(this->shim().GetVideoEncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().AudioEffectDefinitions());
+            *value = detach(this->shim().AudioEffectDefinitions());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().VideoEffectDefinitions());
+            *value = detach(this->shim().VideoEffectDefinitions());
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().CreateFromColor(*reinterpret_cast<const Windows::UI::Color *>(&color), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
+            *value = detach(this->shim().CreateFromColor(*reinterpret_cast<const Windows::UI::Color *>(&color), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *operation = detach(this->shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().CreateFromImageFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
+            *operation = detach(this->shim().CreateFromImageFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().CreateFromSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
+            *value = detach(this->shim().CreateFromSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
         catch (...)
@@ -573,7 +573,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Clips());
+            *value = detach(this->shim().Clips());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().BackgroundAudioTracks());
+            *value = detach(this->shim().BackgroundAudioTracks());
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().UserData());
+            *value = detach(this->shim().UserData());
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *result = detach(shim().Clone());
+            *result = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().SaveAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *operation = detach(this->shim().SaveAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().GetThumbnailAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeFromStart), scaledWidth, scaledHeight, framePrecision));
+            *operation = detach(this->shim().GetThumbnailAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeFromStart), scaledWidth, scaledHeight, framePrecision));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().GetThumbnailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> *>(&timesFromStart), scaledWidth, scaledHeight, framePrecision));
+            *operation = detach(this->shim().GetThumbnailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> *>(&timesFromStart), scaledWidth, scaledHeight, framePrecision));
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination)));
+            *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination)));
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference));
+            *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference));
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference, *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
+            *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference, *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().CreateDefaultEncodingProfile());
+            *value = detach(this->shim().CreateDefaultEncodingProfile());
             return S_OK;
         }
         catch (...)
@@ -740,7 +740,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GenerateMediaStreamSource());
+            *value = detach(this->shim().GenerateMediaStreamSource());
             return S_OK;
         }
         catch (...)
@@ -754,7 +754,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GenerateMediaStreamSource(*reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
+            *value = detach(this->shim().GenerateMediaStreamSource(*reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight));
+            *value = detach(this->shim().GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight));
             return S_OK;
         }
         catch (...)
@@ -786,7 +786,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition2> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().OverlayLayers());
+            *value = detach(this->shim().OverlayLayers());
             return S_OK;
         }
         catch (...)
@@ -804,7 +804,7 @@ struct produce<D, Windows::Media::Editing::IMediaCompositionStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().LoadAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
+            *operation = detach(this->shim().LoadAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -822,7 +822,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -835,7 +835,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            shim().Position(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().Position(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -848,7 +848,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -861,7 +861,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Delay());
+            *value = detach(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Opacity());
+            *value = detach(this->shim().Opacity());
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            shim().Opacity(value);
+            this->shim().Opacity(value);
             return S_OK;
         }
         catch (...)
@@ -900,7 +900,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().Clone());
+            *result = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -914,7 +914,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Clip());
+            *value = detach(this->shim().Clip());
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AudioEnabled());
+            *value = detach(this->shim().AudioEnabled());
             return S_OK;
         }
         catch (...)
@@ -941,7 +941,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
-            shim().AudioEnabled(value);
+            this->shim().AudioEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayFactory> : produce_base<
     {
         try
         {
-            *mediaOverlay = detach(shim().Create(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip)));
+            *mediaOverlay = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip)));
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayFactory> : produce_base<
     {
         try
         {
-            *mediaOverlay = detach(shim().CreateWithPositionAndOpacity(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip), *reinterpret_cast<const Windows::Foundation::Rect *>(&position), opacity));
+            *mediaOverlay = detach(this->shim().CreateWithPositionAndOpacity(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip), *reinterpret_cast<const Windows::Foundation::Rect *>(&position), opacity));
             return S_OK;
         }
         catch (...)
@@ -990,7 +990,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
-            *result = detach(shim().Clone());
+            *result = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -1004,7 +1004,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Overlays());
+            *value = detach(this->shim().Overlays());
             return S_OK;
         }
         catch (...)
@@ -1018,7 +1018,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().CustomCompositorDefinition());
+            *value = detach(this->shim().CustomCompositorDefinition());
             return S_OK;
         }
         catch (...)
@@ -1036,7 +1036,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayerFactory> : produce_
     {
         try
         {
-            *mediaOverlayLayer = detach(shim().CreateWithCompositorDefinition(*reinterpret_cast<const Windows::Media::Effects::IVideoCompositorDefinition *>(&compositorDefinition)));
+            *mediaOverlayLayer = detach(this->shim().CreateWithCompositorDefinition(*reinterpret_cast<const Windows::Media::Effects::IVideoCompositorDefinition *>(&compositorDefinition)));
             return S_OK;
         }
         catch (...)

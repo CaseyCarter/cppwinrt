@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Gaming.Input.3.h"
-#include "internal\Windows.Gaming.Input.Custom.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Gaming.Input.3.h"
+#include "internal/Windows.Gaming.Input.Custom.3.h"
 #include "Windows.Gaming.Input.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::Gaming::Input::Custom::ICustomGameControllerFactory> 
     {
         try
         {
-            *value = detach(shim().CreateGameController(*reinterpret_cast<const Windows::Gaming::Input::Custom::IGameControllerProvider *>(&provider)));
+            *value = detach(this->shim().CreateGameController(*reinterpret_cast<const Windows::Gaming::Input::Custom::IGameControllerProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Gaming::Input::Custom::ICustomGameControllerFactory> 
     {
         try
         {
-            shim().OnGameControllerAdded(*reinterpret_cast<const Windows::Gaming::Input::IGameController *>(&value));
+            this->shim().OnGameControllerAdded(*reinterpret_cast<const Windows::Gaming::Input::IGameController *>(&value));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Gaming::Input::Custom::ICustomGameControllerFactory> 
     {
         try
         {
-            shim().OnGameControllerRemoved(*reinterpret_cast<const Windows::Gaming::Input::IGameController *>(&value));
+            this->shim().OnGameControllerRemoved(*reinterpret_cast<const Windows::Gaming::Input::IGameController *>(&value));
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerS
     {
         try
         {
-            shim().RegisterCustomFactoryForGipInterface(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), interfaceId);
+            this->shim().RegisterCustomFactoryForGipInterface(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), interfaceId);
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerS
     {
         try
         {
-            shim().RegisterCustomFactoryForHardwareId(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), hardwareVendorId, hardwareProductId);
+            this->shim().RegisterCustomFactoryForHardwareId(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), hardwareVendorId, hardwareProductId);
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerS
     {
         try
         {
-            shim().RegisterCustomFactoryForXusbType(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), xusbType, xusbSubtype);
+            this->shim().RegisterCustomFactoryForXusbType(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), xusbType, xusbSubtype);
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerInputSink> : pr
     {
         try
         {
-            shim().OnInputResumed(timestamp);
+            this->shim().OnInputResumed(timestamp);
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerInputSink> : pr
     {
         try
         {
-            shim().OnInputSuspended(timestamp);
+            this->shim().OnInputSuspended(timestamp);
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().FirmwareVersionInfo());
+            *value = detach(this->shim().FirmwareVersionInfo());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().HardwareProductId());
+            *value = detach(this->shim().HardwareProductId());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().HardwareVendorId());
+            *value = detach(this->shim().HardwareVendorId());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().HardwareVersionInfo());
+            *value = detach(this->shim().HardwareVersionInfo());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().IsConnected());
+            *value = detach(this->shim().IsConnected());
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult> : pr
     {
         try
         {
-            *value = detach(shim().ExtendedErrorCode());
+            *value = detach(this->shim().ExtendedErrorCode());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult> : pr
     {
         try
         {
-            *value = detach(shim().FinalComponentId());
+            *value = detach(this->shim().FinalComponentId());
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult> : pr
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerInputSink> :
     {
         try
         {
-            shim().OnKeyReceived(timestamp, keyCode, isPressed);
+            this->shim().OnKeyReceived(timestamp, keyCode, isPressed);
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerInputSink> :
     {
         try
         {
-            shim().OnMessageReceived(timestamp, messageClass, messageId, sequenceId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
+            this->shim().OnMessageReceived(timestamp, messageClass, messageId, sequenceId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
     {
         try
         {
-            shim().SendMessage(messageClass, messageId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
+            this->shim().SendMessage(messageClass, messageId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
     {
         try
         {
-            shim().SendReceiveMessage(messageClass, messageId, array_ref<const uint8_t>(requestMessageBuffer, requestMessageBuffer + __requestMessageBufferSize), *responseMessageBuffer);
+            this->shim().SendReceiveMessage(messageClass, messageId, array_ref<const uint8_t>(requestMessageBuffer, requestMessageBuffer + __requestMessageBufferSize), *responseMessageBuffer);
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
     {
         try
         {
-            *result = detach(shim().UpdateFirmwareAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&firmwareImage)));
+            *result = detach(this->shim().UpdateFirmwareAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&firmwareImage)));
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IXusbGameControllerInputSink> 
     {
         try
         {
-            shim().OnInputReceived(timestamp, reportId, array_ref<const uint8_t>(inputBuffer, inputBuffer + __inputBufferSize));
+            this->shim().OnInputReceived(timestamp, reportId, array_ref<const uint8_t>(inputBuffer, inputBuffer + __inputBufferSize));
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IXusbGameControllerProvider> :
     {
         try
         {
-            shim().SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed);
+            this->shim().SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed);
             return S_OK;
         }
         catch (...)

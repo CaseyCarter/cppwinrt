@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.Data.Html.0.h"
 
 WINRT_EXPORT namespace winrt {

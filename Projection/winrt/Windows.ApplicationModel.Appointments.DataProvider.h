@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.DataProvider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.DataProvider.3.h"
 #include "Windows.ApplicationModel.Appointments.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentLocalId());
+            *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentOriginalStartTime());
+            *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().NotifyInvitees());
+            *value = detach(this->shim().NotifyInvitees());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Appointment());
+            *value = detach(this->shim().Appointment());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().NotifyInvitees());
+            *value = detach(this->shim().NotifyInvitees());
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().ChangedProperties());
+            *value = detach(this->shim().ChangedProperties());
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Appointments::Appointment *>(&createdOrUpdatedAppointment)));
+            *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Appointments::Appointment *>(&createdOrUpdatedAppointment)));
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentLocalId());
+            *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentOriginalStartTime());
+            *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Invitees());
+            *value = detach(this->shim().Invitees());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().ForwardHeader());
+            *value = detach(this->shim().ForwardHeader());
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -398,7 +398,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -416,7 +416,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentLocalId());
+            *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
         catch (...)
@@ -476,7 +476,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentOriginalStartTime());
+            *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
         catch (...)
@@ -490,7 +490,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().NewStartTime());
+            *value = detach(this->shim().NewStartTime());
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().NewDuration());
+            *value = detach(this->shim().NewDuration());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -558,7 +558,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -576,7 +576,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -622,7 +622,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -636,7 +636,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentCalendarLocalId());
+            *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentLocalId());
+            *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
         catch (...)
@@ -714,7 +714,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().AppointmentOriginalStartTime());
+            *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *response = detach(shim().Response());
+            *response = detach(this->shim().Response());
             return S_OK;
         }
         catch (...)
@@ -741,7 +741,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -755,7 +755,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Comment());
+            *value = detach(this->shim().Comment());
             return S_OK;
         }
         catch (...)
@@ -769,7 +769,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().SendUpdate());
+            *value = detach(this->shim().SendUpdate());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -796,7 +796,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -814,7 +814,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -846,7 +846,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -859,7 +859,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().SyncRequested(token);
+            this->shim().SyncRequested(token);
             return S_OK;
         }
         catch (...)
@@ -872,7 +872,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().CreateOrUpdateAppointmentRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().CreateOrUpdateAppointmentRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -885,7 +885,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().CreateOrUpdateAppointmentRequested(token);
+            this->shim().CreateOrUpdateAppointmentRequested(token);
             return S_OK;
         }
         catch (...)
@@ -898,7 +898,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().CancelMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().CancelMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -911,7 +911,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().CancelMeetingRequested(token);
+            this->shim().CancelMeetingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -924,7 +924,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().ForwardMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ForwardMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -937,7 +937,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().ForwardMeetingRequested(token);
+            this->shim().ForwardMeetingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -950,7 +950,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().ProposeNewTimeForMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ProposeNewTimeForMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -963,7 +963,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().ProposeNewTimeForMeetingRequested(token);
+            this->shim().ProposeNewTimeForMeetingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -976,7 +976,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *token = detach(shim().UpdateMeetingResponseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().UpdateMeetingResponseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -989,7 +989,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().UpdateMeetingResponseRequested(token);
+            this->shim().UpdateMeetingResponseRequested(token);
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -1019,7 +1019,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
-            *value = detach(shim().Connection());
+            *value = detach(this->shim().Connection());
             return S_OK;
         }
         catch (...)

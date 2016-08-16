@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.SpeechRecognition.3.h"
-#include "internal\Windows.Globalization.3.h"
-#include "internal\Windows.ApplicationModel.AppService.3.h"
-#include "internal\Windows.ApplicationModel.VoiceCommands.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.SpeechRecognition.3.h"
+#include "internal/Windows.Globalization.3.h"
+#include "internal/Windows.ApplicationModel.AppService.3.h"
+#include "internal/Windows.ApplicationModel.VoiceCommands.3.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {
@@ -23,7 +23,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
-            *value = detach(shim().CommandName());
+            *value = detach(this->shim().CommandName());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
-            *value = detach(shim().SpeechRecognitionResult());
+            *value = detach(this->shim().SpeechRecognitionResult());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandComplet
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirm
     {
         try
         {
-            *value = detach(shim().Confirmed());
+            *value = detach(this->shim().Confirmed());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().TextLine1());
+            *value = detach(this->shim().TextLine1());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().TextLine1(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TextLine1(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().TextLine2());
+            *value = detach(this->shim().TextLine2());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().TextLine2(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TextLine2(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().TextLine3());
+            *value = detach(this->shim().TextLine3());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().TextLine3(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TextLine3(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().Image());
+            *value = detach(this->shim().Image());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().Image(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
+            this->shim().Image(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().AppContext());
+            *value = detach(this->shim().AppContext());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().AppContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AppContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().AppLaunchArgument());
+            *value = detach(this->shim().AppLaunchArgument());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            *value = detach(shim().ContentTileType());
+            *value = detach(this->shim().ContentTileType());
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
-            shim().ContentTileType(value);
+            this->shim().ContentTileType(value);
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
-            *updateAction = detach(shim().SetPhraseListAsync(*reinterpret_cast<const hstring *>(&phraseListName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&phraseList)));
+            *updateAction = detach(this->shim().SetPhraseListAsync(*reinterpret_cast<const hstring *>(&phraseListName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&phraseList)));
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
-            *installAction = detach(shim().InstallCommandDefinitionsFromStorageFileAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
+            *installAction = detach(this->shim().InstallCommandDefinitionsFromStorageFileAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
-            *voiceCommandDefinitions = detach(shim().InstalledCommandDefinitions());
+            *voiceCommandDefinitions = detach(this->shim().InstalledCommandDefinitions());
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambi
     {
         try
         {
-            *value = detach(shim().SelectedItem());
+            *value = detach(this->shim().SelectedItem());
             return S_OK;
         }
         catch (...)
@@ -418,7 +418,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *value = detach(shim().Message());
+            *value = detach(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            shim().Message(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
+            this->shim().Message(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *value = detach(shim().RepeatMessage());
+            *value = detach(this->shim().RepeatMessage());
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            shim().RepeatMessage(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
+            this->shim().RepeatMessage(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *value = detach(shim().AppLaunchArgument());
+            *value = detach(this->shim().AppLaunchArgument());
             return S_OK;
         }
         catch (...)
@@ -486,7 +486,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *value = detach(shim().VoiceCommandContentTiles());
+            *value = detach(this->shim().VoiceCommandContentTiles());
             return S_OK;
         }
         catch (...)
@@ -517,7 +517,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *value = detach(shim().MaxSupportedVoiceCommandContentTiles());
+            *value = detach(this->shim().MaxSupportedVoiceCommandContentTiles());
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *response = detach(shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&userMessage)));
+            *response = detach(this->shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&userMessage)));
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *response = detach(shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
+            *response = detach(this->shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
             return S_OK;
         }
         catch (...)
@@ -558,7 +558,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *response = detach(shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage)));
+            *response = detach(this->shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage)));
             return S_OK;
         }
         catch (...)
@@ -572,7 +572,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
-            *response = detach(shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
+            *response = detach(this->shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *operation = detach(shim().GetVoiceCommandAsync());
+            *operation = detach(this->shim().GetVoiceCommandAsync());
             return S_OK;
         }
         catch (...)
@@ -604,7 +604,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *operation = detach(shim().RequestConfirmationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *operation = detach(this->shim().RequestConfirmationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -618,7 +618,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *operation = detach(shim().RequestDisambiguationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *operation = detach(this->shim().RequestDisambiguationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *action = detach(shim().ReportProgressAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *action = detach(this->shim().ReportProgressAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -646,7 +646,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *action = detach(shim().ReportSuccessAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *action = detach(this->shim().ReportSuccessAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *action = detach(shim().ReportFailureAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *action = detach(this->shim().ReportFailureAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -674,7 +674,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *action = detach(shim().RequestAppLaunchAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
+            *action = detach(this->shim().RequestAppLaunchAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -688,7 +688,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *language = detach(shim().Language());
+            *language = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -702,7 +702,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *token = detach(shim().VoiceCommandCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> *>(&handler)));
+            *token = detach(this->shim().VoiceCommandCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -715,7 +715,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            shim().VoiceCommandCompleted(token);
+            this->shim().VoiceCommandCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
-            *value = detach(shim().FromAppServiceTriggerDetails(*reinterpret_cast<const Windows::ApplicationModel::AppService::AppServiceTriggerDetails *>(&triggerDetails)));
+            *value = detach(this->shim().FromAppServiceTriggerDetails(*reinterpret_cast<const Windows::ApplicationModel::AppService::AppServiceTriggerDetails *>(&triggerDetails)));
             return S_OK;
         }
         catch (...)
@@ -750,7 +750,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
-            *value = detach(shim().DisplayMessage());
+            *value = detach(this->shim().DisplayMessage());
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
-            shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
-            *value = detach(shim().SpokenMessage());
+            *value = detach(this->shim().SpokenMessage());
             return S_OK;
         }
         catch (...)
@@ -791,7 +791,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
-            shim().SpokenMessage(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SpokenMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)

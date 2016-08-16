@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Spi.Provider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Spi.Provider.3.h"
 #include "Windows.Devices.Spi.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().ChipSelectLine());
+            *value = detach(this->shim().ChipSelectLine());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            shim().ChipSelectLine(value);
+            this->shim().ChipSelectLine(value);
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -70,7 +70,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().DataBitLength());
+            *value = detach(this->shim().DataBitLength());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            shim().DataBitLength(value);
+            this->shim().DataBitLength(value);
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().ClockFrequency());
+            *value = detach(this->shim().ClockFrequency());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            shim().ClockFrequency(value);
+            this->shim().ClockFrequency(value);
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().SharingMode());
+            *value = detach(this->shim().SharingMode());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            shim().SharingMode(value);
+            this->shim().SharingMode(value);
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
-            *value = detach(shim().Create(chipSelectLine));
+            *value = detach(this->shim().Create(chipSelectLine));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiControllerProvider> : pro
     {
         try
         {
-            *result = detach(shim().GetDeviceProvider(*reinterpret_cast<const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings *>(&settings)));
+            *result = detach(this->shim().GetDeviceProvider(*reinterpret_cast<const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings *>(&settings)));
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            *value = detach(shim().ConnectionSettings());
+            *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
+            this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
         catch (...)
@@ -229,7 +229,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            shim().Read(*buffer);
+            this->shim().Read(*buffer);
             return S_OK;
         }
         catch (...)
@@ -242,7 +242,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -255,7 +255,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
-            shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiProvider> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetControllersAsync());
+            *result = detach(this->shim().GetControllersAsync());
             return S_OK;
         }
         catch (...)

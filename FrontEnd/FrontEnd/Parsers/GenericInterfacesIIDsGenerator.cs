@@ -24,14 +24,14 @@ namespace Microsoft.Wcl.Parsers
             {
                 // Cut time by doing all the calculation of iids in parallel
                 // In my box it reduced ~40ms (non parallel version takes ~160ms)
-                Parallel.ForEach(genericInterfacesRepository.Values, (info) =>
+                Parallel.ForEach(genericInterfacesRepository, (info) =>
                 {
                     GenerateGenericInterfaceIID(iidMaker, info);
                 });
             }
             else
             {
-                foreach (var info in genericInterfacesRepository.Values)
+                foreach (var info in genericInterfacesRepository)
                 {
                     GenerateGenericInterfaceIID(iidMaker, info);
                 }

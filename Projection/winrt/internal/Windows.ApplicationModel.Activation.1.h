@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.ApplicationModel.Activation.0.h"
 #include "Windows.ApplicationModel.Appointments.AppointmentsProvider.0.h"
 #include "Windows.ApplicationModel.Background.0.h"

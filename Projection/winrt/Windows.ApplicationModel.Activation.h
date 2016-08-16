@@ -3,24 +3,24 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
-#include "internal\Windows.ApplicationModel.UserDataAccounts.Provider.3.h"
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.UI.ViewManagement.3.h"
-#include "internal\Windows.ApplicationModel.Search.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.ShareTarget.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Search.3.h"
-#include "internal\Windows.Storage.Pickers.Provider.3.h"
-#include "internal\Windows.Storage.Provider.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Security.Authentication.Web.3.h"
-#include "internal\Windows.Security.Authentication.Web.Provider.3.h"
-#include "internal\Windows.ApplicationModel.Background.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
-#include "internal\Windows.Media.SpeechRecognition.3.h"
-#include "internal\Windows.ApplicationModel.Activation.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
+#include "internal/Windows.ApplicationModel.UserDataAccounts.Provider.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.UI.ViewManagement.3.h"
+#include "internal/Windows.ApplicationModel.Search.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.ShareTarget.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Search.3.h"
+#include "internal/Windows.Storage.Pickers.Provider.3.h"
+#include "internal/Windows.Storage.Provider.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Security.Authentication.Web.3.h"
+#include "internal/Windows.Security.Authentication.Web.Provider.3.h"
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.Media.SpeechRecognition.3.h"
+#include "internal/Windows.ApplicationModel.Activation.3.h"
 #include "Windows.ApplicationModel.h"
 
 WINRT_EXPORT namespace winrt {
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().PreviousExecutionState());
+            *value = detach(this->shim().PreviousExecutionState());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().SplashScreen());
+            *value = detach(this->shim().SplashScreen());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgsWith
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IApplicationViewActivat
     {
         try
         {
-            *value = detach(shim().CurrentlyShownApplicationViewId());
+            *value = detach(this->shim().CurrentlyShownApplicationViewId());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAc
     {
         try
         {
-            *value = detach(shim().Verb());
+            *value = detach(this->shim().Verb());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAd
     {
         try
         {
-            *value = detach(shim().AddAppointmentOperation());
+            *value = detach(this->shim().AddAppointmentOperation());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRe
     {
         try
         {
-            *value = detach(shim().RemoveAppointmentOperation());
+            *value = detach(this->shim().RemoveAppointmentOperation());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRe
     {
         try
         {
-            *value = detach(shim().ReplaceAppointmentOperation());
+            *value = detach(this->shim().ReplaceAppointmentOperation());
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
-            *value = detach(shim().InstanceStartDate());
+            *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
-            *value = detach(shim().LocalId());
+            *value = detach(this->shim().LocalId());
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
-            *value = detach(shim().RoamingId());
+            *value = detach(this->shim().RoamingId());
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
-            *value = detach(shim().TimeToShow());
+            *value = detach(this->shim().TimeToShow());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IBackgroundActivatedEve
     {
         try
         {
-            *value = detach(shim().TaskInstance());
+            *value = detach(this->shim().TaskInstance());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ICachedFileUpdaterActiv
     {
         try
         {
-            *value = detach(shim().CachedFileUpdaterUI());
+            *value = detach(this->shim().CachedFileUpdaterUI());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IContinuationActivatedE
     {
         try
         {
-            *value = detach(shim().ContinuationData());
+            *value = detach(this->shim().ContinuationData());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventAr
     {
         try
         {
-            *value = detach(shim().DeviceInformationId());
+            *value = detach(this->shim().DeviceInformationId());
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventAr
     {
         try
         {
-            *value = detach(shim().Verb());
+            *value = detach(this->shim().Verb());
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDevicePairingActivated
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDialReceiverActivatedE
     {
         try
         {
-            *value = detach(shim().AppName());
+            *value = detach(this->shim().AppName());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
-            *value = detach(shim().Files());
+            *value = detach(this->shim().Files());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
-            *value = detach(shim().Verb());
+            *value = detach(this->shim().Verb());
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
-            *value = detach(shim().CallerPackageFamilyName());
+            *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
-            *value = detach(shim().NeighboringFilesQuery());
+            *value = detach(this->shim().NeighboringFilesQuery());
             return S_OK;
         }
         catch (...)
@@ -451,7 +451,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivate
     {
         try
         {
-            *value = detach(shim().FileOpenPickerUI());
+            *value = detach(this->shim().FileOpenPickerUI());
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivate
     {
         try
         {
-            *value = detach(shim().CallerPackageFamilyName());
+            *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerContinua
     {
         try
         {
-            *value = detach(shim().Files());
+            *value = detach(this->shim().Files());
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
-            *value = detach(shim().FileSavePickerUI());
+            *value = detach(this->shim().FileSavePickerUI());
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
-            *value = detach(shim().CallerPackageFamilyName());
+            *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
-            *value = detach(shim().EnterpriseId());
+            *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerContinua
     {
         try
         {
-            *value = detach(shim().File());
+            *value = detach(this->shim().File());
             return S_OK;
         }
         catch (...)
@@ -573,7 +573,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFolderPickerContinuati
     {
         try
         {
-            *value = detach(shim().Folder());
+            *value = detach(this->shim().Folder());
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -605,7 +605,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().TileId());
+            *value = detach(this->shim().TileId());
             return S_OK;
         }
         catch (...)
@@ -623,7 +623,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().TileActivatedInfo());
+            *value = detach(this->shim().TileActivatedInfo());
             return S_OK;
         }
         catch (...)
@@ -641,7 +641,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEve
     {
         try
         {
-            *value = detach(shim().Info());
+            *value = detach(this->shim().Info());
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IPickerReturnedActivate
     {
         try
         {
-            *value = detach(shim().PickerOperationId());
+            *value = detach(this->shim().PickerOperationId());
             return S_OK;
         }
         catch (...)
@@ -677,7 +677,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IPrelaunchActivatedEven
     {
         try
         {
-            *value = detach(shim().PrelaunchActivated());
+            *value = detach(this->shim().PrelaunchActivated());
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
-            *value = detach(shim().CallerPackageFamilyName());
+            *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolForResultsActi
     {
         try
         {
-            *value = detach(shim().ProtocolForResultsOperation());
+            *value = detach(this->shim().ProtocolForResultsOperation());
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActiva
     {
         try
         {
-            *value = detach(shim().SharedContext());
+            *value = detach(this->shim().SharedContext());
             return S_OK;
         }
         catch (...)
@@ -780,7 +780,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().QueryText());
+            *value = detach(this->shim().QueryText());
             return S_OK;
         }
         catch (...)
@@ -794,7 +794,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -812,7 +812,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
-            *value = detach(shim().LinguisticDetails());
+            *value = detach(this->shim().LinguisticDetails());
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IShareTargetActivatedEv
     {
         try
         {
-            *value = detach(shim().ShareOperation());
+            *value = detach(this->shim().ShareOperation());
             return S_OK;
         }
         catch (...)
@@ -848,7 +848,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
-            *value = detach(shim().ImageLocation());
+            *value = detach(this->shim().ImageLocation());
             return S_OK;
         }
         catch (...)
@@ -861,7 +861,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
-            *cookie = detach(shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
-            shim().Dismissed(cookie);
+            this->shim().Dismissed(cookie);
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ITileActivatedInfo> : p
     {
         try
         {
-            *value = detach(shim().RecentlyShownNotifications());
+            *value = detach(this->shim().RecentlyShownNotifications());
             return S_OK;
         }
         catch (...)
@@ -909,7 +909,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IToastNotificationActiv
     {
         try
         {
-            *argument = detach(shim().Argument());
+            *argument = detach(this->shim().Argument());
             return S_OK;
         }
         catch (...)
@@ -923,7 +923,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IToastNotificationActiv
     {
         try
         {
-            *value = detach(shim().UserInput());
+            *value = detach(this->shim().UserInput());
             return S_OK;
         }
         catch (...)
@@ -941,7 +941,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IUserDataAccountProvide
     {
         try
         {
-            *value = detach(shim().Operation());
+            *value = detach(this->shim().Operation());
             return S_OK;
         }
         catch (...)
@@ -959,7 +959,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IViewSwitcherProvider> 
     {
         try
         {
-            *value = detach(shim().ViewSwitcher());
+            *value = detach(this->shim().ViewSwitcher());
             return S_OK;
         }
         catch (...)
@@ -977,7 +977,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IVoiceCommandActivatedE
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IWebAccountProviderActi
     {
         try
         {
-            *value = detach(shim().Operation());
+            *value = detach(this->shim().Operation());
             return S_OK;
         }
         catch (...)
@@ -1013,7 +1013,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IWebAuthenticationBroke
     {
         try
         {
-            *result = detach(shim().WebAuthenticationResult());
+            *result = detach(this->shim().WebAuthenticationResult());
             return S_OK;
         }
         catch (...)

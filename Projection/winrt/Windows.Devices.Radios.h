@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Radios.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Radios.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            *retval = detach(shim().SetStateAsync(value));
+            *retval = detach(this->shim().SetStateAsync(value));
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            *eventCookie = detach(shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> *>(&handler)));
+            *eventCookie = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            shim().StateChanged(eventCookie);
+            this->shim().StateChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().GetRadiosAsync());
+            *value = detach(this->shim().GetRadiosAsync());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
-            *deviceSelector = detach(shim().GetDeviceSelector());
+            *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().RequestAccessAsync());
+            *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)

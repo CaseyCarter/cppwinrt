@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Devices.Printers.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Devices.Printers.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDevice> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PrintSchema());
+            *value = detach(this->shim().PrintSchema());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDeviceStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDeviceStatics> : produce_b
     {
         try
         {
-            *result = detach(shim().GetDeviceSelector());
+            *result = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().GetDefaultPrintTicketAsync());
+            *operation = detach(this->shim().GetDefaultPrintTicketAsync());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().GetCapabilitiesAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&constrainTicket)));
+            *operation = detach(this->shim().GetCapabilitiesAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&constrainTicket)));
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().MergeAndValidateWithDefaultPrintTicketAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&deltaTicket)));
+            *operation = detach(this->shim().MergeAndValidateWithDefaultPrintTicketAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&deltaTicket)));
             return S_OK;
         }
         catch (...)

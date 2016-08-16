@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Data.Html.3.h"
+#include "internal/Windows.Data.Html.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -16,7 +16,7 @@ struct produce<D, Windows::Data::Html::IHtmlUtilities> : produce_base<D, Windows
     {
         try
         {
-            *text = detach(shim().ConvertToText(*reinterpret_cast<const hstring *>(&html)));
+            *text = detach(this->shim().ConvertToText(*reinterpret_cast<const hstring *>(&html)));
             return S_OK;
         }
         catch (...)

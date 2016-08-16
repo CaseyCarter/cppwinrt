@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.Composition.3.h"
-#include "internal\Windows.UI.Xaml.Controls.3.h"
-#include "internal\Windows.UI.Xaml.Hosting.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.Xaml.Controls.3.h"
+#include "internal/Windows.UI.Xaml.Hosting.3.h"
 #include "Windows.UI.Xaml.h"
 
 WINRT_EXPORT namespace winrt {
@@ -24,7 +24,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
-            *result = detach(shim().GetElementVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *result = detach(this->shim().GetElementVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
-            *result = detach(shim().GetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *result = detach(this->shim().GetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
-            shim().SetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
+            this->shim().SetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
-            *result = detach(shim().GetScrollViewerManipulationPropertySet(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&scrollViewer)));
+            *result = detach(this->shim().GetScrollViewerManipulationPropertySet(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&scrollViewer)));
             return S_OK;
         }
         catch (...)

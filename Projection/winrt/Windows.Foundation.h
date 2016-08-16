@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {
@@ -38,7 +38,7 @@ struct produce<D, Windows::Foundation::IClosable> : produce_base<D, Windows::Fou
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)
@@ -55,7 +55,7 @@ struct produce<D, Windows::Foundation::IDeferral> : produce_base<D, Windows::Fou
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Foundation::IDeferralFactory> : produce_base<D, Windo
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::DeferralCompletedHandler *>(&handler)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::DeferralCompletedHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Foundation::IGetActivationFactory> : produce_base<D, 
     {
         try
         {
-            *factory = detach(shim().GetActivationFactory(*reinterpret_cast<const hstring *>(&activatableClassId)));
+            *factory = detach(this->shim().GetActivationFactory(*reinterpret_cast<const hstring *>(&activatableClassId)));
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::Foundation::IMemoryBuffer> : produce_base<D, Windows:
     {
         try
         {
-            *reference = detach(shim().CreateReference());
+            *reference = detach(this->shim().CreateReference());
             return S_OK;
         }
         catch (...)
@@ -126,7 +126,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferFactory> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Create(capacity));
+            *value = detach(this->shim().Create(capacity));
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Capacity());
+            *value = detach(this->shim().Capacity());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
-            *cookie = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
-            shim().Closed(cookie);
+            this->shim().Closed(cookie);
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsNumericScalar());
+            *value = detach(this->shim().IsNumericScalar());
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetUInt8());
+            *value = detach(this->shim().GetUInt8());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetInt16());
+            *value = detach(this->shim().GetInt16());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetUInt16());
+            *value = detach(this->shim().GetUInt16());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetInt32());
+            *value = detach(this->shim().GetInt32());
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetUInt32());
+            *value = detach(this->shim().GetUInt32());
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetInt64());
+            *value = detach(this->shim().GetInt64());
             return S_OK;
         }
         catch (...)
@@ -291,7 +291,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetUInt64());
+            *value = detach(this->shim().GetUInt64());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetSingle());
+            *value = detach(this->shim().GetSingle());
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetDouble());
+            *value = detach(this->shim().GetDouble());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetChar16());
+            *value = detach(this->shim().GetChar16());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetBoolean());
+            *value = detach(this->shim().GetBoolean());
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetString());
+            *value = detach(this->shim().GetString());
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetGuid());
+            *value = detach(this->shim().GetGuid());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetDateTime());
+            *value = detach(this->shim().GetDateTime());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetTimeSpan());
+            *value = detach(this->shim().GetTimeSpan());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetPoint());
+            *value = detach(this->shim().GetPoint());
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetSize());
+            *value = detach(this->shim().GetSize());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().GetRect());
+            *value = detach(this->shim().GetRect());
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetUInt8Array(detach<uint8_t>(__valueSize, value));
+            this->shim().GetUInt8Array(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetInt16Array(detach<int16_t>(__valueSize, value));
+            this->shim().GetInt16Array(detach<int16_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -478,7 +478,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetUInt16Array(detach<uint16_t>(__valueSize, value));
+            this->shim().GetUInt16Array(detach<uint16_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetInt32Array(detach<int32_t>(__valueSize, value));
+            this->shim().GetInt32Array(detach<int32_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -508,7 +508,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetUInt32Array(detach<uint32_t>(__valueSize, value));
+            this->shim().GetUInt32Array(detach<uint32_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetInt64Array(detach<int64_t>(__valueSize, value));
+            this->shim().GetInt64Array(detach<int64_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -538,7 +538,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetUInt64Array(detach<uint64_t>(__valueSize, value));
+            this->shim().GetUInt64Array(detach<uint64_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -553,7 +553,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetSingleArray(detach<float>(__valueSize, value));
+            this->shim().GetSingleArray(detach<float>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -568,7 +568,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetDoubleArray(detach<double>(__valueSize, value));
+            this->shim().GetDoubleArray(detach<double>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetChar16Array(detach<wchar_t>(__valueSize, value));
+            this->shim().GetChar16Array(detach<wchar_t>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetBooleanArray(detach<bool>(__valueSize, value));
+            this->shim().GetBooleanArray(detach<bool>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -613,7 +613,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetStringArray(detach<hstring>(__valueSize, value));
+            this->shim().GetStringArray(detach<hstring>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetInspectableArray(detach<Windows::IInspectable>(__valueSize, value));
+            this->shim().GetInspectableArray(detach<Windows::IInspectable>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -643,7 +643,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetGuidArray(detach<GUID>(__valueSize, value));
+            this->shim().GetGuidArray(detach<GUID>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetDateTimeArray(detach<Windows::Foundation::DateTime>(__valueSize, value));
+            this->shim().GetDateTimeArray(detach<Windows::Foundation::DateTime>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetTimeSpanArray(detach<Windows::Foundation::TimeSpan>(__valueSize, value));
+            this->shim().GetTimeSpanArray(detach<Windows::Foundation::TimeSpan>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -688,7 +688,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetPointArray(detach<Windows::Foundation::Point>(__valueSize, value));
+            this->shim().GetPointArray(detach<Windows::Foundation::Point>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -703,7 +703,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetSizeArray(detach<Windows::Foundation::Size>(__valueSize, value));
+            this->shim().GetSizeArray(detach<Windows::Foundation::Size>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
-            shim().GetRectArray(detach<Windows::Foundation::Rect>(__valueSize, value));
+            this->shim().GetRectArray(detach<Windows::Foundation::Rect>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -737,7 +737,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateEmpty());
+            *propertyValue = detach(this->shim().CreateEmpty());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt8(value));
+            *propertyValue = detach(this->shim().CreateUInt8(value));
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt16(value));
+            *propertyValue = detach(this->shim().CreateInt16(value));
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt16(value));
+            *propertyValue = detach(this->shim().CreateUInt16(value));
             return S_OK;
         }
         catch (...)
@@ -793,7 +793,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt32(value));
+            *propertyValue = detach(this->shim().CreateInt32(value));
             return S_OK;
         }
         catch (...)
@@ -807,7 +807,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt32(value));
+            *propertyValue = detach(this->shim().CreateUInt32(value));
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt64(value));
+            *propertyValue = detach(this->shim().CreateInt64(value));
             return S_OK;
         }
         catch (...)
@@ -835,7 +835,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt64(value));
+            *propertyValue = detach(this->shim().CreateUInt64(value));
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateSingle(value));
+            *propertyValue = detach(this->shim().CreateSingle(value));
             return S_OK;
         }
         catch (...)
@@ -863,7 +863,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateDouble(value));
+            *propertyValue = detach(this->shim().CreateDouble(value));
             return S_OK;
         }
         catch (...)
@@ -877,7 +877,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateChar16(value));
+            *propertyValue = detach(this->shim().CreateChar16(value));
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateBoolean(value));
+            *propertyValue = detach(this->shim().CreateBoolean(value));
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateString(*reinterpret_cast<const hstring *>(&value)));
+            *propertyValue = detach(this->shim().CreateString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInspectable(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *propertyValue = detach(this->shim().CreateInspectable(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -933,7 +933,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateGuid(value));
+            *propertyValue = detach(this->shim().CreateGuid(value));
             return S_OK;
         }
         catch (...)
@@ -947,7 +947,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
+            *propertyValue = detach(this->shim().CreateDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -961,7 +961,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
+            *propertyValue = detach(this->shim().CreateTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreatePoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
+            *propertyValue = detach(this->shim().CreatePoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -989,7 +989,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
+            *propertyValue = detach(this->shim().CreateSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1003,7 +1003,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
+            *propertyValue = detach(this->shim().CreateRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1017,7 +1017,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt8Array(array_ref<const uint8_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateUInt8Array(array_ref<const uint8_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1031,7 +1031,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt16Array(array_ref<const int16_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateInt16Array(array_ref<const int16_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1045,7 +1045,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt16Array(array_ref<const uint16_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateUInt16Array(array_ref<const uint16_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1059,7 +1059,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt32Array(array_ref<const int32_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateInt32Array(array_ref<const int32_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1073,7 +1073,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt32Array(array_ref<const uint32_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateUInt32Array(array_ref<const uint32_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1087,7 +1087,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInt64Array(array_ref<const int64_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateInt64Array(array_ref<const int64_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1101,7 +1101,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateUInt64Array(array_ref<const uint64_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateUInt64Array(array_ref<const uint64_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1115,7 +1115,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateSingleArray(array_ref<const float>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateSingleArray(array_ref<const float>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1129,7 +1129,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateDoubleArray(array_ref<const double>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateDoubleArray(array_ref<const double>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateChar16Array(array_ref<const wchar_t>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateChar16Array(array_ref<const wchar_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1157,7 +1157,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateBooleanArray(array_ref<const bool>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateBooleanArray(array_ref<const bool>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1171,7 +1171,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateStringArray(*reinterpret_cast<const hstring *>(&value)));
+            *propertyValue = detach(this->shim().CreateStringArray(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1186,7 +1186,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateInspectableArray(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *propertyValue = detach(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1201,7 +1201,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateGuidArray(array_ref<const GUID>(value, value + __valueSize)));
+            *propertyValue = detach(this->shim().CreateGuidArray(array_ref<const GUID>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -1215,7 +1215,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateDateTimeArray(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
+            *propertyValue = detach(this->shim().CreateDateTimeArray(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1229,7 +1229,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateTimeSpanArray(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
+            *propertyValue = detach(this->shim().CreateTimeSpanArray(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1243,7 +1243,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreatePointArray(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
+            *propertyValue = detach(this->shim().CreatePointArray(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1257,7 +1257,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateSizeArray(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
+            *propertyValue = detach(this->shim().CreateSizeArray(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1271,7 +1271,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
-            *propertyValue = detach(shim().CreateRectArray(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
+            *propertyValue = detach(this->shim().CreateRectArray(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1289,7 +1289,7 @@ struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::F
     {
         try
         {
-            *value = detach(shim().ToString());
+            *value = detach(this->shim().ToString());
             return S_OK;
         }
         catch (...)
@@ -1307,7 +1307,7 @@ struct produce<D, Windows::Foundation::IUriEscapeStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UnescapeComponent(*reinterpret_cast<const hstring *>(&toUnescape)));
+            *value = detach(this->shim().UnescapeComponent(*reinterpret_cast<const hstring *>(&toUnescape)));
             return S_OK;
         }
         catch (...)
@@ -1321,7 +1321,7 @@ struct produce<D, Windows::Foundation::IUriEscapeStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().EscapeComponent(*reinterpret_cast<const hstring *>(&toEscape)));
+            *value = detach(this->shim().EscapeComponent(*reinterpret_cast<const hstring *>(&toEscape)));
             return S_OK;
         }
         catch (...)
@@ -1339,7 +1339,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().AbsoluteUri());
+            *value = detach(this->shim().AbsoluteUri());
             return S_OK;
         }
         catch (...)
@@ -1353,7 +1353,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DisplayUri());
+            *value = detach(this->shim().DisplayUri());
             return S_OK;
         }
         catch (...)
@@ -1367,7 +1367,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Domain());
+            *value = detach(this->shim().Domain());
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Extension());
+            *value = detach(this->shim().Extension());
             return S_OK;
         }
         catch (...)
@@ -1395,7 +1395,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Fragment());
+            *value = detach(this->shim().Fragment());
             return S_OK;
         }
         catch (...)
@@ -1409,7 +1409,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Host());
+            *value = detach(this->shim().Host());
             return S_OK;
         }
         catch (...)
@@ -1423,7 +1423,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Password());
+            *value = detach(this->shim().Password());
             return S_OK;
         }
         catch (...)
@@ -1437,7 +1437,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Path());
+            *value = detach(this->shim().Path());
             return S_OK;
         }
         catch (...)
@@ -1451,7 +1451,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Query());
+            *value = detach(this->shim().Query());
             return S_OK;
         }
         catch (...)
@@ -1465,7 +1465,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *ppWwwFormUrlDecoder = detach(shim().QueryParsed());
+            *ppWwwFormUrlDecoder = detach(this->shim().QueryParsed());
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RawUri());
+            *value = detach(this->shim().RawUri());
             return S_OK;
         }
         catch (...)
@@ -1493,7 +1493,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SchemeName());
+            *value = detach(this->shim().SchemeName());
             return S_OK;
         }
         catch (...)
@@ -1507,7 +1507,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().UserName());
+            *value = detach(this->shim().UserName());
             return S_OK;
         }
         catch (...)
@@ -1521,7 +1521,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Port());
+            *value = detach(this->shim().Port());
             return S_OK;
         }
         catch (...)
@@ -1534,7 +1534,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Suspicious());
+            *value = detach(this->shim().Suspicious());
             return S_OK;
         }
         catch (...)
@@ -1547,7 +1547,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Equals(*reinterpret_cast<const Windows::Foundation::Uri *>(&pUri)));
+            *value = detach(this->shim().Equals(*reinterpret_cast<const Windows::Foundation::Uri *>(&pUri)));
             return S_OK;
         }
         catch (...)
@@ -1560,7 +1560,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
-            *instance = detach(shim().CombineUri(*reinterpret_cast<const hstring *>(&relativeUri)));
+            *instance = detach(this->shim().CombineUri(*reinterpret_cast<const hstring *>(&relativeUri)));
             return S_OK;
         }
         catch (...)
@@ -1578,7 +1578,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassFactory> : produce_base<D
     {
         try
         {
-            *instance = detach(shim().CreateUri(*reinterpret_cast<const hstring *>(&uri)));
+            *instance = detach(this->shim().CreateUri(*reinterpret_cast<const hstring *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -1592,7 +1592,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassFactory> : produce_base<D
     {
         try
         {
-            *instance = detach(shim().CreateWithRelativeUri(*reinterpret_cast<const hstring *>(&baseUri), *reinterpret_cast<const hstring *>(&relativeUri)));
+            *instance = detach(this->shim().CreateWithRelativeUri(*reinterpret_cast<const hstring *>(&baseUri), *reinterpret_cast<const hstring *>(&relativeUri)));
             return S_OK;
         }
         catch (...)
@@ -1610,7 +1610,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
     {
         try
         {
-            *value = detach(shim().AbsoluteCanonicalUri());
+            *value = detach(this->shim().AbsoluteCanonicalUri());
             return S_OK;
         }
         catch (...)
@@ -1624,7 +1624,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
     {
         try
         {
-            *value = detach(shim().DisplayIri());
+            *value = detach(this->shim().DisplayIri());
             return S_OK;
         }
         catch (...)
@@ -1642,7 +1642,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderEntry> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1656,7 +1656,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderEntry> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1674,7 +1674,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClass> : produce
     {
         try
         {
-            *phstrValue = detach(shim().GetFirstValueByName(*reinterpret_cast<const hstring *>(&name)));
+            *phstrValue = detach(this->shim().GetFirstValueByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> : 
     {
         try
         {
-            *instance = detach(shim().CreateWwwFormUrlDecoder(*reinterpret_cast<const hstring *>(&query)));
+            *instance = detach(this->shim().CreateWwwFormUrlDecoder(*reinterpret_cast<const hstring *>(&query)));
             return S_OK;
         }
         catch (...)

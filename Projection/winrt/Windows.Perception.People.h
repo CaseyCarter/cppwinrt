@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Perception.People.3.h"
+#include "internal/Windows.Perception.People.3.h"
 #include "Windows.Perception.h"
 
 WINRT_EXPORT namespace winrt {
@@ -17,7 +17,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ForwardDirection());
+            *value = detach(this->shim().ForwardDirection());
             return S_OK;
         }
         catch (...)
@@ -43,7 +43,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UpDirection());
+            *value = detach(this->shim().UpDirection());
             return S_OK;
         }
         catch (...)

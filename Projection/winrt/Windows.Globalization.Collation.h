@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Globalization.Collation.3.h"
+#include "internal/Windows.Globalization.Collation.3.h"
 #include "Windows.Globalization.h"
 #include "Windows.Foundation.Collections.h"
 
@@ -18,7 +18,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
     {
         try
         {
-            *value = detach(shim().First());
+            *value = detach(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
     {
         try
         {
-            *value = detach(shim().Label());
+            *value = detach(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGroupings> : prod
     {
         try
         {
-            *result = detach(shim().Lookup(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach(this->shim().Lookup(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)

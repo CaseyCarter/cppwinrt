@@ -18,7 +18,7 @@ protected:
 
     ColorKeyFrameT()
     {
-        get_activation_factory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ColorKeyFrame, IColorKeyFrameFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 
@@ -32,7 +32,7 @@ protected:
 
     DoubleKeyFrameT()
     {
-        get_activation_factory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<DoubleKeyFrame, IDoubleKeyFrameFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 
@@ -46,7 +46,7 @@ protected:
 
     NavigationTransitionInfoT()
     {
-        get_activation_factory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<NavigationTransitionInfo, INavigationTransitionInfoFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 
@@ -60,7 +60,7 @@ protected:
 
     ObjectKeyFrameT()
     {
-        get_activation_factory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<ObjectKeyFrame, IObjectKeyFrameFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 
@@ -74,7 +74,7 @@ protected:
 
     PointKeyFrameT()
     {
-        get_activation_factory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<PointKeyFrame, IPointKeyFrameFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 
@@ -88,7 +88,7 @@ protected:
 
     TimelineT()
     {
-        get_activation_factory<Timeline, ITimelineFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<Timeline, ITimelineFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 

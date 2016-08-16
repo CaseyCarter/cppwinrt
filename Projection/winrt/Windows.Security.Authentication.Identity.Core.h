@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Authentication.Identity.Core.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Authentication.Identity.Core.3.h"
 #include "Windows.Security.Authentication.Identity.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().GetOneTimePassCodeAsync(*reinterpret_cast<const hstring *>(&userAccountId), codeLength));
+            *asyncOperation = detach(this->shim().GetOneTimePassCodeAsync(*reinterpret_cast<const hstring *>(&userAccountId), codeLength));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().AddDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&authenticationToken), *reinterpret_cast<const hstring *>(&wnsChannelId)));
+            *asyncOperation = detach(this->shim().AddDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&authenticationToken), *reinterpret_cast<const hstring *>(&wnsChannelId)));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().RemoveDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId)));
+            *asyncOperation = detach(this->shim().RemoveDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId)));
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().UpdateWnsChannelAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&channelUri)));
+            *asyncOperation = detach(this->shim().UpdateWnsChannelAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&channelUri)));
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().GetSessionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
+            *asyncOperation = detach(this->shim().GetSessionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().GetSessionsAndUnregisteredAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
+            *asyncOperation = detach(this->shim().GetSessionsAndUnregisteredAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
+            *asyncOperation = detach(this->shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
+            *asyncOperation = detach(this->shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().DenySessionAsync(*reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
+            *asyncOperation = detach(this->shim().DenySessionAsync(*reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *asyncOperation = detach(shim().DenySessionAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
+            *asyncOperation = detach(this->shim().DenySessionAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().Current());
+            *value = detach(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().Sessions());
+            *value = detach(this->shim().Sessions());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().ServiceResponse());
+            *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().Code());
+            *value = detach(this->shim().Code());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().TimeInterval());
+            *value = detach(this->shim().TimeInterval());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().TimeToLive());
+            *value = detach(this->shim().TimeToLive());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().ServiceResponse());
+            *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().UserAccountId());
+            *value = detach(this->shim().UserAccountId());
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().SessionId());
+            *value = detach(this->shim().SessionId());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().DisplaySessionId());
+            *value = detach(this->shim().DisplaySessionId());
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().ApprovalStatus());
+            *value = detach(this->shim().ApprovalStatus());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().AuthenticationType());
+            *value = detach(this->shim().AuthenticationType());
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().RequestTime());
+            *value = detach(this->shim().RequestTime());
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().ExpirationTime());
+            *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().Sessions());
+            *value = detach(this->shim().Sessions());
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().UnregisteredAccounts());
+            *value = detach(this->shim().UnregisteredAccounts());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
-            *value = detach(shim().ServiceResponse());
+            *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }
         catch (...)

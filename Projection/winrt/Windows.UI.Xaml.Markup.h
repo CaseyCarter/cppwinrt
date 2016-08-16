@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Interop.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Xaml.Markup.3.h"
+#include "internal/Windows.UI.Xaml.Interop.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Xaml.Markup.3.h"
 #include "Windows.UI.Xaml.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IComponentConnector> : produce_base
     {
         try
         {
-            shim().Connect(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target));
+            this->shim().Connect(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target));
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IComponentConnector2> : produce_bas
     {
         try
         {
-            *returnValue = detach(shim().GetBindingConnector(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target)));
+            *returnValue = detach(this->shim().GetBindingConnector(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -56,7 +56,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IDataTemplateComponent> : produce_b
     {
         try
         {
-            shim().Recycle();
+            this->shim().Recycle();
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IDataTemplateComponent> : produce_b
     {
         try
         {
-            shim().ProcessBindings(*reinterpret_cast<const Windows::IInspectable *>(&item), itemIndex, phase, *nextPhase);
+            this->shim().ProcessBindings(*reinterpret_cast<const Windows::IInspectable *>(&item), itemIndex, phase, *nextPhase);
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics> : produce
     {
         try
         {
-            *returnValue = detach(shim().Write(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> *>(&inputStreams), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> *>(&outputStreams), *reinterpret_cast<const Windows::UI::Xaml::Markup::IXamlMetadataProvider *>(&xamlMetadataProvider)));
+            *returnValue = detach(this->shim().Write(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> *>(&inputStreams), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> *>(&outputStreams), *reinterpret_cast<const Windows::UI::Xaml::Markup::IXamlMetadataProvider *>(&xamlMetadataProvider)));
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            *value = detach(shim().DataTemplateComponentProperty());
+            *value = detach(this->shim().DataTemplateComponentProperty());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            *value = detach(shim().GetDataTemplateComponent(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            *value = detach(this->shim().GetDataTemplateComponent(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetDataTemplateComponent(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::UI::Xaml::Markup::IDataTemplateComponent *>(&value));
+            this->shim().SetDataTemplateComponent(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::UI::Xaml::Markup::IDataTemplateComponent *>(&value));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SuspendRendering(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&target));
+            this->shim().SuspendRendering(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&target));
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().ResumeRendering(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&target));
+            this->shim().ResumeRendering(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&target));
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            *returnValue = detach(shim().ConvertValue(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type), *reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *returnValue = detach(this->shim().ConvertValue(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type), *reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromString(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetPropertyFromString(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromBoolean(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromBoolean(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromChar16(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromChar16(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromDateTime(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().SetPropertyFromDateTime(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromDouble(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromDouble(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromUInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromUInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromUInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromUInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromSingle(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromSingle(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromPoint(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().SetPropertyFromPoint(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromRect(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().SetPropertyFromRect(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromSize(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().SetPropertyFromSize(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromTimeSpan(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().SetPropertyFromTimeSpan(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromByte(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromByte(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromUri(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SetPropertyFromUri(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
     {
         try
         {
-            shim().SetPropertyFromObject(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetPropertyFromObject(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsAttachable());
+            *value = detach(this->shim().IsAttachable());
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsDependencyProperty());
+            *value = detach(this->shim().IsDependencyProperty());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsReadOnly());
+            *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().TargetType());
+            *value = detach(this->shim().TargetType());
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().GetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance)));
+            *value = detach(this->shim().GetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance)));
             return S_OK;
         }
         catch (...)
@@ -512,7 +512,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
     {
         try
         {
-            shim().SetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMetadataProvider> : produce_ba
     {
         try
         {
-            *xamlType = detach(shim().GetXamlType(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type)));
+            *xamlType = detach(this->shim().GetXamlType(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type)));
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMetadataProvider> : produce_ba
     {
         try
         {
-            *xamlType = detach(shim().GetXamlType(*reinterpret_cast<const hstring *>(&fullName)));
+            *xamlType = detach(this->shim().GetXamlType(*reinterpret_cast<const hstring *>(&fullName)));
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMetadataProvider> : produce_ba
     {
         try
         {
-            std::tie(*__definitionsSize, *definitions) = detach(shim().GetXmlnsDefinitions());
+            std::tie(*__definitionsSize, *definitions) = detach(this->shim().GetXmlnsDefinitions());
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlReaderStatics> : produce_base<
     {
         try
         {
-            *returnValue = detach(shim().Load(*reinterpret_cast<const hstring *>(&xaml)));
+            *returnValue = detach(this->shim().Load(*reinterpret_cast<const hstring *>(&xaml)));
             return S_OK;
         }
         catch (...)
@@ -594,7 +594,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlReaderStatics> : produce_base<
     {
         try
         {
-            *returnValue = detach(shim().LoadWithInitialTemplateValidation(*reinterpret_cast<const hstring *>(&xaml)));
+            *returnValue = detach(this->shim().LoadWithInitialTemplateValidation(*reinterpret_cast<const hstring *>(&xaml)));
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().BaseType());
+            *value = detach(this->shim().BaseType());
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ContentProperty());
+            *value = detach(this->shim().ContentProperty());
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().FullName());
+            *value = detach(this->shim().FullName());
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsArray());
+            *value = detach(this->shim().IsArray());
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsCollection());
+            *value = detach(this->shim().IsCollection());
             return S_OK;
         }
         catch (...)
@@ -680,7 +680,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsConstructible());
+            *value = detach(this->shim().IsConstructible());
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsDictionary());
+            *value = detach(this->shim().IsDictionary());
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsMarkupExtension());
+            *value = detach(this->shim().IsMarkupExtension());
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().IsBindable());
+            *value = detach(this->shim().IsBindable());
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().ItemType());
+            *value = detach(this->shim().ItemType());
             return S_OK;
         }
         catch (...)
@@ -746,7 +746,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().KeyType());
+            *value = detach(this->shim().KeyType());
             return S_OK;
         }
         catch (...)
@@ -760,7 +760,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().UnderlyingType());
+            *value = detach(this->shim().UnderlyingType());
             return S_OK;
         }
         catch (...)
@@ -773,7 +773,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *instance = detach(shim().ActivateInstance());
+            *instance = detach(this->shim().ActivateInstance());
             return S_OK;
         }
         catch (...)
@@ -787,7 +787,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *instance = detach(shim().CreateFromString(*reinterpret_cast<const hstring *>(&value)));
+            *instance = detach(this->shim().CreateFromString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -801,7 +801,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            *xamlMember = detach(shim().GetMember(*reinterpret_cast<const hstring *>(&name)));
+            *xamlMember = detach(this->shim().GetMember(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            shim().AddToVector(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AddToVector(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            shim().AddToMap(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&key), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AddToMap(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&key), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -841,7 +841,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
     {
         try
         {
-            shim().RunInitializer();
+            this->shim().RunInitializer();
             return S_OK;
         }
         catch (...)

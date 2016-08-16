@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Networking.Proximity.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Networking.Proximity.3.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {
@@ -94,7 +94,7 @@ struct produce<D, Windows::Networking::Proximity::IConnectionRequestedEventArgs>
     {
         try
         {
-            *value = detach(shim().PeerInformation());
+            *value = detach(this->shim().PeerInformation());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().AllowBluetooth());
+            *value = detach(this->shim().AllowBluetooth());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().AllowBluetooth(value);
+            this->shim().AllowBluetooth(value);
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().AllowInfrastructure());
+            *value = detach(this->shim().AllowInfrastructure());
             return S_OK;
         }
         catch (...)
@@ -151,7 +151,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().AllowInfrastructure(value);
+            this->shim().AllowInfrastructure(value);
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().AllowWiFiDirect());
+            *value = detach(this->shim().AllowWiFiDirect());
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().AllowWiFiDirect(value);
+            this->shim().AllowWiFiDirect(value);
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().SupportedDiscoveryTypes());
+            *value = detach(this->shim().SupportedDiscoveryTypes());
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *value = detach(shim().AlternateIdentities());
+            *value = detach(this->shim().AlternateIdentities());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().Start(*reinterpret_cast<const hstring *>(&peerMessage));
+            this->shim().Start(*reinterpret_cast<const hstring *>(&peerMessage));
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *cookie = detach(shim().TriggeredConnectionStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().TriggeredConnectionStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().TriggeredConnectionStateChanged(cookie);
+            this->shim().TriggeredConnectionStateChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *cookie = detach(shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            shim().ConnectionRequested(cookie);
+            this->shim().ConnectionRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *asyncOp = detach(shim().FindAllPeersAsync());
+            *asyncOp = detach(this->shim().FindAllPeersAsync());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
-            *asyncOp = detach(shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::Proximity::PeerInformation *>(&peerInformation)));
+            *asyncOp = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::Proximity::PeerInformation *>(&peerInformation)));
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
-            *value = detach(shim().Role());
+            *value = detach(this->shim().Role());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
-            shim().Role(value);
+            this->shim().Role(value);
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
-            *value = detach(shim().DiscoveryData());
+            *value = detach(this->shim().DiscoveryData());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
-            shim().DiscoveryData(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().DiscoveryData(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher());
+            *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation> : produce_ba
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation3> : produce_b
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation3> : produce_b
     {
         try
         {
-            *value = detach(shim().DiscoveryData());
+            *value = detach(this->shim().DiscoveryData());
             return S_OK;
         }
         catch (...)
@@ -488,7 +488,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformationWithHostAndSer
     {
         try
         {
-            *value = detach(shim().HostName());
+            *value = detach(this->shim().HostName());
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformationWithHostAndSer
     {
         try
         {
-            *value = detach(shim().ServiceName());
+            *value = detach(this->shim().ServiceName());
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
+            *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Added(token);
+            this->shim().Added(token);
             return S_OK;
         }
         catch (...)
@@ -546,7 +546,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
+            *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Removed(token);
+            this->shim().Removed(token);
             return S_OK;
         }
         catch (...)
@@ -572,7 +572,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -585,7 +585,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *token = detach(shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().EnumerationCompleted(token);
+            this->shim().EnumerationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -624,7 +624,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -637,7 +637,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -650,7 +650,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -663,7 +663,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -676,7 +676,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *subscriptionId = detach(shim().SubscribeForMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Networking::Proximity::MessageReceivedHandler *>(&messageReceivedHandler)));
+            *subscriptionId = detach(this->shim().SubscribeForMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Networking::Proximity::MessageReceivedHandler *>(&messageReceivedHandler)));
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message)));
+            *messageId = detach(this->shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
+            *messageId = detach(this->shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message)));
+            *messageId = detach(this->shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
+            *messageId = detach(this->shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message)));
+            *messageId = detach(this->shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *messageId = detach(shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
+            *messageId = detach(this->shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            shim().StopSubscribingForMessage(subscriptionId);
+            this->shim().StopSubscribingForMessage(subscriptionId);
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            shim().StopPublishingMessage(messageId);
+            this->shim().StopPublishingMessage(messageId);
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().DeviceArrived(*reinterpret_cast<const Windows::Networking::Proximity::DeviceArrivedEventHandler *>(&arrivedHandler)));
+            *cookie = detach(this->shim().DeviceArrived(*reinterpret_cast<const Windows::Networking::Proximity::DeviceArrivedEventHandler *>(&arrivedHandler)));
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            shim().DeviceArrived(cookie);
+            this->shim().DeviceArrived(cookie);
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().DeviceDeparted(*reinterpret_cast<const Windows::Networking::Proximity::DeviceDepartedEventHandler *>(&departedHandler)));
+            *cookie = detach(this->shim().DeviceDeparted(*reinterpret_cast<const Windows::Networking::Proximity::DeviceDepartedEventHandler *>(&departedHandler)));
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            shim().DeviceDeparted(cookie);
+            this->shim().DeviceDeparted(cookie);
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *value = detach(shim().MaxMessageBytes());
+            *value = detach(this->shim().MaxMessageBytes());
             return S_OK;
         }
         catch (...)
@@ -875,7 +875,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *value = detach(shim().BitsPerSecond());
+            *value = detach(this->shim().BitsPerSecond());
             return S_OK;
         }
         catch (...)
@@ -888,7 +888,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
-            *selector = detach(shim().GetDeviceSelector());
+            *selector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -920,7 +920,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
-            *proximityDevice = detach(shim().GetDefault());
+            *proximityDevice = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -934,7 +934,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
-            *proximityDevice = detach(shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
+            *proximityDevice = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -952,7 +952,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().MessageType());
+            *value = detach(this->shim().MessageType());
             return S_OK;
         }
         catch (...)
@@ -966,7 +966,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().SubscriptionId());
+            *value = detach(this->shim().SubscriptionId());
             return S_OK;
         }
         catch (...)
@@ -979,7 +979,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -993,7 +993,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().DataAsString());
+            *value = detach(this->shim().DataAsString());
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -1024,7 +1024,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
-            *value = detach(shim().Socket());
+            *value = detach(this->shim().Socket());
             return S_OK;
         }
         catch (...)

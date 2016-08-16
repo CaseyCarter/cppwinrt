@@ -156,7 +156,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetPatternCore(patternInterface));
+            *returnValue = detach(this->shim().GetPatternCore(patternInterface));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetAcceleratorKeyCore());
+            *returnValue = detach(this->shim().GetAcceleratorKeyCore());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetAccessKeyCore());
+            *returnValue = detach(this->shim().GetAccessKeyCore());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationControlTypeCore());
+            *returnValue = detach(this->shim().GetAutomationControlTypeCore());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetAutomationIdCore());
+            *returnValue = detach(this->shim().GetAutomationIdCore());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetBoundingRectangleCore());
+            *returnValue = detach(this->shim().GetBoundingRectangleCore());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetChildrenCore());
+            *returnValue = detach(this->shim().GetChildrenCore());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetClassNameCore());
+            *returnValue = detach(this->shim().GetClassNameCore());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetClickablePointCore());
+            *returnValue = detach(this->shim().GetClickablePointCore());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetHelpTextCore());
+            *returnValue = detach(this->shim().GetHelpTextCore());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetItemStatusCore());
+            *returnValue = detach(this->shim().GetItemStatusCore());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetItemTypeCore());
+            *returnValue = detach(this->shim().GetItemTypeCore());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLabeledByCore());
+            *returnValue = detach(this->shim().GetLabeledByCore());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedControlTypeCore());
+            *returnValue = detach(this->shim().GetLocalizedControlTypeCore());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetNameCore());
+            *returnValue = detach(this->shim().GetNameCore());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetOrientationCore());
+            *returnValue = detach(this->shim().GetOrientationCore());
             return S_OK;
         }
         catch (...)
@@ -376,7 +376,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().HasKeyboardFocusCore());
+            *returnValue = detach(this->shim().HasKeyboardFocusCore());
             return S_OK;
         }
         catch (...)
@@ -389,7 +389,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsContentElementCore());
+            *returnValue = detach(this->shim().IsContentElementCore());
             return S_OK;
         }
         catch (...)
@@ -402,7 +402,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsControlElementCore());
+            *returnValue = detach(this->shim().IsControlElementCore());
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsEnabledCore());
+            *returnValue = detach(this->shim().IsEnabledCore());
             return S_OK;
         }
         catch (...)
@@ -428,7 +428,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsKeyboardFocusableCore());
+            *returnValue = detach(this->shim().IsKeyboardFocusableCore());
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsOffscreenCore());
+            *returnValue = detach(this->shim().IsOffscreenCore());
             return S_OK;
         }
         catch (...)
@@ -454,7 +454,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsPasswordCore());
+            *returnValue = detach(this->shim().IsPasswordCore());
             return S_OK;
         }
         catch (...)
@@ -467,7 +467,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsRequiredForFormCore());
+            *returnValue = detach(this->shim().IsRequiredForFormCore());
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ public:
     {
         try
         {
-            shim().SetFocusCore();
+            this->shim().SetFocusCore();
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
+            *returnValue = detach(this->shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLiveSettingCore());
+            *returnValue = detach(this->shim().GetLiveSettingCore());
             return S_OK;
         }
         catch (...)
@@ -540,7 +540,7 @@ public:
     {
         try
         {
-            shim().ShowContextMenuCore();
+            this->shim().ShowContextMenuCore();
             return S_OK;
         }
         catch (...)
@@ -553,7 +553,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetControlledPeersCore());
+            *returnValue = detach(this->shim().GetControlledPeersCore());
             return S_OK;
         }
         catch (...)
@@ -612,7 +612,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().NavigateCore(direction));
+            *returnValue = detach(this->shim().NavigateCore(direction));
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
+            *returnValue = detach(this->shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetFocusedElementCore());
+            *returnValue = detach(this->shim().GetFocusedElementCore());
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetAnnotationsCore());
+            *returnValue = detach(this->shim().GetAnnotationsCore());
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetPositionInSetCore());
+            *returnValue = detach(this->shim().GetPositionInSetCore());
             return S_OK;
         }
         catch (...)
@@ -681,7 +681,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetSizeOfSetCore());
+            *returnValue = detach(this->shim().GetSizeOfSetCore());
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLevelCore());
+            *returnValue = detach(this->shim().GetLevelCore());
             return S_OK;
         }
         catch (...)
@@ -727,7 +727,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLandmarkTypeCore());
+            *returnValue = detach(this->shim().GetLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -740,7 +740,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetLocalizedLandmarkTypeCore());
+            *returnValue = detach(this->shim().GetLocalizedLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -794,7 +794,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsPeripheralCore());
+            *returnValue = detach(this->shim().IsPeripheralCore());
             return S_OK;
         }
         catch (...)
@@ -807,7 +807,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().IsDataValidForFormCore());
+            *returnValue = detach(this->shim().IsDataValidForFormCore());
             return S_OK;
         }
         catch (...)
@@ -820,7 +820,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetFullDescriptionCore());
+            *returnValue = detach(this->shim().GetFullDescriptionCore());
             return S_OK;
         }
         catch (...)
@@ -834,7 +834,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetDescribedByCore());
+            *returnValue = detach(this->shim().GetDescribedByCore());
             return S_OK;
         }
         catch (...)
@@ -848,7 +848,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetFlowsToCore());
+            *returnValue = detach(this->shim().GetFlowsToCore());
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().GetFlowsFromCore());
+            *returnValue = detach(this->shim().GetFlowsFromCore());
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ public:
     {
         try
         {
-            *returnValue = detach(shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)

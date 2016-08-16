@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Gaming.Input.ForceFeedback.3.h"
-#include "internal\Windows.Gaming.Input.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Gaming.Input.ForceFeedback.3.h"
+#include "internal/Windows.Gaming.Input.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -20,7 +20,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStick> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetButtonLabel(button));
+            *value = detach(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStick> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetCurrentReading());
+            *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().ArcadeStickAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
+            *token = detach(this->shim().ArcadeStickAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
     {
         try
         {
-            shim().ArcadeStickAdded(token);
+            this->shim().ArcadeStickAdded(token);
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().ArcadeStickRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
+            *token = detach(this->shim().ArcadeStickRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
     {
         try
         {
-            shim().ArcadeStickRemoved(token);
+            this->shim().ArcadeStickRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ArcadeSticks());
+            *value = detach(this->shim().ArcadeSticks());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().HeadsetConnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
+            *token = detach(this->shim().HeadsetConnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            shim().HeadsetConnected(token);
+            this->shim().HeadsetConnected(token);
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().HeadsetDisconnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
+            *token = detach(this->shim().HeadsetDisconnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            shim().HeadsetDisconnected(token);
+            this->shim().HeadsetDisconnected(token);
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().UserChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> *>(&value)));
+            *token = detach(this->shim().UserChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            shim().UserChanged(token);
+            this->shim().UserChanged(token);
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Headset());
+            *value = detach(this->shim().Headset());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsWireless());
+            *value = detach(this->shim().IsWireless());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::G
     {
         try
         {
-            *value = detach(shim().Vibration());
+            *value = detach(this->shim().Vibration());
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::G
     {
         try
         {
-            shim().Vibration(*reinterpret_cast<const Windows::Gaming::Input::GamepadVibration *>(&value));
+            this->shim().Vibration(*reinterpret_cast<const Windows::Gaming::Input::GamepadVibration *>(&value));
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::G
     {
         try
         {
-            *value = detach(shim().GetCurrentReading());
+            *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad2> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GetButtonLabel(button));
+            *value = detach(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -303,7 +303,7 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().GamepadAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
+            *token = detach(this->shim().GamepadAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
     {
         try
         {
-            shim().GamepadAdded(token);
+            this->shim().GamepadAdded(token);
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
     {
         try
         {
-            *token = detach(shim().GamepadRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
+            *token = detach(this->shim().GamepadRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
     {
         try
         {
-            shim().GamepadRemoved(token);
+            this->shim().GamepadRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Gamepads());
+            *value = detach(this->shim().Gamepads());
             return S_OK;
         }
         catch (...)
@@ -373,7 +373,7 @@ struct produce<D, Windows::Gaming::Input::IHeadset> : produce_base<D, Windows::G
     {
         try
         {
-            *value = detach(shim().CaptureDeviceId());
+            *value = detach(this->shim().CaptureDeviceId());
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::Gaming::Input::IHeadset> : produce_base<D, Windows::G
     {
         try
         {
-            *value = detach(shim().RenderDeviceId());
+            *value = detach(this->shim().RenderDeviceId());
             return S_OK;
         }
         catch (...)
@@ -405,7 +405,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().HasClutch());
+            *value = detach(this->shim().HasClutch());
             return S_OK;
         }
         catch (...)
@@ -418,7 +418,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().HasHandbrake());
+            *value = detach(this->shim().HasHandbrake());
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().HasPatternShifter());
+            *value = detach(this->shim().HasPatternShifter());
             return S_OK;
         }
         catch (...)
@@ -444,7 +444,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().MaxPatternShifterGear());
+            *value = detach(this->shim().MaxPatternShifterGear());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().MaxWheelAngle());
+            *value = detach(this->shim().MaxWheelAngle());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().WheelMotor());
+            *value = detach(this->shim().WheelMotor());
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetButtonLabel(button));
+            *value = detach(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetCurrentReading());
+            *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -514,7 +514,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().RacingWheelAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
+            *token = detach(this->shim().RacingWheelAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -527,7 +527,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
     {
         try
         {
-            shim().RacingWheelAdded(token);
+            this->shim().RacingWheelAdded(token);
             return S_OK;
         }
         catch (...)
@@ -540,7 +540,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().RacingWheelRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
+            *token = detach(this->shim().RacingWheelRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -553,7 +553,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
     {
         try
         {
-            shim().RacingWheelRemoved(token);
+            this->shim().RacingWheelRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().RacingWheels());
+            *value = detach(this->shim().RacingWheels());
             return S_OK;
         }
         catch (...)
@@ -584,7 +584,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetCurrentReading());
+            *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetOptionalButtonLabel(button));
+            *value = detach(this->shim().GetOptionalButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -610,7 +610,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
     {
         try
         {
-            *value = detach(shim().GetRequiredButtonLabel(button));
+            *value = detach(this->shim().GetRequiredButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
     {
         try
         {
-            *token = detach(shim().UINavigationControllerAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
+            *token = detach(this->shim().UINavigationControllerAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
     {
         try
         {
-            shim().UINavigationControllerAdded(token);
+            this->shim().UINavigationControllerAdded(token);
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
     {
         try
         {
-            *token = detach(shim().UINavigationControllerRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
+            *token = detach(this->shim().UINavigationControllerRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
     {
         try
         {
-            shim().UINavigationControllerRemoved(token);
+            this->shim().UINavigationControllerRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
     {
         try
         {
-            *value = detach(shim().UINavigationControllers());
+            *value = detach(this->shim().UINavigationControllers());
             return S_OK;
         }
         catch (...)

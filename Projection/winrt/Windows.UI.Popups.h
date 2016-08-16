@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Popups.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Popups.3.h"
 #include "Windows.UI.h"
 
 WINRT_EXPORT namespace winrt {
@@ -40,7 +40,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Commands());
+            *value = detach(this->shim().Commands());
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().DefaultCommandIndex());
+            *value = detach(this->shim().DefaultCommandIndex());
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            shim().DefaultCommandIndex(value);
+            this->shim().DefaultCommandIndex(value);
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().CancelCommandIndex());
+            *value = detach(this->shim().CancelCommandIndex());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            shim().CancelCommandIndex(value);
+            this->shim().CancelCommandIndex(value);
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            shim().Content(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Content(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *messageDialogAsyncOperation = detach(shim().ShowAsync());
+            *messageDialogAsyncOperation = detach(this->shim().ShowAsync());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
-            shim().Options(value);
+            this->shim().Options(value);
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialogFactory> : produce_base<D, 
     {
         try
         {
-            *messageDialog = detach(shim().Create(*reinterpret_cast<const hstring *>(&content)));
+            *messageDialog = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialogFactory> : produce_base<D, 
     {
         try
         {
-            *messageDialog = detach(shim().CreateWithTitle(*reinterpret_cast<const hstring *>(&content), *reinterpret_cast<const hstring *>(&title)));
+            *messageDialog = detach(this->shim().CreateWithTitle(*reinterpret_cast<const hstring *>(&content), *reinterpret_cast<const hstring *>(&title)));
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
-            *value = detach(shim().Commands());
+            *value = detach(this->shim().Commands());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
-            *asyncOperation = detach(shim().ShowAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
+            *asyncOperation = detach(this->shim().ShowAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
-            *asyncOperation = detach(shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *asyncOperation = detach(this->shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -278,7 +278,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
-            *asyncOperation = detach(shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
+            *asyncOperation = detach(this->shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            *value = detach(shim().Label());
+            *value = detach(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -310,7 +310,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            shim().Label(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            *value = detach(shim().Invoked());
+            *value = detach(this->shim().Invoked());
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            shim().Invoked(*reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&value));
+            this->shim().Invoked(*reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&value));
             return S_OK;
         }
         catch (...)
@@ -350,7 +350,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
-            shim().Id(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Id(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
-            *instance = detach(shim().Create(*reinterpret_cast<const hstring *>(&label)));
+            *instance = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&label)));
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
-            *instance = detach(shim().CreateWithHandler(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action)));
+            *instance = detach(this->shim().CreateWithHandler(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action)));
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
-            *instance = detach(shim().CreateWithHandlerAndId(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action), *reinterpret_cast<const Windows::IInspectable *>(&commandId)));
+            *instance = detach(this->shim().CreateWithHandlerAndId(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action), *reinterpret_cast<const Windows::IInspectable *>(&commandId)));
             return S_OK;
         }
         catch (...)

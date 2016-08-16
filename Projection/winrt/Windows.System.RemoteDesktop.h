@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.System.RemoteDesktop.3.h"
+#include "internal/Windows.System.RemoteDesktop.3.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {
@@ -17,7 +17,7 @@ struct produce<D, Windows::System::RemoteDesktop::IInteractiveSessionStatics> : 
     {
         try
         {
-            *value = detach(shim().IsRemote());
+            *value = detach(this->shim().IsRemote());
             return S_OK;
         }
         catch (...)

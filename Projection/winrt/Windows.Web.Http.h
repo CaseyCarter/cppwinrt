@@ -3,14 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.Filters.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Web.Http.Headers.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Web.Http.3.h"
+#include "internal/Windows.Web.Http.Filters.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Web.Http.Headers.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Web.Http.3.h"
 #include "Windows.Web.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
@@ -26,7 +26,7 @@ struct produce<D, Windows::Web::Http::IHttpBufferContentFactory> : produce_base<
     {
         try
         {
-            *bufferContent = detach(shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content)));
+            *bufferContent = detach(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -40,7 +40,7 @@ struct produce<D, Windows::Web::Http::IHttpBufferContentFactory> : produce_base<
     {
         try
         {
-            *bufferContent = detach(shim().CreateFromBufferWithOffset(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content), offset, count));
+            *bufferContent = detach(this->shim().CreateFromBufferWithOffset(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content), offset, count));
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().DeleteAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), completionOption));
+            *operation = detach(this->shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), completionOption));
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().GetBufferAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().GetBufferAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().GetInputStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().GetInputStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().GetStringAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().GetStringAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().PostAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
+            *operation = detach(this->shim().PostAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().PutAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
+            *operation = detach(this->shim().PutAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
+            *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *operation = detach(shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request), completionOption));
+            *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request), completionOption));
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().DefaultRequestHeaders());
+            *value = detach(this->shim().DefaultRequestHeaders());
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::Web::Http::IHttpClientFactory> : produce_base<D, Wind
     {
         try
         {
-            *client = detach(shim().Create(*reinterpret_cast<const Windows::Web::Http::Filters::IHttpFilter *>(&filter)));
+            *client = detach(this->shim().Create(*reinterpret_cast<const Windows::Web::Http::Filters::IHttpFilter *>(&filter)));
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *value = detach(shim().Headers());
+            *value = detach(this->shim().Headers());
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *operation = detach(shim().BufferAllAsync());
+            *operation = detach(this->shim().BufferAllAsync());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *operation = detach(shim().ReadAsBufferAsync());
+            *operation = detach(this->shim().ReadAsBufferAsync());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *operation = detach(shim().ReadAsInputStreamAsync());
+            *operation = detach(this->shim().ReadAsInputStreamAsync());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *operation = detach(shim().ReadAsStringAsync());
+            *operation = detach(this->shim().ReadAsStringAsync());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *succeeded = detach(shim().TryComputeLength(*length));
+            *succeeded = detach(this->shim().TryComputeLength(*length));
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
-            *operation = detach(shim().WriteToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
+            *operation = detach(this->shim().WriteToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Domain());
+            *value = detach(this->shim().Domain());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Path());
+            *value = detach(this->shim().Path());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Expires());
+            *value = detach(this->shim().Expires());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            shim().Expires(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().Expires(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().HttpOnly());
+            *value = detach(this->shim().HttpOnly());
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            shim().HttpOnly(value);
+            this->shim().HttpOnly(value);
             return S_OK;
         }
         catch (...)
@@ -430,7 +430,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Secure());
+            *value = detach(this->shim().Secure());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            shim().Secure(value);
+            this->shim().Secure(value);
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
-            shim().Value(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieFactory> : produce_base<D, Wind
     {
         try
         {
-            *cookie = detach(shim().Create(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&domain), *reinterpret_cast<const hstring *>(&path)));
+            *cookie = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&domain), *reinterpret_cast<const hstring *>(&path)));
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
-            *replaced = detach(shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie)));
+            *replaced = detach(this->shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie)));
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
-            *replaced = detach(shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie), thirdParty));
+            *replaced = detach(this->shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie), thirdParty));
             return S_OK;
         }
         catch (...)
@@ -531,7 +531,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
-            shim().DeleteCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie));
+            this->shim().DeleteCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie));
             return S_OK;
         }
         catch (...)
@@ -544,7 +544,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().GetCookies(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach(this->shim().GetCookies(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::Web::Http::IHttpFormUrlEncodedContentFactory> : produ
     {
         try
         {
-            *formUrlEncodedContent = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&content)));
+            *formUrlEncodedContent = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Web::Http::IHttpMethod> : produce_base<D, Windows::We
     {
         try
         {
-            *value = detach(shim().Method());
+            *value = detach(this->shim().Method());
             return S_OK;
         }
         catch (...)
@@ -598,7 +598,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodFactory> : produce_base<D, Wind
     {
         try
         {
-            *httpMethod = detach(shim().Create(*reinterpret_cast<const hstring *>(&method)));
+            *httpMethod = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&method)));
             return S_OK;
         }
         catch (...)
@@ -616,7 +616,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Delete());
+            *value = detach(this->shim().Delete());
             return S_OK;
         }
         catch (...)
@@ -630,7 +630,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Get());
+            *value = detach(this->shim().Get());
             return S_OK;
         }
         catch (...)
@@ -644,7 +644,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Head());
+            *value = detach(this->shim().Head());
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Patch());
+            *value = detach(this->shim().Patch());
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Post());
+            *value = detach(this->shim().Post());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Put());
+            *value = detach(this->shim().Put());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContent> : produce_base<D, W
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
+            this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContentFactory> : produce_ba
     {
         try
         {
-            *multipartContent = detach(shim().CreateWithSubtype(*reinterpret_cast<const hstring *>(&subtype)));
+            *multipartContent = detach(this->shim().CreateWithSubtype(*reinterpret_cast<const hstring *>(&subtype)));
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContentFactory> : produce_ba
     {
         try
         {
-            *multipartContent = detach(shim().CreateWithSubtypeAndBoundary(*reinterpret_cast<const hstring *>(&subtype), *reinterpret_cast<const hstring *>(&boundary)));
+            *multipartContent = detach(this->shim().CreateWithSubtypeAndBoundary(*reinterpret_cast<const hstring *>(&subtype), *reinterpret_cast<const hstring *>(&boundary)));
             return S_OK;
         }
         catch (...)
@@ -767,7 +767,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
+            this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
             return S_OK;
         }
         catch (...)
@@ -780,7 +780,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name));
+            this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
         catch (...)
@@ -793,7 +793,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&fileName));
+            this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&fileName));
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContentFactory> : pr
     {
         try
         {
-            *multipartFormDataContent = detach(shim().CreateWithBoundary(*reinterpret_cast<const hstring *>(&boundary)));
+            *multipartFormDataContent = detach(this->shim().CreateWithBoundary(*reinterpret_cast<const hstring *>(&boundary)));
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
+            this->shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
             return S_OK;
         }
         catch (...)
@@ -855,7 +855,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Headers());
+            *value = detach(this->shim().Headers());
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Method());
+            *value = detach(this->shim().Method());
             return S_OK;
         }
         catch (...)
@@ -883,7 +883,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            shim().Method(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&value));
+            this->shim().Method(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&value));
             return S_OK;
         }
         catch (...)
@@ -896,7 +896,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -910,7 +910,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().RequestUri());
+            *value = detach(this->shim().RequestUri());
             return S_OK;
         }
         catch (...)
@@ -924,7 +924,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            shim().RequestUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().RequestUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -937,7 +937,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().TransportInformation());
+            *value = detach(this->shim().TransportInformation());
             return S_OK;
         }
         catch (...)
@@ -955,7 +955,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessageFactory> : produce_base
     {
         try
         {
-            *httpRequestMessage = detach(shim().Create(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&method), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *httpRequestMessage = detach(this->shim().Create(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&method), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
+            this->shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Headers());
+            *value = detach(this->shim().Headers());
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().IsSuccessStatusCode());
+            *value = detach(this->shim().IsSuccessStatusCode());
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ReasonPhrase());
+            *value = detach(this->shim().ReasonPhrase());
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().ReasonPhrase(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReasonPhrase(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().RequestMessage());
+            *value = detach(this->shim().RequestMessage());
             return S_OK;
         }
         catch (...)
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().RequestMessage(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&value));
+            this->shim().RequestMessage(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Source());
+            *value = detach(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().Source(value);
+            this->shim().Source(value);
             return S_OK;
         }
         catch (...)
@@ -1107,7 +1107,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StatusCode());
+            *value = detach(this->shim().StatusCode());
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().StatusCode(value);
+            this->shim().StatusCode(value);
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Version());
+            *value = detach(this->shim().Version());
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            shim().Version(value);
+            this->shim().Version(value);
             return S_OK;
         }
         catch (...)
@@ -1159,7 +1159,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
-            *httpResponseMessage = detach(shim().EnsureSuccessStatusCode());
+            *httpResponseMessage = detach(this->shim().EnsureSuccessStatusCode());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessageFactory> : produce_bas
     {
         try
         {
-            *httpResponseMessage = detach(shim().Create(statusCode));
+            *httpResponseMessage = detach(this->shim().Create(statusCode));
             return S_OK;
         }
         catch (...)
@@ -1195,7 +1195,7 @@ struct produce<D, Windows::Web::Http::IHttpStreamContentFactory> : produce_base<
     {
         try
         {
-            *streamContent = detach(shim().CreateFromInputStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&content)));
+            *streamContent = detach(this->shim().CreateFromInputStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
-            *stringContent = detach(shim().CreateFromString(*reinterpret_cast<const hstring *>(&content)));
+            *stringContent = detach(this->shim().CreateFromString(*reinterpret_cast<const hstring *>(&content)));
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
-            *stringContent = detach(shim().CreateFromStringWithEncoding(*reinterpret_cast<const hstring *>(&content), encoding));
+            *stringContent = detach(this->shim().CreateFromStringWithEncoding(*reinterpret_cast<const hstring *>(&content), encoding));
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
-            *stringContent = detach(shim().CreateFromStringWithEncodingAndMediaType(*reinterpret_cast<const hstring *>(&content), encoding, *reinterpret_cast<const hstring *>(&mediaType)));
+            *stringContent = detach(this->shim().CreateFromStringWithEncodingAndMediaType(*reinterpret_cast<const hstring *>(&content), encoding, *reinterpret_cast<const hstring *>(&mediaType)));
             return S_OK;
         }
         catch (...)
@@ -1259,7 +1259,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
-            *value = detach(shim().ServerCertificate());
+            *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
         catch (...)
@@ -1273,7 +1273,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
-            *value = detach(shim().ServerCertificateErrorSeverity());
+            *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
         catch (...)
@@ -1286,7 +1286,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
-            *value = detach(shim().ServerCertificateErrors());
+            *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
         catch (...)
@@ -1300,7 +1300,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
-            *value = detach(shim().ServerIntermediateCertificates());
+            *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
         catch (...)

@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Text.3.h"
-#include "internal\Windows.Globalization.Fonts.3.h"
+#include "internal/Windows.UI.Text.3.h"
+#include "internal/Windows.Globalization.Fonts.3.h"
 #include "Windows.Globalization.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
-            *value = detach(shim().FontFamily());
+            *value = detach(this->shim().FontFamily());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
-            *weight = detach(shim().FontWeight());
+            *weight = detach(this->shim().FontWeight());
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
-            *stretch = detach(shim().FontStretch());
+            *stretch = detach(this->shim().FontStretch());
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
-            *style = detach(shim().FontStyle());
+            *style = detach(this->shim().FontStyle());
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
-            *scale = detach(shim().ScaleFactor());
+            *scale = detach(this->shim().ScaleFactor());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().UITextFont());
+            *value = detach(this->shim().UITextFont());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().UIHeadingFont());
+            *value = detach(this->shim().UIHeadingFont());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().UITitleFont());
+            *value = detach(this->shim().UITitleFont());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().UICaptionFont());
+            *value = detach(this->shim().UICaptionFont());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().UINotificationHeadingFont());
+            *value = detach(this->shim().UINotificationHeadingFont());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().TraditionalDocumentFont());
+            *value = detach(this->shim().TraditionalDocumentFont());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().ModernDocumentFont());
+            *value = detach(this->shim().ModernDocumentFont());
             return S_OK;
         }
         catch (...)
@@ -186,7 +186,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().DocumentHeadingFont());
+            *value = detach(this->shim().DocumentHeadingFont());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().FixedWidthTextFont());
+            *value = detach(this->shim().FixedWidthTextFont());
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().DocumentAlternate1Font());
+            *value = detach(this->shim().DocumentAlternate1Font());
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
-            *value = detach(shim().DocumentAlternate2Font());
+            *value = detach(this->shim().DocumentAlternate2Font());
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroupFactory> : pr
     {
         try
         {
-            *recommendedFonts = detach(shim().CreateLanguageFontGroup(*reinterpret_cast<const hstring *>(&languageTag)));
+            *recommendedFonts = detach(this->shim().CreateLanguageFontGroup(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)

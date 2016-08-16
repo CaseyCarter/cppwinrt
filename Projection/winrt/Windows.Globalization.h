@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Globalization.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Globalization.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -18,7 +18,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
-            *value = detach(shim().PrimaryLanguageOverride());
+            *value = detach(this->shim().PrimaryLanguageOverride());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
-            shim().PrimaryLanguageOverride(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PrimaryLanguageOverride(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
-            *value = detach(shim().Languages());
+            *value = detach(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
-            *value = detach(shim().ManifestLanguages());
+            *value = detach(this->shim().ManifestLanguages());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Clone());
+            *value = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().SetToMin();
+            this->shim().SetToMin();
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().SetToMax();
+            this->shim().SetToMax();
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Languages());
+            *value = detach(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumeralSystem());
+            *value = detach(this->shim().NumeralSystem());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
+            this->shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GetCalendarSystem());
+            *value = detach(this->shim().GetCalendarSystem());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().ChangeCalendarSystem(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ChangeCalendarSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GetClock());
+            *value = detach(this->shim().GetClock());
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().ChangeClock(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ChangeClock(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().GetDateTime());
+            *result = detach(this->shim().GetDateTime());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().SetDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().SetDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().SetToNow();
+            this->shim().SetToNow();
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstEra());
+            *value = detach(this->shim().FirstEra());
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastEra());
+            *value = detach(this->shim().LastEra());
             return S_OK;
         }
         catch (...)
@@ -277,7 +277,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfEras());
+            *value = detach(this->shim().NumberOfEras());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Era());
+            *value = detach(this->shim().Era());
             return S_OK;
         }
         catch (...)
@@ -303,7 +303,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Era(value);
+            this->shim().Era(value);
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddEras(eras);
+            this->shim().AddEras(eras);
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().EraAsString());
+            *result = detach(this->shim().EraAsString());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().EraAsString(idealLength));
+            *result = detach(this->shim().EraAsString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstYearInThisEra());
+            *value = detach(this->shim().FirstYearInThisEra());
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastYearInThisEra());
+            *value = detach(this->shim().LastYearInThisEra());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfYearsInThisEra());
+            *value = detach(this->shim().NumberOfYearsInThisEra());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Year());
+            *value = detach(this->shim().Year());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Year(value);
+            this->shim().Year(value);
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddYears(years);
+            this->shim().AddYears(years);
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().YearAsString());
+            *result = detach(this->shim().YearAsString());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().YearAsTruncatedString(remainingDigits));
+            *result = detach(this->shim().YearAsTruncatedString(remainingDigits));
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().YearAsPaddedString(minDigits));
+            *result = detach(this->shim().YearAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstMonthInThisYear());
+            *value = detach(this->shim().FirstMonthInThisYear());
             return S_OK;
         }
         catch (...)
@@ -490,7 +490,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastMonthInThisYear());
+            *value = detach(this->shim().LastMonthInThisYear());
             return S_OK;
         }
         catch (...)
@@ -503,7 +503,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfMonthsInThisYear());
+            *value = detach(this->shim().NumberOfMonthsInThisYear());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Month());
+            *value = detach(this->shim().Month());
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Month(value);
+            this->shim().Month(value);
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddMonths(months);
+            this->shim().AddMonths(months);
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsString());
+            *result = detach(this->shim().MonthAsString());
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsString(idealLength));
+            *result = detach(this->shim().MonthAsString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsSoloString());
+            *result = detach(this->shim().MonthAsSoloString());
             return S_OK;
         }
         catch (...)
@@ -597,7 +597,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsSoloString(idealLength));
+            *result = detach(this->shim().MonthAsSoloString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -611,7 +611,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsNumericString());
+            *result = detach(this->shim().MonthAsNumericString());
             return S_OK;
         }
         catch (...)
@@ -625,7 +625,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MonthAsPaddedNumericString(minDigits));
+            *result = detach(this->shim().MonthAsPaddedNumericString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddWeeks(weeks);
+            this->shim().AddWeeks(weeks);
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstDayInThisMonth());
+            *value = detach(this->shim().FirstDayInThisMonth());
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastDayInThisMonth());
+            *value = detach(this->shim().LastDayInThisMonth());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfDaysInThisMonth());
+            *value = detach(this->shim().NumberOfDaysInThisMonth());
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Day());
+            *value = detach(this->shim().Day());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Day(value);
+            this->shim().Day(value);
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddDays(days);
+            this->shim().AddDays(days);
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayAsString());
+            *result = detach(this->shim().DayAsString());
             return S_OK;
         }
         catch (...)
@@ -744,7 +744,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayAsPaddedString(minDigits));
+            *result = detach(this->shim().DayAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DayOfWeek());
+            *value = detach(this->shim().DayOfWeek());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayOfWeekAsString());
+            *result = detach(this->shim().DayOfWeekAsString());
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayOfWeekAsString(idealLength));
+            *result = detach(this->shim().DayOfWeekAsString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -799,7 +799,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayOfWeekAsSoloString());
+            *result = detach(this->shim().DayOfWeekAsSoloString());
             return S_OK;
         }
         catch (...)
@@ -813,7 +813,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().DayOfWeekAsSoloString(idealLength));
+            *result = detach(this->shim().DayOfWeekAsSoloString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -827,7 +827,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstPeriodInThisDay());
+            *value = detach(this->shim().FirstPeriodInThisDay());
             return S_OK;
         }
         catch (...)
@@ -840,7 +840,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastPeriodInThisDay());
+            *value = detach(this->shim().LastPeriodInThisDay());
             return S_OK;
         }
         catch (...)
@@ -853,7 +853,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfPeriodsInThisDay());
+            *value = detach(this->shim().NumberOfPeriodsInThisDay());
             return S_OK;
         }
         catch (...)
@@ -866,7 +866,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Period());
+            *value = detach(this->shim().Period());
             return S_OK;
         }
         catch (...)
@@ -879,7 +879,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Period(value);
+            this->shim().Period(value);
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddPeriods(periods);
+            this->shim().AddPeriods(periods);
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().PeriodAsString());
+            *result = detach(this->shim().PeriodAsString());
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().PeriodAsString(idealLength));
+            *result = detach(this->shim().PeriodAsString(idealLength));
             return S_OK;
         }
         catch (...)
@@ -933,7 +933,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstHourInThisPeriod());
+            *value = detach(this->shim().FirstHourInThisPeriod());
             return S_OK;
         }
         catch (...)
@@ -946,7 +946,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastHourInThisPeriod());
+            *value = detach(this->shim().LastHourInThisPeriod());
             return S_OK;
         }
         catch (...)
@@ -959,7 +959,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfHoursInThisPeriod());
+            *value = detach(this->shim().NumberOfHoursInThisPeriod());
             return S_OK;
         }
         catch (...)
@@ -972,7 +972,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Hour());
+            *value = detach(this->shim().Hour());
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Hour(value);
+            this->shim().Hour(value);
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddHours(hours);
+            this->shim().AddHours(hours);
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().HourAsString());
+            *result = detach(this->shim().HourAsString());
             return S_OK;
         }
         catch (...)
@@ -1025,7 +1025,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().HourAsPaddedString(minDigits));
+            *result = detach(this->shim().HourAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Minute());
+            *value = detach(this->shim().Minute());
             return S_OK;
         }
         catch (...)
@@ -1052,7 +1052,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Minute(value);
+            this->shim().Minute(value);
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddMinutes(minutes);
+            this->shim().AddMinutes(minutes);
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MinuteAsString());
+            *result = detach(this->shim().MinuteAsString());
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().MinuteAsPaddedString(minDigits));
+            *result = detach(this->shim().MinuteAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Second());
+            *value = detach(this->shim().Second());
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Second(value);
+            this->shim().Second(value);
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddSeconds(seconds);
+            this->shim().AddSeconds(seconds);
             return S_OK;
         }
         catch (...)
@@ -1145,7 +1145,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().SecondAsString());
+            *result = detach(this->shim().SecondAsString());
             return S_OK;
         }
         catch (...)
@@ -1159,7 +1159,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().SecondAsPaddedString(minDigits));
+            *result = detach(this->shim().SecondAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -1173,7 +1173,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Nanosecond());
+            *value = detach(this->shim().Nanosecond());
             return S_OK;
         }
         catch (...)
@@ -1186,7 +1186,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().Nanosecond(value);
+            this->shim().Nanosecond(value);
             return S_OK;
         }
         catch (...)
@@ -1199,7 +1199,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().AddNanoseconds(nanoseconds);
+            this->shim().AddNanoseconds(nanoseconds);
             return S_OK;
         }
         catch (...)
@@ -1212,7 +1212,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().NanosecondAsString());
+            *result = detach(this->shim().NanosecondAsString());
             return S_OK;
         }
         catch (...)
@@ -1226,7 +1226,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().NanosecondAsPaddedString(minDigits));
+            *result = detach(this->shim().NanosecondAsPaddedString(minDigits));
             return S_OK;
         }
         catch (...)
@@ -1240,7 +1240,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().Compare(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other)));
+            *result = detach(this->shim().Compare(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other)));
             return S_OK;
         }
         catch (...)
@@ -1253,7 +1253,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().CompareDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&other)));
+            *result = detach(this->shim().CompareDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&other)));
             return S_OK;
         }
         catch (...)
@@ -1266,7 +1266,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            shim().CopyTo(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other));
+            this->shim().CopyTo(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other));
             return S_OK;
         }
         catch (...)
@@ -1279,7 +1279,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstMinuteInThisHour());
+            *value = detach(this->shim().FirstMinuteInThisHour());
             return S_OK;
         }
         catch (...)
@@ -1292,7 +1292,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastMinuteInThisHour());
+            *value = detach(this->shim().LastMinuteInThisHour());
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfMinutesInThisHour());
+            *value = detach(this->shim().NumberOfMinutesInThisHour());
             return S_OK;
         }
         catch (...)
@@ -1318,7 +1318,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstSecondInThisMinute());
+            *value = detach(this->shim().FirstSecondInThisMinute());
             return S_OK;
         }
         catch (...)
@@ -1331,7 +1331,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastSecondInThisMinute());
+            *value = detach(this->shim().LastSecondInThisMinute());
             return S_OK;
         }
         catch (...)
@@ -1344,7 +1344,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NumberOfSecondsInThisMinute());
+            *value = detach(this->shim().NumberOfSecondsInThisMinute());
             return S_OK;
         }
         catch (...)
@@ -1357,7 +1357,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ResolvedLanguage());
+            *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -1371,7 +1371,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().IsDaylightSavingTime());
+            *value = detach(this->shim().IsDaylightSavingTime());
             return S_OK;
         }
         catch (...)
@@ -1388,7 +1388,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().CreateCalendarDefaultCalendarAndClock(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
+            *result = detach(this->shim().CreateCalendarDefaultCalendarAndClock(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().CreateCalendar(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock)));
+            *result = detach(this->shim().CreateCalendar(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock)));
             return S_OK;
         }
         catch (...)
@@ -1420,7 +1420,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory2> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().CreateCalendarWithTimeZone(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock), *reinterpret_cast<const hstring *>(&timeZoneId)));
+            *result = detach(this->shim().CreateCalendarWithTimeZone(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock), *reinterpret_cast<const hstring *>(&timeZoneId)));
             return S_OK;
         }
         catch (...)
@@ -1438,7 +1438,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Gregorian());
+            *value = detach(this->shim().Gregorian());
             return S_OK;
         }
         catch (...)
@@ -1452,7 +1452,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Hebrew());
+            *value = detach(this->shim().Hebrew());
             return S_OK;
         }
         catch (...)
@@ -1466,7 +1466,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Hijri());
+            *value = detach(this->shim().Hijri());
             return S_OK;
         }
         catch (...)
@@ -1480,7 +1480,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Japanese());
+            *value = detach(this->shim().Japanese());
             return S_OK;
         }
         catch (...)
@@ -1494,7 +1494,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Julian());
+            *value = detach(this->shim().Julian());
             return S_OK;
         }
         catch (...)
@@ -1508,7 +1508,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Korean());
+            *value = detach(this->shim().Korean());
             return S_OK;
         }
         catch (...)
@@ -1522,7 +1522,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Taiwan());
+            *value = detach(this->shim().Taiwan());
             return S_OK;
         }
         catch (...)
@@ -1536,7 +1536,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().Thai());
+            *value = detach(this->shim().Thai());
             return S_OK;
         }
         catch (...)
@@ -1550,7 +1550,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().UmAlQura());
+            *value = detach(this->shim().UmAlQura());
             return S_OK;
         }
         catch (...)
@@ -1568,7 +1568,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics2> : produc
     {
         try
         {
-            *value = detach(shim().Persian());
+            *value = detach(this->shim().Persian());
             return S_OK;
         }
         catch (...)
@@ -1586,7 +1586,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
-            *value = detach(shim().ChineseLunar());
+            *value = detach(this->shim().ChineseLunar());
             return S_OK;
         }
         catch (...)
@@ -1600,7 +1600,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
-            *value = detach(shim().JapaneseLunar());
+            *value = detach(this->shim().JapaneseLunar());
             return S_OK;
         }
         catch (...)
@@ -1614,7 +1614,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
-            *value = detach(shim().KoreanLunar());
+            *value = detach(this->shim().KoreanLunar());
             return S_OK;
         }
         catch (...)
@@ -1628,7 +1628,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
-            *value = detach(shim().TaiwanLunar());
+            *value = detach(this->shim().TaiwanLunar());
             return S_OK;
         }
         catch (...)
@@ -1642,7 +1642,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
-            *value = detach(shim().VietnameseLunar());
+            *value = detach(this->shim().VietnameseLunar());
             return S_OK;
         }
         catch (...)
@@ -1660,7 +1660,7 @@ struct produce<D, Windows::Globalization::IClockIdentifiersStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().TwelveHour());
+            *value = detach(this->shim().TwelveHour());
             return S_OK;
         }
         catch (...)
@@ -1674,7 +1674,7 @@ struct produce<D, Windows::Globalization::IClockIdentifiersStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().TwentyFourHour());
+            *value = detach(this->shim().TwentyFourHour());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AED());
+            *value = detach(this->shim().AED());
             return S_OK;
         }
         catch (...)
@@ -1706,7 +1706,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AFN());
+            *value = detach(this->shim().AFN());
             return S_OK;
         }
         catch (...)
@@ -1720,7 +1720,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ALL());
+            *value = detach(this->shim().ALL());
             return S_OK;
         }
         catch (...)
@@ -1734,7 +1734,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AMD());
+            *value = detach(this->shim().AMD());
             return S_OK;
         }
         catch (...)
@@ -1748,7 +1748,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ANG());
+            *value = detach(this->shim().ANG());
             return S_OK;
         }
         catch (...)
@@ -1762,7 +1762,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AOA());
+            *value = detach(this->shim().AOA());
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ARS());
+            *value = detach(this->shim().ARS());
             return S_OK;
         }
         catch (...)
@@ -1790,7 +1790,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AUD());
+            *value = detach(this->shim().AUD());
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AWG());
+            *value = detach(this->shim().AWG());
             return S_OK;
         }
         catch (...)
@@ -1818,7 +1818,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().AZN());
+            *value = detach(this->shim().AZN());
             return S_OK;
         }
         catch (...)
@@ -1832,7 +1832,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BAM());
+            *value = detach(this->shim().BAM());
             return S_OK;
         }
         catch (...)
@@ -1846,7 +1846,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BBD());
+            *value = detach(this->shim().BBD());
             return S_OK;
         }
         catch (...)
@@ -1860,7 +1860,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BDT());
+            *value = detach(this->shim().BDT());
             return S_OK;
         }
         catch (...)
@@ -1874,7 +1874,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BGN());
+            *value = detach(this->shim().BGN());
             return S_OK;
         }
         catch (...)
@@ -1888,7 +1888,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BHD());
+            *value = detach(this->shim().BHD());
             return S_OK;
         }
         catch (...)
@@ -1902,7 +1902,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BIF());
+            *value = detach(this->shim().BIF());
             return S_OK;
         }
         catch (...)
@@ -1916,7 +1916,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BMD());
+            *value = detach(this->shim().BMD());
             return S_OK;
         }
         catch (...)
@@ -1930,7 +1930,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BND());
+            *value = detach(this->shim().BND());
             return S_OK;
         }
         catch (...)
@@ -1944,7 +1944,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BOB());
+            *value = detach(this->shim().BOB());
             return S_OK;
         }
         catch (...)
@@ -1958,7 +1958,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BRL());
+            *value = detach(this->shim().BRL());
             return S_OK;
         }
         catch (...)
@@ -1972,7 +1972,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BSD());
+            *value = detach(this->shim().BSD());
             return S_OK;
         }
         catch (...)
@@ -1986,7 +1986,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BTN());
+            *value = detach(this->shim().BTN());
             return S_OK;
         }
         catch (...)
@@ -2000,7 +2000,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BWP());
+            *value = detach(this->shim().BWP());
             return S_OK;
         }
         catch (...)
@@ -2014,7 +2014,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BYR());
+            *value = detach(this->shim().BYR());
             return S_OK;
         }
         catch (...)
@@ -2028,7 +2028,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().BZD());
+            *value = detach(this->shim().BZD());
             return S_OK;
         }
         catch (...)
@@ -2042,7 +2042,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CAD());
+            *value = detach(this->shim().CAD());
             return S_OK;
         }
         catch (...)
@@ -2056,7 +2056,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CDF());
+            *value = detach(this->shim().CDF());
             return S_OK;
         }
         catch (...)
@@ -2070,7 +2070,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CHF());
+            *value = detach(this->shim().CHF());
             return S_OK;
         }
         catch (...)
@@ -2084,7 +2084,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CLP());
+            *value = detach(this->shim().CLP());
             return S_OK;
         }
         catch (...)
@@ -2098,7 +2098,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CNY());
+            *value = detach(this->shim().CNY());
             return S_OK;
         }
         catch (...)
@@ -2112,7 +2112,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().COP());
+            *value = detach(this->shim().COP());
             return S_OK;
         }
         catch (...)
@@ -2126,7 +2126,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CRC());
+            *value = detach(this->shim().CRC());
             return S_OK;
         }
         catch (...)
@@ -2140,7 +2140,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CUP());
+            *value = detach(this->shim().CUP());
             return S_OK;
         }
         catch (...)
@@ -2154,7 +2154,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CVE());
+            *value = detach(this->shim().CVE());
             return S_OK;
         }
         catch (...)
@@ -2168,7 +2168,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().CZK());
+            *value = detach(this->shim().CZK());
             return S_OK;
         }
         catch (...)
@@ -2182,7 +2182,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().DJF());
+            *value = detach(this->shim().DJF());
             return S_OK;
         }
         catch (...)
@@ -2196,7 +2196,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().DKK());
+            *value = detach(this->shim().DKK());
             return S_OK;
         }
         catch (...)
@@ -2210,7 +2210,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().DOP());
+            *value = detach(this->shim().DOP());
             return S_OK;
         }
         catch (...)
@@ -2224,7 +2224,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().DZD());
+            *value = detach(this->shim().DZD());
             return S_OK;
         }
         catch (...)
@@ -2238,7 +2238,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().EGP());
+            *value = detach(this->shim().EGP());
             return S_OK;
         }
         catch (...)
@@ -2252,7 +2252,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ERN());
+            *value = detach(this->shim().ERN());
             return S_OK;
         }
         catch (...)
@@ -2266,7 +2266,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ETB());
+            *value = detach(this->shim().ETB());
             return S_OK;
         }
         catch (...)
@@ -2280,7 +2280,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().EUR());
+            *value = detach(this->shim().EUR());
             return S_OK;
         }
         catch (...)
@@ -2294,7 +2294,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().FJD());
+            *value = detach(this->shim().FJD());
             return S_OK;
         }
         catch (...)
@@ -2308,7 +2308,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().FKP());
+            *value = detach(this->shim().FKP());
             return S_OK;
         }
         catch (...)
@@ -2322,7 +2322,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GBP());
+            *value = detach(this->shim().GBP());
             return S_OK;
         }
         catch (...)
@@ -2336,7 +2336,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GEL());
+            *value = detach(this->shim().GEL());
             return S_OK;
         }
         catch (...)
@@ -2350,7 +2350,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GHS());
+            *value = detach(this->shim().GHS());
             return S_OK;
         }
         catch (...)
@@ -2364,7 +2364,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GIP());
+            *value = detach(this->shim().GIP());
             return S_OK;
         }
         catch (...)
@@ -2378,7 +2378,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GMD());
+            *value = detach(this->shim().GMD());
             return S_OK;
         }
         catch (...)
@@ -2392,7 +2392,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GNF());
+            *value = detach(this->shim().GNF());
             return S_OK;
         }
         catch (...)
@@ -2406,7 +2406,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GTQ());
+            *value = detach(this->shim().GTQ());
             return S_OK;
         }
         catch (...)
@@ -2420,7 +2420,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().GYD());
+            *value = detach(this->shim().GYD());
             return S_OK;
         }
         catch (...)
@@ -2434,7 +2434,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().HKD());
+            *value = detach(this->shim().HKD());
             return S_OK;
         }
         catch (...)
@@ -2448,7 +2448,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().HNL());
+            *value = detach(this->shim().HNL());
             return S_OK;
         }
         catch (...)
@@ -2462,7 +2462,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().HRK());
+            *value = detach(this->shim().HRK());
             return S_OK;
         }
         catch (...)
@@ -2476,7 +2476,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().HTG());
+            *value = detach(this->shim().HTG());
             return S_OK;
         }
         catch (...)
@@ -2490,7 +2490,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().HUF());
+            *value = detach(this->shim().HUF());
             return S_OK;
         }
         catch (...)
@@ -2504,7 +2504,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().IDR());
+            *value = detach(this->shim().IDR());
             return S_OK;
         }
         catch (...)
@@ -2518,7 +2518,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ILS());
+            *value = detach(this->shim().ILS());
             return S_OK;
         }
         catch (...)
@@ -2532,7 +2532,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().INR());
+            *value = detach(this->shim().INR());
             return S_OK;
         }
         catch (...)
@@ -2546,7 +2546,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().IQD());
+            *value = detach(this->shim().IQD());
             return S_OK;
         }
         catch (...)
@@ -2560,7 +2560,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().IRR());
+            *value = detach(this->shim().IRR());
             return S_OK;
         }
         catch (...)
@@ -2574,7 +2574,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ISK());
+            *value = detach(this->shim().ISK());
             return S_OK;
         }
         catch (...)
@@ -2588,7 +2588,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().JMD());
+            *value = detach(this->shim().JMD());
             return S_OK;
         }
         catch (...)
@@ -2602,7 +2602,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().JOD());
+            *value = detach(this->shim().JOD());
             return S_OK;
         }
         catch (...)
@@ -2616,7 +2616,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().JPY());
+            *value = detach(this->shim().JPY());
             return S_OK;
         }
         catch (...)
@@ -2630,7 +2630,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KES());
+            *value = detach(this->shim().KES());
             return S_OK;
         }
         catch (...)
@@ -2644,7 +2644,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KGS());
+            *value = detach(this->shim().KGS());
             return S_OK;
         }
         catch (...)
@@ -2658,7 +2658,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KHR());
+            *value = detach(this->shim().KHR());
             return S_OK;
         }
         catch (...)
@@ -2672,7 +2672,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KMF());
+            *value = detach(this->shim().KMF());
             return S_OK;
         }
         catch (...)
@@ -2686,7 +2686,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KPW());
+            *value = detach(this->shim().KPW());
             return S_OK;
         }
         catch (...)
@@ -2700,7 +2700,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KRW());
+            *value = detach(this->shim().KRW());
             return S_OK;
         }
         catch (...)
@@ -2714,7 +2714,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KWD());
+            *value = detach(this->shim().KWD());
             return S_OK;
         }
         catch (...)
@@ -2728,7 +2728,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KYD());
+            *value = detach(this->shim().KYD());
             return S_OK;
         }
         catch (...)
@@ -2742,7 +2742,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().KZT());
+            *value = detach(this->shim().KZT());
             return S_OK;
         }
         catch (...)
@@ -2756,7 +2756,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LAK());
+            *value = detach(this->shim().LAK());
             return S_OK;
         }
         catch (...)
@@ -2770,7 +2770,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LBP());
+            *value = detach(this->shim().LBP());
             return S_OK;
         }
         catch (...)
@@ -2784,7 +2784,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LKR());
+            *value = detach(this->shim().LKR());
             return S_OK;
         }
         catch (...)
@@ -2798,7 +2798,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LRD());
+            *value = detach(this->shim().LRD());
             return S_OK;
         }
         catch (...)
@@ -2812,7 +2812,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LSL());
+            *value = detach(this->shim().LSL());
             return S_OK;
         }
         catch (...)
@@ -2826,7 +2826,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LTL());
+            *value = detach(this->shim().LTL());
             return S_OK;
         }
         catch (...)
@@ -2840,7 +2840,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LVL());
+            *value = detach(this->shim().LVL());
             return S_OK;
         }
         catch (...)
@@ -2854,7 +2854,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().LYD());
+            *value = detach(this->shim().LYD());
             return S_OK;
         }
         catch (...)
@@ -2868,7 +2868,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MAD());
+            *value = detach(this->shim().MAD());
             return S_OK;
         }
         catch (...)
@@ -2882,7 +2882,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MDL());
+            *value = detach(this->shim().MDL());
             return S_OK;
         }
         catch (...)
@@ -2896,7 +2896,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MGA());
+            *value = detach(this->shim().MGA());
             return S_OK;
         }
         catch (...)
@@ -2910,7 +2910,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MKD());
+            *value = detach(this->shim().MKD());
             return S_OK;
         }
         catch (...)
@@ -2924,7 +2924,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MMK());
+            *value = detach(this->shim().MMK());
             return S_OK;
         }
         catch (...)
@@ -2938,7 +2938,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MNT());
+            *value = detach(this->shim().MNT());
             return S_OK;
         }
         catch (...)
@@ -2952,7 +2952,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MOP());
+            *value = detach(this->shim().MOP());
             return S_OK;
         }
         catch (...)
@@ -2966,7 +2966,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MRO());
+            *value = detach(this->shim().MRO());
             return S_OK;
         }
         catch (...)
@@ -2980,7 +2980,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MUR());
+            *value = detach(this->shim().MUR());
             return S_OK;
         }
         catch (...)
@@ -2994,7 +2994,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MVR());
+            *value = detach(this->shim().MVR());
             return S_OK;
         }
         catch (...)
@@ -3008,7 +3008,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MWK());
+            *value = detach(this->shim().MWK());
             return S_OK;
         }
         catch (...)
@@ -3022,7 +3022,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MXN());
+            *value = detach(this->shim().MXN());
             return S_OK;
         }
         catch (...)
@@ -3036,7 +3036,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MYR());
+            *value = detach(this->shim().MYR());
             return S_OK;
         }
         catch (...)
@@ -3050,7 +3050,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().MZN());
+            *value = detach(this->shim().MZN());
             return S_OK;
         }
         catch (...)
@@ -3064,7 +3064,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NAD());
+            *value = detach(this->shim().NAD());
             return S_OK;
         }
         catch (...)
@@ -3078,7 +3078,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NGN());
+            *value = detach(this->shim().NGN());
             return S_OK;
         }
         catch (...)
@@ -3092,7 +3092,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NIO());
+            *value = detach(this->shim().NIO());
             return S_OK;
         }
         catch (...)
@@ -3106,7 +3106,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NOK());
+            *value = detach(this->shim().NOK());
             return S_OK;
         }
         catch (...)
@@ -3120,7 +3120,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NPR());
+            *value = detach(this->shim().NPR());
             return S_OK;
         }
         catch (...)
@@ -3134,7 +3134,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().NZD());
+            *value = detach(this->shim().NZD());
             return S_OK;
         }
         catch (...)
@@ -3148,7 +3148,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().OMR());
+            *value = detach(this->shim().OMR());
             return S_OK;
         }
         catch (...)
@@ -3162,7 +3162,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PAB());
+            *value = detach(this->shim().PAB());
             return S_OK;
         }
         catch (...)
@@ -3176,7 +3176,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PEN());
+            *value = detach(this->shim().PEN());
             return S_OK;
         }
         catch (...)
@@ -3190,7 +3190,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PGK());
+            *value = detach(this->shim().PGK());
             return S_OK;
         }
         catch (...)
@@ -3204,7 +3204,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PHP());
+            *value = detach(this->shim().PHP());
             return S_OK;
         }
         catch (...)
@@ -3218,7 +3218,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PKR());
+            *value = detach(this->shim().PKR());
             return S_OK;
         }
         catch (...)
@@ -3232,7 +3232,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PLN());
+            *value = detach(this->shim().PLN());
             return S_OK;
         }
         catch (...)
@@ -3246,7 +3246,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().PYG());
+            *value = detach(this->shim().PYG());
             return S_OK;
         }
         catch (...)
@@ -3260,7 +3260,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().QAR());
+            *value = detach(this->shim().QAR());
             return S_OK;
         }
         catch (...)
@@ -3274,7 +3274,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().RON());
+            *value = detach(this->shim().RON());
             return S_OK;
         }
         catch (...)
@@ -3288,7 +3288,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().RSD());
+            *value = detach(this->shim().RSD());
             return S_OK;
         }
         catch (...)
@@ -3302,7 +3302,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().RUB());
+            *value = detach(this->shim().RUB());
             return S_OK;
         }
         catch (...)
@@ -3316,7 +3316,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().RWF());
+            *value = detach(this->shim().RWF());
             return S_OK;
         }
         catch (...)
@@ -3330,7 +3330,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SAR());
+            *value = detach(this->shim().SAR());
             return S_OK;
         }
         catch (...)
@@ -3344,7 +3344,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SBD());
+            *value = detach(this->shim().SBD());
             return S_OK;
         }
         catch (...)
@@ -3358,7 +3358,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SCR());
+            *value = detach(this->shim().SCR());
             return S_OK;
         }
         catch (...)
@@ -3372,7 +3372,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SDG());
+            *value = detach(this->shim().SDG());
             return S_OK;
         }
         catch (...)
@@ -3386,7 +3386,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SEK());
+            *value = detach(this->shim().SEK());
             return S_OK;
         }
         catch (...)
@@ -3400,7 +3400,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SGD());
+            *value = detach(this->shim().SGD());
             return S_OK;
         }
         catch (...)
@@ -3414,7 +3414,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SHP());
+            *value = detach(this->shim().SHP());
             return S_OK;
         }
         catch (...)
@@ -3428,7 +3428,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SLL());
+            *value = detach(this->shim().SLL());
             return S_OK;
         }
         catch (...)
@@ -3442,7 +3442,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SOS());
+            *value = detach(this->shim().SOS());
             return S_OK;
         }
         catch (...)
@@ -3456,7 +3456,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SRD());
+            *value = detach(this->shim().SRD());
             return S_OK;
         }
         catch (...)
@@ -3470,7 +3470,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().STD());
+            *value = detach(this->shim().STD());
             return S_OK;
         }
         catch (...)
@@ -3484,7 +3484,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SYP());
+            *value = detach(this->shim().SYP());
             return S_OK;
         }
         catch (...)
@@ -3498,7 +3498,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().SZL());
+            *value = detach(this->shim().SZL());
             return S_OK;
         }
         catch (...)
@@ -3512,7 +3512,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().THB());
+            *value = detach(this->shim().THB());
             return S_OK;
         }
         catch (...)
@@ -3526,7 +3526,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TJS());
+            *value = detach(this->shim().TJS());
             return S_OK;
         }
         catch (...)
@@ -3540,7 +3540,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TMT());
+            *value = detach(this->shim().TMT());
             return S_OK;
         }
         catch (...)
@@ -3554,7 +3554,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TND());
+            *value = detach(this->shim().TND());
             return S_OK;
         }
         catch (...)
@@ -3568,7 +3568,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TOP());
+            *value = detach(this->shim().TOP());
             return S_OK;
         }
         catch (...)
@@ -3582,7 +3582,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TRY());
+            *value = detach(this->shim().TRY());
             return S_OK;
         }
         catch (...)
@@ -3596,7 +3596,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TTD());
+            *value = detach(this->shim().TTD());
             return S_OK;
         }
         catch (...)
@@ -3610,7 +3610,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TWD());
+            *value = detach(this->shim().TWD());
             return S_OK;
         }
         catch (...)
@@ -3624,7 +3624,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().TZS());
+            *value = detach(this->shim().TZS());
             return S_OK;
         }
         catch (...)
@@ -3638,7 +3638,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().UAH());
+            *value = detach(this->shim().UAH());
             return S_OK;
         }
         catch (...)
@@ -3652,7 +3652,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().UGX());
+            *value = detach(this->shim().UGX());
             return S_OK;
         }
         catch (...)
@@ -3666,7 +3666,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().USD());
+            *value = detach(this->shim().USD());
             return S_OK;
         }
         catch (...)
@@ -3680,7 +3680,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().UYU());
+            *value = detach(this->shim().UYU());
             return S_OK;
         }
         catch (...)
@@ -3694,7 +3694,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().UZS());
+            *value = detach(this->shim().UZS());
             return S_OK;
         }
         catch (...)
@@ -3708,7 +3708,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().VEF());
+            *value = detach(this->shim().VEF());
             return S_OK;
         }
         catch (...)
@@ -3722,7 +3722,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().VND());
+            *value = detach(this->shim().VND());
             return S_OK;
         }
         catch (...)
@@ -3736,7 +3736,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().VUV());
+            *value = detach(this->shim().VUV());
             return S_OK;
         }
         catch (...)
@@ -3750,7 +3750,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().WST());
+            *value = detach(this->shim().WST());
             return S_OK;
         }
         catch (...)
@@ -3764,7 +3764,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().XAF());
+            *value = detach(this->shim().XAF());
             return S_OK;
         }
         catch (...)
@@ -3778,7 +3778,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().XCD());
+            *value = detach(this->shim().XCD());
             return S_OK;
         }
         catch (...)
@@ -3792,7 +3792,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().XOF());
+            *value = detach(this->shim().XOF());
             return S_OK;
         }
         catch (...)
@@ -3806,7 +3806,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().XPF());
+            *value = detach(this->shim().XPF());
             return S_OK;
         }
         catch (...)
@@ -3820,7 +3820,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().XXX());
+            *value = detach(this->shim().XXX());
             return S_OK;
         }
         catch (...)
@@ -3834,7 +3834,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().YER());
+            *value = detach(this->shim().YER());
             return S_OK;
         }
         catch (...)
@@ -3848,7 +3848,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ZAR());
+            *value = detach(this->shim().ZAR());
             return S_OK;
         }
         catch (...)
@@ -3862,7 +3862,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ZMW());
+            *value = detach(this->shim().ZMW());
             return S_OK;
         }
         catch (...)
@@ -3876,7 +3876,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
-            *value = detach(shim().ZWL());
+            *value = detach(this->shim().ZWL());
             return S_OK;
         }
         catch (...)
@@ -3894,7 +3894,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Code());
+            *value = detach(this->shim().Code());
             return S_OK;
         }
         catch (...)
@@ -3908,7 +3908,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CodeTwoLetter());
+            *value = detach(this->shim().CodeTwoLetter());
             return S_OK;
         }
         catch (...)
@@ -3922,7 +3922,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CodeThreeLetter());
+            *value = detach(this->shim().CodeThreeLetter());
             return S_OK;
         }
         catch (...)
@@ -3936,7 +3936,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CodeThreeDigit());
+            *value = detach(this->shim().CodeThreeDigit());
             return S_OK;
         }
         catch (...)
@@ -3950,7 +3950,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -3964,7 +3964,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().NativeName());
+            *value = detach(this->shim().NativeName());
             return S_OK;
         }
         catch (...)
@@ -3978,7 +3978,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CurrenciesInUse());
+            *value = detach(this->shim().CurrenciesInUse());
             return S_OK;
         }
         catch (...)
@@ -3996,7 +3996,7 @@ struct produce<D, Windows::Globalization::IGeographicRegionFactory> : produce_ba
     {
         try
         {
-            *result = detach(shim().CreateGeographicRegion(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
+            *result = detach(this->shim().CreateGeographicRegion(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
             return S_OK;
         }
         catch (...)
@@ -4014,7 +4014,7 @@ struct produce<D, Windows::Globalization::IGeographicRegionStatics> : produce_ba
     {
         try
         {
-            *result = detach(shim().IsSupported(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
+            *result = detach(this->shim().IsSupported(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
             return S_OK;
         }
         catch (...)
@@ -4031,7 +4031,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LanguageTag());
+            *value = detach(this->shim().LanguageTag());
             return S_OK;
         }
         catch (...)
@@ -4045,7 +4045,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -4059,7 +4059,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NativeName());
+            *value = detach(this->shim().NativeName());
             return S_OK;
         }
         catch (...)
@@ -4073,7 +4073,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Script());
+            *value = detach(this->shim().Script());
             return S_OK;
         }
         catch (...)
@@ -4091,7 +4091,7 @@ struct produce<D, Windows::Globalization::ILanguageExtensionSubtags> : produce_b
     {
         try
         {
-            *value = detach(shim().GetExtensionSubtags(*reinterpret_cast<const hstring *>(&singleton)));
+            *value = detach(this->shim().GetExtensionSubtags(*reinterpret_cast<const hstring *>(&singleton)));
             return S_OK;
         }
         catch (...)
@@ -4109,7 +4109,7 @@ struct produce<D, Windows::Globalization::ILanguageFactory> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().CreateLanguage(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().CreateLanguage(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -4127,7 +4127,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().IsWellFormed(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().IsWellFormed(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -4140,7 +4140,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().CurrentInputMethodLanguageTag());
+            *value = detach(this->shim().CurrentInputMethodLanguageTag());
             return S_OK;
         }
         catch (...)
@@ -4158,7 +4158,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics2> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().TrySetInputMethodLanguageTag(*reinterpret_cast<const hstring *>(&languageTag)));
+            *result = detach(this->shim().TrySetInputMethodLanguageTag(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
         catch (...)
@@ -4175,7 +4175,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Arab());
+            *value = detach(this->shim().Arab());
             return S_OK;
         }
         catch (...)
@@ -4189,7 +4189,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().ArabExt());
+            *value = detach(this->shim().ArabExt());
             return S_OK;
         }
         catch (...)
@@ -4203,7 +4203,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Bali());
+            *value = detach(this->shim().Bali());
             return S_OK;
         }
         catch (...)
@@ -4217,7 +4217,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Beng());
+            *value = detach(this->shim().Beng());
             return S_OK;
         }
         catch (...)
@@ -4231,7 +4231,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Cham());
+            *value = detach(this->shim().Cham());
             return S_OK;
         }
         catch (...)
@@ -4245,7 +4245,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Deva());
+            *value = detach(this->shim().Deva());
             return S_OK;
         }
         catch (...)
@@ -4259,7 +4259,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().FullWide());
+            *value = detach(this->shim().FullWide());
             return S_OK;
         }
         catch (...)
@@ -4273,7 +4273,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Gujr());
+            *value = detach(this->shim().Gujr());
             return S_OK;
         }
         catch (...)
@@ -4287,7 +4287,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Guru());
+            *value = detach(this->shim().Guru());
             return S_OK;
         }
         catch (...)
@@ -4301,7 +4301,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().HaniDec());
+            *value = detach(this->shim().HaniDec());
             return S_OK;
         }
         catch (...)
@@ -4315,7 +4315,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Java());
+            *value = detach(this->shim().Java());
             return S_OK;
         }
         catch (...)
@@ -4329,7 +4329,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Kali());
+            *value = detach(this->shim().Kali());
             return S_OK;
         }
         catch (...)
@@ -4343,7 +4343,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Khmr());
+            *value = detach(this->shim().Khmr());
             return S_OK;
         }
         catch (...)
@@ -4357,7 +4357,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Knda());
+            *value = detach(this->shim().Knda());
             return S_OK;
         }
         catch (...)
@@ -4371,7 +4371,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Lana());
+            *value = detach(this->shim().Lana());
             return S_OK;
         }
         catch (...)
@@ -4385,7 +4385,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().LanaTham());
+            *value = detach(this->shim().LanaTham());
             return S_OK;
         }
         catch (...)
@@ -4399,7 +4399,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Laoo());
+            *value = detach(this->shim().Laoo());
             return S_OK;
         }
         catch (...)
@@ -4413,7 +4413,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Latn());
+            *value = detach(this->shim().Latn());
             return S_OK;
         }
         catch (...)
@@ -4427,7 +4427,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Lepc());
+            *value = detach(this->shim().Lepc());
             return S_OK;
         }
         catch (...)
@@ -4441,7 +4441,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Limb());
+            *value = detach(this->shim().Limb());
             return S_OK;
         }
         catch (...)
@@ -4455,7 +4455,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Mlym());
+            *value = detach(this->shim().Mlym());
             return S_OK;
         }
         catch (...)
@@ -4469,7 +4469,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Mong());
+            *value = detach(this->shim().Mong());
             return S_OK;
         }
         catch (...)
@@ -4483,7 +4483,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Mtei());
+            *value = detach(this->shim().Mtei());
             return S_OK;
         }
         catch (...)
@@ -4497,7 +4497,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Mymr());
+            *value = detach(this->shim().Mymr());
             return S_OK;
         }
         catch (...)
@@ -4511,7 +4511,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().MymrShan());
+            *value = detach(this->shim().MymrShan());
             return S_OK;
         }
         catch (...)
@@ -4525,7 +4525,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Nkoo());
+            *value = detach(this->shim().Nkoo());
             return S_OK;
         }
         catch (...)
@@ -4539,7 +4539,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Olck());
+            *value = detach(this->shim().Olck());
             return S_OK;
         }
         catch (...)
@@ -4553,7 +4553,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Orya());
+            *value = detach(this->shim().Orya());
             return S_OK;
         }
         catch (...)
@@ -4567,7 +4567,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Saur());
+            *value = detach(this->shim().Saur());
             return S_OK;
         }
         catch (...)
@@ -4581,7 +4581,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Sund());
+            *value = detach(this->shim().Sund());
             return S_OK;
         }
         catch (...)
@@ -4595,7 +4595,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Talu());
+            *value = detach(this->shim().Talu());
             return S_OK;
         }
         catch (...)
@@ -4609,7 +4609,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().TamlDec());
+            *value = detach(this->shim().TamlDec());
             return S_OK;
         }
         catch (...)
@@ -4623,7 +4623,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Telu());
+            *value = detach(this->shim().Telu());
             return S_OK;
         }
         catch (...)
@@ -4637,7 +4637,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Thai());
+            *value = detach(this->shim().Thai());
             return S_OK;
         }
         catch (...)
@@ -4651,7 +4651,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Tibt());
+            *value = detach(this->shim().Tibt());
             return S_OK;
         }
         catch (...)
@@ -4665,7 +4665,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
-            *value = detach(shim().Vaii());
+            *value = detach(this->shim().Vaii());
             return S_OK;
         }
         catch (...)
@@ -4683,7 +4683,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().Brah());
+            *value = detach(this->shim().Brah());
             return S_OK;
         }
         catch (...)
@@ -4697,7 +4697,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().Osma());
+            *value = detach(this->shim().Osma());
             return S_OK;
         }
         catch (...)
@@ -4711,7 +4711,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().MathBold());
+            *value = detach(this->shim().MathBold());
             return S_OK;
         }
         catch (...)
@@ -4725,7 +4725,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().MathDbl());
+            *value = detach(this->shim().MathDbl());
             return S_OK;
         }
         catch (...)
@@ -4739,7 +4739,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().MathSans());
+            *value = detach(this->shim().MathSans());
             return S_OK;
         }
         catch (...)
@@ -4753,7 +4753,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().MathSanb());
+            *value = detach(this->shim().MathSanb());
             return S_OK;
         }
         catch (...)
@@ -4767,7 +4767,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().MathMono());
+            *value = detach(this->shim().MathMono());
             return S_OK;
         }
         catch (...)
@@ -4781,7 +4781,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().ZmthBold());
+            *value = detach(this->shim().ZmthBold());
             return S_OK;
         }
         catch (...)
@@ -4795,7 +4795,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().ZmthDbl());
+            *value = detach(this->shim().ZmthDbl());
             return S_OK;
         }
         catch (...)
@@ -4809,7 +4809,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().ZmthSans());
+            *value = detach(this->shim().ZmthSans());
             return S_OK;
         }
         catch (...)
@@ -4823,7 +4823,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().ZmthSanb());
+            *value = detach(this->shim().ZmthSanb());
             return S_OK;
         }
         catch (...)
@@ -4837,7 +4837,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
-            *value = detach(shim().ZmthMono());
+            *value = detach(this->shim().ZmthMono());
             return S_OK;
         }
         catch (...)
@@ -4855,7 +4855,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().GetTimeZone());
+            *value = detach(this->shim().GetTimeZone());
             return S_OK;
         }
         catch (...)
@@ -4869,7 +4869,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
-            shim().ChangeTimeZone(*reinterpret_cast<const hstring *>(&timeZoneId));
+            this->shim().ChangeTimeZone(*reinterpret_cast<const hstring *>(&timeZoneId));
             return S_OK;
         }
         catch (...)
@@ -4882,7 +4882,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
-            *result = detach(shim().TimeZoneAsString());
+            *result = detach(this->shim().TimeZoneAsString());
             return S_OK;
         }
         catch (...)
@@ -4896,7 +4896,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
-            *result = detach(shim().TimeZoneAsString(idealLength));
+            *result = detach(this->shim().TimeZoneAsString(idealLength));
             return S_OK;
         }
         catch (...)

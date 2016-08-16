@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.UserDataAccounts.SystemAccess.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.UserDataAccounts.SystemAccess.3.h"
 #include "Windows.ApplicationModel.UserDataAccounts.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AccountName());
+            *value = detach(this->shim().AccountName());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AccountName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AccountName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().DeviceAccountTypeId());
+            *value = detach(this->shim().DeviceAccountTypeId());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().DeviceAccountTypeId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DeviceAccountTypeId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().ServerType());
+            *value = detach(this->shim().ServerType());
             return S_OK;
         }
         catch (...)
@@ -87,7 +87,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().ServerType(value);
+            this->shim().ServerType(value);
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().EmailAddress());
+            *value = detach(this->shim().EmailAddress());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().EmailAddress(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EmailAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().Domain());
+            *value = detach(this->shim().Domain());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().Domain(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Domain(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().EmailSyncEnabled());
+            *value = detach(this->shim().EmailSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().EmailSyncEnabled(value);
+            this->shim().EmailSyncEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().ContactsSyncEnabled());
+            *value = detach(this->shim().ContactsSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().ContactsSyncEnabled(value);
+            this->shim().ContactsSyncEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CalendarSyncEnabled());
+            *value = detach(this->shim().CalendarSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CalendarSyncEnabled(value);
+            this->shim().CalendarSyncEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerAddress());
+            *value = detach(this->shim().IncomingServerAddress());
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerAddress(*reinterpret_cast<const hstring *>(&value));
+            this->shim().IncomingServerAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerPort());
+            *value = detach(this->shim().IncomingServerPort());
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerPort(value);
+            this->shim().IncomingServerPort(value);
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerRequiresSsl());
+            *value = detach(this->shim().IncomingServerRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerRequiresSsl(value);
+            this->shim().IncomingServerRequiresSsl(value);
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerUsername());
+            *value = detach(this->shim().IncomingServerUsername());
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerUsername(*reinterpret_cast<const hstring *>(&value));
+            this->shim().IncomingServerUsername(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerAddress());
+            *value = detach(this->shim().OutgoingServerAddress());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerAddress(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OutgoingServerAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerPort());
+            *value = detach(this->shim().OutgoingServerPort());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerPort(value);
+            this->shim().OutgoingServerPort(value);
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerRequiresSsl());
+            *value = detach(this->shim().OutgoingServerRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerRequiresSsl(value);
+            this->shim().OutgoingServerRequiresSsl(value);
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerUsername());
+            *value = detach(this->shim().OutgoingServerUsername());
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerUsername(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OutgoingServerUsername(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerCredential());
+            *value = detach(this->shim().IncomingServerCredential());
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().IncomingServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerCredential());
+            *value = detach(this->shim().OutgoingServerCredential());
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().OutgoingServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OAuthRefreshToken());
+            *value = detach(this->shim().OAuthRefreshToken());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OAuthRefreshToken(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OAuthRefreshToken(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsExternallyManaged());
+            *value = detach(this->shim().IsExternallyManaged());
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IsExternallyManaged(value);
+            this->shim().IsExternallyManaged(value);
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AccountIconId());
+            *value = detach(this->shim().AccountIconId());
             return S_OK;
         }
         catch (...)
@@ -568,7 +568,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AccountIconId(value);
+            this->shim().AccountIconId(value);
             return S_OK;
         }
         catch (...)
@@ -581,7 +581,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AuthenticationType());
+            *value = detach(this->shim().AuthenticationType());
             return S_OK;
         }
         catch (...)
@@ -594,7 +594,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AuthenticationType(value);
+            this->shim().AuthenticationType(value);
             return S_OK;
         }
         catch (...)
@@ -607,7 +607,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsSsoAuthenticationSupported());
+            *value = detach(this->shim().IsSsoAuthenticationSupported());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().SsoAccountId());
+            *value = detach(this->shim().SsoAccountId());
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().SsoAccountId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SsoAccountId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AlwaysDownloadFullMessage());
+            *value = detach(this->shim().AlwaysDownloadFullMessage());
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AlwaysDownloadFullMessage(value);
+            this->shim().AlwaysDownloadFullMessage(value);
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().DoesPolicyAllowMailSync());
+            *value = detach(this->shim().DoesPolicyAllowMailSync());
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().SyncScheduleKind());
+            *value = detach(this->shim().SyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().SyncScheduleKind(value);
+            this->shim().SyncScheduleKind(value);
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().MailAgeFilter());
+            *value = detach(this->shim().MailAgeFilter());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().MailAgeFilter(value);
+            this->shim().MailAgeFilter(value);
             return S_OK;
         }
         catch (...)
@@ -738,7 +738,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsClientAuthenticationCertificateRequired());
+            *value = detach(this->shim().IsClientAuthenticationCertificateRequired());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IsClientAuthenticationCertificateRequired(value);
+            this->shim().IsClientAuthenticationCertificateRequired(value);
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AutoSelectAuthenticationCertificate());
+            *value = detach(this->shim().AutoSelectAuthenticationCertificate());
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AutoSelectAuthenticationCertificate(value);
+            this->shim().AutoSelectAuthenticationCertificate(value);
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().AuthenticationCertificateId());
+            *value = detach(this->shim().AuthenticationCertificateId());
             return S_OK;
         }
         catch (...)
@@ -804,7 +804,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().AuthenticationCertificateId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AuthenticationCertificateId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -817,7 +817,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CardDavSyncScheduleKind());
+            *value = detach(this->shim().CardDavSyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CardDavSyncScheduleKind(value);
+            this->shim().CardDavSyncScheduleKind(value);
             return S_OK;
         }
         catch (...)
@@ -843,7 +843,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CalDavSyncScheduleKind());
+            *value = detach(this->shim().CalDavSyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -856,7 +856,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CalDavSyncScheduleKind(value);
+            this->shim().CalDavSyncScheduleKind(value);
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CardDavServerUrl());
+            *value = detach(this->shim().CardDavServerUrl());
             return S_OK;
         }
         catch (...)
@@ -883,7 +883,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CardDavServerUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().CardDavServerUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -896,7 +896,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CardDavRequiresSsl());
+            *value = detach(this->shim().CardDavRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -909,7 +909,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CardDavRequiresSsl(value);
+            this->shim().CardDavRequiresSsl(value);
             return S_OK;
         }
         catch (...)
@@ -922,7 +922,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CalDavServerUrl());
+            *value = detach(this->shim().CalDavServerUrl());
             return S_OK;
         }
         catch (...)
@@ -936,7 +936,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CalDavServerUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().CalDavServerUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().CalDavRequiresSsl());
+            *value = detach(this->shim().CalDavRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().CalDavRequiresSsl(value);
+            this->shim().CalDavRequiresSsl(value);
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().WasModifiedByUser());
+            *value = detach(this->shim().WasModifiedByUser());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().WasModifiedByUser(value);
+            this->shim().WasModifiedByUser(value);
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().WasIncomingServerCertificateHashConfirmed());
+            *value = detach(this->shim().WasIncomingServerCertificateHashConfirmed());
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().WasIncomingServerCertificateHashConfirmed(value);
+            this->shim().WasIncomingServerCertificateHashConfirmed(value);
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IncomingServerCertificateHash());
+            *value = detach(this->shim().IncomingServerCertificateHash());
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IncomingServerCertificateHash(*reinterpret_cast<const hstring *>(&value));
+            this->shim().IncomingServerCertificateHash(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsOutgoingServerAuthenticationRequired());
+            *value = detach(this->shim().IsOutgoingServerAuthenticationRequired());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IsOutgoingServerAuthenticationRequired(value);
+            this->shim().IsOutgoingServerAuthenticationRequired(value);
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsOutgoingServerAuthenticationEnabled());
+            *value = detach(this->shim().IsOutgoingServerAuthenticationEnabled());
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IsOutgoingServerAuthenticationEnabled(value);
+            this->shim().IsOutgoingServerAuthenticationEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().WasOutgoingServerCertificateHashConfirmed());
+            *value = detach(this->shim().WasOutgoingServerCertificateHashConfirmed());
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().WasOutgoingServerCertificateHashConfirmed(value);
+            this->shim().WasOutgoingServerCertificateHashConfirmed(value);
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().OutgoingServerCertificateHash());
+            *value = detach(this->shim().OutgoingServerCertificateHash());
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().OutgoingServerCertificateHash(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OutgoingServerCertificateHash(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1159,7 +1159,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            *value = detach(shim().IsSyncScheduleManagedBySystem());
+            *value = detach(this->shim().IsSyncScheduleManagedBySystem());
             return S_OK;
         }
         catch (...)
@@ -1172,7 +1172,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
     {
         try
         {
-            shim().IsSyncScheduleManagedBySystem(value);
+            this->shim().IsSyncScheduleManagedBySystem(value);
             return S_OK;
         }
         catch (...)
@@ -1189,7 +1189,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
     {
         try
         {
-            *result = detach(shim().AddAndShowDeviceAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> *>(&accounts)));
+            *result = detach(this->shim().AddAndShowDeviceAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> *>(&accounts)));
             return S_OK;
         }
         catch (...)
@@ -1207,7 +1207,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
     {
         try
         {
-            *result = detach(shim().SuppressLocalAccountWithAccountAsync(*reinterpret_cast<const hstring *>(&userDataAccountId)));
+            *result = detach(this->shim().SuppressLocalAccountWithAccountAsync(*reinterpret_cast<const hstring *>(&userDataAccountId)));
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
     {
         try
         {
-            *result = detach(shim().CreateDeviceAccountAsync(*reinterpret_cast<const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration *>(&account)));
+            *result = detach(this->shim().CreateDeviceAccountAsync(*reinterpret_cast<const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration *>(&account)));
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
     {
         try
         {
-            *result = detach(shim().DeleteDeviceAccountAsync(*reinterpret_cast<const hstring *>(&accountId)));
+            *result = detach(this->shim().DeleteDeviceAccountAsync(*reinterpret_cast<const hstring *>(&accountId)));
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
     {
         try
         {
-            *result = detach(shim().GetDeviceAccountConfigurationAsync(*reinterpret_cast<const hstring *>(&accountId)));
+            *result = detach(this->shim().GetDeviceAccountConfigurationAsync(*reinterpret_cast<const hstring *>(&accountId)));
             return S_OK;
         }
         catch (...)

@@ -1,4 +1,6 @@
 
+#ifdef WINRT_CORO
+
 namespace Windows::Foundation {
 
 template <typename T, typename F>
@@ -95,3 +97,5 @@ inline void await_resume(const IAsyncAction & object)
 }
 
 }
+
+#endif

@@ -52,5 +52,73 @@ namespace Microsoft.Wtl.Tests
 
             Assert.AreEqual(-1, result);
         }
+
+        [TestMethod]
+        public void FolderForDatabaseIsCreated()
+        {
+            var currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            var targetDirectory = System.IO.Path.Combine(currentDirectory, "testfolderdelete");
+            var databaseFileLocation = System.IO.Path.Combine(targetDirectory, "output.db");
+
+            Wcl.FrontEndConfiguration configuration = new Wcl.FrontEndConfiguration()
+            {
+                DataStoreLocation = databaseFileLocation
+            };
+
+            System.IO.Directory.Delete(targetDirectory, true);
+
+            FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
+
+            database.Initialize();
+            database.Save();
+
+            Assert.IsTrue(System.IO.File.Exists(databaseFileLocation));
+        }
+
+        [TestMethod]
+        public void FolderForDatabaseExists()
+        {
+            var currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            var targetDirectory = System.IO.Path.Combine(currentDirectory, "testfolderdelete");
+            var databaseFileLocation = System.IO.Path.Combine(targetDirectory, "output.db");
+
+            Wcl.FrontEndConfiguration configuration = new Wcl.FrontEndConfiguration()
+            {
+                DataStoreLocation = databaseFileLocation
+            };
+
+            // First get rid of everything (avoid noise all together). Then create the folder
+            System.IO.Directory.Delete(targetDirectory, true);
+            System.IO.Directory.CreateDirectory(targetDirectory);
+
+            FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
+
+            database.Initialize();
+            database.Save();
+
+            Assert.IsTrue(System.IO.File.Exists(databaseFileLocation));
+        }
+
+        [TestMethod]
+        public void DatabaseIsCreatedInTheCurrentDirectory()
+        {
+            var databaseFileName = "output.db";
+            var currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            var databaseFileLocation = System.IO.Path.Combine(currentDirectory, databaseFileName);
+
+            Wcl.FrontEndConfiguration configuration = new Wcl.FrontEndConfiguration()
+            {
+                DataStoreLocation = databaseFileName
+            };
+
+            System.IO.File.Delete(databaseFileLocation);
+
+            FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
+
+            database.Initialize();
+            database.Save();
+
+            Assert.IsTrue(System.IO.File.Exists(databaseFileLocation));
+        }
     }
 }

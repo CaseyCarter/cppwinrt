@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.DataProvider.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.DataProvider.3.h"
 #include "Windows.ApplicationModel.Contacts.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            *token = detach(shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            shim().SyncRequested(token);
+            this->shim().SyncRequested(token);
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            *token = detach(shim().ServerSearchReadBatchRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs> *>(&handler)));
+            *token = detach(this->shim().ServerSearchReadBatchRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            shim().ServerSearchReadBatchRequested(token);
+            this->shim().ServerSearchReadBatchRequested(token);
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
-            *value = detach(shim().Connection());
+            *value = detach(this->shim().Connection());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().SessionId());
+            *value = detach(this->shim().SessionId());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().ContactListId());
+            *value = detach(this->shim().ContactListId());
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().Options());
+            *value = detach(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().SuggestedBatchSize());
+            *value = detach(this->shim().SuggestedBatchSize());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *result = detach(shim().SaveContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
+            *result = detach(this->shim().SaveContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync(batchStatus));
+            *result = detach(this->shim().ReportFailedAsync(batchStatus));
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().ContactListId());
+            *value = detach(this->shim().ContactListId());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *result = detach(shim().ReportCompletedAsync());
+            *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *result = detach(shim().ReportFailedAsync());
+            *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
         catch (...)
@@ -285,7 +285,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

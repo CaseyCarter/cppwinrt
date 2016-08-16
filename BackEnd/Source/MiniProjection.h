@@ -99,7 +99,7 @@ struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::F
     {
         try
         {
-            *value = detach(shim().ToString());
+            *value = detach(this->shim().ToString());
             return S_OK;
         }
         catch (...)

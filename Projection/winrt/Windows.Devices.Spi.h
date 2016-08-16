@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Spi.Provider.3.h"
-#include "internal\Windows.Devices.Spi.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Spi.Provider.3.h"
+#include "internal/Windows.Devices.Spi.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 
@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().ChipSelectLineCount());
+            *value = detach(this->shim().ChipSelectLineCount());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().MinClockFrequency());
+            *value = detach(this->shim().MinClockFrequency());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().MaxClockFrequency());
+            *value = detach(this->shim().MaxClockFrequency());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().SupportedDataBitLengths());
+            *value = detach(this->shim().SupportedDataBitLengths());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().ChipSelectLine());
+            *value = detach(this->shim().ChipSelectLine());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            shim().ChipSelectLine(value);
+            this->shim().ChipSelectLine(value);
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().DataBitLength());
+            *value = detach(this->shim().DataBitLength());
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            shim().DataBitLength(value);
+            this->shim().DataBitLength(value);
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().ClockFrequency());
+            *value = detach(this->shim().ClockFrequency());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            shim().ClockFrequency(value);
+            this->shim().ClockFrequency(value);
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            *value = detach(shim().SharingMode());
+            *value = detach(this->shim().SharingMode());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
-            shim().SharingMode(value);
+            this->shim().SharingMode(value);
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettingsFactory> : produc
     {
         try
         {
-            *value = detach(shim().Create(chipSelectLine));
+            *value = detach(this->shim().Create(chipSelectLine));
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ struct produce<D, Windows::Devices::Spi::ISpiController> : produce_base<D, Windo
     {
         try
         {
-            *device = detach(shim().GetDevice(*reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
+            *device = detach(this->shim().GetDevice(*reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Devices::Spi::ISpiControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetDefaultAsync());
+            *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Devices::Spi::ISpiControllerStatics> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Spi::Provider::ISpiProvider *>(&provider)));
+            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Spi::Provider::ISpiProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ConnectionSettings());
+            *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
         catch (...)
@@ -308,7 +308,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
+            this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().Read(*buffer);
+            this->shim().Read(*buffer);
             return S_OK;
         }
         catch (...)
@@ -334,7 +334,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
-            shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -392,7 +392,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *busInfo = detach(shim().GetBusInfo(*reinterpret_cast<const hstring *>(&busId)));
+            *busInfo = detach(this->shim().GetBusInfo(*reinterpret_cast<const hstring *>(&busId)));
             return S_OK;
         }
         catch (...)
@@ -406,7 +406,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&busId), *reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&busId), *reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
             return S_OK;
         }
         catch (...)

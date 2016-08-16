@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Appointments.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
 #include "Windows.ApplicationModel.Appointments.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().AppointmentInformation());
+            *value = detach(this->shim().AppointmentInformation());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().SourcePackageFamilyName());
+            *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
+            this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCanceled();
+            this->shim().ReportCanceled();
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportError(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().DismissUI();
+            this->shim().DismissUI();
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().AddAppointment());
+            *value = detach(this->shim().AddAppointment());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().ReplaceAppointment());
+            *value = detach(this->shim().ReplaceAppointment());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().RemoveAppointment());
+            *value = detach(this->shim().RemoveAppointment());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().ShowTimeFrame());
+            *value = detach(this->shim().ShowTimeFrame());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().ShowAppointmentDetails());
+            *value = detach(this->shim().ShowAppointmentDetails());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().AppointmentId());
+            *value = detach(this->shim().AppointmentId());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().InstanceStartDate());
+            *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().SourcePackageFamilyName());
+            *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCompleted();
+            this->shim().ReportCompleted();
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCanceled();
+            this->shim().ReportCanceled();
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportError(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().DismissUI();
+            this->shim().DismissUI();
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().AppointmentId());
+            *value = detach(this->shim().AppointmentId());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().AppointmentInformation());
+            *value = detach(this->shim().AppointmentInformation());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().InstanceStartDate());
+            *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            *value = detach(shim().SourcePackageFamilyName());
+            *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
+            this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportCanceled();
+            this->shim().ReportCanceled();
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().ReportError(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
-            shim().DismissUI();
+            this->shim().DismissUI();
             return S_OK;
         }
         catch (...)

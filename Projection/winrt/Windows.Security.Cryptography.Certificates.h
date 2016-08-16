@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
 #include "Windows.Security.Cryptography.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *value = detach(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainBuildingParameters *>(&parameters)));
+            *value = detach(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainBuildingParameters *>(&parameters)));
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().SerialNumber());
+            std::tie(*__valueSize, *value) = detach(this->shim().SerialNumber());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().GetHashValue());
+            std::tie(*__valueSize, *value) = detach(this->shim().GetHashValue());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().GetHashValue(*reinterpret_cast<const hstring *>(&hashAlgorithmName)));
+            std::tie(*__valueSize, *value) = detach(this->shim().GetHashValue(*reinterpret_cast<const hstring *>(&hashAlgorithmName)));
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().GetCertificateBlob());
+            *value = detach(this->shim().GetCertificateBlob());
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().Issuer());
+            *value = detach(this->shim().Issuer());
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().HasPrivateKey());
+            *value = detach(this->shim().HasPrivateKey());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().IsStronglyProtected());
+            *value = detach(this->shim().IsStronglyProtected());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().ValidFrom());
+            *value = detach(this->shim().ValidFrom());
             return S_OK;
         }
         catch (...)
@@ -175,7 +175,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().ValidTo());
+            *value = detach(this->shim().ValidTo());
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().EnhancedKeyUsages());
+            *value = detach(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -215,7 +215,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().IsSecurityDeviceBound());
+            *value = detach(this->shim().IsSecurityDeviceBound());
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().KeyUsages());
+            *value = detach(this->shim().KeyUsages());
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().KeyAlgorithmName());
+            *value = detach(this->shim().KeyAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().SignatureAlgorithmName());
+            *value = detach(this->shim().SignatureAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().SignatureHashAlgorithmName());
+            *value = detach(this->shim().SignatureHashAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
     {
         try
         {
-            *value = detach(shim().SubjectAlternativeName());
+            *value = detach(this->shim().SubjectAlternativeName());
             return S_OK;
         }
         catch (...)
@@ -320,7 +320,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
     {
         try
         {
-            *value = detach(shim().IsPerUser());
+            *value = detach(this->shim().IsPerUser());
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
     {
         try
         {
-            *value = detach(shim().StoreName());
+            *value = detach(this->shim().StoreName());
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
     {
         try
         {
-            *value = detach(shim().KeyStorageProviderName());
+            *value = detach(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
     {
         try
         {
-            *status = detach(shim().Validate());
+            *status = detach(this->shim().Validate());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
     {
         try
         {
-            *status = detach(shim().Validate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainValidationParameters *>(&parameter)));
+            *status = detach(this->shim().Validate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainValidationParameters *>(&parameter)));
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
     {
         try
         {
-            *certificates = detach(shim().GetCertificates(includeRoot));
+            *certificates = detach(this->shim().GetCertificates(includeRoot));
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
+            *value = detach(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
+            *value = detach(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
             return S_OK;
         }
         catch (...)
@@ -437,7 +437,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().UserCertificateEnrollmentManager());
+            *value = detach(this->shim().UserCertificateEnrollmentManager());
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateFac
     {
         try
         {
-            *certificate = detach(shim().CreateCertificate(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&certBlob)));
+            *certificate = detach(this->shim().CreateCertificate(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&certBlob)));
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().EncipherOnly());
+            *value = detach(this->shim().EncipherOnly());
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().EncipherOnly(value);
+            this->shim().EncipherOnly(value);
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().CrlSign());
+            *value = detach(this->shim().CrlSign());
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().CrlSign(value);
+            this->shim().CrlSign(value);
             return S_OK;
         }
         catch (...)
@@ -575,7 +575,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().KeyCertificateSign());
+            *value = detach(this->shim().KeyCertificateSign());
             return S_OK;
         }
         catch (...)
@@ -588,7 +588,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().KeyCertificateSign(value);
+            this->shim().KeyCertificateSign(value);
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().KeyAgreement());
+            *value = detach(this->shim().KeyAgreement());
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().KeyAgreement(value);
+            this->shim().KeyAgreement(value);
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().DataEncipherment());
+            *value = detach(this->shim().DataEncipherment());
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().DataEncipherment(value);
+            this->shim().DataEncipherment(value);
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().KeyEncipherment());
+            *value = detach(this->shim().KeyEncipherment());
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().KeyEncipherment(value);
+            this->shim().KeyEncipherment(value);
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().NonRepudiation());
+            *value = detach(this->shim().NonRepudiation());
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().NonRepudiation(value);
+            this->shim().NonRepudiation(value);
             return S_OK;
         }
         catch (...)
@@ -705,7 +705,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            *value = detach(shim().DigitalSignature());
+            *value = detach(this->shim().DigitalSignature());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
     {
         try
         {
-            shim().DigitalSignature(value);
+            this->shim().DigitalSignature(value);
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().EnhancedKeyUsages());
+            *value = detach(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().IssuerName());
+            *value = detach(this->shim().IssuerName());
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().IssuerName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().IssuerName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -776,7 +776,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -803,7 +803,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().Thumbprint());
+            std::tie(*__valueSize, *value) = detach(this->shim().Thumbprint());
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().Thumbprint(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().Thumbprint(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -831,7 +831,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().HardwareOnly());
+            *value = detach(this->shim().HardwareOnly());
             return S_OK;
         }
         catch (...)
@@ -844,7 +844,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().HardwareOnly(value);
+            this->shim().HardwareOnly(value);
             return S_OK;
         }
         catch (...)
@@ -861,7 +861,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().IncludeDuplicates());
+            *value = detach(this->shim().IncludeDuplicates());
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().IncludeDuplicates(value);
+            this->shim().IncludeDuplicates(value);
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().IncludeExpiredCertificates());
+            *value = detach(this->shim().IncludeExpiredCertificates());
             return S_OK;
         }
         catch (...)
@@ -900,7 +900,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().IncludeExpiredCertificates(value);
+            this->shim().IncludeExpiredCertificates(value);
             return S_OK;
         }
         catch (...)
@@ -913,7 +913,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            *value = detach(shim().StoreName());
+            *value = detach(this->shim().StoreName());
             return S_OK;
         }
         catch (...)
@@ -927,7 +927,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
     {
         try
         {
-            shim().StoreName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().StoreName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -944,7 +944,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().Subject());
+            *value = detach(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -958,7 +958,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().Subject(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Subject(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -971,7 +971,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().KeyAlgorithmName());
+            *value = detach(this->shim().KeyAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -985,7 +985,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().KeyAlgorithmName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().KeyAlgorithmName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().KeySize());
+            *value = detach(this->shim().KeySize());
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().KeySize(value);
+            this->shim().KeySize(value);
             return S_OK;
         }
         catch (...)
@@ -1024,7 +1024,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -1038,7 +1038,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().HashAlgorithmName());
+            *value = detach(this->shim().HashAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().HashAlgorithmName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().HashAlgorithmName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().Exportable());
+            *value = detach(this->shim().Exportable());
             return S_OK;
         }
         catch (...)
@@ -1091,7 +1091,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().Exportable(value);
+            this->shim().Exportable(value);
             return S_OK;
         }
         catch (...)
@@ -1104,7 +1104,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().KeyUsages());
+            *value = detach(this->shim().KeyUsages());
             return S_OK;
         }
         catch (...)
@@ -1117,7 +1117,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().KeyUsages(value);
+            this->shim().KeyUsages(value);
             return S_OK;
         }
         catch (...)
@@ -1130,7 +1130,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().KeyProtectionLevel());
+            *value = detach(this->shim().KeyProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().KeyProtectionLevel(value);
+            this->shim().KeyProtectionLevel(value);
             return S_OK;
         }
         catch (...)
@@ -1156,7 +1156,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().KeyStorageProviderName());
+            *value = detach(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -1170,7 +1170,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().KeyStorageProviderName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().KeyStorageProviderName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1187,7 +1187,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().SmartcardReaderName());
+            *value = detach(this->shim().SmartcardReaderName());
             return S_OK;
         }
         catch (...)
@@ -1201,7 +1201,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().SmartcardReaderName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SmartcardReaderName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1214,7 +1214,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().SigningCertificate());
+            *value = detach(this->shim().SigningCertificate());
             return S_OK;
         }
         catch (...)
@@ -1228,7 +1228,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().SigningCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
+            this->shim().SigningCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().AttestationCredentialCertificate());
+            *value = detach(this->shim().AttestationCredentialCertificate());
             return S_OK;
         }
         catch (...)
@@ -1255,7 +1255,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().AttestationCredentialCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
+            this->shim().AttestationCredentialCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1272,7 +1272,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().CurveName());
+            *value = detach(this->shim().CurveName());
             return S_OK;
         }
         catch (...)
@@ -1286,7 +1286,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().CurveName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CurveName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1299,7 +1299,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().CurveParameters());
+            std::tie(*__valueSize, *value) = detach(this->shim().CurveParameters());
             return S_OK;
         }
         catch (...)
@@ -1314,7 +1314,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().CurveParameters(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().CurveParameters(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1327,7 +1327,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().ContainerNamePrefix());
+            *value = detach(this->shim().ContainerNamePrefix());
             return S_OK;
         }
         catch (...)
@@ -1341,7 +1341,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().ContainerNamePrefix(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContainerNamePrefix(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().ContainerName());
+            *value = detach(this->shim().ContainerName());
             return S_OK;
         }
         catch (...)
@@ -1368,7 +1368,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().ContainerName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContainerName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            *value = detach(shim().UseExistingKey());
+            *value = detach(this->shim().UseExistingKey());
             return S_OK;
         }
         catch (...)
@@ -1394,7 +1394,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
     {
         try
         {
-            shim().UseExistingKey(value);
+            this->shim().UseExistingKey(value);
             return S_OK;
         }
         catch (...)
@@ -1411,7 +1411,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            shim().Add(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate));
+            this->shim().Add(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate));
             return S_OK;
         }
         catch (...)
@@ -1424,7 +1424,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            shim().Delete(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate));
+            this->shim().Delete(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate));
             return S_OK;
         }
         catch (...)
@@ -1441,7 +1441,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1459,7 +1459,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().FindAllAsync());
+            *value = detach(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -1473,7 +1473,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().FindAllAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateQuery *>(&query)));
+            *value = detach(this->shim().FindAllAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateQuery *>(&query)));
             return S_OK;
         }
         catch (...)
@@ -1487,7 +1487,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().TrustedRootCertificationAuthorities());
+            *value = detach(this->shim().TrustedRootCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -1501,7 +1501,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().IntermediateCertificationAuthorities());
+            *value = detach(this->shim().IntermediateCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -1515,7 +1515,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *value = detach(shim().GetStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
+            *value = detach(this->shim().GetStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
             return S_OK;
         }
         catch (...)
@@ -1533,7 +1533,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
     {
         try
         {
-            *result = detach(shim().GetUserStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
+            *result = detach(this->shim().GetUserStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
             return S_OK;
         }
         catch (...)
@@ -1551,7 +1551,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().EnhancedKeyUsages());
+            *value = detach(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -1565,7 +1565,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().ValidationTimestamp());
+            *value = detach(this->shim().ValidationTimestamp());
             return S_OK;
         }
         catch (...)
@@ -1578,7 +1578,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            shim().ValidationTimestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().ValidationTimestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1591,7 +1591,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().RevocationCheckEnabled());
+            *value = detach(this->shim().RevocationCheckEnabled());
             return S_OK;
         }
         catch (...)
@@ -1604,7 +1604,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            shim().RevocationCheckEnabled(value);
+            this->shim().RevocationCheckEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1617,7 +1617,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().NetworkRetrievalEnabled());
+            *value = detach(this->shim().NetworkRetrievalEnabled());
             return S_OK;
         }
         catch (...)
@@ -1630,7 +1630,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            shim().NetworkRetrievalEnabled(value);
+            this->shim().NetworkRetrievalEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1643,7 +1643,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().AuthorityInformationAccessEnabled());
+            *value = detach(this->shim().AuthorityInformationAccessEnabled());
             return S_OK;
         }
         catch (...)
@@ -1656,7 +1656,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            shim().AuthorityInformationAccessEnabled(value);
+            this->shim().AuthorityInformationAccessEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1669,7 +1669,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *value = detach(shim().CurrentTimeValidationEnabled());
+            *value = detach(this->shim().CurrentTimeValidationEnabled());
             return S_OK;
         }
         catch (...)
@@ -1682,7 +1682,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            shim().CurrentTimeValidationEnabled(value);
+            this->shim().CurrentTimeValidationEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1695,7 +1695,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
     {
         try
         {
-            *certificates = detach(shim().ExclusiveTrustRoots());
+            *certificates = detach(this->shim().ExclusiveTrustRoots());
             return S_OK;
         }
         catch (...)
@@ -1713,7 +1713,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
     {
         try
         {
-            *value = detach(shim().CertificateChainPolicy());
+            *value = detach(this->shim().CertificateChainPolicy());
             return S_OK;
         }
         catch (...)
@@ -1726,7 +1726,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
     {
         try
         {
-            shim().CertificateChainPolicy(value);
+            this->shim().CertificateChainPolicy(value);
             return S_OK;
         }
         catch (...)
@@ -1739,7 +1739,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
     {
         try
         {
-            *value = detach(shim().ServerDnsName());
+            *value = detach(this->shim().ServerDnsName());
             return S_OK;
         }
         catch (...)
@@ -1753,7 +1753,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
     {
         try
         {
-            shim().ServerDnsName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().ServerDnsName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1770,7 +1770,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            *value = detach(shim().Certificates());
+            *value = detach(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -1784,7 +1784,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            std::tie(*__valueSize, *value) = detach(shim().Content());
+            std::tie(*__valueSize, *value) = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -1799,7 +1799,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            *value = detach(shim().Signers());
+            *value = detach(this->shim().Signers());
             return S_OK;
         }
         catch (...)
@@ -1813,7 +1813,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            *value = detach(shim().VerifySignature());
+            *value = detach(this->shim().VerifySignature());
             return S_OK;
         }
         catch (...)
@@ -1830,7 +1830,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            *cmsSignedData = detach(shim().CreateCmsAttachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
+            *cmsSignedData = detach(this->shim().CreateCmsAttachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
             return S_OK;
         }
         catch (...)
@@ -1848,7 +1848,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
     {
         try
         {
-            *outputBlob = detach(shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *outputBlob = detach(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -1866,7 +1866,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
     {
         try
         {
-            *value = detach(shim().Certificates());
+            *value = detach(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -1880,7 +1880,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
     {
         try
         {
-            *value = detach(shim().Signers());
+            *value = detach(this->shim().Signers());
             return S_OK;
         }
         catch (...)
@@ -1894,7 +1894,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
     {
         try
         {
-            *value = detach(shim().VerifySignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data)));
+            *value = detach(this->shim().VerifySignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -1912,7 +1912,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
     {
         try
         {
-            *cmsSignedData = detach(shim().CreateCmsDetachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
+            *cmsSignedData = detach(this->shim().CreateCmsDetachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
             return S_OK;
         }
         catch (...)
@@ -1930,7 +1930,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
     {
         try
         {
-            *outputBlob = detach(shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *outputBlob = detach(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -1948,7 +1948,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
     {
         try
         {
-            *value = detach(shim().Certificate());
+            *value = detach(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -1962,7 +1962,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
     {
         try
         {
-            shim().Certificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
+            this->shim().Certificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1975,7 +1975,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
     {
         try
         {
-            *value = detach(shim().HashAlgorithmName());
+            *value = detach(this->shim().HashAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -1989,7 +1989,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
     {
         try
         {
-            shim().HashAlgorithmName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().HashAlgorithmName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2002,7 +2002,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
     {
         try
         {
-            *value = detach(shim().TimestampInfo());
+            *value = detach(this->shim().TimestampInfo());
             return S_OK;
         }
         catch (...)
@@ -2020,7 +2020,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
     {
         try
         {
-            *value = detach(shim().SigningCertificate());
+            *value = detach(this->shim().SigningCertificate());
             return S_OK;
         }
         catch (...)
@@ -2034,7 +2034,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
     {
         try
         {
-            *value = detach(shim().Certificates());
+            *value = detach(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -2048,7 +2048,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -2065,7 +2065,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Rsa());
+            *value = detach(this->shim().Rsa());
             return S_OK;
         }
         catch (...)
@@ -2079,7 +2079,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Dsa());
+            *value = detach(this->shim().Dsa());
             return S_OK;
         }
         catch (...)
@@ -2093,7 +2093,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdh256());
+            *value = detach(this->shim().Ecdh256());
             return S_OK;
         }
         catch (...)
@@ -2107,7 +2107,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdh384());
+            *value = detach(this->shim().Ecdh384());
             return S_OK;
         }
         catch (...)
@@ -2121,7 +2121,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdh521());
+            *value = detach(this->shim().Ecdh521());
             return S_OK;
         }
         catch (...)
@@ -2135,7 +2135,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdsa256());
+            *value = detach(this->shim().Ecdsa256());
             return S_OK;
         }
         catch (...)
@@ -2149,7 +2149,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdsa384());
+            *value = detach(this->shim().Ecdsa384());
             return S_OK;
         }
         catch (...)
@@ -2163,7 +2163,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdsa521());
+            *value = detach(this->shim().Ecdsa521());
             return S_OK;
         }
         catch (...)
@@ -2181,7 +2181,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdsa());
+            *value = detach(this->shim().Ecdsa());
             return S_OK;
         }
         catch (...)
@@ -2195,7 +2195,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
     {
         try
         {
-            *value = detach(shim().Ecdh());
+            *value = detach(this->shim().Ecdh());
             return S_OK;
         }
         catch (...)
@@ -2213,7 +2213,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
     {
         try
         {
-            *value = detach(shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential)));
+            *value = detach(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential)));
             return S_OK;
         }
         catch (...)
@@ -2227,7 +2227,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
     {
         try
         {
-            *value = detach(shim().GetTpmAttestationCredentialId(*reinterpret_cast<const hstring *>(&credential)));
+            *value = detach(this->shim().GetTpmAttestationCredentialId(*reinterpret_cast<const hstring *>(&credential)));
             return S_OK;
         }
         catch (...)
@@ -2245,7 +2245,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
     {
         try
         {
-            *value = detach(shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential), *reinterpret_cast<const hstring *>(&containerName)));
+            *value = detach(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential), *reinterpret_cast<const hstring *>(&containerName)));
             return S_OK;
         }
         catch (...)
@@ -2263,7 +2263,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
     {
         try
         {
-            *value = detach(shim().SoftwareKeyStorageProvider());
+            *value = detach(this->shim().SoftwareKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2277,7 +2277,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
     {
         try
         {
-            *value = detach(shim().SmartcardKeyStorageProvider());
+            *value = detach(this->shim().SmartcardKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2291,7 +2291,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
     {
         try
         {
-            *value = detach(shim().PlatformKeyStorageProvider());
+            *value = detach(this->shim().PlatformKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2309,7 +2309,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
     {
         try
         {
-            *value = detach(shim().PassportKeyStorageProvider());
+            *value = detach(this->shim().PassportKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2327,7 +2327,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().Exportable());
+            *value = detach(this->shim().Exportable());
             return S_OK;
         }
         catch (...)
@@ -2340,7 +2340,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().Exportable(value);
+            this->shim().Exportable(value);
             return S_OK;
         }
         catch (...)
@@ -2353,7 +2353,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().KeyProtectionLevel());
+            *value = detach(this->shim().KeyProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -2366,7 +2366,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().KeyProtectionLevel(value);
+            this->shim().KeyProtectionLevel(value);
             return S_OK;
         }
         catch (...)
@@ -2379,7 +2379,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().InstallOptions());
+            *value = detach(this->shim().InstallOptions());
             return S_OK;
         }
         catch (...)
@@ -2392,7 +2392,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().InstallOptions(value);
+            this->shim().InstallOptions(value);
             return S_OK;
         }
         catch (...)
@@ -2405,7 +2405,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -2419,7 +2419,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2432,7 +2432,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().KeyStorageProviderName());
+            *value = detach(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -2446,7 +2446,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().KeyStorageProviderName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().KeyStorageProviderName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2459,7 +2459,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().ContainerNamePrefix());
+            *value = detach(this->shim().ContainerNamePrefix());
             return S_OK;
         }
         catch (...)
@@ -2473,7 +2473,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().ContainerNamePrefix(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContainerNamePrefix(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2486,7 +2486,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            *value = detach(shim().ReaderName());
+            *value = detach(this->shim().ReaderName());
             return S_OK;
         }
         catch (...)
@@ -2500,7 +2500,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
     {
         try
         {
-            shim().ReaderName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ReaderName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2517,7 +2517,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
     {
         try
         {
-            *value = detach(shim().Personal());
+            *value = detach(this->shim().Personal());
             return S_OK;
         }
         catch (...)
@@ -2531,7 +2531,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
     {
         try
         {
-            *value = detach(shim().TrustedRootCertificationAuthorities());
+            *value = detach(this->shim().TrustedRootCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -2545,7 +2545,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
     {
         try
         {
-            *value = detach(shim().IntermediateCertificationAuthorities());
+            *value = detach(this->shim().IntermediateCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -2563,7 +2563,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().EmailName());
+            *value = detach(this->shim().EmailName());
             return S_OK;
         }
         catch (...)
@@ -2577,7 +2577,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().IPAddress());
+            *value = detach(this->shim().IPAddress());
             return S_OK;
         }
         catch (...)
@@ -2591,7 +2591,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().Url());
+            *value = detach(this->shim().Url());
             return S_OK;
         }
         catch (...)
@@ -2605,7 +2605,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().DnsName());
+            *value = detach(this->shim().DnsName());
             return S_OK;
         }
         catch (...)
@@ -2619,7 +2619,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().DistinguishedName());
+            *value = detach(this->shim().DistinguishedName());
             return S_OK;
         }
         catch (...)
@@ -2633,7 +2633,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
     {
         try
         {
-            *value = detach(shim().PrincipalName());
+            *value = detach(this->shim().PrincipalName());
             return S_OK;
         }
         catch (...)
@@ -2651,7 +2651,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
+            *value = detach(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -2665,7 +2665,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
+            *value = detach(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
             return S_OK;
         }
         catch (...)
@@ -2679,7 +2679,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -2693,7 +2693,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
             return S_OK;
         }
         catch (...)
@@ -2711,7 +2711,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
+            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
             return S_OK;
         }
         catch (...)
@@ -2729,7 +2729,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *result = detach(shim().RequestAddAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *result = detach(this->shim().RequestAddAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -2743,7 +2743,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *result = detach(shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *result = detach(this->shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -2757,7 +2757,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.Effects.3.h"
+#include "internal/Windows.Graphics.Effects.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -16,7 +16,7 @@ struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D,
     {
         try
         {
-            *name = detach(shim().Name());
+            *name = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D,
     {
         try
         {
-            shim().Name(*reinterpret_cast<const hstring *>(&name));
+            this->shim().Name(*reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
         catch (...)

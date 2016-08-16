@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Networking.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Networking.Connectivity.3.h"
-#include "internal\Windows.Networking.ServiceDiscovery.Dnssd.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Networking.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Networking.Connectivity.3.h"
+#include "internal/Windows.Networking.ServiceDiscovery.Dnssd.3.h"
 #include "Windows.Networking.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
@@ -24,7 +24,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
-            *value = detach(shim().IPAddress());
+            *value = detach(this->shim().IPAddress());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
-            *value = detach(shim().HasInstanceNameChanged());
+            *value = detach(this->shim().HasInstanceNameChanged());
             return S_OK;
         }
         catch (...)
@@ -68,7 +68,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().DnssdServiceInstanceName());
+            *value = detach(this->shim().DnssdServiceInstanceName());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            shim().DnssdServiceInstanceName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DnssdServiceInstanceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().HostName());
+            *value = detach(this->shim().HostName());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            shim().HostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
+            this->shim().HostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().Port());
+            *value = detach(this->shim().Port());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            shim().Port(value);
+            this->shim().Port(value);
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().Priority());
+            *value = detach(this->shim().Priority());
             return S_OK;
         }
         catch (...)
@@ -161,7 +161,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            shim().Priority(value);
+            this->shim().Priority(value);
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().Weight());
+            *value = detach(this->shim().Weight());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            shim().Weight(value);
+            this->shim().Weight(value);
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *value = detach(shim().TextAttributes());
+            *value = detach(this->shim().TextAttributes());
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *result = detach(shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket)));
+            *result = detach(this->shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket)));
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *result = detach(shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
+            *result = detach(this->shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
         catch (...)
@@ -242,7 +242,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *result = detach(shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket)));
+            *result = detach(this->shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket)));
             return S_OK;
         }
         catch (...)
@@ -256,7 +256,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *result = detach(shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
+            *result = detach(this->shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&dnssdServiceInstanceName), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), port));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&dnssdServiceInstanceName), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), port));
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            *token = detach(shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> *>(&handler)));
+            *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            shim().Added(token);
+            this->shim().Added(token);
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            *token = detach(shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            shim().EnumerationCompleted(token);
+            this->shim().EnumerationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -383,7 +383,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)

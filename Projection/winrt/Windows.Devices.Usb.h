@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Usb.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Usb.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 
@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
-            *value = detach(shim().MaxPacketSize());
+            *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
-            *value = detach(shim().EndpointNumber());
+            *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
-            *value = detach(shim().Pipe());
+            *value = detach(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MaxTransferSizeBytes());
+            *value = detach(this->shim().MaxTransferSizeBytes());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().EndpointDescriptor());
+            *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            *operation = detach(shim().ClearStallAsync());
+            *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            shim().ReadOptions(value);
+            this->shim().ReadOptions(value);
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ReadOptions());
+            *value = detach(this->shim().ReadOptions());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            shim().FlushBuffer();
+            this->shim().FlushBuffer();
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().InputStream());
+            *value = detach(this->shim().InputStream());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
-            *value = detach(shim().MaxPacketSize());
+            *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
-            *value = detach(shim().EndpointNumber());
+            *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
-            *value = detach(shim().Pipe());
+            *value = detach(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().EndpointDescriptor());
+            *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().ClearStallAsync());
+            *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteOptions(value);
+            this->shim().WriteOptions(value);
             return S_OK;
         }
         catch (...)
@@ -248,7 +248,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().WriteOptions());
+            *value = detach(this->shim().WriteOptions());
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().OutputStream());
+            *value = detach(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().UsbInterfaces());
+            *value = detach(this->shim().UsbInterfaces());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ConfigurationDescriptor());
+            *value = detach(this->shim().ConfigurationDescriptor());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Descriptors());
+            *value = detach(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
-            *value = detach(shim().ConfigurationValue());
+            *value = detach(this->shim().ConfigurationValue());
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
-            *value = detach(shim().MaxPowerMilliamps());
+            *value = detach(this->shim().MaxPowerMilliamps());
             return S_OK;
         }
         catch (...)
@@ -351,7 +351,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
-            *value = detach(shim().SelfPowered());
+            *value = detach(this->shim().SelfPowered());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
-            *value = detach(shim().RemoteWakeup());
+            *value = detach(this->shim().RemoteWakeup());
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : p
     {
         try
         {
-            *success = detach(shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : p
     {
         try
         {
-            *parsed = detach(shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -413,7 +413,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -426,7 +426,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            shim().Direction(value);
+            this->shim().Direction(value);
             return S_OK;
         }
         catch (...)
@@ -439,7 +439,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            *value = detach(shim().ControlTransferType());
+            *value = detach(this->shim().ControlTransferType());
             return S_OK;
         }
         catch (...)
@@ -452,7 +452,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            shim().ControlTransferType(value);
+            this->shim().ControlTransferType(value);
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            *value = detach(shim().Recipient());
+            *value = detach(this->shim().Recipient());
             return S_OK;
         }
         catch (...)
@@ -478,7 +478,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            shim().Recipient(value);
+            this->shim().Recipient(value);
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            *value = detach(shim().AsByte());
+            *value = detach(this->shim().AsByte());
             return S_OK;
         }
         catch (...)
@@ -504,7 +504,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
-            shim().AsByte(value);
+            this->shim().AsByte(value);
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DescriptorType());
+            *value = detach(this->shim().DescriptorType());
             return S_OK;
         }
         catch (...)
@@ -547,7 +547,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
-            shim().ReadDescriptorBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().ReadDescriptorBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
+            *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
+            *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DefaultInterface());
+            *value = detach(this->shim().DefaultInterface());
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DeviceDescriptor());
+            *value = detach(this->shim().DeviceDescriptor());
             return S_OK;
         }
         catch (...)
@@ -648,7 +648,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Configuration());
+            *value = detach(this->shim().Configuration());
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ClassCode());
+            *value = detach(this->shim().ClassCode());
             return S_OK;
         }
         catch (...)
@@ -679,7 +679,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            shim().ClassCode(value);
+            this->shim().ClassCode(value);
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().SubclassCode());
+            *value = detach(this->shim().SubclassCode());
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            shim().SubclassCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
+            this->shim().SubclassCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ProtocolCode());
+            *value = detach(this->shim().ProtocolCode());
             return S_OK;
         }
         catch (...)
@@ -733,7 +733,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
-            shim().ProtocolCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
+            this->shim().ProtocolCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -754,7 +754,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().CdcControl());
+            *value = detach(this->shim().CdcControl());
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().Physical());
+            *value = detach(this->shim().Physical());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().PersonalHealthcare());
+            *value = detach(this->shim().PersonalHealthcare());
             return S_OK;
         }
         catch (...)
@@ -796,7 +796,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().ActiveSync());
+            *value = detach(this->shim().ActiveSync());
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().PalmSync());
+            *value = detach(this->shim().PalmSync());
             return S_OK;
         }
         catch (...)
@@ -824,7 +824,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceFirmwareUpdate());
+            *value = detach(this->shim().DeviceFirmwareUpdate());
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().Irda());
+            *value = detach(this->shim().Irda());
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().Measurement());
+            *value = detach(this->shim().Measurement());
             return S_OK;
         }
         catch (...)
@@ -866,7 +866,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().VendorSpecific());
+            *value = detach(this->shim().VendorSpecific());
             return S_OK;
         }
         catch (...)
@@ -884,7 +884,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BcdUsb());
+            *value = detach(this->shim().BcdUsb());
             return S_OK;
         }
         catch (...)
@@ -897,7 +897,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MaxPacketSize0());
+            *value = detach(this->shim().MaxPacketSize0());
             return S_OK;
         }
         catch (...)
@@ -910,7 +910,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().VendorId());
+            *value = detach(this->shim().VendorId());
             return S_OK;
         }
         catch (...)
@@ -923,7 +923,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ProductId());
+            *value = detach(this->shim().ProductId());
             return S_OK;
         }
         catch (...)
@@ -936,7 +936,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BcdDeviceRevision());
+            *value = detach(this->shim().BcdDeviceRevision());
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().NumberOfConfigurations());
+            *value = detach(this->shim().NumberOfConfigurations());
             return S_OK;
         }
         catch (...)
@@ -966,7 +966,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass));
+            *value = detach(this->shim().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass));
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector(winUsbInterfaceClass));
+            *value = detach(this->shim().GetDeviceSelector(winUsbInterfaceClass));
             return S_OK;
         }
         catch (...)
@@ -994,7 +994,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector(vendorId, productId));
+            *value = detach(this->shim().GetDeviceSelector(vendorId, productId));
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetDeviceClassSelector(*reinterpret_cast<const Windows::Devices::Usb::UsbDeviceClass *>(&usbClass)));
+            *value = detach(this->shim().GetDeviceClassSelector(*reinterpret_cast<const Windows::Devices::Usb::UsbDeviceClass *>(&usbClass)));
             return S_OK;
         }
         catch (...)
@@ -1022,7 +1022,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().EndpointNumber());
+            *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -1066,7 +1066,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().EndpointType());
+            *value = detach(this->shim().EndpointType());
             return S_OK;
         }
         catch (...)
@@ -1079,7 +1079,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().AsBulkInEndpointDescriptor());
+            *value = detach(this->shim().AsBulkInEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().AsInterruptInEndpointDescriptor());
+            *value = detach(this->shim().AsInterruptInEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1107,7 +1107,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().AsBulkOutEndpointDescriptor());
+            *value = detach(this->shim().AsBulkOutEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1121,7 +1121,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
-            *value = detach(shim().AsInterruptOutEndpointDescriptor());
+            *value = detach(this->shim().AsInterruptOutEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
     {
         try
         {
-            *success = detach(shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -1153,7 +1153,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
     {
         try
         {
-            *parsed = detach(shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -1171,7 +1171,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().BulkInPipes());
+            *value = detach(this->shim().BulkInPipes());
             return S_OK;
         }
         catch (...)
@@ -1185,7 +1185,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InterruptInPipes());
+            *value = detach(this->shim().InterruptInPipes());
             return S_OK;
         }
         catch (...)
@@ -1199,7 +1199,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().BulkOutPipes());
+            *value = detach(this->shim().BulkOutPipes());
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InterruptOutPipes());
+            *value = detach(this->shim().InterruptOutPipes());
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InterfaceSettings());
+            *value = detach(this->shim().InterfaceSettings());
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().InterfaceNumber());
+            *value = detach(this->shim().InterfaceNumber());
             return S_OK;
         }
         catch (...)
@@ -1254,7 +1254,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Descriptors());
+            *value = detach(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -1272,7 +1272,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
-            *value = detach(shim().ClassCode());
+            *value = detach(this->shim().ClassCode());
             return S_OK;
         }
         catch (...)
@@ -1285,7 +1285,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
-            *value = detach(shim().SubclassCode());
+            *value = detach(this->shim().SubclassCode());
             return S_OK;
         }
         catch (...)
@@ -1298,7 +1298,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
-            *value = detach(shim().ProtocolCode());
+            *value = detach(this->shim().ProtocolCode());
             return S_OK;
         }
         catch (...)
@@ -1311,7 +1311,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
-            *value = detach(shim().AlternateSettingNumber());
+            *value = detach(this->shim().AlternateSettingNumber());
             return S_OK;
         }
         catch (...)
@@ -1324,7 +1324,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
-            *value = detach(shim().InterfaceNumber());
+            *value = detach(this->shim().InterfaceNumber());
             return S_OK;
         }
         catch (...)
@@ -1341,7 +1341,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
     {
         try
         {
-            *success = detach(shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -1355,7 +1355,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
     {
         try
         {
-            *parsed = detach(shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -1373,7 +1373,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BulkInEndpoints());
+            *value = detach(this->shim().BulkInEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1387,7 +1387,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().InterruptInEndpoints());
+            *value = detach(this->shim().InterruptInEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1401,7 +1401,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BulkOutEndpoints());
+            *value = detach(this->shim().BulkOutEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().InterruptOutEndpoints());
+            *value = detach(this->shim().InterruptOutEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1429,7 +1429,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Selected());
+            *value = detach(this->shim().Selected());
             return S_OK;
         }
         catch (...)
@@ -1442,7 +1442,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *operation = detach(shim().SelectSettingAsync());
+            *operation = detach(this->shim().SelectSettingAsync());
             return S_OK;
         }
         catch (...)
@@ -1456,7 +1456,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().InterfaceDescriptor());
+            *value = detach(this->shim().InterfaceDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1470,7 +1470,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Descriptors());
+            *value = detach(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -1488,7 +1488,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
-            *value = detach(shim().MaxPacketSize());
+            *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -1501,7 +1501,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
-            *value = detach(shim().EndpointNumber());
+            *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1514,7 +1514,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
-            *value = detach(shim().Interval());
+            *value = detach(this->shim().Interval());
             return S_OK;
         }
         catch (...)
@@ -1527,7 +1527,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
-            *value = detach(shim().Pipe());
+            *value = detach(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -1545,7 +1545,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEventArgs> : produce_bas
     {
         try
         {
-            *value = detach(shim().InterruptData());
+            *value = detach(this->shim().InterruptData());
             return S_OK;
         }
         catch (...)
@@ -1563,7 +1563,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().EndpointDescriptor());
+            *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1577,7 +1577,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().ClearStallAsync());
+            *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -1591,7 +1591,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> *>(&handler)));
+            *token = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1604,7 +1604,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
-            shim().DataReceived(token);
+            this->shim().DataReceived(token);
             return S_OK;
         }
         catch (...)
@@ -1621,7 +1621,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
-            *value = detach(shim().MaxPacketSize());
+            *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -1634,7 +1634,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
-            *value = detach(shim().EndpointNumber());
+            *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1647,7 +1647,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
-            *value = detach(shim().Interval());
+            *value = detach(this->shim().Interval());
             return S_OK;
         }
         catch (...)
@@ -1660,7 +1660,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
-            *value = detach(shim().Pipe());
+            *value = detach(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -1678,7 +1678,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().EndpointDescriptor());
+            *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
-            *operation = detach(shim().ClearStallAsync());
+            *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -1706,7 +1706,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
-            shim().WriteOptions(value);
+            this->shim().WriteOptions(value);
             return S_OK;
         }
         catch (...)
@@ -1719,7 +1719,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().WriteOptions());
+            *value = detach(this->shim().WriteOptions());
             return S_OK;
         }
         catch (...)
@@ -1732,7 +1732,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().OutputStream());
+            *value = detach(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -1750,7 +1750,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().RequestType());
+            *value = detach(this->shim().RequestType());
             return S_OK;
         }
         catch (...)
@@ -1764,7 +1764,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            shim().RequestType(*reinterpret_cast<const Windows::Devices::Usb::UsbControlRequestType *>(&value));
+            this->shim().RequestType(*reinterpret_cast<const Windows::Devices::Usb::UsbControlRequestType *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1777,7 +1777,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1790,7 +1790,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            shim().Request(value);
+            this->shim().Request(value);
             return S_OK;
         }
         catch (...)
@@ -1803,7 +1803,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1816,7 +1816,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -1829,7 +1829,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Index());
+            *value = detach(this->shim().Index());
             return S_OK;
         }
         catch (...)
@@ -1842,7 +1842,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            shim().Index(value);
+            this->shim().Index(value);
             return S_OK;
         }
         catch (...)
@@ -1855,7 +1855,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -1868,7 +1868,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
-            shim().Length(value);
+            this->shim().Length(value);
             return S_OK;
         }
         catch (...)
@@ -1885,7 +1885,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacketFactory> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateWithEightByteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&eightByteBuffer)));
+            *value = detach(this->shim().CreateWithEightByteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&eightByteBuffer)));
             return S_OK;
         }
         catch (...)

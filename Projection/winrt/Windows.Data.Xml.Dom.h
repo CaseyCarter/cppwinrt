@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Data.Xml.Dom.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Data.Xml.Dom.3.h"
 #include "Windows.Foundation.Collections.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::Data::Xml::Dom::IDtdEntity> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().PublicId());
+            *value = detach(this->shim().PublicId());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Data::Xml::Dom::IDtdEntity> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().SystemId());
+            *value = detach(this->shim().SystemId());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Data::Xml::Dom::IDtdEntity> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().NotationName());
+            *value = detach(this->shim().NotationName());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Data::Xml::Dom::IDtdNotation> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PublicId());
+            *value = detach(this->shim().PublicId());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Data::Xml::Dom::IDtdNotation> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SystemId());
+            *value = detach(this->shim().SystemId());
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlAttribute> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlAttribute> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Specified());
+            *value = detach(this->shim().Specified());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlAttribute> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlAttribute> : produce_base<D, Wind
     {
         try
         {
-            shim().Value(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            shim().Data(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Data(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            *data = detach(shim().SubstringData(offset, count));
+            *data = detach(this->shim().SubstringData(offset, count));
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            shim().AppendData(*reinterpret_cast<const hstring *>(&data));
+            this->shim().AppendData(*reinterpret_cast<const hstring *>(&data));
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            shim().InsertData(offset, *reinterpret_cast<const hstring *>(&data));
+            this->shim().InsertData(offset, *reinterpret_cast<const hstring *>(&data));
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            shim().DeleteData(offset, count);
+            this->shim().DeleteData(offset, count);
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlCharacterData> : produce_base<D, 
     {
         try
         {
-            shim().ReplaceData(offset, count, *reinterpret_cast<const hstring *>(&data));
+            this->shim().ReplaceData(offset, count, *reinterpret_cast<const hstring *>(&data));
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Doctype());
+            *value = detach(this->shim().Doctype());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Implementation());
+            *value = detach(this->shim().Implementation());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DocumentElement());
+            *value = detach(this->shim().DocumentElement());
             return S_OK;
         }
         catch (...)
@@ -316,7 +316,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newElement = detach(shim().CreateElement(*reinterpret_cast<const hstring *>(&tagName)));
+            *newElement = detach(this->shim().CreateElement(*reinterpret_cast<const hstring *>(&tagName)));
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newDocumentFragment = detach(shim().CreateDocumentFragment());
+            *newDocumentFragment = detach(this->shim().CreateDocumentFragment());
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newTextNode = detach(shim().CreateTextNode(*reinterpret_cast<const hstring *>(&data)));
+            *newTextNode = detach(this->shim().CreateTextNode(*reinterpret_cast<const hstring *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newComment = detach(shim().CreateComment(*reinterpret_cast<const hstring *>(&data)));
+            *newComment = detach(this->shim().CreateComment(*reinterpret_cast<const hstring *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newProcessingInstruction = detach(shim().CreateProcessingInstruction(*reinterpret_cast<const hstring *>(&target), *reinterpret_cast<const hstring *>(&data)));
+            *newProcessingInstruction = detach(this->shim().CreateProcessingInstruction(*reinterpret_cast<const hstring *>(&target), *reinterpret_cast<const hstring *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newAttribute = detach(shim().CreateAttribute(*reinterpret_cast<const hstring *>(&name)));
+            *newAttribute = detach(this->shim().CreateAttribute(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newEntityReference = detach(shim().CreateEntityReference(*reinterpret_cast<const hstring *>(&name)));
+            *newEntityReference = detach(this->shim().CreateEntityReference(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *elements = detach(shim().GetElementsByTagName(*reinterpret_cast<const hstring *>(&tagName)));
+            *elements = detach(this->shim().GetElementsByTagName(*reinterpret_cast<const hstring *>(&tagName)));
             return S_OK;
         }
         catch (...)
@@ -428,7 +428,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newCDataSection = detach(shim().CreateCDataSection(*reinterpret_cast<const hstring *>(&data)));
+            *newCDataSection = detach(this->shim().CreateCDataSection(*reinterpret_cast<const hstring *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -442,7 +442,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DocumentUri());
+            *value = detach(this->shim().DocumentUri());
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newAttribute = detach(shim().CreateAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName)));
+            *newAttribute = detach(this->shim().CreateAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName)));
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newElement = detach(shim().CreateElementNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName)));
+            *newElement = detach(this->shim().CreateElementNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName)));
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *element = detach(shim().GetElementById(*reinterpret_cast<const hstring *>(&elementId)));
+            *element = detach(this->shim().GetElementById(*reinterpret_cast<const hstring *>(&elementId)));
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocument> : produce_base<D, Windo
     {
         try
         {
-            *newNode = detach(shim().ImportNode(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node), deep));
+            *newNode = detach(this->shim().ImportNode(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node), deep));
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentIO> : produce_base<D, Win
     {
         try
         {
-            shim().LoadXml(*reinterpret_cast<const hstring *>(&xml));
+            this->shim().LoadXml(*reinterpret_cast<const hstring *>(&xml));
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentIO> : produce_base<D, Win
     {
         try
         {
-            shim().LoadXml(*reinterpret_cast<const hstring *>(&xml), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings));
+            this->shim().LoadXml(*reinterpret_cast<const hstring *>(&xml), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings));
             return S_OK;
         }
         catch (...)
@@ -546,7 +546,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentIO> : produce_base<D, Win
     {
         try
         {
-            *asyncInfo = detach(shim().SaveToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *asyncInfo = detach(this->shim().SaveToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentIO2> : produce_base<D, Wi
     {
         try
         {
-            shim().LoadXmlFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().LoadXmlFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentIO2> : produce_base<D, Wi
     {
         try
         {
-            shim().LoadXmlFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings));
+            this->shim().LoadXmlFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings));
             return S_OK;
         }
         catch (...)
@@ -594,7 +594,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentStatics> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *asyncInfo = detach(this->shim().LoadFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentStatics> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings)));
+            *asyncInfo = detach(this->shim().LoadFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings)));
             return S_OK;
         }
         catch (...)
@@ -622,7 +622,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentStatics> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -636,7 +636,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentStatics> : produce_base<D
     {
         try
         {
-            *asyncInfo = detach(shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings)));
+            *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Data::Xml::Dom::XmlLoadSettings *>(&loadSettings)));
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentType> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentType> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Entities());
+            *value = detach(this->shim().Entities());
             return S_OK;
         }
         catch (...)
@@ -682,7 +682,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDocumentType> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Notations());
+            *value = detach(this->shim().Notations());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlDomImplementation> : produce_base
     {
         try
         {
-            *featureSupported = detach(shim().HasFeature(*reinterpret_cast<const hstring *>(&feature), *reinterpret_cast<const Windows::IInspectable *>(&version)));
+            *featureSupported = detach(this->shim().HasFeature(*reinterpret_cast<const hstring *>(&feature), *reinterpret_cast<const Windows::IInspectable *>(&version)));
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().TagName());
+            *value = detach(this->shim().TagName());
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *attributeValue = detach(shim().GetAttribute(*reinterpret_cast<const hstring *>(&attributeName)));
+            *attributeValue = detach(this->shim().GetAttribute(*reinterpret_cast<const hstring *>(&attributeName)));
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            shim().SetAttribute(*reinterpret_cast<const hstring *>(&attributeName), *reinterpret_cast<const hstring *>(&attributeValue));
+            this->shim().SetAttribute(*reinterpret_cast<const hstring *>(&attributeName), *reinterpret_cast<const hstring *>(&attributeValue));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            shim().RemoveAttribute(*reinterpret_cast<const hstring *>(&attributeName));
+            this->shim().RemoveAttribute(*reinterpret_cast<const hstring *>(&attributeName));
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *attributeNode = detach(shim().GetAttributeNode(*reinterpret_cast<const hstring *>(&attributeName)));
+            *attributeNode = detach(this->shim().GetAttributeNode(*reinterpret_cast<const hstring *>(&attributeName)));
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *previousAttribute = detach(shim().SetAttributeNode(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&newAttribute)));
+            *previousAttribute = detach(this->shim().SetAttributeNode(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&newAttribute)));
             return S_OK;
         }
         catch (...)
@@ -799,7 +799,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *removedAttribute = detach(shim().RemoveAttributeNode(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&attributeNode)));
+            *removedAttribute = detach(this->shim().RemoveAttributeNode(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&attributeNode)));
             return S_OK;
         }
         catch (...)
@@ -813,7 +813,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *elements = detach(shim().GetElementsByTagName(*reinterpret_cast<const hstring *>(&tagName)));
+            *elements = detach(this->shim().GetElementsByTagName(*reinterpret_cast<const hstring *>(&tagName)));
             return S_OK;
         }
         catch (...)
@@ -827,7 +827,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            shim().SetAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&qualifiedName), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -840,7 +840,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName)));
+            *value = detach(this->shim().GetAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName)));
             return S_OK;
         }
         catch (...)
@@ -854,7 +854,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            shim().RemoveAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName));
+            this->shim().RemoveAttributeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName));
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *previousAttribute = detach(shim().SetAttributeNodeNS(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&newAttribute)));
+            *previousAttribute = detach(this->shim().SetAttributeNodeNS(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlAttribute *>(&newAttribute)));
             return S_OK;
         }
         catch (...)
@@ -881,7 +881,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlElement> : produce_base<D, Window
     {
         try
         {
-            *previousAttribute = detach(shim().GetAttributeNodeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName)));
+            *previousAttribute = detach(this->shim().GetAttributeNodeNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&localName)));
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().MaxElementDepth());
+            *value = detach(this->shim().MaxElementDepth());
             return S_OK;
         }
         catch (...)
@@ -916,7 +916,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            shim().MaxElementDepth(value);
+            this->shim().MaxElementDepth(value);
             return S_OK;
         }
         catch (...)
@@ -929,7 +929,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ProhibitDtd());
+            *value = detach(this->shim().ProhibitDtd());
             return S_OK;
         }
         catch (...)
@@ -942,7 +942,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            shim().ProhibitDtd(value);
+            this->shim().ProhibitDtd(value);
             return S_OK;
         }
         catch (...)
@@ -955,7 +955,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ResolveExternals());
+            *value = detach(this->shim().ResolveExternals());
             return S_OK;
         }
         catch (...)
@@ -968,7 +968,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            shim().ResolveExternals(value);
+            this->shim().ResolveExternals(value);
             return S_OK;
         }
         catch (...)
@@ -981,7 +981,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ValidateOnParse());
+            *value = detach(this->shim().ValidateOnParse());
             return S_OK;
         }
         catch (...)
@@ -994,7 +994,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            shim().ValidateOnParse(value);
+            this->shim().ValidateOnParse(value);
             return S_OK;
         }
         catch (...)
@@ -1007,7 +1007,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().ElementContentWhiteSpace());
+            *value = detach(this->shim().ElementContentWhiteSpace());
             return S_OK;
         }
         catch (...)
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlLoadSettings> : produce_base<D, W
     {
         try
         {
-            shim().ElementContentWhiteSpace(value);
+            this->shim().ElementContentWhiteSpace(value);
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -1050,7 +1050,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *node = detach(shim().Item(index));
+            *node = detach(this->shim().Item(index));
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *node = detach(shim().GetNamedItem(*reinterpret_cast<const hstring *>(&name)));
+            *node = detach(this->shim().GetNamedItem(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *previousNode = detach(shim().SetNamedItem(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node)));
+            *previousNode = detach(this->shim().SetNamedItem(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node)));
             return S_OK;
         }
         catch (...)
@@ -1092,7 +1092,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *previousNode = detach(shim().RemoveNamedItem(*reinterpret_cast<const hstring *>(&name)));
+            *previousNode = detach(this->shim().RemoveNamedItem(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *node = detach(shim().GetNamedItemNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&name)));
+            *node = detach(this->shim().GetNamedItemNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *previousNode = detach(shim().RemoveNamedItemNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&name)));
+            *previousNode = detach(this->shim().RemoveNamedItemNS(*reinterpret_cast<const Windows::IInspectable *>(&namespaceUri), *reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -1134,7 +1134,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNamedNodeMap> : produce_base<D, W
     {
         try
         {
-            *previousNode = detach(shim().SetNamedItemNS(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node)));
+            *previousNode = detach(this->shim().SetNamedItemNS(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&node)));
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NodeValue());
+            *value = detach(this->shim().NodeValue());
             return S_OK;
         }
         catch (...)
@@ -1166,7 +1166,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().NodeValue(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().NodeValue(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NodeType());
+            *value = detach(this->shim().NodeType());
             return S_OK;
         }
         catch (...)
@@ -1192,7 +1192,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NodeName());
+            *value = detach(this->shim().NodeName());
             return S_OK;
         }
         catch (...)
@@ -1206,7 +1206,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ParentNode());
+            *value = detach(this->shim().ParentNode());
             return S_OK;
         }
         catch (...)
@@ -1220,7 +1220,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ChildNodes());
+            *value = detach(this->shim().ChildNodes());
             return S_OK;
         }
         catch (...)
@@ -1234,7 +1234,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FirstChild());
+            *value = detach(this->shim().FirstChild());
             return S_OK;
         }
         catch (...)
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LastChild());
+            *value = detach(this->shim().LastChild());
             return S_OK;
         }
         catch (...)
@@ -1262,7 +1262,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PreviousSibling());
+            *value = detach(this->shim().PreviousSibling());
             return S_OK;
         }
         catch (...)
@@ -1276,7 +1276,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NextSibling());
+            *value = detach(this->shim().NextSibling());
             return S_OK;
         }
         catch (...)
@@ -1290,7 +1290,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Attributes());
+            *value = detach(this->shim().Attributes());
             return S_OK;
         }
         catch (...)
@@ -1304,7 +1304,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().HasChildNodes());
+            *value = detach(this->shim().HasChildNodes());
             return S_OK;
         }
         catch (...)
@@ -1317,7 +1317,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().OwnerDocument());
+            *value = detach(this->shim().OwnerDocument());
             return S_OK;
         }
         catch (...)
@@ -1331,7 +1331,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *insertedChild = detach(shim().InsertBefore(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild), *reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&referenceChild)));
+            *insertedChild = detach(this->shim().InsertBefore(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild), *reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&referenceChild)));
             return S_OK;
         }
         catch (...)
@@ -1345,7 +1345,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *previousChild = detach(shim().ReplaceChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild), *reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&referenceChild)));
+            *previousChild = detach(this->shim().ReplaceChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild), *reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&referenceChild)));
             return S_OK;
         }
         catch (...)
@@ -1359,7 +1359,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *removedChild = detach(shim().RemoveChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&childNode)));
+            *removedChild = detach(this->shim().RemoveChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&childNode)));
             return S_OK;
         }
         catch (...)
@@ -1373,7 +1373,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *appendedChild = detach(shim().AppendChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild)));
+            *appendedChild = detach(this->shim().AppendChild(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&newChild)));
             return S_OK;
         }
         catch (...)
@@ -1387,7 +1387,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *newNode = detach(shim().CloneNode(deep));
+            *newNode = detach(this->shim().CloneNode(deep));
             return S_OK;
         }
         catch (...)
@@ -1401,7 +1401,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().NamespaceUri());
+            *value = detach(this->shim().NamespaceUri());
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().LocalName());
+            *value = detach(this->shim().LocalName());
             return S_OK;
         }
         catch (...)
@@ -1429,7 +1429,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Prefix());
+            *value = detach(this->shim().Prefix());
             return S_OK;
         }
         catch (...)
@@ -1443,7 +1443,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().Normalize();
+            this->shim().Normalize();
             return S_OK;
         }
         catch (...)
@@ -1456,7 +1456,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNode> : produce_base<D, Windows::
     {
         try
         {
-            shim().Prefix(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Prefix(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1473,7 +1473,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeList> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -1486,7 +1486,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeList> : produce_base<D, Windo
     {
         try
         {
-            *node = detach(shim().Item(index));
+            *node = detach(this->shim().Item(index));
             return S_OK;
         }
         catch (...)
@@ -1504,7 +1504,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSelector> : produce_base<D, W
     {
         try
         {
-            *node = detach(shim().SelectSingleNode(*reinterpret_cast<const hstring *>(&xpath)));
+            *node = detach(this->shim().SelectSingleNode(*reinterpret_cast<const hstring *>(&xpath)));
             return S_OK;
         }
         catch (...)
@@ -1518,7 +1518,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSelector> : produce_base<D, W
     {
         try
         {
-            *nodelist = detach(shim().SelectNodes(*reinterpret_cast<const hstring *>(&xpath)));
+            *nodelist = detach(this->shim().SelectNodes(*reinterpret_cast<const hstring *>(&xpath)));
             return S_OK;
         }
         catch (...)
@@ -1532,7 +1532,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSelector> : produce_base<D, W
     {
         try
         {
-            *node = detach(shim().SelectSingleNodeNS(*reinterpret_cast<const hstring *>(&xpath), *reinterpret_cast<const Windows::IInspectable *>(&namespaces)));
+            *node = detach(this->shim().SelectSingleNodeNS(*reinterpret_cast<const hstring *>(&xpath), *reinterpret_cast<const Windows::IInspectable *>(&namespaces)));
             return S_OK;
         }
         catch (...)
@@ -1546,7 +1546,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSelector> : produce_base<D, W
     {
         try
         {
-            *nodelist = detach(shim().SelectNodesNS(*reinterpret_cast<const hstring *>(&xpath), *reinterpret_cast<const Windows::IInspectable *>(&namespaces)));
+            *nodelist = detach(this->shim().SelectNodesNS(*reinterpret_cast<const hstring *>(&xpath), *reinterpret_cast<const Windows::IInspectable *>(&namespaces)));
             return S_OK;
         }
         catch (...)
@@ -1564,7 +1564,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSerializer> : produce_base<D,
     {
         try
         {
-            *outerXml = detach(shim().GetXml());
+            *outerXml = detach(this->shim().GetXml());
             return S_OK;
         }
         catch (...)
@@ -1578,7 +1578,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSerializer> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().InnerText());
+            *value = detach(this->shim().InnerText());
             return S_OK;
         }
         catch (...)
@@ -1592,7 +1592,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlNodeSerializer> : produce_base<D,
     {
         try
         {
-            shim().InnerText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().InnerText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1609,7 +1609,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlProcessingInstruction> : produce_
     {
         try
         {
-            *value = detach(shim().Target());
+            *value = detach(this->shim().Target());
             return S_OK;
         }
         catch (...)
@@ -1623,7 +1623,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlProcessingInstruction> : produce_
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlProcessingInstruction> : produce_
     {
         try
         {
-            shim().Data(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Data(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1654,7 +1654,7 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlText> : produce_base<D, Windows::
     {
         try
         {
-            *secondPart = detach(shim().SplitText(offset));
+            *secondPart = detach(this->shim().SplitText(offset));
             return S_OK;
         }
         catch (...)

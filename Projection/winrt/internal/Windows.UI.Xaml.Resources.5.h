@@ -18,7 +18,7 @@ protected:
 
     CustomXamlResourceLoaderT()
     {
-        get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(*this, m_inner);
+        get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(*this, this->m_inner);
     }
 };
 

@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.Imaging.3.h"
-#include "internal\Windows.Devices.Perception.3.h"
-#include "internal\Windows.Media.3.h"
-#include "internal\Windows.Devices.Perception.Provider.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.Devices.Perception.3.h"
+#include "internal/Windows.Media.3.h"
+#include "internal/Windows.Devices.Perception.Provider.3.h"
 #include "Windows.Devices.Perception.h"
 #include "Windows.Foundation.h"
 
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IKnownPerceptionFrameK
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IKnownPerceptionFrameK
     {
         try
         {
-            *value = detach(shim().Depth());
+            *value = detach(this->shim().Depth());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IKnownPerceptionFrameK
     {
         try
         {
-            *value = detach(shim().Infrared());
+            *value = detach(this->shim().Infrared());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionControlGrou
     {
         try
         {
-            *value = detach(shim().FrameProviderIds());
+            *value = detach(this->shim().FrameProviderIds());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionControlGrou
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&ids)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&ids)));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *value = detach(shim().TargetId());
+            *value = detach(this->shim().TargetId());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&orientation)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&orientation)));
             return S_OK;
         }
         catch (...)
@@ -207,7 +207,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *value = detach(shim().RelativeLocations());
+            *value = detach(this->shim().RelativeLocations());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionCorrelation
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> *>(&relativeLocations)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> *>(&relativeLocations)));
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFaceAuthent
     {
         try
         {
-            *value = detach(shim().FrameProviderIds());
+            *value = detach(this->shim().FrameProviderIds());
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFaceAuthent
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&ids), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler *>(&startHandler), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler *>(&stopHandler)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&ids), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler *>(&startHandler), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler *>(&stopHandler)));
             return S_OK;
         }
         catch (...)
@@ -279,7 +279,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrame> : pr
     {
         try
         {
-            *value = detach(shim().RelativeTime());
+            *value = detach(this->shim().RelativeTime());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrame> : pr
     {
         try
         {
-            shim().RelativeTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().RelativeTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrame> : pr
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -319,7 +319,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrame> : pr
     {
         try
         {
-            *value = detach(shim().FrameData());
+            *value = detach(this->shim().FrameData());
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *result = detach(shim().FrameProviderInfo());
+            *result = detach(this->shim().FrameProviderInfo());
             return S_OK;
         }
         catch (...)
@@ -351,7 +351,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().Available());
+            *value = detach(this->shim().Available());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -378,7 +378,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -404,7 +404,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().SetProperty(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest *>(&value));
+            this->shim().SetProperty(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest *>(&value));
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().Id(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().DeviceKind());
+            *value = detach(this->shim().DeviceKind());
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().DeviceKind(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DeviceKind(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().FrameKind());
+            *value = detach(this->shim().FrameKind());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().FrameKind(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FrameKind(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *value = detach(shim().Hidden());
+            *value = detach(this->shim().Hidden());
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().Hidden(value);
+            this->shim().Hidden(value);
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            *result = detach(shim().GetFrameProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo)));
+            *result = detach(this->shim().GetFrameProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo)));
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().RegisterFrameProviderInfo(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo));
+            this->shim().RegisterFrameProviderInfo(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo));
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().UnregisterFrameProviderInfo(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo));
+            this->shim().UnregisterFrameProviderInfo(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo *>(&frameProviderInfo));
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().RegisterFaceAuthenticationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&faceAuthenticationGroup));
+            this->shim().RegisterFaceAuthenticationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&faceAuthenticationGroup));
             return S_OK;
         }
         catch (...)
@@ -616,7 +616,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().UnregisterFaceAuthenticationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&faceAuthenticationGroup));
+            this->shim().UnregisterFaceAuthenticationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&faceAuthenticationGroup));
             return S_OK;
         }
         catch (...)
@@ -629,7 +629,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().RegisterControlGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionControlGroup *>(&controlGroup));
+            this->shim().RegisterControlGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionControlGroup *>(&controlGroup));
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().UnregisterControlGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionControlGroup *>(&controlGroup));
+            this->shim().UnregisterControlGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionControlGroup *>(&controlGroup));
             return S_OK;
         }
         catch (...)
@@ -655,7 +655,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().RegisterCorrelationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup *>(&correlationGroup));
+            this->shim().RegisterCorrelationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup *>(&correlationGroup));
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().UnregisterCorrelationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup *>(&correlationGroup));
+            this->shim().UnregisterCorrelationGroup(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager *>(&manager), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup *>(&correlationGroup));
             return S_OK;
         }
         catch (...)
@@ -681,7 +681,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().UpdateAvailabilityForProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProvider *>(&provider), available);
+            this->shim().UpdateAvailabilityForProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProvider *>(&provider), available);
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionFrameProvid
     {
         try
         {
-            shim().PublishFrameForProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProvider *>(&provider), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrame *>(&frame));
+            this->shim().PublishFrameForProvider(*reinterpret_cast<const Windows::Devices::Perception::Provider::IPerceptionFrameProvider *>(&provider), *reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFrame *>(&frame));
             return S_OK;
         }
         catch (...)
@@ -711,7 +711,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -739,7 +739,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -752,7 +752,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
     {
         try
         {
-            shim().Status(value);
+            this->shim().Status(value);
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -783,7 +783,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionVideoFrameA
     {
         try
         {
-            *value = detach(shim().AllocateFrame());
+            *value = detach(this->shim().AllocateFrame());
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionVideoFrameA
     {
         try
         {
-            *value = detach(shim().CopyFromVideoFrame(*reinterpret_cast<const Windows::Media::VideoFrame *>(&frame)));
+            *value = detach(this->shim().CopyFromVideoFrame(*reinterpret_cast<const Windows::Media::VideoFrame *>(&frame)));
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionVideoFrameA
     {
         try
         {
-            *result = detach(shim().Create(maxOutstandingFrameCountForWrite, format, *reinterpret_cast<const Windows::Foundation::Size *>(&resolution), alpha));
+            *result = detach(this->shim().Create(maxOutstandingFrameCountForWrite, format, *reinterpret_cast<const Windows::Foundation::Size *>(&resolution), alpha));
             return S_OK;
         }
         catch (...)

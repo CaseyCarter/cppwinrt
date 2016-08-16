@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Web.Http.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Web.Http.Filters.3.h"
+#include "internal/Windows.Web.Http.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Web.Http.Filters.3.h"
 #include "Windows.Web.Http.h"
 #include "Windows.Foundation.h"
 
@@ -24,7 +24,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().AllowAutoRedirect());
+            *value = detach(this->shim().AllowAutoRedirect());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().AllowAutoRedirect(value);
+            this->shim().AllowAutoRedirect(value);
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().AllowUI());
+            *value = detach(this->shim().AllowUI());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().AllowUI(value);
+            this->shim().AllowUI(value);
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().AutomaticDecompression());
+            *value = detach(this->shim().AutomaticDecompression());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().AutomaticDecompression(value);
+            this->shim().AutomaticDecompression(value);
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().CacheControl());
+            *value = detach(this->shim().CacheControl());
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().CookieManager());
+            *value = detach(this->shim().CookieManager());
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().ClientCertificate());
+            *value = detach(this->shim().ClientCertificate());
             return S_OK;
         }
         catch (...)
@@ -144,7 +144,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().ClientCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
+            this->shim().ClientCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().IgnorableServerCertificateErrors());
+            *value = detach(this->shim().IgnorableServerCertificateErrors());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().MaxConnectionsPerServer());
+            *value = detach(this->shim().MaxConnectionsPerServer());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().MaxConnectionsPerServer(value);
+            this->shim().MaxConnectionsPerServer(value);
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().ProxyCredential());
+            *value = detach(this->shim().ProxyCredential());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().ServerCredential());
+            *value = detach(this->shim().ServerCredential());
             return S_OK;
         }
         catch (...)
@@ -238,7 +238,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            *value = detach(shim().UseProxy());
+            *value = detach(this->shim().UseProxy());
             return S_OK;
         }
         catch (...)
@@ -264,7 +264,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
-            shim().UseProxy(value);
+            this->shim().UseProxy(value);
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter2> : produ
     {
         try
         {
-            *value = detach(shim().MaxVersion());
+            *value = detach(this->shim().MaxVersion());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter2> : produ
     {
         try
         {
-            shim().MaxVersion(value);
+            this->shim().MaxVersion(value);
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter3> : produ
     {
         try
         {
-            *value = detach(shim().CookieUsageBehavior());
+            *value = detach(this->shim().CookieUsageBehavior());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter3> : produ
     {
         try
         {
-            shim().CookieUsageBehavior(value);
+            this->shim().CookieUsageBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
-            *eventCookie = detach(shim().ServerCustomValidationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().ServerCustomValidationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
-            shim().ServerCustomValidationRequested(eventCookie);
+            this->shim().ServerCustomValidationRequested(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
-            shim().ClearAuthenticationCache();
+            this->shim().ClearAuthenticationCache();
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
-            *value = detach(shim().ReadBehavior());
+            *value = detach(this->shim().ReadBehavior());
             return S_OK;
         }
         catch (...)
@@ -397,7 +397,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
-            shim().ReadBehavior(value);
+            this->shim().ReadBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
-            *value = detach(shim().WriteBehavior());
+            *value = detach(this->shim().WriteBehavior());
             return S_OK;
         }
         catch (...)
@@ -423,7 +423,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
-            shim().WriteBehavior(value);
+            this->shim().WriteBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpFilter> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
+            *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *value = detach(shim().RequestMessage());
+            *value = detach(this->shim().RequestMessage());
             return S_OK;
         }
         catch (...)
@@ -472,7 +472,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *value = detach(shim().ServerCertificate());
+            *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
         catch (...)
@@ -486,7 +486,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *value = detach(shim().ServerCertificateErrorSeverity());
+            *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
         catch (...)
@@ -499,7 +499,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *value = detach(shim().ServerCertificateErrors());
+            *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
         catch (...)
@@ -513,7 +513,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *value = detach(shim().ServerIntermediateCertificates());
+            *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
         catch (...)
@@ -527,7 +527,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            shim().Reject();
+            this->shim().Reject();
             return S_OK;
         }
         catch (...)
@@ -540,7 +540,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)

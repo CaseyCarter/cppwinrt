@@ -92,6 +92,7 @@
     <Compile Include="EnumerationsTests.cs" />
     <Compile Include="FrontEndPhase1Tests.cs" />
     <Compile Include="ImplicitGenericInterfaces.cs" />
+    <Compile Include="InnerGenericInterfacesTests.cs" />
     <Compile Include="InterfaceTests.cs" />
     <Compile Include="MetadataTestHelper.cs" />
     <Compile Include="NamespaceToGenericInterfaceDependencyTests.cs" />
@@ -139,6 +140,8 @@
     <None Include="TestData\EnumerationsInput\Enumerations1.base" />
     <None Include="TestData\EnumerationsInput\Enumerations1_Enumerators.base" />
     <None Include="TestData\GenericInterfacesInput\ImplicitGenericInterfaces1.base" />
+    <None Include="TestData\GenericInterfacesInput\ImplicitGenericInterfaces2.base" />
+    <None Include="TestData\GenericInterfacesInput\InnerGenericInterfaces1.base" />
     <None Include="TestData\InterfacesInput\Interface1.base" />
     <None Include="TestData\InterfacesInput\Interface1_Methods.base" />
     <None Include="TestData\InterfacesInput\Interface1_Parameters.base" />

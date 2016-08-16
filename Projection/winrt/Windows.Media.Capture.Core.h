@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Media.Capture.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Media.Capture.Core.3.h"
+#include "internal/Windows.Media.Capture.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Media.Capture.Core.3.h"
 #include "Windows.Media.Capture.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
-            *value = detach(shim().Frame());
+            *value = detach(this->shim().Frame());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
-            *value = detach(shim().CaptureTimeOffset());
+            *value = detach(this->shim().CaptureTimeOffset());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
-            *value = detach(shim().UsedFrameControllerIndex());
+            *value = detach(this->shim().UsedFrameControllerIndex());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
-            *value = detach(shim().CapturedFrameControlValues());
+            *value = detach(this->shim().CapturedFrameControlValues());
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            *operation = detach(shim().StartAsync());
+            *operation = detach(this->shim().StartAsync());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            *operation = detach(shim().StopAsync());
+            *operation = detach(this->shim().StopAsync());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            *operation = detach(shim().FinishAsync());
+            *operation = detach(this->shim().FinishAsync());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            *token = detach(shim().PhotoCaptured(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PhotoCaptured(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            shim().PhotoCaptured(token);
+            this->shim().PhotoCaptured(token);
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture2>
     {
         try
         {
-            *operation = detach(shim().UpdateSettingsAsync());
+            *operation = detach(this->shim().UpdateSettingsAsync());
             return S_OK;
         }
         catch (...)

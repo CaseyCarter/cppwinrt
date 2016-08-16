@@ -1,4 +1,5 @@
-﻿#include "base_dependencies.h"
+﻿#pragma comment(lib, "windowsapp") 
+#include "base_dependencies.h"
 #include "base_macros.h"
 
 namespace winrt {

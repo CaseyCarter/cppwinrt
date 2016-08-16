@@ -37,17 +37,6 @@ static void WriteRootNamespaceEnd(Target & target)
     Write(target, "\r\n}\r\n");
 }
 
-static void WriteWindowsNumerics()
-{
-    // Note: this is in the RS1 SDK - remove this once the RS1 SDK is available.
-
-    OutputFile impl("WindowsNumerics.impl.h");
-    Write(impl, Strings::WindowsNumerics_impl);
-
-    OutputFile inl("WindowsNumerics.inl");
-    Write(inl, Strings::WindowsNumerics);
-}
-
 static void WriteModule()
 {
     OutputFile target("..\\winrt.ixx");
@@ -105,6 +94,14 @@ static void WriteBaseHeader()
     WriteRootNamespaceEnd(out);
 
     Write(out, Strings::base_std);
+}
+
+static void WritePplHeader()
+{
+    OutputFile out("..\\ppl.h");
+    WriteLogo(out);
+    Write(out, Strings::PragmaOnce);
+    Write(out, Strings::base_ppl);
 }
 
 static void GenerateForward()
@@ -279,13 +276,14 @@ static bool GenerateComposables()
 static void WriteLibrary()
 {
     std::string path = Settings::OutPath;
-    Path::Append(path, Settings::PublicPath + Settings::InternalPath);
+    Path::Append(path, Settings::PublicPath);
+    Path::Append(path, Settings::InternalPath);
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
     WriteModule();
     WriteBaseHeader();
-    WriteWindowsNumerics();
+    WritePplHeader();
 
     std::vector<std::string> processedNamespaces;
 

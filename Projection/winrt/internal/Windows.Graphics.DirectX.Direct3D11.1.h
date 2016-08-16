@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.Graphics.DirectX.Direct3D11.0.h"
 #include "Windows.Graphics.DirectX.0.h"
 

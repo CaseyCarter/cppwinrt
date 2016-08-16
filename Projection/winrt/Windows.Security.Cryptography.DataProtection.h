@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Security.Cryptography.DataProtection.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Security.Cryptography.DataProtection.3.h"
 #include "Windows.Security.Cryptography.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
-            *value = detach(shim().ProtectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
+            *value = detach(this->shim().ProtectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
-            *value = detach(shim().UnprotectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
+            *value = detach(this->shim().UnprotectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
-            *value = detach(shim().ProtectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
+            *value = detach(this->shim().ProtectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
-            *value = detach(shim().UnprotectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
+            *value = detach(this->shim().UnprotectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
-            *value = detach(shim().CreateOverloadExplicit(*reinterpret_cast<const hstring *>(&protectionDescriptor)));
+            *value = detach(this->shim().CreateOverloadExplicit(*reinterpret_cast<const hstring *>(&protectionDescriptor)));
             return S_OK;
         }
         catch (...)

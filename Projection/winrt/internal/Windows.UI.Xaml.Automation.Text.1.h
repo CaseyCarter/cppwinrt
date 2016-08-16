@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.UI.Xaml.Automation.Text.0.h"
 
 WINRT_EXPORT namespace winrt {

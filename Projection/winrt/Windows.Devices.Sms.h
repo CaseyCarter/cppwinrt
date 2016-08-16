@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Sms.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Sms.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().To(*reinterpret_cast<const hstring *>(&value));
+            this->shim().To(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Body());
+            *value = detach(this->shim().Body());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().Body(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Body(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().CallbackNumber());
+            *value = detach(this->shim().CallbackNumber());
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().CallbackNumber(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CallbackNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().IsDeliveryNotificationEnabled());
+            *value = detach(this->shim().IsDeliveryNotificationEnabled());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().IsDeliveryNotificationEnabled(value);
+            this->shim().IsDeliveryNotificationEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RetryAttemptCount());
+            *value = detach(this->shim().RetryAttemptCount());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().RetryAttemptCount(value);
+            this->shim().RetryAttemptCount(value);
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Encoding());
+            *value = detach(this->shim().Encoding());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().Encoding(value);
+            this->shim().Encoding(value);
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PortNumber());
+            *value = detach(this->shim().PortNumber());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().PortNumber(value);
+            this->shim().PortNumber(value);
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().TeleserviceId());
+            *value = detach(this->shim().TeleserviceId());
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().TeleserviceId(value);
+            this->shim().TeleserviceId(value);
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ProtocolId());
+            *value = detach(this->shim().ProtocolId());
             return S_OK;
         }
         catch (...)
@@ -271,7 +271,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().ProtocolId(value);
+            this->shim().ProtocolId(value);
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().BinaryBody());
+            *value = detach(this->shim().BinaryBody());
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windo
     {
         try
         {
-            shim().BinaryBody(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
+            this->shim().BinaryBody(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Body());
+            *value = detach(this->shim().Body());
             return S_OK;
         }
         catch (...)
@@ -356,7 +356,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().GeographicalScope());
+            *value = detach(this->shim().GeographicalScope());
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MessageCode());
+            *value = detach(this->shim().MessageCode());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().UpdateNumber());
+            *value = detach(this->shim().UpdateNumber());
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().BroadcastType());
+            *value = detach(this->shim().BroadcastType());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsEmergencyAlert());
+            *value = detach(this->shim().IsEmergencyAlert());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsUserPopupRequested());
+            *value = detach(this->shim().IsUserPopupRequested());
             return S_OK;
         }
         catch (...)
@@ -451,7 +451,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().SmscAddress());
+            *value = detach(this->shim().SmscAddress());
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            shim().SmscAddress(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SmscAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -478,7 +478,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -492,7 +492,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().ParentDeviceId());
+            *value = detach(this->shim().ParentDeviceId());
             return S_OK;
         }
         catch (...)
@@ -506,7 +506,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().AccountPhoneNumber());
+            *value = detach(this->shim().AccountPhoneNumber());
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().CellularClass());
+            *value = detach(this->shim().CellularClass());
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().DeviceStatus());
+            *value = detach(this->shim().DeviceStatus());
             return S_OK;
         }
         catch (...)
@@ -546,7 +546,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().CalculateLength(*reinterpret_cast<const Windows::Devices::Sms::ISmsMessageBase *>(&message)));
+            *value = detach(this->shim().CalculateLength(*reinterpret_cast<const Windows::Devices::Sms::ISmsMessageBase *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *asyncInfo = detach(shim().SendMessageAndGetResultAsync(*reinterpret_cast<const Windows::Devices::Sms::ISmsMessageBase *>(&message)));
+            *asyncInfo = detach(this->shim().SendMessageAndGetResultAsync(*reinterpret_cast<const Windows::Devices::Sms::ISmsMessageBase *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -573,7 +573,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            *eventCookie = detach(shim().DeviceStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().DeviceStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows:
     {
         try
         {
-            shim().DeviceStatusChanged(eventCookie);
+            this->shim().DeviceStatusChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2Statics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2Statics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -631,7 +631,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2Statics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().GetDefault());
+            *value = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::Devices::Sms::ISmsDevice2Statics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().FromParentId(*reinterpret_cast<const hstring *>(&parentDeviceId)));
+            *value = detach(this->shim().FromParentId(*reinterpret_cast<const hstring *>(&parentDeviceId)));
             return S_OK;
         }
         catch (...)
@@ -663,7 +663,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().MessageType());
+            *value = detach(this->shim().MessageType());
             return S_OK;
         }
         catch (...)
@@ -676,7 +676,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ImsiPrefixes());
+            *value = detach(this->shim().ImsiPrefixes());
             return S_OK;
         }
         catch (...)
@@ -690,7 +690,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DeviceIds());
+            *value = detach(this->shim().DeviceIds());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().SenderNumbers());
+            *value = detach(this->shim().SenderNumbers());
             return S_OK;
         }
         catch (...)
@@ -718,7 +718,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().TextMessagePrefixes());
+            *value = detach(this->shim().TextMessagePrefixes());
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PortNumbers());
+            *value = detach(this->shim().PortNumbers());
             return S_OK;
         }
         catch (...)
@@ -746,7 +746,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().CellularClass());
+            *value = detach(this->shim().CellularClass());
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            shim().CellularClass(value);
+            this->shim().CellularClass(value);
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ProtocolIds());
+            *value = detach(this->shim().ProtocolIds());
             return S_OK;
         }
         catch (...)
@@ -786,7 +786,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().TeleserviceIds());
+            *value = detach(this->shim().TeleserviceIds());
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().WapApplicationIds());
+            *value = detach(this->shim().WapApplicationIds());
             return S_OK;
         }
         catch (...)
@@ -814,7 +814,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().WapContentTypes());
+            *value = detach(this->shim().WapContentTypes());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().BroadcastTypes());
+            *value = detach(this->shim().BroadcastTypes());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().BroadcastChannels());
+            *value = detach(this->shim().BroadcastChannels());
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRuleFactory> : produce_base<D
     {
         try
         {
-            *value = detach(shim().CreateFilterRule(messageType));
+            *value = detach(this->shim().CreateFilterRule(messageType));
             return S_OK;
         }
         catch (...)
@@ -878,7 +878,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRules> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ActionType());
+            *value = detach(this->shim().ActionType());
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRules> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Rules());
+            *value = detach(this->shim().Rules());
             return S_OK;
         }
         catch (...)
@@ -909,7 +909,7 @@ struct produce<D, Windows::Devices::Sms::ISmsFilterRulesFactory> : produce_base<
     {
         try
         {
-            *value = detach(shim().CreateFilterRules(actionType));
+            *value = detach(this->shim().CreateFilterRules(actionType));
             return S_OK;
         }
         catch (...)
@@ -927,7 +927,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().MessageType());
+            *value = detach(this->shim().MessageType());
             return S_OK;
         }
         catch (...)
@@ -940,7 +940,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -954,7 +954,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().CellularClass());
+            *value = detach(this->shim().CellularClass());
             return S_OK;
         }
         catch (...)
@@ -967,7 +967,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().MessageClass());
+            *value = detach(this->shim().MessageClass());
             return S_OK;
         }
         catch (...)
@@ -980,7 +980,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().SimIccId());
+            *value = detach(this->shim().SimIccId());
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().MessageType());
+            *value = detach(this->shim().MessageType());
             return S_OK;
         }
         catch (...)
@@ -1011,7 +1011,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().TextMessage());
+            *value = detach(this->shim().TextMessage());
             return S_OK;
         }
         catch (...)
@@ -1025,7 +1025,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().WapMessage());
+            *value = detach(this->shim().WapMessage());
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().AppMessage());
+            *value = detach(this->shim().AppMessage());
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().BroadcastMessage());
+            *value = detach(this->shim().BroadcastMessage());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().VoicemailMessage());
+            *value = detach(this->shim().VoicemailMessage());
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            *value = detach(shim().StatusMessage());
+            *value = detach(this->shim().StatusMessage());
             return S_OK;
         }
         catch (...)
@@ -1095,7 +1095,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            shim().Drop();
+            this->shim().Drop();
             return S_OK;
         }
         catch (...)
@@ -1108,7 +1108,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : pr
     {
         try
         {
-            shim().Accept();
+            this->shim().Accept();
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistration> : produce_base
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistration> : produce_base
     {
         try
         {
-            shim().Unregister();
+            this->shim().Unregister();
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistration> : produce_base
     {
         try
         {
-            *eventCookie = detach(shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistration> : produce_base
     {
         try
         {
-            shim().MessageReceived(eventCookie);
+            this->shim().MessageReceived(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistrationStatics> : produ
     {
         try
         {
-            *value = detach(shim().AllRegistrations());
+            *value = detach(this->shim().AllRegistrations());
             return S_OK;
         }
         catch (...)
@@ -1196,7 +1196,7 @@ struct produce<D, Windows::Devices::Sms::ISmsMessageRegistrationStatics> : produ
     {
         try
         {
-            *value = detach(shim().Register(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Sms::SmsFilterRules *>(&filterRules)));
+            *value = detach(this->shim().Register(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Sms::SmsFilterRules *>(&filterRules)));
             return S_OK;
         }
         catch (...)
@@ -1214,7 +1214,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().IsSuccessful());
+            *value = detach(this->shim().IsSuccessful());
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().MessageReferenceNumbers());
+            *value = detach(this->shim().MessageReferenceNumbers());
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().CellularClass());
+            *value = detach(this->shim().CellularClass());
             return S_OK;
         }
         catch (...)
@@ -1254,7 +1254,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ModemErrorCode());
+            *value = detach(this->shim().ModemErrorCode());
             return S_OK;
         }
         catch (...)
@@ -1267,7 +1267,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().IsErrorTransient());
+            *value = detach(this->shim().IsErrorTransient());
             return S_OK;
         }
         catch (...)
@@ -1280,7 +1280,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().NetworkCauseCode());
+            *value = detach(this->shim().NetworkCauseCode());
             return S_OK;
         }
         catch (...)
@@ -1293,7 +1293,7 @@ struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D
     {
         try
         {
-            *value = detach(shim().TransportFailureCause());
+            *value = detach(this->shim().TransportFailureCause());
             return S_OK;
         }
         catch (...)
@@ -1310,7 +1310,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -1324,7 +1324,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -1338,7 +1338,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Body());
+            *value = detach(this->shim().Body());
             return S_OK;
         }
         catch (...)
@@ -1352,7 +1352,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1365,7 +1365,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MessageReferenceNumber());
+            *value = detach(this->shim().MessageReferenceNumber());
             return S_OK;
         }
         catch (...)
@@ -1378,7 +1378,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().ServiceCenterTimestamp());
+            *value = detach(this->shim().ServiceCenterTimestamp());
             return S_OK;
         }
         catch (...)
@@ -1391,7 +1391,7 @@ struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().DischargeTime());
+            *value = detach(this->shim().DischargeTime());
             return S_OK;
         }
         catch (...)
@@ -1408,7 +1408,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1421,7 +1421,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -1435,7 +1435,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().To(*reinterpret_cast<const hstring *>(&value));
+            this->shim().To(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1448,7 +1448,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -1462,7 +1462,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Body());
+            *value = detach(this->shim().Body());
             return S_OK;
         }
         catch (...)
@@ -1476,7 +1476,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().Body(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Body(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1489,7 +1489,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Encoding());
+            *value = detach(this->shim().Encoding());
             return S_OK;
         }
         catch (...)
@@ -1502,7 +1502,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().Encoding(value);
+            this->shim().Encoding(value);
             return S_OK;
         }
         catch (...)
@@ -1515,7 +1515,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().CallbackNumber());
+            *value = detach(this->shim().CallbackNumber());
             return S_OK;
         }
         catch (...)
@@ -1529,7 +1529,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().CallbackNumber(*reinterpret_cast<const hstring *>(&value));
+            this->shim().CallbackNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1542,7 +1542,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsDeliveryNotificationEnabled());
+            *value = detach(this->shim().IsDeliveryNotificationEnabled());
             return S_OK;
         }
         catch (...)
@@ -1555,7 +1555,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().IsDeliveryNotificationEnabled(value);
+            this->shim().IsDeliveryNotificationEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1568,7 +1568,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().RetryAttemptCount());
+            *value = detach(this->shim().RetryAttemptCount());
             return S_OK;
         }
         catch (...)
@@ -1581,7 +1581,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            shim().RetryAttemptCount(value);
+            this->shim().RetryAttemptCount(value);
             return S_OK;
         }
         catch (...)
@@ -1594,7 +1594,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().TeleserviceId());
+            *value = detach(this->shim().TeleserviceId());
             return S_OK;
         }
         catch (...)
@@ -1607,7 +1607,7 @@ struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ProtocolId());
+            *value = detach(this->shim().ProtocolId());
             return S_OK;
         }
         catch (...)
@@ -1624,7 +1624,7 @@ struct produce<D, Windows::Devices::Sms::ISmsVoicemailMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::Devices::Sms::ISmsVoicemailMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -1651,7 +1651,7 @@ struct produce<D, Windows::Devices::Sms::ISmsVoicemailMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Body());
+            *value = detach(this->shim().Body());
             return S_OK;
         }
         catch (...)
@@ -1665,7 +1665,7 @@ struct produce<D, Windows::Devices::Sms::ISmsVoicemailMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MessageCount());
+            *value = detach(this->shim().MessageCount());
             return S_OK;
         }
         catch (...)
@@ -1683,7 +1683,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1696,7 +1696,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -1710,7 +1710,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -1724,7 +1724,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ApplicationId());
+            *value = detach(this->shim().ApplicationId());
             return S_OK;
         }
         catch (...)
@@ -1738,7 +1738,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().ContentType());
+            *value = detach(this->shim().ContentType());
             return S_OK;
         }
         catch (...)
@@ -1752,7 +1752,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().BinaryBody());
+            *value = detach(this->shim().BinaryBody());
             return S_OK;
         }
         catch (...)
@@ -1766,7 +1766,7 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Headers());
+            *value = detach(this->shim().Headers());
             return S_OK;
         }
         catch (...)

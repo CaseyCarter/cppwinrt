@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Core.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.UI.Input.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.UI.Input.Inking.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Core.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.UI.Input.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.UI.Input.Inking.3.h"
 #include "Windows.UI.Input.h"
 
 WINRT_EXPORT namespace winrt {
@@ -23,7 +23,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            *value = detach(shim().Color());
+            *value = detach(this->shim().Color());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            *value = detach(shim().PenTip());
+            *value = detach(this->shim().PenTip());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            shim().PenTip(value);
+            this->shim().PenTip(value);
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            shim().Size(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().Size(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            *value = detach(shim().IgnorePressure());
+            *value = detach(this->shim().IgnorePressure());
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            shim().IgnorePressure(value);
+            this->shim().IgnorePressure(value);
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            *value = detach(shim().FitToCurve());
+            *value = detach(this->shim().FitToCurve());
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes> : produce_b
     {
         try
         {
-            shim().FitToCurve(value);
+            this->shim().FitToCurve(value);
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes2> : produce_
     {
         try
         {
-            *value = detach(shim().PenTipTransform());
+            *value = detach(this->shim().PenTipTransform());
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes2> : produce_
     {
         try
         {
-            shim().PenTipTransform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().PenTipTransform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes2> : produce_
     {
         try
         {
-            *value = detach(shim().DrawAsHighlighter());
+            *value = detach(this->shim().DrawAsHighlighter());
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes2> : produce_
     {
         try
         {
-            shim().DrawAsHighlighter(value);
+            this->shim().DrawAsHighlighter(value);
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes3> : produce_
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes3> : produce_
     {
         try
         {
-            *value = detach(shim().PencilProperties());
+            *value = detach(this->shim().PencilProperties());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributesPencilPropert
     {
         try
         {
-            *value = detach(shim().Opacity());
+            *value = detach(this->shim().Opacity());
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributesPencilPropert
     {
         try
         {
-            shim().Opacity(value);
+            this->shim().Opacity(value);
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributesStatics> : pr
     {
         try
         {
-            *result = detach(shim().CreateForPencil());
+            *result = detach(this->shim().CreateForPencil());
             return S_OK;
         }
         catch (...)
@@ -292,7 +292,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkInputProcessingConfiguration> 
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -305,7 +305,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkInputProcessingConfiguration> 
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -318,7 +318,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkInputProcessingConfiguration> 
     {
         try
         {
-            *value = detach(shim().RightDragAction());
+            *value = detach(this->shim().RightDragAction());
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkInputProcessingConfiguration> 
     {
         try
         {
-            shim().RightDragAction(value);
+            this->shim().RightDragAction(value);
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Mode());
+            *value = detach(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            shim().Mode(value);
+            this->shim().Mode(value);
             return S_OK;
         }
         catch (...)
@@ -374,7 +374,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            shim().ProcessPointerDown(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
+            this->shim().ProcessPointerDown(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
             return S_OK;
         }
         catch (...)
@@ -387,7 +387,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            *updateInformation = detach(shim().ProcessPointerUpdate(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
+            *updateInformation = detach(this->shim().ProcessPointerUpdate(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            *updateRectangle = detach(shim().ProcessPointerUp(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
+            *updateRectangle = detach(this->shim().ProcessPointerUp(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            shim().SetDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&drawingAttributes));
+            this->shim().SetDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&drawingAttributes));
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
     {
         try
         {
-            *recognitionResults = detach(shim().RecognizeAsync(recognitionTarget));
+            *recognitionResults = detach(this->shim().RecognizeAsync(recognitionTarget));
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPoint> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPoint> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPointFactory> : produce_base<D
     {
         try
         {
-            *result = detach(shim().CreateInkPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&position), pressure));
+            *result = detach(this->shim().CreateInkPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&position), pressure));
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().IsInputEnabled());
+            *value = detach(this->shim().IsInputEnabled());
             return S_OK;
         }
         catch (...)
@@ -506,7 +506,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().IsInputEnabled(value);
+            this->shim().IsInputEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -519,7 +519,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().InputDeviceTypes());
+            *value = detach(this->shim().InputDeviceTypes());
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().InputDeviceTypes(value);
+            this->shim().InputDeviceTypes(value);
             return S_OK;
         }
         catch (...)
@@ -545,7 +545,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().UnprocessedInput());
+            *value = detach(this->shim().UnprocessedInput());
             return S_OK;
         }
         catch (...)
@@ -559,7 +559,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().StrokeInput());
+            *value = detach(this->shim().StrokeInput());
             return S_OK;
         }
         catch (...)
@@ -573,7 +573,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().InputProcessingConfiguration());
+            *value = detach(this->shim().InputProcessingConfiguration());
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().StrokeContainer());
+            *value = detach(this->shim().StrokeContainer());
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().StrokeContainer(*reinterpret_cast<const Windows::UI::Input::Inking::InkStrokeContainer *>(&value));
+            this->shim().StrokeContainer(*reinterpret_cast<const Windows::UI::Input::Inking::InkStrokeContainer *>(&value));
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CopyDefaultDrawingAttributes());
+            *value = detach(this->shim().CopyDefaultDrawingAttributes());
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().UpdateDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&value));
+            this->shim().UpdateDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&value));
             return S_OK;
         }
         catch (...)
@@ -641,7 +641,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *inkSynchronizer = detach(shim().ActivateCustomDrying());
+            *inkSynchronizer = detach(this->shim().ActivateCustomDrying());
             return S_OK;
         }
         catch (...)
@@ -655,7 +655,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().SetPredefinedConfiguration(value);
+            this->shim().SetPredefinedConfiguration(value);
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().StrokesCollected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokesCollected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -681,7 +681,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().StrokesCollected(cookie);
+            this->shim().StrokesCollected(cookie);
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().StrokesErased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokesErased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
     {
         try
         {
-            shim().StrokesErased(cookie);
+            this->shim().StrokesErased(cookie);
             return S_OK;
         }
         catch (...)
@@ -724,7 +724,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -737,7 +737,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base
     {
         try
         {
-            shim().Length(value);
+            this->shim().Length(value);
             return S_OK;
         }
         catch (...)
@@ -750,7 +750,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base
     {
         try
         {
-            *value = detach(shim().Width());
+            *value = detach(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base
     {
         try
         {
-            shim().Width(value);
+            this->shim().Width(value);
             return S_OK;
         }
         catch (...)
@@ -780,7 +780,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRulerFactory> : produ
     {
         try
         {
-            *inkPresenterRuler = detach(shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
+            *inkPresenterRuler = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
             return S_OK;
         }
         catch (...)
@@ -798,7 +798,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            *value = detach(shim().IsVisible());
+            *value = detach(this->shim().IsVisible());
             return S_OK;
         }
         catch (...)
@@ -824,7 +824,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            shim().IsVisible(value);
+            this->shim().IsVisible(value);
             return S_OK;
         }
         catch (...)
@@ -837,7 +837,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -850,7 +850,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -863,7 +863,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            *value = detach(shim().ForegroundColor());
+            *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -876,7 +876,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -889,7 +889,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            *value = detach(shim().Transform());
+            *value = detach(this->shim().Transform());
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterStencil> : produce_ba
     {
         try
         {
-            shim().Transform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().Transform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognitionResult> : produce_b
     {
         try
         {
-            *boundingRect = detach(shim().BoundingRect());
+            *boundingRect = detach(this->shim().BoundingRect());
             return S_OK;
         }
         catch (...)
@@ -932,7 +932,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognitionResult> : produce_b
     {
         try
         {
-            *textCandidates = detach(shim().GetTextCandidates());
+            *textCandidates = detach(this->shim().GetTextCandidates());
             return S_OK;
         }
         catch (...)
@@ -946,7 +946,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognitionResult> : produce_b
     {
         try
         {
-            *strokes = detach(shim().GetStrokes());
+            *strokes = detach(this->shim().GetStrokes());
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognizer> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -982,7 +982,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognizerContainer> : produce
     {
         try
         {
-            shim().SetDefaultRecognizer(*reinterpret_cast<const Windows::UI::Input::Inking::InkRecognizer *>(&recognizer));
+            this->shim().SetDefaultRecognizer(*reinterpret_cast<const Windows::UI::Input::Inking::InkRecognizer *>(&recognizer));
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognizerContainer> : produce
     {
         try
         {
-            *recognitionResults = detach(shim().RecognizeAsync(*reinterpret_cast<const Windows::UI::Input::Inking::InkStrokeContainer *>(&strokeCollection), recognitionTarget));
+            *recognitionResults = detach(this->shim().RecognizeAsync(*reinterpret_cast<const Windows::UI::Input::Inking::InkStrokeContainer *>(&strokeCollection), recognitionTarget));
             return S_OK;
         }
         catch (...)
@@ -1009,7 +1009,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkRecognizerContainer> : produce
     {
         try
         {
-            *recognizerView = detach(shim().GetRecognizers());
+            *recognizerView = detach(this->shim().GetRecognizers());
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().DrawingAttributes());
+            *value = detach(this->shim().DrawingAttributes());
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            shim().DrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&value));
+            this->shim().DrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().BoundingRect());
+            *value = detach(this->shim().BoundingRect());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Selected());
+            *value = detach(this->shim().Selected());
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            shim().Selected(value);
+            this->shim().Selected(value);
             return S_OK;
         }
         catch (...)
@@ -1093,7 +1093,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Recognized());
+            *value = detach(this->shim().Recognized());
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *renderingSegments = detach(shim().GetRenderingSegments());
+            *renderingSegments = detach(this->shim().GetRenderingSegments());
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke> : produce_base<D, Wind
     {
         try
         {
-            *clonedStroke = detach(shim().Clone());
+            *clonedStroke = detach(this->shim().Clone());
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke2> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().PointTransform());
+            *value = detach(this->shim().PointTransform());
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke2> : produce_base<D, Win
     {
         try
         {
-            shim().PointTransform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
+            this->shim().PointTransform(*reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1164,7 +1164,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke2> : produce_base<D, Win
     {
         try
         {
-            *inkPoints = detach(shim().GetInkPoints());
+            *inkPoints = detach(this->shim().GetInkPoints());
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<
     {
         try
         {
-            shim().BeginStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
+            this->shim().BeginStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint));
             return S_OK;
         }
         catch (...)
@@ -1195,7 +1195,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<
     {
         try
         {
-            *previousPointerPoint = detach(shim().AppendToStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
+            *previousPointerPoint = detach(this->shim().AppendToStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
             return S_OK;
         }
         catch (...)
@@ -1209,7 +1209,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<
     {
         try
         {
-            *stroke = detach(shim().EndStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
+            *stroke = detach(this->shim().EndStroke(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<
     {
         try
         {
-            *stroke = detach(shim().CreateStroke(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> *>(&points)));
+            *stroke = detach(this->shim().CreateStroke(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> *>(&points)));
             return S_OK;
         }
         catch (...)
@@ -1237,7 +1237,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<
     {
         try
         {
-            shim().SetDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&drawingAttributes));
+            this->shim().SetDefaultDrawingAttributes(*reinterpret_cast<const Windows::UI::Input::Inking::InkDrawingAttributes *>(&drawingAttributes));
             return S_OK;
         }
         catch (...)
@@ -1254,7 +1254,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder2> : produce_base
     {
         try
         {
-            *result = detach(shim().CreateStrokeFromInkPoints(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> *>(&inkPoints), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&transform)));
+            *result = detach(this->shim().CreateStrokeFromInkPoints(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> *>(&inkPoints), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&transform)));
             return S_OK;
         }
         catch (...)
@@ -1272,7 +1272,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *value = detach(shim().BoundingRect());
+            *value = detach(this->shim().BoundingRect());
             return S_OK;
         }
         catch (...)
@@ -1285,7 +1285,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            shim().AddStroke(*reinterpret_cast<const Windows::UI::Input::Inking::InkStroke *>(&stroke));
+            this->shim().AddStroke(*reinterpret_cast<const Windows::UI::Input::Inking::InkStroke *>(&stroke));
             return S_OK;
         }
         catch (...)
@@ -1298,7 +1298,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *invalidatedRect = detach(shim().DeleteSelected());
+            *invalidatedRect = detach(this->shim().DeleteSelected());
             return S_OK;
         }
         catch (...)
@@ -1311,7 +1311,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *invalidatedRectangle = detach(shim().MoveSelected(*reinterpret_cast<const Windows::Foundation::Point *>(&translation)));
+            *invalidatedRectangle = detach(this->shim().MoveSelected(*reinterpret_cast<const Windows::Foundation::Point *>(&translation)));
             return S_OK;
         }
         catch (...)
@@ -1324,7 +1324,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *invalidatedRectangle = detach(shim().SelectWithPolyLine(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> *>(&polyline)));
+            *invalidatedRectangle = detach(this->shim().SelectWithPolyLine(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> *>(&polyline)));
             return S_OK;
         }
         catch (...)
@@ -1337,7 +1337,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *invalidatedRectangle = detach(shim().SelectWithLine(*reinterpret_cast<const Windows::Foundation::Point *>(&from), *reinterpret_cast<const Windows::Foundation::Point *>(&to)));
+            *invalidatedRectangle = detach(this->shim().SelectWithLine(*reinterpret_cast<const Windows::Foundation::Point *>(&from), *reinterpret_cast<const Windows::Foundation::Point *>(&to)));
             return S_OK;
         }
         catch (...)
@@ -1350,7 +1350,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            shim().CopySelectedToClipboard();
+            this->shim().CopySelectedToClipboard();
             return S_OK;
         }
         catch (...)
@@ -1363,7 +1363,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *invalidatedRectangle = detach(shim().PasteFromClipboard(*reinterpret_cast<const Windows::Foundation::Point *>(&position)));
+            *invalidatedRectangle = detach(this->shim().PasteFromClipboard(*reinterpret_cast<const Windows::Foundation::Point *>(&position)));
             return S_OK;
         }
         catch (...)
@@ -1376,7 +1376,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *canPaste = detach(shim().CanPasteFromClipboard());
+            *canPaste = detach(this->shim().CanPasteFromClipboard());
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *loadAction = detach(shim().LoadAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&inputStream)));
+            *loadAction = detach(this->shim().LoadAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&inputStream)));
             return S_OK;
         }
         catch (...)
@@ -1403,7 +1403,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *outputStreamOperation = detach(shim().SaveAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
+            *outputStreamOperation = detach(this->shim().SaveAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
             return S_OK;
         }
         catch (...)
@@ -1417,7 +1417,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            shim().UpdateRecognitionResults(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> *>(&recognitionResults));
+            this->shim().UpdateRecognitionResults(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> *>(&recognitionResults));
             return S_OK;
         }
         catch (...)
@@ -1430,7 +1430,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *strokeView = detach(shim().GetStrokes());
+            *strokeView = detach(this->shim().GetStrokes());
             return S_OK;
         }
         catch (...)
@@ -1444,7 +1444,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer> : produce_bas
     {
         try
         {
-            *recognitionResults = detach(shim().GetRecognitionResults());
+            *recognitionResults = detach(this->shim().GetRecognitionResults());
             return S_OK;
         }
         catch (...)
@@ -1462,7 +1462,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer2> : produce_ba
     {
         try
         {
-            shim().AddStrokes(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> *>(&strokes));
+            this->shim().AddStrokes(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> *>(&strokes));
             return S_OK;
         }
         catch (...)
@@ -1475,7 +1475,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer2> : produce_ba
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -1492,7 +1492,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            *cookie = detach(shim().StrokeStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokeStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1505,7 +1505,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            shim().StrokeStarted(cookie);
+            this->shim().StrokeStarted(cookie);
             return S_OK;
         }
         catch (...)
@@ -1518,7 +1518,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            *cookie = detach(shim().StrokeContinued(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokeContinued(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1531,7 +1531,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            shim().StrokeContinued(cookie);
+            this->shim().StrokeContinued(cookie);
             return S_OK;
         }
         catch (...)
@@ -1544,7 +1544,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            *cookie = detach(shim().StrokeEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokeEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1557,7 +1557,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            shim().StrokeEnded(cookie);
+            this->shim().StrokeEnded(cookie);
             return S_OK;
         }
         catch (...)
@@ -1570,7 +1570,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            *cookie = detach(shim().StrokeCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().StrokeCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1583,7 +1583,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            shim().StrokeCanceled(cookie);
+            this->shim().StrokeCanceled(cookie);
             return S_OK;
         }
         catch (...)
@@ -1596,7 +1596,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeInput> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().InkPresenter());
+            *value = detach(this->shim().InkPresenter());
             return S_OK;
         }
         catch (...)
@@ -1614,7 +1614,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1627,7 +1627,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().BezierControlPoint1());
+            *value = detach(this->shim().BezierControlPoint1());
             return S_OK;
         }
         catch (...)
@@ -1640,7 +1640,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().BezierControlPoint2());
+            *value = detach(this->shim().BezierControlPoint2());
             return S_OK;
         }
         catch (...)
@@ -1653,7 +1653,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -1666,7 +1666,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().TiltX());
+            *value = detach(this->shim().TiltX());
             return S_OK;
         }
         catch (...)
@@ -1679,7 +1679,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().TiltY());
+            *value = detach(this->shim().TiltY());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeRenderingSegment> : prod
     {
         try
         {
-            *value = detach(shim().Twist());
+            *value = detach(this->shim().Twist());
             return S_OK;
         }
         catch (...)
@@ -1709,7 +1709,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Strokes());
+            *value = detach(this->shim().Strokes());
             return S_OK;
         }
         catch (...)
@@ -1727,7 +1727,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokesErasedEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Strokes());
+            *value = detach(this->shim().Strokes());
             return S_OK;
         }
         catch (...)
@@ -1745,7 +1745,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkSynchronizer> : produce_base<D
     {
         try
         {
-            *inkStrokes = detach(shim().BeginDry());
+            *inkStrokes = detach(this->shim().BeginDry());
             return S_OK;
         }
         catch (...)
@@ -1759,7 +1759,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkSynchronizer> : produce_base<D
     {
         try
         {
-            shim().EndDry();
+            this->shim().EndDry();
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerEntered(cookie);
+            this->shim().PointerEntered(cookie);
             return S_OK;
         }
         catch (...)
@@ -1802,7 +1802,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerHovered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerHovered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1815,7 +1815,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerHovered(cookie);
+            this->shim().PointerHovered(cookie);
             return S_OK;
         }
         catch (...)
@@ -1828,7 +1828,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1841,7 +1841,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerExited(cookie);
+            this->shim().PointerExited(cookie);
             return S_OK;
         }
         catch (...)
@@ -1854,7 +1854,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1867,7 +1867,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerPressed(cookie);
+            this->shim().PointerPressed(cookie);
             return S_OK;
         }
         catch (...)
@@ -1880,7 +1880,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1893,7 +1893,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerMoved(cookie);
+            this->shim().PointerMoved(cookie);
             return S_OK;
         }
         catch (...)
@@ -1906,7 +1906,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1919,7 +1919,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerReleased(cookie);
+            this->shim().PointerReleased(cookie);
             return S_OK;
         }
         catch (...)
@@ -1932,7 +1932,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *cookie = detach(shim().PointerLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1945,7 +1945,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            shim().PointerLost(cookie);
+            this->shim().PointerLost(cookie);
             return S_OK;
         }
         catch (...)
@@ -1958,7 +1958,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkUnprocessedInput> : produce_ba
     {
         try
         {
-            *value = detach(shim().InkPresenter());
+            *value = detach(this->shim().InkPresenter());
             return S_OK;
         }
         catch (...)

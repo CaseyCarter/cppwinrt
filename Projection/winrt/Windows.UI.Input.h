@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Input.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.UI.Input.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Input.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.UI.Input.3.h"
 #include "Windows.UI.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().CrossSlidingState());
+            *value = detach(this->shim().CrossSlidingState());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().DraggingState());
+            *value = detach(this->shim().DraggingState());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            *token = detach(shim().Starting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
+            *token = detach(this->shim().Starting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Starting(token);
+            this->shim().Starting(token);
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            *token = detach(shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
+            *token = detach(this->shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Canceled(token);
+            this->shim().Canceled(token);
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ struct produce<D, Windows::UI::Input::IEdgeGestureEventArgs> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::UI::Input::IEdgeGestureStatics> : produce_base<D, Win
     {
         try
         {
-            *current = detach(shim().GetForCurrentView());
+            *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().GestureSettings());
+            *value = detach(this->shim().GestureSettings());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().GestureSettings(value);
+            this->shim().GestureSettings(value);
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsInertial());
+            *value = detach(this->shim().IsInertial());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().IsActive());
+            *value = detach(this->shim().IsActive());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ShowGestureFeedback());
+            *value = detach(this->shim().ShowGestureFeedback());
             return S_OK;
         }
         catch (...)
@@ -289,7 +289,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ShowGestureFeedback(value);
+            this->shim().ShowGestureFeedback(value);
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PivotCenter());
+            *value = detach(this->shim().PivotCenter());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().PivotCenter(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().PivotCenter(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().PivotRadius());
+            *value = detach(this->shim().PivotRadius());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().PivotRadius(value);
+            this->shim().PivotRadius(value);
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaTranslationDeceleration());
+            *value = detach(this->shim().InertiaTranslationDeceleration());
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaTranslationDeceleration(value);
+            this->shim().InertiaTranslationDeceleration(value);
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaRotationDeceleration());
+            *value = detach(this->shim().InertiaRotationDeceleration());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaRotationDeceleration(value);
+            this->shim().InertiaRotationDeceleration(value);
             return S_OK;
         }
         catch (...)
@@ -406,7 +406,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaExpansionDeceleration());
+            *value = detach(this->shim().InertiaExpansionDeceleration());
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaExpansionDeceleration(value);
+            this->shim().InertiaExpansionDeceleration(value);
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaTranslationDisplacement());
+            *value = detach(this->shim().InertiaTranslationDisplacement());
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaTranslationDisplacement(value);
+            this->shim().InertiaTranslationDisplacement(value);
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaRotationAngle());
+            *value = detach(this->shim().InertiaRotationAngle());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaRotationAngle(value);
+            this->shim().InertiaRotationAngle(value);
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InertiaExpansion());
+            *value = detach(this->shim().InertiaExpansion());
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().InertiaExpansion(value);
+            this->shim().InertiaExpansion(value);
             return S_OK;
         }
         catch (...)
@@ -510,7 +510,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ManipulationExact());
+            *value = detach(this->shim().ManipulationExact());
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ManipulationExact(value);
+            this->shim().ManipulationExact(value);
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().CrossSlideThresholds());
+            *value = detach(this->shim().CrossSlideThresholds());
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().CrossSlideThresholds(*reinterpret_cast<const Windows::UI::Input::CrossSlideThresholds *>(&value));
+            this->shim().CrossSlideThresholds(*reinterpret_cast<const Windows::UI::Input::CrossSlideThresholds *>(&value));
             return S_OK;
         }
         catch (...)
@@ -562,7 +562,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().CrossSlideHorizontally());
+            *value = detach(this->shim().CrossSlideHorizontally());
             return S_OK;
         }
         catch (...)
@@ -575,7 +575,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().CrossSlideHorizontally(value);
+            this->shim().CrossSlideHorizontally(value);
             return S_OK;
         }
         catch (...)
@@ -588,7 +588,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().CrossSlideExact());
+            *value = detach(this->shim().CrossSlideExact());
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().CrossSlideExact(value);
+            this->shim().CrossSlideExact(value);
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AutoProcessInertia());
+            *value = detach(this->shim().AutoProcessInertia());
             return S_OK;
         }
         catch (...)
@@ -627,7 +627,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().AutoProcessInertia(value);
+            this->shim().AutoProcessInertia(value);
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().MouseWheelParameters());
+            *value = detach(this->shim().MouseWheelParameters());
             return S_OK;
         }
         catch (...)
@@ -654,7 +654,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *canBeDoubleTap = detach(shim().CanBeDoubleTap(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value)));
+            *canBeDoubleTap = detach(this->shim().CanBeDoubleTap(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -667,7 +667,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ProcessDownEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
+            this->shim().ProcessDownEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
             return S_OK;
         }
         catch (...)
@@ -680,7 +680,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ProcessMoveEvents(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> *>(&value));
+            this->shim().ProcessMoveEvents(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ProcessUpEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
+            this->shim().ProcessUpEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
             return S_OK;
         }
         catch (...)
@@ -706,7 +706,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ProcessMouseWheelEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value), isShiftKeyDown, isControlKeyDown);
+            this->shim().ProcessMouseWheelEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value), isShiftKeyDown, isControlKeyDown);
             return S_OK;
         }
         catch (...)
@@ -719,7 +719,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ProcessInertia();
+            this->shim().ProcessInertia();
             return S_OK;
         }
         catch (...)
@@ -732,7 +732,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().CompleteGesture();
+            this->shim().CompleteGesture();
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().Tapped(cookie);
+            this->shim().Tapped(cookie);
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().RightTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().RightTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -784,7 +784,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().RightTapped(cookie);
+            this->shim().RightTapped(cookie);
             return S_OK;
         }
         catch (...)
@@ -797,7 +797,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().Holding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().Holding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -810,7 +810,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().Holding(cookie);
+            this->shim().Holding(cookie);
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().Dragging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().Dragging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -836,7 +836,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().Dragging(cookie);
+            this->shim().Dragging(cookie);
             return S_OK;
         }
         catch (...)
@@ -849,7 +849,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -862,7 +862,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ManipulationStarted(cookie);
+            this->shim().ManipulationStarted(cookie);
             return S_OK;
         }
         catch (...)
@@ -875,7 +875,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -888,7 +888,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ManipulationUpdated(cookie);
+            this->shim().ManipulationUpdated(cookie);
             return S_OK;
         }
         catch (...)
@@ -901,7 +901,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().ManipulationInertiaStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ManipulationInertiaStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -914,7 +914,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ManipulationInertiaStarting(cookie);
+            this->shim().ManipulationInertiaStarting(cookie);
             return S_OK;
         }
         catch (...)
@@ -927,7 +927,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -940,7 +940,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().ManipulationCompleted(cookie);
+            this->shim().ManipulationCompleted(cookie);
             return S_OK;
         }
         catch (...)
@@ -953,7 +953,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            *pCookie = detach(shim().CrossSliding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().CrossSliding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -966,7 +966,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
-            shim().CrossSliding(cookie);
+            this->shim().CrossSliding(cookie);
             return S_OK;
         }
         catch (...)
@@ -983,7 +983,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -996,7 +996,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1009,7 +1009,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().HoldingState());
+            *value = detach(this->shim().HoldingState());
             return S_OK;
         }
         catch (...)
@@ -1026,7 +1026,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            *value = detach(shim().IsInterceptionEnabledWhenInForeground());
+            *value = detach(this->shim().IsInterceptionEnabledWhenInForeground());
             return S_OK;
         }
         catch (...)
@@ -1039,7 +1039,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            shim().IsInterceptionEnabledWhenInForeground(value);
+            this->shim().IsInterceptionEnabledWhenInForeground(value);
             return S_OK;
         }
         catch (...)
@@ -1052,7 +1052,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            *token = detach(shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *token = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            shim().KeyDown(token);
+            this->shim().KeyDown(token);
             return S_OK;
         }
         catch (...)
@@ -1078,7 +1078,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            *token = detach(shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *token = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1091,7 +1091,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
-            shim().KeyUp(token);
+            this->shim().KeyUp(token);
             return S_OK;
         }
         catch (...)
@@ -1108,7 +1108,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics> : pro
     {
         try
         {
-            *keyboardDeliverySettings = detach(shim().GetForCurrentView());
+            *keyboardDeliverySettings = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -1126,7 +1126,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Cumulative());
+            *value = detach(this->shim().Cumulative());
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Velocities());
+            *value = detach(this->shim().Velocities());
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -1195,7 +1195,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Delta());
+            *value = detach(this->shim().Delta());
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Cumulative());
+            *value = detach(this->shim().Cumulative());
             return S_OK;
         }
         catch (...)
@@ -1234,7 +1234,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Velocities());
+            *value = detach(this->shim().Velocities());
             return S_OK;
         }
         catch (...)
@@ -1251,7 +1251,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -1264,7 +1264,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Cumulative());
+            *value = detach(this->shim().Cumulative());
             return S_OK;
         }
         catch (...)
@@ -1294,7 +1294,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -1307,7 +1307,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1320,7 +1320,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Delta());
+            *value = detach(this->shim().Delta());
             return S_OK;
         }
         catch (...)
@@ -1333,7 +1333,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Cumulative());
+            *value = detach(this->shim().Cumulative());
             return S_OK;
         }
         catch (...)
@@ -1346,7 +1346,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
-            *value = detach(shim().Velocities());
+            *value = detach(this->shim().Velocities());
             return S_OK;
         }
         catch (...)
@@ -1363,7 +1363,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CharTranslation());
+            *value = detach(this->shim().CharTranslation());
             return S_OK;
         }
         catch (...)
@@ -1376,7 +1376,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            shim().CharTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().CharTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DeltaScale());
+            *value = detach(this->shim().DeltaScale());
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            shim().DeltaScale(value);
+            this->shim().DeltaScale(value);
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().DeltaRotationAngle());
+            *value = detach(this->shim().DeltaRotationAngle());
             return S_OK;
         }
         catch (...)
@@ -1428,7 +1428,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            shim().DeltaRotationAngle(value);
+            this->shim().DeltaRotationAngle(value);
             return S_OK;
         }
         catch (...)
@@ -1441,7 +1441,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().PageTranslation());
+            *value = detach(this->shim().PageTranslation());
             return S_OK;
         }
         catch (...)
@@ -1454,7 +1454,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
-            shim().PageTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().PageTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1471,7 +1471,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PointerDevice());
+            *value = detach(this->shim().PointerDevice());
             return S_OK;
         }
         catch (...)
@@ -1485,7 +1485,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1498,7 +1498,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().RawPosition());
+            *value = detach(this->shim().RawPosition());
             return S_OK;
         }
         catch (...)
@@ -1511,7 +1511,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PointerId());
+            *value = detach(this->shim().PointerId());
             return S_OK;
         }
         catch (...)
@@ -1524,7 +1524,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FrameId());
+            *value = detach(this->shim().FrameId());
             return S_OK;
         }
         catch (...)
@@ -1537,7 +1537,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -1550,7 +1550,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().IsInContact());
+            *value = detach(this->shim().IsInContact());
             return S_OK;
         }
         catch (...)
@@ -1563,7 +1563,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -1581,7 +1581,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -1594,7 +1594,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsInverted());
+            *value = detach(this->shim().IsInverted());
             return S_OK;
         }
         catch (...)
@@ -1607,7 +1607,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsEraser());
+            *value = detach(this->shim().IsEraser());
             return S_OK;
         }
         catch (...)
@@ -1620,7 +1620,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Orientation());
+            *value = detach(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -1633,7 +1633,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().XTilt());
+            *value = detach(this->shim().XTilt());
             return S_OK;
         }
         catch (...)
@@ -1646,7 +1646,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().YTilt());
+            *value = detach(this->shim().YTilt());
             return S_OK;
         }
         catch (...)
@@ -1659,7 +1659,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Twist());
+            *value = detach(this->shim().Twist());
             return S_OK;
         }
         catch (...)
@@ -1672,7 +1672,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ContactRect());
+            *value = detach(this->shim().ContactRect());
             return S_OK;
         }
         catch (...)
@@ -1685,7 +1685,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().ContactRectRaw());
+            *value = detach(this->shim().ContactRectRaw());
             return S_OK;
         }
         catch (...)
@@ -1698,7 +1698,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().TouchConfidence());
+            *value = detach(this->shim().TouchConfidence());
             return S_OK;
         }
         catch (...)
@@ -1711,7 +1711,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsLeftButtonPressed());
+            *value = detach(this->shim().IsLeftButtonPressed());
             return S_OK;
         }
         catch (...)
@@ -1724,7 +1724,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsRightButtonPressed());
+            *value = detach(this->shim().IsRightButtonPressed());
             return S_OK;
         }
         catch (...)
@@ -1737,7 +1737,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsMiddleButtonPressed());
+            *value = detach(this->shim().IsMiddleButtonPressed());
             return S_OK;
         }
         catch (...)
@@ -1750,7 +1750,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MouseWheelDelta());
+            *value = detach(this->shim().MouseWheelDelta());
             return S_OK;
         }
         catch (...)
@@ -1763,7 +1763,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsHorizontalMouseWheel());
+            *value = detach(this->shim().IsHorizontalMouseWheel());
             return S_OK;
         }
         catch (...)
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsPrimary());
+            *value = detach(this->shim().IsPrimary());
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsInRange());
+            *value = detach(this->shim().IsInRange());
             return S_OK;
         }
         catch (...)
@@ -1802,7 +1802,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsCanceled());
+            *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1815,7 +1815,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsBarrelButtonPressed());
+            *value = detach(this->shim().IsBarrelButtonPressed());
             return S_OK;
         }
         catch (...)
@@ -1828,7 +1828,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsXButton1Pressed());
+            *value = detach(this->shim().IsXButton1Pressed());
             return S_OK;
         }
         catch (...)
@@ -1841,7 +1841,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().IsXButton2Pressed());
+            *value = detach(this->shim().IsXButton2Pressed());
             return S_OK;
         }
         catch (...)
@@ -1854,7 +1854,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PointerUpdateKind());
+            *value = detach(this->shim().PointerUpdateKind());
             return S_OK;
         }
         catch (...)
@@ -1867,7 +1867,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().HasUsage(usagePage, usageId));
+            *value = detach(this->shim().HasUsage(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -1880,7 +1880,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().GetUsageValue(usagePage, usageId));
+            *value = detach(this->shim().GetUsageValue(usagePage, usageId));
             return S_OK;
         }
         catch (...)
@@ -1897,7 +1897,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ZDistance());
+            *value = detach(this->shim().ZDistance());
             return S_OK;
         }
         catch (...)
@@ -1915,7 +1915,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
-            *pointerPoint = detach(shim().GetCurrentPoint(pointerId));
+            *pointerPoint = detach(this->shim().GetCurrentPoint(pointerId));
             return S_OK;
         }
         catch (...)
@@ -1929,7 +1929,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
-            *pointerPoints = detach(shim().GetIntermediatePoints(pointerId));
+            *pointerPoints = detach(this->shim().GetIntermediatePoints(pointerId));
             return S_OK;
         }
         catch (...)
@@ -1943,7 +1943,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
-            *pointerPoint = detach(shim().GetCurrentPoint(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
+            *pointerPoint = detach(this->shim().GetCurrentPoint(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
             return S_OK;
         }
         catch (...)
@@ -1957,7 +1957,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
-            *pointerPoints = detach(shim().GetIntermediatePoints(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
+            *pointerPoints = detach(this->shim().GetIntermediatePoints(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
             return S_OK;
         }
         catch (...)
@@ -1975,7 +1975,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Inverse());
+            *value = detach(this->shim().Inverse());
             return S_OK;
         }
         catch (...)
@@ -1989,7 +1989,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
-            *returnValue = detach(shim().TryTransform(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
+            *returnValue = detach(this->shim().TryTransform(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
         catch (...)
@@ -2002,7 +2002,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
-            *returnValue = detach(shim().TransformBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
+            *returnValue = detach(this->shim().TransformBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
         catch (...)
@@ -2019,7 +2019,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
-            shim().IsContactFeedbackEnabled(value);
+            this->shim().IsContactFeedbackEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2032,7 +2032,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
-            *value = detach(shim().IsContactFeedbackEnabled());
+            *value = detach(this->shim().IsContactFeedbackEnabled());
             return S_OK;
         }
         catch (...)
@@ -2045,7 +2045,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
-            shim().IsBarrelButtonFeedbackEnabled(value);
+            this->shim().IsBarrelButtonFeedbackEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2058,7 +2058,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
-            *value = detach(shim().IsBarrelButtonFeedbackEnabled());
+            *value = detach(this->shim().IsBarrelButtonFeedbackEnabled());
             return S_OK;
         }
         catch (...)
@@ -2075,7 +2075,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettingsStatics> : pr
     {
         try
         {
-            *visualizationSettings = detach(shim().GetForCurrentView());
+            *visualizationSettings = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2093,7 +2093,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().Menu());
+            *value = detach(this->shim().Menu());
             return S_OK;
         }
         catch (...)
@@ -2107,7 +2107,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RotationResolutionInDegrees());
+            *value = detach(this->shim().RotationResolutionInDegrees());
             return S_OK;
         }
         catch (...)
@@ -2120,7 +2120,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().RotationResolutionInDegrees(value);
+            this->shim().RotationResolutionInDegrees(value);
             return S_OK;
         }
         catch (...)
@@ -2133,7 +2133,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().UseAutomaticHapticFeedback());
+            *value = detach(this->shim().UseAutomaticHapticFeedback());
             return S_OK;
         }
         catch (...)
@@ -2146,7 +2146,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().UseAutomaticHapticFeedback(value);
+            this->shim().UseAutomaticHapticFeedback(value);
             return S_OK;
         }
         catch (...)
@@ -2159,7 +2159,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().ScreenContactStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().ScreenContactStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2172,7 +2172,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ScreenContactStarted(cookie);
+            this->shim().ScreenContactStarted(cookie);
             return S_OK;
         }
         catch (...)
@@ -2185,7 +2185,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().ScreenContactEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().ScreenContactEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2198,7 +2198,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ScreenContactEnded(cookie);
+            this->shim().ScreenContactEnded(cookie);
             return S_OK;
         }
         catch (...)
@@ -2211,7 +2211,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().ScreenContactContinued(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().ScreenContactContinued(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2224,7 +2224,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ScreenContactContinued(cookie);
+            this->shim().ScreenContactContinued(cookie);
             return S_OK;
         }
         catch (...)
@@ -2237,7 +2237,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
+            *cookie = detach(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2250,7 +2250,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ControlLost(cookie);
+            this->shim().ControlLost(cookie);
             return S_OK;
         }
         catch (...)
@@ -2263,7 +2263,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *token = detach(shim().RotationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().RotationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2276,7 +2276,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().RotationChanged(token);
+            this->shim().RotationChanged(token);
             return S_OK;
         }
         catch (...)
@@ -2289,7 +2289,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *token = detach(shim().ButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2302,7 +2302,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ButtonClicked(token);
+            this->shim().ButtonClicked(token);
             return S_OK;
         }
         catch (...)
@@ -2315,7 +2315,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().ControlAcquired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().ControlAcquired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2328,7 +2328,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
-            shim().ControlAcquired(cookie);
+            this->shim().ControlAcquired(cookie);
             return S_OK;
         }
         catch (...)
@@ -2345,7 +2345,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs> :
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -2363,7 +2363,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
-            shim().SetDefaultMenuItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> *>(&buttons));
+            this->shim().SetDefaultMenuItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> *>(&buttons));
             return S_OK;
         }
         catch (...)
@@ -2376,7 +2376,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
-            shim().ResetToDefaultMenuItems();
+            this->shim().ResetToDefaultMenuItems();
             return S_OK;
         }
         catch (...)
@@ -2389,7 +2389,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
-            *result = detach(shim().TrySelectDefaultMenuItem(type));
+            *result = detach(this->shim().TrySelectDefaultMenuItem(type));
             return S_OK;
         }
         catch (...)
@@ -2406,7 +2406,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfigurationStatics> : p
     {
         try
         {
-            *configuration = detach(shim().GetForCurrentView());
+            *configuration = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2424,7 +2424,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -2442,7 +2442,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Items());
+            *value = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -2456,7 +2456,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -2469,7 +2469,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            shim().IsEnabled(value);
+            this->shim().IsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2482,7 +2482,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().GetSelectedMenuItem());
+            *result = detach(this->shim().GetSelectedMenuItem());
             return S_OK;
         }
         catch (...)
@@ -2496,7 +2496,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            shim().SelectMenuItem(*reinterpret_cast<const Windows::UI::Input::RadialControllerMenuItem *>(&menuItem));
+            this->shim().SelectMenuItem(*reinterpret_cast<const Windows::UI::Input::RadialControllerMenuItem *>(&menuItem));
             return S_OK;
         }
         catch (...)
@@ -2509,7 +2509,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
-            *result = detach(shim().TrySelectPreviouslySelectedMenuItem());
+            *result = detach(this->shim().TrySelectPreviouslySelectedMenuItem());
             return S_OK;
         }
         catch (...)
@@ -2526,7 +2526,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
-            *value = detach(shim().DisplayText());
+            *value = detach(this->shim().DisplayText());
             return S_OK;
         }
         catch (...)
@@ -2540,7 +2540,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
-            *value = detach(shim().Tag());
+            *value = detach(this->shim().Tag());
             return S_OK;
         }
         catch (...)
@@ -2554,7 +2554,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
-            shim().Tag(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Tag(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2567,7 +2567,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
-            *token = detach(shim().Invoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Invoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2580,7 +2580,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
-            shim().Invoked(token);
+            this->shim().Invoked(token);
             return S_OK;
         }
         catch (...)
@@ -2597,7 +2597,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produc
     {
         try
         {
-            *result = detach(shim().CreateFromIcon(*reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&icon)));
+            *result = detach(this->shim().CreateFromIcon(*reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&icon)));
             return S_OK;
         }
         catch (...)
@@ -2611,7 +2611,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produc
     {
         try
         {
-            *result = detach(shim().CreateFromKnownIcon(*reinterpret_cast<const hstring *>(&displayText), value));
+            *result = detach(this->shim().CreateFromKnownIcon(*reinterpret_cast<const hstring *>(&displayText), value));
             return S_OK;
         }
         catch (...)
@@ -2629,7 +2629,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
     {
         try
         {
-            *value = detach(shim().RotationDeltaInDegrees());
+            *value = detach(this->shim().RotationDeltaInDegrees());
             return S_OK;
         }
         catch (...)
@@ -2642,7 +2642,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -2660,7 +2660,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContact> : produce_
     {
         try
         {
-            *value = detach(shim().Bounds());
+            *value = detach(this->shim().Bounds());
             return S_OK;
         }
         catch (...)
@@ -2673,7 +2673,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContact> : produce_
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -2690,7 +2690,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEve
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -2708,7 +2708,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEvent
     {
         try
         {
-            *value = detach(shim().Contact());
+            *value = detach(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -2726,7 +2726,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerStatics> : produce_base<D
     {
         try
         {
-            *result = detach(shim().IsSupported());
+            *result = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -2739,7 +2739,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerStatics> : produce_base<D
     {
         try
         {
-            *result = detach(shim().CreateForCurrentView());
+            *result = detach(this->shim().CreateForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2757,7 +2757,7 @@ struct produce<D, Windows::UI::Input::IRightTappedEventArgs> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -2770,7 +2770,7 @@ struct produce<D, Windows::UI::Input::IRightTappedEventArgs> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -2787,7 +2787,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -2800,7 +2800,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -2813,7 +2813,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().TapCount());
+            *value = detach(this->shim().TapCount());
             return S_OK;
         }
         catch (...)

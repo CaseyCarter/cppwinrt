@@ -3,14 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Globalization.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
-#include "internal\Windows.Security.Cryptography.Certificates.3.h"
-#include "internal\Windows.Security.Credentials.3.h"
-#include "internal\Windows.Networking.Sockets.3.h"
-#include "internal\Windows.Devices.AllJoyn.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Globalization.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.Security.Cryptography.Certificates.3.h"
+#include "internal/Windows.Security.Credentials.3.h"
+#include "internal/Windows.Networking.Sockets.3.h"
+#include "internal/Windows.Devices.AllJoyn.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -24,7 +24,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().IsEnabled(value);
+            this->shim().IsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DefaultAppName());
+            *value = detach(this->shim().DefaultAppName());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().DefaultAppName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DefaultAppName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().AppNames());
+            *value = detach(this->shim().AppNames());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DateOfManufacture());
+            *value = detach(this->shim().DateOfManufacture());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().DateOfManufacture(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            this->shim().DateOfManufacture(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DefaultDescription());
+            *value = detach(this->shim().DefaultDescription());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().DefaultDescription(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DefaultDescription(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Descriptions());
+            *value = detach(this->shim().Descriptions());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DefaultManufacturer());
+            *value = detach(this->shim().DefaultManufacturer());
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().DefaultManufacturer(*reinterpret_cast<const hstring *>(&value));
+            this->shim().DefaultManufacturer(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -186,7 +186,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Manufacturers());
+            *value = detach(this->shim().Manufacturers());
             return S_OK;
         }
         catch (...)
@@ -200,7 +200,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ModelNumber());
+            *value = detach(this->shim().ModelNumber());
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().ModelNumber(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ModelNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().SoftwareVersion());
+            *value = detach(this->shim().SoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().SoftwareVersion(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SoftwareVersion(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().SupportUrl());
+            *value = detach(this->shim().SupportUrl());
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().SupportUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SupportUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            *value = detach(shim().AppId());
+            *value = detach(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
-            shim().AppId(value);
+            this->shim().AppId(value);
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -324,7 +324,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -338,7 +338,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().AJSoftwareVersion());
+            *value = detach(this->shim().AJSoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().AppId());
+            *value = detach(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().DateOfManufacture());
+            *value = detach(this->shim().DateOfManufacture());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().DefaultLanguage());
+            *value = detach(this->shim().DefaultLanguage());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().HardwareVersion());
+            *value = detach(this->shim().HardwareVersion());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().ModelNumber());
+            *value = detach(this->shim().ModelNumber());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().SoftwareVersion());
+            *value = detach(this->shim().SoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().SupportedLanguages());
+            *value = detach(this->shim().SupportedLanguages());
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().SupportUrl());
+            *value = detach(this->shim().SupportUrl());
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().AppName());
+            *value = detach(this->shim().AppName());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -505,7 +505,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().DeviceName());
+            *value = detach(this->shim().DeviceName());
             return S_OK;
         }
         catch (...)
@@ -519,7 +519,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
-            *value = detach(shim().Manufacturer());
+            *value = detach(this->shim().Manufacturer());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : pro
     {
         try
         {
-            *operation = detach(shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort));
+            *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort));
             return S_OK;
         }
         catch (...)
@@ -551,7 +551,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : pro
     {
         try
         {
-            *operation = detach(shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort, *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort, *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> : prod
     {
         try
         {
-            shim().Accept();
+            this->shim().Accept();
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *value = detach(shim().SessionPort());
+            *value = detach(this->shim().SessionPort());
             return S_OK;
         }
         catch (...)
@@ -613,7 +613,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *value = detach(shim().TrafficType());
+            *value = detach(this->shim().TrafficType());
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *value = detach(shim().SamePhysicalNode());
+            *value = detach(this->shim().SamePhysicalNode());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *value = detach(shim().SameNetwork());
+            *value = detach(this->shim().SameNetwork());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            shim().Accept();
+            this->shim().Accept();
             return S_OK;
         }
         catch (...)
@@ -669,7 +669,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), sessionPort, trafficType, proximity, *reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner *>(&acceptSessionJoiner)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), sessionPort, trafficType, proximity, *reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner *>(&acceptSessionJoiner)));
             return S_OK;
         }
         catch (...)
@@ -687,7 +687,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
-            *value = detach(shim().AuthenticationMechanism());
+            *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -700,7 +700,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
-            *value = detach(shim().PeerUniqueName());
+            *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -714,7 +714,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
-            *value = detach(shim().Succeeded());
+            *value = detach(this->shim().Succeeded());
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *value = detach(shim().AboutData());
+            *value = detach(this->shim().AboutData());
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *value = detach(shim().ConnectionSpecification());
+            *value = detach(this->shim().ConnectionSpecification());
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -786,7 +786,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *operation = detach(shim().PingAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *operation = detach(this->shim().PingAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().Connect();
+            this->shim().Connect();
             return S_OK;
         }
         catch (...)
@@ -813,7 +813,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().Disconnect();
+            this->shim().Disconnect();
             return S_OK;
         }
         catch (...)
@@ -826,7 +826,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *token = detach(shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -839,7 +839,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().StateChanged(token);
+            this->shim().StateChanged(token);
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *value = detach(shim().AuthenticationMechanisms());
+            *value = detach(this->shim().AuthenticationMechanisms());
             return S_OK;
         }
         catch (...)
@@ -866,7 +866,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *token = detach(shim().CredentialsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().CredentialsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -879,7 +879,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().CredentialsRequested(token);
+            this->shim().CredentialsRequested(token);
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *token = detach(shim().CredentialsVerificationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().CredentialsVerificationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().CredentialsVerificationRequested(token);
+            this->shim().CredentialsVerificationRequested(token);
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            *token = detach(shim().AuthenticationComplete(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> *>(&handler)));
+            *token = detach(this->shim().AuthenticationComplete(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -931,7 +931,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
-            shim().AuthenticationComplete(token);
+            this->shim().AuthenticationComplete(token);
             return S_OK;
         }
         catch (...)
@@ -948,7 +948,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
+            *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -976,7 +976,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            *token = detach(shim().AcceptSessionJoinerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> *>(&handler)));
+            *token = detach(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -989,7 +989,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            shim().AcceptSessionJoinerRequested(token);
+            this->shim().AcceptSessionJoinerRequested(token);
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            *token = detach(shim().SessionJoined(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> *>(&handler)));
+            *token = detach(this->shim().SessionJoined(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1015,7 +1015,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
-            shim().SessionJoined(token);
+            this->shim().SessionJoined(token);
             return S_OK;
         }
         catch (...)
@@ -1032,7 +1032,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory> : pro
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&connectionSpecification)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&connectionSpecification)));
             return S_OK;
         }
         catch (...)
@@ -1050,7 +1050,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
     {
         try
         {
-            *value = detach(shim().State());
+            *value = detach(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -1063,7 +1063,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1080,7 +1080,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : pro
     {
         try
         {
-            *defaultBusAttachment = detach(shim().GetDefault());
+            *defaultBusAttachment = detach(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : pro
     {
         try
         {
-            *deviceWatcher = detach(shim().GetWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requiredInterfaces)));
+            *deviceWatcher = detach(this->shim().GetWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requiredInterfaces)));
             return S_OK;
         }
         catch (...)
@@ -1112,7 +1112,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            shim().AddProducer(*reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynProducer *>(&producer));
+            this->shim().AddProducer(*reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynProducer *>(&producer));
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            *value = detach(shim().BusAttachment());
+            *value = detach(this->shim().BusAttachment());
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1192,7 +1192,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -1209,7 +1209,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&objectPath)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&objectPath)));
             return S_OK;
         }
         catch (...)
@@ -1223,7 +1223,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce
     {
         try
         {
-            *result = detach(shim().CreateWithBusAttachment(*reinterpret_cast<const hstring *>(&objectPath), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
+            *result = detach(this->shim().CreateWithBusAttachment(*reinterpret_cast<const hstring *>(&objectPath), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
         catch (...)
@@ -1241,7 +1241,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1258,7 +1258,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFa
     {
         try
         {
-            *result = detach(shim().Create(status));
+            *result = detach(this->shim().Create(status));
             return S_OK;
         }
         catch (...)
@@ -1276,7 +1276,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            *value = detach(shim().AuthenticationMechanism());
+            *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -1289,7 +1289,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            *value = detach(shim().Certificate());
+            *value = detach(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -1303,7 +1303,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            shim().Certificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
+            this->shim().Certificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1316,7 +1316,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            *value = detach(shim().PasswordCredential());
+            *value = detach(this->shim().PasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -1330,7 +1330,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            shim().PasswordCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
+            this->shim().PasswordCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1343,7 +1343,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            *value = detach(shim().Timeout());
+            *value = detach(this->shim().Timeout());
             return S_OK;
         }
         catch (...)
@@ -1356,7 +1356,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
-            shim().Timeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().Timeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1373,7 +1373,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
-            *value = detach(shim().AttemptCount());
+            *value = detach(this->shim().AttemptCount());
             return S_OK;
         }
         catch (...)
@@ -1386,7 +1386,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
-            *value = detach(shim().Credentials());
+            *value = detach(this->shim().Credentials());
             return S_OK;
         }
         catch (...)
@@ -1400,7 +1400,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
-            *value = detach(shim().PeerUniqueName());
+            *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1414,7 +1414,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
-            *value = detach(shim().RequestedUserName());
+            *value = detach(this->shim().RequestedUserName());
             return S_OK;
         }
         catch (...)
@@ -1428,7 +1428,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1446,7 +1446,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().AuthenticationMechanism());
+            *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -1459,7 +1459,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().PeerUniqueName());
+            *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1473,7 +1473,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().PeerCertificate());
+            *value = detach(this->shim().PeerCertificate());
             return S_OK;
         }
         catch (...)
@@ -1487,7 +1487,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().PeerCertificateErrorSeverity());
+            *value = detach(this->shim().PeerCertificateErrorSeverity());
             return S_OK;
         }
         catch (...)
@@ -1500,7 +1500,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().PeerCertificateErrors());
+            *value = detach(this->shim().PeerCertificateErrors());
             return S_OK;
         }
         catch (...)
@@ -1514,7 +1514,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *value = detach(shim().PeerIntermediateCertificates());
+            *value = detach(this->shim().PeerIntermediateCertificates());
             return S_OK;
         }
         catch (...)
@@ -1528,7 +1528,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            shim().Accept();
+            this->shim().Accept();
             return S_OK;
         }
         catch (...)
@@ -1541,7 +1541,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1559,7 +1559,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo> : produce_base
     {
         try
         {
-            *value = detach(shim().SenderUniqueName());
+            *value = detach(this->shim().SenderUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1577,7 +1577,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory> : produ
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&senderUniqueName)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&senderUniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1595,7 +1595,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducer> : produce_base<D,
     {
         try
         {
-            shim().SetBusObject(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusObject *>(&busObject));
+            this->shim().SetBusObject(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusObject *>(&busObject));
             return S_OK;
         }
         catch (...)
@@ -1612,7 +1612,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> :
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1629,7 +1629,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFac
     {
         try
         {
-            *result = detach(shim().Create(status));
+            *result = detach(this->shim().Create(status));
             return S_OK;
         }
         catch (...)
@@ -1647,7 +1647,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -1661,7 +1661,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
-            *value = detach(shim().ObjectPath());
+            *value = detach(this->shim().ObjectPath());
             return S_OK;
         }
         catch (...)
@@ -1675,7 +1675,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
-            *value = detach(shim().SessionPort());
+            *value = detach(this->shim().SessionPort());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory> : produ
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const hstring *>(&objectPath), sessionPort));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const hstring *>(&objectPath), sessionPort));
             return S_OK;
         }
         catch (...)
@@ -1710,7 +1710,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -1728,7 +1728,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1746,7 +1746,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics> : produ
     {
         try
         {
-            *operation = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1764,7 +1764,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1777,7 +1777,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1790,7 +1790,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *operation = detach(shim().RemoveMemberAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *operation = detach(this->shim().RemoveMemberAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().MemberAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> *>(&handler)));
+            *token = detach(this->shim().MemberAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1817,7 +1817,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            shim().MemberAdded(token);
+            this->shim().MemberAdded(token);
             return S_OK;
         }
         catch (...)
@@ -1830,7 +1830,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().MemberRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> *>(&handler)));
+            *token = detach(this->shim().MemberRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1843,7 +1843,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            shim().MemberRemoved(token);
+            this->shim().MemberRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -1856,7 +1856,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            *token = detach(shim().Lost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> *>(&handler)));
+            *token = detach(this->shim().Lost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1869,7 +1869,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
-            shim().Lost(token);
+            this->shim().Lost(token);
             return S_OK;
         }
         catch (...)
@@ -1886,7 +1886,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Session());
+            *value = detach(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -1904,7 +1904,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFacto
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynSession *>(&session)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynSession *>(&session)));
             return S_OK;
         }
         catch (...)
@@ -1922,7 +1922,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().Reason());
+            *value = detach(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -1939,7 +1939,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory
     {
         try
         {
-            *result = detach(shim().Create(reason));
+            *result = detach(this->shim().Create(reason));
             return S_OK;
         }
         catch (...)
@@ -1957,7 +1957,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -1975,7 +1975,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1993,7 +1993,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
     {
         try
         {
-            *value = detach(shim().UniqueName());
+            *value = detach(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -2011,7 +2011,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
     {
         try
         {
-            *result = detach(shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -2029,7 +2029,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
+            *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
         catch (...)
@@ -2043,7 +2043,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
+            *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
         catch (...)
@@ -2061,7 +2061,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().Ok());
+            *value = detach(this->shim().Ok());
             return S_OK;
         }
         catch (...)
@@ -2074,7 +2074,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().Fail());
+            *value = detach(this->shim().Fail());
             return S_OK;
         }
         catch (...)
@@ -2087,7 +2087,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().OperationTimedOut());
+            *value = detach(this->shim().OperationTimedOut());
             return S_OK;
         }
         catch (...)
@@ -2100,7 +2100,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().OtherEndClosed());
+            *value = detach(this->shim().OtherEndClosed());
             return S_OK;
         }
         catch (...)
@@ -2113,7 +2113,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().ConnectionRefused());
+            *value = detach(this->shim().ConnectionRefused());
             return S_OK;
         }
         catch (...)
@@ -2126,7 +2126,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().AuthenticationFailed());
+            *value = detach(this->shim().AuthenticationFailed());
             return S_OK;
         }
         catch (...)
@@ -2139,7 +2139,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().AuthenticationRejectedByUser());
+            *value = detach(this->shim().AuthenticationRejectedByUser());
             return S_OK;
         }
         catch (...)
@@ -2152,7 +2152,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().SslConnectFailed());
+            *value = detach(this->shim().SslConnectFailed());
             return S_OK;
         }
         catch (...)
@@ -2165,7 +2165,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().SslIdentityVerificationFailed());
+            *value = detach(this->shim().SslIdentityVerificationFailed());
             return S_OK;
         }
         catch (...)
@@ -2178,7 +2178,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InsufficientSecurity());
+            *value = detach(this->shim().InsufficientSecurity());
             return S_OK;
         }
         catch (...)
@@ -2191,7 +2191,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument1());
+            *value = detach(this->shim().InvalidArgument1());
             return S_OK;
         }
         catch (...)
@@ -2204,7 +2204,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument2());
+            *value = detach(this->shim().InvalidArgument2());
             return S_OK;
         }
         catch (...)
@@ -2217,7 +2217,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument3());
+            *value = detach(this->shim().InvalidArgument3());
             return S_OK;
         }
         catch (...)
@@ -2230,7 +2230,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument4());
+            *value = detach(this->shim().InvalidArgument4());
             return S_OK;
         }
         catch (...)
@@ -2243,7 +2243,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument5());
+            *value = detach(this->shim().InvalidArgument5());
             return S_OK;
         }
         catch (...)
@@ -2256,7 +2256,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument6());
+            *value = detach(this->shim().InvalidArgument6());
             return S_OK;
         }
         catch (...)
@@ -2269,7 +2269,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument7());
+            *value = detach(this->shim().InvalidArgument7());
             return S_OK;
         }
         catch (...)
@@ -2282,7 +2282,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
-            *value = detach(shim().InvalidArgument8());
+            *value = detach(this->shim().InvalidArgument8());
             return S_OK;
         }
         catch (...)
@@ -2299,7 +2299,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> : 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2316,7 +2316,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFact
     {
         try
         {
-            *result = detach(shim().Create(status));
+            *result = detach(this->shim().Create(status));
             return S_OK;
         }
         catch (...)

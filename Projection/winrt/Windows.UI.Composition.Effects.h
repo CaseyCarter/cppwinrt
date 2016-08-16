@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.Effects.3.h"
-#include "internal\Windows.UI.Composition.Effects.3.h"
+#include "internal/Windows.Graphics.Effects.3.h"
+#include "internal/Windows.UI.Composition.Effects.3.h"
 #include "Windows.UI.Composition.h"
 #include "Windows.Graphics.Effects.h"
 
@@ -19,7 +19,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            *value = detach(shim().AmbientAmount());
+            *value = detach(this->shim().AmbientAmount());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            shim().AmbientAmount(value);
+            this->shim().AmbientAmount(value);
             return S_OK;
         }
         catch (...)
@@ -45,7 +45,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            *value = detach(shim().DiffuseAmount());
+            *value = detach(this->shim().DiffuseAmount());
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            shim().DiffuseAmount(value);
+            this->shim().DiffuseAmount(value);
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            *value = detach(shim().NormalMapSource());
+            *value = detach(this->shim().NormalMapSource());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            shim().NormalMapSource(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffectSource *>(&value));
+            this->shim().NormalMapSource(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffectSource *>(&value));
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            *value = detach(shim().SpecularAmount());
+            *value = detach(this->shim().SpecularAmount());
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            shim().SpecularAmount(value);
+            this->shim().SpecularAmount(value);
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            *value = detach(shim().SpecularShine());
+            *value = detach(this->shim().SpecularShine());
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
-            shim().SpecularShine(value);
+            this->shim().SpecularShine(value);
             return S_OK;
         }
         catch (...)

@@ -7,9 +7,6 @@ namespace Microsoft.Wcl.Parsers
 {
     internal class GenericIntefacesPreProcessor
     {
-        private Dictionary<string, GenericInterfaceInfo> InnerGenericInterfacesTable { get; set; } = new Dictionary<string, GenericInterfaceInfo>();
-        private Dictionary<string, GenericInterfaceInfo> ImplicitGenericInterfacesTable { get; set; } = new Dictionary<string, GenericInterfaceInfo>();
-
         public GenericIntefacesPreProcessor(FrontEndConfiguration configuration)
         {
             this.Configuration = configuration;
@@ -50,17 +47,29 @@ namespace Microsoft.Wcl.Parsers
         private void GenerateInnerGenericInterfaces()
         {
             var genericInterfacesRepository = this.Configuration.DataStore.GetGenericInterfacesRepository();
-            var generatedList = new List<GenericInterfaceInfo>();
+            var innerGenericInterfacesGeneratator = new InnerGenericInterfacesGeneratator(this.Configuration);
+
+            foreach (var info in genericInterfacesRepository)
+            {
+                Debug.Assert(info.InnerGenericInterfaces == null);
+            }
 
             // If we have an IVector<IVector<Point>>, we need to also add all inner generic interfaces to the repository
             // because they are needed by the projection.
-            foreach (var info in genericInterfacesRepository.Values)
+            // Note: Not using a foreach because the collection will be changed.
+            for (int j = 0; j < genericInterfacesRepository.Count; j++)
             {
-                var tempList = InnerGenericInterfacesGeneratator.GenerateInnerGenericInterface(info);
+                var info = genericInterfacesRepository[j];
+                if (info.InnerGenericInterfaces != null)
+                {
+                    continue;
+                }
+                
+                var tempList = innerGenericInterfacesGeneratator.GenerateInnerGenericInterface(info);
                 Debug.Assert(tempList != null);
                 info.InnerGenericInterfaces = tempList;
 
-                // No foreach so that the items can be accessed by index
+                // No foreach so that collection can be changed
                 for (int i = 0; i < tempList.Count; i++)
                 {
                     GenericInterfaceInfo innerInfo = tempList[i];
@@ -73,22 +82,39 @@ namespace Microsoft.Wcl.Parsers
                         tempList[i] = infoThatExists;
                         innerInfo = infoThatExists;
                     }
+                }
 
-                    // Only add to dictionary & list (to be used later on to insert first) if we don't have it already
-                    if (!this.InnerGenericInterfacesTable.ContainsKey(innerInfo.MetadataFullTypeNameInCppForm))
+                // Get the maximum index of all the inner generic interfaces.
+                // If one of them happens to be in the collection after the current GenericInterfaceInfo,
+                // then move the current GenericInterfaceInfo at the end of the list.
+                // This is to guarantee that those inner generic interfaces (which are dependencies) are 
+                // in the array before the current GenericInterfaceInfo
+                var maxIndex = 0;
+
+                foreach (var innerInfo in tempList)
+                {
+                    if (!genericInterfacesRepository.Contains(innerInfo))
                     {
-                        this.InnerGenericInterfacesTable.Add(innerInfo.MetadataFullTypeNameInCppForm, innerInfo);
-                        generatedList.Add(innerInfo);
+                        genericInterfacesRepository.Add(innerInfo);
                     }
+
+                    var innerInfoIndex = genericInterfacesRepository.IndexOf(innerInfo);
+                    maxIndex = Math.Max(maxIndex, innerInfoIndex);
+                }
+
+                if (genericInterfacesRepository.IndexOf(info) < maxIndex)
+                {
+                    genericInterfacesRepository.Remove(info);
+                    genericInterfacesRepository.Add(info);
+
+                    // Compensate to re-visit the current index
+                    j--;
                 }
             }
 
-            foreach (var info in generatedList)
+            foreach (var info in genericInterfacesRepository)
             {
-                if (!genericInterfacesRepository.ContainsKey(info.MetadataFullTypeNameInCppForm))
-                {
-                    genericInterfacesRepository.Add(info.MetadataFullTypeNameInCppForm, info);
-                }
+                Debug.Assert(info.InnerGenericInterfaces != null);
             }
         }
 
@@ -99,18 +125,25 @@ namespace Microsoft.Wcl.Parsers
         /// </summary>
         private void GenerateImplicitGenericInterfaces()
         {
-            var generatedList = new List<GenericInterfaceInfo>();
             var genericInterfacesRepository = this.Configuration.DataStore.GetGenericInterfacesRepository();
+
+            foreach (var info in genericInterfacesRepository)
+            {
+                Debug.Assert(info.ImplicitGenericInterfaces == null);
+            }
 
             // Go over the generic interfaces repository and build a list with all the implicit ones.
             // To be used later within the front end, associate each implicit set with the one it got generated from.
-            foreach (var info in genericInterfacesRepository.Values)
+            // Note: Not using a foreach because the collection will be changed.
+            for (int j = 0; j < genericInterfacesRepository.Count; j++)
             {
+                var info = genericInterfacesRepository[j];
+
                 var tempList = ImplicitGenericInterfacesGenerator.GenerateDependencyGenericInterfaces(info);
                 Debug.Assert(tempList != null);
                 info.ImplicitGenericInterfaces = tempList;
 
-                // No foreach so that the items can be accessed by index
+                // No foreach so that the collection can be modified
                 for (int i = 0; i < tempList.Count; i++)
                 {
                     GenericInterfaceInfo implicitInfo = tempList[i];
@@ -123,22 +156,20 @@ namespace Microsoft.Wcl.Parsers
                         tempList[i] = infoThatExists;
                         implicitInfo = infoThatExists;
                     }
+                }
 
-                    // Only add to dictionary & list (to be used later on to insert first) if we don't have it already
-                    if (!this.ImplicitGenericInterfacesTable.ContainsKey(implicitInfo.MetadataFullTypeNameInCppForm))
+                foreach (var innerInfo in tempList)
+                {
+                    if (!genericInterfacesRepository.Contains(innerInfo))
                     {
-                        this.ImplicitGenericInterfacesTable.Add(implicitInfo.MetadataFullTypeNameInCppForm, implicitInfo);
-                        generatedList.Add(implicitInfo);
+                        genericInterfacesRepository.Add(innerInfo);
                     }
                 }
             }
 
-            foreach (var info in generatedList)
+            foreach (var info in genericInterfacesRepository)
             {
-                if (!genericInterfacesRepository.ContainsKey(info.MetadataFullTypeNameInCppForm))
-                {
-                    genericInterfacesRepository.Add(info.MetadataFullTypeNameInCppForm, info);
-                }
+                Debug.Assert(info.ImplicitGenericInterfaces != null);
             }
         }
 
@@ -157,7 +188,7 @@ namespace Microsoft.Wcl.Parsers
         {
             var genericInterfacesRepository = this.Configuration.DataStore.GetGenericInterfacesRepository();
 
-            foreach (var info in genericInterfacesRepository.Values)
+            foreach (var info in genericInterfacesRepository)
             {
                 this.Configuration.DataStore.InsertGenericInterfaceInfo(info);
             }

@@ -3,14 +3,14 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.Storage.Search.3.h"
-#include "internal\Windows.UI.ViewManagement.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.System.RemoteSystems.3.h"
-#include "internal\Windows.System.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.Storage.Search.3.h"
+#include "internal/Windows.UI.ViewManagement.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.System.RemoteSystems.3.h"
+#include "internal/Windows.System.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -23,7 +23,7 @@ struct produce<D, Windows::System::IAppMemoryReport> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PrivateCommitUsage());
+            *value = detach(this->shim().PrivateCommitUsage());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::System::IAppMemoryReport> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PeakPrivateCommitUsage());
+            *value = detach(this->shim().PeakPrivateCommitUsage());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::System::IAppMemoryReport> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().TotalCommitUsage());
+            *value = detach(this->shim().TotalCommitUsage());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::System::IAppMemoryReport> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().TotalCommitLimit());
+            *value = detach(this->shim().TotalCommitLimit());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::System::IAppMemoryUsageLimitChangingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().OldLimit());
+            *value = detach(this->shim().OldLimit());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::System::IAppMemoryUsageLimitChangingEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().NewLimit());
+            *value = detach(this->shim().NewLimit());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::System::IFolderLauncherOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ItemsToSelect());
+            *value = detach(this->shim().ItemsToSelect());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DisplayName());
+            *value = detach(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().FirstName());
+            *value = detach(this->shim().FirstName());
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().LastName());
+            *value = detach(this->shim().LastName());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ProviderName());
+            *value = detach(this->shim().ProviderName());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().AccountName());
+            *value = detach(this->shim().AccountName());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().GuestHost());
+            *value = detach(this->shim().GuestHost());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().PrincipalName());
+            *value = detach(this->shim().PrincipalName());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DomainName());
+            *value = detach(this->shim().DomainName());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::System::IKnownUserPropertiesStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().SessionInitiationProtocolUri());
+            *value = detach(this->shim().SessionInitiationProtocolUri());
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::System::ILaunchUriResult> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::System::ILaunchUriResult> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Result());
+            *value = detach(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().TreatAsUntrusted());
+            *value = detach(this->shim().TreatAsUntrusted());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().TreatAsUntrusted(value);
+            this->shim().TreatAsUntrusted(value);
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DisplayApplicationPicker());
+            *value = detach(this->shim().DisplayApplicationPicker());
             return S_OK;
         }
         catch (...)
@@ -327,7 +327,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().DisplayApplicationPicker(value);
+            this->shim().DisplayApplicationPicker(value);
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().UI());
+            *value = detach(this->shim().UI());
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PreferredApplicationPackageFamilyName());
+            *value = detach(this->shim().PreferredApplicationPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().PreferredApplicationPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PreferredApplicationPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -381,7 +381,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().PreferredApplicationDisplayName());
+            *value = detach(this->shim().PreferredApplicationDisplayName());
             return S_OK;
         }
         catch (...)
@@ -395,7 +395,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().PreferredApplicationDisplayName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PreferredApplicationDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().FallbackUri());
+            *value = detach(this->shim().FallbackUri());
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().FallbackUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().FallbackUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().ContentType());
+            *value = detach(this->shim().ContentType());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ struct produce<D, Windows::System::ILauncherOptions> : produce_base<D, Windows::
     {
         try
         {
-            shim().ContentType(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContentType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::System::ILauncherOptions2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().TargetApplicationPackageFamilyName());
+            *value = detach(this->shim().TargetApplicationPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ struct produce<D, Windows::System::ILauncherOptions2> : produce_base<D, Windows:
     {
         try
         {
-            shim().TargetApplicationPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetApplicationPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ struct produce<D, Windows::System::ILauncherOptions2> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().NeighboringFilesQuery());
+            *value = detach(this->shim().NeighboringFilesQuery());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::System::ILauncherOptions2> : produce_base<D, Windows:
     {
         try
         {
-            shim().NeighboringFilesQuery(*reinterpret_cast<const Windows::Storage::Search::StorageFileQueryResult *>(&value));
+            this->shim().NeighboringFilesQuery(*reinterpret_cast<const Windows::Storage::Search::StorageFileQueryResult *>(&value));
             return S_OK;
         }
         catch (...)
@@ -524,7 +524,7 @@ struct produce<D, Windows::System::ILauncherOptions3> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().IgnoreAppUriHandlers());
+            *value = detach(this->shim().IgnoreAppUriHandlers());
             return S_OK;
         }
         catch (...)
@@ -537,7 +537,7 @@ struct produce<D, Windows::System::ILauncherOptions3> : produce_base<D, Windows:
     {
         try
         {
-            shim().IgnoreAppUriHandlers(value);
+            this->shim().IgnoreAppUriHandlers(value);
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::System::ILauncherStatics> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().LaunchFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *operation = detach(this->shim().LaunchFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -568,7 +568,7 @@ struct produce<D, Windows::System::ILauncherStatics> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().LaunchFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -582,7 +582,7 @@ struct produce<D, Windows::System::ILauncherStatics> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -596,7 +596,7 @@ struct produce<D, Windows::System::ILauncherStatics> : produce_base<D, Windows::
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForResultsAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchUriForResultsAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForResultsAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
+            *operation = detach(this->shim().LaunchUriForResultsAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), launchQuerySupportType));
+            *operation = detach(this->shim().QueryUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), launchQuerySupportType));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), launchQuerySupportType, *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *operation = detach(this->shim().QueryUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), launchQuerySupportType, *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryFileSupportAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
+            *operation = detach(this->shim().QueryFileSupportAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryFileSupportAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file), *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *operation = detach(this->shim().QueryFileSupportAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file), *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().FindUriSchemeHandlersAsync(*reinterpret_cast<const hstring *>(&scheme)));
+            *operation = detach(this->shim().FindUriSchemeHandlersAsync(*reinterpret_cast<const hstring *>(&scheme)));
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().FindUriSchemeHandlersAsync(*reinterpret_cast<const hstring *>(&scheme), launchQuerySupportType));
+            *operation = detach(this->shim().FindUriSchemeHandlersAsync(*reinterpret_cast<const hstring *>(&scheme), launchQuerySupportType));
             return S_OK;
         }
         catch (...)
@@ -740,7 +740,7 @@ struct produce<D, Windows::System::ILauncherStatics2> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().FindFileHandlersAsync(*reinterpret_cast<const hstring *>(&extension)));
+            *operation = detach(this->shim().FindFileHandlersAsync(*reinterpret_cast<const hstring *>(&extension)));
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::System::ILauncherStatics3> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder)));
+            *operation = detach(this->shim().LaunchFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder)));
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::System::ILauncherStatics3> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder), *reinterpret_cast<const Windows::System::FolderLauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchFolderAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder), *reinterpret_cast<const Windows::System::FolderLauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryAppUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().QueryAppUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -804,7 +804,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().QueryAppUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *operation = detach(this->shim().QueryAppUriSupportAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().FindAppUriHandlersAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().FindAppUriHandlersAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -832,7 +832,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -846,7 +846,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
+            *operation = detach(this->shim().LaunchUriForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForResultsForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchUriForResultsForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -888,7 +888,7 @@ struct produce<D, Windows::System::ILauncherStatics4> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().LaunchUriForResultsForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
+            *operation = detach(this->shim().LaunchUriForResultsForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::LauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().InvocationPoint());
+            *value = detach(this->shim().InvocationPoint());
             return S_OK;
         }
         catch (...)
@@ -920,7 +920,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            shim().InvocationPoint(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
+            this->shim().InvocationPoint(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -933,7 +933,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().SelectionRect());
+            *value = detach(this->shim().SelectionRect());
             return S_OK;
         }
         catch (...)
@@ -947,7 +947,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            shim().SelectionRect(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Rect> *>(&value));
+            this->shim().SelectionRect(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Rect> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -960,7 +960,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().PreferredPlacement());
+            *value = detach(this->shim().PreferredPlacement());
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::System::ILauncherUIOptions> : produce_base<D, Windows
     {
         try
         {
-            shim().PreferredPlacement(value);
+            this->shim().PreferredPlacement(value);
             return S_OK;
         }
         catch (...)
@@ -990,7 +990,7 @@ struct produce<D, Windows::System::ILauncherViewOptions> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().DesiredRemainingView());
+            *value = detach(this->shim().DesiredRemainingView());
             return S_OK;
         }
         catch (...)
@@ -1003,7 +1003,7 @@ struct produce<D, Windows::System::ILauncherViewOptions> : produce_base<D, Windo
     {
         try
         {
-            shim().DesiredRemainingView(value);
+            this->shim().DesiredRemainingView(value);
             return S_OK;
         }
         catch (...)
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppMemoryUsage());
+            *value = detach(this->shim().AppMemoryUsage());
             return S_OK;
         }
         catch (...)
@@ -1033,7 +1033,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppMemoryUsageLimit());
+            *value = detach(this->shim().AppMemoryUsageLimit());
             return S_OK;
         }
         catch (...)
@@ -1046,7 +1046,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AppMemoryUsageLevel());
+            *value = detach(this->shim().AppMemoryUsageLevel());
             return S_OK;
         }
         catch (...)
@@ -1059,7 +1059,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().AppMemoryUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().AppMemoryUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1072,7 +1072,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            shim().AppMemoryUsageIncreased(token);
+            this->shim().AppMemoryUsageIncreased(token);
             return S_OK;
         }
         catch (...)
@@ -1085,7 +1085,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().AppMemoryUsageDecreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().AppMemoryUsageDecreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1098,7 +1098,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            shim().AppMemoryUsageDecreased(token);
+            this->shim().AppMemoryUsageDecreased(token);
             return S_OK;
         }
         catch (...)
@@ -1111,7 +1111,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            *token = detach(shim().AppMemoryUsageLimitChanging(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> *>(&handler)));
+            *token = detach(this->shim().AppMemoryUsageLimitChanging(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1124,7 +1124,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
     {
         try
         {
-            shim().AppMemoryUsageLimitChanging(token);
+            this->shim().AppMemoryUsageLimitChanging(token);
             return S_OK;
         }
         catch (...)
@@ -1141,7 +1141,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics2> : produce_base<D, Win
     {
         try
         {
-            *memoryReport = detach(shim().GetAppMemoryReport());
+            *memoryReport = detach(this->shim().GetAppMemoryReport());
             return S_OK;
         }
         catch (...)
@@ -1155,7 +1155,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics2> : produce_base<D, Win
     {
         try
         {
-            *memoryReport = detach(shim().GetProcessMemoryReport());
+            *memoryReport = detach(this->shim().GetProcessMemoryReport());
             return S_OK;
         }
         catch (...)
@@ -1173,7 +1173,7 @@ struct produce<D, Windows::System::IMemoryManagerStatics3> : produce_base<D, Win
     {
         try
         {
-            *result = detach(shim().TrySetAppMemoryUsageLimit(value));
+            *result = detach(this->shim().TrySetAppMemoryUsageLimit(value));
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::System::IProcessMemoryReport> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().PrivateWorkingSetUsage());
+            *value = detach(this->shim().PrivateWorkingSetUsage());
             return S_OK;
         }
         catch (...)
@@ -1203,7 +1203,7 @@ struct produce<D, Windows::System::IProcessMemoryReport> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().TotalWorkingSetUsage());
+            *value = detach(this->shim().TotalWorkingSetUsage());
             return S_OK;
         }
         catch (...)
@@ -1220,7 +1220,7 @@ struct produce<D, Windows::System::IProtocolForResultsOperation> : produce_base<
     {
         try
         {
-            shim().ReportCompleted(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&data));
+            this->shim().ReportCompleted(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&data));
             return S_OK;
         }
         catch (...)
@@ -1237,7 +1237,7 @@ struct produce<D, Windows::System::IRemoteLauncherOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FallbackUri());
+            *value = detach(this->shim().FallbackUri());
             return S_OK;
         }
         catch (...)
@@ -1251,7 +1251,7 @@ struct produce<D, Windows::System::IRemoteLauncherOptions> : produce_base<D, Win
     {
         try
         {
-            shim().FallbackUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().FallbackUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1264,7 +1264,7 @@ struct produce<D, Windows::System::IRemoteLauncherOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().PreferredAppIds());
+            *value = detach(this->shim().PreferredAppIds());
             return S_OK;
         }
         catch (...)
@@ -1282,7 +1282,7 @@ struct produce<D, Windows::System::IRemoteLauncherStatics> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -1296,7 +1296,7 @@ struct produce<D, Windows::System::IRemoteLauncherStatics> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::RemoteLauncherOptions *>(&options)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::RemoteLauncherOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -1310,7 +1310,7 @@ struct produce<D, Windows::System::IRemoteLauncherStatics> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::RemoteLauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
+            *operation = detach(this->shim().LaunchUriAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::System::RemoteLauncherOptions *>(&options), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&inputData)));
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *value = detach(shim().NonRoamableId());
+            *value = detach(this->shim().NonRoamableId());
             return S_OK;
         }
         catch (...)
@@ -1342,7 +1342,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *value = detach(shim().AuthenticationStatus());
+            *value = detach(this->shim().AuthenticationStatus());
             return S_OK;
         }
         catch (...)
@@ -1355,7 +1355,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -1368,7 +1368,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *operation = detach(shim().GetPropertyAsync(*reinterpret_cast<const hstring *>(&value)));
+            *operation = detach(this->shim().GetPropertyAsync(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1382,7 +1382,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *operation = detach(shim().GetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&values)));
+            *operation = detach(this->shim().GetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&values)));
             return S_OK;
         }
         catch (...)
@@ -1396,7 +1396,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
     {
         try
         {
-            *operation = detach(shim().GetPictureAsync(desiredSize));
+            *operation = detach(this->shim().GetPictureAsync(desiredSize));
             return S_OK;
         }
         catch (...)
@@ -1414,7 +1414,7 @@ struct produce<D, Windows::System::IUserAuthenticationStatusChangeDeferral> : pr
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1431,7 +1431,7 @@ struct produce<D, Windows::System::IUserAuthenticationStatusChangingEventArgs> :
     {
         try
         {
-            *deferral = detach(shim().GetDeferral());
+            *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1445,7 +1445,7 @@ struct produce<D, Windows::System::IUserAuthenticationStatusChangingEventArgs> :
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -1459,7 +1459,7 @@ struct produce<D, Windows::System::IUserAuthenticationStatusChangingEventArgs> :
     {
         try
         {
-            *value = detach(shim().NewStatus());
+            *value = detach(this->shim().NewStatus());
             return S_OK;
         }
         catch (...)
@@ -1472,7 +1472,7 @@ struct produce<D, Windows::System::IUserAuthenticationStatusChangingEventArgs> :
     {
         try
         {
-            *value = detach(shim().CurrentStatus());
+            *value = detach(this->shim().CurrentStatus());
             return S_OK;
         }
         catch (...)
@@ -1489,7 +1489,7 @@ struct produce<D, Windows::System::IUserChangedEventArgs> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -1507,7 +1507,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationChangedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1521,7 +1521,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationChangedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().NewUser());
+            *value = detach(this->shim().NewUser());
             return S_OK;
         }
         catch (...)
@@ -1535,7 +1535,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationChangedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().OldUser());
+            *value = detach(this->shim().OldUser());
             return S_OK;
         }
         catch (...)
@@ -1553,7 +1553,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationStatics> : produce_base
     {
         try
         {
-            *user = detach(shim().FindUserFromDeviceId(*reinterpret_cast<const hstring *>(&deviceId)));
+            *user = detach(this->shim().FindUserFromDeviceId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1567,7 +1567,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationStatics> : produce_base
     {
         try
         {
-            *token = detach(shim().UserDeviceAssociationChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().UserDeviceAssociationChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1580,7 +1580,7 @@ struct produce<D, Windows::System::IUserDeviceAssociationStatics> : produce_base
     {
         try
         {
-            shim().UserDeviceAssociationChanged(token);
+            this->shim().UserDeviceAssociationChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1597,7 +1597,7 @@ struct produce<D, Windows::System::IUserPicker> : produce_base<D, Windows::Syste
     {
         try
         {
-            *value = detach(shim().AllowGuestAccounts());
+            *value = detach(this->shim().AllowGuestAccounts());
             return S_OK;
         }
         catch (...)
@@ -1610,7 +1610,7 @@ struct produce<D, Windows::System::IUserPicker> : produce_base<D, Windows::Syste
     {
         try
         {
-            shim().AllowGuestAccounts(value);
+            this->shim().AllowGuestAccounts(value);
             return S_OK;
         }
         catch (...)
@@ -1623,7 +1623,7 @@ struct produce<D, Windows::System::IUserPicker> : produce_base<D, Windows::Syste
     {
         try
         {
-            *value = detach(shim().SuggestedSelectedUser());
+            *value = detach(this->shim().SuggestedSelectedUser());
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::System::IUserPicker> : produce_base<D, Windows::Syste
     {
         try
         {
-            shim().SuggestedSelectedUser(*reinterpret_cast<const Windows::System::User *>(&value));
+            this->shim().SuggestedSelectedUser(*reinterpret_cast<const Windows::System::User *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1650,7 +1650,7 @@ struct produce<D, Windows::System::IUserPicker> : produce_base<D, Windows::Syste
     {
         try
         {
-            *pickSingleUserOperation = detach(shim().PickSingleUserAsync());
+            *pickSingleUserOperation = detach(this->shim().PickSingleUserAsync());
             return S_OK;
         }
         catch (...)
@@ -1668,7 +1668,7 @@ struct produce<D, Windows::System::IUserPickerStatics> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().IsSupported());
+            *value = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -1685,7 +1685,7 @@ struct produce<D, Windows::System::IUserStatics> : produce_base<D, Windows::Syst
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher());
+            *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -1699,7 +1699,7 @@ struct produce<D, Windows::System::IUserStatics> : produce_base<D, Windows::Syst
     {
         try
         {
-            *operation = detach(shim().FindAllAsync());
+            *operation = detach(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -1713,7 +1713,7 @@ struct produce<D, Windows::System::IUserStatics> : produce_base<D, Windows::Syst
     {
         try
         {
-            *operation = detach(shim().FindAllAsync(type));
+            *operation = detach(this->shim().FindAllAsync(type));
             return S_OK;
         }
         catch (...)
@@ -1727,7 +1727,7 @@ struct produce<D, Windows::System::IUserStatics> : produce_base<D, Windows::Syst
     {
         try
         {
-            *operation = detach(shim().FindAllAsync(type, status));
+            *operation = detach(this->shim().FindAllAsync(type, status));
             return S_OK;
         }
         catch (...)
@@ -1741,7 +1741,7 @@ struct produce<D, Windows::System::IUserStatics> : produce_base<D, Windows::Syst
     {
         try
         {
-            *value = detach(shim().GetFromId(*reinterpret_cast<const hstring *>(&nonRoamableId)));
+            *value = detach(this->shim().GetFromId(*reinterpret_cast<const hstring *>(&nonRoamableId)));
             return S_OK;
         }
         catch (...)
@@ -1759,7 +1759,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1772,7 +1772,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -1785,7 +1785,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -1798,7 +1798,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1811,7 +1811,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Added(token);
+            this->shim().Added(token);
             return S_OK;
         }
         catch (...)
@@ -1824,7 +1824,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1837,7 +1837,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Removed(token);
+            this->shim().Removed(token);
             return S_OK;
         }
         catch (...)
@@ -1850,7 +1850,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1863,7 +1863,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -1876,7 +1876,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().AuthenticationStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
+            *token = detach(this->shim().AuthenticationStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1889,7 +1889,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().AuthenticationStatusChanged(token);
+            this->shim().AuthenticationStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -1902,7 +1902,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().AuthenticationStatusChanging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserAuthenticationStatusChangingEventArgs> *>(&handler)));
+            *token = detach(this->shim().AuthenticationStatusChanging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserAuthenticationStatusChangingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1915,7 +1915,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().AuthenticationStatusChanging(token);
+            this->shim().AuthenticationStatusChanging(token);
             return S_OK;
         }
         catch (...)
@@ -1928,7 +1928,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1941,7 +1941,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().EnumerationCompleted(token);
+            this->shim().EnumerationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -1954,7 +1954,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1967,7 +1967,7 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)

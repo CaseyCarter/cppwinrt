@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
-#include "internal\Windows.Devices.Midi.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.Devices.Midi.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 
@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessage> : produce
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessage> : produce
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessageFactory> : 
     {
         try
         {
-            *value = detach(shim().CreateMidiChannelPressureMessage(channel, pressure));
+            *value = detach(this->shim().CreateMidiChannelPressureMessage(channel, pressure));
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().Controller());
+            *value = detach(this->shim().Controller());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().ControlValue());
+            *value = detach(this->shim().ControlValue());
             return S_OK;
         }
         catch (...)
@@ -112,7 +112,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessageFactory> : pr
     {
         try
         {
-            *value = detach(shim().CreateMidiControlChangeMessage(channel, controller, controlValue));
+            *value = detach(this->shim().CreateMidiControlChangeMessage(channel, controller, controlValue));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
-            *token = detach(shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> *>(&handler)));
+            *token = detach(this->shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -143,7 +143,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
-            shim().MessageReceived(token);
+            this->shim().MessageReceived(token);
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPortStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPortStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Timestamp());
+            *value = detach(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().RawData());
+            *value = detach(this->shim().RawData());
             return S_OK;
         }
         catch (...)
@@ -233,7 +233,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessageReceivedEventArgs> : produ
     {
         try
         {
-            *value = detach(shim().Message());
+            *value = detach(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -268,7 +268,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Note());
+            *value = detach(this->shim().Note());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Velocity());
+            *value = detach(this->shim().Velocity());
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessageFactory> : produce_
     {
         try
         {
-            *value = detach(shim().CreateMidiNoteOffMessage(channel, note, velocity));
+            *value = detach(this->shim().CreateMidiNoteOffMessage(channel, note, velocity));
             return S_OK;
         }
         catch (...)
@@ -329,7 +329,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Note());
+            *value = detach(this->shim().Note());
             return S_OK;
         }
         catch (...)
@@ -355,7 +355,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Velocity());
+            *value = detach(this->shim().Velocity());
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessageFactory> : produce_b
     {
         try
         {
-            *value = detach(shim().CreateMidiNoteOnMessage(channel, note, velocity));
+            *value = detach(this->shim().CreateMidiNoteOnMessage(channel, note, velocity));
             return S_OK;
         }
         catch (...)
@@ -390,7 +390,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
-            shim().SendMessage(*reinterpret_cast<const Windows::Devices::Midi::IMidiMessage *>(&midiMessage));
+            this->shim().SendMessage(*reinterpret_cast<const Windows::Devices::Midi::IMidiMessage *>(&midiMessage));
             return S_OK;
         }
         catch (...)
@@ -403,7 +403,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
-            shim().SendBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&midiData));
+            this->shim().SendBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&midiData));
             return S_OK;
         }
         catch (...)
@@ -416,7 +416,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPortStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPortStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessage> : produce
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessage> : produce
     {
         try
         {
-            *value = detach(shim().Bend());
+            *value = detach(this->shim().Bend());
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory> : 
     {
         try
         {
-            *value = detach(shim().CreateMidiPitchBendChangeMessage(channel, bend));
+            *value = detach(this->shim().CreateMidiPitchBendChangeMessage(channel, bend));
             return S_OK;
         }
         catch (...)
@@ -514,7 +514,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -527,7 +527,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
-            *value = detach(shim().Note());
+            *value = detach(this->shim().Note());
             return S_OK;
         }
         catch (...)
@@ -540,7 +540,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
-            *value = detach(shim().Pressure());
+            *value = detach(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFacto
     {
         try
         {
-            *value = detach(shim().CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure));
+            *value = detach(this->shim().CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure));
             return S_OK;
         }
         catch (...)
@@ -575,7 +575,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().Channel());
+            *value = detach(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -588,7 +588,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessage> : produce_b
     {
         try
         {
-            *value = detach(shim().Program());
+            *value = detach(this->shim().Program());
             return S_OK;
         }
         catch (...)
@@ -605,7 +605,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessageFactory> : pr
     {
         try
         {
-            *value = detach(shim().CreateMidiProgramChangeMessage(channel, program));
+            *value = detach(this->shim().CreateMidiProgramChangeMessage(channel, program));
             return S_OK;
         }
         catch (...)
@@ -623,7 +623,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongPositionPointerMessage> : pro
     {
         try
         {
-            *value = detach(shim().Beats());
+            *value = detach(this->shim().Beats());
             return S_OK;
         }
         catch (...)
@@ -640,7 +640,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory
     {
         try
         {
-            *value = detach(shim().CreateMidiSongPositionPointerMessage(beats));
+            *value = detach(this->shim().CreateMidiSongPositionPointerMessage(beats));
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongSelectMessage> : produce_base
     {
         try
         {
-            *value = detach(shim().Song());
+            *value = detach(this->shim().Song());
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongSelectMessageFactory> : produ
     {
         try
         {
-            *value = detach(shim().CreateMidiSongSelectMessage(song));
+            *value = detach(this->shim().CreateMidiSongSelectMessage(song));
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().AudioDevice());
+            *value = detach(this->shim().AudioDevice());
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().Volume());
+            *value = detach(this->shim().Volume());
             return S_OK;
         }
         catch (...)
@@ -720,7 +720,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
-            shim().Volume(value);
+            this->shim().Volume(value);
             return S_OK;
         }
         catch (...)
@@ -737,7 +737,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateAsync());
+            *value = detach(this->shim().CreateAsync());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&audioDevice)));
+            *value = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&audioDevice)));
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
-            *value = detach(shim().IsSynthesizer(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&midiDevice)));
+            *value = detach(this->shim().IsSynthesizer(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&midiDevice)));
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory> : 
     {
         try
         {
-            *value = detach(shim().CreateMidiSystemExclusiveMessage(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&rawData)));
+            *value = detach(this->shim().CreateMidiSystemExclusiveMessage(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&rawData)));
             return S_OK;
         }
         catch (...)
@@ -800,7 +800,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessage> : produce_base<D
     {
         try
         {
-            *value = detach(shim().FrameType());
+            *value = detach(this->shim().FrameType());
             return S_OK;
         }
         catch (...)
@@ -813,7 +813,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessage> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Values());
+            *value = detach(this->shim().Values());
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessageFactory> : produce
     {
         try
         {
-            *value = detach(shim().CreateMidiTimeCodeMessage(frameType, values));
+            *value = detach(this->shim().CreateMidiTimeCodeMessage(frameType, values));
             return S_OK;
         }
         catch (...)

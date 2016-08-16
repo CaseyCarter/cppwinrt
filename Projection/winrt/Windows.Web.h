@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Web.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Web.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -17,7 +17,7 @@ struct produce<D, Windows::Web::IUriToStreamResolver> : produce_base<D, Windows:
     {
         try
         {
-            *operation = detach(shim().UriToStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach(this->shim().UriToStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Web::IWebErrorStatics> : produce_base<D, Windows::Web
     {
         try
         {
-            *status = detach(shim().GetStatus(hresult));
+            *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }
         catch (...)

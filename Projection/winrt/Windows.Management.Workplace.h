@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Management.Workplace.3.h"
+#include "internal/Windows.Management.Workplace.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -16,7 +16,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsBrowserAllowed());
+            *value = detach(this->shim().IsBrowserAllowed());
             return S_OK;
         }
         catch (...)
@@ -29,7 +29,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsCameraAllowed());
+            *value = detach(this->shim().IsCameraAllowed());
             return S_OK;
         }
         catch (...)
@@ -42,7 +42,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsMicrosoftAccountAllowed());
+            *value = detach(this->shim().IsMicrosoftAccountAllowed());
             return S_OK;
         }
         catch (...)
@@ -55,7 +55,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
-            *value = detach(shim().IsStoreAllowed());
+            *value = detach(this->shim().IsStoreAllowed());
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Management::Workplace::IMdmPolicyStatics2> : produce_
     {
         try
         {
-            *value = detach(shim().GetMessagingSyncPolicy());
+            *value = detach(this->shim().GetMessagingSyncPolicy());
             return S_OK;
         }
         catch (...)

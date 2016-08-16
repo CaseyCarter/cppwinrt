@@ -3,18 +3,18 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.Controls.Primitives.3.h"
-#include "internal\Windows.UI.Composition.3.h"
-#include "internal\Windows.UI.Xaml.Controls.3.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.Controls.Primitives.3.h"
+#include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.Xaml.Controls.3.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "Windows.UI.Xaml.Media.h"
 #include "Windows.Foundation.Collections.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.4.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.5.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.4.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.5.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -31,7 +31,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEase> : produce_base
     {
         try
         {
-            *value = detach(shim().Amplitude());
+            *value = detach(this->shim().Amplitude());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEase> : produce_base
     {
         try
         {
-            shim().Amplitude(value);
+            this->shim().Amplitude(value);
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEaseStatics> : produ
     {
         try
         {
-            *value = detach(shim().AmplitudeProperty());
+            *value = detach(this->shim().AmplitudeProperty());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboard> : produ
     {
         try
         {
-            *value = detach(shim().Storyboard());
+            *value = detach(this->shim().Storyboard());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboard> : produ
     {
         try
         {
-            shim().Storyboard(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Storyboard *>(&value));
+            this->shim().Storyboard(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Storyboard *>(&value));
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboardStatics> 
     {
         try
         {
-            *value = detach(shim().StoryboardProperty());
+            *value = detach(this->shim().StoryboardProperty());
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
-            *value = detach(shim().Bounces());
+            *value = detach(this->shim().Bounces());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
-            shim().Bounces(value);
+            this->shim().Bounces(value);
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
-            *value = detach(shim().Bounciness());
+            *value = detach(this->shim().Bounciness());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
-            shim().Bounciness(value);
+            this->shim().Bounciness(value);
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEaseStatics> : pro
     {
         try
         {
-            *value = detach(shim().BouncesProperty());
+            *value = detach(this->shim().BouncesProperty());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEaseStatics> : pro
     {
         try
         {
-            *value = detach(shim().BouncinessProperty());
+            *value = detach(this->shim().BouncinessProperty());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -261,7 +261,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            *value = detach(shim().By());
+            *value = detach(this->shim().By());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
+            this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().FromProperty());
+            *value = detach(this->shim().FromProperty());
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().ToProperty());
+            *value = detach(this->shim().ToProperty());
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().ByProperty());
+            *value = detach(this->shim().ByProperty());
             return S_OK;
         }
         catch (...)
@@ -400,7 +400,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -432,7 +432,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().KeyFrames());
+            *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
         catch (...)
@@ -446,7 +446,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -476,7 +476,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
-            *value = detach(shim().KeyTime());
+            *value = detach(this->shim().KeyTime());
             return S_OK;
         }
         catch (...)
@@ -533,7 +533,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
-            shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
+            this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -550,7 +550,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory> : 
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics> : 
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics> : 
     {
         try
         {
-            *value = detach(shim().KeyTimeProperty());
+            *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -601,7 +601,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabled());
+            *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            shim().IsStaggeringEnabled(value);
+            this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -631,7 +631,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabledProperty());
+            *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            *value = detach(shim().IsStaggerElementProperty());
+            *value = detach(this->shim().IsStaggerElementProperty());
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            *value = detach(shim().GetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *value = detach(this->shim().GetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
-            shim().SetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
+            this->shim().SetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -689,7 +689,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -702,7 +702,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -715,7 +715,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
-            *returnValue = detach(shim().TryStart(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&destination)));
+            *returnValue = detach(this->shim().TryStart(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&destination)));
             return S_OK;
         }
         catch (...)
@@ -728,7 +728,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
-            shim().Cancel();
+            this->shim().Cancel();
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            *value = detach(shim().DefaultDuration());
+            *value = detach(this->shim().DefaultDuration());
             return S_OK;
         }
         catch (...)
@@ -758,7 +758,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            shim().DefaultDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().DefaultDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            *value = detach(shim().DefaultEasingFunction());
+            *value = detach(this->shim().DefaultEasingFunction());
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            shim().DefaultEasingFunction(*reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&value));
+            this->shim().DefaultEasingFunction(*reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&value));
             return S_OK;
         }
         catch (...)
@@ -798,7 +798,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            *returnValue = detach(shim().PrepareToAnimate(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&source)));
+            *returnValue = detach(this->shim().PrepareToAnimate(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&source)));
             return S_OK;
         }
         catch (...)
@@ -812,7 +812,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            *returnValue = detach(shim().GetAnimation(*reinterpret_cast<const hstring *>(&key)));
+            *returnValue = detach(this->shim().GetAnimation(*reinterpret_cast<const hstring *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -830,7 +830,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
-            *returnValue = detach(shim().GetForCurrentView());
+            *returnValue = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -848,7 +848,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
-            *value = detach(shim().HorizontalOffset());
+            *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -861,7 +861,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
-            shim().HorizontalOffset(value);
+            this->shim().HorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
-            *value = detach(shim().VerticalOffset());
+            *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
-            shim().VerticalOffset(value);
+            this->shim().VerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -904,7 +904,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransitionSt
     {
         try
         {
-            *value = detach(shim().HorizontalOffsetProperty());
+            *value = detach(this->shim().HorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransitionSt
     {
         try
         {
-            *value = detach(shim().VerticalOffsetProperty());
+            *value = detach(this->shim().VerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -936,7 +936,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().ExitElement());
+            *value = detach(this->shim().ExitElement());
             return S_OK;
         }
         catch (...)
@@ -950,7 +950,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            shim().ExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
+            this->shim().ExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
         catch (...)
@@ -967,7 +967,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().ExitElementProperty());
+            *value = detach(this->shim().ExitElementProperty());
             return S_OK;
         }
         catch (...)
@@ -981,7 +981,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().IsEntranceElementProperty());
+            *value = detach(this->shim().IsEntranceElementProperty());
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().GetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *value = detach(this->shim().GetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            shim().SetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
+            this->shim().SetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1021,7 +1021,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().IsExitElementProperty());
+            *value = detach(this->shim().IsExitElementProperty());
             return S_OK;
         }
         catch (...)
@@ -1035,7 +1035,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().GetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *value = detach(this->shim().GetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1048,7 +1048,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            shim().SetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
+            this->shim().SetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1061,7 +1061,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().ExitElementContainerProperty());
+            *value = detach(this->shim().ExitElementContainerProperty());
             return S_OK;
         }
         catch (...)
@@ -1075,7 +1075,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            *value = detach(shim().GetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element)));
+            *value = detach(this->shim().GetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -1088,7 +1088,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
-            shim().SetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element), value);
+            this->shim().SetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            shim().From(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
+            this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -1166,7 +1166,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            shim().To(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
+            this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            *value = detach(shim().By());
+            *value = detach(this->shim().By());
             return S_OK;
         }
         catch (...)
@@ -1193,7 +1193,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            shim().By(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
+            this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1206,7 +1206,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -1220,7 +1220,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1233,7 +1233,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -1246,7 +1246,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -1263,7 +1263,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
-            *value = detach(shim().FromProperty());
+            *value = detach(this->shim().FromProperty());
             return S_OK;
         }
         catch (...)
@@ -1277,7 +1277,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
-            *value = detach(shim().ToProperty());
+            *value = detach(this->shim().ToProperty());
             return S_OK;
         }
         catch (...)
@@ -1291,7 +1291,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
-            *value = detach(shim().ByProperty());
+            *value = detach(this->shim().ByProperty());
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -1337,7 +1337,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().KeyFrames());
+            *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
         catch (...)
@@ -1351,7 +1351,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -1364,7 +1364,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -1381,7 +1381,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -1399,7 +1399,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1412,7 +1412,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
-            shim().Value(value);
+            this->shim().Value(value);
             return S_OK;
         }
         catch (...)
@@ -1425,7 +1425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
-            *value = detach(shim().KeyTime());
+            *value = detach(this->shim().KeyTime());
             return S_OK;
         }
         catch (...)
@@ -1438,7 +1438,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
-            shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
+            this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1455,7 +1455,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1474,7 +1474,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics> :
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -1488,7 +1488,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics> :
     {
         try
         {
-            *value = detach(shim().KeyTimeProperty());
+            *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -1506,7 +1506,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -1520,7 +1520,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation> 
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1537,7 +1537,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -1555,7 +1555,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -1569,7 +1569,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1582,7 +1582,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().ToOffset());
+            *value = detach(this->shim().ToOffset());
             return S_OK;
         }
         catch (...)
@@ -1595,7 +1595,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            shim().ToOffset(value);
+            this->shim().ToOffset(value);
             return S_OK;
         }
         catch (...)
@@ -1608,7 +1608,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().Direction());
+            *value = detach(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -1621,7 +1621,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
-            shim().Direction(value);
+            this->shim().Direction(value);
             return S_OK;
         }
         catch (...)
@@ -1638,7 +1638,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -1652,7 +1652,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().ToOffsetProperty());
+            *value = detach(this->shim().ToOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -1666,7 +1666,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().DirectionProperty());
+            *value = detach(this->shim().DirectionProperty());
             return S_OK;
         }
         catch (...)
@@ -1688,7 +1688,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            *value = detach(shim().EntranceTargetName());
+            *value = detach(this->shim().EntranceTargetName());
             return S_OK;
         }
         catch (...)
@@ -1702,7 +1702,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1715,7 +1715,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            *value = detach(shim().EntranceTarget());
+            *value = detach(this->shim().EntranceTarget());
             return S_OK;
         }
         catch (...)
@@ -1729,7 +1729,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1742,7 +1742,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            *value = detach(shim().ExitTargetName());
+            *value = detach(this->shim().ExitTargetName());
             return S_OK;
         }
         catch (...)
@@ -1756,7 +1756,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1769,7 +1769,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            *value = detach(shim().ExitTarget());
+            *value = detach(this->shim().ExitTarget());
             return S_OK;
         }
         catch (...)
@@ -1783,7 +1783,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
-            shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1800,7 +1800,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
-            *value = detach(shim().EntranceTargetNameProperty());
+            *value = detach(this->shim().EntranceTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -1814,7 +1814,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
-            *value = detach(shim().EntranceTargetProperty());
+            *value = detach(this->shim().EntranceTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -1828,7 +1828,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
-            *value = detach(shim().ExitTargetNameProperty());
+            *value = detach(this->shim().ExitTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -1842,7 +1842,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
-            *value = detach(shim().ExitTargetProperty());
+            *value = detach(this->shim().ExitTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -1860,7 +1860,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().EntranceTargetName());
+            *value = detach(this->shim().EntranceTargetName());
             return S_OK;
         }
         catch (...)
@@ -1874,7 +1874,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1887,7 +1887,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().EntranceTarget());
+            *value = detach(this->shim().EntranceTarget());
             return S_OK;
         }
         catch (...)
@@ -1901,7 +1901,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1914,7 +1914,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().ExitTargetName());
+            *value = detach(this->shim().ExitTargetName());
             return S_OK;
         }
         catch (...)
@@ -1928,7 +1928,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1941,7 +1941,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            *value = detach(shim().ExitTarget());
+            *value = detach(this->shim().ExitTarget());
             return S_OK;
         }
         catch (...)
@@ -1955,7 +1955,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
-            shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1972,7 +1972,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().EntranceTargetNameProperty());
+            *value = detach(this->shim().EntranceTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -1986,7 +1986,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().EntranceTargetProperty());
+            *value = detach(this->shim().EntranceTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -2000,7 +2000,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().ExitTargetNameProperty());
+            *value = detach(this->shim().ExitTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -2014,7 +2014,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
-            *value = detach(shim().ExitTargetProperty());
+            *value = detach(this->shim().ExitTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -2032,7 +2032,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -2046,7 +2046,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2063,7 +2063,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -2081,7 +2081,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame> : p
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -2095,7 +2095,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame> : p
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2112,7 +2112,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrameStati
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -2130,7 +2130,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame> : 
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -2144,7 +2144,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame> : 
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2161,7 +2161,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrameStat
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -2179,7 +2179,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
-            *value = detach(shim().EasingMode());
+            *value = detach(this->shim().EasingMode());
             return S_OK;
         }
         catch (...)
@@ -2192,7 +2192,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
-            shim().EasingMode(value);
+            this->shim().EasingMode(value);
             return S_OK;
         }
         catch (...)
@@ -2205,7 +2205,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
-            *returnValue = detach(shim().Ease(normalizedTime));
+            *returnValue = detach(this->shim().Ease(normalizedTime));
             return S_OK;
         }
         catch (...)
@@ -2226,7 +2226,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseStatic
     {
         try
         {
-            *value = detach(shim().EasingModeProperty());
+            *value = detach(this->shim().EasingModeProperty());
             return S_OK;
         }
         catch (...)
@@ -2244,7 +2244,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame> : p
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -2258,7 +2258,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame> : p
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2275,7 +2275,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrameStati
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -2293,7 +2293,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition> :
     {
         try
         {
-            *value = detach(shim().Edge());
+            *value = detach(this->shim().Edge());
             return S_OK;
         }
         catch (...)
@@ -2306,7 +2306,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition> :
     {
         try
         {
-            shim().Edge(value);
+            this->shim().Edge(value);
             return S_OK;
         }
         catch (...)
@@ -2323,7 +2323,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransitionSta
     {
         try
         {
-            *value = detach(shim().EdgeProperty());
+            *value = detach(this->shim().EdgeProperty());
             return S_OK;
         }
         catch (...)
@@ -2341,7 +2341,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
-            *value = detach(shim().Oscillations());
+            *value = detach(this->shim().Oscillations());
             return S_OK;
         }
         catch (...)
@@ -2354,7 +2354,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
-            shim().Oscillations(value);
+            this->shim().Oscillations(value);
             return S_OK;
         }
         catch (...)
@@ -2367,7 +2367,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
-            *value = detach(shim().Springiness());
+            *value = detach(this->shim().Springiness());
             return S_OK;
         }
         catch (...)
@@ -2380,7 +2380,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
-            shim().Springiness(value);
+            this->shim().Springiness(value);
             return S_OK;
         }
         catch (...)
@@ -2397,7 +2397,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEaseStatics> : pr
     {
         try
         {
-            *value = detach(shim().OscillationsProperty());
+            *value = detach(this->shim().OscillationsProperty());
             return S_OK;
         }
         catch (...)
@@ -2411,7 +2411,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEaseStatics> : pr
     {
         try
         {
-            *value = detach(shim().SpringinessProperty());
+            *value = detach(this->shim().SpringinessProperty());
             return S_OK;
         }
         catch (...)
@@ -2433,7 +2433,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
-            *value = detach(shim().IsTargetElementProperty());
+            *value = detach(this->shim().IsTargetElementProperty());
             return S_OK;
         }
         catch (...)
@@ -2447,7 +2447,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
-            *value = detach(shim().GetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            *value = detach(this->shim().GetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -2460,7 +2460,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
-            shim().SetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
+            this->shim().SetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
         catch (...)
@@ -2477,7 +2477,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -2490,7 +2490,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            shim().FromHorizontalOffset(value);
+            this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -2503,7 +2503,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -2516,7 +2516,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            shim().FromVerticalOffset(value);
+            this->shim().FromVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -2529,7 +2529,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabled());
+            *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
         catch (...)
@@ -2542,7 +2542,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
-            shim().IsStaggeringEnabled(value);
+            this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -2559,7 +2559,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffsetProperty());
+            *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -2573,7 +2573,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
-            *value = detach(shim().FromVerticalOffsetProperty());
+            *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -2587,7 +2587,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabledProperty());
+            *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -2605,7 +2605,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEase> : produ
     {
         try
         {
-            *value = detach(shim().Exponent());
+            *value = detach(this->shim().Exponent());
             return S_OK;
         }
         catch (...)
@@ -2618,7 +2618,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEase> : produ
     {
         try
         {
-            shim().Exponent(value);
+            this->shim().Exponent(value);
             return S_OK;
         }
         catch (...)
@@ -2635,7 +2635,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEaseStatics> 
     {
         try
         {
-            *value = detach(shim().ExponentProperty());
+            *value = detach(this->shim().ExponentProperty());
             return S_OK;
         }
         catch (...)
@@ -2653,7 +2653,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation> : 
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -2667,7 +2667,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation> : 
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2684,7 +2684,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimationStat
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -2702,7 +2702,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation> :
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -2716,7 +2716,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation> :
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2733,7 +2733,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimationSta
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -2751,7 +2751,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
-            *value = detach(shim().ControlPoint1());
+            *value = detach(this->shim().ControlPoint1());
             return S_OK;
         }
         catch (...)
@@ -2764,7 +2764,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
-            shim().ControlPoint1(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().ControlPoint1(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2777,7 +2777,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
-            *value = detach(shim().ControlPoint2());
+            *value = detach(this->shim().ControlPoint2());
             return S_OK;
         }
         catch (...)
@@ -2790,7 +2790,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
-            shim().ControlPoint2(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().ControlPoint2(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2811,7 +2811,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeyTimeHelperStatics> : 
     {
         try
         {
-            *returnValue = detach(shim().FromTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeSpan)));
+            *returnValue = detach(this->shim().FromTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeSpan)));
             return S_OK;
         }
         catch (...)
@@ -2840,7 +2840,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
-            *value = detach(shim().DefaultNavigationTransitionInfo());
+            *value = detach(this->shim().DefaultNavigationTransitionInfo());
             return S_OK;
         }
         catch (...)
@@ -2854,7 +2854,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
-            shim().DefaultNavigationTransitionInfo(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&value));
+            this->shim().DefaultNavigationTransitionInfo(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2871,7 +2871,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
-            *value = detach(shim().DefaultNavigationTransitionInfoProperty());
+            *value = detach(this->shim().DefaultNavigationTransitionInfoProperty());
             return S_OK;
         }
         catch (...)
@@ -2893,7 +2893,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2912,7 +2912,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
-            *returnValue = detach(shim().GetNavigationStateCore());
+            *returnValue = detach(this->shim().GetNavigationStateCore());
             return S_OK;
         }
         catch (...)
@@ -2926,7 +2926,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
-            shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
+            this->shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
             return S_OK;
         }
         catch (...)
@@ -2943,7 +2943,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().KeyFrames());
+            *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
         catch (...)
@@ -2957,7 +2957,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -2970,7 +2970,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -2987,7 +2987,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -3005,7 +3005,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3019,7 +3019,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3032,7 +3032,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
-            *value = detach(shim().KeyTime());
+            *value = detach(this->shim().KeyTime());
             return S_OK;
         }
         catch (...)
@@ -3045,7 +3045,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
-            shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
+            this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3062,7 +3062,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory> :
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3081,7 +3081,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics> :
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -3095,7 +3095,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics> :
     {
         try
         {
-            *value = detach(shim().KeyTimeProperty());
+            *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -3113,7 +3113,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransition> : p
     {
         try
         {
-            *value = detach(shim().Edge());
+            *value = detach(this->shim().Edge());
             return S_OK;
         }
         catch (...)
@@ -3126,7 +3126,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransition> : p
     {
         try
         {
-            shim().Edge(value);
+            this->shim().Edge(value);
             return S_OK;
         }
         catch (...)
@@ -3143,7 +3143,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransitionStati
     {
         try
         {
-            *value = detach(shim().EdgeProperty());
+            *value = detach(this->shim().EdgeProperty());
             return S_OK;
         }
         catch (...)
@@ -3161,7 +3161,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            *value = detach(shim().From());
+            *value = detach(this->shim().From());
             return S_OK;
         }
         catch (...)
@@ -3175,7 +3175,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
+            this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3188,7 +3188,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            *value = detach(shim().To());
+            *value = detach(this->shim().To());
             return S_OK;
         }
         catch (...)
@@ -3202,7 +3202,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
+            this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3215,7 +3215,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            *value = detach(shim().By());
+            *value = detach(this->shim().By());
             return S_OK;
         }
         catch (...)
@@ -3229,7 +3229,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
+            this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3242,7 +3242,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            *value = detach(shim().EasingFunction());
+            *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
         catch (...)
@@ -3256,7 +3256,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
+            this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3269,7 +3269,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -3282,7 +3282,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -3299,7 +3299,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().FromProperty());
+            *value = detach(this->shim().FromProperty());
             return S_OK;
         }
         catch (...)
@@ -3313,7 +3313,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().ToProperty());
+            *value = detach(this->shim().ToProperty());
             return S_OK;
         }
         catch (...)
@@ -3327,7 +3327,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().ByProperty());
+            *value = detach(this->shim().ByProperty());
             return S_OK;
         }
         catch (...)
@@ -3341,7 +3341,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().EasingFunctionProperty());
+            *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
         catch (...)
@@ -3355,7 +3355,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -3373,7 +3373,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().KeyFrames());
+            *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
         catch (...)
@@ -3387,7 +3387,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimation());
+            *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
         catch (...)
@@ -3400,7 +3400,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
-            shim().EnableDependentAnimation(value);
+            this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
         catch (...)
@@ -3417,7 +3417,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
-            *value = detach(shim().EnableDependentAnimationProperty());
+            *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
         catch (...)
@@ -3435,7 +3435,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -3448,7 +3448,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3461,7 +3461,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
-            *value = detach(shim().KeyTime());
+            *value = detach(this->shim().KeyTime());
             return S_OK;
         }
         catch (...)
@@ -3474,7 +3474,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
-            shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
+            this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3491,7 +3491,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory> : 
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3510,7 +3510,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics> : 
     {
         try
         {
-            *value = detach(shim().ValueProperty());
+            *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
         catch (...)
@@ -3524,7 +3524,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics> : 
     {
         try
         {
-            *value = detach(shim().KeyTimeProperty());
+            *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -3542,7 +3542,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -3556,7 +3556,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3573,7 +3573,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -3591,7 +3591,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation>
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -3605,7 +3605,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation>
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3622,7 +3622,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimationS
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -3640,7 +3640,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -3654,7 +3654,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3667,7 +3667,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -3680,7 +3680,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            shim().FromHorizontalOffset(value);
+            this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -3693,7 +3693,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -3706,7 +3706,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
-            shim().FromVerticalOffset(value);
+            this->shim().FromVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -3723,7 +3723,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -3737,7 +3737,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffsetProperty());
+            *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -3751,7 +3751,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
-            *value = detach(shim().FromVerticalOffsetProperty());
+            *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -3769,7 +3769,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation> : 
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -3783,7 +3783,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation> : 
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3800,7 +3800,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimationStat
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -3818,7 +3818,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -3831,7 +3831,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
-            shim().FromHorizontalOffset(value);
+            this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -3844,7 +3844,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -3857,7 +3857,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
-            shim().FromVerticalOffset(value);
+            this->shim().FromVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -3874,7 +3874,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStat
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffsetProperty());
+            *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -3888,7 +3888,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStat
     {
         try
         {
-            *value = detach(shim().FromVerticalOffsetProperty());
+            *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -3906,7 +3906,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEase> : produce_bas
     {
         try
         {
-            *value = detach(shim().Power());
+            *value = detach(this->shim().Power());
             return S_OK;
         }
         catch (...)
@@ -3919,7 +3919,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEase> : produce_bas
     {
         try
         {
-            shim().Power(value);
+            this->shim().Power(value);
             return S_OK;
         }
         catch (...)
@@ -3936,7 +3936,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEaseStatics> : prod
     {
         try
         {
-            *value = detach(shim().PowerProperty());
+            *value = detach(this->shim().PowerProperty());
             return S_OK;
         }
         catch (...)
@@ -3974,7 +3974,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *value = detach(shim().Forever());
+            *value = detach(this->shim().Forever());
             return S_OK;
         }
         catch (...)
@@ -3987,7 +3987,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *returnValue = detach(shim().FromCount(count));
+            *returnValue = detach(this->shim().FromCount(count));
             return S_OK;
         }
         catch (...)
@@ -4000,7 +4000,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *returnValue = detach(shim().FromDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
+            *returnValue = detach(this->shim().FromDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
         catch (...)
@@ -4013,7 +4013,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *value = detach(shim().GetHasCount(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
+            *value = detach(this->shim().GetHasCount(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -4026,7 +4026,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *value = detach(shim().GetHasDuration(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
+            *value = detach(this->shim().GetHasDuration(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -4039,7 +4039,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
-            *returnValue = detach(shim().Equals(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value)));
+            *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -4056,7 +4056,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -4070,7 +4070,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4083,7 +4083,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -4096,7 +4096,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            shim().FromHorizontalOffset(value);
+            this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -4109,7 +4109,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -4122,7 +4122,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            shim().FromVerticalOffset(value);
+            this->shim().FromVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -4139,7 +4139,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -4153,7 +4153,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffsetProperty());
+            *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -4167,7 +4167,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
-            *value = detach(shim().FromVerticalOffsetProperty());
+            *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -4189,7 +4189,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabled());
+            *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
         catch (...)
@@ -4202,7 +4202,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
-            shim().IsStaggeringEnabled(value);
+            this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -4219,7 +4219,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
-            *value = detach(shim().IsStaggeringEnabledProperty());
+            *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
         catch (...)
@@ -4245,7 +4245,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame> : p
     {
         try
         {
-            *value = detach(shim().KeySpline());
+            *value = detach(this->shim().KeySpline());
             return S_OK;
         }
         catch (...)
@@ -4259,7 +4259,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame> : p
     {
         try
         {
-            shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
+            this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4276,7 +4276,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrameStati
     {
         try
         {
-            *value = detach(shim().KeySplineProperty());
+            *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
         catch (...)
@@ -4294,7 +4294,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame> : 
     {
         try
         {
-            *value = detach(shim().KeySpline());
+            *value = detach(this->shim().KeySpline());
             return S_OK;
         }
         catch (...)
@@ -4308,7 +4308,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame> : 
     {
         try
         {
-            shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
+            this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4325,7 +4325,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrameStat
     {
         try
         {
-            *value = detach(shim().KeySplineProperty());
+            *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
         catch (...)
@@ -4343,7 +4343,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame> : p
     {
         try
         {
-            *value = detach(shim().KeySpline());
+            *value = detach(this->shim().KeySpline());
             return S_OK;
         }
         catch (...)
@@ -4357,7 +4357,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame> : p
     {
         try
         {
-            shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
+            this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4374,7 +4374,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrameStati
     {
         try
         {
-            *value = detach(shim().KeySplineProperty());
+            *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
         catch (...)
@@ -4392,7 +4392,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedTargetName());
+            *value = detach(this->shim().OpenedTargetName());
             return S_OK;
         }
         catch (...)
@@ -4406,7 +4406,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4419,7 +4419,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedTarget());
+            *value = detach(this->shim().OpenedTarget());
             return S_OK;
         }
         catch (...)
@@ -4433,7 +4433,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4446,7 +4446,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedTargetName());
+            *value = detach(this->shim().ClosedTargetName());
             return S_OK;
         }
         catch (...)
@@ -4460,7 +4460,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4473,7 +4473,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedTarget());
+            *value = detach(this->shim().ClosedTarget());
             return S_OK;
         }
         catch (...)
@@ -4487,7 +4487,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4500,7 +4500,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTargetName());
+            *value = detach(this->shim().ContentTargetName());
             return S_OK;
         }
         catch (...)
@@ -4514,7 +4514,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4527,7 +4527,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTarget());
+            *value = detach(this->shim().ContentTarget());
             return S_OK;
         }
         catch (...)
@@ -4541,7 +4541,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4554,7 +4554,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedLength());
+            *value = detach(this->shim().OpenedLength());
             return S_OK;
         }
         catch (...)
@@ -4567,7 +4567,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().OpenedLength(value);
+            this->shim().OpenedLength(value);
             return S_OK;
         }
         catch (...)
@@ -4580,7 +4580,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedLength());
+            *value = detach(this->shim().ClosedLength());
             return S_OK;
         }
         catch (...)
@@ -4593,7 +4593,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ClosedLength(value);
+            this->shim().ClosedLength(value);
             return S_OK;
         }
         catch (...)
@@ -4606,7 +4606,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OffsetFromCenter());
+            *value = detach(this->shim().OffsetFromCenter());
             return S_OK;
         }
         catch (...)
@@ -4619,7 +4619,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().OffsetFromCenter(value);
+            this->shim().OffsetFromCenter(value);
             return S_OK;
         }
         catch (...)
@@ -4632,7 +4632,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTranslationDirection());
+            *value = detach(this->shim().ContentTranslationDirection());
             return S_OK;
         }
         catch (...)
@@ -4645,7 +4645,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ContentTranslationDirection(value);
+            this->shim().ContentTranslationDirection(value);
             return S_OK;
         }
         catch (...)
@@ -4658,7 +4658,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTranslationOffset());
+            *value = detach(this->shim().ContentTranslationOffset());
             return S_OK;
         }
         catch (...)
@@ -4671,7 +4671,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            shim().ContentTranslationOffset(value);
+            this->shim().ContentTranslationOffset(value);
             return S_OK;
         }
         catch (...)
@@ -4688,7 +4688,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedTargetNameProperty());
+            *value = detach(this->shim().OpenedTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -4702,7 +4702,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedTargetProperty());
+            *value = detach(this->shim().OpenedTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -4716,7 +4716,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedTargetNameProperty());
+            *value = detach(this->shim().ClosedTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -4730,7 +4730,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedTargetProperty());
+            *value = detach(this->shim().ClosedTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -4744,7 +4744,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTargetNameProperty());
+            *value = detach(this->shim().ContentTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -4758,7 +4758,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTargetProperty());
+            *value = detach(this->shim().ContentTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -4772,7 +4772,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OpenedLengthProperty());
+            *value = detach(this->shim().OpenedLengthProperty());
             return S_OK;
         }
         catch (...)
@@ -4786,7 +4786,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ClosedLengthProperty());
+            *value = detach(this->shim().ClosedLengthProperty());
             return S_OK;
         }
         catch (...)
@@ -4800,7 +4800,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().OffsetFromCenterProperty());
+            *value = detach(this->shim().OffsetFromCenterProperty());
             return S_OK;
         }
         catch (...)
@@ -4814,7 +4814,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTranslationDirectionProperty());
+            *value = detach(this->shim().ContentTranslationDirectionProperty());
             return S_OK;
         }
         catch (...)
@@ -4828,7 +4828,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
-            *value = detach(shim().ContentTranslationOffsetProperty());
+            *value = detach(this->shim().ContentTranslationOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -4846,7 +4846,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().OpenedTargetName());
+            *value = detach(this->shim().OpenedTargetName());
             return S_OK;
         }
         catch (...)
@@ -4860,7 +4860,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4873,7 +4873,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().OpenedTarget());
+            *value = detach(this->shim().OpenedTarget());
             return S_OK;
         }
         catch (...)
@@ -4887,7 +4887,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4900,7 +4900,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ClosedTargetName());
+            *value = detach(this->shim().ClosedTargetName());
             return S_OK;
         }
         catch (...)
@@ -4914,7 +4914,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4927,7 +4927,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ClosedTarget());
+            *value = detach(this->shim().ClosedTarget());
             return S_OK;
         }
         catch (...)
@@ -4941,7 +4941,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4954,7 +4954,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ContentTargetName());
+            *value = detach(this->shim().ContentTargetName());
             return S_OK;
         }
         catch (...)
@@ -4968,7 +4968,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -4981,7 +4981,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ContentTarget());
+            *value = detach(this->shim().ContentTarget());
             return S_OK;
         }
         catch (...)
@@ -4995,7 +4995,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            this->shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5008,7 +5008,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().OpenedLength());
+            *value = detach(this->shim().OpenedLength());
             return S_OK;
         }
         catch (...)
@@ -5021,7 +5021,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().OpenedLength(value);
+            this->shim().OpenedLength(value);
             return S_OK;
         }
         catch (...)
@@ -5034,7 +5034,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ClosedLength());
+            *value = detach(this->shim().ClosedLength());
             return S_OK;
         }
         catch (...)
@@ -5047,7 +5047,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ClosedLength(value);
+            this->shim().ClosedLength(value);
             return S_OK;
         }
         catch (...)
@@ -5060,7 +5060,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().OffsetFromCenter());
+            *value = detach(this->shim().OffsetFromCenter());
             return S_OK;
         }
         catch (...)
@@ -5073,7 +5073,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().OffsetFromCenter(value);
+            this->shim().OffsetFromCenter(value);
             return S_OK;
         }
         catch (...)
@@ -5086,7 +5086,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ContentTranslationDirection());
+            *value = detach(this->shim().ContentTranslationDirection());
             return S_OK;
         }
         catch (...)
@@ -5099,7 +5099,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ContentTranslationDirection(value);
+            this->shim().ContentTranslationDirection(value);
             return S_OK;
         }
         catch (...)
@@ -5112,7 +5112,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ContentTranslationOffset());
+            *value = detach(this->shim().ContentTranslationOffset());
             return S_OK;
         }
         catch (...)
@@ -5125,7 +5125,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
-            shim().ContentTranslationOffset(value);
+            this->shim().ContentTranslationOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5142,7 +5142,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().OpenedTargetNameProperty());
+            *value = detach(this->shim().OpenedTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5156,7 +5156,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().OpenedTargetProperty());
+            *value = detach(this->shim().OpenedTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -5170,7 +5170,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ClosedTargetNameProperty());
+            *value = detach(this->shim().ClosedTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5184,7 +5184,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ClosedTargetProperty());
+            *value = detach(this->shim().ClosedTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -5198,7 +5198,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ContentTargetNameProperty());
+            *value = detach(this->shim().ContentTargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5212,7 +5212,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ContentTargetProperty());
+            *value = detach(this->shim().ContentTargetProperty());
             return S_OK;
         }
         catch (...)
@@ -5226,7 +5226,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().OpenedLengthProperty());
+            *value = detach(this->shim().OpenedLengthProperty());
             return S_OK;
         }
         catch (...)
@@ -5240,7 +5240,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ClosedLengthProperty());
+            *value = detach(this->shim().ClosedLengthProperty());
             return S_OK;
         }
         catch (...)
@@ -5254,7 +5254,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().OffsetFromCenterProperty());
+            *value = detach(this->shim().OffsetFromCenterProperty());
             return S_OK;
         }
         catch (...)
@@ -5268,7 +5268,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ContentTranslationDirectionProperty());
+            *value = detach(this->shim().ContentTranslationDirectionProperty());
             return S_OK;
         }
         catch (...)
@@ -5282,7 +5282,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ContentTranslationOffsetProperty());
+            *value = detach(this->shim().ContentTranslationOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5300,7 +5300,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            *value = detach(shim().Children());
+            *value = detach(this->shim().Children());
             return S_OK;
         }
         catch (...)
@@ -5314,7 +5314,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
+            this->shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
             return S_OK;
         }
         catch (...)
@@ -5327,7 +5327,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -5340,7 +5340,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().Begin();
+            this->shim().Begin();
             return S_OK;
         }
         catch (...)
@@ -5353,7 +5353,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().Pause();
+            this->shim().Pause();
             return S_OK;
         }
         catch (...)
@@ -5366,7 +5366,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().Resume();
+            this->shim().Resume();
             return S_OK;
         }
         catch (...)
@@ -5379,7 +5379,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            *returnValue = detach(shim().GetCurrentState());
+            *returnValue = detach(this->shim().GetCurrentState());
             return S_OK;
         }
         catch (...)
@@ -5392,7 +5392,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            *returnValue = detach(shim().GetCurrentTime());
+            *returnValue = detach(this->shim().GetCurrentTime());
             return S_OK;
         }
         catch (...)
@@ -5405,7 +5405,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().SeekAlignedToLastTick(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
+            this->shim().SeekAlignedToLastTick(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
             return S_OK;
         }
         catch (...)
@@ -5418,7 +5418,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
-            shim().SkipToFill();
+            this->shim().SkipToFill();
             return S_OK;
         }
         catch (...)
@@ -5435,7 +5435,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            *value = detach(shim().TargetPropertyProperty());
+            *value = detach(this->shim().TargetPropertyProperty());
             return S_OK;
         }
         catch (...)
@@ -5449,7 +5449,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            *path = detach(shim().GetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
+            *path = detach(this->shim().GetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -5463,7 +5463,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            shim().SetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&path));
+            this->shim().SetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&path));
             return S_OK;
         }
         catch (...)
@@ -5476,7 +5476,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5490,7 +5490,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            *name = detach(shim().GetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
+            *name = detach(this->shim().GetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -5504,7 +5504,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            shim().SetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&name));
+            this->shim().SetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
         catch (...)
@@ -5517,7 +5517,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
-            shim().SetTarget(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&timeline), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&target));
+            this->shim().SetTarget(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&timeline), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&target));
             return S_OK;
         }
         catch (...)
@@ -5538,7 +5538,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -5552,7 +5552,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5565,7 +5565,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffset());
+            *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -5578,7 +5578,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            shim().FromHorizontalOffset(value);
+            this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5591,7 +5591,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            *value = detach(shim().FromVerticalOffset());
+            *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -5604,7 +5604,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
-            shim().FromVerticalOffset(value);
+            this->shim().FromVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5621,7 +5621,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5635,7 +5635,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
-            *value = detach(shim().FromHorizontalOffsetProperty());
+            *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5649,7 +5649,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
-            *value = detach(shim().FromVerticalOffsetProperty());
+            *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5667,7 +5667,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            *value = detach(shim().TargetName());
+            *value = detach(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -5681,7 +5681,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            shim().TargetName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5694,7 +5694,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ToHorizontalOffset());
+            *value = detach(this->shim().ToHorizontalOffset());
             return S_OK;
         }
         catch (...)
@@ -5707,7 +5707,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            shim().ToHorizontalOffset(value);
+            this->shim().ToHorizontalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5720,7 +5720,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            *value = detach(shim().ToVerticalOffset());
+            *value = detach(this->shim().ToVerticalOffset());
             return S_OK;
         }
         catch (...)
@@ -5733,7 +5733,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
-            shim().ToVerticalOffset(value);
+            this->shim().ToVerticalOffset(value);
             return S_OK;
         }
         catch (...)
@@ -5750,7 +5750,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
-            *value = detach(shim().TargetNameProperty());
+            *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
         catch (...)
@@ -5764,7 +5764,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ToHorizontalOffsetProperty());
+            *value = detach(this->shim().ToHorizontalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5778,7 +5778,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
-            *value = detach(shim().ToVerticalOffsetProperty());
+            *value = detach(this->shim().ToVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5796,7 +5796,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().AutoReverse());
+            *value = detach(this->shim().AutoReverse());
             return S_OK;
         }
         catch (...)
@@ -5809,7 +5809,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().AutoReverse(value);
+            this->shim().AutoReverse(value);
             return S_OK;
         }
         catch (...)
@@ -5822,7 +5822,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().BeginTime());
+            *value = detach(this->shim().BeginTime());
             return S_OK;
         }
         catch (...)
@@ -5836,7 +5836,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().BeginTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            this->shim().BeginTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5849,7 +5849,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().Duration());
+            *value = detach(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -5862,7 +5862,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().Duration(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&value));
+            this->shim().Duration(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5875,7 +5875,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().SpeedRatio());
+            *value = detach(this->shim().SpeedRatio());
             return S_OK;
         }
         catch (...)
@@ -5888,7 +5888,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().SpeedRatio(value);
+            this->shim().SpeedRatio(value);
             return S_OK;
         }
         catch (...)
@@ -5901,7 +5901,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().FillBehavior());
+            *value = detach(this->shim().FillBehavior());
             return S_OK;
         }
         catch (...)
@@ -5914,7 +5914,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().FillBehavior(value);
+            this->shim().FillBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -5927,7 +5927,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *value = detach(shim().RepeatBehavior());
+            *value = detach(this->shim().RepeatBehavior());
             return S_OK;
         }
         catch (...)
@@ -5940,7 +5940,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().RepeatBehavior(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value));
+            this->shim().RepeatBehavior(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value));
             return S_OK;
         }
         catch (...)
@@ -5953,7 +5953,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -5966,7 +5966,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -5983,7 +5983,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineFactory> : produ
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -6002,7 +6002,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().AllowDependentAnimations());
+            *value = detach(this->shim().AllowDependentAnimations());
             return S_OK;
         }
         catch (...)
@@ -6015,7 +6015,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            shim().AllowDependentAnimations(value);
+            this->shim().AllowDependentAnimations(value);
             return S_OK;
         }
         catch (...)
@@ -6028,7 +6028,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().AutoReverseProperty());
+            *value = detach(this->shim().AutoReverseProperty());
             return S_OK;
         }
         catch (...)
@@ -6042,7 +6042,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().BeginTimeProperty());
+            *value = detach(this->shim().BeginTimeProperty());
             return S_OK;
         }
         catch (...)
@@ -6056,7 +6056,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().DurationProperty());
+            *value = detach(this->shim().DurationProperty());
             return S_OK;
         }
         catch (...)
@@ -6070,7 +6070,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().SpeedRatioProperty());
+            *value = detach(this->shim().SpeedRatioProperty());
             return S_OK;
         }
         catch (...)
@@ -6084,7 +6084,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().FillBehaviorProperty());
+            *value = detach(this->shim().FillBehaviorProperty());
             return S_OK;
         }
         catch (...)
@@ -6098,7 +6098,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
-            *value = detach(shim().RepeatBehaviorProperty());
+            *value = detach(this->shim().RepeatBehaviorProperty());
             return S_OK;
         }
         catch (...)

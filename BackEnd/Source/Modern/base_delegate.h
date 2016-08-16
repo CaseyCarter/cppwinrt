@@ -16,6 +16,9 @@ struct __declspec(novtable) impl_TypedEventHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
 };
 
+template <typename T> struct EventHandler : impl::not_specialized<EventHandler<T>> {};
+template <typename TSender, typename TArgs> struct TypedEventHandler : impl::not_specialized<TypedEventHandler<TSender, TArgs>> {};
+
 }
 
 namespace Windows::Foundation {

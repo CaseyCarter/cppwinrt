@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Graphics.Imaging.3.h"
-#include "internal\Windows.Globalization.3.h"
-#include "internal\Windows.Media.Ocr.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.Globalization.3.h"
+#include "internal/Windows.Media.Ocr.3.h"
 #include "Windows.Media.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Me
     {
         try
         {
-            *result = detach(shim().RecognizeAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap)));
+            *result = detach(this->shim().RecognizeAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().RecognizerLanguage());
+            *value = detach(this->shim().RecognizerLanguage());
             return S_OK;
         }
         catch (...)
@@ -53,7 +53,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().MaxImageDimension());
+            *value = detach(this->shim().MaxImageDimension());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().AvailableRecognizerLanguages());
+            *value = detach(this->shim().AvailableRecognizerLanguages());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().IsLanguageSupported(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *result = detach(this->shim().IsLanguageSupported(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().TryCreateFromLanguage(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *result = detach(this->shim().TryCreateFromLanguage(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
-            *result = detach(shim().TryCreateFromUserProfileLanguages());
+            *result = detach(this->shim().TryCreateFromUserProfileLanguages());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
     {
         try
         {
-            *value = detach(shim().Words());
+            *value = detach(this->shim().Words());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().Lines());
+            *value = detach(this->shim().Lines());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().TextAngle());
+            *value = detach(this->shim().TextAngle());
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -203,7 +203,7 @@ struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Medi
     {
         try
         {
-            *value = detach(shim().BoundingRect());
+            *value = detach(this->shim().BoundingRect());
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Medi
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)

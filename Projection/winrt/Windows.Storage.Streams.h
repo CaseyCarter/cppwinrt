@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
 #include "Windows.Storage.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
@@ -21,7 +21,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Capacity());
+            *value = detach(this->shim().Capacity());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().Length());
+            *value = detach(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
-            shim().Length(value);
+            this->shim().Length(value);
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Storage::Streams::IBufferFactory> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Create(capacity));
+            *value = detach(this->shim().Create(capacity));
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Storage::Streams::IBufferStatics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CreateCopyFromMemoryBuffer(*reinterpret_cast<const Windows::Foundation::IMemoryBuffer *>(&input)));
+            *value = detach(this->shim().CreateCopyFromMemoryBuffer(*reinterpret_cast<const Windows::Foundation::IMemoryBuffer *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Storage::Streams::IBufferStatics> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().CreateMemoryBufferOverIBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&input)));
+            *value = detach(this->shim().CreateMemoryBufferOverIBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -114,7 +114,7 @@ struct produce<D, Windows::Storage::Streams::IContentTypeProvider> : produce_bas
     {
         try
         {
-            *value = detach(shim().ContentType());
+            *value = detach(this->shim().ContentType());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UnconsumedBufferLength());
+            *value = detach(this->shim().UnconsumedBufferLength());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UnicodeEncoding());
+            *value = detach(this->shim().UnicodeEncoding());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            shim().UnicodeEncoding(value);
+            this->shim().UnicodeEncoding(value);
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ByteOrder());
+            *value = detach(this->shim().ByteOrder());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            shim().ByteOrder(value);
+            this->shim().ByteOrder(value);
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().InputStreamOptions());
+            *value = detach(this->shim().InputStreamOptions());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            shim().InputStreamOptions(value);
+            this->shim().InputStreamOptions(value);
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadByte());
+            *value = detach(this->shim().ReadByte());
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            shim().ReadBytes(*value);
+            this->shim().ReadBytes(*value);
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *buffer = detach(shim().ReadBuffer(length));
+            *buffer = detach(this->shim().ReadBuffer(length));
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadBoolean());
+            *value = detach(this->shim().ReadBoolean());
             return S_OK;
         }
         catch (...)
@@ -276,7 +276,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadGuid());
+            *value = detach(this->shim().ReadGuid());
             return S_OK;
         }
         catch (...)
@@ -289,7 +289,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadInt16());
+            *value = detach(this->shim().ReadInt16());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadInt32());
+            *value = detach(this->shim().ReadInt32());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadInt64());
+            *value = detach(this->shim().ReadInt64());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadUInt16());
+            *value = detach(this->shim().ReadUInt16());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadUInt32());
+            *value = detach(this->shim().ReadUInt32());
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadUInt64());
+            *value = detach(this->shim().ReadUInt64());
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadSingle());
+            *value = detach(this->shim().ReadSingle());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadDouble());
+            *value = detach(this->shim().ReadDouble());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadString(codeUnitCount));
+            *value = detach(this->shim().ReadString(codeUnitCount));
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadDateTime());
+            *value = detach(this->shim().ReadDateTime());
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ReadTimeSpan());
+            *value = detach(this->shim().ReadTimeSpan());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().LoadAsync(count));
+            *operation = detach(this->shim().LoadAsync(count));
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *buffer = detach(shim().DetachBuffer());
+            *buffer = detach(this->shim().DetachBuffer());
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
-            *stream = detach(shim().DetachStream());
+            *stream = detach(this->shim().DetachStream());
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::Storage::Streams::IDataReaderFactory> : produce_base<
     {
         try
         {
-            *dataReader = detach(shim().CreateDataReader(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&inputStream)));
+            *dataReader = detach(this->shim().CreateDataReader(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&inputStream)));
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Storage::Streams::IDataReaderStatics> : produce_base<
     {
         try
         {
-            *dataReader = detach(shim().FromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *dataReader = detach(this->shim().FromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UnstoredBufferLength());
+            *value = detach(this->shim().UnstoredBufferLength());
             return S_OK;
         }
         catch (...)
@@ -528,7 +528,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().UnicodeEncoding());
+            *value = detach(this->shim().UnicodeEncoding());
             return S_OK;
         }
         catch (...)
@@ -541,7 +541,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().UnicodeEncoding(value);
+            this->shim().UnicodeEncoding(value);
             return S_OK;
         }
         catch (...)
@@ -554,7 +554,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *value = detach(shim().ByteOrder());
+            *value = detach(this->shim().ByteOrder());
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().ByteOrder(value);
+            this->shim().ByteOrder(value);
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteByte(value);
+            this->shim().WriteByte(value);
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteBytes(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().WriteBytes(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
+            this->shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), start, count);
+            this->shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), start, count);
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteBoolean(value);
+            this->shim().WriteBoolean(value);
             return S_OK;
         }
         catch (...)
@@ -645,7 +645,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteGuid(value);
+            this->shim().WriteGuid(value);
             return S_OK;
         }
         catch (...)
@@ -658,7 +658,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteInt16(value);
+            this->shim().WriteInt16(value);
             return S_OK;
         }
         catch (...)
@@ -671,7 +671,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteInt32(value);
+            this->shim().WriteInt32(value);
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteInt64(value);
+            this->shim().WriteInt64(value);
             return S_OK;
         }
         catch (...)
@@ -697,7 +697,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteUInt16(value);
+            this->shim().WriteUInt16(value);
             return S_OK;
         }
         catch (...)
@@ -710,7 +710,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteUInt32(value);
+            this->shim().WriteUInt32(value);
             return S_OK;
         }
         catch (...)
@@ -723,7 +723,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteUInt64(value);
+            this->shim().WriteUInt64(value);
             return S_OK;
         }
         catch (...)
@@ -736,7 +736,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteSingle(value);
+            this->shim().WriteSingle(value);
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteDouble(value);
+            this->shim().WriteDouble(value);
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().WriteDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -775,7 +775,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            shim().WriteTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().WriteTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -788,7 +788,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *codeUnitCount = detach(shim().WriteString(*reinterpret_cast<const hstring *>(&value)));
+            *codeUnitCount = detach(this->shim().WriteString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -801,7 +801,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *codeUnitCount = detach(shim().MeasureString(*reinterpret_cast<const hstring *>(&value)));
+            *codeUnitCount = detach(this->shim().MeasureString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -814,7 +814,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().StoreAsync());
+            *operation = detach(this->shim().StoreAsync());
             return S_OK;
         }
         catch (...)
@@ -828,7 +828,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *operation = detach(shim().FlushAsync());
+            *operation = detach(this->shim().FlushAsync());
             return S_OK;
         }
         catch (...)
@@ -842,7 +842,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *buffer = detach(shim().DetachBuffer());
+            *buffer = detach(this->shim().DetachBuffer());
             return S_OK;
         }
         catch (...)
@@ -856,7 +856,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
-            *outputStream = detach(shim().DetachStream());
+            *outputStream = detach(this->shim().DetachStream());
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriterFactory> : produce_base<
     {
         try
         {
-            *dataWriter = detach(shim().CreateDataWriter(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
+            *dataWriter = detach(this->shim().CreateDataWriter(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::Storage::Streams::IInputStream> : produce_base<D, Win
     {
         try
         {
-            *operation = detach(shim().ReadAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), count, options));
+            *operation = detach(this->shim().ReadAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), count, options));
             return S_OK;
         }
         catch (...)
@@ -910,7 +910,7 @@ struct produce<D, Windows::Storage::Streams::IInputStreamReference> : produce_ba
     {
         try
         {
-            *operation = detach(shim().OpenSequentialReadAsync());
+            *operation = detach(this->shim().OpenSequentialReadAsync());
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::Storage::Streams::IOutputStream> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().WriteAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *operation = detach(this->shim().WriteAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -942,7 +942,7 @@ struct produce<D, Windows::Storage::Streams::IOutputStream> : produce_base<D, Wi
     {
         try
         {
-            *operation = detach(shim().FlushAsync());
+            *operation = detach(this->shim().FlushAsync());
             return S_OK;
         }
         catch (...)
@@ -960,7 +960,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            shim().Size(value);
+            this->shim().Size(value);
             return S_OK;
         }
         catch (...)
@@ -986,7 +986,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *stream = detach(shim().GetInputStreamAt(position));
+            *stream = detach(this->shim().GetInputStreamAt(position));
             return S_OK;
         }
         catch (...)
@@ -1000,7 +1000,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *stream = detach(shim().GetOutputStreamAt(position));
+            *stream = detach(this->shim().GetOutputStreamAt(position));
             return S_OK;
         }
         catch (...)
@@ -1014,7 +1014,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1027,7 +1027,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            shim().Seek(position);
+            this->shim().Seek(position);
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *stream = detach(shim().CloneStream());
+            *stream = detach(this->shim().CloneStream());
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *value = detach(shim().CanRead());
+            *value = detach(this->shim().CanRead());
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
-            *value = detach(shim().CanWrite());
+            *value = detach(this->shim().CanWrite());
             return S_OK;
         }
         catch (...)
@@ -1084,7 +1084,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReference> : pro
     {
         try
         {
-            *operation = detach(shim().OpenReadAsync());
+            *operation = detach(this->shim().OpenReadAsync());
             return S_OK;
         }
         catch (...)
@@ -1102,7 +1102,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
-            *streamReference = detach(shim().CreateFromFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *streamReference = detach(this->shim().CreateFromFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -1116,7 +1116,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
-            *streamReference = detach(shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *streamReference = detach(this->shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -1130,7 +1130,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
-            *streamReference = detach(shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            *streamReference = detach(this->shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -1148,7 +1148,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
-            *operation = detach(shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
+            *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
             return S_OK;
         }
         catch (...)
@@ -1162,7 +1162,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
-            *operation = detach(shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination), bytesToCopy));
+            *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination), bytesToCopy));
             return S_OK;
         }
         catch (...)
@@ -1176,7 +1176,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
-            *operation = detach(shim().CopyAndCloseAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
+            *operation = detach(this->shim().CopyAndCloseAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
             return S_OK;
         }
         catch (...)

@@ -201,6 +201,19 @@ struct __declspec(novtable) impl_IObservableVector : IInspectable
     virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
 };
 
+template <typename K, typename V> struct MapChangedEventHandler : impl::not_specialized<MapChangedEventHandler<K, V>> {};
+template <typename T> struct VectorChangedEventHandler : impl::not_specialized <VectorChangedEventHandler<T>> {};
+template <typename T> struct IIterator : impl::not_specialized <IIterator<T>> {};
+template <typename T> struct IIterable : impl::not_specialized <IIterable<T>> {};
+template <typename K, typename V> struct IKeyValuePair : impl::not_specialized <IKeyValuePair<K, V>> {};
+template <typename T> struct IVectorView : impl::not_specialized <IVectorView<T>> {};
+template <typename T> struct IVector : impl::not_specialized <IVector<T>> {};
+template <typename K, typename V> struct IMapView : impl::not_specialized <IMapView<K, V>> {};
+template <typename K, typename V> struct IMap : impl::not_specialized <IMap<K, V>> {};
+template <typename K> struct IMapChangedEventArgs : impl::not_specialized <IMapChangedEventArgs<K>> {};
+template <typename K, typename V> struct IObservableMap : impl::not_specialized <IObservableMap<K, V>> {};
+template <typename T> struct IObservableVector : impl::not_specialized <IObservableVector<T>> {};
+
 }
 
 namespace Windows::Foundation::Collections {
@@ -563,7 +576,7 @@ public:
 
     MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
     {
-        return return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
+        return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
     }
 };
 
@@ -590,7 +603,7 @@ public:
 
     VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
     {
-        return return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
+        return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
     }
 };
 

@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Background.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Background.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
-            *value = detach(shim().ExpectedDuration());
+            *value = detach(this->shim().ExpectedDuration());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_bas
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_bas
     {
         try
         {
-            *value = detach(shim().Arguments());
+            *value = detach(this->shim().Arguments());
             return S_OK;
         }
         catch (...)

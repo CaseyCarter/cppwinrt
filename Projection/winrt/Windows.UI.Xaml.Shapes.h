@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Media.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.Composition.3.h"
-#include "internal\Windows.UI.Xaml.Shapes.3.h"
+#include "internal/Windows.UI.Xaml.Media.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.Xaml.Shapes.3.h"
 #include "Windows.UI.Xaml.h"
-#include "internal\Windows.UI.Xaml.Shapes.5.h"
+#include "internal/Windows.UI.Xaml.Shapes.5.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -26,7 +26,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().X1());
+            *value = detach(this->shim().X1());
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            shim().X1(value);
+            this->shim().X1(value);
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().Y1());
+            *value = detach(this->shim().Y1());
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Y1(value);
+            this->shim().Y1(value);
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().X2());
+            *value = detach(this->shim().X2());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            shim().X2(value);
+            this->shim().X2(value);
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().Y2());
+            *value = detach(this->shim().Y2());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILine> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Y2(value);
+            this->shim().Y2(value);
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILineStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().X1Property());
+            *value = detach(this->shim().X1Property());
             return S_OK;
         }
         catch (...)
@@ -148,7 +148,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILineStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Y1Property());
+            *value = detach(this->shim().Y1Property());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILineStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().X2Property());
+            *value = detach(this->shim().X2Property());
             return S_OK;
         }
         catch (...)
@@ -176,7 +176,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::ILineStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Y2Property());
+            *value = detach(this->shim().Y2Property());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPath> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPath> : produce_base<D, Windows::U
     {
         try
         {
-            shim().Data(*reinterpret_cast<const Windows::UI::Xaml::Media::Geometry *>(&value));
+            this->shim().Data(*reinterpret_cast<const Windows::UI::Xaml::Media::Geometry *>(&value));
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPathFactory> : produce_base<D, Win
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPathStatics> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().DataProperty());
+            *value = detach(this->shim().DataProperty());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygon> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().FillRule());
+            *value = detach(this->shim().FillRule());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygon> : produce_base<D, Windows
     {
         try
         {
-            shim().FillRule(value);
+            this->shim().FillRule(value);
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygon> : produce_base<D, Windows
     {
         try
         {
-            *value = detach(shim().Points());
+            *value = detach(this->shim().Points());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygon> : produce_base<D, Windows
     {
         try
         {
-            shim().Points(*reinterpret_cast<const Windows::UI::Xaml::Media::PointCollection *>(&value));
+            this->shim().Points(*reinterpret_cast<const Windows::UI::Xaml::Media::PointCollection *>(&value));
             return S_OK;
         }
         catch (...)
@@ -319,7 +319,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygonStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().FillRuleProperty());
+            *value = detach(this->shim().FillRuleProperty());
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolygonStatics> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PointsProperty());
+            *value = detach(this->shim().PointsProperty());
             return S_OK;
         }
         catch (...)
@@ -351,7 +351,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolyline> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().FillRule());
+            *value = detach(this->shim().FillRule());
             return S_OK;
         }
         catch (...)
@@ -364,7 +364,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolyline> : produce_base<D, Window
     {
         try
         {
-            shim().FillRule(value);
+            this->shim().FillRule(value);
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolyline> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().Points());
+            *value = detach(this->shim().Points());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolyline> : produce_base<D, Window
     {
         try
         {
-            shim().Points(*reinterpret_cast<const Windows::UI::Xaml::Media::PointCollection *>(&value));
+            this->shim().Points(*reinterpret_cast<const Windows::UI::Xaml::Media::PointCollection *>(&value));
             return S_OK;
         }
         catch (...)
@@ -408,7 +408,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolylineStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().FillRuleProperty());
+            *value = detach(this->shim().FillRuleProperty());
             return S_OK;
         }
         catch (...)
@@ -422,7 +422,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPolylineStatics> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().PointsProperty());
+            *value = detach(this->shim().PointsProperty());
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RadiusX());
+            *value = detach(this->shim().RadiusX());
             return S_OK;
         }
         catch (...)
@@ -453,7 +453,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangle> : produce_base<D, Windo
     {
         try
         {
-            shim().RadiusX(value);
+            this->shim().RadiusX(value);
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangle> : produce_base<D, Windo
     {
         try
         {
-            *value = detach(shim().RadiusY());
+            *value = detach(this->shim().RadiusY());
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangle> : produce_base<D, Windo
     {
         try
         {
-            shim().RadiusY(value);
+            this->shim().RadiusY(value);
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangleStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RadiusXProperty());
+            *value = detach(this->shim().RadiusXProperty());
             return S_OK;
         }
         catch (...)
@@ -510,7 +510,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IRectangleStatics> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RadiusYProperty());
+            *value = detach(this->shim().RadiusYProperty());
             return S_OK;
         }
         catch (...)
@@ -528,7 +528,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Fill());
+            *value = detach(this->shim().Fill());
             return S_OK;
         }
         catch (...)
@@ -542,7 +542,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().Fill(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Fill(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -555,7 +555,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Stroke());
+            *value = detach(this->shim().Stroke());
             return S_OK;
         }
         catch (...)
@@ -569,7 +569,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().Stroke(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
+            this->shim().Stroke(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
         catch (...)
@@ -582,7 +582,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeMiterLimit());
+            *value = detach(this->shim().StrokeMiterLimit());
             return S_OK;
         }
         catch (...)
@@ -595,7 +595,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeMiterLimit(value);
+            this->shim().StrokeMiterLimit(value);
             return S_OK;
         }
         catch (...)
@@ -608,7 +608,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeThickness());
+            *value = detach(this->shim().StrokeThickness());
             return S_OK;
         }
         catch (...)
@@ -621,7 +621,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeThickness(value);
+            this->shim().StrokeThickness(value);
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeStartLineCap());
+            *value = detach(this->shim().StrokeStartLineCap());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeStartLineCap(value);
+            this->shim().StrokeStartLineCap(value);
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeEndLineCap());
+            *value = detach(this->shim().StrokeEndLineCap());
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeEndLineCap(value);
+            this->shim().StrokeEndLineCap(value);
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeLineJoin());
+            *value = detach(this->shim().StrokeLineJoin());
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeLineJoin(value);
+            this->shim().StrokeLineJoin(value);
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeDashOffset());
+            *value = detach(this->shim().StrokeDashOffset());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeDashOffset(value);
+            this->shim().StrokeDashOffset(value);
             return S_OK;
         }
         catch (...)
@@ -738,7 +738,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeDashCap());
+            *value = detach(this->shim().StrokeDashCap());
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeDashCap(value);
+            this->shim().StrokeDashCap(value);
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().StrokeDashArray());
+            *value = detach(this->shim().StrokeDashArray());
             return S_OK;
         }
         catch (...)
@@ -778,7 +778,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().StrokeDashArray(*reinterpret_cast<const Windows::UI::Xaml::Media::DoubleCollection *>(&value));
+            this->shim().StrokeDashArray(*reinterpret_cast<const Windows::UI::Xaml::Media::DoubleCollection *>(&value));
             return S_OK;
         }
         catch (...)
@@ -791,7 +791,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().Stretch());
+            *value = detach(this->shim().Stretch());
             return S_OK;
         }
         catch (...)
@@ -804,7 +804,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            shim().Stretch(value);
+            this->shim().Stretch(value);
             return S_OK;
         }
         catch (...)
@@ -817,7 +817,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().GeometryTransform());
+            *value = detach(this->shim().GeometryTransform());
             return S_OK;
         }
         catch (...)
@@ -835,7 +835,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape2> : produce_base<D, Windows:
     {
         try
         {
-            *returnValue = detach(shim().GetAlphaMask());
+            *returnValue = detach(this->shim().GetAlphaMask());
             return S_OK;
         }
         catch (...)
@@ -853,7 +853,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeFactory> : produce_base<D, Wi
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -872,7 +872,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().FillProperty());
+            *value = detach(this->shim().FillProperty());
             return S_OK;
         }
         catch (...)
@@ -886,7 +886,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeProperty());
+            *value = detach(this->shim().StrokeProperty());
             return S_OK;
         }
         catch (...)
@@ -900,7 +900,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeMiterLimitProperty());
+            *value = detach(this->shim().StrokeMiterLimitProperty());
             return S_OK;
         }
         catch (...)
@@ -914,7 +914,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeThicknessProperty());
+            *value = detach(this->shim().StrokeThicknessProperty());
             return S_OK;
         }
         catch (...)
@@ -928,7 +928,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeStartLineCapProperty());
+            *value = detach(this->shim().StrokeStartLineCapProperty());
             return S_OK;
         }
         catch (...)
@@ -942,7 +942,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeEndLineCapProperty());
+            *value = detach(this->shim().StrokeEndLineCapProperty());
             return S_OK;
         }
         catch (...)
@@ -956,7 +956,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeLineJoinProperty());
+            *value = detach(this->shim().StrokeLineJoinProperty());
             return S_OK;
         }
         catch (...)
@@ -970,7 +970,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeDashOffsetProperty());
+            *value = detach(this->shim().StrokeDashOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -984,7 +984,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeDashCapProperty());
+            *value = detach(this->shim().StrokeDashCapProperty());
             return S_OK;
         }
         catch (...)
@@ -998,7 +998,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StrokeDashArrayProperty());
+            *value = detach(this->shim().StrokeDashArrayProperty());
             return S_OK;
         }
         catch (...)
@@ -1012,7 +1012,7 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShapeStatics> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().StretchProperty());
+            *value = detach(this->shim().StretchProperty());
             return S_OK;
         }
         catch (...)

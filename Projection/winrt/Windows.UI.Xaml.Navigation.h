@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.UI.Xaml.Interop.3.h"
-#include "internal\Windows.UI.Xaml.Media.Animation.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Xaml.3.h"
-#include "internal\Windows.UI.Xaml.Navigation.3.h"
+#include "internal/Windows.UI.Xaml.Interop.3.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.UI.Xaml.Navigation.3.h"
 #include "Windows.UI.Xaml.h"
 
 WINRT_EXPORT namespace winrt {
@@ -110,7 +110,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Cancel());
+            *value = detach(this->shim().Cancel());
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> : p
     {
         try
         {
-            shim().Cancel(value);
+            this->shim().Cancel(value);
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> : p
     {
         try
         {
-            *value = detach(shim().NavigationMode());
+            *value = detach(this->shim().NavigationMode());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> : p
     {
         try
         {
-            *value = detach(shim().SourcePageType());
+            *value = detach(this->shim().SourcePageType());
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2> : 
     {
         try
         {
-            *value = detach(shim().Parameter());
+            *value = detach(this->shim().Parameter());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2> : 
     {
         try
         {
-            *value = detach(shim().NavigationTransitionInfo());
+            *value = detach(this->shim().NavigationTransitionInfo());
             return S_OK;
         }
         catch (...)
@@ -198,7 +198,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Parameter());
+            *value = detach(this->shim().Parameter());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().SourcePageType());
+            *value = detach(this->shim().SourcePageType());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().NavigationMode());
+            *value = detach(this->shim().NavigationMode());
             return S_OK;
         }
         catch (...)
@@ -252,7 +252,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
     {
         try
         {
-            shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs2> : produc
     {
         try
         {
-            *value = detach(shim().NavigationTransitionInfo());
+            *value = detach(this->shim().NavigationTransitionInfo());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Exception());
+            *value = detach(this->shim().Exception());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Handled());
+            *value = detach(this->shim().Handled());
             return S_OK;
         }
         catch (...)
@@ -327,7 +327,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> : p
     {
         try
         {
-            shim().Handled(value);
+            this->shim().Handled(value);
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().SourcePageType());
+            *value = detach(this->shim().SourcePageType());
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntry> : produce_base
     {
         try
         {
-            *value = detach(shim().SourcePageType());
+            *value = detach(this->shim().SourcePageType());
             return S_OK;
         }
         catch (...)
@@ -370,7 +370,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntry> : produce_base
     {
         try
         {
-            *value = detach(shim().Parameter());
+            *value = detach(this->shim().Parameter());
             return S_OK;
         }
         catch (...)
@@ -384,7 +384,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntry> : produce_base
     {
         try
         {
-            *value = detach(shim().NavigationTransitionInfo());
+            *value = detach(this->shim().NavigationTransitionInfo());
             return S_OK;
         }
         catch (...)
@@ -402,7 +402,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntryFactory> : produ
     {
         try
         {
-            *instance = detach(shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&sourcePageType), *reinterpret_cast<const Windows::IInspectable *>(&parameter), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&navigationTransitionInfo)));
+            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&sourcePageType), *reinterpret_cast<const Windows::IInspectable *>(&parameter), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&navigationTransitionInfo)));
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntryStatics> : produ
     {
         try
         {
-            *value = detach(shim().SourcePageTypeProperty());
+            *value = detach(this->shim().SourcePageTypeProperty());
             return S_OK;
         }
         catch (...)

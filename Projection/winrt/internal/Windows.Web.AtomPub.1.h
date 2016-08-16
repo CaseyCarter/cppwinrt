@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.Web.AtomPub.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Security.Credentials.0.h"

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.System.Power.3.h"
-#include "internal\Windows.Devices.Power.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.System.Power.3.h"
+#include "internal/Windows.Devices.Power.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
-            *result = detach(shim().GetReport());
+            *result = detach(this->shim().GetReport());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
-            *token = detach(shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
-            shim().ReportUpdated(token);
+            this->shim().ReportUpdated(token);
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ChargeRateInMilliwatts());
+            *value = detach(this->shim().ChargeRateInMilliwatts());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().DesignCapacityInMilliwattHours());
+            *value = detach(this->shim().DesignCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FullChargeCapacityInMilliwattHours());
+            *value = detach(this->shim().FullChargeCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().RemainingCapacityInMilliwattHours());
+            *value = detach(this->shim().RemainingCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().AggregateBattery());
+            *result = detach(this->shim().AggregateBattery());
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
-            *result = detach(shim().GetDeviceSelector());
+            *result = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)

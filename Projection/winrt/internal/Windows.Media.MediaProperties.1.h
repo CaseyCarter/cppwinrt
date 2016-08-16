@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.Media.MediaProperties.0.h"
 #include "Windows.Storage.0.h"
 #include "Windows.Storage.Streams.0.h"

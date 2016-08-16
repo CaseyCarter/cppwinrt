@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.System.Display.3.h"
+#include "internal/Windows.System.Display.3.h"
 #include "Windows.System.h"
 
 WINRT_EXPORT namespace winrt {
@@ -17,7 +17,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
-            shim().RequestActive();
+            this->shim().RequestActive();
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
-            shim().RequestRelease();
+            this->shim().RequestRelease();
             return S_OK;
         }
         catch (...)

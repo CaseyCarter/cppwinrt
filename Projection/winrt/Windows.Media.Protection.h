@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Media.Playback.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Media.Protection.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Media.Playback.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Media.Protection.3.h"
 #include "Windows.Media.h"
 #include "Windows.Foundation.h"
 
@@ -76,7 +76,7 @@ struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Information());
+            *value = detach(this->shim().Information());
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : p
     {
         try
         {
-            *value = detach(shim().Completion());
+            *value = detach(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -108,7 +108,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().IsEffectiveProtectionAtLeast(protection));
+            *value = detach(this->shim().IsEffectiveProtectionAtLeast(protection));
             return S_OK;
         }
         catch (...)
@@ -121,7 +121,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().GetEffectiveProtection());
+            *value = detach(this->shim().GetEffectiveProtection());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().SetDesiredMinProtectionAsync(protection));
+            *value = detach(this->shim().SetDesiredMinProtectionAsync(protection));
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
-            *token = detach(shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
-            shim().ProtectionChanged(token);
+            this->shim().ProtectionChanged(token);
             return S_OK;
         }
         catch (...)
@@ -179,7 +179,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            *cookie = detach(shim().ServiceRequested(*reinterpret_cast<const Windows::Media::Protection::ServiceRequestedEventHandler *>(&handler)));
+            *cookie = detach(this->shim().ServiceRequested(*reinterpret_cast<const Windows::Media::Protection::ServiceRequestedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            shim().ServiceRequested(cookie);
+            this->shim().ServiceRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -205,7 +205,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            *cookie = detach(shim().RebootNeeded(*reinterpret_cast<const Windows::Media::Protection::RebootNeededEventHandler *>(&handler)));
+            *cookie = detach(this->shim().RebootNeeded(*reinterpret_cast<const Windows::Media::Protection::RebootNeededEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            shim().RebootNeeded(cookie);
+            this->shim().RebootNeeded(cookie);
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            *cookie = detach(shim().ComponentLoadFailed(*reinterpret_cast<const Windows::Media::Protection::ComponentLoadFailedEventHandler *>(&handler)));
+            *cookie = detach(this->shim().ComponentLoadFailed(*reinterpret_cast<const Windows::Media::Protection::ComponentLoadFailedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            shim().ComponentLoadFailed(cookie);
+            this->shim().ComponentLoadFailed(cookie);
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServer> : produ
     {
         try
         {
-            *ppProperties = detach(shim().Properties());
+            *ppProperties = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory> 
     {
         try
         {
-            *ppObject = detach(shim().CreatePMPServer(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&pProperties)));
+            *ppObject = detach(this->shim().CreatePMPServer(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&pProperties)));
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceCompletion>
     {
         try
         {
-            shim().Complete(success);
+            this->shim().Complete(success);
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
     {
         try
         {
-            *system = detach(shim().ProtectionSystem());
+            *system = detach(this->shim().ProtectionSystem());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
     {
         try
         {
-            *type = detach(shim().Type());
+            *type = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Media::Protection::IProtectionCapabilities> : produce
     {
         try
         {
-            *value = detach(shim().IsTypeSupported(*reinterpret_cast<const hstring *>(&type), *reinterpret_cast<const hstring *>(&keySystem)));
+            *value = detach(this->shim().IsTypeSupported(*reinterpret_cast<const hstring *>(&type), *reinterpret_cast<const hstring *>(&keySystem)));
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalInformation> 
     {
         try
         {
-            *items = detach(shim().Items());
+            *items = detach(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
-            *reasons = detach(shim().Reasons());
+            *reasons = detach(this->shim().Reasons());
             return S_OK;
         }
         catch (...)
@@ -406,7 +406,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
-            *value = detach(shim().HeaderHash());
+            *value = detach(this->shim().HeaderHash());
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
-            *value = detach(shim().PublicKeyHash());
+            *value = detach(this->shim().PublicKeyHash());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
-            *name = detach(shim().Name());
+            *name = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -448,7 +448,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
-            *value = detach(shim().RenewalId());
+            *value = detach(this->shim().RenewalId());
             return S_OK;
         }
         catch (...)
@@ -466,7 +466,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
     {
         try
         {
-            *value = detach(shim().Completion());
+            *value = detach(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -498,7 +498,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs2> : pro
     {
         try
         {
-            *value = detach(shim().MediaPlaybackItem());
+            *value = detach(this->shim().MediaPlaybackItem());
             return S_OK;
         }
         catch (...)

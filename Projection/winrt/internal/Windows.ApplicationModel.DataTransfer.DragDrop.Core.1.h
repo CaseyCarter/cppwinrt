@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "..\base.h"
+#include "../base.h"
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.Core.0.h"
 #include "Windows.ApplicationModel.DataTransfer.0.h"
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.0.h"

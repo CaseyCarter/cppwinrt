@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.UI.Input.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Core.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.UI.Input.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Core.3.h"
 #include "Windows.UI.h"
 
 WINRT_EXPORT namespace winrt {
@@ -59,7 +59,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().EventType());
+            *value = detach(this->shim().EventType());
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().VirtualKey());
+            *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().KeyStatus());
+            *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -120,7 +120,7 @@ struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : pr
     {
         try
         {
-            *value = detach(shim().AutomationProvider());
+            *value = detach(this->shim().AutomationProvider());
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : pr
     {
         try
         {
-            shim().AutomationProvider(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AutomationProvider(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -151,7 +151,7 @@ struct produce<D, Windows::UI::Core::IBackRequestedEventArgs> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().Handled());
+            *value = detach(this->shim().Handled());
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::UI::Core::IBackRequestedEventArgs> : produce_base<D, 
     {
         try
         {
-            shim().Handled(value);
+            this->shim().Handled(value);
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
     {
         try
         {
-            *value = detach(shim().KeyCode());
+            *value = detach(this->shim().KeyCode());
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
     {
         try
         {
-            *value = detach(shim().KeyStatus());
+            *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
-            *value = detach(shim().PointerPosition());
+            *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
-            *value = detach(shim().SearchBounds());
+            *value = detach(this->shim().SearchBounds());
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
-            *value = detach(shim().ClosestInteractiveBounds());
+            *value = detach(this->shim().ClosestInteractiveBounds());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
-            shim().ClosestInteractiveBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().ClosestInteractiveBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Win
     {
         try
         {
-            *pCookie = detach(shim().AcceleratorKeyActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().AcceleratorKeyActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Win
     {
         try
         {
-            shim().AcceleratorKeyActivated(cookie);
+            this->shim().AcceleratorKeyActivated(cookie);
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested> : p
     {
         try
         {
-            *pCookie = detach(shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -310,7 +310,7 @@ struct produce<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested> : p
     {
         try
         {
-            shim().ClosestInteractiveBoundsRequested(cookie);
+            this->shim().ClosestInteractiveBoundsRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -327,7 +327,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().HasFocus());
+            *value = detach(this->shim().HasFocus());
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
-            *pCookie = detach(shim().GotFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().GotFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -353,7 +353,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
-            shim().GotFocus(cookie);
+            this->shim().GotFocus(cookie);
             return S_OK;
         }
         catch (...)
@@ -366,7 +366,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
-            *pCookie = detach(shim().LostFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().LostFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
-            shim().LostFocus(cookie);
+            this->shim().LostFocus(cookie);
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -409,7 +409,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().Type());
+            *value = detach(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -426,7 +426,7 @@ struct produce<D, Windows::UI::Core::ICoreCursorFactory> : produce_base<D, Windo
     {
         try
         {
-            *cursor = detach(shim().CreateCursor(type, id));
+            *cursor = detach(this->shim().CreateCursor(type, id));
             return S_OK;
         }
         catch (...)
@@ -444,7 +444,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
-            *value = detach(shim().HasThreadAccess());
+            *value = detach(this->shim().HasThreadAccess());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
-            shim().ProcessEvents(options);
+            this->shim().ProcessEvents(options);
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
-            *asyncAction = detach(shim().RunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
+            *asyncAction = detach(this->shim().RunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -484,7 +484,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
-            *asyncAction = detach(shim().RunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
+            *asyncAction = detach(this->shim().RunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows
     {
         try
         {
-            *asyncOperation = detach(shim().TryRunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
+            *asyncOperation = detach(this->shim().TryRunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows
     {
         try
         {
-            *asyncOperation = detach(shim().TryRunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
+            *asyncOperation = detach(this->shim().TryRunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
-            *value = detach(shim().CurrentPriority());
+            *value = detach(this->shim().CurrentPriority());
             return S_OK;
         }
         catch (...)
@@ -547,7 +547,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
-            shim().CurrentPriority(value);
+            this->shim().CurrentPriority(value);
             return S_OK;
         }
         catch (...)
@@ -560,7 +560,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
-            *value = detach(shim().ShouldYield());
+            *value = detach(this->shim().ShouldYield());
             return S_OK;
         }
         catch (...)
@@ -573,7 +573,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
-            *value = detach(shim().ShouldYield(priority));
+            *value = detach(this->shim().ShouldYield(priority));
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
-            shim().StopProcessEvents();
+            this->shim().StopProcessEvents();
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Dispatcher());
+            *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsInputEnabled());
+            *value = detach(this->shim().IsInputEnabled());
             return S_OK;
         }
         catch (...)
@@ -630,7 +630,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
-            shim().IsInputEnabled(value);
+            this->shim().IsInputEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -643,7 +643,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
-            *pCookie = detach(shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
-            shim().InputEnabled(cookie);
+            this->shim().InputEnabled(cookie);
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            *KeyState = detach(shim().GetCurrentKeyState(virtualKey));
+            *KeyState = detach(this->shim().GetCurrentKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -686,7 +686,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            *pCookie = detach(shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            shim().CharacterReceived(cookie);
+            this->shim().CharacterReceived(cookie);
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            *pCookie = detach(shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            shim().KeyDown(cookie);
+            this->shim().KeyDown(cookie);
             return S_OK;
         }
         catch (...)
@@ -738,7 +738,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            *pCookie = detach(shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -751,7 +751,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
-            shim().KeyUp(cookie);
+            this->shim().KeyUp(cookie);
             return S_OK;
         }
         catch (...)
@@ -768,7 +768,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().GetCurrentKeyEventDeviceId());
+            *value = detach(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
         catch (...)
@@ -786,7 +786,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().ReleasePointerCapture();
+            this->shim().ReleasePointerCapture();
             return S_OK;
         }
         catch (...)
@@ -799,7 +799,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().SetPointerCapture();
+            this->shim().SetPointerCapture();
             return S_OK;
         }
         catch (...)
@@ -812,7 +812,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().HasCapture());
+            *value = detach(this->shim().HasCapture());
             return S_OK;
         }
         catch (...)
@@ -825,7 +825,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PointerPosition());
+            *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *value = detach(shim().PointerCursor());
+            *value = detach(this->shim().PointerCursor());
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
+            this->shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
             return S_OK;
         }
         catch (...)
@@ -865,7 +865,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -878,7 +878,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerCaptureLost(cookie);
+            this->shim().PointerCaptureLost(cookie);
             return S_OK;
         }
         catch (...)
@@ -891,7 +891,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -904,7 +904,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerEntered(cookie);
+            this->shim().PointerEntered(cookie);
             return S_OK;
         }
         catch (...)
@@ -917,7 +917,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -930,7 +930,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerExited(cookie);
+            this->shim().PointerExited(cookie);
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -956,7 +956,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerMoved(cookie);
+            this->shim().PointerMoved(cookie);
             return S_OK;
         }
         catch (...)
@@ -969,7 +969,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -982,7 +982,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerPressed(cookie);
+            this->shim().PointerPressed(cookie);
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerReleased(cookie);
+            this->shim().PointerReleased(cookie);
             return S_OK;
         }
         catch (...)
@@ -1021,7 +1021,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            *cookie = detach(shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
-            shim().PointerWheelChanged(cookie);
+            this->shim().PointerWheelChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().PointerRoutedAway(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerRoutedAway(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            shim().PointerRoutedAway(cookie);
+            this->shim().PointerRoutedAway(cookie);
             return S_OK;
         }
         catch (...)
@@ -1077,7 +1077,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().PointerRoutedTo(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerRoutedTo(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1090,7 +1090,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            shim().PointerRoutedTo(cookie);
+            this->shim().PointerRoutedTo(cookie);
             return S_OK;
         }
         catch (...)
@@ -1103,7 +1103,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            *cookie = detach(shim().PointerRoutedReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerRoutedReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1116,7 +1116,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
-            shim().PointerRoutedReleased(cookie);
+            this->shim().PointerRoutedReleased(cookie);
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Win
     {
         try
         {
-            *pCookie = detach(shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Win
     {
         try
         {
-            shim().TouchHitTesting(cookie);
+            this->shim().TouchHitTesting(cookie);
             return S_OK;
         }
         catch (...)
@@ -1163,7 +1163,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().AutomationHostProvider());
+            *value = detach(this->shim().AutomationHostProvider());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().Bounds());
+            *value = detach(this->shim().Bounds());
             return S_OK;
         }
         catch (...)
@@ -1190,7 +1190,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().CustomProperties());
+            *value = detach(this->shim().CustomProperties());
             return S_OK;
         }
         catch (...)
@@ -1204,7 +1204,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().Dispatcher());
+            *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
         catch (...)
@@ -1218,7 +1218,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().FlowDirection());
+            *value = detach(this->shim().FlowDirection());
             return S_OK;
         }
         catch (...)
@@ -1231,7 +1231,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().FlowDirection(value);
+            this->shim().FlowDirection(value);
             return S_OK;
         }
         catch (...)
@@ -1244,7 +1244,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().IsInputEnabled());
+            *value = detach(this->shim().IsInputEnabled());
             return S_OK;
         }
         catch (...)
@@ -1257,7 +1257,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().IsInputEnabled(value);
+            this->shim().IsInputEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -1270,7 +1270,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().PointerCursor());
+            *value = detach(this->shim().PointerCursor());
             return S_OK;
         }
         catch (...)
@@ -1284,7 +1284,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
+            this->shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1297,7 +1297,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().PointerPosition());
+            *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -1310,7 +1310,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *value = detach(shim().Visible());
+            *value = detach(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -1323,7 +1323,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().Activate();
+            this->shim().Activate();
             return S_OK;
         }
         catch (...)
@@ -1336,7 +1336,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)
@@ -1349,7 +1349,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *KeyState = detach(shim().GetAsyncKeyState(virtualKey));
+            *KeyState = detach(this->shim().GetAsyncKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -1362,7 +1362,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *KeyState = detach(shim().GetKeyState(virtualKey));
+            *KeyState = detach(this->shim().GetKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -1375,7 +1375,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().ReleasePointerCapture();
+            this->shim().ReleasePointerCapture();
             return S_OK;
         }
         catch (...)
@@ -1388,7 +1388,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().SetPointerCapture();
+            this->shim().SetPointerCapture();
             return S_OK;
         }
         catch (...)
@@ -1401,7 +1401,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1414,7 +1414,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().Activated(cookie);
+            this->shim().Activated(cookie);
             return S_OK;
         }
         catch (...)
@@ -1427,7 +1427,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().AutomationProviderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().AutomationProviderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1440,7 +1440,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().AutomationProviderRequested(cookie);
+            this->shim().AutomationProviderRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -1453,7 +1453,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1466,7 +1466,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().CharacterReceived(cookie);
+            this->shim().CharacterReceived(cookie);
             return S_OK;
         }
         catch (...)
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1492,7 +1492,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().Closed(cookie);
+            this->shim().Closed(cookie);
             return S_OK;
         }
         catch (...)
@@ -1505,7 +1505,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1518,7 +1518,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().InputEnabled(cookie);
+            this->shim().InputEnabled(cookie);
             return S_OK;
         }
         catch (...)
@@ -1531,7 +1531,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1544,7 +1544,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().KeyDown(cookie);
+            this->shim().KeyDown(cookie);
             return S_OK;
         }
         catch (...)
@@ -1557,7 +1557,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1570,7 +1570,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().KeyUp(cookie);
+            this->shim().KeyUp(cookie);
             return S_OK;
         }
         catch (...)
@@ -1583,7 +1583,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1596,7 +1596,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerCaptureLost(cookie);
+            this->shim().PointerCaptureLost(cookie);
             return S_OK;
         }
         catch (...)
@@ -1609,7 +1609,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1622,7 +1622,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerEntered(cookie);
+            this->shim().PointerEntered(cookie);
             return S_OK;
         }
         catch (...)
@@ -1635,7 +1635,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1648,7 +1648,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerExited(cookie);
+            this->shim().PointerExited(cookie);
             return S_OK;
         }
         catch (...)
@@ -1661,7 +1661,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1674,7 +1674,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerMoved(cookie);
+            this->shim().PointerMoved(cookie);
             return S_OK;
         }
         catch (...)
@@ -1687,7 +1687,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1700,7 +1700,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerPressed(cookie);
+            this->shim().PointerPressed(cookie);
             return S_OK;
         }
         catch (...)
@@ -1713,7 +1713,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1726,7 +1726,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerReleased(cookie);
+            this->shim().PointerReleased(cookie);
             return S_OK;
         }
         catch (...)
@@ -1739,7 +1739,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1752,7 +1752,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().TouchHitTesting(cookie);
+            this->shim().TouchHitTesting(cookie);
             return S_OK;
         }
         catch (...)
@@ -1765,7 +1765,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *cookie = detach(shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1778,7 +1778,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().PointerWheelChanged(cookie);
+            this->shim().PointerWheelChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1791,7 +1791,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().SizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().SizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().SizeChanged(cookie);
+            this->shim().SizeChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1817,7 +1817,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            *pCookie = detach(shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1830,7 +1830,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
-            shim().VisibilityChanged(cookie);
+            this->shim().VisibilityChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -1847,7 +1847,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow2> : produce_base<D, Windows::UI
     {
         try
         {
-            shim().PointerPosition(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().PointerPosition(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1864,7 +1864,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
-            *pCookie = detach(shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
+            *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1877,7 +1877,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
-            shim().ClosestInteractiveBoundsRequested(cookie);
+            this->shim().ClosestInteractiveBoundsRequested(cookie);
             return S_OK;
         }
         catch (...)
@@ -1890,7 +1890,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
-            *value = detach(shim().GetCurrentKeyEventDeviceId());
+            *value = detach(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
         catch (...)
@@ -1908,7 +1908,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Handled());
+            *value = detach(this->shim().Handled());
             return S_OK;
         }
         catch (...)
@@ -1921,7 +1921,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Win
     {
         try
         {
-            shim().Handled(value);
+            this->shim().Handled(value);
             return S_OK;
         }
         catch (...)
@@ -1938,7 +1938,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManager> : produce_base<D,
     {
         try
         {
-            shim().NotifyLayoutCompleted();
+            this->shim().NotifyLayoutCompleted();
             return S_OK;
         }
         catch (...)
@@ -1955,7 +1955,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
     {
         try
         {
-            shim().ShouldWaitForLayoutCompletion(value);
+            this->shim().ShouldWaitForLayoutCompletion(value);
             return S_OK;
         }
         catch (...)
@@ -1968,7 +1968,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
     {
         try
         {
-            *value = detach(shim().ShouldWaitForLayoutCompletion());
+            *value = detach(this->shim().ShouldWaitForLayoutCompletion());
             return S_OK;
         }
         catch (...)
@@ -1985,7 +1985,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerStatics> : produce_
     {
         try
         {
-            *CoreWindowResizeManager = detach(shim().GetForCurrentView());
+            *CoreWindowResizeManager = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2003,7 +2003,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowStatic> : produce_base<D, Window
     {
         try
         {
-            *ppWindow = detach(shim().GetForCurrentThread());
+            *ppWindow = detach(this->shim().GetForCurrentThread());
             return S_OK;
         }
         catch (...)
@@ -2021,7 +2021,7 @@ struct produce<D, Windows::UI::Core::IIdleDispatchedHandlerArgs> : produce_base<
     {
         try
         {
-            *value = detach(shim().IsDispatcherIdle());
+            *value = detach(this->shim().IsDispatcherIdle());
             return S_OK;
         }
         catch (...)
@@ -2038,7 +2038,7 @@ struct produce<D, Windows::UI::Core::IInitializeWithCoreWindow> : produce_base<D
     {
         try
         {
-            shim().Initialize(*reinterpret_cast<const Windows::UI::Core::CoreWindow *>(&window));
+            this->shim().Initialize(*reinterpret_cast<const Windows::UI::Core::CoreWindow *>(&window));
             return S_OK;
         }
         catch (...)
@@ -2055,7 +2055,7 @@ struct produce<D, Windows::UI::Core::IInputEnabledEventArgs> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().InputEnabled());
+            *value = detach(this->shim().InputEnabled());
             return S_OK;
         }
         catch (...)
@@ -2072,7 +2072,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().VirtualKey());
+            *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -2085,7 +2085,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
     {
         try
         {
-            *value = detach(shim().KeyStatus());
+            *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -2102,7 +2102,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs2> : produce_base<D, Windows::
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -2120,7 +2120,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().CurrentPoint());
+            *value = detach(this->shim().CurrentPoint());
             return S_OK;
         }
         catch (...)
@@ -2134,7 +2134,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().KeyModifiers());
+            *value = detach(this->shim().KeyModifiers());
             return S_OK;
         }
         catch (...)
@@ -2147,7 +2147,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
-            *value = detach(shim().GetIntermediatePoints());
+            *value = detach(this->shim().GetIntermediatePoints());
             return S_OK;
         }
         catch (...)
@@ -2165,7 +2165,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager> : produce_base<D,
     {
         try
         {
-            *token = detach(shim().BackRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().BackRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2178,7 +2178,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager> : produce_base<D,
     {
         try
         {
-            shim().BackRequested(token);
+            this->shim().BackRequested(token);
             return S_OK;
         }
         catch (...)
@@ -2195,7 +2195,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
     {
         try
         {
-            *value = detach(shim().AppViewBackButtonVisibility());
+            *value = detach(this->shim().AppViewBackButtonVisibility());
             return S_OK;
         }
         catch (...)
@@ -2208,7 +2208,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
     {
         try
         {
-            shim().AppViewBackButtonVisibility(value);
+            this->shim().AppViewBackButtonVisibility(value);
             return S_OK;
         }
         catch (...)
@@ -2225,7 +2225,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManagerStatics> : produce_
     {
         try
         {
-            *loader = detach(shim().GetForCurrentView());
+            *loader = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2243,7 +2243,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().ProximityEvaluation());
+            *value = detach(this->shim().ProximityEvaluation());
             return S_OK;
         }
         catch (...)
@@ -2256,7 +2256,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            shim().ProximityEvaluation(*reinterpret_cast<const Windows::UI::Core::CoreProximityEvaluation *>(&value));
+            this->shim().ProximityEvaluation(*reinterpret_cast<const Windows::UI::Core::CoreProximityEvaluation *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2269,7 +2269,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Point());
+            *value = detach(this->shim().Point());
             return S_OK;
         }
         catch (...)
@@ -2282,7 +2282,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().BoundingBox());
+            *value = detach(this->shim().BoundingBox());
             return S_OK;
         }
         catch (...)
@@ -2295,7 +2295,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            *proximityEvaluation = detach(shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Rect *>(&controlBoundingBox)));
+            *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Rect *>(&controlBoundingBox)));
             return S_OK;
         }
         catch (...)
@@ -2308,7 +2308,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
-            *proximityEvaluation = detach(shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Point *>(&controlVertices)));
+            *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Point *>(&controlVertices)));
             return S_OK;
         }
         catch (...)
@@ -2325,7 +2325,7 @@ struct produce<D, Windows::UI::Core::IVisibilityChangedEventArgs> : produce_base
     {
         try
         {
-            *value = detach(shim().Visible());
+            *value = detach(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -2342,7 +2342,7 @@ struct produce<D, Windows::UI::Core::IWindowActivatedEventArgs> : produce_base<D
     {
         try
         {
-            *value = detach(shim().WindowActivationState());
+            *value = detach(this->shim().WindowActivationState());
             return S_OK;
         }
         catch (...)
@@ -2359,7 +2359,7 @@ struct produce<D, Windows::UI::Core::IWindowSizeChangedEventArgs> : produce_base
     {
         try
         {
-            *value = detach(shim().Size());
+            *value = detach(this->shim().Size());
             return S_OK;
         }
         catch (...)

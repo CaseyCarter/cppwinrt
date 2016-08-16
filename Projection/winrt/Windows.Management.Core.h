@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Management.Core.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Management.Core.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -21,7 +21,7 @@ struct produce<D, Windows::Management::Core::IApplicationDataManagerStatics> : p
     {
         try
         {
-            *applicationData = detach(shim().CreateForPackageFamily(*reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *applicationData = detach(this->shim().CreateForPackageFamily(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)

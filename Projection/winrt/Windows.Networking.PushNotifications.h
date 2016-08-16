@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.UI.Notifications.3.h"
-#include "internal\Windows.Networking.PushNotifications.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.UI.Notifications.3.h"
+#include "internal/Windows.Networking.PushNotifications.3.h"
 #include "Windows.Networking.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *value = detach(shim().ExpirationTime());
+            *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *token = detach(shim().PushNotificationReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PushNotificationReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            shim().PushNotificationReceived(token);
+            this->shim().PushNotificationReceived(token);
             return S_OK;
         }
         catch (...)
@@ -90,7 +90,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForApplicationAsync());
+            *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
+            *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
+            *operation = detach(this->shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -150,7 +150,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForApplicationAsync());
+            *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync());
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
+            *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *operation = detach(shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
+            *operation = detach(this->shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
-            *result = detach(shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -214,7 +214,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            shim().Cancel(value);
+            this->shim().Cancel(value);
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().Cancel());
+            *value = detach(this->shim().Cancel());
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().NotificationType());
+            *value = detach(this->shim().NotificationType());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().ToastNotification());
+            *value = detach(this->shim().ToastNotification());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().TileNotification());
+            *value = detach(this->shim().TileNotification());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().BadgeNotification());
+            *value = detach(this->shim().BadgeNotification());
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
-            *value = detach(shim().RawNotification());
+            *value = detach(this->shim().RawNotification());
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::Networking::PushNotifications::IRawNotification> : pr
     {
         try
         {
-            *value = detach(shim().Content());
+            *value = detach(this->shim().Content());
             return S_OK;
         }
         catch (...)

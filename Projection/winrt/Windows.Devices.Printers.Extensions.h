@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Printers.Extensions.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Printers.Extensions.3.h"
 #include "Windows.Devices.Printers.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            *value = detach(shim().DeviceID());
+            *value = detach(this->shim().DeviceID());
             return S_OK;
         }
         catch (...)
@@ -32,7 +32,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            *printModelPackage = detach(shim().GetPrintModelPackage());
+            *printModelPackage = detach(this->shim().GetPrintModelPackage());
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            *value = detach(shim().IsPrintReady());
+            *value = detach(this->shim().IsPrintReady());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            shim().IsPrintReady(value);
+            this->shim().IsPrintReady(value);
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            *eventCookie = detach(shim().PrintRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().PrintRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
-            shim().PrintRequested(eventCookie);
+            this->shim().PrintRequested(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : p
     {
         try
         {
-            *eventCookie = detach(shim().PrinterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().PrinterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : p
     {
         try
         {
-            shim().PrinterChanged(eventCookie);
+            this->shim().PrinterChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
-            shim().SetExtendedStatus(value);
+            this->shim().SetExtendedStatus(value);
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
-            shim().SetSource(*reinterpret_cast<const Windows::IInspectable *>(&source));
+            this->shim().SetSource(*reinterpret_cast<const Windows::IInspectable *>(&source));
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
-            shim().SetSourceChanged(value);
+            this->shim().SetSourceChanged(value);
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinte
     {
         try
         {
-            *value = detach(shim().NewDeviceId());
+            *value = detach(this->shim().NewDeviceId());
             return S_OK;
         }
         catch (...)

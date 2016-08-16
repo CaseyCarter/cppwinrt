@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Graphics.Imaging.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.DragDrop.Core.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.DragDrop.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.DragDrop.Core.3.h"
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *returnValue = detach(shim().TargetRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> *>(&value)));
+            *returnValue = detach(this->shim().TargetRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().TargetRequested(value);
+            this->shim().TargetRequested(value);
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().AreConcurrentOperationsEnabled());
+            *value = detach(this->shim().AreConcurrentOperationsEnabled());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().AreConcurrentOperationsEnabled(value);
+            this->shim().AreConcurrentOperationsEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().GetForCurrentView());
+            *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().Modifiers());
+            *value = detach(this->shim().Modifiers());
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().Position());
+            *value = detach(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().AllowedOperations());
+            *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetPointerId(pointerId);
+            this->shim().SetPointerId(pointerId);
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
+            this->shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
+            this->shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().DragUIContentMode());
+            *value = detach(this->shim().DragUIContentMode());
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().DragUIContentMode(value);
+            this->shim().DragUIContentMode(value);
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().StartAsync());
+            *value = detach(this->shim().StartAsync());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().AllowedOperations());
+            *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
         catch (...)
@@ -266,7 +266,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().AllowedOperations(value);
+            this->shim().AllowedOperations(value);
             return S_OK;
         }
         catch (...)
@@ -283,7 +283,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
+            this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
         catch (...)
@@ -296,7 +296,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
+            this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().IsContentVisible());
+            *value = detach(this->shim().IsContentVisible());
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().IsContentVisible(value);
+            this->shim().IsContentVisible(value);
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().Caption());
+            *value = detach(this->shim().Caption());
             return S_OK;
         }
         catch (...)
@@ -349,7 +349,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().Caption(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Caption(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().IsCaptionVisible());
+            *value = detach(this->shim().IsCaptionVisible());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().IsCaptionVisible(value);
+            this->shim().IsCaptionVisible(value);
             return S_OK;
         }
         catch (...)
@@ -388,7 +388,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *value = detach(shim().IsGlyphVisible());
+            *value = detach(this->shim().IsGlyphVisible());
             return S_OK;
         }
         catch (...)
@@ -401,7 +401,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().IsGlyphVisible(value);
+            this->shim().IsGlyphVisible(value);
             return S_OK;
         }
         catch (...)
@@ -414,7 +414,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *returnValue = detach(shim().EnterAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
+            *returnValue = detach(this->shim().EnterAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *returnValue = detach(shim().OverAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
+            *returnValue = detach(this->shim().OverAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *returnValue = detach(shim().LeaveAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
+            *returnValue = detach(this->shim().LeaveAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            *returnValue = detach(shim().DropAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
+            *returnValue = detach(this->shim().DropAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
-            shim().SetTarget(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget *>(&target));
+            this->shim().SetTarget(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget *>(&target));
             return S_OK;
         }
         catch (...)

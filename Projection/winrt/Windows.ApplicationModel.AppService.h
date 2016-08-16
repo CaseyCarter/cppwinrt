@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.System.RemoteSystems.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.ApplicationModel.AppService.3.h"
+#include "internal/Windows.System.RemoteSystems.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.AppService.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.h"
 
@@ -22,7 +22,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceCatalogStati
     {
         try
         {
-            *operation = detach(shim().FindAppServiceProvidersAsync(*reinterpret_cast<const hstring *>(&appServiceName)));
+            *operation = detach(this->shim().FindAppServiceProvidersAsync(*reinterpret_cast<const hstring *>(&appServiceName)));
             return S_OK;
         }
         catch (...)
@@ -40,7 +40,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceClosedEventA
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *value = detach(shim().AppServiceName());
+            *value = detach(this->shim().AppServiceName());
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            shim().AppServiceName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AppServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -84,7 +84,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            shim().PackageFamilyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *operation = detach(shim().OpenAsync());
+            *operation = detach(this->shim().OpenAsync());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *operation = detach(shim().SendMessageAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
+            *operation = detach(this->shim().SendMessageAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *token = detach(shim().RequestReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> *>(&handler)));
+            *token = detach(this->shim().RequestReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            shim().RequestReceived(token);
+            this->shim().RequestReceived(token);
             return S_OK;
         }
         catch (...)
@@ -165,7 +165,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            *token = detach(shim().ServiceClosed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ServiceClosed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -178,7 +178,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
-            shim().ServiceClosed(token);
+            this->shim().ServiceClosed(token);
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
-            *operation = detach(shim().OpenRemoteAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest)));
+            *operation = detach(this->shim().OpenRemoteAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest)));
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
-            shim().User(*reinterpret_cast<const Windows::System::User *>(&value));
+            this->shim().User(*reinterpret_cast<const Windows::System::User *>(&value));
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceDeferral> : 
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequest> : p
     {
         try
         {
-            *value = detach(shim().Message());
+            *value = detach(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -271,7 +271,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequest> : p
     {
         try
         {
-            *operation = detach(shim().SendResponseAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
+            *operation = detach(this->shim().SendResponseAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -289,7 +289,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequestRecei
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -303,7 +303,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequestRecei
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -321,7 +321,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceResponse> : 
     {
         try
         {
-            *value = detach(shim().Message());
+            *value = detach(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceResponse> : 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -366,7 +366,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
-            *value = detach(shim().CallerPackageFamilyName());
+            *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
-            *value = detach(shim().AppServiceConnection());
+            *value = detach(this->shim().AppServiceConnection());
             return S_OK;
         }
         catch (...)
@@ -398,7 +398,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
-            *value = detach(shim().IsRemoteSystemConnection());
+            *value = detach(this->shim().IsRemoteSystemConnection());
             return S_OK;
         }
         catch (...)

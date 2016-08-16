@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Devices.SerialCommunication.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Devices.SerialCommunication.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 
@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IErrorReceivedEventArgs
     {
         try
         {
-            *value = detach(shim().Error());
+            *value = detach(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IPinChangedEventArgs> :
     {
         try
         {
-            *value = detach(shim().PinChange());
+            *value = detach(this->shim().PinChange());
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().BaudRate());
+            *value = detach(this->shim().BaudRate());
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().BaudRate(value);
+            this->shim().BaudRate(value);
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().BreakSignalState());
+            *value = detach(this->shim().BreakSignalState());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().BreakSignalState(value);
+            this->shim().BreakSignalState(value);
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().BytesReceived());
+            *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().CarrierDetectState());
+            *value = detach(this->shim().CarrierDetectState());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().ClearToSendState());
+            *value = detach(this->shim().ClearToSendState());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().DataBits());
+            *value = detach(this->shim().DataBits());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().DataBits(value);
+            this->shim().DataBits(value);
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().DataSetReadyState());
+            *value = detach(this->shim().DataSetReadyState());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().Handshake());
+            *value = detach(this->shim().Handshake());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().Handshake(value);
+            this->shim().Handshake(value);
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().IsDataTerminalReadyEnabled());
+            *value = detach(this->shim().IsDataTerminalReadyEnabled());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().IsDataTerminalReadyEnabled(value);
+            this->shim().IsDataTerminalReadyEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().IsRequestToSendEnabled());
+            *value = detach(this->shim().IsRequestToSendEnabled());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().IsRequestToSendEnabled(value);
+            this->shim().IsRequestToSendEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().Parity());
+            *value = detach(this->shim().Parity());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().Parity(value);
+            this->shim().Parity(value);
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().PortName());
+            *value = detach(this->shim().PortName());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().ReadTimeout());
+            *value = detach(this->shim().ReadTimeout());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().ReadTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().ReadTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().StopBits());
+            *value = detach(this->shim().StopBits());
             return S_OK;
         }
         catch (...)
@@ -341,7 +341,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().StopBits(value);
+            this->shim().StopBits(value);
             return S_OK;
         }
         catch (...)
@@ -354,7 +354,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().UsbVendorId());
+            *value = detach(this->shim().UsbVendorId());
             return S_OK;
         }
         catch (...)
@@ -367,7 +367,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().UsbProductId());
+            *value = detach(this->shim().UsbProductId());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().WriteTimeout());
+            *value = detach(this->shim().WriteTimeout());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().WriteTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().WriteTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -406,7 +406,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().InputStream());
+            *value = detach(this->shim().InputStream());
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *value = detach(shim().OutputStream());
+            *value = detach(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *token = detach(shim().ErrorReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> *>(&reportHandler)));
+            *token = detach(this->shim().ErrorReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().ErrorReceived(token);
+            this->shim().ErrorReceived(token);
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            *token = detach(shim().PinChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> *>(&reportHandler)));
+            *token = detach(this->shim().PinChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
-            shim().PinChanged(token);
+            this->shim().PinChanged(token);
             return S_OK;
         }
         catch (...)
@@ -490,7 +490,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
-            *value = detach(shim().GetDeviceSelector());
+            *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -504,7 +504,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
-            *result = detach(shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&portName)));
+            *result = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&portName)));
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
-            *result = detach(shim().GetDeviceSelectorFromUsbVidPid(vendorId, productId));
+            *result = detach(this->shim().GetDeviceSelectorFromUsbVidPid(vendorId, productId));
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
-            *result = detach(shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)

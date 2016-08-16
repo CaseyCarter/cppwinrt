@@ -11,10 +11,22 @@ namespace Microsoft.Wcl.Parsers
 {
     class InnerGenericInterfacesGeneratator
     {
-        static public List<GenericInterfaceInfo> GenerateInnerGenericInterface(GenericInterfaceInfo info)
+        public InnerGenericInterfacesGeneratator(FrontEndConfiguration configuration)
+        {
+            this.Configuration = configuration;
+        }
+
+        private FrontEndConfiguration Configuration { get; set; }
+
+        public List<GenericInterfaceInfo> GenerateInnerGenericInterface(GenericInterfaceInfo info)
+        {
+            return this.GenerateInnerGenericInterface(info.MetadataFullTypeNameInCppForm);
+        }
+
+        private List<GenericInterfaceInfo> GenerateInnerGenericInterface(string genericInterfaceFullTypeName)
         {
             var outputList = new List<GenericInterfaceInfo>();
-            var genericType = MetadataGenericInterfaceParser.Parse(info.MetadataFullTypeNameInCppForm);
+            var genericType = MetadataGenericInterfaceParser.Parse(genericInterfaceFullTypeName);
 
             List<GenericType> list = new List<GenericType>();
             ProcessGenericType(genericType, list);
@@ -39,14 +51,36 @@ namespace Microsoft.Wcl.Parsers
             return outputList;
         }
 
-        static private void ProcessGenericType(GenericType genericType, List<GenericType> list)
+        private void ProcessGenericType(GenericType genericType, List<GenericType> innerList)
         {
             foreach (var item in genericType.Arguments)
             {
+                // Two main cases
+                // 1. Generic type has an inner type which happens to be a generic interface AND
+                // 2. The type may in turn have a depenency on another type that happens to be a generic interface
                 if (item is GenericType)
                 {
-                    list.Add((GenericType)item);
-                    ProcessGenericType((GenericType)item, list);
+                    innerList.Add((GenericType)item);
+                    ProcessGenericType((GenericType)item, innerList);
+                }
+                else
+                {
+                    object runtimeClass = null;
+                    this.Configuration.DataStore.GetRepository().TryGetValue(TypeNameUtilities.GetFullTypeNameInDotForm((string)item), out runtimeClass);
+                    if (runtimeClass != null && runtimeClass is RuntimeClassInfo)
+                    {
+                        string defaultInterface = ((RuntimeClassInfo)runtimeClass).DefaultInterface;
+                        if (GenericInterfaceParser.IsGenericInterface(defaultInterface))
+                        {
+                            // Because this generic interface can in turn have inner generic interfaces, follow the trail
+                            GenericType dependencyGenericType = MetadataGenericInterfaceParser.Parse(defaultInterface);
+                            ProcessGenericType(dependencyGenericType, innerList);
+
+                            // To guarantee subsequent order, first the dependencies and then the current dependency generic type.
+                            // Adding dependencyGenericType last to guarantee that it comes last relative to the ones added the line above.
+                            innerList.Add(dependencyGenericType);
+                        }
+                    }
                 }
             }
         }

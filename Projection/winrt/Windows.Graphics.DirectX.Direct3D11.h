@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Graphics.DirectX.Direct3D11.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "Windows.Graphics.DirectX.h"
 
 WINRT_EXPORT namespace winrt {
@@ -17,7 +17,7 @@ struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice> : pro
     {
         try
         {
-            shim().Trim();
+            this->shim().Trim();
             return S_OK;
         }
         catch (...)
@@ -34,7 +34,7 @@ struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> : pr
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)

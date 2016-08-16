@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Devices.Input.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Devices.Input.3.h"
 #include "Windows.Devices.h"
 
 WINRT_EXPORT namespace winrt {
@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Input::IKeyboardCapabilities> : produce_base
     {
         try
         {
-            *value = detach(shim().KeyboardPresent());
+            *value = detach(this->shim().KeyboardPresent());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().MousePresent());
+            *value = detach(this->shim().MousePresent());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().VerticalWheelPresent());
+            *value = detach(this->shim().VerticalWheelPresent());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().HorizontalWheelPresent());
+            *value = detach(this->shim().HorizontalWheelPresent());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().SwapButtons());
+            *value = detach(this->shim().SwapButtons());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().NumberOfButtons());
+            *value = detach(this->shim().NumberOfButtons());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windo
     {
         try
         {
-            *cookie = detach(shim().MouseMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().MouseMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -118,7 +118,7 @@ struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windo
     {
         try
         {
-            shim().MouseMoved(cookie);
+            this->shim().MouseMoved(cookie);
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Devices::Input::IMouseDeviceStatics> : produce_base<D
     {
         try
         {
-            *mouseDevice = detach(shim().GetForCurrentView());
+            *mouseDevice = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -153,7 +153,7 @@ struct produce<D, Windows::Devices::Input::IMouseEventArgs> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MouseDelta());
+            *value = detach(this->shim().MouseDelta());
             return S_OK;
         }
         catch (...)
@@ -170,7 +170,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().PointerDeviceType());
+            *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IsIntegrated());
+            *value = detach(this->shim().IsIntegrated());
             return S_OK;
         }
         catch (...)
@@ -196,7 +196,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().MaxContacts());
+            *value = detach(this->shim().MaxContacts());
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().PhysicalDeviceRect());
+            *value = detach(this->shim().PhysicalDeviceRect());
             return S_OK;
         }
         catch (...)
@@ -222,7 +222,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ScreenRect());
+            *value = detach(this->shim().ScreenRect());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SupportedUsages());
+            *value = detach(this->shim().SupportedUsages());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice2> : produce_base<D, Wi
     {
         try
         {
-            *value = detach(shim().MaxPointersWithZDistance());
+            *value = detach(this->shim().MaxPointersWithZDistance());
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base
     {
         try
         {
-            *pointerDevice = detach(shim().GetPointerDevice(pointerId));
+            *pointerDevice = detach(this->shim().GetPointerDevice(pointerId));
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base
     {
         try
         {
-            *pointerDevices = detach(shim().GetPointerDevices());
+            *pointerDevices = detach(this->shim().GetPointerDevices());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().TouchPresent());
+            *value = detach(this->shim().TouchPresent());
             return S_OK;
         }
         catch (...)
@@ -315,7 +315,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Contacts());
+            *value = detach(this->shim().Contacts());
             return S_OK;
         }
         catch (...)

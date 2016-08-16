@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Devices.Pwm.Provider.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Pwm.Provider.3.h"
 #include "Windows.Devices.Pwm.h"
 
 WINRT_EXPORT namespace winrt {
@@ -18,7 +18,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().PinCount());
+            *value = detach(this->shim().PinCount());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().ActualFrequency());
+            *value = detach(this->shim().ActualFrequency());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().SetDesiredFrequency(frequency));
+            *value = detach(this->shim().SetDesiredFrequency(frequency));
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().MaxFrequency());
+            *value = detach(this->shim().MaxFrequency());
             return S_OK;
         }
         catch (...)
@@ -70,7 +70,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            *value = detach(shim().MinFrequency());
+            *value = detach(this->shim().MinFrequency());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            shim().AcquirePin(pin);
+            this->shim().AcquirePin(pin);
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            shim().ReleasePin(pin);
+            this->shim().ReleasePin(pin);
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            shim().EnablePin(pin);
+            this->shim().EnablePin(pin);
             return S_OK;
         }
         catch (...)
@@ -122,7 +122,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            shim().DisablePin(pin);
+            this->shim().DisablePin(pin);
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
-            shim().SetPulseParameters(pin, dutyCycle, invertPolarity);
+            this->shim().SetPulseParameters(pin, dutyCycle, invertPolarity);
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmProvider> : produce_base<
     {
         try
         {
-            *result = detach(shim().GetControllers());
+            *result = detach(this->shim().GetControllers());
             return S_OK;
         }
         catch (...)

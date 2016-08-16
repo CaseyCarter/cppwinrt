@@ -509,21 +509,21 @@ static void WriteMethodBodyPreCall(Output & out)
         if (back.Category == TypeCategory::String || (back.Category == TypeCategory::Interface && Settings::ParameterInfo.Parameters.back().ClassType.empty()))
         {
             Write(out,
-                  "\n    % %;",
+                  "\r\n    % %;",
                   Settings::ParameterInfo.ReturnType,
                   Settings::ParameterInfo.ReturnTypeName());
         }
         else if (!Settings::ParameterInfo.Parameters.back().ClassType.empty())
         {
             Write(out,
-                  "\n    % % { nullptr };",
+                  "\r\n    % % { nullptr };",
                   Settings::ParameterInfo.ReturnType,
                   Settings::ParameterInfo.ReturnTypeName());
         }
         else
         {
             Write(out,
-                  "\n    % % {};",
+                  "\r\n    % % {};",
                   Settings::ParameterInfo.ReturnType,
                   Settings::ParameterInfo.ReturnTypeName());
         }
@@ -535,7 +535,7 @@ static void WriteMethodBodyPostCall(Output & out)
     if (Settings::ParameterInfo.HasReturnType)
     {
         Write(out,
-              "\n    return %;",
+              "\r\n    return %;",
               Settings::ParameterInfo.ReturnTypeName());
     }
 }
@@ -866,14 +866,14 @@ static void WriteOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach(shim().%(%))",
+              " = detach(this->shim().%(%))",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }
     else
     {
         Write(out,
-              "shim().%(%)",
+              "this->shim().%(%)",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }
@@ -890,14 +890,14 @@ static void WriteProducerCleanup(Output & out)
 
         if (param.IsArray() && param.IsReferenceOrReturn())
         {
-            Write(out, "\n            *__%Size = 0;", param.Name);
-            Write(out, "\n            *% = nullptr;", param.Name);
+            Write(out, "\r\n            *__%Size = 0;", param.Name);
+            Write(out, "\r\n            *% = nullptr;", param.Name);
         }
         else if (param.Category == TypeCategory::String ||
                  param.Category == TypeCategory::Interface ||
                  param.Category == TypeCategory::Delegate)
         {
-            Write(out, "\n            *% = nullptr;", param.Name);
+            Write(out, "\r\n            *% = nullptr;", param.Name);
         }
 
         MODERN_ASSERT(param.Category != TypeCategory::Class);
@@ -1560,7 +1560,7 @@ void WriteRequiredAbiHeadersForInterface(Output & out)
 
 void WriteRequiredForwards(Output & out)
 {
-    Write(out, Strings::WriteInclude, "..\\base.h");
+    Write(out, Strings::WriteInclude, "../base.h");
     Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + Settings::ForwardLayerExtension);
 
     GetRequiredForwards([&]

@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include "internal\Windows.System.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Management.Deployment.3.h"
-#include "internal\Windows.ApplicationModel.Store.Preview.InstallControl.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Management.Deployment.3.h"
+#include "internal/Windows.ApplicationModel.Store.Preview.InstallControl.3.h"
 #include "Windows.ApplicationModel.Store.Preview.h"
 
 WINRT_EXPORT namespace winrt {
@@ -21,7 +21,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().ProductId());
+            *value = detach(this->shim().ProductId());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().InstallType());
+            *value = detach(this->shim().InstallType());
             return S_OK;
         }
         catch (...)
@@ -62,7 +62,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().IsUserInitiated());
+            *value = detach(this->shim().IsUserInitiated());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *result = detach(shim().GetCurrentStatus());
+            *result = detach(this->shim().GetCurrentStatus());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Cancel();
+            this->shim().Cancel();
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Pause();
+            this->shim().Pause();
             return S_OK;
         }
         catch (...)
@@ -115,7 +115,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Restart();
+            this->shim().Restart();
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *token = detach(shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Completed(token);
+            this->shim().Completed(token);
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *token = detach(shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().StatusChanged(token);
+            this->shim().StatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Cancel(*reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Cancel(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Pause(*reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Pause(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Restart(*reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Restart(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().AppInstallItems());
+            *value = detach(this->shim().AppInstallItems());
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Cancel(*reinterpret_cast<const hstring *>(&productId));
+            this->shim().Cancel(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
         catch (...)
@@ -254,7 +254,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Pause(*reinterpret_cast<const hstring *>(&productId));
+            this->shim().Pause(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Restart(*reinterpret_cast<const hstring *>(&productId));
+            this->shim().Restart(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *token = detach(shim().ItemCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
+            *token = detach(this->shim().ItemCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -293,7 +293,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().ItemCompleted(token);
+            this->shim().ItemCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *token = detach(shim().ItemStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
+            *token = detach(this->shim().ItemStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -319,7 +319,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().ItemStatusChanged(token);
+            this->shim().ItemStatusChanged(token);
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().AutoUpdateSetting());
+            *value = detach(this->shim().AutoUpdateSetting());
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().AutoUpdateSetting(value);
+            this->shim().AutoUpdateSetting(value);
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().AcquisitionIdentity());
+            *value = detach(this->shim().AcquisitionIdentity());
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().AcquisitionIdentity(*reinterpret_cast<const hstring *>(&value));
+            this->shim().AcquisitionIdentity(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -385,7 +385,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().GetIsApplicableAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
+            *operation = detach(this->shim().GetIsApplicableAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage));
+            *operation = detach(this->shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage));
             return S_OK;
         }
         catch (...)
@@ -413,7 +413,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *operation = detach(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -427,7 +427,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
+            *operation = detach(this->shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForAllUpdatesAsync());
+            *operation = detach(this->shim().SearchForAllUpdatesAsync());
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().IsStoreBlockedByPolicyAsync(*reinterpret_cast<const hstring *>(&storeClientName), *reinterpret_cast<const hstring *>(&storeClientPublisher)));
+            *operation = detach(this->shim().IsStoreBlockedByPolicyAsync(*reinterpret_cast<const hstring *>(&storeClientName), *reinterpret_cast<const hstring *>(&storeClientPublisher)));
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId)));
+            *operation = detach(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId)));
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&bundleId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&bundleId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -515,7 +515,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForAllUpdatesAsync(*reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().SearchForAllUpdatesAsync(*reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Cancel(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Cancel(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -570,7 +570,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Pause(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Pause(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -583,7 +583,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().Restart(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().Restart(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().StartProductInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
+            *operation = detach(this->shim().StartProductInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().StartProductInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
+            *operation = detach(this->shim().StartProductInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
         catch (...)
@@ -628,7 +628,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().UpdateAppByPackageFamilyNameForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().UpdateAppByPackageFamilyNameForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().SearchForUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().SearchForAllUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().SearchForAllUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().GetIsAppAllowedToInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            *operation = detach(this->shim().GetIsAppAllowedToInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *operation = detach(shim().GetIsApplicableForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
+            *operation = detach(this->shim().GetIsApplicableForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            shim().MoveToFrontOfDownloadQueue(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
+            this->shim().MoveToFrontOfDownloadQueue(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
         catch (...)
@@ -715,7 +715,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().Item());
+            *value = detach(this->shim().Item());
             return S_OK;
         }
         catch (...)
@@ -733,7 +733,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().InstallState());
+            *value = detach(this->shim().InstallState());
             return S_OK;
         }
         catch (...)
@@ -746,7 +746,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().DownloadSizeInBytes());
+            *value = detach(this->shim().DownloadSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().BytesDownloaded());
+            *value = detach(this->shim().BytesDownloaded());
             return S_OK;
         }
         catch (...)
@@ -772,7 +772,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().PercentComplete());
+            *value = detach(this->shim().PercentComplete());
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().ErrorCode());
+            *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -802,7 +802,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().User());
+            *value = detach(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -816,7 +816,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
-            *value = detach(shim().ReadyForLaunch());
+            *value = detach(this->shim().ReadyForLaunch());
             return S_OK;
         }
         catch (...)

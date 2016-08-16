@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Security.EnterpriseData.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.ApplicationModel.DataTransfer.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Security.EnterpriseData.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.ApplicationModel.DataTransfer.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.Collections.h"
 
@@ -45,7 +45,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            *content = detach(shim().GetContent());
+            *content = detach(this->shim().GetContent());
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            shim().SetContent(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataPackage *>(&content));
+            this->shim().SetContent(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataPackage *>(&content));
             return S_OK;
         }
         catch (...)
@@ -72,7 +72,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            shim().Flush();
+            this->shim().Flush();
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            shim().Clear();
+            this->shim().Clear();
             return S_OK;
         }
         catch (...)
@@ -98,7 +98,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            *token = detach(shim().ContentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&changeHandler)));
+            *token = detach(this->shim().ContentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&changeHandler)));
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
     {
         try
         {
-            shim().ContentChanged(token);
+            this->shim().ContentChanged(token);
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *value = detach(shim().GetView());
+            *value = detach(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -156,7 +156,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *value = detach(shim().RequestedOperation());
+            *value = detach(this->shim().RequestedOperation());
             return S_OK;
         }
         catch (...)
@@ -169,7 +169,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().RequestedOperation(value);
+            this->shim().RequestedOperation(value);
             return S_OK;
         }
         catch (...)
@@ -182,7 +182,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *eventCookie = detach(shim().OperationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> *>(&handler)));
+            *eventCookie = detach(this->shim().OperationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().OperationCompleted(eventCookie);
+            this->shim().OperationCompleted(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -208,7 +208,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *eventCookie = detach(shim().Destroyed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> *>(&handler)));
+            *eventCookie = detach(this->shim().Destroyed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().Destroyed(eventCookie);
+            this->shim().Destroyed(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -234,7 +234,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetData(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetData(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetDataProvider(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataProviderHandler *>(&delayRenderer));
+            this->shim().SetDataProvider(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataProviderHandler *>(&delayRenderer));
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SetText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -273,7 +273,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -286,7 +286,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetHtmlFormat(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SetHtmlFormat(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -299,7 +299,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            *value = detach(shim().ResourceMap());
+            *value = detach(this->shim().ResourceMap());
             return S_OK;
         }
         catch (...)
@@ -313,7 +313,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetRtf(*reinterpret_cast<const hstring *>(&value));
+            this->shim().SetRtf(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -326,7 +326,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetBitmap(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
+            this->shim().SetBitmap(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -339,7 +339,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetStorageItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> *>(&value));
+            this->shim().SetStorageItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -352,7 +352,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
     {
         try
         {
-            shim().SetStorageItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> *>(&value), readOnly);
+            this->shim().SetStorageItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> *>(&value), readOnly);
             return S_OK;
         }
         catch (...)
@@ -369,7 +369,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage2> : prod
     {
         try
         {
-            shim().SetApplicationLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SetApplicationLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -382,7 +382,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage2> : prod
     {
         try
         {
-            shim().SetWebLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SetWebLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -399,7 +399,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -413,7 +413,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -426,7 +426,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -440,7 +440,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().Description(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -453,7 +453,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -467,7 +467,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -480,7 +480,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().FileTypes());
+            *value = detach(this->shim().FileTypes());
             return S_OK;
         }
         catch (...)
@@ -494,7 +494,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ApplicationName());
+            *value = detach(this->shim().ApplicationName());
             return S_OK;
         }
         catch (...)
@@ -508,7 +508,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().ApplicationName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ApplicationName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ApplicationListingUri());
+            *value = detach(this->shim().ApplicationListingUri());
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().ApplicationListingUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ApplicationListingUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -552,7 +552,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ContentSourceWebLink());
+            *value = detach(this->shim().ContentSourceWebLink());
             return S_OK;
         }
         catch (...)
@@ -566,7 +566,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().ContentSourceWebLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ContentSourceWebLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -579,7 +579,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ContentSourceApplicationLink());
+            *value = detach(this->shim().ContentSourceApplicationLink());
             return S_OK;
         }
         catch (...)
@@ -593,7 +593,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().ContentSourceApplicationLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().ContentSourceApplicationLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().PackageFamilyName(*reinterpret_cast<const hstring *>(&value));
+            this->shim().PackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Square30x30Logo());
+            *value = detach(this->shim().Square30x30Logo());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().Square30x30Logo(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            this->shim().Square30x30Logo(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
         catch (...)
@@ -660,7 +660,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().LogoBackgroundColor());
+            *value = detach(this->shim().LogoBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -673,7 +673,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().LogoBackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().LogoBackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -690,7 +690,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().EnterpriseId());
+            *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            shim().EnterpriseId(*reinterpret_cast<const hstring *>(&value));
+            this->shim().EnterpriseId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -721,7 +721,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Description());
+            *value = detach(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -749,7 +749,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Thumbnail());
+            *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -763,7 +763,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().FileTypes());
+            *value = detach(this->shim().FileTypes());
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ApplicationName());
+            *value = detach(this->shim().ApplicationName());
             return S_OK;
         }
         catch (...)
@@ -791,7 +791,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ApplicationListingUri());
+            *value = detach(this->shim().ApplicationListingUri());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().PackageFamilyName());
+            *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -823,7 +823,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ContentSourceWebLink());
+            *value = detach(this->shim().ContentSourceWebLink());
             return S_OK;
         }
         catch (...)
@@ -837,7 +837,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().ContentSourceApplicationLink());
+            *value = detach(this->shim().ContentSourceApplicationLink());
             return S_OK;
         }
         catch (...)
@@ -851,7 +851,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().Square30x30Logo());
+            *value = detach(this->shim().Square30x30Logo());
             return S_OK;
         }
         catch (...)
@@ -865,7 +865,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().LogoBackgroundColor());
+            *value = detach(this->shim().LogoBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -882,7 +882,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertyS
     {
         try
         {
-            *value = detach(shim().EnterpriseId());
+            *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
         catch (...)
@@ -900,7 +900,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -914,7 +914,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *value = detach(shim().RequestedOperation());
+            *value = detach(this->shim().RequestedOperation());
             return S_OK;
         }
         catch (...)
@@ -927,7 +927,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            shim().ReportOperationCompleted(value);
+            this->shim().ReportOperationCompleted(value);
             return S_OK;
         }
         catch (...)
@@ -940,7 +940,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *formatIds = detach(shim().AvailableFormats());
+            *formatIds = detach(this->shim().AvailableFormats());
             return S_OK;
         }
         catch (...)
@@ -954,7 +954,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *value = detach(shim().Contains(*reinterpret_cast<const hstring *>(&formatId)));
+            *value = detach(this->shim().Contains(*reinterpret_cast<const hstring *>(&formatId)));
             return S_OK;
         }
         catch (...)
@@ -967,7 +967,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetDataAsync(*reinterpret_cast<const hstring *>(&formatId)));
+            *operation = detach(this->shim().GetDataAsync(*reinterpret_cast<const hstring *>(&formatId)));
             return S_OK;
         }
         catch (...)
@@ -981,7 +981,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetTextAsync());
+            *operation = detach(this->shim().GetTextAsync());
             return S_OK;
         }
         catch (...)
@@ -995,7 +995,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetTextAsync(*reinterpret_cast<const hstring *>(&formatId)));
+            *operation = detach(this->shim().GetTextAsync(*reinterpret_cast<const hstring *>(&formatId)));
             return S_OK;
         }
         catch (...)
@@ -1009,7 +1009,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetUriAsync());
+            *operation = detach(this->shim().GetUriAsync());
             return S_OK;
         }
         catch (...)
@@ -1023,7 +1023,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetHtmlFormatAsync());
+            *operation = detach(this->shim().GetHtmlFormatAsync());
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetResourceMapAsync());
+            *operation = detach(this->shim().GetResourceMapAsync());
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetRtfAsync());
+            *operation = detach(this->shim().GetRtfAsync());
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetBitmapAsync());
+            *operation = detach(this->shim().GetBitmapAsync());
             return S_OK;
         }
         catch (...)
@@ -1079,7 +1079,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
     {
         try
         {
-            *operation = detach(shim().GetStorageItemsAsync());
+            *operation = detach(this->shim().GetStorageItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -1097,7 +1097,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView2> : 
     {
         try
         {
-            *operation = detach(shim().GetApplicationLinkAsync());
+            *operation = detach(this->shim().GetApplicationLinkAsync());
             return S_OK;
         }
         catch (...)
@@ -1111,7 +1111,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView2> : 
     {
         try
         {
-            *operation = detach(shim().GetWebLinkAsync());
+            *operation = detach(this->shim().GetWebLinkAsync());
             return S_OK;
         }
         catch (...)
@@ -1129,7 +1129,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView3> : 
     {
         try
         {
-            *operation = detach(shim().RequestAccessAsync());
+            *operation = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView3> : 
     {
         try
         {
-            *operation = detach(shim().RequestAccessAsync(*reinterpret_cast<const hstring *>(&enterpriseId)));
+            *operation = detach(this->shim().RequestAccessAsync(*reinterpret_cast<const hstring *>(&enterpriseId)));
             return S_OK;
         }
         catch (...)
@@ -1157,7 +1157,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView3> : 
     {
         try
         {
-            *result = detach(shim().UnlockAndAssumeEnterpriseIdentity());
+            *result = detach(this->shim().UnlockAndAssumeEnterpriseIdentity());
             return S_OK;
         }
         catch (...)
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView4> : 
     {
         try
         {
-            shim().SetAcceptedFormatId(*reinterpret_cast<const hstring *>(&formatId));
+            this->shim().SetAcceptedFormatId(*reinterpret_cast<const hstring *>(&formatId));
             return S_OK;
         }
         catch (...)
@@ -1191,7 +1191,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderDeferral
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
     {
         try
         {
-            *value = detach(shim().FormatId());
+            *value = detach(this->shim().FormatId());
             return S_OK;
         }
         catch (...)
@@ -1222,7 +1222,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
     {
         try
         {
-            shim().SetData(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetData(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1266,7 +1266,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produ
     {
         try
         {
-            *value = detach(shim().Data());
+            *value = detach(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -1280,7 +1280,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produ
     {
         try
         {
-            shim().Data(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataPackage *>(&value));
+            this->shim().Data(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataPackage *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1293,7 +1293,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produ
     {
         try
         {
-            *value = detach(shim().Deadline());
+            *value = detach(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -1306,7 +1306,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produ
     {
         try
         {
-            shim().FailWithDisplayText(*reinterpret_cast<const hstring *>(&value));
+            this->shim().FailWithDisplayText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produ
     {
         try
         {
-            *value = detach(shim().GetDeferral());
+            *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1337,7 +1337,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequestDeferral>
     {
         try
         {
-            shim().Complete();
+            this->shim().Complete();
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequestedEventAr
     {
         try
         {
-            *value = detach(shim().Request());
+            *value = detach(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1372,7 +1372,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>
     {
         try
         {
-            *eventCookie = detach(shim().DataRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().DataRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>
     {
         try
         {
-            shim().DataRequested(eventCookie);
+            this->shim().DataRequested(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1398,7 +1398,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>
     {
         try
         {
-            *eventCookie = detach(shim().TargetApplicationChosen(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> *>(&eventHandler)));
+            *eventCookie = detach(this->shim().TargetApplicationChosen(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -1411,7 +1411,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>
     {
         try
         {
-            shim().TargetApplicationChosen(eventCookie);
+            this->shim().TargetApplicationChosen(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1428,7 +1428,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerS
     {
         try
         {
-            shim().ShowShareUI();
+            this->shim().ShowShareUI();
             return S_OK;
         }
         catch (...)
@@ -1441,7 +1441,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerS
     {
         try
         {
-            *value = detach(shim().GetForCurrentView());
+            *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -1459,7 +1459,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerS
     {
         try
         {
-            *value = detach(shim().IsSupported());
+            *value = detach(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -1476,7 +1476,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStat
     {
         try
         {
-            *htmlFragment = detach(shim().GetStaticFragment(*reinterpret_cast<const hstring *>(&htmlFormat)));
+            *htmlFragment = detach(this->shim().GetStaticFragment(*reinterpret_cast<const hstring *>(&htmlFormat)));
             return S_OK;
         }
         catch (...)
@@ -1490,7 +1490,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStat
     {
         try
         {
-            *htmlFormat = detach(shim().CreateHtmlFormat(*reinterpret_cast<const hstring *>(&htmlFragment)));
+            *htmlFormat = detach(this->shim().CreateHtmlFormat(*reinterpret_cast<const hstring *>(&htmlFragment)));
             return S_OK;
         }
         catch (...)
@@ -1508,7 +1508,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEv
     {
         try
         {
-            *value = detach(shim().Operation());
+            *value = detach(this->shim().Operation());
             return S_OK;
         }
         catch (...)
@@ -1525,7 +1525,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEv
     {
         try
         {
-            *value = detach(shim().AcceptedFormatId());
+            *value = detach(this->shim().AcceptedFormatId());
             return S_OK;
         }
         catch (...)
@@ -1543,7 +1543,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessM
     {
         try
         {
-            *outToken = detach(shim().AddFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *outToken = detach(this->shim().AddFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -1557,7 +1557,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessM
     {
         try
         {
-            *operation = detach(shim().RedeemTokenForFileAsync(*reinterpret_cast<const hstring *>(&token)));
+            *operation = detach(this->shim().RedeemTokenForFileAsync(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
         catch (...)
@@ -1571,7 +1571,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessM
     {
         try
         {
-            shim().RemoveFile(*reinterpret_cast<const hstring *>(&token));
+            this->shim().RemoveFile(*reinterpret_cast<const hstring *>(&token));
             return S_OK;
         }
         catch (...)
@@ -1588,7 +1588,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().Text());
+            *value = detach(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1602,7 +1602,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().Uri());
+            *value = detach(this->shim().Uri());
             return S_OK;
         }
         catch (...)
@@ -1616,7 +1616,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().Html());
+            *value = detach(this->shim().Html());
             return S_OK;
         }
         catch (...)
@@ -1630,7 +1630,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().Rtf());
+            *value = detach(this->shim().Rtf());
             return S_OK;
         }
         catch (...)
@@ -1644,7 +1644,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().Bitmap());
+            *value = detach(this->shim().Bitmap());
             return S_OK;
         }
         catch (...)
@@ -1658,7 +1658,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().StorageItems());
+            *value = detach(this->shim().StorageItems());
             return S_OK;
         }
         catch (...)
@@ -1676,7 +1676,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().WebLink());
+            *value = detach(this->shim().WebLink());
             return S_OK;
         }
         catch (...)
@@ -1690,7 +1690,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsS
     {
         try
         {
-            *value = detach(shim().ApplicationLink());
+            *value = detach(this->shim().ApplicationLink());
             return S_OK;
         }
         catch (...)
@@ -1708,7 +1708,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ITargetApplicationCho
     {
         try
         {
-            *value = detach(shim().ApplicationName());
+            *value = detach(this->shim().ApplicationName());
             return S_OK;
         }
         catch (...)

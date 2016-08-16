@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.UI.3.h"
+#include "internal/Windows.UI.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -20,7 +20,7 @@ struct produce<D, Windows::UI::IColorHelperStatics> : produce_base<D, Windows::U
     {
         try
         {
-            *returnValue = detach(shim().FromArgb(a, r, g, b));
+            *returnValue = detach(this->shim().FromArgb(a, r, g, b));
             return S_OK;
         }
         catch (...)
@@ -41,7 +41,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().AliceBlue());
+            *value = detach(this->shim().AliceBlue());
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().AntiqueWhite());
+            *value = detach(this->shim().AntiqueWhite());
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Aqua());
+            *value = detach(this->shim().Aqua());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Aquamarine());
+            *value = detach(this->shim().Aquamarine());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Azure());
+            *value = detach(this->shim().Azure());
             return S_OK;
         }
         catch (...)
@@ -106,7 +106,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Beige());
+            *value = detach(this->shim().Beige());
             return S_OK;
         }
         catch (...)
@@ -119,7 +119,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Bisque());
+            *value = detach(this->shim().Bisque());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Black());
+            *value = detach(this->shim().Black());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().BlanchedAlmond());
+            *value = detach(this->shim().BlanchedAlmond());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Blue());
+            *value = detach(this->shim().Blue());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().BlueViolet());
+            *value = detach(this->shim().BlueViolet());
             return S_OK;
         }
         catch (...)
@@ -184,7 +184,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Brown());
+            *value = detach(this->shim().Brown());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().BurlyWood());
+            *value = detach(this->shim().BurlyWood());
             return S_OK;
         }
         catch (...)
@@ -210,7 +210,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().CadetBlue());
+            *value = detach(this->shim().CadetBlue());
             return S_OK;
         }
         catch (...)
@@ -223,7 +223,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Chartreuse());
+            *value = detach(this->shim().Chartreuse());
             return S_OK;
         }
         catch (...)
@@ -236,7 +236,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Chocolate());
+            *value = detach(this->shim().Chocolate());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Coral());
+            *value = detach(this->shim().Coral());
             return S_OK;
         }
         catch (...)
@@ -262,7 +262,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().CornflowerBlue());
+            *value = detach(this->shim().CornflowerBlue());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Cornsilk());
+            *value = detach(this->shim().Cornsilk());
             return S_OK;
         }
         catch (...)
@@ -288,7 +288,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Crimson());
+            *value = detach(this->shim().Crimson());
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Cyan());
+            *value = detach(this->shim().Cyan());
             return S_OK;
         }
         catch (...)
@@ -314,7 +314,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkBlue());
+            *value = detach(this->shim().DarkBlue());
             return S_OK;
         }
         catch (...)
@@ -327,7 +327,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkCyan());
+            *value = detach(this->shim().DarkCyan());
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkGoldenrod());
+            *value = detach(this->shim().DarkGoldenrod());
             return S_OK;
         }
         catch (...)
@@ -353,7 +353,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkGray());
+            *value = detach(this->shim().DarkGray());
             return S_OK;
         }
         catch (...)
@@ -366,7 +366,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkGreen());
+            *value = detach(this->shim().DarkGreen());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkKhaki());
+            *value = detach(this->shim().DarkKhaki());
             return S_OK;
         }
         catch (...)
@@ -392,7 +392,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkMagenta());
+            *value = detach(this->shim().DarkMagenta());
             return S_OK;
         }
         catch (...)
@@ -405,7 +405,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkOliveGreen());
+            *value = detach(this->shim().DarkOliveGreen());
             return S_OK;
         }
         catch (...)
@@ -418,7 +418,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkOrange());
+            *value = detach(this->shim().DarkOrange());
             return S_OK;
         }
         catch (...)
@@ -431,7 +431,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkOrchid());
+            *value = detach(this->shim().DarkOrchid());
             return S_OK;
         }
         catch (...)
@@ -444,7 +444,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkRed());
+            *value = detach(this->shim().DarkRed());
             return S_OK;
         }
         catch (...)
@@ -457,7 +457,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkSalmon());
+            *value = detach(this->shim().DarkSalmon());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkSeaGreen());
+            *value = detach(this->shim().DarkSeaGreen());
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkSlateBlue());
+            *value = detach(this->shim().DarkSlateBlue());
             return S_OK;
         }
         catch (...)
@@ -496,7 +496,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkSlateGray());
+            *value = detach(this->shim().DarkSlateGray());
             return S_OK;
         }
         catch (...)
@@ -509,7 +509,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkTurquoise());
+            *value = detach(this->shim().DarkTurquoise());
             return S_OK;
         }
         catch (...)
@@ -522,7 +522,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DarkViolet());
+            *value = detach(this->shim().DarkViolet());
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DeepPink());
+            *value = detach(this->shim().DeepPink());
             return S_OK;
         }
         catch (...)
@@ -548,7 +548,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DeepSkyBlue());
+            *value = detach(this->shim().DeepSkyBlue());
             return S_OK;
         }
         catch (...)
@@ -561,7 +561,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DimGray());
+            *value = detach(this->shim().DimGray());
             return S_OK;
         }
         catch (...)
@@ -574,7 +574,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().DodgerBlue());
+            *value = detach(this->shim().DodgerBlue());
             return S_OK;
         }
         catch (...)
@@ -587,7 +587,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Firebrick());
+            *value = detach(this->shim().Firebrick());
             return S_OK;
         }
         catch (...)
@@ -600,7 +600,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().FloralWhite());
+            *value = detach(this->shim().FloralWhite());
             return S_OK;
         }
         catch (...)
@@ -613,7 +613,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().ForestGreen());
+            *value = detach(this->shim().ForestGreen());
             return S_OK;
         }
         catch (...)
@@ -626,7 +626,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Fuchsia());
+            *value = detach(this->shim().Fuchsia());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Gainsboro());
+            *value = detach(this->shim().Gainsboro());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().GhostWhite());
+            *value = detach(this->shim().GhostWhite());
             return S_OK;
         }
         catch (...)
@@ -665,7 +665,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Gold());
+            *value = detach(this->shim().Gold());
             return S_OK;
         }
         catch (...)
@@ -678,7 +678,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Goldenrod());
+            *value = detach(this->shim().Goldenrod());
             return S_OK;
         }
         catch (...)
@@ -691,7 +691,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Gray());
+            *value = detach(this->shim().Gray());
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Green());
+            *value = detach(this->shim().Green());
             return S_OK;
         }
         catch (...)
@@ -717,7 +717,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().GreenYellow());
+            *value = detach(this->shim().GreenYellow());
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Honeydew());
+            *value = detach(this->shim().Honeydew());
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().HotPink());
+            *value = detach(this->shim().HotPink());
             return S_OK;
         }
         catch (...)
@@ -756,7 +756,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().IndianRed());
+            *value = detach(this->shim().IndianRed());
             return S_OK;
         }
         catch (...)
@@ -769,7 +769,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Indigo());
+            *value = detach(this->shim().Indigo());
             return S_OK;
         }
         catch (...)
@@ -782,7 +782,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Ivory());
+            *value = detach(this->shim().Ivory());
             return S_OK;
         }
         catch (...)
@@ -795,7 +795,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Khaki());
+            *value = detach(this->shim().Khaki());
             return S_OK;
         }
         catch (...)
@@ -808,7 +808,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Lavender());
+            *value = detach(this->shim().Lavender());
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LavenderBlush());
+            *value = detach(this->shim().LavenderBlush());
             return S_OK;
         }
         catch (...)
@@ -834,7 +834,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LawnGreen());
+            *value = detach(this->shim().LawnGreen());
             return S_OK;
         }
         catch (...)
@@ -847,7 +847,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LemonChiffon());
+            *value = detach(this->shim().LemonChiffon());
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightBlue());
+            *value = detach(this->shim().LightBlue());
             return S_OK;
         }
         catch (...)
@@ -873,7 +873,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightCoral());
+            *value = detach(this->shim().LightCoral());
             return S_OK;
         }
         catch (...)
@@ -886,7 +886,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightCyan());
+            *value = detach(this->shim().LightCyan());
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightGoldenrodYellow());
+            *value = detach(this->shim().LightGoldenrodYellow());
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightGreen());
+            *value = detach(this->shim().LightGreen());
             return S_OK;
         }
         catch (...)
@@ -925,7 +925,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightGray());
+            *value = detach(this->shim().LightGray());
             return S_OK;
         }
         catch (...)
@@ -938,7 +938,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightPink());
+            *value = detach(this->shim().LightPink());
             return S_OK;
         }
         catch (...)
@@ -951,7 +951,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightSalmon());
+            *value = detach(this->shim().LightSalmon());
             return S_OK;
         }
         catch (...)
@@ -964,7 +964,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightSeaGreen());
+            *value = detach(this->shim().LightSeaGreen());
             return S_OK;
         }
         catch (...)
@@ -977,7 +977,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightSkyBlue());
+            *value = detach(this->shim().LightSkyBlue());
             return S_OK;
         }
         catch (...)
@@ -990,7 +990,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightSlateGray());
+            *value = detach(this->shim().LightSlateGray());
             return S_OK;
         }
         catch (...)
@@ -1003,7 +1003,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightSteelBlue());
+            *value = detach(this->shim().LightSteelBlue());
             return S_OK;
         }
         catch (...)
@@ -1016,7 +1016,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LightYellow());
+            *value = detach(this->shim().LightYellow());
             return S_OK;
         }
         catch (...)
@@ -1029,7 +1029,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Lime());
+            *value = detach(this->shim().Lime());
             return S_OK;
         }
         catch (...)
@@ -1042,7 +1042,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().LimeGreen());
+            *value = detach(this->shim().LimeGreen());
             return S_OK;
         }
         catch (...)
@@ -1055,7 +1055,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Linen());
+            *value = detach(this->shim().Linen());
             return S_OK;
         }
         catch (...)
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Magenta());
+            *value = detach(this->shim().Magenta());
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Maroon());
+            *value = detach(this->shim().Maroon());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumAquamarine());
+            *value = detach(this->shim().MediumAquamarine());
             return S_OK;
         }
         catch (...)
@@ -1107,7 +1107,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumBlue());
+            *value = detach(this->shim().MediumBlue());
             return S_OK;
         }
         catch (...)
@@ -1120,7 +1120,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumOrchid());
+            *value = detach(this->shim().MediumOrchid());
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumPurple());
+            *value = detach(this->shim().MediumPurple());
             return S_OK;
         }
         catch (...)
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumSeaGreen());
+            *value = detach(this->shim().MediumSeaGreen());
             return S_OK;
         }
         catch (...)
@@ -1159,7 +1159,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumSlateBlue());
+            *value = detach(this->shim().MediumSlateBlue());
             return S_OK;
         }
         catch (...)
@@ -1172,7 +1172,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumSpringGreen());
+            *value = detach(this->shim().MediumSpringGreen());
             return S_OK;
         }
         catch (...)
@@ -1185,7 +1185,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumTurquoise());
+            *value = detach(this->shim().MediumTurquoise());
             return S_OK;
         }
         catch (...)
@@ -1198,7 +1198,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MediumVioletRed());
+            *value = detach(this->shim().MediumVioletRed());
             return S_OK;
         }
         catch (...)
@@ -1211,7 +1211,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MidnightBlue());
+            *value = detach(this->shim().MidnightBlue());
             return S_OK;
         }
         catch (...)
@@ -1224,7 +1224,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MintCream());
+            *value = detach(this->shim().MintCream());
             return S_OK;
         }
         catch (...)
@@ -1237,7 +1237,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().MistyRose());
+            *value = detach(this->shim().MistyRose());
             return S_OK;
         }
         catch (...)
@@ -1250,7 +1250,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Moccasin());
+            *value = detach(this->shim().Moccasin());
             return S_OK;
         }
         catch (...)
@@ -1263,7 +1263,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().NavajoWhite());
+            *value = detach(this->shim().NavajoWhite());
             return S_OK;
         }
         catch (...)
@@ -1276,7 +1276,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Navy());
+            *value = detach(this->shim().Navy());
             return S_OK;
         }
         catch (...)
@@ -1289,7 +1289,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().OldLace());
+            *value = detach(this->shim().OldLace());
             return S_OK;
         }
         catch (...)
@@ -1302,7 +1302,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Olive());
+            *value = detach(this->shim().Olive());
             return S_OK;
         }
         catch (...)
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().OliveDrab());
+            *value = detach(this->shim().OliveDrab());
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Orange());
+            *value = detach(this->shim().Orange());
             return S_OK;
         }
         catch (...)
@@ -1341,7 +1341,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().OrangeRed());
+            *value = detach(this->shim().OrangeRed());
             return S_OK;
         }
         catch (...)
@@ -1354,7 +1354,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Orchid());
+            *value = detach(this->shim().Orchid());
             return S_OK;
         }
         catch (...)
@@ -1367,7 +1367,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PaleGoldenrod());
+            *value = detach(this->shim().PaleGoldenrod());
             return S_OK;
         }
         catch (...)
@@ -1380,7 +1380,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PaleGreen());
+            *value = detach(this->shim().PaleGreen());
             return S_OK;
         }
         catch (...)
@@ -1393,7 +1393,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PaleTurquoise());
+            *value = detach(this->shim().PaleTurquoise());
             return S_OK;
         }
         catch (...)
@@ -1406,7 +1406,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PaleVioletRed());
+            *value = detach(this->shim().PaleVioletRed());
             return S_OK;
         }
         catch (...)
@@ -1419,7 +1419,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PapayaWhip());
+            *value = detach(this->shim().PapayaWhip());
             return S_OK;
         }
         catch (...)
@@ -1432,7 +1432,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PeachPuff());
+            *value = detach(this->shim().PeachPuff());
             return S_OK;
         }
         catch (...)
@@ -1445,7 +1445,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Peru());
+            *value = detach(this->shim().Peru());
             return S_OK;
         }
         catch (...)
@@ -1458,7 +1458,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Pink());
+            *value = detach(this->shim().Pink());
             return S_OK;
         }
         catch (...)
@@ -1471,7 +1471,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Plum());
+            *value = detach(this->shim().Plum());
             return S_OK;
         }
         catch (...)
@@ -1484,7 +1484,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().PowderBlue());
+            *value = detach(this->shim().PowderBlue());
             return S_OK;
         }
         catch (...)
@@ -1497,7 +1497,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Purple());
+            *value = detach(this->shim().Purple());
             return S_OK;
         }
         catch (...)
@@ -1510,7 +1510,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Red());
+            *value = detach(this->shim().Red());
             return S_OK;
         }
         catch (...)
@@ -1523,7 +1523,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().RosyBrown());
+            *value = detach(this->shim().RosyBrown());
             return S_OK;
         }
         catch (...)
@@ -1536,7 +1536,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().RoyalBlue());
+            *value = detach(this->shim().RoyalBlue());
             return S_OK;
         }
         catch (...)
@@ -1549,7 +1549,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SaddleBrown());
+            *value = detach(this->shim().SaddleBrown());
             return S_OK;
         }
         catch (...)
@@ -1562,7 +1562,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Salmon());
+            *value = detach(this->shim().Salmon());
             return S_OK;
         }
         catch (...)
@@ -1575,7 +1575,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SandyBrown());
+            *value = detach(this->shim().SandyBrown());
             return S_OK;
         }
         catch (...)
@@ -1588,7 +1588,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SeaGreen());
+            *value = detach(this->shim().SeaGreen());
             return S_OK;
         }
         catch (...)
@@ -1601,7 +1601,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SeaShell());
+            *value = detach(this->shim().SeaShell());
             return S_OK;
         }
         catch (...)
@@ -1614,7 +1614,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Sienna());
+            *value = detach(this->shim().Sienna());
             return S_OK;
         }
         catch (...)
@@ -1627,7 +1627,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Silver());
+            *value = detach(this->shim().Silver());
             return S_OK;
         }
         catch (...)
@@ -1640,7 +1640,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SkyBlue());
+            *value = detach(this->shim().SkyBlue());
             return S_OK;
         }
         catch (...)
@@ -1653,7 +1653,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SlateBlue());
+            *value = detach(this->shim().SlateBlue());
             return S_OK;
         }
         catch (...)
@@ -1666,7 +1666,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SlateGray());
+            *value = detach(this->shim().SlateGray());
             return S_OK;
         }
         catch (...)
@@ -1679,7 +1679,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Snow());
+            *value = detach(this->shim().Snow());
             return S_OK;
         }
         catch (...)
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SpringGreen());
+            *value = detach(this->shim().SpringGreen());
             return S_OK;
         }
         catch (...)
@@ -1705,7 +1705,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().SteelBlue());
+            *value = detach(this->shim().SteelBlue());
             return S_OK;
         }
         catch (...)
@@ -1718,7 +1718,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Tan());
+            *value = detach(this->shim().Tan());
             return S_OK;
         }
         catch (...)
@@ -1731,7 +1731,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Teal());
+            *value = detach(this->shim().Teal());
             return S_OK;
         }
         catch (...)
@@ -1744,7 +1744,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Thistle());
+            *value = detach(this->shim().Thistle());
             return S_OK;
         }
         catch (...)
@@ -1757,7 +1757,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Tomato());
+            *value = detach(this->shim().Tomato());
             return S_OK;
         }
         catch (...)
@@ -1770,7 +1770,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Transparent());
+            *value = detach(this->shim().Transparent());
             return S_OK;
         }
         catch (...)
@@ -1783,7 +1783,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Turquoise());
+            *value = detach(this->shim().Turquoise());
             return S_OK;
         }
         catch (...)
@@ -1796,7 +1796,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Violet());
+            *value = detach(this->shim().Violet());
             return S_OK;
         }
         catch (...)
@@ -1809,7 +1809,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Wheat());
+            *value = detach(this->shim().Wheat());
             return S_OK;
         }
         catch (...)
@@ -1822,7 +1822,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().White());
+            *value = detach(this->shim().White());
             return S_OK;
         }
         catch (...)
@@ -1835,7 +1835,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().WhiteSmoke());
+            *value = detach(this->shim().WhiteSmoke());
             return S_OK;
         }
         catch (...)
@@ -1848,7 +1848,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().Yellow());
+            *value = detach(this->shim().Yellow());
             return S_OK;
         }
         catch (...)
@@ -1861,7 +1861,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
-            *value = detach(shim().YellowGreen());
+            *value = detach(this->shim().YellowGreen());
             return S_OK;
         }
         catch (...)

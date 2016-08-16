@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include "internal\Windows.ApplicationModel.Contacts.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.ApplicationModel.Contacts.Provider.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.Provider.3.h"
 #include "Windows.ApplicationModel.Contacts.h"
 
 WINRT_EXPORT namespace winrt {
@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *result = detach(shim().AddContact(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
+            *result = detach(this->shim().AddContact(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            shim().RemoveContact(*reinterpret_cast<const hstring *>(&id));
+            this->shim().RemoveContact(*reinterpret_cast<const hstring *>(&id));
             return S_OK;
         }
         catch (...)
@@ -46,7 +46,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *isContained = detach(shim().ContainsContact(*reinterpret_cast<const hstring *>(&id)));
+            *isContained = detach(this->shim().ContainsContact(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -59,7 +59,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *value = detach(shim().DesiredFields());
+            *value = detach(this->shim().DesiredFields());
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *value = detach(shim().SelectionMode());
+            *value = detach(this->shim().SelectionMode());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *token = detach(shim().ContactRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> *>(&handler)));
+            *token = detach(this->shim().ContactRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -99,7 +99,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            shim().ContactRemoved(token);
+            this->shim().ContactRemoved(token);
             return S_OK;
         }
         catch (...)
@@ -116,7 +116,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *result = detach(shim().AddContact(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
+            *result = detach(this->shim().AddContact(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
         catch (...)
@@ -129,7 +129,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
-            *value = detach(shim().DesiredFieldsWithContactFieldType());
+            *value = detach(this->shim().DesiredFieldsWithContactFieldType());
             return S_OK;
         }
         catch (...)
@@ -147,7 +147,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactRemoved
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)

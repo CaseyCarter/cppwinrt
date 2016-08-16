@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.UI.3.h"
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.UI.Popups.3.h"
-#include "internal\Windows.ApplicationModel.Background.3.h"
-#include "internal\Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.Devices.Enumeration.3.h"
 #include "Windows.Devices.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
@@ -25,7 +25,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs> 
     {
         try
         {
-            *value = detach(shim().Status());
+            *value = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -42,7 +42,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
-            *cookie = detach(shim().AccessChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> *>(&handler)));
+            *cookie = detach(this->shim().AccessChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -73,7 +73,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
-            shim().AccessChanged(cookie);
+            this->shim().AccessChanged(cookie);
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
-            *status = detach(shim().CurrentStatus());
+            *status = detach(this->shim().CurrentStatus());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
-            *value = detach(shim().CreateFromId(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach(this->shim().CreateFromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
-            *value = detach(shim().CreateFromDeviceClassId(deviceClassId));
+            *value = detach(this->shim().CreateFromDeviceClassId(deviceClassId));
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
-            *value = detach(shim().CreateFromDeviceClass(deviceClass));
+            *value = detach(this->shim().CreateFromDeviceClass(deviceClass));
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerD
     {
         try
         {
-            *value = detach(shim().DeviceId());
+            *value = detach(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -167,7 +167,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedE
     {
         try
         {
-            *value = detach(shim().Device());
+            *value = detach(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().Name());
+            *value = detach(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -213,7 +213,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().IsEnabled());
+            *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().IsDefault());
+            *value = detach(this->shim().IsDefault());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().EnclosureLocation());
+            *value = detach(this->shim().EnclosureLocation());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            shim().Update(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformationUpdate *>(&updateInfo));
+            this->shim().Update(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformationUpdate *>(&updateInfo));
             return S_OK;
         }
         catch (...)
@@ -280,7 +280,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *asyncOp = detach(shim().GetThumbnailAsync());
+            *asyncOp = detach(this->shim().GetThumbnailAsync());
             return S_OK;
         }
         catch (...)
@@ -294,7 +294,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
-            *asyncOp = detach(shim().GetGlyphThumbnailAsync());
+            *asyncOp = detach(this->shim().GetGlyphThumbnailAsync());
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation2> : produce_
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -325,7 +325,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation2> : produce_
     {
         try
         {
-            *value = detach(shim().Pairing());
+            *value = detach(this->shim().Pairing());
             return S_OK;
         }
         catch (...)
@@ -343,7 +343,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
-            *result = detach(shim().PairAsync(pairingKindsSupported));
+            *result = detach(this->shim().PairAsync(pairingKindsSupported));
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
-            *result = detach(shim().PairAsync(pairingKindsSupported, minProtectionLevel));
+            *result = detach(this->shim().PairAsync(pairingKindsSupported, minProtectionLevel));
             return S_OK;
         }
         catch (...)
@@ -371,7 +371,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
-            *result = detach(shim().PairAsync(pairingKindsSupported, minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
+            *result = detach(this->shim().PairAsync(pairingKindsSupported, minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
             return S_OK;
         }
         catch (...)
@@ -385,7 +385,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
-            *token = detach(shim().PairingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> *>(&handler)));
+            *token = detach(this->shim().PairingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -398,7 +398,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
-            shim().PairingRequested(token);
+            this->shim().PairingRequested(token);
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
-            *value = detach(shim().IsPaired());
+            *value = detach(this->shim().IsPaired());
             return S_OK;
         }
         catch (...)
@@ -428,7 +428,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
-            *value = detach(shim().CanPair());
+            *value = detach(this->shim().CanPair());
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
-            *result = detach(shim().PairAsync());
+            *result = detach(this->shim().PairAsync());
             return S_OK;
         }
         catch (...)
@@ -455,7 +455,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
-            *result = detach(shim().PairAsync(minProtectionLevel));
+            *result = detach(this->shim().PairAsync(minProtectionLevel));
             return S_OK;
         }
         catch (...)
@@ -473,7 +473,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
-            *value = detach(shim().ProtectionLevel());
+            *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -486,7 +486,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
-            *value = detach(shim().Custom());
+            *value = detach(this->shim().Custom());
             return S_OK;
         }
         catch (...)
@@ -500,7 +500,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
-            *result = detach(shim().PairAsync(minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
+            *result = detach(this->shim().PairAsync(minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
             return S_OK;
         }
         catch (...)
@@ -514,7 +514,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
-            *result = detach(shim().UnpairAsync());
+            *result = detach(this->shim().UnpairAsync());
             return S_OK;
         }
         catch (...)
@@ -532,7 +532,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatic
     {
         try
         {
-            *result = detach(shim().TryRegisterForAllInboundPairingRequests(pairingKindsSupported));
+            *result = detach(this->shim().TryRegisterForAllInboundPairingRequests(pairingKindsSupported));
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
+            *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync());
+            *asyncOp = detach(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(deviceClass));
+            *asyncOp = detach(this->shim().FindAllAsync(deviceClass));
             return S_OK;
         }
         catch (...)
@@ -605,7 +605,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter)));
+            *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
+            *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
         catch (...)
@@ -633,7 +633,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher());
+            *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(deviceClass));
+            *watcher = detach(this->shim().CreateWatcher(deviceClass));
             return S_OK;
         }
         catch (...)
@@ -661,7 +661,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter)));
+            *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
+            *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
         catch (...)
@@ -693,7 +693,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
-            *aqsFilter = detach(shim().GetAqsFilterFromDeviceClass(deviceClass));
+            *aqsFilter = detach(this->shim().GetAqsFilterFromDeviceClass(deviceClass));
             return S_OK;
         }
         catch (...)
@@ -707,7 +707,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
-            *asyncOp = detach(shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
+            *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
         catch (...)
@@ -721,7 +721,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
-            *asyncOp = detach(shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
+            *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
-            *watcher = detach(shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
+            *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
         catch (...)
@@ -753,7 +753,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : pro
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -767,7 +767,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : pro
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -785,7 +785,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate2> : pr
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -802,7 +802,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -816,7 +816,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            *value = detach(shim().PairingKind());
+            *value = detach(this->shim().PairingKind());
             return S_OK;
         }
         catch (...)
@@ -829,7 +829,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            *value = detach(shim().Pin());
+            *value = detach(this->shim().Pin());
             return S_OK;
         }
         catch (...)
@@ -843,7 +843,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            shim().Accept();
+            this->shim().Accept();
             return S_OK;
         }
         catch (...)
@@ -856,7 +856,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            shim().Accept(*reinterpret_cast<const hstring *>(&pin));
+            this->shim().Accept(*reinterpret_cast<const hstring *>(&pin));
             return S_OK;
         }
         catch (...)
@@ -869,7 +869,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
-            *result = detach(shim().GetDeferral());
+            *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -887,7 +887,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingResult> : produce
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -900,7 +900,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingResult> : produce
     {
         try
         {
-            *value = detach(shim().ProtectionLevelUsed());
+            *value = detach(this->shim().ProtectionLevelUsed());
             return S_OK;
         }
         catch (...)
@@ -921,7 +921,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *filter = detach(shim().Filter());
+            *filter = detach(this->shim().Filter());
             return S_OK;
         }
         catch (...)
@@ -935,7 +935,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *value = detach(shim().Appearance());
+            *value = detach(this->shim().Appearance());
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *value = detach(shim().RequestedProperties());
+            *value = detach(this->shim().RequestedProperties());
             return S_OK;
         }
         catch (...)
@@ -963,7 +963,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *token = detach(shim().DeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> *>(&handler)));
+            *token = detach(this->shim().DeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -976,7 +976,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().DeviceSelected(token);
+            this->shim().DeviceSelected(token);
             return S_OK;
         }
         catch (...)
@@ -989,7 +989,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *token = detach(shim().DisconnectButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> *>(&handler)));
+            *token = detach(this->shim().DisconnectButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1002,7 +1002,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().DisconnectButtonClicked(token);
+            this->shim().DisconnectButtonClicked(token);
             return S_OK;
         }
         catch (...)
@@ -1015,7 +1015,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *token = detach(shim().DevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().DevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1028,7 +1028,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().DevicePickerDismissed(token);
+            this->shim().DevicePickerDismissed(token);
             return S_OK;
         }
         catch (...)
@@ -1041,7 +1041,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
+            this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
             return S_OK;
         }
         catch (...)
@@ -1054,7 +1054,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement);
+            this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement);
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
+            *operation = detach(this->shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            *operation = detach(shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement));
+            *operation = detach(this->shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement));
             return S_OK;
         }
         catch (...)
@@ -1095,7 +1095,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().Hide();
+            this->shim().Hide();
             return S_OK;
         }
         catch (...)
@@ -1108,7 +1108,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
-            shim().SetDisplayStatus(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const hstring *>(&status), options);
+            this->shim().SetDisplayStatus(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const hstring *>(&status), options);
             return S_OK;
         }
         catch (...)
@@ -1125,7 +1125,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().Title());
+            *value = detach(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().Title(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1152,7 +1152,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().ForegroundColor());
+            *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1178,7 +1178,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().BackgroundColor());
+            *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1191,7 +1191,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1204,7 +1204,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().AccentColor());
+            *value = detach(this->shim().AccentColor());
             return S_OK;
         }
         catch (...)
@@ -1217,7 +1217,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().AccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().AccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1230,7 +1230,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().SelectedForegroundColor());
+            *value = detach(this->shim().SelectedForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -1243,7 +1243,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().SelectedForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().SelectedForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1256,7 +1256,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().SelectedBackgroundColor());
+            *value = detach(this->shim().SelectedBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -1269,7 +1269,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().SelectedBackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().SelectedBackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1282,7 +1282,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            *value = detach(shim().SelectedAccentColor());
+            *value = detach(this->shim().SelectedAccentColor());
             return S_OK;
         }
         catch (...)
@@ -1295,7 +1295,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
-            shim().SelectedAccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            this->shim().SelectedAccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1312,7 +1312,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerFilter> : produce_
     {
         try
         {
-            *value = detach(shim().SupportedDeviceClasses());
+            *value = detach(this->shim().SupportedDeviceClasses());
             return S_OK;
         }
         catch (...)
@@ -1326,7 +1326,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerFilter> : produce_
     {
         try
         {
-            *value = detach(shim().SupportedDeviceSelectors());
+            *value = detach(this->shim().SupportedDeviceSelectors());
             return S_OK;
         }
         catch (...)
@@ -1344,7 +1344,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceSelectedEventArgs> : pro
     {
         try
         {
-            *value = detach(shim().SelectedDevice());
+            *value = detach(this->shim().SelectedDevice());
             return S_OK;
         }
         catch (...)
@@ -1362,7 +1362,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceUnpairingResult> : produ
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1379,7 +1379,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *token = detach(shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> *>(&handler)));
+            *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1392,7 +1392,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Added(token);
+            this->shim().Added(token);
             return S_OK;
         }
         catch (...)
@@ -1405,7 +1405,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *token = detach(shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
+            *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1418,7 +1418,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Updated(token);
+            this->shim().Updated(token);
             return S_OK;
         }
         catch (...)
@@ -1431,7 +1431,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *token = detach(shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
+            *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1444,7 +1444,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Removed(token);
+            this->shim().Removed(token);
             return S_OK;
         }
         catch (...)
@@ -1457,7 +1457,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *token = detach(shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1470,7 +1470,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().EnumerationCompleted(token);
+            this->shim().EnumerationCompleted(token);
             return S_OK;
         }
         catch (...)
@@ -1483,7 +1483,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *token = detach(shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1496,7 +1496,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Stopped(token);
+            this->shim().Stopped(token);
             return S_OK;
         }
         catch (...)
@@ -1509,7 +1509,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            *status = detach(shim().Status());
+            *status = detach(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1522,7 +1522,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Start();
+            this->shim().Start();
             return S_OK;
         }
         catch (...)
@@ -1535,7 +1535,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
-            shim().Stop();
+            this->shim().Stop();
             return S_OK;
         }
         catch (...)
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher2> : produce_base
     {
         try
         {
-            *trigger = detach(shim().GetBackgroundTrigger(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> *>(&requestedEventKinds)));
+            *trigger = detach(this->shim().GetBackgroundTrigger(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> *>(&requestedEventKinds)));
             return S_OK;
         }
         catch (...)
@@ -1570,7 +1570,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
-            *value = detach(shim().Kind());
+            *value = detach(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -1583,7 +1583,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
-            *value = detach(shim().DeviceInformation());
+            *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -1597,7 +1597,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
-            *value = detach(shim().DeviceInformationUpdate());
+            *value = detach(this->shim().DeviceInformationUpdate());
             return S_OK;
         }
         catch (...)
@@ -1615,7 +1615,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails> :
     {
         try
         {
-            *value = detach(shim().DeviceWatcherEvents());
+            *value = detach(this->shim().DeviceWatcherEvents());
             return S_OK;
         }
         catch (...)
@@ -1633,7 +1633,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
-            *value = detach(shim().InDock());
+            *value = detach(this->shim().InDock());
             return S_OK;
         }
         catch (...)
@@ -1646,7 +1646,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
-            *value = detach(shim().InLid());
+            *value = detach(this->shim().InLid());
             return S_OK;
         }
         catch (...)
@@ -1659,7 +1659,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
-            *value = detach(shim().Panel());
+            *value = detach(this->shim().Panel());
             return S_OK;
         }
         catch (...)
@@ -1676,7 +1676,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation2> : produce_
     {
         try
         {
-            *value = detach(shim().RotationAngleInDegreesClockwise());
+            *value = detach(this->shim().RotationAngleInDegreesClockwise());
             return S_OK;
         }
         catch (...)

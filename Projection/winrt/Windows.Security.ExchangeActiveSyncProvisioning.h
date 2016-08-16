@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "internal\Windows.Security.ExchangeActiveSyncProvisioning.3.h"
+#include "internal/Windows.Security.ExchangeActiveSyncProvisioning.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -16,7 +16,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -29,7 +29,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().OperatingSystem());
+            *value = detach(this->shim().OperatingSystem());
             return S_OK;
         }
         catch (...)
@@ -43,7 +43,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().FriendlyName());
+            *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().SystemManufacturer());
+            *value = detach(this->shim().SystemManufacturer());
             return S_OK;
         }
         catch (...)
@@ -71,7 +71,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().SystemProductName());
+            *value = detach(this->shim().SystemProductName());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().SystemSku());
+            *value = detach(this->shim().SystemSku());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().SystemHardwareVersion());
+            *value = detach(this->shim().SystemHardwareVersion());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
-            *value = detach(shim().SystemFirmwareVersion());
+            *value = detach(this->shim().SystemFirmwareVersion());
             return S_OK;
         }
         catch (...)

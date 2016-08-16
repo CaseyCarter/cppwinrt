@@ -46,3 +46,43 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 #ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
 #endif
+
+#ifndef __IAgileReference_INTERFACE_DEFINED__
+#define WINRT_NO_AGILE_REFERENCE
+#endif
+
+#if NTDDI_VERSION > NTDDI_WINBLUE
+
+#define WINRT_NUMERICS
+#define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
+#define _WINDOWS_NUMERICS_END_NAMESPACE_
+
+#ifdef __clang__
+#define _XM_NO_INTRINSICS_
+#endif
+
+// If this include fails it means that you're targeting an older platform version. Please use 10.0.14393.0 or later.
+#include <WindowsNumerics.impl.h>
+
+#ifdef __clang__
+#undef _XM_NO_INTRINSICS_
+#endif
+
+#undef _WINDOWS_NUMERICS_NAMESPACE_
+#undef _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
+#undef _WINDOWS_NUMERICS_END_NAMESPACE_
+
+namespace winrt::ABI::Windows::Foundation::Numerics {
+
+using float2 = winrt::Windows::Foundation::Numerics::float2;
+using float3 = winrt::Windows::Foundation::Numerics::float3;
+using float4 = winrt::Windows::Foundation::Numerics::float4;
+using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
+using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
+using plane = winrt::Windows::Foundation::Numerics::plane;
+using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
+
+}
+
+#endif

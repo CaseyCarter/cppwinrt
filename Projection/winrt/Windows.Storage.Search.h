@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Foundation.Collections.3.h"
-#include "internal\Windows.Storage.Streams.3.h"
-#include "internal\Windows.Foundation.3.h"
-#include "internal\Windows.Storage.3.h"
-#include "internal\Windows.Storage.FileProperties.3.h"
-#include "internal\Windows.Storage.Search.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.3.h"
+#include "internal/Windows.Storage.FileProperties.3.h"
+#include "internal/Windows.Storage.Search.3.h"
 #include "Windows.Storage.h"
 #include "Windows.Foundation.Collections.h"
 
@@ -23,7 +23,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().AddAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
+            *operation = detach(this->shim().AddAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().UpdateAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
+            *operation = detach(this->shim().UpdateAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
             return S_OK;
         }
         catch (...)
@@ -51,7 +51,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().DeleteAsync(*reinterpret_cast<const hstring *>(&contentId)));
+            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const hstring *>(&contentId)));
             return S_OK;
         }
         catch (...)
@@ -65,7 +65,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().DeleteMultipleAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds)));
+            *operation = detach(this->shim().DeleteMultipleAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds)));
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().DeleteAllAsync());
+            *operation = detach(this->shim().DeleteAllAsync());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *operation = detach(shim().RetrievePropertiesAsync(*reinterpret_cast<const hstring *>(&contentId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
+            *operation = detach(this->shim().RetrievePropertiesAsync(*reinterpret_cast<const hstring *>(&contentId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
-            *value = detach(shim().Revision());
+            *value = detach(this->shim().Revision());
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetCountAsync());
+            *operation = detach(this->shim().GetCountAsync());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetPropertiesAsync());
+            *operation = detach(this->shim().GetPropertiesAsync());
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetPropertiesAsync(startIndex, maxItems));
+            *operation = detach(this->shim().GetPropertiesAsync(startIndex, maxItems));
             return S_OK;
         }
         catch (...)
@@ -166,7 +166,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetAsync());
+            *operation = detach(this->shim().GetAsync());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *operation = detach(shim().GetAsync(startIndex, maxItems));
+            *operation = detach(this->shim().GetAsync(startIndex, maxItems));
             return S_OK;
         }
         catch (...)
@@ -194,7 +194,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
-            *value = detach(shim().QueryFolder());
+            *value = detach(this->shim().QueryFolder());
             return S_OK;
         }
         catch (...)
@@ -212,7 +212,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
-            *query = detach(shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder), *reinterpret_cast<const hstring *>(&searchFilterLanguage)));
+            *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder), *reinterpret_cast<const hstring *>(&searchFilterLanguage)));
             return S_OK;
         }
         catch (...)
@@ -226,7 +226,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
-            *query = detach(shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder)));
+            *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder)));
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
-            *query = detach(shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
+            *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
         catch (...)
@@ -258,7 +258,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerStatics> : produce_ba
     {
         try
         {
-            *index = detach(shim().GetIndexer(*reinterpret_cast<const hstring *>(&indexName)));
+            *index = detach(this->shim().GetIndexer(*reinterpret_cast<const hstring *>(&indexName)));
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerStatics> : produce_ba
     {
         try
         {
-            *index = detach(shim().GetIndexer());
+            *index = detach(this->shim().GetIndexer());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Id());
+            *value = detach(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -304,7 +304,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            shim().Id(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -317,7 +317,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Properties());
+            *value = detach(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -331,7 +331,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Stream());
+            *value = detach(this->shim().Stream());
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            shim().Stream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
+            this->shim().Stream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().StreamContentType());
+            *value = detach(this->shim().StreamContentType());
             return S_OK;
         }
         catch (...)
@@ -372,7 +372,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
-            shim().StreamContentType(*reinterpret_cast<const hstring *>(&value));
+            this->shim().StreamContentType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -389,7 +389,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FileTypeFilter());
+            *value = detach(this->shim().FileTypeFilter());
             return S_OK;
         }
         catch (...)
@@ -403,7 +403,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().FolderDepth());
+            *value = detach(this->shim().FolderDepth());
             return S_OK;
         }
         catch (...)
@@ -416,7 +416,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().FolderDepth(value);
+            this->shim().FolderDepth(value);
             return S_OK;
         }
         catch (...)
@@ -429,7 +429,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().ApplicationSearchFilter());
+            *value = detach(this->shim().ApplicationSearchFilter());
             return S_OK;
         }
         catch (...)
@@ -443,7 +443,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().ApplicationSearchFilter(*reinterpret_cast<const hstring *>(&value));
+            this->shim().ApplicationSearchFilter(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -456,7 +456,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().UserSearchFilter());
+            *value = detach(this->shim().UserSearchFilter());
             return S_OK;
         }
         catch (...)
@@ -470,7 +470,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().UserSearchFilter(*reinterpret_cast<const hstring *>(&value));
+            this->shim().UserSearchFilter(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -483,7 +483,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().Language(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -510,7 +510,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().IndexerOption());
+            *value = detach(this->shim().IndexerOption());
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().IndexerOption(value);
+            this->shim().IndexerOption(value);
             return S_OK;
         }
         catch (...)
@@ -536,7 +536,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SortOrder());
+            *value = detach(this->shim().SortOrder());
             return S_OK;
         }
         catch (...)
@@ -550,7 +550,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().GroupPropertyName());
+            *value = detach(this->shim().GroupPropertyName());
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().DateStackOption());
+            *value = detach(this->shim().DateStackOption());
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            *value = detach(shim().SaveToString());
+            *value = detach(this->shim().SaveToString());
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().LoadFromString(*reinterpret_cast<const hstring *>(&value));
+            this->shim().LoadFromString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -604,7 +604,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().SetThumbnailPrefetch(mode, requestedSize, options);
+            this->shim().SetThumbnailPrefetch(mode, requestedSize, options);
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
-            shim().SetPropertyPrefetch(options, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve));
+            this->shim().SetPropertyPrefetch(options, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsFactory> : produce_base
     {
         try
         {
-            *queryOptions = detach(shim().CreateCommonFileQuery(query, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&fileTypeFilter)));
+            *queryOptions = detach(this->shim().CreateCommonFileQuery(query, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&fileTypeFilter)));
             return S_OK;
         }
         catch (...)
@@ -648,7 +648,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsFactory> : produce_base
     {
         try
         {
-            *queryOptions = detach(shim().CreateCommonFolderQuery(query));
+            *queryOptions = detach(this->shim().CreateCommonFolderQuery(query));
             return S_OK;
         }
         catch (...)
@@ -666,7 +666,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsWithProviderFilter> : p
     {
         try
         {
-            *value = detach(shim().StorageProviderIdFilter());
+            *value = detach(this->shim().StorageProviderIdFilter());
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync(startIndex, maxNumberOfItems));
+            *operation = detach(this->shim().GetFilesAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync());
+            *operation = detach(this->shim().GetFilesAsync());
             return S_OK;
         }
         catch (...)
@@ -716,7 +716,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult2> : produce_
     {
         try
         {
-            *result = detach(shim().GetMatchingPropertiesWithRanges(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
+            *result = detach(this->shim().GetMatchingPropertiesWithRanges(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -734,7 +734,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetIndexedStateAsync());
+            *operation = detach(this->shim().GetIndexedStateAsync());
             return S_OK;
         }
         catch (...)
@@ -748,7 +748,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFileQuery());
+            *value = detach(this->shim().CreateFileQuery());
             return S_OK;
         }
         catch (...)
@@ -762,7 +762,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFileQuery(query));
+            *value = detach(this->shim().CreateFileQuery(query));
             return S_OK;
         }
         catch (...)
@@ -776,7 +776,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFileQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
+            *value = detach(this->shim().CreateFileQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFolderQuery());
+            *value = detach(this->shim().CreateFolderQuery());
             return S_OK;
         }
         catch (...)
@@ -804,7 +804,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFolderQuery(query));
+            *value = detach(this->shim().CreateFolderQuery(query));
             return S_OK;
         }
         catch (...)
@@ -818,7 +818,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateFolderQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
+            *value = detach(this->shim().CreateFolderQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
         catch (...)
@@ -832,7 +832,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateItemQuery());
+            *value = detach(this->shim().CreateItemQuery());
             return S_OK;
         }
         catch (...)
@@ -846,7 +846,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().CreateItemQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
+            *value = detach(this->shim().CreateItemQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
         catch (...)
@@ -860,7 +860,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync(query, startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetFilesAsync(query, startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -874,7 +874,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetFilesAsync(query));
+            *operation = detach(this->shim().GetFilesAsync(query));
             return S_OK;
         }
         catch (...)
@@ -888,7 +888,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync(query, startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetFoldersAsync(query, startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -902,7 +902,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync(query));
+            *operation = detach(this->shim().GetFoldersAsync(query));
             return S_OK;
         }
         catch (...)
@@ -916,7 +916,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync(startIndex, maxItemsToRetrieve));
+            *operation = detach(this->shim().GetItemsAsync(startIndex, maxItemsToRetrieve));
             return S_OK;
         }
         catch (...)
@@ -930,7 +930,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().AreQueryOptionsSupported(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
+            *value = detach(this->shim().AreQueryOptionsSupported(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
         catch (...)
@@ -943,7 +943,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().IsCommonFolderQuerySupported(query));
+            *value = detach(this->shim().IsCommonFolderQuerySupported(query));
             return S_OK;
         }
         catch (...)
@@ -956,7 +956,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
-            *value = detach(shim().IsCommonFileQuerySupported(query));
+            *value = detach(this->shim().IsCommonFileQuerySupported(query));
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryResult> : produce
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync(startIndex, maxNumberOfItems));
+            *operation = detach(this->shim().GetFoldersAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryResult> : produce
     {
         try
         {
-            *operation = detach(shim().GetFoldersAsync());
+            *operation = detach(this->shim().GetFoldersAsync());
             return S_OK;
         }
         catch (...)
@@ -1005,7 +1005,7 @@ struct produce<D, Windows::Storage::Search::IStorageItemQueryResult> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync(startIndex, maxNumberOfItems));
+            *operation = detach(this->shim().GetItemsAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
         catch (...)
@@ -1019,7 +1019,7 @@ struct produce<D, Windows::Storage::Search::IStorageItemQueryResult> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetItemsAsync());
+            *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -1037,7 +1037,7 @@ struct produce<D, Windows::Storage::Search::IStorageLibraryContentChangedTrigger
     {
         try
         {
-            *value = detach(shim().Folder());
+            *value = detach(this->shim().Folder());
             return S_OK;
         }
         catch (...)
@@ -1051,7 +1051,7 @@ struct produce<D, Windows::Storage::Search::IStorageLibraryContentChangedTrigger
     {
         try
         {
-            *result = detach(shim().CreateModifiedSinceQuery(*reinterpret_cast<const Windows::Foundation::DateTime *>(&lastQueryTime)));
+            *result = detach(this->shim().CreateModifiedSinceQuery(*reinterpret_cast<const Windows::Foundation::DateTime *>(&lastQueryTime)));
             return S_OK;
         }
         catch (...)
@@ -1069,7 +1069,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *operation = detach(shim().GetItemCountAsync());
+            *operation = detach(this->shim().GetItemCountAsync());
             return S_OK;
         }
         catch (...)
@@ -1083,7 +1083,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *container = detach(shim().Folder());
+            *container = detach(this->shim().Folder());
             return S_OK;
         }
         catch (...)
@@ -1097,7 +1097,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *eventCookie = detach(shim().ContentsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&handler)));
+            *eventCookie = detach(this->shim().ContentsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1110,7 +1110,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            shim().ContentsChanged(eventCookie);
+            this->shim().ContentsChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1123,7 +1123,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *eventCookie = detach(shim().OptionsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&changedHandler)));
+            *eventCookie = detach(this->shim().OptionsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
         catch (...)
@@ -1136,7 +1136,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            shim().OptionsChanged(eventCookie);
+            this->shim().OptionsChanged(eventCookie);
             return S_OK;
         }
         catch (...)
@@ -1149,7 +1149,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *operation = detach(shim().FindStartIndexAsync(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *operation = detach(this->shim().FindStartIndexAsync(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1163,7 +1163,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            *value = detach(shim().GetCurrentQueryOptions());
+            *value = detach(this->shim().GetCurrentQueryOptions());
             return S_OK;
         }
         catch (...)
@@ -1177,7 +1177,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
-            shim().ApplyNewQueryOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&newQueryOptions));
+            this->shim().ApplyNewQueryOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&newQueryOptions));
             return S_OK;
         }
         catch (...)
@@ -1194,7 +1194,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Language());
+            *value = detach(this->shim().Language());
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
-            shim().Language(*reinterpret_cast<const hstring *>(&value));
+            this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
-            *value = detach(shim().Value());
+            *value = detach(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
-            shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)

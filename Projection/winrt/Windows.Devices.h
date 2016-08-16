@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "internal\Windows.Devices.Adc.Provider.3.h"
-#include "internal\Windows.Devices.Pwm.Provider.3.h"
-#include "internal\Windows.Devices.Gpio.Provider.3.h"
-#include "internal\Windows.Devices.I2c.Provider.3.h"
-#include "internal\Windows.Devices.Spi.Provider.3.h"
-#include "internal\Windows.Devices.3.h"
+#include "internal/Windows.Devices.Adc.Provider.3.h"
+#include "internal/Windows.Devices.Pwm.Provider.3.h"
+#include "internal/Windows.Devices.Gpio.Provider.3.h"
+#include "internal/Windows.Devices.I2c.Provider.3.h"
+#include "internal/Windows.Devices.Spi.Provider.3.h"
+#include "internal/Windows.Devices.3.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProvider> : produce
     {
         try
         {
-            *value = detach(shim().AdcControllerProvider());
+            *value = detach(this->shim().AdcControllerProvider());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProvider> : produce
     {
         try
         {
-            *value = detach(shim().PwmControllerProvider());
+            *value = detach(this->shim().PwmControllerProvider());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProvider> : produce
     {
         try
         {
-            *value = detach(shim().GpioControllerProvider());
+            *value = detach(this->shim().GpioControllerProvider());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProvider> : produce
     {
         try
         {
-            *value = detach(shim().I2cControllerProvider());
+            *value = detach(this->shim().I2cControllerProvider());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProvider> : produce
     {
         try
         {
-            *value = detach(shim().SpiControllerProvider());
+            *value = detach(this->shim().SpiControllerProvider());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesAggregateProviderFactory> : 
     {
         try
         {
-            *value = detach(shim().Create(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcControllerProvider *>(&adc), *reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmControllerProvider *>(&pwm), *reinterpret_cast<const Windows::Devices::Gpio::Provider::IGpioControllerProvider *>(&gpio), *reinterpret_cast<const Windows::Devices::I2c::Provider::II2cControllerProvider *>(&i2c), *reinterpret_cast<const Windows::Devices::Spi::Provider::ISpiControllerProvider *>(&spi)));
+            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcControllerProvider *>(&adc), *reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmControllerProvider *>(&pwm), *reinterpret_cast<const Windows::Devices::Gpio::Provider::IGpioControllerProvider *>(&gpio), *reinterpret_cast<const Windows::Devices::I2c::Provider::II2cControllerProvider *>(&i2c), *reinterpret_cast<const Windows::Devices::Spi::Provider::ISpiControllerProvider *>(&spi)));
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesControllerStatics> : produce
     {
         try
         {
-            *value = detach(shim().DefaultProvider());
+            *value = detach(this->shim().DefaultProvider());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Devices::ILowLevelDevicesControllerStatics> : produce
     {
         try
         {
-            shim().DefaultProvider(*reinterpret_cast<const Windows::Devices::ILowLevelDevicesAggregateProvider *>(&value));
+            this->shim().DefaultProvider(*reinterpret_cast<const Windows::Devices::ILowLevelDevicesAggregateProvider *>(&value));
             return S_OK;
         }
         catch (...)
