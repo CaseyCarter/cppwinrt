@@ -172,6 +172,13 @@ struct hresult_class_not_available : hresult_error
     hresult_class_not_available(from_abi_t) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
 };
 
+struct hresult_changed_state : hresult_error
+{
+    hresult_changed_state() : hresult_error(E_CHANGED_STATE) {}
+    hresult_changed_state(hstring_ref message) : hresult_error(E_CHANGED_STATE, message) {}
+    hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
+};
+
 namespace impl {
 
 [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
@@ -219,6 +226,11 @@ namespace impl {
     if (result == CLASS_E_CLASSNOTAVAILABLE)
     {
         throw hresult_class_not_available(hresult_error::from_abi);
+    }
+
+    if (result == E_CHANGED_STATE)
+    {
+        throw hresult_changed_state(hresult_error::from_abi);
     }
 
     throw hresult_error(result, hresult_error::from_abi);

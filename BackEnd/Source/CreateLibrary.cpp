@@ -95,6 +95,7 @@ static void WriteBaseHeader()
     Write(out, Strings::base_reference);             // #include "base_reference.h"
     Write(out, Strings::base_collections_consume);   // #include "base_collections_consume.h"
     Write(out, Strings::base_collections_produce);   // #include "base_collections_produce.h"
+    Write(out, Strings::base_collections_impl);      // #include "base_collections_impl.h"
     Write(out, Strings::base_foundation);            // #include "base_foundation.h"
     Write(out, Strings::base_async_consume);         // #include "base_async_consume.h"
     Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"

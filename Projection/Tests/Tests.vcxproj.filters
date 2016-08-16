@@ -29,6 +29,7 @@
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="implements_references.cpp" />
     <ClCompile Include="make_self.cpp" />
+    <ClCompile Include="internal_vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
