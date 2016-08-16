@@ -759,6 +759,16 @@ struct WINRT_EBO IIterable :
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
+
+    IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T>>(std::forward<std::vector<T>>(values)))
+    {}
+
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<T>>(first, last))
+    {}
+
+    IIterable(std::initializer_list<T> values) : IIterable(make<impl::iterable<T>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename K, typename V>
@@ -787,6 +797,16 @@ struct WINRT_EBO IVectorView :
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVectorView>(m_ptr); }
+
+    IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
+    {}
+
+    template<class InputIt>
+    IVectorView(InputIt first, InputIt last) : IVectorView(make<impl::vector_view_standalone<T>>(first, last))
+    {}
+
+    IVectorView(std::initializer_list<T> values) : IVectorView(make<impl::vector_view_standalone<T>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename T>
@@ -797,6 +817,16 @@ struct WINRT_EBO IVector :
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
+
+    IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
+    {}
+
+    template<class InputIt>
+    IVector(InputIt first, InputIt last) : IVector(make<impl::vector<T>>(first, last))
+    {}
+
+    IVector(std::initializer_list<T> values) : IVector(make<impl::vector<T>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename K, typename V>

@@ -25,6 +25,7 @@ namespace winrt {
 #include "base_reference.h"
 #include "base_collections_consume.h"
 #include "base_collections_produce.h"
+#include "base_collections_impl.h"
 #include "base_foundation.h"
 #include "base_async_consume.h"
 #include "base_async_produce.h"
