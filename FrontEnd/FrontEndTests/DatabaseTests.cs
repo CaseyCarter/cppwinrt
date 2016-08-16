@@ -65,7 +65,10 @@ namespace Microsoft.Wtl.Tests
                 DataStoreLocation = databaseFileLocation
             };
 
-            System.IO.Directory.Delete(targetDirectory, true);
+            if (System.IO.Directory.Exists(targetDirectory))
+            {
+                System.IO.Directory.Delete(targetDirectory, true);
+            }
 
             FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
 
@@ -88,7 +91,11 @@ namespace Microsoft.Wtl.Tests
             };
 
             // First get rid of everything (avoid noise all together). Then create the folder
-            System.IO.Directory.Delete(targetDirectory, true);
+            if (System.IO.Directory.Exists(targetDirectory))
+            {
+                System.IO.Directory.Delete(targetDirectory, true);
+            }
+
             System.IO.Directory.CreateDirectory(targetDirectory);
 
             FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
@@ -111,7 +118,10 @@ namespace Microsoft.Wtl.Tests
                 DataStoreLocation = databaseFileName
             };
 
-            System.IO.File.Delete(databaseFileLocation);
+            if (System.IO.File.Exists(databaseFileLocation))
+            {
+                System.IO.File.Delete(databaseFileLocation);
+            }
 
             FrontEndDatabaseTest database = new FrontEndDatabaseTest(configuration);
 
