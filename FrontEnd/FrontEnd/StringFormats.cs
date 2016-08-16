@@ -33,6 +33,7 @@ namespace Microsoft.Wcl
         public const string ResponseFileNotFound = "Could not find response file {0}";
         public const string CouldNotGetArgumentCountFromGenericType = "Could not get argument count from generic type {0}";
         public const string NotEnoughParameters = "Input did not contain the required -winmd parameter";
+        public const string InvalidResponseFile = "Invalid response file. Could not parse near {0} when parsing {1} around index {2}";
     }
 
     internal static class StringFormats

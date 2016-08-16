@@ -231,5 +231,111 @@ namespace Microsoft.Wtl.Tests
 
             AssertHelper.VerifiyThrows<ResponseFileNotFoundException>(() => { responseFileParser.Parse(file); }, string.Format(StringExceptionFormats.ResponseFileNotFound, file));
         }
+
+        [TestMethod]
+        public void InvalidResponseFile()
+        {
+            var name = "-winmd";
+            var chunk1 = "\"C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd\"\"";
+
+            var input = string.Format("{0} {1}", name, chunk1);
+            var parser = new ResponseFileParserTest();
+            AssertHelper.VerifiyThrows< InvalidResponseFileException>(() => { parser.ParseResponseFileContentHelper(input); });
+        }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesWithMultipleSpaces()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var input = string.Format("           {0}       \"{1}\"                   \"{2}\"            ", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(name, list[0]);
+            Assert.AreEqual(value1, list[1]);
+            Assert.AreEqual(value2, list[2]);
+        }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesWithMultipleSpacesBetweenValuesOneInvalid()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var input = string.Format("           {0}       \"{1}\"\"                   \"{2}\"           ", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+
+            AssertHelper.VerifiyThrows<InvalidResponseFileException>(() => { parser.ParseResponseFileContentHelper(input); });
+        }
+
+        [TestMethod]
+        public void TwoParameter_TwoValidValuesWithMultipleSpacesBetweenValues()
+        {
+            var name1 = "-winmd";
+            var value11 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value12 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var name2 = "-winmd";
+            var value21 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value22 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var input = string.Format("           {0}       \"{1}\"                   \"{2}\"           {3}     \"{4}\"    \"{5}\"    ", name1, value11, value12, name2, value21, value22);
+            var parser = new ResponseFileParserTest();
+
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(6, list.Count);
+            Assert.AreEqual(name1, list[0]);
+            Assert.AreEqual(value11, list[1]);
+            Assert.AreEqual(value12, list[2]);
+            Assert.AreEqual(name2, list[3]);
+            Assert.AreEqual(value21, list[4]);
+            Assert.AreEqual(value22, list[5]);
+        }
+
+        [TestMethod]
+        public void TwoParameter_TwoValidValuesWithMultipleSpacesBetweenValuesOneInvalid()
+        {
+            var name1 = "-winmd";
+            var value11 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value12 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var name2 = "-winmd";
+            var value21 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value22 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var input = string.Format("           {0}       \"{1}\"                   \"{2}\"           {3}     \"{4}\"    \"{5}\"\"    ", name1, value11, value12, name2, value21, value22);
+            var parser = new ResponseFileParserTest();
+
+            AssertHelper.VerifiyThrows<InvalidResponseFileException>(() => { parser.ParseResponseFileContentHelper(input); });
+        }
+
+        [TestMethod]
+        public void ThreeParameter_TwoValidValuesWithSpacesAndEndOfLine()
+        {
+            var name1 = "-winmd";
+            var value11 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value12 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var name2 = "-winmd";
+            var value21 = "Windows.Foundation.FoundationContract.winmd";
+            var value22 = "Windows.Foundation.UniversalApiContract.winmd";
+            var name3 = "-winmd";
+            var value31 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value32 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows.Foundation.UniversalApiContract.winmd";
+            var input = string.Format("\r\n  \r\n           {0}       \"{1}\"      \r\n             \"{2}\"           {3}     {4}    {5}   {6}       \"{7}\"                   \"{8}\"    ", name1, value11, value12, name2, value21, value22, name3, value31, value32);
+            var parser = new ResponseFileParserTest();
+
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(9, list.Count);
+            Assert.AreEqual(name1, list[0]);
+            Assert.AreEqual(value11, list[1]);
+            Assert.AreEqual(value12, list[2]);
+            Assert.AreEqual(name2, list[3]);
+            Assert.AreEqual(value21, list[4]);
+            Assert.AreEqual(value22, list[5]);
+            Assert.AreEqual(name3, list[6]);
+            Assert.AreEqual(value31, list[7]);
+            Assert.AreEqual(value32, list[8]);
+        }
     }
 }

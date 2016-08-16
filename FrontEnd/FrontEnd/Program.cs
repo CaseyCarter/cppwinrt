@@ -22,7 +22,7 @@ namespace Microsoft.Wcl
                 //@"-winmd", @"D:\testmetadata\Windows.Foundation.FoundationContract.winmd",
                 //@"-winmd", @"D:\testmetadata\Windows.Foundation.UniversalApiContract.winmd",
                 // The below is a full set of the SDK as it was in TH2.
-                //@"-winmd",
+                //@"-winmd",   
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Calls.CallsPhoneContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.ApplicationModel.Calls.CallsVoipContract.winmd",
@@ -54,9 +54,10 @@ namespace Microsoft.Wcl
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd",
                 //@"D:\Git\ModernCPP2\FrontEnd\FrontEndTests\TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd",
                 //@"@D:\xbox\Projection.Xbox_doesnotexists.txt",
+                @"@d:\filelist.rsp",
                     //@"-winmd",
                     @"-db",
-                    @"d:\modern\testdatabaseoutput.db"
+                    @"d:\modern2\testdatabaseoutput.db"
                 };
 
                 int value = ProcessMain(args);
@@ -98,6 +99,11 @@ namespace Microsoft.Wcl
                 {
                     PrintOutputAfterKnownException(e);
                     return 1;
+                }
+                catch (InvalidResponseFileException e)
+                {
+                    PrintOutputAfterKnownException(e);
+                    return -1;
                 }
                 catch (Exception e)
                 {
