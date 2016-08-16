@@ -343,7 +343,7 @@ namespace Microsoft.Wcl.DataStore
             this.Transaction.Commit();
 
             var dataStoreDirectory = Path.GetDirectoryName(this.Configuration.DataStoreLocation);
-            if (!System.IO.Directory.Exists(dataStoreDirectory))
+            if (!string.IsNullOrEmpty(dataStoreDirectory) && !System.IO.Directory.Exists(dataStoreDirectory))
             {
                 Directory.CreateDirectory(dataStoreDirectory);
             }
