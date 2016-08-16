@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Data;
 using Microsoft.Wcl.Projection;
 using Microsoft.Wcl.Parsers;
+using System.IO;
 
 namespace Microsoft.Wcl.DataStore
 {
@@ -340,6 +341,12 @@ namespace Microsoft.Wcl.DataStore
         public void Save()
         {
             this.Transaction.Commit();
+
+            var dataStoreDirectory = Path.GetDirectoryName(this.Configuration.DataStoreLocation);
+            if (!System.IO.Directory.Exists(dataStoreDirectory))
+            {
+                Directory.CreateDirectory(dataStoreDirectory);
+            }
 
             var connectionString = String.Format(FrontEndDatabaseResources.FileDatabaseConnectionString, this.Configuration.DataStoreLocation);
             var destination = new SQLiteConnection(connectionString);
