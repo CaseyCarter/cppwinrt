@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Wcl;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -42,26 +43,30 @@ namespace Microsoft.Wtl.Tests
             }
         }
 
-        internal static Wcl.FrontEndConfiguration RunFrontEnd(string[] winmds, bool skipGenericInterfaceResolution = true)
+        internal static Wcl.FrontEndConfiguration RunFrontEnd(string[] winmds, bool skipGenericInterfaceResolution = true, string databaseLocation = null)
         {
-            var argHelper = new string[winmds.Length + 1];
-            int i = 0;
-            argHelper[i++] = @"-winmd";
+            var argHelper = new List<string>();
+
+            argHelper.Add(@"-winmd");
             foreach (var winmd in winmds)
             {
-                argHelper[i++] = winmd;
+                argHelper.Add(winmd);
             }
 
-            var arguments = new Wcl.ArgumentsParser(argHelper);
+            argHelper.Add("-db");
+            argHelper.Add(databaseLocation ?? GetDatabaseFullPath());
+
+            var arguments = new Wcl.ArgumentsParser(argHelper.ToArray());
             arguments.Parse();
             var configuration = new Wcl.FrontEndConfiguration();
             configuration.Arguments.Add(arguments.ArgumentsDictionary.GetEnumerator());
             configuration.SkipGenericInterfaceResolution = skipGenericInterfaceResolution;
 
-            var databaseFilePath = GetDatabaseFullPath();
-            if (File.Exists(databaseFilePath))
+
+            var expandedDataStoreLocation = System.Environment.ExpandEnvironmentVariables(databaseLocation ?? GetDatabaseFullPath());
+            if (File.Exists(expandedDataStoreLocation))
             {
-                File.Delete(databaseFilePath);
+                File.Delete(expandedDataStoreLocation);
             }
 
             var frontEnd = new Wcl.Steps.FrontEnd();

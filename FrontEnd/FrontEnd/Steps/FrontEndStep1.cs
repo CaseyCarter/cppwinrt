@@ -52,11 +52,13 @@ namespace Microsoft.Wcl.Steps
 
         private void CheckWinmdsExists(IList<string> winmds)
         {
-            foreach (var winmd in winmds)
+            for (int i = 0; i < winmds.Count; i++)
             {
-                if (!File.Exists(winmd))
+                winmds[i] = System.Environment.ExpandEnvironmentVariables(winmds[i]);
+
+                if (!File.Exists(winmds[i]))
                 {
-                    throw new WinmdFileNotFoundException(winmd);
+                    throw new WinmdFileNotFoundException(winmds[i]);
                 }
             }
         }
@@ -68,7 +70,7 @@ namespace Microsoft.Wcl.Steps
             if (this.Configuration.Arguments.TryGetValue(DatabaseArgumentValue, out dbArgument))
             {
                 Debug.Assert(dbArgument.Values.Count == 1);
-                this.Configuration.DataStoreLocation = dbArgument.Values[0];
+                this.Configuration.DataStoreLocation = System.Environment.ExpandEnvironmentVariables(dbArgument.Values[0]);
             }
             else
             {

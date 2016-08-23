@@ -90,6 +90,7 @@
     <Compile Include="ClassConstructors.cs" />
     <Compile Include="DatabaseTests.cs" />
     <Compile Include="EnumerationsTests.cs" />
+    <Compile Include="FilePathsExpansionTests.cs" />
     <Compile Include="FrontEndPhase1Tests.cs" />
     <Compile Include="ImplicitGenericInterfaces.cs" />
     <Compile Include="InnerGenericInterfacesTests.cs" />
