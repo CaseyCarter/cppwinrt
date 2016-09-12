@@ -49,6 +49,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("7c65d286-7285-5d63-bdea-5ef951bdf618")) __declspec(novtable) IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> : impl_IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> {};
 #endif
 
+#ifndef WINRT_GENERIC_144136c6_b502_5a52_90fc_22a09318f932
+#define WINRT_GENERIC_144136c6_b502_5a52_90fc_22a09318f932
+template <> struct __declspec(uuid("144136c6-b502-5a52-90fc-22a09318f932")) __declspec(novtable) IIterator<Windows::Devices::WiFi::WiFiAdapter> : impl_IIterator<Windows::Devices::WiFi::WiFiAdapter> {};
+#endif
+
+#ifndef WINRT_GENERIC_e0bc76c4_8d0c_53fc_bcd4_228f47210ace
+#define WINRT_GENERIC_e0bc76c4_8d0c_53fc_bcd4_228f47210ace
+template <> struct __declspec(uuid("e0bc76c4-8d0c-53fc-bcd4-228f47210ace")) __declspec(novtable) IIterable<Windows::Devices::WiFi::WiFiAdapter> : impl_IIterable<Windows::Devices::WiFi::WiFiAdapter> {};
+#endif
+
 
 }
 

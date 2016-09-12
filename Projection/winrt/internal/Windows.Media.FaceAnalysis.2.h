@@ -44,6 +44,31 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("7f32c680-e37e-539a-8993-2abbea71afda")) __declspec(novtable) IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> : impl_IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_39ef4411_0618_5b8d_8ea2_81c637f823f8
+#define WINRT_GENERIC_39ef4411_0618_5b8d_8ea2_81c637f823f8
+template <> struct __declspec(uuid("39ef4411-0618-5b8d-8ea2-81c637f823f8")) __declspec(novtable) IVectorView<Windows::Media::FaceAnalysis::DetectedFace> : impl_IVectorView<Windows::Media::FaceAnalysis::DetectedFace> {};
+#endif
+
+#ifndef WINRT_GENERIC_a0cf090e_0340_531f_898b_c21eafb9f4ae
+#define WINRT_GENERIC_a0cf090e_0340_531f_898b_c21eafb9f4ae
+template <> struct __declspec(uuid("a0cf090e-0340-531f-898b-c21eafb9f4ae")) __declspec(novtable) IIterator<Windows::Media::FaceAnalysis::DetectedFace> : impl_IIterator<Windows::Media::FaceAnalysis::DetectedFace> {};
+#endif
+
+#ifndef WINRT_GENERIC_25347323_3556_5cbb_9855_2b5856437f4d
+#define WINRT_GENERIC_25347323_3556_5cbb_9855_2b5856437f4d
+template <> struct __declspec(uuid("25347323-3556-5cbb-9855-2b5856437f4d")) __declspec(novtable) IIterable<Windows::Media::FaceAnalysis::DetectedFace> : impl_IIterable<Windows::Media::FaceAnalysis::DetectedFace> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_3224aec6_e785_5066_976f_79dd081b75a9
 #define WINRT_GENERIC_3224aec6_e785_5066_976f_79dd081b75a9
 template <> struct __declspec(uuid("3224aec6-e785-5066-976f-79dd081b75a9")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Media::FaceAnalysis::FaceDetector> : impl_AsyncOperationCompletedHandler<Windows::Media::FaceAnalysis::FaceDetector> {};

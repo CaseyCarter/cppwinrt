@@ -194,6 +194,16 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_69cec62c_41eb_5d69_a475_29ee22323dd8
+#define WINRT_GENERIC_69cec62c_41eb_5d69_a475_29ee22323dd8
+template <> struct __declspec(uuid("69cec62c-41eb-5d69-a475-29ee22323dd8")) __declspec(novtable) IIterator<Windows::ApplicationModel::AppInfo> : impl_IIterator<Windows::ApplicationModel::AppInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_63d0bffe_0e34_55b3_83d5_314caff2b137
+#define WINRT_GENERIC_63d0bffe_0e34_55b3_83d5_314caff2b137
+template <> struct __declspec(uuid("63d0bffe-0e34-55b3-83d5-314caff2b137")) __declspec(novtable) IIterable<Windows::ApplicationModel::AppInfo> : impl_IIterable<Windows::ApplicationModel::AppInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
@@ -233,6 +243,26 @@ template <> struct __declspec(uuid("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2")) __de
 #define WINRT_GENERIC_60847289_ea0b_5df6_89df_f2c62cba9693
 template <> struct __declspec(uuid("60847289-ea0b-5df6-89df-f2c62cba9693")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_326fe162_582b_5659_b8a4_68ff0f525745
+#define WINRT_GENERIC_326fe162_582b_5659_b8a4_68ff0f525745
+template <> struct __declspec(uuid("326fe162-582b-5659-b8a4-68ff0f525745")) __declspec(novtable) IIterator<Windows::System::User> : impl_IIterator<Windows::System::User> {};
+#endif
+
+#ifndef WINRT_GENERIC_d1bacd1f_0376_5823_8c29_1d45b9f4c191
+#define WINRT_GENERIC_d1bacd1f_0376_5823_8c29_1d45b9f4c191
+template <> struct __declspec(uuid("d1bacd1f-0376-5823-8c29-1d45b9f4c191")) __declspec(novtable) IIterable<Windows::System::User> : impl_IIterable<Windows::System::User> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f913e3a2_d1c5_5308_becf_4c2d8167824a
 #define WINRT_GENERIC_f913e3a2_d1c5_5308_becf_4c2d8167824a

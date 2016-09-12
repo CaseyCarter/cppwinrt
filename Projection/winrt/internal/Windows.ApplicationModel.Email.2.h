@@ -274,6 +274,16 @@ template <> struct __declspec(uuid("9ea98fb4-9e7e-5caa-a320-cc7ab5338084")) __de
 template <> struct __declspec(uuid("f6d6af60-f11a-5c03-80cc-473407a5aabf")) __declspec(novtable) IVectorView<Windows::ApplicationModel::Email::EmailRecipient> : impl_IVectorView<Windows::ApplicationModel::Email::EmailRecipient> {};
 #endif
 
+#ifndef WINRT_GENERIC_cae3c1c4_c689_5787_976f_1a158ffdd16b
+#define WINRT_GENERIC_cae3c1c4_c689_5787_976f_1a158ffdd16b
+template <> struct __declspec(uuid("cae3c1c4-c689-5787-976f-1a158ffdd16b")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> : impl_IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_7e326530_7449_51a7_b1bc_c43533a78e06
+#define WINRT_GENERIC_7e326530_7449_51a7_b1bc_c43533a78e06
+template <> struct __declspec(uuid("7e326530-7449-51a7-b1bc-c43533a78e06")) __declspec(novtable) IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
+#endif
+
 
 }
 
@@ -303,6 +313,26 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_ddb761d3_71b8_5c4b_ad8b_1e6522664921
 template <> struct __declspec(uuid("ddb761d3-71b8-5c4b-ad8b-1e6522664921")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Email::EmailStore> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Email::EmailStore> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
+#define WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
+template <> struct __declspec(uuid("312f8d4a-0e85-566e-b7aa-dbd40a0343ff")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailMailbox> : impl_IIterator<Windows::ApplicationModel::Email::EmailMailbox> {};
+#endif
+
+#ifndef WINRT_GENERIC_8fc76b2e_f800_5f1d_a023_de47e5f306e0
+#define WINRT_GENERIC_8fc76b2e_f800_5f1d_a023_de47e5f306e0
+template <> struct __declspec(uuid("8fc76b2e-f800-5f1d-a023-de47e5f306e0")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailMailbox> : impl_IIterable<Windows::ApplicationModel::Email::EmailMailbox> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_4d5f57df_e0dc_5cf5_b2e5_fa1e5c0006fa
 #define WINRT_GENERIC_4d5f57df_e0dc_5cf5_b2e5_fa1e5c0006fa
@@ -364,6 +394,16 @@ template <> struct __declspec(uuid("dfc1275a-c7b0-5fe4-9370-32b94ad0ba8e")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_5c040cd6_9593_5e74_9a5e_7284cd1b7200
+#define WINRT_GENERIC_5c040cd6_9593_5e74_9a5e_7284cd1b7200
+template <> struct __declspec(uuid("5c040cd6-9593-5e74-9a5e-7284cd1b7200")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> : impl_IIterator<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_1cfe3d41_16a5_5026_a6fe_2cb0a303a605
+#define WINRT_GENERIC_1cfe3d41_16a5_5026_a6fe_2cb0a303a605
+template <> struct __declspec(uuid("1cfe3d41-16a5-5026-a6fe-2cb0a303a605")) __declspec(novtable) IIterator<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IIterator<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
+#endif
+
 #ifndef WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
 #define WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
 template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterator<Windows::Security::Cryptography::Certificates::Certificate> {};
@@ -388,6 +428,26 @@ template <> struct __declspec(uuid("929f0fda-f350-55be-8555-e98d81eaf1a5")) __de
 #define WINRT_GENERIC_52604da6_485b_5445_8e6f_64cc13056045
 template <> struct __declspec(uuid("52604da6-485b-5445-8e6f-64cc13056045")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_95ae5494_43bc_5f6b_a02b_b6956d0c7069
+#define WINRT_GENERIC_95ae5494_43bc_5f6b_a02b_b6956d0c7069
+template <> struct __declspec(uuid("95ae5494-43bc-5f6b-a02b-b6956d0c7069")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailFolder> : impl_IIterator<Windows::ApplicationModel::Email::EmailFolder> {};
+#endif
+
+#ifndef WINRT_GENERIC_6dcb53eb_8a35_54bf_8c8e_449bce9b3920
+#define WINRT_GENERIC_6dcb53eb_8a35_54bf_8c8e_449bce9b3920
+template <> struct __declspec(uuid("6dcb53eb-8a35-54bf-8c8e-449bce9b3920")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailFolder> : impl_IIterable<Windows::ApplicationModel::Email::EmailFolder> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_02c54220_ded8_5495_841d_d432c879b826
 #define WINRT_GENERIC_02c54220_ded8_5495_841d_d432c879b826
@@ -452,6 +512,16 @@ template <> struct __declspec(uuid("26419311-1cd7-5bab-9c4a-e95884d5539c")) __de
 #ifndef WINRT_GENERIC_f7bdef91_beff_5be2_8ef9_2f8112e59a6f
 #define WINRT_GENERIC_f7bdef91_beff_5be2_8ef9_2f8112e59a6f
 template <> struct __declspec(uuid("f7bdef91-beff-5be2-8ef9-2f8112e59a6f")) __declspec(novtable) IVectorView<Windows::ApplicationModel::Email::EmailMailboxAction> : impl_IVectorView<Windows::ApplicationModel::Email::EmailMailboxAction> {};
+#endif
+
+#ifndef WINRT_GENERIC_b2b91198_5f8b_5e4a_85f8_ddca82ba0b7f
+#define WINRT_GENERIC_b2b91198_5f8b_5e4a_85f8_ddca82ba0b7f
+template <> struct __declspec(uuid("b2b91198-5f8b-5e4a-85f8-ddca82ba0b7f")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailMailboxChange> : impl_IIterator<Windows::ApplicationModel::Email::EmailMailboxChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_4630ccb6_dfce_57dc_a5d1_28b889c2c2b7
+#define WINRT_GENERIC_4630ccb6_dfce_57dc_a5d1_28b889c2c2b7
+template <> struct __declspec(uuid("4630ccb6-dfce-57dc-a5d1-28b889c2c2b7")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailMailboxChange> : impl_IIterable<Windows::ApplicationModel::Email::EmailMailboxChange> {};
 #endif
 
 

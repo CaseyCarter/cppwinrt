@@ -99,6 +99,16 @@ template <> struct __declspec(uuid("3c047c6a-c55b-5485-b673-8d4bd7c342e2")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_391f7579_a90e_5352_9d01_fda995d7912f
+#define WINRT_GENERIC_391f7579_a90e_5352_9d01_fda995d7912f
+template <> struct __declspec(uuid("391f7579-a90e-5352-9d01-fda995d7912f")) __declspec(novtable) IIterator<Windows::UI::StartScreen::SecondaryTile> : impl_IIterator<Windows::UI::StartScreen::SecondaryTile> {};
+#endif
+
+#ifndef WINRT_GENERIC_75651af0_014a_5593_bc48_836ba3d1d5d4
+#define WINRT_GENERIC_75651af0_014a_5593_bc48_836ba3d1d5d4
+template <> struct __declspec(uuid("75651af0-014a-5593-bc48-836ba3d1d5d4")) __declspec(novtable) IIterable<Windows::UI::StartScreen::SecondaryTile> : impl_IIterable<Windows::UI::StartScreen::SecondaryTile> {};
+#endif
+
 #ifndef WINRT_GENERIC_bbc6e16c_cace_5230_8804_2298375168ac
 #define WINRT_GENERIC_bbc6e16c_cace_5230_8804_2298375168ac
 template <> struct __declspec(uuid("bbc6e16c-cace-5230-8804-2298375168ac")) __declspec(novtable) IIterator<Windows::UI::StartScreen::SecondaryTileVisualElements> : impl_IIterator<Windows::UI::StartScreen::SecondaryTileVisualElements> {};

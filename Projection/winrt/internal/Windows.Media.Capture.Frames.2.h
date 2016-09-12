@@ -105,6 +105,16 @@ template <> struct __declspec(uuid("443c60d8-208e-5399-bc44-edc6fef02293")) __de
 template <> struct __declspec(uuid("2e29c5b0-6aa9-50f2-91a4-5b67a5598f2e")) __declspec(novtable) IIterable<Windows::Media::Capture::Frames::MediaFrameSourceInfo> : impl_IIterable<Windows::Media::Capture::Frames::MediaFrameSourceInfo> {};
 #endif
 
+#ifndef WINRT_GENERIC_dc0c1f9a_b748_5cfa_9b42_a3a8fe37281a
+#define WINRT_GENERIC_dc0c1f9a_b748_5cfa_9b42_a3a8fe37281a
+template <> struct __declspec(uuid("dc0c1f9a-b748-5cfa-9b42-a3a8fe37281a")) __declspec(novtable) IIterator<Windows::Media::Capture::Frames::MediaFrameSourceGroup> : impl_IIterator<Windows::Media::Capture::Frames::MediaFrameSourceGroup> {};
+#endif
+
+#ifndef WINRT_GENERIC_d0b71deb_76e8_5833_9623_2b1e1a8e1b72
+#define WINRT_GENERIC_d0b71deb_76e8_5833_9623_2b1e1a8e1b72
+template <> struct __declspec(uuid("d0b71deb-76e8-5833-9623-2b1e1a8e1b72")) __declspec(novtable) IIterable<Windows::Media::Capture::Frames::MediaFrameSourceGroup> : impl_IIterable<Windows::Media::Capture::Frames::MediaFrameSourceGroup> {};
+#endif
+
 
 }
 

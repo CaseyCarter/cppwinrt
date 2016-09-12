@@ -39,6 +39,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("f09e843a-13cb-559b-a9fc-015722c2cd57")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_6ee1200d_dd13_5050_88cb_5352af113fd1
+#define WINRT_GENERIC_6ee1200d_dd13_5050_88cb_5352af113fd1
+template <> struct __declspec(uuid("6ee1200d-dd13-5050-88cb-5352af113fd1")) __declspec(novtable) IIterator<Windows::UI::Notifications::UserNotification> : impl_IIterator<Windows::UI::Notifications::UserNotification> {};
+#endif
+
+#ifndef WINRT_GENERIC_18170480_1bd8_5cd0_bb32_67e71d5b4d7c
+#define WINRT_GENERIC_18170480_1bd8_5cd0_bb32_67e71d5b4d7c
+template <> struct __declspec(uuid("18170480-1bd8-5cd0-bb32-67e71d5b4d7c")) __declspec(novtable) IIterable<Windows::UI::Notifications::UserNotification> : impl_IIterable<Windows::UI::Notifications::UserNotification> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_bf7f3d3c_230f_54ea_ad74_0cf6c55cd8d1
 #define WINRT_GENERIC_bf7f3d3c_230f_54ea_ad74_0cf6c55cd8d1
 template <> struct __declspec(uuid("bf7f3d3c-230f-54ea-ad74-0cf6c55cd8d1")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> {};

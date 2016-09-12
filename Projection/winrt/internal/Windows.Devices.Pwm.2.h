@@ -25,6 +25,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("0a288d41-1f20-5d16-85dd-52855b11569a")) __declspec(novtable) IAsyncOperation<Windows::Devices::Pwm::PwmController> : impl_IAsyncOperation<Windows::Devices::Pwm::PwmController> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_599330bd_b0ca_533e_938f_5dd4242bf513
+#define WINRT_GENERIC_599330bd_b0ca_533e_938f_5dd4242bf513
+template <> struct __declspec(uuid("599330bd-b0ca-533e-938f-5dd4242bf513")) __declspec(novtable) IIterator<Windows::Devices::Pwm::PwmController> : impl_IIterator<Windows::Devices::Pwm::PwmController> {};
+#endif
+
+#ifndef WINRT_GENERIC_1403a6ab_73cb_5805_9bbc_a0dd39d476b0
+#define WINRT_GENERIC_1403a6ab_73cb_5805_9bbc_a0dd39d476b0
+template <> struct __declspec(uuid("1403a6ab-73cb-5805-9bbc-a0dd39d476b0")) __declspec(novtable) IIterable<Windows::Devices::Pwm::PwmController> : impl_IIterable<Windows::Devices::Pwm::PwmController> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_5fc68e9f_ffff_5d53_ba21_9c33ef56b240
 #define WINRT_GENERIC_5fc68e9f_ffff_5d53_ba21_9c33ef56b240
 template <> struct __declspec(uuid("5fc68e9f-ffff-5d53-ba21-9c33ef56b240")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Pwm::PwmController> : impl_AsyncOperationCompletedHandler<Windows::Devices::Pwm::PwmController> {};

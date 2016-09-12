@@ -299,6 +299,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("31229f8c-709d-5017-8629-57ef1289e616")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_91ccb492_ec28_530b_b45e_c431744ca9b5
+#define WINRT_GENERIC_91ccb492_ec28_530b_b45e_c431744ca9b5
+template <> struct __declspec(uuid("91ccb492-ec28-530b-b45e-c431744ca9b5")) __declspec(novtable) IIterator<Windows::Networking::Vpn::IVpnProfile> : impl_IIterator<Windows::Networking::Vpn::IVpnProfile> {};
+#endif
+
+#ifndef WINRT_GENERIC_db35f6b1_f266_5c87_8862_9dd87d9df18f
+#define WINRT_GENERIC_db35f6b1_f266_5c87_8862_9dd87d9df18f
+template <> struct __declspec(uuid("db35f6b1-f266-5c87-8862-9dd87d9df18f")) __declspec(novtable) IIterable<Windows::Networking::Vpn::IVpnProfile> : impl_IIterable<Windows::Networking::Vpn::IVpnProfile> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_69d957be_045e_538f_98f6_1aa65cee244a
 #define WINRT_GENERIC_69d957be_045e_538f_98f6_1aa65cee244a
 template <> struct __declspec(uuid("69d957be-045e-538f-98f6-1aa65cee244a")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> {};

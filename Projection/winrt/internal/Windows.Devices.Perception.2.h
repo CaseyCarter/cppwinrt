@@ -215,6 +215,26 @@ template <> struct __declspec(uuid("4d529b7e-eea0-511b-8285-47e8c85d0295")) __de
 template <> struct __declspec(uuid("687fef67-8871-56fe-8e7e-1d2929cc6f42")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_b22b294f_a4d2_5726_a7fc_5e331432d9b4
+#define WINRT_GENERIC_b22b294f_a4d2_5726_a7fc_5e331432d9b4
+template <> struct __declspec(uuid("b22b294f-a4d2-5726-a7fc-5e331432d9b4")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionInfraredFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionInfraredFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_9309d0db_338d_5adf_8b3e_509bfdfccef3
+#define WINRT_GENERIC_9309d0db_338d_5adf_8b3e_509bfdfccef3
+template <> struct __declspec(uuid("9309d0db-338d-5adf-8b3e-509bfdfccef3")) __declspec(novtable) IIterable<Windows::Devices::Perception::PerceptionInfraredFrameSource> : impl_IIterable<Windows::Devices::Perception::PerceptionInfraredFrameSource> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_a8d4cd8e_b210_54f7_ae2b_7770e19b3e36
 #define WINRT_GENERIC_a8d4cd8e_b210_54f7_ae2b_7770e19b3e36
 template <> struct __declspec(uuid("a8d4cd8e-b210-54f7-ae2b-7770e19b3e36")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource> : impl_AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource> {};
@@ -225,10 +245,50 @@ template <> struct __declspec(uuid("a8d4cd8e-b210-54f7-ae2b-7770e19b3e36")) __de
 template <> struct __declspec(uuid("62744ea4-3447-5722-ab5e-02567b4fceeb")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_20cff8c2_7844_54e5_ae4f_57e7768f9b69
+#define WINRT_GENERIC_20cff8c2_7844_54e5_ae4f_57e7768f9b69
+template <> struct __declspec(uuid("20cff8c2-7844-54e5-ae4f-57e7768f9b69")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionDepthFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionDepthFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_8a07e1e8_5a02_585b_a26e_ad79beaa94cf
+#define WINRT_GENERIC_8a07e1e8_5a02_585b_a26e_ad79beaa94cf
+template <> struct __declspec(uuid("8a07e1e8-5a02-585b-a26e-ad79beaa94cf")) __declspec(novtable) IIterable<Windows::Devices::Perception::PerceptionDepthFrameSource> : impl_IIterable<Windows::Devices::Perception::PerceptionDepthFrameSource> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_b48cb886_3476_58d9_b76d_fda6b3e81f54
 #define WINRT_GENERIC_b48cb886_3476_58d9_b76d_fda6b3e81f54
 template <> struct __declspec(uuid("b48cb886-3476-58d9-b76d-fda6b3e81f54")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionDepthFrameSource> : impl_AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionDepthFrameSource> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_24089f00_ba6d_50d4_ac46_f288755e4181
+#define WINRT_GENERIC_24089f00_ba6d_50d4_ac46_f288755e4181
+template <> struct __declspec(uuid("24089f00-ba6d-50d4-ac46-f288755e4181")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionColorFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionColorFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_db18069e_7b5a_54c3_a627_d56f9517fdf5
+#define WINRT_GENERIC_db18069e_7b5a_54c3_a627_d56f9517fdf5
+template <> struct __declspec(uuid("db18069e-7b5a-54c3-a627-d56f9517fdf5")) __declspec(novtable) IIterable<Windows::Devices::Perception::PerceptionColorFrameSource> : impl_IIterable<Windows::Devices::Perception::PerceptionColorFrameSource> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_3b56acc2_e275_54fb_be08_9fdc8f1a1e10
 #define WINRT_GENERIC_3b56acc2_e275_54fb_be08_9fdc8f1a1e10

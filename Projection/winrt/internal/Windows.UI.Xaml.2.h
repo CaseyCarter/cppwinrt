@@ -186,6 +186,11 @@ template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
+#define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
+template <> struct __declspec(uuid("c602b59e-0a8e-5e99-b478-2b564585278d")) __declspec(novtable) IIterator<Windows::Foundation::Point> : impl_IIterator<Windows::Foundation::Point> {};
+#endif
+
 #ifndef WINRT_GENERIC_3198322e_2527_58d1_8d92_9d22b977d255
 #define WINRT_GENERIC_3198322e_2527_58d1_8d92_9d22b977d255
 template <> struct __declspec(uuid("3198322e-2527-58d1-8d92-9d22b977d255")) __declspec(novtable) IIterator<Windows::UI::Xaml::SetterBase> : impl_IIterator<Windows::UI::Xaml::SetterBase> {};

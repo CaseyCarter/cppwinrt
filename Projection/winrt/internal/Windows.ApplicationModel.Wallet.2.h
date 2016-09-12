@@ -139,6 +139,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("88b0349f-503d-5786-a267-55bb37a8a1b1")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Wallet::WalletItem> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Wallet::WalletItem> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_e3ceb002_c2dd_5e63_913c_d7d577561e73
+#define WINRT_GENERIC_e3ceb002_c2dd_5e63_913c_d7d577561e73
+template <> struct __declspec(uuid("e3ceb002-c2dd-5e63-913c-d7d577561e73")) __declspec(novtable) IIterator<Windows::ApplicationModel::Wallet::WalletItem> : impl_IIterator<Windows::ApplicationModel::Wallet::WalletItem> {};
+#endif
+
+#ifndef WINRT_GENERIC_ac174c8c_0fdd_5cff_a29f_4e8ce1c8bc81
+#define WINRT_GENERIC_ac174c8c_0fdd_5cff_a29f_4e8ce1c8bc81
+template <> struct __declspec(uuid("ac174c8c-0fdd-5cff-a29f-4e8ce1c8bc81")) __declspec(novtable) IIterable<Windows::ApplicationModel::Wallet::WalletItem> : impl_IIterable<Windows::ApplicationModel::Wallet::WalletItem> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_5334975e_205a_5b6c_96fd_896fb93949bd
 #define WINRT_GENERIC_5334975e_205a_5b6c_96fd_896fb93949bd
 template <> struct __declspec(uuid("5334975e-205a-5b6c-96fd-896fb93949bd")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Wallet::WalletItemStore> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Wallet::WalletItemStore> {};

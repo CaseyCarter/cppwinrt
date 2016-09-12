@@ -269,6 +269,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_df6e6b4f_3e45_52cd_aade_3316896abad0
+#define WINRT_GENERIC_df6e6b4f_3e45_52cd_aade_3316896abad0
+template <> struct __declspec(uuid("df6e6b4f-3e45-52cd-aade-3316896abad0")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::ChatMessageChange> : impl_IIterator<Windows::ApplicationModel::Chat::ChatMessageChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_0df896df_354c_5d35_b7ac_6b2e1d70c8eb
+#define WINRT_GENERIC_0df896df_354c_5d35_b7ac_6b2e1d70c8eb
+template <> struct __declspec(uuid("0df896df-354c-5d35-b7ac-6b2e1d70c8eb")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::ChatMessageChange> : impl_IIterable<Windows::ApplicationModel::Chat::ChatMessageChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_bc37f8a5_cd61_5054_a897_6d402b56b58b
 #define WINRT_GENERIC_bc37f8a5_cd61_5054_a897_6d402b56b58b
 template <> struct __declspec(uuid("bc37f8a5-cd61-5054-a897-6d402b56b58b")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::ChatMessageAttachment> : impl_IIterator<Windows::ApplicationModel::Chat::ChatMessageAttachment> {};
@@ -324,6 +334,26 @@ template <> struct __declspec(uuid("0b9c15f1-1871-50c5-86de-6e614d593c57")) __de
 template <> struct __declspec(uuid("d60cae9d-88cb-59f1-8576-3fba44796be8")) __declspec(novtable) AsyncOperationCompletedHandler<int32_t> : impl_AsyncOperationCompletedHandler<int32_t> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_98ebffc3_ef5f_58ac_9695_047a96c3f0b0
+#define WINRT_GENERIC_98ebffc3_ef5f_58ac_9695_047a96c3f0b0
+template <> struct __declspec(uuid("98ebffc3-ef5f-58ac-9695-047a96c3f0b0")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::ChatMessageTransport> : impl_IIterator<Windows::ApplicationModel::Chat::ChatMessageTransport> {};
+#endif
+
+#ifndef WINRT_GENERIC_aae32f12_ed85_528c_8bad_6362d876ef8b
+#define WINRT_GENERIC_aae32f12_ed85_528c_8bad_6362d876ef8b
+template <> struct __declspec(uuid("aae32f12-ed85-528c-8bad-6362d876ef8b")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::ChatMessageTransport> : impl_IIterable<Windows::ApplicationModel::Chat::ChatMessageTransport> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_a9174f86_1fc7_50f4_8d7e_103d3fd6e5a3
 #define WINRT_GENERIC_a9174f86_1fc7_50f4_8d7e_103d3fd6e5a3
 template <> struct __declspec(uuid("a9174f86-1fc7-50f4-8d7e-103d3fd6e5a3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatMessageStore> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatMessageStore> {};
@@ -339,10 +369,70 @@ template <> struct __declspec(uuid("69dc85b1-ba0b-57d3-b7c3-618e0156f8cb")) __de
 template <> struct __declspec(uuid("5b3512cc-8528-5e87-b061-1b982a647fc4")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatSyncManager> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatSyncManager> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_cd3c8682_2366_5646_9af5_bcb9c3be9ebe
+#define WINRT_GENERIC_cd3c8682_2366_5646_9af5_bcb9c3be9ebe
+template <> struct __declspec(uuid("cd3c8682-2366-5646-9af5-bcb9c3be9ebe")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::ChatMessage> : impl_IIterator<Windows::ApplicationModel::Chat::ChatMessage> {};
+#endif
+
+#ifndef WINRT_GENERIC_647bf12c_f621_5fd8_af39_c72b16baf07e
+#define WINRT_GENERIC_647bf12c_f621_5fd8_af39_c72b16baf07e
+template <> struct __declspec(uuid("647bf12c-f621-5fd8-af39-c72b16baf07e")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::ChatMessage> : impl_IIterable<Windows::ApplicationModel::Chat::ChatMessage> {};
+#endif
+
+#ifndef WINRT_GENERIC_5d2c1b3f_9bc7_5126_93cd_f52326494de1
+#define WINRT_GENERIC_5d2c1b3f_9bc7_5126_93cd_f52326494de1
+template <> struct __declspec(uuid("5d2c1b3f-9bc7-5126-93cd-f52326494de1")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::IChatItem> : impl_IIterator<Windows::ApplicationModel::Chat::IChatItem> {};
+#endif
+
+#ifndef WINRT_GENERIC_ea8e3309_099a_592e_9e28_441b151fe061
+#define WINRT_GENERIC_ea8e3309_099a_592e_9e28_441b151fe061
+template <> struct __declspec(uuid("ea8e3309-099a-592e-9e28-441b151fe061")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::IChatItem> : impl_IIterable<Windows::ApplicationModel::Chat::IChatItem> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_ce2d035c_7686_56bd_a2ca_194735fd8617
 #define WINRT_GENERIC_ce2d035c_7686_56bd_a2ca_194735fd8617
 template <> struct __declspec(uuid("ce2d035c-7686-56bd-a2ca-194735fd8617")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatCapabilities> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Chat::ChatCapabilities> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_7007a155_47ca_59c8_bf1e_960b82159907
+#define WINRT_GENERIC_7007a155_47ca_59c8_bf1e_960b82159907
+template <> struct __declspec(uuid("7007a155-47ca-59c8-bf1e-960b82159907")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::ChatConversation> : impl_IIterator<Windows::ApplicationModel::Chat::ChatConversation> {};
+#endif
+
+#ifndef WINRT_GENERIC_af43c676_a512_5388_9f69_0308953d719b
+#define WINRT_GENERIC_af43c676_a512_5388_9f69_0308953d719b
+template <> struct __declspec(uuid("af43c676-a512-5388-9f69-0308953d719b")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::ChatConversation> : impl_IIterable<Windows::ApplicationModel::Chat::ChatConversation> {};
+#endif
+
+#ifndef WINRT_GENERIC_a4eda5fb_fb99_56a7_8948_95c668a3ed3c
+#define WINRT_GENERIC_a4eda5fb_fb99_56a7_8948_95c668a3ed3c
+template <> struct __declspec(uuid("a4eda5fb-fb99-56a7-8948-95c668a3ed3c")) __declspec(novtable) IIterator<Windows::ApplicationModel::Chat::RcsTransport> : impl_IIterator<Windows::ApplicationModel::Chat::RcsTransport> {};
+#endif
+
+#ifndef WINRT_GENERIC_184c2264_65fd_5ad4_b22f_cb34e8eaec63
+#define WINRT_GENERIC_184c2264_65fd_5ad4_b22f_cb34e8eaec63
+template <> struct __declspec(uuid("184c2264-65fd-5ad4-b22f-cb34e8eaec63")) __declspec(novtable) IIterable<Windows::ApplicationModel::Chat::RcsTransport> : impl_IIterable<Windows::ApplicationModel::Chat::RcsTransport> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_7851a9c5_1467_5c7d_af74_57ec6bd33417
 #define WINRT_GENERIC_7851a9c5_1467_5c7d_af74_57ec6bd33417

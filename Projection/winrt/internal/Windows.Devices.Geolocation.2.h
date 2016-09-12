@@ -109,6 +109,26 @@ template <> struct __declspec(uuid("7668a704-244e-5e12-8dcb-92a3299eba26")) __de
 template <> struct __declspec(uuid("f3524c93-e5c7-5b88-bedb-d3e637cff271")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_a99b4206_263e_5308_82f2_31315c65135c
+#define WINRT_GENERIC_a99b4206_263e_5308_82f2_31315c65135c
+template <> struct __declspec(uuid("a99b4206-263e-5308-82f2-31315c65135c")) __declspec(novtable) IIterator<Windows::Devices::Geolocation::Geoposition> : impl_IIterator<Windows::Devices::Geolocation::Geoposition> {};
+#endif
+
+#ifndef WINRT_GENERIC_135ed72d_75b1_5881_be41_6ffeaa202044
+#define WINRT_GENERIC_135ed72d_75b1_5881_be41_6ffeaa202044
+template <> struct __declspec(uuid("135ed72d-75b1-5881-be41-6ffeaa202044")) __declspec(novtable) IIterable<Windows::Devices::Geolocation::Geoposition> : impl_IIterable<Windows::Devices::Geolocation::Geoposition> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_9454b533_efb4_5385_8d3a_437fabc32d91
 #define WINRT_GENERIC_9454b533_efb4_5385_8d3a_437fabc32d91
 template <> struct __declspec(uuid("9454b533-efb4-5385-8d3a-437fabc32d91")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> {};

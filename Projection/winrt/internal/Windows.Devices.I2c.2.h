@@ -40,6 +40,26 @@ template <> struct __declspec(uuid("a4fb1dd4-80c9-5a61-ae8d-c8a7afc03275")) __de
 template <> struct __declspec(uuid("2df5bb6a-5e73-5ae3-a0b2-22e1c9d8ef4d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::I2c::I2cDevice> : impl_AsyncOperationCompletedHandler<Windows::Devices::I2c::I2cDevice> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_8f6822fc_e4ea_5b35_939a_27f3b3d550d2
+#define WINRT_GENERIC_8f6822fc_e4ea_5b35_939a_27f3b3d550d2
+template <> struct __declspec(uuid("8f6822fc-e4ea-5b35-939a-27f3b3d550d2")) __declspec(novtable) IIterator<Windows::Devices::I2c::I2cController> : impl_IIterator<Windows::Devices::I2c::I2cController> {};
+#endif
+
+#ifndef WINRT_GENERIC_a5ee8233_2429_5b26_9a02_993e4e7edfa9
+#define WINRT_GENERIC_a5ee8233_2429_5b26_9a02_993e4e7edfa9
+template <> struct __declspec(uuid("a5ee8233-2429-5b26-9a02-993e4e7edfa9")) __declspec(novtable) IIterable<Windows::Devices::I2c::I2cController> : impl_IIterable<Windows::Devices::I2c::I2cController> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_6ff64b72_a5aa_5986_b563_27612afb373c
 #define WINRT_GENERIC_6ff64b72_a5aa_5986_b563_27612afb373c
 template <> struct __declspec(uuid("6ff64b72-a5aa-5986-b563-27612afb373c")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::I2c::I2cController> : impl_AsyncOperationCompletedHandler<Windows::Devices::I2c::I2cController> {};

@@ -210,6 +210,36 @@ template <> struct __declspec(uuid("1c157d0f-5efe-5cec-bbd6-0c6ce9af07a5")) __de
 template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __declspec(novtable) IIterator<Windows::Networking::EndpointPair> : impl_IIterator<Windows::Networking::EndpointPair> {};
 #endif
 
+#ifndef WINRT_GENERIC_5fafb57b_9c82_50a1_9970_69f9cb069695
+#define WINRT_GENERIC_5fafb57b_9c82_50a1_9970_69f9cb069695
+template <> struct __declspec(uuid("5fafb57b-9c82-50a1-9970-69f9cb069695")) __declspec(novtable) IIterator<Windows::Networking::Connectivity::NetworkUsage> : impl_IIterator<Windows::Networking::Connectivity::NetworkUsage> {};
+#endif
+
+#ifndef WINRT_GENERIC_dd2656b1_8360_5772_b272_c47f7f0fc7a6
+#define WINRT_GENERIC_dd2656b1_8360_5772_b272_c47f7f0fc7a6
+template <> struct __declspec(uuid("dd2656b1-8360-5772-b272-c47f7f0fc7a6")) __declspec(novtable) IIterable<Windows::Networking::Connectivity::NetworkUsage> : impl_IIterable<Windows::Networking::Connectivity::NetworkUsage> {};
+#endif
+
+#ifndef WINRT_GENERIC_741cea48_651c_5fd9_931e_4f91b521e182
+#define WINRT_GENERIC_741cea48_651c_5fd9_931e_4f91b521e182
+template <> struct __declspec(uuid("741cea48-651c-5fd9-931e-4f91b521e182")) __declspec(novtable) IIterator<Windows::Networking::Connectivity::ConnectivityInterval> : impl_IIterator<Windows::Networking::Connectivity::ConnectivityInterval> {};
+#endif
+
+#ifndef WINRT_GENERIC_58051a8b_b259_5414_9b9a_caa0789e833e
+#define WINRT_GENERIC_58051a8b_b259_5414_9b9a_caa0789e833e
+template <> struct __declspec(uuid("58051a8b-b259-5414-9b9a-caa0789e833e")) __declspec(novtable) IIterable<Windows::Networking::Connectivity::ConnectivityInterval> : impl_IIterable<Windows::Networking::Connectivity::ConnectivityInterval> {};
+#endif
+
+#ifndef WINRT_GENERIC_4070c40f_ab2f_56f2_b54c_8232ae86aacd
+#define WINRT_GENERIC_4070c40f_ab2f_56f2_b54c_8232ae86aacd
+template <> struct __declspec(uuid("4070c40f-ab2f-56f2-b54c-8232ae86aacd")) __declspec(novtable) IIterator<Windows::Networking::Connectivity::AttributedNetworkUsage> : impl_IIterator<Windows::Networking::Connectivity::AttributedNetworkUsage> {};
+#endif
+
+#ifndef WINRT_GENERIC_d061dcb9_6854_5ef9_8e03_008a7a704c48
+#define WINRT_GENERIC_d061dcb9_6854_5ef9_8e03_008a7a704c48
+template <> struct __declspec(uuid("d061dcb9-6854-5ef9-8e03-008a7a704c48")) __declspec(novtable) IIterable<Windows::Networking::Connectivity::AttributedNetworkUsage> : impl_IIterable<Windows::Networking::Connectivity::AttributedNetworkUsage> {};
+#endif
+
 #ifndef WINRT_GENERIC_40556131_a2a1_5fab_aaee_5f35268ca26b
 #define WINRT_GENERIC_40556131_a2a1_5fab_aaee_5f35268ca26b
 template <> struct __declspec(uuid("40556131-a2a1-5fab-aaee-5f35268ca26b")) __declspec(novtable) IIterator<uint8_t> : impl_IIterator<uint8_t> {};

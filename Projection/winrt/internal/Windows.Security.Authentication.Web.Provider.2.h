@@ -144,6 +144,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("626bc177-8403-5030-a88c-7485cc89d730")) __declspec(novtable) IIterator<Windows::Web::Http::HttpCookie> : impl_IIterator<Windows::Web::Http::HttpCookie> {};
 #endif
 
+#ifndef WINRT_GENERIC_a5984607_661d_5e9c_a0ba_5c7d5f41af1c
+#define WINRT_GENERIC_a5984607_661d_5e9c_a0ba_5c7d5f41af1c
+template <> struct __declspec(uuid("a5984607-661d-5e9c-a0ba-5c7d5f41af1c")) __declspec(novtable) IIterator<Windows::Security::Authentication::Web::Provider::WebAccountClientView> : impl_IIterator<Windows::Security::Authentication::Web::Provider::WebAccountClientView> {};
+#endif
+
+#ifndef WINRT_GENERIC_610e0f9d_aae4_54e1_bb0b_1aca14110abf
+#define WINRT_GENERIC_610e0f9d_aae4_54e1_bb0b_1aca14110abf
+template <> struct __declspec(uuid("610e0f9d-aae4-54e1-bb0b-1aca14110abf")) __declspec(novtable) IIterable<Windows::Security::Authentication::Web::Provider::WebAccountClientView> : impl_IIterable<Windows::Security::Authentication::Web::Provider::WebAccountClientView> {};
+#endif
+
 #ifndef WINRT_GENERIC_eb57825d_5ad6_5ee0_8dc6_a53c1e82e3ab
 #define WINRT_GENERIC_eb57825d_5ad6_5ee0_8dc6_a53c1e82e3ab
 template <> struct __declspec(uuid("eb57825d-5ad6-5ee0-8dc6-a53c1e82e3ab")) __declspec(novtable) IIterator<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> : impl_IIterator<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> {};

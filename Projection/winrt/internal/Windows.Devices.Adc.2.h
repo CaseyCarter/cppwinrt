@@ -25,6 +25,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("69420262-35c9-583f-a40e-c2694562c9e2")) __declspec(novtable) IAsyncOperation<Windows::Devices::Adc::AdcController> : impl_IAsyncOperation<Windows::Devices::Adc::AdcController> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_a10b62c1_a014_5335_8867_747fcab16005
+#define WINRT_GENERIC_a10b62c1_a014_5335_8867_747fcab16005
+template <> struct __declspec(uuid("a10b62c1-a014-5335-8867-747fcab16005")) __declspec(novtable) IIterator<Windows::Devices::Adc::AdcController> : impl_IIterator<Windows::Devices::Adc::AdcController> {};
+#endif
+
+#ifndef WINRT_GENERIC_4e478aad_4861_5758_b64b_5b4f28d8f86e
+#define WINRT_GENERIC_4e478aad_4861_5758_b64b_5b4f28d8f86e
+template <> struct __declspec(uuid("4e478aad-4861-5758-b64b-5b4f28d8f86e")) __declspec(novtable) IIterable<Windows::Devices::Adc::AdcController> : impl_IIterable<Windows::Devices::Adc::AdcController> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_baf66488_202f_5d51_b05e_18606c46b808
 #define WINRT_GENERIC_baf66488_202f_5d51_b05e_18606c46b808
 template <> struct __declspec(uuid("baf66488-202f-5d51-b05e-18606c46b808")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Adc::AdcController> : impl_AsyncOperationCompletedHandler<Windows::Devices::Adc::AdcController> {};

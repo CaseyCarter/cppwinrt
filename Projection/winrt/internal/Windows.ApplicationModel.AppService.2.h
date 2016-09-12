@@ -60,6 +60,26 @@ template <> struct __declspec(uuid("b6c6bbf2-72ca-5799-a651-d1990670097b")) __de
 template <> struct __declspec(uuid("b824383d-32e0-5579-8670-a06a61457f20")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_69cec62c_41eb_5d69_a475_29ee22323dd8
+#define WINRT_GENERIC_69cec62c_41eb_5d69_a475_29ee22323dd8
+template <> struct __declspec(uuid("69cec62c-41eb-5d69-a475-29ee22323dd8")) __declspec(novtable) IIterator<Windows::ApplicationModel::AppInfo> : impl_IIterator<Windows::ApplicationModel::AppInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_63d0bffe_0e34_55b3_83d5_314caff2b137
+#define WINRT_GENERIC_63d0bffe_0e34_55b3_83d5_314caff2b137
+template <> struct __declspec(uuid("63d0bffe-0e34-55b3-83d5-314caff2b137")) __declspec(novtable) IIterable<Windows::ApplicationModel::AppInfo> : impl_IIterable<Windows::ApplicationModel::AppInfo> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_7ea7d7ec_e164_52c3_8e32_bba7126d9028
 #define WINRT_GENERIC_7ea7d7ec_e164_52c3_8e32_bba7126d9028
 template <> struct __declspec(uuid("7ea7d7ec-e164-52c3-8e32-bba7126d9028")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::AppService::AppServiceResponse> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::AppService::AppServiceResponse> {};

@@ -58,6 +58,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
@@ -71,6 +76,11 @@ template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __de
 #ifndef WINRT_GENERIC_85575a41_06cb_58d0_b98a_7c8f06e6e9d7
 #define WINRT_GENERIC_85575a41_06cb_58d0_b98a_7c8f06e6e9d7
 template <> struct __declspec(uuid("85575a41-06cb-58d0-b98a-7c8f06e6e9d7")) __declspec(novtable) IVectorView<Windows::Storage::IStorageItem> : impl_IVectorView<Windows::Storage::IStorageItem> {};
+#endif
+
+#ifndef WINRT_GENERIC_bb8b8418_65d1_544b_b083_6d172f568c73
+#define WINRT_GENERIC_bb8b8418_65d1_544b_b083_6d172f568c73
+template <> struct __declspec(uuid("bb8b8418-65d1-544b-b083-6d172f568c73")) __declspec(novtable) IIterable<Windows::Storage::IStorageItem> : impl_IIterable<Windows::Storage::IStorageItem> {};
 #endif
 
 
@@ -188,6 +198,21 @@ template <> struct __declspec(uuid("3bee8834-b9a7-5a80-a746-5ef097227878")) __de
 template <> struct __declspec(uuid("8f0f439e-87d0-531f-85b1-54f4528f29c3")) __declspec(novtable) IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> : impl_IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_9ac00304_83ea_5688_87b6_ae38aab65d0b
+#define WINRT_GENERIC_9ac00304_83ea_5688_87b6_ae38aab65d0b
+template <> struct __declspec(uuid("9ac00304-83ea-5688-87b6-ae38aab65d0b")) __declspec(novtable) IIterable<Windows::Storage::StorageFile> : impl_IIterable<Windows::Storage::StorageFile> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_31456b58_a5cb_5c5b_bd6e_ccce3a7bf4b4
 #define WINRT_GENERIC_31456b58_a5cb_5c5b_bd6e_ccce3a7bf4b4
 template <> struct __declspec(uuid("31456b58-a5cb-5c5b-bd6e-ccce3a7bf4b4")) __declspec(novtable) IAsyncOperation<Windows::Storage::ApplicationData> : impl_IAsyncOperation<Windows::Storage::ApplicationData> {};
@@ -251,6 +276,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_05b487c2_3830_5d3c_98da_25fa11542dbd
+#define WINRT_GENERIC_05b487c2_3830_5d3c_98da_25fa11542dbd
+template <> struct __declspec(uuid("05b487c2-3830-5d3c-98da-25fa11542dbd")) __declspec(novtable) IIterator<Windows::Storage::IStorageItem> : impl_IIterator<Windows::Storage::IStorageItem> {};
 #endif
 
 
@@ -322,6 +352,31 @@ template <> struct __declspec(uuid("92c3102f-a327-5318-a6c1-76f6b2a0abfb")) __de
 #define WINRT_GENERIC_c8659aae_4926_52ad_8f60_d89fe5a8df5f
 template <> struct __declspec(uuid("c8659aae-4926-52ad-8f60-d89fe5a8df5f")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::FileProperties::BasicProperties> : impl_AsyncOperationCompletedHandler<Windows::Storage::FileProperties::BasicProperties> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_c48a1103_56e6_5398_84fe_92edad7fc111
+#define WINRT_GENERIC_c48a1103_56e6_5398_84fe_92edad7fc111
+template <> struct __declspec(uuid("c48a1103-56e6-5398-84fe-92edad7fc111")) __declspec(novtable) IIterator<Windows::Storage::StorageLibraryChange> : impl_IIterator<Windows::Storage::StorageLibraryChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_87c15dfc_0c5e_518b_9206_97d3d9823c61
+#define WINRT_GENERIC_87c15dfc_0c5e_518b_9206_97d3d9823c61
+template <> struct __declspec(uuid("87c15dfc-0c5e-518b-9206-97d3d9823c61")) __declspec(novtable) IIterable<Windows::Storage::StorageLibraryChange> : impl_IIterable<Windows::Storage::StorageLibraryChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
+#define WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
+template <> struct __declspec(uuid("43e29f53-0298-55aa-a6c8-4edd323d9598")) __declspec(novtable) IIterator<Windows::Storage::StorageFile> : impl_IIterator<Windows::Storage::StorageFile> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_d11739e6_2995_5d33_bfff_51b6041f68c1
 #define WINRT_GENERIC_d11739e6_2995_5d33_bfff_51b6041f68c1
