@@ -37,11 +37,16 @@ namespace Microsoft.Wcl.NamespaceDependencies
                 this.NamespaceDependenciesTable.Add(namespaceName, namespaceDependencyInfo);
             }
 
-            foreach (var info in genericInterfaceInfo.InnerGenericInterfaces)
+            // GenericInterfaceInfo.InnerGenericInterfaces will be null if the current generic interface is an implicit generic interface
+            if (genericInterfaceInfo.InnerGenericInterfaces != null)
             {
-                if (!namespaceDependencyInfo.DependentGenericInterfaces.Contains(info.MetadataFullTypeNameInCppForm))
+                foreach (var info in genericInterfaceInfo.InnerGenericInterfaces)
                 {
-                    namespaceDependencyInfo.DependentGenericInterfaces.Add(info.MetadataFullTypeNameInCppForm);
+                    if (!namespaceDependencyInfo.DependentGenericInterfaces.Contains(info.MetadataFullTypeNameInCppForm))
+                    {
+                        namespaceDependencyInfo.DependentGenericInterfaces.Add(info.MetadataFullTypeNameInCppForm);
+                        Resolve(containerFullTypeName, info.MetadataFullTypeNameInCppForm);
+                    }
                 }
             }
 
@@ -50,6 +55,7 @@ namespace Microsoft.Wcl.NamespaceDependencies
                 if (!namespaceDependencyInfo.DependentGenericInterfaces.Contains(info.MetadataFullTypeNameInCppForm))
                 {
                     namespaceDependencyInfo.DependentGenericInterfaces.Add(info.MetadataFullTypeNameInCppForm);
+                    Resolve(containerFullTypeName, info.MetadataFullTypeNameInCppForm);
                 }
             }
 

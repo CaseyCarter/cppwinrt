@@ -34,6 +34,26 @@ template <> struct __declspec(uuid("21fb30ef-072f-502c-9898-d0c3b2cd9ac5")) __de
 template <> struct __declspec(uuid("fc6aa329-b586-5ebb-9e85-3f6b84ebdf18")) __declspec(novtable) TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_cf37ede7_eaec_5b8f_ad31_4d51abd9db05
+#define WINRT_GENERIC_cf37ede7_eaec_5b8f_ad31_4d51abd9db05
+template <> struct __declspec(uuid("cf37ede7-eaec-5b8f-ad31-4d51abd9db05")) __declspec(novtable) IIterator<Windows::Devices::Radios::Radio> : impl_IIterator<Windows::Devices::Radios::Radio> {};
+#endif
+
+#ifndef WINRT_GENERIC_e82500af_1f53_504e_b8be_dac4fbb69084
+#define WINRT_GENERIC_e82500af_1f53_504e_b8be_dac4fbb69084
+template <> struct __declspec(uuid("e82500af-1f53-504e-b8be-dac4fbb69084")) __declspec(novtable) IIterable<Windows::Devices::Radios::Radio> : impl_IIterable<Windows::Devices::Radios::Radio> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
 #define WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
 template <> struct __declspec(uuid("8a5c7e3a-80e2-585b-8630-7a8e777f0354")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> : impl_AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> {};

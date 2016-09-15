@@ -195,6 +195,26 @@ template <> struct __declspec(uuid("d775d699-9d74-5473-9c1b-d51a89db6642")) __de
 template <> struct __declspec(uuid("fb0594f4-93d9-5c2f-b8eb-90f1e9258fdc")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Sensors::ActivitySensor> : impl_AsyncOperationCompletedHandler<Windows::Devices::Sensors::ActivitySensor> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_d2dab535_0c94_547e_afe3_5527bcbeb9cc
+#define WINRT_GENERIC_d2dab535_0c94_547e_afe3_5527bcbeb9cc
+template <> struct __declspec(uuid("d2dab535-0c94-547e-afe3-5527bcbeb9cc")) __declspec(novtable) IIterator<Windows::Devices::Sensors::ActivitySensorReading> : impl_IIterator<Windows::Devices::Sensors::ActivitySensorReading> {};
+#endif
+
+#ifndef WINRT_GENERIC_9a34ce03_8c6d_5994_907f_d5c2d19148cb
+#define WINRT_GENERIC_9a34ce03_8c6d_5994_907f_d5c2d19148cb
+template <> struct __declspec(uuid("9a34ce03-8c6d-5994-907f-d5c2d19148cb")) __declspec(novtable) IIterable<Windows::Devices::Sensors::ActivitySensorReading> : impl_IIterable<Windows::Devices::Sensors::ActivitySensorReading> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_adc48d5d_b343_5a58_8454_6e2bc2e0475c
 #define WINRT_GENERIC_adc48d5d_b343_5a58_8454_6e2bc2e0475c
 template <> struct __declspec(uuid("adc48d5d-b343-5a58-8454-6e2bc2e0475c")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Sensors::ActivitySensorReading> : impl_AsyncOperationCompletedHandler<Windows::Devices::Sensors::ActivitySensorReading> {};

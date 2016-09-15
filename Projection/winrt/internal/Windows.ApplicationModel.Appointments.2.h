@@ -204,6 +204,26 @@ template <> struct __declspec(uuid("57e35198-1b41-54da-adaf-50ef1e93fded")) __de
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_386a5922_49fc_53b6_8bed_4c9ff9fe6e01
+#define WINRT_GENERIC_386a5922_49fc_53b6_8bed_4c9ff9fe6e01
+template <> struct __declspec(uuid("386a5922-49fc-53b6-8bed-4c9ff9fe6e01")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::Appointment> : impl_IIterator<Windows::ApplicationModel::Appointments::Appointment> {};
+#endif
+
+#ifndef WINRT_GENERIC_b9802bba_ff53_5d37_8cd7_e56162f12156
+#define WINRT_GENERIC_b9802bba_ff53_5d37_8cd7_e56162f12156
+template <> struct __declspec(uuid("b9802bba-ff53-5d37-8cd7-e56162f12156")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::Appointment> : impl_IIterable<Windows::ApplicationModel::Appointments::Appointment> {};
+#endif
+
+#ifndef WINRT_GENERIC_e58c63db_d9d5_5fa5_8790_29846de54fa4
+#define WINRT_GENERIC_e58c63db_d9d5_5fa5_8790_29846de54fa4
+template <> struct __declspec(uuid("e58c63db-d9d5-5fa5-8790-29846de54fa4")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::AppointmentException> : impl_IIterator<Windows::ApplicationModel::Appointments::AppointmentException> {};
+#endif
+
+#ifndef WINRT_GENERIC_caac41d6_6c65_5fd8_b783_eb9d9a4272b8
+#define WINRT_GENERIC_caac41d6_6c65_5fd8_b783_eb9d9a4272b8
+template <> struct __declspec(uuid("caac41d6-6c65-5fd8-b783-eb9d9a4272b8")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::AppointmentException> : impl_IIterable<Windows::ApplicationModel::Appointments::AppointmentException> {};
+#endif
+
 
 }
 
@@ -214,10 +234,50 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("b640ed04-9331-5b28-9247-0146bcf5b72a")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Appointments::Appointment> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Appointments::Appointment> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_16a427bf_e5b0_5662_9279_caa8ed8481a6
+#define WINRT_GENERIC_16a427bf_e5b0_5662_9279_caa8ed8481a6
+template <> struct __declspec(uuid("16a427bf-e5b0-5662-9279-caa8ed8481a6")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::AppointmentStoreChange> : impl_IIterator<Windows::ApplicationModel::Appointments::AppointmentStoreChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_7b657ca2_e02e_5026_a032_9905e49682fd
+#define WINRT_GENERIC_7b657ca2_e02e_5026_a032_9905e49682fd
+template <> struct __declspec(uuid("7b657ca2-e02e-5026-a032-9905e49682fd")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::AppointmentStoreChange> : impl_IIterable<Windows::ApplicationModel::Appointments::AppointmentStoreChange> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_6d9cb651_5af6_51b0_9cd3_45dd51f17949
 #define WINRT_GENERIC_6d9cb651_5af6_51b0_9cd3_45dd51f17949
 template <> struct __declspec(uuid("6d9cb651-5af6-51b0-9cd3-45dd51f17949")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120
+#define WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120
+template <> struct __declspec(uuid("f40a879d-b6b7-5f92-beb1-6a8e7ce54120")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IIterator<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
+#endif
+
+#ifndef WINRT_GENERIC_d3fb010b_b692_5130_9d16_2cfdabcb6dec
+#define WINRT_GENERIC_d3fb010b_b692_5130_9d16_2cfdabcb6dec
+template <> struct __declspec(uuid("d3fb010b-b692-5130-9d16-2cfdabcb6dec")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IIterable<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_82fb40fe_05b1_523c_9b53_b3dd759c9f75
 #define WINRT_GENERIC_82fb40fe_05b1_523c_9b53_b3dd759c9f75

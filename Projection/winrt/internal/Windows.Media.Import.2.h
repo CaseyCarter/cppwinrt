@@ -145,6 +145,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_7d70f831_6ee4_5130_a7b8_253a21154e82
+#define WINRT_GENERIC_7d70f831_6ee4_5130_a7b8_253a21154e82
+template <> struct __declspec(uuid("7d70f831-6ee4-5130-a7b8-253a21154e82")) __declspec(novtable) IIterator<Windows::Media::Import::PhotoImportSource> : impl_IIterator<Windows::Media::Import::PhotoImportSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_40e01d62_b413_5b43_ab07_ab28b23fc886
+#define WINRT_GENERIC_40e01d62_b413_5b43_ab07_ab28b23fc886
+template <> struct __declspec(uuid("40e01d62-b413-5b43-ab07-ab28b23fc886")) __declspec(novtable) IIterable<Windows::Media::Import::PhotoImportSource> : impl_IIterable<Windows::Media::Import::PhotoImportSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_7c9dde1a_a8a1_5957_8e0d_c401d19c9237
 #define WINRT_GENERIC_7c9dde1a_a8a1_5957_8e0d_c401d19c9237
 template <> struct __declspec(uuid("7c9dde1a-a8a1-5957-8e0d-c401d19c9237")) __declspec(novtable) IIterator<Windows::Media::Import::PhotoImportOperation> : impl_IIterator<Windows::Media::Import::PhotoImportOperation> {};

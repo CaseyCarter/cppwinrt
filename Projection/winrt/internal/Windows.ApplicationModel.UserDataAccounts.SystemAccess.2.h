@@ -24,6 +24,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_a9c3ea6e_9dd9_52fe_9d27_f9e4dedd4d3f
 #define WINRT_GENERIC_a9c3ea6e_9dd9_52fe_9d27_f9e4dedd4d3f
 template <> struct __declspec(uuid("a9c3ea6e-9dd9-52fe-9d27-f9e4dedd4d3f")) __declspec(novtable) IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> : impl_IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> {};
@@ -48,6 +53,11 @@ template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
+#define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
+template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
 
 #ifndef WINRT_GENERIC_51705a87_8dcb_5971_8d6b_ca8ae6a955ad
 #define WINRT_GENERIC_51705a87_8dcb_5971_8d6b_ca8ae6a955ad

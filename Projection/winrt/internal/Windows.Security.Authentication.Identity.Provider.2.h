@@ -54,6 +54,26 @@ template <> struct __declspec(uuid("9159437a-4397-546e-be61-2ef161717e06")) __de
 template <> struct __declspec(uuid("a04902e8-f830-50ea-89ea-96e2a6fb9453")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0eedbda6_2de0_50af_abc4_46073245fb2d
+#define WINRT_GENERIC_0eedbda6_2de0_50af_abc4_46073245fb2d
+template <> struct __declspec(uuid("0eedbda6-2de0-50af-abc4-46073245fb2d")) __declspec(novtable) IIterator<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> : impl_IIterator<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_43b7bbe4_f096_53dd_8c16_1faa4b468c86
+#define WINRT_GENERIC_43b7bbe4_f096_53dd_8c16_1faa4b468c86
+template <> struct __declspec(uuid("43b7bbe4-f096-53dd-8c16-1faa4b468c86")) __declspec(novtable) IIterable<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> : impl_IIterable<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_2547373d_9684_5e5b_a9b8_a6f90ce632ad
 #define WINRT_GENERIC_2547373d_9684_5e5b_a9b8_a6f90ce632ad
 template <> struct __declspec(uuid("2547373d-9684-5e5b-a9b8-a6f90ce632ad")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> {};

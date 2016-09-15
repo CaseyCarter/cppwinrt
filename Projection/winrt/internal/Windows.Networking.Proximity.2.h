@@ -69,6 +69,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("fb3e3d3c-6fe5-5e27-a132-902247e2a93e")) __declspec(novtable) IAsyncOperation<Windows::Networking::Sockets::StreamSocket> : impl_IAsyncOperation<Windows::Networking::Sockets::StreamSocket> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_eb6fe2c2_d6cd_5df0_a295_74c56ec58aab
+#define WINRT_GENERIC_eb6fe2c2_d6cd_5df0_a295_74c56ec58aab
+template <> struct __declspec(uuid("eb6fe2c2-d6cd-5df0-a295-74c56ec58aab")) __declspec(novtable) IIterator<Windows::Networking::Proximity::PeerInformation> : impl_IIterator<Windows::Networking::Proximity::PeerInformation> {};
+#endif
+
+#ifndef WINRT_GENERIC_917e1105_0647_5793_9d50_befe225f0f2f
+#define WINRT_GENERIC_917e1105_0647_5793_9d50_befe225f0f2f
+template <> struct __declspec(uuid("917e1105-0647-5793-9d50-befe225f0f2f")) __declspec(novtable) IIterable<Windows::Networking::Proximity::PeerInformation> : impl_IIterable<Windows::Networking::Proximity::PeerInformation> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_71b5d99e_3854_5e9a_b4dc_d1b58bf198fc
 #define WINRT_GENERIC_71b5d99e_3854_5e9a_b4dc_d1b58bf198fc
 template <> struct __declspec(uuid("71b5d99e-3854-5e9a-b4dc-d1b58bf198fc")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Networking::Sockets::StreamSocket> : impl_AsyncOperationCompletedHandler<Windows::Networking::Sockets::StreamSocket> {};

@@ -79,6 +79,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("0217f069-025c-5ee6-a87f-e782e3b623ae")) __declspec(novtable) IIterator<Windows::ApplicationModel::Package> : impl_IIterator<Windows::ApplicationModel::Package> {};
 #endif
 
+#ifndef WINRT_GENERIC_b93e2028_50bc_599e_b3d9_427b61d26c01
+#define WINRT_GENERIC_b93e2028_50bc_599e_b3d9_427b61d26c01
+template <> struct __declspec(uuid("b93e2028-50bc-599e-b3d9-427b61d26c01")) __declspec(novtable) IIterator<Windows::ApplicationModel::Core::AppListEntry> : impl_IIterator<Windows::ApplicationModel::Core::AppListEntry> {};
+#endif
+
+#ifndef WINRT_GENERIC_86f4d4ef_d8fd_5fb5_807c_72da8fc9e544
+#define WINRT_GENERIC_86f4d4ef_d8fd_5fb5_807c_72da8fc9e544
+template <> struct __declspec(uuid("86f4d4ef-d8fd-5fb5-807c-72da8fc9e544")) __declspec(novtable) IIterable<Windows::ApplicationModel::Core::AppListEntry> : impl_IIterable<Windows::ApplicationModel::Core::AppListEntry> {};
+#endif
+
 
 }
 

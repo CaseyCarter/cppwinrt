@@ -27,7 +27,7 @@ extern char const base_macros[2312];
 extern char const base_meta[2343];
 extern char const base_modern[186];
 extern char const base_module[71];
-extern char const base_ppl[2743];
+extern char const base_ppl[3745];
 extern char const base_reference[1620];
 extern char const base_std[919];
 extern char const base_string[6205];

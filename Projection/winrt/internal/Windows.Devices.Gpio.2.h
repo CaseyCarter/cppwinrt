@@ -30,6 +30,26 @@ template <> struct __declspec(uuid("ed045917-96c7-5735-b4be-d79619d4835e")) __de
 template <> struct __declspec(uuid("44ba689b-7d42-5374-add9-ab41e877a34b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> : impl_TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_67944db0_6c56_5a2f_9e7b_63ca1aa8c411
+#define WINRT_GENERIC_67944db0_6c56_5a2f_9e7b_63ca1aa8c411
+template <> struct __declspec(uuid("67944db0-6c56-5a2f-9e7b-63ca1aa8c411")) __declspec(novtable) IIterator<Windows::Devices::Gpio::GpioController> : impl_IIterator<Windows::Devices::Gpio::GpioController> {};
+#endif
+
+#ifndef WINRT_GENERIC_415c3794_b2b6_5f5c_9a05_ae9268514726
+#define WINRT_GENERIC_415c3794_b2b6_5f5c_9a05_ae9268514726
+template <> struct __declspec(uuid("415c3794-b2b6-5f5c-9a05-ae9268514726")) __declspec(novtable) IIterable<Windows::Devices::Gpio::GpioController> : impl_IIterable<Windows::Devices::Gpio::GpioController> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_370167c0_0f7b_5e77_9bae_d35089a3db75
 #define WINRT_GENERIC_370167c0_0f7b_5e77_9bae_d35089a3db75
 template <> struct __declspec(uuid("370167c0-0f7b-5e77-9bae-d35089a3db75")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Gpio::GpioController> : impl_AsyncOperationCompletedHandler<Windows::Devices::Gpio::GpioController> {};

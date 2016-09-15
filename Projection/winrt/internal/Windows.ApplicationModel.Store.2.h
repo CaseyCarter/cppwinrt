@@ -109,6 +109,16 @@ template <> struct __declspec(uuid("24b6922a-fdb1-5003-ae89-c8bf16ca0143")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_cb77cf2e_ef57_5256_9753_214baada2301
+#define WINRT_GENERIC_cb77cf2e_ef57_5256_9753_214baada2301
+template <> struct __declspec(uuid("cb77cf2e-ef57-5256-9753-214baada2301")) __declspec(novtable) IIterator<Windows::ApplicationModel::Store::UnfulfilledConsumable> : impl_IIterator<Windows::ApplicationModel::Store::UnfulfilledConsumable> {};
+#endif
+
+#ifndef WINRT_GENERIC_2f4d1483_dd86_5fdb_8c44_06c98844bf3d
+#define WINRT_GENERIC_2f4d1483_dd86_5fdb_8c44_06c98844bf3d
+template <> struct __declspec(uuid("2f4d1483-dd86-5fdb-8c44-06c98844bf3d")) __declspec(novtable) IIterable<Windows::ApplicationModel::Store::UnfulfilledConsumable> : impl_IIterable<Windows::ApplicationModel::Store::UnfulfilledConsumable> {};
+#endif
+
 #ifndef WINRT_GENERIC_ff71c38c_3e6e_5e60_994b_9201436deed1
 #define WINRT_GENERIC_ff71c38c_3e6e_5e60_994b_9201436deed1
 template <> struct __declspec(uuid("ff71c38c-3e6e-5e60-994b-9201436deed1")) __declspec(novtable) IKeyValuePair<hstring, Windows::ApplicationModel::Store::ProductLicense> : impl_IKeyValuePair<hstring, Windows::ApplicationModel::Store::ProductLicense> {};

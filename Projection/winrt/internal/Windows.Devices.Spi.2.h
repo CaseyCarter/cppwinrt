@@ -65,6 +65,26 @@ template <> struct __declspec(uuid("a88a28ba-6966-55e7-8c81-7c65f74e39c0")) __de
 template <> struct __declspec(uuid("5e94d949-a844-5b25-a3cc-afabeb18c1d2")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Spi::SpiController> : impl_AsyncOperationCompletedHandler<Windows::Devices::Spi::SpiController> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_fd7d5997_544c_5be9_b0fa_1d0efbfc4a03
+#define WINRT_GENERIC_fd7d5997_544c_5be9_b0fa_1d0efbfc4a03
+template <> struct __declspec(uuid("fd7d5997-544c-5be9-b0fa-1d0efbfc4a03")) __declspec(novtable) IIterator<Windows::Devices::Spi::SpiController> : impl_IIterator<Windows::Devices::Spi::SpiController> {};
+#endif
+
+#ifndef WINRT_GENERIC_7b076938_dc1b_5368_9003_059291d37f35
+#define WINRT_GENERIC_7b076938_dc1b_5368_9003_059291d37f35
+template <> struct __declspec(uuid("7b076938-dc1b-5368-9003-059291d37f35")) __declspec(novtable) IIterable<Windows::Devices::Spi::SpiController> : impl_IIterable<Windows::Devices::Spi::SpiController> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_89624331_f802_56f7_9b33_17c616ecbcfa
 #define WINRT_GENERIC_89624331_f802_56f7_9b33_17c616ecbcfa
 template <> struct __declspec(uuid("89624331-f802-56f7-9b33-17c616ecbcfa")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> {};
