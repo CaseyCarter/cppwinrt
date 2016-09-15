@@ -337,5 +337,69 @@ namespace Microsoft.Wtl.Tests
             Assert.AreEqual(value31, list[7]);
             Assert.AreEqual(value32, list[8]);
         }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesWithQuotesThatContainDashesEndWithExtraTokens()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows-Foundation-FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows-Foundation-UniversalApiContract.winmd";
+            var input = string.Format("   \r\n        {0}       \"{1}\"        \r\n           \"{2}\"        \r\n    ", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(name, list[0]);
+            Assert.AreEqual(value1, list[1]);
+            Assert.AreEqual(value2, list[2]);
+        }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesWithQuotesThatContainDashesEndWithNoExtraTokens()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows-Foundation-FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows.Foundation.UniversalApiContract\\1.0.0.0\\Windows-Foundation-UniversalApiContract.winmd";
+            var input = string.Format("   \r\n        {0}       \"{1}\"        \r\n           \"{2}\"", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(name, list[0]);
+            Assert.AreEqual(value1, list[1]);
+            Assert.AreEqual(value2, list[2]);
+        }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesOneWithQuotesThatContainDashesEndWithExtraTokens()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows-Foundation-FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Windows-Foundation-UniversalApiContract.winmd";
+            var input = string.Format("   \r\n        {0}       \"{1}\"        \r\n           {2}   \r\n      ", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(name, list[0]);
+            Assert.AreEqual(value1, list[1]);
+            Assert.AreEqual(value2, list[2]);
+        }
+
+        [TestMethod]
+        public void OneParameter_TwoValidValuesOneWithQuotesThatContainDashesEndWithNoExtraTokens()
+        {
+            var name = "-winmd";
+            var value1 = "C:\\Program Files (x86)\\Windows Kits\\10\\References\\Windows-Foundation-FoundationContract\\1.0.0.0\\Windows.Foundation.FoundationContract.winmd";
+            var value2 = "C:\\Windows-Foundation-UniversalApiContract.winmd";
+            var input = string.Format("   \r\n        {0}       \"{1}\"        \r\n           {2}", name, value1, value2);
+            var parser = new ResponseFileParserTest();
+            var list = parser.ParseResponseFileContentHelper(input);
+
+            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(name, list[0]);
+            Assert.AreEqual(value1, list[1]);
+            Assert.AreEqual(value2, list[2]);
+        }
     }
 }
