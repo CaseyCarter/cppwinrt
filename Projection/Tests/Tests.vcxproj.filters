@@ -32,6 +32,7 @@
     <ClCompile Include="range_for.cpp" />
     <ClCompile Include="ppl.cpp" />
     <ClCompile Include="internal_vector.cpp" />
+    <ClCompile Include="internal_map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

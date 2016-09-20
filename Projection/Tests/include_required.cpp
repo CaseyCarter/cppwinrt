@@ -1,4 +1,5 @@
 // Do NOT use pch.h for this test. We need to verify that Windows.Foundation.Collections.h is included in isolation.
+
 #include <winrt\Windows.Graphics.Imaging.h>
 #include <winrt\Windows.Web.AtomPub.h>
 #include "catch.hpp"

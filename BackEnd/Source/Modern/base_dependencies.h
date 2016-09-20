@@ -16,6 +16,8 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
+#include <map>
+#include <unordered_map>
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
 #define WINRT_CORO

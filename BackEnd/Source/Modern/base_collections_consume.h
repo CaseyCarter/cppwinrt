@@ -1,4 +1,11 @@
 
+namespace impl {
+
+template <typename T, typename containertype> struct iterator;
+template <typename T, typename containertype> struct iterator_standalone;
+
+}
+
 namespace Windows::Foundation::Collections {
 
 enum class CollectionChange
@@ -760,14 +767,14 @@ struct WINRT_EBO IIterable :
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
 
-    IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T>>(std::forward<std::vector<T>>(values)))
+    IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
     {}
 
     template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<T>>(first, last))
+    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<T, std::vector<T>>>(first, last))
     {}
 
-    IIterable(std::initializer_list<T> values) : IIterable(make<impl::iterable<T>>(values.begin(), values.end()))
+    IIterable(std::initializer_list<T> values) : IIterable(make<impl::iterable<T, std::vector<T>>>(values.begin(), values.end()))
     {}
 };
 
@@ -778,6 +785,19 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
+
+    IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
+    {}
+
+    IIterable(std::unordered_map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
+    {}
+
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(first, last))
+    {}
+
+    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename K, typename V>
@@ -787,6 +807,17 @@ struct WINRT_EBO IKeyValuePair :
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
+
+private:
+    IKeyValuePair(const std::pair<const K, V> & pair) : IKeyValuePair(make<impl::key_value_pair<K, V>>(pair.first, pair.second))
+    {}
+
+    template <typename T, typename containertype>
+    friend struct impl::iterator;
+    template <typename T, typename containertype>
+    friend struct impl::iterator_standalone;
+    template<class _InIt, class _Diff, class _OutIt> 
+    friend _OutIt std::_Copy_n_unchecked2(_InIt _First, _Diff _Count, _OutIt _Dest, forward_iterator_tag);
 };
 
 template <typename T>
@@ -837,6 +868,19 @@ struct WINRT_EBO IMapView :
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMapView>(m_ptr); }
+
+    IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
+    {}
+
+    IMapView(std::unordered_map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
+    {}
+
+    template<class InputIt>
+    IMapView(InputIt first, InputIt last) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(first, last))
+    {}
+
+    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename K, typename V>
@@ -847,6 +891,19 @@ struct WINRT_EBO IMap :
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IMap>(m_ptr); }
+
+    IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
+    {}
+
+    IMap(std::unordered_map<K, V> && values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
+    {}
+
+    template<class InputIt>
+    IMap(InputIt first, InputIt last) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(first, last))
+    {}
+
+    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    {}
 };
 
 template <typename K>

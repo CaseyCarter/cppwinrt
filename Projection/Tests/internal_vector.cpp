@@ -547,7 +547,7 @@ TEST_CASE("IVector,SetAt, vector is not empty, index past the end of the vector"
 TEST_CASE("IIterable,create,rvalue")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     REQUIRE(iter != nullptr);
     IIterator<int> itor = iter.First();
     REQUIRE(itor != nullptr);
@@ -561,7 +561,7 @@ TEST_CASE("IIterable,create,rvalue")
 TEST_CASE("IIterable,create,iterators")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(stdVector.data(), stdVector.data() + stdVector.size());
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(stdVector.data(), stdVector.data() + stdVector.size());
     REQUIRE(iter != nullptr);
     IIterator<int> itor = iter.First();
     REQUIRE(itor != nullptr);
@@ -575,7 +575,7 @@ TEST_CASE("IIterable,create,iterators")
 TEST_CASE("IIterable,create, il")
 {
     auto il = { 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(il);
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(il);
     REQUIRE(iter != nullptr);
     IIterator<int> itor = iter.First();
     REQUIRE(itor != nullptr);
@@ -743,7 +743,7 @@ TEST_CASE("IIterable, from vectorview created as standalone, create,il")
 TEST_CASE("IIterator,current,current has value")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     REQUIRE(itor != nullptr);
     REQUIRE(itor.Current() == 1);
@@ -752,7 +752,7 @@ TEST_CASE("IIterator,current,current has value")
 TEST_CASE("IIterator,current,throws when empty")
 {
     std::vector<int> stdVector;
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     REQUIRE(itor != nullptr);
     REQUIRE_THROWS_AS(itor.Current(), winrt::hresult_out_of_bounds);
@@ -761,7 +761,7 @@ TEST_CASE("IIterator,current,throws when empty")
 TEST_CASE("IIterator,HasCurrent,true")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     REQUIRE(itor.HasCurrent());
 }
@@ -769,7 +769,7 @@ TEST_CASE("IIterator,HasCurrent,true")
 TEST_CASE("IIterator,HasCurrent,false")
 {
     std::vector<int> stdVector;;
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     REQUIRE(itor.HasCurrent() == false);
 }
@@ -778,7 +778,7 @@ TEST_CASE("IIterator,MoveNext")
 {
     std::vector<int> stdVector{ 1, 2 };
     std::vector<int> expectedValues = stdVector;
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
 
     int index = 0;
@@ -839,7 +839,7 @@ TEST_CASE("IIterator,Invalidate iterator, GetMany")
 TEST_CASE("IIterator,GetMany, output array has less size than the iterator")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     std::array<int, 1> output;
 
@@ -851,7 +851,7 @@ TEST_CASE("IIterator,GetMany, output array has less size than the iterator")
 TEST_CASE("IIterator,GetMany, output array has the same number of elements")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     std::array<int, 2> output;
 
@@ -864,7 +864,7 @@ TEST_CASE("IIterator,GetMany, output array has the same number of elements")
 TEST_CASE("IIterator,GetMany, output array has more slots than the iterator")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IIterable<int> iter = winrt::make<winrt::impl::iterable<int>>(std::move(stdVector));
+    IIterable<int> iter = winrt::make<winrt::impl::iterable<int, std::vector<int>>>(std::move(stdVector));
     IIterator<int> itor = iter.First();
     std::array<int, 3> output{ 0, 0, 0 };
 

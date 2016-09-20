@@ -21,8 +21,6 @@
 #include "winrt\Windows.Web.Http.h"
 #include "winrt\Windows.Web.Syndication.h"
 
-#include <map>
-#include <unordered_map>
 #include <memory>
 #include <future>
 #include <array>
