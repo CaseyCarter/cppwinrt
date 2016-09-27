@@ -22,7 +22,7 @@ extern char const base_event_consume[2355];
 extern char const base_foundation[1125];
 extern char const base_handle[2972];
 extern char const base_implements[11732];
-extern char const base_lock[834];
+extern char const base_lock[1528];
 extern char const base_macros[2312];
 extern char const base_meta[2343];
 extern char const base_modern[186];
