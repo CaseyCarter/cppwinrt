@@ -261,70 +261,60 @@ template <> struct traits<Windows::Devices::HumanInterfaceDevice::IHidOutputRepo
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidBooleanControl;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidBooleanControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidBooleanControl"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidCollection>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidCollection;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidCollection"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidDevice>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidDevice;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidDevice"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidFeatureReport;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidFeatureReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidFeatureReport"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidInputReport>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidInputReport;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidInputReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidInputReport"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidNumericControl>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidNumericControl;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidNumericControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidNumericControl"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription"; }
 };
 
 template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidOutputReport>
 {
     using abi = ABI::Windows::Devices::HumanInterfaceDevice::HidOutputReport;
-    using default_interface = Windows::Devices::HumanInterfaceDevice::IHidOutputReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.HumanInterfaceDevice.HidOutputReport"; }
 };
 

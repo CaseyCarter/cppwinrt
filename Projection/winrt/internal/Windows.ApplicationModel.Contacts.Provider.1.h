@@ -76,14 +76,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::Provider::IContac
 template <> struct traits<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::Provider::ContactPickerUI;
-    using default_interface = Windows::ApplicationModel::Contacts::Provider::IContactPickerUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.Provider.ContactPickerUI"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs;
-    using default_interface = Windows::ApplicationModel::Contacts::Provider::IContactRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs"; }
 };
 

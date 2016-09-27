@@ -113,42 +113,36 @@ template <> struct traits<Windows::Security::Authentication::OnlineId::IUserIden
 template <> struct traits<Windows::Security::Authentication::OnlineId::OnlineIdAuthenticator>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::OnlineIdAuthenticator;
-    using default_interface = Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket;
-    using default_interface = Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest;
-    using default_interface = Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::OnlineId::SignOutUserOperation>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::SignOutUserOperation;
-    using default_interface = Windows::Foundation::IAsyncAction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.SignOutUserOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::OnlineId::UserAuthenticationOperation>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::UserAuthenticationOperation;
-    using default_interface = Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.UserAuthenticationOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::OnlineId::UserIdentity>
 {
     using abi = ABI::Windows::Security::Authentication::OnlineId::UserIdentity;
-    using default_interface = Windows::Security::Authentication::OnlineId::IUserIdentity;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.OnlineId.UserIdentity"; }
 };
 

@@ -74,7 +74,6 @@ template <> struct traits<Windows::ApplicationModel::Wallet::System::IWalletMana
 template <> struct traits<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::System::WalletItemSystemStore;
-    using default_interface = Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.System.WalletItemSystemStore"; }
 };
 

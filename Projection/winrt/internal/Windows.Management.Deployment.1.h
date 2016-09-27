@@ -210,28 +210,24 @@ template <> struct traits<Windows::Management::Deployment::IPackageVolume2>
 template <> struct traits<Windows::Management::Deployment::DeploymentResult>
 {
     using abi = ABI::Windows::Management::Deployment::DeploymentResult;
-    using default_interface = Windows::Management::Deployment::IDeploymentResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.DeploymentResult"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageManager>
 {
     using abi = ABI::Windows::Management::Deployment::PackageManager;
-    using default_interface = Windows::Management::Deployment::IPackageManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageManager"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageUserInformation>
 {
     using abi = ABI::Windows::Management::Deployment::PackageUserInformation;
-    using default_interface = Windows::Management::Deployment::IPackageUserInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageUserInformation"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageVolume>
 {
     using abi = ABI::Windows::Management::Deployment::PackageVolume;
-    using default_interface = Windows::Management::Deployment::IPackageVolume;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageVolume"; }
 };
 

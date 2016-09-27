@@ -103,14 +103,12 @@ template <> struct traits<Windows::Networking::IHostNameStatics>
 template <> struct traits<Windows::Networking::EndpointPair>
 {
     using abi = ABI::Windows::Networking::EndpointPair;
-    using default_interface = Windows::Networking::IEndpointPair;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.EndpointPair"; }
 };
 
 template <> struct traits<Windows::Networking::HostName>
 {
     using abi = ABI::Windows::Networking::HostName;
-    using default_interface = Windows::Networking::IHostName;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.HostName"; }
 };
 

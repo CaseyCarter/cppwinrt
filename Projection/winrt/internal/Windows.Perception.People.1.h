@@ -42,7 +42,6 @@ template <> struct traits<Windows::Perception::People::IHeadPose>
 template <> struct traits<Windows::Perception::People::HeadPose>
 {
     using abi = ABI::Windows::Perception::People::HeadPose;
-    using default_interface = Windows::Perception::People::IHeadPose;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.People.HeadPose"; }
 };
 

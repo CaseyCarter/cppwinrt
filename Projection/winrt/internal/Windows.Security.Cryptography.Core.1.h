@@ -551,7 +551,6 @@ template <> struct traits<Windows::Security::Cryptography::Core::AsymmetricAlgor
 template <> struct traits<Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider;
-    using default_interface = Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider"; }
 };
 
@@ -563,14 +562,12 @@ template <> struct traits<Windows::Security::Cryptography::Core::CryptographicEn
 template <> struct traits<Windows::Security::Cryptography::Core::CryptographicHash>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::CryptographicHash;
-    using default_interface = Windows::Security::Cryptography::Core::IHashComputation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.CryptographicHash"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Core::CryptographicKey>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::CryptographicKey;
-    using default_interface = Windows::Security::Cryptography::Core::ICryptographicKey;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.CryptographicKey"; }
 };
 
@@ -582,7 +579,6 @@ template <> struct traits<Windows::Security::Cryptography::Core::EccCurveNames>
 template <> struct traits<Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData;
-    using default_interface = Windows::Security::Cryptography::Core::IEncryptedAndAuthenticatedData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.EncryptedAndAuthenticatedData"; }
 };
 
@@ -594,7 +590,6 @@ template <> struct traits<Windows::Security::Cryptography::Core::HashAlgorithmNa
 template <> struct traits<Windows::Security::Cryptography::Core::HashAlgorithmProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::HashAlgorithmProvider;
-    using default_interface = Windows::Security::Cryptography::Core::IHashAlgorithmProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.HashAlgorithmProvider"; }
 };
 
@@ -606,14 +601,12 @@ template <> struct traits<Windows::Security::Cryptography::Core::KeyDerivationAl
 template <> struct traits<Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider;
-    using default_interface = Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Core::KeyDerivationParameters>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::KeyDerivationParameters;
-    using default_interface = Windows::Security::Cryptography::Core::IKeyDerivationParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.KeyDerivationParameters"; }
 };
 
@@ -625,7 +618,6 @@ template <> struct traits<Windows::Security::Cryptography::Core::MacAlgorithmNam
 template <> struct traits<Windows::Security::Cryptography::Core::MacAlgorithmProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::MacAlgorithmProvider;
-    using default_interface = Windows::Security::Cryptography::Core::IMacAlgorithmProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.MacAlgorithmProvider"; }
 };
 
@@ -642,7 +634,6 @@ template <> struct traits<Windows::Security::Cryptography::Core::SymmetricAlgori
 template <> struct traits<Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider;
-    using default_interface = Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider"; }
 };
 

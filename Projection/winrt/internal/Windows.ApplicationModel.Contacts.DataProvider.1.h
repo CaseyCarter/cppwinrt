@@ -122,42 +122,36 @@ template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ICo
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs"; }
 };
 

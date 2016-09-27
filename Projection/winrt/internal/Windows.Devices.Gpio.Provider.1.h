@@ -102,7 +102,6 @@ template <> struct traits<Windows::Devices::Gpio::Provider::IGpioProvider>
 template <> struct traits<Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs;
-    using default_interface = Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs"; }
 };
 

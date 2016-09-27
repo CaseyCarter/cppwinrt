@@ -181,49 +181,42 @@ template <> struct traits<Windows::ApplicationModel::AppService::AppServiceCatal
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceClosedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceClosedEventArgs;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceClosedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceConnection>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceConnection;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceConnection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceDeferral;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceRequest>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceRequest;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceResponse>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceResponse;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceResponse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceResponse"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppService::AppServiceTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::AppService::AppServiceTriggerDetails;
-    using default_interface = Windows::ApplicationModel::AppService::IAppServiceTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppService.AppServiceTriggerDetails"; }
 };
 

@@ -351,77 +351,66 @@ template <> struct traits<Windows::UI::Text::Core::ICoreTextTextUpdatingEventArg
 template <> struct traits<Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextCompositionSegment>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextCompositionSegment;
-    using default_interface = Windows::UI::Text::Core::ICoreTextCompositionSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextCompositionSegment"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextEditContext>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextEditContext;
-    using default_interface = Windows::UI::Text::Core::ICoreTextEditContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextEditContext"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextLayoutBounds>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextLayoutBounds;
-    using default_interface = Windows::UI::Text::Core::ICoreTextLayoutBounds;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextLayoutBounds"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextLayoutRequest>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextLayoutRequest;
-    using default_interface = Windows::UI::Text::Core::ICoreTextLayoutRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextLayoutRequest"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextSelectionRequest>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextSelectionRequest;
-    using default_interface = Windows::UI::Text::Core::ICoreTextSelectionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextSelectionRequest"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs"; }
 };
 
@@ -433,28 +422,24 @@ template <> struct traits<Windows::UI::Text::Core::CoreTextServicesConstants>
 template <> struct traits<Windows::UI::Text::Core::CoreTextServicesManager>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextServicesManager;
-    using default_interface = Windows::UI::Text::Core::ICoreTextServicesManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextServicesManager"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextTextRequest>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextTextRequest;
-    using default_interface = Windows::UI::Text::Core::ICoreTextTextRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextTextRequest"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextTextRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextTextRequestedEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextTextRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs>
 {
     using abi = ABI::Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs;
-    using default_interface = Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs"; }
 };
 

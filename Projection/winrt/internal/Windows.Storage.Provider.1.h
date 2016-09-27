@@ -136,28 +136,24 @@ template <> struct traits<Windows::Storage::Provider::CachedFileUpdater>
 template <> struct traits<Windows::Storage::Provider::CachedFileUpdaterUI>
 {
     using abi = ABI::Windows::Storage::Provider::CachedFileUpdaterUI;
-    using default_interface = Windows::Storage::Provider::ICachedFileUpdaterUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.CachedFileUpdaterUI"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequest>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequest;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequest"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequestDeferral>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequestDeferral;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequestedEventArgs>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequestedEventArgs;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequestedEventArgs"; }
 };
 

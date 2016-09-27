@@ -90,14 +90,12 @@ template <> struct traits<Windows::Media::Transcoding::IPrepareTranscodeResult>
 template <> struct traits<Windows::Media::Transcoding::MediaTranscoder>
 {
     using abi = ABI::Windows::Media::Transcoding::MediaTranscoder;
-    using default_interface = Windows::Media::Transcoding::IMediaTranscoder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Transcoding.MediaTranscoder"; }
 };
 
 template <> struct traits<Windows::Media::Transcoding::PrepareTranscodeResult>
 {
     using abi = ABI::Windows::Media::Transcoding::PrepareTranscodeResult;
-    using default_interface = Windows::Media::Transcoding::IPrepareTranscodeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Transcoding.PrepareTranscodeResult"; }
 };
 

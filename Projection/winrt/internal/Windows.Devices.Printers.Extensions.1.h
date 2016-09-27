@@ -88,21 +88,18 @@ template <> struct traits<Windows::Devices::Printers::Extensions::IPrint3DWorkfl
 template <> struct traits<Windows::Devices::Printers::Extensions::Print3DWorkflow>
 {
     using abi = ABI::Windows::Devices::Printers::Extensions::Print3DWorkflow;
-    using default_interface = Windows::Devices::Printers::Extensions::IPrint3DWorkflow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Printers.Extensions.Print3DWorkflow"; }
 };
 
 template <> struct traits<Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs;
-    using default_interface = Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs;
-    using default_interface = Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs"; }
 };
 

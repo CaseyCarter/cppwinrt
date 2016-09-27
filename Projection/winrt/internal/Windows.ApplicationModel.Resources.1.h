@@ -92,7 +92,6 @@ template <> struct traits<Windows::ApplicationModel::Resources::IResourceLoaderS
 template <> struct traits<Windows::ApplicationModel::Resources::ResourceLoader>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::ResourceLoader;
-    using default_interface = Windows::ApplicationModel::Resources::IResourceLoader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.ResourceLoader"; }
 };
 

@@ -313,77 +313,66 @@ template <> struct traits<Windows::Storage::Streams::IRandomAccessStreamWithCont
 template <> struct traits<Windows::Storage::Streams::Buffer>
 {
     using abi = ABI::Windows::Storage::Streams::Buffer;
-    using default_interface = Windows::Storage::Streams::IBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.Buffer"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::DataReader>
 {
     using abi = ABI::Windows::Storage::Streams::DataReader;
-    using default_interface = Windows::Storage::Streams::IDataReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.DataReader"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::DataReaderLoadOperation>
 {
     using abi = ABI::Windows::Storage::Streams::DataReaderLoadOperation;
-    using default_interface = Windows::Foundation::IAsyncOperation<uint32_t>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.DataReaderLoadOperation"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::DataWriter>
 {
     using abi = ABI::Windows::Storage::Streams::DataWriter;
-    using default_interface = Windows::Storage::Streams::IDataWriter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.DataWriter"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::DataWriterStoreOperation>
 {
     using abi = ABI::Windows::Storage::Streams::DataWriterStoreOperation;
-    using default_interface = Windows::Foundation::IAsyncOperation<uint32_t>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.DataWriterStoreOperation"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::FileInputStream>
 {
     using abi = ABI::Windows::Storage::Streams::FileInputStream;
-    using default_interface = Windows::Storage::Streams::IInputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.FileInputStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::FileOutputStream>
 {
     using abi = ABI::Windows::Storage::Streams::FileOutputStream;
-    using default_interface = Windows::Storage::Streams::IOutputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.FileOutputStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::FileRandomAccessStream>
 {
     using abi = ABI::Windows::Storage::Streams::FileRandomAccessStream;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.FileRandomAccessStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::InMemoryRandomAccessStream>
 {
     using abi = ABI::Windows::Storage::Streams::InMemoryRandomAccessStream;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.InMemoryRandomAccessStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::InputStreamOverStream>
 {
     using abi = ABI::Windows::Storage::Streams::InputStreamOverStream;
-    using default_interface = Windows::Storage::Streams::IInputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.InputStreamOverStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::OutputStreamOverStream>
 {
     using abi = ABI::Windows::Storage::Streams::OutputStreamOverStream;
-    using default_interface = Windows::Storage::Streams::IOutputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.OutputStreamOverStream"; }
 };
 
@@ -395,14 +384,12 @@ template <> struct traits<Windows::Storage::Streams::RandomAccessStream>
 template <> struct traits<Windows::Storage::Streams::RandomAccessStreamOverStream>
 {
     using abi = ABI::Windows::Storage::Streams::RandomAccessStreamOverStream;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.RandomAccessStreamOverStream"; }
 };
 
 template <> struct traits<Windows::Storage::Streams::RandomAccessStreamReference>
 {
     using abi = ABI::Windows::Storage::Streams::RandomAccessStreamReference;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStreamReference;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Streams.RandomAccessStreamReference"; }
 };
 

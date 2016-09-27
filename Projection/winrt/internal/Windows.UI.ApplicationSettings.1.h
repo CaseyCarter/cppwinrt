@@ -255,56 +255,48 @@ template <> struct traits<Windows::UI::ApplicationSettings::WebAccountProviderCo
 template <> struct traits<Windows::UI::ApplicationSettings::AccountsSettingsPane>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane;
-    using default_interface = Windows::UI::ApplicationSettings::IAccountsSettingsPane;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.AccountsSettingsPane"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs;
-    using default_interface = Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral;
-    using default_interface = Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::CredentialCommand>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::CredentialCommand;
-    using default_interface = Windows::UI::ApplicationSettings::ICredentialCommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.CredentialCommand"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::SettingsCommand>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::SettingsCommand;
-    using default_interface = Windows::UI::Popups::IUICommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.SettingsCommand"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::WebAccountCommand>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::WebAccountCommand;
-    using default_interface = Windows::UI::ApplicationSettings::IWebAccountCommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.WebAccountCommand"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::WebAccountInvokedArgs>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::WebAccountInvokedArgs;
-    using default_interface = Windows::UI::ApplicationSettings::IWebAccountInvokedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.WebAccountInvokedArgs"; }
 };
 
 template <> struct traits<Windows::UI::ApplicationSettings::WebAccountProviderCommand>
 {
     using abi = ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand;
-    using default_interface = Windows::UI::ApplicationSettings::IWebAccountProviderCommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ApplicationSettings.WebAccountProviderCommand"; }
 };
 

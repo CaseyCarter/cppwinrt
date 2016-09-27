@@ -150,7 +150,6 @@ template <> struct traits<Windows::Graphics::Display::IDisplayPropertiesStatics>
 template <> struct traits<Windows::Graphics::Display::DisplayInformation>
 {
     using abi = ABI::Windows::Graphics::Display::DisplayInformation;
-    using default_interface = Windows::Graphics::Display::IDisplayInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Display.DisplayInformation"; }
 };
 

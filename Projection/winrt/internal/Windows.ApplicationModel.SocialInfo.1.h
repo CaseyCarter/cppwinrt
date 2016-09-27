@@ -163,42 +163,36 @@ template <> struct traits<Windows::ApplicationModel::SocialInfo::ISocialUserInfo
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialFeedChildItem>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialFeedChildItem;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialFeedChildItem"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialFeedContent>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialFeedContent;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialFeedContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialFeedContent"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialFeedItem>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialFeedItem;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialFeedItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialFeedItem"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialItemThumbnail;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialItemThumbnail"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialUserInfo>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::SocialUserInfo;
-    using default_interface = Windows::ApplicationModel::SocialInfo::ISocialUserInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.SocialUserInfo"; }
 };
 

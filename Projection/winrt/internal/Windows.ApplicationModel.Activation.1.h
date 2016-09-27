@@ -633,217 +633,186 @@ template <> struct traits<Windows::ApplicationModel::Activation::IWebAuthenticat
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderAddAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::AppointmentsProviderAddAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.AppointmentsProviderAddAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderRemoveAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::AppointmentsProviderRemoveAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.AppointmentsProviderRemoveAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderReplaceAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::AppointmentsProviderReplaceAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.AppointmentsProviderReplaceAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::AppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.AppointmentsProviderShowAppointmentDetailsActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderShowTimeFrameActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::AppointmentsProviderShowTimeFrameActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.AppointmentsProviderShowTimeFrameActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::DeviceActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.DeviceActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::DevicePairingActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::DevicePairingActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.DevicePairingActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::DialReceiverActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::DialReceiverActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.DialReceiverActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FileActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FileActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FileActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FileOpenPickerContinuationEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FileOpenPickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FileSavePickerContinuationEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FileSavePickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FileSavePickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::FolderPickerContinuationEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::FolderPickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.FolderPickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.LaunchActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.LockScreenActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.PickerReturnedActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::ProtocolForResultsActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::ProtocolForResultsActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.ProtocolForResultsActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::RestrictedLaunchActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::RestrictedLaunchActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.RestrictedLaunchActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::SearchActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::SearchActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ISearchActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.SearchActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::SplashScreen>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::SplashScreen;
-    using default_interface = Windows::ApplicationModel::Activation::ISplashScreen;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.SplashScreen"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::TileActivatedInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::TileActivatedInfo;
-    using default_interface = Windows::ApplicationModel::Activation::ITileActivatedInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.TileActivatedInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::ToastNotificationActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::ToastNotificationActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::UserDataAccountProviderActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::UserDataAccountProviderActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.UserDataAccountProviderActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::VoiceCommandActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::VoiceCommandActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::WebAccountProviderActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::WebAccountProviderActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.WebAccountProviderActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.WebAuthenticationBrokerContinuationEventArgs"; }
 };
 

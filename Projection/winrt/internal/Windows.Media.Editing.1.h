@@ -260,42 +260,36 @@ template <> struct traits<Windows::Media::Editing::IMediaOverlayLayerFactory>
 template <> struct traits<Windows::Media::Editing::BackgroundAudioTrack>
 {
     using abi = ABI::Windows::Media::Editing::BackgroundAudioTrack;
-    using default_interface = Windows::Media::Editing::IBackgroundAudioTrack;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.BackgroundAudioTrack"; }
 };
 
 template <> struct traits<Windows::Media::Editing::EmbeddedAudioTrack>
 {
     using abi = ABI::Windows::Media::Editing::EmbeddedAudioTrack;
-    using default_interface = Windows::Media::Editing::IEmbeddedAudioTrack;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.EmbeddedAudioTrack"; }
 };
 
 template <> struct traits<Windows::Media::Editing::MediaClip>
 {
     using abi = ABI::Windows::Media::Editing::MediaClip;
-    using default_interface = Windows::Media::Editing::IMediaClip;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.MediaClip"; }
 };
 
 template <> struct traits<Windows::Media::Editing::MediaComposition>
 {
     using abi = ABI::Windows::Media::Editing::MediaComposition;
-    using default_interface = Windows::Media::Editing::IMediaComposition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.MediaComposition"; }
 };
 
 template <> struct traits<Windows::Media::Editing::MediaOverlay>
 {
     using abi = ABI::Windows::Media::Editing::MediaOverlay;
-    using default_interface = Windows::Media::Editing::IMediaOverlay;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.MediaOverlay"; }
 };
 
 template <> struct traits<Windows::Media::Editing::MediaOverlayLayer>
 {
     using abi = ABI::Windows::Media::Editing::MediaOverlayLayer;
-    using default_interface = Windows::Media::Editing::IMediaOverlayLayer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Editing.MediaOverlayLayer"; }
 };
 

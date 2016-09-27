@@ -561,7 +561,6 @@ template <> struct traits<Windows::UI::Xaml::Automation::Provider::IWindowProvid
 template <> struct traits<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple;
-    using default_interface = Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple"; }
 };
 

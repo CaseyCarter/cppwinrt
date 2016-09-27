@@ -526,28 +526,24 @@ template <> struct traits<Windows::Networking::BackgroundTransfer::IUploadOperat
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundDownloader>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundDownloader;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundDownloader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundDownloader"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroupTriggerDetails>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroupTriggerDetails;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroupTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart"; }
 };
 
@@ -559,14 +555,12 @@ template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundTra
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferGroup;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundTransferGroup"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::BackgroundUploader>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::BackgroundUploader;
-    using default_interface = Windows::Networking::BackgroundTransfer::IBackgroundUploader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.BackgroundUploader"; }
 };
 
@@ -578,28 +572,24 @@ template <> struct traits<Windows::Networking::BackgroundTransfer::ContentPrefet
 template <> struct traits<Windows::Networking::BackgroundTransfer::DownloadOperation>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::DownloadOperation;
-    using default_interface = Windows::Networking::BackgroundTransfer::IDownloadOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.DownloadOperation"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::ResponseInformation>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::ResponseInformation;
-    using default_interface = Windows::Networking::BackgroundTransfer::IResponseInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.ResponseInformation"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult;
-    using default_interface = Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult"; }
 };
 
 template <> struct traits<Windows::Networking::BackgroundTransfer::UploadOperation>
 {
     using abi = ABI::Windows::Networking::BackgroundTransfer::UploadOperation;
-    using default_interface = Windows::Networking::BackgroundTransfer::IUploadOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.BackgroundTransfer.UploadOperation"; }
 };
 

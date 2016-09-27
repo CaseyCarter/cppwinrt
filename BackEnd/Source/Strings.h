@@ -98,7 +98,7 @@ extern char const WriteClassConstructorDefinitionComposable[111];
 extern char const WriteClassDeclaration[44];
 extern char const WriteClassDefaultConstructorDeclaration[11];
 extern char const WriteClassDefaultConstructorDefinition[55];
-extern char const WriteClassImplementation[176];
+extern char const WriteClassImplementation[142];
 extern char const WriteClassImplementationStatic[114];
 extern char const WriteClassNullptrConstructor[36];
 extern char const WriteComposableConstructor[94];

@@ -364,63 +364,54 @@ template <> struct traits<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackg
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::BitmapImage>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::BitmapImage;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IBitmapImage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.BitmapImage"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::BitmapSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::BitmapSource;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IBitmapSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.BitmapSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::RenderTargetBitmap>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::RenderTargetBitmap;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::SoftwareBitmapSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::SoftwareBitmapSource;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::SurfaceImageSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SurfaceImageSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::WriteableBitmap>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::WriteableBitmap;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IWriteableBitmap;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.WriteableBitmap"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask;
-    using default_interface = Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask"; }
 };
 

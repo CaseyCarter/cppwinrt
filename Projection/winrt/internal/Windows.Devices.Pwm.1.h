@@ -92,14 +92,12 @@ template <> struct traits<Windows::Devices::Pwm::IPwmPin>
 template <> struct traits<Windows::Devices::Pwm::PwmController>
 {
     using abi = ABI::Windows::Devices::Pwm::PwmController;
-    using default_interface = Windows::Devices::Pwm::IPwmController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Pwm.PwmController"; }
 };
 
 template <> struct traits<Windows::Devices::Pwm::PwmPin>
 {
     using abi = ABI::Windows::Devices::Pwm::PwmPin;
-    using default_interface = Windows::Devices::Pwm::IPwmPin;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Pwm.PwmPin"; }
 };
 

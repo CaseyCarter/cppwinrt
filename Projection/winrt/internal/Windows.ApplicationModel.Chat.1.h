@@ -852,7 +852,6 @@ template <> struct traits<Windows::ApplicationModel::Chat::IRemoteParticipantCom
 template <> struct traits<Windows::ApplicationModel::Chat::ChatCapabilities>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatCapabilities;
-    using default_interface = Windows::ApplicationModel::Chat::IChatCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatCapabilities"; }
 };
 
@@ -864,35 +863,30 @@ template <> struct traits<Windows::ApplicationModel::Chat::ChatCapabilitiesManag
 template <> struct traits<Windows::ApplicationModel::Chat::ChatConversation>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatConversation;
-    using default_interface = Windows::ApplicationModel::Chat::IChatConversation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatConversation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatConversationReader>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatConversationReader;
-    using default_interface = Windows::ApplicationModel::Chat::IChatConversationReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatConversationReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatConversationThreadingInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatConversationThreadingInfo;
-    using default_interface = Windows::ApplicationModel::Chat::IChatConversationThreadingInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatConversationThreadingInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessage>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessage;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessage"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageAttachment>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageAttachment;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageAttachment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageAttachment"; }
 };
 
@@ -904,35 +898,30 @@ template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageBlocking>
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageChange>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageChange;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageChange"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageChangeReader>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageChangeReader;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageChangeReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageChangeTracker>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageChangeTracker;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageChangeTracker"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageChangedDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageChangedDeferral;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageChangedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageChangedDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs"; }
 };
 
@@ -944,119 +933,102 @@ template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageManager>
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageNotificationTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageNotificationTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageNotificationTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageReader>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageReader;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageStore>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageStore;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageStoreChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageTransport>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageTransport;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageTransport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageTransport"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageTransportConfiguration>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageTransportConfiguration;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageTransportConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatMessageValidationResult>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatMessageValidationResult;
-    using default_interface = Windows::ApplicationModel::Chat::IChatMessageValidationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatMessageValidationResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatQueryOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatQueryOptions;
-    using default_interface = Windows::ApplicationModel::Chat::IChatQueryOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatQueryOptions"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatRecipientDeliveryInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatRecipientDeliveryInfo;
-    using default_interface = Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatRecipientDeliveryInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatSearchReader>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatSearchReader;
-    using default_interface = Windows::ApplicationModel::Chat::IChatSearchReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatSearchReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatSyncConfiguration>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatSyncConfiguration;
-    using default_interface = Windows::ApplicationModel::Chat::IChatSyncConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatSyncConfiguration"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::ChatSyncManager>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::ChatSyncManager;
-    using default_interface = Windows::ApplicationModel::Chat::IChatSyncManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.ChatSyncManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsEndUserMessage>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsEndUserMessage;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsEndUserMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsEndUserMessage"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsEndUserMessageAction>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsEndUserMessageAction;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsEndUserMessageAction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsEndUserMessageAction"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsEndUserMessageManager>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsEndUserMessageManager;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsEndUserMessageManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsEndUserMessageManager"; }
 };
 
@@ -1068,28 +1040,24 @@ template <> struct traits<Windows::ApplicationModel::Chat::RcsManager>
 template <> struct traits<Windows::ApplicationModel::Chat::RcsServiceKindSupportedChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsServiceKindSupportedChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsServiceKindSupportedChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsTransport>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsTransport;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsTransport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsTransport"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RcsTransportConfiguration>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RcsTransportConfiguration;
-    using default_interface = Windows::ApplicationModel::Chat::IRcsTransportConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RcsTransportConfiguration"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Chat::IRemoteParticipantComposingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs"; }
 };
 

@@ -136,21 +136,18 @@ template <> struct traits<Windows::Devices::I2c::II2cDeviceStatics>
 template <> struct traits<Windows::Devices::I2c::I2cConnectionSettings>
 {
     using abi = ABI::Windows::Devices::I2c::I2cConnectionSettings;
-    using default_interface = Windows::Devices::I2c::II2cConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.I2c.I2cConnectionSettings"; }
 };
 
 template <> struct traits<Windows::Devices::I2c::I2cController>
 {
     using abi = ABI::Windows::Devices::I2c::I2cController;
-    using default_interface = Windows::Devices::I2c::II2cController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.I2c.I2cController"; }
 };
 
 template <> struct traits<Windows::Devices::I2c::I2cDevice>
 {
     using abi = ABI::Windows::Devices::I2c::I2cDevice;
-    using default_interface = Windows::Devices::I2c::II2cDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.I2c.I2cDevice"; }
 };
 

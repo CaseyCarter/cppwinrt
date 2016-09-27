@@ -76,7 +76,6 @@ template <> struct traits<Windows::UI::Xaml::Resources::ICustomXamlResourceLoade
 template <> struct traits<Windows::UI::Xaml::Resources::CustomXamlResourceLoader>
 {
     using abi = ABI::Windows::UI::Xaml::Resources::CustomXamlResourceLoader;
-    using default_interface = Windows::UI::Xaml::Resources::ICustomXamlResourceLoader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Resources.CustomXamlResourceLoader"; }
 };
 

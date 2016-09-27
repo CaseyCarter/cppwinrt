@@ -774,77 +774,66 @@ template <> struct traits<Windows::Networking::Sockets::IWebSocketServerCustomVa
 template <> struct traits<Windows::Networking::Sockets::DatagramSocket>
 {
     using abi = ABI::Windows::Networking::Sockets::DatagramSocket;
-    using default_interface = Windows::Networking::Sockets::IDatagramSocket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.DatagramSocket"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::DatagramSocketControl>
 {
     using abi = ABI::Windows::Networking::Sockets::DatagramSocketControl;
-    using default_interface = Windows::Networking::Sockets::IDatagramSocketControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.DatagramSocketControl"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::DatagramSocketInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::DatagramSocketInformation;
-    using default_interface = Windows::Networking::Sockets::IDatagramSocketInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.DatagramSocketInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs;
-    using default_interface = Windows::Networking::Sockets::IDatagramSocketMessageReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::MessageWebSocket>
 {
     using abi = ABI::Windows::Networking::Sockets::MessageWebSocket;
-    using default_interface = Windows::Networking::Sockets::IMessageWebSocket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.MessageWebSocket"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::MessageWebSocketControl>
 {
     using abi = ABI::Windows::Networking::Sockets::MessageWebSocketControl;
-    using default_interface = Windows::Networking::Sockets::IMessageWebSocketControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.MessageWebSocketControl"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::MessageWebSocketInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::MessageWebSocketInformation;
-    using default_interface = Windows::Networking::Sockets::IWebSocketInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.MessageWebSocketInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs;
-    using default_interface = Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::SocketActivityContext>
 {
     using abi = ABI::Windows::Networking::Sockets::SocketActivityContext;
-    using default_interface = Windows::Networking::Sockets::ISocketActivityContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.SocketActivityContext"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::SocketActivityInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::SocketActivityInformation;
-    using default_interface = Windows::Networking::Sockets::ISocketActivityInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.SocketActivityInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::SocketActivityTriggerDetails>
 {
     using abi = ABI::Windows::Networking::Sockets::SocketActivityTriggerDetails;
-    using default_interface = Windows::Networking::Sockets::ISocketActivityTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.SocketActivityTriggerDetails"; }
 };
 
@@ -856,77 +845,66 @@ template <> struct traits<Windows::Networking::Sockets::SocketError>
 template <> struct traits<Windows::Networking::Sockets::StreamSocket>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocket;
-    using default_interface = Windows::Networking::Sockets::IStreamSocket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocket"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketControl>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketControl;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketControl"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketInformation;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketListener>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketListener;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketListener;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketListener"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketListenerConnectionReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketListenerControl>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketListenerControl;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketListenerControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketListenerControl"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamSocketListenerInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamSocketListenerInformation;
-    using default_interface = Windows::Networking::Sockets::IStreamSocketListenerInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamSocketListenerInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamWebSocket>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamWebSocket;
-    using default_interface = Windows::Networking::Sockets::IStreamWebSocket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamWebSocket"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamWebSocketControl>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamWebSocketControl;
-    using default_interface = Windows::Networking::Sockets::IStreamWebSocketControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamWebSocketControl"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::StreamWebSocketInformation>
 {
     using abi = ABI::Windows::Networking::Sockets::StreamWebSocketInformation;
-    using default_interface = Windows::Networking::Sockets::IWebSocketInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.StreamWebSocketInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::WebSocketClosedEventArgs>
 {
     using abi = ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs;
-    using default_interface = Windows::Networking::Sockets::IWebSocketClosedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.WebSocketClosedEventArgs"; }
 };
 
@@ -938,14 +916,12 @@ template <> struct traits<Windows::Networking::Sockets::WebSocketError>
 template <> struct traits<Windows::Networking::Sockets::WebSocketKeepAlive>
 {
     using abi = ABI::Windows::Networking::Sockets::WebSocketKeepAlive;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTask;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.WebSocketKeepAlive"; }
 };
 
 template <> struct traits<Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs>
 {
     using abi = ABI::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs;
-    using default_interface = Windows::Networking::Sockets::IWebSocketServerCustomValidationRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs"; }
 };
 

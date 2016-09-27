@@ -57,7 +57,6 @@ template <> struct traits<Windows::UI::Xaml::Hosting::IElementCompositionPreview
 template <> struct traits<Windows::UI::Xaml::Hosting::ElementCompositionPreview>
 {
     using abi = ABI::Windows::UI::Xaml::Hosting::ElementCompositionPreview;
-    using default_interface = Windows::UI::Xaml::Hosting::IElementCompositionPreview;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Hosting.ElementCompositionPreview"; }
 };
 

@@ -96,14 +96,12 @@ template <> struct traits<Windows::System::Threading::Core::SignalHandler>
 template <> struct traits<Windows::System::Threading::Core::PreallocatedWorkItem>
 {
     using abi = ABI::Windows::System::Threading::Core::PreallocatedWorkItem;
-    using default_interface = Windows::System::Threading::Core::IPreallocatedWorkItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.Core.PreallocatedWorkItem"; }
 };
 
 template <> struct traits<Windows::System::Threading::Core::SignalNotifier>
 {
     using abi = ABI::Windows::System::Threading::Core::SignalNotifier;
-    using default_interface = Windows::System::Threading::Core::ISignalNotifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.Core.SignalNotifier"; }
 };
 

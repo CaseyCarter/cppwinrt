@@ -71,14 +71,12 @@ template <> struct traits<Windows::Devices::Printers::IPrintSchema>
 template <> struct traits<Windows::Devices::Printers::Print3DDevice>
 {
     using abi = ABI::Windows::Devices::Printers::Print3DDevice;
-    using default_interface = Windows::Devices::Printers::IPrint3DDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Printers.Print3DDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Printers::PrintSchema>
 {
     using abi = ABI::Windows::Devices::Printers::PrintSchema;
-    using default_interface = Windows::Devices::Printers::IPrintSchema;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Printers.PrintSchema"; }
 };
 

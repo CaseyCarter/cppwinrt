@@ -184,35 +184,30 @@ template <> struct traits<Windows::UI::Input::Preview::Injection::IInputInjector
 template <> struct traits<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo>
 {
     using abi = ABI::Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo;
-    using default_interface = Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo"; }
 };
 
 template <> struct traits<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo>
 {
     using abi = ABI::Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo;
-    using default_interface = Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo"; }
 };
 
 template <> struct traits<Windows::UI::Input::Preview::Injection::InjectedInputPenInfo>
 {
     using abi = ABI::Windows::UI::Input::Preview::Injection::InjectedInputPenInfo;
-    using default_interface = Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Preview.Injection.InjectedInputPenInfo"; }
 };
 
 template <> struct traits<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo>
 {
     using abi = ABI::Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo;
-    using default_interface = Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo"; }
 };
 
 template <> struct traits<Windows::UI::Input::Preview::Injection::InputInjector>
 {
     using abi = ABI::Windows::UI::Input::Preview::Injection::InputInjector;
-    using default_interface = Windows::UI::Input::Preview::Injection::IInputInjector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Preview.Injection.InputInjector"; }
 };
 

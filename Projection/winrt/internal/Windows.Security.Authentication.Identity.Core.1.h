@@ -128,35 +128,30 @@ template <> struct traits<Windows::Security::Authentication::Identity::Core::IMi
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager;
-    using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult;
-    using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo;
-    using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo;
-    using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
-    using default_interface = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo"; }
 };
 

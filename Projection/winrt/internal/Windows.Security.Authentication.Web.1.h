@@ -80,7 +80,6 @@ template <> struct traits<Windows::Security::Authentication::Web::WebAuthenticat
 template <> struct traits<Windows::Security::Authentication::Web::WebAuthenticationResult>
 {
     using abi = ABI::Windows::Security::Authentication::Web::WebAuthenticationResult;
-    using default_interface = Windows::Security::Authentication::Web::IWebAuthenticationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.WebAuthenticationResult"; }
 };
 

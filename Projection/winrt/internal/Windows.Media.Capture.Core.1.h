@@ -77,14 +77,12 @@ template <> struct traits<Windows::Media::Capture::Core::IVariablePhotoSequenceC
 template <> struct traits<Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs;
-    using default_interface = Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Core::VariablePhotoSequenceCapture>
 {
     using abi = ABI::Windows::Media::Capture::Core::VariablePhotoSequenceCapture;
-    using default_interface = Windows::Media::Capture::Core::IVariablePhotoSequenceCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Core.VariablePhotoSequenceCapture"; }
 };
 

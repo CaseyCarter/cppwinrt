@@ -515,70 +515,60 @@ template <> struct traits<Windows::UI::Xaml::Data::PropertyChangedEventHandler>
 template <> struct traits<Windows::UI::Xaml::Data::Binding>
 {
     using abi = ABI::Windows::UI::Xaml::Data::Binding;
-    using default_interface = Windows::UI::Xaml::Data::IBinding;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.Binding"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::BindingBase>
 {
     using abi = ABI::Windows::UI::Xaml::Data::BindingBase;
-    using default_interface = Windows::UI::Xaml::Data::IBindingBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.BindingBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::BindingExpression>
 {
     using abi = ABI::Windows::UI::Xaml::Data::BindingExpression;
-    using default_interface = Windows::UI::Xaml::Data::IBindingExpression;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.BindingExpression"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::BindingExpressionBase>
 {
     using abi = ABI::Windows::UI::Xaml::Data::BindingExpressionBase;
-    using default_interface = Windows::UI::Xaml::Data::IBindingExpressionBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.BindingExpressionBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::BindingOperations>
 {
     using abi = ABI::Windows::UI::Xaml::Data::BindingOperations;
-    using default_interface = Windows::UI::Xaml::Data::IBindingOperations;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.BindingOperations"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::CollectionViewSource>
 {
     using abi = ABI::Windows::UI::Xaml::Data::CollectionViewSource;
-    using default_interface = Windows::UI::Xaml::Data::ICollectionViewSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.CollectionViewSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::CurrentChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Data::CurrentChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Data::ICurrentChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.CurrentChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::ItemIndexRange>
 {
     using abi = ABI::Windows::UI::Xaml::Data::ItemIndexRange;
-    using default_interface = Windows::UI::Xaml::Data::IItemIndexRange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.ItemIndexRange"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::PropertyChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Data::PropertyChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Data::IPropertyChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.PropertyChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Data::RelativeSource>
 {
     using abi = ABI::Windows::UI::Xaml::Data::RelativeSource;
-    using default_interface = Windows::UI::Xaml::Data::IRelativeSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Data.RelativeSource"; }
 };
 

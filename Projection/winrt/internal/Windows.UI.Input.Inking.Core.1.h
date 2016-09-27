@@ -122,21 +122,18 @@ template <> struct traits<Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdate
 template <> struct traits<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource>
 {
     using abi = ABI::Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource;
-    using default_interface = Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs;
-    using default_interface = Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource>
 {
     using abi = ABI::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource;
-    using default_interface = Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource"; }
 };
 

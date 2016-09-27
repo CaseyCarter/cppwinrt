@@ -125,42 +125,36 @@ template <> struct traits<Windows::Devices::Bluetooth::Background::IRfcommOutbou
 template <> struct traits<Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementPublisherTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementPublisherTriggerDetails;
-    using default_interface = Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementPublisherTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.BluetoothLEAdvertisementPublisherTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementWatcherTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementWatcherTriggerDetails;
-    using default_interface = Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementWatcherTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.BluetoothLEAdvertisementWatcherTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails;
-    using default_interface = Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.GattCharacteristicNotificationTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails;
-    using default_interface = Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.RfcommConnectionTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation;
-    using default_interface = Windows::Devices::Bluetooth::Background::IRfcommInboundConnectionInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.RfcommInboundConnectionInformation"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation;
-    using default_interface = Windows::Devices::Bluetooth::Background::IRfcommOutboundConnectionInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.RfcommOutboundConnectionInformation"; }
 };
 

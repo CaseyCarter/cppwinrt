@@ -197,119 +197,102 @@ template <> struct traits<Windows::Graphics::Printing::OptionDetails::IPrintText
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintBindingOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintBindingOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintBindingOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintBorderingOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintBorderingOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintCollationOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintCollationOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintCollationOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintColorModeOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintColorModeOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintColorModeOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintCopiesOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintCopiesOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintCopiesOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintCustomItemDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintCustomItemDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintCustomItemDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintDuplexOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintDuplexOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintDuplexOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintHolePunchOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintHolePunchOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintHolePunchOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintMediaSizeOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintMediaSizeOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintMediaSizeOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintMediaTypeOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintMediaTypeOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintMediaTypeOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintOrientationOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintOrientationOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintOrientationOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintQualityOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintQualityOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintQualityOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintStapleOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintStapleOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintStapleOptionDetails"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails>
 {
     using abi = ABI::Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails;
-    using default_interface = Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails"; }
 };
 

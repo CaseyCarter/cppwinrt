@@ -380,91 +380,78 @@ template <> struct traits<Windows::Graphics::Imaging::ISoftwareBitmapStatics>
 template <> struct traits<Windows::Graphics::Imaging::BitmapBuffer>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapBuffer;
-    using default_interface = Windows::Graphics::Imaging::IBitmapBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapBuffer"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapCodecInformation>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapCodecInformation;
-    using default_interface = Windows::Graphics::Imaging::IBitmapCodecInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapCodecInformation"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapDecoder>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapDecoder;
-    using default_interface = Windows::Graphics::Imaging::IBitmapDecoder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapDecoder"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapEncoder>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapEncoder;
-    using default_interface = Windows::Graphics::Imaging::IBitmapEncoder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapEncoder"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapFrame>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapFrame;
-    using default_interface = Windows::Graphics::Imaging::IBitmapFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapFrame"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapProperties>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapProperties;
-    using default_interface = Windows::Graphics::Imaging::IBitmapProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapProperties"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapPropertiesView>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapPropertiesView;
-    using default_interface = Windows::Graphics::Imaging::IBitmapPropertiesView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapPropertiesView"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapPropertySet>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapPropertySet;
-    using default_interface = Windows::Foundation::Collections::IMap<hstring, Windows::Graphics::Imaging::BitmapTypedValue>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapPropertySet"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapTransform>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapTransform;
-    using default_interface = Windows::Graphics::Imaging::IBitmapTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapTransform"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::BitmapTypedValue>
 {
     using abi = ABI::Windows::Graphics::Imaging::BitmapTypedValue;
-    using default_interface = Windows::Graphics::Imaging::IBitmapTypedValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.BitmapTypedValue"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::ImageStream>
 {
     using abi = ABI::Windows::Graphics::Imaging::ImageStream;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStreamWithContentType;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.ImageStream"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::PixelDataProvider>
 {
     using abi = ABI::Windows::Graphics::Imaging::PixelDataProvider;
-    using default_interface = Windows::Graphics::Imaging::IPixelDataProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.PixelDataProvider"; }
 };
 
 template <> struct traits<Windows::Graphics::Imaging::SoftwareBitmap>
 {
     using abi = ABI::Windows::Graphics::Imaging::SoftwareBitmap;
-    using default_interface = Windows::Graphics::Imaging::ISoftwareBitmap;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Imaging.SoftwareBitmap"; }
 };
 

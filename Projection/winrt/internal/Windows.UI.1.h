@@ -233,14 +233,12 @@ template <> struct traits<Windows::UI::IColorsStatics>
 template <> struct traits<Windows::UI::ColorHelper>
 {
     using abi = ABI::Windows::UI::ColorHelper;
-    using default_interface = Windows::UI::IColorHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ColorHelper"; }
 };
 
 template <> struct traits<Windows::UI::Colors>
 {
     using abi = ABI::Windows::UI::Colors;
-    using default_interface = Windows::UI::IColors;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Colors"; }
 };
 

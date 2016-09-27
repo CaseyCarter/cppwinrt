@@ -103,7 +103,6 @@ template <> struct traits<Windows::Devices::Spi::Provider::ISpiProvider>
 template <> struct traits<Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings>
 {
     using abi = ABI::Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings;
-    using default_interface = Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings"; }
 };
 

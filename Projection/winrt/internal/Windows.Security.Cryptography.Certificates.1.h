@@ -680,14 +680,12 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::IUserCe
 template <> struct traits<Windows::Security::Cryptography::Certificates::Certificate>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::Certificate;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.Certificate"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateChain>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateChain;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificateChain;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateChain"; }
 };
 
@@ -699,28 +697,24 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::Certifi
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateKeyUsages>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateKeyUsages;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificateKeyUsages;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateKeyUsages"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateQuery>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateQuery;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificateQuery;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateQuery"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateRequestProperties>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateRequestProperties;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificateRequestProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateRequestProperties"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateStore>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateStore;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICertificateStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateStore"; }
 };
 
@@ -732,42 +726,36 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::Certifi
 template <> struct traits<Windows::Security::Cryptography::Certificates::ChainBuildingParameters>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::ChainBuildingParameters;
-    using default_interface = Windows::Security::Cryptography::Certificates::IChainBuildingParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.ChainBuildingParameters"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::ChainValidationParameters>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::ChainValidationParameters;
-    using default_interface = Windows::Security::Cryptography::Certificates::IChainValidationParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.ChainValidationParameters"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CmsAttachedSignature>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CmsAttachedSignature;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICmsAttachedSignature;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CmsAttachedSignature"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CmsDetachedSignature>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CmsDetachedSignature;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICmsDetachedSignature;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CmsDetachedSignature"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CmsSignerInfo>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CmsSignerInfo;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICmsSignerInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CmsSignerInfo"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CmsTimestampInfo>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::CmsTimestampInfo;
-    using default_interface = Windows::Security::Cryptography::Certificates::ICmsTimestampInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CmsTimestampInfo"; }
 };
 
@@ -789,7 +777,6 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::KeyStor
 template <> struct traits<Windows::Security::Cryptography::Certificates::PfxImportParameters>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::PfxImportParameters;
-    using default_interface = Windows::Security::Cryptography::Certificates::IPfxImportParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.PfxImportParameters"; }
 };
 
@@ -801,21 +788,18 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::Standar
 template <> struct traits<Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo;
-    using default_interface = Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager;
-    using default_interface = Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.UserCertificateEnrollmentManager"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::UserCertificateStore>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::UserCertificateStore;
-    using default_interface = Windows::Security::Cryptography::Certificates::IUserCertificateStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.UserCertificateStore"; }
 };
 

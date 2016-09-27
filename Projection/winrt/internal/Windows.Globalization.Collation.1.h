@@ -55,14 +55,12 @@ template <> struct traits<Windows::Globalization::Collation::ICharacterGroupings
 template <> struct traits<Windows::Globalization::Collation::CharacterGrouping>
 {
     using abi = ABI::Windows::Globalization::Collation::CharacterGrouping;
-    using default_interface = Windows::Globalization::Collation::ICharacterGrouping;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Collation.CharacterGrouping"; }
 };
 
 template <> struct traits<Windows::Globalization::Collation::CharacterGroupings>
 {
     using abi = ABI::Windows::Globalization::Collation::CharacterGroupings;
-    using default_interface = Windows::Globalization::Collation::ICharacterGroupings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Collation.CharacterGroupings"; }
 };
 

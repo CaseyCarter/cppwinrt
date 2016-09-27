@@ -418,98 +418,84 @@ template <> struct traits<Windows::Web::Http::IHttpTransportInformation>
 template <> struct traits<Windows::Web::Http::HttpBufferContent>
 {
     using abi = ABI::Windows::Web::Http::HttpBufferContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpBufferContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpClient>
 {
     using abi = ABI::Windows::Web::Http::HttpClient;
-    using default_interface = Windows::Web::Http::IHttpClient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpClient"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpCookie>
 {
     using abi = ABI::Windows::Web::Http::HttpCookie;
-    using default_interface = Windows::Web::Http::IHttpCookie;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpCookie"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpCookieCollection>
 {
     using abi = ABI::Windows::Web::Http::HttpCookieCollection;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpCookieCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpCookieManager>
 {
     using abi = ABI::Windows::Web::Http::HttpCookieManager;
-    using default_interface = Windows::Web::Http::IHttpCookieManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpCookieManager"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpFormUrlEncodedContent>
 {
     using abi = ABI::Windows::Web::Http::HttpFormUrlEncodedContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpFormUrlEncodedContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpMethod>
 {
     using abi = ABI::Windows::Web::Http::HttpMethod;
-    using default_interface = Windows::Web::Http::IHttpMethod;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpMethod"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpMultipartContent>
 {
     using abi = ABI::Windows::Web::Http::HttpMultipartContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpMultipartContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpMultipartFormDataContent>
 {
     using abi = ABI::Windows::Web::Http::HttpMultipartFormDataContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpMultipartFormDataContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpRequestMessage>
 {
     using abi = ABI::Windows::Web::Http::HttpRequestMessage;
-    using default_interface = Windows::Web::Http::IHttpRequestMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpRequestMessage"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpResponseMessage>
 {
     using abi = ABI::Windows::Web::Http::HttpResponseMessage;
-    using default_interface = Windows::Web::Http::IHttpResponseMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpResponseMessage"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpStreamContent>
 {
     using abi = ABI::Windows::Web::Http::HttpStreamContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpStreamContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpStringContent>
 {
     using abi = ABI::Windows::Web::Http::HttpStringContent;
-    using default_interface = Windows::Web::Http::IHttpContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpStringContent"; }
 };
 
 template <> struct traits<Windows::Web::Http::HttpTransportInformation>
 {
     using abi = ABI::Windows::Web::Http::HttpTransportInformation;
-    using default_interface = Windows::Web::Http::IHttpTransportInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.HttpTransportInformation"; }
 };
 

@@ -50,7 +50,6 @@ template <> struct traits<Windows::UI::Composition::Effects::ISceneLightingEffec
 template <> struct traits<Windows::UI::Composition::Effects::SceneLightingEffect>
 {
     using abi = ABI::Windows::UI::Composition::Effects::SceneLightingEffect;
-    using default_interface = Windows::UI::Composition::Effects::ISceneLightingEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Effects.SceneLightingEffect"; }
 };
 

@@ -80,14 +80,12 @@ template <> struct traits<Windows::Globalization::Fonts::ILanguageFontGroupFacto
 template <> struct traits<Windows::Globalization::Fonts::LanguageFont>
 {
     using abi = ABI::Windows::Globalization::Fonts::LanguageFont;
-    using default_interface = Windows::Globalization::Fonts::ILanguageFont;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Fonts.LanguageFont"; }
 };
 
 template <> struct traits<Windows::Globalization::Fonts::LanguageFontGroup>
 {
     using abi = ABI::Windows::Globalization::Fonts::LanguageFontGroup;
-    using default_interface = Windows::Globalization::Fonts::ILanguageFontGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Fonts.LanguageFontGroup"; }
 };
 

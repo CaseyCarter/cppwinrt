@@ -450,7 +450,6 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic"; }
 };
 
@@ -462,7 +461,6 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor"; }
 };
 
@@ -474,14 +472,12 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormat;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat"; }
 };
 
@@ -493,21 +489,18 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReliableWriteTransaction>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReliableWriteTransaction;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattReliableWriteTransaction"; }
 };
 
@@ -519,7 +512,6 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs;
-    using default_interface = Windows::Devices::Bluetooth::GenericAttributeProfile::IGattValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs"; }
 };
 

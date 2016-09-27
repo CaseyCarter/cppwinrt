@@ -336,14 +336,12 @@ template <> struct traits<Windows::Services::Maps::IMapServiceStatics3>
 template <> struct traits<Windows::Services::Maps::MapAddress>
 {
     using abi = ABI::Windows::Services::Maps::MapAddress;
-    using default_interface = Windows::Services::Maps::IMapAddress;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapAddress"; }
 };
 
 template <> struct traits<Windows::Services::Maps::MapLocation>
 {
     using abi = ABI::Windows::Services::Maps::MapLocation;
-    using default_interface = Windows::Services::Maps::IMapLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapLocation"; }
 };
 
@@ -355,7 +353,6 @@ template <> struct traits<Windows::Services::Maps::MapLocationFinder>
 template <> struct traits<Windows::Services::Maps::MapLocationFinderResult>
 {
     using abi = ABI::Windows::Services::Maps::MapLocationFinderResult;
-    using default_interface = Windows::Services::Maps::IMapLocationFinderResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapLocationFinderResult"; }
 };
 
@@ -367,14 +364,12 @@ template <> struct traits<Windows::Services::Maps::MapManager>
 template <> struct traits<Windows::Services::Maps::MapRoute>
 {
     using abi = ABI::Windows::Services::Maps::MapRoute;
-    using default_interface = Windows::Services::Maps::IMapRoute;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapRoute"; }
 };
 
 template <> struct traits<Windows::Services::Maps::MapRouteDrivingOptions>
 {
     using abi = ABI::Windows::Services::Maps::MapRouteDrivingOptions;
-    using default_interface = Windows::Services::Maps::IMapRouteDrivingOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapRouteDrivingOptions"; }
 };
 
@@ -386,21 +381,18 @@ template <> struct traits<Windows::Services::Maps::MapRouteFinder>
 template <> struct traits<Windows::Services::Maps::MapRouteFinderResult>
 {
     using abi = ABI::Windows::Services::Maps::MapRouteFinderResult;
-    using default_interface = Windows::Services::Maps::IMapRouteFinderResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapRouteFinderResult"; }
 };
 
 template <> struct traits<Windows::Services::Maps::MapRouteLeg>
 {
     using abi = ABI::Windows::Services::Maps::MapRouteLeg;
-    using default_interface = Windows::Services::Maps::IMapRouteLeg;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapRouteLeg"; }
 };
 
 template <> struct traits<Windows::Services::Maps::MapRouteManeuver>
 {
     using abi = ABI::Windows::Services::Maps::MapRouteManeuver;
-    using default_interface = Windows::Services::Maps::IMapRouteManeuver;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Maps.MapRouteManeuver"; }
 };
 

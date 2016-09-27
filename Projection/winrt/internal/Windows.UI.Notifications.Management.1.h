@@ -62,7 +62,6 @@ template <> struct traits<Windows::UI::Notifications::Management::IUserNotificat
 template <> struct traits<Windows::UI::Notifications::Management::UserNotificationListener>
 {
     using abi = ABI::Windows::UI::Notifications::Management::UserNotificationListener;
-    using default_interface = Windows::UI::Notifications::Management::IUserNotificationListener;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.Management.UserNotificationListener"; }
 };
 

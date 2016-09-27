@@ -185,21 +185,18 @@ template <> struct traits<Windows::Gaming::Input::Custom::GameControllerFactoryM
 template <> struct traits<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult>
 {
     using abi = ABI::Windows::Gaming::Input::Custom::GipFirmwareUpdateResult;
-    using default_interface = Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.Custom.GipFirmwareUpdateResult"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::Custom::GipGameControllerProvider>
 {
     using abi = ABI::Windows::Gaming::Input::Custom::GipGameControllerProvider;
-    using default_interface = Windows::Gaming::Input::Custom::IGipGameControllerProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.Custom.GipGameControllerProvider"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::Custom::XusbGameControllerProvider>
 {
     using abi = ABI::Windows::Gaming::Input::Custom::XusbGameControllerProvider;
-    using default_interface = Windows::Gaming::Input::Custom::IXusbGameControllerProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.Custom.XusbGameControllerProvider"; }
 };
 

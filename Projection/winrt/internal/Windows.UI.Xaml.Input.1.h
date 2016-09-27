@@ -674,168 +674,144 @@ template <> struct traits<Windows::UI::Xaml::Input::TappedEventHandler>
 template <> struct traits<Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::AccessKeyManager>
 {
     using abi = ABI::Windows::UI::Xaml::Input::AccessKeyManager;
-    using default_interface = Windows::UI::Xaml::Input::IAccessKeyManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.AccessKeyManager"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ContextRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ContextRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IContextRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ContextRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::FocusManager>
 {
     using abi = ABI::Windows::UI::Xaml::Input::FocusManager;
-    using default_interface = Windows::UI::Xaml::Input::IFocusManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.FocusManager"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::HoldingRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IHoldingRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.HoldingRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::InertiaExpansionBehavior>
 {
     using abi = ABI::Windows::UI::Xaml::Input::InertiaExpansionBehavior;
-    using default_interface = Windows::UI::Xaml::Input::IInertiaExpansionBehavior;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.InertiaExpansionBehavior"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::InertiaRotationBehavior>
 {
     using abi = ABI::Windows::UI::Xaml::Input::InertiaRotationBehavior;
-    using default_interface = Windows::UI::Xaml::Input::IInertiaRotationBehavior;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.InertiaRotationBehavior"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::InertiaTranslationBehavior>
 {
     using abi = ABI::Windows::UI::Xaml::Input::InertiaTranslationBehavior;
-    using default_interface = Windows::UI::Xaml::Input::IInertiaTranslationBehavior;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.InertiaTranslationBehavior"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::InputScope>
 {
     using abi = ABI::Windows::UI::Xaml::Input::InputScope;
-    using default_interface = Windows::UI::Xaml::Input::IInputScope;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.InputScope"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::InputScopeName>
 {
     using abi = ABI::Windows::UI::Xaml::Input::InputScopeName;
-    using default_interface = Windows::UI::Xaml::Input::IInputScopeName;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.InputScopeName"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::KeyRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::KeyRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IKeyRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.KeyRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationPivot>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationPivot;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationPivot;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationPivot"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::Pointer>
 {
     using abi = ABI::Windows::UI::Xaml::Input::Pointer;
-    using default_interface = Windows::UI::Xaml::Input::IPointer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.Pointer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::PointerRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::PointerRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IPointerRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.PointerRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::RightTappedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.RightTappedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::TappedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::TappedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Input::ITappedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.TappedRoutedEventArgs"; }
 };
 

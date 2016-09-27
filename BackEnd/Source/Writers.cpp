@@ -1178,7 +1178,6 @@ void WriteInterfaceTraits(Output & out)
                   Settings::ClassName,
                   Settings::Namespace,
                   Settings::ClassName,
-                  Settings::ClassDefaultInterface,
                   Settings::ClassDotName);
         }
     });

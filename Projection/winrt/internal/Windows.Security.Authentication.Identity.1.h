@@ -70,14 +70,12 @@ template <> struct traits<Windows::Security::Authentication::Identity::IEnterpri
 template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo;
-    using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager;
-    using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager"; }
 };
 

@@ -154,21 +154,18 @@ template <> struct traits<Windows::Web::Http::Filters::IHttpServerCustomValidati
 template <> struct traits<Windows::Web::Http::Filters::HttpBaseProtocolFilter>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpBaseProtocolFilter;
-    using default_interface = Windows::Web::Http::Filters::IHttpBaseProtocolFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpBaseProtocolFilter"; }
 };
 
 template <> struct traits<Windows::Web::Http::Filters::HttpCacheControl>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpCacheControl;
-    using default_interface = Windows::Web::Http::Filters::IHttpCacheControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpCacheControl"; }
 };
 
 template <> struct traits<Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs;
-    using default_interface = Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs"; }
 };
 

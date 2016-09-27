@@ -79,14 +79,12 @@ template <> struct traits<Windows::Devices::Lights::ILampStatics>
 template <> struct traits<Windows::Devices::Lights::Lamp>
 {
     using abi = ABI::Windows::Devices::Lights::Lamp;
-    using default_interface = Windows::Devices::Lights::ILamp;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Lights.Lamp"; }
 };
 
 template <> struct traits<Windows::Devices::Lights::LampAvailabilityChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Lights::LampAvailabilityChangedEventArgs;
-    using default_interface = Windows::Devices::Lights::ILampAvailabilityChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Lights.LampAvailabilityChangedEventArgs"; }
 };
 

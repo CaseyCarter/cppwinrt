@@ -167,7 +167,6 @@ template <> struct traits<Windows::Data::Json::IJsonValueStatics2>
 template <> struct traits<Windows::Data::Json::JsonArray>
 {
     using abi = ABI::Windows::Data::Json::JsonArray;
-    using default_interface = Windows::Data::Json::IJsonArray;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Json.JsonArray"; }
 };
 
@@ -179,14 +178,12 @@ template <> struct traits<Windows::Data::Json::JsonError>
 template <> struct traits<Windows::Data::Json::JsonObject>
 {
     using abi = ABI::Windows::Data::Json::JsonObject;
-    using default_interface = Windows::Data::Json::IJsonObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Json.JsonObject"; }
 };
 
 template <> struct traits<Windows::Data::Json::JsonValue>
 {
     using abi = ABI::Windows::Data::Json::JsonValue;
-    using default_interface = Windows::Data::Json::IJsonValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Json.JsonValue"; }
 };
 

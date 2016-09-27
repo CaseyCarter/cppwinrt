@@ -105,14 +105,12 @@ template <> struct traits<Windows::Globalization::PhoneNumberFormatting::IPhoneN
 template <> struct traits<Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter>
 {
     using abi = ABI::Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter;
-    using default_interface = Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter"; }
 };
 
 template <> struct traits<Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo>
 {
     using abi = ABI::Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo;
-    using default_interface = Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo"; }
 };
 

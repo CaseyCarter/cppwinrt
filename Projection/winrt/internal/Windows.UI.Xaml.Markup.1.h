@@ -264,21 +264,18 @@ template <> struct traits<Windows::UI::Xaml::Markup::IXamlType>
 template <> struct traits<Windows::UI::Xaml::Markup::XamlBinaryWriter>
 {
     using abi = ABI::Windows::UI::Xaml::Markup::XamlBinaryWriter;
-    using default_interface = Windows::UI::Xaml::Markup::IXamlBinaryWriter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Markup.XamlBinaryWriter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Markup::XamlBindingHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Markup::XamlBindingHelper;
-    using default_interface = Windows::UI::Xaml::Markup::IXamlBindingHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Markup.XamlBindingHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Markup::XamlReader>
 {
     using abi = ABI::Windows::UI::Xaml::Markup::XamlReader;
-    using default_interface = Windows::UI::Xaml::Markup::IXamlReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Markup.XamlReader"; }
 };
 

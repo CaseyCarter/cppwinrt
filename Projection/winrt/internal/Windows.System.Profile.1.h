@@ -143,7 +143,6 @@ template <> struct traits<Windows::System::Profile::AnalyticsInfo>
 template <> struct traits<Windows::System::Profile::AnalyticsVersionInfo>
 {
     using abi = ABI::Windows::System::Profile::AnalyticsVersionInfo;
-    using default_interface = Windows::System::Profile::IAnalyticsVersionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Profile.AnalyticsVersionInfo"; }
 };
 
@@ -155,7 +154,6 @@ template <> struct traits<Windows::System::Profile::HardwareIdentification>
 template <> struct traits<Windows::System::Profile::HardwareToken>
 {
     using abi = ABI::Windows::System::Profile::HardwareToken;
-    using default_interface = Windows::System::Profile::IHardwareToken;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Profile.HardwareToken"; }
 };
 
@@ -177,7 +175,6 @@ template <> struct traits<Windows::System::Profile::SystemIdentification>
 template <> struct traits<Windows::System::Profile::SystemIdentificationInfo>
 {
     using abi = ABI::Windows::System::Profile::SystemIdentificationInfo;
-    using default_interface = Windows::System::Profile::ISystemIdentificationInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Profile.SystemIdentificationInfo"; }
 };
 

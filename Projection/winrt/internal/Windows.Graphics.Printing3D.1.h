@@ -667,189 +667,162 @@ template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskSourceReques
 template <> struct traits<Windows::Graphics::Printing3D::Print3DManager>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DManager;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DManager"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTask>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTask;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTask;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTask"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskRequest>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTaskRequest;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTaskRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTaskRequest"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs;
-    using default_interface = Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3D3MFPackage>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3D3MFPackage;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3D3MFPackage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3D3MFPackage"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DBaseMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DBaseMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DBaseMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DBaseMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DColorMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DColorMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DColorMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DColorMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DColorMaterialGroup>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DColorMaterialGroup;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DColorMaterialGroup"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DComponent>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DComponent;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DComponent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DComponent"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DComponentWithMatrix>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DComponentWithMatrix;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DComponentWithMatrix"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DCompositeMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DCompositeMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DCompositeMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DFaceReductionOptions>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DFaceReductionOptions;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DFaceReductionOptions"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DMesh>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DMesh;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DMesh;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DMesh"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DMeshVerificationResult>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DMeshVerificationResult;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DMeshVerificationResult"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DModel>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DModel;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DModel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DModel"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DModelTexture>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DModelTexture;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DModelTexture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DModelTexture"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing3D::Printing3DTextureResource>
 {
     using abi = ABI::Windows::Graphics::Printing3D::Printing3DTextureResource;
-    using default_interface = Windows::Graphics::Printing3D::IPrinting3DTextureResource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing3D.Printing3DTextureResource"; }
 };
 

@@ -679,140 +679,120 @@ template <> struct traits<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEvent
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynAboutData>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynAboutData;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynAboutData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynAboutData"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynAboutDataView>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynAboutDataView;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynAboutDataView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynAboutDataView"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynBusAttachment>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynBusAttachment;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynBusAttachment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynBusAttachment"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynBusObject>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynBusObject;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynBusObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynBusObject"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynCredentials>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynCredentials;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynCredentials;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynCredentials"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynMessageInfo>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynMessageInfo;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynMessageInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynMessageInfo"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynServiceInfo>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynServiceInfo;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynServiceInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynServiceInfo"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynSession>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynSession;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynSession"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs"; }
 };
 
@@ -824,7 +804,6 @@ template <> struct traits<Windows::Devices::AllJoyn::AllJoynStatus>
 template <> struct traits<Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs>
 {
     using abi = ABI::Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs;
-    using default_interface = Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs"; }
 };
 

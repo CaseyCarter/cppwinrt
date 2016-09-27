@@ -54,7 +54,6 @@ template <> struct traits<Windows::Perception::IPerceptionTimestampHelperStatics
 template <> struct traits<Windows::Perception::PerceptionTimestamp>
 {
     using abi = ABI::Windows::Perception::PerceptionTimestamp;
-    using default_interface = Windows::Perception::IPerceptionTimestamp;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.PerceptionTimestamp"; }
 };
 

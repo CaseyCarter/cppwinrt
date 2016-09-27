@@ -1012,231 +1012,198 @@ template <> struct traits<Windows::Web::Http::Headers::IHttpTransferCodingHeader
 template <> struct traits<Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpChallengeHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpChallengeHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpChallengeHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpChallengeHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentCodingHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentCodingHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentCodingHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentCodingHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentDispositionHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentDispositionHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentDispositionHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentHeaderCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentHeaderCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentHeaderCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentHeaderCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpContentRangeHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpContentRangeHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpContentRangeHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpContentRangeHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpCookiePairHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpCookiePairHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpCookiePairHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpCookiePairHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpCredentialsHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpCredentialsHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpCredentialsHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpCredentialsHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpExpectationHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpExpectationHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpExpectationHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpExpectationHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpLanguageHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpLanguageHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpLanguageHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpMediaTypeHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpMediaTypeHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpMediaTypeHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpMethodHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpMethodHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpMethodHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpMethodHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpNameValueHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpNameValueHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpNameValueHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpNameValueHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpProductHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpProductHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpProductHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpProductHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpProductInfoHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpProductInfoHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpProductInfoHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpProductInfoHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpRequestHeaderCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpRequestHeaderCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpRequestHeaderCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpRequestHeaderCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpResponseHeaderCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpResponseHeaderCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpResponseHeaderCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpResponseHeaderCollection"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpTransferCodingHeaderValue>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValue;
-    using default_interface = Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpTransferCodingHeaderValue"; }
 };
 
 template <> struct traits<Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection>
 {
     using abi = ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection;
-    using default_interface = Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection"; }
 };
 

@@ -340,7 +340,6 @@ template <> struct traits<Windows::UI::Text::ITextSelection>
 template <> struct traits<Windows::UI::Text::FontWeights>
 {
     using abi = ABI::Windows::UI::Text::FontWeights;
-    using default_interface = Windows::UI::Text::IFontWeights;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.FontWeights"; }
 };
 

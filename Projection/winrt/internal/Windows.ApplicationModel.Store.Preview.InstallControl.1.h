@@ -181,28 +181,24 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem;
-    using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallItem"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager;
-    using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs;
-    using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManagerItemEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus;
-    using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus"; }
 };
 

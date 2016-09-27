@@ -704,105 +704,90 @@ template <> struct traits<Windows::Media::Devices::IZoomSettings>
 template <> struct traits<Windows::Media::Devices::AdvancedPhotoCaptureSettings>
 {
     using abi = ABI::Windows::Media::Devices::AdvancedPhotoCaptureSettings;
-    using default_interface = Windows::Media::Devices::IAdvancedPhotoCaptureSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AdvancedPhotoCaptureSettings"; }
 };
 
 template <> struct traits<Windows::Media::Devices::AdvancedPhotoControl>
 {
     using abi = ABI::Windows::Media::Devices::AdvancedPhotoControl;
-    using default_interface = Windows::Media::Devices::IAdvancedPhotoControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AdvancedPhotoControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::AudioDeviceController>
 {
     using abi = ABI::Windows::Media::Devices::AudioDeviceController;
-    using default_interface = Windows::Media::Devices::IAudioDeviceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AudioDeviceController"; }
 };
 
 template <> struct traits<Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs;
-    using default_interface = Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs;
-    using default_interface = Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Devices::ExposureCompensationControl>
 {
     using abi = ABI::Windows::Media::Devices::ExposureCompensationControl;
-    using default_interface = Windows::Media::Devices::IExposureCompensationControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ExposureCompensationControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::ExposureControl>
 {
     using abi = ABI::Windows::Media::Devices::ExposureControl;
-    using default_interface = Windows::Media::Devices::IExposureControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ExposureControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::ExposurePriorityVideoControl>
 {
     using abi = ABI::Windows::Media::Devices::ExposurePriorityVideoControl;
-    using default_interface = Windows::Media::Devices::IExposurePriorityVideoControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ExposurePriorityVideoControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::FlashControl>
 {
     using abi = ABI::Windows::Media::Devices::FlashControl;
-    using default_interface = Windows::Media::Devices::IFlashControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.FlashControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::FocusControl>
 {
     using abi = ABI::Windows::Media::Devices::FocusControl;
-    using default_interface = Windows::Media::Devices::IFocusControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.FocusControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::FocusSettings>
 {
     using abi = ABI::Windows::Media::Devices::FocusSettings;
-    using default_interface = Windows::Media::Devices::IFocusSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.FocusSettings"; }
 };
 
 template <> struct traits<Windows::Media::Devices::HdrVideoControl>
 {
     using abi = ABI::Windows::Media::Devices::HdrVideoControl;
-    using default_interface = Windows::Media::Devices::IHdrVideoControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.HdrVideoControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::IsoSpeedControl>
 {
     using abi = ABI::Windows::Media::Devices::IsoSpeedControl;
-    using default_interface = Windows::Media::Devices::IIsoSpeedControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.IsoSpeedControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::LowLagPhotoControl>
 {
     using abi = ABI::Windows::Media::Devices::LowLagPhotoControl;
-    using default_interface = Windows::Media::Devices::ILowLagPhotoControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.LowLagPhotoControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::LowLagPhotoSequenceControl>
 {
     using abi = ABI::Windows::Media::Devices::LowLagPhotoSequenceControl;
-    using default_interface = Windows::Media::Devices::ILowLagPhotoSequenceControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.LowLagPhotoSequenceControl"; }
 };
 
@@ -814,84 +799,72 @@ template <> struct traits<Windows::Media::Devices::MediaDevice>
 template <> struct traits<Windows::Media::Devices::MediaDeviceControl>
 {
     using abi = ABI::Windows::Media::Devices::MediaDeviceControl;
-    using default_interface = Windows::Media::Devices::IMediaDeviceControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.MediaDeviceControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::MediaDeviceControlCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::MediaDeviceControlCapabilities;
-    using default_interface = Windows::Media::Devices::IMediaDeviceControlCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.MediaDeviceControlCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::OpticalImageStabilizationControl>
 {
     using abi = ABI::Windows::Media::Devices::OpticalImageStabilizationControl;
-    using default_interface = Windows::Media::Devices::IOpticalImageStabilizationControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.OpticalImageStabilizationControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::PhotoConfirmationControl>
 {
     using abi = ABI::Windows::Media::Devices::PhotoConfirmationControl;
-    using default_interface = Windows::Media::Devices::IPhotoConfirmationControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.PhotoConfirmationControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::RegionOfInterest>
 {
     using abi = ABI::Windows::Media::Devices::RegionOfInterest;
-    using default_interface = Windows::Media::Devices::IRegionOfInterest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.RegionOfInterest"; }
 };
 
 template <> struct traits<Windows::Media::Devices::RegionsOfInterestControl>
 {
     using abi = ABI::Windows::Media::Devices::RegionsOfInterestControl;
-    using default_interface = Windows::Media::Devices::IRegionsOfInterestControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.RegionsOfInterestControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::SceneModeControl>
 {
     using abi = ABI::Windows::Media::Devices::SceneModeControl;
-    using default_interface = Windows::Media::Devices::ISceneModeControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.SceneModeControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::TorchControl>
 {
     using abi = ABI::Windows::Media::Devices::TorchControl;
-    using default_interface = Windows::Media::Devices::ITorchControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.TorchControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::VideoDeviceController>
 {
     using abi = ABI::Windows::Media::Devices::VideoDeviceController;
-    using default_interface = Windows::Media::Devices::IVideoDeviceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.VideoDeviceController"; }
 };
 
 template <> struct traits<Windows::Media::Devices::WhiteBalanceControl>
 {
     using abi = ABI::Windows::Media::Devices::WhiteBalanceControl;
-    using default_interface = Windows::Media::Devices::IWhiteBalanceControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.WhiteBalanceControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::ZoomControl>
 {
     using abi = ABI::Windows::Media::Devices::ZoomControl;
-    using default_interface = Windows::Media::Devices::IZoomControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ZoomControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::ZoomSettings>
 {
     using abi = ABI::Windows::Media::Devices::ZoomSettings;
-    using default_interface = Windows::Media::Devices::IZoomSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ZoomSettings"; }
 };
 

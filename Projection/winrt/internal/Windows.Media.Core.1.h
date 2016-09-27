@@ -1277,406 +1277,348 @@ template <> struct traits<Windows::Media::Core::IVideoTrackSupportInfo>
 template <> struct traits<Windows::Media::Core::AudioStreamDescriptor>
 {
     using abi = ABI::Windows::Media::Core::AudioStreamDescriptor;
-    using default_interface = Windows::Media::Core::IAudioStreamDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.AudioStreamDescriptor"; }
 };
 
 template <> struct traits<Windows::Media::Core::AudioTrack>
 {
     using abi = ABI::Windows::Media::Core::AudioTrack;
-    using default_interface = Windows::Media::Core::IMediaTrack;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.AudioTrack"; }
 };
 
 template <> struct traits<Windows::Media::Core::AudioTrackOpenFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::AudioTrackOpenFailedEventArgs;
-    using default_interface = Windows::Media::Core::IAudioTrackOpenFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.AudioTrackOpenFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::AudioTrackSupportInfo>
 {
     using abi = ABI::Windows::Media::Core::AudioTrackSupportInfo;
-    using default_interface = Windows::Media::Core::IAudioTrackSupportInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.AudioTrackSupportInfo"; }
 };
 
 template <> struct traits<Windows::Media::Core::DataCue>
 {
     using abi = ABI::Windows::Media::Core::DataCue;
-    using default_interface = Windows::Media::Core::IDataCue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.DataCue"; }
 };
 
 template <> struct traits<Windows::Media::Core::FaceDetectedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::FaceDetectedEventArgs;
-    using default_interface = Windows::Media::Core::IFaceDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.FaceDetectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::FaceDetectionEffect>
 {
     using abi = ABI::Windows::Media::Core::FaceDetectionEffect;
-    using default_interface = Windows::Media::Core::IFaceDetectionEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.FaceDetectionEffect"; }
 };
 
 template <> struct traits<Windows::Media::Core::FaceDetectionEffectDefinition>
 {
     using abi = ABI::Windows::Media::Core::FaceDetectionEffectDefinition;
-    using default_interface = Windows::Media::Effects::IVideoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.FaceDetectionEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Core::FaceDetectionEffectFrame>
 {
     using abi = ABI::Windows::Media::Core::FaceDetectionEffectFrame;
-    using default_interface = Windows::Media::Core::IFaceDetectionEffectFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.FaceDetectionEffectFrame"; }
 };
 
 template <> struct traits<Windows::Media::Core::HighDynamicRangeControl>
 {
     using abi = ABI::Windows::Media::Core::HighDynamicRangeControl;
-    using default_interface = Windows::Media::Core::IHighDynamicRangeControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.HighDynamicRangeControl"; }
 };
 
 template <> struct traits<Windows::Media::Core::HighDynamicRangeOutput>
 {
     using abi = ABI::Windows::Media::Core::HighDynamicRangeOutput;
-    using default_interface = Windows::Media::Core::IHighDynamicRangeOutput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.HighDynamicRangeOutput"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaBinder>
 {
     using abi = ABI::Windows::Media::Core::MediaBinder;
-    using default_interface = Windows::Media::Core::IMediaBinder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaBinder"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaBindingEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaBindingEventArgs;
-    using default_interface = Windows::Media::Core::IMediaBindingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaBindingEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaCueEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaCueEventArgs;
-    using default_interface = Windows::Media::Core::IMediaCueEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaCueEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaSource>
 {
     using abi = ABI::Windows::Media::Core::MediaSource;
-    using default_interface = Windows::Media::Core::IMediaSource2;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaSource"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaSourceError>
 {
     using abi = ABI::Windows::Media::Core::MediaSourceError;
-    using default_interface = Windows::Media::Core::IMediaSourceError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaSourceError"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaSourceOpenOperationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaSourceStateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaSourceStateChangedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaSourceStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaSourceStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSample>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSample;
-    using default_interface = Windows::Media::Core::IMediaStreamSample;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSample"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSamplePropertySet>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSamplePropertySet;
-    using default_interface = Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSamplePropertySet"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSampleProtectionProperties>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSampleProtectionProperties;
-    using default_interface = Windows::Media::Core::IMediaStreamSampleProtectionProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSampleProtectionProperties"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSource>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSource;
-    using default_interface = Windows::Media::Core::IMediaStreamSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSource"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceClosedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceClosedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceClosedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceClosedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceClosedRequest>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceClosedRequest;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceClosedRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceClosedRequest"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSampleRenderedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSampleRequest>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSampleRequest;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSampleRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSampleRequest"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSampleRequestDeferral>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSampleRequestDeferral;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSampleRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSampleRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSampleRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceStartingEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceStartingEventArgs;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceStartingRequest>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceStartingRequest;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceStartingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceStartingRequest"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceStartingRequestDeferral>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceStartingRequestDeferral;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceStartingRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceStartingRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSwitchStreamsRequest>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSwitchStreamsRequest;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSwitchStreamsRequest"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs;
-    using default_interface = Windows::Media::Core::IMediaStreamSourceSwitchStreamsRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::MseSourceBuffer>
 {
     using abi = ABI::Windows::Media::Core::MseSourceBuffer;
-    using default_interface = Windows::Media::Core::IMseSourceBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MseSourceBuffer"; }
 };
 
 template <> struct traits<Windows::Media::Core::MseSourceBufferList>
 {
     using abi = ABI::Windows::Media::Core::MseSourceBufferList;
-    using default_interface = Windows::Media::Core::IMseSourceBufferList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MseSourceBufferList"; }
 };
 
 template <> struct traits<Windows::Media::Core::MseStreamSource>
 {
     using abi = ABI::Windows::Media::Core::MseStreamSource;
-    using default_interface = Windows::Media::Core::IMseStreamSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.MseStreamSource"; }
 };
 
 template <> struct traits<Windows::Media::Core::SceneAnalysisEffect>
 {
     using abi = ABI::Windows::Media::Core::SceneAnalysisEffect;
-    using default_interface = Windows::Media::Core::ISceneAnalysisEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SceneAnalysisEffect"; }
 };
 
 template <> struct traits<Windows::Media::Core::SceneAnalysisEffectDefinition>
 {
     using abi = ABI::Windows::Media::Core::SceneAnalysisEffectDefinition;
-    using default_interface = Windows::Media::Effects::IVideoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SceneAnalysisEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Core::SceneAnalysisEffectFrame>
 {
     using abi = ABI::Windows::Media::Core::SceneAnalysisEffectFrame;
-    using default_interface = Windows::Media::Core::ISceneAnalysisEffectFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SceneAnalysisEffectFrame"; }
 };
 
 template <> struct traits<Windows::Media::Core::SceneAnalyzedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::SceneAnalyzedEventArgs;
-    using default_interface = Windows::Media::Core::ISceneAnalyzedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SceneAnalyzedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedMetadataTrack>
 {
     using abi = ABI::Windows::Media::Core::TimedMetadataTrack;
-    using default_interface = Windows::Media::Core::ITimedMetadataTrack;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedMetadataTrack"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedMetadataTrackError>
 {
     using abi = ABI::Windows::Media::Core::TimedMetadataTrackError;
-    using default_interface = Windows::Media::Core::ITimedMetadataTrackError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedMetadataTrackError"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedMetadataTrackFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::TimedMetadataTrackFailedEventArgs;
-    using default_interface = Windows::Media::Core::ITimedMetadataTrackFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedMetadataTrackFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextCue>
 {
     using abi = ABI::Windows::Media::Core::TimedTextCue;
-    using default_interface = Windows::Media::Core::ITimedTextCue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextCue"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextLine>
 {
     using abi = ABI::Windows::Media::Core::TimedTextLine;
-    using default_interface = Windows::Media::Core::ITimedTextLine;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextLine"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextRegion>
 {
     using abi = ABI::Windows::Media::Core::TimedTextRegion;
-    using default_interface = Windows::Media::Core::ITimedTextRegion;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextRegion"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextSource>
 {
     using abi = ABI::Windows::Media::Core::TimedTextSource;
-    using default_interface = Windows::Media::Core::ITimedTextSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextSource"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextSourceResolveResultEventArgs>
 {
     using abi = ABI::Windows::Media::Core::TimedTextSourceResolveResultEventArgs;
-    using default_interface = Windows::Media::Core::ITimedTextSourceResolveResultEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextSourceResolveResultEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextStyle>
 {
     using abi = ABI::Windows::Media::Core::TimedTextStyle;
-    using default_interface = Windows::Media::Core::ITimedTextStyle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextStyle"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedTextSubformat>
 {
     using abi = ABI::Windows::Media::Core::TimedTextSubformat;
-    using default_interface = Windows::Media::Core::ITimedTextSubformat;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.TimedTextSubformat"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoStabilizationEffect>
 {
     using abi = ABI::Windows::Media::Core::VideoStabilizationEffect;
-    using default_interface = Windows::Media::Core::IVideoStabilizationEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoStabilizationEffect"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoStabilizationEffectDefinition>
 {
     using abi = ABI::Windows::Media::Core::VideoStabilizationEffectDefinition;
-    using default_interface = Windows::Media::Effects::IVideoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoStabilizationEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs;
-    using default_interface = Windows::Media::Core::IVideoStabilizationEffectEnabledChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoStreamDescriptor>
 {
     using abi = ABI::Windows::Media::Core::VideoStreamDescriptor;
-    using default_interface = Windows::Media::Core::IVideoStreamDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoStreamDescriptor"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoTrack>
 {
     using abi = ABI::Windows::Media::Core::VideoTrack;
-    using default_interface = Windows::Media::Core::IMediaTrack;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoTrack"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoTrackOpenFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::VideoTrackOpenFailedEventArgs;
-    using default_interface = Windows::Media::Core::IVideoTrackOpenFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoTrackOpenFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Core::VideoTrackSupportInfo>
 {
     using abi = ABI::Windows::Media::Core::VideoTrackSupportInfo;
-    using default_interface = Windows::Media::Core::IVideoTrackSupportInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.VideoTrackSupportInfo"; }
 };
 

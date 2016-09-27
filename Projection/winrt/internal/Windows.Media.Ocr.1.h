@@ -106,28 +106,24 @@ template <> struct traits<Windows::Media::Ocr::IOcrWord>
 template <> struct traits<Windows::Media::Ocr::OcrEngine>
 {
     using abi = ABI::Windows::Media::Ocr::OcrEngine;
-    using default_interface = Windows::Media::Ocr::IOcrEngine;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Ocr.OcrEngine"; }
 };
 
 template <> struct traits<Windows::Media::Ocr::OcrLine>
 {
     using abi = ABI::Windows::Media::Ocr::OcrLine;
-    using default_interface = Windows::Media::Ocr::IOcrLine;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Ocr.OcrLine"; }
 };
 
 template <> struct traits<Windows::Media::Ocr::OcrResult>
 {
     using abi = ABI::Windows::Media::Ocr::OcrResult;
-    using default_interface = Windows::Media::Ocr::IOcrResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Ocr.OcrResult"; }
 };
 
 template <> struct traits<Windows::Media::Ocr::OcrWord>
 {
     using abi = ABI::Windows::Media::Ocr::OcrWord;
-    using default_interface = Windows::Media::Ocr::IOcrWord;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Ocr.OcrWord"; }
 };
 

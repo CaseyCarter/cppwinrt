@@ -65,7 +65,6 @@ template <> struct traits<Windows::Data::Xml::Xsl::IXsltProcessorFactory>
 template <> struct traits<Windows::Data::Xml::Xsl::XsltProcessor>
 {
     using abi = ABI::Windows::Data::Xml::Xsl::XsltProcessor;
-    using default_interface = Windows::Data::Xml::Xsl::IXsltProcessor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Xsl.XsltProcessor"; }
 };
 

@@ -86,14 +86,12 @@ template <> struct traits<Windows::Devices::ILowLevelDevicesControllerStatics>
 template <> struct traits<Windows::Devices::LowLevelDevicesAggregateProvider>
 {
     using abi = ABI::Windows::Devices::LowLevelDevicesAggregateProvider;
-    using default_interface = Windows::Devices::ILowLevelDevicesAggregateProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.LowLevelDevicesAggregateProvider"; }
 };
 
 template <> struct traits<Windows::Devices::LowLevelDevicesController>
 {
     using abi = ABI::Windows::Devices::LowLevelDevicesController;
-    using default_interface = Windows::Devices::ILowLevelDevicesController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.LowLevelDevicesController"; }
 };
 

@@ -113,21 +113,18 @@ template <> struct traits<Windows::Devices::Geolocation::Geofencing::IGeofenceSt
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::Geofence>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::Geofence;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofence;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.Geofence"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::GeofenceMonitor;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.GeofenceMonitor"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofenceStateChangeReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport"; }
 };
 

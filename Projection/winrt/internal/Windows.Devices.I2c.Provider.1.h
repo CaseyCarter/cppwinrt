@@ -104,7 +104,6 @@ template <> struct traits<Windows::Devices::I2c::Provider::IProviderI2cConnectio
 template <> struct traits<Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings>
 {
     using abi = ABI::Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings;
-    using default_interface = Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.I2c.Provider.ProviderI2cConnectionSettings"; }
 };
 

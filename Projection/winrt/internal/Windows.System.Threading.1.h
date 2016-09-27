@@ -110,7 +110,6 @@ template <> struct traits<Windows::System::Threading::ThreadPool>
 template <> struct traits<Windows::System::Threading::ThreadPoolTimer>
 {
     using abi = ABI::Windows::System::Threading::ThreadPoolTimer;
-    using default_interface = Windows::System::Threading::IThreadPoolTimer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.ThreadPoolTimer"; }
 };
 

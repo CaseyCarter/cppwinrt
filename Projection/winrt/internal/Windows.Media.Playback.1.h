@@ -999,273 +999,234 @@ template <> struct traits<Windows::Media::Playback::BackgroundMediaPlayer>
 template <> struct traits<Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs;
-    using default_interface = Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreak>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreak;
-    using default_interface = Windows::Media::Playback::IMediaBreak;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreak"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakEndedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakEndedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaBreakEndedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakEndedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakManager>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakManager;
-    using default_interface = Windows::Media::Playback::IMediaBreakManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakManager"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakSchedule>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakSchedule;
-    using default_interface = Windows::Media::Playback::IMediaBreakSchedule;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakSchedule"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakSeekedOverEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakSeekedOverEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaBreakSeekedOverEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakSeekedOverEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakSkippedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakSkippedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaBreakSkippedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakSkippedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaBreakStartedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaBreakStartedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaBreakStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaBreakStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaItemDisplayProperties>
 {
     using abi = ABI::Windows::Media::Playback::MediaItemDisplayProperties;
-    using default_interface = Windows::Media::Playback::IMediaItemDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaItemDisplayProperties"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackAudioTrackList>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackAudioTrackList;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Media::Core::AudioTrack>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackAudioTrackList"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManager>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManager;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManager"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerCommandBehavior;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerFastForwardReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerNextReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerPauseReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerPlayReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerPositionReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerPreviousReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerRateReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerRewindReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackItem>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackItem;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackItem"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackItemError>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackItemError;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackItemError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackItemError"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackItemFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackItemFailedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackItemFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackItemFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackItemOpenedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackList>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackList;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackList"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackSession>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackSession;
-    using default_interface = Windows::Media::Playback::IMediaPlaybackSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackSession"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlaybackVideoTrackList>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlaybackVideoTrackList;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Media::Core::VideoTrack>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlaybackVideoTrackList"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlayer>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlayer;
-    using default_interface = Windows::Media::Playback::IMediaPlayer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlayer"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlayerDataReceivedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlayerDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlayerFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlayerFailedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlayerFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlayerFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlayerRateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlayerRateChangedEventArgs;
-    using default_interface = Windows::Media::Playback::IMediaPlayerRateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlayerRateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::MediaPlayerSurface>
 {
     using abi = ABI::Windows::Media::Playback::MediaPlayerSurface;
-    using default_interface = Windows::Media::Playback::IMediaPlayerSurface;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.MediaPlayerSurface"; }
 };
 
 template <> struct traits<Windows::Media::Playback::PlaybackMediaMarker>
 {
     using abi = ABI::Windows::Media::Playback::PlaybackMediaMarker;
-    using default_interface = Windows::Media::Playback::IPlaybackMediaMarker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.PlaybackMediaMarker"; }
 };
 
 template <> struct traits<Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs;
-    using default_interface = Windows::Media::Playback::IPlaybackMediaMarkerReachedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Playback::PlaybackMediaMarkerSequence>
 {
     using abi = ABI::Windows::Media::Playback::PlaybackMediaMarkerSequence;
-    using default_interface = Windows::Media::Playback::IPlaybackMediaMarkerSequence;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.PlaybackMediaMarkerSequence"; }
 };
 
 template <> struct traits<Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs;
-    using default_interface = Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs"; }
 };
 

@@ -1720,329 +1720,282 @@ template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollEventHa
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ButtonBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ButtonBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IButtonBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ButtonBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CalendarPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CalendarPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICalendarPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CalendarPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CalendarViewTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CalendarViewTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CarouselPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CarouselPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICarouselPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CarouselPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CommandBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CommandBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragDeltaEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragDeltaEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragStartedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::FlyoutBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IFlyoutBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.FlyoutBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GeneratorPositionHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GeneratorPositionHelper;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGeneratorPositionHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GeneratorPositionHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GridViewItemPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GridViewItemPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GridViewItemTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GridViewItemTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGridViewItemTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::JumpListItemBackgroundConverter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::JumpListItemBackgroundConverter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgroundConverter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.JumpListItemBackgroundConverter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::JumpListItemForegroundConverter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::JumpListItemForegroundConverter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegroundConverter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.JumpListItemForegroundConverter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LayoutInformation>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LayoutInformation;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILayoutInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LayoutInformation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ListViewItemPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ListViewItemPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ListViewItemTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ListViewItemTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IListViewItemTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelector;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelectorItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelectorItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelectorItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelectorPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelectorPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelectorPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::MenuFlyoutPresenterTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::MenuFlyoutPresenterTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutPresenterTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::OrientedVirtualizingPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::OrientedVirtualizingPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizingPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PickerFlyoutBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PickerFlyoutBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotHeaderItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotHeaderItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotHeaderPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotHeaderPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotHeaderPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotHeaderPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Popup>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Popup;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPopup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Popup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ProgressBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ProgressBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ProgressBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ProgressRingTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ProgressRingTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ProgressRingTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RangeBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RangeBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRangeBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RangeBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RepeatButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RepeatButton;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRepeatButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RepeatButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ScrollBar;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IScrollBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ScrollBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ScrollEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Selector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Selector;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Selector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SelectorItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SelectorItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISelectorItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SelectorItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SettingsFlyoutTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SettingsFlyoutTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SplitViewTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SplitViewTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Thumb>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Thumb;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IThumb;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Thumb"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::TickBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::TickBar;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ITickBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.TickBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToggleButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToggleButton;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToggleButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToggleButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToolTipTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToolTipTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings"; }
 };
 

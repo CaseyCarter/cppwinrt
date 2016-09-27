@@ -165,49 +165,42 @@ template <> struct traits<Windows::Security::Authentication::Identity::Provider:
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthentication>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthentication;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthentication;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageInfo;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStageInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistration>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistration;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult;
-    using default_interface = Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistrationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult"; }
 };
 

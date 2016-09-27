@@ -1029,147 +1029,126 @@ template <> struct traits<Windows::ApplicationModel::Email::IEmailStoreNotificat
 template <> struct traits<Windows::ApplicationModel::Email::EmailAttachment>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailAttachment;
-    using default_interface = Windows::ApplicationModel::Email::IEmailAttachment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailAttachment"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailConversation>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailConversation;
-    using default_interface = Windows::ApplicationModel::Email::IEmailConversation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailConversation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailConversationBatch>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailConversationBatch;
-    using default_interface = Windows::ApplicationModel::Email::IEmailConversationBatch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailConversationBatch"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailConversationReader>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailConversationReader;
-    using default_interface = Windows::ApplicationModel::Email::IEmailConversationReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailConversationReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailFolder>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailFolder;
-    using default_interface = Windows::ApplicationModel::Email::IEmailFolder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailFolder"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailIrmInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailIrmInfo;
-    using default_interface = Windows::ApplicationModel::Email::IEmailIrmInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailIrmInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailIrmTemplate>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailIrmTemplate;
-    using default_interface = Windows::ApplicationModel::Email::IEmailIrmTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailIrmTemplate"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailItemCounts>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailItemCounts;
-    using default_interface = Windows::ApplicationModel::Email::IEmailItemCounts;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailItemCounts"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailbox>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailbox;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailbox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailbox"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxAction>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxAction;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxAction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxAction"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxAutoReply>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxAutoReply;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxAutoReply;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxAutoReply"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxCapabilities>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxCapabilities;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxCapabilities"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxChange>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxChange;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxChange"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxChangeReader>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxChangeReader;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxChangeReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxChangeTracker>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxChangeTracker;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxChangeTracker"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxChangedDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxChangedDeferral;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxChangedDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxCreateFolderResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxPolicies>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxPolicies;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxPolicies;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxPolicies"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMailboxSyncManager>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMailboxSyncManager;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMailboxSyncManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMailboxSyncManager"; }
 };
 
@@ -1181,77 +1160,66 @@ template <> struct traits<Windows::ApplicationModel::Email::EmailManager>
 template <> struct traits<Windows::ApplicationModel::Email::EmailManagerForUser>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailManagerForUser;
-    using default_interface = Windows::ApplicationModel::Email::IEmailManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailManagerForUser"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMeetingInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMeetingInfo;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMeetingInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMeetingInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMessage>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMessage;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMessage"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMessageBatch>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMessageBatch;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMessageBatch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMessageBatch"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailMessageReader>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailMessageReader;
-    using default_interface = Windows::ApplicationModel::Email::IEmailMessageReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailMessageReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailQueryOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailQueryOptions;
-    using default_interface = Windows::ApplicationModel::Email::IEmailQueryOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailQueryOptions"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailQueryTextSearch>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailQueryTextSearch;
-    using default_interface = Windows::ApplicationModel::Email::IEmailQueryTextSearch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailQueryTextSearch"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailRecipient>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailRecipient;
-    using default_interface = Windows::ApplicationModel::Email::IEmailRecipient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailRecipient"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailRecipientResolutionResult;
-    using default_interface = Windows::ApplicationModel::Email::IEmailRecipientResolutionResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailRecipientResolutionResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailStore>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailStore;
-    using default_interface = Windows::ApplicationModel::Email::IEmailStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.EmailStoreNotificationTriggerDetails"; }
 };
 

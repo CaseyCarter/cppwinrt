@@ -269,70 +269,60 @@ template <> struct traits<Windows::Devices::WiFiDirect::IWiFiDirectLegacySetting
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectAdvertisement>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectAdvertisement;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectAdvertisement"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectConnectionListener;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectConnectionListener"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectConnectionParameters"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectDevice>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectDevice;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectDevice"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectInformationElement;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectInformationElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectInformationElement"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectLegacySettings>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::WiFiDirectLegacySettings;
-    using default_interface = Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.WiFiDirectLegacySettings"; }
 };
 

@@ -91,21 +91,18 @@ template <> struct traits<Windows::Media::SpeechSynthesis::IVoiceInformation>
 template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesisStream>
 {
     using abi = ABI::Windows::Media::SpeechSynthesis::SpeechSynthesisStream;
-    using default_interface = Windows::Media::SpeechSynthesis::ISpeechSynthesisStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechSynthesis.SpeechSynthesisStream"; }
 };
 
 template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesizer>
 {
     using abi = ABI::Windows::Media::SpeechSynthesis::SpeechSynthesizer;
-    using default_interface = Windows::Media::SpeechSynthesis::ISpeechSynthesizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechSynthesis.SpeechSynthesizer"; }
 };
 
 template <> struct traits<Windows::Media::SpeechSynthesis::VoiceInformation>
 {
     using abi = ABI::Windows::Media::SpeechSynthesis::VoiceInformation;
-    using default_interface = Windows::Media::SpeechSynthesis::IVoiceInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechSynthesis.VoiceInformation"; }
 };
 

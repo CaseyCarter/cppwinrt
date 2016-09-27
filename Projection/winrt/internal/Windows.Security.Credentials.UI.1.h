@@ -112,14 +112,12 @@ template <> struct traits<Windows::Security::Credentials::UI::CredentialPicker>
 template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerOptions>
 {
     using abi = ABI::Windows::Security::Credentials::UI::CredentialPickerOptions;
-    using default_interface = Windows::Security::Credentials::UI::ICredentialPickerOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.UI.CredentialPickerOptions"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerResults>
 {
     using abi = ABI::Windows::Security::Credentials::UI::CredentialPickerResults;
-    using default_interface = Windows::Security::Credentials::UI::ICredentialPickerResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.UI.CredentialPickerResults"; }
 };
 

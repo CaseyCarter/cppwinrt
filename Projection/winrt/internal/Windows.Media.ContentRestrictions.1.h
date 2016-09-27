@@ -108,21 +108,18 @@ template <> struct traits<Windows::Media::ContentRestrictions::IRatedContentRest
 template <> struct traits<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy;
-    using default_interface = Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy"; }
 };
 
 template <> struct traits<Windows::Media::ContentRestrictions::RatedContentDescription>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::RatedContentDescription;
-    using default_interface = Windows::Media::ContentRestrictions::IRatedContentDescription;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.RatedContentDescription"; }
 };
 
 template <> struct traits<Windows::Media::ContentRestrictions::RatedContentRestrictions>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::RatedContentRestrictions;
-    using default_interface = Windows::Media::ContentRestrictions::IRatedContentRestrictions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.RatedContentRestrictions"; }
 };
 

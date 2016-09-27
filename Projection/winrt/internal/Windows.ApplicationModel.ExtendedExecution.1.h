@@ -63,14 +63,12 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::IExtende
 template <> struct traits<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs;
-    using default_interface = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession>
 {
     using abi = ABI::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession;
-    using default_interface = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession"; }
 };
 

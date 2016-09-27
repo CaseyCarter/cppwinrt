@@ -343,21 +343,18 @@ template <> struct traits<Windows::Devices::Bluetooth::IBluetoothSignalStrengthF
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothClassOfDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothClassOfDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothClassOfDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothClassOfDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearance>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothLEAppearance;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothLEAppearance;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothLEAppearance"; }
 };
 
@@ -374,14 +371,12 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearanceSubc
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothLEDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothLEDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothLEDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter"; }
 };
 

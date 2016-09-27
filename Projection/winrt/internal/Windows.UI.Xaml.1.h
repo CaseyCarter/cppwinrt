@@ -2349,420 +2349,360 @@ template <> struct traits<Windows::UI::Xaml::WindowVisibilityChangedEventHandler
 template <> struct traits<Windows::UI::Xaml::AdaptiveTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::AdaptiveTrigger;
-    using default_interface = Windows::UI::Xaml::IAdaptiveTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.AdaptiveTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Application>
 {
     using abi = ABI::Windows::UI::Xaml::Application;
-    using default_interface = Windows::UI::Xaml::IApplication;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Application"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ApplicationInitializationCallbackParams>
 {
     using abi = ABI::Windows::UI::Xaml::ApplicationInitializationCallbackParams;
-    using default_interface = Windows::UI::Xaml::IApplicationInitializationCallbackParams;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ApplicationInitializationCallbackParams"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::BindingFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::BindingFailedEventArgs;
-    using default_interface = Windows::UI::Xaml::IBindingFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.BindingFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::CornerRadiusHelper>
 {
     using abi = ABI::Windows::UI::Xaml::CornerRadiusHelper;
-    using default_interface = Windows::UI::Xaml::ICornerRadiusHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.CornerRadiusHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataContextChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DataContextChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDataContextChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataContextChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::DataTemplate;
-    using default_interface = Windows::UI::Xaml::IDataTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataTemplateKey>
 {
     using abi = ABI::Windows::UI::Xaml::DataTemplateKey;
-    using default_interface = Windows::UI::Xaml::IDataTemplateKey;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataTemplateKey"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DebugSettings>
 {
     using abi = ABI::Windows::UI::Xaml::DebugSettings;
-    using default_interface = Windows::UI::Xaml::IDebugSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DebugSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyObject>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyObject;
-    using default_interface = Windows::UI::Xaml::IDependencyObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyObject"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyObjectCollection>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyObjectCollection;
-    using default_interface = Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyObjectCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyProperty>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyProperty;
-    using default_interface = Windows::UI::Xaml::IDependencyProperty;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyProperty"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyPropertyChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyPropertyChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDependencyPropertyChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyPropertyChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DispatcherTimer>
 {
     using abi = ABI::Windows::UI::Xaml::DispatcherTimer;
-    using default_interface = Windows::UI::Xaml::IDispatcherTimer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DispatcherTimer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DragEventArgs;
-    using default_interface = Windows::UI::Xaml::IDragEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragOperationDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::DragOperationDeferral;
-    using default_interface = Windows::UI::Xaml::IDragOperationDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragOperationDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragStartingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DragStartingEventArgs;
-    using default_interface = Windows::UI::Xaml::IDragStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragUI>
 {
     using abi = ABI::Windows::UI::Xaml::DragUI;
-    using default_interface = Windows::UI::Xaml::IDragUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragUI"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragUIOverride>
 {
     using abi = ABI::Windows::UI::Xaml::DragUIOverride;
-    using default_interface = Windows::UI::Xaml::IDragUIOverride;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragUIOverride"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DropCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DropCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDropCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DropCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DurationHelper>
 {
     using abi = ABI::Windows::UI::Xaml::DurationHelper;
-    using default_interface = Windows::UI::Xaml::IDurationHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DurationHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ElementSoundPlayer>
 {
     using abi = ABI::Windows::UI::Xaml::ElementSoundPlayer;
-    using default_interface = Windows::UI::Xaml::IElementSoundPlayer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ElementSoundPlayer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::EventTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::EventTrigger;
-    using default_interface = Windows::UI::Xaml::IEventTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.EventTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ExceptionRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::ExceptionRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IExceptionRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ExceptionRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkElement>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkElement;
-    using default_interface = Windows::UI::Xaml::IFrameworkElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkTemplate;
-    using default_interface = Windows::UI::Xaml::IFrameworkTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkView>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkView;
-    using default_interface = Windows::UI::Xaml::IFrameworkView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkViewSource>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkViewSource;
-    using default_interface = Windows::UI::Xaml::IFrameworkViewSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkViewSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::GridLengthHelper>
 {
     using abi = ABI::Windows::UI::Xaml::GridLengthHelper;
-    using default_interface = Windows::UI::Xaml::IGridLengthHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.GridLengthHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::MediaFailedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::MediaFailedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IMediaFailedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.MediaFailedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PointHelper>
 {
     using abi = ABI::Windows::UI::Xaml::PointHelper;
-    using default_interface = Windows::UI::Xaml::IPointHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PointHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PropertyMetadata>
 {
     using abi = ABI::Windows::UI::Xaml::PropertyMetadata;
-    using default_interface = Windows::UI::Xaml::IPropertyMetadata;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PropertyMetadata"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PropertyPath>
 {
     using abi = ABI::Windows::UI::Xaml::PropertyPath;
-    using default_interface = Windows::UI::Xaml::IPropertyPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PropertyPath"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RectHelper>
 {
     using abi = ABI::Windows::UI::Xaml::RectHelper;
-    using default_interface = Windows::UI::Xaml::IRectHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RectHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ResourceDictionary>
 {
     using abi = ABI::Windows::UI::Xaml::ResourceDictionary;
-    using default_interface = Windows::UI::Xaml::IResourceDictionary;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ResourceDictionary"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RoutedEvent>
 {
     using abi = ABI::Windows::UI::Xaml::RoutedEvent;
-    using default_interface = Windows::UI::Xaml::IRoutedEvent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RoutedEvent"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::RoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Setter>
 {
     using abi = ABI::Windows::UI::Xaml::Setter;
-    using default_interface = Windows::UI::Xaml::ISetter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Setter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SetterBase>
 {
     using abi = ABI::Windows::UI::Xaml::SetterBase;
-    using default_interface = Windows::UI::Xaml::ISetterBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SetterBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SetterBaseCollection>
 {
     using abi = ABI::Windows::UI::Xaml::SetterBaseCollection;
-    using default_interface = Windows::UI::Xaml::ISetterBaseCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SetterBaseCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SizeChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::SizeChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::ISizeChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SizeChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SizeHelper>
 {
     using abi = ABI::Windows::UI::Xaml::SizeHelper;
-    using default_interface = Windows::UI::Xaml::ISizeHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SizeHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::StateTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::StateTrigger;
-    using default_interface = Windows::UI::Xaml::IStateTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.StateTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::StateTriggerBase>
 {
     using abi = ABI::Windows::UI::Xaml::StateTriggerBase;
-    using default_interface = Windows::UI::Xaml::IStateTriggerBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.StateTriggerBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Style>
 {
     using abi = ABI::Windows::UI::Xaml::Style;
-    using default_interface = Windows::UI::Xaml::IStyle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Style"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TargetPropertyPath>
 {
     using abi = ABI::Windows::UI::Xaml::TargetPropertyPath;
-    using default_interface = Windows::UI::Xaml::ITargetPropertyPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TargetPropertyPath"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ThicknessHelper>
 {
     using abi = ABI::Windows::UI::Xaml::ThicknessHelper;
-    using default_interface = Windows::UI::Xaml::IThicknessHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ThicknessHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerAction>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerAction;
-    using default_interface = Windows::UI::Xaml::ITriggerAction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerAction"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerActionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerActionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerAction>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerActionCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerBase>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerBase;
-    using default_interface = Windows::UI::Xaml::ITriggerBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerCollection>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerBase>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::UIElement>
 {
     using abi = ABI::Windows::UI::Xaml::UIElement;
-    using default_interface = Windows::UI::Xaml::IUIElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.UIElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::UnhandledExceptionEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::UnhandledExceptionEventArgs;
-    using default_interface = Windows::UI::Xaml::IUnhandledExceptionEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.UnhandledExceptionEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualState>
 {
     using abi = ABI::Windows::UI::Xaml::VisualState;
-    using default_interface = Windows::UI::Xaml::IVisualState;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualState"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IVisualStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateGroup>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateGroup;
-    using default_interface = Windows::UI::Xaml::IVisualStateGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateGroup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateManager>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateManager;
-    using default_interface = Windows::UI::Xaml::IVisualStateManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateManager"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualTransition>
 {
     using abi = ABI::Windows::UI::Xaml::VisualTransition;
-    using default_interface = Windows::UI::Xaml::IVisualTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Window>
 {
     using abi = ABI::Windows::UI::Xaml::Window;
-    using default_interface = Windows::UI::Xaml::IWindow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Window"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::WindowCreatedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::WindowCreatedEventArgs;
-    using default_interface = Windows::UI::Xaml::IWindowCreatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.WindowCreatedEventArgs"; }
 };
 

@@ -243,98 +243,84 @@ template <> struct traits<Windows::ApplicationModel::Resources::Core::IResourceQ
 template <> struct traits<Windows::ApplicationModel::Resources::Core::NamedResource>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::NamedResource;
-    using default_interface = Windows::ApplicationModel::Resources::Core::INamedResource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.NamedResource"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceCandidate>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceCandidate;
-    using default_interface = Windows::ApplicationModel::Resources::Core::IResourceCandidate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceCandidate"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceCandidateVectorView>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceCandidateVectorView;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceContext>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceContext;
-    using default_interface = Windows::ApplicationModel::Resources::Core::IResourceContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceContext"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceContextLanguagesVectorView>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceContextLanguagesVectorView;
-    using default_interface = Windows::Foundation::Collections::IVectorView<hstring>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceContextLanguagesVectorView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceManager>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceManager;
-    using default_interface = Windows::ApplicationModel::Resources::Core::IResourceManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceMap>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceMap;
-    using default_interface = Windows::ApplicationModel::Resources::Core::IResourceMap;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceMap"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceMapIterator>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceMapIterator;
-    using default_interface = Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceMapIterator"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceMapMapView>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceMapMapView;
-    using default_interface = Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceMapMapView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceMapMapViewIterator>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceMapMapViewIterator;
-    using default_interface = Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap>>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceMapMapViewIterator"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQualifier>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceQualifier;
-    using default_interface = Windows::ApplicationModel::Resources::Core::IResourceQualifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceQualifier"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQualifierMapView>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceQualifierMapView;
-    using default_interface = Windows::Foundation::Collections::IMapView<hstring, hstring>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceQualifierMapView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQualifierObservableMap>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceQualifierObservableMap;
-    using default_interface = Windows::Foundation::Collections::IObservableMap<hstring, hstring>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceQualifierObservableMap"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQualifierVectorView>
 {
     using abi = ABI::Windows::ApplicationModel::Resources::Core::ResourceQualifierVectorView;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceQualifier>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView"; }
 };
 

@@ -171,35 +171,30 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Cor
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager;
-    using default_interface = Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo;
-    using default_interface = Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragOperation>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragOperation;
-    using default_interface = Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride;
-    using default_interface = Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIOverride"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTargetRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs"; }
 };
 

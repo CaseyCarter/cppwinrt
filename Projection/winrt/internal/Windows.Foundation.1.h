@@ -370,14 +370,12 @@ template <> struct traits<Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFac
 template <> struct traits<Windows::Foundation::Deferral>
 {
     using abi = ABI::Windows::Foundation::Deferral;
-    using default_interface = Windows::Foundation::IDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Deferral"; }
 };
 
 template <> struct traits<Windows::Foundation::MemoryBuffer>
 {
     using abi = ABI::Windows::Foundation::MemoryBuffer;
-    using default_interface = Windows::Foundation::IMemoryBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.MemoryBuffer"; }
 };
 
@@ -389,21 +387,18 @@ template <> struct traits<Windows::Foundation::PropertyValue>
 template <> struct traits<Windows::Foundation::Uri>
 {
     using abi = ABI::Windows::Foundation::Uri;
-    using default_interface = Windows::Foundation::IUriRuntimeClass;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Uri"; }
 };
 
 template <> struct traits<Windows::Foundation::WwwFormUrlDecoder>
 {
     using abi = ABI::Windows::Foundation::WwwFormUrlDecoder;
-    using default_interface = Windows::Foundation::IWwwFormUrlDecoderRuntimeClass;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.WwwFormUrlDecoder"; }
 };
 
 template <> struct traits<Windows::Foundation::WwwFormUrlDecoderEntry>
 {
     using abi = ABI::Windows::Foundation::WwwFormUrlDecoderEntry;
-    using default_interface = Windows::Foundation::IWwwFormUrlDecoderEntry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.WwwFormUrlDecoderEntry"; }
 };
 

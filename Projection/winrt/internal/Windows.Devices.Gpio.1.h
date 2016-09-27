@@ -107,21 +107,18 @@ template <> struct traits<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>
 template <> struct traits<Windows::Devices::Gpio::GpioController>
 {
     using abi = ABI::Windows::Devices::Gpio::GpioController;
-    using default_interface = Windows::Devices::Gpio::IGpioController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.GpioController"; }
 };
 
 template <> struct traits<Windows::Devices::Gpio::GpioPin>
 {
     using abi = ABI::Windows::Devices::Gpio::GpioPin;
-    using default_interface = Windows::Devices::Gpio::IGpioPin;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.GpioPin"; }
 };
 
 template <> struct traits<Windows::Devices::Gpio::GpioPinValueChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Gpio::GpioPinValueChangedEventArgs;
-    using default_interface = Windows::Devices::Gpio::IGpioPinValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.GpioPinValueChangedEventArgs"; }
 };
 

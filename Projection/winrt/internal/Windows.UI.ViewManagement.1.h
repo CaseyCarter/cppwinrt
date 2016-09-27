@@ -504,35 +504,30 @@ template <> struct traits<Windows::UI::ViewManagement::IUIViewSettingsStatics>
 template <> struct traits<Windows::UI::ViewManagement::AccessibilitySettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::AccessibilitySettings;
-    using default_interface = Windows::UI::ViewManagement::IAccessibilitySettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.AccessibilitySettings"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ActivationViewSwitcher>
 {
     using abi = ABI::Windows::UI::ViewManagement::ActivationViewSwitcher;
-    using default_interface = Windows::UI::ViewManagement::IActivationViewSwitcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ActivationViewSwitcher"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationView>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationView;
-    using default_interface = Windows::UI::ViewManagement::IApplicationView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationView"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewScaling>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewScaling;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewScaling;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewScaling"; }
 };
 
@@ -544,28 +539,24 @@ template <> struct traits<Windows::UI::ViewManagement::ApplicationViewSwitcher>
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewTitleBar>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewTitleBar;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewTitleBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewTitleBar"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewTransferContext>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewTransferContext;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewTransferContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewTransferContext"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::InputPane>
 {
     using abi = ABI::Windows::UI::ViewManagement::InputPane;
-    using default_interface = Windows::UI::ViewManagement::IInputPane;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.InputPane"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::InputPaneVisibilityEventArgs>
 {
     using abi = ABI::Windows::UI::ViewManagement::InputPaneVisibilityEventArgs;
-    using default_interface = Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.InputPaneVisibilityEventArgs"; }
 };
 
@@ -577,14 +568,12 @@ template <> struct traits<Windows::UI::ViewManagement::ProjectionManager>
 template <> struct traits<Windows::UI::ViewManagement::UISettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::UISettings;
-    using default_interface = Windows::UI::ViewManagement::IUISettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.UISettings"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::UIViewSettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::UIViewSettings;
-    using default_interface = Windows::UI::ViewManagement::IUIViewSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.UIViewSettings"; }
 };
 

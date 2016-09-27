@@ -52,7 +52,6 @@ template <> struct traits<Windows::Management::Core::IApplicationDataManagerStat
 template <> struct traits<Windows::Management::Core::ApplicationDataManager>
 {
     using abi = ABI::Windows::Management::Core::ApplicationDataManager;
-    using default_interface = Windows::Management::Core::IApplicationDataManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Core.ApplicationDataManager"; }
 };
 

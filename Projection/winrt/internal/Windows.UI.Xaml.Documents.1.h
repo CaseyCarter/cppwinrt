@@ -728,126 +728,108 @@ template <> struct traits<Windows::UI::Xaml::Documents::IUnderline>
 template <> struct traits<Windows::UI::Xaml::Documents::Block>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Block;
-    using default_interface = Windows::UI::Xaml::Documents::IBlock;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Block"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::BlockCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::BlockCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Block>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.BlockCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Bold>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Bold;
-    using default_interface = Windows::UI::Xaml::Documents::IBold;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Bold"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Glyphs>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Glyphs;
-    using default_interface = Windows::UI::Xaml::Documents::IGlyphs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Glyphs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Hyperlink>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Hyperlink;
-    using default_interface = Windows::UI::Xaml::Documents::IHyperlink;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Hyperlink"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::HyperlinkClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::HyperlinkClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.HyperlinkClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Inline>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Inline;
-    using default_interface = Windows::UI::Xaml::Documents::IInline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Inline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::InlineCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::InlineCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Inline>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.InlineCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::InlineUIContainer>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::InlineUIContainer;
-    using default_interface = Windows::UI::Xaml::Documents::IInlineUIContainer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.InlineUIContainer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Italic>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Italic;
-    using default_interface = Windows::UI::Xaml::Documents::IItalic;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Italic"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::LineBreak>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::LineBreak;
-    using default_interface = Windows::UI::Xaml::Documents::ILineBreak;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.LineBreak"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Paragraph>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Paragraph;
-    using default_interface = Windows::UI::Xaml::Documents::IParagraph;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Paragraph"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Run>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Run;
-    using default_interface = Windows::UI::Xaml::Documents::IRun;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Run"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Span>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Span;
-    using default_interface = Windows::UI::Xaml::Documents::ISpan;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Span"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::TextElement>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::TextElement;
-    using default_interface = Windows::UI::Xaml::Documents::ITextElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.TextElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::TextPointer>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::TextPointer;
-    using default_interface = Windows::UI::Xaml::Documents::ITextPointer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.TextPointer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Typography>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Typography;
-    using default_interface = Windows::UI::Xaml::Documents::ITypography;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Typography"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::Underline>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::Underline;
-    using default_interface = Windows::UI::Xaml::Documents::IUnderline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Documents.Underline"; }
 };
 

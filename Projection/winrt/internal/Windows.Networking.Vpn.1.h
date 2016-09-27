@@ -822,217 +822,186 @@ template <> struct traits<Windows::Networking::Vpn::IVpnTrafficFilterFactory>
 template <> struct traits<Windows::Networking::Vpn::VpnAppId>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnAppId;
-    using default_interface = Windows::Networking::Vpn::IVpnAppId;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnAppId"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnChannel>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnChannel;
-    using default_interface = Windows::Networking::Vpn::IVpnChannel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnChannel"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnChannelActivityEventArgs>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnChannelActivityEventArgs;
-    using default_interface = Windows::Networking::Vpn::IVpnChannelActivityEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnChannelActivityEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs;
-    using default_interface = Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnChannelConfiguration>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnChannelConfiguration;
-    using default_interface = Windows::Networking::Vpn::IVpnChannelConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnChannelConfiguration"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCredential>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCredential;
-    using default_interface = Windows::Networking::Vpn::IVpnCredential;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCredential"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomCheckBox>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomCheckBox;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomCheckBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomCheckBox"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomComboBox>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomComboBox;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomComboBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomComboBox"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomEditBox>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomEditBox;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomEditBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomEditBox"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomErrorBox>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomErrorBox;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomErrorBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomErrorBox"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomPromptBooleanInput>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomPromptBooleanInput;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomPromptBooleanInput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomPromptBooleanInput"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomPromptOptionSelector>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomPromptOptionSelector;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomPromptOptionSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomPromptOptionSelector"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomPromptText>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomPromptText;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomPromptText;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomPromptText"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomPromptTextInput>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomPromptTextInput;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomPromptTextInput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomPromptTextInput"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnCustomTextBox>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnCustomTextBox;
-    using default_interface = Windows::Networking::Vpn::IVpnCustomTextBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnCustomTextBox"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnDomainNameAssignment>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnDomainNameAssignment;
-    using default_interface = Windows::Networking::Vpn::IVpnDomainNameAssignment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnDomainNameAssignment"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnDomainNameInfo>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnDomainNameInfo;
-    using default_interface = Windows::Networking::Vpn::IVpnDomainNameInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnDomainNameInfo"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnInterfaceId>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnInterfaceId;
-    using default_interface = Windows::Networking::Vpn::IVpnInterfaceId;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnInterfaceId"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnManagementAgent>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnManagementAgent;
-    using default_interface = Windows::Networking::Vpn::IVpnManagementAgent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnManagementAgent"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnNamespaceAssignment>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnNamespaceAssignment;
-    using default_interface = Windows::Networking::Vpn::IVpnNamespaceAssignment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnNamespaceAssignment"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnNamespaceInfo>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnNamespaceInfo;
-    using default_interface = Windows::Networking::Vpn::IVpnNamespaceInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnNamespaceInfo"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnNativeProfile>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnNativeProfile;
-    using default_interface = Windows::Networking::Vpn::IVpnNativeProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnNativeProfile"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnPacketBuffer>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnPacketBuffer;
-    using default_interface = Windows::Networking::Vpn::IVpnPacketBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnPacketBuffer"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnPacketBufferList>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnPacketBufferList;
-    using default_interface = Windows::Networking::Vpn::IVpnPacketBufferList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnPacketBufferList"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnPickedCredential>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnPickedCredential;
-    using default_interface = Windows::Networking::Vpn::IVpnPickedCredential;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnPickedCredential"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnPlugInProfile>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnPlugInProfile;
-    using default_interface = Windows::Networking::Vpn::IVpnPlugInProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnPlugInProfile"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnRoute>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnRoute;
-    using default_interface = Windows::Networking::Vpn::IVpnRoute;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnRoute"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnRouteAssignment>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnRouteAssignment;
-    using default_interface = Windows::Networking::Vpn::IVpnRouteAssignment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnRouteAssignment"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnSystemHealth>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnSystemHealth;
-    using default_interface = Windows::Networking::Vpn::IVpnSystemHealth;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnSystemHealth"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnTrafficFilter>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnTrafficFilter;
-    using default_interface = Windows::Networking::Vpn::IVpnTrafficFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnTrafficFilter"; }
 };
 
 template <> struct traits<Windows::Networking::Vpn::VpnTrafficFilterAssignment>
 {
     using abi = ABI::Windows::Networking::Vpn::VpnTrafficFilterAssignment;
-    using default_interface = Windows::Networking::Vpn::IVpnTrafficFilterAssignment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Vpn.VpnTrafficFilterAssignment"; }
 };
 

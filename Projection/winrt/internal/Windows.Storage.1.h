@@ -826,28 +826,24 @@ template <> struct traits<Windows::Storage::StreamedFileDataRequestedHandler>
 template <> struct traits<Windows::Storage::ApplicationData>
 {
     using abi = ABI::Windows::Storage::ApplicationData;
-    using default_interface = Windows::Storage::IApplicationData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationData"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataCompositeValue>
 {
     using abi = ABI::Windows::Storage::ApplicationDataCompositeValue;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataCompositeValue"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataContainer>
 {
     using abi = ABI::Windows::Storage::ApplicationDataContainer;
-    using default_interface = Windows::Storage::IApplicationDataContainer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataContainer"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataContainerSettings>
 {
     using abi = ABI::Windows::Storage::ApplicationDataContainerSettings;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataContainerSettings"; }
 };
 
@@ -879,119 +875,102 @@ template <> struct traits<Windows::Storage::PathIO>
 template <> struct traits<Windows::Storage::SetVersionDeferral>
 {
     using abi = ABI::Windows::Storage::SetVersionDeferral;
-    using default_interface = Windows::Storage::ISetVersionDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SetVersionDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::SetVersionRequest>
 {
     using abi = ABI::Windows::Storage::SetVersionRequest;
-    using default_interface = Windows::Storage::ISetVersionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SetVersionRequest"; }
 };
 
 template <> struct traits<Windows::Storage::StorageFile>
 {
     using abi = ABI::Windows::Storage::StorageFile;
-    using default_interface = Windows::Storage::IStorageFile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageFile"; }
 };
 
 template <> struct traits<Windows::Storage::StorageFolder>
 {
     using abi = ABI::Windows::Storage::StorageFolder;
-    using default_interface = Windows::Storage::IStorageFolder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageFolder"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibrary>
 {
     using abi = ABI::Windows::Storage::StorageLibrary;
-    using default_interface = Windows::Storage::IStorageLibrary;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibrary"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChange>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChange;
-    using default_interface = Windows::Storage::IStorageLibraryChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChange"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChangeReader>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChangeReader;
-    using default_interface = Windows::Storage::IStorageLibraryChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChangeReader"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChangeTracker>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChangeTracker;
-    using default_interface = Windows::Storage::IStorageLibraryChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChangeTracker"; }
 };
 
 template <> struct traits<Windows::Storage::StorageProvider>
 {
     using abi = ABI::Windows::Storage::StorageProvider;
-    using default_interface = Windows::Storage::IStorageProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageProvider"; }
 };
 
 template <> struct traits<Windows::Storage::StorageStreamTransaction>
 {
     using abi = ABI::Windows::Storage::StorageStreamTransaction;
-    using default_interface = Windows::Storage::IStorageStreamTransaction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageStreamTransaction"; }
 };
 
 template <> struct traits<Windows::Storage::StreamedFileDataRequest>
 {
     using abi = ABI::Windows::Storage::StreamedFileDataRequest;
-    using default_interface = Windows::Storage::Streams::IOutputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StreamedFileDataRequest"; }
 };
 
 template <> struct traits<Windows::Storage::SystemAudioProperties>
 {
     using abi = ABI::Windows::Storage::SystemAudioProperties;
-    using default_interface = Windows::Storage::ISystemAudioProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemAudioProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemGPSProperties>
 {
     using abi = ABI::Windows::Storage::SystemGPSProperties;
-    using default_interface = Windows::Storage::ISystemGPSProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemGPSProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemImageProperties>
 {
     using abi = ABI::Windows::Storage::SystemImageProperties;
-    using default_interface = Windows::Storage::ISystemImageProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemImageProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemMediaProperties>
 {
     using abi = ABI::Windows::Storage::SystemMediaProperties;
-    using default_interface = Windows::Storage::ISystemMediaProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemMediaProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemMusicProperties>
 {
     using abi = ABI::Windows::Storage::SystemMusicProperties;
-    using default_interface = Windows::Storage::ISystemMusicProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemMusicProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemPhotoProperties>
 {
     using abi = ABI::Windows::Storage::SystemPhotoProperties;
-    using default_interface = Windows::Storage::ISystemPhotoProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemPhotoProperties"; }
 };
 
@@ -1003,7 +982,6 @@ template <> struct traits<Windows::Storage::SystemProperties>
 template <> struct traits<Windows::Storage::SystemVideoProperties>
 {
     using abi = ABI::Windows::Storage::SystemVideoProperties;
-    using default_interface = Windows::Storage::ISystemVideoProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemVideoProperties"; }
 };
 

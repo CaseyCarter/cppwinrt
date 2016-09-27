@@ -630,42 +630,36 @@ template <> struct traits<Windows::ApplicationModel::Appointments::IFindAppointm
 template <> struct traits<Windows::ApplicationModel::Appointments::Appointment>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::Appointment;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.Appointment"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentCalendar>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentCalendar;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentCalendar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentCalendar"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentConflictResult>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentConflictResult;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentConflictResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentConflictResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentException>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentException;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentException;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentException"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentInvitee>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentInvitee;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentInvitee;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentInvitee"; }
 };
 
@@ -677,14 +671,12 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentMa
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentManagerForUser>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentManagerForUser;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentManagerForUser"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentOrganizer>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentOrganizer;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentParticipant;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentOrganizer"; }
 };
 
@@ -696,63 +688,54 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentPr
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentRecurrence>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentRecurrence;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentRecurrence;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentRecurrence"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStore>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStore;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreChange>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreChange;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreChange"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreChangedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentStoreNotificationTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentStoreNotificationTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Appointments::IAppointmentStoreNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentStoreNotificationTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::FindAppointmentsOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::FindAppointmentsOptions;
-    using default_interface = Windows::ApplicationModel::Appointments::IFindAppointmentsOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.FindAppointmentsOptions"; }
 };
 

@@ -493,154 +493,132 @@ template <> struct traits<Windows::Devices::Usb::IUsbSetupPacketFactory>
 template <> struct traits<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbBulkInEndpointDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbBulkInEndpointDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbBulkInEndpointDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbBulkInPipe>
 {
     using abi = ABI::Windows::Devices::Usb::UsbBulkInPipe;
-    using default_interface = Windows::Devices::Usb::IUsbBulkInPipe;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbBulkInPipe"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbBulkOutEndpointDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbBulkOutEndpointDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbBulkOutPipe>
 {
     using abi = ABI::Windows::Devices::Usb::UsbBulkOutPipe;
-    using default_interface = Windows::Devices::Usb::IUsbBulkOutPipe;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbBulkOutPipe"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbConfiguration>
 {
     using abi = ABI::Windows::Devices::Usb::UsbConfiguration;
-    using default_interface = Windows::Devices::Usb::IUsbConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbConfiguration"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbConfigurationDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbConfigurationDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbConfigurationDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbConfigurationDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbControlRequestType>
 {
     using abi = ABI::Windows::Devices::Usb::UsbControlRequestType;
-    using default_interface = Windows::Devices::Usb::IUsbControlRequestType;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbControlRequestType"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbDevice>
 {
     using abi = ABI::Windows::Devices::Usb::UsbDevice;
-    using default_interface = Windows::Devices::Usb::IUsbDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbDeviceClass>
 {
     using abi = ABI::Windows::Devices::Usb::UsbDeviceClass;
-    using default_interface = Windows::Devices::Usb::IUsbDeviceClass;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbDeviceClass"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbDeviceClasses>
 {
     using abi = ABI::Windows::Devices::Usb::UsbDeviceClasses;
-    using default_interface = Windows::Devices::Usb::IUsbDeviceClasses;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbDeviceClasses"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbDeviceDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbDeviceDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbDeviceDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbDeviceDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbEndpointDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbEndpointDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbEndpointDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbEndpointDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterface>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterface;
-    using default_interface = Windows::Devices::Usb::IUsbInterface;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterface"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterfaceDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterfaceDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbInterfaceDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterfaceDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterfaceSetting>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterfaceSetting;
-    using default_interface = Windows::Devices::Usb::IUsbInterfaceSetting;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterfaceSetting"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterruptInEndpointDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterruptInEndpointDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterruptInEventArgs>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterruptInEventArgs;
-    using default_interface = Windows::Devices::Usb::IUsbInterruptInEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterruptInEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterruptInPipe>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterruptInPipe;
-    using default_interface = Windows::Devices::Usb::IUsbInterruptInPipe;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterruptInPipe"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor;
-    using default_interface = Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbInterruptOutPipe>
 {
     using abi = ABI::Windows::Devices::Usb::UsbInterruptOutPipe;
-    using default_interface = Windows::Devices::Usb::IUsbInterruptOutPipe;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbInterruptOutPipe"; }
 };
 
 template <> struct traits<Windows::Devices::Usb::UsbSetupPacket>
 {
     using abi = ABI::Windows::Devices::Usb::UsbSetupPacket;
-    using default_interface = Windows::Devices::Usb::IUsbSetupPacket;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Usb.UsbSetupPacket"; }
 };
 

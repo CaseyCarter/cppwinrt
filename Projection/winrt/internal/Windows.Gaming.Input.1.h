@@ -265,35 +265,30 @@ template <> struct traits<Windows::Gaming::Input::IUINavigationControllerStatics
 template <> struct traits<Windows::Gaming::Input::ArcadeStick>
 {
     using abi = ABI::Windows::Gaming::Input::ArcadeStick;
-    using default_interface = Windows::Gaming::Input::IArcadeStick;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ArcadeStick"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::Gamepad>
 {
     using abi = ABI::Windows::Gaming::Input::Gamepad;
-    using default_interface = Windows::Gaming::Input::IGamepad;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.Gamepad"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::Headset>
 {
     using abi = ABI::Windows::Gaming::Input::Headset;
-    using default_interface = Windows::Gaming::Input::IHeadset;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.Headset"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::RacingWheel>
 {
     using abi = ABI::Windows::Gaming::Input::RacingWheel;
-    using default_interface = Windows::Gaming::Input::IRacingWheel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.RacingWheel"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::UINavigationController>
 {
     using abi = ABI::Windows::Gaming::Input::UINavigationController;
-    using default_interface = Windows::Gaming::Input::IUINavigationController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.UINavigationController"; }
 };
 

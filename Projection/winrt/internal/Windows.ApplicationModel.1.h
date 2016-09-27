@@ -423,14 +423,12 @@ template <> struct traits<Windows::ApplicationModel::ISuspendingOperation>
 template <> struct traits<Windows::ApplicationModel::AppDisplayInfo>
 {
     using abi = ABI::Windows::ApplicationModel::AppDisplayInfo;
-    using default_interface = Windows::ApplicationModel::IAppDisplayInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppDisplayInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppInfo>
 {
     using abi = ABI::Windows::ApplicationModel::AppInfo;
-    using default_interface = Windows::ApplicationModel::IAppInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppInfo"; }
 };
 
@@ -442,98 +440,84 @@ template <> struct traits<Windows::ApplicationModel::DesignMode>
 template <> struct traits<Windows::ApplicationModel::EnteredBackgroundEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::EnteredBackgroundEventArgs;
-    using default_interface = Windows::ApplicationModel::IEnteredBackgroundEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.EnteredBackgroundEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::LeavingBackgroundEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::LeavingBackgroundEventArgs;
-    using default_interface = Windows::ApplicationModel::ILeavingBackgroundEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LeavingBackgroundEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Package>
 {
     using abi = ABI::Windows::ApplicationModel::Package;
-    using default_interface = Windows::ApplicationModel::IPackage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Package"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageCatalog>
 {
     using abi = ABI::Windows::ApplicationModel::PackageCatalog;
-    using default_interface = Windows::ApplicationModel::IPackageCatalog;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageCatalog"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageId>
 {
     using abi = ABI::Windows::ApplicationModel::PackageId;
-    using default_interface = Windows::ApplicationModel::IPackageId;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageId"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageInstallingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::PackageInstallingEventArgs;
-    using default_interface = Windows::ApplicationModel::IPackageInstallingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageInstallingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageStagingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::PackageStagingEventArgs;
-    using default_interface = Windows::ApplicationModel::IPackageStagingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageStagingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageStatus>
 {
     using abi = ABI::Windows::ApplicationModel::PackageStatus;
-    using default_interface = Windows::ApplicationModel::IPackageStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageStatus"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageStatusChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::PackageStatusChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::IPackageStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageStatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageUninstallingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::PackageUninstallingEventArgs;
-    using default_interface = Windows::ApplicationModel::IPackageUninstallingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageUninstallingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageUpdatingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::PackageUpdatingEventArgs;
-    using default_interface = Windows::ApplicationModel::IPackageUpdatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageUpdatingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SuspendingDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::SuspendingDeferral;
-    using default_interface = Windows::ApplicationModel::ISuspendingDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SuspendingDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SuspendingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::SuspendingEventArgs;
-    using default_interface = Windows::ApplicationModel::ISuspendingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SuspendingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SuspendingOperation>
 {
     using abi = ABI::Windows::ApplicationModel::SuspendingOperation;
-    using default_interface = Windows::ApplicationModel::ISuspendingOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SuspendingOperation"; }
 };
 

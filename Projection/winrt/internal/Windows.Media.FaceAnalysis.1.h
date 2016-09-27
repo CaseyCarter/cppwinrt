@@ -110,21 +110,18 @@ template <> struct traits<Windows::Media::FaceAnalysis::IFaceTrackerStatics>
 template <> struct traits<Windows::Media::FaceAnalysis::DetectedFace>
 {
     using abi = ABI::Windows::Media::FaceAnalysis::DetectedFace;
-    using default_interface = Windows::Media::FaceAnalysis::IDetectedFace;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.FaceAnalysis.DetectedFace"; }
 };
 
 template <> struct traits<Windows::Media::FaceAnalysis::FaceDetector>
 {
     using abi = ABI::Windows::Media::FaceAnalysis::FaceDetector;
-    using default_interface = Windows::Media::FaceAnalysis::IFaceDetector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.FaceAnalysis.FaceDetector"; }
 };
 
 template <> struct traits<Windows::Media::FaceAnalysis::FaceTracker>
 {
     using abi = ABI::Windows::Media::FaceAnalysis::FaceTracker;
-    using default_interface = Windows::Media::FaceAnalysis::IFaceTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.FaceAnalysis.FaceTracker"; }
 };
 

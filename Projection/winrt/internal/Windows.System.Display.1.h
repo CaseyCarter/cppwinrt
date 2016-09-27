@@ -41,7 +41,6 @@ template <> struct traits<Windows::System::Display::IDisplayRequest>
 template <> struct traits<Windows::System::Display::DisplayRequest>
 {
     using abi = ABI::Windows::System::Display::DisplayRequest;
-    using default_interface = Windows::System::Display::IDisplayRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Display.DisplayRequest"; }
 };
 

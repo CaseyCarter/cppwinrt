@@ -109,28 +109,24 @@ template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::IDnssdSe
 template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult>
 {
     using abi = ABI::Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult;
-    using default_interface = Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult"; }
 };
 
 template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance>
 {
     using abi = ABI::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance;
-    using default_interface = Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceInstance;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance"; }
 };
 
 template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstanceCollection>
 {
     using abi = ABI::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstanceCollection;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstanceCollection"; }
 };
 
 template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher>
 {
     using abi = ABI::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher;
-    using default_interface = Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher"; }
 };
 

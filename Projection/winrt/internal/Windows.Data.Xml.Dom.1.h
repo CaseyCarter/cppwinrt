@@ -415,112 +415,96 @@ template <> struct traits<Windows::Data::Xml::Dom::IXmlText>
 template <> struct traits<Windows::Data::Xml::Dom::DtdEntity>
 {
     using abi = ABI::Windows::Data::Xml::Dom::DtdEntity;
-    using default_interface = Windows::Data::Xml::Dom::IDtdEntity;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.DtdEntity"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::DtdNotation>
 {
     using abi = ABI::Windows::Data::Xml::Dom::DtdNotation;
-    using default_interface = Windows::Data::Xml::Dom::IDtdNotation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.DtdNotation"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlAttribute>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlAttribute;
-    using default_interface = Windows::Data::Xml::Dom::IXmlAttribute;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlAttribute"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlCDataSection>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlCDataSection;
-    using default_interface = Windows::Data::Xml::Dom::IXmlCDataSection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlCDataSection"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlComment>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlComment;
-    using default_interface = Windows::Data::Xml::Dom::IXmlComment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlComment"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlDocument>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlDocument;
-    using default_interface = Windows::Data::Xml::Dom::IXmlDocument;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlDocument"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlDocumentFragment>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlDocumentFragment;
-    using default_interface = Windows::Data::Xml::Dom::IXmlDocumentFragment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlDocumentFragment"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlDocumentType>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlDocumentType;
-    using default_interface = Windows::Data::Xml::Dom::IXmlDocumentType;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlDocumentType"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlDomImplementation>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlDomImplementation;
-    using default_interface = Windows::Data::Xml::Dom::IXmlDomImplementation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlDomImplementation"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlElement>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlElement;
-    using default_interface = Windows::Data::Xml::Dom::IXmlElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlElement"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlEntityReference>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlEntityReference;
-    using default_interface = Windows::Data::Xml::Dom::IXmlEntityReference;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlEntityReference"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlLoadSettings>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlLoadSettings;
-    using default_interface = Windows::Data::Xml::Dom::IXmlLoadSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlLoadSettings"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlNamedNodeMap>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlNamedNodeMap;
-    using default_interface = Windows::Data::Xml::Dom::IXmlNamedNodeMap;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlNamedNodeMap"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlNodeList>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlNodeList;
-    using default_interface = Windows::Data::Xml::Dom::IXmlNodeList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlNodeList"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlProcessingInstruction>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlProcessingInstruction;
-    using default_interface = Windows::Data::Xml::Dom::IXmlProcessingInstruction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlProcessingInstruction"; }
 };
 
 template <> struct traits<Windows::Data::Xml::Dom::XmlText>
 {
     using abi = ABI::Windows::Data::Xml::Dom::XmlText;
-    using default_interface = Windows::Data::Xml::Dom::IXmlText;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Xml.Dom.XmlText"; }
 };
 

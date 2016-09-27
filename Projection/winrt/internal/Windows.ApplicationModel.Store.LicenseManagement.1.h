@@ -82,14 +82,12 @@ template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::L
 template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo;
-    using default_interface = Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult>
 {
     using abi = ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult;
-    using default_interface = Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult"; }
 };
 

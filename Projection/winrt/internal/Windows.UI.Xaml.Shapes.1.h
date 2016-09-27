@@ -283,49 +283,42 @@ template <> struct traits<Windows::UI::Xaml::Shapes::IShapeStatics>
 template <> struct traits<Windows::UI::Xaml::Shapes::Ellipse>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Ellipse;
-    using default_interface = Windows::UI::Xaml::Shapes::IEllipse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Ellipse"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Line>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Line;
-    using default_interface = Windows::UI::Xaml::Shapes::ILine;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Line"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Path>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Path;
-    using default_interface = Windows::UI::Xaml::Shapes::IPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Path"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Polygon>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Polygon;
-    using default_interface = Windows::UI::Xaml::Shapes::IPolygon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Polygon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Polyline>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Polyline;
-    using default_interface = Windows::UI::Xaml::Shapes::IPolyline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Polyline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Rectangle>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Rectangle;
-    using default_interface = Windows::UI::Xaml::Shapes::IRectangle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Rectangle"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Shape>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Shape;
-    using default_interface = Windows::UI::Xaml::Shapes::IShape;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Shape"; }
 };
 

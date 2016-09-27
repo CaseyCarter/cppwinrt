@@ -493,77 +493,66 @@ template <> struct traits<Windows::Foundation::Diagnostics::AsyncCausalityTracer
 template <> struct traits<Windows::Foundation::Diagnostics::ErrorDetails>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::ErrorDetails;
-    using default_interface = Windows::Foundation::Diagnostics::IErrorDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.ErrorDetails"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::FileLoggingSession>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::FileLoggingSession;
-    using default_interface = Windows::Foundation::Diagnostics::IFileLoggingSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.FileLoggingSession"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs;
-    using default_interface = Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingActivity>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingActivity;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingActivity;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingActivity"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingChannel>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingChannel;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingChannel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingChannel"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingChannelOptions>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingChannelOptions;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingChannelOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingChannelOptions"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingFields>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingFields;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingFields;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingFields"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingOptions>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingOptions;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingOptions"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingSession>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingSession;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingSession"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings;
-    using default_interface = Windows::Foundation::Diagnostics::IErrorReportingSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.RuntimeBrokerErrorSettings"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs;
-    using default_interface = Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs"; }
 };
 

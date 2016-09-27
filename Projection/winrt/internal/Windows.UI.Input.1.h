@@ -694,189 +694,162 @@ template <> struct traits<Windows::UI::Input::ITappedEventArgs>
 template <> struct traits<Windows::UI::Input::CrossSlidingEventArgs>
 {
     using abi = ABI::Windows::UI::Input::CrossSlidingEventArgs;
-    using default_interface = Windows::UI::Input::ICrossSlidingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.CrossSlidingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::DraggingEventArgs>
 {
     using abi = ABI::Windows::UI::Input::DraggingEventArgs;
-    using default_interface = Windows::UI::Input::IDraggingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.DraggingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::EdgeGesture>
 {
     using abi = ABI::Windows::UI::Input::EdgeGesture;
-    using default_interface = Windows::UI::Input::IEdgeGesture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.EdgeGesture"; }
 };
 
 template <> struct traits<Windows::UI::Input::EdgeGestureEventArgs>
 {
     using abi = ABI::Windows::UI::Input::EdgeGestureEventArgs;
-    using default_interface = Windows::UI::Input::IEdgeGestureEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.EdgeGestureEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::GestureRecognizer>
 {
     using abi = ABI::Windows::UI::Input::GestureRecognizer;
-    using default_interface = Windows::UI::Input::IGestureRecognizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.GestureRecognizer"; }
 };
 
 template <> struct traits<Windows::UI::Input::HoldingEventArgs>
 {
     using abi = ABI::Windows::UI::Input::HoldingEventArgs;
-    using default_interface = Windows::UI::Input::IHoldingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.HoldingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::KeyboardDeliveryInterceptor>
 {
     using abi = ABI::Windows::UI::Input::KeyboardDeliveryInterceptor;
-    using default_interface = Windows::UI::Input::IKeyboardDeliveryInterceptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.KeyboardDeliveryInterceptor"; }
 };
 
 template <> struct traits<Windows::UI::Input::ManipulationCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::ManipulationCompletedEventArgs;
-    using default_interface = Windows::UI::Input::IManipulationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.ManipulationCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::ManipulationInertiaStartingEventArgs>
 {
     using abi = ABI::Windows::UI::Input::ManipulationInertiaStartingEventArgs;
-    using default_interface = Windows::UI::Input::IManipulationInertiaStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.ManipulationInertiaStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::ManipulationStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::ManipulationStartedEventArgs;
-    using default_interface = Windows::UI::Input::IManipulationStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.ManipulationStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::ManipulationUpdatedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::ManipulationUpdatedEventArgs;
-    using default_interface = Windows::UI::Input::IManipulationUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.ManipulationUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::MouseWheelParameters>
 {
     using abi = ABI::Windows::UI::Input::MouseWheelParameters;
-    using default_interface = Windows::UI::Input::IMouseWheelParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.MouseWheelParameters"; }
 };
 
 template <> struct traits<Windows::UI::Input::PointerPoint>
 {
     using abi = ABI::Windows::UI::Input::PointerPoint;
-    using default_interface = Windows::UI::Input::IPointerPoint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.PointerPoint"; }
 };
 
 template <> struct traits<Windows::UI::Input::PointerPointProperties>
 {
     using abi = ABI::Windows::UI::Input::PointerPointProperties;
-    using default_interface = Windows::UI::Input::IPointerPointProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.PointerPointProperties"; }
 };
 
 template <> struct traits<Windows::UI::Input::PointerVisualizationSettings>
 {
     using abi = ABI::Windows::UI::Input::PointerVisualizationSettings;
-    using default_interface = Windows::UI::Input::IPointerVisualizationSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.PointerVisualizationSettings"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialController>
 {
     using abi = ABI::Windows::UI::Input::RadialController;
-    using default_interface = Windows::UI::Input::IRadialController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialController"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerButtonClickedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerButtonClickedEventArgs;
-    using default_interface = Windows::UI::Input::IRadialControllerButtonClickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerButtonClickedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerConfiguration>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerConfiguration;
-    using default_interface = Windows::UI::Input::IRadialControllerConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerConfiguration"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerControlAcquiredEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerControlAcquiredEventArgs;
-    using default_interface = Windows::UI::Input::IRadialControllerControlAcquiredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerControlAcquiredEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerMenu>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerMenu;
-    using default_interface = Windows::UI::Input::IRadialControllerMenu;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerMenu"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerMenuItem>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerMenuItem;
-    using default_interface = Windows::UI::Input::IRadialControllerMenuItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerMenuItem"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerRotationChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerRotationChangedEventArgs;
-    using default_interface = Windows::UI::Input::IRadialControllerRotationChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerRotationChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContact>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerScreenContact;
-    using default_interface = Windows::UI::Input::IRadialControllerScreenContact;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerScreenContact"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs;
-    using default_interface = Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContactStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerScreenContactStartedEventArgs;
-    using default_interface = Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerScreenContactStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RightTappedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::RightTappedEventArgs;
-    using default_interface = Windows::UI::Input::IRightTappedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RightTappedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::TappedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::TappedEventArgs;
-    using default_interface = Windows::UI::Input::ITappedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.TappedEventArgs"; }
 };
 

@@ -223,14 +223,12 @@ template <> struct traits<Windows::Security::Authentication::Web::Core::IWebToke
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebAccountEventArgs>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebAccountEventArgs;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebAccountEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebAccountEventArgs"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebAccountMonitor>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebAccountMonitor;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebAccountMonitor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebAccountMonitor"; }
 };
 
@@ -242,28 +240,24 @@ template <> struct traits<Windows::Security::Authentication::Web::Core::WebAuthe
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebProviderError>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebProviderError;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebProviderError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebProviderError"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebTokenRequest>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebTokenRequest;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebTokenRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebTokenRequest"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebTokenRequestResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebTokenRequestResult"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Core::WebTokenResponse>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::WebTokenResponse;
-    using default_interface = Windows::Security::Authentication::Web::Core::IWebTokenResponse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Core.WebTokenResponse"; }
 };
 

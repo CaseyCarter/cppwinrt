@@ -113,28 +113,24 @@ template <> struct traits<Windows::Web::AtomPub::IWorkspace>
 template <> struct traits<Windows::Web::AtomPub::AtomPubClient>
 {
     using abi = ABI::Windows::Web::AtomPub::AtomPubClient;
-    using default_interface = Windows::Web::AtomPub::IAtomPubClient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.AtomPub.AtomPubClient"; }
 };
 
 template <> struct traits<Windows::Web::AtomPub::ResourceCollection>
 {
     using abi = ABI::Windows::Web::AtomPub::ResourceCollection;
-    using default_interface = Windows::Web::AtomPub::IResourceCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.AtomPub.ResourceCollection"; }
 };
 
 template <> struct traits<Windows::Web::AtomPub::ServiceDocument>
 {
     using abi = ABI::Windows::Web::AtomPub::ServiceDocument;
-    using default_interface = Windows::Web::AtomPub::IServiceDocument;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.AtomPub.ServiceDocument"; }
 };
 
 template <> struct traits<Windows::Web::AtomPub::Workspace>
 {
     using abi = ABI::Windows::Web::AtomPub::Workspace;
-    using default_interface = Windows::Web::AtomPub::IWorkspace;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.AtomPub.Workspace"; }
 };
 

@@ -958,21 +958,18 @@ template <> struct traits<Windows::Networking::NetworkOperators::IUssdSessionSta
 template <> struct traits<Windows::Networking::NetworkOperators::HotspotAuthenticationContext>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::HotspotAuthenticationContext;
-    using default_interface = Windows::Networking::NetworkOperators::IHotspotAuthenticationContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.HotspotAuthenticationContext"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::HotspotAuthenticationEventDetails>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::HotspotAuthenticationEventDetails;
-    using default_interface = Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.HotspotAuthenticationEventDetails"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult;
-    using default_interface = Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.HotspotCredentialsAuthenticationResult"; }
 };
 
@@ -999,273 +996,234 @@ template <> struct traits<Windows::Networking::NetworkOperators::KnownUSimFilePa
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandAccount>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandAccount;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandAccount;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandAccount"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceService>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceService;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceService"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandSession"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceInformation"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceTriggerDetails>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceTriggerDetails;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandModem>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandModem;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandModem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandModem"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandNetwork>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandNetwork;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandNetwork;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandNetwork"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChange"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChangeTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandPin>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandPin;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandPin;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandPin"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChange"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChangeTriggerDetails>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChangeTriggerDetails;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChangeTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandPinManager>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandPinManager;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandPinManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandPinManager"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChange"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChangeTriggerDetails>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChangeTriggerDetails;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChangeTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandUicc>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandUicc;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandUicc;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandUicc"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccApp;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandUiccApp"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandUiccAppReadRecordResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandUiccAppRecordDetailsResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult;
-    using default_interface = Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.MobileBroadbandUiccAppsResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration;
-    using default_interface = Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.NetworkOperatorTetheringAccessPointConfiguration"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient;
-    using default_interface = Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.NetworkOperatorTetheringClient"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager;
-    using default_interface = Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult;
-    using default_interface = Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults;
-    using default_interface = Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::ProvisionedProfile>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::ProvisionedProfile;
-    using default_interface = Windows::Networking::NetworkOperators::IProvisionedProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.ProvisionedProfile"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::ProvisioningAgent>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::ProvisioningAgent;
-    using default_interface = Windows::Networking::NetworkOperators::IProvisioningAgent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.ProvisioningAgent"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::UssdMessage>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::UssdMessage;
-    using default_interface = Windows::Networking::NetworkOperators::IUssdMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.UssdMessage"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::UssdReply>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::UssdReply;
-    using default_interface = Windows::Networking::NetworkOperators::IUssdReply;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.UssdReply"; }
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::UssdSession>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::UssdSession;
-    using default_interface = Windows::Networking::NetworkOperators::IUssdSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.NetworkOperators.UssdSession"; }
 };
 

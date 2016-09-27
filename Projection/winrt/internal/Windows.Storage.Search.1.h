@@ -335,70 +335,60 @@ template <> struct traits<Windows::Storage::Search::IValueAndLanguage>
 template <> struct traits<Windows::Storage::Search::ContentIndexer>
 {
     using abi = ABI::Windows::Storage::Search::ContentIndexer;
-    using default_interface = Windows::Storage::Search::IContentIndexer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.ContentIndexer"; }
 };
 
 template <> struct traits<Windows::Storage::Search::ContentIndexerQuery>
 {
     using abi = ABI::Windows::Storage::Search::ContentIndexerQuery;
-    using default_interface = Windows::Storage::Search::IContentIndexerQuery;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.ContentIndexerQuery"; }
 };
 
 template <> struct traits<Windows::Storage::Search::IndexableContent>
 {
     using abi = ABI::Windows::Storage::Search::IndexableContent;
-    using default_interface = Windows::Storage::Search::IIndexableContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.IndexableContent"; }
 };
 
 template <> struct traits<Windows::Storage::Search::QueryOptions>
 {
     using abi = ABI::Windows::Storage::Search::QueryOptions;
-    using default_interface = Windows::Storage::Search::IQueryOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.QueryOptions"; }
 };
 
 template <> struct traits<Windows::Storage::Search::SortEntryVector>
 {
     using abi = ABI::Windows::Storage::Search::SortEntryVector;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::Storage::Search::SortEntry>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.SortEntryVector"; }
 };
 
 template <> struct traits<Windows::Storage::Search::StorageFileQueryResult>
 {
     using abi = ABI::Windows::Storage::Search::StorageFileQueryResult;
-    using default_interface = Windows::Storage::Search::IStorageFileQueryResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.StorageFileQueryResult"; }
 };
 
 template <> struct traits<Windows::Storage::Search::StorageFolderQueryResult>
 {
     using abi = ABI::Windows::Storage::Search::StorageFolderQueryResult;
-    using default_interface = Windows::Storage::Search::IStorageFolderQueryResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.StorageFolderQueryResult"; }
 };
 
 template <> struct traits<Windows::Storage::Search::StorageItemQueryResult>
 {
     using abi = ABI::Windows::Storage::Search::StorageItemQueryResult;
-    using default_interface = Windows::Storage::Search::IStorageItemQueryResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.StorageItemQueryResult"; }
 };
 
 template <> struct traits<Windows::Storage::Search::StorageLibraryContentChangedTriggerDetails>
 {
     using abi = ABI::Windows::Storage::Search::StorageLibraryContentChangedTriggerDetails;
-    using default_interface = Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.StorageLibraryContentChangedTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Storage::Search::ValueAndLanguage>
 {
     using abi = ABI::Windows::Storage::Search::ValueAndLanguage;
-    using default_interface = Windows::Storage::Search::IValueAndLanguage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Search.ValueAndLanguage"; }
 };
 

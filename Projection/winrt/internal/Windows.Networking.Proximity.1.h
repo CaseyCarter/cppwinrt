@@ -274,7 +274,6 @@ template <> struct traits<Windows::Networking::Proximity::MessageTransmittedHand
 template <> struct traits<Windows::Networking::Proximity::ConnectionRequestedEventArgs>
 {
     using abi = ABI::Windows::Networking::Proximity::ConnectionRequestedEventArgs;
-    using default_interface = Windows::Networking::Proximity::IConnectionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ConnectionRequestedEventArgs"; }
 };
 
@@ -286,35 +285,30 @@ template <> struct traits<Windows::Networking::Proximity::PeerFinder>
 template <> struct traits<Windows::Networking::Proximity::PeerInformation>
 {
     using abi = ABI::Windows::Networking::Proximity::PeerInformation;
-    using default_interface = Windows::Networking::Proximity::IPeerInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.PeerInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::PeerWatcher>
 {
     using abi = ABI::Windows::Networking::Proximity::PeerWatcher;
-    using default_interface = Windows::Networking::Proximity::IPeerWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.PeerWatcher"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::ProximityDevice>
 {
     using abi = ABI::Windows::Networking::Proximity::ProximityDevice;
-    using default_interface = Windows::Networking::Proximity::IProximityDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ProximityDevice"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::ProximityMessage>
 {
     using abi = ABI::Windows::Networking::Proximity::ProximityMessage;
-    using default_interface = Windows::Networking::Proximity::IProximityMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ProximityMessage"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs>
 {
     using abi = ABI::Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs;
-    using default_interface = Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs"; }
 };
 

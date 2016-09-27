@@ -501,133 +501,114 @@ template <> struct traits<Windows::UI::Input::Inking::IInkUnprocessedInput>
 template <> struct traits<Windows::UI::Input::Inking::InkDrawingAttributes>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkDrawingAttributes;
-    using default_interface = Windows::UI::Input::Inking::IInkDrawingAttributes;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkDrawingAttributes"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties;
-    using default_interface = Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkInputProcessingConfiguration>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkInputProcessingConfiguration;
-    using default_interface = Windows::UI::Input::Inking::IInkInputProcessingConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkInputProcessingConfiguration"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkManager>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkManager;
-    using default_interface = Windows::UI::Input::Inking::IInkManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkManager"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkPoint>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkPoint;
-    using default_interface = Windows::UI::Input::Inking::IInkPoint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkPoint"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkPresenter>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkPresenter;
-    using default_interface = Windows::UI::Input::Inking::IInkPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkPresenterRuler>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkPresenterRuler;
-    using default_interface = Windows::UI::Input::Inking::IInkPresenterRuler;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkPresenterRuler"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkRecognitionResult>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkRecognitionResult;
-    using default_interface = Windows::UI::Input::Inking::IInkRecognitionResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkRecognitionResult"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkRecognizer>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkRecognizer;
-    using default_interface = Windows::UI::Input::Inking::IInkRecognizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkRecognizer"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkRecognizerContainer>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkRecognizerContainer;
-    using default_interface = Windows::UI::Input::Inking::IInkRecognizerContainer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkRecognizerContainer"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStroke>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStroke;
-    using default_interface = Windows::UI::Input::Inking::IInkStroke;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStroke"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokeBuilder>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokeBuilder;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokeBuilder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokeBuilder"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokeContainer>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokeContainer;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokeContainer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokeContainer"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokeInput>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokeInput;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokeInput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokeInput"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokeRenderingSegment>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokeRenderingSegment;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokeRenderingSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokeRenderingSegment"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokesCollectedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokesCollectedEventArgs;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokesCollectedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkStrokesErasedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkStrokesErasedEventArgs;
-    using default_interface = Windows::UI::Input::Inking::IInkStrokesErasedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkStrokesErasedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkSynchronizer>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkSynchronizer;
-    using default_interface = Windows::UI::Input::Inking::IInkSynchronizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkSynchronizer"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkUnprocessedInput>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkUnprocessedInput;
-    using default_interface = Windows::UI::Input::Inking::IInkUnprocessedInput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkUnprocessedInput"; }
 };
 

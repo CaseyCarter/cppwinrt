@@ -489,70 +489,60 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::Clipboard>
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackage>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackage;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackage"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackagePropertySet>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackagePropertySet"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackageView>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackageView;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackageView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackageView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataProviderDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataProviderDeferral;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataProviderDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataProviderDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataProviderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataProviderRequest;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataProviderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataProviderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequest>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequest;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequestDeferral;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequestDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataTransferManager>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataTransferManager;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataTransferManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataTransferManager"; }
 };
 
@@ -564,7 +554,6 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::HtmlFormatHel
 template <> struct traits<Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs"; }
 };
 
@@ -581,7 +570,6 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::StandardDataF
 template <> struct traits<Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs"; }
 };
 

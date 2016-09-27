@@ -86,14 +86,12 @@ template <> struct traits<Windows::ApplicationModel::SocialInfo::Provider::ISoci
 template <> struct traits<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater;
-    using default_interface = Windows::ApplicationModel::SocialInfo::Provider::ISocialDashboardItemUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater>
 {
     using abi = ABI::Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater;
-    using default_interface = Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater"; }
 };
 

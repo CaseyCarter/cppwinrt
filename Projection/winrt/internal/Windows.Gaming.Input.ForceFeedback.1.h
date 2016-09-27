@@ -151,35 +151,30 @@ template <> struct traits<Windows::Gaming::Input::ForceFeedback::IRampForceEffec
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ConditionForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ConditionForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ConditionForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ConstantForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ConstantForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ConstantForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::RampForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::RampForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.RampForceEffect"; }
 };
 

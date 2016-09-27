@@ -421,84 +421,72 @@ template <> struct traits<Windows::Devices::Geolocation::IVenueData>
 template <> struct traits<Windows::Devices::Geolocation::CivicAddress>
 {
     using abi = ABI::Windows::Devices::Geolocation::CivicAddress;
-    using default_interface = Windows::Devices::Geolocation::ICivicAddress;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.CivicAddress"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::GeoboundingBox>
 {
     using abi = ABI::Windows::Devices::Geolocation::GeoboundingBox;
-    using default_interface = Windows::Devices::Geolocation::IGeoboundingBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.GeoboundingBox"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geocircle>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geocircle;
-    using default_interface = Windows::Devices::Geolocation::IGeocircle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geocircle"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geocoordinate>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geocoordinate;
-    using default_interface = Windows::Devices::Geolocation::IGeocoordinate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geocoordinate"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::GeocoordinateSatelliteData>
 {
     using abi = ABI::Windows::Devices::Geolocation::GeocoordinateSatelliteData;
-    using default_interface = Windows::Devices::Geolocation::IGeocoordinateSatelliteData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.GeocoordinateSatelliteData"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geolocator>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geolocator;
-    using default_interface = Windows::Devices::Geolocation::IGeolocator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geolocator"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geopath>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geopath;
-    using default_interface = Windows::Devices::Geolocation::IGeopath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geopath"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geopoint>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geopoint;
-    using default_interface = Windows::Devices::Geolocation::IGeopoint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geopoint"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geoposition>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geoposition;
-    using default_interface = Windows::Devices::Geolocation::IGeoposition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geoposition"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::PositionChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Geolocation::PositionChangedEventArgs;
-    using default_interface = Windows::Devices::Geolocation::IPositionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.PositionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::StatusChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Geolocation::StatusChangedEventArgs;
-    using default_interface = Windows::Devices::Geolocation::IStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.StatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::VenueData>
 {
     using abi = ABI::Windows::Devices::Geolocation::VenueData;
-    using default_interface = Windows::Devices::Geolocation::IVenueData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.VenueData"; }
 };
 

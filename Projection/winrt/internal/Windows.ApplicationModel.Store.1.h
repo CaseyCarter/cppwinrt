@@ -382,49 +382,42 @@ template <> struct traits<Windows::ApplicationModel::Store::CurrentAppSimulator>
 template <> struct traits<Windows::ApplicationModel::Store::LicenseInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Store::LicenseInformation;
-    using default_interface = Windows::ApplicationModel::Store::ILicenseInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.LicenseInformation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ListingInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ListingInformation;
-    using default_interface = Windows::ApplicationModel::Store::IListingInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ListingInformation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductLicense>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductLicense;
-    using default_interface = Windows::ApplicationModel::Store::IProductLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductLicense"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductListing>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductListing;
-    using default_interface = Windows::ApplicationModel::Store::IProductListing;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductListing"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties;
-    using default_interface = Windows::ApplicationModel::Store::IProductPurchaseDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::PurchaseResults>
 {
     using abi = ABI::Windows::ApplicationModel::Store::PurchaseResults;
-    using default_interface = Windows::ApplicationModel::Store::IPurchaseResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.PurchaseResults"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::UnfulfilledConsumable>
 {
     using abi = ABI::Windows::ApplicationModel::Store::UnfulfilledConsumable;
-    using default_interface = Windows::ApplicationModel::Store::IUnfulfilledConsumable;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.UnfulfilledConsumable"; }
 };
 

@@ -76,14 +76,12 @@ template <> struct traits<Windows::Devices::Power::IBatteryStatics>
 template <> struct traits<Windows::Devices::Power::Battery>
 {
     using abi = ABI::Windows::Devices::Power::Battery;
-    using default_interface = Windows::Devices::Power::IBattery;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Power.Battery"; }
 };
 
 template <> struct traits<Windows::Devices::Power::BatteryReport>
 {
     using abi = ABI::Windows::Devices::Power::BatteryReport;
-    using default_interface = Windows::Devices::Power::IBatteryReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Power.BatteryReport"; }
 };
 

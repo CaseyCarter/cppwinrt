@@ -559,224 +559,192 @@ template <> struct traits<Windows::ApplicationModel::Email::DataProvider::IEmail
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailDataProviderConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailDataProviderTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailDataProviderTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxCreateFolderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxCreateFolderRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDeleteFolderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDeleteFolderRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadAttachmentRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadAttachmentRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadMessageRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadMessageRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxEmptyFolderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxEmptyFolderRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxForwardMeetingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxForwardMeetingRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxGetAutoReplySettingsRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxGetAutoReplySettingsRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxMoveFolderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxMoveFolderRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxProposeNewTimeForMeetingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxProposeNewTimeForMeetingRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxResolveRecipientsRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxResolveRecipientsRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxServerSearchReadBatchRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxServerSearchReadBatchRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSetAutoReplySettingsRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSetAutoReplySettingsRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSyncManagerSyncRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSyncManagerSyncRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxUpdateMeetingResponseRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxUpdateMeetingResponseRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequest;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxValidateCertificatesRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Email::DataProvider::IEmailMailboxValidateCertificatesRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs"; }
 };
 

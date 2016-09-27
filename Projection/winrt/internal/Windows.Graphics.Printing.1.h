@@ -389,77 +389,66 @@ template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedH
 template <> struct traits<Windows::Graphics::Printing::PrintManager>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintManager;
-    using default_interface = Windows::Graphics::Printing::IPrintManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintManager"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintPageInfo>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintPageInfo;
-    using default_interface = Windows::Graphics::Printing::IPrintPageInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintPageInfo"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTask>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTask;
-    using default_interface = Windows::Graphics::Printing::IPrintTask;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTask"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskCompletedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskCompletedEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskOptions>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskOptions;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskOptionsCore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskOptions"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskProgressingEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskProgressingEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskProgressingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskProgressingEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequest>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequest;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequest"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequestedDeferral>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequestedDeferral;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequestedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequestedDeferral"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequestedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequestedEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskSourceRequestedArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskSourceRequestedArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral"; }
 };
 

@@ -169,7 +169,6 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAcc
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration"; }
 };
 

@@ -229,35 +229,30 @@ template <> struct traits<Windows::ApplicationModel::VoiceCommands::IVoiceComman
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommand>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommand;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommand"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandConfirmationResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition"; }
 };
 
@@ -269,28 +264,24 @@ template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommand
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandDisambiguationResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage>
 {
     using abi = ABI::Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage;
-    using default_interface = Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage"; }
 };
 

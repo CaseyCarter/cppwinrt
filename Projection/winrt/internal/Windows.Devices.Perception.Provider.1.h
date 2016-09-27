@@ -307,42 +307,36 @@ template <> struct traits<Windows::Devices::Perception::Provider::KnownPerceptio
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionControlGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionControlGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionControlGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionControlGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionCorrelation>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionCorrelation;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionCorrelation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionCorrelation"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionCorrelationGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionCorrelationGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionCorrelationGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFrame>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFrame;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFrame"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo"; }
 };
 
@@ -354,14 +348,12 @@ template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFram
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionPropertyChangeRequest"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator"; }
 };
 

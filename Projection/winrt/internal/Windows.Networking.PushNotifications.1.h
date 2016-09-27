@@ -122,7 +122,6 @@ template <> struct traits<Windows::Networking::PushNotifications::IRawNotificati
 template <> struct traits<Windows::Networking::PushNotifications::PushNotificationChannel>
 {
     using abi = ABI::Windows::Networking::PushNotifications::PushNotificationChannel;
-    using default_interface = Windows::Networking::PushNotifications::IPushNotificationChannel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.PushNotifications.PushNotificationChannel"; }
 };
 
@@ -134,21 +133,18 @@ template <> struct traits<Windows::Networking::PushNotifications::PushNotificati
 template <> struct traits<Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser>
 {
     using abi = ABI::Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser;
-    using default_interface = Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser"; }
 };
 
 template <> struct traits<Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs;
-    using default_interface = Windows::Networking::PushNotifications::IPushNotificationReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Networking::PushNotifications::RawNotification>
 {
     using abi = ABI::Windows::Networking::PushNotifications::RawNotification;
-    using default_interface = Windows::Networking::PushNotifications::IRawNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.PushNotifications.RawNotification"; }
 };
 

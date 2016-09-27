@@ -61,7 +61,6 @@ template <> struct traits<Windows::Devices::Radios::IRadioStatics>
 template <> struct traits<Windows::Devices::Radios::Radio>
 {
     using abi = ABI::Windows::Devices::Radios::Radio;
-    using default_interface = Windows::Devices::Radios::IRadio;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Radios.Radio"; }
 };
 

@@ -606,7 +606,6 @@ template <> struct traits<Windows::Globalization::ApplicationLanguages>
 template <> struct traits<Windows::Globalization::Calendar>
 {
     using abi = ABI::Windows::Globalization::Calendar;
-    using default_interface = Windows::Globalization::ICalendar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Calendar"; }
 };
 
@@ -628,14 +627,12 @@ template <> struct traits<Windows::Globalization::CurrencyIdentifiers>
 template <> struct traits<Windows::Globalization::GeographicRegion>
 {
     using abi = ABI::Windows::Globalization::GeographicRegion;
-    using default_interface = Windows::Globalization::IGeographicRegion;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.GeographicRegion"; }
 };
 
 template <> struct traits<Windows::Globalization::Language>
 {
     using abi = ABI::Windows::Globalization::Language;
-    using default_interface = Windows::Globalization::ILanguage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Language"; }
 };
 

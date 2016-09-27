@@ -58,7 +58,6 @@ template <> struct traits<Windows::Security::ExchangeActiveSyncProvisioning::IEa
 template <> struct traits<Windows::Security::ExchangeActiveSyncProvisioning::EasClientDeviceInformation>
 {
     using abi = ABI::Windows::Security::ExchangeActiveSyncProvisioning::EasClientDeviceInformation;
-    using default_interface = Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation"; }
 };
 

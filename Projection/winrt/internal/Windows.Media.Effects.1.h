@@ -315,21 +315,18 @@ template <> struct traits<Windows::Media::Effects::IVideoTransformEffectDefiniti
 template <> struct traits<Windows::Media::Effects::AudioCaptureEffectsManager>
 {
     using abi = ABI::Windows::Media::Effects::AudioCaptureEffectsManager;
-    using default_interface = Windows::Media::Effects::IAudioCaptureEffectsManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.AudioCaptureEffectsManager"; }
 };
 
 template <> struct traits<Windows::Media::Effects::AudioEffect>
 {
     using abi = ABI::Windows::Media::Effects::AudioEffect;
-    using default_interface = Windows::Media::Effects::IAudioEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.AudioEffect"; }
 };
 
 template <> struct traits<Windows::Media::Effects::AudioEffectDefinition>
 {
     using abi = ABI::Windows::Media::Effects::AudioEffectDefinition;
-    using default_interface = Windows::Media::Effects::IAudioEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.AudioEffectDefinition"; }
 };
 
@@ -341,49 +338,42 @@ template <> struct traits<Windows::Media::Effects::AudioEffectsManager>
 template <> struct traits<Windows::Media::Effects::AudioRenderEffectsManager>
 {
     using abi = ABI::Windows::Media::Effects::AudioRenderEffectsManager;
-    using default_interface = Windows::Media::Effects::IAudioRenderEffectsManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.AudioRenderEffectsManager"; }
 };
 
 template <> struct traits<Windows::Media::Effects::CompositeVideoFrameContext>
 {
     using abi = ABI::Windows::Media::Effects::CompositeVideoFrameContext;
-    using default_interface = Windows::Media::Effects::ICompositeVideoFrameContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.CompositeVideoFrameContext"; }
 };
 
 template <> struct traits<Windows::Media::Effects::ProcessAudioFrameContext>
 {
     using abi = ABI::Windows::Media::Effects::ProcessAudioFrameContext;
-    using default_interface = Windows::Media::Effects::IProcessAudioFrameContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.ProcessAudioFrameContext"; }
 };
 
 template <> struct traits<Windows::Media::Effects::ProcessVideoFrameContext>
 {
     using abi = ABI::Windows::Media::Effects::ProcessVideoFrameContext;
-    using default_interface = Windows::Media::Effects::IProcessVideoFrameContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.ProcessVideoFrameContext"; }
 };
 
 template <> struct traits<Windows::Media::Effects::VideoCompositorDefinition>
 {
     using abi = ABI::Windows::Media::Effects::VideoCompositorDefinition;
-    using default_interface = Windows::Media::Effects::IVideoCompositorDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.VideoCompositorDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Effects::VideoEffectDefinition>
 {
     using abi = ABI::Windows::Media::Effects::VideoEffectDefinition;
-    using default_interface = Windows::Media::Effects::IVideoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.VideoEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Effects::VideoTransformEffectDefinition>
 {
     using abi = ABI::Windows::Media::Effects::VideoTransformEffectDefinition;
-    using default_interface = Windows::Media::Effects::IVideoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Effects.VideoTransformEffectDefinition"; }
 };
 

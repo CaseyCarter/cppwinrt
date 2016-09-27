@@ -99,28 +99,24 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider:
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountPartnerAccountInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderAddAccountOperation>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderAddAccountOperation;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderAddAccountOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderResolveErrorsOperation>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderResolveErrorsOperation;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderResolveErrorsOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderSettingsOperation>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderSettingsOperation;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderSettingsOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation"; }
 };
 

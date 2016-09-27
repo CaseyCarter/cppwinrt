@@ -82,14 +82,12 @@ template <> struct traits<Windows::Storage::Compression::IDecompressorFactory>
 template <> struct traits<Windows::Storage::Compression::Compressor>
 {
     using abi = ABI::Windows::Storage::Compression::Compressor;
-    using default_interface = Windows::Storage::Compression::ICompressor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Compression.Compressor"; }
 };
 
 template <> struct traits<Windows::Storage::Compression::Decompressor>
 {
     using abi = ABI::Windows::Storage::Compression::Decompressor;
-    using default_interface = Windows::Storage::Compression::IDecompressor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Compression.Decompressor"; }
 };
 

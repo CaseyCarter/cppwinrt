@@ -299,7 +299,6 @@ template <> struct traits<Windows::ApplicationModel::Core::IUnhandledErrorDetect
 template <> struct traits<Windows::ApplicationModel::Core::AppListEntry>
 {
     using abi = ABI::Windows::ApplicationModel::Core::AppListEntry;
-    using default_interface = Windows::ApplicationModel::Core::IAppListEntry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.AppListEntry"; }
 };
 
@@ -311,35 +310,30 @@ template <> struct traits<Windows::ApplicationModel::Core::CoreApplication>
 template <> struct traits<Windows::ApplicationModel::Core::CoreApplicationView>
 {
     using abi = ABI::Windows::ApplicationModel::Core::CoreApplicationView;
-    using default_interface = Windows::ApplicationModel::Core::ICoreApplicationView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.CoreApplicationView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar>
 {
     using abi = ABI::Windows::ApplicationModel::Core::CoreApplicationViewTitleBar;
-    using default_interface = Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.CoreApplicationViewTitleBar"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::HostedViewClosingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Core::HostedViewClosingEventArgs;
-    using default_interface = Windows::ApplicationModel::Core::IHostedViewClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.HostedViewClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::UnhandledError>
 {
     using abi = ABI::Windows::ApplicationModel::Core::UnhandledError;
-    using default_interface = Windows::ApplicationModel::Core::IUnhandledError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.UnhandledError"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs;
-    using default_interface = Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.UnhandledErrorDetectedEventArgs"; }
 };
 

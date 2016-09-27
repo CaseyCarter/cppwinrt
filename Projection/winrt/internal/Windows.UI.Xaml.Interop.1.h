@@ -194,7 +194,6 @@ template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEve
 template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs"; }
 };
 

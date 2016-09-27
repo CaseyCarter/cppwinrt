@@ -342,84 +342,72 @@ template <> struct traits<Windows::UI::Composition::Interactions::IVisualInterac
 template <> struct traits<Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection;
-    using default_interface = Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTracker>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTracker;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTracker"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerIdleStateEnteredArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerInertiaModifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotion;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValue;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerInertiaStateEnteredArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerInteractingStateEnteredArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerRequestIgnoredArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs;
-    using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerValuesChangedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::VisualInteractionSource>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::VisualInteractionSource;
-    using default_interface = Windows::UI::Composition::Interactions::IVisualInteractionSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.VisualInteractionSource"; }
 };
 

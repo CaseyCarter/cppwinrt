@@ -1264,329 +1264,282 @@ template <> struct traits<Windows::Devices::Sensors::ISimpleOrientationSensorSta
 template <> struct traits<Windows::Devices::Sensors::Accelerometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Accelerometer;
-    using default_interface = Windows::Devices::Sensors::IAccelerometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Accelerometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::AccelerometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::AccelerometerReading;
-    using default_interface = Windows::Devices::Sensors::IAccelerometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.AccelerometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IAccelerometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::AccelerometerShakenEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::AccelerometerShakenEventArgs;
-    using default_interface = Windows::Devices::Sensors::IAccelerometerShakenEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.AccelerometerShakenEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ActivitySensor>
 {
     using abi = ABI::Windows::Devices::Sensors::ActivitySensor;
-    using default_interface = Windows::Devices::Sensors::IActivitySensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ActivitySensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ActivitySensorReading>
 {
     using abi = ABI::Windows::Devices::Sensors::ActivitySensorReading;
-    using default_interface = Windows::Devices::Sensors::IActivitySensorReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ActivitySensorReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ActivitySensorReadingChangeReport>
 {
     using abi = ABI::Windows::Devices::Sensors::ActivitySensorReadingChangeReport;
-    using default_interface = Windows::Devices::Sensors::IActivitySensorReadingChangeReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ActivitySensorReadingChangeReport"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IActivitySensorReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ActivitySensorTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Sensors::ActivitySensorTriggerDetails;
-    using default_interface = Windows::Devices::Sensors::IActivitySensorTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ActivitySensorTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Altimeter>
 {
     using abi = ABI::Windows::Devices::Sensors::Altimeter;
-    using default_interface = Windows::Devices::Sensors::IAltimeter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Altimeter"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::AltimeterReading>
 {
     using abi = ABI::Windows::Devices::Sensors::AltimeterReading;
-    using default_interface = Windows::Devices::Sensors::IAltimeterReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.AltimeterReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::AltimeterReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::AltimeterReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IAltimeterReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.AltimeterReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Barometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Barometer;
-    using default_interface = Windows::Devices::Sensors::IBarometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Barometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::BarometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::BarometerReading;
-    using default_interface = Windows::Devices::Sensors::IBarometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.BarometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::BarometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::BarometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IBarometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.BarometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Compass>
 {
     using abi = ABI::Windows::Devices::Sensors::Compass;
-    using default_interface = Windows::Devices::Sensors::ICompass;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Compass"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::CompassReading>
 {
     using abi = ABI::Windows::Devices::Sensors::CompassReading;
-    using default_interface = Windows::Devices::Sensors::ICompassReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.CompassReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::CompassReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::CompassReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::ICompassReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.CompassReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Gyrometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Gyrometer;
-    using default_interface = Windows::Devices::Sensors::IGyrometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Gyrometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::GyrometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::GyrometerReading;
-    using default_interface = Windows::Devices::Sensors::IGyrometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.GyrometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::GyrometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::GyrometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IGyrometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.GyrometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Inclinometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Inclinometer;
-    using default_interface = Windows::Devices::Sensors::IInclinometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Inclinometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::InclinometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::InclinometerReading;
-    using default_interface = Windows::Devices::Sensors::IInclinometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.InclinometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::InclinometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::InclinometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IInclinometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.InclinometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::LightSensor>
 {
     using abi = ABI::Windows::Devices::Sensors::LightSensor;
-    using default_interface = Windows::Devices::Sensors::ILightSensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.LightSensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::LightSensorReading>
 {
     using abi = ABI::Windows::Devices::Sensors::LightSensorReading;
-    using default_interface = Windows::Devices::Sensors::ILightSensorReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.LightSensorReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::LightSensorReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::LightSensorReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::ILightSensorReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.LightSensorReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Magnetometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Magnetometer;
-    using default_interface = Windows::Devices::Sensors::IMagnetometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Magnetometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::MagnetometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::MagnetometerReading;
-    using default_interface = Windows::Devices::Sensors::IMagnetometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.MagnetometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IMagnetometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::OrientationSensor>
 {
     using abi = ABI::Windows::Devices::Sensors::OrientationSensor;
-    using default_interface = Windows::Devices::Sensors::IOrientationSensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.OrientationSensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::OrientationSensorReading>
 {
     using abi = ABI::Windows::Devices::Sensors::OrientationSensorReading;
-    using default_interface = Windows::Devices::Sensors::IOrientationSensorReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.OrientationSensorReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IOrientationSensorReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Pedometer>
 {
     using abi = ABI::Windows::Devices::Sensors::Pedometer;
-    using default_interface = Windows::Devices::Sensors::IPedometer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Pedometer"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::PedometerDataThreshold>
 {
     using abi = ABI::Windows::Devices::Sensors::PedometerDataThreshold;
-    using default_interface = Windows::Devices::Sensors::ISensorDataThreshold;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.PedometerDataThreshold"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::PedometerReading>
 {
     using abi = ABI::Windows::Devices::Sensors::PedometerReading;
-    using default_interface = Windows::Devices::Sensors::IPedometerReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.PedometerReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::PedometerReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::PedometerReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IPedometerReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.PedometerReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ProximitySensor>
 {
     using abi = ABI::Windows::Devices::Sensors::ProximitySensor;
-    using default_interface = Windows::Devices::Sensors::IProximitySensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ProximitySensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ProximitySensorDataThreshold>
 {
     using abi = ABI::Windows::Devices::Sensors::ProximitySensorDataThreshold;
-    using default_interface = Windows::Devices::Sensors::ISensorDataThreshold;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ProximitySensorDataThreshold"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ProximitySensorDisplayOnOffController>
 {
     using abi = ABI::Windows::Devices::Sensors::ProximitySensorDisplayOnOffController;
-    using default_interface = Windows::Foundation::IClosable;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ProximitySensorDisplayOnOffController"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ProximitySensorReading>
 {
     using abi = ABI::Windows::Devices::Sensors::ProximitySensorReading;
-    using default_interface = Windows::Devices::Sensors::IProximitySensorReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ProximitySensorReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::IProximitySensorReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::SensorDataThresholdTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Sensors::SensorDataThresholdTriggerDetails;
-    using default_interface = Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.SensorDataThresholdTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::SensorQuaternion>
 {
     using abi = ABI::Windows::Devices::Sensors::SensorQuaternion;
-    using default_interface = Windows::Devices::Sensors::ISensorQuaternion;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.SensorQuaternion"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::SensorRotationMatrix>
 {
     using abi = ABI::Windows::Devices::Sensors::SensorRotationMatrix;
-    using default_interface = Windows::Devices::Sensors::ISensorRotationMatrix;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.SensorRotationMatrix"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::SimpleOrientationSensor>
 {
     using abi = ABI::Windows::Devices::Sensors::SimpleOrientationSensor;
-    using default_interface = Windows::Devices::Sensors::ISimpleOrientationSensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.SimpleOrientationSensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::ISimpleOrientationSensorOrientationChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs"; }
 };
 

@@ -270,98 +270,84 @@ template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider:
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCancelMeetingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCancelMeetingRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCreateOrUpdateAppointmentRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarForwardMeetingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarForwardMeetingRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarProposeNewTimeForMeetingRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarSyncManagerSyncRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarSyncManagerSyncRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequest;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarUpdateMeetingResponseRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarUpdateMeetingResponseRequestEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentDataProviderConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Appointments::DataProvider::IAppointmentDataProviderTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails"; }
 };
 

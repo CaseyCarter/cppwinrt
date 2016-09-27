@@ -83,14 +83,12 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTarget::
 template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink;
-    using default_interface = Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation;
-    using default_interface = Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation"; }
 };
 

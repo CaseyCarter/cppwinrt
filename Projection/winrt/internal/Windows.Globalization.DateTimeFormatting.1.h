@@ -104,7 +104,6 @@ template <> struct traits<Windows::Globalization::DateTimeFormatting::IDateTimeF
 template <> struct traits<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>
 {
     using abi = ABI::Windows::Globalization::DateTimeFormatting::DateTimeFormatter;
-    using default_interface = Windows::Globalization::DateTimeFormatting::IDateTimeFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.DateTimeFormatting.DateTimeFormatter"; }
 };
 

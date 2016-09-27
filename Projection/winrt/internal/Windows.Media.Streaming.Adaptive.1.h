@@ -263,70 +263,60 @@ template <> struct traits<Windows::Media::Streaming::Adaptive::IAdaptiveMediaSou
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSource"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceAdvancedSettings>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceAdvancedSettings;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvancedSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCreationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadBitrateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadBitrateChangedEventArgs;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadCompletedEventArgs>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadCompletedEventArgs;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadFailedEventArgs;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedDeferral>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedDeferral;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadRequestedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedDeferral"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedEventArgs;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadResult>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadResult;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult"; }
 };
 
 template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourcePlaybackBitrateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
-    using default_interface = Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs"; }
 };
 

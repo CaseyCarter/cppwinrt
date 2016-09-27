@@ -127,28 +127,24 @@ template <> struct traits<Windows::UI::Popups::UICommandInvokedHandler>
 template <> struct traits<Windows::UI::Popups::MessageDialog>
 {
     using abi = ABI::Windows::UI::Popups::MessageDialog;
-    using default_interface = Windows::UI::Popups::IMessageDialog;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Popups.MessageDialog"; }
 };
 
 template <> struct traits<Windows::UI::Popups::PopupMenu>
 {
     using abi = ABI::Windows::UI::Popups::PopupMenu;
-    using default_interface = Windows::UI::Popups::IPopupMenu;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Popups.PopupMenu"; }
 };
 
 template <> struct traits<Windows::UI::Popups::UICommand>
 {
     using abi = ABI::Windows::UI::Popups::UICommand;
-    using default_interface = Windows::UI::Popups::IUICommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Popups.UICommand"; }
 };
 
 template <> struct traits<Windows::UI::Popups::UICommandSeparator>
 {
     using abi = ABI::Windows::UI::Popups::UICommandSeparator;
-    using default_interface = Windows::UI::Popups::IUICommand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Popups.UICommandSeparator"; }
 };
 

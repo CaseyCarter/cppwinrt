@@ -331,56 +331,48 @@ template <> struct traits<Windows::Data::Text::WordSegmentsTokenizingHandler>
 template <> struct traits<Windows::Data::Text::AlternateWordForm>
 {
     using abi = ABI::Windows::Data::Text::AlternateWordForm;
-    using default_interface = Windows::Data::Text::IAlternateWordForm;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.AlternateWordForm"; }
 };
 
 template <> struct traits<Windows::Data::Text::SelectableWordSegment>
 {
     using abi = ABI::Windows::Data::Text::SelectableWordSegment;
-    using default_interface = Windows::Data::Text::ISelectableWordSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.SelectableWordSegment"; }
 };
 
 template <> struct traits<Windows::Data::Text::SelectableWordsSegmenter>
 {
     using abi = ABI::Windows::Data::Text::SelectableWordsSegmenter;
-    using default_interface = Windows::Data::Text::ISelectableWordsSegmenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.SelectableWordsSegmenter"; }
 };
 
 template <> struct traits<Windows::Data::Text::SemanticTextQuery>
 {
     using abi = ABI::Windows::Data::Text::SemanticTextQuery;
-    using default_interface = Windows::Data::Text::ISemanticTextQuery;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.SemanticTextQuery"; }
 };
 
 template <> struct traits<Windows::Data::Text::TextConversionGenerator>
 {
     using abi = ABI::Windows::Data::Text::TextConversionGenerator;
-    using default_interface = Windows::Data::Text::ITextConversionGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.TextConversionGenerator"; }
 };
 
 template <> struct traits<Windows::Data::Text::TextPhoneme>
 {
     using abi = ABI::Windows::Data::Text::TextPhoneme;
-    using default_interface = Windows::Data::Text::ITextPhoneme;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.TextPhoneme"; }
 };
 
 template <> struct traits<Windows::Data::Text::TextPredictionGenerator>
 {
     using abi = ABI::Windows::Data::Text::TextPredictionGenerator;
-    using default_interface = Windows::Data::Text::ITextPredictionGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.TextPredictionGenerator"; }
 };
 
 template <> struct traits<Windows::Data::Text::TextReverseConversionGenerator>
 {
     using abi = ABI::Windows::Data::Text::TextReverseConversionGenerator;
-    using default_interface = Windows::Data::Text::ITextReverseConversionGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.TextReverseConversionGenerator"; }
 };
 
@@ -392,14 +384,12 @@ template <> struct traits<Windows::Data::Text::UnicodeCharacters>
 template <> struct traits<Windows::Data::Text::WordSegment>
 {
     using abi = ABI::Windows::Data::Text::WordSegment;
-    using default_interface = Windows::Data::Text::IWordSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.WordSegment"; }
 };
 
 template <> struct traits<Windows::Data::Text::WordsSegmenter>
 {
     using abi = ABI::Windows::Data::Text::WordsSegmenter;
-    using default_interface = Windows::Data::Text::IWordsSegmenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Text.WordsSegmenter"; }
 };
 

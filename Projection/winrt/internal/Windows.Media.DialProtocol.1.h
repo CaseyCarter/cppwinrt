@@ -169,49 +169,42 @@ template <> struct traits<Windows::Media::DialProtocol::IDialDisconnectButtonCli
 template <> struct traits<Windows::Media::DialProtocol::DialApp>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialApp;
-    using default_interface = Windows::Media::DialProtocol::IDialApp;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialApp"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialAppStateDetails>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialAppStateDetails;
-    using default_interface = Windows::Media::DialProtocol::IDialAppStateDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialAppStateDetails"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialDevice>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialDevice;
-    using default_interface = Windows::Media::DialProtocol::IDialDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialDevice"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialDevicePicker>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialDevicePicker;
-    using default_interface = Windows::Media::DialProtocol::IDialDevicePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialDevicePicker"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialDevicePickerFilter>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialDevicePickerFilter;
-    using default_interface = Windows::Media::DialProtocol::IDialDevicePickerFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialDevicePickerFilter"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialDeviceSelectedEventArgs>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialDeviceSelectedEventArgs;
-    using default_interface = Windows::Media::DialProtocol::IDialDeviceSelectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialDeviceSelectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs>
 {
     using abi = ABI::Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs;
-    using default_interface = Windows::Media::DialProtocol::IDialDisconnectButtonClickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs"; }
 };
 

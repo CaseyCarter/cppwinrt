@@ -463,28 +463,24 @@ template <> struct traits<Windows::Web::Syndication::ISyndicationTextFactory>
 template <> struct traits<Windows::Web::Syndication::SyndicationAttribute>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationAttribute;
-    using default_interface = Windows::Web::Syndication::ISyndicationAttribute;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationAttribute"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationCategory>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationCategory;
-    using default_interface = Windows::Web::Syndication::ISyndicationCategory;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationCategory"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationClient>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationClient;
-    using default_interface = Windows::Web::Syndication::ISyndicationClient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationClient"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationContent>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationContent;
-    using default_interface = Windows::Web::Syndication::ISyndicationContent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationContent"; }
 };
 
@@ -496,49 +492,42 @@ template <> struct traits<Windows::Web::Syndication::SyndicationError>
 template <> struct traits<Windows::Web::Syndication::SyndicationFeed>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationFeed;
-    using default_interface = Windows::Web::Syndication::ISyndicationFeed;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationFeed"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationGenerator>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationGenerator;
-    using default_interface = Windows::Web::Syndication::ISyndicationGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationGenerator"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationItem>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationItem;
-    using default_interface = Windows::Web::Syndication::ISyndicationItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationItem"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationLink>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationLink;
-    using default_interface = Windows::Web::Syndication::ISyndicationLink;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationLink"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationNode>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationNode;
-    using default_interface = Windows::Web::Syndication::ISyndicationNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationNode"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationPerson>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationPerson;
-    using default_interface = Windows::Web::Syndication::ISyndicationPerson;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationPerson"; }
 };
 
 template <> struct traits<Windows::Web::Syndication::SyndicationText>
 {
     using abi = ABI::Windows::Web::Syndication::SyndicationText;
-    using default_interface = Windows::Web::Syndication::ISyndicationText;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Syndication.SyndicationText"; }
 };
 

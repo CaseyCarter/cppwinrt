@@ -173,63 +173,54 @@ template <> struct traits<Windows::Storage::Pickers::Provider::ITargetFileReques
 template <> struct traits<Windows::Storage::Pickers::Provider::FileOpenPickerUI>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::FileOpenPickerUI;
-    using default_interface = Windows::Storage::Pickers::Provider::IFileOpenPickerUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.FileOpenPickerUI"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::FileRemovedEventArgs>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::FileRemovedEventArgs;
-    using default_interface = Windows::Storage::Pickers::Provider::IFileRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.FileRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::FileSavePickerUI>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::FileSavePickerUI;
-    using default_interface = Windows::Storage::Pickers::Provider::IFileSavePickerUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.FileSavePickerUI"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::PickerClosingDeferral>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::PickerClosingDeferral;
-    using default_interface = Windows::Storage::Pickers::Provider::IPickerClosingDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.PickerClosingDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::PickerClosingEventArgs>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::PickerClosingEventArgs;
-    using default_interface = Windows::Storage::Pickers::Provider::IPickerClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.PickerClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::PickerClosingOperation>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::PickerClosingOperation;
-    using default_interface = Windows::Storage::Pickers::Provider::IPickerClosingOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.PickerClosingOperation"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::TargetFileRequest>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::TargetFileRequest;
-    using default_interface = Windows::Storage::Pickers::Provider::ITargetFileRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.TargetFileRequest"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::TargetFileRequestDeferral>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::TargetFileRequestDeferral;
-    using default_interface = Windows::Storage::Pickers::Provider::ITargetFileRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.TargetFileRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs>
 {
     using abi = ABI::Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs;
-    using default_interface = Windows::Storage::Pickers::Provider::ITargetFileRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs"; }
 };
 
