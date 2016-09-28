@@ -770,11 +770,14 @@ struct WINRT_EBO IIterable :
     IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<T, std::vector<T>>>(first, last))
+    IIterable(const std::vector<T> & values) : IIterable(std::vector<T>(values))
     {}
 
-    IIterable(std::initializer_list<T> values) : IIterable(make<impl::iterable<T, std::vector<T>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(std::vector<T>(first, last))
+    {}
+
+    IIterable(std::initializer_list<T> values) : IIterable(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -789,14 +792,20 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IIterable(const std::map<K, V> & values) : IIterable(std::map<K, V>(values))
+    {}
+
     IIterable(std::unordered_map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(first, last))
+    IIterable(const std::unordered_map<K, V> & values) : IIterable(std::unordered_map<K, V>(values))
     {}
 
-    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(std::unordered_map<K, V>(first, last))
+    {}
+
+    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 
@@ -832,11 +841,14 @@ struct WINRT_EBO IVectorView :
     IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IVectorView(InputIt first, InputIt last) : IVectorView(make<impl::vector_view_standalone<T>>(first, last))
+    IVectorView(const std::vector<T> & values) : IVectorView(std::vector<T>(values))
     {}
 
-    IVectorView(std::initializer_list<T> values) : IVectorView(make<impl::vector_view_standalone<T>>(values.begin(), values.end()))
+    template<class InputIt>
+    IVectorView(InputIt first, InputIt last) : IVectorView(std::vector<T>(first, last))
+    {}
+
+    IVectorView(std::initializer_list<T> values) : IVectorView(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -852,11 +864,14 @@ struct WINRT_EBO IVector :
     IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IVector(InputIt first, InputIt last) : IVector(make<impl::vector<T>>(first, last))
+    IVector(const std::vector<T> & values) : IVector(std::vector<T>(values))
     {}
 
-    IVector(std::initializer_list<T> values) : IVector(make<impl::vector<T>>(values.begin(), values.end()))
+    template<class InputIt>
+    IVector(InputIt first, InputIt last) : IVector(std::vector<T>(first, last))
+    {}
+
+    IVector(std::initializer_list<T> values) : IVector(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -872,14 +887,20 @@ struct WINRT_EBO IMapView :
     IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IMapView(const std::map<K, V> & values) : IMapView(std::map<K, V>(values))
+    {}
+
     IMapView(std::unordered_map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IMapView(InputIt first, InputIt last) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(first, last))
+    IMapView(const std::unordered_map<K, V> & values) : IMapView(std::unordered_map<K, V>(values))
     {}
 
-    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IMapView(InputIt first, InputIt last) : IMapView(std::unordered_map<K, V>(first, last))
+    {}
+
+    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 
@@ -895,14 +916,20 @@ struct WINRT_EBO IMap :
     IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IMap(const std::map<K, V> & values) : IMap(std::map<K, V>(values))
+    {}
+
     IMap(std::unordered_map<K, V> && values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IMap(InputIt first, InputIt last) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(first, last))
+    IMap(const std::unordered_map<K, V> & values) : IMap(std::unordered_map<K, V>(values))
     {}
 
-    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IMap(InputIt first, InputIt last) : IMap(std::unordered_map<K, V>(first, last))
+    {}
+
+    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 

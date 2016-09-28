@@ -49,112 +49,112 @@ void ValidateIterable(IIterable<IKeyValuePair<int, hstring>>& iter)
 TEST_CASE("Map, create, r-value from std::map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     ValidateMap(obj);
 }
 
 TEST_CASE("Map, create, r-value from std::unordered_map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     ValidateMap(obj);
 }
 
 TEST_CASE("Map, create, iterators from std::map, container std::unordered_map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::unordered_map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMap<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     ValidateMap(obj);
 }
 
 TEST_CASE("Map, create, iterators from std::unordered_map, container std::map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMap<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     ValidateMap(obj);
 }
 
 TEST_CASE("Map, create, il, container std::map")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(il);
+    IMap<int, hstring> obj(il);
     ValidateMap(obj);
 }
 
 TEST_CASE("Map, create, il, container std::unordered_map")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::unordered_map<int, hstring>>>(il);
+    IMap<int, hstring> obj(il);
     ValidateMap(obj);
 }
 
 TEST_CASE("IMapView, create, r-value from std::map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> obj(std::move(myStdMap));
     ValidateMapView(obj);
 }
 
 TEST_CASE("IMapView, create, r-value from std::unordered_map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> obj(std::move(myStdMap));
     ValidateMapView(obj);
 }
 
 TEST_CASE("IMapView, create, iterators from std::map, container std::unordered_map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMapView<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     ValidateMapView(obj);
 }
 
 TEST_CASE("IMapView, create, iterators from std::unordered_map, container std::map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMapView<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     ValidateMapView(obj);
 }
 
 TEST_CASE("IMapView, create, il, container std::map")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::map<int, hstring>>>(il);
+    IMapView<int, hstring> obj(il);
     ValidateMapView(obj);
 }
 
 TEST_CASE("IMapView, create, il, container std::unordered_map")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(il);
+    IMapView<int, hstring> obj(il);
     ValidateMapView(obj);
 }
 
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, create, r-value from std::map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> obj = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> obj(std::move(myStdMap));
     ValidateIterable(obj);
 }
 
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, create, r-value from std::unordered_map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> obj = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> obj(std::move(myStdMap));
     ValidateIterable(obj);
 }
 
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, create, iterators from std::map, container std::unordered_map")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> obj = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::unordered_map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IIterable<IKeyValuePair<int, hstring>> obj(myStdMap.begin(), myStdMap.end());
     ValidateIterable(obj);
 }
 
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, create, iterators from std::unordered_map, container std::map")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> obj = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IIterable<IKeyValuePair<int, hstring>> obj(myStdMap.begin(), myStdMap.end());
     ValidateIterable(obj);
 }
 
@@ -164,7 +164,7 @@ TEST_CASE("IIterable<IKeyValuePair<K, V>>, create, iterators from std::unordered
 
 TEST_CASE("Map, create, empty")
 {
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>();
+    IMap<int, hstring> obj(std::map<int, hstring>({}));
 
     REQUIRE(obj != nullptr);
     REQUIRE(obj.Size() == 0);
@@ -173,7 +173,7 @@ TEST_CASE("Map, create, empty")
 TEST_CASE("Map, create, from std::map, rvalue, has elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj != nullptr);
     REQUIRE(obj.Size() == 2);
@@ -186,7 +186,7 @@ TEST_CASE("Map, create, from std::map, rvalue, has elements")
 TEST_CASE("Map, create, from il, has elements")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(il);
+    IMap<int, hstring> obj(il);
 
     REQUIRE(obj != nullptr);
     REQUIRE(obj.Size() == 2);
@@ -199,7 +199,7 @@ TEST_CASE("Map, create, from il, has elements")
 TEST_CASE("Map, create, from iterators, has elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMap<int, hstring> obj(myStdMap.begin(), myStdMap.end());
 
     REQUIRE(obj != nullptr);
     REQUIRE(obj.Size() == 2);
@@ -212,7 +212,7 @@ TEST_CASE("Map, create, from iterators, has elements")
 TEST_CASE("Map, Clear")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj.Size() == 2);
     obj.Clear();
@@ -226,7 +226,7 @@ TEST_CASE("Map, Clear")
 TEST_CASE("Map, GetView")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view != nullptr);
@@ -241,7 +241,7 @@ TEST_CASE("Map, GetView")
 TEST_CASE("Map, Lookup")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj.Lookup(1) == L"value1");
     REQUIRE(obj.Lookup(2) == L"value2");
@@ -252,7 +252,7 @@ TEST_CASE("Map, Lookup")
 TEST_CASE("Map, HasKey")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj.HasKey(1));
     REQUIRE(obj.HasKey(2));
@@ -267,7 +267,7 @@ TEST_CASE("Map, HasKey")
 
 TEST_CASE("Map, Insert, empty")
 {
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>();
+    IMap<int, hstring> obj(std::map<int, hstring>({}));
     REQUIRE(!obj.Insert(1, L"value1"));
     REQUIRE(obj.Size() == 1);
     REQUIRE(obj.Lookup(1) == L"value1");
@@ -281,7 +281,7 @@ TEST_CASE("Map, Insert, empty")
 TEST_CASE("Map, Insert, not empty")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     REQUIRE(obj.Size() == 2);
 
     REQUIRE(!obj.Insert(3, L"value3"));
@@ -294,7 +294,7 @@ TEST_CASE("Map, Insert, not empty")
 TEST_CASE("Map, Insert, not empty, insert after Clear")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj.Size() == 2);
     REQUIRE(obj.Lookup(1) == L"value1");
@@ -314,7 +314,7 @@ TEST_CASE("Map, Insert, not empty, insert after Clear")
 TEST_CASE("Map, Insert, pair replaced")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
 
     REQUIRE(obj.Insert(1, L"value3"));
     REQUIRE(obj.Insert(2, L"value4"));
@@ -327,7 +327,7 @@ TEST_CASE("Map, Insert, pair replaced")
 TEST_CASE("Map, Erase, not empty, keys exists")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     REQUIRE(obj.Size() == 2);
 
     obj.Remove(2);
@@ -345,7 +345,7 @@ TEST_CASE("Map, Erase, not empty, keys exists")
 TEST_CASE("Map, Erase, not empty, key does not exists")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     REQUIRE(obj.Size() == 2);
 
     obj.Remove(3);
@@ -358,7 +358,7 @@ TEST_CASE("Map, Erase, not empty, key does not exists")
 
 TEST_CASE("Map, Erase, empty, key does not exists")
 {
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>();
+    IMap<int, hstring> obj(std::map<int, hstring>({}));
     REQUIRE(obj.Size() == 0);
 
     obj.Remove(3);
@@ -368,7 +368,7 @@ TEST_CASE("Map, Erase, empty, key does not exists")
 TEST_CASE("Map, First")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE(itor != nullptr);
@@ -391,7 +391,7 @@ TEST_CASE("Map, First")
 TEST_CASE("IMapView from IMap, HasKey")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.HasKey(1));
@@ -403,7 +403,7 @@ TEST_CASE("IMapView from IMap, HasKey")
 TEST_CASE("IMapView from IMap, Lookup")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Lookup(1) == L"value1");
@@ -415,7 +415,7 @@ TEST_CASE("IMapView from IMap, Lookup")
 TEST_CASE("IMapView from IMap, Split")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IMapView<int, hstring> first;
     IMapView<int, hstring> second;
@@ -429,7 +429,7 @@ TEST_CASE("IMapView from IMap, Split")
 TEST_CASE("IMapView from IMap, Size, has elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Size() == 2);
@@ -437,7 +437,7 @@ TEST_CASE("IMapView from IMap, Size, has elements")
 
 TEST_CASE("IMapView from IMap, Size, no elements")
 {
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>();
+    IMap<int, hstring> obj(std::map<int, hstring>({}));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Size() == 0);
@@ -450,7 +450,7 @@ TEST_CASE("IMapView from IMap, Size, no elements")
 TEST_CASE("IMapView standalone, create from std::map, has elements")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
 
     REQUIRE(view != nullptr);
     REQUIRE(view.Size() == 2);
@@ -463,7 +463,7 @@ TEST_CASE("IMapView standalone, create from std::map, has elements")
 TEST_CASE("IMapView standalone, create from iterators, has elements")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMapView<int, hstring> view(myStdMap.begin(), myStdMap.end());
 
     REQUIRE(view != nullptr);
     REQUIRE(view.Size() == 2);
@@ -475,7 +475,7 @@ TEST_CASE("IMapView standalone, create from iterators, has elements")
 
 TEST_CASE("IMapView standalone, create, no elements")
 {
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>();
+    IMapView<int, hstring> view(std::map<int, hstring>({}));
 
     REQUIRE(view != nullptr);
     REQUIRE(view.Size() == 0);
@@ -484,7 +484,7 @@ TEST_CASE("IMapView standalone, create, no elements")
 TEST_CASE("IMapView standalone, create, from il, has elements")
 {
     auto il = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> obj = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(il);
+    IMapView<int, hstring> obj(il);
 
     REQUIRE(obj != nullptr);
     REQUIRE(obj.Size() == 2);
@@ -497,7 +497,7 @@ TEST_CASE("IMapView standalone, create, from il, has elements")
 TEST_CASE("IMapView standalone, HasKey")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
 
     REQUIRE(view.HasKey(1));
     REQUIRE(view.HasKey(2));
@@ -508,7 +508,7 @@ TEST_CASE("IMapView standalone, HasKey")
 TEST_CASE("IMapView standalone, Lookup")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
 
     REQUIRE(view.Lookup(1) == L"value1");
     REQUIRE(view.Lookup(2) == L"value2");
@@ -519,7 +519,7 @@ TEST_CASE("IMapView standalone, Lookup")
 TEST_CASE("IMapView standalone, Split")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IMapView<int, hstring> first;
     IMapView<int, hstring> second;
 
@@ -532,14 +532,14 @@ TEST_CASE("IMapView standalone, Split")
 TEST_CASE("IMapView standalone, Size, has elements")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
 
     REQUIRE(view.Size() == 2);
 }
 
 TEST_CASE("IMapView standalone, Size, no elements")
 {
-    IMapView<int, hstring> view = winrt::make<impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>();
+    IMapView<int, hstring> view(std::map<int, hstring>({}));
 
     REQUIRE(view.Size() == 0);
 }
@@ -551,7 +551,7 @@ TEST_CASE("IMapView standalone, Size, no elements")
 TEST_CASE("IMap IIterable,create,rvalue")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> iter = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> iter(std::move(myStdMap));
     REQUIRE(iter != nullptr);
     IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
     REQUIRE(itor != nullptr);
@@ -567,7 +567,7 @@ TEST_CASE("IMap IIterable,create,rvalue")
 TEST_CASE("IMap IIterable,create,iterators")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> iter = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IIterable<IKeyValuePair<int, hstring>> iter(myStdMap.begin(), myStdMap.end());
     REQUIRE(iter != nullptr);
     IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
     REQUIRE(itor != nullptr);
@@ -587,7 +587,7 @@ TEST_CASE("IMap IIterable,create,iterators")
 TEST_CASE("IMap IIterable, from IMap, create, rvalue")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterable<IKeyValuePair<int, hstring>> iter = obj;
 
     REQUIRE(iter != nullptr);
@@ -605,7 +605,7 @@ TEST_CASE("IMap IIterable, from IMap, create, rvalue")
 TEST_CASE("IMap IIterable, from IMap, create, iterators")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMap<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     IIterable<IKeyValuePair<int, hstring>> iter = obj;
 
     REQUIRE(iter != nullptr);
@@ -627,7 +627,7 @@ TEST_CASE("IMap IIterable, from IMap, create, iterators")
 TEST_CASE("IMap IIterable, from IMapView created from IMap, create, rvalue")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterable<IKeyValuePair<int, hstring>> iter = view;
 
@@ -646,7 +646,7 @@ TEST_CASE("IMap IIterable, from IMapView created from IMap, create, rvalue")
 TEST_CASE("IMap IIterable, from IMapView created from IMap, create, iterators")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMap<int, hstring> obj(myStdMap.begin(), myStdMap.end());
     IMapView<int, hstring> view = obj.GetView();
     IIterable<IKeyValuePair<int, hstring>> iter = view;
 
@@ -669,7 +669,7 @@ TEST_CASE("IMap IIterable, from IMapView created from IMap, create, iterators")
 TEST_CASE("IMap IIterable, from IMapView standalone, create, rvalue")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterable<IKeyValuePair<int, hstring>> iter = view;
 
     REQUIRE(iter != nullptr);
@@ -687,7 +687,7 @@ TEST_CASE("IMap IIterable, from IMapView standalone, create, rvalue")
 TEST_CASE("IMap IIterable, from IMapView standalone, create, iterators")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(myStdMap.begin(), myStdMap.end());
+    IMapView<int, hstring> view(myStdMap.begin(), myStdMap.end());
     IIterable<IKeyValuePair<int, hstring>> iter = view;
 
     REQUIRE(iter != nullptr);
@@ -709,7 +709,7 @@ TEST_CASE("IMap IIterable, from IMapView standalone, create, iterators")
 TEST_CASE("IMap IIterator, from IMap, Current, current has value")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE(itor.Current());
@@ -718,7 +718,7 @@ TEST_CASE("IMap IIterator, from IMap, Current, current has value")
 TEST_CASE("IMap IIterator, from IMap, Current, throws when empty")
 {
     std::map<int, hstring> myStdMap;
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE_THROWS_AS(itor.Current(), winrt::hresult_out_of_bounds);
@@ -727,7 +727,7 @@ TEST_CASE("IMap IIterator, from IMap, Current, throws when empty")
 TEST_CASE("IMap IIterator, from IMap, HasCurrent, true")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE(itor.HasCurrent());
@@ -736,7 +736,7 @@ TEST_CASE("IMap IIterator, from IMap, HasCurrent, true")
 TEST_CASE("IMap IIterator, from IMap, HasCurrent, false")
 {
     std::map<int, hstring> myStdMap;
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE_FALSE(itor.HasCurrent());
@@ -745,7 +745,7 @@ TEST_CASE("IMap IIterator, from IMap, HasCurrent, false")
 TEST_CASE("IMap IIterator, from IMap, MoveNext")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     REQUIRE(itor.HasCurrent());
@@ -764,7 +764,7 @@ TEST_CASE("IMap IIterator, from IMap, MoveNext")
 TEST_CASE("IMap IIterator, from IMap, GetMany, output array has less size than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
     std::array<IKeyValuePair<int, hstring>, 1> output;
 
@@ -777,7 +777,7 @@ TEST_CASE("IMap IIterator, from IMap, GetMany, output array has less size than t
 TEST_CASE("IMap IIterator, from IMap, GetMany, output array has the same number of elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
     std::array<IKeyValuePair<int, hstring>, 2> output;
 
@@ -792,7 +792,7 @@ TEST_CASE("IMap IIterator, from IMap, GetMany, output array has the same number 
 TEST_CASE("IMap IIterator, from IMap, GetMany, output array has more slots than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
     std::array<IKeyValuePair<int, hstring>, 3> output;
 
@@ -811,7 +811,7 @@ TEST_CASE("IMap IIterator, from IMap, GetMany, output array has more slots than 
 TEST_CASE("IMap IIterator, from IMapView created from IMap, Current, current has value")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
@@ -821,7 +821,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, Current, current has
 TEST_CASE("IMap IIterator, from IMapView created from IMap, Current, throws when empty")
 {
     std::map<int, hstring> myStdMap;
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
@@ -831,7 +831,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, Current, throws when
 TEST_CASE("IMap IIterator, from IMapView created from IMap, HasCurrent, true")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
@@ -841,7 +841,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, HasCurrent, true")
 TEST_CASE("IMap IIterator, from IMapView created from IMap, HasCurrent, false")
 {
     std::map<int, hstring> myStdMap;
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
@@ -851,7 +851,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, HasCurrent, false")
 TEST_CASE("IMap IIterator, from IMapView created from IMap, MoveNext")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
@@ -871,7 +871,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, MoveNext")
 TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output array has less size than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 1> output;
@@ -885,7 +885,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output arra
 TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output array has the same number of elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 2> output;
@@ -901,7 +901,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output arra
 TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output array has more slots than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 3> output;
@@ -921,7 +921,7 @@ TEST_CASE("IMap IIterator, from IMapView created from IMap, GetMany, output arra
 TEST_CASE("IMap IIterator, from IMapView standalone, Current, current has value")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.Current());
@@ -930,7 +930,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, Current, current has value"
 TEST_CASE("IMap IIterator, from IMapView standalone, Current, throws when empty")
 {
     std::unordered_map<int, hstring> myStdMap;
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE_THROWS_AS(itor.Current(), winrt::hresult_out_of_bounds);
@@ -939,7 +939,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, Current, throws when empty"
 TEST_CASE("IMap IIterator, from IMapView standalone, HasCurrent, true")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.HasCurrent());
@@ -948,7 +948,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, HasCurrent, true")
 TEST_CASE("IMap IIterator, from IMapView standalone, HasCurrent, false")
 {
     std::unordered_map<int, hstring> myStdMap;
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE_FALSE(itor.HasCurrent());
@@ -957,7 +957,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, HasCurrent, false")
 TEST_CASE("IMap IIterator, from IMapView standalone, MoveNext")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.HasCurrent());
@@ -976,7 +976,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, MoveNext")
 TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has less size than the iterator")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 1> output;
 
@@ -989,7 +989,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has l
 TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has the same number of elements")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 2> output;
 
@@ -1004,7 +1004,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has t
 TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has more slots than the iterator")
 {
     std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMapView<int, hstring> view = winrt::make<winrt::impl::map_view_standalone<int, hstring, std::unordered_map<int, hstring>>>(std::move(myStdMap));
+    IMapView<int, hstring> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 3> output;
 
@@ -1023,7 +1023,7 @@ TEST_CASE("IMap IIterator, from IMapView standalone, GetMany, output array has m
 TEST_CASE("IMap IIterator, from IIterable standalone, Current, current has value")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.Current());
@@ -1032,7 +1032,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, Current, current has value
 TEST_CASE("IMap IIterator, from IIterable standalone, Current, throws when empty")
 {
     std::map<int, hstring> myStdMap;
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE_THROWS_AS(itor.Current(), winrt::hresult_out_of_bounds);
@@ -1041,7 +1041,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, Current, throws when empty
 TEST_CASE("IMap IIterator, from IIterable standalone, HasCurrent, true")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.HasCurrent());
@@ -1050,7 +1050,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, HasCurrent, true")
 TEST_CASE("IMap IIterator, from IIterable standalone, HasCurrent, false")
 {
     std::map<int, hstring> myStdMap;
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE_FALSE(itor.HasCurrent());
@@ -1059,7 +1059,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, HasCurrent, false")
 TEST_CASE("IMap IIterator, from IIterable standalone, MoveNext")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
 
     REQUIRE(itor.HasCurrent());
@@ -1078,7 +1078,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, MoveNext")
 TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has less size than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 1> output;
 
@@ -1091,7 +1091,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has 
 TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has the same number of elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 2> output;
 
@@ -1106,7 +1106,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has 
 TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has more slots than the iterator")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IIterable<IKeyValuePair<int, hstring>> view = winrt::make<winrt::impl::iterable<IKeyValuePair<int, hstring>, std::map<int, hstring>>>(std::move(myStdMap));
+    IIterable<IKeyValuePair<int, hstring>> view(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = view.First();
     std::array<IKeyValuePair<int, hstring>, 3> output;
 
@@ -1125,7 +1125,7 @@ TEST_CASE("IMap IIterator, from IIterable standalone, GetMany, output array has 
 TEST_CASE("IMap IMapView, from map, invalidate, HasKey")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Size() == 2);
@@ -1136,7 +1136,7 @@ TEST_CASE("IMap IMapView, from map, invalidate, HasKey")
 TEST_CASE("IMap IMapView, from map, invalidate, Lookup")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Size() == 2);
@@ -1147,7 +1147,7 @@ TEST_CASE("IMap IMapView, from map, invalidate, Lookup")
 TEST_CASE("IMap IMapView, from map, invalidate, Split")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
     IMapView<int, hstring> left;
     IMapView<int, hstring> right;
@@ -1160,7 +1160,7 @@ TEST_CASE("IMap IMapView, from map, invalidate, Split")
 TEST_CASE("IMap IMapView, from map, invalidate, Size")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IMapView<int, hstring> view = obj.GetView();
 
     REQUIRE(view.Size() == 2);
@@ -1175,7 +1175,7 @@ TEST_CASE("IMap IMapView, from map, invalidate, Size")
 TEST_CASE("IMap IIterator, from IMap, invalidate, Current")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     obj.Clear();
@@ -1185,7 +1185,7 @@ TEST_CASE("IMap IIterator, from IMap, invalidate, Current")
 TEST_CASE("IMap IIterator, from IMap, invalidate, HasCurrent")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     obj.Clear();
@@ -1195,7 +1195,7 @@ TEST_CASE("IMap IIterator, from IMap, invalidate, HasCurrent")
 TEST_CASE("IMap IIterator, from IMap, invalidate, MoveNext")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
 
     obj.Clear();
@@ -1205,7 +1205,7 @@ TEST_CASE("IMap IIterator, from IMap, invalidate, MoveNext")
 TEST_CASE("IMap IIterator, from IMap, invalidate, GetMany")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
-    IMap<int, hstring> obj = winrt::make<winrt::impl::map<int, hstring, std::map<int, hstring>>>(std::move(myStdMap));
+    IMap<int, hstring> obj(std::move(myStdMap));
     IIterator<IKeyValuePair<int, hstring>> itor = obj.First();
     std::array<IKeyValuePair<int, hstring>, 2> output;
 
@@ -1238,6 +1238,15 @@ TEST_CASE("IMap, projected type, call function, il")
     FunctionThatTakesAnIMap({ std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} });
 }
 
+TEST_CASE("IMap, projected type, call function, by reference and copy")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    
+    FunctionThatTakesAnIMap(myStdMap);
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
 #pragma endregion
 
 #pragma region "Tests, calling a function with an IMapView"
@@ -1261,6 +1270,15 @@ TEST_CASE("IMapView, projected type, call function, rvalue")
 TEST_CASE("IMapView, projected type, call function, il")
 {
     FunctionThatTakesAnIMapView({ std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} });
+}
+
+TEST_CASE("IMapView, projected type, call function, by reference and copy")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    
+    FunctionThatTakesAnIMapView(myStdMap);
+
+    REQUIRE(myStdMap.size() == 2);
 }
 
 #pragma endregion
@@ -1289,6 +1307,15 @@ TEST_CASE("IIterable<KeyValuePair<K, V>>, projected type, call function, rvalue"
 TEST_CASE("IIterable<KeyValuePair<K, V>>, projected type, call function, il")
 {
     FunctionThatTakesAnIIterable({ std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} });
+}
+
+TEST_CASE("IIterable<KeyValuePair<K, V>>, projected type, call function, by reference and copy")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    
+    FunctionThatTakesAnIIterable(myStdMap);
+
+    REQUIRE(myStdMap.size() == 2);
 }
 
 #pragma endregion
@@ -1367,6 +1394,49 @@ TEST_CASE("IMap, creating projected type, r-value, no elements")
     REQUIRE(obj.Size() == 0);
     REQUIRE_FALSE(obj.HasKey(1));
 }
+
+TEST_CASE("IMap, creating projected type, by reference and copy std::map, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMap<int, hstring> obj(myStdMap);
+
+    REQUIRE(obj != nullptr);
+    REQUIRE(obj.Size() == 2);
+    REQUIRE(obj.HasKey(1));
+    REQUIRE(obj.Lookup(1) == L"value1");
+    REQUIRE(obj.HasKey(2));
+    REQUIRE(obj.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMap, creating projected type, by reference and copy std::unordered_map, with elements")
+{
+    std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMap<int, hstring> obj(myStdMap);
+
+    REQUIRE(obj != nullptr);
+    REQUIRE(obj.Size() == 2);
+    REQUIRE(obj.HasKey(1));
+    REQUIRE(obj.Lookup(1) == L"value1");
+    REQUIRE(obj.HasKey(2));
+    REQUIRE(obj.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMap, creating projected type, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IMap<int, hstring> obj(myStdMap);
+
+    REQUIRE(obj != nullptr);
+    REQUIRE(obj.Size() == 0);
+    REQUIRE_FALSE(obj.HasKey(1));
+
+    REQUIRE(myStdMap.size() == 0);
+}
+
 
 TEST_CASE("IMap, creating projected type, iterators, with elements")
 {
@@ -1450,6 +1520,48 @@ TEST_CASE("IMapView, creating projected type, r-value, no elements")
     REQUIRE(view != nullptr);
     REQUIRE(view.Size() == 0);
     REQUIRE_FALSE(view.HasKey(1));
+}
+
+TEST_CASE("IMapView, creating projected type, by reference and copy std::map, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMapView<int, hstring> view(myStdMap);
+
+    REQUIRE(view != nullptr);
+    REQUIRE(view.Size() == 2);
+    REQUIRE(view.HasKey(1));
+    REQUIRE(view.Lookup(1) == L"value1");
+    REQUIRE(view.HasKey(2));
+    REQUIRE(view.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMapView, creating projected type, by reference and copy std::unordered_map, with elements")
+{
+    std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMapView<int, hstring> view(myStdMap);
+
+    REQUIRE(view != nullptr);
+    REQUIRE(view.Size() == 2);
+    REQUIRE(view.HasKey(1));
+    REQUIRE(view.Lookup(1) == L"value1");
+    REQUIRE(view.HasKey(2));
+    REQUIRE(view.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMapView, creating projected type, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IMapView<int, hstring> view(myStdMap);
+
+    REQUIRE(view != nullptr);
+    REQUIRE(view.Size() == 0);
+    REQUIRE_FALSE(view.HasKey(1));
+
+    REQUIRE(myStdMap.size() == 0);
 }
 
 TEST_CASE("IMapView, creating projected type, iterators, with elements")
@@ -1545,6 +1657,57 @@ TEST_CASE("IIterable<IKeyValuePair<K, V>>, creating projected type, r-value, no 
     REQUIRE_FALSE(itor.HasCurrent());
 }
 
+TEST_CASE("IIterable<IKeyValuePair<K, V>>, creating projected type, by reference and copy std::map, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IIterable<IKeyValuePair<int, hstring>> iter(myStdMap);
+    IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
+
+    REQUIRE(iter != nullptr);
+    REQUIRE(itor != nullptr);
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 1);
+    REQUIRE(itor.Current().Value() == L"value1");
+    REQUIRE(itor.MoveNext());
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 2);
+    REQUIRE(itor.Current().Value() == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IIterable<IKeyValuePair<K, V>>, creating projected type, by reference and copy std::unordered_map, with elements")
+{
+    std::unordered_map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IIterable<IKeyValuePair<int, hstring>> iter(myStdMap);
+    IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
+
+    REQUIRE(iter != nullptr);
+    REQUIRE(itor != nullptr);
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 1);
+    REQUIRE(itor.Current().Value() == L"value1");
+    REQUIRE(itor.MoveNext());
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 2);
+    REQUIRE(itor.Current().Value() == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IIterable<IKeyValuePair<K, V>>, creating projected type, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IIterable<IKeyValuePair<int, hstring>> iter(std::move(myStdMap));
+    IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
+
+    REQUIRE(iter != nullptr);
+    REQUIRE(itor != nullptr);
+    REQUIRE_FALSE(itor.HasCurrent());
+
+    REQUIRE(myStdMap.size() == 0);
+}
+
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, creating projected type, iterators, with elements")
 {
     std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
@@ -1626,6 +1789,33 @@ TEST_CASE("IMap, equal operator, r-value, no elements")
     REQUIRE_FALSE(obj.HasKey(1));
 }
 
+TEST_CASE("IMap, equal operator, by reference and copy, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMap<int, hstring> obj = myStdMap;
+
+    REQUIRE(obj != nullptr);
+    REQUIRE(obj.Size() == 2);
+    REQUIRE(obj.HasKey(1));
+    REQUIRE(obj.Lookup(1) == L"value1");
+    REQUIRE(obj.HasKey(2));
+    REQUIRE(obj.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMap, equal operator, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IMap<int, hstring> obj = myStdMap;
+
+    REQUIRE(obj != nullptr);
+    REQUIRE(obj.Size() == 0);
+    REQUIRE_FALSE(obj.HasKey(1));
+
+    REQUIRE(myStdMap.size() == 0);
+}
+
 TEST_CASE("IMap, equal operator, il, with elements")
 {
     IMap<int, hstring> obj = { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
@@ -1670,6 +1860,33 @@ TEST_CASE("IMapView, equal operator, r-value, no elements")
     REQUIRE(view != nullptr);
     REQUIRE(view.Size() == 0);
     REQUIRE_FALSE(view.HasKey(1));
+}
+
+TEST_CASE("IMapView, equal operator, by reference and copy, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IMapView<int, hstring> view = myStdMap;
+
+    REQUIRE(view != nullptr);
+    REQUIRE(view.Size() == 2);
+    REQUIRE(view.HasKey(1));
+    REQUIRE(view.Lookup(1) == L"value1");
+    REQUIRE(view.HasKey(2));
+    REQUIRE(view.Lookup(2) == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IMapView, equal operator, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IMapView<int, hstring> view = myStdMap;
+
+    REQUIRE(view != nullptr);
+    REQUIRE(view.Size() == 0);
+    REQUIRE_FALSE(view.HasKey(1));
+
+    REQUIRE(myStdMap.size() == 0);
 }
 
 TEST_CASE("IMapView, equal operator, il, with elements")
@@ -1721,6 +1938,38 @@ TEST_CASE("IIterable<IKeyValuePair<K, V>>, equal operator, r-value, no elements"
     REQUIRE(iter != nullptr);
     REQUIRE(itor != nullptr);
     REQUIRE_FALSE(itor.HasCurrent());
+}
+
+TEST_CASE("IIterable<IKeyValuePair<K, V>>, equal operator, by reference and copy, with elements")
+{
+    std::map<int, hstring> myStdMap { std::pair<int, hstring> { 1, L"value1"}, std::pair<int, hstring> { 2, L"value2"} };
+    IIterable<IKeyValuePair<int, hstring>> iter = myStdMap;
+    IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
+
+    REQUIRE(iter != nullptr);
+    REQUIRE(itor != nullptr);
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 1);
+    REQUIRE(itor.Current().Value() == L"value1");
+    REQUIRE(itor.MoveNext());
+    REQUIRE(itor.HasCurrent());
+    REQUIRE(itor.Current().Key() == 2);
+    REQUIRE(itor.Current().Value() == L"value2");
+
+    REQUIRE(myStdMap.size() == 2);
+}
+
+TEST_CASE("IIterable<IKeyValuePair<K, V>>, equal operator, by reference and copy, no elements")
+{
+    std::map<int, hstring> myStdMap;
+    IIterable<IKeyValuePair<int, hstring>> iter = myStdMap;
+    IIterator<IKeyValuePair<int, hstring>> itor = iter.First();
+
+    REQUIRE(iter != nullptr);
+    REQUIRE(itor != nullptr);
+    REQUIRE_FALSE(itor.HasCurrent());
+
+    REQUIRE(myStdMap.size() == 0);
 }
 
 TEST_CASE("IIterable<IKeyValuePair<K, V>>, equal operator, il, with elements")

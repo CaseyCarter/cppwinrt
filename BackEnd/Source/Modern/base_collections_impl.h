@@ -52,10 +52,6 @@ namespace impl
         vector(std::vector<T> && values) : m_storage(std::move(values))
         {}
 
-        template<class InputIt>
-        vector(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
         void Append(const T & value)
         {
             m_version.increment();
@@ -186,10 +182,6 @@ namespace impl
         vector_view_standalone(std::vector<T> && values) : m_storage(std::move(values))
         {}
 
-        template<class InputIt>
-        vector_view_standalone(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
         T GetAt(const uint32_t index) const
         {
             if (index >= m_storage.size())
@@ -289,32 +281,28 @@ namespace impl
         collection_version_validator version_validator;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterable : implements<iterable<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterable : implements<iterable<T, Container>,
                                  Windows::Foundation::Collections::IIterable<T>>
     {
-        iterable(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        iterable(InputIt first, InputIt last) : m_storage(first, last)
+        iterable(Container && values) : m_storage(std::move(values))
         {}
 
         Windows::Foundation::Collections::IIterator<T> First() const
         {
-            return make<iterator_standalone<T, CONTAINER>>(*this, m_storage);
+            return make<iterator_standalone<T, Container>>(*this, m_storage);
         }
 
     private:
 
-        const CONTAINER m_storage;
+        const Container m_storage;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterator : implements<iterator<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterator : implements<iterator<T, Container>,
                                  Windows::Foundation::Collections::IIterator<T>>
     {
-        iterator(const Windows::Foundation::Collections::IIterable<T> & owner, const CONTAINER & values, collection_version & owner_version, const uint32_t storage_version) noexcept :
+        iterator(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values, collection_version & owner_version, const uint32_t storage_version) noexcept :
             m_storage(owner),
             version_validator(owner_version, storage_version),
             m_current(values.begin()),
@@ -371,15 +359,15 @@ namespace impl
 
         const Windows::Foundation::Collections::IIterable<T> m_storage;
         collection_version_validator version_validator;
-        typename CONTAINER::const_iterator m_current;
-        typename CONTAINER::const_iterator m_end;
+        typename Container::const_iterator m_current;
+        typename Container::const_iterator m_end;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterator_standalone : implements<iterator_standalone<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterator_standalone : implements<iterator_standalone<T, Container>,
                                             Windows::Foundation::Collections::IIterator<T>>
     {
-        iterator_standalone(const Windows::Foundation::Collections::IIterable<T> & owner, const CONTAINER & values) noexcept :
+        iterator_standalone(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values) noexcept :
             m_storage(owner),
             m_current(values.begin()),
             m_end(values.end())
@@ -427,8 +415,8 @@ namespace impl
     private:
 
         const Windows::Foundation::Collections::IIterable<T> m_storage;
-        typename CONTAINER::const_iterator m_current;
-        typename CONTAINER::const_iterator m_end;
+        typename Container::const_iterator m_current;
+        typename Container::const_iterator m_end;
     };
 
     template <typename K, typename V>
@@ -456,21 +444,14 @@ namespace impl
         V m_value;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map : implements<map<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map : implements<map<K, V, Container>,
                             Windows::Foundation::Collections::IMap<K, V>,
                             Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
         map() = default;
 
-        map(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        map(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
-        map(std::initializer_list<std::pair<K, V>> values) : map(values.begin(), values.end())
+        map(Container && values) : m_storage(std::move(values))
         {}
 
         void Clear() noexcept
@@ -486,7 +467,7 @@ namespace impl
 
         Windows::Foundation::Collections::IMapView<K, V> GetView()
         {
-            return make<map_view_from_map<K, V, CONTAINER>>(this, m_version, m_version.get());
+            return make<map_view_from_map<K, V, Container>>(this, m_version, m_version.get());
         }
 
         bool HasKey(const K & key) const noexcept
@@ -521,21 +502,21 @@ namespace impl
 
         Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
         {
-            return make<iterator<IKeyValuePair<K, V>, CONTAINER>>(*this, m_storage, m_version, m_version.get());
+            return make<iterator<IKeyValuePair<K, V>, Container>>(*this, m_storage, m_version, m_version.get());
         }
 
     private:
 
-        CONTAINER m_storage;
+        Container m_storage;
         collection_version m_version;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map_view_from_map : implements<map_view_from_map<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map_view_from_map : implements<map_view_from_map<K, V, Container>,
                                           Windows::Foundation::Collections::IMapView<K, V>,
                                           Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
-        map_view_from_map(map<K, V, CONTAINER>* map, collection_version & owner_version, const uint32_t storage_version) : 
+        map_view_from_map(map<K, V, Container>* map, collection_version & owner_version, const uint32_t storage_version) : 
             version_validator(owner_version, storage_version)
         {
             m_storage.copy_from(map);
@@ -575,25 +556,18 @@ namespace impl
 
     private:
 
-        com_ptr<map<K, V, CONTAINER>> m_storage;
+        com_ptr<map<K, V, Container>> m_storage;
         collection_version_validator version_validator;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map_view_standalone: implements<map_view_standalone<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map_view_standalone: implements<map_view_standalone<K, V, Container>,
                                            Windows::Foundation::Collections::IMapView<K, V>,
                                            Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
         map_view_standalone() = default;
 
-        map_view_standalone(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        map_view_standalone(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
-        map_view_standalone(std::initializer_list<std::pair<K, V>> values) : map_view_standalone(values.begin(), values.end())
+        map_view_standalone(Container && values) : m_storage(std::move(values))
         {}
 
         bool HasKey(const K & key) const noexcept
@@ -626,11 +600,11 @@ namespace impl
 
         Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
         {
-            return make<impl::iterator_standalone<Windows::Foundation::Collections::IKeyValuePair<K, V>, CONTAINER>>(*this, m_storage);
+            return make<impl::iterator_standalone<Windows::Foundation::Collections::IKeyValuePair<K, V>, Container>>(*this, m_storage);
         }
 
     private:
 
-        CONTAINER m_storage;
+        Container m_storage;
     };
 }

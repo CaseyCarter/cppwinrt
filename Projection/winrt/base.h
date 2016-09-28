@@ -4247,11 +4247,14 @@ struct WINRT_EBO IIterable :
     IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<T, std::vector<T>>>(first, last))
+    IIterable(const std::vector<T> & values) : IIterable(std::vector<T>(values))
     {}
 
-    IIterable(std::initializer_list<T> values) : IIterable(make<impl::iterable<T, std::vector<T>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(std::vector<T>(first, last))
+    {}
+
+    IIterable(std::initializer_list<T> values) : IIterable(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -4266,14 +4269,20 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IIterable(const std::map<K, V> & values) : IIterable(std::map<K, V>(values))
+    {}
+
     IIterable(std::unordered_map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(first, last))
+    IIterable(const std::unordered_map<K, V> & values) : IIterable(std::unordered_map<K, V>(values))
     {}
 
-    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IIterable(InputIt first, InputIt last) : IIterable(std::unordered_map<K, V>(first, last))
+    {}
+
+    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 
@@ -4309,11 +4318,14 @@ struct WINRT_EBO IVectorView :
     IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IVectorView(InputIt first, InputIt last) : IVectorView(make<impl::vector_view_standalone<T>>(first, last))
+    IVectorView(const std::vector<T> & values) : IVectorView(std::vector<T>(values))
     {}
 
-    IVectorView(std::initializer_list<T> values) : IVectorView(make<impl::vector_view_standalone<T>>(values.begin(), values.end()))
+    template<class InputIt>
+    IVectorView(InputIt first, InputIt last) : IVectorView(std::vector<T>(first, last))
+    {}
+
+    IVectorView(std::initializer_list<T> values) : IVectorView(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -4329,11 +4341,14 @@ struct WINRT_EBO IVector :
     IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
     {}
 
-    template<class InputIt>
-    IVector(InputIt first, InputIt last) : IVector(make<impl::vector<T>>(first, last))
+    IVector(const std::vector<T> & values) : IVector(std::vector<T>(values))
     {}
 
-    IVector(std::initializer_list<T> values) : IVector(make<impl::vector<T>>(values.begin(), values.end()))
+    template<class InputIt>
+    IVector(InputIt first, InputIt last) : IVector(std::vector<T>(first, last))
+    {}
+
+    IVector(std::initializer_list<T> values) : IVector(std::vector<T>(values.begin(), values.end()))
     {}
 };
 
@@ -4349,14 +4364,20 @@ struct WINRT_EBO IMapView :
     IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IMapView(const std::map<K, V> & values) : IMapView(std::map<K, V>(values))
+    {}
+
     IMapView(std::unordered_map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IMapView(InputIt first, InputIt last) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(first, last))
+    IMapView(const std::unordered_map<K, V> & values) : IMapView(std::unordered_map<K, V>(values))
     {}
 
-    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IMapView(InputIt first, InputIt last) : IMapView(std::unordered_map<K, V>(first, last))
+    {}
+
+    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 
@@ -4372,14 +4393,20 @@ struct WINRT_EBO IMap :
     IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
 
+    IMap(const std::map<K, V> & values) : IMap(std::map<K, V>(values))
+    {}
+
     IMap(std::unordered_map<K, V> && values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
     {}
 
-    template<class InputIt>
-    IMap(InputIt first, InputIt last) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(first, last))
+    IMap(const std::unordered_map<K, V> & values) : IMap(std::unordered_map<K, V>(values))
     {}
 
-    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(values.begin(), values.end()))
+    template<class InputIt>
+    IMap(InputIt first, InputIt last) : IMap(std::unordered_map<K, V>(first, last))
+    {}
+
+    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(std::unordered_map<K, V>(values.begin(), values.end()))
     {}
 };
 
@@ -5186,10 +5213,6 @@ namespace impl
         vector(std::vector<T> && values) : m_storage(std::move(values))
         {}
 
-        template<class InputIt>
-        vector(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
         void Append(const T & value)
         {
             m_version.increment();
@@ -5320,10 +5343,6 @@ namespace impl
         vector_view_standalone(std::vector<T> && values) : m_storage(std::move(values))
         {}
 
-        template<class InputIt>
-        vector_view_standalone(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
         T GetAt(const uint32_t index) const
         {
             if (index >= m_storage.size())
@@ -5423,32 +5442,28 @@ namespace impl
         collection_version_validator version_validator;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterable : implements<iterable<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterable : implements<iterable<T, Container>,
                                  Windows::Foundation::Collections::IIterable<T>>
     {
-        iterable(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        iterable(InputIt first, InputIt last) : m_storage(first, last)
+        iterable(Container && values) : m_storage(std::move(values))
         {}
 
         Windows::Foundation::Collections::IIterator<T> First() const
         {
-            return make<iterator_standalone<T, CONTAINER>>(*this, m_storage);
+            return make<iterator_standalone<T, Container>>(*this, m_storage);
         }
 
     private:
 
-        const CONTAINER m_storage;
+        const Container m_storage;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterator : implements<iterator<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterator : implements<iterator<T, Container>,
                                  Windows::Foundation::Collections::IIterator<T>>
     {
-        iterator(const Windows::Foundation::Collections::IIterable<T> & owner, const CONTAINER & values, collection_version & owner_version, const uint32_t storage_version) noexcept :
+        iterator(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values, collection_version & owner_version, const uint32_t storage_version) noexcept :
             m_storage(owner),
             version_validator(owner_version, storage_version),
             m_current(values.begin()),
@@ -5505,15 +5520,15 @@ namespace impl
 
         const Windows::Foundation::Collections::IIterable<T> m_storage;
         collection_version_validator version_validator;
-        typename CONTAINER::const_iterator m_current;
-        typename CONTAINER::const_iterator m_end;
+        typename Container::const_iterator m_current;
+        typename Container::const_iterator m_end;
     };
 
-    template <typename T, typename CONTAINER>
-    struct iterator_standalone : implements<iterator_standalone<T, CONTAINER>,
+    template <typename T, typename Container>
+    struct iterator_standalone : implements<iterator_standalone<T, Container>,
                                             Windows::Foundation::Collections::IIterator<T>>
     {
-        iterator_standalone(const Windows::Foundation::Collections::IIterable<T> & owner, const CONTAINER & values) noexcept :
+        iterator_standalone(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values) noexcept :
             m_storage(owner),
             m_current(values.begin()),
             m_end(values.end())
@@ -5561,8 +5576,8 @@ namespace impl
     private:
 
         const Windows::Foundation::Collections::IIterable<T> m_storage;
-        typename CONTAINER::const_iterator m_current;
-        typename CONTAINER::const_iterator m_end;
+        typename Container::const_iterator m_current;
+        typename Container::const_iterator m_end;
     };
 
     template <typename K, typename V>
@@ -5590,21 +5605,14 @@ namespace impl
         V m_value;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map : implements<map<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map : implements<map<K, V, Container>,
                             Windows::Foundation::Collections::IMap<K, V>,
                             Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
         map() = default;
 
-        map(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        map(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
-        map(std::initializer_list<std::pair<K, V>> values) : map(values.begin(), values.end())
+        map(Container && values) : m_storage(std::move(values))
         {}
 
         void Clear() noexcept
@@ -5620,7 +5628,7 @@ namespace impl
 
         Windows::Foundation::Collections::IMapView<K, V> GetView()
         {
-            return make<map_view_from_map<K, V, CONTAINER>>(this, m_version, m_version.get());
+            return make<map_view_from_map<K, V, Container>>(this, m_version, m_version.get());
         }
 
         bool HasKey(const K & key) const noexcept
@@ -5655,21 +5663,21 @@ namespace impl
 
         Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
         {
-            return make<iterator<IKeyValuePair<K, V>, CONTAINER>>(*this, m_storage, m_version, m_version.get());
+            return make<iterator<IKeyValuePair<K, V>, Container>>(*this, m_storage, m_version, m_version.get());
         }
 
     private:
 
-        CONTAINER m_storage;
+        Container m_storage;
         collection_version m_version;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map_view_from_map : implements<map_view_from_map<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map_view_from_map : implements<map_view_from_map<K, V, Container>,
                                           Windows::Foundation::Collections::IMapView<K, V>,
                                           Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
-        map_view_from_map(map<K, V, CONTAINER>* map, collection_version & owner_version, const uint32_t storage_version) : 
+        map_view_from_map(map<K, V, Container>* map, collection_version & owner_version, const uint32_t storage_version) : 
             version_validator(owner_version, storage_version)
         {
             m_storage.copy_from(map);
@@ -5709,25 +5717,18 @@ namespace impl
 
     private:
 
-        com_ptr<map<K, V, CONTAINER>> m_storage;
+        com_ptr<map<K, V, Container>> m_storage;
         collection_version_validator version_validator;
     };
 
-    template <typename K, typename V, typename CONTAINER>
-    struct map_view_standalone: implements<map_view_standalone<K, V, CONTAINER>,
+    template <typename K, typename V, typename Container>
+    struct map_view_standalone: implements<map_view_standalone<K, V, Container>,
                                            Windows::Foundation::Collections::IMapView<K, V>,
                                            Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
     {
         map_view_standalone() = default;
 
-        map_view_standalone(CONTAINER && values) : m_storage(std::move(values))
-        {}
-
-        template<class InputIt>
-        map_view_standalone(InputIt first, InputIt last) : m_storage(first, last)
-        {}
-
-        map_view_standalone(std::initializer_list<std::pair<K, V>> values) : map_view_standalone(values.begin(), values.end())
+        map_view_standalone(Container && values) : m_storage(std::move(values))
         {}
 
         bool HasKey(const K & key) const noexcept
@@ -5760,12 +5761,12 @@ namespace impl
 
         Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
         {
-            return make<impl::iterator_standalone<Windows::Foundation::Collections::IKeyValuePair<K, V>, CONTAINER>>(*this, m_storage);
+            return make<impl::iterator_standalone<Windows::Foundation::Collections::IKeyValuePair<K, V>, Container>>(*this, m_storage);
         }
 
     private:
 
-        CONTAINER m_storage;
+        Container m_storage;
     };
 }
 
