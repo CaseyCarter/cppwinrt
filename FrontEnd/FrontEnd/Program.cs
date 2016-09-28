@@ -200,21 +200,21 @@ Copyright(C) Microsoft Corporation.All rights reserved.
 Usage:
 
 - To show this help:
-    WinMDc1.exe -?
+    cppwinrt1.exe -?
 - To process a winmd (output sqlite database default name will be winrt.db and it will placed in the same directory):
-    WinMDc1.exe -winmd foo.winmd
+    cppwinrt1.exe -winmd foo.winmd
 - To process a winmd and specify a location and name of the output sqlite database:
-    WinMDc1.exe -winmd foo.winmd -db c:\output\mydatabase.db
+    cppwinrt1.exe -winmd foo.winmd -db c:\output\mydatabase.db
 - To process more than one winmd
-    WinMDc1.exe -winmd foo.winmd bar.winmd
+    cppwinrt1.exe -winmd foo.winmd bar.winmd
 - To process more than one set of winmds
-    WinMDc1.exe -winmd c:\foo\foo1.winmd c:\foo\foo2.winmd -winmd d:\bar\bar1.winmd d:\bar\bar2.winmd
+    cppwinrt1.exe -winmd c:\foo\foo1.winmd c:\foo\foo2.winmd -winmd d:\bar\bar1.winmd d:\bar\bar2.winmd
 - To process a response file (for long static inputs)
-    WinMDc1.exe @c:\data\responseFile.txt
+    cppwinrt1.exe @c:\data\responseFile.txt
 - To process a winmd and use a response file
-    WinMDc1.exe -winmd c:\foo\foo1.winmd @c:\data\responseFile.txt
+    cppwinrt1.exe -winmd c:\foo\foo1.winmd @c:\data\responseFile.txt
 - To process a winmd with path and name that contain spaces
-    WinMDc1.exe -winmd ""C:\Program Files(x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\1.0.0.0\Windows.Foundation.FoundationContract.winmd""
+    cppwinrt1.exe -winmd ""C:\Program Files(x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\1.0.0.0\Windows.Foundation.FoundationContract.winmd""
 ";
     }
 }
